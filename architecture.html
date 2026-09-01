@@ -1,123 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Architecture &amp; Benchmarks | HTMLANDHTML.COM</title>
-  <meta name="description" content="Zero-dependency HTML5/CSS3 engineering specifications. Sub-millisecond TTFB, 100/100 Core Web Vitals, fluid typography, and Big Four standards.">
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How HTML&HTML Templates Are Built</title>
+  <meta name="description" content="HTML&HTML uses semantic HTML5, modern CSS, Vanilla JavaScript, centralized design tokens and documented verification without mandatory framework lock-in.">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://htmlandhtml.com/architecture.html">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "TechArticle",
-        "@id": "https://htmlandhtml.com/architecture.html#article",
-        "headline": "Sovereign Tier HTML/CSS Architecture Specifications",
-        "description": "Deterministic DOM structure, fluid typography, and zero-dependency runtime standard.",
-        "author": { "@id": "https://htmlandhtml.com/#organization" },
-        "publisher": { "@id": "https://htmlandhtml.com/#organization" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://htmlandhtml.com/architecture.html#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://htmlandhtml.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Architecture", "item": "https://htmlandhtml.com/architecture.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+  <link rel="stylesheet" href="assets/css/main.css?v=hh-architecture-v2">
+  <style>.info-shell{width:min(calc(100% - 36px),880px);margin:0 auto;padding:64px 0 100px}.info-shell h1{font-size:clamp(2.7rem,7vw,5.4rem);line-height:.95;letter-spacing:-.06em;margin:20px 0}.info-shell>p{font-size:1.08rem;color:var(--muted);max-width:760px}.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:42px}.principles article{border:1px solid var(--line);padding:24px;border-radius:10px}.principles h2{margin:0 0 7px;font-size:1.05rem}.principles p{margin:0;color:var(--muted)}.truth{margin-top:30px;padding:20px;background:var(--soft);border-radius:8px}.back{display:inline-block;margin-top:34px;color:var(--brand)}@media(max-width:700px){.principles{grid-template-columns:1fr}}</style>
 </head>
-<body id="architecture">
-
-  <aside class="utility-bar">
-    <div class="container">
-      <div class="utility-badge">
-        <span>SOVEREIGN ASSET TIER: $100 USD FLAT BUYOUT</span>
-      </div>
-      <div class="utility-links">
-        <a href="index.html">← Back to Catalog</a>
-        <a href="licensing.html">License Deed</a>
-        <a href="checkout.html">Buy License ($100 USD)</a>
-      </div>
-    </div>
-  </aside>
-
-  <header id="header" style="padding: 40px 0 20px 0;">
-    <div class="container">
-      <h1 class="logo"><a href="/">HTMLANDHTML <span>.COM</span></a></h1>
-      <h2 style="color: var(--color-brand-dark); font-size: 2rem; margin-top: 10px;">Engineering Architecture &amp; Benchmarks</h2>
-    </div>
-  </header>
-
-  <div class="container">
-    <article class="modal container small">
-      <h3>The Zero-Dependency Blueprint</h3>
-      <p>
-        Every template in our library is built from first principles using pure semantic <strong>HTML5</strong>, modular <strong>CSS3 custom properties</strong>, and lightweight standalone <strong>ES6+</strong> modules.
-      </p>
-
-      <ul class="checklist">
-        <li><strong>0.00 KB External Runtime Bloat:</strong> Zero dependencies on jQuery, React, Vue, or Tailwind JIT compilers.</li>
-        <li><strong>Sub-Millisecond TTFB:</strong> Fully static, pre-rendered DOM compatible with Edge CDN caching (Cloudflare, Fastly, Vercel).</li>
-        <li><strong>100/100 Core Web Vitals:</strong> LCP &lt; 0.8s, CLS = 0.000 (locked aspect ratios), and TBT = 0ms.</li>
-        <li><strong>Fluid Typography Math:</strong> Dynamic scaling via mathematical <code>clamp()</code> formulas across all viewports.</li>
-      </ul>
-
-      <hr>
-
-      <h3>Core Web Vitals Benchmark Logs (p75 Field Data)</h3>
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; margin: 20px 0;">
-        <thead>
-          <tr style="background: #EBEDF2;">
-            <th style="padding: 10px 14px; border-bottom: 2px solid #C4C9D2;">Audit Dimension</th>
-            <th style="padding: 10px 14px; border-bottom: 2px solid #C4C9D2;">Industry Average</th>
-            <th style="padding: 10px 14px; border-bottom: 2px solid #C4C9D2;">HTMLANDHTML.COM</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom: 1px solid #E1E4E8;">
-            <td style="padding: 10px 14px;"><strong>JavaScript Payload</strong></td>
-            <td style="padding: 10px 14px; color: #D32F2F;">2.4 MB</td>
-            <td style="padding: 10px 14px; color: #0A6C38; font-weight: 700;">0.00 KB (Zero)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E1E4E8;">
-            <td style="padding: 10px 14px;"><strong>Largest Contentful Paint</strong></td>
-            <td style="padding: 10px 14px; color: #D32F2F;">3.8s</td>
-            <td style="padding: 10px 14px; color: #0A6C38; font-weight: 700;">0.72s (Sub-Second)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E1E4E8;">
-            <td style="padding: 10px 14px;"><strong>Cumulative Layout Shift</strong></td>
-            <td style="padding: 10px 14px; color: #D32F2F;">0.280</td>
-            <td style="padding: 10px 14px; color: #0A6C38; font-weight: 700;">0.000 (Zero Shift)</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div style="margin-top: 32px; text-align: center;">
-        <a href="live-preview.html" class="button demo">Launch Live Sandbox ↗</a>
-      </div>
-    </article>
-  </div>
-
-  <footer id="footer" class="container">
-    <ul class="menu">
-      <li><a href="index.html">Catalog</a></li>
-      <li><a href="geo-seo.html">GEO &amp; SEO Engine</a></li>
-      <li><a href="compliance.html">WCAG AAA 7:1</a></li>
-      <li><a href="licensing.html">License Deed</a></li>
-      <li><a href="checkout.html">Procurement Desk</a></li>
-    </ul>
-    <div class="copyright">
-      &copy; HTMLANDHTML.COM Global Enterprise Systems.
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+<body>
+  <main class="info-shell">
+    <a class="brand brand-small" href="/">HTML<span>&</span>HTML</a>
+    <p class="eyebrow">ARCHITECTURE</p>
+    <h1>Simple to use.<br>Disciplined underneath.</h1>
+    <p>HTML&HTML templates are HTML-first commercial products. The goal is clean source, straightforward customization and minimal runtime complexity without reducing responsive, accessibility or performance standards.</p>
+    <section class="principles" aria-label="Architecture principles">
+      <article><h2>Semantic HTML5</h2><p>Readable structure and native elements before unnecessary abstraction.</p></article>
+      <article><h2>Modern CSS</h2><p>Custom properties, Grid, Flexbox and fluid sizing where they improve maintainability.</p></article>
+      <article><h2>Vanilla JavaScript</h2><p>Small interaction code with no framework requirement for the default product.</p></article>
+      <article><h2>Centralized tokens</h2><p>Colors, spacing, type and component behavior are designed to be changed predictably.</p></article>
+      <article><h2>AI-friendly editing</h2><p>Clear sections and documentation make safe customization easier for coding agents.</p></article>
+      <article><h2>Evidence before claims</h2><p>Performance, accessibility and compatibility claims are published only after corresponding checks run.</p></article>
+    </section>
+    <div class="truth"><strong>Verification status:</strong> this rebuild remains <em>IMPLEMENTATION COMPLETE — VERIFICATION PENDING</em> until the required browser, responsive, accessibility and performance checks are executed and evidence is stored.</div>
+    <a class="back" href="/">← Back to templates</a>
+  </main>
 </body>
 </html>
