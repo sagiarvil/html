@@ -5,61 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Template Preview — HTML&HTML</title>
   <meta name="robots" content="noindex,nofollow">
-  <link rel="stylesheet" href="assets/css/main.css?v=hh-preview-v2">
+  <link rel="stylesheet" href="assets/css/main.css?v=hh-preview-v3">
+  <script src="assets/js/products.js"></script>
 </head>
 <body class="preview-body">
   <header class="preview-bar">
-    <div class="preview-left">
-      <strong class="preview-title" id="previewTitle">HTML&HTML Preview</strong>
-      <div class="viewport-switcher" aria-label="Preview width">
-        <button type="button" data-width="100%" aria-pressed="true">Desktop</button>
-        <button type="button" data-width="1024px" aria-pressed="false">Tablet</button>
-        <button type="button" data-width="390px" aria-pressed="false">Mobile</button>
-      </div>
-    </div>
-    <div class="preview-right">
-      <a class="preview-action" href="/">Back</a>
-      <a class="preview-action" id="popoutLink" href="#" target="_blank" rel="noopener">Open</a>
-      <a class="preview-action primary" id="buyLink" href="checkout.html">Buy</a>
-    </div>
+    <div class="preview-left"><strong class="preview-title" id="previewTitle">HTML&HTML Preview</strong><div class="viewport-switcher" aria-label="Preview width"><button type="button" data-width="100%" aria-pressed="true">Desktop</button><button type="button" data-width="1024px" aria-pressed="false">Laptop</button><button type="button" data-width="768px" aria-pressed="false">Tablet</button><button type="button" data-width="390px" aria-pressed="false">Mobile</button></div></div>
+    <div class="preview-right"><a class="preview-action" href="/">Back</a><a class="preview-action" id="detailsLink" href="product.html">Details</a><a class="preview-action" id="popoutLink" href="#" target="_blank" rel="noopener">Open</a><a class="preview-action primary" id="buyLink" href="checkout.html">Price</a></div>
   </header>
-
-  <main class="preview-stage">
-    <iframe id="previewFrame" title="HTML&HTML template preview"></iframe>
-  </main>
-
+  <main class="preview-stage"><iframe id="previewFrame" title="HTML&HTML template preview"></iframe></main>
   <script>
-    const catalog = {
-      ledger: { title: 'Ledger', file: 'demos/ledger.html', price: 19 },
-      counsel: { title: 'Counsel', file: 'demos/counsel.html', price: 19 },
-      habitat: { title: 'Habitat', file: 'demos/habitat.html', price: 24 },
-      clinic: { title: 'Clinic', file: 'demos/clinic.html', price: 19 },
-      table: { title: 'Table', file: 'demos/table.html', price: 14 },
-      launchpad: { title: 'Launchpad', file: 'demos/launchpad.html', price: 19 }
-    };
-
+    const products = window.HTMLHTML_PRODUCTS || {};
     const params = new URLSearchParams(location.search);
-    const key = params.get('template') || 'ledger';
-    const product = catalog[key] || catalog.ledger;
+    const key = params.get('template') || 'launchpad';
+    const product = products[key] || products.launchpad;
     const frame = document.getElementById('previewFrame');
     const title = document.getElementById('previewTitle');
     const popout = document.getElementById('popoutLink');
     const buy = document.getElementById('buyLink');
-
-    title.textContent = product.title + ' — HTML&HTML';
-    document.title = product.title + ' Preview — HTML&HTML';
-    frame.src = product.file;
-    popout.href = product.file;
-    buy.href = `checkout.html?package=${encodeURIComponent(key)}&price=${product.price}`;
-    buy.textContent = `Buy $${product.price}`;
-
-    document.querySelectorAll('.viewport-switcher button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.viewport-switcher button').forEach(item => item.setAttribute('aria-pressed', 'false'));
-        button.setAttribute('aria-pressed', 'true');
-        frame.style.width = button.dataset.width;
-      });
-    });
+    const details = document.getElementById('detailsLink');
+    if (product) {
+      title.textContent = `${product.title} — ${product.category}`;
+      document.title = `${product.title} Preview — HTML&HTML`;
+      frame.src = product.demo;
+      popout.href = product.demo;
+      details.href = `product.html?template=${encodeURIComponent(key)}`;
+      buy.href = `checkout.html?package=${encodeURIComponent(key)}&price=${product.price}`;
+      buy.textContent = `$${product.price}`;
+    }
+    document.querySelectorAll('.viewport-switcher button').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.viewport-switcher button').forEach(item => item.setAttribute('aria-pressed','false'));
+      button.setAttribute('aria-pressed','true');
+      frame.style.width = button.dataset.width;
+    }));
   </script>
 </body>
 </html>
