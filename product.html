@@ -9,22 +9,33 @@
   <link rel="stylesheet" href="assets/css/main.css?v=hh-catalog-v2">
   <link rel="stylesheet" href="assets/css/catalog-global.css?v=hh-global-v1">
   <script src="assets/js/products.js"></script>
+  <style>
+    .buyer-package{display:none}.buyer-package.is-visible{display:block}.package-summary{margin:0 0 20px;padding:18px 20px;border:1px solid #dfe3e8;border-radius:14px;background:#f8fafb;font-weight:760}.package-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}.package-panel{padding:22px;border:1px solid #e0e4e9;border-radius:15px;background:#fff}.package-panel h3{margin:0 0 12px;font-size:1.15rem}.package-panel ul{margin:0;padding-left:19px}.package-panel li{margin:8px 0;color:#5f6774;font-size:.86rem}.page-preview-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}.page-preview-grid button{min-height:64px;padding:10px;border:1px solid #dfe3e8;border-radius:11px;background:#fff;color:#353d48;font:inherit;font-size:.75rem;font-weight:760;cursor:pointer;text-align:left}.page-preview-grid button[aria-pressed=true]{background:#181c25;color:#fff;border-color:#181c25}.page-preview-grid small{display:block;margin-top:4px;opacity:.68;font-size:.64rem;font-weight:600}.preview-note{margin:14px 0 0;color:#777f8a;font-size:.78rem}.file-list{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem}.exclusion-panel{border-color:#eadfce;background:#fffaf3}.detail-buybox .package-count{margin:.7rem 0 0;color:#59616d;font-size:.75rem;font-weight:760}@media(max-width:900px){.package-columns{grid-template-columns:1fr}.page-preview-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:540px){.page-preview-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <main class="product-detail-shell">
     <nav class="detail-nav" aria-label="Product navigation"><a class="detail-brand" href="/" aria-label="HTML and HTML home"><img src="assets/brand/htmlandhtml-logo.svg" alt="HTML and HTML" width="760" height="240"></a><div class="detail-nav-links"><a href="/#catalog">Templates</a><a href="/#compatibility">Compatibility</a><a href="licensing.html">License</a></div></nav>
 
-    <section class="detail-hero"><div><p class="detail-kicker" id="productCategory">HTML TEMPLATE</p><h1 id="productTitle">Template</h1><p class="detail-lede" id="productDescription"></p><p class="detail-lede" style="font-size:.9rem"><strong>What you see is what you are evaluating:</strong> the preview below renders the same HTML/CSS/JS demo source used to represent this product. No wireframe or unrelated mockup.</p></div><aside class="detail-buybox" aria-label="Product price and status"><p class="detail-price" id="productPrice">$19</p><p class="detail-price-note">One-time template price. Checkout remains disabled until the payment provider is connected.</p><a class="btn btn-solid" id="checkoutLink" href="checkout.html">Purchase / release status</a><a class="btn btn-ghost" id="fullDemoLink" href="live-preview.html" style="margin-top:.65rem">Open full live demo</a><dl><div><dt>Complexity</dt><dd id="productComplexity">Standard</dd></div><div><dt>Core stack</dt><dd>HTML5 · CSS · JS</dd></div><div><dt>Build step</dt><dd>None</dd></div><div><dt>Framework lock-in</dt><dd>None</dd></div></dl></aside></section>
+    <section class="detail-hero"><div><p class="detail-kicker" id="productCategory">HTML TEMPLATE</p><h1 id="productTitle">Template</h1><p class="detail-lede" id="productDescription"></p><p class="detail-lede" style="font-size:.9rem"><strong>Buyer rule:</strong> every capability listed below must correspond to source you can actually inspect. The live preview is not a decorative mockup.</p></div><aside class="detail-buybox" aria-label="Product price and status"><p class="detail-price" id="productPrice">$19</p><p class="detail-price-note">One-time template price. Checkout remains disabled until the payment provider is connected.</p><a class="btn btn-solid" id="checkoutLink" href="checkout.html">Purchase / release status</a><a class="btn btn-ghost" id="fullDemoLink" href="live-preview.html" style="margin-top:.65rem">Open full live demo</a><p class="package-count" id="packageCount"></p><dl><div><dt>Complexity</dt><dd id="productComplexity">Standard</dd></div><div><dt>Core stack</dt><dd>HTML5 · CSS · JS</dd></div><div><dt>Build step</dt><dd>None</dd></div><div><dt>Framework lock-in</dt><dd>None</dd></div></dl></aside></section>
 
-    <section class="device-preview" aria-labelledby="preview-title"><div class="device-preview-bar"><strong id="preview-title">Actual responsive template</strong><div class="device-switcher" role="group" aria-label="Preview device"><button type="button" data-width="100%" aria-pressed="true">Desktop</button><button type="button" data-width="1024px" aria-pressed="false">Tablet</button><button type="button" data-width="768px" aria-pressed="false">Tablet Portrait</button><button type="button" data-width="390px" aria-pressed="false">Mobile</button></div></div><div class="device-stage-frame"><iframe id="detailPreviewFrame" title="Actual responsive template preview"></iframe></div></section>
+    <section class="device-preview" aria-labelledby="preview-title"><div class="device-preview-bar"><strong id="preview-title">Actual responsive template</strong><div class="device-switcher" role="group" aria-label="Preview device"><button type="button" data-width="100%" aria-pressed="true">Desktop</button><button type="button" data-width="1024px" aria-pressed="false">Tablet</button><button type="button" data-width="768px" aria-pressed="false">Tablet Portrait</button><button type="button" data-width="390px" aria-pressed="false">Mobile</button></div></div><div class="device-stage-frame"><iframe id="detailPreviewFrame" title="Actual responsive template preview"></iframe></div><div class="page-preview-grid" id="pagePreviewGrid" aria-label="Included page previews"></div></section>
 
-    <section class="detail-section" aria-labelledby="fit-title"><div class="detail-section-head"><p class="eyebrow">TECHNICAL PROFILE</p><h2 id="fit-title">Know exactly what you are buying.</h2><p id="productFit"></p></div><dl class="tech-profile"><div><dt>Canonical runtime</dt><dd>Semantic HTML5</dd></div><div><dt>Styling</dt><dd>Modern CSS + Custom Properties</dd></div><div><dt>Interactivity</dt><dd>Vanilla JavaScript</dd></div><div><dt>Dependencies</dt><dd>No framework required</dd></div><div><dt>Responsive</dt><dd>Mobile · Tablet · Desktop</dd></div><div><dt>Browser target</dt><dd>Current Chrome · Safari · Firefox · Edge</dd></div><div><dt>Editing</dt><dd>Manual or AI-assisted</dd></div><div><dt>Preview integrity</dt><dd>Catalog, live demo and product source are aligned</dd></div></dl></section>
+    <section class="detail-section buyer-package" id="packageSection" aria-labelledby="package-title">
+      <div class="detail-section-head"><p class="eyebrow">WHAT YOU ACTUALLY GET</p><h2 id="package-title">Inspect the package before you buy.</h2><p id="previewNote"></p></div>
+      <p class="package-summary" id="packageSummary"></p>
+      <div class="package-columns">
+        <article class="package-panel"><h3>Included layouts & behavior</h3><ul id="includedList"></ul></article>
+        <article class="package-panel"><h3>Source files represented</h3><ul class="file-list" id="filesList"></ul></article>
+        <article class="package-panel exclusion-panel" style="grid-column:1/-1"><h3>Not included / integration still required</h3><ul id="notIncludedList"></ul></article>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="fit-title"><div class="detail-section-head"><p class="eyebrow">TECHNICAL PROFILE</p><h2 id="fit-title">Know the technical boundaries too.</h2><p id="productFit"></p></div><dl class="tech-profile"><div><dt>Canonical runtime</dt><dd>Semantic HTML5</dd></div><div><dt>Styling</dt><dd>Modern CSS + Custom Properties</dd></div><div><dt>Interactivity</dt><dd>Vanilla JavaScript</dd></div><div><dt>Dependencies</dt><dd>No framework required</dd></div><div><dt>Responsive</dt><dd>Mobile · Tablet · Desktop</dd></div><div><dt>Browser target</dt><dd>Current Chrome · Safari · Firefox · Edge</dd></div><div><dt>Editing</dt><dd>Manual or AI-assisted</dd></div><div><dt>Preview integrity</dt><dd>Included layouts are shown as rendered HTML</dd></div></dl></section>
 
     <section class="detail-section" aria-labelledby="integration-title"><div class="detail-section-head"><p class="eyebrow">SYSTEM COMPATIBILITY</p><h2 id="integration-title">Direct where HTML belongs. Adaptable where frameworks differ.</h2><p>A single executable template cannot run unchanged inside every platform. HTML&HTML separates direct deployment from integration work so you can plan correctly before purchase.</p></div><div class="integration-list"><article><span class="status status-direct">DIRECT</span><h3>Static & traditional hosting</h3><p>Open locally or deploy to cPanel, Netlify, Vercel static hosting, GitHub Pages or another standard static host. Relative assets and no build step keep the canonical package portable.</p></article><article><span class="status status-adapt">ADAPTABLE</span><h3>React / Next / Vue / Nuxt / Svelte / Astro</h3><p>Convert sections into framework components and map design tokens to the target project. The source is intentionally structured to make this adaptation predictable, but it is not advertised as zero-work compatibility.</p></article><article><span class="status status-adapter">THEME / ADAPTER WORK</span><h3>WordPress / Shopify / CMS platforms</h3><p>Requires platform-specific theme, Liquid, PHP or CMS integration. Use the HTML package as the visual and structural source; test forms, routing, content fields and platform behavior after conversion.</p></article></div></section>
 
-    <section class="detail-section" aria-labelledby="method-title"><div class="detail-section-head"><p class="eyebrow">IMPLEMENTATION METHOD</p><h2 id="method-title">Four steps from source to live site.</h2></div><ol class="method-steps"><li><strong>Inspect</strong><span>Open the live demo, test desktop/tablet/mobile and confirm the layout suits the project.</span></li><li><strong>Customize</strong><span>Replace copy, media and design tokens. Keep semantic structure and accessibility states intact.</span></li><li><strong>Integrate</strong><span>Deploy directly as HTML or convert sections into the target framework/theme when needed.</span></li><li><strong>Verify</strong><span>Re-run links, assets, responsive, keyboard, console and performance checks after material changes.</span></li></ol></section>
-
-    <section class="detail-section" aria-labelledby="buyer-guide-title"><div class="detail-section-head"><p class="eyebrow">BUYER GUIDE</p><h2 id="buyer-guide-title">Clear technical disclosure before purchase.</h2><p>Each HTML&HTML product profile exposes the information buyers commonly need: technology, responsive behavior, browser target, files/structure, customization method, compatibility status and live preview. Support or update promises are never shown unless they are actually offered.</p></div></section>
+    <section class="detail-section" aria-labelledby="method-title"><div class="detail-section-head"><p class="eyebrow">IMPLEMENTATION METHOD</p><h2 id="method-title">Four steps from source to live site.</h2></div><ol class="method-steps"><li><strong>Inspect</strong><span>Open every included page in the live demo and test desktop/tablet/mobile before purchase.</span></li><li><strong>Customize</strong><span>Replace copy, demo media and design tokens. Keep semantic structure and accessibility states intact.</span></li><li><strong>Integrate</strong><span>Deploy directly as HTML or connect your own forms, CRM, CMS, data source or target framework.</span></li><li><strong>Verify</strong><span>Re-run links, assets, responsive, keyboard, console and performance checks after material changes.</span></li></ol></section>
 
     <footer class="site-footer"><div><a class="footer-logo" href="/"><img src="assets/brand/htmlandhtml-logo.svg" alt="HTML and HTML" width="760" height="240" loading="lazy"></a></div><nav><a href="/#catalog">Templates</a><a href="licensing.html">License</a><a href="architecture.html">Architecture</a></nav><p class="copyright">© 2026 HTML&HTML.</p></footer>
   </main>
@@ -47,6 +58,40 @@
       document.getElementById('fullDemoLink').href = `live-preview.html?template=${encodeURIComponent(key)}`;
       const frame = document.getElementById('detailPreviewFrame');
       frame.src = product.demo;
+
+      const pageGrid = document.getElementById('pagePreviewGrid');
+      if (Array.isArray(product.pages) && product.pages.length) {
+        document.getElementById('packageCount').textContent = `${product.pages.length} included HTML pages`;
+        product.pages.forEach((page, index) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.innerHTML = `${page.label}<small>${page.includedAs || ''}</small>`;
+          button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
+          button.addEventListener('click', () => {
+            frame.src = page.file;
+            pageGrid.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed','false'));
+            button.setAttribute('aria-pressed','true');
+          });
+          pageGrid.appendChild(button);
+        });
+      } else {
+        pageGrid.hidden = true;
+      }
+
+      const packageSection = document.getElementById('packageSection');
+      if (product.included || product.files || product.notIncluded) {
+        packageSection.classList.add('is-visible');
+        document.getElementById('packageSummary').textContent = product.summary || 'Source package contents are listed below.';
+        document.getElementById('previewNote').textContent = product.previewNote || 'The live demo represents the source layouts included with this product.';
+        const fill = (id, values) => {
+          const root = document.getElementById(id);
+          (values || []).forEach(value => { const li = document.createElement('li'); li.textContent = value; root.appendChild(li); });
+        };
+        fill('includedList', product.included);
+        fill('filesList', product.files);
+        fill('notIncludedList', product.notIncluded);
+      }
+
       document.querySelectorAll('.device-switcher button').forEach(button => button.addEventListener('click', () => {
         document.querySelectorAll('.device-switcher button').forEach(item => item.setAttribute('aria-pressed','false'));
         button.setAttribute('aria-pressed','true');
