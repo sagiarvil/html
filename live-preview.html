@@ -5,15 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Template Preview — HTML&HTML</title>
   <meta name="robots" content="noindex,nofollow">
-  <link rel="stylesheet" href="assets/css/main.css?v=hh-preview-v3">
+  <link rel="stylesheet" href="assets/css/main.css?v=hh-preview-v4">
   <script src="assets/js/products.js"></script>
 </head>
 <body class="preview-body">
   <header class="preview-bar">
-    <div class="preview-left"><strong class="preview-title" id="previewTitle">HTML&HTML Preview</strong><div class="viewport-switcher" aria-label="Preview width"><button type="button" data-width="100%" aria-pressed="true">Desktop</button><button type="button" data-width="1024px" aria-pressed="false">Laptop</button><button type="button" data-width="768px" aria-pressed="false">Tablet</button><button type="button" data-width="390px" aria-pressed="false">Mobile</button></div></div>
-    <div class="preview-right"><a class="preview-action" href="/">Back</a><a class="preview-action" id="detailsLink" href="product.html">Details</a><a class="preview-action" id="popoutLink" href="#" target="_blank" rel="noopener">Open</a><a class="preview-action primary" id="buyLink" href="checkout.html">Price</a></div>
+    <div class="preview-left">
+      <strong class="preview-title" id="previewTitle">HTML&HTML Preview</strong>
+      <div class="viewport-switcher" aria-label="Preview device">
+        <button type="button" data-width="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-width="1024px" aria-pressed="false">Tablet</button>
+        <button type="button" data-width="768px" aria-pressed="false">Tablet Portrait</button>
+        <button type="button" data-width="390px" aria-pressed="false">Mobile</button>
+      </div>
+    </div>
+    <div class="preview-right">
+      <a class="preview-action" href="/">Back</a>
+      <a class="preview-action" id="detailsLink" href="product.html">Details</a>
+      <a class="preview-action" id="popoutLink" href="#" target="_blank" rel="noopener">Pop Out</a>
+      <a class="preview-action primary" id="buyLink" href="checkout.html">Price</a>
+    </div>
   </header>
-  <main class="preview-stage"><iframe id="previewFrame" title="HTML&HTML template preview"></iframe></main>
+  <main class="preview-stage"><iframe id="previewFrame" title="Actual HTML&HTML template preview"></iframe></main>
   <script>
     const products = window.HTMLHTML_PRODUCTS || {};
     const params = new URLSearchParams(location.search);
@@ -25,13 +38,13 @@
     const buy = document.getElementById('buyLink');
     const details = document.getElementById('detailsLink');
     if (product) {
-      title.textContent = `${product.title} — ${product.category}`;
-      document.title = `${product.title} Preview — HTML&HTML`;
+      title.textContent = `${product.title} — actual template`;
+      document.title = `${product.title} Live Preview — HTML&HTML`;
       frame.src = product.demo;
       popout.href = product.demo;
       details.href = `product.html?template=${encodeURIComponent(key)}`;
       buy.href = `checkout.html?package=${encodeURIComponent(key)}&price=${product.price}`;
-      buy.textContent = `$${product.price}`;
+      buy.textContent = `Buy · $${product.price}`;
     }
     document.querySelectorAll('.viewport-switcher button').forEach(button => button.addEventListener('click', () => {
       document.querySelectorAll('.viewport-switcher button').forEach(item => item.setAttribute('aria-pressed','false'));
