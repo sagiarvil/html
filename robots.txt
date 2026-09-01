@@ -1,6 +1,4 @@
-# ==============================================================================
-# htmlandhtml.com - Search Crawler Policy (NOINDEX / STAGING MODE)
-# ==============================================================================
-
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://htmlandhtml.com/sitemap.xml

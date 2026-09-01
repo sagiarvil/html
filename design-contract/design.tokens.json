@@ -1,0 +1,14 @@
+{
+  "name": "HTML&HTML Storefront",
+  "version": "1.0.0",
+  "mode": "light",
+  "source": "assets/css/main.css",
+  "principles": [
+    "HTML-first",
+    "catalog-led",
+    "high contrast",
+    "low dependency",
+    "responsive",
+    "AI-editable"
+  ]
+}

@@ -1,16 +1,15 @@
-# Deep Sub-Graph: Performance & Benchmark Validation
-**Standard**: Google Core Web Vitals (CWV) p75 Field Thresholds
-**Target**: Perfect 100/100 Lighthouse Benchmark
+# HTML&HTML Performance Policy
 
-## 1. Metrics & Field Limits
-- **Largest Contentful Paint (LCP)**: < 0.8 seconds (Google threshold: < 2.5s).
-- **Interaction to Next Paint (INP)**: < 40 milliseconds (Google threshold: < 200ms).
-- **Cumulative Layout Shift (CLS)**: 0.000 (Google threshold: < 0.1).
-- **First Contentful Paint (FCP)**: < 0.5 seconds.
-- **Total Blocking Time (TBT)**: 0 milliseconds.
+HTML&HTML targets fast, low-dependency static delivery, but measured scores are never assumed.
 
-## 2. Asset Payload Budgets
-- Critical HTML: < 35 KB uncompressed.
-- Critical CSS: < 18 KB uncompressed.
-- Runtime JS: < 12 KB uncompressed.
-- Total Baseline Page Weight: < 85 KB (excluding high-res editorial photography).
+Performance work should prioritize:
+- minimal unnecessary JavaScript
+- optimized media
+- reserved media dimensions
+- controlled font loading
+- reduced render-blocking resources
+- no hidden third-party dependency for core rendering
+
+Lighthouse, Core Web Vitals and browser/device performance numbers may be published only when the corresponding tests have actually run and the environment is recorded.
+
+Current rebuild status: IMPLEMENTATION COMPLETE — VERIFICATION PENDING.
