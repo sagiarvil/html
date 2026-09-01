@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Template Preview — HTML&HTML</title>
   <meta name="robots" content="noindex,nofollow">
-  <link rel="stylesheet" href="assets/css/main.css?v=hh-preview-v4">
+  <link rel="stylesheet" href="assets/css/main.css?v=hh-preview-v5">
   <script src="assets/js/products.js"></script>
+  <style>
+    .preview-body{display:flex;min-height:100vh;flex-direction:column}.preview-bar{flex:0 0 auto}.preview-proof{display:none;flex:0 0 auto;padding:10px 16px;background:#fff;color:#202631;border-bottom:1px solid #e3e6eb}.preview-proof.is-visible{display:block}.preview-proof-top{display:flex;justify-content:space-between;gap:18px;align-items:center}.preview-proof strong{font-size:.82rem}.preview-proof span{color:#6c7480;font-size:.72rem}.preview-pages{display:flex;gap:6px;overflow:auto;margin-top:9px;padding-bottom:2px}.preview-pages button{flex:0 0 auto;min-height:34px;padding:0 11px;border:1px solid #dfe3e8;border-radius:999px;background:#fff;color:#414956;font:inherit;font-size:.7rem;font-weight:760;cursor:pointer}.preview-pages button[aria-pressed=true]{background:#171c24;color:#fff;border-color:#171c24}.preview-stage{flex:1;height:auto;min-height:0}.preview-file{font-weight:800;color:#303844!important}@media(max-width:780px){.preview-proof-top{align-items:flex-start;flex-direction:column;gap:3px}.preview-bar{align-items:flex-start;flex-direction:column}.preview-right{width:100%;overflow:auto}.viewport-switcher{overflow:auto}}
+  </style>
 </head>
 <body class="preview-body">
   <header class="preview-bar">
@@ -21,11 +24,15 @@
     </div>
     <div class="preview-right">
       <a class="preview-action" href="/">Back</a>
-      <a class="preview-action" id="detailsLink" href="product.html">Details</a>
+      <a class="preview-action" id="detailsLink" href="product.html">What’s included</a>
       <a class="preview-action" id="popoutLink" href="#" target="_blank" rel="noopener">Pop Out</a>
       <a class="preview-action primary" id="buyLink" href="checkout.html">Price</a>
     </div>
   </header>
+  <section class="preview-proof" id="previewProof" aria-label="Included pages">
+    <div class="preview-proof-top"><div><strong id="packageSummary"></strong><br><span>Every page button below opens an actual HTML layout represented in this product.</span></div><span>Previewing included file: <b class="preview-file" id="includedFile">index.html</b></span></div>
+    <div class="preview-pages" id="previewPages" role="group" aria-label="Included page previews"></div>
+  </section>
   <main class="preview-stage"><iframe id="previewFrame" title="Actual HTML&HTML template preview"></iframe></main>
   <script>
     const products = window.HTMLHTML_PRODUCTS || {};
@@ -37,6 +44,19 @@
     const popout = document.getElementById('popoutLink');
     const buy = document.getElementById('buyLink');
     const details = document.getElementById('detailsLink');
+    const proof = document.getElementById('previewProof');
+    const pagesRoot = document.getElementById('previewPages');
+    const includedFile = document.getElementById('includedFile');
+    const packageSummary = document.getElementById('packageSummary');
+
+    const loadPage = (page, button) => {
+      frame.src = page.file;
+      popout.href = page.file;
+      if (includedFile) includedFile.textContent = page.includedAs || page.label;
+      document.querySelectorAll('.preview-pages button').forEach(item => item.setAttribute('aria-pressed','false'));
+      if (button) button.setAttribute('aria-pressed','true');
+    };
+
     if (product) {
       title.textContent = `${product.title} — actual template`;
       document.title = `${product.title} Live Preview — HTML&HTML`;
@@ -45,7 +65,22 @@
       details.href = `product.html?template=${encodeURIComponent(key)}`;
       buy.href = `checkout.html?package=${encodeURIComponent(key)}&price=${product.price}`;
       buy.textContent = `Buy · $${product.price}`;
+
+      if (Array.isArray(product.pages) && product.pages.length) {
+        proof.classList.add('is-visible');
+        packageSummary.textContent = product.summary || `${product.pages.length} included HTML pages`;
+        product.pages.forEach((page, index) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = page.label;
+          button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
+          button.addEventListener('click', () => loadPage(page, button));
+          pagesRoot.appendChild(button);
+        });
+        includedFile.textContent = product.pages[0].includedAs || product.pages[0].label;
+      }
     }
+
     document.querySelectorAll('.viewport-switcher button').forEach(button => button.addEventListener('click', () => {
       document.querySelectorAll('.viewport-switcher button').forEach(item => item.setAttribute('aria-pressed','false'));
       button.setAttribute('aria-pressed','true');
