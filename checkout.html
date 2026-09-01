@@ -7,38 +7,32 @@
   <meta name="description" content="Purchase information for HTML&HTML premium HTML templates.">
   <meta name="robots" content="noindex,follow">
   <link rel="stylesheet" href="assets/css/main.css?v=hh-checkout-v2">
-  <style>
-    .purchase-shell{width:min(calc(100% - 36px),760px);margin:0 auto;padding:70px 0 100px}.purchase-card{border:1px solid var(--line);border-radius:14px;padding:34px;background:#fff;box-shadow:var(--shadow)}.purchase-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.purchase-head h1{margin:0;font-size:2.3rem;letter-spacing:-.04em}.price{font-size:2rem;font-weight:900;color:var(--brand)}.notice{margin:28px 0;padding:16px 18px;border-left:4px solid var(--accent);background:#fff5f2}.purchase-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.purchase-actions a{padding:12px 17px;border-radius:5px;text-decoration:none;font-weight:800}.purchase-actions .primary{background:var(--ink);color:#fff}.purchase-actions .secondary{border:1px solid var(--line)}
-  </style>
+  <script src="assets/js/products.js"></script>
+  <style>.purchase-shell{width:min(calc(100% - 36px),760px);margin:0 auto;padding:70px 0 100px}.purchase-logo{display:block;width:190px;margin-bottom:30px}.purchase-logo img{display:block;width:100%;height:auto}.purchase-card{border:1px solid var(--line);border-radius:14px;padding:34px;background:#fff;box-shadow:var(--shadow)}.purchase-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.purchase-head h1{margin:0;font-size:2.3rem;letter-spacing:-.04em}.price{font-size:2rem;font-weight:900;color:var(--brand)}.notice{margin:28px 0;padding:16px 18px;border-left:4px solid var(--accent);background:#fff5f2}.purchase-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.purchase-actions a{padding:12px 17px;border-radius:5px;text-decoration:none;font-weight:800}.purchase-actions .primary{background:var(--ink);color:#fff}.purchase-actions .secondary{border:1px solid var(--line)}</style>
 </head>
 <body>
   <main class="purchase-shell">
-    <a class="brand brand-small" href="/">HTML<span>&</span>HTML</a>
+    <a class="purchase-logo" href="/"><img src="assets/brand/htmlandhtml-logo.svg" alt="HTML and HTML" width="760" height="240"></a>
     <section class="purchase-card" aria-labelledby="purchaseTitle">
-      <div class="purchase-head">
-        <div><p class="eyebrow">PURCHASE</p><h1 id="purchaseTitle">Template</h1></div>
-        <div class="price" id="purchasePrice">$19</div>
-      </div>
+      <div class="purchase-head"><div><p class="eyebrow">PURCHASE</p><h1 id="purchaseTitle">Template</h1><p id="purchaseMeta"></p></div><div class="price" id="purchasePrice">$19</div></div>
       <p>Premium HTML5, CSS3 and Vanilla JavaScript source with the documented template package.</p>
       <div class="notice"><strong>Checkout is not active on this build.</strong><br>No card details are collected and no payment is processed here. The production payment provider must be connected before sales are enabled.</div>
-      <div class="purchase-actions">
-        <a class="primary" id="previewLink" href="/">Preview template</a>
-        <a class="secondary" href="/">Back to catalog</a>
-      </div>
+      <div class="purchase-actions"><a class="primary" id="previewLink" href="/">Preview template</a><a class="secondary" id="detailLink" href="/">Product details</a><a class="secondary" href="/">Back to catalog</a></div>
     </section>
   </main>
   <script>
-    const products = {
-      ledger: ['Ledger', 19], counsel: ['Counsel', 19], habitat: ['Habitat', 24],
-      clinic: ['Clinic', 19], table: ['Table', 14], launchpad: ['Launchpad', 19]
-    };
+    const products = window.HTMLHTML_PRODUCTS || {};
     const params = new URLSearchParams(location.search);
-    const key = params.get('package') || 'ledger';
-    const item = products[key] || products.ledger;
-    document.getElementById('purchaseTitle').textContent = item[0];
-    document.getElementById('purchasePrice').textContent = '$' + item[1];
-    document.getElementById('previewLink').href = 'live-preview.html?template=' + encodeURIComponent(key);
-    document.title = item[0] + ' Purchase — HTML&HTML';
+    const key = params.get('package') || 'launchpad';
+    const item = products[key] || products.launchpad;
+    if (item) {
+      document.getElementById('purchaseTitle').textContent = item.title;
+      document.getElementById('purchasePrice').textContent = '$' + item.price;
+      document.getElementById('purchaseMeta').textContent = item.category + ' · ' + item.complexity;
+      document.getElementById('previewLink').href = 'live-preview.html?template=' + encodeURIComponent(key);
+      document.getElementById('detailLink').href = 'product.html?template=' + encodeURIComponent(key);
+      document.title = item.title + ' Purchase — HTML&HTML';
+    }
   </script>
 </body>
 </html>
