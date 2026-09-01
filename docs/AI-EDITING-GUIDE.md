@@ -18,7 +18,7 @@ Customize branding, copy, product catalog content and visual tokens without brea
 
 1. Preserve semantic heading order and keyboard-accessible controls.
 2. Keep the `viewport` meta tag on every public page.
-3. Do not reintroduce HTML5 UP template names, copy, source, branding or remote demo URLs.
+3. Do not reintroduce legacy third-party template names, copy, source, branding or remote demo URLs.
 4. Do not claim Lighthouse, WCAG, browser or device results unless evidence exists.
 5. Do not add a framework or runtime dependency unless explicitly requested.
 6. When adding a catalog item, add matching entries to `index.html` and `live-preview.html`, then create its local `demos/<slug>.html` file.
