@@ -1,7 +1,7 @@
 {
   "name": "htmlandhtml-com",
-  "version": "3.0.0",
-  "description": "Sovereign Tier $100 USD HTML Source Code Architecture & Global Distribution Platform",
+  "version": "4.0.0",
+  "description": "HTML&HTML premium HTML5, CSS3 and Vanilla JavaScript template catalog",
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
