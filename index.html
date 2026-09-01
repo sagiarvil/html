@@ -12,34 +12,54 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://htmlandhtml.com/">
   <link rel="stylesheet" href="assets/css/main.css?v=hh-catalog-v2">
+  <link rel="stylesheet" href="assets/css/hero-preserve.css?v=hh-hero-v1">
 </head>
 <body>
   <a class="skip-link" href="#catalog">Skip to templates</a>
 
   <main class="shell">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-copy">
-        <a class="brand" href="/" aria-label="HTML and HTML home">HTML<span>&</span>HTML</a>
-        <h1 id="page-title">Premium HTML templates,<br><strong>built clean from the start.</strong></h1>
-        <p class="hero-lede">Responsive HTML5, modern CSS and Vanilla JavaScript for freelancers, small agencies and businesses. Easy to brand, easy to edit, easy to hand to an AI coding agent.</p>
+    <header id="header-hero-wrapper">
+      <div id="header-hero-inner">
+        <div id="header-left">
+          <a class="logo-badge" href="/" aria-label="HTML and HTML home">HTML&amp;HTML</a>
+          <h1 class="tagline" id="page-title">Premium HTML templates<br><strong>built clean from the start.</strong></h1>
+          <p class="hero-support">Responsive HTML5, modern CSS and Vanilla JavaScript for freelancers, small agencies and businesses. Easy to customize manually or with an AI coding agent.</p>
+        </div>
+
+        <div id="header-right">
+          <ul class="feature-circles" aria-label="Template qualities">
+            <li class="circle-item">
+              <div class="circle-box"><span class="circle-symbol">↔</span></div>
+              <div class="circle-caption"><span>Fully</span><strong>Responsive</strong></div>
+            </li>
+            <li class="plus-sign" aria-hidden="true">+</li>
+            <li class="circle-item">
+              <div class="circle-box"><span class="circle-symbol">&lt;/&gt;</span></div>
+              <div class="circle-caption"><span>Clean</span><strong>HTML + CSS + JS</strong></div>
+            </li>
+            <li class="plus-sign" aria-hidden="true">+</li>
+            <li class="circle-item">
+              <div class="circle-box"><span class="circle-symbol">Aa</span></div>
+              <div class="circle-caption"><span>Easy to</span><strong>Customize</strong></div>
+            </li>
+            <li class="plus-sign" aria-hidden="true">+</li>
+            <li class="circle-item">
+              <div class="circle-box"><span class="circle-symbol">AI</span></div>
+              <div class="circle-caption"><span>Ready for</span><strong>AI-assisted edits</strong></div>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <ul class="feature-grid" aria-label="Template qualities">
-        <li><span class="feature-mark">01</span><small>Standards-first</small><strong>HTML + CSS + JS</strong></li>
-        <li><span class="feature-mark">02</span><small>Designed for</small><strong>Every viewport</strong></li>
-        <li><span class="feature-mark">03</span><small>Simple to</small><strong>Customize</strong></li>
-        <li><span class="feature-mark">04</span><small>Ready for</small><strong>AI-assisted edits</strong></li>
-      </ul>
-    </section>
-
-    <div class="utility-row">
-      <p>Original commercial templates. No framework required.</p>
-      <nav aria-label="Catalog links">
-        <a href="#catalog">Browse templates</a>
-        <a href="licensing.html">License</a>
-        <a href="architecture.html">How it’s built</a>
-      </nav>
-    </div>
+      <div id="hero-bar">
+        <p>Original commercial templates. No framework required.</p>
+        <nav aria-label="Catalog links">
+          <a href="#catalog">Browse templates</a>
+          <a href="licensing.html">License</a>
+          <a href="architecture.html">How it’s built</a>
+        </nav>
+      </div>
+    </header>
 
     <section id="catalog" class="catalog" aria-labelledby="catalog-title">
       <header class="section-heading">
