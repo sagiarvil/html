@@ -2,7 +2,9 @@
   const chips = [...document.querySelectorAll('.category-chip')];
   const cards = [...document.querySelectorAll('.product-card')];
   const empty = document.getElementById('catalogEmpty');
-  const buyerScope = { habitat: '5 HTML pages included' };
+  const buyerScope = {
+    launchpad:'1 HTML page included',storefront:'1 HTML page included',table:'1 HTML page included',habitat:'5 HTML pages included',clinic:'1 HTML page included',academy:'1 HTML page included',counsel:'1 HTML page included',ledger:'1 HTML page included',studio:'1 HTML page included',summit:'1 HTML page included',cockpit:'1 HTML page included'
+  };
 
   const style = document.createElement('style');
   style.id = 'hh-product-render-styles';
