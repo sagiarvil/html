@@ -1,0 +1,732 @@
+/* ==========================================================================
+   HTML&HTML (https://htmlandhtml.com) - Official & Exact Stylesheet
+   Millimetric Pixel-Perfect Dimensions, Spacing, Typography & Hierarchy
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: #FFFFFF;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 13pt;
+  line-height: 1.5em;
+  color: #676d79;
+  font-weight: 300;
+  background: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+b, strong {
+  font-weight: 700;
+  color: #3b424f;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: dotted 1px #d0d6e2;
+  color: inherit;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #e7746f;
+  border-color: #e7746f;
+}
+
+/* Container */
+.container {
+  margin: 0 auto;
+  max-width: 1240px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+@media screen and (max-width: 1280px) {
+  .container { max-width: 1080px; }
+}
+
+@media screen and (max-width: 1140px) {
+  .container { width: 95%; }
+}
+
+/* ==========================================================================
+   1. Merged Header & Hero Section (Millimetric Match from Screenshots)
+   ========================================================================== */
+#header-hero-wrapper {
+  padding: 5.5rem 0 3.5rem 0;
+}
+
+#header-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Left Column: Logo Badge + Tagline */
+#header-left {
+  flex: 0 0 40%;
+  text-align: left;
+}
+
+#header-left .logo-badge {
+  display: inline-block;
+  background: #e7746f;
+  color: #FFFFFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2.35rem;
+  font-weight: 700;
+  padding: 0.32em 0.85em;
+  border-radius: 4px;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 1.4rem;
+  border-bottom: none;
+  box-shadow: 0 2px 6px rgba(231, 116, 111, 0.25);
+  transition: background-color 0.2s ease;
+}
+
+#header-left .logo-badge:hover {
+  background: #d6615c;
+  color: #FFFFFF;
+}
+
+#header-left .tagline {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2.65rem;
+  line-height: 1.18;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+#header-left .tagline .light-prefix {
+  font-weight: 300;
+  color: #555b68;
+}
+
+#header-left .tagline .bold-spiffy {
+  font-weight: 900;
+  color: #3b424f;
+}
+
+#header-left .tagline .bold-templates {
+  font-weight: 900;
+  color: #3b424f;
+}
+
+#header-left .tagline .light-are {
+  font-weight: 300;
+  color: #676d79;
+}
+
+/* Right Column: 4 Circular Features with Plus Signs */
+#header-right {
+  flex: 0 0 58%;
+}
+
+.feature-circles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-circles li.circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.feature-circles .circle-box {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  border: 1px solid #dee0e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-circles li.circle-item:hover .circle-box {
+  transform: translateY(-3px);
+  border-color: #e7746f;
+}
+
+.feature-circles .circle-box i {
+  font-size: 2.35rem;
+  color: #4e5664;
+}
+
+.feature-circles .circle-caption {
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: #676d79;
+}
+
+.feature-circles .circle-caption span.light {
+  display: block;
+  font-weight: 300;
+  color: #676d79;
+  font-size: 0.92rem;
+}
+
+.feature-circles .circle-caption strong {
+  display: block;
+  color: #3b424f;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 1px;
+}
+
+.feature-circles li.plus-sign {
+  font-size: 2rem;
+  color: #dee0e3;
+  font-weight: 200;
+  padding: 0 0.4rem;
+  margin-top: -2.2rem;
+  user-select: none;
+}
+
+/* Bottom Bar */
+#bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.8rem 0 1rem 0;
+}
+
+#bar .bar-left {
+  display: flex;
+  align-items: center;
+}
+
+#bar .bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 11pt;
+  color: #676d79;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 2.75em;
+  line-height: 2.7em;
+  padding: 0 1.5em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 11pt;
+  border: solid 1px #dee0e3;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #FFFFFF;
+  color: #676d79;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  border-color: #e7746f;
+  color: #e7746f;
+}
+
+.button.twitter-btn {
+  background: #FFFFFF;
+  border-color: #dee0e3;
+  color: #383b43;
+  font-size: 10pt;
+  padding: 0 1.2em;
+}
+
+.button.twitter-btn:hover {
+  border-color: #00acee;
+  color: #00acee;
+}
+
+/* ==========================================================================
+   2. Wide Horizontal Product Banners (Paradigm Shift, Massively, Ethereal, etc.)
+   ========================================================================== */
+#items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2.5rem 0 4rem 0;
+}
+
+.item-banner {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 4.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.item-banner:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Theme Backgrounds */
+.item-banner.paradigm-shift {
+  background: #36e2b9;
+  color: #111111;
+}
+
+.item-banner.massively {
+  background-color: #2e333a;
+  color: #FFFFFF;
+}
+
+.item-banner.ethereal {
+  background: linear-gradient(110deg, #78539e 0%, #d87170 52%, #e2a06b 100%);
+  color: #FFFFFF;
+}
+
+.item-banner.dimension {
+  background: #1b1f22;
+  color: #FFFFFF;
+}
+
+.item-banner.editorial {
+  background: #f7f8fa;
+  border: 1px solid #dee0e3;
+  color: #383b43;
+}
+
+.item-banner.forty {
+  background: #242943;
+  color: #FFFFFF;
+}
+
+.item-banner.stellar {
+  background: linear-gradient(135deg, #463b73 0%, #894b79 100%);
+  color: #FFFFFF;
+}
+
+.item-banner.story {
+  background: #2b3036;
+  color: #FFFFFF;
+}
+
+.item-banner.multiverse {
+  background: #17181c;
+  color: #FFFFFF;
+}
+
+.item-banner.hyperspace {
+  background: #312450;
+  color: #FFFFFF;
+}
+
+.item-banner.solid-state {
+  background: #2e3141;
+  color: #FFFFFF;
+}
+
+/* Left: 3 Overlapping Device Mockups */
+.item-mockup-wrapper {
+  flex: 0 0 52%;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.mockup-desktop {
+  width: 320px;
+  height: 180px;
+  background: #1a1c1e;
+  border: 4px solid #1a1c1e;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  position: absolute;
+  left: 60px;
+  top: 10px;
+  z-index: 1;
+}
+
+.mockup-desktop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mockup-tablet {
+  width: 130px;
+  height: 175px;
+  background: #111315;
+  border: 3px solid #111315;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: absolute;
+  left: 0;
+  top: 15px;
+  z-index: 2;
+}
+
+.mockup-tablet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mockup-phone {
+  width: 75px;
+  height: 140px;
+  background: #0d0e10;
+  border: 3px solid #0d0e10;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  position: absolute;
+  left: 340px;
+  top: 35px;
+  z-index: 3;
+}
+
+.mockup-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right: Title + Action Buttons */
+.item-info {
+  flex: 0 0 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 4;
+}
+
+.item-info h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: inherit;
+}
+
+.item-info .actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.item-info .btn-demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  line-height: 2.9rem;
+  padding: 0 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 11pt;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.item-info .btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  line-height: 2.9rem;
+  padding: 0 1.8rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11pt;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.item-info .btn-download em {
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 0.35rem;
+  opacity: 0.85;
+}
+
+/* Button Colors */
+.item-banner.paradigm-shift .btn-demo { border: 1px solid #111; color: #111; }
+.item-banner.paradigm-shift .btn-demo:hover { background: rgba(0,0,0,0.08); }
+.item-banner.paradigm-shift .btn-download { background: #111; color: #FFF; border: 1px solid #111; }
+.item-banner.paradigm-shift .btn-download:hover { background: #333; }
+
+.item-banner.massively .btn-demo,
+.item-banner.ethereal .btn-demo,
+.item-banner.dimension .btn-demo,
+.item-banner.forty .btn-demo,
+.item-banner.stellar .btn-demo,
+.item-banner.story .btn-demo,
+.item-banner.multiverse .btn-demo,
+.item-banner.hyperspace .btn-demo,
+.item-banner.solid-state .btn-demo {
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #FFFFFF;
+}
+
+.item-banner.massively .btn-demo:hover,
+.item-banner.ethereal .btn-demo:hover,
+.item-banner.dimension .btn-demo:hover,
+.item-banner.forty .btn-demo:hover,
+.item-banner.stellar .btn-demo:hover,
+.item-banner.story .btn-demo:hover,
+.item-banner.multiverse .btn-demo:hover,
+.item-banner.hyperspace .btn-demo:hover,
+.item-banner.solid-state .btn-demo:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #FFFFFF;
+}
+
+.item-banner.massively .btn-download,
+.item-banner.ethereal .btn-download,
+.item-banner.dimension .btn-download,
+.item-banner.forty .btn-download,
+.item-banner.stellar .btn-download,
+.item-banner.story .btn-download,
+.item-banner.multiverse .btn-download,
+.item-banner.hyperspace .btn-download,
+.item-banner.solid-state .btn-download {
+  background: #FFFFFF;
+  color: #1b1f22;
+  border: 1px solid #FFFFFF;
+}
+
+.item-banner.massively .btn-download:hover,
+.item-banner.ethereal .btn-download:hover,
+.item-banner.dimension .btn-download:hover,
+.item-banner.forty .btn-download:hover,
+.item-banner.stellar .btn-download:hover,
+.item-banner.story .btn-download:hover,
+.item-banner.multiverse .btn-download:hover,
+.item-banner.hyperspace .btn-download:hover,
+.item-banner.solid-state .btn-download:hover {
+  background: #f2f2f2;
+}
+
+/* ==========================================================================
+   3. Pixelarity Banner & Footer
+   ========================================================================= */
+#px-banner {
+  border: solid 1px #dee0e3;
+  border-radius: 6px;
+  padding: 3.5em 3em;
+  text-align: center;
+  margin: 3rem 0 4rem 0;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+#px-banner h2 {
+  font-size: 2.4em;
+  line-height: 1.25em;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 0.3em 0;
+  color: #383b43;
+}
+
+#px-banner p {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  margin: 0 0 1.75em 0;
+  color: #676d79;
+}
+
+#px-banner .px-button {
+  display: inline-block;
+  background: #e7746f;
+  color: #FFFFFF;
+  border: 0;
+  font-weight: 600;
+  font-size: 1.15em;
+  height: 2.85em;
+  line-height: 2.85em;
+  padding: 0 2.2em;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(231, 116, 111, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+#px-banner .px-button:hover {
+  background: #d6615c;
+  color: #FFFFFF;
+  border-bottom: 0;
+}
+
+/* Exact Millimetric Footer */
+#footer {
+  text-align: center;
+  padding: 4.5rem 0 3.5rem 0;
+  border-top: solid 1px #dee0e3;
+  background: #FFFFFF;
+}
+
+#footer .menu {
+  margin: 0 0 2.2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+#footer .menu li {
+  display: inline-block;
+  font-size: 13.5px;
+  color: #676d79;
+}
+
+#footer .menu li:before {
+  content: '\2022';
+  padding: 0 0.85em;
+  color: #dee0e3;
+}
+
+#footer .menu li:first-child:before {
+  display: none;
+}
+
+#footer .menu li a {
+  color: #676d79;
+}
+
+#footer .menu li a:hover {
+  color: #e7746f;
+}
+
+#footer .signup {
+  margin: 0 auto 2.2rem auto;
+  max-width: 440px;
+  display: flex;
+  gap: 0.6em;
+}
+
+#footer .signup input[type="email"] {
+  height: 2.85em;
+  line-height: 2.8em;
+  padding: 0 1em;
+  border-radius: 4px;
+  border: solid 1px #dee0e3;
+  background-color: #F4F5F7;
+  font-family: inherit;
+  font-size: 11pt;
+  color: #676d79;
+  flex: 1;
+  outline: none;
+}
+
+#footer .signup input[type="email"]:focus {
+  border-color: #e7746f;
+}
+
+#footer .signup .button {
+  height: 2.85em;
+  line-height: 2.8em;
+}
+
+#footer .copyright {
+  font-size: 12px;
+  line-height: 1.8em;
+  color: #9aa1af;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media screen and (max-width: 980px) {
+  #header-hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  #header-left {
+    flex: 0 0 100%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  #header-right {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .item-banner {
+    flex-direction: column;
+    padding: 2.5rem 2rem;
+    gap: 2rem;
+  }
+  .item-mockup-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    justify-content: center;
+  }
+  .item-info {
+    flex: 0 0 auto;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .feature-circles {
+    flex-wrap: wrap;
+    gap: 1.5rem 0;
+  }
+  .feature-circles li.circle-item {
+    flex: 0 0 45%;
+  }
+  .feature-circles li.plus-sign {
+    display: none;
+  }
+  #bar {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+  .mockup-desktop { left: 20px; width: 260px; height: 150px; }
+  .mockup-phone { left: 240px; }
+}

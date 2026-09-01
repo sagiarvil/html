@@ -1,0 +1,35 @@
+<svg width="600" height="338" viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="338" fill="#181B20"/>
+  <rect width="600" height="24" fill="#111317"/>
+  <circle cx="16" cy="12" r="4" fill="#FF5F56"/>
+  <circle cx="28" cy="12" r="4" fill="#FFBD2E"/>
+  <circle cx="40" cy="12" r="4" fill="#27C93F"/>
+  
+  <!-- Multiverse Photo Tiles Grid (Exact Style) -->
+  <g transform="translate(10, 34)">
+    <rect x="0" y="0" width="138" height="140" fill="#e74c3c" rx="2"/>
+    <text x="69" y="75" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">MAGNA LEO</text>
+    
+    <rect x="146" y="0" width="138" height="140" fill="#3498db" rx="2"/>
+    <text x="215" y="75" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">LOREM LOBORTIS</text>
+    
+    <rect x="292" y="0" width="138" height="140" fill="#2ecc71" rx="2"/>
+    <text x="361" y="75" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">FEUGIAT DOLOR</text>
+    
+    <rect x="438" y="0" width="138" height="140" fill="#f39c12" rx="2"/>
+    <text x="507" y="75" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">TEMPUS ALIQUAM</text>
+    
+    <!-- Row 2 -->
+    <rect x="0" y="148" width="138" height="140" fill="#9b59b6" rx="2"/>
+    <text x="69" y="223" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">NULLA FACILISI</text>
+    
+    <rect x="146" y="148" width="138" height="140" fill="#1abc9c" rx="2"/>
+    <text x="215" y="223" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">BLANDIT ENIM</text>
+    
+    <rect x="292" y="148" width="138" height="140" fill="#e67e22" rx="2"/>
+    <text x="361" y="223" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">CONSEQUAT</text>
+    
+    <rect x="438" y="148" width="138" height="140" fill="#34495e" rx="2"/>
+    <text x="507" y="223" text-anchor="middle" fill="#FFF" font-family="sans-serif" font-size="12" font-weight="bold">PRAESENT</text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+# htmlandhtml.com - Sovereign Tier HTML Design & Engineering Knowledge Graph
+> Institutional Standard: $100 USD Global Enterprise HTML Source Code Baseline
+> Classification: W3C Validated, WCAG AAA 7:1, Zero-Dependency Semantic Core
+
+## Executive Summary
+htmlandhtml.com produces and distributes sovereign-tier, zero-dependency HTML5/CSS3/ES6 source code architectures engineered for institutional advisory, corporate finance, SaaS platforms, high-performance web systems, and mission-critical enterprise applications. Every codebase complies strictly with Big Four corporate light theme chromatic law, fluid typography, symmetrical 16:9 visual frameworks, and deep LLM discoverability.
+
+## Core Offerings & Pricing Structure
+- **Global Commercial License Baseline**: $100.00 USD Flat Fee / Single Codebase Buyout.
+- **Enterprise Sovereign Bundle**: $250.00 USD Multi-Project Royalty-Free License.
+- **Institutional Deal Advisory Suite**: $499.00 USD Full Ecosystem with n8n + SEO Pipeline + Schema Generators.
+
+## Technical Architecture & Benchmarks
+- **Runtime Dependencies**: 0 KB (No React/Vue runtime overhead, no bloated CSS frameworks).
+- **Time to First Byte (TTFB)**: Sub-50ms via Edge CDN static distribution.
+- **Core Web Vitals Target**: LCP < 0.8s, CLS = 0.00, INP < 50ms (100/100 Lighthouse Performance).
+- **Accessibility Standard**: Section 508 & WCAG 2.1 Level AAA compliant (7:1 contrast ratio minimum).
+- **Chromatic Standard**: Big Four Light Theme (#00338D Deep Navy, #001F5C Banking Midnight, #005EB8 Audit Cobalt, #FFFFFF Canvas). Zero Dark Mode.
+
+## Deep Sub-Graphs & Semantic Documents
+- [Enterprise HTML Architecture Specifications](https://htmlandhtml.com/llms/enterprise-html.md): Deterministic DOM structure, CSS variables, and layout laws.
+- [Commercial Licensing & Rights Perimeter](https://htmlandhtml.com/llms/licensing.md): $100 USD buyout rights, redistribution limits, and warranty.
+- [Performance & Benchmark Validation](https://htmlandhtml.com/llms/performance.md): Lighthouse metrics, raw payload budgets, and edge caching rules.
+
+## Primary Canonical Routes
+- Homepage: https://htmlandhtml.com/
+- Product Catalog: https://htmlandhtml.com/products.html
+- Architecture Specs: https://htmlandhtml.com/architecture.html
+- Universal GEO/SEO Specs: https://htmlandhtml.com/geo-seo.html
+- Compliance Standards: https://htmlandhtml.com/compliance.html
+- Commercial Licensing: https://htmlandhtml.com/licensing.html
+- Live Component Sandbox: https://htmlandhtml.com/live-preview.html
+- Procurement & Checkout: https://htmlandhtml.com/checkout.html

@@ -1,0 +1,17 @@
+{
+  "name": "htmlandhtml-com",
+  "version": "3.0.0",
+  "description": "Sovereign Tier $100 USD HTML Source Code Architecture & Global Distribution Platform",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
+    "firebase:deploy": "npx -y firebase-tools@latest deploy --only hosting",
+    "firebase:serve": "npx -y firebase-tools@latest emulators:start --only hosting"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250224.0",
+    "wrangler": "^3.109.2"
+  }
+}

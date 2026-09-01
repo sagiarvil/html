@@ -1,0 +1,16 @@
+# Firebase App Hosting Configuration for hesapla-v2 (europe-west4)
+# Project: studio-7658156126-ffb8e
+
+serviceAccount: ""
+runConfig:
+  minInstances: 0
+  maxInstances: 10
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: HOST
+    value: htmlandhtml.com
+  - variable: NODE_ENV
+    value: production

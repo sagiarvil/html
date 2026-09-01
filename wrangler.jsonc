@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "htmlandhtml-com",
+  "compatibility_date": "2026-08-30",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "htmlandhtml.com/*",
+      "zone_name": "htmlandhtml.com"
+    },
+    {
+      "pattern": "www.htmlandhtml.com/*",
+      "zone_name": "htmlandhtml.com"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

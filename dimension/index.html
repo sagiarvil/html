@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML&HTML
+	htmlandhtml.com
+	Free for personal and commercial use under the CCA 3.0 license (htmlandhtml.com/license.html)
+-->
+<html>
+	<head>
+		<title>Dimension by HTML&amp;HTML</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<style>
+			@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600");
+			*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+			body {
+				font-family: "Source Sans Pro", sans-serif;
+				background-color: #1b1f22;
+				background-image: radial-gradient(rgba(0,0,0,0.25) 25%, transparent 0), radial-gradient(rgba(0,0,0,0.25) 25%, transparent 0);
+				background-size: 4px 4px;
+				color: #ffffff;
+				font-size: 16pt;
+				line-height: 1.75;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				padding: 2rem;
+			}
+			#wrapper { max-width: 68rem; width: 100%; text-align: center; }
+			#header .logo {
+				width: 5.5rem;
+				height: 5.5rem;
+				line-height: 5.5rem;
+				border: solid 1px #ffffff;
+				border-radius: 100%;
+				margin: 0 auto 2rem auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+			}
+			#header .content {
+				border-top: solid 1px #ffffff;
+				border-bottom: solid 1px #ffffff;
+				padding: 2.5rem 0;
+				margin-bottom: 2.5rem;
+			}
+			#header h1 {
+				font-size: 2.5rem;
+				letter-spacing: 0.5rem;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+			}
+			#header p {
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				font-size: 0.8rem;
+				color: rgba(255,255,255,0.7);
+			}
+			#header p a { color: #ffffff; text-decoration: none; border-bottom: dotted 1px rgba(255,255,255,0.5); }
+			nav ul {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				border: solid 1px #ffffff;
+				border-radius: 4px;
+				overflow: hidden;
+				display: inline-flex;
+			}
+			nav ul li { border-left: solid 1px #ffffff; }
+			nav ul li:first-child { border-left: 0; }
+			nav ul li a {
+				display: block;
+				padding: 0 2rem;
+				height: 3rem;
+				line-height: 3rem;
+				color: #ffffff;
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				font-size: 0.8rem;
+				transition: background-color 0.2s ease-in-out;
+			}
+			nav ul li a:hover { background-color: rgba(255,255,255,0.15); }
+			#footer { margin-top: 3rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+			#footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+			
+			/* Modal Article */
+			.article-card {
+				background: rgba(27, 31, 34, 0.95);
+				border: solid 1px #ffffff;
+				border-radius: 4px;
+				padding: 3rem;
+				max-width: 50rem;
+				margin: 2rem auto;
+				text-align: left;
+				display: none;
+			}
+			.article-card.active { display: block; }
+			.article-card h2 { font-size: 1.75rem; text-transform: uppercase; letter-spacing: 0.2rem; margin-bottom: 1.5rem; border-bottom: solid 1px rgba(255,255,255,0.2); padding-bottom: 0.5rem; }
+			.article-card .close-btn { float: right; cursor: pointer; font-size: 1.5rem; color: #ffffff; line-height: 1; }
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header id="header">
+				<div class="logo">
+					<i class="fa-regular fa-gem"></i>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<h1>Dimension</h1>
+						<p>A fully responsive site template designed by <a href="/">HTML&amp;HTML</a> and released<br />
+						for free under the <a href="/license.html">Creative Commons</a> license.</p>
+					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#intro" onclick="openArticle('intro')">Intro</a></li>
+						<li><a href="#work" onclick="openArticle('work')">Work</a></li>
+						<li><a href="#about" onclick="openArticle('about')">About</a></li>
+						<li><a href="#contact" onclick="openArticle('contact')">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Articles -->
+			<div id="main">
+				<article id="art-intro" class="article-card">
+					<span class="close-btn" onclick="closeArticles()">&times;</span>
+					<h2>Intro</h2>
+					<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+				</article>
+
+				<article id="art-work" class="article-card">
+					<span class="close-btn" onclick="closeArticles()">&times;</span>
+					<h2>Work</h2>
+					<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam.</p>
+					<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem.</p>
+				</article>
+
+				<article id="art-about" class="article-card">
+					<span class="close-btn" onclick="closeArticles()">&times;</span>
+					<h2>About</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat.</p>
+				</article>
+
+				<article id="art-contact" class="article-card">
+					<span class="close-btn" onclick="closeArticles()">&times;</span>
+					<h2>Contact</h2>
+					<p>Feel free to reach out via email or connect with us on social media.</p>
+				</article>
+			</div>
+
+			<footer id="footer">
+				<p class="copyright">&copy; HTML&amp;HTML. Design: <a href="/">HTML&amp;HTML</a>.</p>
+			</footer>
+		</div>
+
+		<script>
+			function openArticle(id) {
+				document.querySelectorAll('.article-card').forEach(el => el.classList.remove('active'));
+				const target = document.getElementById('art-' + id);
+				if (target) target.classList.add('active');
+			}
+			function closeArticles() {
+				document.querySelectorAll('.article-card').forEach(el => el.classList.remove('active'));
+			}
+		</script>
+	</body>
+</html>
