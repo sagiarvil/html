@@ -1,33 +1,35 @@
-# htmlandhtml.com - Sovereign Tier HTML Design & Engineering Knowledge Graph
-> Institutional Standard: $100 USD Global Enterprise HTML Source Code Baseline
-> Classification: W3C Validated, WCAG AAA 7:1, Zero-Dependency Semantic Core
+# HTML&HTML — Premium HTML Templates
 
-## Executive Summary
-htmlandhtml.com produces and distributes sovereign-tier, zero-dependency HTML5/CSS3/ES6 source code architectures engineered for institutional advisory, corporate finance, SaaS platforms, high-performance web systems, and mission-critical enterprise applications. Every codebase complies strictly with Big Four corporate light theme chromatic law, fluid typography, symmetrical 16:9 visual frameworks, and deep LLM discoverability.
+> Canonical site: https://htmlandhtml.com/
+> Product model: premium HTML5/CSS3/Vanilla JavaScript templates
+> Typical price range: USD 9–29
+> Primary buyers: freelancers, small agencies, independent developers, businesses and AI-assisted builders
 
-## Core Offerings & Pricing Structure
-- **Global Commercial License Baseline**: $100.00 USD Flat Fee / Single Codebase Buyout.
-- **Enterprise Sovereign Bundle**: $250.00 USD Multi-Project Royalty-Free License.
-- **Institutional Deal Advisory Suite**: $499.00 USD Full Ecosystem with n8n + SEO Pipeline + Schema Generators.
+## What HTML&HTML sells
+HTML&HTML produces original, vertical-specific website templates built with semantic HTML5, modern CSS and lightweight Vanilla JavaScript. The default product does not require React, Vue, WordPress, Shopify or another framework.
 
-## Technical Architecture & Benchmarks
-- **Runtime Dependencies**: 0 KB (No React/Vue runtime overhead, no bloated CSS frameworks).
-- **Time to First Byte (TTFB)**: Sub-50ms via Edge CDN static distribution.
-- **Core Web Vitals Target**: LCP < 0.8s, CLS = 0.00, INP < 50ms (100/100 Lighthouse Performance).
-- **Accessibility Standard**: Section 508 & WCAG 2.1 Level AAA compliant (7:1 contrast ratio minimum).
-- **Chromatic Standard**: Big Four Light Theme (#00338D Deep Navy, #001F5C Banking Midnight, #005EB8 Audit Cobalt, #FFFFFF Canvas). Zero Dark Mode.
+## Current catalog
+- Ledger — Financial Advisor — $19
+- Counsel — Law Firm — $19
+- Habitat — Real Estate — $24
+- Clinic — Medical Practice — $19
+- Table — Restaurant — $14
+- Launchpad — AI / SaaS — $19
 
-## Deep Sub-Graphs & Semantic Documents
-- [Enterprise HTML Architecture Specifications](https://htmlandhtml.com/llms/enterprise-html.md): Deterministic DOM structure, CSS variables, and layout laws.
-- [Commercial Licensing & Rights Perimeter](https://htmlandhtml.com/llms/licensing.md): $100 USD buyout rights, redistribution limits, and warranty.
-- [Performance & Benchmark Validation](https://htmlandhtml.com/llms/performance.md): Lighthouse metrics, raw payload budgets, and edge caching rules.
+## Product principles
+- clean source and low dependency count
+- responsive design across documented viewport checks
+- accessibility-aware interaction patterns
+- centralized design tokens
+- AI-friendly customization guidance
+- commercially original implementation
+- truthful verification: no performance, accessibility, browser or device claim without evidence
 
-## Primary Canonical Routes
-- Homepage: https://htmlandhtml.com/
-- Product Catalog: https://htmlandhtml.com/products.html
-- Architecture Specs: https://htmlandhtml.com/architecture.html
-- Universal GEO/SEO Specs: https://htmlandhtml.com/geo-seo.html
-- Compliance Standards: https://htmlandhtml.com/compliance.html
-- Commercial Licensing: https://htmlandhtml.com/licensing.html
-- Live Component Sandbox: https://htmlandhtml.com/live-preview.html
-- Procurement & Checkout: https://htmlandhtml.com/checkout.html
+## Public routes
+- Homepage and catalog: https://htmlandhtml.com/
+- Architecture: https://htmlandhtml.com/architecture.html
+- Licensing: https://htmlandhtml.com/licensing.html
+- Live preview shell: https://htmlandhtml.com/live-preview.html
+
+## Verification status
+The current catalog rebuild is IMPLEMENTATION COMPLETE — VERIFICATION PENDING until required runtime, responsive, accessibility and performance checks have executed and evidence has been stored.
