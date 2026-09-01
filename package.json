@@ -4,6 +4,8 @@
   "description": "HTML&HTML premium HTML5, CSS3 and Vanilla JavaScript template catalog",
   "private": true,
   "scripts": {
+    "test": "npm run test:integrity",
+    "test:integrity": "node tests/integrity/check.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
