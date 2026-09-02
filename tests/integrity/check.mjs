@@ -47,7 +47,7 @@ for (const rel of htmlFiles) {
   let match;
   while ((match = attrRe.exec(text))) {
     let target = match[1].trim();
-    if (!target || target.startsWith('#') || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(target)) continue;
+    if (!target || target.includes('${') || target.includes('{{') || target.startsWith('#') || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(target)) continue;
     target = target.split('#')[0].split('?')[0];
     if (!target) continue;
     let resolved;
@@ -77,6 +77,7 @@ for (const rel of habitatPages) {
   if (!/assets\/css\/habitat-premium\.css/i.test(text)) errors.push(`${rel}: missing shared Habitat CSS`);
   if (!/assets\/js\/habitat-premium\.js/i.test(text)) errors.push(`${rel}: missing shared Habitat JavaScript`);
   if (/\b(?:h-wrap|h-nav|h-links|h-grid3|h-listing|h-contact-card)\b/.test(text)) errors.push(`${rel}: legacy pre-flagship Habitat markup still present`);
+  if (/<a\b[^>]*>[\s\S]{0,900}?<button\b/i.test(text)) errors.push(`${rel}: nested interactive button inside anchor detected`);
 }
 
 const productsPath = path.join(root, 'assets/js/products.js');
