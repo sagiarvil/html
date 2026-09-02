@@ -77,7 +77,7 @@ for (const rel of habitatPages) {
   if (!/assets\/css\/habitat-premium\.css/i.test(text)) errors.push(`${rel}: missing shared Habitat CSS`);
   if (!/assets\/js\/habitat-premium\.js/i.test(text)) errors.push(`${rel}: missing shared Habitat JavaScript`);
   if (/\b(?:h-wrap|h-nav|h-links|h-grid3|h-listing|h-contact-card)\b/.test(text)) errors.push(`${rel}: legacy pre-flagship Habitat markup still present`);
-  if (/<a\b[^>]*>[\s\S]{0,900}?<button\b/i.test(text)) errors.push(`${rel}: nested interactive button inside anchor detected`);
+  if (/<a\b[^>]*>(?:(?!<\/a>)[\s\S])*?<button\b/i.test(text)) errors.push(`${rel}: nested interactive button inside anchor detected`);
 }
 
 const productsPath = path.join(root, 'assets/js/products.js');
