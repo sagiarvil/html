@@ -1,89 +1,35 @@
 (() => {
-  const chips = [...document.querySelectorAll('.category-chip')];
-  const cards = [...document.querySelectorAll('.product-card')];
-  const empty = document.getElementById('catalogEmpty');
-  const buyerScope = {
-    launchpad:'1 HTML page included',storefront:'1 HTML page included',table:'1 HTML page included',habitat:'5 HTML pages included',clinic:'1 HTML page included',academy:'1 HTML page included',counsel:'1 HTML page included',ledger:'1 HTML page included',studio:'1 HTML page included',summit:'1 HTML page included',cockpit:'1 HTML page included'
-  };
-
-  const style = document.createElement('style');
-  style.id = 'hh-product-render-styles';
-  style.textContent = `
+  const chips=[...document.querySelectorAll('.category-chip')]; const cards=[...document.querySelectorAll('.product-card')]; const empty=document.getElementById('catalogEmpty'); const grid=document.getElementById('productGrid');
+  const release={launchpad:{scope:'1 HTML page',status:'Verification pending'},storefront:{scope:'1 HTML page',status:'Verification pending'},table:{scope:'1 HTML page',status:'Verification pending'},habitat:{scope:'7 HTML pages',status:'Flagship release candidate',flagship:true,price:29},clinic:{scope:'1 HTML page',status:'Verification pending'},academy:{scope:'1 HTML page',status:'Verification pending'},counsel:{scope:'1 HTML page',status:'Verification pending'},ledger:{scope:'1 HTML page',status:'Verification pending'},studio:{scope:'1 HTML page',status:'Verification pending'},summit:{scope:'1 HTML page',status:'Verification pending'},cockpit:{scope:'1 HTML page',status:'Verification pending'}};
+  const style=document.createElement('style'); style.id='hh-product-render-styles'; style.textContent=`
+    .product-card.hh-flagship{grid-column:1/-1;border-color:#b8c7c0;box-shadow:0 28px 80px rgba(18,50,40,.09)}
+    .product-card.hh-flagship .product-card-body{display:grid;grid-template-columns:1fr auto;column-gap:40px;align-items:end;padding:30px 34px 34px}
+    .product-card.hh-flagship .product-card-topline,.product-card.hh-flagship h3,.product-card.hh-flagship> .product-card-body>p,.product-card.hh-flagship .product-specs{grid-column:1}
+    .product-card.hh-flagship .product-actions{grid-column:2;grid-row:1/6;align-self:end;min-width:320px}
+    .product-card.hh-flagship h3{font-size:clamp(2.1rem,4vw,4rem);margin:.25rem 0 .45rem}
+    .product-card.hh-flagship> .product-card-body>p{max-width:760px;font-size:1rem}
+    .product-card.hh-pending{position:relative}.product-card.hh-pending:after{content:'CONCEPT · VERIFICATION PENDING';position:absolute;left:18px;top:18px;z-index:8;padding:7px 10px;border-radius:999px;background:rgba(20,24,31,.88);color:#fff;font-size:.56rem;font-weight:900;letter-spacing:.08em;pointer-events:none}
+    .product-card.hh-pending .btn-solid{background:#fff;color:#232933;border-color:#cdd2d8}
     .product-visual.has-real-preview{min-height:0;padding:0;background:#eef0f3;overflow:hidden}
     .hh-render-shell{position:relative;width:100%;overflow:hidden;background:#fff;border-bottom:1px solid rgba(24,28,37,.1)}
-    .hh-render-viewport{position:relative;width:100%;min-height:330px;overflow:hidden;background:#fff}
-    .hh-render-frame{position:absolute;top:0;left:0;width:1440px;height:820px;border:0;background:#fff;transform-origin:top left;pointer-events:none;opacity:0;transition:opacity .2s ease}
-    .hh-render-shell.is-loaded .hh-render-frame{opacity:1}
-    .hh-render-loading{position:absolute;inset:0;display:grid;place-items:center;background:#f6f7f9;color:#7f8794;font-size:.68rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-    .hh-render-shell.is-loaded .hh-render-loading{display:none}
-    .hh-preview-badge,.hh-scope-badge{position:absolute;z-index:3;padding:.48rem .7rem;border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);color:#2d3440;box-shadow:0 6px 18px rgba(20,27,43,.1);font-size:.62rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
-    .hh-preview-badge{left:16px;top:16px}.hh-scope-badge{left:16px;top:54px;background:#171b24;color:#fff}
-    .product-visual.has-real-preview .visual-label{right:16px;bottom:16px;z-index:3;box-shadow:0 6px 18px rgba(20,27,43,.1)}
-    .product-visual.has-real-preview::after{content:'Open live demo';position:absolute;inset:auto 16px 16px auto;z-index:4;opacity:0;transform:translateY(6px);padding:.62rem .82rem;border-radius:999px;background:#171b24;color:#fff;font-size:.68rem;font-weight:850;transition:opacity .18s ease,transform .18s ease}
-    .product-visual.has-real-preview:hover::after{opacity:1;transform:none}.product-visual.has-real-preview:hover .visual-label{opacity:0}
-    @media(max-width:760px){.hh-render-viewport{min-height:245px}.product-visual.has-real-preview::after{display:none}}
+    .hh-render-viewport{position:relative;width:100%;min-height:330px;overflow:hidden;background:#fff}.hh-flagship .hh-render-viewport{height:540px;min-height:540px}
+    .hh-render-frame{position:absolute;top:0;left:0;width:1440px;height:940px;border:0;background:#fff;transform-origin:top left;pointer-events:none;opacity:0;transition:opacity .2s ease}.hh-render-shell.is-loaded .hh-render-frame{opacity:1}
+    .hh-render-loading{position:absolute;inset:0;display:grid;place-items:center;background:#f6f7f9;color:#7f8794;font-size:.68rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.hh-render-shell.is-loaded .hh-render-loading{display:none}
+    .hh-preview-badge,.hh-scope-badge,.hh-release-badge{position:absolute;z-index:5;padding:.48rem .7rem;border-radius:999px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);color:#2d3440;box-shadow:0 6px 18px rgba(20,27,43,.1);font-size:.58rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+    .hh-preview-badge{left:16px;top:16px}.hh-scope-badge{left:16px;top:52px;background:#171b24;color:#fff}.hh-release-badge{right:16px;top:16px;background:#173f33;color:#fff}.hh-pending .hh-release-badge{display:none}
+    .product-visual.has-real-preview .visual-label{right:16px;bottom:16px;z-index:5;box-shadow:0 6px 18px rgba(20,27,43,.1)}
+    .product-visual.has-real-preview::after{content:'Inspect actual source preview';position:absolute;inset:auto 16px 16px auto;z-index:6;opacity:0;transform:translateY(6px);padding:.62rem .82rem;border-radius:999px;background:#171b24;color:#fff;font-size:.66rem;font-weight:850;transition:opacity .18s ease,transform .18s ease}.product-visual.has-real-preview:hover::after{opacity:1;transform:none}.product-visual.has-real-preview:hover .visual-label{opacity:0}
+    @media(max-width:900px){.product-card.hh-flagship .product-card-body{display:block}.product-card.hh-flagship .product-actions{min-width:0;margin-top:20px}.hh-flagship .hh-render-viewport{height:400px;min-height:400px}}
+    @media(max-width:760px){.hh-render-viewport{min-height:245px}.hh-flagship .hh-render-viewport{height:320px;min-height:320px}.product-visual.has-real-preview::after{display:none}}
     @media(prefers-reduced-motion:reduce){.hh-render-frame,.product-visual.has-real-preview::after{transition:none}}
-  `;
-  if (!document.getElementById(style.id)) document.head.appendChild(style);
+  `; document.head.appendChild(style);
 
-  const keyFromCard = card => {
-    const link = card.querySelector('a[href*="product.html?template="]');
-    if (!link) return null;
-    try { return new URL(link.getAttribute('href'), window.location.href).searchParams.get('template'); }
-    catch { return null; }
-  };
+  const keyFromCard=card=>{const link=card.querySelector('a[href*="product.html?template="]');if(!link)return null;try{return new URL(link.getAttribute('href'),location.href).searchParams.get('template')}catch{return null}};
+  cards.forEach(card=>{const key=keyFromCard(card);const meta=release[key]||{};card.dataset.productKey=key||'';card.classList.add(meta.flagship?'hh-flagship':'hh-pending');if(key==='habitat'){const price=card.querySelector('.price');if(price)price.textContent='$29';const desc=card.querySelector('.product-card-body>p');if(desc)desc.textContent='A seven-page private-estates website system with editorial property storytelling, neighborhood intelligence, advisors, journal, working front-end filters, favorites, gallery and enquiry states.';const detail=card.querySelector('.product-actions .btn-solid');if(detail)detail.textContent='Inspect flagship · $29';}else{const detail=card.querySelector('.product-actions .btn-solid');if(detail)detail.textContent='Details · verification pending';}});
+  const flagship=cards.find(card=>card.dataset.productKey==='habitat'); if(flagship&&grid)grid.prepend(flagship);
 
-  const resizePreview = shell => {
-    const viewport = shell.querySelector('.hh-render-viewport');
-    const frame = shell.querySelector('.hh-render-frame');
-    if (!viewport || !frame) return;
-    const sourceWidth = 1440;
-    const sourceHeight = 820;
-    const available = viewport.clientWidth || shell.clientWidth;
-    const scale = Math.max(.16, available / sourceWidth);
-    frame.style.transform = `scale(${scale})`;
-    viewport.style.height = `${Math.round(sourceHeight * scale)}px`;
-  };
-
-  const mountRealPreview = card => {
-    const key = keyFromCard(card);
-    const visual = card.querySelector('.product-visual');
-    if (!key || !visual || visual.dataset.realRender === 'true') return;
-    const category = card.querySelector('.product-card-topline p')?.textContent?.trim() || 'HTML TEMPLATE';
-    const scope = buyerScope[key] ? `<span class="hh-scope-badge">${buyerScope[key]}</span>` : '';
-    visual.dataset.realRender = 'true';
-    visual.classList.add('has-real-preview');
-    visual.href = `live-preview.html?template=${encodeURIComponent(key)}`;
-    visual.setAttribute('aria-label', `Open ${key} live demo`);
-    visual.innerHTML = `
-      <div class="hh-render-shell" aria-hidden="true"><div class="hh-render-viewport"><iframe class="hh-render-frame" data-src="demos/${encodeURIComponent(key)}.html" loading="lazy" tabindex="-1" title=""></iframe><div class="hh-render-loading">Loading actual template</div></div></div>
-      <span class="hh-preview-badge">Actual included HTML render</span>${scope}<span class="visual-label">${category}</span>`;
-    const shell = visual.querySelector('.hh-render-shell');
-    const frame = visual.querySelector('.hh-render-frame');
-    if (!shell || !frame) return;
-    resizePreview(shell);
-    frame.addEventListener('load', () => shell.classList.add('is-loaded'), { once:true });
-    if ('ResizeObserver' in window) new ResizeObserver(() => resizePreview(shell)).observe(shell);
-    else window.addEventListener('resize', () => resizePreview(shell), { passive:true });
-  };
-
-  cards.forEach(mountRealPreview);
-  const previewFrames = [...document.querySelectorAll('.hh-render-frame[data-src]')];
-  const loadFrame = frame => { if (frame.src || !frame.dataset.src) return; frame.src = frame.dataset.src; frame.removeAttribute('data-src'); };
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (!entry.isIntersecting) return; loadFrame(entry.target); observer.unobserve(entry.target); }); }, { rootMargin:'700px 0px' });
-    previewFrames.forEach(frame => observer.observe(frame));
-  } else previewFrames.forEach(loadFrame);
-
-  if (!chips.length || !cards.length) return;
-  chips.forEach(chip => {
-    chip.setAttribute('aria-pressed', chip.classList.contains('is-active') ? 'true' : 'false');
-    chip.addEventListener('click', () => {
-      const filter = chip.dataset.filter || 'all';
-      chips.forEach(item => { const active = item === chip; item.classList.toggle('is-active', active); item.setAttribute('aria-pressed', active ? 'true' : 'false'); });
-      let visible = 0;
-      cards.forEach(card => { const show = filter === 'all' || card.dataset.category === filter; card.hidden = !show; if (show) visible += 1; });
-      if (empty) empty.hidden = visible !== 0;
-    });
-  });
+  const resizePreview=shell=>{const viewport=shell.querySelector('.hh-render-viewport');const frame=shell.querySelector('.hh-render-frame');if(!viewport||!frame)return;const available=viewport.clientWidth||shell.clientWidth;const scale=Math.max(.16,available/1440);frame.style.transform=`scale(${scale})`;if(!shell.closest('.hh-flagship'))viewport.style.height=`${Math.round(820*scale)}px`;};
+  const mount=card=>{const key=card.dataset.productKey||keyFromCard(card);const visual=card.querySelector('.product-visual');if(!key||!visual||visual.dataset.realRender==='true')return;const meta=release[key]||{};const category=card.querySelector('.product-card-topline p')?.textContent?.trim()||'HTML TEMPLATE';visual.dataset.realRender='true';visual.classList.add('has-real-preview');visual.href=`live-preview.html?template=${encodeURIComponent(key)}`;visual.setAttribute('aria-label',`Open ${key} actual live preview`);visual.innerHTML=`<div class="hh-render-shell" aria-hidden="true"><div class="hh-render-viewport"><iframe class="hh-render-frame" data-src="demos/${encodeURIComponent(key)}.html" loading="lazy" tabindex="-1" title=""></iframe><div class="hh-render-loading">Loading actual template</div></div></div><span class="hh-preview-badge">Actual HTML render</span><span class="hh-scope-badge">${meta.scope||'HTML source'}</span>${meta.flagship?'<span class="hh-release-badge">Flagship RC</span>':''}<span class="visual-label">${category}</span>`;const shell=visual.querySelector('.hh-render-shell');const frame=visual.querySelector('.hh-render-frame');resizePreview(shell);frame.addEventListener('load',()=>shell.classList.add('is-loaded'),{once:true});if('ResizeObserver'in window)new ResizeObserver(()=>resizePreview(shell)).observe(shell);};
+  cards.forEach(mount); const frames=[...document.querySelectorAll('.hh-render-frame[data-src]')]; const load=frame=>{if(frame.src||!frame.dataset.src)return;frame.src=frame.dataset.src;frame.removeAttribute('data-src')}; if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;load(entry.target);observer.unobserve(entry.target)}),{rootMargin:'700px 0px'});frames.forEach(frame=>observer.observe(frame));}else frames.forEach(load);
+  if(!chips.length||!cards.length)return; chips.forEach(chip=>{chip.setAttribute('aria-pressed',chip.classList.contains('is-active')?'true':'false');chip.addEventListener('click',()=>{const filter=chip.dataset.filter||'all';chips.forEach(item=>{const active=item===chip;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',active?'true':'false')});let visible=0;cards.forEach(card=>{const show=filter==='all'||card.dataset.category===filter;card.hidden=!show;if(show)visible++});if(empty)empty.hidden=visible!==0;});});
 })();
