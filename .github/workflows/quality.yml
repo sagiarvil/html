@@ -9,10 +9,13 @@ jobs:
   integrity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
       - run: npm install --ignore-scripts --no-audit --no-fund
       - run: npm test
       - run: npx wrangler pages functions build functions --outfile /tmp/htmlandhtml-worker.js
+      - run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
+      - run: npm --prefix functions-firebase run build
