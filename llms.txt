@@ -4,6 +4,13 @@
 
 HTML&HTML separates measured facts, vendor/standard guidance, proposals and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals. The public authority hub exposes focused llms.txt, AI crawler and full AI website-readiness tools that all use the same 12-engine scan core.
 
+## Open audit profile and reference layer
+
+- [Open Website AI Readiness Audit Profile](https://htmlandhtml.com/standard/): Public HTML&HTML product profile defining the 12-engine decision contract, evidence classes, confidence, unknown-state semantics and safety invariants. It is explicitly not presented as an IETF/W3C/vendor standard.
+- [Machine-readable audit profile](https://htmlandhtml.com/audit-profile.json): Versioned JSON representation of the same engine weights, boundaries and invariants.
+- [External evidence source registry](https://htmlandhtml.com/sources.json): First-party vendor, standards-body and proposal references with manual verification dates.
+- [AI Crawler Reference 2026](https://htmlandhtml.com/reference/ai-crawlers/): Sourced distinctions between search, user-directed retrieval, model-development collection and product-control robots tokens.
+
 ## Core product
 
 - [Website Fix Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI/GEO crawler access, llms.txt v2, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion and Link Integrity.
