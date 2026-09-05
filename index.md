@@ -4,6 +4,18 @@
 
 HTML&HTML scans the public surface of a website with twelve deterministic analysis engines. It reports the problem, affected URL, severity, confidence, evidence class and measured evidence for free. It does not hide findings behind payment.
 
+## Authority tools
+
+- [AI Website Readiness — English](https://htmlandhtml.com/en/ai-website-readiness/)
+- [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/)
+- [llms.txt Validator — English](https://htmlandhtml.com/en/llms-txt-validator/)
+- [llms.txt Validator — Turkish](https://htmlandhtml.com/tr/llms-txt-validator/)
+- [AI Crawler Checker — English](https://htmlandhtml.com/en/ai-crawler-checker/)
+- [AI Crawler Checker — Turkish](https://htmlandhtml.com/tr/ai-crawler-checker/)
+- [Public Methodology](https://htmlandhtml.com/methodology.html)
+
+All focused tools call the same 12-engine scan core. They are separate search-intent and reporting surfaces, not separate scoring implementations.
+
 ## Free diagnosis
 
 - Crawl & Index
@@ -20,6 +32,10 @@ HTML&HTML scans the public surface of a website with twelve deterministic analys
 - Internal link integrity
 
 The public scanner does not invent source-file names and does not fabricate field Core Web Vitals. If reliable CrUX/PageSpeed data is unavailable, LCP, INP and CLS remain NOT_MEASURED.
+
+## Evidence model
+
+Findings are classified as OFFICIAL_STANDARD, OFFICIAL_VENDOR, PROPOSAL, MEASURED, INTERNAL_HEURISTIC or EXPERIMENTAL. Confidence is reported separately as confirmed, strong, probable or requires-source-verification. Unknown or unavailable rules are not forced into pass/fail scoring.
 
 ## Paid resolution
 
