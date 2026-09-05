@@ -1,0 +1,49 @@
+name: firebase-production
+
+on:
+  workflow_run:
+    workflows: [quality]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: htmlandhtml-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Firebase function dependencies
+        run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
+      - name: Build Firebase function adapter
+        run: npm --prefix functions-firebase run build
+      - name: Validate Firebase deployment credential
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STUDIO_7658156126_FFB8E || secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          set -euo pipefail
+          if test -z "$FIREBASE_SERVICE_ACCOUNT_JSON"; then
+            echo "FIREBASE_DEPLOY_BLOCKED: configure FIREBASE_SERVICE_ACCOUNT_STUDIO_7658156126_FFB8E (preferred) or FIREBASE_SERVICE_ACCOUNT."
+            exit 2
+          fi
+          umask 077
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
+          node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/firebase-service-account.json','utf8')); if(!x.client_email||!x.private_key||!x.project_id) throw new Error('invalid service-account JSON');"
+      - name: Deploy Hosting and Functions atomically through Firebase CLI
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
+        run: npx -y firebase-tools@15.28.2 deploy --only hosting,functions --project studio-7658156126-ffb8e --non-interactive
+      - name: Remove deployment credential
+        if: always()
+        run: rm -f "$RUNNER_TEMP/firebase-service-account.json"
