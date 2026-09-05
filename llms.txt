@@ -6,24 +6,10 @@ HTML&HTML separates measured facts, official standards, vendor guidance, proposa
 
 ## Core product
 
-- [Website Evidence Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI crawler access, formal llms.txt v2 verification, Structured Data, Performance Hygiene, Accessibility, Security, Content Trust, Agent Readiness, Conversion and Link Integrity.
-- [Machine-readable product overview](https://htmlandhtml.com/index.md): Clean Markdown overview of the product, evidence boundary and commercial model.
-
-## Engineering guide
-
-- [llms.txt v2 and AI readiness guide](https://htmlandhtml.com/guide.md): Current v2 structure, path-specific discovery, crawler-role separation, evidence classes and release gates.
+- [Machine-readable product overview](https://htmlandhtml.com/index.md): Clean Markdown overview of the free diagnosis, twelve analysis engines, evidence boundary and USD 149 implementation mandate.
+- [Engineering guide](https://htmlandhtml.com/guide.md): llms.txt v2 structure, path-specific discovery, AI crawler role separation, evidence classes and release gates.
 - [Methodology and evidence policy](https://htmlandhtml.com/about.md): How HTML&HTML distinguishes measured evidence, standards, vendor policies, proposals, heuristics and deliberate non-claims.
-
-## Developer resources
-
-- [API documentation](https://htmlandhtml.com/api): Human-readable documentation for the scan, formal llms audit, health and paid mandate endpoints.
-- [Formal llms.txt audit API](https://htmlandhtml.com/api/llms): GET or POST endpoint that prefers the most-specific applicable llms.txt, parses its structure and probes declared file-list links.
-- [Full public scan API](https://htmlandhtml.com/api/scan): POST endpoint for the 12-engine evidence report.
-- [Health endpoint](https://htmlandhtml.com/api/health): Runtime engine, registry and llms.txt rule-set health contract.
-
-## Commercial model
-
-- [Full Site Fix Mandate](https://htmlandhtml.com/#pricing): USD 149 for one domain / one engagement. A fresh scan is converted into P0–P3 implementation order, ROOT FIX, RECOVERY, PREVENTION, acceptance/falsification and regression tests, rollback and stop conditions.
+- [API contract](https://htmlandhtml.com/api.md): Machine-readable documentation for the full scan, formal llms.txt audit, health and paid mandate endpoints.
 
 ## Important interpretation notes
 
@@ -36,5 +22,3 @@ HTML&HTML separates measured facts, official standards, vendor guidance, proposa
 ## Optional
 
 - [llms.txt v2 proposal](https://llmstxt.org/): Upstream proposal used by the versioned formal llms.txt rule set.
-- [HTML&HTML visual guide](https://htmlandhtml.com/guide): Human-readable bilingual guide.
-- [HTML&HTML about](https://htmlandhtml.com/about): Human-readable bilingual methodology page.
