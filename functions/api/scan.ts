@@ -1,4 +1,4 @@
-import { runScan } from '../lib/scan-engine';
+import { runScan } from '../lib/scan-orchestrator';
 
 export const onRequestPost:PagesFunction=async({request})=>{
   try{
