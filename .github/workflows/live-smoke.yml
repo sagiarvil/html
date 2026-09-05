@@ -19,7 +19,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          check(){ url="$1"; marker="$2"; body="$(curl -fsS --connect-timeout 8 --max-time 25 "$url")"; printf '%s' "$body" | grep -qi "$marker"; }
+          check(){
+            url="$1"; marker="$2"
+            body="$(curl -fsS --connect-timeout 8 --max-time 25 "$url")"
+            if ! printf '%s' "$body" | grep -Fqi "$marker"; then
+              echo "SMOKE_MARKER_MISSING: $marker @ $url"
+              exit 1
+            fi
+            echo "SMOKE_OK: $url"
+          }
           check 'https://htmlandhtml.com/' 'Website Fix Validator'
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT VALIDATOR'
           check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
@@ -27,7 +35,7 @@ jobs:
           check 'https://htmlandhtml.com/methodology.html' 'PUBLIC METHODOLOGY'
           check 'https://htmlandhtml.com/standard/' 'OPEN AUDIT PROFILE'
           check 'https://htmlandhtml.com/reference/ai-crawlers/' 'AI CRAWLER REFERENCE'
-          check 'https://htmlandhtml.com/about/' 'ABOUT HTML&HTML'
+          check 'https://htmlandhtml.com/about/' 'ABOUT HTML&amp;HTML'
           check 'https://htmlandhtml.com/contact/' 'CONTACT / SUPPORT'
           check 'https://htmlandhtml.com/privacy/' 'PRIVACY / PUBLIC SCANS'
           check 'https://htmlandhtml.com/terms/' 'TERMS / PUBLIC VALIDATOR'
