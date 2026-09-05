@@ -1,0 +1,29 @@
+{
+  "registryVersion": "2026.09.05",
+  "verifiedAt": "2026-09-05T21:15:00Z",
+  "policies": [
+    {"id":"rfc9309","name":"Robots Exclusion Protocol","status":"OFFICIAL_STANDARD","version":"RFC 9309","source":"https://www.rfc-editor.org/rfc/rfc9309"},
+    {"id":"llms-v2","name":"llms.txt","status":"PROPOSAL","version":"v2 / 2026-08","source":"https://llmstxt.org/","signals":["rel=describedby","rel=alternate:type=text/markdown","subpath llms.txt"]},
+    {"id":"a2a","name":"Agent2Agent Protocol","status":"OFFICIAL_STANDARD","version":"latest","source":"https://a2a-protocol.org/latest/","signals":["/.well-known/agent-card.json"]},
+    {"id":"mcp","name":"Model Context Protocol","status":"OFFICIAL_STANDARD","version":"2026-07-28","source":"https://modelcontextprotocol.io/","signals":["stateless-core","Mcp-Method","Mcp-Name","authorization-hardening"]}
+  ],
+  "crawlers": [
+    {"token":"Googlebot","provider":"Google","purpose":"search","importance":"critical","sourceClass":"OFFICIAL_VENDOR","source":"https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"},
+    {"token":"Google-Extended","provider":"Google","purpose":"training-grounding-control","importance":"info","sourceClass":"OFFICIAL_VENDOR","source":"https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers","notes":"Control token; not a separate request UA and not a Google Search ranking signal."},
+    {"token":"OAI-SearchBot","provider":"OpenAI","purpose":"search","importance":"high","sourceClass":"OFFICIAL_VENDOR","source":"https://help.openai.com/en/articles/12627856-publishers-and-developers-faq"},
+    {"token":"OAI-AdsBot","provider":"OpenAI","purpose":"ads-landing-validation","importance":"info","sourceClass":"OFFICIAL_VENDOR","source":"https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers"},
+    {"token":"GPTBot","provider":"OpenAI","purpose":"training","importance":"info","sourceClass":"OFFICIAL_VENDOR","source":"https://platform.openai.com/docs/bots"},
+    {"token":"Claude-SearchBot","provider":"Anthropic","purpose":"search","importance":"high","sourceClass":"OFFICIAL_VENDOR","source":"https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+    {"token":"Claude-User","provider":"Anthropic","purpose":"user-retrieval","importance":"medium","sourceClass":"OFFICIAL_VENDOR","source":"https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+    {"token":"ClaudeBot","provider":"Anthropic","purpose":"training","importance":"info","sourceClass":"OFFICIAL_VENDOR","source":"https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+    {"token":"PerplexityBot","provider":"Perplexity","purpose":"search","importance":"high","sourceClass":"OFFICIAL_VENDOR","source":"https://www.perplexity.ai/help-center/en/articles/10354969-how-does-perplexity-follow-robots-txt"},
+    {"token":"Applebot","provider":"Apple","purpose":"search-ai-context","importance":"high","sourceClass":"OFFICIAL_VENDOR","source":"https://support.apple.com/119829"},
+    {"token":"Applebot-Extended","provider":"Apple","purpose":"training-control","importance":"info","sourceClass":"OFFICIAL_VENDOR","source":"https://support.apple.com/119829","notes":"Control token; Applebot performs the actual crawl."},
+    {"token":"bingbot","provider":"Microsoft","purpose":"search-copilot-index","importance":"high","sourceClass":"OFFICIAL_VENDOR","source":"https://support.microsoft.com/en-us/bing/how-bing-delivers-search-results"}
+  ],
+  "experimentalSignals": [
+    {"id":"a2a-agent-card","path":"/.well-known/agent-card.json","status":"OFFICIAL_STANDARD","weight":15},
+    {"id":"openapi","path":"/openapi.json","status":"OFFICIAL_STANDARD","weight":20},
+    {"id":"mcp-endpoint","path":"/mcp","status":"EXPERIMENTAL","weight":15}
+  ]
+}
