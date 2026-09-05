@@ -1,0 +1,81 @@
+name: live-smoke
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Wait for production release and verify homepage
+        shell: bash
+        run: |
+          set -euo pipefail
+          ok=0
+          for i in {1..18}; do
+            body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/ || true)"
+            if printf '%s' "$body" | grep -q '12 motor\|12 engines\|12-Motor\|12-Engine'; then
+              ok=1
+              break
+            fi
+            sleep 5
+          done
+          test "$ok" -eq 1
+          ! printf '%s' "$body" | grep -q '\$49\|\$99'
+          printf '%s' "$body" | grep -q '\$149'
+
+      - name: Verify health contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/health)"
+          BODY="$body" node - <<'NODE'
+          const x=JSON.parse(process.env.BODY);
+          if(x.status!=='ok') throw new Error('health status');
+          if(x.scanEngines!==12) throw new Error('engine count');
+          if(x.freeDiagnosis!==true) throw new Error('free diagnosis contract');
+          NODE
+
+      - name: Verify production 12-engine scan
+        shell: bash
+        run: |
+          set -euo pipefail
+          body="$(curl -fsS --connect-timeout 10 --max-time 90 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
+          BODY="$body" node - <<'NODE'
+          const x=JSON.parse(process.env.BODY);
+          const expected=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
+          for(const k of expected) if(typeof x.scores?.[k] !== 'number') throw new Error('missing score '+k);
+          if(!Array.isArray(x.findings)) throw new Error('findings missing');
+          if(!x.scanId) throw new Error('scan id missing');
+          if(x.fieldData?.coreWebVitals!=='NOT_MEASURED') throw new Error('CWV evidence contract');
+          if(Object.keys(x.scores).length!==12) throw new Error('score cardinality');
+          for(const f of x.findings){
+            if(!f.id||!f.severity||!f.confidence||!f.sourceClass||!('evidence' in f)) throw new Error('finding evidence contract');
+            if('fixTr' in f||'fixEn' in f||'rootFix' in f) throw new Error('paid remediation leaked into free scan');
+          }
+          NODE
+
+      - name: Verify SSRF boundary repeats safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          code="$(curl -sS -o /tmp/ssrf.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data '{"domain":"http://127.0.0.1"}' https://htmlandhtml.com/api/scan)"
+          test "$code" = '403'
+          code2="$(curl -sS -o /tmp/ssrf2.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data '{"domain":"http://localhost"}' https://htmlandhtml.com/api/scan)"
+          test "$code2" = '403'
+
+      - name: Verify paid mandate is fail-closed
+        shell: bash
+        run: |
+          set -euo pipefail
+          code="$(curl -sS -o /tmp/mandate.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/mandate)"
+          case "$code" in
+            402|503) exit 0 ;;
+            *) echo "Unexpected paid endpoint status: $code"; cat /tmp/mandate.json; exit 1 ;;
+          esac
