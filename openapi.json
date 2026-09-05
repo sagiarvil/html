@@ -1,0 +1,116 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HTML&HTML Website Fix Validator API",
+    "version": "2.0.0",
+    "description": "Public contracts for the HTML&HTML 12-engine website diagnosis service. The scan endpoint measures public HTTP/HTML surfaces. The paid mandate endpoint is entitlement-gated and fails closed when payment/entitlement configuration is unavailable."
+  },
+  "servers": [{"url": "https://htmlandhtml.com"}],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Service health and capability state",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Health state",
+            "content": {"application/json": {"schema": {"type": "object"}}}
+          }
+        }
+      }
+    },
+    "/api/scan": {
+      "post": {
+        "summary": "Run the public 12-engine website diagnosis",
+        "operationId": "scanWebsite",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["domain"],
+                "properties": {"domain": {"type": "string", "examples": ["example.com"]}}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Evidence-backed scan result",
+            "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ScanResult"}}}
+          },
+          "400": {"description": "Invalid or unscannable target"},
+          "403": {"description": "Target rejected by network safety boundary"}
+        }
+      }
+    },
+    "/api/mandate": {
+      "post": {
+        "summary": "Generate an entitlement-gated Full Site Fix Mandate",
+        "operationId": "generateFixMandate",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["domain"],
+                "properties": {"domain": {"type": "string"}}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {"description": "Paid implementation mandate"},
+          "402": {"description": "Valid paid entitlement required"},
+          "503": {"description": "Paid mandate service is not activated"}
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {"type": "http", "scheme": "bearer"}
+    },
+    "schemas": {
+      "ScanResult": {
+        "type": "object",
+        "required": ["scanId", "domain", "url", "scannedAt", "checked", "overall", "scores", "findings", "summary", "policies", "fieldData"],
+        "properties": {
+          "scanId": {"type": "string"},
+          "domain": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "scannedAt": {"type": "string", "format": "date-time"},
+          "checked": {"type": "integer"},
+          "overall": {"type": "integer", "minimum": 0, "maximum": 100},
+          "scores": {
+            "type": "object",
+            "required": ["crawl", "technical", "ai", "llms", "schema", "performance", "accessibility", "security", "trust", "agent", "conversion", "links"],
+            "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 100}
+          },
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "category", "severity", "confidence", "sourceClass", "evidence"],
+              "properties": {
+                "id": {"type": "string"},
+                "category": {"type": "string"},
+                "severity": {"enum": ["critical", "high", "medium", "low", "info"]},
+                "confidence": {"enum": ["confirmed", "strong", "probable", "requires-source-verification"]},
+                "sourceClass": {"enum": ["OFFICIAL_STANDARD", "OFFICIAL_VENDOR", "PROPOSAL", "MEASURED", "INTERNAL_HEURISTIC", "EXPERIMENTAL"]},
+                "evidence": {"type": "string"},
+                "url": {"type": "string"}
+              }
+            }
+          },
+          "summary": {"type": "object"},
+          "policies": {"type": "object"},
+          "fieldData": {"type": "object"}
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,15 @@
 {
+  "functions": [
+    {
+      "source": "functions-firebase",
+      "codebase": "validator",
+      "runtime": "nodejs22",
+      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"]
+    }
+  ],
   "hosting": {
     "public": ".",
-    "ignore": ["firebase.json", ".firebaserc", "**/.*", "**/node_modules/**", "wrangler.jsonc", "package*.json", "functions/**", "scripts/**", "tests/**"],
+    "ignore": ["firebase.json", ".firebaserc", "**/.*", "**/node_modules/**", "wrangler.jsonc", "package*.json", "functions/**", "functions-firebase/**", "scripts/**", "tests/**"],
     "cleanUrls": true,
     "trailingSlash": false,
     "headers": [
@@ -14,7 +22,14 @@
         {"key":"Content-Security-Policy","value":"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"}
       ]},
       {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
-      {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"}]}
+      {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/openapi.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]}
+    ],
+    "rewrites": [
+      {"source":"/api/health","function":{"functionId":"health","region":"us-central1","pinTag":true}},
+      {"source":"/api/scan","function":{"functionId":"scan","region":"us-central1","pinTag":true}},
+      {"source":"/api/mandate","function":{"functionId":"mandate","region":"us-central1","pinTag":true}}
     ],
     "redirects": [
       {"source":"/index.html","destination":"/","type":301},
