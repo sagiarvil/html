@@ -1,9 +1,9 @@
 {
-  "registryVersion": "2026.09.05",
-  "verifiedAt": "2026-09-05T21:15:00Z",
+  "registryVersion": "2026.09.06",
+  "verifiedAt": "2026-09-06T00:30:00Z",
   "policies": [
     {"id":"rfc9309","name":"Robots Exclusion Protocol","status":"OFFICIAL_STANDARD","version":"RFC 9309","source":"https://www.rfc-editor.org/rfc/rfc9309"},
-    {"id":"llms-v2","name":"llms.txt","status":"PROPOSAL","version":"v2 / 2026-08","source":"https://llmstxt.org/","signals":["rel=describedby","rel=alternate:type=text/markdown","subpath llms.txt"]},
+    {"id":"llms-v2","name":"llms.txt","status":"PROPOSAL","version":"v2 / 2026-08-10","source":"https://llmstxt.org/","signals":["rel=describedby","rel=alternate:type=text/markdown","subpath llms.txt","most-specific coverage"]},
     {"id":"a2a","name":"Agent2Agent Protocol","status":"OFFICIAL_STANDARD","version":"latest","source":"https://a2a-protocol.org/latest/","signals":["/.well-known/agent-card.json"]},
     {"id":"mcp","name":"Model Context Protocol","status":"OFFICIAL_STANDARD","version":"2026-07-28","source":"https://modelcontextprotocol.io/","signals":["stateless-core","Mcp-Method","Mcp-Name","authorization-hardening"]}
   ],
