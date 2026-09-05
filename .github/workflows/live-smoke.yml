@@ -1,8 +1,9 @@
 name: live-smoke
 
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: [firebase-production]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -10,37 +11,43 @@ permissions:
 
 jobs:
   production-smoke:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
-      - name: Wait for production release and verify homepage
+      - name: Verify production homepage and authority routes
         shell: bash
         run: |
           set -euo pipefail
-          ok=0
-          code=000
-          : > /tmp/headers
-          : > /tmp/body
-          for i in {1..18}; do
-            code="$(curl -sS -D /tmp/headers -o /tmp/body -w '%{http_code}' --connect-timeout 8 --max-time 20 https://htmlandhtml.com/ || true)"
-            if test "$code" = '200' && grep -q '12 motor\|12 engines\|12-Motor\|12-Engine' /tmp/body; then
-              ok=1
-              break
-            fi
-            sleep 5
-          done
-          if test "$ok" -ne 1; then
-            echo "PRODUCTION_BOUNDARY_FAILURE http=$code"
-            echo '--- response headers ---'
-            sed -n '1,40p' /tmp/headers
-            echo '--- public title ---'
-            grep -o -m1 '<title>[^<]*' /tmp/body || true
-            echo '--- release markers ---'
-            grep -o -m3 'Premium HTML templates\|Website Fix Validator\|12 motor\|12 engines\|\$49\|\$99\|\$149' /tmp/body || true
-            exit 1
-          fi
-          ! grep -q '\$49\|\$99' /tmp/body
-          grep -q '\$149' /tmp/body
+          check(){
+            url="$1"; marker="$2"; body="$(curl -fsS --connect-timeout 8 --max-time 25 "$url")"; printf '%s' "$body" | grep -qi "$marker"
+          }
+          check 'https://htmlandhtml.com/' 'Website Fix Validator'
+          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT VALIDATOR'
+          check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
+          check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
+          check 'https://htmlandhtml.com/methodology.html' 'PUBLIC METHODOLOGY'
+          check 'https://htmlandhtml.com/about/' 'ABOUT HTML&HTML'
+          check 'https://htmlandhtml.com/contact/' 'CONTACT / SUPPORT'
+          check 'https://htmlandhtml.com/privacy/' 'PRIVACY / PUBLIC SCANS'
+          check 'https://htmlandhtml.com/terms/' 'TERMS / PUBLIC VALIDATOR'
+          body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
+          ! printf '%s' "$body" | grep -q '\$49\|\$99'
+          printf '%s' "$body" | grep -q '\$149'
+
+      - name: Verify machine-readable authority graph
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt | grep -q 'OpenAPI contract'
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md | grep -q 'Authority tools'
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml | grep -q '/tr/llms-txt-validator/'
+          body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/openapi.json)"
+          BODY="$body" node - <<'NODE'
+          const x=JSON.parse(process.env.BODY);
+          if(x.openapi!=='3.1.0') throw new Error('OpenAPI version');
+          for(const p of ['/api/health','/api/scan','/api/mandate']) if(!x.paths?.[p]) throw new Error('missing API path '+p);
+          NODE
 
       - name: Verify health contract
         shell: bash
@@ -58,7 +65,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          body="$(curl -fsS --connect-timeout 10 --max-time 90 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
+          body="$(curl -fsS --connect-timeout 10 --max-time 120 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY);
           const expected=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
