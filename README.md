@@ -1,66 +1,63 @@
-# HTML&HTML
+# HTML&HTML — Website Fix Validator
 
-Premium HTML5, CSS3 and Vanilla JavaScript templates for freelancers, small agencies, independent developers and businesses.
+HTML&HTML is a bilingual (TR/EN) website validation and implementation-mandate product.
 
-## Product direction
+## Product flow
 
-HTML&HTML uses an HTML-first model: clean source, no mandatory framework, responsive behavior, accessible interaction patterns, AI-friendly editing and straightforward deployment.
+1. User enters a public domain or URL.
+2. `/api/scan` inspects externally verifiable website signals.
+3. The UI returns five scores plus prioritized findings.
+4. A paid Fix Mandate turns findings into an AI-agent implementation contract.
+5. Codebase Mandate adds source-aware file/component targeting when code access exists.
 
-The storefront structure takes inspiration from proven template-catalog patterns such as a compact value proposition, large visual template rows and an integrated responsive preview workflow, while the implementation, product names, copy, styling and template demos are original to HTML&HTML.
+## Current checks
 
-## Current catalog
+- HTTP/HTML availability
+- title and meta description
+- H1 hierarchy
+- canonical
+- HTML language
+- viewport
+- JSON-LD presence
+- robots meta
+- `/robots.txt`
+- `/sitemap.xml`
+- `/llms.txt`
+- HSTS, nosniff, CSP, referrer policy
 
-- Ledger — Financial Advisor — $19
-- Counsel — Law Firm — $19
-- Habitat — Real Estate — $24
-- Clinic — Medical Practice — $19
-- Table — Restaurant — $14
-- Launchpad — AI / SaaS — $19
+## Commercial tiers
 
-## Repository structure
+- Free Scan — $0
+- Fix Mandate — $49 one-time
+- Codebase Mandate — $99 one-time
 
-```text
-.
-├── index.html
-├── live-preview.html
-├── checkout.html
-├── architecture.html
-├── licensing.html
-├── assets/
-│   ├── css/main.css
-│   └── js/main.js
-├── demos/
-│   ├── ledger.html
-│   ├── counsel.html
-│   ├── habitat.html
-│   ├── clinic.html
-│   ├── table.html
-│   └── launchpad.html
-├── design-contract/
-├── docs/
-├── tests/
-├── verification/
-└── marketplace/
-```
+Payment processing is intentionally not active until a production payment provider is connected.
+
+## Runtime
+
+- Static HTML/CSS/JS frontend
+- Cloudflare Pages Function: `functions/api/scan.ts`
+- No framework dependency
 
 ## Local development
 
-Use any static HTTP server, for example:
-
 ```bash
-npx serve .
+npm install
+npm run dev
 ```
 
-## Verification policy
+## Test
 
-Do not claim Lighthouse, WCAG, browser, device or production-readiness results unless the corresponding test actually ran and evidence is stored in the repository.
+```bash
+npm test
+```
 
-Current rebuild status is `IMPLEMENTATION COMPLETE — VERIFICATION PENDING` until the required HTML/CSS/JS, accessibility, responsive, browser and performance checks are executed.
+## Deployment
 
-## Checkout
+Cloudflare Pages:
 
-The current checkout page is a non-payment placeholder. It does not collect card data or process payments. A production payment provider must be connected before sales are enabled.
+```bash
+npm run pages:deploy
+```
 
-## License
-
-Commercial license terms must match the final sales channel and approved seller terms. Do not redistribute third-party template source or brand assets as HTML&HTML products.
+The canonical production repository is `sagiarvil/html`.
