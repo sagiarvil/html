@@ -1,0 +1,98 @@
+{
+  "registry": "HTML&HTML External Evidence Source Registry",
+  "version": "1.0.0",
+  "lastVerified": "2026-09-06",
+  "policy": "External behavior claims must point to a first-party vendor, standards body or clearly labeled proposal source. Availability monitoring does not prove semantic stability; material rule changes require human review and a profile version decision.",
+  "sources": [
+    {
+      "id": "RFC9309",
+      "class": "OFFICIAL_STANDARD",
+      "publisher": "IETF / RFC Editor",
+      "title": "Robots Exclusion Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+      "appliesTo": ["crawl","ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "OPENAI-SEARCH",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "OpenAI",
+      "title": "Searching the web with ChatGPT",
+      "url": "https://help.openai.com/en/articles/9237897",
+      "appliesTo": ["ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "OPENAI-PUBLISHERS",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "OpenAI",
+      "title": "Publishers and Developers FAQ",
+      "url": "https://help.openai.com/en/articles/12627856-publishers-and-developers-faq",
+      "appliesTo": ["ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "ANTHROPIC-CRAWLERS",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "Anthropic",
+      "title": "Anthropic web crawlers and site-owner controls",
+      "url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "appliesTo": ["ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "PERPLEXITY-ROBOTS",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "Perplexity",
+      "title": "How does Perplexity follow robots.txt?",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10354969-how-does-perplexity-follow-robots-txt",
+      "appliesTo": ["ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "GOOGLE-COMMON-CRAWLERS",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "Google",
+      "title": "Google's common crawlers",
+      "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "appliesTo": ["crawl","ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "LLMS-TXT-V2",
+      "class": "PROPOSAL",
+      "publisher": "llmstxt.org / Jeremy Howard",
+      "title": "The /llms.txt file, v2",
+      "url": "https://llmstxt.org/",
+      "appliesTo": ["llms","agent"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "LLMS-TXT-CHANGES",
+      "class": "PROPOSAL",
+      "publisher": "llmstxt.org / Jeremy Howard",
+      "title": "llms.txt changes — v2",
+      "url": "https://llmstxt.org/changes.html",
+      "appliesTo": ["llms","agent"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "WCAG22",
+      "class": "OFFICIAL_STANDARD",
+      "publisher": "W3C",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "appliesTo": ["accessibility"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "OPENAPI31",
+      "class": "OFFICIAL_STANDARD",
+      "publisher": "OpenAPI Initiative",
+      "title": "OpenAPI Specification 3.1",
+      "url": "https://spec.openapis.org/oas/v3.1.0.html",
+      "appliesTo": ["agent"],
+      "lastVerified": "2026-09-06"
+    }
+  ]
+}

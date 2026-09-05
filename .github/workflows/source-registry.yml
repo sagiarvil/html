@@ -1,0 +1,60 @@
+name: source-registry
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source availability and manual-review age
+        id: verify
+        continue-on-error: true
+        run: node scripts/check-source-registry.mjs 2>&1 | tee /tmp/source-registry.log
+      - name: Open one traceable issue on failure
+        if: steps.verify.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title='Source registry verification failed'
+          existing="$(gh issue list --state open --search "\"$title\" in:title" --json number,title --jq '.[] | select(.title=="Source registry verification failed") | .number' | head -1)"
+          if test -n "$existing"; then
+            gh issue comment "$existing" --body "Verification failed again: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          else
+            {
+              echo 'The public HTML&HTML source registry failed its automated availability/freshness gate.'
+              echo
+              echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+              echo
+              echo '```text'
+              tail -120 /tmp/source-registry.log
+              echo '```'
+              echo
+              echo 'Required action: verify the affected first-party source, update the registry/rule interpretation if materially changed, update lastVerified, and run the gate again.'
+            } > /tmp/issue.md
+            gh issue create --title "$title" --body-file /tmp/issue.md
+          fi
+          exit 1
+      - name: Close resolved registry alert
+        if: steps.verify.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          numbers="$(gh issue list --state open --search '"'"'Source registry verification failed'"'"' in:title' --json number,title --jq '.[] | select(.title=="Source registry verification failed") | .number')"
+          for n in $numbers; do
+            gh issue comment "$n" --body "Source registry gate is healthy again: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            gh issue close "$n" --reason completed
+          done
