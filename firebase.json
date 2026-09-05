@@ -24,7 +24,9 @@
       {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
       {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
-      {"source":"/openapi.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]}
+      {"source":"/openapi.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/audit-profile.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]},
+      {"source":"/sources.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]}
     ],
     "rewrites": [
       {"source":"/api/health","function":{"functionId":"health","region":"us-central1","pinTag":true}},
