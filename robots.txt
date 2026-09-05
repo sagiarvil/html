@@ -1,3 +1,20 @@
+# Public search/retrieval policy
+User-agent: Googlebot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Default policy. Training-specific controls are not silently changed here.
 User-agent: *
 Allow: /
 Disallow: /checkout
