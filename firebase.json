@@ -20,7 +20,10 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
-      {"source":"/api/**","function":{"functionId":"api","region":"europe-west1"}}
+      {"source":"/api/scan","function":{"functionId":"api","region":"europe-west1"}},
+      {"source":"/api/llms","function":{"functionId":"api","region":"europe-west1"}},
+      {"source":"/api/health","function":{"functionId":"api","region":"europe-west1"}},
+      {"source":"/api/mandate","function":{"functionId":"api","region":"europe-west1"}}
     ],
     "headers": [
       {"source":"**","headers":[
@@ -31,9 +34,25 @@
         {"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},
         {"key":"Content-Security-Policy","value":"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"}
       ]},
+      {"source":"/","headers":[
+        {"key":"Cache-Control","value":"public, max-age=0, must-revalidate"},
+        {"key":"Link","value":"</index.md>; rel=\"alternate\"; type=\"text/markdown\", </llms.txt>; rel=\"describedby\""}
+      ]},
+      {"source":"/guide","headers":[
+        {"key":"Cache-Control","value":"public, max-age=0, must-revalidate"},
+        {"key":"Link","value":"</guide.md>; rel=\"alternate\"; type=\"text/markdown\", </llms.txt>; rel=\"describedby\""}
+      ]},
+      {"source":"/about","headers":[
+        {"key":"Cache-Control","value":"public, max-age=0, must-revalidate"},
+        {"key":"Link","value":"</about.md>; rel=\"alternate\"; type=\"text/markdown\", </llms.txt>; rel=\"describedby\""}
+      ]},
+      {"source":"/api","headers":[
+        {"key":"Cache-Control","value":"public, max-age=0, must-revalidate"},
+        {"key":"Link","value":"</api.md>; rel=\"alternate\"; type=\"text/markdown\", </llms.txt>; rel=\"describedby\""}
+      ]},
       {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
-      {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"}]},
-      {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"}]}
+      {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Cache-Control","value":"public, max-age=300, must-revalidate"}]},
+      {"source":"**/*.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Cache-Control","value":"public, max-age=300, must-revalidate"}]}
     ],
     "redirects": [
       {"source":"/index.html","destination":"/","type":301},
