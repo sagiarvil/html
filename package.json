@@ -1,12 +1,12 @@
 {
   "name": "htmlandhtml-com",
-  "version": "6.0.0",
-  "description": "HTML&HTML bilingual 12-engine website diagnosis and paid implementation-mandate platform",
+  "version": "6.1.0",
+  "description": "HTML&HTML bilingual 12-engine website diagnosis, authority tools and paid implementation-mandate platform",
   "private": true,
   "scripts": {
     "test": "npm run test:integrity && npm run test:client",
     "test:integrity": "node tests/integrity/check.mjs",
-    "test:client": "node --check assets/js/validator.js",
+    "test:client": "node --check assets/js/validator.js && node --check assets/js/authority-tool.js",
     "dev": "wrangler pages dev .",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
     "firebase:deploy": "npx -y firebase-tools@latest deploy --only hosting",
