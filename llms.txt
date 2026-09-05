@@ -2,13 +2,23 @@
 
 > HTML&HTML is a bilingual 12-engine website diagnosis and implementation-mandate platform. Evidence-backed public findings are free; the implementation contract is the paid product.
 
-HTML&HTML separates measured facts, vendor/standard guidance, proposals and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals.
+HTML&HTML separates measured facts, vendor/standard guidance, proposals and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals. The public authority hub exposes focused llms.txt, AI crawler and full AI website-readiness tools that all use the same 12-engine scan core.
 
 ## Core product
 
 - [Website Fix Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI/GEO crawler access, llms.txt v2, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion and Link Integrity.
+- [AI Website Readiness — English](https://htmlandhtml.com/en/ai-website-readiness/): Full 12-engine AI and technical readiness view.
+- [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/): 12 motorlu AI/GEO ve teknik hazırlık görünümü.
+- [Methodology](https://htmlandhtml.com/methodology.html): Public evidence classes, confidence levels, scoring rules, scan boundaries and governance model.
 - [Markdown overview](https://htmlandhtml.com/index.md): Clean machine-readable overview of the product and commercial boundary.
 - [Health endpoint](https://htmlandhtml.com/api/health): Runtime service state, version, engine count and paid-mandate configuration state.
+
+## Focused free tools
+
+- [llms.txt Validator — English](https://htmlandhtml.com/en/llms-txt-validator/): Structure, real HTTP link reachability, llms.txt v2 discovery and related AI access evidence.
+- [llms.txt Validator — Turkish](https://htmlandhtml.com/tr/llms-txt-validator/): llms.txt yapı, gerçek link erişimi, v2 keşif ilişkileri ve ilgili AI erişim kanıtları.
+- [AI Crawler Checker — English](https://htmlandhtml.com/en/ai-crawler-checker/): Bot-policy and crawl-access checks for OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot, Google-Extended and related public signals.
+- [AI Crawler Checker — Turkish](https://htmlandhtml.com/tr/ai-crawler-checker/): AI bot politikası ve crawl erişimi kontrolleri.
 
 ## Commercial model
 
@@ -25,13 +35,22 @@ HTML&HTML separates measured facts, vendor/standard guidance, proposals and inte
 - INTERNAL_HEURISTIC: clearly labeled product heuristics.
 - EXPERIMENTAL: optional agent surfaces such as A2A/MCP when applicable.
 
+## Scan boundaries
+
+- Up to 25 public HTML pages and 30 link probes per scan.
+- Private/local/reserved targets, credential-bearing URLs, non-standard ports and redirect pivots into private address space fail closed.
+- Unknown or unavailable measurements are excluded from the relevant score denominator rather than forced to pass or fail.
+- Reliable LCP, INP and CLS require field/lab data integration. If unavailable, those metrics remain NOT_MEASURED.
+
 ## Important limitations
 
 - 100/100 means only that measured checks passed. It does not guarantee rankings, traffic, sales or AI citations.
 - Public scanning can verify externally visible behavior but cannot reliably name the source file that must change. File-level targeting requires source/codebase context.
-- Reliable field LCP, INP and CLS require field/lab data integration. If unavailable, those metrics remain NOT_MEASURED.
+- llms.txt is tracked as a PROPOSAL, not as a mandatory web standard or ranking requirement.
 - The paid mandate endpoint is fail-closed until a secure payment provider and entitlement secret are configured.
 
 ## Languages
 
-- Turkish and English are available on the same canonical application.
+- Turkish authority pages use /tr/ paths.
+- English authority pages use /en/ paths.
+- Canonical and hreflang pairs are published for the focused tools.
