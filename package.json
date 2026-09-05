@@ -1,13 +1,12 @@
 {
   "name": "htmlandhtml-com",
-  "version": "4.0.0",
-  "description": "HTML&HTML premium HTML5, CSS3 and Vanilla JavaScript template catalog",
+  "version": "5.0.0",
+  "description": "HTML&HTML bilingual website fix validator and AI implementation mandate platform",
   "private": true,
   "scripts": {
     "test": "npm run test:integrity",
     "test:integrity": "node tests/integrity/check.mjs",
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
+    "dev": "wrangler pages dev .",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
     "firebase:deploy": "npx -y firebase-tools@latest deploy --only hosting",
     "firebase:serve": "npx -y firebase-tools@latest emulators:start --only hosting"
