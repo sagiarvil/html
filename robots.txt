@@ -14,10 +14,13 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Default policy. Training-specific controls are not silently changed here.
+# Default policy. Public documentation remains crawlable; runtime execution routes do not.
 User-agent: *
 Allow: /
 Disallow: /checkout
-Disallow: /api/
+Disallow: /api/scan
+Disallow: /api/llms
+Disallow: /api/health
+Disallow: /api/mandate
 
 Sitemap: https://htmlandhtml.com/sitemap.xml
