@@ -18,17 +18,29 @@ jobs:
         run: |
           set -euo pipefail
           ok=0
+          code=000
+          : > /tmp/headers
+          : > /tmp/body
           for i in {1..18}; do
-            body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/ || true)"
-            if printf '%s' "$body" | grep -q '12 motor\|12 engines\|12-Motor\|12-Engine'; then
+            code="$(curl -sS -D /tmp/headers -o /tmp/body -w '%{http_code}' --connect-timeout 8 --max-time 20 https://htmlandhtml.com/ || true)"
+            if test "$code" = '200' && grep -q '12 motor\|12 engines\|12-Motor\|12-Engine' /tmp/body; then
               ok=1
               break
             fi
             sleep 5
           done
-          test "$ok" -eq 1
-          ! printf '%s' "$body" | grep -q '\$49\|\$99'
-          printf '%s' "$body" | grep -q '\$149'
+          if test "$ok" -ne 1; then
+            echo "PRODUCTION_BOUNDARY_FAILURE http=$code"
+            echo '--- response headers ---'
+            sed -n '1,40p' /tmp/headers
+            echo '--- public title ---'
+            grep -o -m1 '<title>[^<]*' /tmp/body || true
+            echo '--- release markers ---'
+            grep -o -m3 'Premium HTML templates\|Website Fix Validator\|12 motor\|12 engines\|\$49\|\$99\|\$149' /tmp/body || true
+            exit 1
+          fi
+          ! grep -q '\$49\|\$99' /tmp/body
+          grep -q '\$149' /tmp/body
 
       - name: Verify health contract
         shell: bash
