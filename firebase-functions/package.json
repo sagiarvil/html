@@ -1,6 +1,6 @@
 {
   "name": "htmlandhtml-firebase-runtime",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "main": "index.js",
   "engines": {"node": "22"},
@@ -8,7 +8,10 @@
     "build": "mkdir -p lib && esbuild ../functions/api/scan.ts --bundle --platform=node --format=cjs --target=node22 --outfile=lib/scan.cjs && esbuild ../functions/api/llms.ts --bundle --platform=node --format=cjs --target=node22 --outfile=lib/llms.cjs && esbuild ../functions/api/mandate.ts --bundle --platform=node --format=cjs --target=node22 --outfile=lib/mandate.cjs && esbuild ../functions/api/health.ts --bundle --platform=node --format=cjs --target=node22 --outfile=lib/health.cjs"
   },
   "dependencies": {
-    "firebase-functions": "7.3.2"
+    "firebase-functions": "7.3.2",
+    "mdast-util-to-string": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "esbuild": "^0.25.0"
