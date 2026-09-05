@@ -21,7 +21,7 @@ jobs:
           set -euo pipefail
           check(){
             url="$1"; marker="$2"
-            body="$(curl -fsS --connect-timeout 8 --max-time 25 "$url")"
+            body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"
             if ! printf '%s' "$body" | grep -Fqi "$marker"; then
               echo "SMOKE_MARKER_MISSING: $marker @ $url"
               exit 1
@@ -39,7 +39,7 @@ jobs:
           check 'https://htmlandhtml.com/contact/' 'CONTACT / SUPPORT'
           check 'https://htmlandhtml.com/privacy/' 'PRIVACY / PUBLIC SCANS'
           check 'https://htmlandhtml.com/terms/' 'TERMS / PUBLIC VALIDATOR'
-          body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
+          body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
           ! printf '%s' "$body" | grep -q '\$49\|\$99'
           printf '%s' "$body" | grep -q '\$149'
 
