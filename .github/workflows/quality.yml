@@ -26,6 +26,7 @@ jobs:
       - name: Validate Firebase entrypoint syntax
         run: node --check firebase-functions/index.js
       - name: Bundle formal llms engine for deterministic fixture tests
-        run: ./firebase-functions/node_modules/.bin/esbuild functions/lib/llms-engine.ts --bundle --platform=node --format=esm --target=node22 --outfile=/tmp/llms-engine.mjs
+        working-directory: firebase-functions
+        run: npm run build:test-llms
       - name: Run llms.txt v2 fixture tests
         run: node tests/llms/check.mjs
