@@ -1,6 +1,7 @@
 const { onRequest } = require('firebase-functions/v2/https');
 
 const scanApi = require('./lib/scan.cjs');
+const llmsApi = require('./lib/llms.cjs');
 const mandateApi = require('./lib/mandate.cjs');
 const healthApi = require('./lib/health.cjs');
 
@@ -45,7 +46,9 @@ exports.api = onRequest({
 }, async (req, res) => {
   try {
     if (req.method === 'OPTIONS') {
-      res.setHeader('Allow', 'GET, POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Headers', 'content-type, authorization');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
       return res.status(204).send('');
     }
     const path = String(req.originalUrl || req.url || '').split('?')[0].replace(/\/+$/, '');
@@ -53,6 +56,8 @@ exports.api = onRequest({
     let response;
     if (path.endsWith('/scan')) {
       response = req.method === 'POST' ? await scanApi.onRequestPost({ request }) : await scanApi.onRequestGet({ request });
+    } else if (path.endsWith('/llms')) {
+      response = req.method === 'POST' ? await llmsApi.onRequestPost({ request }) : await llmsApi.onRequestGet({ request });
     } else if (path.endsWith('/mandate')) {
       response = req.method === 'POST'
         ? await mandateApi.onRequestPost({ request, env: { MANDATE_ACCESS_TOKEN: process.env.MANDATE_ACCESS_TOKEN } })
