@@ -5,6 +5,10 @@ const llmsApi = require('./lib/llms.cjs');
 const mandateApi = require('./lib/mandate.cjs');
 const healthApi = require('./lib/health.cjs');
 
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const buckets = new Map();
+const limits = { scan: 12, llms: 30, mandate: 10 };
+
 function requestHeaders(req) {
   const headers = new Headers();
   for (const [key, value] of Object.entries(req.headers || {})) {
@@ -27,6 +31,33 @@ function toWebRequest(req) {
   return new Request(url, init);
 }
 
+function routeKey(path) {
+  if (path.endsWith('/scan')) return 'scan';
+  if (path.endsWith('/llms')) return 'llms';
+  if (path.endsWith('/mandate')) return 'mandate';
+  return null;
+}
+
+function clientKey(req) {
+  const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  return forwarded || req.ip || req.socket?.remoteAddress || 'unknown';
+}
+
+function allowRequest(req, route) {
+  const limit = limits[route];
+  if (!limit) return { ok: true };
+  const now = Date.now();
+  if (buckets.size > 5000) {
+    for (const [k,v] of buckets) if (v.resetAt <= now) buckets.delete(k);
+  }
+  const key = `${route}:${clientKey(req)}`;
+  let item = buckets.get(key);
+  if (!item || item.resetAt <= now) item = { count: 0, resetAt: now + RATE_WINDOW_MS };
+  item.count += 1;
+  buckets.set(key, item);
+  return { ok: item.count <= limit, retryAfter: Math.max(1, Math.ceil((item.resetAt - now) / 1000)), remaining: Math.max(0, limit - item.count) };
+}
+
 async function sendWebResponse(res, response) {
   res.status(response.status);
   for (const [key, value] of response.headers.entries()) {
@@ -40,8 +71,8 @@ exports.api = onRequest({
   region: 'europe-west1',
   timeoutSeconds: 55,
   memory: '512MiB',
-  maxInstances: 20,
-  concurrency: 20,
+  maxInstances: 10,
+  concurrency: 5,
   invoker: 'public'
 }, async (req, res) => {
   try {
@@ -52,6 +83,13 @@ exports.api = onRequest({
       return res.status(204).send('');
     }
     const path = String(req.originalUrl || req.url || '').split('?')[0].replace(/\/+$/, '');
+    const route = routeKey(path);
+    const rate = allowRequest(req, route);
+    if (!rate.ok) {
+      res.setHeader('Retry-After', String(rate.retryAfter));
+      res.setHeader('Cache-Control', 'no-store');
+      return res.status(429).json({ error: 'Rate limit exceeded', retryAfterSeconds: rate.retryAfter });
+    }
     const request = toWebRequest(req);
     let response;
     if (path.endsWith('/scan')) {
