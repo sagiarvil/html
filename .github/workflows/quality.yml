@@ -17,12 +17,10 @@ jobs:
         run: npm install --ignore-scripts --no-audit --no-fund
       - name: Static product integrity
         run: npm test
-      - name: Compile Cloudflare-compatible function surface
-        run: npx wrangler pages functions build functions --outfile /tmp/htmlandhtml-worker.js
       - name: Install Firebase runtime dependencies
         working-directory: firebase-functions
         run: npm install --ignore-scripts --no-audit --no-fund
-      - name: Compile Firebase API runtime
+      - name: Compile canonical Firebase API runtime
         working-directory: firebase-functions
         run: npm run build
       - name: Validate Firebase entrypoint syntax
