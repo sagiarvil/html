@@ -13,6 +13,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --ignore-scripts --no-audit --no-fund
-      - run: npm test
-      - run: npx wrangler pages functions build functions --outfile /tmp/htmlandhtml-worker.js
+      - name: Install root tooling
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Static product integrity
+        run: npm test
+      - name: Compile Cloudflare-compatible function surface
+        run: npx wrangler pages functions build functions --outfile /tmp/htmlandhtml-worker.js
+      - name: Install Firebase runtime dependencies
+        working-directory: firebase-functions
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Compile Firebase API runtime
+        working-directory: firebase-functions
+        run: npm run build
+      - name: Validate Firebase entrypoint syntax
+        run: node --check firebase-functions/index.js
+      - name: Bundle formal llms engine for deterministic fixture tests
+        run: ./firebase-functions/node_modules/.bin/esbuild functions/lib/llms-engine.ts --bundle --platform=node --format=esm --target=node22 --outfile=/tmp/llms-engine.mjs
+      - name: Run llms.txt v2 fixture tests
+        run: node tests/llms/check.mjs
