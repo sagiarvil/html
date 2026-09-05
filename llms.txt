@@ -11,6 +11,7 @@ HTML&HTML separates measured facts, vendor/standard guidance, proposals and inte
 - [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/): 12 motorlu AI/GEO ve teknik hazırlık görünümü.
 - [Methodology](https://htmlandhtml.com/methodology.html): Public evidence classes, confidence levels, scoring rules, scan boundaries and governance model.
 - [Markdown overview](https://htmlandhtml.com/index.md): Clean machine-readable overview of the product and commercial boundary.
+- [OpenAPI contract](https://htmlandhtml.com/openapi.json): Machine-readable contract for health, public scan and entitlement-gated mandate endpoints.
 - [Health endpoint](https://htmlandhtml.com/api/health): Runtime service state, version, engine count and paid-mandate configuration state.
 
 ## Focused free tools
@@ -19,6 +20,14 @@ HTML&HTML separates measured facts, vendor/standard guidance, proposals and inte
 - [llms.txt Validator — Turkish](https://htmlandhtml.com/tr/llms-txt-validator/): llms.txt yapı, gerçek link erişimi, v2 keşif ilişkileri ve ilgili AI erişim kanıtları.
 - [AI Crawler Checker — English](https://htmlandhtml.com/en/ai-crawler-checker/): Bot-policy and crawl-access checks for OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot, Google-Extended and related public signals.
 - [AI Crawler Checker — Turkish](https://htmlandhtml.com/tr/ai-crawler-checker/): AI bot politikası ve crawl erişimi kontrolleri.
+
+## Identity, support and policy
+
+- [About HTML&HTML](https://htmlandhtml.com/about/): Product identity, evidence-first position and commercial boundary.
+- [Contact and support](https://htmlandhtml.com/contact/): Official support route through the sagiarvil/html issue tracker; secrets and private data must not be posted publicly.
+- [Privacy](https://htmlandhtml.com/privacy/): Public scan data boundary and current application-storage behavior.
+- [Terms](https://htmlandhtml.com/terms/): Responsible-use boundaries and explicit limits of diagnostic scores.
+- [Source repository](https://github.com/sagiarvil/html): Maintained source-of-truth repository for HTML&HTML.
 
 ## Commercial model
 
@@ -47,6 +56,7 @@ HTML&HTML separates measured facts, vendor/standard guidance, proposals and inte
 - 100/100 means only that measured checks passed. It does not guarantee rankings, traffic, sales or AI citations.
 - Public scanning can verify externally visible behavior but cannot reliably name the source file that must change. File-level targeting requires source/codebase context.
 - llms.txt is tracked as a PROPOSAL, not as a mandatory web standard or ranking requirement.
+- A2A/MCP remain optional experimental surfaces and are not published merely to improve the product's own score.
 - The paid mandate endpoint is fail-closed until a secure payment provider and entitlement secret are configured.
 
 ## Languages
