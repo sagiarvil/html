@@ -13,6 +13,8 @@ const pages=[
 ];
 const required=['assets/css/authority.css','assets/js/authority-tool.js','methodology.html','sitemap.xml','llms.txt','index.md'];
 for(const rel of required)if(!fs.existsSync(path.join(root,rel)))errors.push(`missing authority file: ${rel}`);
+const toolJs=fs.readFileSync(path.join(root,'assets/js/authority-tool.js'),'utf8');
+if(!/\/api\/scan/.test(toolJs))errors.push('authority tool must call shared /api/scan');
 for(const [rel,lang,canonical,alternate,categories] of pages){
  const p=path.join(root,rel);if(!fs.existsSync(p)){errors.push(`missing authority page: ${rel}`);continue}
  const text=fs.readFileSync(p,'utf8');
@@ -20,7 +22,6 @@ for(const [rel,lang,canonical,alternate,categories] of pages){
  if(!text.includes(`https://htmlandhtml.com${canonical}`))errors.push(`${rel}: canonical missing`);
  if(!text.includes(`https://htmlandhtml.com${alternate}`))errors.push(`${rel}: hreflang pair missing`);
  if(!text.includes(`data-tool-categories="${categories}"`))errors.push(`${rel}: tool category scope drift`);
- if(!/\/api\/scan/.test(fs.readFileSync(path.join(root,'assets/js/authority-tool.js'),'utf8')))errors.push('authority tool must call shared /api/scan');
  if(!/application\/ld\+json/.test(text))errors.push(`${rel}: structured data missing`);
  if(!/rel="describedby"/.test(text))errors.push(`${rel}: llms.txt discovery missing`);
 }
@@ -28,9 +29,11 @@ const methodology=fs.readFileSync(path.join(root,'methodology.html'),'utf8');
 for(const token of ['OFFICIAL_STANDARD','OFFICIAL_VENDOR','PROPOSAL','MEASURED','INTERNAL_HEURISTIC','EXPERIMENTAL','NOT_MEASURED','SSRF'])if(!methodology.includes(token))errors.push(`methodology missing governance token: ${token}`);
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
+const homepage=fs.readFileSync(path.join(root,'index.html'),'utf8');
 for(const [, ,canonical] of pages){const absolute=`https://htmlandhtml.com${canonical}`;if(!sitemap.includes(absolute))errors.push(`sitemap missing ${absolute}`);if(!llms.includes(absolute))errors.push(`llms.txt missing ${absolute}`)}
+for(const href of ['/tr/llms-txt-validator/','/tr/ai-crawler-checker/','/tr/ai-website-readiness/','/methodology.html'])if(!homepage.includes(`href="${href}"`))errors.push(`homepage missing authority internal link: ${href}`);
 if(!sitemap.includes('https://htmlandhtml.com/methodology.html'))errors.push('sitemap missing methodology');
 if(!llms.includes('https://htmlandhtml.com/methodology.html'))errors.push('llms.txt missing methodology');
 if(!/Unknown or unavailable measurements are excluded/i.test(llms))errors.push('llms.txt missing unknown-score boundary');
 if(errors.length){console.error('AUTHORITY INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('AUTHORITY INTEGRITY PASS: localized tools, shared scan core, methodology, sitemap/hreflang and machine-readable authority graph verified.');
+console.log('AUTHORITY INTEGRITY PASS: localized tools, shared scan core, methodology, homepage internal links, sitemap/hreflang and machine-readable authority graph verified.');
