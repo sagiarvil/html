@@ -2,36 +2,39 @@
 
 > HTML&HTML is a bilingual 12-engine website diagnosis and implementation-mandate platform. Evidence-backed public findings are free; the implementation contract is the paid product.
 
-HTML&HTML separates measured facts, vendor/standard guidance, proposals and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals.
+HTML&HTML separates measured facts, official standards, vendor guidance, proposals, internal heuristics and experimental agent surfaces. Public scanning never invents source-file paths and never fabricates field Core Web Vitals.
 
 ## Core product
 
-- [Website Fix Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI/GEO crawler access, llms.txt v2, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion and Link Integrity.
-- [Markdown overview](https://htmlandhtml.com/index.md): Clean machine-readable overview of the product and commercial boundary.
-- [Health endpoint](https://htmlandhtml.com/api/health): Runtime service state, version, engine count and paid-mandate configuration state.
+- [Website Evidence Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI crawler access, formal llms.txt v2 verification, Structured Data, Performance Hygiene, Accessibility, Security, Content Trust, Agent Readiness, Conversion and Link Integrity.
+- [Machine-readable product overview](https://htmlandhtml.com/index.md): Clean Markdown overview of the product, evidence boundary and commercial model.
+
+## Engineering guide
+
+- [llms.txt v2 and AI readiness guide](https://htmlandhtml.com/guide.md): Current v2 structure, path-specific discovery, crawler-role separation, evidence classes and release gates.
+- [Methodology and evidence policy](https://htmlandhtml.com/about.md): How HTML&HTML distinguishes measured evidence, standards, vendor policies, proposals, heuristics and deliberate non-claims.
+
+## Developer resources
+
+- [API documentation](https://htmlandhtml.com/api): Human-readable documentation for the scan, formal llms audit, health and paid mandate endpoints.
+- [Formal llms.txt audit API](https://htmlandhtml.com/api/llms): GET or POST endpoint that prefers the most-specific applicable llms.txt, parses its structure and probes declared file-list links.
+- [Full public scan API](https://htmlandhtml.com/api/scan): POST endpoint for the 12-engine evidence report.
+- [Health endpoint](https://htmlandhtml.com/api/health): Runtime engine, registry and llms.txt rule-set health contract.
 
 ## Commercial model
 
-- Free Diagnosis: USD 0. All detected issues, URLs, severity, confidence, source class and evidence are visible.
-- Full Site Fix Mandate: USD 149 for one domain / one engagement. It converts a fresh scan into P0–P3 implementation order, ROOT FIX, RECOVERY, PREVENTION, acceptance/regression tests, rollback and stop conditions.
-- Re-scan: One re-scan within 30 days is included in the commercial scope.
+- [Full Site Fix Mandate](https://htmlandhtml.com/#pricing): USD 149 for one domain / one engagement. A fresh scan is converted into P0–P3 implementation order, ROOT FIX, RECOVERY, PREVENTION, acceptance/falsification and regression tests, rollback and stop conditions.
 
-## Evidence policy
-
-- OFFICIAL_STANDARD: standards or normative platform rules.
-- OFFICIAL_VENDOR: current crawler/product guidance from the relevant vendor.
-- PROPOSAL: emerging proposals such as llms.txt; not presented as ranking requirements.
-- MEASURED: direct HTTP/HTML/header/link evidence.
-- INTERNAL_HEURISTIC: clearly labeled product heuristics.
-- EXPERIMENTAL: optional agent surfaces such as A2A/MCP when applicable.
-
-## Important limitations
+## Important interpretation notes
 
 - 100/100 means only that measured checks passed. It does not guarantee rankings, traffic, sales or AI citations.
-- Public scanning can verify externally visible behavior but cannot reliably name the source file that must change. File-level targeting requires source/codebase context.
-- Reliable field LCP, INP and CLS require field/lab data integration. If unavailable, those metrics remain NOT_MEASURED.
-- The paid mandate endpoint is fail-closed until a secure payment provider and entitlement secret are configured.
+- llms.txt v2 is a proposal. HTML&HTML does not treat its absence as a Google Search ranking failure.
+- Public scanning verifies externally visible behavior but cannot reliably name the source file that must change. File-level targeting requires source/codebase context.
+- Reliable field LCP, INP and CLS require appropriate field/lab evidence. If unavailable, those metrics remain NOT_MEASURED.
+- Search/retrieval crawler controls are evaluated separately from model-training or product-control tokens.
 
-## Languages
+## Optional
 
-- Turkish and English are available on the same canonical application.
+- [llms.txt v2 proposal](https://llmstxt.org/): Upstream proposal used by the versioned formal llms.txt rule set.
+- [HTML&HTML visual guide](https://htmlandhtml.com/guide): Human-readable bilingual guide.
+- [HTML&HTML about](https://htmlandhtml.com/about): Human-readable bilingual methodology page.
