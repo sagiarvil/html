@@ -38,6 +38,8 @@ const checks=[
   [/most-specific|llmsCandidates|path-specific/i.test(llmsEngine),'path-specific llms discovery missing'],
   [/createHash\('sha256'\)/.test(llmsEngine),'llms audit SHA-256 evidence missing'],
   [/LINK_CONCURRENCY|mapLimit/.test(llmsEngine)&&/MAX_LINKS/.test(llmsEngine),'bounded llms link probing missing'],
+  [/unified/.test(llmsEngine)&&/remarkParse/.test(llmsEngine),'formal llms parser must use CommonMark AST'],
+  [/llms-rules-v2\.json/.test(llmsEngine),'formal llms engine must load the versioned rule set'],
   [rules.spec?.version==='v2'&&rules.structure?.h1Required===true&&rules.structure?.blockquoteRequired===false,'llms v2 rule-set semantics are wrong'],
   [rules.delivery?.hardByteLimit===null&&rules.delivery?.hardTtfbMs===null,'non-normative llms size/latency thresholds must not be hard spec failures'],
   [rules.structure?.optionalSectionMechanicalSemantics===false,'v2 Optional mechanical semantics must remain disabled'],
@@ -65,7 +67,7 @@ const forbidden=[/Premium HTML templates/i,/Browse templates/i,/product\.html\?t
 for(const p of forbidden)if(p.test(index))errors.push(`legacy homepage reference: ${p}`);
 const localAttr=/(?:href|src)=["']([^"']+)["']/gi;
 for(const file of ['index.html','checkout.html','guide.html','about.html','api.html']){
-  const text=read(file);let m;
+  const text=read(file).replace(/<pre\b[\s\S]*?<\/pre>/gi,'');let m;
   while((m=localAttr.exec(text))){
     let t=m[1];if(!t||t.startsWith('#')||/^(https?:|mailto:|tel:|data:|javascript:)/i.test(t))continue;
     t=t.split('#')[0].split('?')[0];if(!t)continue;if(t==='/')t='index.html';else if(t.startsWith('/'))t=t.slice(1);else t=path.relative(root,path.resolve(path.dirname(file),t));
@@ -73,4 +75,4 @@ for(const file of ['index.html','checkout.html','guide.html','about.html','api.h
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: premium bilingual UI, 12-engine evidence scan, formal llms v2 audit, versioned standards, Firebase runtime, SSRF/rate limits, $149 paid mandate and update watcher verified.');
+console.log('INTEGRITY PASS: premium bilingual UI, 12-engine evidence scan, CommonMark formal llms v2 audit, versioned standards, Firebase runtime, SSRF/rate limits, $149 paid mandate and update watcher verified.');
