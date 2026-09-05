@@ -77,15 +77,6 @@
       "lastVerified": "2026-09-06"
     },
     {
-      "id": "SCHEMAORG",
-      "class": "OFFICIAL_STANDARD",
-      "publisher": "Schema.org",
-      "title": "Schema.org vocabulary",
-      "url": "https://schema.org/",
-      "appliesTo": ["schema","trust"],
-      "lastVerified": "2026-09-06"
-    },
-    {
       "id": "WCAG22",
       "class": "OFFICIAL_STANDARD",
       "publisher": "W3C",
