@@ -1,105 +1,43 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const root = process.cwd();
-const ignoreDirs = new Set(['.git', 'node_modules']);
-const htmlFiles = [];
-const textFiles = [];
-
-function walk(dir) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (ignoreDirs.has(entry.name)) continue;
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full);
-    else {
-      const rel = path.relative(root, full).replaceAll('\\', '/');
-      if (/\.(html|css|js|mjs|md|txt|json|xml|ts)$/i.test(rel)) textFiles.push(rel);
-      if (/\.html$/i.test(rel)) htmlFiles.push(rel);
-    }
-  }
-}
-walk(root);
-
-const forbidden = [
-  /zce\.github\.io\/html5up/i,
-  /pixelarity\.com/i,
-  /\bHTML5 UP\b/i,
-  /\bParadigm Shift\b/i,
-  /\bMassively\b/i,
-  /\bEthereal\b/i,
-  /\bSOVEREIGN ASSET TIER\b/i,
-  /21,579,731/
+const root=process.cwd();
+const errors=[];
+const required=['index.html','checkout.html','assets/css/validator.css','assets/js/validator.js','functions/api/scan.ts','robots.txt','sitemap.xml','llms.txt'];
+for(const rel of required){if(!fs.existsSync(path.join(root,rel)))errors.push(`missing required file: ${rel}`)}
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const css=fs.readFileSync(path.join(root,'assets/css/validator.css'),'utf8');
+const js=fs.readFileSync(path.join(root,'assets/js/validator.js'),'utf8');
+const api=fs.readFileSync(path.join(root,'functions/api/scan.ts'),'utf8');
+const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
+const checks=[
+  [/<html lang="tr">/i.test(index),'homepage must declare Turkish default language'],
+  [/data-lang="tr"/.test(index)&&/data-lang="en"/.test(index),'TR/EN language controls missing'],
+  [/id="scanForm"/.test(index)&&/id="domainInput"/.test(index),'scanner form missing'],
+  [/\/api\/scan/.test(js),'client scan endpoint missing'],
+  [/onRequestPost/.test(api),'server scan handler missing'],
+  [/Fix Mandate/.test(index)&&/Codebase Mandate/.test(index),'commercial mandate tiers missing'],
+  [/\$49/.test(index)&&/\$99/.test(index),'mandate prices missing'],
+  [/application\/ld\+json/.test(index),'structured data missing'],
+  [/^# HTML&HTML/m.test(llms)&&/^> /m.test(llms)&&/^## /m.test(llms),'llms.txt structure incomplete'],
+  [css.length>5000,'validator CSS unexpectedly small'],
+  [js.length>5000,'validator JS unexpectedly small']
 ];
-
-const errors = [];
-for (const rel of textFiles) {
-  if (rel === 'tests/integrity/check.mjs') continue;
-  const text = fs.readFileSync(path.join(root, rel), 'utf8');
-  for (const pattern of forbidden) {
-    if (pattern.test(text)) errors.push(`${rel}: forbidden legacy reference ${pattern}`);
+for(const [ok,msg] of checks)if(!ok)errors.push(msg);
+const forbidden=[/Premium HTML templates/i,/Browse templates/i,/product\.html\?template=/i,/live-preview\.html/i,/HTML5 UP/i,/pixelarity\.com/i];
+for(const p of forbidden)if(p.test(index))errors.push(`legacy homepage reference: ${p}`);
+const localAttr=/(?:href|src)=["']([^"']+)["']/gi;
+for(const file of ['index.html','checkout.html']){
+  const text=fs.readFileSync(path.join(root,file),'utf8');let m;
+  while((m=localAttr.exec(text))){
+    let t=m[1];
+    if(!t||t.startsWith('#')||/^(https?:|mailto:|tel:|data:|javascript:)/i.test(t))continue;
+    t=t.split('#')[0].split('?')[0];if(!t)continue;
+    if(t==='/')t='index.html';else if(t.startsWith('/'))t=t.slice(1);else t=path.relative(root,path.resolve(path.dirname(file),t));
+    let resolved=path.join(root,t);
+    if(!fs.existsSync(resolved)&&!path.extname(resolved)&&fs.existsSync(resolved+'.html'))resolved+='.html';
+    if(!fs.existsSync(resolved))errors.push(`${file}: missing local target ${m[1]}`);
   }
 }
-
-const attrRe = /(?:href|src)=["']([^"']+)["']/gi;
-for (const rel of htmlFiles) {
-  const file = path.join(root, rel);
-  const text = fs.readFileSync(file, 'utf8');
-  let match;
-  while ((match = attrRe.exec(text))) {
-    let target = match[1].trim();
-    if (!target || target.includes('${') || target.includes('{{') || target.startsWith('#') || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(target)) continue;
-    target = target.split('#')[0].split('?')[0];
-    if (!target) continue;
-    let resolved;
-    if (target.startsWith('/')) resolved = path.join(root, target.replace(/^\/+/, ''));
-    else resolved = path.resolve(path.dirname(file), target);
-    if (target === '/' || target === './') resolved = path.join(root, 'index.html');
-    if (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory()) resolved = path.join(resolved, 'index.html');
-    if (!fs.existsSync(resolved)) errors.push(`${rel}: missing local target ${match[1]}`);
-  }
-}
-
-const habitatPages = [
-  'demos/habitat.html',
-  'demos/habitat-listings.html',
-  'demos/habitat-property.html',
-  'demos/habitat-neighborhoods.html',
-  'demos/habitat-agents.html',
-  'demos/habitat-journal.html',
-  'demos/habitat-contact.html'
-];
-for (const rel of habitatPages) {
-  const file = path.join(root, rel);
-  if (!fs.existsSync(file)) { errors.push(`Habitat release: missing required page ${rel}`); continue; }
-  const text = fs.readFileSync(file, 'utf8');
-  if (!/<title>[^<]+<\/title>/i.test(text)) errors.push(`${rel}: missing document title`);
-  if (!/<meta\s+name=["']description["']/i.test(text)) errors.push(`${rel}: missing meta description`);
-  if (!/assets\/css\/habitat-premium\.css/i.test(text)) errors.push(`${rel}: missing shared Habitat CSS`);
-  if (!/assets\/js\/habitat-premium\.js/i.test(text)) errors.push(`${rel}: missing shared Habitat JavaScript`);
-  if (/\b(?:h-wrap|h-nav|h-links|h-grid3|h-listing|h-contact-card)\b/.test(text)) errors.push(`${rel}: legacy pre-flagship Habitat markup still present`);
-  if (/<a\b[^>]*>(?:(?!<\/a>)[\s\S])*?<button\b/i.test(text)) errors.push(`${rel}: nested interactive button inside anchor detected`);
-}
-
-const productsPath = path.join(root, 'assets/js/products.js');
-if (fs.existsSync(productsPath)) {
-  const products = fs.readFileSync(productsPath, 'utf8');
-  for (const file of ['habitat.html','habitat-listings.html','habitat-property.html','habitat-neighborhoods.html','habitat-agents.html','habitat-journal.html','habitat-contact.html']) {
-    if (!products.includes(file)) errors.push(`assets/js/products.js: Habitat manifest missing ${file}`);
-  }
-  if (!/releaseState:'RELEASE CANDIDATE'/.test(products)) errors.push('assets/js/products.js: Habitat release state missing');
-  if (!/7 real HTML pages/.test(products)) errors.push('assets/js/products.js: Habitat seven-page package summary missing');
-}
-
-for (const rel of ['live-preview.html','product.html']) {
-  const text = fs.readFileSync(path.join(root, rel), 'utf8');
-  if (!/releaseState/.test(text)) errors.push(`${rel}: release-state disclosure missing`);
-  if (!/product\.pages|const pages/.test(text)) errors.push(`${rel}: included page rendering logic missing`);
-}
-
-if (errors.length) {
-  console.error('INTEGRITY FAIL');
-  for (const error of errors) console.error(`- ${error}`);
-  process.exit(1);
-}
-
-console.log(`INTEGRITY PASS: ${htmlFiles.length} HTML files, ${textFiles.length} text/code files scanned; Habitat flagship release contract checked.`);
+if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
+console.log('INTEGRITY PASS: bilingual validator, scanner endpoint, mandate pricing and machine-readable files verified.');

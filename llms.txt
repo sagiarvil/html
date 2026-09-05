@@ -1,35 +1,25 @@
-# HTML&HTML — Premium HTML Templates
+# HTML&HTML
 
-> Canonical site: https://htmlandhtml.com/
-> Product model: premium HTML5/CSS3/Vanilla JavaScript templates
-> Typical price range: USD 9–29
-> Primary buyers: freelancers, small agencies, independent developers, businesses and AI-assisted builders
+> HTML&HTML is a bilingual website fix validator and AI implementation mandate platform. It scans public website signals, prioritizes technical findings, and turns them into implementation-ready instructions for AI coding agents.
 
-## What HTML&HTML sells
-HTML&HTML produces original, vertical-specific website templates built with semantic HTML5, modern CSS and lightweight Vanilla JavaScript. The default product does not require React, Vue, WordPress, Shopify or another framework.
+## Core product
 
-## Current catalog
-- Ledger — Financial Advisor — $19
-- Counsel — Law Firm — $19
-- Habitat — Real Estate — $24
-- Clinic — Medical Practice — $19
-- Table — Restaurant — $14
-- Launchpad — AI / SaaS — $19
+- [Website Fix Validator](https://htmlandhtml.com/): Free public scan for technical SEO, AI/GEO readiness, structured data, robots.txt, sitemap.xml, llms.txt, baseline security headers and selected structural signals.
+- Fix Mandate: A site-specific implementation contract containing evidence, priority, target state, implementation instructions, acceptance criteria, regression tests, rollback rules and stop conditions.
+- Codebase Mandate: A source-aware version that can target files, components, dependencies and regression surfaces when codebase access is available.
 
-## Product principles
-- clean source and low dependency count
-- responsive design across documented viewport checks
-- accessibility-aware interaction patterns
-- centralized design tokens
-- AI-friendly customization guidance
-- commercially original implementation
-- truthful verification: no performance, accessibility, browser or device claim without evidence
+## Pricing
 
-## Public routes
-- Homepage and catalog: https://htmlandhtml.com/
-- Architecture: https://htmlandhtml.com/architecture.html
-- Licensing: https://htmlandhtml.com/licensing.html
-- Live preview shell: https://htmlandhtml.com/live-preview.html
+- Free Scan: USD 0.
+- Fix Mandate: USD 49 one-time.
+- Codebase Mandate: USD 99 one-time.
 
-## Verification status
-The current catalog rebuild is IMPLEMENTATION COMPLETE — VERIFICATION PENDING until required runtime, responsive, accessibility and performance checks have executed and evidence has been stored.
+## Important limitations
+
+- A 100/100 validator score means the measured checks passed; it does not guarantee Google rankings, traffic, AI citations or commercial results.
+- Public scanning can verify externally visible behavior but cannot reliably identify the source file that must change. File-level fixes require codebase context.
+- The service does not collect payment card information until a production payment provider is connected.
+
+## Languages
+
+- Turkish and English are available on the same canonical application.
