@@ -1,7 +1,7 @@
 import {onRequest} from 'firebase-functions/v2/https';
 import {runScan} from './scan-engine';
 
-const common={region:'us-central1' as const,timeoutSeconds:120,memory:'512MiB' as const,cors:false};
+const common={region:'us-central1' as const,timeoutSeconds:120,memory:'512MiB' as const,cors:false,invoker:'public' as const};
 function harden(res:any){res.set('Cache-Control','no-store');res.set('X-Content-Type-Options','nosniff')}
 
 export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},async(req,res)=>{
