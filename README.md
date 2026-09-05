@@ -1,43 +1,61 @@
-# HTML&HTML — Website Fix Validator
+# HTML&HTML — 12-Engine Website Fix Validator
 
-HTML&HTML is a bilingual (TR/EN) website validation and implementation-mandate product.
+HTML&HTML is a bilingual TR/EN website diagnosis and implementation-mandate product.
 
-## Product flow
+## Product contract
 
 1. User enters a public domain or URL.
-2. `/api/scan` inspects externally verifiable website signals.
-3. The UI returns five scores plus prioritized findings.
-4. A paid Fix Mandate turns findings into an AI-agent implementation contract.
-5. Codebase Mandate adds source-aware file/component targeting when code access exists.
+2. `/api/scan` applies DNS/redirect SSRF gates and scans up to 25 public HTML pages plus machine-readable surfaces.
+3. Twelve deterministic engines return all findings, URLs, severity, confidence, evidence class and measured evidence for free.
+4. Free results never expose implementation instructions and never invent source-file paths.
+5. `/api/mandate` re-scans the same domain and converts valid findings into an implementation contract only after paid entitlement verification.
+6. Full Site Fix Mandate is USD 149 for one domain / one engagement, with one re-scan within 30 days in the commercial scope.
 
-## Current checks
+## Twelve engines
 
-- HTTP/HTML availability
-- title and meta description
-- H1 hierarchy
-- canonical
-- HTML language
-- viewport
-- JSON-LD presence
-- robots meta
-- `/robots.txt`
-- `/sitemap.xml`
-- `/llms.txt`
-- HSTS, nosniff, CSP, referrer policy
+- Crawl & Index
+- Technical SEO
+- AI / GEO crawler access
+- llms.txt v2 proposal checks
+- Structured Data
+- Performance Hygiene
+- Accessibility
+- Security Baseline
+- Content Trust
+- Agent Readiness
+- Conversion
+- Link Integrity
 
-## Commercial tiers
+## Evidence model
 
-- Free Scan — $0
-- Fix Mandate — $49 one-time
-- Codebase Mandate — $99 one-time
+Each finding contains a stable issue ID plus severity, confidence and evidence class:
 
-Payment processing is intentionally not active until a production payment provider is connected.
+- `OFFICIAL_STANDARD`
+- `OFFICIAL_VENDOR`
+- `PROPOSAL`
+- `MEASURED`
+- `INTERNAL_HEURISTIC`
+- `EXPERIMENTAL`
 
-## Runtime
+Field LCP/INP/CLS are not inferred from HTML. Without reliable CrUX/PageSpeed integration they remain `NOT_MEASURED`.
 
-- Static HTML/CSS/JS frontend
-- Cloudflare Pages Function: `functions/api/scan.ts`
-- No framework dependency
+## Runtime safety
+
+- fail-closed DNS resolution before target fetch
+- private/reserved IP rejection
+- non-standard port rejection
+- redirect re-validation on every hop
+- response body limit
+- request timeout
+- bounded pages and link probes
+- no secret/token logging
+- API responses use `no-store`
+
+## Paid mandate gate
+
+`functions/api/mandate.ts` requires `MANDATE_ACCESS_TOKEN`. If the entitlement secret is absent it returns HTTP 503; an invalid/missing entitlement returns HTTP 402. No payment provider credentials are committed to the repository.
+
+The external payment provider is intentionally not simulated. Production charging must remain disabled until a real provider and entitlement issuance flow are configured.
 
 ## Local development
 
@@ -54,10 +72,8 @@ npm test
 
 ## Deployment
 
-Cloudflare Pages:
-
 ```bash
 npm run pages:deploy
 ```
 
-The canonical production repository is `sagiarvil/html`.
+Canonical production repository: `sagiarvil/html`.
