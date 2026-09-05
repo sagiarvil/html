@@ -1,46 +1,28 @@
 {
   "hosting": {
     "public": ".",
-    "ignore": [
-      "firebase.json",
-      ".firebaserc",
-      "**/.*",
-      "**/node_modules/**",
-      "wrangler.jsonc",
-      "package*.json",
-      "functions/**",
-      "scripts/**"
-    ],
+    "ignore": ["firebase.json", ".firebaserc", "**/.*", "**/node_modules/**", "wrangler.jsonc", "package*.json", "functions/**", "scripts/**", "tests/**"],
     "cleanUrls": true,
     "trailingSlash": false,
     "headers": [
-      {
-        "source": "**",
-        "headers": [
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
-          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-          { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
-          { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
-        ]
-      },
-      {
-        "source": "/assets/**",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=604800" },
-          { "key": "Access-Control-Allow-Origin", "value": "*" }
-        ]
-      }
+      {"source":"**","headers":[
+        {"key":"X-Content-Type-Options","value":"nosniff"},
+        {"key":"X-Frame-Options","value":"SAMEORIGIN"},
+        {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},
+        {"key":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains; preload"},
+        {"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"}
+      ]},
+      {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
+      {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"}]}
     ],
     "redirects": [
-      { "source": "/index.html", "destination": "/", "type": 301 },
-      { "source": "/home", "destination": "/", "type": 301 },
-      { "source": "/products", "destination": "/#catalog", "type": 301 },
-      { "source": "/products.html", "destination": "/#catalog", "type": 301 },
-      { "source": "/pricing", "destination": "/#catalog", "type": 301 },
-      { "source": "/docs", "destination": "/architecture", "type": 301 },
-      { "source": "/terms", "destination": "/licensing", "type": 301 },
-      { "source": "/license", "destination": "/licensing", "type": 301 }
+      {"source":"/index.html","destination":"/","type":301},
+      {"source":"/home","destination":"/","type":301},
+      {"source":"/products","destination":"/#pricing","type":301},
+      {"source":"/products.html","destination":"/#pricing","type":301},
+      {"source":"/pricing","destination":"/#pricing","type":302},
+      {"source":"/architecture","destination":"/#how","type":301},
+      {"source":"/preview","destination":"/","type":301}
     ]
   }
 }
