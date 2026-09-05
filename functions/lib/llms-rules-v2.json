@@ -1,0 +1,65 @@
+{
+  "ruleSetId": "llms-v2-2026-08-10",
+  "spec": {
+    "name": "llms.txt",
+    "version": "v2",
+    "modified": "2026-08-10",
+    "source": "https://llmstxt.org/",
+    "changes": "https://llmstxt.org/changes.html",
+    "status": "PROPOSAL"
+  },
+  "discovery": {
+    "pathSpecific": true,
+    "mostSpecificWins": true,
+    "describedbyRecommended": true,
+    "markdownAlternateRecommended": true,
+    "markdownUrlForms": ["append-.md", "replace-extension-with-.md"]
+  },
+  "structure": {
+    "h1Required": true,
+    "h1ExactlyOne": true,
+    "blockquoteRequired": false,
+    "blockquoteRecommended": true,
+    "preH2HeadingsAllowed": false,
+    "h2SectionsAreFileLists": true,
+    "fileListItemRequiresMarkdownLink": true,
+    "optionalSectionMechanicalSemantics": false
+  },
+  "delivery": {
+    "preferredContentTypes": ["text/markdown", "text/plain", "text/x-markdown"],
+    "utf8Expected": true,
+    "hardByteLimit": null,
+    "hardTtfbMs": null
+  },
+  "linkProbe": {
+    "maxLinks": 250,
+    "concurrency": 8,
+    "timeoutMs": 7000,
+    "maxRedirects": 4,
+    "successMin": 200,
+    "successMax": 299,
+    "headFallbackStatuses": [403, 405, 501]
+  },
+  "scoring": {
+    "class": "INTERNAL_HEURISTIC",
+    "weights": {
+      "structure": 35,
+      "links": 40,
+      "quality": 25
+    },
+    "blockingSpecFailureCap": 49,
+    "verdicts": [
+      {"min": 90, "label": "EXCELLENT"},
+      {"min": 70, "label": "GOOD"},
+      {"min": 50, "label": "NEEDS_IMPROVEMENT"},
+      {"min": 0, "label": "CRITICAL"}
+    ]
+  },
+  "nonNormativeNotes": {
+    "yamlFrontmatter": "Observed only; v2 does not explicitly prohibit it.",
+    "htmlMarkup": "Observed only; do not call it a spec violation without a normative source.",
+    "fileSize": "v2 says the file should remain small enough for context but provides no fixed byte threshold.",
+    "ttfb": "Operational telemetry only; v2 provides no fixed response-time SLA.",
+    "llmsFullTxt": "Do not treat llms-full.txt as a required v2 surface."
+  }
+}
