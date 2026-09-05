@@ -1,4 +1,4 @@
-/** HTML&HTML canonicalization and security headers. */
+/** HTML&HTML canonicalization, discovery and security headers. */
 interface Env { ASSETS: { fetch: typeof fetch }; }
 export const onRequest: PagesFunction<Env> = async (context) => {
   const { request, next } = context;
@@ -13,6 +13,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   headers.set('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
   headers.set('Permissions-Policy','camera=(), microphone=(), geolocation=()');
   headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'");
-  if (url.pathname === '/llms.txt') { headers.set('Content-Type','text/markdown; charset=utf-8'); headers.set('Access-Control-Allow-Origin','*'); }
+  if (url.pathname === '/' || url.pathname === '/index.html') headers.set('Link','</llms.txt>; rel="describedby", </index.md>; rel="alternate"; type="text/markdown"');
+  if (url.pathname === '/llms.txt' || url.pathname === '/index.md') { headers.set('Content-Type','text/markdown; charset=utf-8'); headers.set('Access-Control-Allow-Origin','*'); }
+  if (url.pathname.startsWith('/api/')) headers.set('Cache-Control','no-store, max-age=0');
   return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
 };
