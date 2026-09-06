@@ -85,25 +85,8 @@
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><i>→</i></button>
       </div>
-      <div class="scan-chips">
-        <span>Examples:</span>
-        <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
-        <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
-        <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
-      </div>
-      <small data-i18n="scanHint">No signup. No secrets. Only public URLs and HTTP surfaces are measured.</small>
     </form>
-    <div id="scanStatus" class="status" hidden></div>
-  </div>
-
-  <div class="signals">
-    <span data-i18n="sigCrawl">CRAWL</span><i></i>
-    <span>SEO</span><i></i>
-    <span>AI / GEO</span><i></i>
-    <span>LLMS V2</span><i></i>
-    <span data-i18n="sigSchema">STRUCTURED DATA</span><i></i>
-    <span data-i18n="sigA11y">ACCESSIBILITY</span><i></i>
-    <span data-i18n="sigSecurity">SECURITY</span>
+    <div id="scanStatus" class="status" hidden style="display:none"></div>
   </div>
 </section>
 

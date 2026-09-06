@@ -85,25 +85,8 @@
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><i>→</i></button>
       </div>
-      <div class="scan-chips">
-        <span>Örnekler:</span>
-        <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
-        <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
-        <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
-      </div>
-      <small data-i18n="scanHint">Kayıt yok. Secret alınmaz. Yalnızca herkese açık URL ve HTTP yüzeyleri ölçülür.</small>
     </form>
-    <div id="scanStatus" class="status" hidden></div>
-  </div>
-
-  <div class="signals">
-    <span data-i18n="sigCrawl">TARAMA</span><i></i>
-    <span>SEO</span><i></i>
-    <span>AI / GEO</span><i></i>
-    <span>LLMS V2</span><i></i>
-    <span data-i18n="sigSchema">YAPISAL VERİ</span><i></i>
-    <span data-i18n="sigA11y">ERİŞİLEBİLİRLİK</span><i></i>
-    <span data-i18n="sigSecurity">GÜVENLİK</span>
+    <div id="scanStatus" class="status" hidden style="display:none"></div>
   </div>
 </section>
 

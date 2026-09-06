@@ -1368,140 +1368,129 @@ html[data-theme="dark"] .px-value-strip > div:hover {
   to { transform: rotate(360deg); }
 }
 
-/* ULTRA-PREMIUM SCANNING TELEMETRY BOX & LIVE PROGRESS ENGINE */
-#scanStatus.status-telemetry {
+/* ==========================================================================
+   SCAN PROGRESS ENGINE & TELEMETRY COUNTER WIDGET
+   ========================================================================== */
+.scan-progress-widget {
   display: flex !important;
   flex-direction: column !important;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
-  gap: 12px !important;
-  padding: 18px 24px !important;
-  border: 1px solid rgba(56, 189, 248, 0.5) !important;
-  border-radius: 18px !important;
-  background: linear-gradient(135deg, rgba(11, 15, 26, 0.98) 0%, rgba(18, 24, 40, 0.98) 100%) !important;
-  box-shadow: 0 12px 40px -8px rgba(0, 102, 255, 0.4), 0 0 24px -4px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  gap: 10px !important;
+  width: 100% !important;
   text-align: left !important;
-  animation: telemetryPulse 2.5s ease-in-out infinite alternate !important;
+  padding: 2px 0 !important;
 }
 
-@keyframes telemetryPulse {
-  0% { border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 12px 40px -8px rgba(0, 102, 255, 0.35); }
-  100% { border-color: rgba(139, 92, 246, 0.55); box-shadow: 0 12px 48px -6px rgba(139, 92, 246, 0.4); }
-}
-
-.telemetry-row-top {
+.scan-progress-head {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  width: 100% !important;
   gap: 12px !important;
 }
 
-.telemetry-label {
+.scan-progress-title {
   display: inline-flex !important;
   align-items: center !important;
   gap: 10px !important;
-  font-size: 14.5px !important;
-  font-weight: 750 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
   color: #ffffff !important;
   letter-spacing: -0.01em !important;
 }
 
-.telemetry-pulse-dot {
-  position: relative !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  background: #38bdf8 !important;
-  box-shadow: 0 0 12px #38bdf8 !important;
-  flex-shrink: 0 !important;
-}
-.telemetry-pulse-dot::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: -4px !important;
-  border-radius: 50% !important;
-  border: 1.5px solid #38bdf8 !important;
-  animation: telemetryRadarRing 1.5s ease-out infinite !important;
-}
-@keyframes telemetryRadarRing {
-  0% { transform: scale(0.6); opacity: 1; }
-  100% { transform: scale(2.2); opacity: 0; }
-}
-
-.telemetry-metrics-badge {
+.scan-counter-badge {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 2px !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(56, 189, 248, 0.16) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  color: #38bdf8 !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
   font-size: 12.5px !important;
   font-weight: 800 !important;
-  color: #38bdf8 !important;
-  background: rgba(56, 189, 248, 0.12) !important;
-  border: 1px solid rgba(56, 189, 248, 0.3) !important;
-  padding: 3px 10px !important;
-  border-radius: 999px !important;
-  letter-spacing: 0.04em !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.3) !important;
 }
 
-.telemetry-track {
+.scan-counter-badge b {
+  font-size: 13.5px !important;
+  color: #ffffff !important;
+}
+
+.scan-progress-track {
   width: 100% !important;
   height: 8px !important;
   background: rgba(255, 255, 255, 0.08) !important;
   border-radius: 999px !important;
   overflow: hidden !important;
   position: relative !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7) !important;
 }
 
-.telemetry-fill {
+.scan-progress-fill {
   height: 100% !important;
   width: 8% !important;
-  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 30%, #8b5cf6 65%, #10b981 100%) !important;
   border-radius: 999px !important;
-  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  position: relative !important;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.75) !important;
+  background: linear-gradient(90deg, #0066ff 0%, #38bdf8 35%, #8b5cf6 70%, #10b981 100%) !important;
+  background-size: 200% 100% !important;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.75), 0 0 4px rgba(255, 255, 255, 0.9) !important;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: progressGlow 1.6s ease-in-out infinite alternate, progressShimmer 2.2s linear infinite !important;
 }
 
-.telemetry-fill::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 28px !important;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent) !important;
-  animation: telemetryLaserSweep 1.2s ease-in-out infinite !important;
-}
-@keyframes telemetryLaserSweep {
-  0% { transform: translateX(-35px); }
-  100% { transform: translateX(35px); }
+@keyframes progressShimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
-.telemetry-row-bottom {
+@keyframes progressGlow {
+  0% { filter: brightness(1) drop-shadow(0 0 6px rgba(56, 189, 248, 0.4)); }
+  100% { filter: brightness(1.25) drop-shadow(0 0 14px rgba(56, 189, 248, 0.85)); }
+}
+
+.scan-telemetry-row {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  width: 100% !important;
-  font-size: 12.5px !important;
-  color: #cbd5e1 !important;
-  flex-wrap: wrap !important;
-  gap: 8px !important;
-}
-
-.telemetry-phase-text {
-  color: #e2e8f0 !important;
-  font-weight: 600 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-}
-
-.telemetry-engine-stats {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  gap: 10px !important;
   font-size: 11.5px !important;
   color: #94a3b8 !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+.scan-live-probe {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.scan-probe-pulse {
+  display: inline-block !important;
+  width: 6.5px !important;
+  height: 6.5px !important;
+  border-radius: 50% !important;
+  background: #10b981 !important;
+  box-shadow: 0 0 8px #10b981, 0 0 2px #ffffff !important;
+  animation: probeBlink 0.9s ease-in-out infinite alternate !important;
+  flex-shrink: 0 !important;
+}
+
+@keyframes probeBlink {
+  0% { opacity: 0.35; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1.15); box-shadow: 0 0 12px #10b981; }
+}
+
+.scan-engine-stat {
+  font-weight: 700 !important;
+  color: #38bdf8 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 /* ==========================================================================
