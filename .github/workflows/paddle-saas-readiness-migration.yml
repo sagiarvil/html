@@ -1,0 +1,52 @@
+name: paddle-saas-readiness-migration
+
+on:
+  push:
+    branches:
+      - paddle-saas-readiness-20260906
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paddle-saas-readiness-migration
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    if: github.actor != 'htmlandhtml-readiness-bot'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: paddle-saas-readiness-20260906
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Materialize Paddle SaaS readiness and clean raw sources
+        run: python3 scripts/prepare_paddle_saas.py
+      - name: Verify raw source contract
+        run: python3 scripts/assert_source_contract.py
+      - name: Verify Paddle domain-review surfaces
+        run: node tests/integrity/paddle-readiness.test.mjs
+      - name: Verify LLMS.TXT News existing editorial contract
+        run: node tests/integrity/llms-news.test.mjs
+      - name: Commit deterministic migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo 'No migration changes required.'
+            exit 0
+          fi
+          git config user.name 'htmlandhtml-readiness-bot'
+          git config user.email 'htmlandhtml-readiness-bot@users.noreply.github.com'
+          git add -A
+          git commit -m 'release: normalize $99 SaaS source and Paddle review surfaces'
+          git push origin HEAD:paddle-saas-readiness-20260906
