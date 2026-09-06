@@ -3,8 +3,8 @@ export const GUEST_PRODUCT='AI_VISIBILITY_IMPLEMENTATION_BLUEPRINT' as const;
 export type GuestEntitlementClaims={v:typeof GUEST_ENTITLEMENT_VERSION;product:typeof GUEST_PRODUCT;domain:string;exp:number;issuedAt:number;nonce:string};
 
 const enc=new TextEncoder();
-function b64url(bytes:Uint8Array){let s='';for(const b of bytes)s+=String.fromCharCode(b);const b64=typeof btoa==='function'?btoa(s):Buffer.from(bytes).toString('base64');return b64.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
-function unb64url(v:string){const p=v.replace(/-/g,'+').replace(/_/g,'/');const pad=p+'='.repeat((4-p.length%4)%4);const raw=typeof atob==='function'?atob(pad):Buffer.from(pad,'base64').toString('binary');return Uint8Array.from(raw,c=>c.charCodeAt(0))}
+function b64url(bytes:Uint8Array){let s='';for(const b of bytes)s+=String.fromCharCode(b);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+function unb64url(v:string){const p=v.replace(/-/g,'+').replace(/_/g,'/');const pad=p+'='.repeat((4-p.length%4)%4);const raw=atob(pad);return Uint8Array.from(raw,c=>c.charCodeAt(0))}
 function canonicalHost(v:string){try{const u=new URL(/^https?:\/\//i.test(v)?v:`https://${v}`);return u.hostname.toLowerCase().replace(/^www\./,'')}catch{return v.toLowerCase().replace(/^www\./,'').split('/')[0].split(':')[0]}}
 async function key(secret:string,usage:KeyUsage[]){return crypto.subtle.importKey('raw',enc.encode(secret),{name:'HMAC',hash:'SHA-256'},false,usage)}
 
