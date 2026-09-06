@@ -120,7 +120,7 @@ def build_homepages():
       <button class="active" data-mode="domain" data-i18n="tabDomain">Alan adı tara</button>
       <button data-mode="url" data-i18n="tabUrl">Tam URL tara</button>
     </div>
-    <form id="scanForm">
+    <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="ornek.com" required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Tara</b><i>→</i></button>
@@ -473,7 +473,7 @@ def build_homepages():
       <button class="active" data-mode="domain">Scan a domain</button>
       <button data-mode="url">Scan a full URL</button>
     </div>
-    <form id="scanForm">
+    <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="example.com" required>
         <button id="scanButton" type="submit"><b>Scan Free</b><i>→</i></button>

@@ -73,7 +73,7 @@
       <button class="active" data-mode="domain">Scan a domain</button>
       <button data-mode="url">Scan a full URL</button>
     </div>
-    <form id="scanForm">
+    <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="example.com" required>
         <button id="scanButton" type="submit"><b>Check Free</b><i>→</i></button>
