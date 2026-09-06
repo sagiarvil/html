@@ -6,6 +6,7 @@ const files=[
   ['scan-request.ts','scan-request.ts'],
   ['mention-engine.ts','mention-engine.ts'],
   ['remediation-engine.ts','remediation-engine.ts'],
+  ['remediation-engine-v2.ts','remediation-engine-v2.ts'],
   ['intelligence-engine.ts','intelligence-engine.ts']
 ];
 for(const [sourceName,targetName] of files){
