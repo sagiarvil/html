@@ -32,6 +32,7 @@ jobs:
       - name: Materialize Paddle SaaS readiness and clean raw sources
         run: |
           python3 scripts/prepare_paddle_saas.py
+          python3 scripts/finalize_llms_news_workflow.py
           python3 scripts/patch_paddle_nav.py
           python3 scripts/build_llms_news.py
       - name: Verify raw source contract
