@@ -120,14 +120,18 @@ html[data-theme="dark"] {
 }
 
 /* --------------------------------------------------------------------------
-   02. BASE BODY & CORE TYPOGRAPHY
+   02. BASE BODY & CORE TYPOGRAPHY (APPLE.COM STANDARD SYSTEM)
    -------------------------------------------------------------------------- */
 body {
   background-color: var(--bg) !important;
   color: var(--fg) !important;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.4705882353 !important;
+  letter-spacing: -0.022em !important;
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
   text-rendering: optimizeLegibility;
   margin: 0;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -135,11 +139,32 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--fg) !important;
-  letter-spacing: -0.025em;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+h1 {
+  letter-spacing: -0.035em !important;
+  line-height: 1.0625 !important;
+}
+
+h2 {
+  letter-spacing: -0.03em !important;
+  line-height: 1.125 !important;
+}
+
+h3 {
+  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
 }
 
 p, li {
   color: var(--fg-soft);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.022em;
+}
+
+button, input, textarea, select {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 a {
@@ -309,24 +334,31 @@ html[data-theme="dark"] .topbar {
 }
 
 /* --------------------------------------------------------------------------
-   04. SCANNER AREA & FORM CONTROLS (ZERO CLIPPING ENGINE)
+   04. SCANNER AREA & FORM CONTROLS (LLMS-TXT-VALIDATOR BLUE BORDER & NO ISLAND)
    -------------------------------------------------------------------------- */
 .scanbox {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 20px !important;
-  box-shadow: var(--shadow) !important;
-  padding: 20px 24px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: min(760px, 100%) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
 }
 
 .scanbox .tabs {
   display: inline-flex;
   gap: 4px;
-  background: var(--bg-soft);
+  background: rgba(0, 0, 0, 0.05);
   padding: 4px;
   border-radius: 999px;
   border: 1px solid var(--line);
   margin-bottom: 16px;
+}
+html[data-theme="dark"] .scanbox .tabs {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 .scanbox .tabs button {
   border: 0 !important;
@@ -337,6 +369,7 @@ html[data-theme="dark"] .topbar {
   padding: 6px 16px !important;
   border-radius: 999px !important;
   cursor: pointer !important;
+  font-family: inherit !important;
 }
 .scanbox .tabs button.active {
   background: var(--bg-card) !important;
@@ -348,27 +381,41 @@ html[data-theme="dark"] .topbar {
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
-  background: var(--bg-soft) !important;
-  border: 1px solid var(--line-strong) !important;
+  background: #ffffff !important;
+  border: 2px solid #0066ff !important;
   border-radius: 999px !important;
-  padding: 6px 6px 6px 18px !important;
+  padding: 6px 6px 6px 24px !important;
+  min-height: 62px !important;
+  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.3), 0 0 24px rgba(0, 102, 255, 0.22) !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  text-align: left !important;
+}
+html[data-theme="dark"] .scanbox .field {
+  background: #0a0b0e !important;
+  border: 2px solid #0066ff !important;
+  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.35), 0 0 24px rgba(0, 102, 255, 0.25) !important;
 }
 .scanbox .field:focus-within {
-  border-color: var(--accent) !important;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+  border-color: #0066ff !important;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.35), 0 0 32px rgba(0, 102, 255, 0.35) !important;
 }
 .scanbox .field input {
   flex: 1 1 auto !important;
   min-width: 0 !important;
   border: 0 !important;
   background: transparent !important;
-  color: var(--fg) !important;
-  font-size: 16px !important;
+  color: #0f172a !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 17px !important;
+  letter-spacing: -0.022em !important;
   outline: none !important;
 }
+html[data-theme="dark"] .scanbox .field input {
+  color: #ffffff !important;
+}
 .scanbox .field input::placeholder {
-  color: var(--fg-dim) !important;
+  color: #94a3b8 !important;
+  opacity: 0.85 !important;
 }
 
 /* Compact, unclipped high-contrast button */
@@ -379,25 +426,28 @@ html[data-theme="dark"] .topbar {
   max-width: 220px !important;
   white-space: nowrap !important;
   border: 0 !important;
-  background: var(--accent) !important;
+  background: #0066ff !important;
   color: #ffffff !important;
-  font-size: 14px !important;
-  font-weight: 750 !important;
-  padding: 0 22px !important;
-  height: 48px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  padding: 0 24px !important;
+  height: 50px !important;
   border-radius: 999px !important;
   cursor: pointer !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
-  transition: transform 0.15s ease, filter 0.15s ease !important;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35) !important;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease !important;
 }
 .scanbox .field button:hover,
 #scanButton:hover {
-  filter: brightness(1.1) !important;
+  filter: brightness(1.08) !important;
   transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.45) !important;
 }
 
 .scan-chips {

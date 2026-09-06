@@ -13,7 +13,7 @@ const PADDLE_API_KEY=defineSecret('PADDLE_API_KEY');
 const PADDLE_WEBHOOK_SECRET=defineSecret('PADDLE_WEBHOOK_SECRET');
 const DELIVERY_SIGNING_SECRET=defineSecret('DELIVERY_SIGNING_SECRET');
 
-const common={region:'us-central1' as const,timeoutSeconds:120,memory:'512MiB' as const,cors:false,invoker:'public' as const,maxInstances:10};
+const common={region:'us-central1' as const,timeoutSeconds:120,memory:'256MiB' as const,cors:false,invoker:'public' as const,maxInstances:2};
 function harden(res:any){res.set('Cache-Control','no-store');res.set('X-Content-Type-Options','nosniff')}
 const mentionCfg=()=>({openaiApiKey:process.env.OPENAI_API_KEY,perplexityApiKey:process.env.PERPLEXITY_API_KEY,geminiApiKey:process.env.GEMINI_API_KEY});
 

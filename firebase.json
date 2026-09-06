@@ -45,15 +45,15 @@
       {"source":"/sources.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]}
     ],
     "rewrites": [
-      {"source":"/api/health","function":{"functionId":"health","region":"us-central1","pinTag":true}},
-      {"source":"/api/scan","function":{"functionId":"scan","region":"us-central1","pinTag":true}},
-      {"source":"/api/intelligence","function":{"functionId":"intelligence","region":"us-central1","pinTag":true}},
-      {"source":"/api/mandate","function":{"functionId":"mandate","region":"us-central1","pinTag":true}},
-      {"source":"/api/delivery","function":{"functionId":"delivery","region":"us-central1","pinTag":true}},
-      {"source":"/api/mentions","function":{"functionId":"mentions","region":"us-central1","pinTag":true}},
-      {"source":"/api/paddle/config","function":{"functionId":"paddleConfig","region":"us-central1","pinTag":true}},
-      {"source":"/api/paddle/entitlement","function":{"functionId":"paddleEntitlement","region":"us-central1","pinTag":true}},
-      {"source":"/api/paddle/webhook","function":{"functionId":"paddleWebhook","region":"us-central1","pinTag":true}}
+      {"source":"/api/health","function":{"functionId":"health","region":"us-central1"}},
+      {"source":"/api/scan","function":{"functionId":"scan","region":"us-central1"}},
+      {"source":"/api/intelligence","function":{"functionId":"intelligence","region":"us-central1"}},
+      {"source":"/api/mandate","function":{"functionId":"mandate","region":"us-central1"}},
+      {"source":"/api/delivery","function":{"functionId":"delivery","region":"us-central1"}},
+      {"source":"/api/mentions","function":{"functionId":"mentions","region":"us-central1"}},
+      {"source":"/api/paddle/config","function":{"functionId":"paddleConfig","region":"us-central1"}},
+      {"source":"/api/paddle/entitlement","function":{"functionId":"paddleEntitlement","region":"us-central1"}},
+      {"source":"/api/paddle/webhook","function":{"functionId":"paddleWebhook","region":"us-central1"}}
     ],
     "redirects": [
       {"source":"/favicon.ico","destination":"/favicon.svg","type":302},
