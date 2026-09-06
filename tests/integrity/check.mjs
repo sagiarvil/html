@@ -3,13 +3,14 @@ import path from 'node:path';
 
 const root=process.cwd();
 const errors=[];
-const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/js/validator.js','functions/api/scan.ts','functions/lib/scan-engine.ts','functions/api/mandate.ts','robots.txt','sitemap.xml','llms.txt'];
+const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/js/validator.js','functions/api/scan.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/api/mandate.ts','robots.txt','sitemap.xml','llms.txt'];
 for(const rel of required){if(!fs.existsSync(path.join(root,rel)))errors.push(`missing required file: ${rel}`)}
 const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(root,'assets/css/validator-base.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/validator-v2.css'),'utf8');
 const js=fs.readFileSync(path.join(root,'assets/js/validator.js'),'utf8');
 const api=fs.readFileSync(path.join(root,'functions/api/scan.ts'),'utf8');
 const engine=fs.readFileSync(path.join(root,'functions/lib/scan-engine.ts'),'utf8');
+const request=fs.readFileSync(path.join(root,'functions/lib/scan-request.ts'),'utf8');
 const mandate=fs.readFileSync(path.join(root,'functions/api/mandate.ts'),'utf8');
 const checkout=fs.readFileSync(path.join(root,'checkout.html'),'utf8');
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
@@ -19,7 +20,8 @@ const checks=[
   [/data-lang="tr"/.test(index)&&/data-lang="en"/.test(index),'TR/EN language controls missing'],
   [/id="scanForm"/.test(index)&&/id="domainInput"/.test(index),'scanner form missing'],
   [/\/api\/scan/.test(js),'client scan endpoint missing'],
-  [/runScan/.test(api),'server scan handler must use shared engine'],
+  [/runFriendlyScan/.test(api)&&/runScan/.test(request),'server scan handler must use shared engine through normalization wrapper'],
+  [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
   [/FULL SITE FIX MANDATE/i.test(index)&&/\$149/.test(index),'single $149 mandate positioning missing'],
   [!/\$49|\$99/.test(index),'legacy mandate prices still present'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
@@ -57,4 +59,4 @@ for(const file of ['index.html','checkout.html']){
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: 12-engine free diagnosis, evidence boundary, SSRF controls, $149 paid mandate gate and machine-readable surfaces verified.');
+console.log('INTEGRITY PASS: 12-engine free diagnosis, resilient domain normalization, evidence boundary, SSRF controls, $149 paid mandate gate and machine-readable surfaces verified.');
