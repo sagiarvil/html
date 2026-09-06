@@ -46,3 +46,8 @@ The paid mandate endpoint remains fail-closed until a production payment provide
 ## Important limits
 
 A 100/100 score means only that the measured checks passed. It does not guarantee search rankings, traffic, sales, Google AI visibility or citations by any AI system. llms.txt and A2A/MCP signals are labeled according to their actual status as proposal or experimental capability rather than being presented as ranking requirements.
+
+## AI Mention Tracker
+- [Turkish AI Mention Tracker](/tr/ai-mention-tracker/)
+- [English AI Mention Tracker](/en/ai-mention-tracker/)
+- Neutral prompts only: target brand/domain in a measurement prompt is rejected.
