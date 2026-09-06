@@ -32,9 +32,10 @@ jobs:
       - name: Materialize Paddle SaaS readiness and clean raw sources
         run: |
           python3 scripts/prepare_paddle_saas.py
-          python3 scripts/finalize_llms_news_workflow.py
           python3 scripts/patch_paddle_nav.py
           python3 scripts/build_llms_news.py
+          # Workflow files are updated separately with a credential that has workflows permission.
+          git checkout HEAD -- .github/workflows/llms-news.yml
       - name: Verify raw source contract
         run: python3 scripts/assert_source_contract.py
       - name: Verify Paddle domain-review surfaces
