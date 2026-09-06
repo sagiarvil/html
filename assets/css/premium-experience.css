@@ -63,8 +63,9 @@ html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-c
 .pillar-card {
   border-radius: 18px;
   padding: 22px 20px;
-  background: var(--px-card);
-  border: 1px solid var(--px-line);
+  background: linear-gradient(175deg, rgba(20, 24, 35, 0.92) 0%, rgba(11, 14, 21, 0.98) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -106,18 +107,18 @@ html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-c
   font-weight: 800;
   letter-spacing: -0.02em;
   margin: 0 0 6px;
-  color: var(--px-ink);
+  color: #ffffff !important;
 }
 .pillar-card p {
   font-size: 13.5px;
   line-height: 1.5;
-  color: var(--px-muted);
+  color: #cbd5e1 !important;
   margin: 0 0 16px;
   flex-grow: 1;
 }
 .pillar-meter {
   height: 5px;
-  background: rgba(0,0,0,0.06);
+  background: rgba(255, 255, 255, 0.08) !important;
   border-radius: 999px;
   overflow: hidden;
   margin-top: auto;
@@ -131,7 +132,9 @@ html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-c
 
 /* Pillar 1: Blue (Keşfedilirlik) */
 .pillar-blue {
-  border-top: 3px solid #0066ff !important;
+  border: 1.5px solid rgba(0, 102, 255, 0.4) !important;
+  border-top: 3.5px solid #0066ff !important;
+  box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.28) !important;
 }
 .pillar-blue .pillar-tag {
   color: #0066ff;
@@ -147,7 +150,9 @@ html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-c
 
 /* Pillar 2: Purple (Anlamlandırma) */
 .pillar-purple {
-  border-top: 3px solid #8b5cf6 !important;
+  border: 1.5px solid rgba(139, 92, 246, 0.4) !important;
+  border-top: 3.5px solid #8b5cf6 !important;
+  box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.28) !important;
 }
 .pillar-purple .pillar-tag {
   color: #8b5cf6;
@@ -163,7 +168,9 @@ html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-c
 
 /* Pillar 3: Green (Güven & Kalite) */
 .pillar-green {
-  border-top: 3px solid #10b981 !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.4) !important;
+  border-top: 3.5px solid #10b981 !important;
+  box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.28) !important;
 }
 .pillar-green .pillar-tag {
   color: #059669;
@@ -179,7 +186,9 @@ html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-c
 
 /* Pillar 4: Amber (Ticari Yol) */
 .pillar-amber {
-  border-top: 3px solid #f59e0b !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+  border-top: 3.5px solid #f59e0b !important;
+  box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.28) !important;
 }
 .pillar-amber .pillar-tag {
   color: #d97706;
@@ -261,6 +270,43 @@ html[data-theme="dark"] .pillar-amber .pillar-score {
 }
 
 /* 12-Engine Score Grid Enhancement */
+.score-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  border: none !important;
+  background: transparent !important;
+  margin-bottom: 28px !important;
+}
+.score-item {
+  border-radius: 14px !important;
+  background: linear-gradient(175deg, rgba(20, 26, 40, 0.9) 0%, rgba(11, 15, 24, 0.96) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 16px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+.score-item:hover {
+  transform: translateY(-2px) !important;
+}
+.score-item.tier-green {
+  border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+  box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.08), 0 0 16px -2px rgba(16, 185, 129, 0.22) !important;
+}
+.score-item.tier-blue {
+  border: 1.5px solid rgba(0, 102, 255, 0.45) !important;
+  box-shadow: inset 0 0 10px rgba(0, 102, 255, 0.08), 0 0 16px -2px rgba(0, 102, 255, 0.22) !important;
+}
+.score-item.tier-yellow, .score-item.tier-orange, .score-item.tier-amber {
+  border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+  box-shadow: inset 0 0 10px rgba(245, 158, 11, 0.08), 0 0 16px -2px rgba(245, 158, 11, 0.22) !important;
+}
+.score-item.tier-red {
+  border: 1.5px solid rgba(239, 68, 68, 0.45) !important;
+  box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.08), 0 0 16px -2px rgba(239, 68, 68, 0.22) !important;
+}
 .score-item-top {
   display: flex;
   justify-content: space-between;
@@ -476,25 +522,57 @@ html[data-theme="dark"] .px-knowledge-step:nth-child(4) .num {
 /* ==========================================================================
    ENTERPRISE FINDING DOSSIER CARD (FIX VERTICAL ELEVATOR SHAFT & BEIGE CODE)
    ========================================================================== */
+.findings {
+  max-height: 820px !important;
+  overflow-y: auto !important;
+  padding-right: 10px !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(56, 189, 248, 0.35) rgba(10, 15, 26, 0.5) !important;
+}
+.findings::-webkit-scrollbar {
+  width: 6px !important;
+}
+.findings::-webkit-scrollbar-track {
+  background: rgba(10, 15, 26, 0.5) !important;
+  border-radius: 999px !important;
+}
+.findings::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35) !important;
+  border-radius: 999px !important;
+}
+.findings::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.7) !important;
+}
 .finding {
   display: flex !important;
   flex-direction: column !important;
-  gap: 12px !important;
-  padding: 24px 26px !important;
-  border-radius: 20px !important;
-  border: 1px solid var(--hh-line, #e2e8f0) !important;
-  background: var(--hh-paper, #f8fafc) !important;
-  margin-bottom: 16px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  gap: 10px !important;
+  padding: 18px 22px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: linear-gradient(175deg, rgba(20, 26, 40, 0.9) 0%, rgba(11, 15, 24, 0.96) 100%) !important;
+  margin-bottom: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
   transition: transform 0.15s ease, box-shadow 0.15s ease !important;
 }
 .finding:hover {
   transform: translateY(-2px) !important;
 }
-
 html[data-theme="dark"] .finding {
-  background: rgba(15, 23, 42, 0.65) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: linear-gradient(175deg, rgba(20, 26, 40, 0.9) 0%, rgba(11, 15, 24, 0.96) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.mandate-card {
+  position: sticky !important;
+  top: 96px !important;
+  align-self: start !important;
+  background: linear-gradient(175deg, rgba(16, 22, 34, 0.95) 0%, rgba(8, 12, 20, 0.98) 100%) !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+  border-top: 3.5px solid #10b981 !important;
+  border-radius: 20px !important;
+  padding: 26px 24px !important;
+  box-shadow: 0 0 28px -4px rgba(16, 185, 129, 0.25), 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+  color: #ffffff !important;
 }
 
 /* FIX SEVERITY: Compact top pill with icon, NEVER a 250px vertical block! */
@@ -557,33 +635,27 @@ html[data-theme="dark"] .finding > .severity.info {
   color: #34d399 !important;
 }
 
-/* 4-Tier Left Border Accents with Ambient Glow */
+/* 4-Tier Left & Top Border Accents with Ambient Glow */
 .finding.finding-tier-critical {
   border-left: 4.5px solid #ef4444 !important;
+  border-top: 1.5px solid rgba(239, 68, 68, 0.4) !important;
+  box-shadow: 0 0 24px -4px rgba(239, 68, 68, 0.25), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
 }
 .finding.finding-tier-high {
   border-left: 4.5px solid #f59e0b !important;
+  border-top: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.25), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
 }
 .finding.finding-tier-medium {
   border-left: 4.5px solid #0066ff !important;
+  border-top: 1.5px solid rgba(0, 102, 255, 0.4) !important;
+  box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.25), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
 }
 .finding.finding-tier-low,
 .finding.finding-tier-info {
   border-left: 4.5px solid #10b981 !important;
-}
-
-html[data-theme="dark"] .finding.finding-tier-critical {
-  box-shadow: 0 4px 24px -4px rgba(239, 68, 68, 0.22) !important;
-}
-html[data-theme="dark"] .finding.finding-tier-high {
-  box-shadow: 0 4px 24px -4px rgba(245, 158, 11, 0.22) !important;
-}
-html[data-theme="dark"] .finding.finding-tier-medium {
-  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.22) !important;
-}
-html[data-theme="dark"] .finding.finding-tier-low,
-html[data-theme="dark"] .finding.finding-tier-info {
-  box-shadow: 0 4px 24px -4px rgba(16, 185, 129, 0.22) !important;
+  border-top: 1.5px solid rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.25), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Finding Tags */
@@ -676,57 +748,51 @@ html[data-theme="dark"] .locked-fix {
    ========================================================================== */
 .classified-section {
   margin-top: 48px !important;
-  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
   border-radius: 28px !important;
-  background: radial-gradient(circle at top center, rgba(245, 158, 11, 0.08), transparent 70%), var(--hh-card, #ffffff) !important;
+  background: radial-gradient(circle at top center, rgba(245, 158, 11, 0.12), transparent 70%), linear-gradient(180deg, rgba(17, 24, 39, 0.96) 0%, rgba(10, 15, 26, 0.98) 100%) !important;
   padding: 38px 32px !important;
-  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.1) !important;
-}
-html[data-theme="dark"] .classified-section {
-  background: radial-gradient(circle at top center, rgba(245, 158, 11, 0.1), transparent 70%), linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 15, 26, 0.98) 100%) !important;
-  border-color: rgba(245, 158, 11, 0.25) !important;
   box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.65) !important;
 }
 
 .classified-grid {
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 18px !important;
+}
+@media (max-width: 1040px) {
+  .classified-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .classified-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .classified-card {
   border-radius: 20px !important;
   padding: 24px !important;
-  background: var(--hh-paper, #f8fafc) !important;
-  border: 1px solid var(--hh-line, #e2e8f0) !important;
+  background: linear-gradient(175deg, rgba(20, 26, 40, 0.92) 0%, rgba(11, 15, 24, 0.96) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
   transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  color: #f8fafc !important;
 }
 .classified-card:hover {
-  transform: translateY(-2px) !important;
+  transform: translateY(-3px) !important;
 }
 
-html[data-theme="dark"] .classified-card {
-  background: rgba(15, 23, 42, 0.7) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* 4 Colors for the 6 Vectors */
-.classified-card:nth-child(1) { border-top: 3px solid #0066ff !important; }
-.classified-card:nth-child(2) { border-top: 3px solid #8b5cf6 !important; }
-.classified-card:nth-child(3) { border-top: 3px solid #10b981 !important; }
-.classified-card:nth-child(4) { border-top: 3px solid #f59e0b !important; }
-.classified-card:nth-child(5) { border-top: 3px solid #0066ff !important; }
-.classified-card:nth-child(6) { border-top: 3px solid #8b5cf6 !important; }
-
-html[data-theme="dark"] .classified-card:nth-child(1) { box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.25) !important; }
-html[data-theme="dark"] .classified-card:nth-child(2) { box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.25) !important; }
-html[data-theme="dark"] .classified-card:nth-child(3) { box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.25) !important; }
-html[data-theme="dark"] .classified-card:nth-child(4) { box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.25) !important; }
-html[data-theme="dark"] .classified-card:nth-child(5) { box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.25) !important; }
-html[data-theme="dark"] .classified-card:nth-child(6) { box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.25) !important; }
+/* 4 Main + Secondary (Tali) Active Color Borders for the 6 Vectors */
+.classified-card:nth-child(1) { border: 1.5px solid rgba(0, 102, 255, 0.4) !important; border-top: 3.5px solid #0066ff !important; box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.3) !important; }
+.classified-card:nth-child(2) { border: 1.5px solid rgba(139, 92, 246, 0.4) !important; border-top: 3.5px solid #8b5cf6 !important; box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.3) !important; }
+.classified-card:nth-child(3) { border: 1.5px solid rgba(16, 185, 129, 0.4) !important; border-top: 3.5px solid #10b981 !important; box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.3) !important; }
+.classified-card:nth-child(4) { border: 1.5px solid rgba(245, 158, 11, 0.4) !important; border-top: 3.5px solid #f59e0b !important; box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.3) !important; }
+.classified-card:nth-child(5) { border: 1.5px solid rgba(6, 182, 212, 0.4) !important; border-top: 3.5px solid #06b6d4 !important; box-shadow: 0 0 24px -4px rgba(6, 182, 212, 0.3) !important; }
+.classified-card:nth-child(6) { border: 1.5px solid rgba(236, 72, 153, 0.4) !important; border-top: 3.5px solid #ec4899 !important; box-shadow: 0 0 24px -4px rgba(236, 72, 153, 0.3) !important; }
 
 .classified-card-head {
   display: flex !important;

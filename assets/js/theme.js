@@ -1,6 +1,6 @@
 (()=>{
-const KEY='hh-theme';const root=document.documentElement;const valid=new Set(['light','dark','system']);let selected=localStorage.getItem(KEY)||'dark';if(!valid.has(selected))selected='dark';const media=matchMedia('(prefers-color-scheme: dark)');
-const apply=()=>{const resolved=selected==='system'?(media.matches?'dark':'dark'):selected;root.dataset.theme=resolved;root.dataset.themePreference=selected;root.style.colorScheme=resolved};apply();
+const KEY='hh-theme';const root=document.documentElement;const valid=new Set(['light','dark','system']);let selected=localStorage.getItem(KEY)||'dark';if(!valid.has(selected)||selected==='light')selected='dark';const media=matchMedia('(prefers-color-scheme: dark)');
+const apply=()=>{const resolved=selected==='system'?'dark':selected;root.dataset.theme=resolved;root.dataset.themePreference=selected;root.style.colorScheme=resolved};apply();
 const link=document.createElement('link');link.rel='stylesheet';link.href='/assets/css/theme.css?v=1';if(!document.querySelector('link[href*="/assets/css/theme.css"]'))document.head.appendChild(link);
 const labels={tr:{light:'AÇIK',dark:'KOYU',system:'SİSTEM',aria:'Görünüm'},en:{light:'LIGHT',dark:'DARK',system:'AUTO',aria:'Appearance'}};
 function loadHomepageIntelligence(){if(!document.getElementById('scanForm')||document.querySelector('script[data-home-intelligence]'))return;const s=document.createElement('script');s.src='/assets/js/intelligence-root.js';s.defer=true;s.dataset.homeIntelligence='1';document.head.appendChild(s)}

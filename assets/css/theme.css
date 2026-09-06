@@ -193,7 +193,7 @@ html[data-theme="dark"] .topbar {
   background: rgba(10, 11, 14, 0.85) !important;
 }
 :root .topbar {
-  background: rgba(248, 249, 250, 0.85) !important;
+  background: rgba(10, 11, 14, 0.85) !important;
 }
 
 .topbar-shell {
@@ -381,12 +381,12 @@ html[data-theme="dark"] .scanbox .tabs {
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
-  background: #ffffff !important;
+  background: #0a0b0e !important;
   border: 2px solid #0066ff !important;
   border-radius: 999px !important;
   padding: 6px 6px 6px 24px !important;
   min-height: 62px !important;
-  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.3), 0 0 24px rgba(0, 102, 255, 0.22) !important;
+  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.35), 0 0 24px rgba(0, 102, 255, 0.25) !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
   text-align: left !important;
 }
@@ -774,23 +774,23 @@ html[data-theme="dark"] .px-three-step.paid {
 }
 
 :root .px-report-split {
-  background: #ffffff !important;
+  background: #12151b !important;
 }
 :root .px-report-split article:first-child {
-  background: #ffffff !important;
-  color: #0f172a !important;
+  background: #12151b !important;
+  color: #f8fafc !important;
 }
 :root .px-report-split article:first-child h3 {
-  color: #0f172a !important;
+  color: #ffffff !important;
 }
 :root .px-report-split article:first-child p,
 :root .px-report-split article:first-child li {
-  color: #475569 !important;
+  color: #cbd5e1 !important;
 }
 :root .px-report-split .bridge {
-  background: #f1f5f9 !important;
-  border-inline: 1px solid #e2e8f0 !important;
-  color: #64748b !important;
+  background: #0d0f14 !important;
+  border-inline: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #94a3b8 !important;
   font-weight: 900 !important;
   display: grid !important;
   place-items: center !important;
@@ -879,29 +879,29 @@ html[data-theme="dark"] .px-report-split .paid li {
   transform: translateY(-3px) !important;
 }
 
-/* Light Theme Pricing Colors */
+/* Root Pricing Colors — Dark Obsidian Default */
 :root .pricing-grid.pricing-three article,
 :root .px-three-tiers article {
-  background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
-  color: #0f172a !important;
+  background: #141720 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  color: #f8fafc !important;
 }
 :root .pricing-grid.pricing-three article > p,
 :root .px-three-tiers article > p {
-  color: #475569 !important;
+  color: #94a3b8 !important;
 }
 :root .pricing-grid.pricing-three article li,
 :root .px-three-tiers article li {
-  border-color: #f1f5f9 !important;
-  color: #334155 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
 }
 :root .pricing-grid.pricing-three .pricehead strong,
 :root .px-three-tiers article h2 {
-  color: #0f172a !important;
+  color: #ffffff !important;
 }
 :root .pricing-grid.pricing-three .pricehead span {
-  color: #64748b !important;
+  color: #94a3b8 !important;
 }
 
 /* Dark Theme Pricing Colors */

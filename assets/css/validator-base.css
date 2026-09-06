@@ -270,14 +270,14 @@ html[data-theme="dark"] .kicker b {
   font-weight: 750;
 }
 .tabs button.active {
-  background: #e8e4da;
-  color: #111;
+  background: rgba(0, 102, 255, 0.2);
+  color: #38bdf8;
 }
 .field {
   display: flex;
   align-items: center;
-  background: #fff;
-  border: 1.5px solid #c9c5ba;
+  background: #0a0b0e;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 14px;
   min-height: 64px;
   padding-left: 18px;
@@ -348,14 +348,14 @@ html[data-theme="dark"] .kicker b {
   transition: all .15s ease;
 }
 .chip-btn:hover {
-  background: #e8e4da;
-  border-color: #b8b4a9;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 .scanbox small {
   display: block;
   text-align: center;
   margin-top: 12px;
-  color: #7b786f;
+  color: var(--muted);
   font-size: 13px;
 }
 .status {
@@ -363,13 +363,14 @@ html[data-theme="dark"] .kicker b {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 13px 16px;
-  background: #fbfaf6;
+  background: #111726;
+  color: #f8fafc;
   font-size: 14px;
 }
 .status.error {
-  border-color: #e1b3ae;
-  background: #fff2ef;
-  color: #8a2f28;
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
 }
 .signals {
   position: relative;
@@ -558,11 +559,12 @@ html[data-theme="dark"] .kicker b {
   display: block;
   margin-top: 8px;
   padding: 9px 12px;
-  background: #ece8df;
+  background: #070a10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 7px;
   white-space: normal;
   font-size: 13px;
-  color: #45443e;
+  color: #38bdf8;
 }
 .mandate-card {
   align-self: start;
