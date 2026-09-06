@@ -9,15 +9,15 @@
 :root {
   color-scheme: dark;
 
-  /* DARK THEME DEFAULT: Obsidian Studio Canvas — Zero White or Muddy Beige */
-  --bg: #07090e;
-  --bg-soft: #0e121d;
-  --bg-card: #111726;
+  /* DARK THEME DEFAULT: Modern Charcoal Black (Kömür Siyahı) — Zero Pitch Black Abyss */
+  --bg: #14151a;
+  --bg-soft: #181a22;
+  --bg-card: #1e2028;
   --fg: #f8fafc;
   --fg-soft: #cbd5e1;
   --fg-dim: #94a3b8;
-  --line: rgba(255, 255, 255, 0.12);
-  --line-strong: rgba(255, 255, 255, 0.22);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.18);
   --accent: #0066ff;
   --accent-hover: #38bdf8;
   --accent-ink: #ffffff;
@@ -31,8 +31,8 @@
   --bad-bg: rgba(239, 68, 68, 0.15);
   --bad-border: rgba(239, 68, 68, 0.4);
   --muted: #94a3b8;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
 
   /* Legacy & Platform Variables */
   --paper: var(--bg);
@@ -66,15 +66,15 @@
 html[data-theme="dark"] {
   color-scheme: dark;
 
-  /* DARK THEME: Pure Charcoal Obsidian Slate (llms-txt-validator.dev authentic) */
-  --bg: #0a0b0e;
-  --bg-soft: #12151b;
-  --bg-card: #141720;
+  /* DARK THEME: Modern Charcoal Black (Kömür Siyahı) */
+  --bg: #14151a;
+  --bg-soft: #181a22;
+  --bg-card: #1e2028;
   --fg: #ededed;
   --fg-soft: #cbd5e1;
   --fg-dim: #94a3b8;
-  --line: #1e222d;
-  --line-strong: #2a3142;
+  --line: #262933;
+  --line-strong: #333745;
   --accent: #2563eb;
   --accent-hover: #3b82f6;
   --accent-ink: #ffffff;
@@ -440,7 +440,7 @@ html[data-theme="dark"] .scanbox .tabs {
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
-  background: #0a0b0e !important;
+  background: #181a22 !important;
   border: 2px solid #0066ff !important;
   border-radius: 999px !important;
   padding: 6px 6px 6px 24px !important;
@@ -450,7 +450,7 @@ html[data-theme="dark"] .scanbox .tabs {
   text-align: left !important;
 }
 html[data-theme="dark"] .scanbox .field {
-  background: #0a0b0e !important;
+  background: #181a22 !important;
   border: 2px solid #0066ff !important;
   box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.35), 0 0 24px rgba(0, 102, 255, 0.25) !important;
 }
@@ -815,7 +815,7 @@ html[data-theme="dark"] .pipeline-flow .pipeline-node:nth-child(11) { box-shadow
   border: 2px solid var(--accent) !important;
 }
 html[data-theme="dark"] .px-three-step.paid {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, #141720 100%) !important;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, #1e2028 100%) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -833,10 +833,10 @@ html[data-theme="dark"] .px-three-step.paid {
 }
 
 :root .px-report-split {
-  background: #12151b !important;
+  background: #1e2028 !important;
 }
 :root .px-report-split article:first-child {
-  background: #12151b !important;
+  background: #1e2028 !important;
   color: #f8fafc !important;
 }
 :root .px-report-split article:first-child h3 {
@@ -847,15 +847,15 @@ html[data-theme="dark"] .px-three-step.paid {
   color: #cbd5e1 !important;
 }
 :root .px-report-split .bridge {
-  background: #0d0f14 !important;
-  border-inline: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: #181a22 !important;
+  border-inline: 1px solid rgba(255, 255, 255, 0.09) !important;
   color: #94a3b8 !important;
   font-weight: 900 !important;
   display: grid !important;
   place-items: center !important;
 }
 :root .px-report-split .paid {
-  background: #0f172a !important;
+  background: #1a2233 !important;
   color: #f8fafc !important;
 }
 :root .px-report-split .paid h3 {
@@ -867,11 +867,11 @@ html[data-theme="dark"] .px-three-step.paid {
 }
 
 html[data-theme="dark"] .px-report-split {
-  background: #12151b !important;
-  border: 1px solid #1e222d !important;
+  background: #1e2028 !important;
+  border: 1px solid #282b36 !important;
 }
 html[data-theme="dark"] .px-report-split article:first-child {
-  background: #12151b !important;
+  background: #1e2028 !important;
   color: #ededed !important;
 }
 html[data-theme="dark"] .px-report-split article:first-child h3 {
@@ -882,15 +882,15 @@ html[data-theme="dark"] .px-report-split article:first-child li {
   color: #94a3b8 !important;
 }
 html[data-theme="dark"] .px-report-split .bridge {
-  background: #0a0b0e !important;
-  border-inline: 1px solid #1e222d !important;
+  background: #181a22 !important;
+  border-inline: 1px solid #282b36 !important;
   color: #64748b !important;
   display: grid !important;
   place-items: center !important;
   font-weight: 900 !important;
 }
 html[data-theme="dark"] .px-report-split .paid {
-  background: #161d2b !important;
+  background: #1a2233 !important;
   color: #ededed !important;
   border-left: 1px solid rgba(37, 99, 235, 0.3) !important;
 }
@@ -941,9 +941,9 @@ html[data-theme="dark"] .px-report-split .paid li {
 /* Root Pricing Colors — Dark Obsidian Default */
 :root .pricing-grid.pricing-three article,
 :root .px-three-tiers article {
-  background: #141720 !important;
+  background: #1e2028 !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
   color: #f8fafc !important;
 }
 :root .pricing-grid.pricing-three article > p,
@@ -966,8 +966,8 @@ html[data-theme="dark"] .px-report-split .paid li {
 /* Dark Theme Pricing Colors */
 html[data-theme="dark"] .pricing-grid.pricing-three article,
 html[data-theme="dark"] .px-three-tiers article {
-  background: #141720 !important;
-  border: 1px solid #1e222d !important;
+  background: #1e2028 !important;
+  border: 1px solid #282b36 !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
   color: #ededed !important;
 }
@@ -1017,7 +1017,7 @@ html[data-theme="dark"] .pricing-grid.pricing-three .pricehead span {
 }
 html[data-theme="dark"] .pricing-grid.pricing-three article.featured,
 html[data-theme="dark"] .px-three-tiers .px-report-paid {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, #141720 100%) !important;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, #1e2028 100%) !important;
   border: 2px solid #2563eb !important;
   box-shadow: 0 16px 48px rgba(37, 99, 235, 0.25) !important;
 }
@@ -1064,7 +1064,7 @@ html[data-theme="dark"] .px-three-tiers .px-report-paid {
 }
 html[data-theme="dark"] .pricing-grid.pricing-three article.enterprise-tier,
 html[data-theme="dark"] .px-three-tiers .px-report-enterprise {
-  background: linear-gradient(180deg, rgba(245, 158, 11, 0.08) 0%, #141720 100%) !important;
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.08) 0%, #1e2028 100%) !important;
   border: 2px solid #f59e0b !important;
   box-shadow: 0 16px 48px rgba(245, 158, 11, 0.22) !important;
 }
@@ -1079,14 +1079,14 @@ html[data-theme="dark"] .px-three-tiers .px-report-enterprise {
   padding: 5px 12px !important;
   border-radius: 999px !important;
   background: linear-gradient(135deg, #f59e0b, #d97706) !important;
-  color: #0a0b0e !important;
+  color: #121316 !important;
   text-transform: uppercase !important;
 }
 .pricing-grid.pricing-three a.solid.enterprise-btn,
 .px-three-tiers .enterprise-cta {
   margin-top: auto !important;
   background: linear-gradient(135deg, #f59e0b, #d97706) !important;
-  color: #0a0b0e !important;
+  color: #121316 !important;
   border: none !important;
   border-radius: 12px !important;
   padding: 14px !important;
@@ -1567,7 +1567,7 @@ html[data-theme="dark"] .finding.finding-tier-info {
   padding: 0 28px;
   border-radius: 999px;
   background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #0a0b0e !important;
+  color: #121316 !important;
   font-weight: 800;
   font-size: 14.5px;
   text-decoration: none;
@@ -2488,13 +2488,13 @@ html[data-theme="dark"] .glossary-cta p {
 /* 3. INPUTS, SEARCH BARS & FORMS */
 html[data-theme="dark"] .glossary-search input,
 html[data-theme="dark"] .tool-form input {
-  background: #0a0b0e !important;
+  background: #181a22 !important;
   border-color: #2a3142 !important;
   color: #ffffff !important;
 }
 html[data-theme="dark"] .glossary-search {
-  background: rgba(10, 11, 14, 0.85) !important;
-  border-color: #1e2330 !important;
+  background: rgba(24, 26, 34, 0.85) !important;
+  border-color: #282b38 !important;
 }
 
 /* 4. RESULTS, FINDINGS & METERS */
@@ -2593,8 +2593,8 @@ html[data-theme="dark"] .authority-callout p {
   color: #cbd5e1 !important;
 }
 html[data-theme="dark"] .hero-actions a {
-  background: #141720 !important;
-  border-color: #1e2330 !important;
+  background: #1e2028 !important;
+  border-color: #282b36 !important;
   color: #f1f5f9 !important;
 }
 html[data-theme="dark"] .hero-actions a.primary,
@@ -2722,13 +2722,13 @@ html[data-theme="dark"] .authority-hero h1 em {
 
   html:not([data-theme="light"]) .glossary-search input,
   html:not([data-theme="light"]) .tool-form input {
-    background: #0a0b0e !important;
+    background: #181a22 !important;
     border-color: #2a3142 !important;
     color: #ffffff !important;
   }
   html:not([data-theme="light"]) .glossary-search {
-    background: rgba(10, 11, 14, 0.85) !important;
-    border-color: #1e2330 !important;
+    background: rgba(24, 26, 34, 0.85) !important;
+    border-color: #282b38 !important;
   }
   html:not([data-theme="light"]) .meter {
     background: #1e2330 !important;
@@ -2815,8 +2815,8 @@ html[data-theme="dark"] .authority-hero h1 em {
     color: #cbd5e1 !important;
   }
   html:not([data-theme="light"]) .hero-actions a {
-    background: #141720 !important;
-    border-color: #1e2330 !important;
+    background: #1e2028 !important;
+    border-color: #282b36 !important;
     color: #f1f5f9 !important;
   }
   html:not([data-theme="light"]) .hero-actions a.primary,

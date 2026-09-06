@@ -55,7 +55,7 @@ def build_homepages():
 <meta property="og:url" content="https://htmlandhtml.com/">
 <meta property="og:title" content="HTML&amp;HTML — Evidence free. Implementation paid.">
 <meta property="og:description" content="12-engine public website diagnosis with implementation-grade Fix Mandates for AI coding agents.">
-<meta name="theme-color" content="#07090e">
+<meta name="theme-color" content="#14151a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -633,7 +633,7 @@ def build_homepages():
 <meta property="og:url" content="https://htmlandhtml.com/en/">
 <meta property="og:title" content="HTML&amp;HTML — Evidence free. Implementation paid.">
 <meta property="og:description" content="12-engine public website diagnosis with implementation-grade Fix Mandates for AI coding agents.">
-<meta name="theme-color" content="#07090e">
+<meta name="theme-color" content="#14151a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">

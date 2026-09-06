@@ -89,7 +89,7 @@
 .tool-form input {
   min-width: 0;
   border: 1px solid var(--line, #2a3142);
-  background: var(--bg, #0a0b0e);
+  background: var(--bg, #14151a);
   color: var(--fg, #ffffff);
   border-radius: 12px;
   padding: 16px 20px;
@@ -135,8 +135,8 @@
   font-size: 15px !important;
   font-weight: 600 !important;
   line-height: 1.55 !important;
-  background: #0b0f19 !important;
-  background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
+  background: #181a22 !important;
+  background: linear-gradient(135deg, rgba(24, 27, 36, 0.98) 0%, rgba(30, 35, 48, 0.98) 100%) !important;
   color: #ffffff !important;
   letter-spacing: -0.01em !important;
   box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
@@ -165,8 +165,8 @@
   flex-direction: column;
   justify-content: center;
   min-height: 180px;
-  border: 1px solid var(--line, #1e222d);
-  background: var(--bg, #0d0f14);
+  border: 1px solid var(--line, #262933);
+  background: var(--bg-card, #1e2028);
   border-radius: 16px;
   padding: 24px;
   text-align: center;
@@ -187,10 +187,10 @@
   gap: 12px;
 }
 .tool-finding {
-  border: 1px solid #35362f;
+  border: 1px solid #282b36;
   border-radius: 14px;
   padding: 18px 20px;
-  background: #171814;
+  background: #1e2028;
 }
 .tool-finding header {
   display: flex;
@@ -214,7 +214,7 @@
   display: block;
   margin-top: 10px;
   padding: 10px 12px;
-  background: #0d0e0b;
+  background: #14151c;
   border-radius: 8px;
   color: #d8d9d0;
   font-size: 13px;

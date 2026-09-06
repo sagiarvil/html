@@ -50,9 +50,9 @@ function contrast(rgb1, rgb2) {
   return (bright + 0.05) / (dark + 0.05);
 }
 
-// Key tokens in dark mode:
-const bgMain = hexToRgb('#0a0b0e');
-const bgCard = hexToRgb('#080a0f');
+// Key tokens in dark mode (Modern Charcoal Black):
+const bgMain = hexToRgb('#14151a');
+const bgCard = hexToRgb('#1e2028');
 const textLight = hexToRgb('#f8fafc');
 const textMuted = hexToRgb('#94a3b8');
 
