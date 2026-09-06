@@ -251,36 +251,95 @@ html[data-theme="dark"] .topbar {
 .theme-switch {
   display: inline-flex !important;
   align-items: center !important;
+  gap: 2px !important;
   flex-wrap: nowrap !important;
   white-space: nowrap !important;
-  background: var(--bg-soft) !important;
-  border: 1px solid var(--line) !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: 999px !important;
   padding: 2px !important;
   height: 32px !important;
   box-sizing: border-box !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="light"] .theme-switch {
+  background: rgba(241, 245, 249, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06) !important;
 }
 .theme-switch button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-  background: transparent !important;
-  color: var(--fg-dim) !important;
-  font-size: 11px !important;
-  font-weight: 750 !important;
-  line-height: 1 !important;
+  width: 28px !important;
   height: 26px !important;
-  padding: 0 10px !important;
+  padding: 0 !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: #94a3b8 !important;
   border-radius: 999px !important;
   cursor: pointer !important;
-  transition: all 0.15s ease !important;
+  position: relative !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
-.theme-switch button[aria-pressed="true"] {
-  background: var(--bg-card) !important;
-  color: var(--fg) !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.18) !important;
+.theme-switch button:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+html[data-theme="light"] .theme-switch button {
+  color: #64748b !important;
+}
+html[data-theme="light"] .theme-switch button:hover {
+  color: #0f172a !important;
+  background: rgba(0, 0, 0, 0.06) !important;
+  transform: translateY(-1px) !important;
+}
+.theme-switch button[data-theme-choice="light"][aria-pressed="true"] {
+  background: rgba(245, 158, 11, 0.18) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25) !important;
+}
+html[data-theme="light"] .theme-switch button[data-theme-choice="light"][aria-pressed="true"] {
+  background: #ffffff !important;
+  color: #d97706 !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12) !important;
+}
+.theme-switch button[data-theme-choice="dark"][aria-pressed="true"] {
+  background: rgba(37, 99, 235, 0.22) !important;
+  color: #60a5fa !important;
+  border-color: rgba(96, 165, 250, 0.35) !important;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.3) !important;
+}
+html[data-theme="light"] .theme-switch button[data-theme-choice="dark"][aria-pressed="true"] {
+  background: #0f172a !important;
+  color: #93c5fd !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15) !important;
+}
+.theme-switch button[data-theme-choice="system"][aria-pressed="true"] {
+  background: rgba(56, 189, 248, 0.18) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25) !important;
+}
+html[data-theme="light"] .theme-switch button[data-theme-choice="system"][aria-pressed="true"] {
+  background: #ffffff !important;
+  color: #0284c7 !important;
+  border-color: rgba(2, 132, 199, 0.25) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12) !important;
+}
+.theme-switch .theme-icon {
+  display: block !important;
+  pointer-events: none !important;
+  transition: transform 0.18s ease !important;
+}
+.theme-switch button:hover .theme-icon {
+  transform: scale(1.1) !important;
 }
 
 .langs {
