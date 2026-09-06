@@ -358,26 +358,69 @@ html[data-theme="dark"] .kicker b {
   color: var(--muted);
   font-size: 13px;
 }
-#scanStatus, .status, #toolStatus, .tool-status, #mentionStatus {
-  margin-top: 16px !important;
-  border: 1px solid rgba(56, 189, 248, 0.45) !important;
-  border-radius: 14px !important;
-  padding: 14px 22px !important;
-  background: #0b0f19 !important;
-  background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
+#scanStatus[hidden],
+.status[hidden],
+#scanStatus:empty,
+.status:empty,
+#toolStatus[hidden],
+.tool-status[hidden],
+#toolStatus:empty,
+.tool-status:empty,
+#mentionStatus[hidden],
+.mention-status[hidden],
+#mentionStatus:empty,
+.mention-status:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+#scanStatus, .status {
+  margin-top: 18px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
   color: #ffffff !important;
   font-size: 15px !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
-  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+#toolStatus, .tool-status, #mentionStatus {
+  margin-top: 16px !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  border-radius: 14px !important;
+  padding: 14px 22px !important;
+  background: #181a22 !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.25) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 12px !important;
   text-align: center !important;
 }
+
 #scanStatus.error, .status.error, #toolStatus.error, .tool-status.error, #mentionStatus.error {
-  border-color: rgba(239, 68, 68, 0.5) !important;
+  border: 1px solid rgba(239, 68, 68, 0.5) !important;
+  border-radius: 12px !important;
+  padding: 12px 20px !important;
   background: rgba(239, 68, 68, 0.15) !important;
   color: #fca5a5 !important;
   box-shadow: 0 4px 20px -4px rgba(239, 68, 68, 0.3) !important;

@@ -2519,16 +2519,41 @@ html[data-theme="dark"] .ai-opportunity-eyebrow {
 html[data-theme="dark"] .score-item strong {
   color: #ffffff;
 }
+html #scanStatus[hidden],
+html .status[hidden],
+html #scanStatus:empty,
+html .status:empty,
+html #toolStatus[hidden],
+html .tool-status[hidden],
+html #toolStatus:empty,
+html .tool-status:empty,
+html #mentionStatus[hidden],
+html .mention-status[hidden],
+html #mentionStatus:empty,
+html .mention-status:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
 html #scanStatus,
-html .status,
+html .status {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
 html #toolStatus,
 html .tool-status,
 html #mentionStatus {
-  background: #0b0f19 !important;
-  background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
-  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  background: #181a22 !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.25) !important;
 }
 html #scanStatus.error,
 html .status.error,
@@ -2751,16 +2776,41 @@ html[data-theme="dark"] .authority-hero h1 em {
   html:not([data-theme="light"]) .score-item strong {
     color: #ffffff;
   }
+  html:not([data-theme="light"]) #scanStatus[hidden],
+  html:not([data-theme="light"]) .status[hidden],
+  html:not([data-theme="light"]) #scanStatus:empty,
+  html:not([data-theme="light"]) .status:empty,
+  html:not([data-theme="light"]) #toolStatus[hidden],
+  html:not([data-theme="light"]) .tool-status[hidden],
+  html:not([data-theme="light"]) #toolStatus:empty,
+  html:not([data-theme="light"]) .tool-status:empty,
+  html:not([data-theme="light"]) #mentionStatus[hidden],
+  html:not([data-theme="light"]) .mention-status[hidden],
+  html:not([data-theme="light"]) #mentionStatus:empty,
+  html:not([data-theme="light"]) .mention-status:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
   html:not([data-theme="light"]) #scanStatus,
-  html:not([data-theme="light"]) .status,
+  html:not([data-theme="light"]) .status {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
   html:not([data-theme="light"]) #toolStatus,
   html:not([data-theme="light"]) .tool-status,
   html:not([data-theme="light"]) #mentionStatus {
-    background: #0b0f19 !important;
-    background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
-    border: 1px solid rgba(56, 189, 248, 0.45) !important;
+    background: #181a22 !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.25) !important;
   }
   html:not([data-theme="light"]) #scanStatus.error,
   html:not([data-theme="light"]) .status.error,
