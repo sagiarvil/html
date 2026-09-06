@@ -327,7 +327,7 @@ def build_homepages():
           <span class="vector-tag">VEKTÖR 02</span>
           <span class="vector-metric-pill">0.95+ Re-rank Skoru</span>
         </div>
-        <h4>Cross-Encoder Attention Hijacking</h4>
+        <h4>Cross-Encoder Dikkat Optimizasyonu</h4>
       </div>
       <p class="vector-desc">Cohere Rerank v3 ve BGE-Reranker matrisinde Perplexity ve Google Gemini AI Overviews'ın ilk alıntısı (Citation #1) olma formülü.</p>
       <div class="classified-terminal-wrap">
@@ -644,7 +644,7 @@ def build_homepages():
         <li><b>$99 Yol Haritasındaki her şey DAHİL</b></li>
         <li><b>6 Gizli Enterprise Protokolü (Açık Kodlarla):</b></li>
         <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
-        <li>2. Cross-Encoder Attention Hijacking (Perplexity 1. Sıra)</li>
+        <li>2. Cross-Encoder Dikkat Optimizasyonu (Perplexity Alıntı Önceliği)</li>
         <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
         <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
         <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
@@ -1022,7 +1022,7 @@ def build_homepages():
           <span class="vector-tag">VECTOR 02</span>
           <span class="vector-metric-pill">0.95+ Re-rank Score</span>
         </div>
-        <h4>Cross-Encoder Attention Hijacking</h4>
+        <h4>Cross-Encoder Attention Optimization</h4>
       </div>
       <p class="vector-desc">Formulation to secure Citation #1 in Perplexity and Google Gemini AI Overviews across Cohere Rerank v3 and BGE-Reranker matrices.</p>
       <div class="classified-terminal-wrap">
@@ -1339,7 +1339,7 @@ def build_homepages():
         <li><b>Everything in $99 Roadmap INCLUDED</b></li>
         <li><b>6 Classified Enterprise Protocols (Full Code):</b></li>
         <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
-        <li>2. Cross-Encoder Attention Hijacking (Perplexity #1 Rank)</li>
+        <li>2. Cross-Encoder Attention Optimization (Perplexity Citation Dominance)</li>
         <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
         <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
         <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
