@@ -12,7 +12,7 @@ export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},asyn
   res.status(200).json({status:'ok',service:'htmlandhtml-validator',version:'2.2.0',scanEngines:12,maxPages:50,freeDiagnosis:true,paidMandateConfigured:false,aiMentionTracker:true,aiMentionAccessConfigured:Boolean(process.env.AI_MENTION_ACCESS_TOKEN),timestamp:new Date().toISOString()});
 });
 
-export const scan=onRequest(common,async(req,res)=>{
+export const scan=onRequest({...common,timeoutSeconds:240},async(req,res)=>{
   harden(res);
   if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
   try{
