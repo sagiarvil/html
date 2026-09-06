@@ -1,55 +1,107 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c d-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c">
-  <title id="t-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c">HTML&amp;HTML AI Search Intelligence — AEO ANALYSIS</title>
-  <desc id="d-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c">Symmetrical vector blueprint for Edge Rate Limiting Strategies for Autonomous AI Crawlers: AI Search and Technical Web Architecture Analysis</desc>
+  <title id="t-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c">HTML&amp;HTML AI Search Intelligence — AEO (AEO ANALYSIS)</title>
+  <desc id="d-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c">Vector silhouette blueprint and narrative story for Edge Rate Limiting Strategies for Autonomous AI Crawlers: AI Search and Technical Web Architecture Analysis</desc>
   <defs>
     <linearGradient id="bg-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07080A"/>
-      <stop offset="50%" stop-color="#0A0C10"/>
-      <stop offset="100%" stop-color="#0D1017"/>
+      <stop offset="0%" stop-color="#060709"/>
+      <stop offset="50%" stop-color="#090B10"/>
+      <stop offset="100%" stop-color="#0C0F16"/>
     </linearGradient>
-    <radialGradient id="glow-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.32"/>
-      <stop offset="60%" stop-color="#EAB308" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#07080A" stop-opacity="0"/>
+    <radialGradient id="glow-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#EAB308" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#060709" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="radial-geo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#EAB308" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="beam-seo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
+  <!-- Background Base -->
   <rect width="1200" height="675" fill="url(#bg-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c)"/>
-  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 8"/>
-  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 8"/>
+  <rect width="1200" height="675" fill="url(#glow-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c)"/>
 
-  <circle cx="600" cy="337.5" r="268" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-  <circle cx="600" cy="337.5" r="221" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="6 6"/>
-  <circle cx="600" cy="337.5" r="115" fill="url(#glow-2026-08-28-edge-rate-limiting-strategies-for-autonomous-ai-cr-531320fd6c)" stroke="rgba(245, 158, 11, 0.25)" stroke-width="1.5"/>
-  <circle cx="600" cy="337.5" r="66" fill="none" stroke="#F59E0B" stroke-width="2"/>
-  <circle cx="600" cy="337.5" r="7" fill="#F59E0B"/>
+  <!-- Perspective Floor Grid (Cybernetic Horizon) -->
+  <g stroke="rgba(255,255,255,0.035)" stroke-width="1">
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="610" x2="1200" y2="610"/>
+    <line x1="600" y1="480" x2="100" y2="675"/>
+    <line x1="600" y1="480" x2="350" y2="675"/>
+    <line x1="600" y1="480" x2="600" y2="675"/>
+    <line x1="600" y1="480" x2="850" y2="675"/>
+    <line x1="600" y1="480" x2="1100" y2="675"/>
+  </g>
 
-  <line x1="485" y1="337.5" x2="304" y2="337.5" stroke="#F59E0B" stroke-width="1.5"/>
-  <line x1="715" y1="337.5" x2="896" y2="337.5" stroke="#F59E0B" stroke-width="1.5"/>
-  <circle cx="304" cy="337.5" r="5" fill="#EAB308"/>
-  <circle cx="896" cy="337.5" r="5" fill="#EAB308"/>
+  <!-- Isometric Blueprint Grid Lines (Subtle) -->
+  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
 
-  <line x1="600" y1="222.5" x2="600" y2="66.5" stroke="#EAB308" stroke-width="1.5"/>
-  <line x1="600" y1="452.5" x2="600" y2="608.5" stroke="#EAB308" stroke-width="1.5"/>
-  <circle cx="600" cy="66.5" r="4" fill="#F59E0B"/>
-  <circle cx="600" cy="608.5" r="4" fill="#F59E0B"/>
+  <!-- SPECIFIC PILLAR SILHOUETTE SCENE -->
 
-  <line x1="553.3" y1="290.8" x2="479.2" y2="216.8" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="646.7" y1="290.8" x2="720.8" y2="216.8" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="553.3" y1="384.2" x2="479.2" y2="458.2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="646.7" y1="384.2" x2="720.8" y2="458.2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <!-- Pillar 3: AEO — Precision Quotation Caliper Extracting Direct Answer from Knowledge Stream -->
+    <g id="scene-aeo" transform="translate(0, -3)">
+      <g transform="translate(480, 200)">
+        <rect x="0" y="0" width="240" height="260" rx="8" fill="#0B0F1A" stroke="#F59E0B" stroke-width="1.8"/>
+        <line x1="20" y1="30" x2="120" y2="30" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="20" y1="60" x2="220" y2="60" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="85" x2="220" y2="85" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <rect x="12" y="105" width="216" height="50" rx="4" fill="#F59E0B" fill-opacity="0.18" stroke="#F59E0B" stroke-width="1.5"/>
+        <line x1="20" y1="122" x2="200" y2="122" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="20" y1="138" x2="160" y2="138" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="20" y1="180" x2="220" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="205" x2="180" y2="205" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="230" x2="140" y2="230" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+      </g>
 
-  <circle cx="479.2" cy="216.8" r="4" fill="#F59E0B"/>
-  <circle cx="720.8" cy="216.8" r="4" fill="#F59E0B"/>
-  <circle cx="479.2" cy="458.2" r="4" fill="#EAB308"/>
-  <circle cx="720.8" cy="458.2" r="4" fill="#EAB308"/>
+      <g transform="translate(600, 330)">
+        <path d="M-135,-30 L-115,-30 L-115,30 L-135,30" fill="none" stroke="#EAB308" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M135,-30 L115,-30 L115,30 L135,30" fill="none" stroke="#EAB308" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="-135" y1="-45" x2="135" y2="-45" stroke="#EAB308" stroke-width="2"/>
+        <line x1="0" y1="-52" x2="0" y2="-38" stroke="#F59E0B" stroke-width="3"/>
+        <circle cx="0" cy="-45" r="5" fill="#F59E0B"/>
+      </g>
 
-  <polygon points="542.5,222.5 657.5,222.5 715.0,337.5 657.5,452.5 542.5,452.5 485.0,337.5" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <g transform="translate(800, 160)">
+        <path d="M0,20 Q0,0 20,0 L180,0 Q200,0 200,20 L200,100 Q200,120 180,120 L40,120 L10,145 L15,120 L20,120 Q0,120 0,100 Z" fill="#0A0E17" stroke="#F59E0B" stroke-width="2"/>
+        <rect x="18" y="16" width="36" height="18" rx="4" fill="#F59E0B"/>
+        <text x="36" y="29" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="900" text-anchor="middle" fill="#07080A">[1]</text>
+        <line x1="64" y1="25" x2="175" y2="25" stroke="#F59E0B" stroke-width="2.5"/>
+        <line x1="20" y1="52" x2="180" y2="52" stroke="#FFFFFF" stroke-width="2"/>
+        <line x1="20" y1="72" x2="180" y2="72" stroke="#FFFFFF" stroke-width="2"/>
+        <line x1="20" y1="92" x2="130" y2="92" stroke="#FFFFFF" stroke-width="2"/>
+      </g>
 
-  <path d="M48 68 V48 H68 M1132 48 H1152 V68 M1152 607 V627 H1132 M68 627 H48 V607" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none"/>
+      <g transform="translate(240, 260)">
+        <circle cx="0" cy="0" r="26" fill="#0A0E17" stroke="#F59E0B" stroke-width="2"/>
+        <path d="M-10,26 L-26,95 L26,95 L12,26 Z" fill="#0A0E17" stroke="#F59E0B" stroke-width="1.8"/>
+        <path d="M-26,95 L40,80 L140,55" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="140" cy="55" r="5" fill="#EAB308"/>
+        <path d="M-20,95 L-24,200 M20,95 L24,200" stroke="#0A0E17" stroke-width="15" stroke-linecap="round"/>
+      </g>
 
-  <text x="56" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#F59E0B">[ AEO ANALYSIS // SYMMETRIC VECTOR CORE ]</text>
-  <text x="1144" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">REF-36BD1BE</text>
-  <text x="600" y="574" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#F8FAFC">Edge Rate Limiting Strategies for Autonomous AI Crawlers: AI Sea</text>
-  <text x="600" y="608" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="middle" letter-spacing="3" fill="rgba(255,255,255,0.45)">HTML&amp;HTML AI SEARCH INTELLIGENCE // 2026-09-06</text>
+      <g font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">
+        <rect x="470" y="480" width="260" height="24" rx="4" fill="#0A0D15" stroke="#F59E0B" stroke-width="1"/>
+        <text x="482" y="496" fill="#F59E0B">ZERO-CLICK EXTRACTION: 0.994</text>
+      </g>
+    </g>
+
+  <!-- Outer Technical Blueprint HUD Brackets -->
+  <path d="M40 60 V40 H60 M1140 40 H1160 V60 M1160 615 V635 H1140 M60 635 H40 V615" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" fill="none"/>
+
+  <!-- Top Metadata Ribbon -->
+  <rect x="48" y="48" width="130" height="24" rx="4" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#F59E0B">PILLAR // AEO</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ ANSWER ENGINE OPTIMIZATION & CALIPER EXTRACTION ]</text>
+  <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-36BD1BE</text>
+
+  <!-- Bottom Caption & Context -->
+  <rect x="48" y="585" width="1104" height="42" rx="6" fill="#07090E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Edge Rate Limiting Strategies for Autonomous AI Crawlers: AI Search and </text>
+  <text x="1136" y="611" font-family="ui-monospace,Menlo,monospace" font-size="10.5" font-weight="700" text-anchor="end" letter-spacing="2" fill="#F59E0B">HTML&amp;HTML // 2026-09-06</text>
 </svg>

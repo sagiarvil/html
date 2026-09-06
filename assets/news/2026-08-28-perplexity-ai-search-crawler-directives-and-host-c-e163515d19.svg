@@ -1,55 +1,115 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19 d-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19">
-  <title id="t-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19">HTML&amp;HTML AI Search Intelligence — RAG RETRIEVAL</title>
-  <desc id="d-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19">Symmetrical vector blueprint for Perplexity AI Search Crawler Directives and Host Caching Protocols: AI Search and Technical Web Architecture Analysis</desc>
+  <title id="t-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19">HTML&amp;HTML AI Search Intelligence — RAG (RAG RETRIEVAL)</title>
+  <desc id="d-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19">Vector silhouette blueprint and narrative story for Perplexity AI Search Crawler Directives and Host Caching Protocols: AI Search and Technical Web Architecture Analysis</desc>
   <defs>
     <linearGradient id="bg-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07080A"/>
-      <stop offset="50%" stop-color="#0A0C10"/>
-      <stop offset="100%" stop-color="#0D1017"/>
+      <stop offset="0%" stop-color="#060709"/>
+      <stop offset="50%" stop-color="#090B10"/>
+      <stop offset="100%" stop-color="#0C0F16"/>
     </linearGradient>
-    <radialGradient id="glow-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.32"/>
-      <stop offset="60%" stop-color="#38BDF8" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#07080A" stop-opacity="0"/>
+    <radialGradient id="glow-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#38BDF8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#060709" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="radial-geo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="beam-seo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
+  <!-- Background Base -->
   <rect width="1200" height="675" fill="url(#bg-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19)"/>
-  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 8"/>
-  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 8"/>
+  <rect width="1200" height="675" fill="url(#glow-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19)"/>
 
-  <circle cx="600" cy="337.5" r="250" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-  <circle cx="600" cy="337.5" r="199" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="6 6"/>
-  <circle cx="600" cy="337.5" r="119" fill="url(#glow-2026-08-28-perplexity-ai-search-crawler-directives-and-host-c-e163515d19)" stroke="rgba(244, 63, 94, 0.25)" stroke-width="1.5"/>
-  <circle cx="600" cy="337.5" r="74" fill="none" stroke="#F43F5E" stroke-width="2"/>
-  <circle cx="600" cy="337.5" r="7" fill="#F43F5E"/>
+  <!-- Perspective Floor Grid (Cybernetic Horizon) -->
+  <g stroke="rgba(255,255,255,0.035)" stroke-width="1">
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="610" x2="1200" y2="610"/>
+    <line x1="600" y1="480" x2="100" y2="675"/>
+    <line x1="600" y1="480" x2="350" y2="675"/>
+    <line x1="600" y1="480" x2="600" y2="675"/>
+    <line x1="600" y1="480" x2="850" y2="675"/>
+    <line x1="600" y1="480" x2="1100" y2="675"/>
+  </g>
 
-  <line x1="481" y1="337.5" x2="326" y2="337.5" stroke="#F43F5E" stroke-width="1.5"/>
-  <line x1="719" y1="337.5" x2="874" y2="337.5" stroke="#F43F5E" stroke-width="1.5"/>
-  <circle cx="326" cy="337.5" r="5" fill="#38BDF8"/>
-  <circle cx="874" cy="337.5" r="5" fill="#38BDF8"/>
+  <!-- Isometric Blueprint Grid Lines (Subtle) -->
+  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
 
-  <line x1="600" y1="218.5" x2="600" y2="88.5" stroke="#38BDF8" stroke-width="1.5"/>
-  <line x1="600" y1="456.5" x2="600" y2="586.5" stroke="#38BDF8" stroke-width="1.5"/>
-  <circle cx="600" cy="88.5" r="4" fill="#F43F5E"/>
-  <circle cx="600" cy="586.5" r="4" fill="#F43F5E"/>
+  <!-- SPECIFIC PILLAR SILHOUETTE SCENE -->
 
-  <line x1="547.7" y1="285.2" x2="475.1" y2="212.6" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="652.3" y1="285.2" x2="725.0" y2="212.6" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="547.7" y1="389.8" x2="475.1" y2="462.4" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="652.3" y1="389.8" x2="725.0" y2="462.4" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <!-- Pillar 6: RAG — Vector Database Radar & High-Dimensional Document Chunk Retrieval -->
+    <g id="scene-rag" transform="translate(0, 5)">
+      <g transform="translate(200, 220)">
+        <rect x="0" y="0" width="130" height="200" rx="6" fill="#0D1018" stroke="#F43F5E" stroke-width="1.8"/>
+        <line x1="20" y1="30" x2="110" y2="30" stroke="#F43F5E" stroke-width="2.5"/>
+        <line x1="20" y1="55" x2="110" y2="55" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="80" x2="110" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="105" x2="110" y2="105" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="130" x2="110" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="20" y1="155" x2="80" y2="155" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <line x1="-15" y1="92" x2="145" y2="92" stroke="#38BDF8" stroke-width="2" stroke-dasharray="2 4"/>
+        <text x="65" y="225" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#F43F5E">RAW DOCUMENT</text>
+      </g>
 
-  <circle cx="475.1" cy="212.6" r="4" fill="#F43F5E"/>
-  <circle cx="725.0" cy="212.6" r="4" fill="#F43F5E"/>
-  <circle cx="475.1" cy="462.4" r="4" fill="#38BDF8"/>
-  <circle cx="725.0" cy="462.4" r="4" fill="#38BDF8"/>
+      <g transform="translate(640, 310)">
+        <ellipse cx="0" cy="0" rx="190" ry="110" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+        <ellipse cx="0" cy="0" rx="120" ry="70" fill="none" stroke="#F43F5E" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+        <line x1="-210" y1="0" x2="210" y2="0" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <line x1="0" y1="-120" x2="0" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        
+        <g fill="rgba(255,255,255,0.2)">
+          <circle cx="-130" cy="-45" r="4"/><circle cx="-145" cy="-25" r="3"/><circle cx="-110" cy="-60" r="3"/>
+          <circle cx="120" cy="55" r="4"/><circle cx="140" cy="35" r="3"/><circle cx="105" cy="70" r="3"/>
+        </g>
 
-  <polygon points="540.5,218.5 659.5,218.5 719.0,337.5 659.5,456.5 540.5,456.5 481.0,337.5" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <g>
+          <circle cx="45" cy="-35" r="9" fill="#F43F5E"/>
+          <circle cx="65" cy="-20" r="7" fill="#38BDF8"/>
+          <circle cx="30" cy="-15" r="7" fill="#38BDF8"/>
+          <circle cx="85" cy="-45" r="6" fill="#F43F5E"/>
+          <line x1="45" y1="-35" x2="65" y2="-20" stroke="#F43F5E" stroke-width="2"/>
+          <line x1="45" y1="-35" x2="30" y2="-15" stroke="#F43F5E" stroke-width="2"/>
+          <line x1="65" y1="-20" x2="85" y2="-45" stroke="#38BDF8" stroke-width="2"/>
+        </g>
 
-  <path d="M48 68 V48 H68 M1132 48 H1152 V68 M1152 607 V627 H1132 M68 627 H48 V607" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none"/>
+        <polygon points="-210,0 45,-35 85,-45" fill="#F43F5E" fill-opacity="0.15"/>
+        <line x1="-210" y1="0" x2="45" y2="-35" stroke="#F43F5E" stroke-width="2.5"/>
+        <circle cx="-210" cy="0" r="6" fill="#F43F5E"/>
+        <text x="65" y="-60" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="900" fill="#F43F5E">COSINE_SIM: 0.965</text>
+      </g>
 
-  <text x="56" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#F43F5E">[ RAG RETRIEVAL // SYMMETRIC VECTOR CORE ]</text>
-  <text x="1144" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">REF-9CF4B19E</text>
-  <text x="600" y="574" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#F8FAFC">Perplexity AI Search Crawler Directives and Host Caching Protoco</text>
-  <text x="600" y="608" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="middle" letter-spacing="3" fill="rgba(255,255,255,0.45)">HTML&amp;HTML AI SEARCH INTELLIGENCE // 2026-09-06</text>
+      <g transform="translate(1000, 240)">
+        <circle cx="0" cy="0" r="24" fill="#0A0E17" stroke="#F43F5E" stroke-width="2"/>
+        <path d="M-8,24 L-24,90 L24,90 L10,24 Z" fill="#0A0E17" stroke="#F43F5E" stroke-width="1.8"/>
+        <path d="M-24,90 L-70,110 L-95,100" fill="none" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="-95" cy="100" r="5" fill="#38BDF8"/>
+        <path d="M-18,90 L-22,190 M18,90 L22,190" stroke="#0A0E17" stroke-width="14" stroke-linecap="round"/>
+      </g>
+
+      <g font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">
+        <rect x="420" y="470" width="220" height="24" rx="4" fill="#0A0D15" stroke="#F43F5E" stroke-width="1"/>
+        <text x="432" y="486" fill="#F43F5E">TOP-K RECALL: 100% (CHUNK_256)</text>
+      </g>
+    </g>
+
+  <!-- Outer Technical Blueprint HUD Brackets -->
+  <path d="M40 60 V40 H60 M1140 40 H1160 V60 M1160 615 V635 H1140 M60 635 H40 V615" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" fill="none"/>
+
+  <!-- Top Metadata Ribbon -->
+  <rect x="48" y="48" width="130" height="24" rx="4" fill="#F43F5E" fill-opacity="0.15" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#F43F5E">PILLAR // RAG</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ RETRIEVAL-AUGMENTED GENERATION & VECTOR MANIFOLDS ]</text>
+  <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-9CF4B19E</text>
+
+  <!-- Bottom Caption & Context -->
+  <rect x="48" y="585" width="1104" height="42" rx="6" fill="#07090E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Perplexity AI Search Crawler Directives and Host Caching Protocols: AI S</text>
+  <text x="1136" y="611" font-family="ui-monospace,Menlo,monospace" font-size="10.5" font-weight="700" text-anchor="end" letter-spacing="2" fill="#F43F5E">HTML&amp;HTML // 2026-09-06</text>
 </svg>

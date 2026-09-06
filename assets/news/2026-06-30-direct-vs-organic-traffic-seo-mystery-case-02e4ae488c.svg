@@ -1,55 +1,102 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c d-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c">
-  <title id="t-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c">HTML&amp;HTML AI Search Intelligence — EEAT CONSENSUS</title>
-  <desc id="d-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c">Symmetrical vector blueprint for Direct Vs Organic Traffic Seo Mystery Case: AI Search and Technical Web Architecture Analysis</desc>
+  <title id="t-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c">HTML&amp;HTML AI Search Intelligence — E-E-A-T (EEAT CONSENSUS)</title>
+  <desc id="d-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c">Vector silhouette blueprint and narrative story for Direct Vs Organic Traffic Seo Mystery Case: AI Search and Technical Web Architecture Analysis</desc>
   <defs>
     <linearGradient id="bg-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07080A"/>
-      <stop offset="50%" stop-color="#0A0C10"/>
-      <stop offset="100%" stop-color="#0D1017"/>
+      <stop offset="0%" stop-color="#060709"/>
+      <stop offset="50%" stop-color="#090B10"/>
+      <stop offset="100%" stop-color="#0C0F16"/>
     </linearGradient>
-    <radialGradient id="glow-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.32"/>
-      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#07080A" stop-opacity="0"/>
+    <radialGradient id="glow-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#060709" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="radial-geo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="beam-seo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#E2E8F0" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
+  <!-- Background Base -->
   <rect width="1200" height="675" fill="url(#bg-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c)"/>
-  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 8"/>
-  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 8"/>
+  <rect width="1200" height="675" fill="url(#glow-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c)"/>
 
-  <circle cx="600" cy="337.5" r="262" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-  <circle cx="600" cy="337.5" r="220" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="6 6"/>
-  <circle cx="600" cy="337.5" r="134" fill="url(#glow-2026-06-30-direct-vs-organic-traffic-seo-mystery-case-02e4ae488c)" stroke="rgba(245, 158, 11, 0.25)" stroke-width="1.5"/>
-  <circle cx="600" cy="337.5" r="71" fill="none" stroke="#E2E8F0" stroke-width="2"/>
-  <circle cx="600" cy="337.5" r="7" fill="#E2E8F0"/>
+  <!-- Perspective Floor Grid (Cybernetic Horizon) -->
+  <g stroke="rgba(255,255,255,0.035)" stroke-width="1">
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="610" x2="1200" y2="610"/>
+    <line x1="600" y1="480" x2="100" y2="675"/>
+    <line x1="600" y1="480" x2="350" y2="675"/>
+    <line x1="600" y1="480" x2="600" y2="675"/>
+    <line x1="600" y1="480" x2="850" y2="675"/>
+    <line x1="600" y1="480" x2="1100" y2="675"/>
+  </g>
 
-  <line x1="466" y1="337.5" x2="305" y2="337.5" stroke="#E2E8F0" stroke-width="1.5"/>
-  <line x1="734" y1="337.5" x2="895" y2="337.5" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="305" cy="337.5" r="5" fill="#F59E0B"/>
-  <circle cx="895" cy="337.5" r="5" fill="#F59E0B"/>
+  <!-- Isometric Blueprint Grid Lines (Subtle) -->
+  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
 
-  <line x1="600" y1="203.5" x2="600" y2="67.5" stroke="#F59E0B" stroke-width="1.5"/>
-  <line x1="600" y1="471.5" x2="600" y2="607.5" stroke="#F59E0B" stroke-width="1.5"/>
-  <circle cx="600" cy="67.5" r="4" fill="#E2E8F0"/>
-  <circle cx="600" cy="607.5" r="4" fill="#E2E8F0"/>
+  <!-- SPECIFIC PILLAR SILHOUETTE SCENE -->
 
-  <line x1="549.8" y1="287.3" x2="459.3" y2="196.8" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="650.2" y1="287.3" x2="740.7" y2="196.8" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="549.8" y1="387.7" x2="459.3" y2="478.2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="650.2" y1="387.7" x2="740.7" y2="478.2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <!-- Pillar 9: E-E-A-T — Auditor Silhouette & Cryptographic Shield of Provenance & Trust -->
+    <g id="scene-eeat" transform="translate(0, 2)">
+      <g transform="translate(600, 310)">
+        <path d="M-120,-110 L120,-110 Q140,50 0,160 Q-140,50 -120,-110 Z" fill="#0B0D14" stroke="#E2E8F0" stroke-width="3"/>
+        <path d="M-95,-90 L95,-90 Q110,40 0,135 Q-110,40 -95,-90 Z" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 6"/>
+        
+        <circle cx="-35" cy="-35" r="28" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+        <circle cx="35" cy="-35" r="28" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+        <circle cx="-35" cy="25" r="28" fill="none" stroke="#F59E0B" stroke-width="2"/>
+        <circle cx="35" cy="25" r="28" fill="none" stroke="#F59E0B" stroke-width="2"/>
+        <text x="-35" y="-31" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#E2E8F0">E</text>
+        <text x="35" y="-31" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#E2E8F0">E</text>
+        <text x="-35" y="29" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#F59E0B">A</text>
+        <text x="35" y="29" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#F59E0B">T</text>
+        
+        <g transform="translate(0, -5)">
+          <circle cx="0" cy="0" r="14" fill="#0A0C12" stroke="#E2E8F0" stroke-width="2"/>
+          <path d="M-5,-4 L-5,-10 Q0,-15 5,-10 L5,-4" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+          <circle cx="0" cy="0" r="3" fill="#E2E8F0"/>
+        </g>
+      </g>
 
-  <circle cx="459.3" cy="196.8" r="4" fill="#E2E8F0"/>
-  <circle cx="740.7" cy="196.8" r="4" fill="#E2E8F0"/>
-  <circle cx="459.3" cy="478.2" r="4" fill="#F59E0B"/>
-  <circle cx="740.7" cy="478.2" r="4" fill="#F59E0B"/>
+      <g transform="translate(260, 240)">
+        <circle cx="0" cy="0" r="26" fill="#0A0D14" stroke="#E2E8F0" stroke-width="2"/>
+        <path d="M-10,26 L-30,105 L30,105 L12,26 Z" fill="#0A0D14" stroke="#E2E8F0" stroke-width="1.8"/>
+        <path d="M-12,70 L45,85 L85,75" fill="none" stroke="#E2E8F0" stroke-width="3.5" stroke-linecap="round"/>
+        <rect x="85" y="55" width="40" height="35" rx="4" fill="#07090F" stroke="#F59E0B" stroke-width="1.5"/>
+        <line x1="92" y1="68" x2="118" y2="68" stroke="#E2E8F0" stroke-width="2"/>
+        <line x1="92" y1="78" x2="110" y2="78" stroke="#F59E0B" stroke-width="2"/>
+        <path d="M-18,105 L-22,210 M18,105 L22,210" stroke="#0A0D14" stroke-width="15" stroke-linecap="round"/>
+      </g>
 
-  <polygon points="533.0,203.5 667.0,203.5 734.0,337.5 667.0,471.5 533.0,471.5 466.0,337.5" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <g font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">
+        <rect x="760" y="240" width="180" height="24" rx="4" fill="#0A0D15" stroke="#E2E8F0" stroke-width="1"/>
+        <text x="772" y="256" fill="#E2E8F0">RFC_3161 TIMESTAMP: OK</text>
+        <rect x="760" y="280" width="180" height="24" rx="4" fill="#0A0D15" stroke="#F59E0B" stroke-width="1"/>
+        <text x="772" y="296" fill="#F59E0B">C2PA PROVENANCE: HASHED</text>
+        <rect x="470" y="490" width="260" height="24" rx="4" fill="#0A0D15" stroke="#E2E8F0" stroke-width="1"/>
+        <text x="482" y="506" fill="#E2E8F0">E-E-A-T AUTHORITATIVENESS: 100%</text>
+      </g>
+    </g>
 
-  <path d="M48 68 V48 H68 M1132 48 H1152 V68 M1152 607 V627 H1132 M68 627 H48 V607" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none"/>
+  <!-- Outer Technical Blueprint HUD Brackets -->
+  <path d="M40 60 V40 H60 M1140 40 H1160 V60 M1160 615 V635 H1140 M60 635 H40 V615" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" fill="none"/>
 
-  <text x="56" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#E2E8F0">[ EEAT CONSENSUS // SYMMETRIC VECTOR CORE ]</text>
-  <text x="1144" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">REF-C4E997AB</text>
-  <text x="600" y="574" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#F8FAFC">Direct Vs Organic Traffic Seo Mystery Case: AI Search and Techni</text>
-  <text x="600" y="608" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="middle" letter-spacing="3" fill="rgba(255,255,255,0.45)">HTML&amp;HTML AI SEARCH INTELLIGENCE // 2026-09-06</text>
+  <!-- Top Metadata Ribbon -->
+  <rect x="48" y="48" width="130" height="24" rx="4" fill="#E2E8F0" fill-opacity="0.15" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#E2E8F0">PILLAR // E-E-A-T</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ CRYPTOGRAPHIC PROVENANCE & TRUST VERIFICATION ]</text>
+  <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-C4E997AB</text>
+
+  <!-- Bottom Caption & Context -->
+  <rect x="48" y="585" width="1104" height="42" rx="6" fill="#07090E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Direct Vs Organic Traffic Seo Mystery Case: AI Search and Technical Web </text>
+  <text x="1136" y="611" font-family="ui-monospace,Menlo,monospace" font-size="10.5" font-weight="700" text-anchor="end" letter-spacing="2" fill="#E2E8F0">HTML&amp;HTML // 2026-09-06</text>
 </svg>

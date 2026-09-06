@@ -39,94 +39,14 @@ def footer(lang):
     tr = lang == 'tr'
     return f'''<footer class="authority-footer"><div class="footer-meta"><p>© 2026 HTML&amp;HTML. {'Yapay zeka arama görünürlüğü, GEO, AEO, LLMO ve teknik web standartları referans platformu.' if tr else 'AI search visibility, GEO, AEO, LLMO and technical web standards reference platform.'}</p><div class="footer-links"><a href="{'/tr/sozluk/' if tr else '/en/glossary/'}">{'AI Arama Sözlüğü' if tr else 'AI Search Glossary'}</a><a href="{'/tr/llms-txt-haberler/' if tr else '/en/llms-txt-news/'}">{'Haberler' if tr else 'News'}</a><a href="{'/tr/fiyatlandirma/' if tr else '/en/pricing/'}">{'Fiyatlar' if tr else 'Pricing'}</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">sitemap.xml</a></div></div></footer>'''
 
+import sys
+sys.path.insert(0, str(ROOT))
+from scripts.news_svg_generator import generate_news_cover_svg
+
 def write_cover(item, slug):
     out = ROOT / 'assets/news' / f'{slug}.svg'
     out.parent.mkdir(parents=True, exist_ok=True)
-    topic = esc(item['topic'].replace('_', ' '))
-    date = esc(item.get('updatedAt') or item['publishedAt'])
-    title = esc(item['title']['en'])
-    
-    seed = int(hashlib.sha256(item['id'].encode()).hexdigest()[:8], 16)
-    r1 = 48 + (seed % 28)
-    r2 = 112 + ((seed >> 2) % 36)
-    r3 = 186 + ((seed >> 4) % 44)
-    r4 = 250 + ((seed >> 6) % 30)
-    
-    t = item.get('topic', 'LLMO')
-    if 'LLMO' in t or 'INFERENCE' in t:
-        c1, c2, glow = '#38BDF8', '#818CF8', 'rgba(56, 189, 248, 0.25)'
-    elif 'RAG' in t:
-        c1, c2, glow = '#F43F5E', '#38BDF8', 'rgba(244, 63, 94, 0.25)'
-    elif 'GEO' in t:
-        c1, c2, glow = '#A855F7', '#EC4899', 'rgba(168, 85, 247, 0.25)'
-    elif 'AEO' in t:
-        c1, c2, glow = '#F59E0B', '#EAB308', 'rgba(245, 158, 11, 0.25)'
-    elif 'AAO' in t:
-        c1, c2, glow = '#10B981', '#14B8A6', 'rgba(16, 185, 129, 0.25)'
-    elif 'SEO' in t:
-        c1, c2, glow = '#F59E0B', '#64748B', 'rgba(245, 158, 11, 0.25)'
-    elif 'SITEMAP' in t:
-        c1, c2, glow = '#06B6D4', '#3B82F6', 'rgba(6, 182, 212, 0.25)'
-    elif 'SCHEMA' in t:
-        c1, c2, glow = '#84CC16', '#0284C7', 'rgba(132, 204, 22, 0.25)'
-    else: # EEAT
-        c1, c2, glow = '#E2E8F0', '#F59E0B', 'rgba(245, 158, 11, 0.25)'
-
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-{slug} d-{slug}">
-  <title id="t-{slug}">HTML&amp;HTML AI Search Intelligence — {topic}</title>
-  <desc id="d-{slug}">Symmetrical vector blueprint for {title}</desc>
-  <defs>
-    <linearGradient id="bg-{slug}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07080A"/>
-      <stop offset="50%" stop-color="#0A0C10"/>
-      <stop offset="100%" stop-color="#0D1017"/>
-    </linearGradient>
-    <radialGradient id="glow-{slug}" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="{c1}" stop-opacity="0.32"/>
-      <stop offset="60%" stop-color="{c2}" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#07080A" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-
-  <rect width="1200" height="675" fill="url(#bg-{slug})"/>
-  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 8"/>
-  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 8"/>
-
-  <circle cx="600" cy="337.5" r="{r4}" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-  <circle cx="600" cy="337.5" r="{r3}" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="6 6"/>
-  <circle cx="600" cy="337.5" r="{r2}" fill="url(#glow-{slug})" stroke="{glow}" stroke-width="1.5"/>
-  <circle cx="600" cy="337.5" r="{r1}" fill="none" stroke="{c1}" stroke-width="2"/>
-  <circle cx="600" cy="337.5" r="7" fill="{c1}"/>
-
-  <line x1="{600 - r2}" y1="337.5" x2="{600 - r3 - 75}" y2="337.5" stroke="{c1}" stroke-width="1.5"/>
-  <line x1="{600 + r2}" y1="337.5" x2="{600 + r3 + 75}" y2="337.5" stroke="{c1}" stroke-width="1.5"/>
-  <circle cx="{600 - r3 - 75}" cy="337.5" r="5" fill="{c2}"/>
-  <circle cx="{600 + r3 + 75}" cy="337.5" r="5" fill="{c2}"/>
-
-  <line x1="600" y1="{337.5 - r2}" x2="600" y2="{337.5 - r3 - 50}" stroke="{c2}" stroke-width="1.5"/>
-  <line x1="600" y1="{337.5 + r2}" x2="600" y2="{337.5 + r3 + 50}" stroke="{c2}" stroke-width="1.5"/>
-  <circle cx="600" cy="{337.5 - r3 - 50}" r="4" fill="{c1}"/>
-  <circle cx="600" cy="{337.5 + r3 + 50}" r="4" fill="{c1}"/>
-
-  <line x1="{600 - r1 * 0.707:.1f}" y1="{337.5 - r1 * 0.707:.1f}" x2="{600 - r2 * 1.05:.1f}" y2="{337.5 - r2 * 1.05:.1f}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="{600 + r1 * 0.707:.1f}" y1="{337.5 - r1 * 0.707:.1f}" x2="{600 + r2 * 1.05:.1f}" y2="{337.5 - r2 * 1.05:.1f}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="{600 - r1 * 0.707:.1f}" y1="{337.5 + r1 * 0.707:.1f}" x2="{600 - r2 * 1.05:.1f}" y2="{337.5 + r2 * 1.05:.1f}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="{600 + r1 * 0.707:.1f}" y1="{337.5 + r1 * 0.707:.1f}" x2="{600 + r2 * 1.05:.1f}" y2="{337.5 + r2 * 1.05:.1f}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-
-  <circle cx="{600 - r2 * 1.05:.1f}" cy="{337.5 - r2 * 1.05:.1f}" r="4" fill="{c1}"/>
-  <circle cx="{600 + r2 * 1.05:.1f}" cy="{337.5 - r2 * 1.05:.1f}" r="4" fill="{c1}"/>
-  <circle cx="{600 - r2 * 1.05:.1f}" cy="{337.5 + r2 * 1.05:.1f}" r="4" fill="{c2}"/>
-  <circle cx="{600 + r2 * 1.05:.1f}" cy="{337.5 + r2 * 1.05:.1f}" r="4" fill="{c2}"/>
-
-  <polygon points="{600 - r2 * 0.5:.1f},{337.5 - r2:.1f} {600 + r2 * 0.5:.1f},{337.5 - r2:.1f} {600 + r2:.1f},{337.5:.1f} {600 + r2 * 0.5:.1f},{337.5 + r2:.1f} {600 - r2 * 0.5:.1f},{337.5 + r2:.1f} {600 - r2:.1f},{337.5:.1f}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-
-  <path d="M48 68 V48 H68 M1132 48 H1152 V68 M1152 607 V627 H1132 M68 627 H48 V607" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none"/>
-
-  <text x="56" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="2" fill="{c1}">[ {topic} // SYMMETRIC VECTOR CORE ]</text>
-  <text x="1144" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">REF-{hex(seed)[2:10].upper()}</text>
-  <text x="600" y="574" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#F8FAFC">{title[:64]}</text>
-  <text x="600" y="608" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="middle" letter-spacing="3" fill="rgba(255,255,255,0.45)">HTML&amp;HTML AI SEARCH INTELLIGENCE // {date}</text>
-</svg>'''
+    svg = generate_news_cover_svg(item, slug)
     out.write_text(svg, encoding='utf-8')
     return '/assets/news/' + out.name
 

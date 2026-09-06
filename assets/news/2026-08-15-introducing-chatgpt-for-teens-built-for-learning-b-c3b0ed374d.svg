@@ -1,55 +1,115 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d d-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d">
-  <title id="t-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d">HTML&amp;HTML AI Search Intelligence — SITEMAP DISCOVERY</title>
-  <desc id="d-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d">Symmetrical vector blueprint for Introducing ChatGPT for Teens: Built for learning, backed by protections: AI Search and Technical Web Architecture Analysis</desc>
+  <title id="t-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d">HTML&amp;HTML AI Search Intelligence — Sitemaps (SITEMAP DISCOVERY)</title>
+  <desc id="d-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d">Vector silhouette blueprint and narrative story for Introducing ChatGPT for Teens: Built for learning, backed by protections: AI Search and Technical Web Architecture Analysis</desc>
   <defs>
     <linearGradient id="bg-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07080A"/>
-      <stop offset="50%" stop-color="#0A0C10"/>
-      <stop offset="100%" stop-color="#0D1017"/>
+      <stop offset="0%" stop-color="#060709"/>
+      <stop offset="50%" stop-color="#090B10"/>
+      <stop offset="100%" stop-color="#0C0F16"/>
     </linearGradient>
-    <radialGradient id="glow-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.32"/>
-      <stop offset="60%" stop-color="#3B82F6" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#07080A" stop-opacity="0"/>
+    <radialGradient id="glow-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#3B82F6" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#060709" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="radial-geo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="beam-seo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
+  <!-- Background Base -->
   <rect width="1200" height="675" fill="url(#bg-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d)"/>
-  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 8"/>
-  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 8"/>
+  <rect width="1200" height="675" fill="url(#glow-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d)"/>
 
-  <circle cx="600" cy="337.5" r="272" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-  <circle cx="600" cy="337.5" r="206" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="6 6"/>
-  <circle cx="600" cy="337.5" r="118" fill="url(#glow-2026-08-15-introducing-chatgpt-for-teens-built-for-learning-b-c3b0ed374d)" stroke="rgba(6, 182, 212, 0.25)" stroke-width="1.5"/>
-  <circle cx="600" cy="337.5" r="69" fill="none" stroke="#06B6D4" stroke-width="2"/>
-  <circle cx="600" cy="337.5" r="7" fill="#06B6D4"/>
+  <!-- Perspective Floor Grid (Cybernetic Horizon) -->
+  <g stroke="rgba(255,255,255,0.035)" stroke-width="1">
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="610" x2="1200" y2="610"/>
+    <line x1="600" y1="480" x2="100" y2="675"/>
+    <line x1="600" y1="480" x2="350" y2="675"/>
+    <line x1="600" y1="480" x2="600" y2="675"/>
+    <line x1="600" y1="480" x2="850" y2="675"/>
+    <line x1="600" y1="480" x2="1100" y2="675"/>
+  </g>
 
-  <line x1="482" y1="337.5" x2="319" y2="337.5" stroke="#06B6D4" stroke-width="1.5"/>
-  <line x1="718" y1="337.5" x2="881" y2="337.5" stroke="#06B6D4" stroke-width="1.5"/>
-  <circle cx="319" cy="337.5" r="5" fill="#3B82F6"/>
-  <circle cx="881" cy="337.5" r="5" fill="#3B82F6"/>
+  <!-- Isometric Blueprint Grid Lines (Subtle) -->
+  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
 
-  <line x1="600" y1="219.5" x2="600" y2="81.5" stroke="#3B82F6" stroke-width="1.5"/>
-  <line x1="600" y1="455.5" x2="600" y2="593.5" stroke="#3B82F6" stroke-width="1.5"/>
-  <circle cx="600" cy="81.5" r="4" fill="#06B6D4"/>
-  <circle cx="600" cy="593.5" r="4" fill="#06B6D4"/>
+  <!-- SPECIFIC PILLAR SILHOUETTE SCENE -->
 
-  <line x1="551.2" y1="288.7" x2="476.1" y2="213.6" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="648.8" y1="288.7" x2="723.9" y2="213.6" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="551.2" y1="386.3" x2="476.1" y2="461.4" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-  <line x1="648.8" y1="386.3" x2="723.9" y2="461.4" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <!-- Pillar 7: Sitemaps — Navigator Silhouette & Hierarchical XML Discovery Topography Tree -->
+    <g id="scene-sitemaps" transform="translate(0, 0)">
+      <g transform="translate(600, 200)">
+        <rect x="-80" y="-30" width="160" height="38" rx="6" fill="#09131C" stroke="#06B6D4" stroke-width="2.5"/>
+        <circle cx="-60" cy="-11" r="5" fill="#06B6D4"/>
+        <text x="-45" y="-8" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" fill="#06B6D4">&lt;sitemapindex&gt;</text>
+        
+        <path d="M0,8 L0,50 L-240,90" fill="none" stroke="#06B6D4" stroke-width="2"/>
+        <path d="M0,8 L0,50 L-80,90" fill="none" stroke="#06B6D4" stroke-width="2"/>
+        <path d="M0,8 L0,50 L80,90" fill="none" stroke="#06B6D4" stroke-width="2"/>
+        <path d="M0,8 L0,50 L240,90" fill="none" stroke="#06B6D4" stroke-width="2"/>
+        
+        <g transform="translate(-240, 90)">
+          <rect x="-60" y="0" width="120" height="32" rx="5" fill="#09131C" stroke="#3B82F6" stroke-width="1.8"/>
+          <text x="0" y="20" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#3B82F6">/products.xml</text>
+          <line x1="0" y1="32" x2="-35" y2="80" stroke="#3B82F6" stroke-width="1.2"/>
+          <line x1="0" y1="32" x2="35" y2="80" stroke="#3B82F6" stroke-width="1.2"/>
+          <circle cx="-35" cy="80" r="5" fill="#06B6D4"/><circle cx="35" cy="80" r="5" fill="#06B6D4"/>
+        </g>
+        <g transform="translate(-80, 90)">
+          <rect x="-55" y="0" width="110" height="32" rx="5" fill="#09131C" stroke="#06B6D4" stroke-width="1.8"/>
+          <text x="0" y="20" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#06B6D4">/guides.xml</text>
+          <line x1="0" y1="32" x2="0" y2="80" stroke="#06B6D4" stroke-width="1.2"/>
+          <circle cx="0" cy="80" r="5" fill="#3B82F6"/>
+        </g>
+        <g transform="translate(80, 90)">
+          <rect x="-55" y="0" width="110" height="32" rx="5" fill="#09131C" stroke="#06B6D4" stroke-width="1.8"/>
+          <text x="0" y="20" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#06B6D4">/news.xml</text>
+          <line x1="0" y1="32" x2="0" y2="80" stroke="#06B6D4" stroke-width="1.2"/>
+          <circle cx="0" cy="80" r="5" fill="#3B82F6"/>
+        </g>
+        <g transform="translate(240, 90)">
+          <rect x="-60" y="0" width="120" height="32" rx="5" fill="#09131C" stroke="#3B82F6" stroke-width="1.8"/>
+          <text x="0" y="20" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#3B82F6">/llms-txt.xml</text>
+          <line x1="0" y1="32" x2="-35" y2="80" stroke="#3B82F6" stroke-width="1.2"/>
+          <line x1="0" y1="32" x2="35" y2="80" stroke="#3B82F6" stroke-width="1.2"/>
+          <circle cx="-35" cy="80" r="5" fill="#06B6D4"/><circle cx="35" cy="80" r="5" fill="#06B6D4"/>
+        </g>
+      </g>
 
-  <circle cx="476.1" cy="213.6" r="4" fill="#06B6D4"/>
-  <circle cx="723.9" cy="213.6" r="4" fill="#06B6D4"/>
-  <circle cx="476.1" cy="461.4" r="4" fill="#3B82F6"/>
-  <circle cx="723.9" cy="461.4" r="4" fill="#3B82F6"/>
+      <g transform="translate(180, 260)">
+        <circle cx="0" cy="0" r="25" fill="#0A0E17" stroke="#06B6D4" stroke-width="2"/>
+        <path d="M-8,25 L-24,95 L24,95 L10,25 Z" fill="#0A0E17" stroke="#06B6D4" stroke-width="1.8"/>
+        <line x1="30" y1="180" x2="30" y2="-40" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="30" cy="-40" r="6" fill="#3B82F6"/>
+        <path d="M10,60 L30,45" fill="none" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/>
+        <path d="M-18,95 L-22,190 M18,95 L22,190" stroke="#0A0E17" stroke-width="14" stroke-linecap="round"/>
+      </g>
 
-  <polygon points="541.0,219.5 659.0,219.5 718.0,337.5 659.0,455.5 541.0,455.5 482.0,337.5" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <g font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">
+        <rect x="460" y="470" width="280" height="24" rx="4" fill="#0A0D15" stroke="#06B6D4" stroke-width="1"/>
+        <text x="472" y="486" fill="#06B6D4">DISCOVERY_INDEX: 100% CRAWL_REACH</text>
+      </g>
+    </g>
 
-  <path d="M48 68 V48 H68 M1132 48 H1152 V68 M1152 607 V627 H1132 M68 627 H48 V607" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none"/>
+  <!-- Outer Technical Blueprint HUD Brackets -->
+  <path d="M40 60 V40 H60 M1140 40 H1160 V60 M1160 615 V635 H1140 M60 635 H40 V615" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" fill="none"/>
 
-  <text x="56" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#06B6D4">[ SITEMAP DISCOVERY // SYMMETRIC VECTOR CORE ]</text>
-  <text x="1144" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">REF-2FCE1E09</text>
-  <text x="600" y="574" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#F8FAFC">Introducing ChatGPT for Teens: Built for learning, backed by pro</text>
-  <text x="600" y="608" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="middle" letter-spacing="3" fill="rgba(255,255,255,0.45)">HTML&amp;HTML AI SEARCH INTELLIGENCE // 2026-09-06</text>
+  <!-- Top Metadata Ribbon -->
+  <rect x="48" y="48" width="130" height="24" rx="4" fill="#06B6D4" fill-opacity="0.15" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#06B6D4">PILLAR // Sitemaps</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ HIERARCHICAL DISCOVERY MESH & CRAWL ROUTING ]</text>
+  <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-2FCE1E09</text>
+
+  <!-- Bottom Caption & Context -->
+  <rect x="48" y="585" width="1104" height="42" rx="6" fill="#07090E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Introducing ChatGPT for Teens: Built for learning, backed by protections</text>
+  <text x="1136" y="611" font-family="ui-monospace,Menlo,monospace" font-size="10.5" font-weight="700" text-anchor="end" letter-spacing="2" fill="#06B6D4">HTML&amp;HTML // 2026-09-06</text>
 </svg>
