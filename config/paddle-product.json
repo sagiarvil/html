@@ -1,0 +1,14 @@
+{
+  "product": "AI Search Visibility Roadmap",
+  "productTr": "AI Görünürlük Yol Haritası",
+  "priceId": "pri_01m1t2f2jkm8w74n7j9ap4hetm",
+  "displayPriceUsd": 99,
+  "billingType": "one_time",
+  "quantity": 1,
+  "scope": {
+    "domains": 1,
+    "maxPublicPages": 50,
+    "verificationRescansWithin30Days": 1
+  },
+  "checkoutProvider": "Paddle"
+}
