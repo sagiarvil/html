@@ -20,14 +20,20 @@ jobs:
         run: |
           set -euo pipefail
           checkout="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/checkout)"
-          grep -Fq 'SOFTWARE-AS-A-SERVICE / ONE-TIME DIGITAL PRODUCT' <<<"$checkout"
+          grep -Fq 'SOFTWARE-AS-A-SERVICE' <<<"$checkout"
           grep -Fq '$99' <<<"$checkout"
           grep -Fq 'Paddle' <<<"$checkout"
+          grep -Fq 'pri_01m1t2f2jkm8w74n7j9ap4hetm' <<<"$checkout"
+          grep -Fq '/assets/js/paddle-checkout.js' <<<"$checkout"
           grep -Fq 'kart verisi toplamıyoruz' <<<"$checkout"
           grep -Fq 'ücret tahsil etmiyoruz' <<<"$checkout"
           grep -Fq 'ödeme webhook' <<<"$checkout"
           grep -Eq '<button[^>]+disabled' <<<"$checkout"
           ! grep -Fq '$149' <<<"$checkout"
+          runtime="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/assets/js/paddle-checkout.js)"
+          grep -Fq 'HTMLANDHTML_PADDLE_CLIENT_TOKEN' <<<"$runtime"
+          grep -Fq 'Paddle.Checkout.open' <<<"$runtime"
+          ! grep -Eqi 'PADDLE_API_KEY|api[_-]?key' <<<"$runtime"
           for f in 00_READ_ME.md 01_EXECUTIVE_SUMMARY.md 02_IMPLEMENTATION_BLUEPRINT.md 03_FINDINGS.json 04_ACCEPTANCE_TESTS.md 05_ROLLBACK_PLAN.md 06_AI_READINESS.json 07_IMPLEMENTATION_CHECKLIST.txt 08_LLMS_TXT_RECOMMENDED.txt 09_MACHINE_SURFACE_MAP.json 10_EVALUATION_REPORT.md; do grep -Fq "$f" <<<"$checkout"; done
 
       - name: Verify legal and company review surfaces
@@ -59,4 +65,16 @@ jobs:
           if(!paid.includes('$99')||!paid.includes('Roadmap')) throw new Error('public paid product profile is not $99 Roadmap');
           if(p.scanBoundaries?.maxPublicHtmlPages!==50) throw new Error('scan boundary changed');
           if(p.engines?.length!==12||p.intelligenceLayer?.analysisCount!==13||p.intelligenceLayer?.readinessLensCount!==7) throw new Error('core product contract changed');
+          NODE
+
+      - name: Verify API commerce and opportunity contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          api="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/openapi.json)"
+          health="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/api/health)"
+          API="$api" HEALTH="$health" node - <<'NODE'
+          const api=JSON.parse(process.env.API),h=JSON.parse(process.env.HEALTH);
+          if(api['x-commerce']?.provider!=='Paddle'||api['x-commerce']?.priceId!=='pri_01m1t2f2jkm8w74n7j9ap4hetm'||api['x-commerce']?.displayPriceUsd!==99) throw new Error('Paddle commerce contract drift');
+          if(h.opportunitySignals!==12) throw new Error('Enterprise opportunity signals missing');
           NODE
