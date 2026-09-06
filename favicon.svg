@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#111"/><text x="32" y="39" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#fff">H&amp;H</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <style>
+    :root {
+      fill: #11120f;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        fill: #f4f1e9;
+      }
+    }
+  </style>
+  <path d="M109 21h56v194h-21V48h-35V21z" />
+  <rect x="10" y="100" width="57" height="21" />
+  <rect x="233" y="97" width="57" height="22" />
+  <rect x="106" y="256" width="95" height="22" />
+</svg>
