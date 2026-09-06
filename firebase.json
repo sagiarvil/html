@@ -29,195 +29,38 @@
       {
         "source": "**",
         "headers": [
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "SAMEORIGIN"
-          },
-          {
-            "key": "Referrer-Policy",
-            "value": "strict-origin-when-cross-origin"
-          },
-          {
-            "key": "Strict-Transport-Security",
-            "value": "max-age=31536000; includeSubDomains; preload"
-          },
-          {
-            "key": "Permissions-Policy",
-            "value": "camera=(), microphone=(), geolocation=()"
-          },
-          {
-            "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
-          }
+          {"key":"X-Content-Type-Options","value":"nosniff"},
+          {"key":"X-Frame-Options","value":"SAMEORIGIN"},
+          {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},
+          {"key":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains; preload"},
+          {"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},
+          {"key":"Content-Security-Policy","value":"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"}
         ]
       },
-      {
-        "source": "/assets/**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=604800, immutable"
-          }
-        ]
-      },
-      {
-        "source": "/llms.txt",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/markdown; charset=utf-8"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
-      },
-      {
-        "source": "/index.md",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/markdown; charset=utf-8"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
-      },
-      {
-        "source": "/openapi.json",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/json; charset=utf-8"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
-      },
-      {
-        "source": "/audit-profile.json",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/json; charset=utf-8"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
-      },
-      {
-        "source": "/sources.json",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/json; charset=utf-8"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
-      }
+      {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
+      {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/openapi.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/audit-profile.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]},
+      {"source":"/sources.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]}
     ],
     "rewrites": [
-      {
-        "source": "/api/health",
-        "function": {
-          "functionId": "health",
-          "region": "us-central1",
-          "pinTag": true
-        }
-      },
-      {
-        "source": "/api/scan",
-        "function": {
-          "functionId": "scan",
-          "region": "us-central1",
-          "pinTag": true
-        }
-      },
-      {
-        "source": "/api/mandate",
-        "function": {
-          "functionId": "mandate",
-          "region": "us-central1",
-          "pinTag": true
-        }
-      },
-      {
-        "source": "/api/mentions",
-        "function": {
-          "functionId": "mentions",
-          "region": "us-central1",
-          "pinTag": true
-        }
-      }
+      {"source":"/api/health","function":{"functionId":"health","region":"us-central1","pinTag":true}},
+      {"source":"/api/scan","function":{"functionId":"scan","region":"us-central1","pinTag":true}},
+      {"source":"/api/intelligence","function":{"functionId":"intelligence","region":"us-central1","pinTag":true}},
+      {"source":"/api/mandate","function":{"functionId":"mandate","region":"us-central1","pinTag":true}},
+      {"source":"/api/mentions","function":{"functionId":"mentions","region":"us-central1","pinTag":true}}
     ],
     "redirects": [
-      {
-        "source": "/favicon.ico",
-        "destination": "/favicon.svg",
-        "type": 302
-      },
-      {
-        "source": "/index.html",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/home",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/products",
-        "destination": "/en/pricing/",
-        "type": 301
-      },
-      {
-        "source": "/products.html",
-        "destination": "/en/pricing/",
-        "type": 301
-      },
-      {
-        "source": "/pricing",
-        "destination": "/en/pricing/",
-        "type": 301
-      },
-      {
-        "source": "/architecture",
-        "destination": "/en/platform/",
-        "type": 301
-      },
-      {
-        "source": "/buy",
-        "destination": "/en/fix-mandate/",
-        "type": 301
-      },
-      {
-        "source": "/preview",
-        "destination": "/",
-        "type": 301
-      }
+      {"source":"/favicon.ico","destination":"/favicon.svg","type":302},
+      {"source":"/index.html","destination":"/","type":301},
+      {"source":"/home","destination":"/","type":301},
+      {"source":"/products","destination":"/en/pricing/","type":301},
+      {"source":"/products.html","destination":"/en/pricing/","type":301},
+      {"source":"/pricing","destination":"/en/pricing/","type":301},
+      {"source":"/architecture","destination":"/en/platform/","type":301},
+      {"source":"/buy","destination":"/en/fix-mandate/","type":301},
+      {"source":"/preview","destination":"/","type":301}
     ]
   }
 }
