@@ -1329,4 +1329,44 @@ html[data-theme="dark"] .px-value-strip > div:hover {
   transform: scale(1.15) !important;
 }
 
+/* ENFORCE DARK OBSIDIAN STATUS BAR DNA ACROSS THE ENTIRE ECOSYSTEM */
+#scanStatus, .status, #toolStatus, .tool-status, #mentionStatus {
+  margin-top: 16px !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  border-radius: 14px !important;
+  padding: 14px 22px !important;
+  background: #0b0f19 !important;
+  background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  text-align: center !important;
+}
+#scanStatus.error, .status.error, #toolStatus.error, .tool-status.error, #mentionStatus.error {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #fca5a5 !important;
+  box-shadow: 0 4px 20px -4px rgba(239, 68, 68, 0.3) !important;
+}
+.status-spinner {
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
+  border: 2.5px solid rgba(56, 189, 248, 0.25) !important;
+  border-top-color: #38bdf8 !important;
+  border-radius: 50% !important;
+  animation: statusSpin 0.75s linear infinite !important;
+  flex-shrink: 0 !important;
+}
+@keyframes statusSpin {
+  to { transform: rotate(360deg); }
+}
+
+
 

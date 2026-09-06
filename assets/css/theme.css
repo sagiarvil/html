@@ -2118,15 +2118,26 @@ html[data-theme="dark"] .ai-opportunity-eyebrow {
 html[data-theme="dark"] .score-item strong {
   color: #ffffff;
 }
-html[data-theme="dark"] .status {
-  background: #141720 !important;
-  border-color: #1e2330 !important;
-  color: #f1f5f9 !important;
+html #scanStatus,
+html .status,
+html #toolStatus,
+html .tool-status,
+html #mentionStatus {
+  background: #0b0f19 !important;
+  background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
 }
-html[data-theme="dark"] .status.error {
+html #scanStatus.error,
+html .status.error,
+html #toolStatus.error,
+html .tool-status.error,
+html #mentionStatus.error {
   background: rgba(239, 68, 68, 0.15) !important;
-  border-color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
   color: #fca5a5 !important;
+  box-shadow: 0 4px 20px -4px rgba(239, 68, 68, 0.3) !important;
 }
 html[data-theme="dark"] .locked-fix {
   background: rgba(255, 255, 255, 0.04) !important;
@@ -2339,15 +2350,26 @@ html[data-theme="dark"] .authority-hero h1 em {
   html:not([data-theme="light"]) .score-item strong {
     color: #ffffff;
   }
-  html:not([data-theme="light"]) .status {
-    background: #141720 !important;
-    border-color: #1e2330 !important;
-    color: #f1f5f9 !important;
+  html:not([data-theme="light"]) #scanStatus,
+  html:not([data-theme="light"]) .status,
+  html:not([data-theme="light"]) #toolStatus,
+  html:not([data-theme="light"]) .tool-status,
+  html:not([data-theme="light"]) #mentionStatus {
+    background: #0b0f19 !important;
+    background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
+    border: 1px solid rgba(56, 189, 248, 0.45) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
   }
-  html:not([data-theme="light"]) .status.error {
+  html:not([data-theme="light"]) #scanStatus.error,
+  html:not([data-theme="light"]) .status.error,
+  html:not([data-theme="light"]) #toolStatus.error,
+  html:not([data-theme="light"]) .tool-status.error,
+  html:not([data-theme="light"]) #mentionStatus.error {
     background: rgba(239, 68, 68, 0.15) !important;
-    border-color: #ef4444 !important;
+    border-color: rgba(239, 68, 68, 0.5) !important;
     color: #fca5a5 !important;
+    box-shadow: 0 4px 20px -4px rgba(239, 68, 68, 0.3) !important;
   }
   html:not([data-theme="light"]) .locked-fix {
     background: rgba(255, 255, 255, 0.04) !important;

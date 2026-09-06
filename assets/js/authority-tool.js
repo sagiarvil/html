@@ -88,9 +88,9 @@ function render(data){
 document.querySelectorAll('.chip-btn').forEach(c=>c.addEventListener('click',()=>{if(input){input.value=c.dataset.domain||c.textContent.trim();input.focus()}}));
 form?.addEventListener('submit',async e=>{
  e.preventDefault();const domain=input.value.trim();if(!domain)return;
- btn.disabled=true;status.hidden=false;status.classList.remove('error');status.textContent=copy.scanning;result.hidden=true;document.getElementById('toolIntelligence')?.remove();
+ btn.disabled=true;status.hidden=false;status.classList.remove('error');status.innerHTML='<span class="status-spinner" aria-hidden="true"></span><span>'+esc(copy.scanning)+'</span>';result.hidden=true;document.getElementById('toolIntelligence')?.remove();
  try{const r=await fetch('/api/scan',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({domain})});const data=await r.json();if(!r.ok){if(lang==='tr'){console.warn('Scan API:',data.error);throw new Error(copy.failed)}throw new Error(data.error||copy.failed)}render(data);status.hidden=true}
- catch(err){status.hidden=false;status.classList.add('error');status.textContent=err?.message||copy.failed}
+ catch(err){status.hidden=false;status.classList.add('error');status.innerHTML='<span>'+esc(err?.message||copy.failed)+'</span>'}
  finally{btn.disabled=false}
 });
 })();

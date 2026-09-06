@@ -127,20 +127,30 @@
   font-size: 13.5px;
   line-height: 1.55;
 }
-.tool-status {
-  margin-top: 16px;
-  padding: 14px 18px;
-  border: 1px solid var(--line, #3a3b35);
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.55;
-  background: var(--bg-soft, #161a23);
-  color: var(--fg, #ffffff);
+.tool-status, #toolStatus, #mentionStatus {
+  margin-top: 16px !important;
+  padding: 14px 22px !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  border-radius: 14px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+  background: #0b0f19 !important;
+  background: linear-gradient(135deg, rgba(14, 18, 29, 0.98) 0%, rgba(20, 26, 42, 0.98) 100%) !important;
+  color: #ffffff !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  text-align: center !important;
 }
-.tool-status.error {
-  border-color: #ef4444;
-  color: #fca5a5;
-  background: rgba(239, 68, 68, 0.1);
+.tool-status.error, #toolStatus.error, #mentionStatus.error {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  box-shadow: 0 4px 20px -4px rgba(239, 68, 68, 0.3) !important;
 }
 .tool-result {
   display: grid;
