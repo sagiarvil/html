@@ -109,10 +109,7 @@ function mountBridge(){
   if(footer)footer.before(section);else (document.querySelector('main')||document.body).appendChild(section);
 }
 function mountHeroThesis(){
-  if(!home()||document.querySelector('[data-commercial-thesis]'))return;
-  const c=copy[lang()];const hero=document.querySelector('.hero');const intro=hero?.querySelector(':scope > p');
-  if(!intro)return;const box=document.createElement('p');box.className='ai-commercial-thesis';box.dataset.commercialThesis='1';box.textContent=c.thesis;intro.after(box);
-  const scan=document.querySelector('#scanButton b');if(scan)scan.textContent=lang()==='tr'?'AI Görünürlüğünü Tara':'Scan AI Visibility';
+  if(!home())return;
   const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>uygulanabilir düzeltmeye çevirin.':'Turn AI visibility blockers<br>into an implementation contract.';if(p)p.textContent=lang()==='tr'?'Bulgu listesini; kök neden, uygulama sırası, kabul testi, regresyon testi ve rollback içeren $99 düzeltme sözleşmesine dönüştürür.':'Convert findings into a $99 fix contract with root cause, implementation order, acceptance tests, regression tests, and rollback.';}
 }
 function loadCss(){if(document.querySelector('link[data-commercial-intent-css]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/commercial-intent.css?v=1';l.dataset.commercialIntentCss='1';document.head.appendChild(l)}

@@ -3,7 +3,7 @@
 const COPY={
  tr:{
   hero:'Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em>',
-  lead:'Tek URL girin. HTML&HTML; llms.txt, GEO, AEO, LLMO, AAO, RAG, E-E-A-T, AI crawler erişimi ve teknik temeli tek taramada ölçer. Sorunları ve kanıtı ücretsiz görün; nasıl uygulanacağını yalnız ihtiyacınız varsa $99 Uygulama Planı ile açın.',
+  lead:'Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.',
   scan:'Ücretsiz Kontrol Et',
   mandateTitle:'Teşhis ücretsiz.<br>Uygulama planı $99.',
   mandateCopy:'Ne yanlış olduğunu saklamıyoruz. $99 katmanında kök neden, P0–P3 uygulama sırası, kabul/regresyon testleri, rollback ve yazılımcınıza teslim edilecek ZIP mühendislik paketi açılır.',

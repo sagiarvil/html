@@ -115,7 +115,7 @@ def build_homepages():
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
   <h1 data-i18n="heroTitle">Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em></h1>
-  <p data-i18n="heroCopy">Alan adını girin. 12 bağımsız analiz motoru herkese açık site yüzeyini tarasın; problemi, önemini, güven seviyesini ve kanıtı gösterelim. Uygulama talimatı ödeme katmanında açılır.</p>
+  <p data-i18n="heroCopy">Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">

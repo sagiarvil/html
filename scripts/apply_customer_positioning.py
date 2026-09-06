@@ -19,6 +19,7 @@ EXCLUDED = {
 }
 
 TR_COMMON = "HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. ChatGPT, Google'ın yapay zeka araması ve diğer AI sistemlerinde bulunmanızı, anlaşılmanızı, kaynak gösterilmenizi ve değerlendirme kümesine girmenizi zorlaştıran site kaynaklı engelleri kanıtıyla gösterir."
+TR_HOME_LEAD = "Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz."
 EN_COMMON = "HTML&HTML prepares your website to compete for visibility, citation and recommendation opportunity in AI search. It shows measurable website-side blockers that can prevent discovery, understanding, source consideration and a usable referral path."
 
 # The first sentence sells the customer expectation; the second explains the mechanism.
@@ -27,14 +28,14 @@ PAGES = {
         "title": "Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&HTML",
         "description": "Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.",
         "h1": "Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?",
-        "lead": TR_COMMON,
+        "lead": TR_HOME_LEAD,
         "cta": "Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et",
     },
     "tr/index.html": {
         "title": "Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&HTML",
         "description": "Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.",
         "h1": "Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?",
-        "lead": TR_COMMON,
+        "lead": TR_HOME_LEAD,
         "cta": "Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et",
     },
     "en/index.html": {
