@@ -30,18 +30,27 @@ jobs:
           NEWS_EDITORIAL_OPENAI_KEY: ${{ secrets.NEWS_EDITORIAL_OPENAI_KEY }}
           NEWS_EDITORIAL_MODEL: gpt-5.6-luna
         run: python3 scripts/update_llms_news.py
+      - name: Detect validated editorial change
+        id: editorial
+        shell: bash
+        run: |
+          if git diff --quiet -- data/llms-news.json; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'LLMS_NEWS_NO_CHANGE: source discovery produced no new validated bilingual brief.'
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
       - name: Materialize bilingual news pages and machine-readable discovery
+        if: steps.editorial.outputs.changed == 'true'
         run: python3 scripts/build_llms_news.py
       - name: Validate news editorial and SEO contract
+        if: steps.editorial.outputs.changed == 'true'
         run: node tests/integrity/llms-news.test.mjs
-      - name: Commit only when a new validated brief exists
+      - name: Commit validated update
+        if: steps.editorial.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- data/llms-news.json tr/llms-txt-haberler en/llms-txt-news assets/news sitemap.xml llms.txt index.md; then
-            echo 'LLMS_NEWS_NO_CHANGE: no new validated source update.'
-            exit 0
-          fi
           git config user.name 'htmlandhtml-news-bot'
           git config user.email 'htmlandhtml-news-bot@users.noreply.github.com'
           git add data/llms-news.json tr/llms-txt-haberler en/llms-txt-news assets/news sitemap.xml llms.txt index.md
