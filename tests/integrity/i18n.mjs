@@ -14,5 +14,8 @@ const trFiles=['tr/llms-txt-validator/index.html','tr/ai-crawler-checker/index.h
 const bannedTr=['>Validator<','>Checker<','>Tracker<','>AI Readiness<','>Methodology<','>Neutral prompt guard<','>Brand mention<','>Domain citation<','>Provider-by-provider evidence<','Evidence is free. Implementation precision is the product.'];
 for(const p of trFiles){const s=read(p);for(const x of bannedTr)if(s.includes(x))errors.push(`${p}: English UI leak ${x}`);if(!s.includes('href="/tr/methodology/"'))errors.push(`${p}: Turkish methodology route missing`)}
 if(!fs.existsSync('tr/methodology/index.html'))errors.push('Turkish methodology page missing');
-const checkout=read('checkout.html');for(const k of ['data-k="product"','data-k="c2"','data-k="c3"','data-k="c4"'])if(!checkout.includes(k))errors.push(`checkout i18n missing ${k}`);
+const checkout=read('checkout.html');
+for(const k of ['kicker','title','lead','priceNote','domainLabel','s1','s2','s3','what','c1','c2','c3','c4','c5','c6','delivery','p1','p1c','p2','p2c','p3','p3c','noticeT','noticeC','back','buy'])if(!checkout.includes(`data-k="${k}"`))errors.push(`checkout i18n missing data-k="${k}"`);
+if(!/const T=\{tr:\{/.test(checkout)||!/\},en:\{/.test(checkout))errors.push('checkout must contain complete TR/EN locale dictionaries');
+if(!/document\.documentElement\.lang=l/.test(checkout)||!/hh-language-changed/.test(checkout))errors.push('checkout language switch contract missing');
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}console.log('Strict bilingual UI, premium infographics and readability contract OK');
