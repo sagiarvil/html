@@ -18,3 +18,6 @@ paddle-keys.txt
 .env
 .env.*
 *.env
+.secret*
+*.secret
+*.local

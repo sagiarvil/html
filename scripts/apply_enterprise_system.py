@@ -70,7 +70,7 @@ TR_PRICING='''<main>
 <section class="px-section">
  <div class="px-section-head"><span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVENTARİ)</span><h2>Bir PDF değil. 22 dosyalı üretim sınıfı mühendislik paketi.</h2><p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile teslim edilebilir.</p></div>
  <div class="px-delivery-category">
-  <div class="px-delivery-category-title"><span>Standart Mühendislik Seti ( ve  Paketlerinde)</span><span class="badge">11 Temel Dosya</span></div>
+  <div class="px-delivery-category-title"><span>Standart Mühendislik Seti ($99 ve $499 Paketlerinde)</span><span class="badge">11 Temel Dosya</span></div>
   <div class="px-delivery-grid-22">
    <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik başlangıç sözleşmesi.</p></article>
    <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level yönetim özeti, 12 motor skoru ve kritik risk dağılım matrisi.</p></article>
@@ -86,7 +86,7 @@ TR_PRICING='''<main>
   </div>
  </div>
  <div class="px-delivery-category">
-  <div class="px-delivery-category-title vip"><span>Enterprise Dark Pool İstihbarat Kiti (Yalnızca  VIP Pakette)</span><span class="badge">11 Gizli Dosya · Açık Kod &amp; Protokol</span></div>
+  <div class="px-delivery-category-title vip"><span>Enterprise Dark Pool İstihbarat Kiti (Yalnızca $499 VIP Pakette)</span><span class="badge">11 Gizli Dosya · Açık Kod &amp; Protokol</span></div>
   <div class="px-delivery-grid-22">
    <article class="px-file-card vip"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">VIP MD</span></div><p>LLM ön-eğitim havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu.</p></article>
    <article class="px-file-card vip"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">VIP JSON</span></div><p>Perplexity/Cohere Reranker için 0.965+ alıntı skorlama dikkat matrisi.</p></article>
@@ -122,7 +122,7 @@ EN_PRICING='''<main>
 <section class="px-section">
  <div class="px-section-head"><span class="eyebrow">ENGINEERING DELIVERY PACKAGE (ZIP MANIFEST)</span><h2>Not another PDF. A 22-file production-grade engineering package.</h2><p>After payment entitlement is verified, the system re-scans the same domain and automatically produces the implementation package as a ZIP. No membership is required; delivery can use a secure guest-checkout entitlement token.</p></div>
  <div class="px-delivery-category">
-  <div class="px-delivery-category-title"><span>Standard Engineering Set ( Pro &amp;  Enterprise)</span><span class="badge">11 Core Files</span></div>
+  <div class="px-delivery-category-title"><span>Standard Engineering Set ($99 Pro &amp; $499 Enterprise)</span><span class="badge">11 Core Files</span></div>
   <div class="px-delivery-grid-22">
    <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Scope, priorities, and execution starting contract for business and developer.</p></article>
    <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level executive summary, 12 engine scores, and critical risk matrix.</p></article>
@@ -138,7 +138,7 @@ EN_PRICING='''<main>
   </div>
  </div>
  <div class="px-delivery-category">
-  <div class="px-delivery-category-title vip"><span>Enterprise Dark Pool Intelligence Kit (Exclusive to  VIP Tier)</span><span class="badge">11 Classified Files · Turnkey Code &amp; Protocols</span></div>
+  <div class="px-delivery-category-title vip"><span>Enterprise Dark Pool Intelligence Kit (Exclusive to $499 VIP Tier)</span><span class="badge">11 Classified Files · Turnkey Code &amp; Protocols</span></div>
   <div class="px-delivery-grid-22">
    <article class="px-file-card vip"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">VIP MD</span></div><p>LLM pre-training corpus seeding (Common Crawl, Arxiv) &amp; PMI co-occurrence guide.</p></article>
    <article class="px-file-card vip"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">VIP JSON</span></div><p>0.965+ citation scoring attention matrix for Perplexity/Cohere Reranker.</p></article>
