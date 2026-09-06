@@ -23,7 +23,7 @@ jobs:
           check 'https://htmlandhtml.com/' 'Website Fix Validator'
           check 'https://htmlandhtml.com/en/website-scanner/' '12-ENGINE WEBSITE SCANNER'
           check 'https://htmlandhtml.com/tr/site-tarama/' '12 MOTOR'
-          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT VALIDATOR'
+          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT V2 ŞARTNAME DOĞRULAYICISI'
           check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
           check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
           check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'AI MENTION TRACKER'
