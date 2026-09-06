@@ -97,7 +97,6 @@ def build_homepages():
       <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
       <a href="/tr/llms-txt-validator/">llms.txt</a>
       <a href="/tr/llms-txt-haberler/">Haberler</a>
-      <a href="/tr/rehberler/">Rehberler</a>
       <a href="/tr/sozluk/">Sözlük</a>
       <a href="/tr/fiyatlandirma/" data-i18n="navPrice">Fiyatlar</a>
     </nav>
@@ -373,7 +372,6 @@ def build_homepages():
       <a href="/en/ai-search-visibility/">AI Visibility</a>
       <a href="/en/llms-txt-validator/">llms.txt</a>
       <a href="/en/llms-txt-news/">News</a>
-      <a href="/en/guides/">Guides</a>
       <a href="/en/glossary/">Glossary</a>
       <a href="/en/pricing/" data-i18n="navPrice">Pricing</a>
     </nav>

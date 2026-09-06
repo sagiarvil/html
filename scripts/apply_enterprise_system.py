@@ -9,7 +9,6 @@ TR_NAV='''<nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
   <a href="/tr/llms-txt-validator/">llms.txt</a>
   <a href="/tr/llms-txt-haberler/">Haberler</a>
-  <a href="/tr/rehberler/">Rehberler</a>
   <a href="/tr/sozluk/">Sözlük</a>
   <a href="/tr/fiyatlandirma/">Fiyatlar</a>
 </nav>'''
@@ -17,7 +16,6 @@ EN_NAV='''<nav class="primary-nav" aria-label="Primary navigation">
   <a href="/en/ai-search-visibility/">AI Visibility</a>
   <a href="/en/llms-txt-validator/">llms.txt</a>
   <a href="/en/llms-txt-news/">News</a>
-  <a href="/en/guides/">Guides</a>
   <a href="/en/glossary/">Glossary</a>
   <a href="/en/pricing/">Pricing</a>
 </nav>'''

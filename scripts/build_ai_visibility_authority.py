@@ -218,8 +218,8 @@ def esc(x): return html.escape(str(x), quote=True)
 
 def nav(lang):
     if lang=="tr":
-        return '<nav><a href="/tr/yapay-zeka-arama-gorunurlugu/">Yapay Zeka Görünürlüğü</a><a href="/tr/sozluk/">Sözlük</a><a href="/tr/araclar/">Araçlar</a><a href="/tr/rehberler/">Rehberler</a><a href="/tr/methodology/">Metodoloji</a></nav>'
-    return '<nav><a href="/en/ai-search-visibility/">AI Search Visibility</a><a href="/en/glossary/">Glossary</a><a href="/en/tools/">Tools</a><a href="/en/guides/">Guides</a><a href="/en/methodology/">Methodology</a></nav>'
+        return '<nav><a href="/tr/yapay-zeka-arama-gorunurlugu/">Yapay Zeka Görünürlüğü</a><a href="/tr/sozluk/">Sözlük</a><a href="/tr/araclar/">Araçlar</a><a href="/tr/methodology/">Metodoloji</a></nav>'
+    return '<nav><a href="/en/ai-search-visibility/">AI Search Visibility</a><a href="/en/glossary/">Glossary</a><a href="/en/tools/">Tools</a><a href="/en/methodology/">Methodology</a></nav>'
 
 def footer(lang):
     if lang=="tr":

@@ -19,10 +19,10 @@ def e(v): return html.escape(str(v),quote=True)
 
 def header(lang):
     if lang=='tr':
-        nav='''<nav><a href="/tr/platform/">Platform</a><a href="/tr/araclar/">Araçlar</a><a href="/tr/rehberler/">Rehberler</a><a href="/tr/sozluk/" aria-current="page">Sözlük</a><a href="/tr/methodology/">Metodoloji</a><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></nav>'''
+        nav='''<nav><a href="/tr/platform/">Platform</a><a href="/tr/araclar/">Araçlar</a><a href="/tr/sozluk/" aria-current="page">Sözlük</a><a href="/tr/methodology/">Metodoloji</a><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></nav>'''
         home='/tr/'; alt='/en/glossary/'; altlabel='EN'; altaria='Switch to English'
     else:
-        nav='''<nav><a href="/en/platform/">Platform</a><a href="/en/tools/">Tools</a><a href="/en/guides/">Guides</a><a href="/en/glossary/" aria-current="page">Glossary</a><a href="/en/methodology/">Methodology</a><a href="/en/pricing/">Pricing</a></nav>'''
+        nav='''<nav><a href="/en/platform/">Platform</a><a href="/en/tools/">Tools</a><a href="/en/glossary/" aria-current="page">Glossary</a><a href="/en/methodology/">Methodology</a><a href="/en/pricing/">Pricing</a></nav>'''
         home='/en/'; alt='/tr/sozluk/'; altlabel='TR'; altaria='Türkçeye geç'
     return f'''<header class="topbar"><div class="topbar-shell"><a class="brand" href="{home}" aria-label="HTML&amp;HTML"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a>{nav}<div class="nav-actions"><div class="langs"><a href="{alt}" aria-label="{altaria}">{altlabel}</a></div></div></div></header>'''
 
