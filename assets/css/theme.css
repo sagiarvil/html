@@ -793,3 +793,89 @@ html[data-theme="dark"] .theme-switch button[aria-pressed="true"] {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   DARK THEME: CHECKOUT PAGE STYLING
+   ========================================================================== */
+html[data-theme="dark"] .checkout-card {
+  background: #13161c !important;
+  border-color: #1e222b !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] .checkout-hero {
+  border-bottom-color: #1e222b !important;
+}
+html[data-theme="dark"] .checkout-hero h1,
+html[data-theme="dark"] .checkout-price strong {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .checkout-hero p,
+html[data-theme="dark"] .checkout-price span {
+  color: #9ca3af !important;
+}
+html[data-theme="dark"] .checkout-domain {
+  background: #0b0d11 !important;
+  border-color: #1e222b !important;
+}
+html[data-theme="dark"] .checkout-domain b {
+  color: #60a5fa !important;
+}
+html[data-theme="dark"] .checkout-grid {
+  background: #1e222b !important;
+  border-color: #1e222b !important;
+}
+html[data-theme="dark"] .checkout-panel {
+  background: #13161c !important;
+  color: #e5e7eb !important;
+}
+html[data-theme="dark"] .checkout-panel h2 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .file-stack div {
+  border-bottom-color: #1e222b !important;
+  color: #9ca3af !important;
+}
+html[data-theme="dark"] .file-stack b {
+  color: #e5e7eb !important;
+}
+html[data-theme="dark"] .checkout-flow {
+  background: #0b0d11 !important;
+}
+html[data-theme="dark"] .checkout-step {
+  background: #13161c !important;
+  border-color: #1e222b !important;
+  color: #e5e7eb !important;
+}
+html[data-theme="dark"] .checkout-step span {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .checkout-step h3 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .checkout-step p {
+  color: #9ca3af !important;
+}
+html[data-theme="dark"] .checkout-notice {
+  background: rgba(245, 158, 11, 0.08) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+  color: #d1d5db !important;
+}
+html[data-theme="dark"] .checkout-notice strong {
+  color: #f59e0b !important;
+}
+html[data-theme="dark"] .checkout-back {
+  color: #9ca3af !important;
+}
+html[data-theme="dark"] .checkout-back:hover {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .checkout-security span {
+  border-color: #1e222b !important;
+  color: #9ca3af !important;
+  background: #0b0d11 !important;
+}
+html[data-theme="dark"] .checkout-disabled {
+  background: #1e222b !important;
+  color: #6b7280 !important;
+}
