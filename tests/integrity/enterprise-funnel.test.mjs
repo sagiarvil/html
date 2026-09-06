@@ -33,23 +33,26 @@ expect(toolsEn.includes('/en/#scanner'),'EN tools primary flow must return to un
 expect(!/Aracı Aç →/.test(tools),'TR tools hub must not behave as a launch-each-tool product directory');
 expect(!/Launch Tool →/.test(toolsEn),'EN tools hub must not behave as a launch-each-tool product directory');
 
+const zipFiles=['00_READ_ME.md','01_EXECUTIVE_SUMMARY.md','02_IMPLEMENTATION_BLUEPRINT.md','03_FINDINGS.json','04_ACCEPTANCE_TESTS.md','05_ROLLBACK_PLAN.md','06_AI_READINESS.json','07_IMPLEMENTATION_CHECKLIST.txt'];
 for(const x of [pricing,pricingEn]){
   expect(x.includes('$99'),'pricing must publish $99 implementation price');
   expect(!x.includes('$149'),'legacy $149 must not survive pricing build');
-  expect(x.includes('00_READ_ME.md')&&x.includes('03_FINDINGS.json')&&x.includes('05_ROLLBACK_PLAN.md'),'pricing must preview the engineering ZIP deliverable');
+  for(const f of zipFiles)expect(x.includes(f),`pricing must preview canonical engineering ZIP file ${f}`);
 }
-expect(pricing.includes('Ne yanlış? Nerede? Ne kadar önemli?'),'TR free diagnostic promise missing');
-expect(pricing.includes('Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?'),'TR paid execution boundary missing');
+expect(pricing.includes('Ne yanlış?')&&pricing.includes('Nerede?')&&pricing.includes('Ne kadar önemli?'),'TR free diagnostic promise missing');
+expect(pricing.includes('Nasıl düzeltilecek?')&&pricing.includes('Hangi sırayla?')&&pricing.includes('Nasıl doğrulanacak?'),'TR paid execution boundary missing');
+expect(pricing.includes('AI Görünürlük Yol Haritası'),'TR paid product must use customer-clear Roadmap naming');
+expect(pricingEn.includes('AI Search Visibility Roadmap'),'EN paid product must use global Roadmap naming');
 expect(pricing.includes('Üyelik zorunlu değildir'),'guest delivery explanation missing');
 expect(pricingEn.includes('No membership is required'),'EN guest delivery explanation missing');
 
 for(const x of [home,trHome,enHome,pricing,pricingEn,tools,toolsEn])expect(x.includes('/assets/css/enterprise-system.css?v=1'),'enterprise visual system must be attached to major funnel surfaces');
 expect(home.includes('/assets/js/enterprise-runtime.js?v=1'),'central scanner must attach enterprise runtime');
 expect(runtime.includes('ai-decision-map')&&runtime.includes('readinessLenses')&&runtime.includes('topPriorities'),'free result must expose readiness lenses and intelligence priorities');
-expect(runtime.includes('$99')&&runtime.includes('Implementation Blueprint'),'runtime customer copy must use $99 professional implementation language');
+expect(runtime.includes('$99')&&runtime.includes('AI Search Visibility Roadmap'),'runtime customer copy must use $99 professional Roadmap language');
 expect(!validator.includes('$149'),'language switch runtime must not resurrect $149');
 expect(!/reçete/i.test(home+pricing+runtime),'customer-facing main funnel must not use novice prescription metaphor');
 expect(enterprise.includes('.news-grid')&&enterprise.includes('.ai-decision-map')&&enterprise.includes('.px-report-boundary'),'enterprise CSS must cover news, free results and pricing comparison');
 
 if(errors.length){console.error('ENTERPRISE FUNNEL FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('ENTERPRISE FUNNEL PASS: concise hero, reference-width scanner, unified scan scope, premium infographics, $99 implementation boundary, free decision map and mobile system verified.');
+console.log('ENTERPRISE FUNNEL PASS: concise hero, reference-width scanner, unified scan scope, premium infographics, $99 Roadmap boundary, canonical ZIP preview, free decision map and mobile system verified.');
