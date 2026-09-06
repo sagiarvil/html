@@ -52,7 +52,7 @@ function contrast(rgb1, rgb2) {
 
 // Key tokens in dark mode:
 const bgMain = hexToRgb('#0a0b0e');
-const bgCard = hexToRgb('#141720');
+const bgCard = hexToRgb('#080a0f');
 const textLight = hexToRgb('#f8fafc');
 const textMuted = hexToRgb('#94a3b8');
 
