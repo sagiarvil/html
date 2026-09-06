@@ -1,0 +1,183 @@
+{
+  "version": "1.0.0",
+  "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
+  "lastUpdated": "2026-09-06T00:00:00Z",
+  "items": [
+    {
+      "id": "2026-08-google-generative-ai-search-reporting-global",
+      "sourceUrl": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "publishedAt": "2026-06-03",
+      "updatedAt": "2026-08-31",
+      "topic": "AI_SEARCH_MEASUREMENT",
+      "keywords": ["yapay zeka arama görünürlüğü", "AI Search", "Search Console", "AI Overviews", "AI Mode", "GEO"],
+      "title": {
+        "tr": "Yapay Zeka Arama Görünürlüğü Artık Search Console'da Ayrı Ölçülebiliyor",
+        "en": "AI Search Visibility Can Now Be Measured Separately in Search Console"
+      },
+      "dek": {
+        "tr": "Üretken yapay zeka sonuçlarında hangi URL'lerin göründüğünü ölçmek, GEO ve AEO çalışmalarını tahminden gerçek gözleme yaklaştırıyor.",
+        "en": "Page-level visibility in generative AI search moves GEO and AEO measurement closer to observed evidence and away from guesswork."
+      },
+      "summary": {
+        "tr": "Yeni performans görünümü, bir sitenin üretken yapay zeka Arama deneyimlerindeki gösterimlerini, görünen sayfalarını, ülke, cihaz ve zaman kırılımlarını ayrı izlemeyi mümkün hale getiriyor. Bu değişiklik, yalnızca 'AI bizi görüyor mu?' sorusunu sormak yerine hangi URL'nin hangi yüzeyde görünürlük kazandığını takip etmeyi mümkün kılıyor.",
+        "en": "The dedicated performance view makes it possible to observe impressions from generative AI Search experiences together with the pages, countries, devices and dates associated with that visibility. The practical shift is from asking whether AI can see a site to measuring which URLs actually earn exposure."
+      },
+      "whyItMatters": {
+        "tr": "AI görünürlüğü stratejisi artık yalnız üçüncü taraf görünürlük tahminlerine dayanmak zorunda değil. Site sahipleri teknik iyileştirmeleri gerçek gösterim değişimleriyle karşılaştırabilir.",
+        "en": "AI visibility strategy no longer has to depend only on third-party estimates. Website owners can compare technical changes against observed visibility changes."
+      },
+      "technicalImpact": {
+        "tr": "Sitemap, canonical, indexability, dahili linkler, içerik kalitesi ve entity sinyalleri için yapılan değişiklikler yayın öncesi/sonrası ölçümle ilişkilendirilebilir. HTML&HTML açısından bu veri, ücretsiz teknik teşhisin dışındaki gerçek saha görünürlüğü katmanıdır.",
+        "en": "Changes to sitemaps, canonicals, indexability, internal links, content quality and entity signals can be compared before and after deployment. For HTML&HTML this is field visibility evidence outside the free technical diagnostic itself."
+      },
+      "actions": {
+        "tr": ["Üretken AI raporunu düzenli bir baseline olarak kaydedin.", "Görünen URL'leri canonical ve sitemap envanterinizle karşılaştırın.", "Teknik değişiklikleri yayın tarihiyle eşleştirip görünürlük trendini izleyin."],
+        "en": ["Store a recurring baseline from the generative AI report.", "Compare visible URLs against your canonical and sitemap inventory.", "Map deployment dates to visibility trends instead of attributing changes from memory."]
+      },
+      "boundary": {
+        "tr": "Gösterim, tavsiye veya tıklama garantisi değildir; gözlemlenmiş bir görünürlük sinyalidir.",
+        "en": "An impression is observed visibility, not a guarantee of recommendation, click or conversion."
+      }
+    },
+    {
+      "id": "2026-08-ai-visibility-technical-debt",
+      "sourceUrl": "https://searchengineland.com/ai-visibility-gains-technical-debt-484755",
+      "publishedAt": "2026-08-13",
+      "topic": "TECHNICAL_AI_READINESS",
+      "keywords": ["AI visibility", "technical SEO", "rendering", "internal links", "llms.txt", "GEO", "AEO"],
+      "title": {
+        "tr": "AI Görünürlüğünde En Büyük Kayıp Yeni Bir Hile Değil, Eski Teknik Borç Olabilir",
+        "en": "The Biggest AI Visibility Loss May Be Old Technical Debt, Not a New Trick"
+      },
+      "dek": {
+        "tr": "Mimari, render, iç bağlantı ve içerik sorunları yapay zeka aramasında daha pahalı hale geliyor; llms.txt tek başına bu borcu kapatmıyor.",
+        "en": "Architecture, rendering, internal-link and content debt becomes more expensive in AI search; an llms.txt file alone does not repair those foundations."
+      },
+      "summary": {
+        "tr": "AI görünürlüğü için yeni kısaltmalar ve tek dosyalık çözümler aramak cazip. Fakat pratikte en büyük kayıpların önemli bölümü, yıllardır bilinen teknik sorunların retrieval ve kaynak seçimi sırasında yeniden görünür hale gelmesinden doğuyor: zayıf site mimarisi, kopuk iç link ağı, render bağımlılığı, duplicate sayfalar ve net olmayan bilgi yapısı.",
+        "en": "It is tempting to search for a new acronym or one-file solution for AI visibility. In practice, many losses are familiar technical problems resurfacing during retrieval and source selection: weak architecture, fragmented internal links, rendering dependence, duplicate pages and ambiguous information structure."
+      },
+      "whyItMatters": {
+        "tr": "Bu yaklaşım ürün önceliğini değiştirir: önce llms.txt eklemek değil, AI ve arama sistemlerinin güvenilir biçimde erişebildiği sağlam bir web yüzeyi kurmak gerekir.",
+        "en": "This changes implementation priority: the first task is not adding an llms.txt file, but building a reliable web surface that search and AI systems can access and interpret."
+      },
+      "technicalImpact": {
+        "tr": "Crawl, canonical, render parity, internal links, structured data ve içerik güveni aynı karar zincirinde test edilmelidir. Bu nedenle HTML&HTML tek URL'den 12 motor + 13 Intelligence Audit çalıştırır; ayrı araç skorlarının birbirinden kopmasına izin vermez.",
+        "en": "Crawlability, canonicals, render parity, internal links, structured data and content trust should be evaluated in one decision chain. That is why HTML&HTML runs 12 engines plus 13 Intelligence Audits from one URL rather than fragmenting the diagnosis."
+      },
+      "actions": {
+        "tr": ["İndekslenebilir kritik URL'lerin crawl ve render farkını doğrulayın.", "Dahili linkleri final canonical URL'lere yöneltin.", "llms.txt'yi teknik temel yerine değil, teknik temelin üstünde isteğe bağlı bilgi yüzeyi olarak konumlandırın."],
+        "en": ["Verify crawl and render behavior on critical indexable URLs.", "Point internal links to final canonical destinations.", "Treat llms.txt as an optional knowledge surface on top of the technical foundation, not as a replacement for it."]
+      },
+      "boundary": {
+        "tr": "Bu analiz, llms.txt'nin değersiz olduğu anlamına gelmez; yalnızca tek başına altyapı sorunlarını çözemeyeceğini vurgular.",
+        "en": "This does not imply llms.txt is useless; it means a file cannot compensate for broken technical foundations."
+      }
+    },
+    {
+      "id": "2026-openai-search-publisher-discovery",
+      "sourceUrl": "https://help.openai.com/en/articles/12627856-publishers-and-developers-faq",
+      "publishedAt": "2026-08-29",
+      "topic": "CHATGPT_DISCOVERY",
+      "keywords": ["ChatGPT Search", "OAI-SearchBot", "AI crawler", "citation", "referral", "robots.txt"],
+      "title": {
+        "tr": "ChatGPT Search'te Görünürlüğün İlk Teknik Kapısı: OAI-SearchBot Erişimi",
+        "en": "The First Technical Gate for ChatGPT Search Visibility: OAI-SearchBot Access"
+      },
+      "dek": {
+        "tr": "Kamuya açık bir site cevaplarda yer alabilir; fakat keşif, özet ve kaynak gösterimi için crawler erişiminin yanlışlıkla engellenmemesi kritik.",
+        "en": "A public website can appear in answers, but accidental crawler blocking can undermine discovery, snippets and clear citations."
+      },
+      "summary": {
+        "tr": "Kamuya açık web içeriği ChatGPT Search sonuçlarında görünmeye aday olabilir. Teknik açıdan en temel kontrol, arama amaçlı crawler'ın kritik sayfalara ulaşmasının robots.txt veya başka erişim katmanları tarafından engellenmemesidir. Yönlendirme trafiğinin ayrı bir kaynak etiketiyle ölçülebilmesi de AI görünürlüğünü yalnız marka bahsi değil gerçek ziyaret yoluyla değerlendirmeyi mümkün kılar.",
+        "en": "Public web content can be eligible to appear in ChatGPT Search. The most basic technical check is whether the search crawler can reach critical pages without being blocked by robots.txt or another access layer. Referral tagging also makes it possible to evaluate AI visibility through actual visits, not only brand mentions."
+      },
+      "whyItMatters": {
+        "tr": "Yapay zeka arama görünürlüğünün bir bölümü ölçülebilir teknik erişim problemidir. Marka içeriği iyi olsa bile crawler kritik URL'yi okuyamıyorsa kaynak olma fırsatı daha baştan zayıflar.",
+        "en": "Part of AI search visibility is a measurable access problem. Strong content cannot be evaluated normally if the crawler cannot read the critical URL."
+      },
+      "technicalImpact": {
+        "tr": "robots.txt politikası arama crawler'ı, eğitim botu ve kullanıcı ajanı arasında ayrıştırılmalıdır. 'Tüm AI botlarına izin ver' gibi mekanik bir kural yerine işletmenin bilinçli politika seçimi raporlanmalıdır.",
+        "en": "robots.txt policy should distinguish search crawling, model-training crawling and user-agent actions. A blanket allow-every-AI-bot rule is less useful than reporting the site's deliberate policy choices."
+      },
+      "actions": {
+        "tr": ["OAI-SearchBot politikasını kritik public URL'ler için doğrulayın.", "robots.txt ile noindex amaçlarını birbirine karıştırmayın.", "AI referral trafiğini ayrı kaynak olarak ölçüp dönüşüm yoluyla ilişkilendirin."],
+        "en": ["Verify OAI-SearchBot policy for critical public URLs.", "Do not confuse robots crawling controls with noindex intent.", "Measure AI referral traffic separately and connect it to conversion paths."]
+      },
+      "boundary": {
+        "tr": "Crawler erişimi, ChatGPT'nin markayı tavsiye edeceği veya bir sayfayı kaynak göstereceği anlamına gelmez; yalnızca teknik uygunluk kapılarından biridir.",
+        "en": "Crawler access does not mean ChatGPT will recommend a brand or cite a page; it is one technical eligibility gate."
+      }
+    },
+    {
+      "id": "2026-ai-recommendation-consistency",
+      "sourceUrl": "https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/",
+      "publishedAt": "2026-01-27",
+      "topic": "AI_VISIBILITY_MEASUREMENT",
+      "keywords": ["AI recommendations", "AI visibility", "prompt tracking", "ChatGPT", "Claude", "AI Mode"],
+      "title": {
+        "tr": "Yapay Zeka Tavsiyelerini Tek Sorguyla Ölçmek Neden Yanıltıcı Olabilir?",
+        "en": "Why Measuring AI Recommendations with One Prompt Can Be Misleading"
+      },
+      "dek": {
+        "tr": "Aynı satın alma niyetinde bile kullanıcı promptları ve model cevapları değişebiliyor. Bu yüzden AI görünürlüğü tek bir 'sıra' yerine örneklem ve kanıt mantığıyla izlenmeli.",
+        "en": "Prompts and model answers can vary even for the same buying intent. AI visibility should therefore be measured with samples and evidence, not one synthetic ranking."
+      },
+      "summary": {
+        "tr": "AI cevapları klasik arama sonucu gibi kararlı bir sıra üretmez. Kullanıcının soruyu nasıl kurduğu, zaman, model ve retrieval davranışı sonuç listesini değiştirebilir. Bu nedenle tek promptla 'AI'da 3. sıradayız' gibi sonuçlar, ölçüm güvenilirliğini olduğundan yüksek gösterebilir.",
+        "en": "AI answers do not behave like a stable ranked search result. Prompt wording, time, model and retrieval behavior can change the recommendation set. A statement such as 'we rank third in AI' based on one prompt can therefore overstate measurement certainty."
+      },
+      "whyItMatters": {
+        "tr": "AI Mention Tracker gibi ürünlerin güvenilir olması için nötr sorgu, çoklu gözlem, sağlayıcı yüzeyi ve citation/mention ayrımı açık olmalıdır.",
+        "en": "A credible AI Mention Tracker needs neutral prompts, repeated observations, explicit provider surfaces and a clear distinction between mentions and citations."
+      },
+      "technicalImpact": {
+        "tr": "HTML&HTML marka/domain adını ölçüm promptuna sokmaz; tüketici uygulaması ile API/search-grounded yüzeyin aynı sonuç olduğunu iddia etmez ve bulunmayan sağlayıcı anahtarında veri uydurmaz.",
+        "en": "HTML&HTML excludes the tracked brand/domain from neutral measurement prompts, does not claim API/search-grounded results equal the consumer app, and does not fabricate observations when provider access is unavailable."
+      },
+      "actions": {
+        "tr": ["Tek bir prompt yerine 2–3 nötr satın alma/araştırma niyeti kullanın.", "Mention ve citation ölçümlerini ayrı tutun.", "Zaman içinde aynı metodolojiyle tekrarlanan gözlemleri karşılaştırın."],
+        "en": ["Use 2–3 neutral buyer/research intents instead of one prompt.", "Keep mention and citation metrics separate.", "Compare repeated observations over time using the same measurement protocol."]
+      },
+      "boundary": {
+        "tr": "AI görünürlüğü ölçülebilir; ancak klasik sıra takibi gibi deterministik değildir ve sonuç değişkenliği raporlanmalıdır.",
+        "en": "AI visibility can be measured, but it is not deterministic rank tracking and answer variability must remain visible."
+      }
+    },
+    {
+      "id": "2026-agentic-search-website-readiness",
+      "sourceUrl": "https://www.mariehaynes.com/why-googles-new-google-agent-is-the-biggest-mindset-shift-in-seo-history/",
+      "publishedAt": "2026-03-25",
+      "topic": "AGENT_READINESS",
+      "keywords": ["AI agents", "agentic web", "AAO", "accessibility", "forms", "WebMCP", "AI visibility"],
+      "title": {
+        "tr": "AI Arama Sonraki Aşamaya Geçiyor: Siteniz Ajanların İşlem Yapmasına Hazır mı?",
+        "en": "AI Search Is Moving to the Next Stage: Is Your Website Ready for Agents to Act?"
+      },
+      "dek": {
+        "tr": "Görünürlük yalnız cevapta yer almak değil; giderek artan biçimde bir ajanın sayfadaki ürün, form ve eylemleri doğru anlayabilmesi anlamına geliyor.",
+        "en": "Visibility is becoming more than appearing in an answer; it increasingly includes whether an agent can correctly interpret products, forms and actions on a page."
+      },
+      "summary": {
+        "tr": "Agentic web yaklaşımında kullanıcı her adımı kendisi tıklamak yerine bazı işlemleri bir yapay zeka ajanına devredebilir. Bu, erişilebilir isimler, açık form etiketleri, kararlı aksiyonlar, güvenli yetkilendirme ve makine tarafından anlaşılabilir arayüzlerin önemini artırır.",
+        "en": "In an agentic web model, users can delegate parts of a journey instead of clicking every step themselves. This increases the value of accessible names, explicit form labels, stable actions, safe authorization boundaries and machine-interpretable interfaces."
+      },
+      "whyItMatters": {
+        "tr": "AAO'nun ticari anlamı burada ortaya çıkar: amaç bir bot için yapay içerik üretmek değil, mevcut müşteri yolunu hem insan hem ajan için anlaşılır ve güvenli hale getirmektir.",
+        "en": "This is the practical commercial meaning of AAO: not creating synthetic content for bots, but making the existing customer journey understandable and safe for both people and agents."
+      },
+      "technicalImpact": {
+        "tr": "Semantik HTML, erişilebilirlik, doğru form label'ları, buton adları, açık durumlar ve güvenli API/eylem yüzeyleri birlikte değerlendirilmelidir. Kullanıcıya ait özel eylemler public scanner tarafından otomatik değiştirilemez.",
+        "en": "Semantic HTML, accessibility, correct form labels, button names, explicit states and safe API/action surfaces should be evaluated together. Private user actions must not be modified automatically from a public scan."
+      },
+      "actions": {
+        "tr": ["Kritik formların programatik label ve accessible name ilişkilerini test edin.", "CTA ve butonların eylem amacını metin/ARIA düzeyinde netleştirin.", "Kimlik doğrulama veya ödeme akışlarını public taramadan otomatik değiştirmeyin; codebase ve güvenlik bağlamı isteyin."],
+        "en": ["Test programmatic labels and accessible names on critical forms.", "Make the purpose of CTAs and buttons explicit in text/ARIA semantics.", "Never auto-modify authentication or payment flows from a public scan; require codebase and security context."]
+      },
+      "boundary": {
+        "tr": "AAO gelişen bir alan; tek bir evrensel standart veya ajan başarısı garantisi olarak sunulmamalıdır.",
+        "en": "AAO is an emerging area and should not be presented as one universal standard or a guarantee of agent success."
+      }
+    }
+  ]
+}
