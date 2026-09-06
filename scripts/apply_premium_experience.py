@@ -49,9 +49,120 @@ TR_KNOW='''<!-- 08 AUTHORITY & REHBERLER -->
 '''
 EN_KNOW=TR_KNOW.replace('Teknik Rehberler ve Standartlar','Technical Guides & Standards').replace('Terim ezberletmek yerine, yapay zeka görünürlüğünü öğrenme → doğrulama → uygulama → ölçme döngüsüne bağlayan referans katmanı.','A reference layer that connects AI visibility to a learn → verify → implement → measure loop instead of jargon memorization.').replace('ÖĞREN','LEARN').replace('Yeni yapay zeka görünürlük kavramlarını kullanıcı diliyle ve kaynak sınıfıyla anlayın.','Understand emerging AI visibility concepts in plain language with evidence classes.').replace('/tr/sozluk/','/en/glossary/').replace('Referans sözlüğe git →','Open the reference glossary →').replace('DOĞRULA','VERIFY').replace('Makine yüzeylerini gerçek HTTP ve doküman kanıtıyla kontrol edin.','Verify machine-readable surfaces with real HTTP and documented evidence.').replace('/tr/llms-txt-validator/','/en/llms-txt-validator/').replace("llms.txt'yi doğrula →",'Validate llms.txt →').replace('UYGULA','IMPLEMENT').replace('Ücretsiz teşhisi yazılımcı veya AI coding agent için uygulanabilir görev sözleşmesine çevirin.','Turn the free diagnosis into an execution contract for a developer or AI coding agent.').replace('/tr/fix-mandate/','/en/fix-mandate/').replace('Teslimatı incele →','Review delivery →').replace('ÖLÇ','MEASURE').replace('Hazırlık ile gerçek marka görünürlüğünü karıştırmayın; nötr sorgularda görünürlüğü ayrıca ölçün.','Keep readiness separate from observed visibility; measure neutral-prompt brand visibility independently.').replace('/tr/ai-mention-tracker/','/en/ai-mention-tracker/').replace('Görünürlük takibini incele →','Review visibility tracking →')
 
-TR_REPORT='''<section class="px-report-split" data-premium-infographic="report-boundary"><article><span class="eyebrow">ÜCRETSİZ RAPOR · $0</span><h3>Problemi saklamıyoruz.</h3><p>Müşteri taramayı bitirdiğinde karar verecek kadar gerçek veri görür.</p><ul><li>12 motor skoru + 13 Intelligence Audit özeti</li><li>Tüm tespitler, etkilenen URL ve kanıt</li><li>Severity, confidence ve source class</li><li>AI görünürlük zincirinde hangi aşamanın riskte olduğu</li><li>Öncelikli P0–P3 risk sırası</li></ul></article><div class="bridge">→</div><article class="paid"><span class="eyebrow">UYGULAMA PAKETİ</span><h3>Nasıl düzelteceğinizi $99'da açın.</h3><p>Ücretli ürün “daha fazla hata” satmaz; yazılımcının doğrudan uygulayabileceği mühendislik reçetesini satar.</p><ul><li>Kök neden + uygulanacak değişiklik</li><li>Dosya/bileşen seviyesi — yalnız codebase kanıtı varsa</li><li>Kabul testi + regresyon testi</li><li>Rollback + durma koşulları</li><li>30 gün içinde doğrulama re-scan</li></ul><span class="price">$99 · 1 domain</span></article></section>
-'''
-EN_REPORT=TR_REPORT.replace('ÜCRETSİZ RAPOR · $0','FREE REPORT · $0').replace('Problemi saklamıyoruz.','We do not hide the problem.').replace('Müşteri taramayı bitirdiğinde karar verecek kadar gerçek veri görür.','After the scan, the customer sees enough real evidence to make a decision.').replace('12 motor skoru + 13 Intelligence Audit özeti','12 engine scores + 13 Intelligence Audit summary').replace('Tüm tespitler, etkilenen URL ve kanıt','All findings, affected URLs and evidence').replace('Severity, confidence ve source class','Severity, confidence and source class').replace('AI görünürlük zincirinde hangi aşamanın riskte olduğu','Which stage of the AI visibility chain is at risk').replace('Öncelikli P0–P3 risk sırası','Prioritized P0–P3 risk order').replace('UYGULAMA PAKETİ','EXECUTION PACK').replace("Nasıl düzelteceğinizi $99'da açın.",'Unlock how to fix it for $99.').replace('Ücretli ürün “daha fazla hata” satmaz; yazılımcının doğrudan uygulayabileceği mühendislik reçetesini satar.','The paid product does not sell “more problems”; it sells an implementation-grade prescription a developer can execute.').replace('Kök neden + uygulanacak değişiklik','Root cause + exact change contract').replace('Dosya/bileşen seviyesi — yalnız codebase kanıtı varsa','File/component targeting only when codebase evidence exists').replace('Kabul testi + regresyon testi','Acceptance + regression tests').replace('Rollback + durma koşulları','Rollback + stop conditions').replace('30 gün içinde doğrulama re-scan','Validation re-scan within 30 days')
+TR_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-infographic="report-boundary">
+  <article class="px-report-free">
+    <span class="eyebrow">AÇIK TEŞHİS · $0</span>
+    <h3>Problemi saklamıyoruz.</h3>
+    <p>Müşteri taramayı bitirdiğinde karar verecek kadar gerçek veri ve tarafsız kanıt görür.</p>
+    <ul>
+      <li>✦ 12 deterministik motor skoru ve analizi</li>
+      <li>✦ 13 Search &amp; AI Intelligence Audit özeti</li>
+      <li>✦ 7 hazırlık lensi (GEO, AEO, LLMO, RAG, E-E-A-T)</li>
+      <li>✦ Tüm tespitler, etkilenen URL\'ler ve canlı kanıtlar</li>
+      <li>✦ Severity, confidence ve kaynak sınıfı</li>
+      <li>✦ Öncelikli P0–P3 etki ve risk sıralaması</li>
+    </ul>
+    <div class="tier-footer">
+      <div class="tier-price"><strong class="amount">$0</strong><span>/ kamuya açık</span></div>
+      <a class="tier-action" href="#scanner">Ücretsiz Teşhisi Başlat →</a>
+    </div>
+  </article>
+  <article class="px-report-paid featured">
+    <span class="eyebrow">EN ÇOK TERCİH EDİLEN</span>
+    <span class="tier-eyebrow">MÜHENDİSLİK YOL HARİTASI · $99</span>
+    <h3>Nasıl düzelteceğinizi açın.</h3>
+    <p>Ücretli ürün “daha fazla hata” satmaz; yazılımcının hemen uygulayacağı 50 sayfalık mühendislik yol haritasını sunar.</p>
+    <ul>
+      <li>✦ Kök neden ve P0–P3 kod uygulama sözleşmesi</li>
+      <li>✦ Dosya ve bileşen seviyesi doğrudan hedefleme</li>
+      <li>✦ Kabul testleri ve regresyon koruma kontrolleri</li>
+      <li>✦ Rollback planı ve durma koşulları güvencesi</li>
+      <li>✦ Otomatik üretilen 11 dosyalı ZIP mühendislik paketi</li>
+      <li>✦ 30 gün içinde 1 resmi doğrulama re-scan hakkı</li>
+    </ul>
+    <div class="tier-footer">
+      <div class="tier-price"><strong class="amount">$99</strong><span>/ 1 domain</span></div>
+      <a class="primary tier-action" href="/checkout?plan=pro">Yol Haritasını Aç — $99 →</a>
+    </div>
+  </article>
+  <article class="px-report-enterprise">
+    <span class="vip-tag">KURUMSAL MİMARİ</span>
+    <span class="tier-eyebrow">ENTERPRISE OTORİTE · $499</span>
+    <h3>Yapay Zekâda Birincil Otorite Olun.</h3>
+    <p>ChatGPT, Perplexity ve Claude\'da markanızı doğal öneri ve ilk alıntı (Citation #1) yapan 6 stratejik kurumsal mimari.</p>
+    <ul>
+      <li>✦ <b>$99 Mühendislik Yol Haritası DAHİL</b></li>
+      <li>✦ Model Corpus Seeding &amp; Entity Eşleştirme Kılavuzu</li>
+      <li>✦ Cross-Encoder Reranking &amp; Citation #1 Mimarisi</li>
+      <li>✦ Wikidata &amp; Google MID Bilgi Grafı Mutabakatı</li>
+      <li>✦ AST llms.txt v2 ve Yüksek Hızlı Bot Uç Dağıtımı</li>
+      <li>✦ Otonom Ajan Hazırlığı (A2A JSON-LD &amp; API)</li>
+      <li>✦ 22 dosyalı VIP ZIP + Öncelikli Mühendislik Desteği</li>
+      <li>✦ 60 gün içinde 3 VIP doğrulama re-scan hakkı</li>
+    </ul>
+    <div class="tier-footer">
+      <div class="tier-price"><strong class="amount">$499</strong><span>/ enterprise</span></div>
+      <a class="enterprise-cta tier-action" href="/checkout?plan=enterprise">Enterprise Lisansı Başlat — $499 →</a>
+    </div>
+  </article>
+</section>'''
+EN_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-infographic="report-boundary">
+  <article class="px-report-free">
+    <span class="eyebrow">OPEN DIAGNOSIS · $0</span>
+    <h3>We do not hide the problem.</h3>
+    <p>After the scan, you see enough verified evidence and raw data to make an informed decision.</p>
+    <ul>
+      <li>✦ 12 deterministic engine scores &amp; diagnosis</li>
+      <li>✦ 13 Search &amp; AI Intelligence Audits summary</li>
+      <li>✦ 7 readiness lenses (GEO, AEO, LLMO, RAG, E-E-A-T)</li>
+      <li>✦ All findings, affected URLs and verified evidence</li>
+      <li>✦ Severity, confidence and source class transparency</li>
+      <li>✦ Prioritized P0–P3 risk order</li>
+    </ul>
+    <div class="tier-footer">
+      <div class="tier-price"><strong class="amount">$0</strong><span>/ public &amp; free</span></div>
+      <a class="tier-action" href="#scanner">Run Free Diagnosis →</a>
+    </div>
+  </article>
+  <article class="px-report-paid featured">
+    <span class="eyebrow">MOST POPULAR</span>
+    <span class="tier-eyebrow">EXECUTION ROADMAP · $99</span>
+    <h3>Unlock how to fix it.</h3>
+    <p>The paid product does not sell “more problems”; it delivers a 50-page engineering roadmap your developer can execute.</p>
+    <ul>
+      <li>✦ Root cause and P0–P3 implementation order</li>
+      <li>✦ File and component level code targeting</li>
+      <li>✦ Acceptance and regression test contracts</li>
+      <li>✦ Rollback safeguards and stop conditions</li>
+      <li>✦ Turnkey 11-file downloadable ZIP package</li>
+      <li>✦ 1 verification re-scan within 30 days</li>
+    </ul>
+    <div class="tier-footer">
+      <div class="tier-price"><strong class="amount">$99</strong><span>/ 1 domain</span></div>
+      <a class="primary tier-action" href="/checkout?plan=pro">Unlock Roadmap — $99 →</a>
+    </div>
+  </article>
+  <article class="px-report-enterprise">
+    <span class="vip-tag">ENTERPRISE ARCHITECTURE</span>
+    <span class="tier-eyebrow">ENTERPRISE AUTHORITY · $499</span>
+    <h3>Establish Primary AI Authority.</h3>
+    <p>The complete 6-pillar enterprise system to win primary citations and natural LLM recommendations across ChatGPT, Perplexity, and Claude.</p>
+    <ul>
+      <li>✦ <b>Everything in $99 Roadmap INCLUDED</b></li>
+      <li>✦ Model Corpus Seeding &amp; Entity Association Guide</li>
+      <li>✦ Cross-Encoder Reranking &amp; Citation #1 Architecture</li>
+      <li>✦ Wikidata &amp; Google MID Knowledge Graph Consensus</li>
+      <li>✦ AST llms.txt v2 &amp; High-Speed Bot Edge Delivery</li>
+      <li>✦ Autonomous Agent Readiness (A2A JSON-LD &amp; API)</li>
+      <li>✦ 22-file extended VIP ZIP + Priority Advisory</li>
+      <li>✦ 3 VIP re-scans within 60 days</li>
+    </ul>
+    <div class="tier-footer">
+      <div class="tier-price"><strong class="amount">$499</strong><span>/ enterprise</span></div>
+      <a class="enterprise-cta tier-action" href="/checkout?plan=enterprise">Unlock Enterprise License — $499 →</a>
+    </div>
+  </article>
+</section>'''
 
 TR_PRICING='''<main class="px-pricing"><section class="px-pricing-hero"><div class="kicker"><span></span><b>TEK ÜRÜN · NET SINIR</b></div><h1>Problemi ücretsiz görün.<br><em>Nasıl düzelteceğinizi $99'da açın.</em></h1><p>Ücretsiz tarama teşhisi saklamaz. $99 Fix Mandate; aynı bulguları yazılımcı, ajans veya AI coding agent için uygulanabilir, test edilebilir ve geri alınabilir bir çalışma paketine dönüştürür.</p><div class="px-trust-row"><span>Kayıt gerekmez</span><span>1 domain</span><span>50 sayfaya kadar</span><span>30 gün re-scan</span><span>Reçete ödeme katmanında</span></div></section><section class="px-price-grid"><article class="px-price-card"><span class="tag">TAM TEŞHİS</span><div class="amount">$0</div><p class="sub">Ne yanlış? Nerede? Ne kadar önemli? Hangi kanıt bunu destekliyor?</p><ul><li>12 deterministik motor skoru</li><li>13 Intelligence Audit + 7 readiness lens</li><li>Tüm bulgular ve etkilenen URL'ler</li><li>Severity + confidence + source class</li><li>AI crawler / llms.txt / schema / link kanıtı</li><li>Uygulama reçetesi ve kod değişikliği yok</li></ul><a href="/tr/#scanner">Ücretsiz raporumu oluştur →</a></article><article class="px-price-card featured"><span class="tag">FULL SITE FIX MANDATE</span><div class="amount">$99</div><p class="sub">Teşhisi, doğrudan uygulanabilir mühendislik çalışma emrine dönüştürür.</p><ul><li>P0–P3 uygulanma sırası</li><li>Kök neden → düzeltme → recovery → prevention</li><li>Acceptance + regression testleri</li><li>Rollback + stop conditions</li><li>Codebase verilirse dosya/bileşen hedefleme</li><li>30 gün içinde 1 doğrulama re-scan</li></ul><a href="/checkout">Uygulama paketini aç — $99 →</a></article></section><section class="px-delivery"><header><span class="eyebrow">TESLİMAT TASARIMI</span><h2>Yazılımcının “şimdi ne yapacağım?” diye sormayacağı paket.</h2><p>Ödeme entegrasyonu aktive edildiğinde üyelik zorunlu olmayacak. Satın alma kaydına bağlı süreli teslim bağlantısı, ilgili domain için oluşturulan ZIP paketini açacak.</p></header><div class="px-files"><div class="px-file"><b>00-README.txt</b><span>Kapsam, öncelik ve başlangıç noktası.</span></div><div class="px-file"><b>01-FIX-MANDATE.md</b><span>P0–P3 uygulama sözleşmesi.</span></div><div class="px-file"><b>02-FINDINGS.json</b><span>Makine okunabilir kanıt envanteri.</span></div><div class="px-file"><b>03-TESTS.md</b><span>Kabul, regresyon ve re-scan kriterleri.</span></div><div class="px-file"><b>04-ROLLBACK.md</b><span>Geri alma ve durma koşulları.</span></div></div><div class="px-buy-flow"><article><strong>01</strong><h3>Tara</h3><p>Ücretsiz teşhis tamamlanır.</p></article><article><strong>02</strong><h3>Öde</h3><p>Güvenli sağlayıcı entitlement üretir.</p></article><article><strong>03</strong><h3>ZIP'i al</h3><p>Süreli indirme bağlantısı; hesap zorunlu değil.</p></article><article><strong>04</strong><h3>Uygula & doğrula</h3><p>Yazılımcı uygular, aynı domain yeniden taranır.</p></article></div><p class="px-note">Kart verisi HTML&HTML sunucusunda tutulmaz. Ödeme sağlayıcısı yapılandırılana kadar ücret tahsilatı ve teslim entitlement'ı fail-closed kalır.</p></section></main>'''
 EN_PRICING=TR_PRICING.replace('TEK ÜRÜN · NET SINIR','ONE PRODUCT · CLEAR BOUNDARY').replace('Problemi ücretsiz görün.<br><em>Nasıl düzelteceğinizi $99\'da açın.</em>','See the problem free.<br><em>Unlock how to fix it for $99.</em>').replace('Ücretsiz tarama teşhisi saklamaz. $99 Fix Mandate; aynı bulguları yazılımcı, ajans veya AI coding agent için uygulanabilir, test edilebilir ve geri alınabilir bir çalışma paketine dönüştürür.','The free scan does not hide the diagnosis. The $99 Fix Mandate turns the same evidence into an executable, testable and reversible work package for a developer, agency or AI coding agent.').replace('Kayıt gerekmez','No signup').replace('1 domain','1 domain').replace('50 sayfaya kadar','Up to 50 pages').replace('30 gün re-scan','30-day re-scan').replace('Reçete ödeme katmanında','Prescription is paid').replace('TAM TEŞHİS','FULL DIAGNOSIS').replace('Ne yanlış? Nerede? Ne kadar önemli? Hangi kanıt bunu destekliyor?','What is wrong, where, how serious, and what proves it?').replace('12 deterministik motor skoru','12 deterministic engine scores').replace('13 Intelligence Audit + 7 readiness lens','13 Intelligence Audits + 7 readiness lenses').replace("Tüm bulgular ve etkilenen URL'ler",'All findings and affected URLs').replace('AI crawler / llms.txt / schema / link kanıtı','AI crawler / llms.txt / schema / link evidence').replace('Uygulama reçetesi ve kod değişikliği yok','No implementation prescription or code changes').replace('/tr/#scanner','/en/#scanner').replace('Ücretsiz raporumu oluştur →','Create my free report →').replace('Teşhisi, doğrudan uygulanabilir mühendislik çalışma emrine dönüştürür.','Turns the diagnosis into an implementation-grade engineering work order.').replace('P0–P3 uygulanma sırası','P0–P3 implementation order').replace('Kök neden → düzeltme → recovery → prevention','Root cause → fix → recovery → prevention').replace('Acceptance + regression testleri','Acceptance + regression tests').replace('Codebase verilirse dosya/bileşen hedefleme','File/component targeting when codebase is provided').replace('30 gün içinde 1 doğrulama re-scan','1 validation re-scan within 30 days').replace('Uygulama paketini aç — $99 →','Unlock execution pack — $99 →').replace('TESLİMAT TASARIMI','DELIVERY DESIGN').replace('Yazılımcının “şimdi ne yapacağım?” diye sormayacağı paket.','A package that removes “what do I do next?” from implementation.').replace('Ödeme entegrasyonu aktive edildiğinde üyelik zorunlu olmayacak. Satın alma kaydına bağlı süreli teslim bağlantısı, ilgili domain için oluşturulan ZIP paketini açacak.','When payment integration is activated, membership will not be required. A purchase-scoped, expiring delivery link will unlock the ZIP package generated for the paid domain.').replace('Kapsam, öncelik ve başlangıç noktası.','Scope, priorities and starting point.').replace('P0–P3 uygulama sözleşmesi.','P0–P3 implementation contract.').replace('Makine okunabilir kanıt envanteri.','Machine-readable evidence inventory.').replace('Kabul, regresyon ve re-scan kriterleri.','Acceptance, regression and re-scan criteria.').replace('Geri alma ve durma koşulları.','Rollback and stop conditions.').replace('Tara','Scan').replace('Ücretsiz teşhis tamamlanır.','Free diagnosis completes.').replace('Öde','Pay').replace('Güvenli sağlayıcı entitlement üretir.','Secure provider issues entitlement.').replace("ZIP'i al",'Get ZIP').replace('Süreli indirme bağlantısı; hesap zorunlu değil.','Expiring download link; no account required.').replace('Uygula & doğrula','Implement & verify').replace('Yazılımcı uygular, aynı domain yeniden taranır.','Developer implements; the same domain is re-scanned.').replace('Kart verisi HTML&HTML sunucusunda tutulmaz. Ödeme sağlayıcısı yapılandırılana kadar ücret tahsilatı ve teslim entitlement\'ı fail-closed kalır.','Card data is not stored on HTML&HTML servers. Until a payment provider is configured, charging and delivery entitlement remain fail-closed.')
@@ -77,15 +188,18 @@ def transform_home(rel,lang):
         text=text.replace('<b data-i18n="scan">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">Ücretsiz Tara</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>')
         tool,eng,how,know,report=TR_TOOL,TR_ENG,TR_HOW,TR_KNOW,TR_REPORT
     else:
-        text=re.sub(r'<h1>Your Customer Asks AI.*?</h1>','<h1>Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
-        text=re.sub(r'<h1>Know what blocks your website.*?</h1>','<h1>Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
+        text=re.sub(r'<h1[^>]*>Your Customer Asks AI.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
+        text=re.sub(r'<h1[^>]*>Know what blocks your website.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
+        text=text.replace('<b data-i18n="scan">Check My AI Visibility Free</b>','<b data-i18n="scan">Check Free</b>').replace('<b data-i18n="scan">Scan Free</b>','<b data-i18n="scan">Check Free</b>')
         text=text.replace('<b>Check My AI Visibility Free</b>','<b>Check Free</b>').replace('<b>Scan Free</b>','<b>Check Free</b>')
         tool,eng,how,know,report=EN_TOOL,EN_ENG,EN_HOW,EN_KNOW,EN_REPORT
     text=between(text,'<!-- 04 TOOL DIRECTORY -->','<!-- 05 12 ENGINES / EVIDENCE / TRUST -->',tool)
     text=between(text,'<!-- 05 12 ENGINES / EVIDENCE / TRUST -->','<!-- 06 HOW IT WORKS -->',eng)
     text=between(text,'<!-- 06 HOW IT WORKS -->','<!-- 07 FIX MANDATE & PRICING -->',how)
     text=between(text,'<!-- 08 AUTHORITY & REHBERLER -->','<!-- 09 SHORT FAQ -->',know)
-    if 'data-premium-infographic="report-boundary"' not in text and '<!-- 03 CORE VALUE -->' in text:
+    if 'data-premium-infographic="report-boundary"' in text:
+        text=re.sub(r'<section[^>]+data-premium-infographic="report-boundary".*?</section>', report, text, flags=re.S)
+    elif '<!-- 03 CORE VALUE -->' in text:
         text=text.replace('<!-- 03 CORE VALUE -->',report+'\n\n<!-- 03 CORE VALUE -->',1)
     text=text.replace('$149','$99').replace('"price": "149"','"price": "99"')
     p.write_text(text,encoding='utf-8')
