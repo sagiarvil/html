@@ -131,3 +131,14 @@ Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, 
 - Free Diagnosis: USD 0. Findings, URLs, severity, confidence, source class, evidence and non-scoring intelligence context are visible.
 - Full Site Fix Mandate: USD 149 for one domain / one engagement, including one re-scan within 30 days.
 - AI Mention Tracker remains entitlement-gated and reports NOT_CONFIGURED when provider access is absent.
+
+<!-- LLMS_NEWS_START -->
+## LLMS.TXT News / AI Search Intelligence
+- [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
+- [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [AI Search Visibility Can Now Be Measured Separately in Search Console](https://htmlandhtml.com/en/llms-txt-news/2026-08-google-generative-ai-search-reporting-global/)
+- [The First Technical Gate for ChatGPT Search Visibility: OAI-SearchBot Access](https://htmlandhtml.com/en/llms-txt-news/2026-openai-search-publisher-discovery/)
+- [The Biggest AI Visibility Loss May Be Old Technical Debt, Not a New Trick](https://htmlandhtml.com/en/llms-txt-news/2026-08-ai-visibility-technical-debt/)
+- [AI Search Is Moving to the Next Stage: Is Your Website Ready for Agents to Act?](https://htmlandhtml.com/en/llms-txt-news/2026-agentic-search-website-readiness/)
+- [Why Measuring AI Recommendations with One Prompt Can Be Misleading](https://htmlandhtml.com/en/llms-txt-news/2026-ai-recommendation-consistency/)
+<!-- LLMS_NEWS_END -->

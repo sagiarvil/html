@@ -1,0 +1,62 @@
+name: paddle-live-smoke
+
+on:
+  workflow_run:
+    workflows: [firebase-production]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  paddle-domain-review-smoke:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify Paddle-facing SaaS purchase surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          checkout="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/checkout)"
+          grep -Fq 'SOFTWARE-AS-A-SERVICE / ONE-TIME DIGITAL PRODUCT' <<<"$checkout"
+          grep -Fq '$99' <<<"$checkout"
+          grep -Fq 'Paddle' <<<"$checkout"
+          grep -Fq 'kart verisi toplamıyoruz' <<<"$checkout"
+          grep -Fq 'ücret tahsil etmiyoruz' <<<"$checkout"
+          grep -Fq 'ödeme webhook' <<<"$checkout"
+          grep -Eq '<button[^>]+disabled' <<<"$checkout"
+          ! grep -Fq '$149' <<<"$checkout"
+          for f in 00_READ_ME.md 01_EXECUTIVE_SUMMARY.md 02_IMPLEMENTATION_BLUEPRINT.md 03_FINDINGS.json 04_ACCEPTANCE_TESTS.md 05_ROLLBACK_PLAN.md 06_AI_READINESS.json 07_IMPLEMENTATION_CHECKLIST.txt 08_LLMS_TXT_RECOMMENDED.txt 09_MACHINE_SURFACE_MAP.json 10_EVALUATION_REPORT.md; do grep -Fq "$f" <<<"$checkout"; done
+
+      - name: Verify legal and company review surfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; grep -Fqi "$marker" <<<"$body"; ! grep -Fq '$149' <<<"$body"; echo "PADDLE_SURFACE_OK: $url"; }
+          check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'data-paddle-saas-readiness="true"'
+          check 'https://htmlandhtml.com/en/pricing/' 'data-paddle-saas-readiness="true"'
+          check 'https://htmlandhtml.com/tr/kullanim-kosullari/' 'Merchant of Record'
+          check 'https://htmlandhtml.com/en/terms/' 'Merchant of Record'
+          check 'https://htmlandhtml.com/tr/gizlilik/' 'Paddle'
+          check 'https://htmlandhtml.com/en/privacy/' 'Paddle'
+          check 'https://htmlandhtml.com/tr/iade-politikasi/' 'İade Politikası'
+          check 'https://htmlandhtml.com/en/refund/' 'Refund Policy'
+          check 'https://htmlandhtml.com/tr/hakkimizda/' 'otomatik SaaS platformudur'
+          check 'https://htmlandhtml.com/en/about/' 'automated SaaS platform'
+          check 'https://htmlandhtml.com/tr/iletisim/' 'contact@htmlandhtml.com'
+          check 'https://htmlandhtml.com/en/contact/' 'contact@htmlandhtml.com'
+
+      - name: Verify public product profile is $99 Roadmap
+        shell: bash
+        run: |
+          set -euo pipefail
+          profile="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/audit-profile.json)"
+          PROFILE="$profile" node - <<'NODE'
+          const p=JSON.parse(process.env.PROFILE);
+          const paid=p.commercialBoundary?.paid||'';
+          if(!paid.includes('$99')||!paid.includes('Roadmap')) throw new Error('public paid product profile is not $99 Roadmap');
+          if(p.scanBoundaries?.maxPublicHtmlPages!==50) throw new Error('scan boundary changed');
+          if(p.engines?.length!==12||p.intelligenceLayer?.analysisCount!==13||p.intelligenceLayer?.readinessLensCount!==7) throw new Error('core product contract changed');
+          NODE
