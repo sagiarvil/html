@@ -1,5 +1,6 @@
 import { runFriendlyScan } from '../lib/scan-request';
 import { generateIntelligenceReport } from '../lib/intelligence-engine';
+import { generateOpportunityReport } from '../lib/opportunity-engine';
 
 export const onRequestPost:PagesFunction=async({request})=>{
   try{
@@ -8,7 +9,8 @@ export const onRequestPost:PagesFunction=async({request})=>{
     if(typeof target!=='string'||!target.trim())return Response.json({error:'Domain required'},{status:400});
     const scan=await runFriendlyScan(target.trim());
     const intelligence=generateIntelligenceReport(scan);
-    return Response.json({scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScores:scan.scores,intelligence},{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
+    const opportunity=generateOpportunityReport(scan);
+    return Response.json({scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScores:scan.scores,intelligence,opportunity},{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
   }catch(e:any){
     const message=e?.message||'Intelligence audit failed';
     const status=/not allowed|private|reserved|credentials|port/i.test(message)?403:400;
