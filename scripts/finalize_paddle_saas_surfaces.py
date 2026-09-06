@@ -5,6 +5,7 @@ Runs after all commercial materializers so pricing/legal/checkout disclosures ca
 silently overwritten by older templates. It does not modify GitHub workflows or package.json.
 """
 from pathlib import Path
+import json, re
 from prepare_paddle_saas import legal_pages, checkout, patch_pricing_and_sitemap, normalize_public_sources
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -39,6 +40,23 @@ def harden_checkout_dependency():
         if needle in s: s=s.replace(needle,replacement,1)
     p.write_text(s,encoding='utf-8')
 
+def ensure_root_trust_authority(path:Path,canonical:str,name:str):
+    if not path.exists(): return
+    s=path.read_text(encoding='utf-8')
+    s=re.sub(r'<link rel="canonical" href="[^"]+">',f'<link rel="canonical" href="{canonical}">',s,count=1)
+    if 'application/ld+json' not in s:
+        schema={
+            '@context':'https://schema.org',
+            '@graph':[
+                {'@type':'WebPage','name':name,'url':canonical,'isPartOf':{'@id':'https://htmlandhtml.com/#website'}},
+                {'@type':'WebSite','@id':'https://htmlandhtml.com/#website','name':'HTML&HTML','url':'https://htmlandhtml.com/'},
+                {'@type':'Organization','@id':'https://htmlandhtml.com/#organization','name':'HTML&HTML','url':'https://htmlandhtml.com/','email':'contact@htmlandhtml.com'}
+            ]
+        }
+        block='<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False,separators=(',',':'))+'</script>'
+        s=s.replace('</head>',block+'</head>',1)
+    path.write_text(s,encoding='utf-8')
+
 legal_pages()
 checkout()
 harden_checkout_dependency()
@@ -46,5 +64,13 @@ patch_pricing_and_sitemap()
 normalize_public_sources()
 for rel,tr in [('index.html',True),('tr/index.html',True),('en/index.html',False),('tr/fiyatlandirma/index.html',True),('en/pricing/index.html',False)]:
     expose_refund_link(ROOT/rel,tr)
+for rel,canonical,name in [
+    ('about/index.html','https://htmlandhtml.com/about/','About HTML&HTML'),
+    ('contact/index.html','https://htmlandhtml.com/contact/','Contact HTML&HTML'),
+    ('privacy/index.html','https://htmlandhtml.com/privacy/','HTML&HTML Privacy Policy'),
+    ('terms/index.html','https://htmlandhtml.com/terms/','HTML&HTML Terms'),
+    ('refund/index.html','https://htmlandhtml.com/refund/','HTML&HTML Refund Policy'),
+]:
+    ensure_root_trust_authority(ROOT/rel,canonical,name)
 normalize_public_sources()
-print('PADDLE_SAAS_FINAL_PASS: Paddle review surfaces finalized after commercial build with verified-webhook fail-closed checkout contract.')
+print('PADDLE_SAAS_FINAL_PASS: Paddle review surfaces finalized with verified-webhook fail-closed checkout and canonical trust-page authority schema.')
