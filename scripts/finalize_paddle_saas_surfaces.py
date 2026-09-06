@@ -28,11 +28,23 @@ def expose_refund_link(path:Path,tr:bool):
         s=s.replace('</footer>',f'<div class="paddle-legal-link" style="text-align:center;padding:10px 20px;font-size:13px"><a href="{href}">{label}</a></div></footer>',1)
         path.write_text(s,encoding='utf-8')
 
+def harden_checkout_dependency():
+    p=ROOT/'checkout.html'
+    if not p.exists(): return
+    s=p.read_text(encoding='utf-8')
+    marker='Paddle ödeme webhook’u sunucu tarafında doğrulanmadan teslim yetkisi üretilmez.'
+    if marker not in s:
+        needle="Paddle domain/account onayı tamamlanana kadar kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Bu buton onay sonrası Paddle Checkout'a bağlanacaktır."
+        replacement="Güvenli ödeme sağlayıcısı Paddle henüz production'a bağlanmadı. Paddle domain/account onayı tamamlanana kadar kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Paddle ödeme webhook’u sunucu tarafında doğrulanmadan teslim yetkisi üretilmez. Bu buton onay sonrası Paddle Checkout'a bağlanacaktır."
+        if needle in s: s=s.replace(needle,replacement,1)
+    p.write_text(s,encoding='utf-8')
+
 legal_pages()
 checkout()
+harden_checkout_dependency()
 patch_pricing_and_sitemap()
 normalize_public_sources()
 for rel,tr in [('index.html',True),('tr/index.html',True),('en/index.html',False),('tr/fiyatlandirma/index.html',True),('en/pricing/index.html',False)]:
     expose_refund_link(ROOT/rel,tr)
 normalize_public_sources()
-print('PADDLE_SAAS_FINAL_PASS: Paddle review surfaces finalized after commercial build without touching workflow configuration.')
+print('PADDLE_SAAS_FINAL_PASS: Paddle review surfaces finalized after commercial build with verified-webhook fail-closed checkout contract.')
