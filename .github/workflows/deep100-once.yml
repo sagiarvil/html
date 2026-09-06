@@ -1,0 +1,57 @@
+name: deep100-once
+on:
+  push:
+    branches: [deep-crawl-100-20260906]
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: ${{ !contains(github.event.head_commit.message || '', 'Apply Deep Crawl 100 contract') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: deep-crawl-100-20260906
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply Deep Crawl 100 contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          replacements = {
+            'MAX_PAGES=50':'MAX_PAGES=100',
+            'maxPages:50':'maxPages:100',
+            '"maxPublicHtmlPages": 50':'"maxPublicHtmlPages": 100',
+            "p.version!=='1.1.0'":"p.version!=='1.2.0'",
+            'maxPublicHtmlPages!==50':'maxPublicHtmlPages!==100',
+            '(x.summary?.pagesScanned||0)>50':'(x.summary?.pagesScanned||0)>100',
+            'timeoutSeconds:240':'timeoutSeconds:600',
+            '--max-time 240':'--max-time 600',
+            'en fazla 50 public HTML sayfası':'en fazla 100 public HTML sayfası',
+            'up to 50 public HTML pages':'up to 100 public HTML pages',
+            '50 public HTML pages':'100 public HTML pages',
+            'Deep Crawl 50':'Deep Crawl 100',
+            'Deep Crawl boundary':'Deep Crawl boundary'
+          }
+          text_ext={'.ts','.js','.mjs','.html','.md','.txt','.json','.yml','.yaml'}
+          changed=[]
+          for p in Path('.').rglob('*'):
+            if not p.is_file() or '.git' in p.parts or 'node_modules' in p.parts or p.suffix not in text_ext: continue
+            s=p.read_text(errors='ignore'); orig=s
+            for a,b in replacements.items(): s=s.replace(a,b)
+            if p.as_posix()=='audit-profile.json':
+              s=s.replace('"version": "1.1.0"','"version": "1.2.0"')
+            if s!=orig:
+              p.write_text(s); changed.append(p.as_posix())
+          print('\n'.join(changed))
+          if not changed: raise SystemExit('No Deep Crawl 100 changes applied')
+          PY
+      - name: Commit migration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Apply Deep Crawl 100 contract'
+          git push origin HEAD:deep-crawl-100-20260906
