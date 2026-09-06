@@ -30,7 +30,7 @@ const trEvidenceChecks=[
  ['Google doğruluk sınırı',/Google doğruluk sınırı/],
  ['Google recognizes GEO market terminology',/Google GEO terimini açıkça tanıyor/],
  ['Google llms.txt non-use boundary',/Google Arama, Google Search ve üretken yapay zeka özelliklerine dahil edilmek için llms\.txt/],
- ['Google RAG/query-fan-out explanation',/Google['’]ın üretken yapay zeka Arama rehberi/]
+ ['Google RAG/query-fan-out explanation',/Google(?:['’]|&#x27;|&#39;)ın üretken yapay zeka Arama rehberi/]
 ];
 for(const [name,rx] of trEvidenceChecks)if(!rx.test(trGloss))errors.push(`TR glossary evidence boundary missing: ${name}`);
 for(const u of ['developers.google.com/search/docs/fundamentals/ai-optimization-guide','developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap','help.openai.com/en/articles/12627856-publishers-and-developers-faq','llmstxt.org/changes.html'])if(!trGloss.includes(u)||!enGloss.includes(u))errors.push(`glossary source missing ${u}`);
