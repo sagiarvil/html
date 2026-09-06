@@ -239,7 +239,7 @@ html[data-theme="dark"] .topbar {
   text-decoration: none !important;
 }
 
-.nav-actions {
+.nav-actions, .exec-nav-actions {
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
