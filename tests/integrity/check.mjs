@@ -3,10 +3,10 @@ import path from 'node:path';
 
 const root=process.cwd();
 const errors=[];
-const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/css/intelligence.css','assets/js/validator.js','assets/js/intelligence-root.js','functions/api/scan.ts','functions/api/intelligence.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/lib/intelligence-engine.ts','functions/api/mandate.ts','functions/lib/remediation-engine.ts','functions/lib/remediation-engine-v2.ts','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','robots.txt','sitemap.xml','llms.txt'];
+const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/css/intelligence.css','assets/css/premium-experience.css','assets/js/validator.js','assets/js/intelligence-root.js','functions/api/scan.ts','functions/api/intelligence.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/lib/intelligence-engine.ts','functions/api/mandate.ts','functions/lib/remediation-engine.ts','functions/lib/remediation-engine-v2.ts','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','robots.txt','sitemap.xml','llms.txt','scripts/apply_premium_experience.py'];
 for(const rel of required){if(!fs.existsSync(path.join(root,rel)))errors.push(`missing required file: ${rel}`)}
 const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const css=fs.readFileSync(path.join(root,'assets/css/validator-base.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/validator-v2.css'),'utf8');
+const css=fs.readFileSync(path.join(root,'assets/css/validator-base.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/validator-v2.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/premium-experience.css'),'utf8');
 const js=fs.readFileSync(path.join(root,'assets/js/validator.js'),'utf8');
 const api=fs.readFileSync(path.join(root,'functions/api/scan.ts'),'utf8');
 const engine=fs.readFileSync(path.join(root,'functions/lib/scan-engine.ts'),'utf8');
@@ -16,6 +16,7 @@ const mandate=fs.readFileSync(path.join(root,'functions/api/mandate.ts'),'utf8')
 const remediation=fs.readFileSync(path.join(root,'functions/lib/remediation-engine.ts'),'utf8')+fs.readFileSync(path.join(root,'functions/lib/remediation-engine-v2.ts'),'utf8');
 const checkout=fs.readFileSync(path.join(root,'checkout.html'),'utf8');
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
+const glossary=fs.existsSync(path.join(root,'tr/sozluk/index.html'))?fs.readFileSync(path.join(root,'tr/sozluk/index.html'),'utf8'):'';
 const categories=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
 const checks=[
   [/<html lang="tr">/i.test(index),'homepage must declare Turkish default language'],
@@ -26,13 +27,16 @@ const checks=[
   [/generateIntelligenceReport/.test(api),'public scan must attach the intelligence layer without replacing canonical scores'],
   [/NON_SCORING_INTELLIGENCE_LAYER/.test(intelligence)&&/INTELLIGENCE_ANALYSIS_COUNT=13/.test(intelligence),'13-audit non-scoring intelligence layer missing'],
   [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
-  [/FULL SITE FIX MANDATE/i.test(index)&&/\$149/.test(index),'single $149 mandate positioning missing'],
-  [!/\$49|\$99/.test(index),'legacy mandate prices still present on homepage'],
+  [/\$99/.test(index),'single $99 mandate positioning missing'],
+  [!/\$49|\$149/.test(index),'legacy mandate prices still present on homepage'],
+  [/data-premium-infographic="tools"/.test(index)&&/data-premium-infographic="engines"/.test(index)&&/data-premium-infographic="process"/.test(index)&&/data-premium-infographic="knowledge"/.test(index),'premium infographic system missing from homepage'],
+  [/premium-experience\.css/.test(index),'premium responsive CSS missing from homepage'],
+  [/Yapay Zeka Sizi Buluyor mu\?/.test(index)&&/Tavsiye Edilmeye Hazır mısınız\?/.test(index),'concise customer-first hero missing'],
+  [!/Google doğruluk sınırı/i.test(glossary),'removed Google accuracy-boundary callout must not render'],
   [!/\((?:feat|fix|chore|refactor|docs|style|test):/i.test(index),'git commit metadata leaked into homepage DOM'],
-  [/pricing-grid\.pricing-two \.featured\{padding-top:(?:6[8-9]|7[0-9])px\}/.test(index),'featured pricing card must reserve vertical space for its badge'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
   [/root_fix/.test(remediation)&&/recovery/.test(remediation)&&/prevention/.test(remediation)&&/rollback_guidance/.test(remediation)&&/acceptance_tests/.test(remediation)&&/regression_tests/.test(remediation),'structured mandate execution contract incomplete'],
-  [/FULL_SITE_FIX_MANDATE_PRICE_USD=149/.test(remediation)&&/FULL_SITE_FIX_MANDATE_MAX_PAGES=50/.test(remediation),'commercial remediation wrapper must enforce $149 and 50-page boundary'],
+  [/FULL_SITE_FIX_MANDATE_PRICE_USD=99/.test(remediation)&&/FULL_SITE_FIX_MANDATE_MAX_PAGES=50/.test(remediation),'commercial remediation wrapper must enforce $99 and 50-page boundary'],
   [/MAX_PAGES=50/.test(engine)&&/MAX_LINK_PROBES=30/.test(engine),'crawl limits missing'],
   [/cloudflare-dns\.com\/dns-query/.test(engine)&&/Target resolves to a private or reserved address/.test(engine),'DNS-level SSRF guard missing'],
   [/redirect:'manual'/.test(engine)&&/MAX_REDIRECTS/.test(engine),'redirect boundary control missing'],
@@ -44,9 +48,11 @@ const checks=[
   [!/fixTr|fixEn/.test(engine),'free scan engine must not expose implementation instructions'],
   [/application\/ld\+json/.test(index),'structured data missing'],
   [/^# HTML&HTML/m.test(llms)&&/^> /m.test(llms)&&/^## /m.test(llms),'llms.txt structure incomplete'],
-  [css.length>7000,'validator CSS unexpectedly small'],
+  [css.length>10000,'combined validator/premium CSS unexpectedly small'],
   [js.length>9000,'validator JS unexpectedly small'],
-  [/Harici ödeme sağlayıcısı henüz yapılandırılmadı/.test(checkout),'checkout must disclose inactive external payment dependency']
+  [/Harici ödeme sağlayıcısı henüz yapılandırılmadı/.test(checkout),'checkout must disclose inactive external payment dependency'],
+  [!/\(feat: yeni html&html logosu/i.test(checkout),'checkout must not leak commit metadata'],
+  [/@media\(max-width:640px\)/.test(css)&&/grid-template-columns:1fr/.test(css),'mobile-first premium layout contract missing']
 ];
 for(const c of categories)checks.push([new RegExp(`['\"]${c}['\"]`).test(engine),`missing scoring engine: ${c}`]);
 for(const [ok,msg] of checks)if(!ok)errors.push(msg);
@@ -66,4 +72,4 @@ for(const file of ['index.html','checkout.html']){
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: canonical 12-engine diagnosis, 13-audit intelligence layer, SSRF controls, $149 paid remediation gate and machine-readable surfaces verified.');
+console.log('INTEGRITY PASS: canonical 12-engine diagnosis, 13-audit intelligence, $99 paid prescription boundary, premium infographics, mobile contract and machine-readable surfaces verified.');
