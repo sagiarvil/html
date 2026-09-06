@@ -915,3 +915,16 @@ html[data-theme="dark"] .vector-desc {
     grid-template-columns: 1fr !important;
   }
 }
+
+.arch-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 11.5px !important;
+  font-weight: 750 !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(56, 189, 248, 0.12) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  letter-spacing: 0.02em !important;
+}

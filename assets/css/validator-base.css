@@ -527,9 +527,9 @@ html[data-theme="dark"] .kicker b {
 }
 .findings { border-top: 1px solid var(--line); }
 .finding {
-  display: grid;
-  grid-template-columns: 86px 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 20px 0;
   border-bottom: 1px solid var(--line);
 }

@@ -1152,50 +1152,137 @@ html[data-theme="dark"] .px-three-tiers .px-report-enterprise {
    10. FINDINGS CARDS (CLONE llms-txt-validator.dev FINDINGS)
    -------------------------------------------------------------------------- */
 .finding {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
   background: var(--bg-card) !important;
   border: 1px solid var(--line) !important;
-  border-radius: 14px !important;
-  padding: 20px !important;
-  margin-bottom: 12px !important;
-  transition: border-color 0.2s ease !important;
+  border-radius: 16px !important;
+  padding: 22px 26px !important;
+  margin-bottom: 14px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
 }
 .finding:hover {
   border-color: var(--line-strong) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 4-Tier Left Accent & Ambient Shadows */
+.finding.finding-tier-critical {
+  border-left: 4.5px solid #ef4444 !important;
+}
+.finding.finding-tier-high {
+  border-left: 4.5px solid #f97316 !important;
+}
+.finding.finding-tier-medium {
+  border-left: 4.5px solid #eab308 !important;
+}
+.finding.finding-tier-low,
+.finding.finding-tier-info {
+  border-left: 4.5px solid #10b981 !important;
+}
+
+html[data-theme="dark"] .finding.finding-tier-critical {
+  box-shadow: 0 4px 24px -4px rgba(239, 68, 68, 0.2) !important;
+}
+html[data-theme="dark"] .finding.finding-tier-high {
+  box-shadow: 0 4px 24px -4px rgba(249, 115, 22, 0.2) !important;
+}
+html[data-theme="dark"] .finding.finding-tier-medium {
+  box-shadow: 0 4px 24px -4px rgba(234, 179, 8, 0.2) !important;
+}
+html[data-theme="dark"] .finding.finding-tier-low,
+html[data-theme="dark"] .finding.finding-tier-info {
+  box-shadow: 0 4px 24px -4px rgba(16, 185, 129, 0.2) !important;
 }
 
 .finding h4 {
-  font-size: 16px !important;
+  font-size: 16.5px !important;
   font-weight: 750 !important;
   color: var(--fg) !important;
-  margin: 0 0 6px !important;
+  margin: 2px 0 6px !important;
 }
 .finding p {
   color: var(--fg-soft) !important;
   font-size: 14px !important;
   line-height: 1.6 !important;
-  margin: 0 !important;
+  margin: 0 0 4px !important;
 }
 .finding-url {
   color: var(--fg-dim) !important;
   font-size: 12.5px !important;
   word-break: break-all !important;
-  margin-top: 8px !important;
+  margin-top: 6px !important;
+}
+
+/* Premium Severity Pills (Never vertical towers) */
+.severity {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-size: 10.5px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: fit-content !important;
+  align-self: flex-start !important;
+  margin: 0 !important;
+}
+.severity .sev-dot {
+  display: inline-block !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  animation: sevPulse 2.5s infinite ease-in-out;
+}
+@keyframes sevPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+
+.severity.critical {
+  color: #f87171 !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+}
+.severity.critical .sev-dot {
+  background: #ef4444 !important;
+  box-shadow: 0 0 8px #ef4444 !important;
 }
 
 .severity.high {
-  color: var(--bad) !important;
-  background: var(--bad-bg) !important;
-  border: 1px solid var(--bad-border) !important;
+  color: #fb923c !important;
+  background: rgba(249, 115, 22, 0.15) !important;
+  border: 1px solid rgba(249, 115, 22, 0.4) !important;
 }
+.severity.high .sev-dot {
+  background: #f97316 !important;
+  box-shadow: 0 0 8px #f97316 !important;
+}
+
 .severity.medium {
-  color: var(--warn) !important;
-  background: var(--warn-bg) !important;
-  border: 1px solid var(--warn-border) !important;
+  color: #facc15 !important;
+  background: rgba(234, 179, 8, 0.15) !important;
+  border: 1px solid rgba(234, 179, 8, 0.4) !important;
 }
+.severity.medium .sev-dot {
+  background: #eab308 !important;
+  box-shadow: 0 0 8px #eab308 !important;
+}
+
 .severity.low, .severity.info {
-  color: var(--good) !important;
-  background: var(--good-bg) !important;
-  border: 1px solid var(--good-border) !important;
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+}
+.severity.low .sev-dot, .severity.info .sev-dot {
+  background: #10b981 !important;
+  box-shadow: 0 0 8px #10b981 !important;
 }
 
 .finding-tags span {

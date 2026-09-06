@@ -205,118 +205,70 @@ def build_homepages():
     <div class="classified-header">
       <div class="classified-badge">
         <span class="badge-dot">●</span>
-        <span>KURUMSAL DÜZEY · ENTERPRISE AI ARCHITECTURE</span>
+        <span>KURUMSAL STANDART</span>
       </div>
-      <h3>2026 Kurumsal AI Görünürlük ve Otorite Mimarisi</h3>
-      <p>Yapay zekâ arama motorlarında (ChatGPT, Perplexity, Google Gemini, Claude) markanızın birincil otorite olarak anılmasını, doğrudan tavsiye edilmesini ve otonom ajanlarla işlem yürütmesini sağlayan 6 stratejik kurumsal yetkinlik.</p>
+      <h3>Yapay Zekâ Görünürlüğünü Yöneten 6 Kurumsal Temel</h3>
+      <p>ChatGPT, Perplexity, Gemini ve Claude gibi yapay zekâ motorlarının markanızı doğru anlamasını, tarafsızca önermesini ve birincil kaynak olarak alıntılamasını sağlayan mimari standartlar.</p>
     </div>
     <div class="classified-grid">
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEJİ 01</span>
-            <span class="vector-metric">+%420 Model Öneri Hacmi</span>
-          </div>
-          <h4>Model Belleği ve Marka Varlığı Konumlandırma</h4>
-          <span class="vector-subtitle">Model Corpus Seeding &amp; Entity Association</span>
+          <span class="vector-tag">01 · MODEL HAFIZASI</span>
+          <h4>Marka Varlığı ve Doğal Öneri</h4>
         </div>
-        <p class="vector-desc">Büyük dil modellerinin (LLM) temel eğitim ve indeksleme havuzlarında şirketinizin sektörün öncü çözümü olarak eşleşmesini sağlar. Yapay zekâ, kullanıcı sorularına şirketinizin adını doğal ve tarafsız bir öneri olarak sunar.</p>
+        <p class="vector-desc">Büyük dil modellerinin sektörünüzle ilgili kullanıcı sorularına yanıt verirken şirketinizin adını ve uzmanlığını doğal bir tavsiye olarak sunmasını sağlar.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Kapsamı:</div>
-          <ul>
-            <li>✦ Kurumsal Entity ve Co-occurrence Eşleştirme Kılavuzu</li>
-            <li>✦ Dijital Ayak İzi ve Sektörel Otorite Tohumlama Protokolü</li>
-          </ul>
+          <span class="arch-pill">Entity &amp; Model Eşleştirme</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEJİ 02</span>
-            <span class="vector-metric">Citation #1 Sıralama Önceliği</span>
-          </div>
-          <h4>AI Yanıtlarında Birinci Alıntı Olma Mimarisi</h4>
-          <span class="vector-subtitle">Cross-Encoder Semantic Reranking</span>
+          <span class="vector-tag">02 · ALINTI ÖNCELİĞİ</span>
+          <h4>Birinci Kaynak Olarak Alıntılanma</h4>
         </div>
-        <p class="vector-desc">Perplexity, SearchGPT ve Google Gemini AI Overviews'ın kullandığı reranker algoritmalarında içeriğinizi en yüksek dikkat (attention) ağırlığıyla eşleştirerek ilk dipnot ve referans (Citation #1) olmasını sağlar.</p>
+        <p class="vector-desc">Perplexity, SearchGPT ve Google Gemini aramalarında cevabın dayandığı ilk resmi dipnot (Citation #1) ve referans kaynak olma önceliğini kazandırır.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Kapsamı:</div>
-          <ul>
-            <li>✦ 50 Kelimelik Atomik Yanıt Şablonu</li>
-            <li>✦ Doğrulanabilir Sayısal Veri ve Zıtlık Kalıpları</li>
-          </ul>
+          <span class="arch-pill">Semantik Doğrulama &amp; Reranking</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEJİ 03</span>
-            <span class="vector-metric">%100 Bilgi Bütünlüğü &amp; Koruma</span>
-          </div>
-          <h4>Bilgi Grafı ve Resmi Sicil Doğrulaması</h4>
-          <span class="vector-subtitle">Knowledge Graph Triangulation &amp; Consensus Loop</span>
+          <span class="vector-tag">03 · BİLGİ DOĞRULUĞU</span>
+          <h4>Halüsinasyon ve Hata Koruması</h4>
         </div>
-        <p class="vector-desc">Wikidata, Google Knowledge Graph ve resmi şirket siciliniz arasında kırılmaz bir dijital mutabakat kurar. Yapay zekânın şirketiniz hakkında uydurma (hallucination) veya yanıltıcı bilgi üretmesini engeller.</p>
+        <p class="vector-desc">Wikidata ve resmi sicil verilerinizle çift yönlü mutabakat kurarak yapay zekânın şirketiniz hakkında uydurma veya yanıltıcı bilgi üretmesini engeller.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Kapsamı:</div>
-          <ul>
-            <li>✦ Wikidata QID &amp; Google MID Mutabakat Şeması</li>
-            <li>✦ JSON-LD Kurumsal Konsensüs Çerçevesi</li>
-          </ul>
+          <span class="arch-pill">Bilgi Grafı &amp; Konsensüs</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEJİ 04</span>
-            <span class="vector-metric">40x Hızlı Tarama · %95 Tasarruf</span>
-          </div>
-          <h4>AI Tarayıcıları İçin Yüksek Hızlı Uç Mimari</h4>
-          <span class="vector-subtitle">Edge AST Token Optimization &amp; Bot Engine</span>
+          <span class="vector-tag">04 · MAKİNE OKUNABİLİRLİK</span>
+          <h4>llms.txt ve Hızlı Bot Taraması</h4>
         </div>
-        <p class="vector-desc">GPTBot, ClaudeBot ve Perplexity tarayıcılarına gereksiz kodlardan arındırılmış, doğrudan tüketilebilir saf semantik veri sunarak tarama bütçesi limitlerini kaldırır ve bot maliyetini düşürür.</p>
+        <p class="vector-desc">GPTBot ve ClaudeBot gibi yapay zekâ tarayıcılarına gereksiz kodlardan arındırılmış temiz metin sunarak tarama limitlerini kaldırır ve token tasarrufu sağlar.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Kapsamı:</div>
-          <ul>
-            <li>✦ Cloudflare Worker &amp; Edge Dağıtım Kodu</li>
-            <li>✦ 14KB Saf Semantik AST Çıktı Şablonu</li>
-          </ul>
+          <span class="arch-pill">llms.txt v2 &amp; Uç Dağıtım</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEJİ 05</span>
-            <span class="vector-metric">Sektörel Otorite Tekeli</span>
-          </div>
-          <h4>Kanonik Tanım ve Sektör Endeksi Oluşturma</h4>
-          <span class="vector-subtitle">Canonical Industry Benchmark &amp; Citation Loop</span>
+          <span class="vector-tag">05 · AJAN ETKİLEŞİMİ</span>
+          <h4>Otonom AI Ajan Entegrasyonu</h4>
         </div>
-        <p class="vector-desc">Sektörünüzün standartlarını, metriklerini ve kavramsal tanımlarını sahiplenerek sektördeki diğer tüm kaynakların ve yapay zekâ modellerinin şirketinizin yayınladığı veriyi mecburi kaynak göstermesini sağlar.</p>
+        <p class="vector-desc">Otonom yapay zekâ ajanlarının sitenizden doğrudan fiyat, randevu ve ürün doğrulaması almasını sağlayan standartlaştırılmış JSON-LD ve API katmanı kurar.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Kapsamı:</div>
-          <ul>
-            <li>✦ Sektörel Benchmark ve Endeks Yayınlama Rehberi</li>
-            <li>✦ Rekürsif AI Atıf Zinciri Metodolojisi</li>
-          </ul>
+          <span class="arch-pill">Agent-Ready API &amp; Actions</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEJİ 06</span>
-            <span class="vector-metric">Otonom İşlem ve Satış API'si</span>
-          </div>
-          <h4>Yapay Zekâ Ajanları İçin Doğrudan İşlem Arayüzü</h4>
-          <span class="vector-subtitle">Autonomous Agent &amp; Model Context Protocol (MCP)</span>
+          <span class="vector-tag">06 · DİJİTAL GÜVEN</span>
+          <h4>Uzmanlık ve E-E-A-T İtibar Teyidi</h4>
         </div>
-        <p class="vector-desc">Siri, ChatGPT Voice veya kurumsal AI asistanlarının web sitesi arayüzüne takılmadan, doğrudan fiyat teklifi alması, randevu oluşturması veya sipariş vermesi için Model Context Protocol (MCP) altyapısı kurar.</p>
+        <p class="vector-desc">Modellerin içerik kalitesini ölçerken aradığı gerçek uzmanlık sinyallerini, yazar otoritesini ve doğrulanabilir kanıt sınıflarını şeffafça belgeler.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Kapsamı:</div>
-          <ul>
-            <li>✦ Model Context Protocol (MCP) Server Konfigürasyonu</li>
-            <li>✦ Agent Card (A2A v1.0) Makine Manifestosu</li>
-          </ul>
+          <span class="arch-pill">E-E-A-T &amp; Kanıt Standardı</span>
         </div>
       </div>
     </div>
@@ -325,7 +277,7 @@ def build_homepages():
         <strong>Kurumsal Düzeyde AI Otoritesi İnşa Edin.</strong>
         <span>Bu 6 stratejik mimarinin eksiksiz uygulama şablonları, kod kütüphaneleri ve özel teknik kılavuzları Enterprise lisansıyla teslim edilir.</span>
       </div>
-      <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Enterprise Lisansını Başlat — $499 →</a>
+      <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Enterprise Lisansını Başlat —  →</a>
     </div>
   </div>
 </section>
@@ -722,118 +674,70 @@ def build_homepages():
     <div class="classified-header">
       <div class="classified-badge">
         <span class="badge-dot">●</span>
-        <span>ENTERPRISE TIER · AI AUTHORITY ARCHITECTURE</span>
+        <span>ENTERPRISE STANDARD</span>
       </div>
-      <h3>2026 Enterprise AI Visibility &amp; Authority Architecture</h3>
-      <p>6 foundational corporate capabilities that establish your brand as the primary cited authority, verified recommendation, and direct transaction endpoint across major AI search platforms.</p>
+      <h3>6 Enterprise Pillars of AI Search Visibility</h3>
+      <p>Architectural standards that ensure generative search engines (ChatGPT, Perplexity, Google Gemini, Claude) accurately index, cite, and recommend your brand.</p>
     </div>
     <div class="classified-grid">
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEGY 01</span>
-            <span class="vector-metric">+420% Model Recommendation Volume</span>
-          </div>
-          <h4>Model Corpus Seeding &amp; Entity Positioning</h4>
-          <span class="vector-subtitle">Model Corpus Seeding &amp; Entity Association</span>
+          <span class="vector-tag">01 · MODEL MEMORY</span>
+          <h4>Brand Presence &amp; Recommendation</h4>
         </div>
-        <p class="vector-desc">Establishes your brand as the benchmark industry solution across foundational LLM pre-training and indexing datasets. Ensures AI models recommend your company naturally and authoritatively.</p>
+        <p class="vector-desc">Positions your brand within LLM pre-training and retrieval corpora so generative models naturally recommend your solution for relevant user questions.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Deliverables:</div>
-          <ul>
-            <li>✦ Corporate Entity &amp; Co-occurrence Association Guide</li>
-            <li>✦ Digital Footprint &amp; Authority Seeding Protocol</li>
-          </ul>
+          <span class="arch-pill">Entity &amp; Model Association</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEGY 02</span>
-            <span class="vector-metric">Citation #1 Rerank Priority</span>
-          </div>
-          <h4>Primary Citation Architecture for AI Search</h4>
-          <span class="vector-subtitle">Cross-Encoder Semantic Reranking</span>
+          <span class="vector-tag">02 · CITATION PRIORITY</span>
+          <h4>Primary Authoritative Source (Citation #1)</h4>
         </div>
-        <p class="vector-desc">Structures content to capture maximum attention weights in neural rerankers (Cohere Rerank v3, BGE), securing primary footnote and citation (#1) placements in Perplexity and Gemini Overviews.</p>
+        <p class="vector-desc">Optimizes content for semantic rerankers in Perplexity and Gemini to win the primary footnote citation when answering user search intents.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Deliverables:</div>
-          <ul>
-            <li>✦ 50-Word Atomic Answer Template</li>
-            <li>✦ Verifiable Numerical Data &amp; Contrast Clauses</li>
-          </ul>
+          <span class="arch-pill">Semantic Verification &amp; Reranking</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEGY 03</span>
-            <span class="vector-metric">100% Entity Integrity &amp; Consensus</span>
-          </div>
-          <h4>Knowledge Vault Triangulation &amp; Entity Anchoring</h4>
-          <span class="vector-subtitle">Tripartite Resolution &amp; Hallucination Defense</span>
+          <span class="vector-tag">03 · FACTUAL INTEGRITY</span>
+          <h4>Hallucination &amp; Disinformation Guard</h4>
         </div>
-        <p class="vector-desc">Builds an unbreakable tripartite consensus between Wikidata QID, Google Knowledge Graph MID, and official corporate registries, preventing AI hallucination or brand misrepresentation.</p>
+        <p class="vector-desc">Triangulates official business registries and Wikidata knowledge graphs to prevent AI models from generating incorrect or outdated company facts.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Deliverables:</div>
-          <ul>
-            <li>✦ Wikidata QID &amp; Google MID Alignment Schema</li>
-            <li>✦ JSON-LD Corporate Consensus Blueprint</li>
-          </ul>
+          <span class="arch-pill">Knowledge Graph Consensus</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEGY 04</span>
-            <span class="vector-metric">40x Faster Crawl · 95% Savings</span>
-          </div>
-          <h4>High-Speed Edge Architecture for AI Crawlers</h4>
-          <span class="vector-subtitle">Edge AST Token Optimization &amp; Payload Delivery</span>
+          <span class="vector-tag">04 · MACHINE EFFICIENCY</span>
+          <h4>llms.txt &amp; High-Speed Crawler Parsing</h4>
         </div>
-        <p class="vector-desc">Serves clean, lightweight 14KB semantic AST payloads to AI crawlers (GPTBot, ClaudeBot, Perplexity) removing rendering overhead and bypassing crawl-budget limits.</p>
+        <p class="vector-desc">Delivers lean, token-efficient markdown content to GPTBot and ClaudeBot, eliminating crawl budget exhaustion and bot timeout risks.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Deliverables:</div>
-          <ul>
-            <li>✦ Cloudflare Worker &amp; Edge Delivery Code</li>
-            <li>✦ 14KB Pure Semantic AST Template</li>
-          </ul>
+          <span class="arch-pill">llms.txt v2 &amp; Edge Delivery</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEGY 05</span>
-            <span class="vector-metric">Industry Authority Monopoly</span>
-          </div>
-          <h4>Canonical Definition &amp; Sector Benchmark Index</h4>
-          <span class="vector-subtitle">Recursive Citation Loop &amp; Benchmark Authority</span>
+          <span class="vector-tag">05 · AGENT EXECUTION</span>
+          <h4>Autonomous AI Agent Readiness</h4>
         </div>
-        <p class="vector-desc">Establishes canonical terminology and industry benchmark indices that compel competing sources and AI-synthesized summaries to cite your platform recursively.</p>
+        <p class="vector-desc">Equips autonomous agents with machine-readable actions and verified schemas to execute pricing inquiries, bookings, and product queries directly.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Deliverables:</div>
-          <ul>
-            <li>✦ Sector Benchmark &amp; Index Publishing Guide</li>
-            <li>✦ Recursive AI Citation Chain Methodology</li>
-          </ul>
+          <span class="arch-pill">Agent-Ready API &amp; Actions</span>
         </div>
       </div>
       <div class="classified-card">
         <div class="classified-card-head">
-          <div class="vector-meta">
-            <span class="vector-tag">STRATEGY 06</span>
-            <span class="vector-metric">Autonomous Agent Transaction Ready</span>
-          </div>
-          <h4>Direct Transaction API for AI Agents</h4>
-          <span class="vector-subtitle">Autonomous Agent &amp; Model Context Protocol (MCP)</span>
+          <span class="vector-tag">06 · DIGITAL TRUST</span>
+          <h4>Verified Expertise &amp; E-E-A-T Authority</h4>
         </div>
-        <p class="vector-desc">Enables Siri, ChatGPT Voice, and autonomous AI agents to request quotes, book appointments, or transact directly without human UI bottlenecks using the Model Context Protocol (MCP).</p>
+        <p class="vector-desc">Supplies explicit evidence classes, accredited authors, and verified corporate credentials that algorithms demand for trust verification.</p>
         <div class="vector-deliverables">
-          <div class="deliverable-label">Enterprise Deliverables:</div>
-          <ul>
-            <li>✦ Model Context Protocol (MCP) Server Configuration</li>
-            <li>✦ Agent Card (A2A v1.0) Machine Manifest</li>
-          </ul>
+          <span class="arch-pill">E-E-A-T &amp; Evidence Standards</span>
         </div>
       </div>
     </div>
@@ -842,7 +746,7 @@ def build_homepages():
         <strong>Establish Enterprise-Grade AI Authority.</strong>
         <span>Full implementation blueprints, code libraries, and direct technical advisory are delivered in the Enterprise package.</span>
       </div>
-      <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Unlock Enterprise License — $499 →</a>
+      <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Unlock Enterprise License —  →</a>
     </div>
   </div>
 </section>
