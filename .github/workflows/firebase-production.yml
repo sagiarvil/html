@@ -24,24 +24,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Materialize AI search visibility authority and commercial content
+      - name: Materialize AI authority, customer positioning and premium infographics
         run: npm run build:commercial
-      - name: Verify customer-first AI visibility artifact before deploy
+      - name: Verify premium customer artifact before deploy
         shell: bash
         run: |
           set -euo pipefail
           grep -Fq 'data-commercial-intent="static"' index.html
-          grep -Fq 'Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?' index.html
-          grep -Fq 'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et' index.html
+          grep -Fq 'Yapay Zeka Sizi Buluyor mu?' index.html
+          grep -Fq 'Tavsiye Edilmeye Hazır mısınız?' index.html
+          grep -Fq 'Ücretsiz Kontrol Et' index.html
           grep -Fq 'Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML' index.html
+          grep -Fq 'data-premium-infographic="tools"' index.html
+          grep -Fq 'data-premium-infographic="engines"' index.html
+          grep -Fq 'data-premium-infographic="process"' index.html
+          grep -Fq 'data-premium-infographic="knowledge"' index.html
+          grep -Fq '$99' index.html
+          ! grep -Fq '$149' index.html
+          grep -Fq 'premium-experience.css?v=1' index.html
           grep -Fq 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap' tr/ai-website-readiness/index.html
           grep -Fq 'llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?' tr/llms-txt-validator/index.html
           grep -Fq 'llms.txt Nedir? Yapay Zeka İçin Makine Okunabilir İçerik Haritası Nasıl Kurulur?' tr/rehberler/llms-txt/index.html
           grep -Fq 'ChatGPT ve Diğer Yapay Zeka Tarayıcıları Sitenize Ulaşabiliyor mu?' tr/ai-crawler-checker/index.html
-          grep -Fq 'Google doğruluk sınırı' tr/sozluk/index.html
-          grep -Fq 'Google accuracy boundary' en/glossary/index.html
-          grep -Fq 'Müşteriniz yapay zekaya' tr/yapay-zeka-arama-gorunurlugu/index.html
-          grep -Fq 'When a customer asks AI' en/ai-search-visibility/index.html
+          ! grep -Fq 'Google doğruluk sınırı' tr/sozluk/index.html
+          ! grep -Fq 'Google accuracy boundary' en/glossary/index.html
+          grep -Fq 'Problemi ücretsiz görün.' tr/fiyatlandirma/index.html
           grep -Fq '/assets/css/commercial-intent.css?v=2' en/ai-website-readiness/index.html
       - name: Install Firebase function dependencies
         run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
