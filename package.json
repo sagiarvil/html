@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test:integrity && npm run test:client",
     "test:integrity": "node tests/integrity/check.mjs && node tests/integrity/authority.mjs && node tests/integrity/i18n.mjs && node tests/integrity/mandate-suite.mjs && node tests/integrity/remediation.test.mjs && node tests/integrity/intelligence.test.mjs",
-    "test:client": "node --check assets/js/validator.js && node --check assets/js/authority-tool.js && node --check assets/js/theme.js && node --check assets/js/mention-tracker.js",
+    "test:client": "node --check assets/js/validator.js && node --check assets/js/authority-tool.js && node --check assets/js/theme.js && node --check assets/js/intelligence-root.js && node --check assets/js/mention-tracker.js",
     "dev": "wrangler pages dev .",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
     "firebase:deploy": "npx -y firebase-tools@latest deploy --only hosting",
