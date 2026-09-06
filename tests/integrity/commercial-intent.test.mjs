@@ -10,7 +10,7 @@ const theme=read('assets/js/theme.js');
 const css=read('assets/css/commercial-intent.css');
 const llms=read('llms.txt');
 const overview=read('index.md');
-const injector=read('scripts/inject_commercial_intent.py');
+const injector=read('scripts/inject_ai_expectation.py');
 
 assert(theme.includes('data-commercial-intent="static"'),'theme.js must prefer the static commercial layer and avoid duplicate runtime copy');
 assert(injector.includes('YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ'),'Turkish expectation-led thesis missing');
@@ -20,7 +20,7 @@ assert(injector.includes('Check My AI Visibility Free'),'English customer-langua
 for(const term of ['llms.txt','GEO','AEO','LLMO','AAO','RAG','E-E-A-T','Sitemap'])assert(injector.includes(term),`commercial vocabulary missing ${term}`);
 assert(injector.includes('developers.google.com/search/docs/fundamentals/ai-optimization-guide'),'official Google AI Search source missing');
 assert(injector.includes('help.openai.com/en/articles/12627856-publishers-and-developers-faq'),'OpenAI Search source missing');
-assert(injector.includes('tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez'),'Turkish anti-guarantee boundary missing');
+assert(injector.includes('Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez'),'Turkish anti-guarantee boundary missing');
 assert(injector.includes('Recommendations, rankings, citations, traffic, customers and revenue are not guaranteed'),'English anti-guarantee boundary missing');
 assert(injector.includes('data-commercial-intent="static"'),'Static HTML injector contract missing');
 assert(css.includes('.ai-opportunity')&&css.includes('.ai-term-strip'),'Commercial component and AI term strip CSS missing');
