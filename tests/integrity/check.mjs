@@ -31,7 +31,7 @@ const checks=[
   [!/\((?:feat|fix|chore|refactor|docs|style|test):/i.test(index),'git commit metadata leaked into homepage DOM'],
   [/pricing-grid\.pricing-two \.featured\{padding-top:(?:6[8-9]|7[0-9])px\}/.test(index),'featured pricing card must reserve vertical space for its badge'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
-  [/ROOT FIX/.test(remediation)&&/RECOVERY/.test(remediation)&&/PREVENTION/.test(remediation)&&/ROLLBACK/.test(remediation),'mandate execution contract incomplete'],
+  [/root_fix/.test(remediation)&&/recovery/.test(remediation)&&/prevention/.test(remediation)&&/rollback_guidance/.test(remediation)&&/acceptance_tests/.test(remediation)&&/regression_tests/.test(remediation),'structured mandate execution contract incomplete'],
   [/FULL_SITE_FIX_MANDATE_PRICE_USD=149/.test(remediation)&&/FULL_SITE_FIX_MANDATE_MAX_PAGES=50/.test(remediation),'commercial remediation wrapper must enforce $149 and 50-page boundary'],
   [/MAX_PAGES=50/.test(engine)&&/MAX_LINK_PROBES=30/.test(engine),'crawl limits missing'],
   [/cloudflare-dns\.com\/dns-query/.test(engine)&&/Target resolves to a private or reserved address/.test(engine),'DNS-level SSRF guard missing'],
