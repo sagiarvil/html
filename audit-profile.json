@@ -1,142 +1,81 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "profile": "HTML&HTML Open Website AI Readiness Audit Profile",
-  "profileId": "hh-owairp",
-  "version": "1.1.0",
-  "status": "public-product-profile",
-  "published": "2026-09-06",
-  "canonical": "https://htmlandhtml.com/standard/",
-  "disclaimer": "This is an openly published HTML&HTML product audit profile, not an IETF, W3C, Google, OpenAI, Anthropic or other third-party standard.",
-  "principles": [
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "profile":"HTML&HTML Open Website AI Readiness Audit Profile",
+  "profileId":"hh-owairp",
+  "version":"1.2.0",
+  "status":"public-product-profile",
+  "published":"2026-09-06",
+  "canonical":"https://htmlandhtml.com/standard/",
+  "disclaimer":"This is an openly published HTML&HTML product audit profile, not an IETF, W3C, Google, OpenAI, Anthropic or other third-party standard.",
+  "principles":[
     "Measured facts, normative standards, vendor guidance, proposals and heuristics must remain distinguishable.",
     "Unknown or unavailable evidence must not be forced into pass or fail.",
     "A score describes measured technical conditions only; it does not guarantee ranking, traffic, revenue or AI citation.",
     "Public scanning must not invent private source-code ownership or file paths.",
     "Security boundaries must fail closed for private, local, reserved or credential-bearing targets.",
-    "Experimental agent surfaces must not be published solely to improve a score."
+    "Experimental agent surfaces must not be published solely to improve a score.",
+    "The Intelligence Audit layer is decision support and never mutates the canonical 12-engine overall score."
   ],
-  "sourceClasses": [
-    {
-      "id": "OFFICIAL_STANDARD",
-      "meaning": "Normative or standards-track specification."
-    },
-    {
-      "id": "OFFICIAL_VENDOR",
-      "meaning": "Current first-party product or crawler guidance."
-    },
-    {
-      "id": "PROPOSAL",
-      "meaning": "Emerging convention that is not treated as a mandatory standard."
-    },
-    {
-      "id": "MEASURED",
-      "meaning": "Directly observed HTTP, HTML, header, robots or link evidence."
-    },
-    {
-      "id": "INTERNAL_HEURISTIC",
-      "meaning": "HTML&HTML decision-support rule where no normative threshold exists."
-    },
-    {
-      "id": "EXPERIMENTAL",
-      "meaning": "Early or optional capability with limited maturity or adoption."
-    }
+  "sourceClasses":[
+    {"id":"OFFICIAL_STANDARD","meaning":"Normative or standards-track specification."},
+    {"id":"OFFICIAL_VENDOR","meaning":"Current first-party product or crawler guidance."},
+    {"id":"PROPOSAL","meaning":"Emerging convention that is not treated as a mandatory standard."},
+    {"id":"MEASURED","meaning":"Directly observed HTTP, HTML, header, robots or link evidence."},
+    {"id":"INTERNAL_HEURISTIC","meaning":"HTML&HTML decision-support rule where no normative threshold exists."},
+    {"id":"EXPERIMENTAL","meaning":"Early or optional capability with limited maturity or adoption."}
   ],
-  "confidenceLevels": [
-    "confirmed",
-    "strong",
-    "probable",
-    "requires-source-verification"
+  "confidenceLevels":["confirmed","strong","probable","requires-source-verification"],
+  "ruleStates":["PASS","FAIL","UNKNOWN","NOT_MEASURED","REQUIRES_CONTEXT"],
+  "engines":[
+    {"id":"crawl","name":"Crawl & Index","overallWeight":12,"purpose":"Public reachability, redirects, robots, sitemap, indexability and page discovery."},
+    {"id":"technical","name":"Technical SEO","overallWeight":14,"purpose":"Titles, descriptions, headings, canonicals, duplicate and route-level technical signals."},
+    {"id":"ai","name":"AI / GEO Access","overallWeight":12,"purpose":"Search, retrieval and AI crawler policy signals without conflating search access with training controls."},
+    {"id":"llms","name":"llms.txt v2","overallWeight":6,"purpose":"Proposal-format, link reachability and discovery relations such as describedby and Markdown alternates."},
+    {"id":"schema","name":"Structured Data","overallWeight":8,"purpose":"JSON-LD parseability, entity types and visible-identity consistency signals."},
+    {"id":"performance","name":"Performance Hygiene","overallWeight":10,"purpose":"Observable HTML/script/render-blocking hygiene; field CWV remain NOT_MEASURED without reliable field or lab data."},
+    {"id":"accessibility","name":"Accessibility","overallWeight":9,"purpose":"Document language, image alternatives, programmatic labels and accessible control names."},
+    {"id":"security","name":"Security Baseline","overallWeight":10,"purpose":"HTTPS, browser security headers, mixed-content and insecure-form baseline controls."},
+    {"id":"trust","name":"Content Trust","overallWeight":7,"purpose":"Organization identity, contact, privacy, terms and editorial accountability signals."},
+    {"id":"agent","name":"Agent Readiness","overallWeight":3,"purpose":"Machine-readable and programmatic discovery surfaces while keeping experimental protocols explicitly optional."},
+    {"id":"conversion","name":"Conversion","overallWeight":4,"purpose":"Visibility and continuity of public next-step/contact/form flows without changing business logic."},
+    {"id":"links","name":"Link Integrity","overallWeight":5,"purpose":"Real HTTP probing of owned internal destinations and unnecessary redirects."}
   ],
-  "ruleStates": [
-    "PASS",
-    "FAIL",
-    "UNKNOWN",
-    "NOT_MEASURED"
-  ],
-  "engines": [
-    {
-      "id": "crawl",
-      "name": "Crawl & Index",
-      "overallWeight": 12,
-      "purpose": "Public reachability, redirects, robots, sitemap, indexability and page discovery."
-    },
-    {
-      "id": "technical",
-      "name": "Technical SEO",
-      "overallWeight": 14,
-      "purpose": "Titles, descriptions, headings, canonicals, duplicate and route-level technical signals."
-    },
-    {
-      "id": "ai",
-      "name": "AI / GEO Access",
-      "overallWeight": 12,
-      "purpose": "Search, retrieval and AI crawler policy signals without conflating search access with training controls."
-    },
-    {
-      "id": "llms",
-      "name": "llms.txt v2",
-      "overallWeight": 6,
-      "purpose": "Proposal-format, link reachability and discovery relations such as describedby and Markdown alternates."
-    },
-    {
-      "id": "schema",
-      "name": "Structured Data",
-      "overallWeight": 8,
-      "purpose": "JSON-LD parseability, entity types and visible-identity consistency signals."
-    },
-    {
-      "id": "performance",
-      "name": "Performance Hygiene",
-      "overallWeight": 10,
-      "purpose": "Observable HTML/script/render-blocking hygiene; field CWV remain NOT_MEASURED without reliable field or lab data."
-    },
-    {
-      "id": "accessibility",
-      "name": "Accessibility",
-      "overallWeight": 9,
-      "purpose": "Document language, image alternatives, programmatic labels and accessible control names."
-    },
-    {
-      "id": "security",
-      "name": "Security Baseline",
-      "overallWeight": 10,
-      "purpose": "HTTPS, browser security headers, mixed-content and insecure-form baseline controls."
-    },
-    {
-      "id": "trust",
-      "name": "Content Trust",
-      "overallWeight": 7,
-      "purpose": "Organization identity, contact, privacy, terms and editorial accountability signals."
-    },
-    {
-      "id": "agent",
-      "name": "Agent Readiness",
-      "overallWeight": 3,
-      "purpose": "Machine-readable and programmatic discovery surfaces while keeping experimental protocols explicitly optional."
-    },
-    {
-      "id": "conversion",
-      "name": "Conversion",
-      "overallWeight": 4,
-      "purpose": "Visibility and continuity of public next-step/contact/form flows without changing business logic."
-    },
-    {
-      "id": "links",
-      "name": "Link Integrity",
-      "overallWeight": 5,
-      "purpose": "Real HTTP probing of owned internal destinations and unnecessary redirects."
-    }
-  ],
-  "scanBoundaries": {
-    "maxPublicHtmlPages": 50,
-    "maxLinkProbes": 30,
-    "privateOrReservedTargets": "reject",
-    "credentialBearingUrls": "reject",
-    "nonStandardPorts": "reject",
-    "redirectPivotToPrivateNetwork": "reject",
-    "fieldCoreWebVitalsWithoutReliableData": "NOT_MEASURED"
+  "intelligenceLayer":{
+    "classification":"NON_SCORING_INTELLIGENCE_LAYER",
+    "analysisCount":13,
+    "readinessLensCount":7,
+    "readinessLenses":["SEO","GEO","AEO","LLMO","AAO","RAG","E-E-A-T"],
+    "analyses":[
+      "intent_cannibalization",
+      "information_gain",
+      "answer_extractability",
+      "entity_graph_integrity",
+      "freshness_integrity",
+      "render_parity",
+      "llm_knowledge_surface",
+      "internal_link_semantic_alignment",
+      "orphan_pages",
+      "discovery_path",
+      "indexnow_readiness",
+      "structured_graph_consistency",
+      "codebase_seo_governance"
+    ],
+    "informationGainBoundary":"Public within-site differentiation signals only; not a reproduction of a Google ranking score or whole-web novelty model.",
+    "renderParityBoundary":"NOT_MEASURED without a controlled browser-render snapshot paired with raw HTML.",
+    "codebaseGovernanceBoundary":"REQUIRES_CONTEXT and activates only with authorized source/repository context.",
+    "indexNowBoundary":"NOT_MEASURED unless configuration or verified public evidence is available."
   },
-  "officialSourceRegistry": "https://htmlandhtml.com/sources.json",
-  "methodology": "https://htmlandhtml.com/methodology.html",
-  "validator": "https://htmlandhtml.com/"
+  "scanBoundaries":{
+    "maxPublicHtmlPages":50,
+    "maxLinkProbes":30,
+    "privateOrReservedTargets":"reject",
+    "credentialBearingUrls":"reject",
+    "nonStandardPorts":"reject",
+    "redirectPivotToPrivateNetwork":"reject",
+    "fieldCoreWebVitalsWithoutReliableData":"NOT_MEASURED"
+  },
+  "commercialBoundary":{"free":"Evidence, scores, intelligence signals and priorities","paid":"$149 Full Site Fix Mandate with implementation contract and 30-day re-scan","implementationWithoutEntitlement":"fail-closed"},
+  "officialSourceRegistry":"https://htmlandhtml.com/sources.json",
+  "methodology":"https://htmlandhtml.com/methodology.html",
+  "validator":"https://htmlandhtml.com/"
 }
