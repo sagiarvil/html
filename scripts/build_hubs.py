@@ -182,8 +182,18 @@ def build_platform_hub():
   <div class="kicker"><span></span><b>{'PLATFORM MİMARİSİ' if lang == 'tr' else 'PLATFORM ARCHITECTURE'}</b></div>
   <h1>{h1}</h1>
   <p>{sub}</p>
-  <div class="authority-proof">
-    <span>SCAN</span><span>EVIDENCE</span><span>PRIORITIZE</span><span>FIX</span><span>RE-SCAN</span><span>MONITOR</span>
+  <div class="pipeline-flow authority-proof" role="region" aria-label="Platform Architecture Loop">
+    <div class="pipeline-node"><span class="node-badge">01</span><span class="node-title">SCAN</span><small class="node-desc">{"Derin Keşif" if lang == "tr" else "Deep Discovery"}</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">02</span><span class="node-title">EVIDENCE</span><small class="node-desc">{"Kanıt Doğrulama" if lang == "tr" else "Evidence Audit"}</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">03</span><span class="node-title">PRIORITIZE</span><small class="node-desc">{"P0–P3 Etki" if lang == "tr" else "P0–P3 Impact"}</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node active"><span class="node-badge">04</span><span class="node-title">FIX</span><small class="node-desc">{"Uygulama Mandatı" if lang == "tr" else "Execution Mandate"}</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">05</span><span class="node-title">RE-SCAN</span><small class="node-desc">{"30 Gün Doğrulama" if lang == "tr" else "30-Day Re-scan"}</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">06</span><span class="node-title">MONITOR</span><small class="node-desc">{"Sürekli İzleme" if lang == "tr" else "Live Monitoring"}</small></div>
   </div>
 </section>
 

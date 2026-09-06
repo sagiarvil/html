@@ -331,8 +331,18 @@ def build_homepages():
     <h2>Website AI Readiness</h2>
     <p>Arama motorları ve yapay zeka sistemleri için web sitenizin taranabilirliğini, semantik doğruluğunu ve makine arayüzlerini deterministik bir döngüde denetleyin.</p>
   </header>
-  <div class="authority-proof" style="justify-content: center; margin-bottom: 36px;">
-    <span>SCAN</span><span>EVIDENCE</span><span>PRIORITIZE</span><span>FIX</span><span>RE-SCAN</span><span>MONITOR</span>
+  <div class="pipeline-flow authority-proof" role="region" aria-label="6-Aşamalı Deterministik Döngü">
+    <div class="pipeline-node"><span class="node-badge">01</span><span class="node-title">SCAN</span><small class="node-desc">Derin Keşif</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">02</span><span class="node-title">EVIDENCE</span><small class="node-desc">Kanıt Doğrulama</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">03</span><span class="node-title">PRIORITIZE</span><small class="node-desc">P0–P3 Etki</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node active"><span class="node-badge">04</span><span class="node-title">FIX</span><small class="node-desc">Uygulama Mandatı</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">05</span><span class="node-title">RE-SCAN</span><small class="node-desc">30 Gün Doğrulama</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">06</span><span class="node-title">MONITOR</span><small class="node-desc">Sürekli İzleme</small></div>
   </div>
 </section>
 
@@ -433,7 +443,7 @@ def build_homepages():
         <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
         <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
         <li>6. Autonomous Agent Headless Transaction API (MCP)</li>
-        <li>14 Dosyalı VIP ZIP Teslimatı</li>
+        <li>22 Dosyalı Mühürlü VIP ZIP Teslimatı</li>
         <li>60 gün içinde 3 VIP re-scan</li>
       </ul>
       <a class="solid enterprise-btn" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499</a>
@@ -832,8 +842,18 @@ def build_homepages():
     <h2>Website AI Readiness</h2>
     <p>Audit, verify, and resolve technical blockers for autonomous agents, generative search engines, and traditional web crawlers.</p>
   </header>
-  <div class="authority-proof" style="justify-content: center; margin-bottom: 36px;">
-    <span>SCAN</span><span>EVIDENCE</span><span>PRIORITIZE</span><span>FIX</span><span>RE-SCAN</span><span>MONITOR</span>
+  <div class="pipeline-flow authority-proof" role="region" aria-label="6-Stage Deterministic Loop">
+    <div class="pipeline-node"><span class="node-badge">01</span><span class="node-title">SCAN</span><small class="node-desc">Deep Discovery</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">02</span><span class="node-title">EVIDENCE</span><small class="node-desc">Evidence Audit</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">03</span><span class="node-title">PRIORITIZE</span><small class="node-desc">P0–P3 Impact</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node active"><span class="node-badge">04</span><span class="node-title">FIX</span><small class="node-desc">Execution Mandate</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">05</span><span class="node-title">RE-SCAN</span><small class="node-desc">30-Day Re-scan</small></div>
+    <span class="pipeline-arrow">→</span>
+    <div class="pipeline-node"><span class="node-badge">06</span><span class="node-title">MONITOR</span><small class="node-desc">Live Monitoring</small></div>
   </div>
 </section>
 
@@ -934,7 +954,7 @@ def build_homepages():
         <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
         <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
         <li>6. Autonomous Agent Headless Transaction API (MCP)</li>
-        <li>14-file Extended VIP ZIP Delivery</li>
+        <li>22-file Extended VIP ZIP Delivery</li>
         <li>3 VIP re-scans within 60 days</li>
       </ul>
       <a class="solid enterprise-btn" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499</a>
