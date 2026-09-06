@@ -1,0 +1,1210 @@
+{
+  "google": [
+    {
+      "url": "https://developers.google.com/search/blog/2026/08/update-site-reputation-policy",
+      "title": "Update to the Site Reputation Policy",
+      "date": "2026-08-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/07/platform-properties-social-video-guide",
+      "title": "Platform properties roll out globally, plus a new social and video performance guide",
+      "date": "2026-07-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms",
+      "title": "See how content from social and video platforms performs on Google Search",
+      "date": "2026-07-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/07/search-central-live-deep-dive-europe-2026",
+      "title": "Search Central Deep Dive Europe 2026: Apparently we&#39;re going to Barcelona",
+      "date": "2026-07-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/06/scl-deep-dive-europe-2026",
+      "title": "Help Us Pick the Next Stop in Europe for Search Central Live Deep Dive 2026!",
+      "date": "2026-06-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "title": "Introducing Search Generative AI performance reports in Search Console",
+      "date": "2026-06-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
+      "title": "A new resource for optimizing for generative AI in Google Search",
+      "date": "2026-05-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/04/back-button-hijacking",
+      "title": "Introducing a new spam policy for &#34;back button hijacking&#34;",
+      "date": "2026-04-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/04/scl-shanghai-2026",
+      "title": "Search Central Live is Coming to Shanghai in 2026!",
+      "date": "2026-04-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/03/crawler-blog-post",
+      "title": "Inside Googlebot: demystifying crawling, fetching, and the bytes we process",
+      "date": "2026-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/03/crawler-ip-ranges",
+      "title": "New Location for the Google Crawlers&#39; IP Range Files",
+      "date": "2026-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/03/scl-canada-2026",
+      "title": "Search Central Live is coming to Canada",
+      "date": "2026-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/03/scl-apac-2026",
+      "title": "Search Central Live Asia Pacific 2026: Get Ready for Sydney and more!",
+      "date": "2026-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/02/discover-core-update",
+      "title": "Google&#39;s February 2026 Discover core update",
+      "date": "2026-02-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/01/search-central-live-brasil-argentina",
+      "title": "Search Central Live is coming back to South America",
+      "date": "2026-01-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/12/scl-eoy",
+      "title": "Search Central Live APAC 2025 Recap: A Note of Gratitude",
+      "date": "2025-12-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/12/weekly-monthly-views-search-console",
+      "title": "Introducing weekly and monthly views in Search Console",
+      "date": "2025-12-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/12/social-channels-search-console",
+      "title": "Introducing social channels in Search Console",
+      "date": "2025-12-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/12/ai-powered-configuration",
+      "title": "Streamline your Search Console analysis with the new AI-powered configuration",
+      "date": "2025-12-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/11/search-console-branded-filter",
+      "title": "Introducing the Branded queries filter in Search Console",
+      "date": "2025-11-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/11/custom-chart-annotations",
+      "title": "Adding context to your Search Console data with custom annotations",
+      "date": "2025-11-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/11/more-ways-to-share-shipping",
+      "title": "More ways to share your shipping and returns policies with Google",
+      "date": "2025-11-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/11/search-central-live-zurich-is-back",
+      "title": "Search Central Live Zurich is back!",
+      "date": "2025-11-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/11/update-on-our-efforts",
+      "title": "Here&#39;s an update on our efforts to simplify the search results page",
+      "date": "2025-11-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/10/search-console-query-groups",
+      "title": "Introducing Query groups in Search Console Insights",
+      "date": "2025-10-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/09/scl-dubai",
+      "title": "Search Central Live Dubai 2025",
+      "date": "2025-09-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/09/store-widget",
+      "title": "Announcing the store widget: build shopper confidence and drive sales",
+      "date": "2025-09-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/09/scl-tok",
+      "title": "Search Central Live Tokyo 2025",
+      "date": "2025-09-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/09/scl-hkk",
+      "title": "Search Central Live Hong Kong 2025",
+      "date": "2025-09-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/08/search-central-live-mexico-2025",
+      "title": "Search Central Live is back to Mexico City",
+      "date": "2025-08-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/07/trends-api",
+      "title": "Introducing the Google Trends API (alpha)",
+      "date": "2025-07-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/06/search-console-insights",
+      "title": "The new Search Console Insights report is here",
+      "date": "2025-06-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/06/scl-dd-apac-2025-news",
+      "title": "SCL Deep Dive APAC 2025: Community Speakers and a New Format",
+      "date": "2025-06-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/06/simplifying-search-results",
+      "title": "Simplifying the search results page",
+      "date": "2025-06-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/06/loyalty-program",
+      "title": "Adding markup support for loyalty programs",
+      "date": "2025-06-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search",
+      "title": "Top ways to ensure your content performs well in Google&#39;s AI experiences on Search",
+      "date": "2025-05-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/05/app-deep-links",
+      "title": "App deep links: connecting your website and app",
+      "date": "2025-05-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/04/search-central-live-deep-dive-2025",
+      "title": "Register now for Search Central Live Deep Dive 2025",
+      "date": "2025-04-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/04/san-hourly-data",
+      "title": "The Search Analytics API now supports hourly data",
+      "date": "2025-04-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/03/robots-future",
+      "title": "Robots Refresher: Future-proof Robots Exclusion Protocol",
+      "date": "2025-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/03/search-central-live-deep-dive-apac-2025",
+      "title": "Get Ready for Search Central Live Asia Pacific 2025",
+      "date": "2025-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/03/robots-refresher-page-level",
+      "title": "Robots Refresher: page-level granularity",
+      "date": "2025-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/03/robotstxt-flexible-way-to-control",
+      "title": "Robots Refresher: robots.txt - a flexible way to control how machines explore your website",
+      "date": "2025-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/03/search-central-live-madrid",
+      "title": "Search Central Live is going to Madrid",
+      "date": "2025-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/03/first-search-central-live-in-south-africa",
+      "title": "First Search Central Live in South Africa",
+      "date": "2025-03-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/02/intro-robots-refresher",
+      "title": "Robots Refresher: introducing a new series",
+      "date": "2025-02-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/02/search-central-live-nyc",
+      "title": "Search Central Live is going to New York City",
+      "date": "2025-02-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/01/simplifying-breadcrumbs",
+      "title": "Simplifying the visible URL element on mobile search results",
+      "date": "2025-01-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2025/01/search-central-live-brazil",
+      "title": "Search Central Live is returning to Brazil",
+      "date": "2025-01-01",
+      "source": "Google Search Central Blog"
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2024/12/crawling-out-of-december",
+      "title": "Crawling out of December: the 2024 recap",
+      "date": "2024-12-01",
+      "source": "Google Search Central Blog"
+    }
+  ],
+  "openai": [
+    {
+      "url": "https://openai.com/index/an-alien-mind",
+      "title": "An Alien Mind",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "title": "Research acceleration: The view inside OpenAI",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/daybreak-for-frontline-defenders",
+      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
+      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/gpt-6-astra",
+      "title": "GPT-6 Astra: A new generation of intelligence",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/safety-overview-gpt-6-astra",
+      "title": "Safety overview: GPT-6 Astra",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/atv-big-air-tour",
+      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/ai-native-company-workflows",
+      "title": "How AI-native companies turn workflows into operating capability",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/path-to-astra",
+      "title": "Path to Astra: critical capabilities and frontier safeguards",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
+      "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/gilbert-tobin",
+      "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+      "title": "OpenAI supports California’s bill to advance youth AI safety",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/polimill",
+      "title": "Polimill builds Japan's next-generation public AI infrastructure",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+      "title": "A milestone in expanding access to AI",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+      "title": "Supporting Thailand’s next generation of AI startups",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/expanding-our-presence-in-brazil",
+      "title": "Expanding OpenAI’s presence in Brazil",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/learning-never-stops",
+      "title": "Learning never stops: How AI makes learning continuous",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+      "title": "The Hugging Face incident and the road ahead",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/loveholidays",
+      "title": "How loveholidays is making everyone a builder with Codex",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
+      "title": "The full stack behind abundant intelligence",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/jalapeno-first-results",
+      "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+      "title": "Disrupting a new covert influence campaign from Russia",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/introducing-admin-plugin",
+      "title": "Introducing the Admin plugin for ChatGPT Work and Codex",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/introducing-intelligence-age",
+      "title": "Introducing Intelligence Age",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/stampli",
+      "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "title": "Offering Zero Data Retention for frontier models",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/replit",
+      "title": "Replit expands access to software creation with GPT-5.6 Luna",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "title": "ChatGPT Ads expands across Europe",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+      "title": "Strengthening democratic oversight in national security",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/partnering-with-codeai",
+      "title": "Partnering with CodeAI to prepare the first AI generation",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "title": "Pacing model development in an era of cyber-critical capabilities",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-for-teens",
+      "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/nvidia/chatgpt-work",
+      "title": "How NVIDIA scales expertise with ChatGPT Work",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/asana",
+      "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/the-defenders-window",
+      "title": "The Defender’s Window",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/openai-joins-ports-pike-project",
+      "title": "OpenAI joins PORTS-Pike project",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "title": "New policy ideas for the Intelligence Age",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "title": "The builder’s guide to GPT‑5.6",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "title": "From assistance to execution: How enterprises put AI to work",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/ringcentral",
+      "title": "How RingCentral builds AI-native work from engineering to ops",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
+      "title": "Daybreak models are now available on AWS",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/testing-ads-in-chatgpt",
+      "title": "Testing ads in ChatGPT",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    },
+    {
+      "url": "https://openai.com/index/responsible-ai-infrastructure-texas",
+      "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
+      "date": "2026-08-15",
+      "source": "OpenAI Blog"
+    }
+  ],
+  "sparktoro": [
+    {
+      "url": "https://sparktoro.com/blog/creating-and-promoting-were-never-the-same-decision/",
+      "title": "Creating And Promoting Were Never The Same Decision",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/how-wed-market-a-400-skincare-device-before-black-friday/",
+      "title": "How Wed Market A 400 Skincare Device Before Black Friday",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/the-brand-new-v3-of-sparktoro-is-here/",
+      "title": "The Brand New V3 Of Sparktoro Is Here",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/when-your-audience-isnt-who-you-think-they-are/",
+      "title": "When Your Audience Isnt Who You Think They Are",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/does-your-website-still-matter-in-the-zero-click-era/",
+      "title": "Does Your Website Still Matter In The Zero Click Era",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/feed/",
+      "title": "Feed",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/7-reasons-every-marketing-team-should-monitor-brand-mentions/",
+      "title": "7 Reasons Every Marketing Team Should Monitor Brand Mentions",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/the-best-persona-tool-on-the-web-is-now-live/",
+      "title": "The Best Persona Tool On The Web Is Now Live",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-brand-affinity-is-now-live-in-sparktoro-reports/",
+      "title": "New Brand Affinity Is Now Live In Sparktoro Reports",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-research-from-similarweb-how-ai-brand-mentions-influence-direct-visits-traditional-search-queries/",
+      "title": "New Research From Similarweb How Ai Brand Mentions Influence Direct Visits Traditional Search Queries",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/the-sparktoro-api-is-live-audience-research-as-infrastructure/",
+      "title": "The Sparktoro Api Is Live Audience Research As Infrastructure",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/wp-json/",
+      "title": "Wp Json",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/total-addressable-market-tam-size-is-now-in-sparktoro-reports/",
+      "title": "Total Addressable Market Tam Size Is Now In Sparktoro Reports",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/how-do-you-market-to-a-double-sided-marketplace/",
+      "title": "How Do You Market To A Double Sided Marketplace",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/sparktoros-mcp-server-is-now-live-connect-audience-research-directly-to-your-favorite-ai-tool/",
+      "title": "Sparktoros Mcp Server Is Now Live Connect Audience Research Directly To Your Favorite Ai Tool",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/zero-click-searches-highest-in-the-uk-lowest-in-germany-and-france-has-the-most-efficient-searchers/",
+      "title": "Zero Click Searches Highest In The Uk Lowest In Germany And France Has The Most Efficient Searchers",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/audience-research-brief-how-wed-market-to-mid-market-revops-leaders/",
+      "title": "Audience Research Brief How Wed Market To Mid Market Revops Leaders",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/",
+      "title": "In 2026 Less Than One Third Of Google Searches Still Send A Click",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/inimitable-product-is-the-new-make-great-content/",
+      "title": "Inimitable Product Is The New Make Great Content",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/zero-click-search-what-still-works/",
+      "title": "Zero Click Search What Still Works",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/how-wed-market-to-software-developers-at-startups/",
+      "title": "How Wed Market To Software Developers At Startups",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/audience-affinity-vs-traffic-why-high-affinity-media-belongs-in-your-earned-media-strategy/",
+      "title": "Audience Affinity Vs Traffic Why High Affinity Media Belongs In Your Earned Media Strategy",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/if-search-captures-demand-public-evidence-creates-it/",
+      "title": "If Search Captures Demand Public Evidence Creates It",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/5-strategic-features-that-predict-survival-in-the-zero-click-era/",
+      "title": "5 Strategic Features That Predict Survival In The Zero Click Era",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/office-hours-instantly-upgrade-your-events-and-webinars/",
+      "title": "Office Hours Instantly Upgrade Your Events And Webinars",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/audience-research-newsletter-how-to-make-content-repeatable-a-hot-take-vs-a-long-take-why-bad-guys-are-good/",
+      "title": "Audience Research Newsletter How To Make Content Repeatable A Hot Take Vs A Long Take Why Bad Guys Are Good",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/the-death-of-the-ultimate-guide/",
+      "title": "The Death Of The Ultimate Guide",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/audience-research-newsletter-how-to-promote-stuff-permissionless-co-marketing-instantly-get-better-content-ideas/",
+      "title": "Audience Research Newsletter How To Promote Stuff Permissionless Co Marketing Instantly Get Better Content Ideas",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/office-hours-b2b-storytelling-how-to-make-your-brand-their-favorite/",
+      "title": "Office Hours B2B Storytelling How To Make Your Brand Their Favorite",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-upgraded-keyword-data-in-sparktoros-audience-research-reports/",
+      "title": "New Upgraded Keyword Data In Sparktoros Audience Research Reports",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/audience-research-newsletter-mini-buyer-persona-podcast-pitch-advice-influence-maps/",
+      "title": "Audience Research Newsletter Mini Buyer Persona Podcast Pitch Advice Influence Maps",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/office-hours-can-you-actually-track-ai-visibility/",
+      "title": "Office Hours Can You Actually Track Ai Visibility",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/office-hours-how-to-write-influence-driven-marketing-messaging/",
+      "title": "Office Hours How To Write Influence Driven Marketing Messaging",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-research-influence-happens-everywhere-an-analysis-of-the-5000-most-visited-sites-on-the-mobile-and-desktop-web/",
+      "title": "New Research Influence Happens Everywhere An Analysis Of The 5000 Most Visited Sites On The Mobile And Desktop Web",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/office-hours-who-will-amplify-this-and-why/",
+      "title": "Office Hours Who Will Amplify This And Why",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/why-linkedin-might-have-two-algorithms-and-why-marketers-should-care/",
+      "title": "Why Linkedin Might Have Two Algorithms And Why Marketers Should Care",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/how-much-is-your-audience-searching-google-vs-prompting-ai-tools-sparktoros-answers-just-got-an-upgrade/",
+      "title": "How Much Is Your Audience Searching Google Vs Prompting Ai Tools Sparktoros Answers Just Got An Upgrade",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-in-sparktoro-uncover-the-ai-prompt-topics-your-audience-is-using-in-chatgpt-google-ai-mode-claude-and-more/",
+      "title": "New In Sparktoro Uncover The Ai Prompt Topics Your Audience Is Using In Chatgpt Google Ai Mode Claude And More",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/digital-agency-new-business-still-a-concern-referrals-still-rule-for-lead-gen-and-are-sales-pipelines-finally-recovering/",
+      "title": "Digital Agency New Business Still A Concern Referrals Still Rule For Lead Gen And Are Sales Pipelines Finally Recovering",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-research-search-happens-everywhere-an-analysis-of-41-websites-with-significant-search-activity/",
+      "title": "New Research Search Happens Everywhere An Analysis Of 41 Websites With Significant Search Activity",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/best-practices-are-meaningless-without-audience-research/",
+      "title": "Best Practices Are Meaningless Without Audience Research",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/audience-research-newsletter-why-audience-research-grow-your-podcast-when-to-charge-for-public-speaking/",
+      "title": "Audience Research Newsletter Why Audience Research Grow Your Podcast When To Charge For Public Speaking",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/",
+      "title": "New Research Ais Are Highly Inconsistent When Recommending Brands Or Products Marketers Should Take Care When Tracking Ai Visibility",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/your-next-launch-will-fail-without-an-amplifier-strategy/",
+      "title": "Your Next Launch Will Fail Without An Amplifier Strategy",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/why-everyone-prompts-ai-differently-even-when-they-want-the-same-thing/",
+      "title": "Why Everyone Prompts Ai Differently Even When They Want The Same Thing",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/starting-today-anyone-can-analyze-any-describable-audience-in-sparktoro/",
+      "title": "Starting Today Anyone Can Analyze Any Describable Audience In Sparktoro",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/where-agency-revenue-is-heading-fewer-big-retainers-more-mid-market-retainers-and-longer-engagements/",
+      "title": "Where Agency Revenue Is Heading Fewer Big Retainers More Mid Market Retainers And Longer Engagements",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/never-ask-an-ai-tool-how-it-came-up-with-that-answer/",
+      "title": "Never Ask An Ai Tool How It Came Up With That Answer",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/our-top-5-blog-posts-in-2025-to-help-you-with-your-marketing-in-2026/",
+      "title": "Our Top 5 Blog Posts In 2025 To Help You With Your Marketing In 2026",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    },
+    {
+      "url": "https://sparktoro.com/blog/how-to-overcome-the-link-in-comments-problem-on-linkedin-and-other-social-platforms/",
+      "title": "How To Overcome The Link In Comments Problem On Linkedin And Other Social Platforms",
+      "date": "2026-07-15",
+      "source": "SparkToro Blog"
+    }
+  ],
+  "mariehaynes": [
+    {
+      "url": "https://www.mariehaynes.com/blog/",
+      "title": "Blog",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/rebrand/",
+      "title": "Rebrand",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/fetch-as-googlebot-test/",
+      "title": "Fetch As Googlebot Test",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/blocking-javascript-and-css/",
+      "title": "Blocking Javascript And Css",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/the-update-in-google-search-console-is-not-an-algorithm-update/",
+      "title": "The Update In Google Search Console Is Not An Algorithm Update",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/keywords-in-title-tag/",
+      "title": "Keywords In Title Tag",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/using-ga-to-look-at-google-organic-traffic/",
+      "title": "Using Ga To Look At Google Organic Traffic",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/early-thoughts-penguin-4-0/",
+      "title": "Early Thoughts Penguin 4 0",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/sites-previously-demoted-penguin-getting-penalty-lifted-off/",
+      "title": "Sites Previously Demoted Penguin Getting Penalty Lifted Off",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/penguin-4-0-faqs/",
+      "title": "Penguin 4 0 Faqs",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/penguin-4-0-recovery-case-studies/",
+      "title": "Penguin 4 0 Recovery Case Studies",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/seo-course-newsletter-announcement/",
+      "title": "Seo Course Newsletter Announcement",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/featured-snippets/",
+      "title": "Featured Snippets",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/https-and-seo/",
+      "title": "Https And Seo",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/google-geolocation-change-how-to-see-serps-from-another-country/",
+      "title": "Google Geolocation Change How To See Serps From Another Country",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/how-will-google-demote-russian-propaganda-in-their-search-results/",
+      "title": "How Will Google Demote Russian Propaganda In Their Search Results",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/march-9-2018-google-algorithm-update/",
+      "title": "March 9 2018 Google Algorithm Update",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/gdpr-and-google-analytics/",
+      "title": "Gdpr And Google Analytics",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/direct-vs-organic-traffic-seo-mystery-case/",
+      "title": "Direct Vs Organic Traffic Seo Mystery Case",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/how-accurate-is-google-search-console-ranking-data/",
+      "title": "How Accurate Is Google Search Console Ranking Data",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/the-september-27-early-october-algorithm-update-was-likely-about-googles-ability-to-assess-trust/",
+      "title": "The September 27 Early October Algorithm Update Was Likely About Googles Ability To Assess Trust",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/does-google-use-bbb-ratings-as-a-ranking-factor/",
+      "title": "Does Google Use Bbb Ratings As A Ranking Factor",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/november-16-2018-google-help-hangout-notes/",
+      "title": "November 16 2018 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/november-27-2018-google-help-hangout-notes/",
+      "title": "November 27 2018 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/november-30-2018-google-help-hangout-notes/",
+      "title": "November 30 2018 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/december-11-2018-google-help-hangout-notes/",
+      "title": "December 11 2018 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/add-new-user-gsc/",
+      "title": "Add New User Gsc",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/google-updated-qrg-quality-2019/",
+      "title": "Google Updated Qrg Quality 2019",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/june-3-2019-core-quality-update/",
+      "title": "June 3 2019 Core Quality Update",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/review-of-the-local-search-handbook/",
+      "title": "Review Of The Local Search Handbook",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/qa-with-gary-illyes/",
+      "title": "Qa With Gary Illyes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/closing-thoughts-on-the-wix-seo-competition/",
+      "title": "Closing Thoughts On The Wix Seo Competition",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/coronavirus-affecting-traffic/",
+      "title": "Coronavirus Affecting Traffic",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/why-did-mhc-join-the-wix-seo-contest/",
+      "title": "Why Did Mhc Join The Wix Seo Contest",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/january-2020-core-update/",
+      "title": "January 2020 Core Update",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/coronavirus-resources-for-seos/",
+      "title": "Coronavirus Resources For Seos",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/interview-tips/",
+      "title": "Interview Tips",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/march-19-2019-google-help-hangout-notes/",
+      "title": "March 19 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/march-8-2019-google-help-hangout-notes/",
+      "title": "March 8 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/march-5-2019-google-help-hangout-notes/",
+      "title": "March 5 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/february-22-2019-google-help-hangout-notes/",
+      "title": "February 22 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/february-19-2019-google-help-hangout-notes/",
+      "title": "February 19 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/february-8-2019-google-help-hangout-notes/",
+      "title": "February 8 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/february-5-2019-google-help-hangout-notes/",
+      "title": "February 5 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/january-22-2019-google-help-hangout-notes/",
+      "title": "January 22 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/january-11-2019-google-help-hangout-notes/",
+      "title": "January 11 2019 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/december-21-2018-google-help-hangout-notes/",
+      "title": "December 21 2018 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/december-14-2018-google-help-hangout-notes/",
+      "title": "December 14 2018 Google Help Hangout Notes",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/meet-the-mhc-team-at-pubcon/",
+      "title": "Meet The Mhc Team At Pubcon",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    },
+    {
+      "url": "https://www.mariehaynes.com/switching-https-happens-disavow/",
+      "title": "Switching Https Happens Disavow",
+      "date": "2026-06-30",
+      "source": "Marie Haynes Consulting"
+    }
+  ]
+}
