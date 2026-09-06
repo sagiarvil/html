@@ -106,13 +106,14 @@ def get_footer(lang):
         <li><a href="/tr/iletisim/">İletişim</a></li>
         <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
         <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
         <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
         <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
     <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
   </div>
 </footer>'''
@@ -171,13 +172,14 @@ def get_footer(lang):
         <li><a href="/en/contact/">Contact</a></li>
         <li><a href="/en/privacy/">Privacy Policy</a></li>
         <li><a href="/en/terms/">Terms of Service</a></li>
+        <li><a href="/en/refund-policy/">Refund Policy</a></li>
         <li><a href="/llms.txt">llms.txt (Directory)</a></li>
         <li><a href="/sources.json">Source Registry</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. All rights reserved.</span>
+    <span>© 2026 HTML&amp;HTML. All rights reserved. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</span>
     <span>12 Independent Diagnostic Engines · 50-Page Deterministic Boundary</span>
   </div>
 </footer>'''

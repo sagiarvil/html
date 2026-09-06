@@ -204,235 +204,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 02.1 NINE PILLARS OF AI VISIBILITY ($99 EXECUTION BLUEPRINT) -->
-<section class="section enterprise-nine-pillars" id="nine-pillars">
-  <div class="classified-header">
-    <div class="classified-badge">
-      <span class="badge-dot">●</span>
-      <span>9 DİJİTAL SÜTUN · $99 MÜHENDİSLİK YOL HARİTASI</span>
-    </div>
-    <h2>Yapay Zeka Arama Sistemlerinin Baktığı 9 Deterministik Katman</h2>
-    <p>ChatGPT, Perplexity, Google Gemini ve Claude; geleneksel arama motorları gibi yalnızca anahtar kelime saymaz. Markanızı tavsiye kümesine almak için bu 9 sütunun teknik ve anlamsal mutabakatını denetler.</p>
-  </div>
-  <div class="nine-pillars-grid">
-    <article class="pillar-card">
-      <span class="pillar-num">01 · TEKNİK TEMEL</span>
-      <strong>Teknik SEO &amp; Keşfedilebilirlik</strong>
-      <p>robots.txt izinleri, temiz sitemap hiyerarşisi, HTTP durum kodları ve AI tarayıcılarının sayfalarınıza takılmadan erişmesi.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">02 · ÜRETKEN MOTOR</span>
-      <strong>GEO (Generative Engine Optimization)</strong>
-      <p>Üretken yapay zeka modellerinin içeriğinizi parça parça anlamasını sağlayan semantik başlık ve bağlam yapısı.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">03 · DOĞRUDAN CEVAP</span>
-      <strong>AEO (Answer Engine Optimization)</strong>
-      <p>50 kelimelik net, alıntılanabilir doğrudan yanıt blokları ve soru-cevap veri eşleştirmeleri.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">04 · MODEL TOKENOMİKSİ</span>
-      <strong>LLMO (Large Language Model Optimization)</strong>
-      <p>Modellerin token bütçesini ve dikkat penceresini (attention span) boşa harcamayan optimize metin akışı.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">05 · AJAN ETKİLEŞİMİ</span>
-      <strong>AAO (AI Agent Optimization)</strong>
-      <p>Otonom yapay zeka ajanlarının sitenizde gezinmesini, ürün ve fiyat verilerini doğrulamasını sağlayan arayüzler.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">06 · VEKTÖR ERİŞİMİ</span>
-      <strong>RAG (Retrieval-Augmented Generation)</strong>
-      <p>Vektör veritabanlarında yapılan semantik aramalarda en yüksek benzerlik skoruyla ilk 3'e seçilme mimarisi.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">07 · MAKİNE KEŞFİ</span>
-      <strong>Sitemaps &amp; URL Hijyeni</strong>
-      <p>Bozuk veya gereksiz sayfalarla bot bütçesini tüketmeyen, yalnızca otoriter içerikleri işaret eden XML haritaları.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">08 · VARLIK GRAFİĞİ</span>
-      <strong>Schema.org &amp; Entity Graph</strong>
-      <p>JSON-LD @graph ile şirketiniz, kurucularınız, ürünleriniz ve hizmetleriniz arasındaki resmi varlık ilişkileri.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">09 · DİJİTAL İTİBAR</span>
-      <strong>E-E-A-T &amp; İçerik Güveni</strong>
-      <p>Deneyim, uzmanlık, otorite ve güvenilirlik göstergeleriyle model halüsinasyonlarını engelleyen şeffaf kanıtlar.</p>
-    </article>
-  </div>
-  <div class="pillar-footer-banner">
-    <div class="banner-text">
-      <strong>Neden $99 Yol Haritası Gereklidir?</strong>
-      <span>Ücretsiz tarama bu 9 sütundaki kopuklukları ve kanıtları gösterir. $99 Yol Haritası ise yazılım ekibiniz veya AI coding ajanınız için hazır kodlar, P0–P3 kök neden çözümleri, Playwright testleri ve rollback planı ile 11 dosyalı üretim ZIP'i teslim eder.</span>
-    </div>
-    <a class="banner-cta" href="/checkout?plan=pro">Yol Haritasını Aç — $99 →</a>
-  </div>
-</section>
-
-<!-- 02.2 SIX STRATEGIC CHAINS & 18 VECTORS ($499 ENTERPRISE MONOPOLY) -->
-<section class="classified-section enterprise-authority-showcase" id="enterprise-vectors">
-  <div class="classified-header">
-    <div class="classified-badge">
-      <span class="badge-dot">●</span>
-      <span>🔒 TOP SECRET · ENTERPRISE DARK POOL</span>
-    </div>
-    <h2>2026 Kurumsal AI Görünürlük İstihbarat Vektörleri</h2>
-    <p>Yıllık $1.000.000+ bütçeli Silikon Vadisi AI arama laboratuvarlarının kapalı devre kullandığı 6 tescilli optimizasyon vektörü. Kamuya açık taramalarda formüller gizlenir.</p>
-  </div>
-  <div class="classified-grid">
-    <!-- VEKTÖR 01 -->
-    <article class="classified-card vector-blue">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VEKTÖR 01</span>
-          <span class="vector-metric-pill">+420% Tavsiye Olasılığı</span>
-        </div>
-        <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
-      </div>
-      <p class="vector-desc">LLM ağırlıklarının ön-eğitim havuzlarına (Common Crawl, Reddit, Arxiv, GitHub) marka entity'si aşılama ve Pointwise Mutual Information (PMI) optimizasyonu.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>corpus_seeding_pmi.ts</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VEKTÖR 02 -->
-    <article class="classified-card vector-purple">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VEKTÖR 02</span>
-          <span class="vector-metric-pill">0.95+ Re-rank Skoru</span>
-        </div>
-        <h4>Cross-Encoder Attention Optimizasyonu</h4>
-      </div>
-      <p class="vector-desc">Cohere Rerank v3 ve BGE-Reranker matrisinde Perplexity ve Google Gemini AI Overviews'ın ilk alıntısı (Citation #1) olma formülü.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>cross_encoder_rerank.py</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VEKTÖR 03 -->
-    <article class="classified-card vector-green">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VEKTÖR 03</span>
-          <span class="vector-metric-pill">%100 Güncelleme Koruması</span>
-        </div>
-        <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
-      </div>
-      <p class="vector-desc">Wikidata QID, Google Knowledge Graph MID ve Resmi Şirket Sicil veritabanı arasında kırılmaz üçgenleme protokolü.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>wikidata_consensus_triple.jsonld</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VEKTÖR 04 -->
-    <article class="classified-card vector-amber">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VEKTÖR 04</span>
-          <span class="vector-metric-pill">40x Hızlı Tarama · %95 Tasarruf</span>
-        </div>
-        <h4>KV-Cache Friendly Edge Token Purge</h4>
-      </div>
-      <p class="vector-desc">AI botlarına (GPTBot, ClaudeBot) 14KB saf optimize AST sunarak tarama bütçesi sınırını kaldıran Cloudflare Worker kodu.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>edge_ast_purge_worker.ts</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VEKTÖR 05 -->
-    <article class="classified-card vector-cyan">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VEKTÖR 05</span>
-          <span class="vector-metric-pill">Sektörel Bilgi Tekeli</span>
-        </div>
-        <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
-      </div>
-      <p class="vector-desc">Sektörel kanonik tanım ve benchmark endeksleri üreterek diğer tüm yapay zekaların sizi zorunlu kaynak göstermesini sağlayan döngü.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>synthetic_citation_loop.ts</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VEKTÖR 06 -->
-    <article class="classified-card vector-rose">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VEKTÖR 06</span>
-          <span class="vector-metric-pill">Otonom Satış Hazırlığı</span>
-        </div>
-        <h4>Autonomous Agent Headless Transaction API</h4>
-      </div>
-      <p class="vector-desc">Siri Agent, ChatGPT Voice ve AutoGPT ajanlarının web arayüzüne takılmadan sitenizden doğrudan işlem yapması için A2A &amp; MCP standardı.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>agent_headless_api_mcp.json</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-  </div>
-  <div class="classified-footer">
-    <div class="classified-footer-info">
-      <strong>Rakiplerinizin Önünde Olun · Kurumsal AI Tekeli</strong>
-      <span>Bu 6 gizli kurumsal vektörün açık kodları, formülleri ve kurulum şablonları Enterprise lisansıyla teslim edilir.</span>
-    </div>
-    <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499 →</a>
-  </div>
-</section>
-
-<!-- 02.3 22-FILE ENGINEERING DELIVERY ZIP MANIFEST -->
-<section class="section px-delivery-manifest-section">
-  <div class="section-head">
-    <span class="eyebrow">MÜHENDİSLİK TESLİMAT ENVANTERİ</span>
-    <h2>Bir PDF Değil. 22 Dosyalı Doğrulanabilir ZIP Paketi.</h2>
-    <p>Ödeme sonrasında sistem aynı domaini yeniden tarar ve mühendislik ekibiniz için bu dosyaları otomatik olarak üretir. Üyelik zorunlu değildir.</p>
-  </div>
-  <div class="px-delivery-category">
-    <div class="px-delivery-category-title">
-      <span>Standart Mühendislik Seti ($99 ve $499 Paketlerinde)</span>
-      <span class="badge">11 Temel Dosya</span>
-    </div>
-    <div class="px-delivery-grid-22">
-      <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Kapsam, P0–P3 öncelik sırası ve başlangıç sözleşmesi.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level yönetim özeti, 12 motor skoru ve kritik risk dağılımı.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>02_IMPLEMENTATION_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>P0–P3 uygulama sırası, kod şablonları ve uygulama sözleşmesi.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>03_FINDINGS.json</b><span class="format-pill">JSON</span></div><p>Makine okunabilir bulgular, URL'ler ve kanıt envanteri.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>04_ACCEPTANCE_TESTS.md</b><span class="format-pill">TEST</span></div><p>Düzeltmeyi kanıtlayan Playwright ve cURL kabul testleri.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>05_ROLLBACK_PLAN.md</b><span class="format-pill">SRE</span></div><p>Sıfır kesintili güvenli geri alma ve durdurma şartları.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>06_AI_READINESS.json</b><span class="format-pill">JSON</span></div><p>7 lens ve 13 audit makine okunabilir hazırlık verisi.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>07_IMPLEMENTATION_CHECKLIST.txt</b><span class="format-pill">TXT</span></div><p>Yazılım ekibi için adım adım yürütme kontrol listesi.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>08_LLMS_TXT_RECOMMENDED.txt</b><span class="format-pill">CONFIG</span></div><p>Domaininize özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>09_MACHINE_SURFACE_MAP.json</b><span class="format-pill">JSON</span></div><p>Doğrulanmış Markdown makine yüzey rotaları.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>10_EVALUATION_REPORT.md</b><span class="format-pill">MD</span></div><p>12 motorlu deterministik değerlendirme raporu.</p></article>
-    </div>
-  </div>
-  <div class="px-delivery-category">
-    <div class="px-delivery-category-title vip">
-      <span>Enterprise Dark Pool İstihbarat Kiti (Yalnızca $499 VIP Pakette)</span>
-      <span class="badge">11 Gizli Dosya · Açık Kod &amp; Protokol</span>
-    </div>
-    <div class="px-delivery-grid-22">
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">VIP MD</span></div><p>LLM ön-eğitim havuzlarına PMI &gt; 0.88 marka tohumlama kılavuzu.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">VIP JSON</span></div><p>Perplexity/Cohere Reranker için 0.965+ alıntı dikkat matrisi.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json</b><span class="format-pill">VIP JSON</span></div><p>Wikidata QID ve Google Knowledge Graph MID mutabakat triples (@graph kodu).</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js</b><span class="format-pill">VIP JS</span></div><p>AI botlarına 14KB mikro-HTML sunan çalışan Cloudflare Worker kodu.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md</b><span class="format-pill">VIP MD</span></div><p>Kanonik endeks ve sentetik atıf zinciri mimarisi.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>16_A2A_AGENT_CARD.json</b><span class="format-pill">VIP JSON</span></div><p>Otonom ajanların siteyi keşfetmesi için A2A v1.0 Agent Card.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>17_MCP_SERVER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>Claude Desktop ve Cursor için Model Context Protocol sunucu şeması.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md</b><span class="format-pill">VIP MD</span></div><p>AI filtrelerinde 'Chosen' olarak seçilme ton ve biçim kılavuzu.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json</b><span class="format-pill">VIP JSON</span></div><p>ColBERT v2 geç etkileşimli vektör hizalama matrisi.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>20_C2PA_PROVENANCE_LEDGER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>RFC 3161 zaman damgası ve C2PA içerik orijinallik manifestosu.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>21_DARK_POOL_HALLUCINATION_MONITOR.py</b><span class="format-pill">VIP PY</span></div><p>15 frontier LLM modelinde marka halüsinasyonunu izleyen Python nöbetçisi.</p></article>
-    </div>
-  </div>
-</section>
-
 <!-- 04 TOOL DIRECTORY -->
 <section class="px-section" id="tools" data-premium-infographic="tools">
   <div class="px-section-head"><span class="eyebrow">MÜŞTERİ YOLCULUĞU</span><h2>Özel Denetim Araçları</h2><p>Teknik araç listesinden fazlası: müşterinin yapay zekaya sorduğu sorudan sitenize gelen ticari fırsata kadar hangi halkanın koptuğunu görün.</p></div>
@@ -470,68 +241,6 @@ def build_homepages():
     <article class="px-three-step"><span class="num">1</span><h3>Ücretsiz tara</h3><p>En fazla 50 herkese açık sayfa, 12 motor ve 13 Intelligence Audit ile ölçülür.</p><a href="#scanner">Alan adını gir →</a></article>
     <article class="px-three-step"><span class="num">2</span><h3>Kanıtı görün</h3><p>Skor, bulgu, etkilenen URL, önem, güven ve kanıt görünür. Düzeltme kodu veya uygulama planı verilmez.</p><a href="#scanner">Ücretsiz raporu gör →</a></article>
     <article class="px-three-step paid"><span class="num">3</span><h3>$99 yol haritasını aç</h3><p>Kök neden, uygulama sırası, dosya/codebase bağlamı, kabul/regresyon testleri, rollback ve re-scan sözleşmesine dönüşür.</p><a href="/checkout">Uygulama paketini aç →</a></article>
-  </div>
-</section>
-
-<!-- 07 FIX MANDATE & PRICING -->
-<section class="section pricing" id="pricing">
-  <header>
-    <span class="eyebrow">ŞEFFAF MODELLER</span>
-    <h2 data-i18n="pricingTitle">Tespit ücretsiz.<br>Uygulama $99 · Kurumsal Tekel $499.</h2>
-    <p data-i18n="pricingCopy">Tek site için şeffaf, tek seferlik yatırım. Sorunları saklayarak değil, deterministik uygulama kesinliği ve kurumsal pazar üstünlüğü sağlayarak değer üretir.</p>
-  </header>
-  <div class="pricing-grid pricing-three">
-    <article>
-      <div class="pricehead"><span data-i18n="fullDiagnosis">TAM TEŞHİS</span><strong>$0</strong></div>
-      <p data-i18n="p1d">Public site yüzeyinde tam teşhis ve kanıt.</p>
-      <ul>
-        <li data-i18n="p1a">12 deterministik skor</li>
-        <li data-i18n="p1b">Tüm tespitler + evidence</li>
-        <li data-i18n="p1c">Severity + confidence + source class</li>
-        <li data-i18n="p1e">AI crawler policy matrix</li>
-        <li>Düzeltme kodları ve talimatları: <b>YOK</b></li>
-        <li>Enterprise 6 Gizli Vektör: <b>TAMAMEN BUZLU (🔒)</b></li>
-      </ul>
-      <a href="#scanner" data-i18n="scanNow">Ücretsiz tara</a>
-    </article>
-    <article class="featured">
-      <span class="popular" data-i18n="popular">EN ÇOK TERCİH EDİLEN</span>
-      <div class="pricehead"><span data-i18n="fullFixProduct">AI GÖRÜNÜRLÜK YOL HARİTASI</span><strong>$99</strong></div>
-      <p data-i18n="p2d">9 Sütun için uygulama-grade mühendislik sözleşmesi.</p>
-      <ul>
-        <li data-i18n="p2a">9 Sütun tam issue envanteri + P0–P3 sıra</li>
-        <li data-i18n="p2b">ROOT FIX → RECOVERY → PREVENTION</li>
-        <li data-i18n="p2c">Acceptance + regression test</li>
-        <li data-i18n="p2e">Rollback + stop conditions</li>
-        <li>Hazır kodlar (robots.txt, llms.txt, Schema graph, AEO)</li>
-        <li data-i18n="p2f">30 gün içinde 1 re-scan</li>
-        <li>11 Dosyalı Standart Mühendislik ZIP Paketi</li>
-        <li>Enterprise 6 Gizli Vektör: <b>ÖZET AÇIK, KODLAR KİLİTLİ (🔒)</b></li>
-      </ul>
-      <a class="solid" href="/checkout?plan=pro" data-i18n="buyFix">Yol Haritasını Aç — $99</a>
-    </article>
-    <article class="enterprise-tier">
-      <span class="vip-badge">KURUMSAL TEKEL &amp; VIP</span>
-      <div class="pricehead"><span>ENTERPRISE DARK POOL</span><strong>$499</strong></div>
-      <p>Silikon Vadisi $1M+ laboratuvarlarının 6 gizli optimizasyon vektörü.</p>
-      <ul>
-        <li><b>$99 Yol Haritasındaki her şey DAHİL</b></li>
-        <li><b>6 Gizli Enterprise Protokolü (Açık Kodlarla):</b></li>
-        <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
-        <li>2. Cross-Encoder Attention Optimizasyonu (Perplexity 1. Sıra)</li>
-        <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
-        <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
-        <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
-        <li>6. Autonomous Agent Headless Transaction API (MCP)</li>
-        <li>22 Dosyalı Mühürlü VIP ZIP Teslimatı</li>
-        <li>60 gün içinde 3 VIP re-scan</li>
-      </ul>
-      <a class="solid enterprise-btn" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499</a>
-    </article>
-  </div>
-  <div class="compare">
-    <b data-i18n="compareLabel">ÜRÜN SINIRI</b>
-    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$99:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? → <strong>$499 Enterprise:</strong> $1M+ AI araştırma laboratuvarlarının ve mühendislik ekiplerinin kullandığı 6 tescilli AI optimizasyon vektörünün açık kod ve mimari protokolleri.</p>
   </div>
 </section>
 
@@ -604,19 +313,20 @@ def build_homepages():
         <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
         <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
         <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
         <li><a href="/tr/iletisim/">İletişim</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu.</p>
+    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</p>
   </div>
 </footer>
 </body>
 </html>'''
 
     # English en/index.html
-    en_html = f'''<!doctype html>
+    en_html = '''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -643,29 +353,28 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <script type="application/ld+json">
-{{
+{
   "@context": "https://schema.org",
   "@graph": [
-    {{
+    {
       "@type": "WebApplication",
       "name": "HTML&HTML Website Fix Validator",
       "url": "https://htmlandhtml.com/en/",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web",
       "offers": [
-        {{ "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "Enterprise Dark Pool Intelligence", "price": "499", "priceCurrency": "USD" }}
+        { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Enterprise Dark Pool Intelligence", "price": "499", "priceCurrency": "USD" }
       ]
-    }}
+    }
   ]
-}}
+}
 </script>
 <script src="/assets/js/validator.js?v=2" defer></script>
 <script src="/assets/js/theme.js"></script>
 </head>
-<body>
-<a class="skip" href="#scanner" data-i18n="skip">Skip to content</a>
+<body class="enterprise-ui">
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
@@ -782,235 +491,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 02.1 NINE PILLARS OF AI VISIBILITY ($99 EXECUTION BLUEPRINT) -->
-<section class="section enterprise-nine-pillars" id="nine-pillars">
-  <div class="classified-header">
-    <div class="classified-badge">
-      <span class="badge-dot">●</span>
-      <span>9 DIGITAL PILLARS · $99 EXECUTION ROADMAP</span>
-    </div>
-    <h2>9 Deterministic Layers Evaluated by AI Search Engines</h2>
-    <p>ChatGPT, Perplexity, Google Gemini, and Claude do not merely count keywords like legacy search engines. To place your brand into their recommendation set, they audit the technical and semantic consensus of these 9 pillars.</p>
-  </div>
-  <div class="nine-pillars-grid">
-    <article class="pillar-card">
-      <span class="pillar-num">01 · TECHNICAL CORE</span>
-      <strong>Technical SEO &amp; Discoverability</strong>
-      <p>robots.txt directives, clean sitemap hierarchies, HTTP status codes, and unobstructed crawl access for frontier AI bots.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">02 · GENERATIVE ENGINE</span>
-      <strong>GEO (Generative Engine Optimization)</strong>
-      <p>Semantic headers, topical boundaries, and structured paragraphs enabling LLMs to accurately parse key claims.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">03 · DIRECT ANSWER</span>
-      <strong>AEO (Answer Engine Optimization)</strong>
-      <p>50-word concise, quotable direct answers formatted for instant footnote extraction in conversational answers.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">04 · MODEL TOKENOMICS</span>
-      <strong>LLMO (Large Language Model Optimization)</strong>
-      <p>Token-efficient text architecture that preserves LLM context window attention spans and eliminates boilerplate noise.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">05 · AGENT INTERACTION</span>
-      <strong>AAO (AI Agent Optimization)</strong>
-      <p>Machine interfaces allowing autonomous agents to navigate, verify pricing, and extract inventory data reliably.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">06 · VECTOR RETRIEVAL</span>
-      <strong>RAG (Retrieval-Augmented Generation)</strong>
-      <p>High cosine-similarity chunking that positions your content in the top 3 vector matches during multi-hop retrieval.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">07 · MACHINE DISCOVERY</span>
-      <strong>Sitemaps &amp; URL Hygiene</strong>
-      <p>Authoritative XML sitemaps pointing only to 200-OK canonical pages, conserving AI bot crawl quotas.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">08 · ENTITY GRAPH</span>
-      <strong>Schema.org &amp; Entity Graph</strong>
-      <p>Interlinked JSON-LD @graph nodes connecting your organization, founders, products, and services unambiguously.</p>
-    </article>
-    <article class="pillar-card">
-      <span class="pillar-num">09 · DIGITAL REPUTATION</span>
-      <strong>E-E-A-T &amp; Content Trust</strong>
-      <p>First-hand experience, verifiable credentials, and transparent sourcing that prevent model hallucinations.</p>
-    </article>
-  </div>
-  <div class="pillar-footer-banner">
-    <div class="banner-text">
-      <strong>Why Is the $99 Roadmap Essential?</strong>
-      <span>The free scan reveals measured breaks across these 9 pillars. The $99 Roadmap delivers turnkey code templates, P0–P3 root causes, Playwright tests, and rollback procedures in an 11-file engineering ZIP.</span>
-    </div>
-    <a class="banner-cta" href="/checkout?plan=pro">Unlock Roadmap — $99 →</a>
-  </div>
-</section>
-
-<!-- 02.2 SIX STRATEGIC CHAINS & 18 VECTORS ($499 ENTERPRISE MONOPOLY) -->
-<section class="classified-section enterprise-authority-showcase" id="enterprise-vectors">
-  <div class="classified-header">
-    <div class="classified-badge">
-      <span class="badge-dot">●</span>
-      <span>🔒 TOP SECRET · ENTERPRISE DARK POOL</span>
-    </div>
-    <h2>2026 Enterprise AI Visibility Intelligence Vectors</h2>
-    <p>Six proprietary optimization vectors used behind closed doors by $1,000,000+ Silicon Valley AI search labs. Formulas redacted in public scans.</p>
-  </div>
-  <div class="classified-grid">
-    <!-- VECTOR 01 -->
-    <article class="classified-card vector-blue">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VECTOR 01</span>
-          <span class="vector-metric-pill">+420% Recommendation Probability</span>
-        </div>
-        <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
-      </div>
-      <p class="vector-desc">Pre-training corpus seeding (Common Crawl, Reddit, Arxiv, GitHub) with Pointwise Mutual Information (PMI) optimization directly into core model weights.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>corpus_seeding_pmi.ts</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VECTOR 02 -->
-    <article class="classified-card vector-purple">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VECTOR 02</span>
-          <span class="vector-metric-pill">0.95+ Re-rank Score</span>
-        </div>
-        <h4>Cross-Encoder Attention Optimization</h4>
-      </div>
-      <p class="vector-desc">Algorithmic template to maximize cross-encoder vector attention scores and secure primary citation across Cohere Rerank v3 and BGE-Reranker matrices.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>cross_encoder_rerank.py</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VECTOR 03 -->
-    <article class="classified-card vector-green">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VECTOR 03</span>
-          <span class="vector-metric-pill">100% Update Resilience</span>
-        </div>
-        <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
-      </div>
-      <p class="vector-desc">Unbreakable triangulation protocol linking Wikidata QID, Google Knowledge Graph MID, and official corporate registry records.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>wikidata_consensus_triple.jsonld</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VECTOR 04 -->
-    <article class="classified-card vector-amber">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VECTOR 04</span>
-          <span class="vector-metric-pill">40x Faster Crawl · 95% Savings</span>
-        </div>
-        <h4>KV-Cache Friendly Edge Token Purge</h4>
-      </div>
-      <p class="vector-desc">Production Cloudflare Worker serving pure 14KB AST to AI crawlers (GPTBot, ClaudeBot), eliminating crawl budget exhaustion.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>edge_ast_purge_worker.ts</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VECTOR 05 -->
-    <article class="classified-card vector-cyan">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VECTOR 05</span>
-          <span class="vector-metric-pill">Sector Knowledge Monopoly</span>
-        </div>
-        <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
-      </div>
-      <p class="vector-desc">Establishes canonical definitions and benchmark indexes, forcing secondary frontier models to mandate your site as root citation.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>synthetic_citation_loop.ts</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-
-    <!-- VECTOR 06 -->
-    <article class="classified-card vector-rose">
-      <div class="classified-card-head">
-        <div class="vector-meta-bar">
-          <span class="vector-tag">VECTOR 06</span>
-          <span class="vector-metric-pill">Autonomous Sales Readiness</span>
-        </div>
-        <h4>Autonomous Agent Headless Transaction API</h4>
-      </div>
-      <p class="vector-desc">A2A &amp; MCP standard enabling Siri Agent, ChatGPT Voice, and AutoGPT agents to complete actions directly without web UI friction.</p>
-      <div class="classified-file-meta">
-        <span class="file-badge"><code>agent_headless_api_mcp.json</code></span>
-        <span class="lock-pill">🔒 $499 Enterprise</span>
-      </div>
-    </article>
-  </div>
-  <div class="classified-footer">
-    <div class="classified-footer-info">
-      <strong>Lead Your Industry · Enterprise AI Monopoly</strong>
-      <span>Production Cloudflare Worker code, MCP servers, and the 22-file VIP engineering kit are delivered immediately under Enterprise license.</span>
-    </div>
-    <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499 →</a>
-  </div>
-</section>
-
-<!-- 02.3 22-FILE ENGINEERING DELIVERY ZIP MANIFEST -->
-<section class="section px-delivery-manifest-section">
-  <div class="section-head">
-    <span class="eyebrow">ENGINEERING DELIVERY MANIFEST</span>
-    <h2>Not a Static PDF. A Verifiable 22-File Engineering Package.</h2>
-    <p>Following payment, our system re-scans the domain and compiles this production-grade ZIP package automatically. No membership required.</p>
-  </div>
-  <div class="px-delivery-category">
-    <div class="px-delivery-category-title">
-      <span>Standard Engineering Set ($99 Pro &amp; $499 Enterprise)</span>
-      <span class="badge">11 Core Files</span>
-    </div>
-    <div class="px-delivery-grid-22">
-      <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Scope, P0–P3 priorities, and execution starting contract.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level executive summary, 12 engine scores, and risk matrix.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>02_IMPLEMENTATION_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>P0–P3 implementation sequence and technical specifications.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>03_FINDINGS.json</b><span class="format-pill">JSON</span></div><p>Machine-readable evidence inventory and affected URLs.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>04_ACCEPTANCE_TESTS.md</b><span class="format-pill">TEST</span></div><p>Playwright and cURL acceptance verification test suites.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>05_ROLLBACK_PLAN.md</b><span class="format-pill">SRE</span></div><p>Zero-downtime rollback procedures and automated stop conditions.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>06_AI_READINESS.json</b><span class="format-pill">JSON</span></div><p>7 readiness lenses and 13 AI intelligence audit machine surfaces.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>07_IMPLEMENTATION_CHECKLIST.txt</b><span class="format-pill">TXT</span></div><p>Step-by-step developer and DevOps execution checklist.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>08_LLMS_TXT_RECOMMENDED.txt</b><span class="format-pill">CONFIG</span></div><p>Production-ready /llms.txt and /llms-full.txt generated for your domain.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>09_MACHINE_SURFACE_MAP.json</b><span class="format-pill">JSON</span></div><p>Domain-specific verified Markdown machine surface route map.</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>10_EVALUATION_REPORT.md</b><span class="format-pill">MD</span></div><p>12-engine deterministic assessment and field data audit report.</p></article>
-    </div>
-  </div>
-  <div class="px-delivery-category">
-    <div class="px-delivery-category-title vip">
-      <span>Enterprise Dark Pool Intelligence Kit (Exclusive to $499 VIP Tier)</span>
-      <span class="badge">11 Classified Files · Turnkey Code &amp; Protocols</span>
-    </div>
-    <div class="px-delivery-grid-22">
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">VIP MD</span></div><p>LLM pre-training corpus seeding (Common Crawl, Arxiv) &amp; PMI guide.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">VIP JSON</span></div><p>0.965+ citation scoring attention matrix for Perplexity/Cohere Reranker.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json</b><span class="format-pill">VIP JSON</span></div><p>Wikidata QID and Google MID consensus triples (@graph code).</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js</b><span class="format-pill">VIP JS</span></div><p>Production Cloudflare HTMLRewriter Worker serving &lt;14KB micro-HTML.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md</b><span class="format-pill">VIP MD</span></div><p>Canonical industry index blueprint and synthetic citation loop.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>16_A2A_AGENT_CARD.json</b><span class="format-pill">VIP JSON</span></div><p>A2A v1.0 Agent Card spec for autonomous agent discovery.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>17_MCP_SERVER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>Model Context Protocol (MCP) server spec for Claude Desktop/Cursor.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md</b><span class="format-pill">VIP MD</span></div><p>Tone and formatting guide engineered to pass 'Chosen' reward filters.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json</b><span class="format-pill">VIP JSON</span></div><p>ColBERT v2 late-interaction dot product alignment matrix.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>20_C2PA_PROVENANCE_LEDGER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>RFC 3161 timestamping and C2PA cryptographic provenance manifest.</p></article>
-      <article class="px-file-card vip"><div class="px-file-card-head"><b>21_DARK_POOL_HALLUCINATION_MONITOR.py</b><span class="format-pill">VIP PY</span></div><p>Automated Python sentinel monitoring brand hallucination across 15 models.</p></article>
-    </div>
-  </div>
-</section>
-
 <!-- 04 TOOL DIRECTORY -->
 <section class="px-section" id="tools" data-premium-infographic="tools">
   <div class="px-section-head"><span class="eyebrow">CUSTOMER JOURNEY</span><h2>Specialized Diagnostic Tools</h2><p>More than a tool list: see which link breaks between a customer asking AI and a usable commercial path to your website.</p></div>
@@ -1019,7 +499,7 @@ def build_homepages():
     <article class="px-flow-card"><span class="node">02</span><h3>Anlaşılın</h3><p>Schema, entity graphs, semantic HTML and llms.txt. Is who you are and what you offer unambiguous?</p></article>
     <article class="px-flow-card"><span class="node">03</span><h3>Kaynak Olun</h3><p>AEO, RAG, E-E-A-T and original-information signals. Is your content usable as an answer source?</p></article>
     <article class="px-flow-card"><span class="node">04</span><h3>Tıklanın</h3><p>Live links, canonicals and redirect integrity. If cited, does the user land on the right page?</p></article>
-    <article class="px-flow-card"><span class="node">05</span><h3>Talebe Dönüşün</h3><p>CTAs, forms and accessible actions. Can AI-sourced interest connect to a real customer journey?</p></article>
+    <article class="px-flow-card"><span class="node">05</span><h3>Talebe Dönüşün</h3><p>CTA, form and accessible actions. Can AI-sourced interest connect to a real customer journey?</p></article>
   </div>
   <div class="px-lenses">
     <div class="px-lens"><b>AI VISIBILITY</b><span>AI Readiness · AI Crawler · AI Mention</span></div>
@@ -1051,68 +531,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 07 FIX MANDATE & PRICING -->
-<section class="section pricing" id="pricing">
-  <header>
-    <span class="eyebrow">TRANSPARENT PRICING</span>
-    <h2 data-i18n="pricingTitle">Diagnosis is free.<br>Resolution is $99 · Enterprise Monopoly $499.</h2>
-    <p data-i18n="pricingCopy">Transparent, one-time investment per site. Revenue comes from implementation precision and enterprise market dominance, not hiding problems.</p>
-  </header>
-  <div class="pricing-grid pricing-three">
-    <article>
-      <div class="pricehead"><span data-i18n="fullDiagnosis">FULL DIAGNOSIS</span><strong>$0</strong></div>
-      <p data-i18n="p1d">Full diagnosis on the public site surface.</p>
-      <ul>
-        <li data-i18n="p1a">12 deterministic scores</li>
-        <li data-i18n="p1b">All findings + evidence</li>
-        <li data-i18n="p1c">Severity + confidence + source class</li>
-        <li data-i18n="p1e">AI crawler policy matrix</li>
-        <li>Remediation codes &amp; blueprints: <b>NONE</b></li>
-        <li>Enterprise 6 Secret Vectors: <b>REDACTED (🔒)</b></li>
-      </ul>
-      <a href="#scanner" data-i18n="scanNow">Scan free</a>
-    </article>
-    <article class="featured">
-      <span class="popular" data-i18n="popular">MOST POPULAR</span>
-      <div class="pricehead"><span data-i18n="fullFixProduct">AI SEARCH VISIBILITY ROADMAP</span><strong>$99</strong></div>
-      <p data-i18n="p2d">Implementation-grade fix contract for 9 Pillars.</p>
-      <ul>
-        <li data-i18n="p2a">Full issue inventory + P0–P3 order</li>
-        <li data-i18n="p2b">ROOT FIX → RECOVERY → PREVENTION</li>
-        <li data-i18n="p2c">Acceptance + regression tests</li>
-        <li data-i18n="p2e">Rollback + stop conditions</li>
-        <li>Production code templates (robots.txt, llms.txt, Schema graph, AEO)</li>
-        <li data-i18n="p2f">1 re-scan within 30 days</li>
-        <li>11-File Core Engineering ZIP Package</li>
-        <li>Enterprise 6 Secret Vectors: <b>SUMMARY VISIBLE, CODE REDACTED (🔒)</b></li>
-      </ul>
-      <a class="solid" href="/checkout?plan=pro" data-i18n="buyFix">Unlock Roadmap — $99</a>
-    </article>
-    <article class="enterprise-tier">
-      <span class="vip-badge">CORPORATE MONOPOLY &amp; VIP</span>
-      <div class="pricehead"><span>ENTERPRISE DARK POOL</span><strong>$499</strong></div>
-      <p>6 proprietary vectors from $1M+ frontier AI research labs.</p>
-      <ul>
-        <li><b>Everything in $99 Roadmap INCLUDED</b></li>
-        <li><b>6 Classified Enterprise Protocols (Full Code):</b></li>
-        <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
-        <li>2. Cross-Encoder Attention Optimization (Perplexity #1 Rank)</li>
-        <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
-        <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
-        <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
-        <li>6. Autonomous Agent Headless Transaction API (MCP)</li>
-        <li>22-File Extended VIP ZIP Delivery</li>
-        <li>3 VIP re-scans within 60 days</li>
-      </ul>
-      <a class="solid enterprise-btn" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499</a>
-    </article>
-  </div>
-  <div class="compare">
-    <b data-i18n="compareLabel">PRODUCT BOUNDARY</b>
-    <p data-i18n="compareCopy"><strong>Free:</strong> what is wrong and what proves it? → <strong>$99:</strong> what root cause should be fixed, in which order, with which tests and rollback? → <strong>$499 Enterprise:</strong> 6 proprietary AI algorithm vectors with turnkey execution code and prompts.</p>
-  </div>
-</section>
-
 <!-- 08 AUTHORITY & REHBERLER -->
 <section class="px-section" data-premium-infographic="knowledge">
   <div class="px-section-head"><span class="eyebrow">REFERENCE LAYER</span><h2>Technical Guides &amp; Standards</h2><p>A reference layer that connects AI visibility to a learn → verify → implement → measure loop instead of jargon memorization.</p></div>
@@ -1139,7 +557,7 @@ def build_homepages():
 </main>
 
 <!-- 10 FOOTER -->
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER</span><h2>Your Customer Asks AI “Who Should I Choose?” Is Your Website in the Answer Set?</h2><p class="ai-opportunity-lead">HTML&HTML prepares your website to compete for visibility, citation and recommendation opportunity in AI search. It shows measurable website-side blockers that can prevent discovery, understanding, source consideration and a usable referral path.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/en/guides/llms-txt/">llms.txt</a><a href="/en/geo-optimization/">GEO</a><a href="/en/aeo-answer-engine-optimization/">AEO</a><a href="/en/llmo-optimization/">LLMO</a><a href="/en/aao-agent-optimization/">AAO</a><a href="/en/rag-readiness/">RAG</a><a href="/en/e-e-a-t-trust-signals/">E-E-A-T</a><a href="/en/glossary/#sitemap">Sitemap</a><a class="all" href="/en/glossary/">Open AI Search Glossary →</a></div><div class="ai-value-chain"><article><b>01</b><h3>AI MUST DISCOVER YOUR WEBSITE</h3><p>robots.txt, sitemaps, canonicals, indexability and AI crawler access are prerequisites for source discovery.</p></article><article><b>02</b><h3>AI MUST UNDERSTAND YOUR WEBSITE</h3><p>GEO, AEO, LLMO, entity graphs, schema and answer extractability reduce ambiguity for machine readers.</p></article><article><b>03</b><h3>BECOME ELIGIBLE AS A SOURCE</h3><p>RAG/retrieval fitness, original information, E-E-A-T, freshness and evidence structures support source eligibility.</p></article><article><b>04</b><h3>CONNECT CITATION TO COMMERCIAL VALUE</h3><p>AAO, accessible user flows, link integrity, measurable referral paths and clear CTAs turn visibility into customer opportunity.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check My AI Visibility Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Unlock AI Search Visibility Roadmap — $99 →</a></div><p class="ai-opportunity-guard">Recommendations, rankings, citations, traffic, customers, or revenue are never guaranteed. HTML&HTML measures website-side technical and content blockers under your control, not external algorithm choices.</p><div class="ai-market-evidence"><h3>Official reference baseline</h3><div><article><b>Google</b><p>Google publishes official guidance for generative search, recognizing GEO and AEO while treating them as modern technical SEO. Google explicitly confirms it does not require special tags for AI Overviews and does not use llms.txt for Google Search visibility.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article><article><b>OpenAI</b><p>OpenAI confirms public sites can appear in ChatGPT Search; OAI-SearchBot access is critical for discovery, consideration, citation, and referral linking.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article><article><b>Google Search Console</b><p>Google launched dedicated generative AI performance reporting in Search Console globally in 2026.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article></div></div></div></section>
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER</span><h2>Your customer asks AI ‘who should I choose?’ Is your website in the consideration set?</h2><p class="ai-opportunity-lead">HTML&HTML prepares your website for visibility, citation eligibility and recommendation opportunity across AI search experiences. It shows measurable website-side blockers that can prevent discovery, understanding and source consideration.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/en/guides/llms-txt/">llms.txt</a><a href="/en/geo-optimization/">GEO</a><a href="/en/aeo-answer-engine-optimization/">AEO</a><a href="/en/llmo-optimization/">LLMO</a><a href="/en/aao-agent-optimization/">AAO</a><a href="/en/rag-readiness/">RAG</a><a href="/en/e-e-a-t-trust-signals/">E-E-A-T</a><a href="/en/glossary/#sitemap">Sitemap</a><a class="all" href="/en/glossary/">Open AI Search Glossary →</a></div><div class="ai-value-chain"><article><b>01</b><h3>BE DISCOVERABLE BY AI</h3><p>robots.txt, sitemaps, canonicals, indexability and AI crawler access form the discovery foundation.</p></article><article><b>02</b><h3>BE UNDERSTANDABLE</h3><p>GEO, AEO, LLMO, entity graphs, schema and answer extractability reduce machine ambiguity.</p></article><article><b>03</b><h3>BE SOURCE-READY</h3><p>RAG/retrieval, original information, E-E-A-T, freshness and evidence support source eligibility.</p></article><article><b>04</b><h3>TURN OPPORTUNITY INTO DEMAND</h3><p>AAO, accessible journeys, intact links, measurable referrals and clear CTAs connect AI discovery to commercial action.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check My AI Visibility Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Prepare My Site for AI Search — $99 →</a></div><p class="ai-opportunity-guard">Recommendations, rankings, citations, traffic, customers and revenue are not guaranteed. HTML&HTML measures website-side technical and content blockers; it does not claim control over external AI systems.</p><div class="ai-market-evidence"><h3>Grounded in primary guidance</h3><div><article><b>Google</b><p>Google publishes official guidance for generative AI Search, recognizes GEO/AEO as market terms but treats this work as SEO for Google Search, says there are no special extra AI Overview/AI Mode requirements, and says Google Search does not use llms.txt for this visibility.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Open source ↗</a></article><article><b>OpenAI</b><p>OpenAI says any public website can appear in ChatGPT Search and OAI-SearchBot access helps content be discovered, surfaced, clearly cited and linked.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Open source ↗</a></article><article><b>Google Search Console</b><p>Google announced dedicated generative AI Search visibility reporting in Search Console and worldwide rollout in 2026.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Open source ↗</a></article></div></div></div></section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -1182,12 +600,13 @@ def build_homepages():
         <li><a href="/en/about/">About Us</a></li>
         <li><a href="/en/terms/">Terms of Service</a></li>
         <li><a href="/en/privacy/">Privacy Policy</a></li>
+        <li><a href="/en/refund-policy/">Refund Policy</a></li>
         <li><a href="/en/contact/">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministic AI &amp; website visibility validator.</p>
+    <p>&copy; 2026 HTML&amp;HTML. Deterministic AI &amp; website visibility validator. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</p>
   </div>
 </footer>
 </body>

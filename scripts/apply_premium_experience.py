@@ -194,8 +194,8 @@ def transform_home(rel,lang):
         text=text.replace('<b>Check My AI Visibility Free</b>','<b>Check Free</b>').replace('<b>Scan Free</b>','<b>Check Free</b>')
         tool,eng,how,know,report=EN_TOOL,EN_ENG,EN_HOW,EN_KNOW,EN_REPORT
     text=between(text,'<!-- 04 TOOL DIRECTORY -->','<!-- 05 12 ENGINES / EVIDENCE / TRUST -->',tool)
-    text=between(text,'<!-- 05 12 ENGINES / EVIDENCE / TRUST -->','<!-- 06 HOW IT WORKS -->',eng)
-    text=between(text,'<!-- 06 HOW IT WORKS -->','<!-- 07 FIX MANDATE & PRICING -->',how)
+    next_anchor = '<!-- 07 FIX MANDATE & PRICING -->' if '<!-- 07 FIX MANDATE & PRICING -->' in text else '<!-- 08 AUTHORITY & REHBERLER -->'
+    text=between(text,'<!-- 06 HOW IT WORKS -->',next_anchor,how)
     text=between(text,'<!-- 08 AUTHORITY & REHBERLER -->','<!-- 09 SHORT FAQ -->',know)
     if 'data-premium-infographic="report-boundary"' in text:
         text=re.sub(r'<section[^>]+data-premium-infographic="report-boundary".*?</section>', report, text, flags=re.S)

@@ -76,7 +76,15 @@ routes = [
     {"loc": "https://htmlandhtml.com/tr/gizlilik/", "changefreq": "monthly", "priority": "0.5", "alt_en": "https://htmlandhtml.com/en/privacy/"},
     {"loc": "https://htmlandhtml.com/terms/", "changefreq": "monthly", "priority": "0.5"},
     {"loc": "https://htmlandhtml.com/en/terms/", "changefreq": "monthly", "priority": "0.5", "alt_tr": "https://htmlandhtml.com/tr/kullanim-kosullari/"},
-    {"loc": "https://htmlandhtml.com/tr/kullanim-kosullari/", "changefreq": "monthly", "priority": "0.5", "alt_en": "https://htmlandhtml.com/en/terms/"}
+    {"loc": "https://htmlandhtml.com/tr/kullanim-kosullari/", "changefreq": "monthly", "priority": "0.5", "alt_en": "https://htmlandhtml.com/en/terms/"},
+    {"loc": "https://htmlandhtml.com/en/refund-policy/", "changefreq": "monthly", "priority": "0.5", "alt_tr": "https://htmlandhtml.com/tr/iade-politikasi/"},
+    {"loc": "https://htmlandhtml.com/tr/iade-politikasi/", "changefreq": "monthly", "priority": "0.5", "alt_en": "https://htmlandhtml.com/en/refund-policy/"},
+
+    # Architecture & Enterprise
+    {"loc": "https://htmlandhtml.com/en/deterministic-layers/", "changefreq": "weekly", "priority": "0.9", "alt_tr": "https://htmlandhtml.com/tr/deterministik-katmanlar/"},
+    {"loc": "https://htmlandhtml.com/tr/deterministik-katmanlar/", "changefreq": "weekly", "priority": "0.9", "alt_en": "https://htmlandhtml.com/en/deterministic-layers/"},
+    {"loc": "https://htmlandhtml.com/en/enterprise-dark-pool/", "changefreq": "weekly", "priority": "0.9", "alt_tr": "https://htmlandhtml.com/tr/enterprise-dark-pool/"},
+    {"loc": "https://htmlandhtml.com/tr/enterprise-dark-pool/", "changefreq": "weekly", "priority": "0.9", "alt_en": "https://htmlandhtml.com/en/enterprise-dark-pool/"}
 ]
 
 # Generate sitemap.xml
