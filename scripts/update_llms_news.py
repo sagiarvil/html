@@ -20,6 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA_PATH=ROOT/'data/llms-news.json'
 MODEL=os.getenv('NEWS_EDITORIAL_MODEL','gpt-5.6-luna').strip()
 API_KEY=os.getenv('NEWS_EDITORIAL_OPENAI_KEY','').strip()
+REQUIRE_KEY='--require-editorial-key' in sys.argv
 MAX_NEW=3
 UA='HTMLHTML-NewsMonitor/1.0 (+https://htmlandhtml.com/tr/llms-txt-haberler/)'
 
@@ -147,7 +148,9 @@ def slug(v):return re.sub(r'[^a-z0-9]+','-',str(v).lower()).strip('-') or 'updat
 
 def main():
     if not API_KEY:
-        print('LLMS_NEWS_SAFE_NOOP: NEWS_EDITORIAL_OPENAI_KEY is not configured; discovery may run but no automatic content will be published.')
+        msg='NEWS_EDITORIAL_OPENAI_KEY is not configured; scheduled publication cannot run.'
+        if REQUIRE_KEY: raise SystemExit('LLMS_NEWS_CONFIG_FAIL: '+msg)
+        print('LLMS_NEWS_SAFE_NOOP: '+msg)
         return 0
     data=json.loads(DATA_PATH.read_text(encoding='utf-8'));known={x['sourceUrl'] for x in data.get('items',[])}
     candidates=[c for c in discover() if c['url'] not in known]

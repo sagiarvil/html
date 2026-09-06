@@ -82,3 +82,10 @@ English counterparts:
 Evidence and diagnosis are public. Implementation precision is the paid product. Full Site Fix Mandate costs USD 149 for one domain / one engagement and includes one re-scan within 30 days.
 
 The product sells measurable readiness and recommendation opportunity, not false certainty. Ranking, recommendation, traffic, customer, revenue, featured-snippet, or AI-citation outcomes are never guaranteed.
+
+<!-- LLMS_NEWS_START -->
+## LLMS.TXT News
+
+- [TR news hub](https://htmlandhtml.com/tr/llms-txt-haberler/)
+- [EN news hub](https://htmlandhtml.com/en/llms-txt-news/)
+<!-- LLMS_NEWS_END -->
