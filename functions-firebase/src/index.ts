@@ -16,7 +16,7 @@ export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},asyn
   res.status(200).json({
     status:'ok',service:'htmlandhtml-validator',version:'2.4.0',remediationMandateVersion:'1.1',intelligenceLayerVersion:INTELLIGENCE_VERSION,deliveryPackVersion:DELIVERY_PACK_VERSION,
     scanEngines:12,intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT,readinessLenses:READINESS_LENS_COUNT,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,freeDiagnosis:true,
-    fullSiteFixMandatePriceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,deliveryPack:true,paidMandateConfigured:Boolean(process.env.MANDATE_ACCESS_TOKEN),guestDeliveryConfigured:Boolean(process.env.DELIVERY_SIGNING_SECRET),
+    fullSiteFixMandatePriceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,deliveryPack:true,paidMandateConfigured:Boolean(process.env.MANDATE_ACCESS_TOKEN),guestDeliveryConfigured:Boolean(process.env.DELIVERY_SIGNING_SECRET),guestEntitlementBoundary:'domain+order',
     aiMentionTracker:true,aiMentionAccessConfigured:Boolean(process.env.AI_MENTION_ACCESS_TOKEN),timestamp:new Date().toISOString()
   });
 });
@@ -48,20 +48,21 @@ export const mandate=onRequest({...common,timeoutSeconds:120,memory:'512MiB'},as
     const access=process.env.MANDATE_ACCESS_TOKEN||'';if(!access){res.status(503).json({error:'Paid implementation service is not activated: production entitlement is not configured.'});return}
     const token=String(req.get('authorization')||'').replace(/^Bearer\s+/i,'');if(!token||token!==access){res.status(402).json({error:'Valid paid entitlement required'});return}
     const scan=await runFriendlyScan(target.trim());const report=generateFullSiteFixMandate(scan,body?.baseline_scan);
-    res.status(200).json({product:'AI Visibility Implementation Blueprint',internalContract:'FULL_SITE_FIX_MANDATE',version:'1.1',priceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,domain:scan.domain,scanId:scan.scanId,report,markdown:report.markdown,deliveryEndpoint:'/api/delivery',scan:{scanId:scan.scanId,domain:scan.domain,url:scan.url,scannedAt:scan.scannedAt,overall:scan.overall,scores:scan.scores,summary:scan.summary}})
-  }catch(e:any){const message=e?.message||'Implementation blueprint generation failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
+    res.status(200).json({product:'AI Search Visibility Roadmap',internalContract:'FULL_SITE_FIX_MANDATE',version:'1.1',priceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,domain:scan.domain,scanId:scan.scanId,report,markdown:report.markdown,deliveryEndpoint:'/api/delivery',scan:{scanId:scan.scanId,domain:scan.domain,url:scan.url,scannedAt:scan.scannedAt,overall:scan.overall,scores:scan.scores,summary:scan.summary}})
+  }catch(e:any){const message=e?.message||'AI Search Visibility Roadmap generation failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
 });
 
 export const delivery=onRequest({...common,timeoutSeconds:120,memory:'512MiB'},async(req,res)=>{
   harden(res);if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
   try{
     const body=req.body;const target=body?.target_url||body?.url||body?.domain;if(!target||typeof target!=='string'||!target.trim()){res.status(400).json({error:'target_url or domain required'});return}
+    const orderId=typeof body?.order_id==='string'?body.order_id.trim():typeof body?.orderId==='string'?body.orderId.trim():'';
     const adminSecret=process.env.MANDATE_ACCESS_TOKEN||'',guestSecret=process.env.DELIVERY_SIGNING_SECRET||'';
     if(!adminSecret&&!guestSecret){res.status(503).json({error:'Paid delivery service is not activated: entitlement secrets are missing.'});return}
     const adminToken=String(req.get('authorization')||'').replace(/^Bearer\s+/i,'');const adminOk=Boolean(adminSecret)&&adminToken===adminSecret;
-    const guestToken=String(req.get('x-htmlhtml-entitlement')||'');const guestClaims=!adminOk&&guestSecret?await verifyGuestEntitlement(guestToken,guestSecret,target.trim()):null;
-    if(!adminOk&&!guestClaims){res.status(402).json({error:'Valid paid entitlement required'});return}
+    const guestToken=String(req.get('x-htmlhtml-entitlement')||'');const guestClaims=!adminOk&&guestSecret&&orderId?await verifyGuestEntitlement(guestToken,guestSecret,target.trim(),orderId):null;
+    if(!adminOk&&!guestClaims){res.status(402).json({error:'Valid paid entitlement bound to this domain and order_id required'});return}
     const scan=await runFriendlyScan(target.trim());const report=generateFullSiteFixMandate(scan,body?.baseline_scan);const pack=buildDeliveryPack(scan,report,body?.locale==='tr'?'tr':'en');
-    res.set('Content-Type',pack.mime);res.set('Content-Disposition',`attachment; filename="${pack.filename}"`);res.set('X-HTMLHTML-Product','AI Visibility Implementation Blueprint');res.set('X-HTMLHTML-Price-USD',String(FULL_SITE_FIX_MANDATE_PRICE_USD));res.set('X-HTMLHTML-Max-Pages',String(FULL_SITE_FIX_MANDATE_MAX_PAGES));res.set('X-HTMLHTML-Pack-Version',pack.version);res.set('X-HTMLHTML-Pack-Files',String(pack.files.length));res.set('X-HTMLHTML-Entitlement-Mode',guestClaims?'guest':'admin');res.status(200).send(Buffer.from(pack.bytes))
+    res.set('Content-Type',pack.mime);res.set('Content-Disposition',`attachment; filename="${pack.filename}"`);res.set('X-HTMLHTML-Product','AI Search Visibility Roadmap');res.set('X-HTMLHTML-Price-USD',String(FULL_SITE_FIX_MANDATE_PRICE_USD));res.set('X-HTMLHTML-Max-Pages',String(FULL_SITE_FIX_MANDATE_MAX_PAGES));res.set('X-HTMLHTML-Pack-Version',pack.version);res.set('X-HTMLHTML-Pack-Files',String(pack.files.length));res.set('X-HTMLHTML-Entitlement-Mode',guestClaims?'guest':'admin');res.set('X-HTMLHTML-Entitlement-Boundary',guestClaims?'domain+order':'admin');res.status(200).send(Buffer.from(pack.bytes))
   }catch(e:any){const message=e?.message||'Delivery pack generation failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
 });
