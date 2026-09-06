@@ -43,17 +43,19 @@ for(const term of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt','Sitemap'
   expect(glossaryEn.includes(term),`EN glossary missing term: ${term}`);
 }
 
-expect(/Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms\.txt \| HTML&HTML/.test(rootHome),'homepage title must own AI search visibility category');
+expect(/Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms\.txt \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own AI search visibility category');
 expect(rootHome.includes('Sitemi Yapay Zeka Sonuçlarına Hazırla — $149'),'homepage paid CTA must sell customer outcome');
 expect(llmsGuideTr.includes('Google Search') && llmsGuideTr.includes('llms.txt'),'TR llms guide must explain Google boundary');
 expect(llmsGuideEn.includes('Google Search') && llmsGuideEn.includes('llms.txt'),'EN llms guide must explain Google boundary');
 expect(sources.includes('GOOGLE-AI-OPTIMIZATION') && sources.includes('OPENAI-PUBLISHERS') && sources.includes('LLMS-TXT-V2'),'source registry missing primary AI visibility authorities');
 
+// Block only affirmative unsupported claims. Explicit no-guarantee/disclaimer copy is required and must not trip these assertions.
 const forbidden=[
   /Google (?:öneriyor|tavsiye ediyor).*llms\.txt/i,
   /Google Search (?:uses|requires) llms\.txt/i,
-  /llms\.txt.*(?:garanti|guarantee).*(?:sıralama|ranking|tavsiye|recommendation)/i,
-  /(?:ChatGPT|Google|AI|yapay zeka).*(?:kesin|guaranteed|garanti).*(?:tavsiye|recommend|traffic|trafik|gelir|revenue)/i,
+  /llms\.txt.*(?:sıralamanızı yükseltir|Google sıralamasını artırır|improves? (?:your )?Google rankings?)/i,
+  /(?:ChatGPT|yapay zeka|AI).*(?:kesin tavsiye eder|will definitely recommend you|will recommend your (?:brand|website))/i,
+  /(?:garantili trafik|garantili gelir|guaranteed traffic|guaranteed revenue)/i,
   /120\.000\+ site zaten kullanıyor/i,
   /%300 artırdı/i,
   /AEO.*3 kat/i,
