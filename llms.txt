@@ -1,6 +1,6 @@
 # HTML&HTML
 
-> HTML&HTML, web sitelerini yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlayan; bunu ölçülebilir web kanıtlarıyla yapan Search & AI Readiness platformudur.
+> HTML&HTML, web sitelerini yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlayan; site tarafındaki teknik ve içerik engellerini ölçülebilir kanıtlarla gösteren Search & AI Readiness platformudur.
 
 HTML&HTML separates measured facts, official vendor/standards guidance, proposals, and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals.
 
@@ -18,28 +18,29 @@ Google Search recognizes market terms such as AEO (Answer Engine Optimization) a
 
 Official Google source: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 
-HTML&HTML still validates llms.txt because it is an active community proposal and machine-readable knowledge surface used in some documentation/coding-agent ecosystems. It is always labeled PROPOSAL and is never presented as an IETF/W3C standard or Google ranking requirement.
+HTML&HTML still validates llms.txt because it is an active community proposal and optional machine-readable knowledge surface used in some documentation/coding-agent ecosystems. It is always labeled PROPOSAL and is never presented as an IETF/W3C standard or Google ranking requirement.
 
 ## AI Search & Visibility Reference Glossary
 
 - [AI Search & Visibility Glossary — English](https://htmlandhtml.com/en/glossary/): Source-aware definitions for GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt, sitemaps, query fan-out and source eligibility.
 - [Yapay Zeka Arama ve Görünürlük Referans Sözlüğü — Türkçe](https://htmlandhtml.com/tr/sozluk/): GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt, sitemap ve kaynak olma uygunluğunu resmi kaynak sınırlarıyla açıklar.
 
-### Core authority pages
-- [AI Search Visibility — English](https://htmlandhtml.com/en/ai-search-visibility/)
-- [Yapay Zeka Arama Görünürlüğü — Türkçe](https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/)
-- [GEO — English](https://htmlandhtml.com/en/geo-optimization/)
-- [GEO — Türkçe](https://htmlandhtml.com/tr/geo-optimizasyon/)
-- [AEO — English](https://htmlandhtml.com/en/aeo-answer-engine-optimization/)
-- [AEO — Türkçe](https://htmlandhtml.com/tr/aeo-answer-engine/)
-- [LLMO — English](https://htmlandhtml.com/en/llmo-optimization/)
-- [LLMO — Türkçe](https://htmlandhtml.com/tr/llmo-optimizasyon/)
-- [AAO — English](https://htmlandhtml.com/en/aao-agent-optimization/)
-- [AAO — Türkçe](https://htmlandhtml.com/tr/aao-ajent-optimizasyon/)
-- [RAG Readiness — English](https://htmlandhtml.com/en/rag-readiness/)
-- [RAG Hazırlığı — Türkçe](https://htmlandhtml.com/tr/rag-optimizasyon/)
-- [E-E-A-T Trust Signals — English](https://htmlandhtml.com/en/e-e-a-t-trust-signals/)
-- [E-E-A-T Güven Sinyalleri — Türkçe](https://htmlandhtml.com/tr/e-e-a-t-guven-sinyalleri/)
+## Core AI visibility authority pages
+
+- https://htmlandhtml.com/en/ai-search-visibility/
+- https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/
+- https://htmlandhtml.com/en/geo-optimization/
+- https://htmlandhtml.com/tr/geo-optimizasyon/
+- https://htmlandhtml.com/en/aeo-answer-engine-optimization/
+- https://htmlandhtml.com/tr/aeo-answer-engine/
+- https://htmlandhtml.com/en/llmo-optimization/
+- https://htmlandhtml.com/tr/llmo-optimizasyon/
+- https://htmlandhtml.com/en/aao-agent-optimization/
+- https://htmlandhtml.com/tr/aao-ajent-optimizasyon/
+- https://htmlandhtml.com/en/rag-readiness/
+- https://htmlandhtml.com/tr/rag-optimizasyon/
+- https://htmlandhtml.com/en/e-e-a-t-trust-signals/
+- https://htmlandhtml.com/tr/e-e-a-t-guven-sinyalleri/
 
 ## Official / primary source layer
 
@@ -53,12 +54,13 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 - [llms.txt proposal](https://llmstxt.org/)
 - [llms.txt v2 changes](https://llmstxt.org/changes.html)
 
-## Platform and Core Services
+## Platform and authority
 
-- [Website Fix Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI/GEO crawler access, llms.txt, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion, and Link Integrity.
+- [Website Fix Validator](https://htmlandhtml.com/)
 - [Platform Architecture — English](https://htmlandhtml.com/en/platform/)
 - [Platform Architecture — Turkish](https://htmlandhtml.com/tr/platform/)
 - [Methodology](https://htmlandhtml.com/methodology.html)
+- [Open Website AI Readiness Audit Profile](https://htmlandhtml.com/standard/)
 - [Machine-readable audit profile](https://htmlandhtml.com/audit-profile.json)
 - [External evidence source registry](https://htmlandhtml.com/sources.json)
 - [AI Crawler Reference](https://htmlandhtml.com/reference/ai-crawlers/)
@@ -87,36 +89,30 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 
 ## Search & AI Intelligence layer
 
-The non-scoring Intelligence layer adds decision context across:
-
-- Search Intent & Cannibalization
-- Information Gain Signals
-- Answer Extractability
-- Entity Graph Integrity
-- Freshness Integrity
-- Hydration / Render Parity
-- LLM Knowledge Surface
-- Internal Link Semantic Alignment
-- Orphan Page Detection
-- Discovery Path
-- IndexNow Readiness
-- Structured @graph Consistency
-- Codebase SEO Governance
+The non-scoring Intelligence layer adds decision context across Search Intent & Cannibalization, Information Gain Signals, Answer Extractability, Entity Graph Integrity, Freshness Integrity, Hydration / Render Parity, LLM Knowledge Surface, Internal Link Semantic Alignment, Orphan Page Detection, Discovery Path, IndexNow Readiness, Structured @graph Consistency, and Codebase SEO Governance.
 
 Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, RAG, and E-E-A-T. These lenses do not mutate the canonical 12-engine technical score.
 
 ## Technical Guides
 
-- [AI Website Readiness Checklist — English](https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/)
-- [AI Website Readiness Checklist — Turkish](https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/)
-- [llms.txt Guide — English](https://htmlandhtml.com/en/guides/llms-txt/)
-- [llms.txt Guide — Turkish](https://htmlandhtml.com/tr/rehberler/llms-txt/)
-- [AI Crawler Access Guide — English](https://htmlandhtml.com/en/guides/ai-crawler-access/)
-- [AI Crawler Access Guide — Turkish](https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/)
-- [Structured Data for AI — English](https://htmlandhtml.com/en/guides/structured-data-for-ai/)
-- [Structured Data for AI — Turkish](https://htmlandhtml.com/tr/rehberler/ai-icin-yapisal-veri/)
-- [AI Search Visibility Guide — English](https://htmlandhtml.com/en/guides/ai-search-visibility/)
-- [AI Search Visibility Guide — Turkish](https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu/)
+- https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/
+- https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/
+- https://htmlandhtml.com/en/guides/llms-txt/
+- https://htmlandhtml.com/tr/rehberler/llms-txt/
+- https://htmlandhtml.com/en/guides/ai-crawler-access/
+- https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/
+- https://htmlandhtml.com/en/guides/structured-data-for-ai/
+- https://htmlandhtml.com/tr/rehberler/ai-icin-yapisal-veri/
+- https://htmlandhtml.com/en/guides/ai-search-visibility/
+- https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu/
+
+## Identity, support and policy
+
+- https://htmlandhtml.com/about/
+- https://htmlandhtml.com/contact/
+- https://htmlandhtml.com/privacy/
+- https://htmlandhtml.com/terms/
+- https://github.com/sagiarvil/html
 
 ## Evidence policy
 
@@ -131,7 +127,7 @@ Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, 
 
 - Up to 50 public HTML pages and 30 link probes per scan.
 - Private/local/reserved targets and redirect pivots into private address space fail closed.
-- Unknown or unavailable measurements remain NOT_MEASURED or REQUIRES_CONTEXT instead of being fabricated.
+- Unknown or unavailable measurements are excluded from the relevant score denominator rather than forced to pass or fail; where appropriate they remain NOT_MEASURED or REQUIRES_CONTEXT.
 - Free Diagnosis: USD 0. Findings, URLs, severity, confidence, source class, evidence and non-scoring intelligence context are visible.
 - Full Site Fix Mandate: USD 149 for one domain / one engagement, including one re-scan within 30 days.
 - AI Mention Tracker remains entitlement-gated and reports NOT_CONFIGURED when provider access is absent.
