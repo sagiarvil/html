@@ -32,6 +32,8 @@ jobs:
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT VALIDATOR'
           check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
           check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
+          check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'AI MENTION TRACKER'
+          check 'https://htmlandhtml.com/en/ai-mention-tracker/' 'AI MENTION TRACKER'
           check 'https://htmlandhtml.com/methodology.html' 'PUBLIC METHODOLOGY'
           check 'https://htmlandhtml.com/standard/' 'OPEN AUDIT PROFILE'
           check 'https://htmlandhtml.com/reference/ai-crawlers/' 'AI CRAWLER REFERENCE'
@@ -42,22 +44,24 @@ jobs:
           body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
           ! printf '%s' "$body" | grep -q '\$49\|\$99'
           printf '%s' "$body" | grep -q '\$149'
+          printf '%s' "$body" | grep -q '/assets/js/theme.js'
 
       - name: Verify machine-readable authority graph
         shell: bash
         run: |
           set -euo pipefail
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt | grep -q 'Open Website AI Readiness Audit Profile'
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md | grep -q 'Authority tools'
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml | grep -q '/standard/'
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt | grep -q 'AI Mention Tracker'
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md | grep -q 'AI Mention Tracker'
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml | grep -q '/tr/ai-mention-tracker/'
           openapi="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/openapi.json)"
           profile="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/audit-profile.json)"
           sources="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sources.json)"
           OPENAPI="$openapi" PROFILE="$profile" SOURCES="$sources" node - <<'NODE'
           const api=JSON.parse(process.env.OPENAPI), p=JSON.parse(process.env.PROFILE), s=JSON.parse(process.env.SOURCES);
           if(api.openapi!=='3.1.0') throw new Error('OpenAPI version');
-          for(const x of ['/api/health','/api/scan','/api/mandate']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
-          if(p.version!=='1.0.0'||p.engines?.length!==12) throw new Error('audit profile contract');
+          for(const x of ['/api/health','/api/scan','/api/mentions','/api/mandate']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
+          if(p.version!=='1.1.0'||p.engines?.length!==12) throw new Error('audit profile contract');
+          if(p.scanBoundaries?.maxPublicHtmlPages!==50) throw new Error('Deep Crawl boundary');
           if(p.engines.reduce((a,x)=>a+x.overallWeight,0)!==100) throw new Error('audit weights');
           if(!Array.isArray(s.sources)||s.sources.length<8) throw new Error('source registry contract');
           NODE
@@ -69,18 +73,19 @@ jobs:
           body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/health)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY);
-          if(x.status!=='ok'||x.scanEngines!==12||x.freeDiagnosis!==true) throw new Error('health contract');
+          if(x.status!=='ok'||x.scanEngines!==12||x.maxPages!==50||x.freeDiagnosis!==true||x.aiMentionTracker!==true) throw new Error('health contract');
           NODE
 
-      - name: Verify production 12-engine scan
+      - name: Verify production 12-engine Deep Crawl contract
         shell: bash
         run: |
           set -euo pipefail
-          body="$(curl -fsS --connect-timeout 10 --max-time 120 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
+          body="$(curl -fsS --connect-timeout 10 --max-time 240 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY); const expected=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
           for(const k of expected) if(typeof x.scores?.[k] !== 'number') throw new Error('missing score '+k);
           if(!Array.isArray(x.findings)||!x.scanId||x.fieldData?.coreWebVitals!=='NOT_MEASURED'||Object.keys(x.scores).length!==12) throw new Error('scan contract');
+          if((x.summary?.pagesScanned||0)>50) throw new Error('Deep Crawl exceeded 50-page boundary');
           for(const f of x.findings){ if(!f.id||!f.severity||!f.confidence||!f.sourceClass||!('evidence' in f)) throw new Error('finding evidence contract'); if('fixTr' in f||'fixEn' in f||'rootFix' in f) throw new Error('paid remediation leaked'); }
           NODE
 
@@ -92,6 +97,18 @@ jobs:
             code="$(curl -sS -o /tmp/ssrf.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data "{\"domain\":\"$target\"}" https://htmlandhtml.com/api/scan)"
             test "$code" = '403'
           done
+
+      - name: Verify AI Mention Tracker paid boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          status="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/mentions)"
+          STATUS="$status" node - <<'NODE'
+          const x=JSON.parse(process.env.STATUS);
+          if(x.service!=='htmlandhtml-ai-mention-tracker'||x.paidModule!==true||!x.providers) throw new Error('mention tracker status contract');
+          NODE
+          code="$(curl -sS -o /tmp/mentions.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data '{"brand":"HTML&HTML","domain":"htmlandhtml.com","queries":["Which tools audit websites for AI search readiness?"]}' https://htmlandhtml.com/api/mentions)"
+          case "$code" in 402|503) exit 0 ;; *) echo "Unexpected mention endpoint status: $code"; cat /tmp/mentions.json; exit 1 ;; esac
 
       - name: Verify paid mandate is fail-closed
         shell: bash
