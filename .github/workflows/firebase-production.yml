@@ -24,6 +24,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Materialize static AI discovery-to-demand content
+        run: python3 scripts/inject_commercial_intent.py
+      - name: Verify static commercial artifact before deploy
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq 'data-commercial-intent="static"' index.html
+          grep -Fq 'AI KEŞİF → TALEP → DÖNÜŞÜM' tr/index.html
+          grep -Fq 'AI DISCOVERY → DEMAND → CONVERSION' en/index.html
+          grep -Fq '/assets/css/commercial-intent.css?v=1' en/ai-website-readiness/index.html
       - name: Install Firebase function dependencies
         run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
       - name: Build Firebase function adapter
