@@ -163,6 +163,7 @@ def build_homepages():
       </div>
     </div>
   </div>
+  <div id="resultPillars" class="result-pillars-grid"></div>
   <div id="scoreGrid" class="score-grid"></div>
   <div id="scanDisclosure" class="scan-disclosure"></div>
 
@@ -676,6 +677,7 @@ def build_homepages():
       </div>
     </div>
   </div>
+  <div id="resultPillars" class="result-pillars-grid"></div>
   <div id="scoreGrid" class="score-grid"></div>
   <div id="scanDisclosure" class="scan-disclosure"></div>
 

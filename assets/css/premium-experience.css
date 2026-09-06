@@ -50,3 +50,413 @@ html[data-theme="dark"] .px-price-card ul{border-color:#1e222b!important;color:#
 html[data-theme="dark"] .px-price-card a{background:linear-gradient(135deg,#0066ff 0%,#0052cc 100%)!important;color:#ffffff!important;border:1px solid rgba(255,255,255,.15)!important}
 html[data-theme="dark"] .px-report-split .bridge{background:#0d0f12!important;border-color:#1e222b!important;color:#9ca3af!important}
 html[data-theme="dark"] .px-trust-row span{background:#12151b!important;border-color:#1e222b!important;color:#9ca3af!important}
+
+/* --------------------------------------------------------------------------
+   13. 4-PILLAR EXECUTIVE HEALTH EVALUATION DECK (SYMMETRIC 4-COLOR SYSTEM)
+   -------------------------------------------------------------------------- */
+.result-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.pillar-card {
+  border-radius: 18px;
+  padding: 22px 20px;
+  background: var(--px-card);
+  border: 1px solid var(--px-line);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-2px);
+}
+.pillar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.pillar-tag {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Mono", monospace;
+}
+.pillar-score {
+  font-size: 28px;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.pillar-score span {
+  font-size: 12px;
+  color: var(--px-muted);
+  font-weight: 600;
+  margin-left: 2px;
+}
+.pillar-card h4 {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--px-ink);
+}
+.pillar-card p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--px-muted);
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+.pillar-meter {
+  height: 5px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: auto;
+}
+.pillar-meter i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pillar 1: Blue (Keşfedilirlik) */
+.pillar-blue {
+  border-top: 3px solid #0066ff !important;
+}
+.pillar-blue .pillar-tag {
+  color: #0066ff;
+  background: rgba(0, 102, 255, 0.1);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+}
+.pillar-blue .pillar-score {
+  color: #0066ff;
+}
+.pillar-blue .pillar-meter i {
+  background: linear-gradient(90deg, #0066ff, #38bdf8);
+}
+
+/* Pillar 2: Purple (Anlamlandırma) */
+.pillar-purple {
+  border-top: 3px solid #8b5cf6 !important;
+}
+.pillar-purple .pillar-tag {
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+.pillar-purple .pillar-score {
+  color: #8b5cf6;
+}
+.pillar-purple .pillar-meter i {
+  background: linear-gradient(90deg, #8b5cf6, #c084fc);
+}
+
+/* Pillar 3: Green (Güven & Kalite) */
+.pillar-green {
+  border-top: 3px solid #10b981 !important;
+}
+.pillar-green .pillar-tag {
+  color: #059669;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.pillar-green .pillar-score {
+  color: #059669;
+}
+.pillar-green .pillar-meter i {
+  background: linear-gradient(90deg, #059669, #34d399);
+}
+
+/* Pillar 4: Amber (Ticari Yol) */
+.pillar-amber {
+  border-top: 3px solid #f59e0b !important;
+}
+.pillar-amber .pillar-tag {
+  color: #d97706;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.pillar-amber .pillar-score {
+  color: #d97706;
+}
+.pillar-amber .pillar-meter i {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+/* Dark Mode 4 Pillars */
+html[data-theme="dark"] .pillar-card {
+  background: linear-gradient(175deg, rgba(20, 24, 35, 0.92) 0%, rgba(11, 14, 21, 0.98) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6) !important;
+}
+html[data-theme="dark"] .pillar-card h4 {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .pillar-card p {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .pillar-meter {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme="dark"] .pillar-blue {
+  border-top: 3px solid #0066ff !important;
+  box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.25), 0 12px 32px -8px rgba(0, 0, 0, 0.6) !important;
+}
+html[data-theme="dark"] .pillar-blue .pillar-tag {
+  color: #38bdf8 !important;
+  background: rgba(0, 102, 255, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+html[data-theme="dark"] .pillar-blue .pillar-score {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .pillar-purple {
+  border-top: 3px solid #8b5cf6 !important;
+  box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.25), 0 12px 32px -8px rgba(0, 0, 0, 0.6) !important;
+}
+html[data-theme="dark"] .pillar-purple .pillar-tag {
+  color: #c084fc !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(192, 132, 252, 0.35) !important;
+}
+html[data-theme="dark"] .pillar-purple .pillar-score {
+  color: #c084fc !important;
+}
+
+html[data-theme="dark"] .pillar-green {
+  border-top: 3px solid #10b981 !important;
+  box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.25), 0 12px 32px -8px rgba(0, 0, 0, 0.6) !important;
+}
+html[data-theme="dark"] .pillar-green .pillar-tag {
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(52, 211, 153, 0.35) !important;
+}
+html[data-theme="dark"] .pillar-green .pillar-score {
+  color: #34d399 !important;
+}
+
+html[data-theme="dark"] .pillar-amber {
+  border-top: 3px solid #f59e0b !important;
+  box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.25), 0 12px 32px -8px rgba(0, 0, 0, 0.6) !important;
+}
+html[data-theme="dark"] .pillar-amber .pillar-tag {
+  color: #fbbf24 !important;
+  background: rgba(245, 158, 11, 0.15) !important;
+  border-color: rgba(251, 191, 36, 0.35) !important;
+}
+html[data-theme="dark"] .pillar-amber .pillar-score {
+  color: #fbbf24 !important;
+}
+
+/* 12-Engine Score Grid Enhancement */
+.score-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.engine-num {
+  font-size: 10px;
+  font-weight: 850;
+  font-family: monospace;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--px-muted);
+  border: 1px solid var(--px-line);
+}
+.score-item.tier-green .bar-green {
+  background: linear-gradient(90deg, #059669, #10b981) !important;
+}
+.score-item.tier-blue .bar-blue {
+  background: linear-gradient(90deg, #0066ff, #38bdf8) !important;
+}
+.score-item.tier-amber .bar-amber {
+  background: linear-gradient(90deg, #d97706, #f59e0b) !important;
+}
+.score-item.tier-red .bar-red {
+  background: linear-gradient(90deg, #dc2626, #ef4444) !important;
+}
+
+/* Findings Filter Bar */
+.findings-filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  border: 1px solid var(--px-line);
+  background: var(--px-card);
+  color: var(--px-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.filter-btn:hover {
+  color: var(--px-ink);
+  border-color: var(--px-blue);
+}
+.filter-btn.active {
+  background: #0066ff !important;
+  color: #ffffff !important;
+  border-color: #0066ff !important;
+  box-shadow: 0 0 16px rgba(0, 102, 255, 0.4) !important;
+}
+
+/* Findings Cards 4-Tier Accent */
+.finding-tier-critical {
+  border-left: 4px solid #ef4444 !important;
+}
+.finding-tier-high {
+  border-left: 4px solid #f59e0b !important;
+}
+.finding-tier-medium {
+  border-left: 4px solid #0066ff !important;
+}
+.finding-tier-low,
+.finding-tier-info {
+  border-left: 4px solid #10b981 !important;
+}
+
+html[data-theme="dark"] .finding-tier-critical {
+  box-shadow: 0 4px 24px -4px rgba(239, 68, 68, 0.18) !important;
+}
+html[data-theme="dark"] .finding-tier-high {
+  box-shadow: 0 4px 24px -4px rgba(245, 158, 11, 0.18) !important;
+}
+html[data-theme="dark"] .finding-tier-medium {
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.18) !important;
+}
+html[data-theme="dark"] .finding-tier-low,
+html[data-theme="dark"] .finding-tier-info {
+  box-shadow: 0 4px 24px -4px rgba(16, 185, 129, 0.18) !important;
+}
+
+/* 4-Color Active Badges for Homepage Infographics */
+html[data-theme="dark"] .px-engine-phase:nth-child(1) {
+  border-top: 3px solid #0066ff !important;
+  box-shadow: 0 0 20px -4px rgba(0, 102, 255, 0.2) !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(1) > span {
+  color: #38bdf8 !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(1) .px-engine-outcome {
+  color: #38bdf8 !important;
+  border-top-color: rgba(56, 189, 248, 0.2) !important;
+}
+
+html[data-theme="dark"] .px-engine-phase:nth-child(2) {
+  border-top: 3px solid #8b5cf6 !important;
+  box-shadow: 0 0 20px -4px rgba(139, 92, 246, 0.2) !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(2) > span {
+  color: #c084fc !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(2) .px-engine-outcome {
+  color: #c084fc !important;
+  border-top-color: rgba(192, 132, 252, 0.2) !important;
+}
+
+html[data-theme="dark"] .px-engine-phase:nth-child(3) {
+  border-top: 3px solid #10b981 !important;
+  box-shadow: 0 0 20px -4px rgba(16, 185, 129, 0.2) !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(3) > span {
+  color: #34d399 !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(3) .px-engine-outcome {
+  color: #34d399 !important;
+  border-top-color: rgba(52, 211, 153, 0.2) !important;
+}
+
+html[data-theme="dark"] .px-engine-phase:nth-child(4) {
+  border-top: 3px solid #f59e0b !important;
+  box-shadow: 0 0 20px -4px rgba(245, 158, 11, 0.2) !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(4) > span {
+  color: #fbbf24 !important;
+}
+html[data-theme="dark"] .px-engine-phase:nth-child(4) .px-engine-outcome {
+  color: #fbbf24 !important;
+  border-top-color: rgba(251, 191, 36, 0.2) !important;
+}
+
+/* 4 Lenses in Tool Directory */
+html[data-theme="dark"] .px-lens:nth-child(1) {
+  border-left: 3px solid #0066ff !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(1) b {
+  color: #38bdf8 !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(2) {
+  border-left: 3px solid #8b5cf6 !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(2) b {
+  color: #c084fc !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(3) {
+  border-left: 3px solid #10b981 !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(3) b {
+  color: #34d399 !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(4) {
+  border-left: 3px solid #f59e0b !important;
+}
+html[data-theme="dark"] .px-lens:nth-child(4) b {
+  color: #fbbf24 !important;
+}
+
+/* 4 Steps in Technical Knowledge Flow */
+html[data-theme="dark"] .px-knowledge-step:nth-child(1) {
+  border-top: 3px solid #0066ff !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(1) .num {
+  color: #38bdf8 !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(2) {
+  border-top: 3px solid #8b5cf6 !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(2) .num {
+  color: #c084fc !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(3) {
+  border-top: 3px solid #f59e0b !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(3) .num {
+  color: #fbbf24 !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(4) {
+  border-top: 3px solid #10b981 !important;
+}
+html[data-theme="dark"] .px-knowledge-step:nth-child(4) .num {
+  color: #34d399 !important;
+}
+
+/* Responsive adjustment for 4-Pillars */
+@media(max-width:900px){
+  .result-pillars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media(max-width:640px){
+  .result-pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
