@@ -33,11 +33,11 @@ jobs:
         run: |
           set -euo pipefail
           if [ -z "${NEWS_EDITORIAL_OPENAI_KEY:-}" ]; then
-            echo '::warning title=LLMS News editorial credential missing::NEWS_EDITORIAL_OPENAI_KEY is not configured. Existing news will still be rebuilt and validated; no new AI-written brief can be published.'
-            python3 scripts/update_llms_news.py
+            echo 'LLMS_NEWS_EDITORIAL_MODE=DETERMINISTIC_NO_KEY'
           else
-            python3 scripts/update_llms_news.py --require-editorial-key
+            echo 'LLMS_NEWS_EDITORIAL_MODE=MODEL_ASSISTED'
           fi
+          python3 scripts/update_llms_news.py
       - name: Detect validated editorial change
         id: editorial
         shell: bash
