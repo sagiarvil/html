@@ -2,7 +2,7 @@ name: llms-txt-news
 
 on:
   schedule:
-    # Turkey uses UTC+3 year-round: 00:00 UTC = 03:00 Europe/Istanbul.
+    # Europe/Istanbul is UTC+3 year-round: 00:00 UTC = 03:00 local.
     - cron: '0 0 * * *'
   workflow_dispatch:
 
@@ -29,22 +29,28 @@ jobs:
         env:
           NEWS_EDITORIAL_OPENAI_KEY: ${{ secrets.NEWS_EDITORIAL_OPENAI_KEY }}
           NEWS_EDITORIAL_MODEL: gpt-5.6-luna
-        run: python3 scripts/update_llms_news.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${NEWS_EDITORIAL_OPENAI_KEY:-}" ]; then
+            echo '::warning title=LLMS News editorial credential missing::NEWS_EDITORIAL_OPENAI_KEY is not configured. Existing news will still be rebuilt and validated; no new AI-written brief can be published.'
+            python3 scripts/update_llms_news.py
+          else
+            python3 scripts/update_llms_news.py --require-editorial-key
+          fi
       - name: Detect validated editorial change
         id: editorial
         shell: bash
         run: |
           if git diff --quiet -- data/llms-news.json; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
-            echo 'LLMS_NEWS_NO_CHANGE: source discovery produced no new validated bilingual brief.'
+            echo 'LLMS_NEWS_NO_CHANGE: no new validated bilingual brief.'
           else
             echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
       - name: Materialize bilingual news pages and machine-readable discovery
-        if: steps.editorial.outputs.changed == 'true'
         run: python3 scripts/build_llms_news.py
       - name: Validate news editorial and SEO contract
-        if: steps.editorial.outputs.changed == 'true'
         run: node tests/integrity/llms-news.test.mjs
       - name: Commit validated update
         if: steps.editorial.outputs.changed == 'true'
