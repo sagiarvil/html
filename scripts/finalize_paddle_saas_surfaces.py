@@ -35,7 +35,7 @@ def harden_checkout_dependency():
     marker='Paddle ödeme webhook’u sunucu tarafında doğrulanmadan teslim yetkisi üretilmez.'
     if marker not in s:
         needle="Paddle domain/account onayı tamamlanana kadar kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Bu buton onay sonrası Paddle Checkout'a bağlanacaktır."
-        replacement="Güvenli ödeme sağlayıcısı Paddle henüz production'a bağlanmadı. Paddle domain/account onayı tamamlanana kadar kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Paddle ödeme webhook’u sunucu tarafında doğrulanmadan teslim yetkisi üretilmez. Bu buton onay sonrası Paddle Checkout'a bağlanacaktır."
+        replacement="Güvenli ödeme sağlayıcısı henüz production'a bağlanmadı. Seçilen sağlayıcı Paddle'dır. Paddle domain/account onayı tamamlanana kadar kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Paddle ödeme webhook’u sunucu tarafında doğrulanmadan teslim yetkisi üretilmez. Bu buton onay sonrası Paddle Checkout'a bağlanacaktır."
         if needle in s: s=s.replace(needle,replacement,1)
     p.write_text(s,encoding='utf-8')
 
