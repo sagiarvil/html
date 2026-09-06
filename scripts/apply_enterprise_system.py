@@ -8,15 +8,15 @@ SKIP={'.git','node_modules','functions','functions-firebase','scripts','tests'}
 TR_NAV='''<nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
   <a href="/tr/llms-txt-validator/">llms.txt</a>
-  <a href="/tr/llms-txt-haberler/">LLMS.TXT Haberler</a>
+  <a href="/tr/llms-txt-haberler/">Haberler</a>
   <a href="/tr/rehberler/">Rehberler</a>
   <a href="/tr/sozluk/">Sözlük</a>
-  <a href="/tr/fiyatlandirma/">Fiyat</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlar</a>
 </nav>'''
 EN_NAV='''<nav class="primary-nav" aria-label="Primary navigation">
   <a href="/en/ai-search-visibility/">AI Visibility</a>
   <a href="/en/llms-txt-validator/">llms.txt</a>
-  <a href="/en/llms-txt-news/">LLMS.TXT News</a>
+  <a href="/en/llms-txt-news/">News</a>
   <a href="/en/guides/">Guides</a>
   <a href="/en/glossary/">Glossary</a>
   <a href="/en/pricing/">Pricing</a>
@@ -68,8 +68,39 @@ TR_PRICING='''<main>
  </div>
 </section>
 <section class="px-section">
- <div class="px-section-head"><span class="eyebrow">TESLİM PAKETİ</span><h2>Bir PDF değil. Uygulanabilir mühendislik paketi.</h2><p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile teslim edilebilir.</p></div>
- <div class="px-delivery-grid"><article><b>00</b><h3>00_READ_ME.md</h3><p>Firma ve yazılımcı için kullanım kılavuzu.</p></article><article><b>01</b><h3>01_EXECUTIVE_SUMMARY.md</h3><p>Yönetim özeti, risk ve öncelikler.</p></article><article><b>02</b><h3>02_IMPLEMENTATION_BLUEPRINT.md</h3><p>Uygulama sırası ve teknik sözleşme.</p></article><article><b>03</b><h3>03_FINDINGS.json</h3><p>Makine okunabilir issue envanteri.</p></article><article><b>04</b><h3>04_ACCEPTANCE_TESTS.md</h3><p>Düzeltmenin çalıştığını kanıtlayan testler.</p></article><article><b>05</b><h3>05_ROLLBACK_PLAN.md</h3><p>Hata halinde güvenli geri dönüş.</p></article><article><b>06</b><h3>06_AI_READINESS.json</h3><p>7 lens + 13 audit makine yüzeyi.</p></article><article><b>07</b><h3>07_IMPLEMENTATION_CHECKLIST.txt</h3><p>Adım adım mühendislik kontrol listesi.</p></article></div>
+ <div class="px-section-head"><span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVENTARİ)</span><h2>Bir PDF değil. 22 dosyalı üretim sınıfı mühendislik paketi.</h2><p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile teslim edilebilir.</p></div>
+ <div class="px-delivery-category">
+  <div class="px-delivery-category-title"><span>Standart Mühendislik Seti ( ve  Paketlerinde)</span><span class="badge">11 Temel Dosya</span></div>
+  <div class="px-delivery-grid-22">
+   <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik başlangıç sözleşmesi.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level yönetim özeti, 12 motor skoru ve kritik risk dağılım matrisi.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>02_IMPLEMENTATION_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>P0–P3 uygulama sırası, kod şablonları ve teknik uygulama sözleşmesi.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>03_FINDINGS.json</b><span class="format-pill">JSON</span></div><p>Makine okunabilir bulgular, URL'ler ve kanıt issue envanteri.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>04_ACCEPTANCE_TESTS.md</b><span class="format-pill">TEST</span></div><p>Düzeltmenin çalıştığını kanıtlayan Playwright ve cURL kabul testleri.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>05_ROLLBACK_PLAN.md</b><span class="format-pill">SRE</span></div><p>Hata halinde sıfır kesintili güvenli geri dönüş ve durdurma şartları.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>06_AI_READINESS.json</b><span class="format-pill">JSON</span></div><p>7 lens + 13 audit makine okunabilir hazırlık verisi yüzeyi.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>07_IMPLEMENTATION_CHECKLIST.txt</b><span class="format-pill">TXT</span></div><p>Yazılım ekibi için adım adım yürütme kontrol listesi.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>08_LLMS_TXT_RECOMMENDED.txt</b><span class="format-pill">CONFIG</span></div><p>Müşterinin alan adına özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>09_MACHINE_SURFACE_MAP.json</b><span class="format-pill">JSON</span></div><p>Alan adına özel doğrulanmış Markdown makine yüzey haritası.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>10_EVALUATION_REPORT.md</b><span class="format-pill">MD</span></div><p>12 motorlu deterministik değerlendirme ve saha verisi denetim raporu.</p></article>
+  </div>
+ </div>
+ <div class="px-delivery-category">
+  <div class="px-delivery-category-title vip"><span>Enterprise Dark Pool İstihbarat Kiti (Yalnızca  VIP Pakette)</span><span class="badge">11 Gizli Dosya · Açık Kod &amp; Protokol</span></div>
+  <div class="px-delivery-grid-22">
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">VIP MD</span></div><p>LLM ön-eğitim havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">VIP JSON</span></div><p>Perplexity/Cohere Reranker için 0.965+ alıntı skorlama dikkat matrisi.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json</b><span class="format-pill">VIP JSON</span></div><p>Wikidata QID ve Google Knowledge Graph MID mutabakat üçlüleri (@graph kodu).</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js</b><span class="format-pill">VIP JS</span></div><p>AI botlarına 14KB altı mikro-HTML sunan çalışan Cloudflare HTMLRewriter Worker kodu.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md</b><span class="format-pill">VIP MD</span></div><p>LLM'lerin halüsinasyonunu engelleyen kanonik endeks ve sentetik atıf mimarisi.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>16_A2A_AGENT_CARD.json</b><span class="format-pill">VIP JSON</span></div><p>Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>17_MCP_SERVER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md</b><span class="format-pill">VIP MD</span></div><p>AI yanıt filtrelerinde 'Chosen' (Tercih Edilen) olarak seçilme ton ve biçim standardı.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json</b><span class="format-pill">VIP JSON</span></div><p>ColBERT v2 geç etkileşimli iç çarpım vektör hizalama matrisi ve token kümeleri.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>20_C2PA_PROVENANCE_LEDGER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>RFC 3161 zaman damgası ve C2PA kriptografik içerik orijinallik manifests şeması.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>21_DARK_POOL_HALLUCINATION_MONITOR.py</b><span class="format-pill">VIP PY</span></div><p>15 farklı modelde (ChatGPT, Claude, Perplexity) marka halüsinasyonunu izleyen Python nöbetçisi.</p></article>
+  </div>
+ </div>
 </section>
 <section class="px-section px-value-strip"><div><span>Üyelik yok</span><b>Guest delivery</b></div><div><span>Aylık abonelik yok</span><b>Tek site / tek çalışma</b></div><div><span>Gizli sorun yok</span><b>Kanıt ücretsiz</b></div><div><span>Uydurma yok</span><b>Ölçülemeyen veri NOT_MEASURED</b></div></section>
 </main>'''
@@ -89,8 +120,39 @@ EN_PRICING='''<main>
  </div>
 </section>
 <section class="px-section">
- <div class="px-section-head"><span class="eyebrow">DELIVERY PACKAGE</span><h2>Not another PDF. An executable engineering package.</h2><p>After payment entitlement is verified, the system re-scans the same domain and automatically produces the implementation package as a ZIP. No membership is required; delivery can use a secure guest-checkout entitlement token.</p></div>
- <div class="px-delivery-grid"><article><b>00</b><h3>00_READ_ME.md</h3><p>Usage guide for the business and developer.</p></article><article><b>01</b><h3>01_EXECUTIVE_SUMMARY.md</h3><p>Executive summary, risk and priorities.</p></article><article><b>02</b><h3>02_IMPLEMENTATION_BLUEPRINT.md</h3><p>Implementation order and technical contract.</p></article><article><b>03</b><h3>03_FINDINGS.json</h3><p>Machine-readable issue inventory.</p></article><article><b>04</b><h3>04_ACCEPTANCE_TESTS.md</h3><p>Tests that prove the fix works.</p></article><article><b>05</b><h3>05_ROLLBACK_PLAN.md</h3><p>Safe recovery if a change fails.</p></article><article><b>06</b><h3>06_AI_READINESS.json</h3><p>7 lenses + 13 audits machine surface.</p></article><article><b>07</b><h3>07_IMPLEMENTATION_CHECKLIST.txt</h3><p>Step-by-step engineering checklist.</p></article></div>
+ <div class="px-section-head"><span class="eyebrow">ENGINEERING DELIVERY PACKAGE (ZIP MANIFEST)</span><h2>Not another PDF. A 22-file production-grade engineering package.</h2><p>After payment entitlement is verified, the system re-scans the same domain and automatically produces the implementation package as a ZIP. No membership is required; delivery can use a secure guest-checkout entitlement token.</p></div>
+ <div class="px-delivery-category">
+  <div class="px-delivery-category-title"><span>Standard Engineering Set ( Pro &amp;  Enterprise)</span><span class="badge">11 Core Files</span></div>
+  <div class="px-delivery-grid-22">
+   <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Scope, priorities, and execution starting contract for business and developer.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level executive summary, 12 engine scores, and critical risk matrix.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>02_IMPLEMENTATION_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>P0–P3 implementation order, code templates, and technical implementation contract.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>03_FINDINGS.json</b><span class="format-pill">JSON</span></div><p>Machine-readable evidence inventory, affected URLs, and issue findings.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>04_ACCEPTANCE_TESTS.md</b><span class="format-pill">TEST</span></div><p>Playwright and cURL acceptance and regression verification test suites.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>05_ROLLBACK_PLAN.md</b><span class="format-pill">SRE</span></div><p>Zero-downtime rollback procedures and automated stop conditions.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>06_AI_READINESS.json</b><span class="format-pill">JSON</span></div><p>7 readiness lenses and 13 AI intelligence audit machine surfaces.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>07_IMPLEMENTATION_CHECKLIST.txt</b><span class="format-pill">TXT</span></div><p>Step-by-step developer and DevOps execution checklist.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>08_LLMS_TXT_RECOMMENDED.txt</b><span class="format-pill">CONFIG</span></div><p>Production-ready /llms.txt and /llms-full.txt generated for your domain.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>09_MACHINE_SURFACE_MAP.json</b><span class="format-pill">JSON</span></div><p>Domain-specific verified Markdown machine surface route map.</p></article>
+   <article class="px-file-card"><div class="px-file-card-head"><b>10_EVALUATION_REPORT.md</b><span class="format-pill">MD</span></div><p>12-engine deterministic assessment and field data audit report.</p></article>
+  </div>
+ </div>
+ <div class="px-delivery-category">
+  <div class="px-delivery-category-title vip"><span>Enterprise Dark Pool Intelligence Kit (Exclusive to  VIP Tier)</span><span class="badge">11 Classified Files · Turnkey Code &amp; Protocols</span></div>
+  <div class="px-delivery-grid-22">
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">VIP MD</span></div><p>LLM pre-training corpus seeding (Common Crawl, Arxiv) &amp; PMI co-occurrence guide.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">VIP JSON</span></div><p>0.965+ citation scoring attention matrix for Perplexity/Cohere Reranker.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json</b><span class="format-pill">VIP JSON</span></div><p>Wikidata QID and Google Knowledge Graph MID consensus triples (@graph code).</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js</b><span class="format-pill">VIP JS</span></div><p>Ready-to-deploy Cloudflare HTMLRewriter Worker serving &lt;14KB micro-HTML to AI bots.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md</b><span class="format-pill">VIP MD</span></div><p>Canonical industry index blueprint and synthetic citation loop preventing AI hallucination.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>16_A2A_AGENT_CARD.json</b><span class="format-pill">VIP JSON</span></div><p>A2A v1.0 Agent Card spec for autonomous agent discovery and transactions.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>17_MCP_SERVER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>Model Context Protocol (MCP) server spec for Claude Desktop and Cursor integration.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md</b><span class="format-pill">VIP MD</span></div><p>Tone and formatting guide engineered to be selected as 'Chosen' by DPO/RLAIF filters.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json</b><span class="format-pill">VIP JSON</span></div><p>ColBERT v2 late-interaction dot product alignment matrix and token clusters.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>20_C2PA_PROVENANCE_LEDGER_SPEC.json</b><span class="format-pill">VIP JSON</span></div><p>RFC 3161 timestamping and C2PA cryptographic provenance manifest schema.</p></article>
+   <article class="px-file-card vip"><div class="px-file-card-head"><b>21_DARK_POOL_HALLUCINATION_MONITOR.py</b><span class="format-pill">VIP PY</span></div><p>Automated Python sentinel monitoring brand hallucination across 15 frontier LLMs.</p></article>
+  </div>
+ </div>
 </section>
 <section class="px-section px-value-strip"><div><span>No membership</span><b>Guest delivery</b></div><div><span>No subscription</span><b>One site / one engagement</b></div><div><span>No hidden issues</span><b>Evidence is free</b></div><div><span>No fabricated metrics</span><b>Unknown stays NOT_MEASURED</b></div></section>
 </main>'''
@@ -100,7 +162,7 @@ def replace_main(rel, html):
     p=ROOT/rel
     if not p.exists(): return
     t=p.read_text(encoding='utf-8')
-    t=re.sub(r'<main>[\s\S]*?</main>',html,t,count=1)
+    t=re.sub(r'<main[^>]*>[\s\S]*?</main>',html,t,count=1)
     p.write_text(t,encoding='utf-8')
 
 # Focus the global primary navigation on the actual acquisition funnel.

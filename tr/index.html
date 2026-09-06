@@ -35,7 +35,7 @@
       "operatingSystem": "Web",
       "offers": [
         { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Full Site Fix Mandate", "price": "99", "priceCurrency": "USD" }
+        { "@type": "Offer", "name": "Tam Site Düzeltme Talimatı", "price": "99", "priceCurrency": "USD" }
       ]
     }
   ]
@@ -57,10 +57,10 @@
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
   <a href="/tr/llms-txt-validator/">llms.txt</a>
-  <a href="/tr/llms-txt-haberler/">LLMS.TXT Haberler</a>
+  <a href="/tr/llms-txt-haberler/">Haberler</a>
   <a href="/tr/rehberler/">Rehberler</a>
   <a href="/tr/sozluk/">Sözlük</a>
-  <a href="/tr/fiyatlandirma/">Fiyat</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlar</a>
 </nav>
     <div class="nav-actions"><a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
       <div class="langs">
@@ -118,9 +118,15 @@
       <h2 id="resultDomain">—</h2>
       <p id="resultMeta">—</p>
     </div>
-    <div class="total-score">
-      <strong id="overallScore">0</strong>
-      <span>/100</span>
+    <div class="result-head-actions">
+      <button type="button" class="btn-pdf-export" id="btnPdfExport" onclick="window.print()" aria-label="PDF İndir">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span data-i18n="downloadPdf">PDF Olarak İndir</span>
+      </button>
+      <div class="total-score">
+        <strong id="overallScore">0</strong>
+        <span>/100</span>
+      </div>
     </div>
   </div>
   <div id="scoreGrid" class="score-grid"></div>
@@ -155,7 +161,7 @@
         <small data-i18n="oneSite">1 domain / tek çalışma</small>
         <strong>$99</strong>
       </div>
-      <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Full Site Fix Mandate →</a>
+      <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Tam Site Düzeltme Talimatı →</a>
       <small class="note" data-i18n="checkoutNote">Kaynak dosya adı public taramadan uydurulmaz; codebase bağlamı varsa dosya seviyesine iner.</small>
     </aside>
   </div>
@@ -337,7 +343,7 @@
     <article class="px-engine-phase"><span>01 · KEŞFEDİLİRLİK</span><h3>Önce bulunabilir olun.</h3><ul><li><b>01</b>Tarama & İndeksleme</li><li><b>02</b>Teknik SEO</li><li><b>12</b>Bağlantı Bütünlüğü</li></ul><div class="px-engine-outcome">ÇIKTI → Arama ve AI sistemleri doğru URL'lere ulaşabiliyor.</div></article>
     <article class="px-engine-phase"><span>02 · ANLAMLANDIRMA</span><h3>Sonra doğru anlaşılın.</h3><ul><li><b>03</b>AI / GEO Erişimi</li><li><b>04</b>llms.txt</li><li><b>05</b>Yapısal Veri</li><li><b>10</b>Ajan Hazırlığı</li></ul><div class="px-engine-outcome">ÇIKTI → Marka, içerik ve makine yüzeyleri daha az belirsiz.</div></article>
     <article class="px-engine-phase"><span>03 · GÜVEN & DENEYİM</span><h3>Kaynak olmaya hazır hale gelin.</h3><ul><li><b>06</b>Performans Hijyeni</li><li><b>07</b>Erişilebilirlik</li><li><b>08</b>Güvenlik Temeli</li><li><b>09</b>İçerik Güveni</li></ul><div class="px-engine-outcome">ÇIKTI → Teknik güven ve insan/ajan deneyimi korunuyor.</div></article>
-    <article class="px-engine-phase"><span>04 · TİCARİ YOL</span><h3>İlgiyi aksiyona bağlayın.</h3><ul><li><b>11</b>Dönüşüm</li><li><b>+13</b>Intelligence Audits</li><li><b>+7</b>Readiness Lens</li></ul><div class="px-engine-outcome">ÇIKTI → Sorun listesi değil, önceliklendirilmiş ticari risk haritası.</div></article>
+    <article class="px-engine-phase"><span>04 · TİCARİ YOL</span><h3>İlgiyi aksiyona bağlayın.</h3><ul><li><b>11</b>Dönüşüm</li><li><b>+13</b>Intelligence Audits</li><li><b>+7</b>Hazırlık Merceği</li></ul><div class="px-engine-outcome">ÇIKTI → Sorun listesi değil, önceliklendirilmiş ticari risk haritası.</div></article>
   </div>
 </section>
 
@@ -437,7 +443,7 @@
       <ul>
         <li><a href="/tr/platform/">Platform</a></li>
         <li><a href="/tr/fix-mandate/">Fix Mandate</a></li>
-        <li><a href="/tr/fiyatlandirma/" data-i18n="navPrice">Fiyat</a></li>
+        <li><a href="/tr/fiyatlandirma/" data-i18n="navPrice">Fiyatlar</a></li>
         <li><a href="/openapi.json">OpenAPI</a></li>
         <li><a href="/audit-profile.json">Audit Profile</a></li>
       </ul>
