@@ -29,7 +29,7 @@ const checks=[
   [/\/api\/scan/.test(js),'legacy validator client scan endpoint missing'],
   [/runFriendlyScan/.test(api)&&/runScan/.test(request),'server scan handler must use shared engine through normalization wrapper'],
   [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
-  [/FULL SITE FIX MANDATE/i.test(fixEn)&&/\$149/.test(fixEn)&&/FULL SITE FIX MANDATE/i.test(fixTr)&&/\$149/.test(fixTr),'single $149 mandate positioning missing'],
+  [/FULL SITE FIX MANDATE/i.test(fixEn)&&/\$149/.test(fixEn)&&/TAM SİTE DÜZELTME TALİMATI/i.test(fixTr)&&/\$149/.test(fixTr),'localized single $149 mandate positioning missing'],
   [!/\$49|\$99/.test(fixEn+fixTr),'legacy mandate prices still present'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
   [/ROOT FIX/.test(mandate)&&/RECOVERY/.test(mandate)&&/PREVENTION/.test(mandate)&&/ROLLBACK/.test(mandate),'mandate execution contract incomplete'],
@@ -67,4 +67,4 @@ for(const file of ['index.html','en/index.html','tr/index.html','checkout.html']
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: locale hubs, shared 12-engine diagnosis, resilient normalization, evidence boundary, SSRF controls and $149 mandate gate verified.');
+console.log('INTEGRITY PASS: locale hubs, shared 12-engine diagnosis, resilient normalization, evidence boundary, SSRF controls and localized $149 mandate gate verified.');
