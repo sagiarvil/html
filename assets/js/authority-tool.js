@@ -12,7 +12,88 @@ const score=document.getElementById('toolScore');
 const meta=document.getElementById('toolMeta');
 const findings=document.getElementById('toolFindings');
 const btn=form?.querySelector('button');
-const copy={tr:{scanning:'Site taranıyor; 12 motor ve 13 istihbarat denetimi aynı kanıt zincirinde çalışıyor…',failed:'Tarama tamamlanamadı.',clear:'Bu kapsamda doğrulanmış sorun bulunmadı.',score:'seçili kapsam skoru',checked:'kontrol',pages:'sayfa',finding:'bulgu',intelligence:'Arama ve AI İstihbarat Denetimleri',intelligenceNote:'Bu 13 analiz ana 12-motor skorunu değiştirmez. Ölçülemeyen veya kaynak kod gerektiren alanlar uydurulmaz.',lenses:'Hazırlık lensleri',priorities:'Öncelikli karar alanları'},en:{scanning:'Scanning the site; 12 engines and 13 intelligence audits run on the same evidence chain…',failed:'Scan could not be completed.',clear:'No verified issue was found in this scope.',score:'selected-scope score',checked:'checks',pages:'pages',finding:'findings',intelligence:'Search & AI Intelligence Audits',intelligenceNote:'These 13 analyses do not change the canonical 12-engine score. Unmeasured or source-context-only areas are never fabricated.',lenses:'Readiness lenses',priorities:'Priority decision areas'}}[lang];
+const copy={tr:{
+ scanning:'Site taranıyor; 12 motor ve 13 istihbarat denetimi aynı kanıt zincirinde çalışıyor…',
+ failed:'Tarama tamamlanamadı.',
+ clear:'Bu kapsamda doğrulanmış sorun bulunmadı.',
+ score:'seçili kapsam skoru',
+ checked:'kontrol',
+ pages:'sayfa',
+ finding:'bulgu',
+ kicker:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
+ intelligence:'Arama ve AI İstihbarat Denetimleri',
+ intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Hazır düzeltme kodları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanındadır.',
+ badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
+ badge13:'13 Derin Analiz',
+ badge7:'7 Hazırlık Lensi',
+ badgeRemedy:'🔒 Çözüm: $99 Yol Haritası & $499 Enterprise',
+ t0Title:'1. Açık Teşhis Envanteri',
+ t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
+ t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 7 hazırlık lensiyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
+ t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
+ t99Title:'2. Mühendislik Yol Haritası',
+ t99Price:'$99 Tek Seferlik',
+ t99Desc:'Nasıl düzeltilecek? Bu ekranda listelenen 13 sorunun kök nedeni, hazır kod blokları, P0–P3 sırası ve yazılımcınıza teslim edilecek 22 dosyalık ZIP paketi.',
+ t99Cta:'$99 Mühendislik Paketini Aç →',
+ t499Title:'3. Kurumsal AI Otoritesi',
+ t499Price:'$499 Kurumsal Entegrasyon',
+ t499Desc:'Gelişmiş AI ekosistemi: Otonom AI crawler protokolleri, LLM RAG semantik grafı, özel tersine mühendislik ve tam mimari destek.',
+ t499Cta:'$499 Kurumsal Çözümü İncele →',
+ lenses:'7 Boyutlu Hazırlık Lensleri',
+ lensesSub:'Ücretsiz Teşhis Boyutları: Yapay zeka ve arama ekosistemindeki 7 ana vektörünüzün anlık durum puanı',
+ priorities:'Öncelikli Stratejik Karar Alanları',
+ prioritiesSub:'Acil Düzeltme Sırası: Doğrulanmış kanıtlara göre en yüksek etkiyi sağlayan ilk 3 öncelik ($99 Yol Haritası ile koda dönüşür)',
+ audits:'13 Bağımsız İstihbarat Denetimi',
+ auditsSub:'Detaylı Teknik Kanıtlar: Her denetim sitenizdeki açık durumu gösterir; düzeltme şablonları $99 pakette yer alır',
+ auditDiagNotice:'Teşhis: Ücretsiz Açık · Düzeltme: $99 Yol Haritasında Dahil',
+ capstoneCta:'🔒 Kod Tabanı İncelemesini $99 Yol Haritası ile Başlat →',
+ bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
+ bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
+ bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Yazılımcınızın hemen devreye alabileceği hazır kod blokları, P0–P3 öncelik sırası ve 22 dosyalık mühendislik ZIP paketi için Yol Haritasını açın.',
+ bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →',
+ bridgeBtn499:'🏢 $499 Kurumsal Çözüm →'
+},
+en:{
+ scanning:'Scanning the site; 12 engines and 13 intelligence audits run on the same evidence chain…',
+ failed:'Scan could not be completed.',
+ clear:'No verified issue was found in this scope.',
+ score:'selected-scope score',
+ checked:'checks',
+ pages:'pages',
+ finding:'findings',
+ kicker:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
+ intelligence:'Search & AI Intelligence Audits',
+ intelligenceNote:'This section is 100% FREE ($0). It transparently documents your search and AI vulnerabilities with live evidence. Turn-key code templates and 22-file ZIP package are in the $99 Roadmap layer.',
+ badgeFree:'🟢 $0 Free Diagnostic Layer',
+ badge13:'13 Deep Analyses',
+ badge7:'7 Readiness Lenses',
+ badgeRemedy:'🔒 Fix: $99 Roadmap & $499 Enterprise',
+ t0Title:'1. Open Diagnostic Inventory',
+ t0Price:'$0 Free (Current Screen)',
+ t0Desc:'What is wrong? Where? 13 deep intelligence audits and 7 readiness lenses provide a complete verified evidence log for free.',
+ t0Status:'✓ Active / Free Live Inspection',
+ t99Title:'2. Implementation Roadmap',
+ t99Price:'$99 One-Time',
+ t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and 22-file ZIP engineering package for your developer.',
+ t99Cta:'Unlock $99 Roadmap Package →',
+ t499Title:'3. Enterprise AI Authority',
+ t499Price:'$499 Enterprise Integration',
+ t499Desc:'Advanced AI ecosystem: Autonomous agent protocols, LLM RAG semantic knowledge graph, reverse-engineering architecture, and VIP advisory.',
+ t499Cta:'View $499 Enterprise Solution →',
+ lenses:'7-Dimensional Readiness Lenses',
+ lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
+ priorities:'Priority Strategic Decision Areas',
+ prioritiesSub:'Action Sequence: Top 3 priorities with highest verified impact-to-effort ratio (converted to code via $99 Roadmap)',
+ audits:'13 Independent Intelligence Audits',
+ auditsSub:'Detailed Technical Evidence: Each audit shows exact verified status; implementation code is in the $99 package',
+ auditDiagNotice:'Diagnosis: Free Public · Code Fix: Unlocked in $99 Roadmap',
+ capstoneCta:'🔒 Unlock Codebase Verification in $99 Visibility Roadmap →',
+ bridgeTag:'DIAGNOSIS COMPLETE · WHAT NEXT?',
+ bridgeTitle:'Vulnerabilities & Evidence Disclosed. Ready to Remediate in Code?',
+ bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the 22-file ZIP engineering package.',
+ bridgeBtn99:'⚡ Unlock $99 Implementation Roadmap (22-File ZIP) →',
+ bridgeBtn499:'🏢 View $499 Enterprise Solution →'
+}}[lang];
 const sevMap={tr:{critical:'KRİTİK',high:'YÜKSEK',medium:'ORTA',low:'DÜŞÜK',info:'BİLGİ'},en:{critical:'CRITICAL',high:'HIGH',medium:'MEDIUM',low:'LOW',info:'INFO'}};
 const confMap={tr:{confirmed:'DOĞRULANMIŞ',strong:'GÜÇLÜ',probable:'OLASI','requires-source-verification':'KAYNAK DOĞRULAMASI GEREKİR'},en:{confirmed:'CONFIRMED',strong:'STRONG',probable:'PROBABLE','requires-source-verification':'SOURCE VERIFICATION REQUIRED'}};
 const srcMap={tr:{OFFICIAL_STANDARD:'RESMİ STANDART',OFFICIAL_VENDOR:'RESMİ SAĞLAYICI',PROPOSAL:'ÖNERİ',MEASURED:'ÖLÇÜLMÜŞ',INTERNAL_HEURISTIC:'İÇ SEZGİSEL KURAL',EXPERIMENTAL:'DENEYSEL'},en:{}};
@@ -72,9 +153,11 @@ function renderIntelligence(data){
   const isCap=a.key==='codebase_seo_governance';const st=statusMap[lang]?.[a.status]||a.status;
   const sc=typeof a.score==='number'?Math.round(a.score):null;const ev=(a.evidence||[])[0]||'';
   let sb='';if(sc!==null){const tr=sc>=80?'green':sc>=60?'blue':sc>=40?'amber':'red';sb=`<div class="intel-card-meter"><i style="width:${Math.max(0,Math.min(100,sc))}%;background:var(--intel-${tr});"></i></div>`}
-  return `<article class="intel-item ${isCap?'intel-capstone':''} intel-${m.theme}" data-key="${esc(a.key)}" data-status="${esc(a.status)}"><div class="intel-item-header"><div class="intel-item-title-wrap"><span class="intel-cat-pill intel-cat-${m.theme}">${esc(cat)}</span><h4>${esc(title)}</h4></div><span class="intel-status-pill status-${esc(a.status)}">${esc(st)}${sc!==null?` · ${sc}/100`:''}</span></div>${sb}<div class="intel-evidence"><code><span class="ev-label">${isTr?'KANIT:':'EVIDENCE:'}</span>${esc(ev)}</code></div><div class="intel-boundary"><strong>⚖️ ${isTr?'Ölçüm Sınırı':'Measurement Boundary'}:</strong> ${esc(isTr?a.boundaryTr:a.boundaryEn)}</div>${isCap?`<div class="intel-capstone-action"><a href="/checkout?plan=pro" class="intel-mandate-cta">${isTr?'🔒 Kod Tabanı İncelemesini $99 Fix Mandate ile Başlat →':'🔒 Unlock Codebase Verification in $99 Fix Mandate →'}</a></div>`:''}</article>`;
+  return `<article class="intel-item ${isCap?'intel-capstone':''} intel-${m.theme}" data-key="${esc(a.key)}" data-status="${esc(a.status)}"><div class="intel-item-header"><div class="intel-item-title-wrap"><span class="intel-cat-pill intel-cat-${m.theme}">${esc(cat)}</span><h4>${esc(title)}</h4></div><span class="intel-status-pill status-${esc(a.status)}">${esc(st)}${sc!==null?` · ${sc}/100`:''}</span></div>${sb}<div class="intel-evidence"><code><span class="ev-label">${isTr?'KANIT:':'EVIDENCE:'}</span>${esc(ev)}</code></div><div class="intel-boundary"><strong>⚖️ ${isTr?'Ölçüm Sınırı':'Measurement Boundary'}:</strong> ${esc(isTr?a.boundaryTr:a.boundaryEn)}</div><div class="intel-item-notice"><span>ℹ️ ${esc(copy.auditDiagNotice)}</span></div>${isCap?`<div class="intel-capstone-action"><a href="/checkout?plan=pro" class="intel-mandate-cta">${esc(copy.capstoneCta)}</a></div>`:''}</article>`;
  }).join('');
- wrap.innerHTML=`<div class="intel-head"><div><span class="intel-head-kicker">${isTr?'YAPAY ZEKA & ARAMA İSTİHBARAT MERKEZİ':'AI & SEARCH INTELLIGENCE COMMAND'}</span><h3>${esc(copy.intelligence)}</h3><p>${esc(copy.intelligenceNote)}</p></div><div class="intel-head-badges"><span class="intel-top-pill pill-blue">${isTr?'13 Derin Analiz':'13 Deep Analyses'}</span><span class="intel-top-pill pill-purple">${isTr?'7 Hazırlık Lensi':'7 Readiness Lenses'}</span><span class="intel-top-pill">${isTr?'Non-Scoring Güvencesi':'Non-Scoring Safe'}</span></div></div><div class="intel-section-title"><h4>${isTr?'7 Boyutlu Hazırlık Lensleri':'7-Dimensional Readiness Lenses'}</h4><span>${isTr?'Tüm arama ve yapay zeka ekosistemindeki görünürlük eksenleri':'Visibility vectors across the entire ecosystem'}</span></div><div class="intel-lenses">${lensHtml}</div>${priorities.length?`<div class="intel-section-title"><h4>${isTr?'Öncelikli Stratejik Karar Alanları':'Priority Strategic Decision Areas'}</h4><span>${isTr?'Doğrulanmış kanıtlara göre en hızlı etki yaratan aksiyon sırası':'Action sequence with highest verified impact-to-effort ratio'}</span></div><div class="intel-priorities-deck">${priorityHtml}</div>`:''}<div class="intel-section-title"><h4>${isTr?'13 Bağımsız İstihbarat Denetimi':'13 Independent Intelligence Audits'}</h4><span>${isTr?'Deterministik ölçüm kanıtları ve kapsam sınırları':'Deterministic measurement evidence and boundary disclosures'}</span></div>${filterHtml}<div class="intel-grid" id="toolIntelAuditsGrid">${analysisHtml}</div>`;
+ const tierGuideHtml=`<div class="intel-tier-guide"><div class="tier-card tier-card-active"><div class="tier-card-header"><span class="tier-card-badge tier-badge-green">${isTr?'AKTİF KATMAN':'ACTIVE LAYER'}</span><span class="tier-card-price">${esc(copy.t0Price)}</span></div><div class="tier-card-title">${esc(copy.t0Title)}</div><p class="tier-card-desc">${esc(copy.t0Desc)}</p><div class="tier-card-status"><span class="status-active-label">${esc(copy.t0Status)}</span></div></div><div class="tier-card"><div class="tier-card-header"><span class="tier-card-badge tier-badge-blue">${isTr?'UYGULAMA PLANI':'EXECUTION PLAN'}</span><span class="tier-card-price price-blue">${esc(copy.t99Price)}</span></div><div class="tier-card-title">${esc(copy.t99Title)}</div><p class="tier-card-desc">${esc(copy.t99Desc)}</p><div class="tier-card-status"><a href="/checkout?plan=pro" class="tier-card-link">${esc(copy.t99Cta)}</a></div></div><div class="tier-card"><div class="tier-card-header"><span class="tier-card-badge tier-badge-purple">${isTr?'VIP ENTEGRASYON':'VIP INTEGRATION'}</span><span class="tier-card-price price-purple">${esc(copy.t499Price)}</span></div><div class="tier-card-title">${esc(copy.t499Title)}</div><p class="tier-card-desc">${esc(copy.t499Desc)}</p><div class="tier-card-status"><a href="/checkout?plan=enterprise" class="tier-card-link link-purple">${esc(copy.t499Cta)}</a></div></div></div>`;
+ const bridgeHtml=`<div class="intel-bridge-banner"><div class="intel-bridge-content"><span class="bridge-tag">${esc(copy.bridgeTag)}</span><h4>${esc(copy.bridgeTitle)}</h4><p>${esc(copy.bridgeDesc)}</p></div><div class="intel-bridge-actions"><a href="/checkout?plan=pro" class="intel-btn-primary">${esc(copy.bridgeBtn99)}</a><a href="/checkout?plan=enterprise" class="intel-btn-secondary">${esc(copy.bridgeBtn499)}</a></div></div>`;
+ wrap.innerHTML=`<div class="intel-head"><div><span class="intel-head-kicker">${esc(copy.kicker)}</span><h3>${esc(copy.intelligence)}</h3><p>${esc(copy.intelligenceNote)}</p></div><div class="intel-head-badges"><span class="intel-top-pill pill-green">${esc(copy.badgeFree)}</span><span class="intel-top-pill pill-blue">${esc(copy.badge13)}</span><span class="intel-top-pill pill-purple">${esc(copy.badge7)}</span><span class="intel-top-pill">${esc(copy.badgeRemedy)}</span></div></div>${tierGuideHtml}<div class="intel-section-title"><h4>${esc(copy.lenses)}</h4><span>${esc(copy.lensesSub)}</span></div><div class="intel-lenses">${lensHtml}</div>${priorities.length?`<div class="intel-section-title"><h4>${esc(copy.priorities)}</h4><span>${esc(copy.prioritiesSub)}</span></div><div class="intel-priorities-deck">${priorityHtml}</div>`:''}<div class="intel-section-title"><h4>${esc(copy.audits)}</h4><span>${esc(copy.auditsSub)}</span></div>${filterHtml}<div class="intel-grid" id="toolIntelAuditsGrid">${analysisHtml}</div>${bridgeHtml}`;
  wrap.querySelectorAll('#toolIntelFilterBar .intel-filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{wrap.querySelectorAll('#toolIntelFilterBar .intel-filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;wrap.querySelectorAll('#toolIntelAuditsGrid .intel-item').forEach(item=>{const st=item.dataset.status;if(f==='all'||(f==='CONTEXT'&&(st==='NOT_MEASURED'||st==='REQUIRES_CONTEXT'))||st===f)item.style.display='';else item.style.display='none'})})});
  result.insertAdjacentElement('afterend',wrap);
 }

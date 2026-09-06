@@ -9,12 +9,12 @@ const COPY={
   mandateCopy:'Ne yanlış olduğunu saklamıyoruz. $99 katmanında kök neden, P0–P3 uygulama sırası, kabul/regresyon testleri, rollback ve yazılımcınıza teslim edilecek ZIP mühendislik paketi açılır.',
   getMandate:'AI Görünürlük Yol Haritasını Aç →',
   locked:'🔒 Nasıl düzeltileceği $99 Uygulama Planı içinde',
-  decisionEyebrow:'ÜCRETSİZ AI GÖRÜNÜRLÜK KARAR HARİTASI',
+  decisionEyebrow:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
   decisionTitle:'12 skorun ötesinde: hangi görünürlük katmanı kaybediyor?',
-  decisionCopy:'7 hazırlık lensi ve en kritik Intelligence bulguları ücretsiz görünür. Kök nedenin nasıl uygulanacağı ücretli mühendislik paketinde kalır.',
+  decisionCopy:'7 hazırlık lensi ve 13 istihbarat bulgusu %100 ÜCRETSİZ ($0) teşhis edilir. Teşhis edilen açıkların hazır düzeltme kodları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanındadır.',
   priority:'ÖNCELİK',impact:'ETKİ',effort:'ÇABA',status:'DURUM',
-  paidText:'Sorun ve kanıt sizde. Uygulama planına ihtiyaç duyuyor musunuz?',
-  paidCta:'$99 Uygulama Planını Aç →'
+  paidText:'Teşhis ve kanıtlar ücretsiz dökümlendi ($0). Bunları koda döküp çözecek $99 Yol Haritasına hazır mısınız?',
+  paidCta:'$99 Mühendislik Yol Haritasını Aç (ZIP) →'
  },
  en:{
   hero:'Can AI Find You?<br><em>Are You Ready to Be Recommended?</em>',
@@ -24,12 +24,12 @@ const COPY={
   mandateCopy:'We do not hide the diagnosis. The $99 layer unlocks root causes, P0–P3 execution order, acceptance/regression tests, rollback safeguards and the ZIP engineering package for your developer.',
   getMandate:'Unlock AI Search Visibility Roadmap →',
   locked:'🔒 How to fix it is inside the $99 Implementation Blueprint',
-  decisionEyebrow:'FREE AI VISIBILITY DECISION MAP',
+  decisionEyebrow:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
   decisionTitle:'Beyond 12 scores: which visibility layer is losing ground?',
-  decisionCopy:'Seven readiness lenses and the most important Intelligence findings remain visible for free. Implementation mechanics stay in the paid engineering package.',
+  decisionCopy:'Seven readiness lenses and 13 intelligence findings are diagnosed 100% FREE ($0). Turn-key code templates and the 22-file ZIP package are unlocked in the $99 Roadmap.',
   priority:'PRIORITY',impact:'IMPACT',effort:'EFFORT',status:'STATUS',
-  paidText:'You have the problem and evidence. Need the implementation plan?',
-  paidCta:'Unlock $99 Implementation Blueprint →'
+  paidText:'Diagnosis and live evidence are disclosed for free ($0). Ready to remediate them in code with the $99 Roadmap?',
+  paidCta:'Unlock $99 Implementation Roadmap (ZIP) →'
  }
 };
 const lensOrder=['SEO','GEO','AEO','LLMO','AAO','RAG','E-E-A-T'];

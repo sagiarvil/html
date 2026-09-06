@@ -15,18 +15,32 @@ const statusMap={
 
 const copy={
   tr:{
-    kicker:'YAPAY ZEKA & ARAMA İSTİHBARAT MERKEZİ',
+    kicker:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
     title:'Arama ve AI İstihbarat Denetimleri',
-    note:'13 gelişmiş analiz, ana 12-motor skorunu değiştirmeden aynı kanıt zincirini yorumlar. Ölçülemeyen veya kaynak kod gerektiren alanlar uydurulmaz.',
+    note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri (ChatGPT, Claude, Perplexity, Gemini) nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Sorunların nasıl düzeltileceği, hazır kod blokları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanında sunulur.',
+    badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
     badge13:'13 Derin Analiz',
     badge7:'7 Hazırlık Lensi',
-    badgeSafe:'Non-Scoring Güvencesi',
+    badgeRemedy:'🔒 Çözüm: $99 Yol Haritası & $499 Enterprise',
+    tierGuideTitle:'Hangi Hizmet Neyi Kapsar? ($0 Teşhis vs. $99 Uygulama vs. $499 Kurumsal)',
+    t0Title:'1. Açık Teşhis Envanteri',
+    t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
+    t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 7 hazırlık lensiyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
+    t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
+    t99Title:'2. Mühendislik Yol Haritası',
+    t99Price:'$99 Tek Seferlik',
+    t99Desc:'Nasıl düzeltilecek? Bu ekranda listelenen 13 sorunun kök nedeni, hazır kod blokları, P0–P3 sırası ve yazılımcınıza teslim edilecek 22 dosyalık ZIP paketi.',
+    t99Cta:'$99 Mühendislik Paketini Aç →',
+    t499Title:'3. Kurumsal AI Otoritesi',
+    t499Price:'$499 Kurumsal Entegrasyon',
+    t499Desc:'Gelişmiş AI ekosistemi: Otonom AI crawler protokolleri, LLM RAG semantik grafı, özel tersine mühendislik ve tam mimari destek.',
+    t499Cta:'$499 Kurumsal Çözümü İncele →',
     lenses:'7 Boyutlu Hazırlık Lensleri',
-    lensesSub:'Tüm arama ve yapay zeka ekosistemindeki görünürlük eksenleri',
+    lensesSub:'Ücretsiz Teşhis Boyutları: Yapay zeka ve arama ekosistemindeki 7 ana vektörünüzün anlık durum puanı',
     priorities:'Öncelikli Stratejik Karar Alanları',
-    prioritiesSub:'Doğrulanmış kanıtlara göre en hızlı etki yaratan aksiyon sırası',
+    prioritiesSub:'Acil Düzeltme Sırası: Doğrulanmış kanıtlara göre en yüksek etkiyi sağlayan ilk 3 öncelik ($99 Yol Haritası ile koda dönüşür)',
     audits:'13 Bağımsız İstihbarat Denetimi',
-    auditsSub:'Deterministik ölçüm kanıtları ve kapsam sınırları',
+    auditsSub:'Detaylı Teknik Kanıtlar: Her denetim sitenizdeki açık durumu gösterir; düzeltme şablonları $99 pakette yer alır',
     all:'Tüm Denetimler',
     pass:'🟢 Geçti',
     warn:'🟠 Uyarı',
@@ -34,21 +48,41 @@ const copy={
     context:'⚪ Kapsam / Bilgi',
     evidenceLabel:'KANIT DÖKÜMÜ',
     boundaryLabel:'Ölçüm Sınırı',
-    capstoneCta:'🔒 Kod Tabanı İncelemesini $99 Fix Mandate ile Başlat →'
+    auditDiagNotice:'Teşhis: Ücretsiz Açık · Düzeltme: $99 Yol Haritasında Dahil',
+    capstoneCta:'🔒 Kod Tabanı İncelemesini $99 Yol Haritası ile Başlat →',
+    bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
+    bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
+    bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Yazılımcınızın hemen devreye alabileceği hazır kod blokları, P0–P3 öncelik sırası ve 22 dosyalık mühendislik ZIP paketi için Yol Haritasını açın.',
+    bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →',
+    bridgeBtn499:'🏢 $499 Kurumsal Çözüm →'
   },
   en:{
-    kicker:'AI & SEARCH INTELLIGENCE COMMAND',
+    kicker:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
     title:'Search & AI Intelligence Audits',
-    note:'Thirteen advanced analyses interpret the same evidence chain without changing the canonical 12-engine score. Unmeasured or source-context-only signals are never fabricated.',
+    note:'This section is 100% FREE ($0). It transparently documents 13 technical vulnerabilities and 7 readiness dimensions of your site across search engines and AI models (ChatGPT, Claude, Perplexity, Gemini) with live evidence. Step-by-step code remediation, priority ordering, and the 22-file ZIP package are unlocked in the $99 Roadmap layer.',
+    badgeFree:'🟢 $0 Free Diagnostic Layer',
     badge13:'13 Deep Analyses',
     badge7:'7 Readiness Lenses',
-    badgeSafe:'Non-Scoring Safe',
+    badgeRemedy:'🔒 Fix: $99 Roadmap & $499 Enterprise',
+    tierGuideTitle:'Which Tier Covers What? ($0 Diagnostic vs $99 Execution vs $499 Enterprise)',
+    t0Title:'1. Open Diagnostic Inventory',
+    t0Price:'$0 Free (Current Screen)',
+    t0Desc:'What is wrong? Where? 13 deep intelligence audits and 7 readiness lenses provide a complete verified evidence log for free.',
+    t0Status:'✓ Active / Free Live Inspection',
+    t99Title:'2. Implementation Roadmap',
+    t99Price:'$99 One-Time',
+    t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and 22-file ZIP engineering package for your developer.',
+    t99Cta:'Unlock $99 Roadmap Package →',
+    t499Title:'3. Enterprise AI Authority',
+    t499Price:'$499 Enterprise Integration',
+    t499Desc:'Advanced AI ecosystem: Autonomous agent protocols, LLM RAG semantic knowledge graph, reverse-engineering architecture, and VIP advisory.',
+    t499Cta:'View $499 Enterprise Solution →',
     lenses:'7-Dimensional Readiness Lenses',
-    lensesSub:'Visibility vectors across the entire search and AI ecosystem',
+    lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
     priorities:'Priority Strategic Decision Areas',
-    prioritiesSub:'Action sequence with highest verified impact-to-effort ratio',
+    prioritiesSub:'Action Sequence: Top 3 priorities with highest verified impact-to-effort ratio (converted to code via $99 Roadmap)',
     audits:'13 Independent Intelligence Audits',
-    auditsSub:'Deterministic measurement evidence and boundary disclosures',
+    auditsSub:'Detailed Technical Evidence: Each audit shows exact verified status; implementation code is in the $99 package',
     all:'All Audits',
     pass:'🟢 Pass',
     warn:'🟠 Warn',
@@ -56,7 +90,13 @@ const copy={
     context:'⚪ Context / Scope',
     evidenceLabel:'EVIDENCE LOG',
     boundaryLabel:'Measurement Boundary',
-    capstoneCta:'🔒 Unlock Codebase Verification in $99 Fix Mandate →'
+    auditDiagNotice:'Diagnosis: Free Public · Code Fix: Unlocked in $99 Roadmap',
+    capstoneCta:'🔒 Unlock Codebase Verification in $99 Visibility Roadmap →',
+    bridgeTag:'DIAGNOSIS COMPLETE · WHAT NEXT?',
+    bridgeTitle:'Vulnerabilities & Evidence Disclosed. Ready to Remediate in Code?',
+    bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the 22-file ZIP engineering package.',
+    bridgeBtn99:'⚡ Unlock $99 Implementation Roadmap (22-File ZIP) →',
+    bridgeBtn499:'🏢 View $499 Enterprise Solution →'
   }
 };
 
@@ -98,7 +138,7 @@ function render(intel){
   section.id='homepageIntelligence';
   section.className='tool-intelligence';
 
-  // 1. Header
+  // 1. Header with clear tier identity
   const headHtml=`
     <div class="intel-head">
       <div>
@@ -107,9 +147,43 @@ function render(intel){
         <p>${esc(t.note)}</p>
       </div>
       <div class="intel-head-badges">
+        <span class="intel-top-pill pill-green">${esc(t.badgeFree)}</span>
         <span class="intel-top-pill pill-blue">${esc(t.badge13)}</span>
         <span class="intel-top-pill pill-purple">${esc(t.badge7)}</span>
-        <span class="intel-top-pill">${esc(t.badgeSafe)}</span>
+        <span class="intel-top-pill">${esc(t.badgeRemedy)}</span>
+      </div>
+    </div>
+  `;
+
+  // 1b. 3-Tier Clarity Guide
+  const tierGuideHtml=`
+    <div class="intel-tier-guide">
+      <div class="tier-card tier-card-active">
+        <div class="tier-card-header">
+          <span class="tier-card-badge tier-badge-green">${isTr?'AKTİF KATMAN':'ACTIVE LAYER'}</span>
+          <span class="tier-card-price">${esc(t.t0Price)}</span>
+        </div>
+        <div class="tier-card-title">${esc(t.t0Title)}</div>
+        <p class="tier-card-desc">${esc(t.t0Desc)}</p>
+        <div class="tier-card-status"><span class="status-active-label">${esc(t.t0Status)}</span></div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-card-header">
+          <span class="tier-card-badge tier-badge-blue">${isTr?'UYGULAMA PLANI':'EXECUTION PLAN'}</span>
+          <span class="tier-card-price price-blue">${esc(t.t99Price)}</span>
+        </div>
+        <div class="tier-card-title">${esc(t.t99Title)}</div>
+        <p class="tier-card-desc">${esc(t.t99Desc)}</p>
+        <div class="tier-card-status"><a href="/checkout?plan=pro" class="tier-card-link">${esc(t.t99Cta)}</a></div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-card-header">
+          <span class="tier-card-badge tier-badge-purple">${isTr?'VIP ENTEGRASYON':'VIP INTEGRATION'}</span>
+          <span class="tier-card-price price-purple">${esc(t.t499Price)}</span>
+        </div>
+        <div class="tier-card-title">${esc(t.t499Title)}</div>
+        <p class="tier-card-desc">${esc(t.t499Desc)}</p>
+        <div class="tier-card-status"><a href="/checkout?plan=enterprise" class="tier-card-link link-purple">${esc(t.t499Cta)}</a></div>
       </div>
     </div>
   `;
@@ -215,13 +289,32 @@ function render(intel){
         <div class="intel-boundary">
           <strong>⚖️ ${esc(t.boundaryLabel)}:</strong> ${esc(boundaryText)}
         </div>
+        <div class="intel-item-notice">
+          <span>ℹ️ ${esc(t.auditDiagNotice)}</span>
+        </div>
         ${isCapstone?`<div class="intel-capstone-action"><a href="/checkout?plan=pro" class="intel-mandate-cta">${esc(t.capstoneCta)}</a></div>`:''}
       </article>
     `;
   }).join('');
 
+  // 5. Conversion & Remediation Bridge Banner
+  const bridgeHtml=`
+    <div class="intel-bridge-banner">
+      <div class="intel-bridge-content">
+        <span class="bridge-tag">${esc(t.bridgeTag)}</span>
+        <h4>${esc(t.bridgeTitle)}</h4>
+        <p>${esc(t.bridgeDesc)}</p>
+      </div>
+      <div class="intel-bridge-actions">
+        <a href="/checkout?plan=pro" class="intel-btn-primary">${esc(t.bridgeBtn99)}</a>
+        <a href="/checkout?plan=enterprise" class="intel-btn-secondary">${esc(t.bridgeBtn499)}</a>
+      </div>
+    </div>
+  `;
+
   section.innerHTML=`
     ${headHtml}
+    ${tierGuideHtml}
     <div class="intel-section-title">
       <h4>${esc(t.lenses)}</h4>
       <span>${esc(t.lensesSub)}</span>
@@ -240,6 +333,7 @@ function render(intel){
     </div>
     ${filterBarHtml}
     <div class="intel-grid" id="intelAuditsGrid">${analysesHtml}</div>
+    ${bridgeHtml}
   `;
 
   // Attach filter events
