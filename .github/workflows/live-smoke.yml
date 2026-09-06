@@ -15,10 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Verify production homepage and authority routes
+      - name: Verify production locale hubs and intent architecture
         shell: bash
         run: |
           set -euo pipefail
+          code="$(curl -sS -o /tmp/root -D /tmp/root.headers -w '%{http_code}' --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
+          test "$code" = '301'
+          grep -Eqi '^location: .*\/en([[:space:]]|$)' /tmp/root.headers
           check(){
             url="$1"; marker="$2"
             body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"
@@ -28,31 +31,48 @@ jobs:
             fi
             echo "SMOKE_OK: $url"
           }
-          check 'https://htmlandhtml.com/' 'Website Fix Validator'
-          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT VALIDATOR'
-          check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
-          check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
-          check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'AI MENTION TRACKER'
-          check 'https://htmlandhtml.com/en/ai-mention-tracker/' 'AI MENTION TRACKER'
-          check 'https://htmlandhtml.com/methodology.html' 'PUBLIC METHODOLOGY'
-          check 'https://htmlandhtml.com/standard/' 'OPEN AUDIT PROFILE'
-          check 'https://htmlandhtml.com/reference/ai-crawlers/' 'AI CRAWLER REFERENCE'
-          check 'https://htmlandhtml.com/about/' 'ABOUT HTML&amp;HTML'
-          check 'https://htmlandhtml.com/contact/' 'CONTACT / SUPPORT'
-          check 'https://htmlandhtml.com/privacy/' 'PRIVACY / PUBLIC SCANS'
-          check 'https://htmlandhtml.com/terms/' 'TERMS / PUBLIC VALIDATOR'
-          body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
-          ! printf '%s' "$body" | grep -q '\$49\|\$99'
-          printf '%s' "$body" | grep -q '\$149'
-          printf '%s' "$body" | grep -q '/assets/js/theme.js'
+          check 'https://htmlandhtml.com/en' 'WEBSITE AI READINESS / EVIDENCE-FIRST'
+          check 'https://htmlandhtml.com/tr' 'AI WEB SİTESİ HAZIRLIĞI / KANIT ÖNCELİKLİ'
+          check 'https://htmlandhtml.com/en/tools' 'TOOL DIRECTORY / ONE ENGINE'
+          check 'https://htmlandhtml.com/tr/araclar' 'ARAÇ DİZİNİ / TEK MOTOR'
+          check 'https://htmlandhtml.com/en/schema-validator' 'FOCUSED FREE TOOL / ONE CANONICAL ENGINE'
+          check 'https://htmlandhtml.com/tr/schema-validator' 'ODAKLI ÜCRETSİZ ARAÇ / TEK CANONICAL MOTOR'
+          check 'https://htmlandhtml.com/en/guides/ai-crawler-access' 'GUIDE / SOURCED DECISION SUPPORT'
+          check 'https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi' 'REHBER / KAYNAKLI KARAR DESTEĞİ'
+          check 'https://htmlandhtml.com/en/llms-txt-validator' 'LLMS.TXT VALIDATOR'
+          check 'https://htmlandhtml.com/tr/ai-crawler-checker' 'AI CRAWLER ACCESS CHECKER'
+          check 'https://htmlandhtml.com/en/ai-mention-tracker' 'AI MENTION TRACKER'
+          check 'https://htmlandhtml.com/tr/ai-mention-tracker' 'AI MENTION TRACKER'
+          check 'https://htmlandhtml.com/en/fix-mandate' 'FULL SITE FIX MANDATE / $149'
+          check 'https://htmlandhtml.com/tr/fix-mandate' 'FULL SITE FIX MANDATE / $149'
+          check 'https://htmlandhtml.com/en/methodology' 'PUBLIC METHODOLOGY'
+          check 'https://htmlandhtml.com/tr/methodology' 'KAMUYA AÇIK METODOLOJİ'
+          check 'https://htmlandhtml.com/en/evidence-standard' 'OPEN PRODUCT PROFILE / V1.1'
+          check 'https://htmlandhtml.com/tr/kanit-standardi' 'AÇIK ÜRÜN PROFİLİ / V1.1'
+
+          en="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/en)"
+          tr="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/tr)"
+          printf '%s' "$en" | grep -Fq 'rel="canonical" href="https://htmlandhtml.com/en"'
+          printf '%s' "$en" | grep -Fq 'hreflang="tr" href="https://htmlandhtml.com/tr"'
+          printf '%s' "$en" | grep -Fq 'hreflang="x-default" href="https://htmlandhtml.com/en"'
+          printf '%s' "$tr" | grep -Fq 'rel="canonical" href="https://htmlandhtml.com/tr"'
+          printf '%s' "$tr" | grep -Fq 'hreflang="en" href="https://htmlandhtml.com/en"'
+          ! printf '%s%s' "$en" "$tr" | grep -Eq '\?lang=(en|tr)'
+          printf '%s%s' "$en" "$tr" | grep -q '/assets/js/theme.js'
+          pricing="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/en/pricing)"
+          ! printf '%s' "$pricing" | grep -q '\$49\|\$99'
+          printf '%s' "$pricing" | grep -q '\$149'
 
       - name: Verify machine-readable authority graph
         shell: bash
         run: |
           set -euo pipefail
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt | grep -q 'AI Mention Tracker'
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md | grep -q 'AI Mention Tracker'
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml | grep -q '/tr/ai-mention-tracker/'
+          llms="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt)"
+          sitemap="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml)"
+          indexmd="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md)"
+          for marker in 'https://htmlandhtml.com/en/tools' 'https://htmlandhtml.com/tr/araclar' 'https://htmlandhtml.com/en/guides' 'https://htmlandhtml.com/tr/rehberler' 'AI Mention Tracker'; do printf '%s' "$llms" | grep -Fq "$marker"; done
+          for marker in '/en/schema-validator' '/tr/schema-validator' '/en/guides/ai-crawler-access' '/tr/rehberler/ai-tarayici-erisimi'; do printf '%s' "$sitemap" | grep -Fq "$marker"; done
+          printf '%s' "$indexmd" | grep -Fq 'HTML&HTML — AI Website Readiness'
           openapi="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/openapi.json)"
           profile="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/audit-profile.json)"
           sources="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sources.json)"
