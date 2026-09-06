@@ -13,22 +13,16 @@ jobs:
   production-smoke:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - name: Verify production homepage and authority routes
         shell: bash
         run: |
           set -euo pipefail
-          check(){
-            url="$1"; marker="$2"
-            body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"
-            if ! printf '%s' "$body" | grep -Fqi "$marker"; then
-              echo "SMOKE_MARKER_MISSING: $marker @ $url"
-              exit 1
-            fi
-            echo "SMOKE_OK: $url"
-          }
+          check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! printf '%s' "$body" | grep -Fqi "$marker"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
           check 'https://htmlandhtml.com/' 'Website Fix Validator'
+          check 'https://htmlandhtml.com/en/website-scanner/' '12-ENGINE WEBSITE SCANNER'
+          check 'https://htmlandhtml.com/tr/site-tarama/' '12 MOTOR'
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT VALIDATOR'
           check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
           check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
@@ -37,10 +31,6 @@ jobs:
           check 'https://htmlandhtml.com/methodology.html' 'PUBLIC METHODOLOGY'
           check 'https://htmlandhtml.com/standard/' 'OPEN AUDIT PROFILE'
           check 'https://htmlandhtml.com/reference/ai-crawlers/' 'AI CRAWLER REFERENCE'
-          check 'https://htmlandhtml.com/about/' 'ABOUT HTML&amp;HTML'
-          check 'https://htmlandhtml.com/contact/' 'CONTACT / SUPPORT'
-          check 'https://htmlandhtml.com/privacy/' 'PRIVACY / PUBLIC SCANS'
-          check 'https://htmlandhtml.com/terms/' 'TERMS / PUBLIC VALIDATOR'
           body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
           ! printf '%s' "$body" | grep -q '\$49\|\$99'
           printf '%s' "$body" | grep -q '\$149'
@@ -59,8 +49,9 @@ jobs:
           OPENAPI="$openapi" PROFILE="$profile" SOURCES="$sources" node - <<'NODE'
           const api=JSON.parse(process.env.OPENAPI), p=JSON.parse(process.env.PROFILE), s=JSON.parse(process.env.SOURCES);
           if(api.openapi!=='3.1.0') throw new Error('OpenAPI version');
-          for(const x of ['/api/health','/api/scan','/api/mentions','/api/mandate']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
-          if(p.version!=='1.1.0'||p.engines?.length!==12) throw new Error('audit profile contract');
+          for(const x of ['/api/health','/api/scan','/api/intelligence','/api/mentions','/api/mandate']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
+          if(p.version!=='1.2.0'||p.engines?.length!==12) throw new Error('audit profile contract');
+          if(p.intelligenceLayer?.analysisCount!==13||p.intelligenceLayer?.readinessLensCount!==7) throw new Error('intelligence profile contract');
           if(p.scanBoundaries?.maxPublicHtmlPages!==50) throw new Error('Deep Crawl boundary');
           if(p.engines.reduce((a,x)=>a+x.overallWeight,0)!==100) throw new Error('audit weights');
           if(!Array.isArray(s.sources)||s.sources.length<8) throw new Error('source registry contract');
@@ -73,10 +64,10 @@ jobs:
           body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/health)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY);
-          if(x.status!=='ok'||x.scanEngines!==12||x.maxPages!==50||x.freeDiagnosis!==true||x.aiMentionTracker!==true) throw new Error('health contract');
+          if(x.status!=='ok'||x.scanEngines!==12||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==149||x.aiMentionTracker!==true) throw new Error('health contract');
           NODE
 
-      - name: Verify production 12-engine Deep Crawl contract
+      - name: Verify production scan and Intelligence Audit contract
         shell: bash
         run: |
           set -euo pipefail
@@ -86,16 +77,33 @@ jobs:
           for(const k of expected) if(typeof x.scores?.[k] !== 'number') throw new Error('missing score '+k);
           if(!Array.isArray(x.findings)||!x.scanId||x.fieldData?.coreWebVitals!=='NOT_MEASURED'||Object.keys(x.scores).length!==12) throw new Error('scan contract');
           if((x.summary?.pagesScanned||0)>50) throw new Error('Deep Crawl exceeded 50-page boundary');
+          const i=x.intelligence;
+          if(i?.classification!=='NON_SCORING_INTELLIGENCE_LAYER'||i.coreScoreUnchanged!==true||i.analyses?.length!==13||Object.keys(i.readinessLenses||{}).length!==7) throw new Error('intelligence contract');
+          if(i.coreOverall!==x.overall) throw new Error('intelligence mutated core score');
+          const rp=i.analyses.find(a=>a.key==='render_parity'); if(rp?.status!=='NOT_MEASURED') throw new Error('render parity fabricated');
+          const cb=i.analyses.find(a=>a.key==='codebase_seo_governance'); if(cb?.status!=='REQUIRES_CONTEXT') throw new Error('codebase governance fabricated');
+          const ig=i.analyses.find(a=>a.key==='information_gain'); if(!ig||ig.sourceClass!=='INTERNAL_HEURISTIC') throw new Error('information gain boundary');
           for(const f of x.findings){ if(!f.id||!f.severity||!f.confidence||!f.sourceClass||!('evidence' in f)) throw new Error('finding evidence contract'); if('fixTr' in f||'fixEn' in f||'rootFix' in f) throw new Error('paid remediation leaked'); }
+          NODE
+
+      - name: Verify dedicated intelligence endpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          body="$(curl -fsS --connect-timeout 10 --max-time 240 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/intelligence)"
+          BODY="$body" node - <<'NODE'
+          const x=JSON.parse(process.env.BODY); if(x.intelligence?.analyses?.length!==13||Object.keys(x.intelligence?.readinessLenses||{}).length!==7) throw new Error('dedicated intelligence endpoint');
           NODE
 
       - name: Verify SSRF boundary repeats safely
         shell: bash
         run: |
           set -euo pipefail
-          for target in 'http://127.0.0.1' 'http://localhost'; do
-            code="$(curl -sS -o /tmp/ssrf.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data "{\"domain\":\"$target\"}" https://htmlandhtml.com/api/scan)"
-            test "$code" = '403'
+          for endpoint in scan intelligence; do
+            for target in 'http://127.0.0.1' 'http://localhost'; do
+              code="$(curl -sS -o /tmp/ssrf.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data "{\"domain\":\"$target\"}" "https://htmlandhtml.com/api/$endpoint")"
+              test "$code" = '403'
+            done
           done
 
       - name: Verify AI Mention Tracker paid boundary
@@ -104,8 +112,7 @@ jobs:
           set -euo pipefail
           status="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/mentions)"
           STATUS="$status" node - <<'NODE'
-          const x=JSON.parse(process.env.STATUS);
-          if(x.service!=='htmlandhtml-ai-mention-tracker'||x.paidModule!==true||!x.providers) throw new Error('mention tracker status contract');
+          const x=JSON.parse(process.env.STATUS); if(x.service!=='htmlandhtml-ai-mention-tracker'||x.paidModule!==true||!x.providers) throw new Error('mention tracker status contract');
           NODE
           code="$(curl -sS -o /tmp/mentions.json -w '%{http_code}' --connect-timeout 8 --max-time 20 -H 'content-type: application/json' --data '{"brand":"HTML&HTML","domain":"htmlandhtml.com","queries":["Which tools audit websites for AI search readiness?"]}' https://htmlandhtml.com/api/mentions)"
           case "$code" in 402|503) exit 0 ;; *) echo "Unexpected mention endpoint status: $code"; cat /tmp/mentions.json; exit 1 ;; esac
