@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8'),exists=p=>fs.existsSync(p),errors=[];
 const theme=read('assets/js/theme.js'),css=read('assets/css/validator.css'),auth=read('assets/css/authority.css');
-if(!theme.includes("tr:{light:'AÇIK',dark:'KOYU',system:'OTO'"))errors.push('theme Turkish labels missing');if(!theme.includes("en:{light:'LIGHT',dark:'DARK',system:'AUTO'"))errors.push('theme English labels missing');
+if(!theme.includes("tr:{light:'AÇIK',dark:'KOYU',system:'SİSTEM'"))errors.push('theme Turkish labels missing');if(!theme.includes("en:{light:'LIGHT',dark:'DARK',system:'AUTO'"))errors.push('theme English labels missing');
 for(const token of ['.finding p{font-size:15px!important','.finding code{font-size:13px!important','.scan-disclosure{font-size:14px!important','.tool-finding p{font-size:14px','.mention-row p{font-size:14px'])if(!(css+auth).includes(token))errors.push(`readability contract missing ${token}`);
 const trFiles=['tr/index.html','tr/araclar/index.html','tr/rehberler/index.html','tr/platform/index.html','tr/fix-mandate/index.html','tr/fiyatlandirma/index.html','tr/methodology/index.html','tr/kanit-standardi/index.html','tr/referans/ai-tarayicilar/index.html','tr/llms-txt-validator/index.html','tr/ai-crawler-checker/index.html','tr/ai-website-readiness/index.html','tr/ai-mention-tracker/index.html'];
 const enFiles=['en/index.html','en/tools/index.html','en/guides/index.html','en/platform/index.html','en/fix-mandate/index.html','en/pricing/index.html','en/methodology/index.html','en/evidence-standard/index.html','en/reference/ai-crawlers/index.html','en/llms-txt-validator/index.html','en/ai-crawler-checker/index.html','en/ai-website-readiness/index.html','en/ai-mention-tracker/index.html'];
