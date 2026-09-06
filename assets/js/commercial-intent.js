@@ -13,7 +13,7 @@ const copy={
     title:'Müşteri AI’ya “kimi seçmeliyim?” diye sorduğunda, siteniz cevapta aday mı?',
     body:'AI görünürlüğü tek başına gelir değildir. Ticari değer; sitenizin bulunabilmesi, doğru anlaşılması, güvenilir bir kaynak olarak değerlendirilebilmesi, tıklanabilmesi ve ziyaretçiyi müşteriye dönüştürebilmesiyle oluşur. HTML&HTML bu zincirin site tarafındaki ölçülebilir kırıklarını bulur.',
     primary:'AI Görünürlük Engellerimi Ücretsiz Tara',
-    paid:'$149 Düzeltme Sözleşmesini Gör',
+    paid:'$99 Düzeltme Sözleşmesini Gör',
     thesis:'Müşteriniz karar vermeden önce AI’ya sorabilir. Hedef, bir “AI sıralaması” satın almak değil; sitenizi AI ve arama sistemlerinin bulabildiği, anlayabildiği, kaynak gösterebildiği ve kullanıcıya yönlendirebildiği bir yapıya getirmektir.',
     guard:'Garanti satmıyoruz: AI sıralaması, öneri, atıf, trafik veya gelir garanti edilemez. Ölçtüğümüz şey, bu sonuçların önündeki site kaynaklı teknik ve içerik engelleridir.',
     stages:[
@@ -34,7 +34,7 @@ const copy={
     title:'When your customer asks AI “who should I choose?”, is your website eligible for the answer?',
     body:'AI visibility is not revenue by itself. Commercial value appears when your site can be discovered, understood, considered as a credible source, clicked, and then convert the visit. HTML&HTML finds measurable site-side breaks across that chain.',
     primary:'Scan My AI Visibility Blockers Free',
-    paid:'See the $149 Fix Mandate',
+    paid:'See the $99 Fix Mandate',
     thesis:'Your customer may ask AI before making a decision. The goal is not to buy an “AI ranking”; it is to make your site discoverable, understandable, citable, linkable, and commercially ready when search and AI systems evaluate sources.',
     guard:'We do not sell guarantees: AI rankings, recommendations, mentions, citations, traffic, or revenue cannot be guaranteed. We measure site-side technical and content blockers that can prevent eligibility, retrieval, and conversion.',
     stages:[
@@ -68,7 +68,7 @@ const intentCopy={
     'platform':'HTML&HTML’nin işi “AI sizi önersin” vaadi satmak değil; öneri ve kaynak gösterimi için gerekli site tarafı koşulların hangilerinin eksik olduğunu kanıtlamaktır.',
     'araclar':'Her araç aynı sorunun farklı halkasını ölçer: AI ve arama sistemlerinin sizi bulması, anlaması, kaynak olarak değerlendirmesi ve kullanıcıyı size taşıması.',
     'rehberler':'Rehberlerin amacı içerik üretmek değil; AI keşfi ve nitelikli talep için uygulanabilir kararları teknik kanıtla açıklamaktır.',
-    'fiyatlandirma':'Ücretsiz katman neyin yanlış olduğunu kanıtlar. $149 Fix Mandate, bu engelleri test edilebilir uygulama sırasına çevirir.',
+    'fiyatlandirma':'Ücretsiz katman neyin yanlış olduğunu kanıtlar. $99 Fix Mandate, bu engelleri test edilebilir uygulama sırasına çevirir.',
     'fix-mandate':'Bir “AI tavsiye garantisi” satın almazsınız. Ölçülen engelleri kaldıran, test eden ve geri dönüş planı olan bir uygulama sözleşmesi satın alırsınız.'
   },
   en:{
@@ -85,7 +85,7 @@ const intentCopy={
     'platform':'HTML&HTML does not sell recommendation promises. It proves which site-side conditions for discovery, citation eligibility, and conversion are missing.',
     'tools':'Each tool measures a different link in the same commercial chain: being found, understood, source-worthy, and able to convert the visit.',
     'guides':'The guides exist to turn AI discovery into actionable engineering and content decisions, not to manufacture generic SEO copy.',
-    'pricing':'The free layer proves what is wrong. The $149 Fix Mandate turns measurable blockers into a testable implementation sequence.',
+    'pricing':'The free layer proves what is wrong. The $99 Fix Mandate turns measurable blockers into a testable implementation sequence.',
     'fix-mandate':'You are not buying an “AI recommendation guarantee.” You are buying an implementation contract that removes measured blockers, tests the result, and defines rollback.'
   }
 };
@@ -113,7 +113,7 @@ function mountHeroThesis(){
   const c=copy[lang()];const hero=document.querySelector('.hero');const intro=hero?.querySelector(':scope > p');
   if(!intro)return;const box=document.createElement('p');box.className='ai-commercial-thesis';box.dataset.commercialThesis='1';box.textContent=c.thesis;intro.after(box);
   const scan=document.querySelector('#scanButton b');if(scan)scan.textContent=lang()==='tr'?'AI Görünürlüğünü Tara':'Scan AI Visibility';
-  const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>uygulanabilir düzeltmeye çevirin.':'Turn AI visibility blockers<br>into an implementation contract.';if(p)p.textContent=lang()==='tr'?'Bulgu listesini; kök neden, uygulama sırası, kabul testi, regresyon testi ve rollback içeren $149 düzeltme sözleşmesine dönüştürür.':'Convert findings into a $149 fix contract with root cause, implementation order, acceptance tests, regression tests, and rollback.';}
+  const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>uygulanabilir düzeltmeye çevirin.':'Turn AI visibility blockers<br>into an implementation contract.';if(p)p.textContent=lang()==='tr'?'Bulgu listesini; kök neden, uygulama sırası, kabul testi, regresyon testi ve rollback içeren $99 düzeltme sözleşmesine dönüştürür.':'Convert findings into a $99 fix contract with root cause, implementation order, acceptance tests, regression tests, and rollback.';}
 }
 function loadCss(){if(document.querySelector('link[data-commercial-intent-css]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/commercial-intent.css?v=1';l.dataset.commercialIntentCss='1';document.head.appendChild(l)}
 function mount(){loadCss();mountHeroThesis();mountBridge()}

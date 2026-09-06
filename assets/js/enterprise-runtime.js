@@ -7,7 +7,7 @@ const COPY={
   scan:'Ücretsiz Kontrol Et',
   mandateTitle:'Teşhis ücretsiz.<br>Uygulama planı $99.',
   mandateCopy:'Ne yanlış olduğunu saklamıyoruz. $99 katmanında kök neden, P0–P3 uygulama sırası, kabul/regresyon testleri, rollback ve yazılımcınıza teslim edilecek ZIP mühendislik paketi açılır.',
-  getMandate:'AI Görünürlük Uygulama Planını Aç →',
+  getMandate:'AI Görünürlük Yol Haritasını Aç →',
   locked:'🔒 Nasıl düzeltileceği $99 Uygulama Planı içinde',
   decisionEyebrow:'ÜCRETSİZ AI GÖRÜNÜRLÜK KARAR HARİTASI',
   decisionTitle:'12 skorun ötesinde: hangi görünürlük katmanı kaybediyor?',
@@ -22,7 +22,7 @@ const COPY={
   scan:'Check Free',
   mandateTitle:'Diagnosis is free.<br>The implementation blueprint is $99.',
   mandateCopy:'We do not hide the diagnosis. The $99 layer unlocks root causes, P0–P3 execution order, acceptance/regression tests, rollback safeguards and the ZIP engineering package for your developer.',
-  getMandate:'Unlock AI Visibility Implementation Blueprint →',
+  getMandate:'Unlock AI Search Visibility Roadmap →',
   locked:'🔒 How to fix it is inside the $99 Implementation Blueprint',
   decisionEyebrow:'FREE AI VISIBILITY DECISION MAP',
   decisionTitle:'Beyond 12 scores: which visibility layer is losing ground?',
@@ -45,7 +45,7 @@ function applyCopy(){
  const gm=document.querySelector('[data-i18n="getMandate"]');if(gm)gm.textContent=c.getMandate;
  document.querySelectorAll('.locked-fix').forEach(el=>el.textContent=c.locked);
  const ptitle=document.querySelector('[data-i18n="pricingTitle"]');if(ptitle)ptitle.innerHTML=l==='tr'?'Teşhis ücretsiz.<br>Uygulama planı $99.':'Diagnosis is free.<br>Implementation Blueprint $99.';
- const buy=document.querySelector('[data-i18n="buyFix"]');if(buy)buy.textContent=l==='tr'?'AI Görünürlük Uygulama Planı — $99':'AI Visibility Implementation Blueprint — $99';
+ const buy=document.querySelector('[data-i18n="buyFix"]');if(buy)buy.textContent=l==='tr'?'AI Görünürlük Yol Haritası — $99':'AI Search Visibility Roadmap — $99';
  document.title=l==='tr'?'Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&HTML':'AI Search Visibility, GEO, AEO & llms.txt | HTML&HTML';
 }
 window.addEventListener('hh-language-changed',()=>{queueMicrotask(()=>{applyCopy();if(window.__HH_LAST_SCAN__)renderDecisionMap(window.__HH_LAST_SCAN__)})});

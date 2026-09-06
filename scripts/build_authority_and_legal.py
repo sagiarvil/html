@@ -368,13 +368,13 @@ def build_company_legal():
                 "title": "Contact HTML&HTML — Engineering & Commercial Support",
                 "h1": "Contact HTML&HTML: <em>Engineering & Inquiries</em>",
                 "sub": "Questions regarding our 12-engine scanning methodology, custom API integrations, or the Full Site Fix Mandate commercial engagement.",
-                "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Commercial Support</h2><p>For questions about the $149 Full Site Fix Mandate, receipts, or custom audit scopes, reach out directly at contact@htmlandhtml.com.</p>"""
+                "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Commercial Support</h2><p>For questions about the $99 Full Site Fix Mandate, receipts, or custom audit scopes, reach out directly at contact@htmlandhtml.com.</p>"""
             },
             "tr": {
                 "title": "İletişim — HTML&HTML Mühendislik ve Ticari Destek",
                 "h1": "HTML&HTML İletişim: <em>Mühendislik ve Destek</em>",
                 "sub": "12 analiz motorumuzun metodolojisi, API entegrasyonları veya Full Site Fix Mandate siparişleri hakkında sorularınız için bize ulaşın.",
-                "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Ticari Destek</h2><p>$149 Full Site Fix Mandate sözleşmesi, faturalar veya özel tarama kapsamları hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
+                "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Ticari Destek</h2><p>$99 Full Site Fix Mandate sözleşmesi, faturalar veya özel tarama kapsamları hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
             }
         },
         {
@@ -403,14 +403,14 @@ def build_company_legal():
             "en": {
                 "title": "Terms of Service — HTML&HTML",
                 "h1": "Terms of Service: <em>Service Boundaries & Fix Mandate</em>",
-                "sub": "Terms governing the free 12-engine diagnostic service and the $149 Full Site Fix Mandate commercial engagement.",
-                "body": """<h2>Service Boundaries</h2><p>HTML&HTML provides technical diagnostics based on deterministic rules. We do not guarantee search engine ranking placement, traffic volume, or ChatGPT citations, as third-party algorithms evolve independently.</p><h2>Commercial Fix Mandate</h2><p>The $149 Fix Mandate delivers prioritized root causes, tests, and a 30-day re-scan. Payment is processed securely, and services are bounded to single public domains.</p>"""
+                "sub": "Terms governing the free 12-engine diagnostic service and the $99 Full Site Fix Mandate commercial engagement.",
+                "body": """<h2>Service Boundaries</h2><p>HTML&HTML provides technical diagnostics based on deterministic rules. We do not guarantee search engine ranking placement, traffic volume, or ChatGPT citations, as third-party algorithms evolve independently.</p><h2>Commercial Fix Mandate</h2><p>The $99 Fix Mandate delivers prioritized root causes, tests, and a 30-day re-scan. Payment is processed securely, and services are bounded to single public domains.</p>"""
             },
             "tr": {
                 "title": "Kullanım Koşulları — HTML&HTML",
                 "h1": "Kullanım Koşulları: <em>Hizmet Sınırları ve Fix Mandate</em>",
-                "sub": "Ücretsiz 12 motorlu teşhis hizmeti ve $149 Full Site Fix Mandate sözleşmesini düzenleyen yasal şartlar.",
-                "body": """<h2>Hizmet Sınırları</h2><p>HTML&HTML deterministik kurallara dayalı teknik teşhis sunar. Üçüncü taraf arama motorlarının algoritmaları bağımsız geliştiği için sıralama, trafik veya yapay zeka atıf garantisi verilmez.</p><h2>Ticari Fix Mandate Sözleşmesi</h2><p>$149 Fix Mandate; öncelikli kök nedenleri, testleri ve 30 günlük yeniden taramayı kapsar. Ödemeler güvenle işlenir ve hizmet tek bir alan adı ile sınırlıdır.</p>"""
+                "sub": "Ücretsiz 12 motorlu teşhis hizmeti ve $99 Full Site Fix Mandate sözleşmesini düzenleyen yasal şartlar.",
+                "body": """<h2>Hizmet Sınırları</h2><p>HTML&HTML deterministik kurallara dayalı teknik teşhis sunar. Üçüncü taraf arama motorlarının algoritmaları bağımsız geliştiği için sıralama, trafik veya yapay zeka atıf garantisi verilmez.</p><h2>Ticari Fix Mandate Sözleşmesi</h2><p>$99 Fix Mandate; öncelikli kök nedenleri, testleri ve 30 günlük yeniden taramayı kapsar. Ödemeler güvenle işlenir ve hizmet tek bir alan adı ile sınırlıdır.</p>"""
             }
         }
     ]

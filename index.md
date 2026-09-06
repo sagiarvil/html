@@ -65,7 +65,7 @@ English counterparts:
 3. **7 Readiness Lenses:** SEO, GEO, AEO, LLMO, AAO, RAG, and E-E-A-T. These are decision-support lenses and do not replace or mutate the canonical 12-engine score.
 4. **Deterministic Governance:** Every finding is linked to observable evidence. Unknown, unmeasured, or source-context-only conditions remain NOT_MEASURED or REQUIRES_CONTEXT instead of becoming artificial pass/fail values.
 5. **Boundaries:** 50 public HTML pages, 30 live link probes, strict SSRF defenses, zero private credential storage, and no fabricated field Core Web Vitals.
-6. **Commercial Product ($149):** Full Site Fix Mandate sequencing root causes, intelligence priorities, recovery, prevention, acceptance/regression tests, rollback guidance, and stop conditions.
+6. **Commercial Product ($99):** Full Site Fix Mandate sequencing root causes, intelligence priorities, recovery, prevention, acceptance/regression tests, rollback guidance, and stop conditions.
 
 ## Machine-Readable Endpoints
 - `/llms.txt`: AI visibility, glossary, tools, methodology, official source boundaries and commercial model directory.
@@ -76,9 +76,16 @@ English counterparts:
 - `/api/scan`: Public 12-engine diagnosis with attached non-scoring Intelligence Audit report.
 - `/api/intelligence`: Dedicated public response for the 13 Intelligence Audits and seven readiness lenses.
 - `/api/mentions`: Entitlement-gated AI Mention Tracker.
-- `/api/mandate`: Entitlement-gated $149 Full Site Fix Mandate.
+- `/api/mandate`: Entitlement-gated $99 Full Site Fix Mandate.
 
 ## Commercial Boundary
-Evidence and diagnosis are public. Implementation precision is the paid product. Full Site Fix Mandate costs USD 149 for one domain / one engagement and includes one re-scan within 30 days.
+Evidence and diagnosis are public. Implementation precision is the paid product. Full Site Fix Mandate costs USD 99 for one domain / one engagement and includes one re-scan within 30 days.
 
 The product sells measurable readiness and recommendation opportunity, not false certainty. Ranking, recommendation, traffic, customer, revenue, featured-snippet, or AI-citation outcomes are never guaranteed.
+
+<!-- LLMS_NEWS_START -->
+## LLMS.TXT News
+
+- [TR news hub](https://htmlandhtml.com/tr/llms-txt-haberler/)
+- [EN news hub](https://htmlandhtml.com/en/llms-txt-news/)
+<!-- LLMS_NEWS_END -->

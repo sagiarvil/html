@@ -75,7 +75,7 @@ def build_homepages():
       "operatingSystem": "Web",
       "offers": [
         {{ "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "Full Site Fix Mandate", "price": "149", "priceCurrency": "USD" }}
+        {{ "@type": "Offer", "name": "Full Site Fix Mandate", "price": "99", "priceCurrency": "USD" }}
       ]
     }}
   ]
@@ -190,7 +190,7 @@ def build_homepages():
       </ul>
       <div class="price">
         <small data-i18n="oneSite">1 domain / tek çalışma</small>
-        <strong>$149</strong>
+        <strong>$99</strong>
       </div>
       <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Full Site Fix Mandate →</a>
       <small class="note" data-i18n="checkoutNote">Kaynak dosya adı public taramadan uydurulmaz; codebase bağlamı varsa dosya seviyesine iner.</small>
@@ -254,7 +254,7 @@ def build_homepages():
   <ol>
     <li><b>01</b><div><h3 data-i18n="s1t">Alan adını girin</h3><p data-i18n="s1c">DNS/redirect güvenlik kapıları sonrası en fazla 50 public HTML sayfası ve temel makine-okunabilir yüzeyler taranır.</p></div></li>
     <li><b>02</b><div><h3 data-i18n="s2t">Problemi ve kanıtı görün</h3><p data-i18n="s2c">Bulgu, severity, confidence, source class, URL ve evidence ücretsizdir. Uygulama reçetesi kilitlidir.</p></div></li>
-    <li><b>03</b><div><h3 data-i18n="s3t">$149 mandate ile düzeltin</h3><p data-i18n="s3c">AI coding agent’inize root fix, recovery, prevention, acceptance/regression test ve rollback sözleşmesi verilir; sonra aynı domain re-scan edilir.</p></div></li>
+    <li><b>03</b><div><h3 data-i18n="s3t">$99 mandate ile düzeltin</h3><p data-i18n="s3c">AI coding agent’inize root fix, recovery, prevention, acceptance/regression test ve rollback sözleşmesi verilir; sonra aynı domain re-scan edilir.</p></div></li>
   </ol>
 </section>
 
@@ -262,7 +262,7 @@ def build_homepages():
 <section class="section pricing" id="pricing">
   <header>
     <span class="eyebrow">HTML&amp;HTML / 05</span>
-    <h2 data-i18n="pricingTitle">Tespit ücretsiz.<br>Düzeltme faaliyeti $149.</h2>
+    <h2 data-i18n="pricingTitle">Tespit ücretsiz.<br>Düzeltme faaliyeti $99.</h2>
     <p data-i18n="pricingCopy">Tek site için tek fiyat. Sorunları saklayarak değil, uygulama kesinliği satarak gelir üretir.</p>
   </header>
   <div class="pricing-grid pricing-two">
@@ -279,7 +279,7 @@ def build_homepages():
     </article>
     <article class="featured">
       <span class="popular" data-i18n="popular">TEK ÜCRETLİ ÜRÜN</span>
-      <div class="pricehead"><span data-i18n="fullFixProduct">TAM SİTE DÜZELTME TALİMATI</span><strong>$149</strong></div>
+      <div class="pricehead"><span data-i18n="fullFixProduct">TAM SİTE DÜZELTME TALİMATI</span><strong>$99</strong></div>
       <p data-i18n="p2d">1 domain için uygulama-grade düzeltme sözleşmesi.</p>
       <ul>
         <li data-i18n="p2a">Tam issue envanteri + P0–P3 sıra</li>
@@ -288,12 +288,12 @@ def build_homepages():
         <li data-i18n="p2e">Rollback + stop conditions</li>
         <li data-i18n="p2f">30 gün içinde 1 re-scan</li>
       </ul>
-      <a class="solid" href="/checkout" data-i18n="buyFix">Full Site Fix Mandate — $149</a>
+      <a class="solid" href="/checkout" data-i18n="buyFix">Full Site Fix Mandate — $99</a>
     </article>
   </div>
   <div class="compare">
     <b data-i18n="compareLabel">ÜRÜN SINIRI</b>
-    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$149:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? Public tarama kaynak dosya adını tahmin etmez; source/codebase bağlamı sağlanırsa mandate dosya seviyesine iner.</p>
+    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$99:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? Public tarama kaynak dosya adını tahmin etmez; source/codebase bağlamı sağlanırsa mandate dosya seviyesine iner.</p>
   </div>
 </section>
 
@@ -407,7 +407,7 @@ def build_homepages():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HTML&HTML — Evidence-Based Site Auditor & Fix Mandate</title>
-<meta name="description" content="Audit your website with 12 deterministic engines. Discover blockers preventing search engines and AI models from retrieving your site. Implementation-grade $149 Fix Mandate.">
+<meta name="description" content="Audit your website with 12 deterministic engines. Discover blockers preventing search engines and AI models from retrieving your site. Implementation-grade $99 Fix Mandate.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/">
@@ -428,7 +428,7 @@ def build_homepages():
       "operatingSystem": "Web",
       "offers": [
         {{ "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "Full Site Fix Mandate", "price": "149", "priceCurrency": "USD" }}
+        {{ "@type": "Offer", "name": "Full Site Fix Mandate", "price": "99", "priceCurrency": "USD" }}
       ]
     }}
   ]
@@ -543,7 +543,7 @@ def build_homepages():
       </ul>
       <div class="price">
         <small>1 domain / single engagement</small>
-        <strong>$149</strong>
+        <strong>$99</strong>
       </div>
       <a class="cta" id="mandateLink" href="/checkout">Full Site Fix Mandate →</a>
       <small class="note">Public scanning never guesses file names; provided codebase context enables file-level targeting.</small>
@@ -607,7 +607,7 @@ def build_homepages():
   <ol>
     <li><b>01</b><div><h3>Enter a domain</h3><p>After DNS and SSRF security gates, up to 50 public HTML pages and machine endpoints are crawled.</p></div></li>
     <li><b>02</b><div><h3>See the problem and proof</h3><p>Findings, severity, confidence, source class, URL, and raw evidence are free. Remediation details remain locked.</p></div></li>
-    <li><b>03</b><div><h3>Fix with a $149 mandate</h3><p>Your AI coding agent or engineering team receives root causes, PR sequence, test assertions, and rollback plans.</p></div></li>
+    <li><b>03</b><div><h3>Fix with a $99 mandate</h3><p>Your AI coding agent or engineering team receives root causes, PR sequence, test assertions, and rollback plans.</p></div></li>
   </ol>
 </section>
 
@@ -615,7 +615,7 @@ def build_homepages():
 <section class="section pricing" id="pricing">
   <header>
     <span class="eyebrow">HTML&amp;HTML / 05</span>
-    <h2>Diagnosis is free.<br>Resolution is $149.</h2>
+    <h2>Diagnosis is free.<br>Resolution is $99.</h2>
     <p>Single engagement per site. We monetize implementation precision, not withholding problems.</p>
   </header>
   <div class="pricing-grid pricing-two">
@@ -632,7 +632,7 @@ def build_homepages():
     </article>
     <article class="featured">
       <span class="popular">PRIMARY PRODUCT</span>
-      <div class="pricehead"><span>FULL SITE FIX MANDATE</span><strong>$149</strong></div>
+      <div class="pricehead"><span>FULL SITE FIX MANDATE</span><strong>$99</strong></div>
       <p>Implementation-grade fix contract for one domain.</p>
       <ul>
         <li>Full issue inventory + P0–P3 order</li>
@@ -641,12 +641,12 @@ def build_homepages():
         <li>Rollback + stop conditions</li>
         <li>1 re-scan within 30 days</li>
       </ul>
-      <a class="solid" href="/checkout">Full Site Fix Mandate — $149</a>
+      <a class="solid" href="/checkout">Full Site Fix Mandate — $99</a>
     </article>
   </div>
   <div class="compare">
     <b>PRODUCT BOUNDARY</b>
-    <p><strong>Free:</strong> what is wrong and what proves it? → <strong>$149:</strong> what root cause should be fixed, in which order, with which tests and rollback? Public scanning never guesses file names; provided codebase context allows file-level targeting.</p>
+    <p><strong>Free:</strong> what is wrong and what proves it? → <strong>$99:</strong> what root cause should be fixed, in which order, with which tests and rollback? Public scanning never guesses file names; provided codebase context allows file-level targeting.</p>
   </div>
 </section>
 

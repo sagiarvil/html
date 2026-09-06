@@ -32,6 +32,9 @@
 }
 </script>
 <script src="/assets/js/theme.js"></script>
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
+<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 </head>
 <body>
 <header class="topbar">
@@ -39,15 +42,15 @@
     <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
     </a>
-    <nav>
-  <a href="/en/platform/">Platform</a>
-  <a href="/en/tools/">Tools</a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+  <a href="/en/ai-search-visibility/">AI Visibility</a>
+  <a href="/en/llms-txt-validator/">llms.txt</a>
+  <a href="/en/llms-txt-news/">LLMS.TXT News</a>
   <a href="/en/guides/">Guides</a>
-  <a href="/en/methodology/">Methodology</a>
+  <a href="/en/glossary/">Glossary</a>
   <a href="/en/pricing/">Pricing</a>
-  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
 </nav>
-    <div class="nav-actions">
+    <div class="nav-actions"><a class="nav-scan-cta" href="/en/#scanner">Scan Free</a>
       <div class="langs">
         <a href="/tr/araclar/" aria-label="Türkçeye geç">TR</a>
       </div>
@@ -62,79 +65,35 @@
 </nav>
 
 <main>
-<section class="authority-hero">
-  <div class="kicker"><span></span><b>TOOLS DIRECTORY</b></div>
-  <h1>Specialized Tools for <em>Modern Search & AI Retrieval</em></h1>
-  <p>Ten deterministic, evidence-backed tools powered by our shared 12-engine scanning core. Test crawler policies, schema markup, security headers, and agent interfaces without false claims.</p>
+<section class="authority-hero px-scope-hero" data-commercial-intent="static">
+  <div class="kicker"><span></span><b>ONE SCAN / FULL SCOPE</b></div>
+  <h1>One URL. <em>The Full AI Visibility System.</em></h1>
+  <p>This is not a directory of separate scanning products. Enter one URL in the primary scanner and all 12 deterministic engines, 13 Intelligence Audits and seven readiness lenses run in the same evidence chain.</p>
+  <div class="hero-actions"><a class="primary" href="/en/#scanner">Start the Unified Scan →</a><a href="/en/methodology/">Review the methodology</a></div>
 </section>
-
-<section class="section">
-  <div class="authority-grid">
-    <article class="authority-card">
-  <b>12 Engines · Full Crawl</b>
-  <h3>Website Scanner</h3>
-  <p>Complete 12-engine diagnostic crawl inspecting HTTP, SEO, AI, schema, and security across up to 50 public pages.</p>
-  <a href="/en/website-scanner/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>LLM & Agent Retrieval</b>
-  <h3>AI Website Readiness</h3>
-  <p>Comprehensive readiness audit evaluating robots.txt bot governance, llms.txt v2, JSON-LD knowledge graphs, and machine interfaces.</p>
-  <a href="/en/ai-website-readiness/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>v2 Specification</b>
-  <h3>llms.txt Validator</h3>
-  <p>Rigorous validation for /llms.txt and /llms-full.txt files: syntax, blockquotes, link reachability, and rel=describedby discovery.</p>
-  <a href="/en/llms-txt-validator/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>RFC 9309 · Bot Policies</b>
-  <h3>AI Crawler Checker</h3>
-  <p>Inspect allow/disallow behavior for OAI-SearchBot, Claude-SearchBot, PerplexityBot, GPTBot, and wildcard fallback rules.</p>
-  <a href="/en/ai-crawler-checker/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>JSON-LD & Entities</b>
-  <h3>Schema Validator</h3>
-  <p>Parse raw JSON-LD blocks to detect syntax errors, broken schema structures, and missing entity linkages.</p>
-  <a href="/en/schema-validator/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>Metadata & Indexability</b>
-  <h3>Technical SEO Checker</h3>
-  <p>Audit titles, meta descriptions, single H1 rules, self-canonical tags, and route-level indexability traps.</p>
-  <a href="/en/technical-seo-checker/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>HTTP Edge Security</b>
-  <h3>Security Headers Checker</h3>
-  <p>Audit HSTS max-age and preload, Content-Security-Policy, X-Frame-Options clickjacking defense, and nosniff enforcement.</p>
-  <a href="/en/security-headers-checker/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>WCAG Hygiene</b>
-  <h3>Accessibility Checker</h3>
-  <p>Audit document html lang declarations, image alt attributes, programmatic form labels, and interactive button semantics.</p>
-  <a href="/en/accessibility-checker/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>Live HTTP Probes</b>
-  <h3>Link Integrity Checker</h3>
-  <p>Probe internal links with real HTTP requests to catch 404 errors, 500 crashes, circular redirects, and mixed protocols.</p>
-  <a href="/en/link-integrity-checker/">Launch Tool →</a>
-</article><article class="authority-card">
-  <b>Paid Module · Real Retrieval</b>
-  <h3>AI Mention Tracker</h3>
-  <p>Run neutral prompts across OpenAI web search, Perplexity Sonar, and Gemini Google grounding to measure brand and domain citations.</p>
-  <a href="/en/ai-mention-tracker/">Launch Tool →</a>
-</article>
+<section class="px-section" data-premium-infographic="scope-map">
+  <div class="px-section-head"><span class="eyebrow">SCOPE MAP</span><h2>Not separate tools. One decision system.</h2><p>Every check contributes to the same scan result. Detail pages explain how individual controls are measured; they do not create separate scan flows.</p></div>
+  <div class="px-tool-flow">
+    <article class="px-flow-card"><span class="node">01</span><h3>Discovery</h3><p>robots.txt, sitemaps, indexability, canonicals, internal links and AI crawler access.</p></article>
+    <article class="px-flow-card"><span class="node">02</span><h3>Understanding</h3><p>Schema, entity graphs, semantic HTML, language consistency, llms.txt and machine-readable knowledge surfaces.</p></article>
+    <article class="px-flow-card"><span class="node">03</span><h3>Source Eligibility</h3><p>GEO, AEO, LLMO, RAG, E-E-A-T, answer extractability and original-information signals.</p></article>
+    <article class="px-flow-card"><span class="node">04</span><h3>User & Agent Journey</h3><p>Accessibility, security, link integrity, CTAs and interaction surfaces agents can interpret.</p></article>
+    <article class="px-flow-card"><span class="node">05</span><h3>Measurement & Priority</h3><p>12 scores + 13 Intelligence Audits + 7 lenses, prioritized by Impact × Effort.</p></article>
   </div>
 </section>
-
-<section class="section">
-  <div class="authority-callout">
-    <div>
-      <h3>One deterministic scanning engine.</h3>
-      <p>Every tool executes the same 12-engine core, filtering categories without score divergence. Implementation instructions unlock in the $149 Fix Mandate.</p>
-    </div>
-    <a href="/en/fix-mandate/">Full Site Fix Mandate — $149</a>
-  </div>
+<section class="px-section px-scope-detail">
+ <div class="px-section-head"><span class="eyebrow">SPECIALIST LAYERS</span><h2>Detail pages do not fragment the scan.</h2><p>llms.txt, AI crawler, schema, technical SEO, security, accessibility and link pages explain sub-controls of the unified scan. Every primary CTA returns to the same scanner.</p></div>
+ <div class="px-lenses">
+  <a class="px-lens" href="/en/llms-txt-validator/"><b>llms.txt</b><span>Structure · link reachability · describedby · Markdown</span></a>
+  <a class="px-lens" href="/en/ai-crawler-checker/"><b>AI Crawler</b><span>OAI-SearchBot · Claude · Perplexity · robots</span></a>
+  <a class="px-lens" href="/en/schema-validator/"><b>Entity & Schema</b><span>JSON-LD · @graph · Organization · Product</span></a>
+  <a class="px-lens" href="/en/technical-seo-checker/"><b>Technical Foundation</b><span>Canonical · H1 · metadata · indexability</span></a>
+ </div>
+ <div class="px-actions"><a class="primary" href="/en/#scanner">Check My AI Visibility Free →</a></div>
 </section>
 </main>
 
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER</span><h2>Your customer asks AI ‘who should I choose?’ Is your website in the consideration set?</h2><p class="ai-opportunity-lead">HTML&HTML prepares your website for visibility, citation eligibility and recommendation opportunity across AI search experiences. It shows measurable website-side blockers that can prevent discovery, understanding and source consideration.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/en/guides/llms-txt/">llms.txt</a><a href="/en/geo-optimization/">GEO</a><a href="/en/aeo-answer-engine-optimization/">AEO</a><a href="/en/llmo-optimization/">LLMO</a><a href="/en/aao-agent-optimization/">AAO</a><a href="/en/rag-readiness/">RAG</a><a href="/en/e-e-a-t-trust-signals/">E-E-A-T</a><a href="/en/glossary/#sitemap">Sitemap</a><a class="all" href="/en/glossary/">Open AI Search Glossary →</a></div><div class="ai-value-chain"><article><b>01</b><h3>BE DISCOVERABLE BY AI</h3><p>robots.txt, sitemaps, canonicals, indexability and AI crawler access form the discovery foundation.</p></article><article><b>02</b><h3>BE UNDERSTANDABLE</h3><p>GEO, AEO, LLMO, entity graphs, schema and answer extractability reduce machine ambiguity.</p></article><article><b>03</b><h3>BE SOURCE-READY</h3><p>RAG/retrieval, original information, E-E-A-T, freshness and evidence support source eligibility.</p></article><article><b>04</b><h3>TURN OPPORTUNITY INTO DEMAND</h3><p>AAO, accessible journeys, intact links, measurable referrals and clear CTAs connect AI discovery to commercial action.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check My AI Visibility Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Prepare My Site for AI Search — $99 →</a></div><p class="ai-opportunity-guard">Recommendations, rankings, citations, traffic, customers and revenue are not guaranteed. HTML&HTML measures website-side technical and content blockers; it does not claim control over external AI systems.</p></div></section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">

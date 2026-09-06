@@ -32,6 +32,9 @@
 }
 </script>
 <script src="/assets/js/theme.js"></script>
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
+<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 </head>
 <body>
 <header class="topbar">
@@ -39,15 +42,15 @@
     <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
     </a>
-    <nav>
-  <a href="/tr/platform/">Platform</a>
-  <a href="/tr/araclar/">Araçlar</a>
+    <nav class="primary-nav" aria-label="Ana navigasyon">
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
+  <a href="/tr/llms-txt-validator/">llms.txt</a>
+  <a href="/tr/llms-txt-haberler/">LLMS.TXT Haberler</a>
   <a href="/tr/rehberler/">Rehberler</a>
-  <a href="/tr/methodology/">Metodoloji</a>
-  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
-  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+  <a href="/tr/sozluk/">Sözlük</a>
+  <a href="/tr/fiyatlandirma/">Fiyat</a>
 </nav>
-    <div class="nav-actions">
+    <div class="nav-actions"><a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
       <div class="langs">
         <a href="/en/tools/" aria-label="Switch to English">EN</a>
       </div>
@@ -62,79 +65,35 @@
 </nav>
 
 <main>
-<section class="authority-hero">
-  <div class="kicker"><span></span><b>ARAÇLAR DİZİNİ</b></div>
-  <h1>Arama ve Yapay Zeka Keşfi İçin <em>Özel Denetim Araçları</em></h1>
-  <p>Paylaşımlı 12 motorlu tarama çekirdeğimizle güçlendirilen 10 adet deterministik ve kanıta dayalı araç. Bot izinlerini, şemaları, güvenlik başlıklarını ve ajan arayüzlerini sahte iddialar olmadan test edin.</p>
+<section class="authority-hero px-scope-hero" data-commercial-intent="static">
+  <div class="kicker"><span></span><b>TEK TARAMA / TÜM KAPSAM</b></div>
+  <h1>Tek URL. <em>Tüm Yapay Zeka Görünürlük Sistemi.</em></h1>
+  <p>Bu sayfa ayrı ayrı araç başlatma ekranı değildir. Ana taramaya tek URL girildiğinde 12 deterministik motor, 13 Intelligence Audit ve 7 hazırlık lensi aynı kanıt zincirinde birlikte çalışır.</p>
+  <div class="hero-actions"><a class="primary" href="/tr/#scanner">Tek Taramayı Başlat →</a><a href="/tr/methodology/">Ölçüm metodolojisini incele</a></div>
 </section>
-
-<section class="section">
-  <div class="authority-grid">
-    <article class="authority-card">
-  <b>12 Motor · Tam Tarama</b>
-  <h3>Web Sitesi Tarayıcısı</h3>
-  <p>En fazla 50 sayfada HTTP, SEO, AI, şema ve güvenliği denetleyen 12 motorlu tam analiz.</p>
-  <a href="/tr/site-tarama/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>LLM ve Ajan Erişimi</b>
-  <h3>AI Web Sitesi Hazırlığı</h3>
-  <p>Bot izinlerini, llms.txt standardını, JSON-LD bilgi graflarını ve makine arayüzlerini ölçen hazırlık denetimi.</p>
-  <a href="/tr/ai-website-readiness/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>v2 Şartnamesi</b>
-  <h3>llms.txt Doğrulayıcı</h3>
-  <p>/llms.txt ve /llms-full.txt dosyaları için sözdizimi, blok alıntı, link erişilebilirliği ve rel=describedby denetimi.</p>
-  <a href="/tr/llms-txt-validator/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>RFC 9309 · Bot Kuralları</b>
-  <h3>AI Tarayıcı Kontrolü</h3>
-  <p>OAI-SearchBot, Claude-SearchBot, PerplexityBot, GPTBot ve joker karakter kurallarını canlıda denetleyin.</p>
-  <a href="/tr/ai-crawler-checker/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>JSON-LD ve Varlıklar</b>
-  <h3>Yapısal Veri Kontrolü</h3>
-  <p>JSON-LD bloklarını ayrıştırarak sözdizimi hatalarını, bozuk şema yapılarını ve eksik varlık bağlantılarını tespit edin.</p>
-  <a href="/tr/schema-validator/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>Meta Veri ve İndeksleme</b>
-  <h3>Teknik SEO Denetimi</h3>
-  <p>Başlıkları, meta açıklamalarını, tek H1 kuralını, kanonik etiketleri ve dizine ekleme engellerini kanıtıyla inceleyin.</p>
-  <a href="/tr/teknik-seo-kontrol/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>HTTP Uç Güvenliği</b>
-  <h3>Güvenlik Başlıkları Kontrolü</h3>
-  <p>HSTS preload, Content-Security-Policy, clickjacking savunması ve nosniff kurallarını uç noktadan denetleyin.</p>
-  <a href="/tr/guvenlik-basliklari-kontrol/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>WCAG Hijyeni</b>
-  <h3>Erişilebilirlik Denetimi</h3>
-  <p>html lang özniteliğini, resim alt etiketlerini, form bağlantılarını ve buton semantiğini kontrol edin.</p>
-  <a href="/tr/erisilebilirlik-kontrol/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>Canlı HTTP Probları</b>
-  <h3>Link Kontrolü</h3>
-  <p>Gerçek HTTP istekleriyle 404 çıkmaz yollarını, sunucu hatalarını, döngüsel yönlendirmeleri ve protokol sorunlarını yakalayın.</p>
-  <a href="/tr/link-kontrol/">Aracı Aç →</a>
-</article><article class="authority-card">
-  <b>Ücretli Modül · Gerçek Arama</b>
-  <h3>AI Marka Görünürlük Takibi</h3>
-  <p>Marka ve alan adı atıflarını ölçmek için OpenAI web search, Perplexity Sonar ve Gemini üzerinde nötr sorgular çalıştırın.</p>
-  <a href="/tr/ai-mention-tracker/">Aracı Aç →</a>
-</article>
+<section class="px-section" data-premium-infographic="scope-map">
+  <div class="px-section-head"><span class="eyebrow">KAPSAM HARİTASI</span><h2>Ayrı araçlar değil, tek karar sistemi.</h2><p>Her kontrol aynı tarama sonucuna katkı verir. Alt sayfalar yalnızca belirli kontrollerin nasıl ölçüldüğünü açıklayan uzmanlık ve referans sayfalarıdır.</p></div>
+  <div class="px-tool-flow">
+    <article class="px-flow-card"><span class="node">01</span><h3>Keşfedilebilirlik</h3><p>robots.txt, sitemap, indexability, canonical, dahili linkler ve AI crawler erişimi.</p></article>
+    <article class="px-flow-card"><span class="node">02</span><h3>Anlamlandırma</h3><p>Schema, entity graph, semantik HTML, dil tutarlılığı, llms.txt ve makine bilgi yüzeyleri.</p></article>
+    <article class="px-flow-card"><span class="node">03</span><h3>Kaynak Uygunluğu</h3><p>GEO, AEO, LLMO, RAG, E-E-A-T, cevap çıkarılabilirliği ve özgün bilgi sinyalleri.</p></article>
+    <article class="px-flow-card"><span class="node">04</span><h3>Kullanıcı & Ajan Yolu</h3><p>Erişilebilirlik, güvenlik, bağlantı bütünlüğü, CTA ve ajanların anlayabildiği etkileşim yüzeyleri.</p></article>
+    <article class="px-flow-card"><span class="node">05</span><h3>Ölçüm & Öncelik</h3><p>12 skor + 13 Intelligence Audit + 7 lens; Impact × Effort ile en kritik görünürlük kayıplarını öne çıkarır.</p></article>
   </div>
 </section>
-
-<section class="section">
-  <div class="authority-callout">
-    <div>
-      <h3>Tek bir deterministik tarama çekirdeği.</h3>
-      <p>Her araç aynı 12 motorlu çekirdeği çağırır ve ilgili kategorileri izole eder. Puanlama mantığı araçlar arasında asla sapma göstermez.</p>
-    </div>
-    <a href="/tr/fix-mandate/">Full Site Fix Mandate — $149</a>
-  </div>
+<section class="px-section px-scope-detail">
+ <div class="px-section-head"><span class="eyebrow">UZMANLIK KATMANLARI</span><h2>Detay sayfaları taramayı bölmez.</h2><p>llms.txt, AI crawler, schema, teknik SEO, güvenlik, erişilebilirlik ve link sayfaları; tek taramanın alt kontrollerini açıklar. Hepsinin birincil CTA'sı aynı ana taramaya döner.</p></div>
+ <div class="px-lenses">
+  <a class="px-lens" href="/tr/llms-txt-validator/"><b>llms.txt</b><span>Yapı · link erişimi · describedby · Markdown</span></a>
+  <a class="px-lens" href="/tr/ai-crawler-checker/"><b>AI Crawler</b><span>OAI-SearchBot · Claude · Perplexity · robots</span></a>
+  <a class="px-lens" href="/tr/schema-validator/"><b>Entity & Schema</b><span>JSON-LD · @graph · Organization · Product</span></a>
+  <a class="px-lens" href="/tr/teknik-seo-kontrol/"><b>Teknik Temel</b><span>Canonical · H1 · metadata · indexability</span></a>
+ </div>
+ <div class="px-actions"><a class="primary" href="/tr/#scanner">Yapay Zeka Görünürlüğümü Ücretsiz Tara →</a></div>
 </section>
 </main>
 
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. Sitenizin bulunmasını, anlaşılmasını ve değerlendirme kümesine girmesini engelleyen ölçülebilir sorunları kanıtıyla gösterir.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Sitemi Yapay Zeka Sonuçlarına Hazırla — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p></div></section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
