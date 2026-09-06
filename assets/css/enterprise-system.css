@@ -202,18 +202,507 @@ html[data-theme="dark"] .news-read:hover {
   text-decoration: underline;
 }
 
-/* Hide broken horizontal connector lines that cut across cards and numbers */
-.px-tool-flow:before,
-.px-three-flow:before {
-  display: none !important;
+/* ==========================================================================
+   NEXT-GENERATION ENTERPRISE CARD & FLOW PIPELINE ARCHITECTURE (V2 PRO)
+   Ultra-premium frosted obsidian, cybernetic node halos, laser data-bus conduit
+   ========================================================================== */
+
+/* 1. Optical Data-Bus / Pipeline Conduit (Desktop) */
+@media (min-width: 901px) {
+  .px-tool-flow:before,
+  .px-three-flow:before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 40px !important;
+    left: 7% !important;
+    right: 7% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg,
+      rgba(56, 189, 248, 0.05) 0%,
+      rgba(56, 189, 248, 0.5) 20%,
+      rgba(56, 189, 248, 0.9) 50%,
+      rgba(56, 189, 248, 0.5) 80%,
+      rgba(56, 189, 248, 0.05) 100%
+    ) !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5), 0 0 3px rgba(56, 189, 248, 0.9) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+  html[data-theme="light"] .px-tool-flow:before,
+  html[data-theme="light"] .px-three-flow:before {
+    background: linear-gradient(90deg,
+      rgba(37, 99, 235, 0.05) 0%,
+      rgba(37, 99, 235, 0.4) 20%,
+      rgba(37, 99, 235, 0.8) 50%,
+      rgba(37, 99, 235, 0.4) 80%,
+      rgba(37, 99, 235, 0.05) 100%
+    ) !important;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25) !important;
+  }
+}
+@media (max-width: 900px) {
+  .px-tool-flow:before,
+  .px-three-flow:before {
+    display: none !important;
+  }
 }
 
-/* Fix step numbers & nodes */
+/* 2. Frosted Obsidian Glass Depth (Dark Mode) */
+html[data-theme="dark"] .px-flow-card,
+html[data-theme="dark"] .px-three-step,
+html[data-theme="dark"] .px-engine-phase,
+html[data-theme="dark"] .px-knowledge-step,
+html[data-theme="dark"] .px-file-card,
+html[data-theme="dark"] .px-buy-flow article,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card,
+  html:not([data-theme="light"]) .px-three-step,
+  html:not([data-theme="light"]) .px-engine-phase,
+  html:not([data-theme="light"]) .px-knowledge-step,
+  html:not([data-theme="light"]) .px-file-card,
+  html:not([data-theme="light"]) .px-buy-flow article
+} {
+  position: relative !important;
+  z-index: 1 !important;
+  background: linear-gradient(175deg, rgba(20, 24, 35, 0.88) 0%, rgba(11, 14, 21, 0.96) 100%) !important;
+  backdrop-filter: blur(24px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(140%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.14),
+    inset 0 0 20px -8px rgba(56, 189, 248, 0.05),
+    0 12px 32px -8px rgba(0, 0, 0, 0.6) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease !important;
+  overflow: hidden !important;
+}
+
+/* Hover Physics (Dark Mode) */
+html[data-theme="dark"] .px-flow-card:hover,
+html[data-theme="dark"] .px-three-step:hover,
+html[data-theme="dark"] .px-engine-phase:hover,
+html[data-theme="dark"] .px-knowledge-step:hover,
+html[data-theme="dark"] .px-file-card:hover,
+html[data-theme="dark"] .px-buy-flow article:hover,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card:hover,
+  html:not([data-theme="light"]) .px-three-step:hover,
+  html:not([data-theme="light"]) .px-engine-phase:hover,
+  html:not([data-theme="light"]) .px-knowledge-step:hover,
+  html:not([data-theme="light"]) .px-file-card:hover,
+  html:not([data-theme="light"]) .px-buy-flow article:hover
+} {
+  transform: translateY(-5px) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.28),
+    0 20px 48px -12px rgba(0, 102, 255, 0.28),
+    0 0 25px -4px rgba(56, 189, 248, 0.22) !important;
+}
+
+/* 3. Pure Architectural Surface (Light Mode) */
+html[data-theme="light"] .px-flow-card,
+html[data-theme="light"] .px-three-step,
+html[data-theme="light"] .px-engine-phase,
+html[data-theme="light"] .px-knowledge-step,
+html[data-theme="light"] .px-file-card,
+html[data-theme="light"] .px-buy-flow article,
+:root:not([data-theme="dark"]) .px-flow-card,
+:root:not([data-theme="dark"]) .px-three-step,
+:root:not([data-theme="dark"]) .px-engine-phase,
+:root:not([data-theme="dark"]) .px-knowledge-step,
+:root:not([data-theme="dark"]) .px-file-card,
+:root:not([data-theme="dark"]) .px-buy-flow article {
+  position: relative;
+  z-index: 1;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 10px 24px -4px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease !important;
+  overflow: hidden;
+}
+html[data-theme="light"] .px-flow-card:hover,
+html[data-theme="light"] .px-three-step:hover,
+html[data-theme="light"] .px-engine-phase:hover,
+html[data-theme="light"] .px-knowledge-step:hover,
+html[data-theme="light"] .px-file-card:hover,
+html[data-theme="light"] .px-buy-flow article:hover,
+:root:not([data-theme="dark"]) .px-flow-card:hover,
+:root:not([data-theme="dark"]) .px-three-step:hover,
+:root:not([data-theme="dark"]) .px-engine-phase:hover,
+:root:not([data-theme="dark"]) .px-knowledge-step:hover,
+:root:not([data-theme="dark"]) .px-file-card:hover,
+:root:not([data-theme="dark"]) .px-buy-flow article:hover {
+  transform: translateY(-4px) !important;
+  border-color: #3b82f6 !important;
+  box-shadow:
+    0 18px 38px -8px rgba(37, 99, 235, 0.14),
+    0 0 0 1px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* 4. Cybernetic Concentric Instrument Node */
 html[data-theme="dark"] .px-flow-card .node,
-html[data-theme="dark"] .px-three-step .num {
-  background: #1e2433 !important;
+html[data-theme="dark"] .px-three-step .num,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card .node,
+  html:not([data-theme="light"]) .px-three-step .num
+} {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  margin-bottom: 20px !important;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow:
+    0 0 0 4px #0d111a,
+    0 0 16px -2px rgba(56, 189, 248, 0.35),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2) !important;
   color: #38bdf8 !important;
-  border: 1px solid rgba(56, 189, 248, 0.3) !important;
-  box-shadow: 0 0 0 5px #0a0b0e !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Mono", "Fira Code", monospace !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+html[data-theme="dark"] .px-flow-card:hover .node,
+html[data-theme="dark"] .px-three-step:hover .num,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card:hover .node,
+  html:not([data-theme="light"]) .px-three-step:hover .num
+} {
+  transform: scale(1.08) !important;
+  border-color: #38bdf8 !important;
+  box-shadow:
+    0 0 0 4px #0d111a,
+    0 0 24px rgba(56, 189, 248, 0.65),
+    inset 0 0 8px rgba(56, 189, 248, 0.3) !important;
+}
+
+html[data-theme="light"] .px-flow-card .node,
+html[data-theme="light"] .px-three-step .num,
+:root:not([data-theme="dark"]) .px-flow-card .node,
+:root:not([data-theme="dark"]) .px-three-step .num {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  margin-bottom: 20px !important;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+  border: 1.5px solid rgba(37, 99, 235, 0.35) !important;
+  box-shadow:
+    0 0 0 4px #ffffff,
+    0 2px 10px rgba(37, 99, 235, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  color: #1d4ed8 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Mono", "Fira Code", monospace !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+html[data-theme="light"] .px-flow-card:hover .node,
+html[data-theme="light"] .px-three-step:hover .num,
+:root:not([data-theme="dark"]) .px-flow-card:hover .node,
+:root:not([data-theme="dark"]) .px-three-step:hover .num {
+  transform: scale(1.06) !important;
+  border-color: #2563eb !important;
+  box-shadow:
+    0 0 0 4px #ffffff,
+    0 4px 16px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* 5. Live Telemetry Status Pulse on Cards */
+html[data-theme="dark"] .px-flow-card::after,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card::after
+} {
+  content: "" !important;
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #38bdf8 !important;
+  box-shadow: 0 0 8px #38bdf8, 0 0 2px #ffffff !important;
+  opacity: 0.8 !important;
+  pointer-events: none !important;
+}
+html[data-theme="light"] .px-flow-card::after,
+:root:not([data-theme="dark"]) .px-flow-card::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #2563eb !important;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4) !important;
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+}
+
+/* 6. Typography & Text Hierarchy */
+html[data-theme="dark"] .px-flow-card h3,
+html[data-theme="dark"] .px-three-step h3,
+html[data-theme="dark"] .px-engine-phase h3,
+html[data-theme="dark"] .px-knowledge-step h3,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card h3,
+  html:not([data-theme="light"]) .px-three-step h3,
+  html:not([data-theme="light"]) .px-engine-phase h3,
+  html:not([data-theme="light"]) .px-knowledge-step h3
+} {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", -apple-system-headline, sans-serif !important;
+  font-size: 17.5px !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+  color: #ffffff !important;
+  margin: 0 0 10px 0 !important;
+}
+html[data-theme="light"] .px-flow-card h3,
+html[data-theme="light"] .px-three-step h3,
+html[data-theme="light"] .px-engine-phase h3,
+html[data-theme="light"] .px-knowledge-step h3,
+:root:not([data-theme="dark"]) .px-flow-card h3,
+:root:not([data-theme="dark"]) .px-three-step h3,
+:root:not([data-theme="dark"]) .px-engine-phase h3,
+:root:not([data-theme="dark"]) .px-knowledge-step h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", -apple-system-headline, sans-serif !important;
+  font-size: 17.5px !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+  color: #0f172a !important;
+  margin: 0 0 10px 0 !important;
+}
+
+html[data-theme="dark"] .px-flow-card p,
+html[data-theme="dark"] .px-three-step p,
+html[data-theme="dark"] .px-engine-phase p,
+html[data-theme="dark"] .px-knowledge-step p,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-flow-card p,
+  html:not([data-theme="light"]) .px-three-step p,
+  html:not([data-theme="light"]) .px-engine-phase p,
+  html:not([data-theme="light"]) .px-knowledge-step p
+} {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", -apple-system-body, sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.62 !important;
+  color: #94a3b8 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 !important;
+}
+html[data-theme="light"] .px-flow-card p,
+html[data-theme="light"] .px-three-step p,
+html[data-theme="light"] .px-engine-phase p,
+html[data-theme="light"] .px-knowledge-step p,
+:root:not([data-theme="dark"]) .px-flow-card p,
+:root:not([data-theme="dark"]) .px-three-step p,
+:root:not([data-theme="dark"]) .px-engine-phase p,
+:root:not([data-theme="dark"]) .px-knowledge-step p {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", -apple-system-body, sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.62 !important;
+  color: #475569 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 !important;
+}
+
+/* 7. Special Engine Rail Phases */
+.px-engine-phase > span {
+  display: inline-block !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Mono", monospace !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.12) !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  margin-bottom: 12px !important;
+}
+html[data-theme="light"] .px-engine-phase > span,
+:root:not([data-theme="dark"]) .px-engine-phase > span {
+  color: #1d4ed8 !important;
+  background: rgba(37, 99, 235, 0.1) !important;
+}
+.px-engine-phase li {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #94a3b8 !important;
+}
+.px-engine-phase li b {
+  color: #38bdf8 !important;
+  font-family: monospace !important;
+  font-size: 11px !important;
+  background: rgba(56, 189, 248, 0.1) !important;
+  padding: 1px 5px !important;
+  border-radius: 4px !important;
+}
+html[data-theme="light"] .px-engine-phase li {
+  color: #475569 !important;
+}
+html[data-theme="light"] .px-engine-phase li b {
+  color: #1d4ed8 !important;
+  background: rgba(37, 99, 235, 0.08) !important;
+}
+.px-engine-outcome {
+  margin-top: 18px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  background: rgba(56, 189, 248, 0.06) !important;
+  color: #38bdf8 !important;
+  font-size: 11.5px !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.45 !important;
+}
+html[data-theme="light"] .px-engine-outcome,
+:root:not([data-theme="dark"]) .px-engine-outcome {
+  border-color: rgba(37, 99, 235, 0.25) !important;
+  background: rgba(37, 99, 235, 0.06) !important;
+  color: #1d4ed8 !important;
+}
+
+/* 8. Paid 3-Step Highlight */
+html[data-theme="dark"] .px-three-step.paid,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-three-step.paid
+} {
+  background: linear-gradient(175deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.98) 100%) !important;
+  border: 1.5px solid #3b82f6 !important;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+    0 16px 40px -10px rgba(37, 99, 235, 0.35) !important;
+}
+html[data-theme="dark"] .px-three-step.paid .num,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-three-step.paid .num
+} {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6) !important;
+}
+html[data-theme="dark"] .px-three-step.paid a,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-three-step.paid a
+} {
+  color: #60a5fa !important;
+}
+
+/* 9. Specialist Lenses Glassmorphism */
+.px-lens {
+  position: relative !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+html[data-theme="dark"] .px-lens,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-lens
+} {
+  background: linear-gradient(175deg, rgba(20, 24, 35, 0.7) 0%, rgba(12, 15, 22, 0.9) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 8px 24px -6px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .px-lens:hover,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-lens:hover
+} {
+  transform: translateY(-3px) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 14px 30px -8px rgba(0, 102, 255, 0.25) !important;
+}
+html[data-theme="dark"] .px-lens b,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-lens b
+} {
+  color: #38bdf8 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Mono", monospace !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.08em !important;
+}
+html[data-theme="dark"] .px-lens span,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-lens span
+} {
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+}
+
+/* 10. 22-File ZIP Manifest Cards & Delivery Files */
+.px-file-card,
+.px-file {
+  position: relative !important;
+  border-radius: 14px !important;
+  padding: 16px !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+html[data-theme="dark"] .px-file-card,
+html[data-theme="dark"] .px-file,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-file-card,
+  html:not([data-theme="light"]) .px-file
+} {
+  background: linear-gradient(175deg, rgba(20, 24, 35, 0.75) 0%, rgba(12, 15, 22, 0.95) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 6px 20px -4px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .px-file-card:hover,
+html[data-theme="dark"] .px-file:hover,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-file-card:hover,
+  html:not([data-theme="light"]) .px-file:hover
+} {
+  transform: translateY(-2px) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+html[data-theme="dark"] .px-file-card.vip,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-file-card.vip
+} {
+  border-color: rgba(245, 158, 11, 0.25) !important;
+}
+html[data-theme="dark"] .px-file-card.vip:hover,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-file-card.vip:hover
+} {
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  box-shadow: 0 10px 25px -6px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* 11. Trust Strip Interactive Polish */
+.px-value-strip > div {
+  transition: transform 0.25s ease, background 0.25s ease !important;
+}
+html[data-theme="dark"] .px-value-strip > div,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-value-strip > div
+} {
+  background: linear-gradient(175deg, rgba(20, 24, 35, 0.8) 0%, rgba(12, 15, 22, 0.95) 100%) !important;
+}
+html[data-theme="dark"] .px-value-strip > div:hover,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .px-value-strip > div:hover
+} {
+  background: linear-gradient(175deg, rgba(28, 34, 48, 0.9) 0%, rgba(16, 20, 30, 0.98) 100%) !important;
 }
 
