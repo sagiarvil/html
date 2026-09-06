@@ -1,125 +1,34 @@
 {
   "registry": "HTML&HTML External Evidence Source Registry",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "lastVerified": "2026-09-06",
-  "policy": "External behavior claims must point to a first-party vendor, standards body or clearly labeled proposal source. Availability monitoring does not prove semantic stability; material rule changes require human review and a profile version decision.",
+  "policy": "External behavior claims must point to a first-party vendor, standards body or clearly labeled proposal source. Availability monitoring does not prove semantic stability; material rule changes require human review and a profile version decision. Industry terminology and HTML&HTML heuristics must never be represented as Google ranking systems.",
   "sources": [
-    {
-      "id": "RFC9309",
-      "class": "OFFICIAL_STANDARD",
-      "publisher": "IETF / RFC Editor",
-      "title": "Robots Exclusion Protocol",
-      "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
-      "appliesTo": ["crawl","ai"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "OPENAI-SEARCH",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "OpenAI",
-      "title": "Searching the web with ChatGPT",
-      "url": "https://help.openai.com/en/articles/9237897",
-      "appliesTo": ["ai"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "OPENAI-PUBLISHERS",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "OpenAI",
-      "title": "Publishers and Developers FAQ",
-      "url": "https://help.openai.com/en/articles/12627856-publishers-and-developers-faq",
-      "appliesTo": ["ai"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "OPENAI-RESPONSES-WEBSEARCH",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "OpenAI",
-      "title": "OpenAI API quickstart — Responses API with web search",
-      "url": "https://platform.openai.com/docs/quickstart/make-your-first-api-request",
-      "appliesTo": ["ai","mention"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "ANTHROPIC-CRAWLERS",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "Anthropic",
-      "title": "Anthropic web crawlers and site-owner controls",
-      "url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
-      "appliesTo": ["ai"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "PERPLEXITY-ROBOTS",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "Perplexity",
-      "title": "How does Perplexity follow robots.txt?",
-      "url": "https://www.perplexity.ai/help-center/en/articles/10354969-how-does-perplexity-follow-robots-txt",
-      "appliesTo": ["ai"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "PERPLEXITY-SONAR",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "Perplexity",
-      "title": "Sonar API — Create Chat Completion",
-      "url": "https://docs.perplexity.ai/api-reference/sonar-post",
-      "appliesTo": ["ai","mention"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "GOOGLE-COMMON-CRAWLERS",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "Google",
-      "title": "Google's common crawlers",
-      "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
-      "appliesTo": ["crawl","ai"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "GEMINI-GOOGLE-SEARCH",
-      "class": "OFFICIAL_VENDOR",
-      "publisher": "Google AI for Developers",
-      "title": "Gemini API — Grounding with Google Search",
-      "url": "https://ai.google.dev/gemini-api/docs/google-search",
-      "appliesTo": ["ai","mention"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "LLMS-TXT-V2",
-      "class": "PROPOSAL",
-      "publisher": "llmstxt.org / Jeremy Howard",
-      "title": "The /llms.txt file, v2",
-      "url": "https://llmstxt.org/",
-      "appliesTo": ["llms","agent"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "LLMS-TXT-CHANGES",
-      "class": "PROPOSAL",
-      "publisher": "llmstxt.org / Jeremy Howard",
-      "title": "llms.txt changes — v2",
-      "url": "https://llmstxt.org/changes.html",
-      "appliesTo": ["llms","agent"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "WCAG22",
-      "class": "OFFICIAL_STANDARD",
-      "publisher": "W3C",
-      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
-      "url": "https://www.w3.org/TR/WCAG22/",
-      "appliesTo": ["accessibility"],
-      "lastVerified": "2026-09-06"
-    },
-    {
-      "id": "OPENAPI31",
-      "class": "OFFICIAL_STANDARD",
-      "publisher": "OpenAPI Initiative",
-      "title": "OpenAPI Specification 3.1",
-      "url": "https://spec.openapis.org/oas/v3.1.0.html",
-      "appliesTo": ["agent"],
-      "lastVerified": "2026-09-06"
-    }
+    {"id":"RFC9309","class":"OFFICIAL_STANDARD","publisher":"IETF / RFC Editor","title":"Robots Exclusion Protocol","url":"https://www.rfc-editor.org/rfc/rfc9309.html","appliesTo":["crawl","ai","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"OPENAI-SEARCH","class":"OFFICIAL_VENDOR","publisher":"OpenAI","title":"Searching the web with ChatGPT","url":"https://help.openai.com/en/articles/9237897","appliesTo":["ai"],"lastVerified":"2026-09-06"},
+    {"id":"OPENAI-PUBLISHERS","class":"OFFICIAL_VENDOR","publisher":"OpenAI","title":"Publishers and Developers FAQ","url":"https://help.openai.com/en/articles/12627856-publishers-and-developers-faq","appliesTo":["ai","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"OPENAI-RESPONSES-WEBSEARCH","class":"OFFICIAL_VENDOR","publisher":"OpenAI","title":"OpenAI API quickstart — Responses API with web search","url":"https://platform.openai.com/docs/quickstart/make-your-first-api-request","appliesTo":["ai","mention","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"ANTHROPIC-CRAWLERS","class":"OFFICIAL_VENDOR","publisher":"Anthropic","title":"Anthropic web crawlers and site-owner controls","url":"https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler","appliesTo":["ai"],"lastVerified":"2026-09-06"},
+    {"id":"PERPLEXITY-ROBOTS","class":"OFFICIAL_VENDOR","publisher":"Perplexity","title":"How does Perplexity follow robots.txt?","url":"https://www.perplexity.ai/help-center/en/articles/10354969-how-does-perplexity-follow-robots-txt","appliesTo":["ai"],"lastVerified":"2026-09-06"},
+    {"id":"PERPLEXITY-SONAR","class":"OFFICIAL_VENDOR","publisher":"Perplexity","title":"Sonar API — Create Chat Completion","url":"https://docs.perplexity.ai/api-reference/sonar-post","appliesTo":["ai","mention","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-COMMON-CRAWLERS","class":"OFFICIAL_VENDOR","publisher":"Google","title":"Google's common crawlers","url":"https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers","appliesTo":["crawl","ai","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-AI-OPTIMIZATION","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Google's Guide to Optimizing for Generative AI Features on Google Search","url":"https://developers.google.com/search/docs/fundamentals/ai-optimization-guide","appliesTo":["seo","ai","geo","aeo","rag","agent","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-AI-FEATURES","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"AI Features and Your Website","url":"https://developers.google.com/search/docs/appearance/ai-features","appliesTo":["seo","ai","crawl","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-SEARCH-ESSENTIALS","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Google Search Essentials","url":"https://developers.google.com/search/docs/essentials","appliesTo":["seo","crawl","trust","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-HELPFUL-CONTENT","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Creating Helpful, Reliable, People-First Content","url":"https://developers.google.com/search/docs/fundamentals/creating-helpful-content","appliesTo":["seo","trust","eeat","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-SITEMAPS","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Build and Submit a Sitemap","url":"https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap","appliesTo":["crawl","technical","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-CANONICAL","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Canonicalization and Consolidating Duplicate URLs","url":"https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls","appliesTo":["technical","crawl","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-STRUCTURED-DATA","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Search Appearance and Structured Data","url":"https://developers.google.com/search/docs/appearance","appliesTo":["schema","seo","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-ORGANIZATION-SCHEMA","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Organization Structured Data","url":"https://developers.google.com/search/docs/appearance/structured-data/organization","appliesTo":["schema","trust","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-INTERNATIONAL","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Managing Multi-Regional and Multilingual Sites","url":"https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites","appliesTo":["technical","seo","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-PREFERRED-SOURCES","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Guide to Preferred Sources in Google Search for Web Publishers","url":"https://developers.google.com/search/docs/appearance/preferred-sources","appliesTo":["ai","seo","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-THIRD-PARTY-SEO","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Google Search's Guidance on Third-Party SEO Tools & Advice","url":"https://developers.google.com/search/docs/fundamentals/third-party-seo","appliesTo":["seo","ai","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-DEVELOPER-SEO","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"SEO Guide for Web Developers","url":"https://developers.google.com/search/docs/fundamentals/get-started-developers","appliesTo":["technical","crawl","seo","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GOOGLE-SEARCH-UPDATES-2026","class":"OFFICIAL_VENDOR","publisher":"Google Search Central","title":"Latest Google Search Documentation Updates","url":"https://developers.google.com/search/updates","appliesTo":["seo","ai","llms","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"GEMINI-GOOGLE-SEARCH","class":"OFFICIAL_VENDOR","publisher":"Google AI for Developers","title":"Gemini API — Grounding with Google Search","url":"https://ai.google.dev/gemini-api/docs/google-search","appliesTo":["ai","mention","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"LLMS-TXT-V2","class":"PROPOSAL","publisher":"llmstxt.org / Jeremy Howard","title":"The /llms.txt file, v2","url":"https://llmstxt.org/","appliesTo":["llms","agent","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"LLMS-TXT-CHANGES","class":"PROPOSAL","publisher":"llmstxt.org / Jeremy Howard","title":"llms.txt changes — v2","url":"https://llmstxt.org/changes.html","appliesTo":["llms","agent","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"WCAG22","class":"OFFICIAL_STANDARD","publisher":"W3C","title":"Web Content Accessibility Guidelines (WCAG) 2.2","url":"https://www.w3.org/TR/WCAG22/","appliesTo":["accessibility","glossary"],"lastVerified":"2026-09-06"},
+    {"id":"OPENAPI31","class":"OFFICIAL_STANDARD","publisher":"OpenAPI Initiative","title":"OpenAPI Specification 3.1","url":"https://spec.openapis.org/oas/v3.1.0.html","appliesTo":["agent","glossary"],"lastVerified":"2026-09-06"}
   ]
 }
