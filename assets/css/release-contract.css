@@ -3,26 +3,28 @@
   width: min(840px, 100%);
   margin: 24px auto 0;
   padding: 16px 22px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 16px;
-  background: #ffffff;
+  background: #0d111a !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-size: 14px;
   line-height: 1.65;
-  color: #475569;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  color: #cbd5e1 !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 8px 24px -4px rgba(0, 0, 0, 0.7) !important;
 }
 .release-contract-line strong {
-  color: #0f172a;
+  color: #ffffff !important;
 }
 
 .pricing-delivery-manifest {
   width: min(1120px, calc(100% - 48px));
   margin: 40px auto 60px;
   padding: 36px;
-  border: 1px solid var(--line, #d8d3c8);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 24px;
-  background: var(--bg-card, #ffffff);
-  box-shadow: var(--shadow, 0 18px 50px rgba(17,17,15,.06));
+  background: #0d111a !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, .7) !important;
 }
 .pricing-delivery-manifest .section-head {
   max-width: 760px;
@@ -33,7 +35,7 @@
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .12em;
-  color: var(--accent, #0066ff);
+  color: #38bdf8 !important;
   margin-bottom: 8px;
 }
 .pricing-delivery-manifest h2 {
@@ -41,11 +43,11 @@
   line-height: 1.1;
   letter-spacing: -.035em;
   margin: 0 0 12px;
-  color: var(--fg, #11110f);
+  color: #f8fafc !important;
 }
 .pricing-delivery-manifest p {
   margin: 0;
-  color: var(--fg-dim, #6d6a63);
+  color: #94a3b8 !important;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -61,68 +63,89 @@
   align-items: center;
   min-height: 52px;
   padding: 0 18px;
-  background: var(--bg-soft, #f4f1e9);
-  color: var(--fg, #0f172a);
-  border: 1px solid var(--line, #d8d3c8);
+  background: #080a0f !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px;
   font: 700 13px/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
   word-break: break-word;
   transition: border-color .15s ease, background .15s ease;
 }
 
-html[data-theme="dark"] .release-contract-line {
-  background: #080a0f !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+html[data-theme="dark"] .release-contract-line,
+html[data-theme="light"] .release-contract-line,
+html .release-contract-line {
+  background: #0d111a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #cbd5e1 !important;
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 8px 24px -4px rgba(0, 0, 0, 0.7) !important;
 }
-html[data-theme="dark"] .release-contract-line strong {
+html[data-theme="dark"] .release-contract-line strong,
+html[data-theme="light"] .release-contract-line strong,
+html .release-contract-line strong {
   color: #ffffff !important;
 }
 
-html[data-theme="dark"] .pricing-delivery-manifest {
-  background: #080a0f !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+html[data-theme="dark"] .pricing-delivery-manifest,
+html[data-theme="light"] .pricing-delivery-manifest,
+html .pricing-delivery-manifest {
+  background: #0d111a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, .7) !important;
 }
-html[data-theme="dark"] .pricing-delivery-manifest h2 {
-  color: #f8fafc;
+html[data-theme="dark"] .pricing-delivery-manifest h2,
+html[data-theme="light"] .pricing-delivery-manifest h2,
+html .pricing-delivery-manifest h2 {
+  color: #f8fafc !important;
 }
-html[data-theme="dark"] .pricing-delivery-manifest p {
-  color: #94a3b8;
+html[data-theme="dark"] .pricing-delivery-manifest p,
+html[data-theme="light"] .pricing-delivery-manifest p,
+html .pricing-delivery-manifest p {
+  color: #94a3b8 !important;
 }
-html[data-theme="dark"] .pricing-delivery-manifest .section-head > span {
-  color: #38bdf8;
+html[data-theme="dark"] .pricing-delivery-manifest .section-head > span,
+html[data-theme="light"] .pricing-delivery-manifest .section-head > span,
+html .pricing-delivery-manifest .section-head > span {
+  color: #38bdf8 !important;
 }
 
-html[data-theme="dark"] .delivery-file-grid code {
-  background: #0d0f14;
-  color: #38bdf8;
-  border-color: #1f2533;
+html[data-theme="dark"] .delivery-file-grid code,
+html[data-theme="light"] .delivery-file-grid code,
+html .delivery-file-grid code {
+  background: #080a0f !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .guest-delivery-contract {
   width: min(1120px, calc(100% - 48px));
   margin: 20px auto 60px;
   padding: 16px 22px;
-  border-left: 3px solid var(--accent, #0066ff);
+  border-left: 3px solid #3b82f6 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 0 12px 12px 0;
-  background: var(--bg-soft, rgba(255,255,255,.42));
+  background: #0d111a !important;
   font-size: 14px;
   line-height: 1.65;
-  color: var(--fg-dim, #6d6a63);
+  color: #cbd5e1 !important;
 }
 .guest-delivery-contract strong {
-  color: var(--fg, #11110f);
+  color: #ffffff !important;
 }
 
-html[data-theme="dark"] .guest-delivery-contract {
-  background: #12151b;
-  border-left-color: #3b82f6;
-  color: #94a3b8;
+html[data-theme="dark"] .guest-delivery-contract,
+html[data-theme="light"] .guest-delivery-contract,
+html .guest-delivery-contract {
+  background: #0d111a !important;
+  border-left-color: #3b82f6 !important;
+  color: #cbd5e1 !important;
 }
-html[data-theme="dark"] .guest-delivery-contract strong {
-  color: #f1f5f9;
+html[data-theme="dark"] .guest-delivery-contract strong,
+html[data-theme="light"] .guest-delivery-contract strong,
+html .guest-delivery-contract strong {
+  color: #ffffff !important;
 }
 
 @media (max-width: 640px) {
