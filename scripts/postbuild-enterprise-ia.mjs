@@ -1,10 +1,41 @@
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8'),write=(p,s)=>fs.writeFileSync(p,s);
+const base='https://htmlandhtml.com';
 let llms=read('llms.txt');
 if(!llms.includes('https://htmlandhtml.com/en/tools')){
   llms=llms.replace('## Platform and commercial boundary',`## Directory hubs\n- [English tools](https://htmlandhtml.com/en/tools): Focused diagnostic entry points backed by the canonical 12-engine scan core.\n- [Türkçe araçlar](https://htmlandhtml.com/tr/araclar): Canonical 12-motor çekirdeği kullanan odaklı araç girişleri.\n- [English guides](https://htmlandhtml.com/en/guides): Sourced decision-support guides linked to measurable tools.\n- [Türkçe rehberler](https://htmlandhtml.com/tr/rehberler): Ölçülebilir araçlara bağlanan kaynaklı karar destek rehberleri.\n\n## Platform and commercial boundary`);
   write('llms.txt',llms);
 }
+
+// Established authority tools predate the enterprise IA generator. Keep their
+// content and product behavior intact, but bring them under the same structured
+// navigation contract as every newly generated intent page.
+const established=[
+ ['en/ai-website-readiness/index.html','en','/en/ai-website-readiness','AI Website Readiness'],
+ ['tr/ai-website-readiness/index.html','tr','/tr/ai-website-readiness','AI Web Sitesi Hazırlığı'],
+ ['en/llms-txt-validator/index.html','en','/en/llms-txt-validator','llms.txt Validator'],
+ ['tr/llms-txt-validator/index.html','tr','/tr/llms-txt-validator','llms.txt Doğrulayıcı'],
+ ['en/ai-crawler-checker/index.html','en','/en/ai-crawler-checker','AI Crawler Checker'],
+ ['tr/ai-crawler-checker/index.html','tr','/tr/ai-crawler-checker','AI Tarayıcı Kontrolü'],
+ ['en/ai-mention-tracker/index.html','en','/en/ai-mention-tracker','AI Mention Tracker'],
+ ['tr/ai-mention-tracker/index.html','tr','/tr/ai-mention-tracker','AI Marka Görünürlük Takibi']
+];
+for(const [file,lang,route,name] of established){
+  if(!fs.existsSync(file))continue;
+  let s=read(file);
+  if(!s.includes('"@type":"BreadcrumbList"')){
+    const home=lang==='tr'?'/tr':'/en';
+    const tools=lang==='tr'?'/tr/araclar':'/en/tools';
+    const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":lang==='tr'?'Ana sayfa':'Home',"item":base+home},
+      {"@type":"ListItem","position":2,"name":lang==='tr'?'Araçlar':'Tools',"item":base+tools},
+      {"@type":"ListItem","position":3,"name":name,"item":base+route}
+    ]};
+    s=s.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
+    write(file,s);
+  }
+}
+
 const pkg=JSON.parse(read('package.json'));
 pkg.scripts['build:ia']='node scripts/build-enterprise-ia.mjs && node scripts/postbuild-enterprise-ia.mjs';
 write('package.json',JSON.stringify(pkg,null,2)+'\n');
