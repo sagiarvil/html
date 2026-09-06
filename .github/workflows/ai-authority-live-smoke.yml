@@ -20,15 +20,15 @@ jobs:
         run: |
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; grep -Fq "$marker" <<<"$body"; echo "AI_AUTHORITY_SMOKE_OK: $url"; }
-          check 'https://htmlandhtml.com/' 'Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?'
-          check 'https://htmlandhtml.com/' 'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et'
+          check 'https://htmlandhtml.com/' 'Yapay Zeka Sizi Buluyor mu?'
+          check 'https://htmlandhtml.com/' 'Tavsiye Edilmeye Hazır mısınız?'
+          check 'https://htmlandhtml.com/' 'Ücretsiz Kontrol Et'
+          check 'https://htmlandhtml.com/' 'data-premium-infographic="tools"'
           check 'https://htmlandhtml.com/tr/ai-website-readiness/' 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap'
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?'
           check 'https://htmlandhtml.com/tr/rehberler/llms-txt/' 'llms.txt Nedir? Yapay Zeka İçin Makine Okunabilir İçerik Haritası Nasıl Kurulur?'
           check 'https://htmlandhtml.com/tr/ai-crawler-checker/' 'ChatGPT ve Diğer Yapay Zeka Tarayıcıları Sitenize Ulaşabiliyor mu?'
           check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'Yapay Zeka Cevaplarında Markanız Gerçekten Geçiyor mu?'
-          check 'https://htmlandhtml.com/tr/sozluk/' 'Google doğruluk sınırı'
-          check 'https://htmlandhtml.com/en/glossary/' 'Google accuracy boundary'
           check 'https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/' 'Müşteriniz yapay zekaya'
           check 'https://htmlandhtml.com/tr/geo-optimizasyon/' 'GEO'
           check 'https://htmlandhtml.com/tr/aeo-answer-engine/' 'AEO'
@@ -37,6 +37,10 @@ jobs:
           check 'https://htmlandhtml.com/tr/rag-optimizasyon/' 'RAG'
           check 'https://htmlandhtml.com/tr/e-e-a-t-guven-sinyalleri/' 'E-E-A-T'
           check 'https://htmlandhtml.com/en/ai-search-visibility/' 'When a customer asks AI'
+          tr_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/sozluk/)"
+          en_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/glossary/)"
+          ! grep -Fq 'Google doğruluk sınırı' <<<"$tr_glossary"
+          ! grep -Fq 'Google accuracy boundary' <<<"$en_glossary"
       - name: Verify machine-readable discovery surfaces include authority graph
         shell: bash
         run: |
@@ -46,6 +50,5 @@ jobs:
           grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/sitemap.xml
           grep -Fq 'https://htmlandhtml.com/en/glossary/' /tmp/sitemap.xml
           grep -Fq 'https://htmlandhtml.com/tr/geo-optimizasyon/' /tmp/sitemap.xml
-          grep -Fq 'Google accuracy boundary' /tmp/llms.txt
           grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/llms.txt
           echo 'AI_AUTHORITY_MACHINE_GRAPH_OK'

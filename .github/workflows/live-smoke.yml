@@ -15,12 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - name: Verify production homepage and authority routes
+      - name: Verify production routes and premium customer experience
         shell: bash
         run: |
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! grep -Fqi "$marker" <<<"$body"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
-          check 'https://htmlandhtml.com/' 'Website Fix Validator'
+          check 'https://htmlandhtml.com/' 'Yapay Zeka Sizi Buluyor mu?'
+          check 'https://htmlandhtml.com/' 'data-premium-infographic="tools"'
+          check 'https://htmlandhtml.com/' 'data-premium-infographic="engines"'
+          check 'https://htmlandhtml.com/' 'data-premium-infographic="process"'
+          check 'https://htmlandhtml.com/' 'data-premium-infographic="knowledge"'
           check 'https://htmlandhtml.com/en/website-scanner/' '12-ENGINE WEBSITE SCANNER'
           check 'https://htmlandhtml.com/tr/site-tarama/' '12 MOTOR'
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT V2 ŞARTNAME DOĞRULAYICISI'
@@ -28,32 +32,27 @@ jobs:
           check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
           check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'AI MARKA GÖRÜNÜRLÜK TAKİBİ'
           check 'https://htmlandhtml.com/en/ai-mention-tracker/' 'AI MENTION TRACKER'
-          check 'https://htmlandhtml.com/methodology.html' 'YÖNETİŞİM VE METODOLOJİ'
-          check 'https://htmlandhtml.com/standard/' 'EVIDENCE & INTEGRITY'
-          check 'https://htmlandhtml.com/reference/ai-crawlers/' 'CRAWLER REGISTRY'
+          check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'Problemi ücretsiz görün.'
           body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
-          ! grep -Eq '\$49|\$99' <<<"$body"
-          grep -Fq '$149' <<<"$body"
+          ! grep -Eq '\$49|\$149' <<<"$body"
+          grep -Fq '$99' <<<"$body"
+          grep -Fq '/assets/css/premium-experience.css?v=1' <<<"$body"
           grep -Fq '/assets/js/theme.js' <<<"$body"
 
-      - name: Verify static customer-first AI visibility HTML without JavaScript
+      - name: Verify customer-first AI visibility and removed glossary callout
         shell: bash
         run: |
           set -euo pipefail
           tr_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/)"
           en_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/)"
-          en_tool="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/ai-website-readiness/)"
-          grep -Fq 'data-commercial-intent="static"' <<<"$tr_home"
-          grep -Fq 'YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ' <<<"$tr_home"
-          grep -Fq 'Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez.' <<<"$tr_home"
-          grep -Fq 'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et' <<<"$tr_home"
-          grep -Fq 'data-commercial-intent="static"' <<<"$en_home"
-          grep -Fq 'AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER' <<<"$en_home"
-          grep -Fq 'Recommendations, rankings, citations, traffic, customers and revenue are not guaranteed.' <<<"$en_home"
-          grep -Fq 'Check My AI Visibility Free' <<<"$en_home"
-          grep -Fq 'data-commercial-intent="static"' <<<"$en_tool"
-          grep -Fq 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemaps + technical SEO' <<<"$en_tool"
-          grep -Fq '/assets/css/commercial-intent.css?v=2' <<<"$en_tool"
+          tr_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/sozluk/)"
+          en_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/glossary/)"
+          grep -Fq 'Tavsiye Edilmeye Hazır mısınız?' <<<"$tr_home"
+          grep -Fq 'Can AI Find You?' <<<"$en_home"
+          grep -Fq 'Ücretsiz Kontrol Et' <<<"$tr_home"
+          grep -Fq 'Check Free' <<<"$en_home"
+          ! grep -Fq 'Google doğruluk sınırı' <<<"$tr_glossary"
+          ! grep -Fq 'Google accuracy boundary' <<<"$en_glossary"
 
       - name: Verify machine-readable authority graph
         shell: bash
@@ -86,7 +85,7 @@ jobs:
           body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/health)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY);
-          if(x.status!=='ok'||x.scanEngines!==12||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==149||x.aiMentionTracker!==true) throw new Error('health contract');
+          if(x.status!=='ok'||x.scanEngines!==12||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==99||x.aiMentionTracker!==true) throw new Error('health contract');
           NODE
 
       - name: Verify production scan and Intelligence Audit contract

@@ -26,13 +26,23 @@ for(const [en,tr] of pairs){
 const trGloss=fs.readFileSync(path.join(root,'tr/sozluk/index.html'),'utf8');
 const enGloss=fs.readFileSync(path.join(root,'en/glossary/index.html'),'utf8');
 for(const t of must)if(!trGloss.includes(t)&&!enGloss.includes(t))errors.push(`glossary missing ${t}`);
+
+// The old standalone "Google doğruluk sınırı / Google accuracy boundary" callout is intentionally removed.
+// Accuracy must still exist inside the relevant evidence blocks so commercial flow stays clean without weakening truthfulness.
+if(/<h2>Google doğruluk sınırı<\/h2>/i.test(trGloss))errors.push('standalone Google accuracy callout must not return on TR glossary');
+if(/<h2>Google accuracy boundary<\/h2>/i.test(enGloss))errors.push('standalone Google accuracy callout must not return on EN glossary');
 const trEvidenceChecks=[
- ['Google doğruluk sınırı',/Google doğruluk sınırı/],
  ['Google recognizes GEO market terminology',/Google GEO terimini açıkça tanıyor/],
  ['Google llms.txt non-use boundary',/Google Arama, Google Search ve üretken yapay zeka özelliklerine dahil edilmek için llms\.txt/],
  ['Google RAG/query-fan-out explanation',/Google(?:['’]|&#x27;|&#39;)ın üretken yapay zeka Arama rehberi/]
 ];
 for(const [name,rx] of trEvidenceChecks)if(!rx.test(trGloss))errors.push(`TR glossary evidence boundary missing: ${name}`);
+const enEvidenceChecks=[
+ ['Google recognizes GEO market terminology',/Google explicitly recognizes the term GEO/],
+ ['Google llms.txt non-use boundary',/Google Search explicitly says it does not use llms\.txt/],
+ ['Google RAG explanation',/Google(?:'|’|&#x27;|&#39;)s 2026 generative AI Search guide/]
+];
+for(const [name,rx] of enEvidenceChecks)if(!rx.test(enGloss))errors.push(`EN glossary evidence boundary missing: ${name}`);
 for(const u of ['developers.google.com/search/docs/fundamentals/ai-optimization-guide','developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap','help.openai.com/en/articles/12627856-publishers-and-developers-faq','llmstxt.org/changes.html'])if(!trGloss.includes(u)||!enGloss.includes(u))errors.push(`glossary source missing ${u}`);
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 for(const marker of ['YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ','GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt','Sitemap','/assets/js/ai-positioning.js'])if(!home.includes(marker))errors.push(`homepage expectation vocabulary missing: ${marker}`);
@@ -42,6 +52,6 @@ for(const [en,tr] of pairs){for(const rel of [en,tr]){const url='https://htmland
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
 if(!/AI Search.*Glossary|Yapay Zeka.*Sözlük/i.test(llms))errors.push('llms.txt missing glossary authority route');
 const googleLlmsBoundary=/Google Search[^\n]*(?:does not use[^\n]*llms\.txt|llms\.txt[^\n]*does not use)/i.test(llms)||/Google[^\n]*llms\.txt[^\n]*(?:kullanmadığını|kullanmıyor)/i.test(llms);
-if(!googleLlmsBoundary)errors.push('llms.txt missing Google accuracy boundary');
+if(!googleLlmsBoundary)errors.push('llms.txt missing integrated Google/llms.txt evidence boundary');
 if(errors.length){console.error('AI AUTHORITY FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('AI AUTHORITY PASS: expectation-led positioning, bilingual glossary, core GEO/AEO/LLMO/AAO/RAG/E-E-A-T authority routes and evidence boundaries verified.');
+console.log('AI AUTHORITY PASS: expectation-led positioning, bilingual glossary, core GEO/AEO/LLMO/AAO/RAG/E-E-A-T authority routes and integrated evidence boundaries verified.');

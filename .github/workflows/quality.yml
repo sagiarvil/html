@@ -8,6 +8,7 @@ on:
 jobs:
   integrity:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
@@ -15,6 +16,10 @@ jobs:
           node-version: '22'
       - run: npm install --ignore-scripts --no-audit --no-fund
       - run: npm test
+      - name: Install Chromium for mobile visual QA
+        run: npx playwright install --with-deps chromium
+      - name: Render mobile product QA at 360/390/430/768
+        run: npm run test:visual
       - run: npx wrangler pages functions build functions --outfile /tmp/htmlandhtml-worker.js
       - run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
       - run: npm --prefix functions-firebase run build
