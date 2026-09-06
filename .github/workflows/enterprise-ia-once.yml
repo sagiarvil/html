@@ -17,7 +17,9 @@ jobs:
         with:
           node-version: 22
       - name: Generate enterprise information architecture
-        run: node scripts/build-enterprise-ia.mjs
+        run: |
+          node scripts/build-enterprise-ia.mjs
+          node scripts/postbuild-enterprise-ia.mjs
       - name: Validate generated contracts
         run: |
           npm install --ignore-scripts --no-audit --no-fund
