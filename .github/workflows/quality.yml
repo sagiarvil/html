@@ -14,6 +14,10 @@ jobs:
         with:
           node-version: '22'
       - run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Verify deterministic enterprise IA generation
+        run: |
+          npm run build:ia
+          git diff --exit-code
       - run: npm test
       - run: npx wrangler pages functions build functions --outfile /tmp/htmlandhtml-worker.js
       - run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
