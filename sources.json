@@ -1,6 +1,6 @@
 {
   "registry": "HTML&HTML External Evidence Source Registry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "lastVerified": "2026-09-06",
   "policy": "External behavior claims must point to a first-party vendor, standards body or clearly labeled proposal source. Availability monitoring does not prove semantic stability; material rule changes require human review and a profile version decision.",
   "sources": [
@@ -32,6 +32,15 @@
       "lastVerified": "2026-09-06"
     },
     {
+      "id": "OPENAI-RESPONSES-WEBSEARCH",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "OpenAI",
+      "title": "OpenAI API quickstart — Responses API with web search",
+      "url": "https://platform.openai.com/docs/quickstart/make-your-first-api-request",
+      "appliesTo": ["ai","mention"],
+      "lastVerified": "2026-09-06"
+    },
+    {
       "id": "ANTHROPIC-CRAWLERS",
       "class": "OFFICIAL_VENDOR",
       "publisher": "Anthropic",
@@ -50,12 +59,30 @@
       "lastVerified": "2026-09-06"
     },
     {
+      "id": "PERPLEXITY-SONAR",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "Perplexity",
+      "title": "Sonar API — Create Chat Completion",
+      "url": "https://docs.perplexity.ai/api-reference/sonar-post",
+      "appliesTo": ["ai","mention"],
+      "lastVerified": "2026-09-06"
+    },
+    {
       "id": "GOOGLE-COMMON-CRAWLERS",
       "class": "OFFICIAL_VENDOR",
       "publisher": "Google",
       "title": "Google's common crawlers",
       "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
       "appliesTo": ["crawl","ai"],
+      "lastVerified": "2026-09-06"
+    },
+    {
+      "id": "GEMINI-GOOGLE-SEARCH",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "Google AI for Developers",
+      "title": "Gemini API — Grounding with Google Search",
+      "url": "https://ai.google.dev/gemini-api/docs/google-search",
+      "appliesTo": ["ai","mention"],
       "lastVerified": "2026-09-06"
     },
     {
