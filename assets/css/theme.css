@@ -7,32 +7,32 @@
    01. DESIGN TOKENS (LIGHT & DARK DUAL-ENGINE)
    -------------------------------------------------------------------------- */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* LIGHT THEME: Crisp studio slate (Zero muddy beige) */
-  --bg: #f8f9fa;
-  --bg-soft: #f1f3f5;
-  --bg-card: #ffffff;
-  --fg: #0f172a;
-  --fg-soft: #334155;
-  --fg-dim: #64748b;
-  --line: #e2e8f0;
-  --line-strong: #cbd5e1;
+  /* DARK THEME DEFAULT: Obsidian Studio Canvas — Zero White or Muddy Beige */
+  --bg: #07090e;
+  --bg-soft: #0e121d;
+  --bg-card: #111726;
+  --fg: #f8fafc;
+  --fg-soft: #cbd5e1;
+  --fg-dim: #94a3b8;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.22);
   --accent: #0066ff;
-  --accent-hover: #0052cc;
+  --accent-hover: #38bdf8;
   --accent-ink: #ffffff;
   --good: #10b981;
-  --good-bg: rgba(16, 185, 129, 0.08);
-  --good-border: rgba(16, 185, 129, 0.25);
+  --good-bg: rgba(16, 185, 129, 0.15);
+  --good-border: rgba(16, 185, 129, 0.4);
   --warn: #f59e0b;
-  --warn-bg: rgba(245, 158, 11, 0.08);
-  --warn-border: rgba(245, 158, 11, 0.25);
+  --warn-bg: rgba(245, 158, 11, 0.15);
+  --warn-border: rgba(245, 158, 11, 0.4);
   --bad: #ef4444;
-  --bad-bg: rgba(239, 68, 68, 0.08);
-  --bad-border: rgba(239, 68, 68, 0.25);
-  --muted: #64748b;
-  --shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 12px 32px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+  --bad-bg: rgba(239, 68, 68, 0.15);
+  --bad-border: rgba(239, 68, 68, 0.4);
+  --muted: #94a3b8;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.7);
 
   /* Legacy & Platform Variables */
   --paper: var(--bg);
@@ -1954,11 +1954,8 @@ html[data-theme="dark"] .glossary-search {
 html[data-theme="dark"] .meter {
   background: #1e2330 !important;
 }
-html[data-theme="dark"] .meter i {
-  background: #10b981 !important;
-}
+/* Dynamic score meters & total badge */
 html[data-theme="dark"] .total-score {
-  border-color: #38bdf8 !important;
   color: #ffffff !important;
 }
 html[data-theme="dark"] .total-score strong {
@@ -1973,7 +1970,7 @@ html[data-theme="dark"] .ai-opportunity-eyebrow {
   color: #94a3b8 !important;
 }
 html[data-theme="dark"] .score-item strong {
-  color: #ffffff !important;
+  color: #ffffff;
 }
 html[data-theme="dark"] .status {
   background: #141720 !important;
@@ -2178,11 +2175,8 @@ html[data-theme="dark"] .authority-hero h1 em {
   html:not([data-theme="light"]) .meter {
     background: #1e2330 !important;
   }
-  html:not([data-theme="light"]) .meter i {
-    background: #10b981 !important;
-  }
+  /* Dynamic score meters & total badge */
   html:not([data-theme="light"]) .total-score {
-    border-color: #38bdf8 !important;
     color: #ffffff !important;
   }
   html:not([data-theme="light"]) .total-score strong {
@@ -2197,7 +2191,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     color: #94a3b8 !important;
   }
   html:not([data-theme="light"]) .score-item strong {
-    color: #ffffff !important;
+    color: #ffffff;
   }
   html:not([data-theme="light"]) .status {
     background: #141720 !important;
@@ -2278,3 +2272,56 @@ html[data-theme="dark"] .authority-hero h1 em {
   }
 }
 
+
+/* --------------------------------------------------------------------------
+   DYNAMIC SCORE TIERS: Yüksek (Yeşil), Orta (Sarı), Düşük (Turuncu), Kötü (Kırmızı)
+   -------------------------------------------------------------------------- */
+.score-item.tier-green strong {
+  color: #10b981 !important;
+  text-shadow: 0 0 16px rgba(16, 185, 129, 0.3);
+}
+.score-item.tier-yellow strong {
+  color: #eab308 !important;
+  text-shadow: 0 0 16px rgba(234, 179, 8, 0.3);
+}
+.score-item.tier-orange strong,
+.score-item.tier-amber strong {
+  color: #f97316 !important;
+  text-shadow: 0 0 16px rgba(249, 115, 22, 0.3);
+}
+.score-item.tier-red strong {
+  color: #ef4444 !important;
+  text-shadow: 0 0 16px rgba(239, 68, 68, 0.3);
+}
+.score-item.tier-blue strong {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+}
+
+.meter i.bar-green,
+.score-item.tier-green .meter i {
+  background: linear-gradient(90deg, #059669, #10b981) !important;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4) !important;
+}
+.meter i.bar-yellow,
+.score-item.tier-yellow .meter i {
+  background: linear-gradient(90deg, #ca8a04, #eab308) !important;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.4) !important;
+}
+.meter i.bar-orange,
+.meter i.bar-amber,
+.score-item.tier-orange .meter i,
+.score-item.tier-amber .meter i {
+  background: linear-gradient(90deg, #ea580c, #f97316) !important;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.4) !important;
+}
+.meter i.bar-red,
+.score-item.tier-red .meter i {
+  background: linear-gradient(90deg, #dc2626, #ef4444) !important;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4) !important;
+}
+.meter i.bar-blue,
+.score-item.tier-blue .meter i {
+  background: linear-gradient(90deg, #0284c7, #38bdf8) !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
+}

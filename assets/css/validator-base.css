@@ -5,12 +5,12 @@
   --hero-max: 860px;
   --reading-max: 1080px;
   --form-max: 640px;
-  --paper: #f8f9fa;
-  --card: #fbfaf6;
-  --ink: #11120f;
-  --muted: #67675f;
-  --line: #d7d3c8;
-  --soft: #e8e4da;
+  --paper: #07090e;
+  --card: #111726;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --line: rgba(255, 255, 255, 0.12);
+  --soft: #0e121d;
   --green: #9df0b7;
   --green2: #dff7e6;
   --red: #c9483f;

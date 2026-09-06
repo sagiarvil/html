@@ -277,17 +277,29 @@ html[data-theme="dark"] .pillar-amber .pillar-score {
   color: var(--px-muted);
   border: 1px solid var(--px-line);
 }
-.score-item.tier-green .bar-green {
+.score-item.tier-green strong { color: #10b981 !important; }
+.score-item.tier-yellow strong { color: #eab308 !important; }
+.score-item.tier-orange strong, .score-item.tier-amber strong { color: #f97316 !important; }
+.score-item.tier-red strong { color: #ef4444 !important; }
+.score-item.tier-blue strong { color: #38bdf8 !important; }
+
+.score-item.tier-green .bar-green, .meter i.bar-green {
   background: linear-gradient(90deg, #059669, #10b981) !important;
 }
-.score-item.tier-blue .bar-blue {
-  background: linear-gradient(90deg, #0066ff, #38bdf8) !important;
+.score-item.tier-yellow .bar-yellow, .meter i.bar-yellow {
+  background: linear-gradient(90deg, #ca8a04, #eab308) !important;
 }
-.score-item.tier-amber .bar-amber {
+.score-item.tier-orange .bar-orange, .meter i.bar-orange {
+  background: linear-gradient(90deg, #ea580c, #f97316) !important;
+}
+.score-item.tier-amber .bar-amber, .meter i.bar-amber {
   background: linear-gradient(90deg, #d97706, #f59e0b) !important;
 }
-.score-item.tier-red .bar-red {
+.score-item.tier-red .bar-red, .meter i.bar-red {
   background: linear-gradient(90deg, #dc2626, #ef4444) !important;
+}
+.score-item.tier-blue .bar-blue, .meter i.bar-blue {
+  background: linear-gradient(90deg, #0066ff, #38bdf8) !important;
 }
 
 /* Findings Filter Bar */
