@@ -1695,3 +1695,416 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     border-radius: 3pt !important;
   }
 }
+
+/* ==========================================================================
+   05. DEFINITIVE HIGH-CONTRAST DARK MODE ENGINE (WCAG AAA COMPLIANT)
+   Eliminates all unreadable text, low-contrast pills and muddy card backgrounds.
+   ========================================================================== */
+
+/* 1. BADGES, PILLS, KICKERS & CHIPS */
+html[data-theme="dark"] .kicker,
+html[data-theme="dark"] .authority-proof span,
+html[data-theme="dark"] .term-class,
+html[data-theme="dark"] .source-chip,
+html[data-theme="dark"] .glossary-proof span,
+html[data-theme="dark"] .core-terms a,
+html[data-theme="dark"] .mention-badge,
+html[data-theme="dark"] .scan-chips span,
+html[data-theme="dark"] .scan-chips .chip-btn,
+html[data-theme="dark"] .news-meta span,
+html[data-theme="dark"] .news-topic-pill,
+html[data-theme="dark"] .news-read-time,
+html[data-theme="dark"] .news-tags span,
+html[data-theme="dark"] .px-trust-row span,
+html[data-theme="dark"] .ai-term-strip a,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .kicker,
+  html:not([data-theme="light"]) .authority-proof span,
+  html:not([data-theme="light"]) .term-class,
+  html:not([data-theme="light"]) .source-chip,
+  html:not([data-theme="light"]) .glossary-proof span,
+  html:not([data-theme="light"]) .core-terms a,
+  html:not([data-theme="light"]) .mention-badge,
+  html:not([data-theme="light"]) .scan-chips span,
+  html:not([data-theme="light"]) .scan-chips .chip-btn,
+  html:not([data-theme="light"]) .news-meta span,
+  html:not([data-theme="light"]) .news-topic-pill,
+  html:not([data-theme="light"]) .news-read-time,
+  html:not([data-theme="light"]) .news-tags span,
+  html:not([data-theme="light"]) .px-trust-row span,
+  html:not([data-theme="light"]) .ai-term-strip a
+} {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #f8fafc !important;
+  text-shadow: none !important;
+}
+
+html[data-theme="dark"] .kicker b,
+html[data-theme="dark"] .authority-proof span b,
+html[data-theme="dark"] .news-topic-pill,
+html[data-theme="dark"] .ai-term-strip a b,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .kicker b,
+  html:not([data-theme="light"]) .authority-proof span b,
+  html:not([data-theme="light"]) .news-topic-pill,
+  html:not([data-theme="light"]) .ai-term-strip a b
+} {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .kicker span,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .kicker span
+} {
+  background: #10b981 !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* 2. ALL CARDS & SURFACES ACROSS HOMEPAGE & SUBPAGES */
+html[data-theme="dark"] .tool-panel,
+html[data-theme="dark"] .authority-card,
+html[data-theme="dark"] .glossary-panel,
+html[data-theme="dark"] .term-card,
+html[data-theme="dark"] .glossary-card,
+html[data-theme="dark"] .reference-note,
+html[data-theme="dark"] .term-blocks section,
+html[data-theme="dark"] .ai-commercial-thesis,
+html[data-theme="dark"] .ai-value-chain article,
+html[data-theme="dark"] .ai-market-evidence article,
+html[data-theme="dark"] .ai-opportunity-secondary,
+html[data-theme="dark"] .evidence-grid article,
+html[data-theme="dark"] .score-grid,
+html[data-theme="dark"] .score-item,
+html[data-theme="dark"] .priority-summary,
+html[data-theme="dark"] .mandate-card,
+html[data-theme="dark"] .news-card,
+html[data-theme="dark"] .pillar-card,
+html[data-theme="dark"] .comparison-wrap,
+html[data-theme="dark"] .px-delivery-grid article,
+html[data-theme="dark"] .ai-decision-map,
+html[data-theme="dark"] .ai-lens,
+html[data-theme="dark"] .ai-intelligence-row,
+html[data-theme="dark"] .glossary-method,
+html[data-theme="dark"] .glossary-cta,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .tool-panel,
+  html:not([data-theme="light"]) .authority-card,
+  html:not([data-theme="light"]) .glossary-panel,
+  html:not([data-theme="light"]) .term-card,
+  html:not([data-theme="light"]) .glossary-card,
+  html:not([data-theme="light"]) .reference-note,
+  html:not([data-theme="light"]) .term-blocks section,
+  html:not([data-theme="light"]) .ai-commercial-thesis,
+  html:not([data-theme="light"]) .ai-value-chain article,
+  html:not([data-theme="light"]) .ai-market-evidence article,
+  html:not([data-theme="light"]) .ai-opportunity-secondary,
+  html:not([data-theme="light"]) .evidence-grid article,
+  html:not([data-theme="light"]) .score-grid,
+  html:not([data-theme="light"]) .score-item,
+  html:not([data-theme="light"]) .priority-summary,
+  html:not([data-theme="light"]) .mandate-card,
+  html:not([data-theme="light"]) .news-card,
+  html:not([data-theme="light"]) .pillar-card,
+  html:not([data-theme="light"]) .comparison-wrap,
+  html:not([data-theme="light"]) .px-delivery-grid article,
+  html:not([data-theme="light"]) .ai-decision-map,
+  html:not([data-theme="light"]) .ai-lens,
+  html:not([data-theme="light"]) .ai-intelligence-row,
+  html:not([data-theme="light"]) .glossary-method,
+  html:not([data-theme="light"]) .glossary-cta
+} {
+  background: #141720 !important;
+  border-color: #1e2330 !important;
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .tool-panel h2,
+html[data-theme="dark"] .authority-card h3,
+html[data-theme="dark"] .glossary-panel h2,
+html[data-theme="dark"] .term-card h2,
+html[data-theme="dark"] .glossary-card h2,
+html[data-theme="dark"] .reference-note h2,
+html[data-theme="dark"] .term-blocks h2,
+html[data-theme="dark"] .ai-value-chain h3,
+html[data-theme="dark"] .ai-market-evidence h3,
+html[data-theme="dark"] .news-card h2,
+html[data-theme="dark"] .news-card h2 a,
+html[data-theme="dark"] .pillar-card strong,
+html[data-theme="dark"] .glossary-method h2,
+html[data-theme="dark"] .glossary-cta h2,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .tool-panel h2,
+  html:not([data-theme="light"]) .authority-card h3,
+  html:not([data-theme="light"]) .glossary-panel h2,
+  html:not([data-theme="light"]) .term-card h2,
+  html:not([data-theme="light"]) .glossary-card h2,
+  html:not([data-theme="light"]) .reference-note h2,
+  html:not([data-theme="light"]) .term-blocks h2,
+  html:not([data-theme="light"]) .ai-value-chain h3,
+  html:not([data-theme="light"]) .ai-market-evidence h3,
+  html:not([data-theme="light"]) .news-card h2,
+  html:not([data-theme="light"]) .news-card h2 a,
+  html:not([data-theme="light"]) .pillar-card strong,
+  html:not([data-theme="light"]) .glossary-method h2,
+  html:not([data-theme="light"]) .glossary-cta h2
+} {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .tool-panel p,
+html[data-theme="dark"] .authority-card p,
+html[data-theme="dark"] .glossary-panel p,
+html[data-theme="dark"] .term-definition,
+html[data-theme="dark"] .term-section p,
+html[data-theme="dark"] .reference-note p,
+html[data-theme="dark"] .term-blocks p,
+html[data-theme="dark"] .ai-value-chain p,
+html[data-theme="dark"] .ai-market-evidence p,
+html[data-theme="dark"] .ai-commercial-thesis,
+html[data-theme="dark"] .news-card p,
+html[data-theme="dark"] .pillar-card p,
+html[data-theme="dark"] .px-delivery-grid p,
+html[data-theme="dark"] .glossary-method p,
+html[data-theme="dark"] .glossary-method li,
+html[data-theme="dark"] .glossary-cta p,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .tool-panel p,
+  html:not([data-theme="light"]) .authority-card p,
+  html:not([data-theme="light"]) .glossary-panel p,
+  html:not([data-theme="light"]) .term-definition,
+  html:not([data-theme="light"]) .term-section p,
+  html:not([data-theme="light"]) .reference-note p,
+  html:not([data-theme="light"]) .term-blocks p,
+  html:not([data-theme="light"]) .ai-value-chain p,
+  html:not([data-theme="light"]) .ai-market-evidence p,
+  html:not([data-theme="light"]) .ai-commercial-thesis,
+  html:not([data-theme="light"]) .news-card p,
+  html:not([data-theme="light"]) .pillar-card p,
+  html:not([data-theme="light"]) .px-delivery-grid p,
+  html:not([data-theme="light"]) .glossary-method p,
+  html:not([data-theme="light"]) .glossary-method li,
+  html:not([data-theme="light"]) .glossary-cta p
+} {
+  color: #cbd5e1 !important;
+}
+
+/* 3. INPUTS, SEARCH BARS & FORMS */
+html[data-theme="dark"] .glossary-search input,
+html[data-theme="dark"] .tool-form input,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .glossary-search input,
+  html:not([data-theme="light"]) .tool-form input
+} {
+  background: #0a0b0e !important;
+  border-color: #2a3142 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .glossary-search,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .glossary-search
+} {
+  background: rgba(10, 11, 14, 0.85) !important;
+  border-color: #1e2330 !important;
+}
+
+/* 4. RESULTS, FINDINGS & METERS */
+html[data-theme="dark"] .meter,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .meter
+} {
+  background: #1e2330 !important;
+}
+html[data-theme="dark"] .meter i,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .meter i
+} {
+  background: #10b981 !important;
+}
+html[data-theme="dark"] .total-score,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .total-score
+} {
+  border-color: #38bdf8 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .total-score strong,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .total-score strong
+} {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .total-score span,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .total-score span
+} {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .score-item span,
+html[data-theme="dark"] .eyebrow,
+html[data-theme="dark"] .ai-opportunity-eyebrow,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .score-item span,
+  html:not([data-theme="light"]) .eyebrow,
+  html:not([data-theme="light"]) .ai-opportunity-eyebrow
+} {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .score-item strong,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .score-item strong
+} {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .status,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .status
+} {
+  background: #141720 !important;
+  border-color: #1e2330 !important;
+  color: #f1f5f9 !important;
+}
+html[data-theme="dark"] .status.error,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .status.error
+} {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: #ef4444 !important;
+  color: #fca5a5 !important;
+}
+html[data-theme="dark"] .locked-fix,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .locked-fix
+} {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .finding code,
+html[data-theme="dark"] .tool-finding code,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .finding code,
+  html:not([data-theme="light"]) .tool-finding code
+} {
+  background: #07080a !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] .finding-tags span,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .finding-tags span
+} {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .finding-url,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .finding-url
+} {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .signals,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .signals
+} {
+  color: #94a3b8 !important;
+}
+html[data-theme="dark"] .signals i,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .signals i
+} {
+  background: #475569 !important;
+}
+
+/* 5. TABLES & COMPARISON MATRICES */
+html[data-theme="dark"] .comparison-table th,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .comparison-table th
+} {
+  background: #161a23 !important;
+  color: #cbd5e1 !important;
+  border-bottom: 1px solid #1e2330 !important;
+}
+html[data-theme="dark"] .comparison-table td,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .comparison-table td
+} {
+  color: #f1f5f9 !important;
+  border-bottom: 1px solid #1e2330 !important;
+}
+html[data-theme="dark"] .comparison-table .limited,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .comparison-table .limited
+} {
+  color: #fbbf24 !important;
+}
+html[data-theme="dark"] .comparison-table .yes,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .comparison-table .yes
+} {
+  color: #34d399 !important;
+}
+
+/* 6. CALLOUTS & ACTIONS */
+html[data-theme="dark"] .authority-callout,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .authority-callout
+} {
+  background: #161a24 !important;
+  border: 1px solid #2a3142 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .authority-callout p,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .authority-callout p
+} {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .hero-actions a,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .hero-actions a
+} {
+  background: #141720 !important;
+  border-color: #1e2330 !important;
+  color: #f1f5f9 !important;
+}
+html[data-theme="dark"] .hero-actions a.primary,
+html[data-theme="dark"] .ai-opportunity-primary,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .hero-actions a.primary,
+  html:not([data-theme="light"]) .ai-opportunity-primary
+} {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+}
+html[data-theme="dark"] .hero-actions a.primary:hover,
+html[data-theme="dark"] .ai-opportunity-primary:hover,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .hero-actions a.primary:hover,
+  html:not([data-theme="light"]) .ai-opportunity-primary:hover
+} {
+  background: #1d4ed8 !important;
+}
+html[data-theme="dark"] .authority-card a,
+html[data-theme="dark"] .term-sources a,
+html[data-theme="dark"] .term-related a,
+html[data-theme="dark"] .news-source a,
+html[data-theme="dark"] .ai-market-evidence a,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .authority-card a,
+  html:not([data-theme="light"]) .term-sources a,
+  html:not([data-theme="light"]) .term-related a,
+  html:not([data-theme="light"]) .news-source a,
+  html:not([data-theme="light"]) .ai-market-evidence a
+} {
+  color: #38bdf8 !important;
+}
+html[data-theme="dark"] .authority-hero h1 em,
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .authority-hero h1 em
+} {
+  color: #94a3b8 !important;
+}
+

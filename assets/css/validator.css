@@ -1,6 +1,6 @@
-@import url('/assets/css/theme.css?v=2');
 @import url('/assets/css/validator-base.css?v=2');
 @import url('/assets/css/validator-v2.css?v=2');
+@import url('/assets/css/theme.css?v=2');
 
 /* Domain input behaves like a plain domain checker: users can enter example.com,
    www.example.com or a full URL. Protocol normalization happens server-side. */
