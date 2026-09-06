@@ -24,16 +24,26 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Materialize static AI discovery-to-demand content
-        run: python3 scripts/inject_commercial_intent.py
-      - name: Verify static commercial artifact before deploy
+      - name: Materialize AI search visibility authority and commercial content
+        run: npm run build:commercial
+      - name: Verify static AI visibility authority artifact before deploy
         shell: bash
         run: |
           set -euo pipefail
           grep -Fq 'data-commercial-intent="static"' index.html
-          grep -Fq 'AI KEŞİF → TALEP → DÖNÜŞÜM' tr/index.html
-          grep -Fq 'AI DISCOVERY → DEMAND → CONVERSION' en/index.html
-          grep -Fq '/assets/css/commercial-intent.css?v=1' en/ai-website-readiness/index.html
+          grep -Fq 'YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ' index.html
+          grep -Fq 'GEO' index.html
+          grep -Fq 'AEO' index.html
+          grep -Fq 'LLMO' index.html
+          grep -Fq 'AAO' index.html
+          grep -Fq 'RAG' index.html
+          grep -Fq 'E-E-A-T' index.html
+          grep -Fq 'llms.txt' index.html
+          grep -Fq 'Google doğruluk sınırı' tr/sozluk/index.html
+          grep -Fq 'Google accuracy boundary' en/glossary/index.html
+          grep -Fq 'Müşteriniz yapay zekaya' tr/yapay-zeka-arama-gorunurlugu/index.html
+          grep -Fq 'When a customer asks AI' en/ai-search-visibility/index.html
+          grep -Fq '/assets/css/commercial-intent.css?v=2' en/ai-website-readiness/index.html
       - name: Install Firebase function dependencies
         run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
       - name: Build Firebase function adapter
