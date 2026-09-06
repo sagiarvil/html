@@ -62,6 +62,7 @@ def build_homepages():
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/validator.css?v=2">
+<link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <style>.pricing-grid.pricing-two .featured{{padding-top:72px}}.pricing-grid.pricing-two .featured .popular{{top:20px;left:24px;right:auto;max-width:calc(100% - 48px);white-space:nowrap}}.pricing-grid.pricing-two .featured .pricehead{{gap:24px}}@media(max-width:600px){{.pricing-grid.pricing-two .featured{{padding-top:68px}}.pricing-grid.pricing-two .featured .popular{{left:20px;max-width:calc(100% - 40px)}}}}</style>
 <script type="application/ld+json">
 {{
@@ -415,6 +416,7 @@ def build_homepages():
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <link rel="stylesheet" href="/assets/css/validator.css?v=2">
+<link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <style>.pricing-grid.pricing-two .featured{{padding-top:72px}}.pricing-grid.pricing-two .featured .popular{{top:20px;left:24px;right:auto;max-width:calc(100% - 48px);white-space:nowrap}}.pricing-grid.pricing-two .featured .pricehead{{gap:24px}}@media(max-width:600px){{.pricing-grid.pricing-two .featured{{padding-top:68px}}.pricing-grid.pricing-two .featured .popular{{left:20px;max-width:calc(100% - 40px)}}}}</style>
 <script type="application/ld+json">
 {{
