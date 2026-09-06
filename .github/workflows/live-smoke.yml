@@ -36,6 +36,23 @@ jobs:
           printf '%s' "$body" | grep -q '\$149'
           printf '%s' "$body" | grep -q '/assets/js/theme.js'
 
+      - name: Verify static AI discovery-to-demand HTML without JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          tr_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/)"
+          en_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/)"
+          en_tool="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/ai-website-readiness/)"
+          printf '%s' "$tr_home" | grep -Fq 'data-commercial-intent="static"'
+          printf '%s' "$tr_home" | grep -Fq 'AI KEŞİF → TALEP → DÖNÜŞÜM'
+          printf '%s' "$tr_home" | grep -Fq 'Garanti satmıyoruz'
+          printf '%s' "$en_home" | grep -Fq 'data-commercial-intent="static"'
+          printf '%s' "$en_home" | grep -Fq 'AI DISCOVERY → DEMAND → CONVERSION'
+          printf '%s' "$en_home" | grep -Fq 'We do not sell guarantees'
+          printf '%s' "$en_tool" | grep -Fq 'data-commercial-intent="static"'
+          printf '%s' "$en_tool" | grep -Fq 'AI readiness is more than adding a file.'
+          printf '%s' "$en_tool" | grep -Fq '/assets/css/commercial-intent.css?v=1'
+
       - name: Verify machine-readable authority graph
         shell: bash
         run: |
