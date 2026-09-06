@@ -8,6 +8,7 @@ const files=[
   ['remediation-engine.ts','remediation-engine.ts'],
   ['remediation-engine-v2.ts','remediation-engine-v2.ts'],
   ['intelligence-engine.ts','intelligence-engine.ts'],
+  ['opportunity-engine.ts','opportunity-engine.ts'],
   ['delivery-pack.ts','delivery-pack.ts'],
   ['guest-entitlement.ts','guest-entitlement.ts']
 ];
@@ -18,4 +19,4 @@ for(const [sourceName,targetName] of files){
   fs.mkdirSync(path.dirname(target),{recursive:true});
   fs.copyFileSync(source,target);
 }
-console.log('Synced canonical scan, normalization, mention, remediation, intelligence, delivery-pack and guest-entitlement engines into Firebase build source.');
+console.log('Synced canonical scan, normalization, mention, remediation, intelligence, opportunity, delivery-pack and guest-entitlement engines into Firebase build source.');
