@@ -56,6 +56,16 @@
       {"source":"/api/paddle/webhook","function":{"functionId":"paddleWebhook","region":"us-central1"}}
     ],
     "redirects": [
+      {"source":"/tr/llms-txt-haberler/2026-08-ai-visibility-technical-debt**","destination":"/tr/llms-txt-haberler/2026-08-28-ai-visibility-gains-often-mask-structural-technica-1507f0bd2c/","type":301},
+      {"source":"/en/llms-txt-news/2026-08-ai-visibility-technical-debt**","destination":"/en/llms-txt-news/2026-08-28-ai-visibility-gains-often-mask-structural-technica-1507f0bd2c/","type":301},
+      {"source":"/tr/llms-txt-haberler/2026-08-google-generative-ai-search-reporting-global**","destination":"/tr/llms-txt-haberler/2026-08-28-search-console-generative-ai-data-discrepancies-an-245fb70e11/","type":301},
+      {"source":"/en/llms-txt-news/2026-08-google-generative-ai-search-reporting-global**","destination":"/en/llms-txt-news/2026-08-28-search-console-generative-ai-data-discrepancies-an-245fb70e11/","type":301},
+      {"source":"/tr/llms-txt-haberler/2026-openai-search-publisher-discovery**","destination":"/tr/llms-txt-haberler/2026-08-28-oai-searchbot-robots-txt-compliance-and-indexing-g-bbacaa0514/","type":301},
+      {"source":"/en/llms-txt-news/2026-openai-search-publisher-discovery**","destination":"/en/llms-txt-news/2026-08-28-oai-searchbot-robots-txt-compliance-and-indexing-g-bbacaa0514/","type":301},
+      {"source":"/tr/llms-txt-haberler/2026-ai-recommendation-consistency**","destination":"/tr/llms-txt-haberler/2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9/","type":301},
+      {"source":"/en/llms-txt-news/2026-ai-recommendation-consistency**","destination":"/en/llms-txt-news/2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9/","type":301},
+      {"source":"/tr/llms-txt-haberler/2026-agentic-search-website-readiness**","destination":"/tr/llms-txt-haberler/2026-08-28-future-proofing-digital-content-for-multi-agent-au-bec404b82a/","type":301},
+      {"source":"/en/llms-txt-news/2026-agentic-search-website-readiness**","destination":"/en/llms-txt-news/2026-08-28-future-proofing-digital-content-for-multi-agent-au-bec404b82a/","type":301},
       {"source":"/favicon.ico","destination":"/favicon.svg","type":302},
       {"source":"/index.html","destination":"/","type":301},
       {"source":"/home","destination":"/","type":301},

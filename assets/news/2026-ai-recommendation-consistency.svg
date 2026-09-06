@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9 d-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9">
+  <title id="t-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9">HTML&amp;HTML AI Search Intelligence — LLMO (AI INFERENCE)</title>
+  <desc id="d-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9">Vector silhouette blueprint and narrative story for Brand Salience and PMI Scoring in Large Language Model Corpora: AI Search and Technical Web Architecture Analysis</desc>
+  <defs>
+    <linearGradient id="bg-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060709"/>
+      <stop offset="50%" stop-color="#090B10"/>
+      <stop offset="100%" stop-color="#0C0F16"/>
+    </linearGradient>
+    <radialGradient id="glow-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#818CF8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#060709" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-geo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="beam-seo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="675" fill="url(#bg-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9)"/>
+  <rect width="1200" height="675" fill="url(#glow-2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9)"/>
+
+  <!-- Perspective Floor Grid (Cybernetic Horizon) -->
+  <g stroke="rgba(255,255,255,0.035)" stroke-width="1">
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="610" x2="1200" y2="610"/>
+    <line x1="600" y1="480" x2="100" y2="675"/>
+    <line x1="600" y1="480" x2="350" y2="675"/>
+    <line x1="600" y1="480" x2="600" y2="675"/>
+    <line x1="600" y1="480" x2="850" y2="675"/>
+    <line x1="600" y1="480" x2="1100" y2="675"/>
+  </g>
+
+  <!-- Isometric Blueprint Grid Lines (Subtle) -->
+  <line x1="0" y1="337.5" x2="1200" y2="337.5" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="600" y1="0" x2="600" y2="675" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
+
+  <!-- SPECIFIC PILLAR SILHOUETTE SCENE -->
+
+    <!-- Pillar 4: LLMO — Neural Architect Silhouette & Colossal Transformer Attention Lattice -->
+    <g id="scene-llmo" transform="translate(0, -3)">
+      <g transform="translate(600, 280)">
+        <g transform="translate(0, -120)">
+          <circle cx="-160" cy="0" r="14" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+          <circle cx="-80" cy="0" r="14" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+          <circle cx="0" cy="0" r="14" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+          <circle cx="80" cy="0" r="14" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+          <circle cx="160" cy="0" r="14" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+          <text x="0" y="-24" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#38BDF8">INPUT EMBEDDINGS (TOKEN LAYER)</text>
+        </g>
+        
+        <g stroke="#818CF8" stroke-width="1.2" opacity="0.45">
+          <line x1="-160" y1="-106" x2="-100" y2="0"/><line x1="-160" y1="-106" x2="0" y2="0"/><line x1="-160" y1="-106" x2="100" y2="0"/>
+          <line x1="-80" y1="-106" x2="-100" y2="0"/><line x1="-80" y1="-106" x2="0" y2="0"/><line x1="-80" y1="-106" x2="100" y2="0"/>
+          <line x1="0" y1="-106" x2="-100" y2="0"/><line x1="0" y1="-106" x2="0" y2="0"/><line x1="0" y1="-106" x2="100" y2="0"/>
+          <line x1="80" y1="-106" x2="-100" y2="0"/><line x1="80" y1="-106" x2="0" y2="0"/><line x1="80" y1="-106" x2="100" y2="0"/>
+          <line x1="160" y1="-106" x2="-100" y2="0"/><line x1="160" y1="-106" x2="0" y2="0"/><line x1="160" y1="-106" x2="100" y2="0"/>
+        </g>
+
+        <g transform="translate(0, 0)">
+          <circle cx="-100" cy="0" r="26" fill="#0E1428" stroke="#38BDF8" stroke-width="2.5"/>
+          <circle cx="-100" cy="0" r="8" fill="#38BDF8"/>
+          <circle cx="0" cy="0" r="32" fill="#0E1428" stroke="#818CF8" stroke-width="3"/>
+          <circle cx="0" cy="0" r="14" fill="#818CF8"/>
+          <circle cx="100" cy="0" r="26" fill="#0E1428" stroke="#38BDF8" stroke-width="2.5"/>
+          <circle cx="100" cy="0" r="8" fill="#38BDF8"/>
+          <text x="0" y="48" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="800" text-anchor="middle" fill="#818CF8">MULTI-HEAD ATTENTION (Q × K^T)</text>
+        </g>
+
+        <g stroke="#38BDF8" stroke-width="1.5" opacity="0.6">
+          <line x1="-100" y1="26" x2="-60" y2="100"/><line x1="0" y1="32" x2="0" y2="100"/><line x1="100" y1="26" x2="60" y2="100"/>
+        </g>
+
+        <g transform="translate(0, 115)">
+          <rect x="-120" y="0" width="240" height="28" rx="6" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+          <text x="0" y="18" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#38BDF8">SOFTMAX PROBABILITY VECTOR</text>
+        </g>
+      </g>
+
+      <g transform="translate(200, 310)">
+        <circle cx="0" cy="0" r="24" fill="#070A12" stroke="#38BDF8" stroke-width="2"/>
+        <path d="M-8,24 L-24,100 L24,100 L10,24 Z" fill="#070A12" stroke="#38BDF8" stroke-width="1.8"/>
+        <path d="M10,45 L60,30 L110,-10" fill="none" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="110" cy="-10" r="4" fill="#818CF8"/>
+        <path d="M-16,100 L-20,180 M16,100 L20,180" stroke="#070A12" stroke-width="14" stroke-linecap="round"/>
+      </g>
+
+      <g font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">
+        <rect x="800" y="440" width="180" height="24" rx="4" fill="#0A0D15" stroke="#818CF8" stroke-width="1"/>
+        <text x="812" y="456" fill="#818CF8">ATTN_WEIGHT: 0.998</text>
+      </g>
+    </g>
+
+  <!-- Outer Technical Blueprint HUD Brackets -->
+  <path d="M40 60 V40 H60 M1140 40 H1160 V60 M1160 615 V635 H1140 M60 635 H40 V615" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" fill="none"/>
+
+  <!-- Top Metadata Ribbon -->
+  <rect x="48" y="48" width="130" height="24" rx="4" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#38BDF8">PILLAR // LLMO</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ LARGE LANGUAGE MODEL OPTIMIZATION & ATTENTION ]</text>
+  <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-87FDA9F8</text>
+
+  <!-- Bottom Caption & Context -->
+  <rect x="48" y="585" width="1104" height="42" rx="6" fill="#07090E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Brand Salience and PMI Scoring in Large Language Model Corpora: AI Searc</text>
+  <text x="1136" y="611" font-family="ui-monospace,Menlo,monospace" font-size="10.5" font-weight="700" text-anchor="end" letter-spacing="2" fill="#38BDF8">HTML&amp;HTML // 2026-09-06</text>
+</svg>

@@ -105,6 +105,14 @@ def format_models_html(models_raw):
                 cards.append(f'<div class="pillar-card"><p>{esc(l[2:])}</p></div>')
     return ''.join(cards)
 
+LEGACY_ALIASES = {
+    '2026-08-ai-visibility-technical-debt': '2026-08-28-ai-visibility-gains-often-mask-structural-technica-1507f0bd2c',
+    '2026-08-google-generative-ai-search-reporting-global': '2026-08-28-search-console-generative-ai-data-discrepancies-an-245fb70e11',
+    '2026-openai-search-publisher-discovery': '2026-08-28-oai-searchbot-robots-txt-compliance-and-indexing-g-bbacaa0514',
+    '2026-ai-recommendation-consistency': '2026-08-28-brand-salience-and-pmi-scoring-in-large-language-m-8b0b657fa9',
+    '2026-agentic-search-website-readiness': '2026-08-28-future-proofing-digital-content-for-multi-agent-au-bec404b82a'
+}
+
 def write_article(item):
     slug = slugify(item['id'])
     cover = write_cover(item, slug)
@@ -145,6 +153,19 @@ def write_article(item):
         
         html_doc = f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} | HTML&amp;HTML</title><meta name="description" content="{dek}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/{slug}/"><link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/{slug}/"><link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/llms-txt-news/{slug}/"><link rel="describedby" href="https://htmlandhtml.com/llms.txt"><link rel="stylesheet" href="/assets/css/theme.css?v=2"><link rel="stylesheet" href="/assets/css/authority.css"><link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2"><link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2"><meta property="og:type" content="article"><meta property="og:title" content="{title}"><meta property="og:description" content="{dek}"><meta property="og:image" content="https://htmlandhtml.com{cover}"><script type="application/ld+json">{article_schema(item,lang,canonical,alternate,cover)}</script><script src="/assets/js/theme.js"></script></head><body>{header(lang)}<main><article class="news-article" data-news-original-analysis="true"><nav class="breadcrumbs"><a href="{'/tr/' if tr else '/en/'}">{'Ana Sayfa' if tr else 'Home'}</a><span>/</span><a href="{hub}">{'LLMS.TXT Haberler' if tr else 'LLMS.TXT News'}</a></nav><header class="news-hero"><div class="kicker"><span></span><b>HTML&amp;HTML / {'YAPAY ZEKA ARAMA İSTİHBARATI' if tr else 'AI SEARCH INTELLIGENCE'}</b></div><h1>{title}</h1><p>{dek}</p><div class="news-meta"><time datetime="{esc(item['publishedAt'])}">{esc(item.get('updatedAt') or item['publishedAt'])}</time><span class="news-topic-pill">{topic_clean}</span><span class="news-read-time">⏱️ {'14 dk okuma' if tr else '14 min read'}</span></div></header><img class="news-cover" src="{cover}" alt="" width="1200" height="675"><div class="news-body"><section class="news-section"><h2>{'Yönetici Özeti ve Temel Gelişme' if tr else 'Executive Summary & Core Development'}</h2><p>{summary}</p></section><section class="news-section"><h2>{'Web Yöneticisi ve Dijital Varlıklar Açısından Kritik Önemi' if tr else 'Why It Matters to Webmasters & Digital Assets'}</h2><p>{why}</p></section><section class="news-section"><h2>{'Derinlemesine Teknik Mimari ve Protokol Değişikliği' if tr else 'Deep Technical Architecture & Protocol Shift'}</h2><p>{tech}</p></section><section class="news-section news-nine-pillars"><h2>{'Çoklu Model ve Yapay Zeka Arama Motorları Karşılaştırması' if tr else 'Multi-Model Retrieval Dynamics & Engine Comparison'}</h2><div class="nine-pillars-grid">{models_html}</div></section><section class="news-section news-nine-pillars"><h2>{'9 Temel Sütun Üzerindeki Doğrudan Etki Matrisi' if tr else 'Direct Impact Matrix Across the 9 Pillars'}</h2><div class="nine-pillars-grid">{nine_pillars_html}</div></section><section class="news-section news-code-block"><h2>{'Üretime Hazır Kod ve Konfigürasyon Spesifikasyonu' if tr else 'Production Code & Configuration Specification'}</h2><p>{code_desc}</p><pre><code>{code_snippet}</code></pre></section><section class="news-actions"><h2>{'Adım Adım Denetim ve Mühendislik Eylem Protokolü' if tr else 'Step-by-Step Engineering Audit & Action Protocol'}</h2><ol class="news-action-list">{acts}</ol></section><aside class="news-boundary"><b>{'KANIT SINIRI VE BELİRSİZLİK PRENSİBİ' if tr else 'EVIDENCE BOUNDARY & UNCERTAINTY PRINCIPLE'}</b><p>{boundary}</p></aside><div class="news-tags">{tags}</div><div class="news-source"><p>{'Bu analiz dış yayının metnini yeniden yayımlamaz; kaynağa dayalı bağımsız HTML&HTML yorumudur.' if tr else 'This brief does not republish the external article; it is independent HTML&HTML analysis grounded in the source.'}</p><a href="{source}" target="_blank" rel="noopener noreferrer external">{'Orijinal kaynak ↗' if tr else 'Original source ↗'}</a></div></div><section class="news-cta" data-commercial-intent="static"><h2>{'Haberi okudunuz. Şimdi kendi sitenizi ölçün.' if tr else 'You have the context. Now measure your own website.'}</h2><p>{'llms.txt, AI crawler, GEO, AEO, LLMO, AAO, RAG, E-E-A-T ve teknik temel aynı taramada birlikte çalışır.' if tr else 'llms.txt, AI crawler access, GEO, AEO, LLMO, AAO, RAG, E-E-A-T and the technical foundation are evaluated in one scan.'}</p><a class="primary" href="{'/tr/#scanner' if tr else '/en/#scanner'}">{'Yapay Zeka Görünürlüğümü Ücretsiz Tara →' if tr else 'Check My AI Visibility Free →'}</a></section></article></main>{footer(lang)}</body></html>'''
         p.write_text(html_doc, encoding='utf-8')
+        
+        # Also materialize legacy aliases if mapped so bookmarks and direct URLs never 404
+        for alias_slug, canonical_slug in LEGACY_ALIASES.items():
+            if slug == canonical_slug:
+                alias_route = f'{hub}{alias_slug}/'
+                alias_p = ROOT / alias_route.strip('/') / 'index.html'
+                alias_p.parent.mkdir(parents=True, exist_ok=True)
+                alias_p.write_text(html_doc, encoding='utf-8')
+                alias_cover = ROOT / 'assets/news' / f'{alias_slug}.svg'
+                src_cover = ROOT / cover.lstrip('/')
+                if src_cover.exists():
+                    alias_cover.write_text(src_cover.read_text(encoding='utf-8'), encoding='utf-8')
+
     return slug, cover
 
 def write_hub(lang, records):

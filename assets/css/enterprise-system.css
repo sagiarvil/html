@@ -48,7 +48,12 @@ html[data-theme="dark"] .news-topic-pill{background:rgba(56,189,248,0.15);color:
 .pillar-card strong{display:block;font-size:14px;margin-bottom:6px;color:var(--hh-ink);letter-spacing:.02em}
 .pillar-card p{margin:0;font-size:14px;line-height:1.6;color:var(--hh-muted)}
 html[data-theme="dark"] .pillar-card{background:rgba(18,20,26,0.6);border-color:rgba(255,255,255,0.08)}
-html[data-theme="dark"] .news-card{background:rgba(18,20,26,0.6);border-color:rgba(255,255,255,0.08)}
+html[data-theme="dark"] .news-card{background:#141720!important;border-color:rgba(255,255,255,0.12)!important}
+html[data-theme="dark"] .news-card h2 a{color:#ffffff!important}
+html[data-theme="dark"] .news-card p{color:#cbd5e1!important}
+html[data-theme="dark"] .news-meta{color:#94a3b8!important}
+html[data-theme="dark"] .news-meta time{color:#94a3b8!important}
+html[data-theme="dark"] .news-read{color:#38bdf8!important}
 .news-code-block pre{background:#07080a;color:#38bdf8;padding:20px;border-radius:14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow-x:auto;border:1px solid rgba(255,255,255,0.1);line-height:1.5;margin:16px 0}
 .news-action-list{padding-left:22px;margin:16px 0}
 .news-action-list li{margin-bottom:10px;line-height:1.65;font-size:16px}
