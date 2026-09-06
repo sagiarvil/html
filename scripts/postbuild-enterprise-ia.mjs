@@ -8,8 +8,8 @@ if(!llms.includes('https://htmlandhtml.com/en/tools')){
 }
 
 // Established authority tools predate the enterprise IA generator. Keep their
-// content and product behavior intact, but bring them under the same structured
-// navigation contract as every newly generated intent page.
+// product behavior intact while bringing them under the same navigation,
+// hreflang and breadcrumb contract as newly generated intent pages.
 const established=[
  ['en/ai-website-readiness/index.html','en','/en/ai-website-readiness','AI Website Readiness'],
  ['tr/ai-website-readiness/index.html','tr','/tr/ai-website-readiness','AI Web Sitesi Hazırlığı'],
@@ -23,17 +23,23 @@ const established=[
 for(const [file,lang,route,name] of established){
   if(!fs.existsSync(file))continue;
   let s=read(file);
+  const home=lang==='tr'?'/tr':'/en';
+  const tools=lang==='tr'?'/tr/araclar':'/en/tools';
+  if(!s.includes('hreflang="x-default"'))s=s.replace('<link rel="describedby"',`<link rel="alternate" hreflang="x-default" href="${base}/en"><link rel="describedby"`);
   if(!s.includes('"@type":"BreadcrumbList"')){
-    const home=lang==='tr'?'/tr':'/en';
-    const tools=lang==='tr'?'/tr/araclar':'/en/tools';
     const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
       {"@type":"ListItem","position":1,"name":lang==='tr'?'Ana sayfa':'Home',"item":base+home},
       {"@type":"ListItem","position":2,"name":lang==='tr'?'Araçlar':'Tools',"item":base+tools},
       {"@type":"ListItem","position":3,"name":name,"item":base+route}
     ]};
     s=s.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
-    write(file,s);
   }
+  if(!s.includes('class="breadcrumbs"')){
+    const label=lang==='tr'?'Sayfa yolu':'Breadcrumb';
+    const homeName=lang==='tr'?'Ana sayfa':'Home',toolsName=lang==='tr'?'Araçlar':'Tools';
+    s=s.replace('<main>',`<main><nav class="breadcrumbs" aria-label="${label}"><a href="${home}">${homeName}</a><span>›</span><a href="${tools}">${toolsName}</a><span>›</span><a href="${route}">${name}</a></nav>`);
+  }
+  write(file,s);
 }
 
 // Collapse legacy English URLs directly into the locale tree. This avoids
@@ -49,6 +55,10 @@ firebase.hosting.redirects=(firebase.hosting.redirects||[]).filter(r=>!legacySou
 firebase.hosting.redirects.unshift(...legacy.map(([source,destination])=>({source,destination,type:301})));
 write('firebase.json',JSON.stringify(firebase,null,2)+'\n');
 write('_redirects',`${legacy.map(([s,d])=>`${s.padEnd(24)} ${d.padEnd(32)} 301`).join('\n')}\n/buy                     /checkout                        302\n`);
+
+// The Turkish locale gets a final human-copy purity pass after all generated
+// and established pages are assembled. Machine/protocol tokens remain exact.
+await import('./purify-tr-ui.mjs');
 
 const pkg=JSON.parse(read('package.json'));
 pkg.scripts['build:ia']='node scripts/build-enterprise-ia.mjs && node scripts/postbuild-enterprise-ia.mjs';
