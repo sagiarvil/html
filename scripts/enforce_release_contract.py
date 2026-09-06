@@ -57,6 +57,12 @@ def write_if_changed(path: Path, text: str) -> None:
         path.write_text(text, encoding='utf-8')
 
 
+def inject_before_main_end(text: str, block: str) -> str:
+    if '</main>' in text:
+        return text.replace('</main>', block + '</main>', 1)
+    return text + block
+
+
 for path in PUBLIC_HTML + [p for p in PUBLIC_EXTRA if p.exists()]:
     write_if_changed(path, normalize_public_text(path.read_text(encoding='utf-8')))
 
@@ -75,6 +81,9 @@ tr_text = tr_pricing.read_text(encoding='utf-8')
 tr_line = '<p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Yol Haritası:</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>'
 if 'Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?' not in tr_text:
     tr_text = re.sub(r'(</h1>)', r'\1' + tr_line, tr_text, count=1, flags=re.I)
+tr_manifest = '''<section class="pricing-delivery-manifest" aria-labelledby="delivery-manifest-tr"><div class="section-head"><span>TESLİM PAKETİ</span><h2 id="delivery-manifest-tr">Ödeme sonrası oluşturulan mühendislik ZIP’i</h2><p>Dosya adları temsili değil; sunucunun ürettiği kanonik teslim sözleşmesidir.</p></div><div class="delivery-file-grid"><code>00_READ_ME.md</code><code>01_EXECUTIVE_SUMMARY.md</code><code>02_IMPLEMENTATION_BLUEPRINT.md</code><code>03_FINDINGS.json</code><code>04_ACCEPTANCE_TESTS.md</code><code>05_ROLLBACK_PLAN.md</code><code>06_AI_READINESS.json</code><code>07_IMPLEMENTATION_CHECKLIST.txt</code></div></section>'''
+if not all(canonical in tr_text for _, canonical in ZIP_NAMES):
+    tr_text = inject_before_main_end(tr_text, tr_manifest)
 write_if_changed(tr_pricing, tr_text)
 
 en_pricing = ROOT / 'en/pricing/index.html'
@@ -82,6 +91,9 @@ en_text = en_pricing.read_text(encoding='utf-8')
 en_line = '<p class="release-contract-line"><strong>Free diagnosis:</strong> What is wrong? Where? How important? <strong>$99 AI Search Visibility Roadmap:</strong> How should it be fixed? In what order? How will it be verified?</p>'
 if 'How should it be fixed? In what order? How will it be verified?' not in en_text:
     en_text = re.sub(r'(</h1>)', r'\1' + en_line, en_text, count=1, flags=re.I)
+en_manifest = '''<section class="pricing-delivery-manifest" aria-labelledby="delivery-manifest-en"><div class="section-head"><span>DELIVERY PACKAGE</span><h2 id="delivery-manifest-en">Engineering ZIP generated after verified payment</h2><p>These are not illustrative labels; they are the canonical server-generated delivery contract.</p></div><div class="delivery-file-grid"><code>00_READ_ME.md</code><code>01_EXECUTIVE_SUMMARY.md</code><code>02_IMPLEMENTATION_BLUEPRINT.md</code><code>03_FINDINGS.json</code><code>04_ACCEPTANCE_TESTS.md</code><code>05_ROLLBACK_PLAN.md</code><code>06_AI_READINESS.json</code><code>07_IMPLEMENTATION_CHECKLIST.txt</code></div></section>'''
+if not all(canonical in en_text for _, canonical in ZIP_NAMES):
+    en_text = inject_before_main_end(en_text, en_manifest)
 write_if_changed(en_pricing, en_text)
 
 # Customer-facing contract must be clean after every build, not merely after hand-edits.
