@@ -1,6 +1,20 @@
-# HTML&HTML — Platform & Architecture Overview
+# HTML&HTML — Website AI Discovery, Demand & Fix Platform
 
-HTML&HTML provides deterministic, evidence-based website audits and implementation-grade Fix Mandates for engineering teams and AI coding agents.
+HTML&HTML audits whether a website is technically and semantically ready to be discovered, understood, cited, linked, and acted on by search and AI systems. The commercial opportunity is not an “AI ranking” by itself; it is the full path from AI/search discovery to qualified referral and conversion.
+
+## Commercial Thesis
+The decision journey is changing. A potential customer may ask ChatGPT, Google AI Search, Perplexity, Gemini, or another AI system what to choose before visiting a website. A site can only compete for that demand if the relevant systems can reach it, understand what it offers, resolve its entities and evidence, treat the content as source-worthy, and send a usable referral path to a conversion-ready page.
+
+HTML&HTML measures the site-side conditions across that chain:
+
+**DISCOVERY → UNDERSTANDING → SOURCE ELIGIBILITY → CLICK → CONVERSION**
+
+HTML&HTML does not guarantee AI rankings, recommendations, brand mentions, citations, traffic, or revenue. It measures and helps remove observable site-side blockers that can prevent eligibility, retrieval, citation, referral, and conversion.
+
+## Why This Matters Now
+- **OpenAI:** Public websites can appear in ChatGPT Search. OpenAI states that allowing OAI-SearchBot supports discovery and citation, and ChatGPT referral traffic can be measured. Source: https://help.openai.com/en/articles/12627856-publishers-and-developers-faq
+- **Google:** Google reports billion-scale adoption of AI Overviews and AI Mode and says AI Search features send billions of clicks to websites. Source: https://blog.google/products-and-platforms/products/search/new-controls-website-owners/
+- **Adobe:** Adobe’s 2026 U.S. retail research reports AI-referred visits outperforming non-AI traffic on conversion and engagement in that market. This is industry-specific evidence, not a universal conversion guarantee. Source: https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable
 
 ## Core Capabilities
 1. **12 Independent Diagnostic Engines:** Crawl & Index, Technical SEO, AI/GEO Access, llms.txt v2, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion, and Link Integrity.
@@ -32,7 +46,13 @@ HTML&HTML provides deterministic, evidence-based website audits and implementati
 - **AI Website Readiness:** AI/GEO and technical readiness view built on the same canonical scan core.
 - **llms.txt Validator:** llms.txt structure, discovery, and real link-reachability checks.
 - **AI Crawler Checker:** Search/retrieval/training crawler policy inspection without conflating those purposes.
+- **Schema Validator:** Entity and structured-data validation supporting machine understanding.
+- **Technical SEO Checker:** Crawlable, canonical, indexable web-foundation checks that remain relevant to AI retrieval.
+- **Accessibility Checker:** Human and agent-readable labels, forms, semantics, and interaction surfaces.
+- **Link Integrity Checker:** Referral-path and internal-link checks so discovery does not terminate on broken destinations.
 - **AI Mention Tracker:** Paid neutral-prompt measurement of brand mentions, domain citations, and source URLs across configured OpenAI, Perplexity, and Gemini surfaces; consumer applications may differ.
 
 ## Commercial Boundary
-Evidence and diagnosis are public. Implementation precision is the paid product. The Full Site Fix Mandate costs USD 149 for one domain / one engagement and includes one re-scan within 30 days. Ranking, traffic, revenue, featured-snippet, or AI-citation outcomes are never guaranteed.
+Evidence and diagnosis are public. Implementation precision is the paid product. The Full Site Fix Mandate costs USD 149 for one domain / one engagement and includes one re-scan within 30 days.
+
+The product sells measurable readiness, not false certainty. Ranking, recommendation, traffic, revenue, featured-snippet, or AI-citation outcomes are never guaranteed.
