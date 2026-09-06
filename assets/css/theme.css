@@ -1857,123 +1857,524 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
 
 /* --------------------------------------------------------------------------
    EXECUTIVE WHITEPAPER PRINT ENGINE (@media print)
+   RULE: Plain white page with pure black text for findings and report export.
    -------------------------------------------------------------------------- */
 @media print {
   @page {
-    margin: 1.5cm;
+    margin: 1.2cm 1cm;
     size: A4 portrait;
   }
-  html, body {
+
+  /* 1. Global Reset to Pure White Background and Deep Black Text */
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  html,
+  html[data-theme],
+  html[data-theme="dark"],
+  html[data-theme="light"],
+  body,
+  html[data-theme] body,
+  html[data-theme="dark"] body,
+  html[data-theme="light"] body {
     background: #ffffff !important;
-    color: #0f172a !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 10pt !important;
     line-height: 1.45 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-  .topbar, footer, .scanbox, .hero, .signals, .px-section, .ai-opportunity,
-  .btn-pdf-export, .theme-switch, .langs, .nav-scan-cta, .locked-fix,
-  .mandate-card, .classified-section, .tabs, .scan-chips {
+
+  /* 2. Hide Everything Not Part of the Audit Report */
+  .topbar,
+  header,
+  footer,
+  .hero,
+  .kicker,
+  .scanbox,
+  .tabs,
+  .scan-chips,
+  .signals,
+  .px-section,
+  .enterprise-nine-pillars,
+  .classified-section,
+  .px-delivery-manifest-section,
+  .pricing,
+  .faq,
+  .ai-opportunity,
+  .btn-pdf-export,
+  .theme-switch,
+  .langs,
+  .nav-scan-cta,
+  .nav-actions,
+  .primary-nav,
+  .skip,
+  .mandate-card,
+  .locked-fix,
+  .finding-conversion-teaser,
+  .findings-filter-bar,
+  #findingsFilterBar,
+  .status,
+  .copy-bubble,
+  [data-commercial-intent],
+  .pillar-footer-banner,
+  .banner-cta {
     display: none !important;
   }
-  #result.results {
+
+  /* 3. Report Container */
+  #result.results,
+  html[data-theme] #result.results,
+  html[data-theme="dark"] #result.results,
+  html[data-theme="light"] #result.results {
     display: block !important;
-    padding: 0 !important;
+    width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
+    padding: 0 !important;
     background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
   }
-  .result-head {
-    border-bottom: 2pt solid #0f172a !important;
-    padding-bottom: 14pt !important;
-    margin-bottom: 20pt !important;
+
+  /* 4. Report Header */
+  .result-head,
+  html[data-theme] .result-head,
+  html[data-theme="dark"] .result-head {
+    border-bottom: 2pt solid #000000 !important;
+    padding-bottom: 10pt !important;
+    margin-bottom: 14pt !important;
     display: flex !important;
     justify-content: space-between !important;
+    align-items: flex-end !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
   }
-  .result-head h2 {
-    font-size: 24pt !important;
-    color: #0f172a !important;
-    margin: 4pt 0 !important;
+
+  .result-head .eyebrow,
+  html[data-theme] .result-head .eyebrow,
+  html[data-theme="dark"] .result-head .eyebrow {
+    font-size: 8.5pt !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    display: block !important;
+    margin-bottom: 3pt !important;
   }
-  .result-head p {
-    color: #64748b !important;
-    font-size: 9pt !important;
+
+  .result-head h2,
+  #resultDomain,
+  html[data-theme] #resultDomain,
+  html[data-theme="dark"] #resultDomain {
+    font-size: 20pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    margin: 0 0 3pt 0 !important;
+    line-height: 1.1 !important;
   }
-  .total-score {
-    border: 2pt solid #0f172a !important;
-    border-radius: 8pt !important;
-    padding: 8pt 16pt !important;
+
+  .result-head p,
+  #resultMeta,
+  html[data-theme] #resultMeta,
+  html[data-theme="dark"] #resultMeta {
+    color: #334155 !important;
+    font-size: 8.5pt !important;
+    margin: 0 !important;
+  }
+
+  /* Overall Score Box */
+  .total-score,
+  html[data-theme] .total-score,
+  html[data-theme="dark"] .total-score {
+    border: 2pt solid #000000 !important;
+    border-radius: 6pt !important;
+    padding: 6pt 12pt !important;
     text-align: center !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
   }
-  .total-score strong {
-    font-size: 32pt !important;
-    color: #0f172a !important;
+
+  .total-score strong,
+  #overallScore,
+  html[data-theme] #overallScore,
+  html[data-theme="dark"] #overallScore {
+    font-size: 26pt !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+    line-height: 1 !important;
+    text-shadow: none !important;
   }
-  .score-grid {
+
+  .total-score span,
+  html[data-theme] .total-score span,
+  html[data-theme="dark"] .total-score span {
+    font-size: 9.5pt !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+  }
+
+  /* 5. 4-Pillars Summary */
+  .result-pillars-grid,
+  html[data-theme] .result-pillars-grid,
+  html[data-theme="dark"] .result-pillars-grid {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 8pt !important;
-    margin-bottom: 20pt !important;
+    gap: 6pt !important;
+    margin-bottom: 12pt !important;
+    background: transparent !important;
   }
-  .score-item {
+
+  .result-pillars-grid .pillar-card,
+  html[data-theme] .result-pillars-grid .pillar-card,
+  html[data-theme="dark"] .result-pillars-grid .pillar-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-radius: 4pt !important;
+    padding: 6pt 8pt !important;
+    box-shadow: none !important;
+  }
+
+  .result-pillars-grid .pillar-tag {
+    font-size: 7pt !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  .result-pillars-grid .pillar-score,
+  .result-pillars-grid strong {
+    font-size: 13pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+  }
+
+  .result-pillars-grid h4 {
+    font-size: 8.5pt !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+    margin: 2pt 0 !important;
+  }
+
+  .result-pillars-grid p {
+    font-size: 7.5pt !important;
+    color: #1e293b !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+
+  .pillar-meter {
+    display: none !important;
+  }
+
+  /* 6. Score Grid (12 Engines) */
+  .score-grid,
+  html[data-theme] .score-grid,
+  html[data-theme="dark"] .score-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5pt !important;
+    margin-bottom: 12pt !important;
+    background: transparent !important;
+  }
+
+  .score-item,
+  html[data-theme] .score-item,
+  html[data-theme="dark"] .score-item {
     border: 1pt solid #cbd5e1 !important;
     background: #f8fafc !important;
-    padding: 8pt !important;
-    border-radius: 4pt !important;
+    background-color: #f8fafc !important;
+    background-image: none !important;
+    padding: 5pt 7pt !important;
+    border-radius: 3pt !important;
+    box-shadow: none !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
-  .score-item span {
-    font-size: 8pt !important;
+
+  .score-item span,
+  html[data-theme] .score-item span,
+  html[data-theme="dark"] .score-item span {
+    font-size: 7.5pt !important;
+    color: #1e293b !important;
+    display: block !important;
+    font-weight: 600 !important;
+  }
+
+  .score-item strong,
+  html[data-theme] .score-item strong,
+  html[data-theme="dark"] .score-item strong {
+    font-size: 13pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    text-shadow: none !important;
+  }
+
+  .score-item .meter {
+    display: none !important;
+  }
+
+  .scan-disclosure,
+  html[data-theme] .scan-disclosure,
+  html[data-theme="dark"] .scan-disclosure {
+    font-size: 7.5pt !important;
     color: #475569 !important;
-    display: block !important;
+    border-top: 1pt solid #cbd5e1 !important;
+    padding-top: 4pt !important;
+    margin-bottom: 12pt !important;
+    background: transparent !important;
   }
-  .score-item strong {
-    font-size: 16pt !important;
-    color: #0f172a !important;
-  }
-  .result-columns {
-    display: block !important;
-  }
-  .findings {
-    display: block !important;
-  }
-  .finding {
-    border: 1pt solid #e2e8f0 !important;
+
+  /* 7. Priority Summary */
+  .priority-summary,
+  html[data-theme] .priority-summary,
+  html[data-theme="dark"] .priority-summary {
+    border: 1.5pt solid #000000 !important;
+    border-left: 5pt solid #000000 !important;
     background: #ffffff !important;
-    padding: 10pt !important;
-    margin-bottom: 10pt !important;
-    border-radius: 4pt !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    padding: 8pt 10pt !important;
+    margin-bottom: 14pt !important;
+    border-radius: 3pt !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  .priority-summary h3,
+  html[data-theme] .priority-summary h3,
+  html[data-theme="dark"] .priority-summary h3 {
+    font-size: 10pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    margin: 0 0 6pt 0 !important;
+  }
+
+  .priority-item,
+  html[data-theme] .priority-item,
+  html[data-theme="dark"] .priority-item {
+    font-size: 8.5pt !important;
+    color: #000000 !important;
+    padding: 3pt 0 !important;
+    border-bottom: 1pt solid #e2e8f0 !important;
     display: flex !important;
-    gap: 12pt !important;
+    align-items: center !important;
+    gap: 6pt !important;
+    background: transparent !important;
   }
-  .finding h4 {
-    color: #0f172a !important;
-    font-size: 11pt !important;
-    margin: 0 0 4pt 0 !important;
+
+  .priority-item span,
+  .priority-item span b {
+    color: #000000 !important;
   }
-  .finding p {
-    color: #334155 !important;
-    font-size: 9pt !important;
-    margin: 0 0 4pt 0 !important;
-  }
-  .finding code {
+
+  /* 8. Findings List */
+  .result-columns,
+  html[data-theme] .result-columns,
+  html[data-theme="dark"] .result-columns {
     display: block !important;
-    background: #f1f5f9 !important;
-    color: #0f172a !important;
-    border: 1pt solid #cbd5e1 !important;
-    padding: 4pt 6pt !important;
-    font-size: 8pt !important;
+    width: 100% !important;
+    background: transparent !important;
   }
-  .severity {
+
+  .result-title,
+  html[data-theme] .result-title,
+  html[data-theme="dark"] .result-title {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    border-bottom: 1.5pt solid #000000 !important;
+    padding-bottom: 4pt !important;
+    margin-bottom: 10pt !important;
+    background: transparent !important;
+  }
+
+  .result-title h3,
+  html[data-theme] .result-title h3,
+  html[data-theme="dark"] .result-title h3 {
+    font-size: 13pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    margin: 0 !important;
+  }
+
+  #findingCount,
+  html[data-theme] #findingCount,
+  html[data-theme="dark"] #findingCount {
+    font-size: 9pt !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+  }
+
+  .findings,
+  html[data-theme] .findings,
+  html[data-theme="dark"] .findings {
+    display: block !important;
+    background: transparent !important;
+  }
+
+  /* 9. Individual Finding Card (DUZ BEYAZ SAYFA, SIYAH YAZI) */
+  .finding,
+  html[data-theme] .finding,
+  html[data-theme="dark"] .finding,
+  article.finding,
+  html[data-theme] article.finding,
+  html[data-theme="dark"] article.finding {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-bottom: 2pt solid #64748b !important;
+    border-radius: 4pt !important;
+    padding: 10pt 12pt !important;
+    margin-bottom: 10pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    display: block !important;
+  }
+
+  /* Finding Tags Bar */
+  .finding-tags,
+  html[data-theme] .finding-tags,
+  html[data-theme="dark"] .finding-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4pt !important;
+    margin-bottom: 6pt !important;
+    background: transparent !important;
+  }
+
+  .finding-tags span,
+  html[data-theme] .finding-tags span,
+  html[data-theme="dark"] .finding-tags span {
     padding: 2pt 6pt !important;
     font-size: 7.5pt !important;
-    font-weight: bold !important;
+    border-radius: 2pt !important;
+    border: 1pt solid #cbd5e1 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  .finding-tags .severity,
+  .severity,
+  html[data-theme] .severity,
+  html[data-theme="dark"] .severity {
+    border: 1.5pt solid #000000 !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+  }
+
+  .finding-tags .tag-id,
+  html[data-theme] .finding-tags .tag-id,
+  html[data-theme="dark"] .finding-tags .tag-id {
+    border: 1.5pt solid #000000 !important;
+    background: #f1f5f9 !important;
+    background-color: #f1f5f9 !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  .finding-tags .tag-conf,
+  html[data-theme] .finding-tags .tag-conf,
+  html[data-theme="dark"] .finding-tags .tag-conf {
+    border: 1pt solid #94a3b8 !important;
+    color: #1e293b !important;
+  }
+
+  .finding-tags .tag-source,
+  html[data-theme] .finding-tags .tag-source,
+  html[data-theme="dark"] .finding-tags .tag-source {
+    border: 1pt solid #94a3b8 !important;
+    color: #1e293b !important;
+  }
+
+  .sev-dot {
+    display: none !important;
+  }
+
+  /* Finding Content */
+  .finding-content,
+  html[data-theme] .finding-content,
+  html[data-theme="dark"] .finding-content {
+    background: transparent !important;
+    color: #000000 !important;
+  }
+
+  .finding h4,
+  html[data-theme] .finding h4,
+  html[data-theme="dark"] .finding h4,
+  .finding-content h4,
+  html[data-theme] .finding-content h4,
+  html[data-theme="dark"] .finding-content h4 {
+    color: #000000 !important;
+    font-size: 11pt !important;
+    font-weight: 900 !important;
+    margin: 0 0 4pt 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .finding p,
+  html[data-theme] .finding p,
+  html[data-theme="dark"] .finding p,
+  .finding-content p,
+  html[data-theme] .finding-content p,
+  html[data-theme="dark"] .finding-content p {
+    color: #000000 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    margin: 0 0 4pt 0 !important;
+  }
+
+  .finding-url,
+  html[data-theme] .finding-url,
+  html[data-theme="dark"] .finding-url {
+    display: block !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+    font-size: 8pt !important;
+    color: #000000 !important;
+    margin: 3pt 0 !important;
+    word-break: break-all !important;
+    text-decoration: underline !important;
+    font-weight: 600 !important;
+  }
+
+  .finding code,
+  html[data-theme] .finding code,
+  html[data-theme="dark"] .finding code {
+    display: block !important;
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    color: #000000 !important;
+    border: 1pt solid #cbd5e1 !important;
+    padding: 5pt 7pt !important;
+    font-size: 8pt !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    margin-top: 4pt !important;
     border-radius: 3pt !important;
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
+    box-shadow: none !important;
+    font-weight: 500 !important;
   }
 }
 
@@ -2492,4 +2893,515 @@ html[data-theme="dark"] .authority-hero h1 em {
 .score-item.tier-blue .meter i {
   background: linear-gradient(90deg, #0284c7, #38bdf8) !important;
   box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* ==========================================================================
+   DEFINITIVE OVERRIDE: EXECUTIVE WHITEPAPER PRINT ENGINE (@media print)
+   RULE: Plain white page with pure black text for findings and report export.
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 1.2cm 1cm;
+    size: A4 portrait;
+  }
+
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  html,
+  html[data-theme],
+  html[data-theme="dark"],
+  html[data-theme="light"],
+  body,
+  html[data-theme] body,
+  html[data-theme="dark"] body,
+  html[data-theme="light"] body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .topbar,
+  header,
+  footer,
+  .hero,
+  .kicker,
+  .scanbox,
+  .tabs,
+  .scan-chips,
+  .signals,
+  .px-section,
+  .enterprise-nine-pillars,
+  .classified-section,
+  .px-delivery-manifest-section,
+  .pricing,
+  .faq,
+  .ai-opportunity,
+  .btn-pdf-export,
+  .theme-switch,
+  .langs,
+  .nav-scan-cta,
+  .nav-actions,
+  .primary-nav,
+  .skip,
+  .mandate-card,
+  .locked-fix,
+  .finding-conversion-teaser,
+  .findings-filter-bar,
+  #findingsFilterBar,
+  .status,
+  .copy-bubble,
+  [data-commercial-intent],
+  .pillar-footer-banner,
+  .banner-cta {
+    display: none !important;
+  }
+
+  #result.results,
+  html[data-theme] #result.results,
+  html[data-theme="dark"] #result.results,
+  html[data-theme="light"] #result.results {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .result-head,
+  html[data-theme] .result-head,
+  html[data-theme="dark"] .result-head {
+    border-bottom: 2pt solid #000000 !important;
+    padding-bottom: 10pt !important;
+    margin-bottom: 14pt !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  .result-head .eyebrow,
+  html[data-theme] .result-head .eyebrow,
+  html[data-theme="dark"] .result-head .eyebrow {
+    font-size: 8.5pt !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    display: block !important;
+    margin-bottom: 3pt !important;
+  }
+
+  .result-head h2,
+  #resultDomain,
+  html[data-theme] #resultDomain,
+  html[data-theme="dark"] #resultDomain {
+    font-size: 20pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    margin: 0 0 3pt 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  .result-head p,
+  #resultMeta,
+  html[data-theme] #resultMeta,
+  html[data-theme="dark"] #resultMeta {
+    color: #334155 !important;
+    font-size: 8.5pt !important;
+    margin: 0 !important;
+  }
+
+  .total-score,
+  html[data-theme] .total-score,
+  html[data-theme="dark"] .total-score {
+    border: 2pt solid #000000 !important;
+    border-radius: 6pt !important;
+    padding: 6pt 12pt !important;
+    text-align: center !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .total-score strong,
+  #overallScore,
+  html[data-theme] #overallScore,
+  html[data-theme="dark"] #overallScore {
+    font-size: 26pt !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+    line-height: 1 !important;
+    text-shadow: none !important;
+  }
+
+  .total-score span,
+  html[data-theme] .total-score span,
+  html[data-theme="dark"] .total-score span {
+    font-size: 9.5pt !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+  }
+
+  .result-pillars-grid,
+  html[data-theme] .result-pillars-grid,
+  html[data-theme="dark"] .result-pillars-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6pt !important;
+    margin-bottom: 12pt !important;
+    background: transparent !important;
+  }
+
+  .result-pillars-grid .pillar-card,
+  html[data-theme] .result-pillars-grid .pillar-card,
+  html[data-theme="dark"] .result-pillars-grid .pillar-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-radius: 4pt !important;
+    padding: 6pt 8pt !important;
+    box-shadow: none !important;
+  }
+
+  .result-pillars-grid .pillar-tag {
+    font-size: 7pt !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  .result-pillars-grid .pillar-score,
+  .result-pillars-grid strong {
+    font-size: 13pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+  }
+
+  .result-pillars-grid h4 {
+    font-size: 8.5pt !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+    margin: 2pt 0 !important;
+  }
+
+  .result-pillars-grid p {
+    font-size: 7.5pt !important;
+    color: #1e293b !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+
+  .pillar-meter {
+    display: none !important;
+  }
+
+  .score-grid,
+  html[data-theme] .score-grid,
+  html[data-theme="dark"] .score-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5pt !important;
+    margin-bottom: 12pt !important;
+    background: transparent !important;
+  }
+
+  .score-item,
+  html[data-theme] .score-item,
+  html[data-theme="dark"] .score-item {
+    border: 1pt solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    background-image: none !important;
+    padding: 5pt 7pt !important;
+    border-radius: 3pt !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .score-item span,
+  html[data-theme] .score-item span,
+  html[data-theme="dark"] .score-item span {
+    font-size: 7.5pt !important;
+    color: #1e293b !important;
+    display: block !important;
+    font-weight: 600 !important;
+  }
+
+  .score-item strong,
+  html[data-theme] .score-item strong,
+  html[data-theme="dark"] .score-item strong {
+    font-size: 13pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    text-shadow: none !important;
+  }
+
+  .score-item .meter {
+    display: none !important;
+  }
+
+  .scan-disclosure,
+  html[data-theme] .scan-disclosure,
+  html[data-theme="dark"] .scan-disclosure {
+    font-size: 7.5pt !important;
+    color: #475569 !important;
+    border-top: 1pt solid #cbd5e1 !important;
+    padding-top: 4pt !important;
+    margin-bottom: 12pt !important;
+    background: transparent !important;
+  }
+
+  .priority-summary,
+  html[data-theme] .priority-summary,
+  html[data-theme="dark"] .priority-summary {
+    border: 1.5pt solid #000000 !important;
+    border-left: 5pt solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    padding: 8pt 10pt !important;
+    margin-bottom: 14pt !important;
+    border-radius: 3pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  .priority-summary h3,
+  html[data-theme] .priority-summary h3,
+  html[data-theme="dark"] .priority-summary h3 {
+    font-size: 10pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    margin: 0 0 6pt 0 !important;
+  }
+
+  .priority-item,
+  html[data-theme] .priority-item,
+  html[data-theme="dark"] .priority-item {
+    font-size: 8.5pt !important;
+    color: #000000 !important;
+    padding: 3pt 0 !important;
+    border-bottom: 1pt solid #e2e8f0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6pt !important;
+    background: transparent !important;
+  }
+
+  .priority-item span,
+  .priority-item span b {
+    color: #000000 !important;
+  }
+
+  .result-columns,
+  html[data-theme] .result-columns,
+  html[data-theme="dark"] .result-columns {
+    display: block !important;
+    width: 100% !important;
+    background: transparent !important;
+  }
+
+  .result-title,
+  html[data-theme] .result-title,
+  html[data-theme="dark"] .result-title {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    border-bottom: 1.5pt solid #000000 !important;
+    padding-bottom: 4pt !important;
+    margin-bottom: 10pt !important;
+    background: transparent !important;
+  }
+
+  .result-title h3,
+  html[data-theme] .result-title h3,
+  html[data-theme="dark"] .result-title h3 {
+    font-size: 13pt !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    margin: 0 !important;
+  }
+
+  #findingCount,
+  html[data-theme] #findingCount,
+  html[data-theme="dark"] #findingCount {
+    font-size: 9pt !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+  }
+
+  .findings,
+  html[data-theme] .findings,
+  html[data-theme="dark"] .findings {
+    display: block !important;
+    background: transparent !important;
+  }
+
+  .finding,
+  html[data-theme] .finding,
+  html[data-theme="dark"] .finding,
+  article.finding,
+  html[data-theme] article.finding,
+  html[data-theme="dark"] article.finding {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-bottom: 2pt solid #64748b !important;
+    border-radius: 4pt !important;
+    padding: 10pt 12pt !important;
+    margin-bottom: 10pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    display: block !important;
+  }
+
+  .finding-tags,
+  html[data-theme] .finding-tags,
+  html[data-theme="dark"] .finding-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4pt !important;
+    margin-bottom: 6pt !important;
+    background: transparent !important;
+  }
+
+  .finding-tags span,
+  html[data-theme] .finding-tags span,
+  html[data-theme="dark"] .finding-tags span {
+    padding: 2pt 6pt !important;
+    font-size: 7.5pt !important;
+    border-radius: 2pt !important;
+    border: 1pt solid #cbd5e1 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  .finding-tags .severity,
+  .severity,
+  html[data-theme] .severity,
+  html[data-theme="dark"] .severity {
+    border: 1.5pt solid #000000 !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+  }
+
+  .finding-tags .tag-id,
+  html[data-theme] .finding-tags .tag-id,
+  html[data-theme="dark"] .finding-tags .tag-id {
+    border: 1.5pt solid #000000 !important;
+    background: #f1f5f9 !important;
+    background-color: #f1f5f9 !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  .finding-tags .tag-conf,
+  html[data-theme] .finding-tags .tag-conf,
+  html[data-theme="dark"] .finding-tags .tag-conf {
+    border: 1pt solid #94a3b8 !important;
+    color: #1e293b !important;
+  }
+
+  .finding-tags .tag-source,
+  html[data-theme] .finding-tags .tag-source,
+  html[data-theme="dark"] .finding-tags .tag-source {
+    border: 1pt solid #94a3b8 !important;
+    color: #1e293b !important;
+  }
+
+  .sev-dot {
+    display: none !important;
+  }
+
+  .finding-content,
+  html[data-theme] .finding-content,
+  html[data-theme="dark"] .finding-content {
+    background: transparent !important;
+    color: #000000 !important;
+  }
+
+  .finding h4,
+  html[data-theme] .finding h4,
+  html[data-theme="dark"] .finding h4,
+  .finding-content h4,
+  html[data-theme] .finding-content h4,
+  html[data-theme="dark"] .finding-content h4 {
+    color: #000000 !important;
+    font-size: 11pt !important;
+    font-weight: 900 !important;
+    margin: 0 0 4pt 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .finding p,
+  html[data-theme] .finding p,
+  html[data-theme="dark"] .finding p,
+  .finding-content p,
+  html[data-theme] .finding-content p,
+  html[data-theme="dark"] .finding-content p {
+    color: #000000 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    margin: 0 0 4pt 0 !important;
+  }
+
+  .finding-url,
+  html[data-theme] .finding-url,
+  html[data-theme="dark"] .finding-url {
+    display: block !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+    font-size: 8pt !important;
+    color: #000000 !important;
+    margin: 3pt 0 !important;
+    word-break: break-all !important;
+    text-decoration: underline !important;
+    font-weight: 600 !important;
+  }
+
+  .finding code,
+  html[data-theme] .finding code,
+  html[data-theme="dark"] .finding code {
+    display: block !important;
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    color: #000000 !important;
+    border: 1pt solid #cbd5e1 !important;
+    padding: 5pt 7pt !important;
+    font-size: 8pt !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    margin-top: 4pt !important;
+    border-radius: 3pt !important;
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
+    box-shadow: none !important;
+    font-weight: 500 !important;
+  }
 }
