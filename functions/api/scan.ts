@@ -1,5 +1,6 @@
 import { runFriendlyScan } from '../lib/scan-request';
 import { generateIntelligenceReport } from '../lib/intelligence-engine';
+import { generateOpportunityReport } from '../lib/opportunity-engine';
 
 export const onRequestPost:PagesFunction=async({request})=>{
   try{
@@ -7,7 +8,8 @@ export const onRequestPost:PagesFunction=async({request})=>{
     if(!body||typeof body.domain!=='string'||!body.domain.trim())return Response.json({error:'Domain required'},{status:400});
     const result=await runFriendlyScan(body.domain);
     const intelligence=generateIntelligenceReport(result);
-    return Response.json({...result,intelligence},{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
+    const opportunity=generateOpportunityReport(result);
+    return Response.json({...result,intelligence,opportunity},{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
   }catch(e:any){
     const message=e?.message||'Scan failed';
     const status=/not allowed|private|reserved|credentials|port/i.test(message)?403:400;
