@@ -31,15 +31,18 @@ export function buildScanCandidates(input:string){
   const candidates:URL[]=[];
   const add=(u:URL)=>{if(!candidates.some(x=>x.toString()===u.toString()))candidates.push(u)};
   add(primary);
+
   const altHost=alternateHost(primary.hostname);
   if(altHost){const alt=new URL(primary);alt.hostname=altHost;add(alt)}
+
   if(!explicit||primary.protocol==='https:'){
     const http=new URL(primary);http.protocol='http:';add(http);
     if(altHost){const altHttp=new URL(http);altHttp.hostname=altHost;add(altHttp)}
-  }else{
+  }else if(primary.protocol==='http:'){
     const https=new URL(primary);https.protocol='https:';add(https);
     if(altHost){const altHttps=new URL(https);altHttps.hostname=altHost;add(altHttps)}
   }
+
   return candidates.map(x=>x.toString());
 }
 
