@@ -38,6 +38,7 @@ jobs:
           grep -Fq '$99' <<<"$body"
           grep -Fq '/assets/css/premium-experience.css?v=1' <<<"$body"
           grep -Fq '/assets/js/theme.js' <<<"$body"
+          grep -Fq '/assets/js/intelligence-root.js' <<<"$body"
 
       - name: Verify customer-first AI visibility and removed glossary callout
         shell: bash
@@ -70,7 +71,8 @@ jobs:
           OPENAPI="$openapi" PROFILE="$profile" SOURCES="$sources" node - <<'NODE'
           const api=JSON.parse(process.env.OPENAPI), p=JSON.parse(process.env.PROFILE), s=JSON.parse(process.env.SOURCES);
           if(api.openapi!=='3.1.0') throw new Error('OpenAPI version');
-          for(const x of ['/api/health','/api/scan','/api/intelligence','/api/mentions','/api/mandate']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
+          for(const x of ['/api/health','/api/scan','/api/intelligence','/api/mentions','/api/mandate','/api/delivery']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
+          if(api['x-commerce']?.provider!=='Paddle'||api['x-commerce']?.priceId!=='pri_01m1t2f2jkm8w74n7j9ap4hetm'||api['x-commerce']?.displayPriceUsd!==99) throw new Error('commerce contract');
           if(p.version!=='1.2.0'||p.engines?.length!==12) throw new Error('audit profile contract');
           if(p.intelligenceLayer?.analysisCount!==13||p.intelligenceLayer?.readinessLensCount!==7) throw new Error('intelligence profile contract');
           if(p.scanBoundaries?.maxPublicHtmlPages!==50) throw new Error('Deep Crawl boundary');
@@ -85,10 +87,10 @@ jobs:
           body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/health)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY);
-          if(x.status!=='ok'||x.scanEngines!==12||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==99||x.aiMentionTracker!==true) throw new Error('health contract');
+          if(x.status!=='ok'||x.scanEngines!==12||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.opportunitySignals!==12||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==99||x.aiMentionTracker!==true) throw new Error('health contract');
           NODE
 
-      - name: Verify production scan and Intelligence Audit contract
+      - name: Verify production scan, Intelligence and Opportunity contract
         shell: bash
         run: |
           set -euo pipefail
@@ -104,6 +106,11 @@ jobs:
           const rp=i.analyses.find(a=>a.key==='render_parity'); if(rp?.status!=='NOT_MEASURED') throw new Error('render parity fabricated');
           const cb=i.analyses.find(a=>a.key==='codebase_seo_governance'); if(cb?.status!=='REQUIRES_CONTEXT') throw new Error('codebase governance fabricated');
           const ig=i.analyses.find(a=>a.key==='information_gain'); if(!ig||ig.sourceClass!=='INTERNAL_HEURISTIC') throw new Error('information gain boundary');
+          const o=x.opportunity;
+          if(o?.classification!=='NON_SCORING_ENTERPRISE_OPPORTUNITY_LAYER'||o.canonicalScoreUnchanged!==true||o.signals?.length!==12) throw new Error('opportunity contract');
+          const obs=o.signals.find(a=>a.key==='observability_gap'); if(obs?.status!=='REQUIRES_CONTEXT') throw new Error('observed visibility fabricated');
+          const fresh=o.signals.find(a=>a.key==='freshness_provenance'); if(fresh?.status!=='REQUIRES_CONTEXT') throw new Error('freshness provenance fabricated');
+          for(const s of o.signals){ if('plan' in s||'acceptanceTests' in s||'rollback' in s||'stopConditions' in s) throw new Error('paid opportunity implementation leaked into free scan'); }
           for(const f of x.findings){ if(!f.id||!f.severity||!f.confidence||!f.sourceClass||!('evidence' in f)) throw new Error('finding evidence contract'); if('fixTr' in f||'fixEn' in f||'rootFix' in f) throw new Error('paid remediation leaked'); }
           NODE
 
@@ -113,7 +120,9 @@ jobs:
           set -euo pipefail
           body="$(curl -fsS --connect-timeout 10 --max-time 240 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/intelligence)"
           BODY="$body" node - <<'NODE'
-          const x=JSON.parse(process.env.BODY); if(x.intelligence?.analyses?.length!==13||Object.keys(x.intelligence?.readinessLenses||{}).length!==7) throw new Error('dedicated intelligence endpoint');
+          const x=JSON.parse(process.env.BODY);
+          if(x.intelligence?.analyses?.length!==13||Object.keys(x.intelligence?.readinessLenses||{}).length!==7) throw new Error('dedicated intelligence endpoint');
+          if(x.opportunity?.signals?.length!==12||x.opportunity?.canonicalScoreUnchanged!==true) throw new Error('dedicated opportunity endpoint');
           NODE
 
       - name: Verify SSRF boundary repeats safely
