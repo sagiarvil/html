@@ -50,7 +50,7 @@ const checks=[
   [/^# HTML&HTML/m.test(llms)&&/^> /m.test(llms)&&/^## /m.test(llms),'llms.txt structure incomplete'],
   [css.length>10000,'combined validator/premium CSS unexpectedly small'],
   [js.length>9000,'validator JS unexpectedly small'],
-  [/Harici ödeme sağlayıcısı henüz yapılandırılmadı/.test(checkout),'checkout must disclose inactive external payment dependency'],
+  [/(?:Güvenli ödeme sağlayıcısı henüz production[’'a]* bağlanmadı|A secure payment provider is not connected to production yet)/i.test(checkout)&&/(?:kart verisi toplamıyoruz|collect no card data)/i.test(checkout)&&/(?:ücret tahsil etmiyoruz|make no charge)/i.test(checkout)&&/(?:ödeme webhook[^<]{0,120}doğrulan|payment webhook[^<]{0,120}verified)/i.test(checkout)&&/<button[^>]+disabled/i.test(checkout),'checkout must disclose inactive payment dependency and remain non-chargeable until a verified payment webhook'],
   [!/\(feat: yeni html&html logosu/i.test(checkout),'checkout must not leak commit metadata'],
   [/@media\(max-width:640px\)/.test(css)&&/grid-template-columns:1fr/.test(css),'mobile-first premium layout contract missing']
 ];
