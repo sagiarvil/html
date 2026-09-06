@@ -36,7 +36,7 @@ jobs:
           grep -Fq '$149' <<<"$body"
           grep -Fq '/assets/js/theme.js' <<<"$body"
 
-      - name: Verify static AI discovery-to-demand HTML without JavaScript
+      - name: Verify static customer-first AI visibility HTML without JavaScript
         shell: bash
         run: |
           set -euo pipefail
@@ -44,14 +44,16 @@ jobs:
           en_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/)"
           en_tool="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/ai-website-readiness/)"
           grep -Fq 'data-commercial-intent="static"' <<<"$tr_home"
-          grep -Fq 'AI KEŞİF → TALEP → DÖNÜŞÜM' <<<"$tr_home"
-          grep -Fq 'Garanti satmıyoruz' <<<"$tr_home"
+          grep -Fq 'YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ' <<<"$tr_home"
+          grep -Fq 'Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez.' <<<"$tr_home"
+          grep -Fq 'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et' <<<"$tr_home"
           grep -Fq 'data-commercial-intent="static"' <<<"$en_home"
-          grep -Fq 'AI DISCOVERY → DEMAND → CONVERSION' <<<"$en_home"
-          grep -Fq 'We do not sell guarantees' <<<"$en_home"
+          grep -Fq 'AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER' <<<"$en_home"
+          grep -Fq 'Recommendations, rankings, citations, traffic, customers and revenue are not guaranteed.' <<<"$en_home"
+          grep -Fq 'Check My AI Visibility Free' <<<"$en_home"
           grep -Fq 'data-commercial-intent="static"' <<<"$en_tool"
-          grep -Fq 'AI readiness is more than adding a file.' <<<"$en_tool"
-          grep -Fq '/assets/css/commercial-intent.css?v=1' <<<"$en_tool"
+          grep -Fq 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemaps + technical SEO' <<<"$en_tool"
+          grep -Fq '/assets/css/commercial-intent.css?v=2' <<<"$en_tool"
 
       - name: Verify machine-readable authority graph
         shell: bash
