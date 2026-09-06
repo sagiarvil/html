@@ -1,5 +1,5 @@
 import { runFriendlyScan } from '../lib/scan-request';
-import { generateFullSiteFixMandate,FULL_SITE_FIX_MANDATE_PRICE_USD,FULL_SITE_FIX_MANDATE_MAX_PAGES } from '../lib/remediation-engine-v2';
+import { generateFullSiteFixMandate,FULL_SITE_FIX_MANDATE_PRICE_USD,FULL_SITE_FIX_MANDATE_MAX_PAGES } from '../lib/remediation-engine-v3';
 import { buildDeliveryPack } from '../lib/delivery-pack';
 import { verifyGuestEntitlement } from '../lib/guest-entitlement';
 
@@ -33,6 +33,7 @@ export const onRequestPost:PagesFunction<Env>=async({request,env})=>{
       'x-htmlhtml-max-pages':String(FULL_SITE_FIX_MANDATE_MAX_PAGES),
       'x-htmlhtml-pack-version':pack.version,
       'x-htmlhtml-pack-files':String(pack.files.length),
+      'x-htmlhtml-opportunity-signals':String(report.opportunity.signals.length),
       'x-htmlhtml-entitlement-mode':guestClaims?'guest':'admin',
       'x-htmlhtml-entitlement-boundary':guestClaims?'domain+order':'admin'
     }});
