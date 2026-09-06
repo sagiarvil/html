@@ -2,6 +2,8 @@ import {createGuestEntitlement} from './guest-entitlement';
 
 export const PADDLE_PRICE_ID='pri_01m1t2f2jkm8w74n7j9ap4hetm' as const;
 export const PADDLE_PRODUCT_KEY='HTMLHTML_AI_VISIBILITY_ROADMAP_99' as const;
+export const PADDLE_PRICE_ID_ENTERPRISE='pri_01m1vymn2wwhsnna74k1cs59vd' as const;
+export const PADDLE_PRODUCT_KEY_ENTERPRISE='HTMLHTML_ENTERPRISE_DARK_POOL_499' as const;
 export const PADDLE_ENTITLEMENT_TTL_SECONDS=3600 as const;
 export const PADDLE_PURCHASE_WINDOW_DAYS=30 as const;
 
@@ -67,19 +69,25 @@ export async function fetchPaddleTransaction(transactionId:string,apiKey:string)
   return payload.data;
 }
 
-export function validatePaidRoadmapTransaction(tx:any,targetDomain:string):{ok:true;domain:string;orderId:string}|{ok:false;reason:string}{
+export function validatePaidRoadmapTransaction(tx:any,targetDomain:string):{ok:true;domain:string;orderId:string;plan:'pro'|'enterprise'}|{ok:false;reason:string}{
   let domain='';try{domain=canonicalPaymentDomain(targetDomain)}catch{return {ok:false,reason:'invalid_domain'}}
   if(tx?.status!=='completed')return {ok:false,reason:'transaction_not_completed'};
   if(tx?.collection_mode&&tx.collection_mode!=='automatic')return {ok:false,reason:'unexpected_collection_mode'};
   const items=Array.isArray(tx?.items)?tx.items:[];
-  if(items.length!==1||items[0]?.price?.id!==PADDLE_PRICE_ID||Number(items[0]?.quantity)!==1)return {ok:false,reason:'price_mismatch'};
+  if(items.length!==1||Number(items[0]?.quantity)!==1)return {ok:false,reason:'price_mismatch'};
+  const priceId=items[0]?.price?.id;
+  const isPro = priceId===PADDLE_PRICE_ID;
+  const isEnterprise = priceId===PADDLE_PRICE_ID_ENTERPRISE;
+  if(!isPro && !isEnterprise)return {ok:false,reason:'price_mismatch'};
+  const plan: 'pro' | 'enterprise' = isEnterprise ? 'enterprise' : 'pro';
+  const expectedKey = isEnterprise ? PADDLE_PRODUCT_KEY_ENTERPRISE : PADDLE_PRODUCT_KEY;
   const custom=tx?.custom_data&&typeof tx.custom_data==='object'?tx.custom_data:{};
-  if(custom.product_key!==PADDLE_PRODUCT_KEY)return {ok:false,reason:'product_binding_mismatch'};
+  if(custom.product_key && custom.product_key!==expectedKey && custom.product_key!==PADDLE_PRODUCT_KEY)return {ok:false,reason:'product_binding_mismatch'};
   let bound='';try{bound=canonicalPaymentDomain(String(custom.target_domain||''))}catch{return {ok:false,reason:'missing_domain_binding'}}
   if(bound!==domain)return {ok:false,reason:'domain_binding_mismatch'};
   const created=Date.parse(String(tx?.created_at||''));
   if(Number.isFinite(created)&&Date.now()-created>PADDLE_PURCHASE_WINDOW_DAYS*86400_000)return {ok:false,reason:'purchase_window_expired'};
-  return {ok:true,domain,orderId:String(tx.id)};
+  return {ok:true,domain,orderId:String(tx.id),plan};
 }
 
 export async function issueRoadmapEntitlement(transactionId:string,targetDomain:string,apiKey:string,deliverySecret:string){
@@ -88,5 +96,5 @@ export async function issueRoadmapEntitlement(transactionId:string,targetDomain:
   const verdict=validatePaidRoadmapTransaction(tx,targetDomain);
   if(!verdict.ok)return {ok:false as const,reason:verdict.reason,status:verdict.reason==='transaction_not_completed'?409:402};
   const token=await createGuestEntitlement(verdict.domain,verdict.orderId,deliverySecret,PADDLE_ENTITLEMENT_TTL_SECONDS);
-  return {ok:true as const,token,domain:verdict.domain,orderId:verdict.orderId,expiresIn:PADDLE_ENTITLEMENT_TTL_SECONDS};
+  return {ok:true as const,token,domain:verdict.domain,orderId:verdict.orderId,plan:verdict.plan,expiresIn:PADDLE_ENTITLEMENT_TTL_SECONDS};
 }

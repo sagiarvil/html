@@ -51,7 +51,7 @@ async function init(){
   await loadPaddleJs();
   if(config.environment==='sandbox')window.Paddle.Environment.set('sandbox');
   window.Paddle.Initialize({token:config.clientToken,eventCallback:event=>{if(event?.name==='checkout.completed'&&event?.data?.transaction_id)finalize(String(event.data.transaction_id))}});
-  button.addEventListener('click',()=>{if(busy)return;window.Paddle.Checkout.open({items:[{priceId:config.priceId,quantity:1}],customData:{product_key:config.productKey,target_domain:domain,locale:lang()},settings:{displayMode:'overlay',theme:'light',locale:lang(),variant:'one-page'}})});
+  button.addEventListener('click',()=>{if(busy)return;const isEnt=plan==='enterprise';const activeProductKey=isEnt?(config.productKeyEnterprise||config.productKey):config.productKey;const checkoutItem={priceId:config.priceId,quantity:1};if(isEnt&&config.priceIdEnterprise)checkoutItem.priceId=config.priceIdEnterprise;window.Paddle.Checkout.open({items:[checkoutItem],customData:{product_key:activeProductKey,target_domain:domain,locale:lang(),plan},settings:{displayMode:'overlay',theme:'light',locale:lang(),variant:'one-page'}});});
   setNotice(text('configured'),text('configuredBody'));setButton(text('ready'),false)
  }catch(error){console.error('Paddle checkout initialization failed',error);setButton(text('loading'),true)}
 }

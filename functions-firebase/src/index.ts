@@ -6,7 +6,7 @@ import {generateIntelligenceReport,INTELLIGENCE_ANALYSIS_COUNT,READINESS_LENS_CO
 import {generateFullSiteFixMandate,FULL_SITE_FIX_MANDATE_PRICE_USD,FULL_SITE_FIX_MANDATE_MAX_PAGES} from './remediation-engine-v2';
 import {buildDeliveryPack,DELIVERY_PACK_VERSION} from './delivery-pack';
 import {verifyGuestEntitlement} from './guest-entitlement';
-import {issueRoadmapEntitlement,verifyPaddleSignature,PADDLE_PRICE_ID,PADDLE_PRODUCT_KEY} from './paddle-payment';
+import {issueRoadmapEntitlement,verifyPaddleSignature,PADDLE_PRICE_ID,PADDLE_PRODUCT_KEY,PADDLE_PRICE_ID_ENTERPRISE,PADDLE_PRODUCT_KEY_ENTERPRISE} from './paddle-payment';
 
 const PADDLE_CLIENT_TOKEN=defineSecret('PADDLE_CLIENT_TOKEN');
 const PADDLE_API_KEY=defineSecret('PADDLE_API_KEY');
@@ -80,7 +80,7 @@ export const paddleConfig=onRequest({...common,timeoutSeconds:30,memory:'256MiB'
   const token=PADDLE_CLIENT_TOKEN.value().trim();
   const environment=token.startsWith('test_')?'sandbox':token.startsWith('live_')?'production':'unknown';
   if(environment==='unknown'){res.status(503).json({error:'Paddle checkout is not configured.'});return}
-  res.status(200).json({priceId:PADDLE_PRICE_ID,productKey:PADDLE_PRODUCT_KEY,clientToken:token,environment});
+  res.status(200).json({priceId:PADDLE_PRICE_ID,productKey:PADDLE_PRODUCT_KEY,priceIdEnterprise:PADDLE_PRICE_ID_ENTERPRISE,productKeyEnterprise:PADDLE_PRODUCT_KEY_ENTERPRISE,clientToken:token,environment});
 });
 
 export const paddleEntitlement=onRequest({...common,timeoutSeconds:30,memory:'256MiB',secrets:[PADDLE_API_KEY,DELIVERY_SIGNING_SECRET]},async(req,res)=>{
@@ -101,6 +101,6 @@ export const paddleWebhook=onRequest({...common,timeoutSeconds:30,memory:'256MiB
   if(!await verifyPaddleSignature(rawBody,signature,PADDLE_WEBHOOK_SECRET.value())){res.status(401).json({error:'Invalid Paddle signature'});return}
   let event:any;try{event=JSON.parse(rawBody)}catch{res.status(400).json({error:'Invalid JSON'});return}
   const eventType=String(event?.event_type||event?.eventType||'');const data=event?.data||{};
-  const relevant=eventType==='transaction.completed'&&Array.isArray(data?.items)&&data.items.some((x:any)=>x?.price?.id===PADDLE_PRICE_ID)&&data?.custom_data?.product_key===PADDLE_PRODUCT_KEY;
+  const relevant=eventType==='transaction.completed'&&Array.isArray(data?.items)&&data.items.some((x:any)=>x?.price?.id===PADDLE_PRICE_ID || x?.price?.id===PADDLE_PRICE_ID_ENTERPRISE);
   res.status(200).json({ok:true,event_id:String(event?.event_id||''),event_type:eventType,relevant});
 });

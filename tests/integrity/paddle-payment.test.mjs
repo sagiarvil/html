@@ -10,6 +10,7 @@ const headers=read('_headers');
 const errors=[];
 const must=(ok,msg)=>{if(!ok)errors.push(msg)};
 must(payment.includes("PADDLE_PRICE_ID='pri_01m1t2f2jkm8w74n7j9ap4hetm'"),'canonical Paddle price id missing');
+must(payment.includes("PADDLE_PRICE_ID_ENTERPRISE='pri_01m1vymn2wwhsnna74k1cs59vd'"),'canonical Paddle enterprise price id missing');
 must(payment.includes("status!=='completed'")||payment.includes("status!=='completed'"),'completed transaction gate missing');
 must(payment.includes('price_mismatch'),'server-side price verification missing');
 must(payment.includes('domain_binding_mismatch'),'server-side domain binding missing');
