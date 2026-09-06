@@ -57,11 +57,25 @@ function renderDecisionMap(data){
  let root=document.getElementById('aiDecisionMap');if(!root){root=document.createElement('section');root.id='aiDecisionMap';root.className='ai-decision-map';disclosure.insertAdjacentElement('afterend',root)}
  const l=currentLang(),c=COPY[l];
  const lenses=intel.readinessLenses||{};
- const lensThemes={SEO:'blue',GEO:'purple',AEO:'purple',LLMO:'purple',AAO:'amber',RAG:'blue','E-E-A-T':'green'};
- const lensHtml=lensOrder.map(k=>{const x=lenses[k];const score=typeof x?.score==='number'?Math.round(x.score):'—';const th=lensThemes[k]||'blue';return `<div class="ai-lens ai-lens-${th}"><span>${safe(k)}</span><strong>${safe(score)}${score==='—'?'':'/100'}</strong></div>`}).join('');
+ const lensHtml=lensOrder.map(k=>{
+   const x=lenses[k];
+   const score=typeof x?.score==='number'?Math.round(x.score):null;
+   const scoreDisplay=score!==null?score:'—';
+   const tier=score===null?'blue':score>=80?'green':score>=65?'yellow':score>=45?'orange':'red';
+   const tierLabel=l==='tr'
+     ?(score>=80?'İYİ':score>=65?'ORTA':score>=45?'DÜŞÜK':'KRİTİK')
+     :(score>=80?'GOOD':score>=65?'FAIR':score>=45?'LOW':'POOR');
+   return `<div class="ai-lens ai-lens-tier-${tier}"><div class="ai-lens-head"><span>${safe(k)}</span><span class="lens-status-tag tag-${tier}">${tierLabel}</span></div><strong class="score-${tier}">${safe(scoreDisplay)}${score===null?'':'/100'}</strong><div class="ai-lens-meter"><i class="bar-${tier}" style="width:${Math.max(0,Math.min(100,score||0))}%;"></i></div></div>`;
+ }).join('');
  const byKey=new Map(intel.analyses.map(a=>[a.key,a]));
  const priorities=(intel.topPriorities||[]).slice(0,5);
- const rows=priorities.map(p=>{const a=byKey.get(p.analysis)||{};const label=l==='tr'?(a.labelTr||a.labelEn||p.analysis):(a.labelEn||a.labelTr||p.analysis);return `<div class="ai-intelligence-row"><b>${safe(p.rank)}. ${safe(label)}</b><span>${safe(c.status)} · ${safe(a.status||'—')}</span><span>${safe(c.impact)} · ${safe(a.impact||p.impact||'—')}</span><span>${safe(c.effort)} · ${safe(a.effort||p.effort||'—')}</span></div>`}).join('');
+ const rows=priorities.map(p=>{
+   const a=byKey.get(p.analysis)||{};
+   const label=l==='tr'?(a.labelTr||a.labelEn||p.analysis):(a.labelEn||a.labelTr||p.analysis);
+   const st=a.status||'—';
+   const stClass=st==='PASS'?'green':st==='WARN'?'yellow':st==='FAIL'?'red':'blue';
+   return `<div class="ai-intelligence-row"><b>${safe(p.rank)}. ${safe(label)}</b><span class="status-pill status-${stClass}">${safe(c.status)} · ${safe(st)}</span><span>${safe(c.impact)} · ${safe(a.impact||p.impact||'—')}</span><span>${safe(c.effort)} · ${safe(a.effort||p.effort||'—')}</span></div>`;
+ }).join('');
  root.innerHTML=`<div class="ai-decision-map-head"><div><small>${safe(c.decisionEyebrow)}</small><h3>${safe(c.decisionTitle)}</h3></div><p>${safe(c.decisionCopy)}</p></div><div class="ai-lens-grid">${lensHtml}</div>${rows?`<div class="ai-intelligence-top">${rows}</div>`:''}<div class="ai-decision-lock"><p>${safe(c.paidText)}</p><a href="/checkout?domain=${encodeURIComponent(data.domain||'')}&scan=${encodeURIComponent(data.scanId||'')}">${safe(c.paidCta)}</a></div>`;
 }
 

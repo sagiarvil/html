@@ -52,8 +52,9 @@ function renderIntelligence(data){
  const lensHtml=lensKeys.map(k=>{
   const v=(intel.readinessLenses||{})[k]||{score:0};const sc=Math.round(v.score||0);
   const m=lensMeta[k]||{theme:'blue',tag:k,descTr:'',descEn:''};
-  const tier=sc>=80?(isTr?'OPTİMAL':'OPTIMAL'):sc>=65?(isTr?'GÜÇLÜ':'STRONG'):sc>=50?(isTr?'ORTA':'MODERATE'):(isTr?'RİSKLİ':'AT RISK');
-  return `<div class="intel-lens lens-${m.theme}"><div class="intel-lens-head"><span class="lens-tag">${esc(m.tag)}</span><span class="lens-tier">${esc(tier)}</span></div><strong>${sc}<span>/100</span></strong><div class="lens-desc">${esc(isTr?m.descTr:m.descEn)}</div><div class="lens-meter"><i style="width:${Math.max(0,Math.min(100,sc))}%"></i></div></div>`;
+  const tier=sc>=80?'green':sc>=65?'yellow':sc>=45?'orange':'red';
+  const tierName=sc>=80?(isTr?'İYİ':'GOOD'):sc>=65?(isTr?'ORTA':'FAIR'):sc>=45?(isTr?'DÜŞÜK':'LOW'):(isTr?'KRİTİK':'CRITICAL');
+  return `<div class="intel-lens lens-tier-${tier}"><div class="intel-lens-head"><span class="lens-tag">${esc(m.tag)}</span><span class="lens-tier tier-${tier}">${esc(tierName)}</span></div><strong class="score-${tier}">${sc}<span>/100</span></strong><div class="lens-desc">${esc(isTr?m.descTr:m.descEn)}</div><div class="lens-meter"><i class="bar-${tier}" style="width:${Math.max(0,Math.min(100,sc))}%;"></i></div></div>`;
  }).join('');
  const priorities=(intel.topPriorities||[]).slice(0,3);
  const priorityHtml=priorities.map((p,idx)=>{

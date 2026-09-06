@@ -274,15 +274,161 @@ html[data-theme="dark"] .ai-lens:hover {
   border-color: rgba(56, 189, 248, 0.45) !important;
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.22), 0 14px 28px -6px rgba(0, 102, 255, 0.25) !important;
 }
-.ai-lens.ai-lens-blue { border-top: 3px solid #0066ff !important; }
-.ai-lens.ai-lens-purple { border-top: 3px solid #8b5cf6 !important; }
-.ai-lens.ai-lens-green { border-top: 3px solid #10b981 !important; }
-.ai-lens.ai-lens-amber { border-top: 3px solid #f59e0b !important; }
+.ai-lens {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  position: relative !important;
+}
+.ai-lens-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 6px !important;
+}
+.ai-lens-head span {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+}
+.lens-status-tag {
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  padding: 2px 7px !important;
+  border-radius: 999px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+.ai-lens strong {
+  display: block !important;
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  margin: 4px 0 8px !important;
+}
+.ai-lens-meter {
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+.ai-lens-meter i {
+  display: block !important;
+  height: 100% !important;
+  border-radius: 999px !important;
+  transition: width 0.4s ease !important;
+}
 
-html[data-theme="dark"] .ai-lens.ai-lens-blue { box-shadow: 0 0 20px -4px rgba(0, 102, 255, 0.25) !important; }
-html[data-theme="dark"] .ai-lens.ai-lens-purple { box-shadow: 0 0 20px -4px rgba(139, 92, 246, 0.25) !important; }
-html[data-theme="dark"] .ai-lens.ai-lens-green { box-shadow: 0 0 20px -4px rgba(16, 185, 129, 0.25) !important; }
-html[data-theme="dark"] .ai-lens.ai-lens-amber { box-shadow: 0 0 20px -4px rgba(245, 158, 11, 0.25) !important; }
+/* Green Tier (İyi / 80+) */
+html[data-theme="dark"] .ai-lens.ai-lens-tier-green, .ai-lens.ai-lens-tier-green {
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+  border-top: 3.5px solid #10b981 !important;
+  box-shadow: 0 0 20px -4px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(16, 185, 129, 0.2) !important;
+}
+html[data-theme="dark"] .ai-lens.ai-lens-tier-green strong, .ai-lens.ai-lens-tier-green strong, strong.score-green {
+  color: #10b981 !important;
+  text-shadow: 0 0 16px rgba(16, 185, 129, 0.4) !important;
+}
+.lens-status-tag.tag-green, .lens-tier.tier-green {
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.18) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+.ai-lens-meter i.bar-green, .lens-meter i.bar-green {
+  background: linear-gradient(90deg, #059669, #10b981) !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* Yellow Tier (Orta / 65-79) */
+html[data-theme="dark"] .ai-lens.ai-lens-tier-yellow, .ai-lens.ai-lens-tier-yellow {
+  border: 1px solid rgba(234, 179, 8, 0.4) !important;
+  border-top: 3.5px solid #eab308 !important;
+  box-shadow: 0 0 20px -4px rgba(234, 179, 8, 0.35), inset 0 1px 0 rgba(234, 179, 8, 0.2) !important;
+}
+html[data-theme="dark"] .ai-lens.ai-lens-tier-yellow strong, .ai-lens.ai-lens-tier-yellow strong, strong.score-yellow {
+  color: #eab308 !important;
+  text-shadow: 0 0 16px rgba(234, 179, 8, 0.4) !important;
+}
+.lens-status-tag.tag-yellow, .lens-tier.tier-yellow {
+  color: #fde047 !important;
+  background: rgba(234, 179, 8, 0.18) !important;
+  border: 1px solid rgba(234, 179, 8, 0.35) !important;
+}
+.ai-lens-meter i.bar-yellow, .lens-meter i.bar-yellow {
+  background: linear-gradient(90deg, #ca8a04, #eab308) !important;
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.5) !important;
+}
+
+/* Orange Tier (Düşük / 45-64) */
+html[data-theme="dark"] .ai-lens.ai-lens-tier-orange, .ai-lens.ai-lens-tier-orange {
+  border: 1px solid rgba(249, 115, 22, 0.4) !important;
+  border-top: 3.5px solid #f97316 !important;
+  box-shadow: 0 0 20px -4px rgba(249, 115, 22, 0.35), inset 0 1px 0 rgba(249, 115, 22, 0.2) !important;
+}
+html[data-theme="dark"] .ai-lens.ai-lens-tier-orange strong, .ai-lens.ai-lens-tier-orange strong, strong.score-orange {
+  color: #f97316 !important;
+  text-shadow: 0 0 16px rgba(249, 115, 22, 0.4) !important;
+}
+.lens-status-tag.tag-orange, .lens-tier.tier-orange {
+  color: #fdba74 !important;
+  background: rgba(249, 115, 22, 0.18) !important;
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
+}
+.ai-lens-meter i.bar-orange, .lens-meter i.bar-orange {
+  background: linear-gradient(90deg, #ea580c, #f97316) !important;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5) !important;
+}
+
+/* Red Tier (Kritik / <45) */
+html[data-theme="dark"] .ai-lens.ai-lens-tier-red, .ai-lens.ai-lens-tier-red {
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  border-top: 3.5px solid #ef4444 !important;
+  box-shadow: 0 0 20px -4px rgba(239, 68, 68, 0.35), inset 0 1px 0 rgba(239, 68, 68, 0.2) !important;
+}
+html[data-theme="dark"] .ai-lens.ai-lens-tier-red strong, .ai-lens.ai-lens-tier-red strong, strong.score-red {
+  color: #ef4444 !important;
+  text-shadow: 0 0 16px rgba(239, 68, 68, 0.4) !important;
+}
+.lens-status-tag.tag-red, .lens-tier.tier-red {
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.18) !important;
+  border: 1px solid rgba(239, 68, 68, 0.35) !important;
+}
+.ai-lens-meter i.bar-red, .lens-meter i.bar-red {
+  background: linear-gradient(90deg, #dc2626, #ef4444) !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5) !important;
+}
+
+/* Status Pills in Priority Rows */
+.status-pill {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+.status-pill.status-green {
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+.status-pill.status-yellow {
+  color: #fde047 !important;
+  background: rgba(234, 179, 8, 0.15) !important;
+  border: 1px solid rgba(234, 179, 8, 0.35) !important;
+}
+.status-pill.status-red {
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  border: 1px solid rgba(239, 68, 68, 0.35) !important;
+}
+.status-pill.status-blue {
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.15) !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+}
 
 html[data-theme="dark"] .ai-intelligence-row {
   background: rgba(18, 22, 32, 0.75) !important;

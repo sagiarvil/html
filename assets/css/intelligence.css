@@ -338,6 +338,83 @@ html[data-theme="dark"] .intel-lens.lens-amber .lens-tier {
 }
 
 
+/* Dynamic Score Tiers for Readiness Lenses */
+.intel-lens.lens-tier-green {
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+  border-top: 3.5px solid #10b981 !important;
+  box-shadow: 0 0 20px -4px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(16, 185, 129, 0.2) !important;
+}
+.intel-lens.lens-tier-green strong, strong.score-green {
+  color: #10b981 !important;
+  text-shadow: 0 0 16px rgba(16, 185, 129, 0.4) !important;
+}
+.lens-tier.tier-green {
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.18) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+.intel-lens.lens-tier-green .lens-meter i, .lens-meter i.bar-green {
+  background: linear-gradient(90deg, #059669, #10b981) !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important;
+}
+
+.intel-lens.lens-tier-yellow {
+  border: 1px solid rgba(234, 179, 8, 0.4) !important;
+  border-top: 3.5px solid #eab308 !important;
+  box-shadow: 0 0 20px -4px rgba(234, 179, 8, 0.35), inset 0 1px 0 rgba(234, 179, 8, 0.2) !important;
+}
+.intel-lens.lens-tier-yellow strong, strong.score-yellow {
+  color: #eab308 !important;
+  text-shadow: 0 0 16px rgba(234, 179, 8, 0.4) !important;
+}
+.lens-tier.tier-yellow {
+  color: #fde047 !important;
+  background: rgba(234, 179, 8, 0.18) !important;
+  border: 1px solid rgba(234, 179, 8, 0.35) !important;
+}
+.intel-lens.lens-tier-yellow .lens-meter i, .lens-meter i.bar-yellow {
+  background: linear-gradient(90deg, #ca8a04, #eab308) !important;
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.5) !important;
+}
+
+.intel-lens.lens-tier-orange {
+  border: 1px solid rgba(249, 115, 22, 0.4) !important;
+  border-top: 3.5px solid #f97316 !important;
+  box-shadow: 0 0 20px -4px rgba(249, 115, 22, 0.35), inset 0 1px 0 rgba(249, 115, 22, 0.2) !important;
+}
+.intel-lens.lens-tier-orange strong, strong.score-orange {
+  color: #f97316 !important;
+  text-shadow: 0 0 16px rgba(249, 115, 22, 0.4) !important;
+}
+.lens-tier.tier-orange {
+  color: #fdba74 !important;
+  background: rgba(249, 115, 22, 0.18) !important;
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
+}
+.intel-lens.lens-tier-orange .lens-meter i, .lens-meter i.bar-orange {
+  background: linear-gradient(90deg, #ea580c, #f97316) !important;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5) !important;
+}
+
+.intel-lens.lens-tier-red {
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  border-top: 3.5px solid #ef4444 !important;
+  box-shadow: 0 0 20px -4px rgba(239, 68, 68, 0.35), inset 0 1px 0 rgba(239, 68, 68, 0.2) !important;
+}
+.intel-lens.lens-tier-red strong, strong.score-red {
+  color: #ef4444 !important;
+  text-shadow: 0 0 16px rgba(239, 68, 68, 0.4) !important;
+}
+.lens-tier.tier-red {
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.18) !important;
+  border: 1px solid rgba(239, 68, 68, 0.35) !important;
+}
+.intel-lens.lens-tier-red .lens-meter i, .lens-meter i.bar-red {
+  background: linear-gradient(90deg, #dc2626, #ef4444) !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5) !important;
+}
+
 /* ==========================================================================
    02. PRIORITY STRATEGIC DECISION AREAS (3 BALANCED CARDS)
    ========================================================================== */
