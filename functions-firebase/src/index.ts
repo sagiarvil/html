@@ -3,6 +3,7 @@ import {runFriendlyScan} from './scan-request';
 import {providerAvailability,runMentionScan} from './mention-engine';
 import {generateIntelligenceReport,INTELLIGENCE_ANALYSIS_COUNT,READINESS_LENS_COUNT,INTELLIGENCE_VERSION} from './intelligence-engine';
 import {generateFullSiteFixMandate,FULL_SITE_FIX_MANDATE_PRICE_USD,FULL_SITE_FIX_MANDATE_MAX_PAGES} from './remediation-engine-v2';
+import {buildDeliveryPack,DELIVERY_PACK_VERSION} from './delivery-pack';
 
 const common={region:'us-central1' as const,timeoutSeconds:120,memory:'512MiB' as const,cors:false,invoker:'public' as const,maxInstances:10};
 function harden(res:any){res.set('Cache-Control','no-store');res.set('X-Content-Type-Options','nosniff')}
@@ -14,15 +15,17 @@ export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},asyn
   res.status(200).json({
     status:'ok',
     service:'htmlandhtml-validator',
-    version:'2.3.0',
+    version:'2.4.0',
     remediationMandateVersion:'1.1',
     intelligenceLayerVersion:INTELLIGENCE_VERSION,
+    deliveryPackVersion:DELIVERY_PACK_VERSION,
     scanEngines:12,
     intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT,
     readinessLenses:READINESS_LENS_COUNT,
     maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,
     freeDiagnosis:true,
     fullSiteFixMandatePriceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,
+    deliveryPack:true,
     paidMandateConfigured:Boolean(process.env.MANDATE_ACCESS_TOKEN),
     aiMentionTracker:true,
     aiMentionAccessConfigured:Boolean(process.env.AI_MENTION_ACCESS_TOKEN),
@@ -94,7 +97,8 @@ export const mandate=onRequest({...common,timeoutSeconds:120,memory:'512MiB'},as
     const scan=await runFriendlyScan(target.trim());
     const report=generateFullSiteFixMandate(scan,body?.baseline_scan);
     res.status(200).json({
-      product:'Full Site Fix Mandate',
+      product:'AI Visibility Implementation Blueprint',
+      internalContract:'FULL_SITE_FIX_MANDATE',
       version:'1.1',
       priceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,
       maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,
@@ -102,10 +106,40 @@ export const mandate=onRequest({...common,timeoutSeconds:120,memory:'512MiB'},as
       scanId:scan.scanId,
       report,
       markdown:report.markdown,
+      deliveryEndpoint:'/api/delivery',
       scan:{scanId:scan.scanId,domain:scan.domain,url:scan.url,scannedAt:scan.scannedAt,overall:scan.overall,scores:scan.scores,summary:scan.summary}
     });
   }catch(e:any){
     const message=e?.message||'Mandate generation failed';
+    const status=/not allowed|private|reserved|credentials|port/i.test(message)?403:400;
+    res.status(status).json({error:message});
+  }
+});
+
+export const delivery=onRequest({...common,timeoutSeconds:120,memory:'512MiB'},async(req,res)=>{
+  harden(res);
+  if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
+  try{
+    const body=req.body;
+    const target=body?.target_url||body?.url||body?.domain;
+    if(!target||typeof target!=='string'||!target.trim()){res.status(400).json({error:'target_url or domain required'});return}
+    const access=process.env.MANDATE_ACCESS_TOKEN||'';
+    if(!access){res.status(503).json({error:'Paid delivery service is not activated: production entitlement is not configured.'});return}
+    const token=String(req.get('authorization')||'').replace(/^Bearer\s+/i,'');
+    if(!token||token!==access){res.status(402).json({error:'Valid paid entitlement required'});return}
+    const scan=await runFriendlyScan(target.trim());
+    const report=generateFullSiteFixMandate(scan,body?.baseline_scan);
+    const pack=buildDeliveryPack(scan,report,body?.locale==='tr'?'tr':'en');
+    res.set('Content-Type',pack.mime);
+    res.set('Content-Disposition',`attachment; filename="${pack.filename}"`);
+    res.set('X-HTMLHTML-Product','AI Visibility Implementation Blueprint');
+    res.set('X-HTMLHTML-Price-USD',String(FULL_SITE_FIX_MANDATE_PRICE_USD));
+    res.set('X-HTMLHTML-Max-Pages',String(FULL_SITE_FIX_MANDATE_MAX_PAGES));
+    res.set('X-HTMLHTML-Pack-Version',pack.version);
+    res.set('X-HTMLHTML-Pack-Files',String(pack.files.length));
+    res.status(200).send(Buffer.from(pack.bytes));
+  }catch(e:any){
+    const message=e?.message||'Delivery pack generation failed';
     const status=/not allowed|private|reserved|credentials|port/i.test(message)?403:400;
     res.status(status).json({error:message});
   }
