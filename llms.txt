@@ -1,77 +1,85 @@
 # HTML&HTML
 
-> HTML&HTML is a bilingual 12-engine website diagnosis and implementation-mandate platform. Evidence-backed public findings are free; the implementation contract is the paid product.
+> HTML&HTML is an evidence-first AI Website Readiness platform. One canonical 12-engine public scan core powers focused tools, sourced guidance, a $149 implementation-grade Fix Mandate and an access-gated AI Mention Tracker. Evidence is free; implementation precision is the paid product.
 
-HTML&HTML separates measured facts, vendor/standard guidance, proposals and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals. The public authority hub exposes focused llms.txt, AI crawler and full AI website-readiness tools that all use the same 12-engine scan core.
+## Language hubs
+- [English hub](https://htmlandhtml.com/en): Global default product and tool directory.
+- [Türkçe ana sayfa](https://htmlandhtml.com/tr): Tam Türkçe ürün, araç ve rehber yapısı.
 
-## Open audit profile and reference layer
+## Directory hubs
+- [English tools](https://htmlandhtml.com/en/tools): Focused diagnostic entry points backed by the canonical 12-engine scan core.
+- [Türkçe araçlar](https://htmlandhtml.com/tr/araclar): Canonical 12-motor çekirdeği kullanan odaklı araç girişleri.
+- [English guides](https://htmlandhtml.com/en/guides): Sourced decision-support guides linked to measurable tools.
+- [Türkçe rehberler](https://htmlandhtml.com/tr/rehberler): Ölçülebilir araçlara bağlanan kaynaklı karar destek rehberleri.
 
-- [Open Website AI Readiness Audit Profile](https://htmlandhtml.com/standard/): Public HTML&HTML product profile defining the 12-engine decision contract, evidence classes, confidence, unknown-state semantics and safety invariants. It is explicitly not presented as an IETF/W3C/vendor standard.
-- [Machine-readable audit profile](https://htmlandhtml.com/audit-profile.json): Versioned JSON representation of the same engine weights, boundaries and invariants.
-- [External evidence source registry](https://htmlandhtml.com/sources.json): First-party vendor, standards-body and proposal references with manual verification dates.
-- [AI Crawler Reference 2026](https://htmlandhtml.com/reference/ai-crawlers/): Sourced distinctions between search, user-directed retrieval, model-development collection and product-control robots tokens.
+## Platform and commercial boundary
+- [Platform](https://htmlandhtml.com/en/platform)
+- [TR Platform](https://htmlandhtml.com/tr/platform)
+- [Pricing](https://htmlandhtml.com/en/pricing): Public diagnosis USD 0; Full Site Fix Mandate USD 149 per domain/engagement.
+- [TR Fiyatlandırma](https://htmlandhtml.com/tr/fiyatlandirma)
+- [Fix Mandate](https://htmlandhtml.com/en/fix-mandate)
+- [TR Fix Mandate](https://htmlandhtml.com/tr/fix-mandate)
 
-## Core product
+## Focused tools — English
+- [Website Scanner](https://htmlandhtml.com/en/website-scanner): Broad 12-engine public website diagnosis across crawl, technical SEO, AI access, llms.txt, schema, performance hygiene, accessibility, security, trust, agent readiness, conversion and links.
+- [AI Website Readiness](https://htmlandhtml.com/en/ai-website-readiness): Full AI and technical readiness view across all 12 engines.
+- [llms.txt Validator](https://htmlandhtml.com/en/llms-txt-validator): llms.txt structure, discovery and real-link evidence.
+- [AI Crawler Checker](https://htmlandhtml.com/en/ai-crawler-checker): Crawler-policy and access checks for AI/search retrieval surfaces.
+- [Schema Validator](https://htmlandhtml.com/en/schema-validator): Parse JSON-LD and surface broken structured-data blocks without claiming that schema guarantees rankings or AI citations.
+- [Technical SEO Checker](https://htmlandhtml.com/en/technical-seo-checker): Check crawlability, redirects, titles, meta, H1, canonicals, duplicates and route-level technical signals.
+- [Security Headers Checker](https://htmlandhtml.com/en/security-headers-checker): Inspect HTTPS, HSTS, CSP, nosniff, Referrer Policy, Permissions Policy and mixed-content signals.
+- [Accessibility Checker](https://htmlandhtml.com/en/accessibility-checker): Check public HTML signals such as lang, alt text, programmatic form labels and accessible names.
+- [Link Integrity Checker](https://htmlandhtml.com/en/link-integrity-checker): Probe internal links for broken destinations and avoidable redirects with real HTTP requests.
+- [AI Mention Tracker](https://htmlandhtml.com/en/ai-mention-tracker): Paid neutral-prompt measurement across configured AI search API surfaces.
 
-- [Website Fix Validator](https://htmlandhtml.com/): Free diagnosis across Crawl & Index, Technical SEO, AI/GEO crawler access, llms.txt v2, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion and Link Integrity.
-- [AI Website Readiness — English](https://htmlandhtml.com/en/ai-website-readiness/): Full 12-engine AI and technical readiness view.
-- [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/): 12 motorlu AI/GEO ve teknik hazırlık görünümü.
-- [Methodology](https://htmlandhtml.com/methodology.html): Public evidence classes, confidence levels, scoring rules, scan boundaries and governance model.
-- [Markdown overview](https://htmlandhtml.com/index.md): Clean machine-readable overview of the product and commercial boundary.
-- [OpenAPI contract](https://htmlandhtml.com/openapi.json): Machine-readable contract for health, public scan and entitlement-gated mandate endpoints.
-- [Health endpoint](https://htmlandhtml.com/api/health): Runtime service state, version, engine count and paid-mandate configuration state.
+## Odaklı araçlar — Türkçe
+- [Site Tarama](https://htmlandhtml.com/tr/site-tarama): Crawl, teknik SEO, AI erişimi, llms.txt, schema, performans hijyeni, erişilebilirlik, güvenlik, güven, agent hazırlığı, dönüşüm ve linkler için 12 motorlu public site teşhisi.
+- [AI Web Sitesi Hazırlığı](https://htmlandhtml.com/tr/ai-website-readiness): 12 motorun tamamında AI ve teknik hazırlık görünümü.
+- [llms.txt Doğrulayıcı](https://htmlandhtml.com/tr/llms-txt-validator): llms.txt yapı, keşif ve gerçek link kanıtı.
+- [AI Tarayıcı Kontrolü](https://htmlandhtml.com/tr/ai-crawler-checker): AI ve arama retrieval yüzeyleri için bot-politika ve erişim kontrolleri.
+- [Schema Doğrulayıcı](https://htmlandhtml.com/tr/schema-validator): JSON-LD parse durumunu ve bozuk yapısal veri bloklarını kontrol eder; schema kullanımını sıralama veya AI citation garantisi gibi sunmaz.
+- [Teknik SEO Kontrolü](https://htmlandhtml.com/tr/teknik-seo-kontrol): Crawl erişimi, redirect, title, meta, H1, canonical, duplicate ve route-level teknik sinyalleri kontrol eder.
+- [Güvenlik Başlıkları Kontrolü](https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol): HTTPS, HSTS, CSP, nosniff, Referrer Policy, Permissions Policy ve mixed-content sinyallerini kontrol eder.
+- [Erişilebilirlik Kontrolü](https://htmlandhtml.com/tr/erisilebilirlik-kontrol): Lang, alt text, programatik form label ve accessible-name gibi public HTML sinyallerini kontrol eder.
+- [Link Bütünlüğü Kontrolü](https://htmlandhtml.com/tr/link-kontrol): İç linkleri gerçek HTTP istekleriyle kırık hedef ve gereksiz redirect açısından ölçer.
+- [AI Marka Görünürlük Takibi](https://htmlandhtml.com/tr/ai-mention-tracker): Yapılandırılmış AI arama API yüzeylerinde ücretli, tarafsız-prompt ölçümü.
 
-## Focused free tools
+## Guides — English
+- [AI Website Readiness Checklist: A Technical Evidence-First Framework](https://htmlandhtml.com/en/guides/ai-website-readiness-checklist): A practical checklist for crawl access, technical SEO, AI crawler policy, llms.txt, structured data, accessibility, security, trust and links without treating any one signal as a ranking guarantee.
+- [llms.txt: What It Is, What It Is Not, and How to Validate It](https://htmlandhtml.com/en/guides/llms-txt): A sourced guide to llms.txt v2, discovery relationships, link reachability and the limits of the proposal.
+- [AI Crawler Access: Robots.txt, Search Retrieval and Vendor-Specific Controls](https://htmlandhtml.com/en/guides/ai-crawler-access): A vendor-sourced guide to separating search crawlers, user-directed retrieval and model-development collection controls.
+- [Structured Data for AI Readiness: What You Can Validate Reliably](https://htmlandhtml.com/en/guides/structured-data-for-ai): How to use structured data as a measurable semantic layer without turning it into an AI citation promise.
+- [AI Search Visibility: From Crawl Eligibility to Measured Mentions](https://htmlandhtml.com/en/guides/ai-search-visibility): A practical model for separating technical eligibility, retrieval evidence and neutral-prompt mention measurement.
 
-- [llms.txt Validator — English](https://htmlandhtml.com/en/llms-txt-validator/): Structure, real HTTP link reachability, llms.txt v2 discovery and related AI access evidence.
-- [llms.txt Validator — Turkish](https://htmlandhtml.com/tr/llms-txt-validator/): llms.txt yapı, gerçek link erişimi, v2 keşif ilişkileri ve ilgili AI erişim kanıtları.
-- [AI Crawler Checker — English](https://htmlandhtml.com/en/ai-crawler-checker/): Bot-policy and crawl-access checks for OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot, Google-Extended and related public signals.
-- [AI Crawler Checker — Turkish](https://htmlandhtml.com/tr/ai-crawler-checker/): AI bot politikası ve crawl erişimi kontrolleri.
+## Rehberler — Türkçe
+- [AI Web Sitesi Hazırlık Kontrol Listesi: Kanıt Öncelikli Teknik Çerçeve](https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi): Crawl erişimi, teknik SEO, AI crawler politikası, llms.txt, yapısal veri, erişilebilirlik, güvenlik, güven ve linkleri tek bir sinyali ranking garantisi gibi sunmadan değerlendiren pratik kontrol listesi.
+- [llms.txt Nedir, Ne Değildir ve Nasıl Doğrulanır?](https://htmlandhtml.com/tr/rehberler/llms-txt): llms.txt v2, discovery ilişkileri, link erişilebilirliği ve proposal sınırlarını kaynaklı biçimde açıklayan rehber.
+- [AI Tarayıcı Erişimi: robots.txt, Arama Retrieval ve Vendor Kontrolleri](https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi): Arama crawler’ları, kullanıcı yönlendirmeli retrieval ve model-geliştirme veri toplama kontrollerini birbirinden ayıran vendor kaynaklı rehber.
+- [AI Hazırlığı İçin Yapısal Veri: Güvenilir Biçimde Ne Ölçülebilir?](https://htmlandhtml.com/tr/rehberler/ai-icin-yapisal-veri): Structured data’yı AI citation vaadine dönüştürmeden ölçülebilir semantik katman olarak kullanma rehberi.
+- [AI Arama Görünürlüğü: Crawl Uygunluğundan Ölçülmüş Mention’a](https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu): Teknik uygunluk, retrieval kanıtı ve tarafsız-prompt mention ölçümünü birbirinden ayıran pratik model.
 
-## Identity, support and policy
+## Methodology and evidence governance
+- [English methodology](https://htmlandhtml.com/en/methodology)
+- [Türkçe metodoloji](https://htmlandhtml.com/tr/methodology)
+- [English evidence standard](https://htmlandhtml.com/en/evidence-standard)
+- [Türkçe kanıt standardı](https://htmlandhtml.com/tr/kanit-standardi)
+- [AI crawler reference](https://htmlandhtml.com/en/reference/ai-crawlers)
+- [AI tarayıcı referansı](https://htmlandhtml.com/tr/referans/ai-tarayicilar)
+- [Machine-readable audit profile](https://htmlandhtml.com/audit-profile.json)
+- [External evidence source registry](https://htmlandhtml.com/sources.json)
+- [OpenAPI 3.1 contract](https://htmlandhtml.com/openapi.json)
 
-- [About HTML&HTML](https://htmlandhtml.com/about/): Product identity, evidence-first position and commercial boundary.
-- [Contact and support](https://htmlandhtml.com/contact/): Official support route through the sagiarvil/html issue tracker; secrets and private data must not be posted publicly.
-- [Privacy](https://htmlandhtml.com/privacy/): Public scan data boundary and current application-storage behavior.
-- [Terms](https://htmlandhtml.com/terms/): Responsible-use boundaries and explicit limits of diagnostic scores.
-- [Source repository](https://github.com/sagiarvil/html): Maintained source-of-truth repository for HTML&HTML.
-
-## Commercial model
-
-- Free Diagnosis: USD 0. All detected issues, URLs, severity, confidence, source class and evidence are visible.
-- Full Site Fix Mandate: USD 149 for one domain / one engagement. It converts a fresh scan into P0–P3 implementation order, ROOT FIX, RECOVERY, PREVENTION, acceptance/regression tests, rollback and stop conditions.
-- Re-scan: One re-scan within 30 days is included in the commercial scope.
-
-## Evidence policy
-
-- OFFICIAL_STANDARD: standards or normative platform rules.
-- OFFICIAL_VENDOR: current crawler/product guidance from the relevant vendor.
-- PROPOSAL: emerging proposals such as llms.txt; not presented as ranking requirements.
-- MEASURED: direct HTTP/HTML/header/link evidence.
-- INTERNAL_HEURISTIC: clearly labeled product heuristics.
-- EXPERIMENTAL: optional agent surfaces such as A2A/MCP when applicable.
+## Trust and policy
+- [About](https://htmlandhtml.com/en/about) · [Hakkımızda](https://htmlandhtml.com/tr/hakkimizda)
+- [Contact](https://htmlandhtml.com/en/contact) · [İletişim](https://htmlandhtml.com/tr/iletisim)
+- [Privacy](https://htmlandhtml.com/en/privacy) · [Gizlilik](https://htmlandhtml.com/tr/gizlilik)
+- [Terms](https://htmlandhtml.com/en/terms) · [Kullanım Koşulları](https://htmlandhtml.com/tr/kullanim-kosullari)
 
 ## Scan boundaries
-
 - Up to 50 public HTML pages and 30 link probes per scan.
 - Private/local/reserved targets, credential-bearing URLs, non-standard ports and redirect pivots into private address space fail closed.
 - Unknown or unavailable measurements are excluded from the relevant score denominator rather than forced to pass or fail.
-- Reliable LCP, INP and CLS require field/lab data integration. If unavailable, those metrics remain NOT_MEASURED.
-
-## Important limitations
-
-- 100/100 means only that measured checks passed. It does not guarantee rankings, traffic, sales or AI citations.
-- Public scanning can verify externally visible behavior but cannot reliably name the source file that must change. File-level targeting requires source/codebase context.
-- llms.txt is tracked as a PROPOSAL, not as a mandatory web standard or ranking requirement.
-- A2A/MCP remain optional experimental surfaces and are not published merely to improve the product's own score.
-- The paid mandate endpoint is fail-closed until a secure payment provider and entitlement secret are configured.
-
-## Languages
-
-- Turkish authority pages use /tr/ paths.
-- English authority pages use /en/ paths.
-- Canonical and hreflang pairs are published for the focused tools.
-
-## AI Mention Tracker
-- [TR AI Mention Tracker](https://htmlandhtml.com/tr/ai-mention-tracker/): Paid neutral-prompt measurement across OpenAI web-search, Perplexity Sonar and Gemini Search-grounded API surfaces.
-- [EN AI Mention Tracker](https://htmlandhtml.com/en/ai-mention-tracker/): Provider-by-provider mention and domain citation evidence. Consumer app results may differ.
+- Reliable LCP, INP and CLS remain NOT_MEASURED without appropriate field/lab integration.
+- Public scanning does not invent source-file paths. File-level targeting requires source/codebase context.
+- A score is not a guarantee of rankings, traffic, revenue or AI citations.
+- llms.txt is treated as a PROPOSAL, not a mandatory web standard.

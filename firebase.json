@@ -174,42 +174,62 @@
     ],
     "redirects": [
       {
+        "source": "/",
+        "destination": "/en",
+        "type": 301
+      },
+      {
+        "source": "/home",
+        "destination": "/en",
+        "type": 301
+      },
+      {
+        "source": "/products",
+        "destination": "/en/pricing",
+        "type": 301
+      },
+      {
+        "source": "/products.html",
+        "destination": "/en/pricing",
+        "type": 301
+      },
+      {
+        "source": "/pricing",
+        "destination": "/en/pricing",
+        "type": 301
+      },
+      {
+        "source": "/architecture",
+        "destination": "/en/platform",
+        "type": 301
+      },
+      {
+        "source": "/preview",
+        "destination": "/en",
+        "type": 301
+      },
+      {
+        "source": "/methodology.html",
+        "destination": "/en/methodology",
+        "type": 301
+      },
+      {
+        "source": "/standard",
+        "destination": "/en/evidence-standard",
+        "type": 301
+      },
+      {
+        "source": "/reference/ai-crawlers",
+        "destination": "/en/reference/ai-crawlers",
+        "type": 301
+      },
+      {
         "source": "/favicon.ico",
         "destination": "/favicon.svg",
         "type": 302
       },
       {
         "source": "/index.html",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/home",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/products",
-        "destination": "/#pricing",
-        "type": 301
-      },
-      {
-        "source": "/products.html",
-        "destination": "/#pricing",
-        "type": 301
-      },
-      {
-        "source": "/pricing",
-        "destination": "/#pricing",
-        "type": 302
-      },
-      {
-        "source": "/architecture",
-        "destination": "/#how",
-        "type": 301
-      },
-      {
-        "source": "/preview",
         "destination": "/",
         "type": 301
       }

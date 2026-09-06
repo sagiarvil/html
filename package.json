@@ -1,16 +1,18 @@
 {
   "name": "htmlandhtml-com",
-  "version": "6.1.0",
-  "description": "HTML&HTML bilingual 12-engine website diagnosis, authority tools and paid implementation-mandate platform",
+  "version": "7.0.0",
+  "description": "HTML&HTML enterprise bilingual AI Website Readiness platform with one canonical 12-engine scan core, intent-focused tools, sourced guides and implementation mandates",
   "private": true,
   "scripts": {
     "test": "npm run test:integrity && npm run test:client",
-    "test:integrity": "node tests/integrity/check.mjs && node tests/integrity/authority.mjs && node tests/integrity/i18n.mjs",
+    "test:integrity": "node tests/integrity/check.mjs && node tests/integrity/authority.mjs && node tests/integrity/i18n.mjs && node tests/integrity/ia.mjs",
     "test:client": "node --check assets/js/validator.js && node --check assets/js/authority-tool.js && node --check assets/js/theme.js && node --check assets/js/mention-tracker.js",
     "dev": "wrangler pages dev .",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
     "firebase:deploy": "npx -y firebase-tools@latest deploy --only hosting",
-    "firebase:serve": "npx -y firebase-tools@latest emulators:start --only hosting"
+    "firebase:serve": "npx -y firebase-tools@latest emulators:start --only hosting",
+    "build:ia": "node scripts/build-enterprise-ia.mjs && node scripts/postbuild-enterprise-ia.mjs",
+    "test:ia": "node tests/integrity/ia.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250224.0",
