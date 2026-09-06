@@ -1,4 +1,4 @@
-import {verifyPaddleSignature,PADDLE_PRICE_ID,PADDLE_PRODUCT_KEY} from '../../lib/paddle-payment';
+import {verifyPaddleSignature,PADDLE_PRICE_ID,PADDLE_PRODUCT_KEY,PADDLE_PRICE_ID_ENTERPRISE,PADDLE_PRODUCT_KEY_ENTERPRISE} from '../../lib/paddle-payment';
 
 interface Env { PADDLE_WEBHOOK_SECRET?: string }
 
@@ -12,7 +12,7 @@ export const onRequestPost:PagesFunction<Env>=async({request,env})=>{
   try{event=JSON.parse(rawBody)}catch{return Response.json({error:'Invalid JSON'},{status:400,headers:{'cache-control':'no-store'}})}
   const eventType=String(event?.event_type||event?.eventType||'');
   const data=event?.data||{};
-  const relevant=eventType==='transaction.completed'&&Array.isArray(data?.items)&&data.items.some((x:any)=>x?.price?.id===PADDLE_PRICE_ID)&&data?.custom_data?.product_key===PADDLE_PRODUCT_KEY;
+  const relevant=eventType==='transaction.completed'&&Array.isArray(data?.items)&&data.items.some((x:any)=>x?.price?.id===PADDLE_PRICE_ID || x?.price?.id===PADDLE_PRICE_ID_ENTERPRISE);
   return Response.json({ok:true,event_id:String(event?.event_id||''),event_type:eventType,relevant},{status:200,headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
 };
 

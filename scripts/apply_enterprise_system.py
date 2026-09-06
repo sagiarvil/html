@@ -57,7 +57,7 @@ TR_PRICING='''<main>
 <section class="authority-hero px-pricing-hero" data-commercial-intent="static">
  <div class="kicker"><span></span><b>3 ŞEFFAF KATMAN · TEK SİTE · UYGULAMA ODAKLI</b></div>
  <h1>Problemi ücretsiz görün. <em>Yol haritasını $99'a açın.</em></h1>
- <p>Tanı için kredi kartı istemiyoruz. Web sitenizin ölçülen sorunlarını ve kanıtlarını ücretsiz gösteriyoruz. İhtiyacınıza göre $99 AI Görünürlük Yol Haritası veya $499 Kurumsal İstihbarat paketini seçin.</p>
+ <p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Yol Haritası:</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>
  <div class="hero-actions"><a class="primary" href="/tr/#scanner">Ücretsiz Teşhisi Başlat →</a><a href="#compare">Paketleri İncele</a></div>
 </section>
 <section class="px-section px-pricing-stage" id="compare">
@@ -109,7 +109,7 @@ EN_PRICING='''<main>
 <section class="authority-hero px-pricing-hero" data-commercial-intent="static">
  <div class="kicker"><span></span><b>3 TRANSPARENT TIERS · ONE SITE · EXECUTION FOCUSED</b></div>
  <h1>See the evidence free. <em>Unlock the roadmap for $99.</em></h1>
- <p>No credit card for diagnosis. See measured website problems and evidence free. Choose between the $99 AI Search Visibility Roadmap or the $499 Enterprise Dark Pool Intelligence package.</p>
+ <p class="release-contract-line"><strong>Free diagnosis:</strong> What is wrong? Where? How important? <strong>$99 AI Search Visibility Roadmap:</strong> How should it be fixed? In what order? How will it be verified?</p>
  <div class="hero-actions"><a class="primary" href="/en/#scanner">Start Free Diagnostic →</a><a href="#compare">Compare Packages</a></div>
 </section>
 <section class="px-section px-pricing-stage" id="compare">

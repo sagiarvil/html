@@ -3,6 +3,7 @@ from pathlib import Path
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
+THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=2">'
 PREMIUM='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">'
 ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">'
 RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=1"></script>'
@@ -17,6 +18,8 @@ for p in ROOT.rglob('*.html'):
     text=text.replace('Düzeltme reçetesi','Uygulama planı').replace('düzeltme reçetesi','uygulama planı')
     text=text.replace('Fix Prescription','Implementation Blueprint').replace('fix prescription','implementation blueprint')
     text=re.sub(r'\s*\((?:feat|fix|chore|refactor|docs|style|test):[^\n<]{0,240}\)\s*$', '\n', text, flags=re.I)
+    if 'theme.css' not in text and '<head>' in text:
+        text=text.replace('<head>', '<head>\n'+THEME, 1)
     if 'premium-experience.css' not in text and '</head>' in text:
         text=text.replace('</head>',PREMIUM+'\n</head>',1)
     if 'enterprise-system.css' not in text and '</head>' in text:

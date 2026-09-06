@@ -15,6 +15,7 @@ EXCLUDED = {
     "en/privacy/index.html", "en/terms/index.html",
     "tr/gizlilik/index.html", "tr/kullanim-kosullari/index.html",
     "privacy/index.html", "terms/index.html",
+    "tr/fiyatlandirma/index.html", "en/pricing/index.html",
 }
 
 TR_COMMON = "HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. ChatGPT, Google'ın yapay zeka araması ve diğer AI sistemlerinde bulunmanızı, anlaşılmanızı, kaynak gösterilmenizi ve değerlendirme kümesine girmenizi zorlaştıran site kaynaklı engelleri kanıtıyla gösterir."
@@ -50,8 +51,6 @@ PAGES = {
     "en/tools/index.html": {"h1":"Why Might AI Fail to Find, Understand or Cite Your Website?","lead":"Each tool measures a different link in the same commercial chain: discovery, understanding, source eligibility and a usable referral path."},
     "tr/rehberler/index.html": {"h1":"Yapay Zeka Arama Sonuçlarında Çıkmak İçin Ne Yapmalısınız?","lead":"Teknik terimleri ezberlemek yerine, yapay zeka görünürlüğü ve kaynak olma fırsatını etkileyen kararları resmi kaynaklar ve ölçülebilir kanıtla uygulayın."},
     "en/guides/index.html": {"h1":"What Should You Do to Compete for AI Search Visibility?","lead":"Skip generic hacks. Use official guidance and measurable evidence to improve the website-side conditions that support AI discovery, source eligibility and referral."},
-    "tr/fiyatlandirma/index.html": {"h1":"Yapay Zeka Görünürlüğünüzü Ücretsiz Ölçün. Düzeltme Yol Haritasını $99'a Açın.","lead":"Problemi ücretsiz görün. Önce yapay zeka arama sonuçlarında görünme ve tavsiye edilme fırsatınızı engelleyen sorunları ücretsiz görün. Yalnızca uygulama yol haritası için $99 ödeyin."},
-    "en/pricing/index.html": {"h1":"Measure AI Search Readiness Free. Unlock the $99 Fix Prescription Only If Needed.","lead":"See the website-side blockers to AI visibility and recommendation opportunity free. Pay only when you want implementation-grade remediation."},
     "tr/fix-mandate/index.html": {"h1":"Yapay Zeka Görünürlüğünüzün Önündeki Engelleri Uygulanabilir Düzeltme Reçetesine Çevirin.","lead":"$99 Fix Mandate bir tavsiye garantisi değil; ölçülen GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik engelleri kök neden, uygulama, test ve rollback planına dönüştüren sözleşmedir."},
     "en/fix-mandate/index.html": {"h1":"Turn AI Search Visibility Blockers into a Testable Fix Prescription.","lead":"The $99 Fix Mandate is not a recommendation guarantee. It turns measured GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt and technical blockers into root-cause fixes, tests and rollback."},
 
