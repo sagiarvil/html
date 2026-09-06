@@ -82,7 +82,7 @@ const intentCopy={
     'link-integrity-checker':'If AI or search sends a user to a broken URL, discovery cannot become commercial value. Protect referral paths and internal link integrity.',
     'website-scanner':'Do not settle for one score. Find where AI and search visibility breaks: discovery, understanding, source eligibility, or conversion.',
     'ai-website-readiness':'AI readiness is more than adding a file. Access, entities, answer extractability, information value, trust, and conversion must work as one chain.',
-    'platform':'HTML&HTML does not sell a promise that AI will recommend you. It proves which site-side conditions for discovery, citation eligibility, and conversion are missing.',
+    'platform':'HTML&HTML does not sell recommendation promises. It proves which site-side conditions for discovery, citation eligibility, and conversion are missing.',
     'tools':'Each tool measures a different link in the same commercial chain: being found, understood, source-worthy, and able to convert the visit.',
     'guides':'The guides exist to turn AI discovery into actionable engineering and content decisions, not to manufacture generic SEO copy.',
     'pricing':'The free layer proves what is wrong. The $149 Fix Mandate turns measurable blockers into a testable implementation sequence.',
