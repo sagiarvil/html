@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 
+# Raw-source guard runs before all build materializers; legacy pricing cannot hide behind deploy transforms.
 ROOT=Path(__file__).resolve().parents[1]
 SKIP={'.git','node_modules','functions','functions-firebase','scripts','tests','.github'}
 paths=[]
