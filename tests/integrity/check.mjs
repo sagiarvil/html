@@ -24,6 +24,8 @@ const checks=[
   [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
   [/FULL SITE FIX MANDATE/i.test(index)&&/\$149/.test(index),'single $149 mandate positioning missing'],
   [!/\$49|\$99/.test(index),'legacy mandate prices still present'],
+  [!/\((?:feat|fix|chore|refactor|docs|style|test):/i.test(index),'git commit metadata leaked into homepage DOM'],
+  [/pricing-grid\.pricing-two \.featured\{padding-top:(?:6[8-9]|7[0-9])px\}/.test(index),'featured pricing card must reserve vertical space for its badge'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
   [/ROOT FIX/.test(mandate)&&/RECOVERY/.test(mandate)&&/PREVENTION/.test(mandate)&&/ROLLBACK/.test(mandate),'mandate execution contract incomplete'],
   [/MAX_PAGES=50/.test(engine)&&/MAX_LINK_PROBES=30/.test(engine),'crawl limits missing'],
@@ -59,4 +61,4 @@ for(const file of ['index.html','checkout.html']){
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: 12-engine free diagnosis, resilient domain normalization, evidence boundary, SSRF controls, $149 paid mandate gate and machine-readable surfaces verified.');
+console.log('INTEGRITY PASS: 12-engine free diagnosis, resilient domain normalization, evidence boundary, SSRF controls, clean homepage DOM, pricing badge spacing, $149 paid mandate gate and machine-readable surfaces verified.');
