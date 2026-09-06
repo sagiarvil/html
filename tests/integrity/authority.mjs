@@ -67,7 +67,7 @@ const openapi=JSON.parse(fs.readFileSync(path.join(root,'openapi.json'),'utf8'))
 if(openapi.openapi!=='3.1.0')errors.push('OpenAPI must be 3.1.0');
 for(const route of ['/api/health','/api/scan','/api/mentions','/api/mandate'])if(!openapi.paths?.[route])errors.push(`OpenAPI missing ${route}`);
 const firebase=JSON.parse(fs.readFileSync(path.join(root,'firebase.json'),'utf8'));
-const rewrites=firebase.hosting?.rewrites||[];for(const route of ['/api/health','/api/scan','/api/mandate'])if(!rewrites.some(r=>r.source===route&&r.function?.functionId))errors.push(`Firebase missing API rewrite ${route}`);
+const rewrites=firebase.hosting?.rewrites||[];for(const route of ['/api/health','/api/scan','/api/mentions','/api/mandate'])if(!rewrites.some(r=>r.source===route&&r.function?.functionId))errors.push(`Firebase missing API rewrite ${route}`);
 if(!Array.isArray(firebase.functions)||firebase.functions[0]?.source!=='functions-firebase')errors.push('Firebase functions source not configured');
 const adapter=fs.readFileSync(path.join(root,'functions-firebase/src/index.ts'),'utf8');
 if(!adapter.includes("from './scan-request'"))errors.push('Firebase adapter must consume synced canonical scan request wrapper');
