@@ -460,3 +460,380 @@ html[data-theme="dark"] .px-knowledge-step:nth-child(4) .num {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==========================================================================
+   ENTERPRISE FINDING DOSSIER CARD (FIX VERTICAL ELEVATOR SHAFT & BEIGE CODE)
+   ========================================================================== */
+.finding {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding: 24px 26px !important;
+  border-radius: 20px !important;
+  border: 1px solid var(--hh-line, #e2e8f0) !important;
+  background: var(--hh-paper, #f8fafc) !important;
+  margin-bottom: 16px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+.finding:hover {
+  transform: translateY(-2px) !important;
+}
+
+html[data-theme="dark"] .finding {
+  background: rgba(15, 23, 42, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* FIX SEVERITY: Compact top pill with icon, NEVER a 250px vertical block! */
+.finding > .severity {
+  display: inline-flex !important;
+  align-items: center !important;
+  align-self: flex-start !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.04em !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+}
+
+.finding > .severity.critical {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+}
+html[data-theme="dark"] .finding > .severity.critical {
+  background: rgba(239, 68, 68, 0.22) !important;
+  color: #f87171 !important;
+}
+
+.finding > .severity.high {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #f59e0b !important;
+  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+}
+html[data-theme="dark"] .finding > .severity.high {
+  background: rgba(245, 158, 11, 0.22) !important;
+  color: #fbbf24 !important;
+}
+
+.finding > .severity.medium {
+  background: rgba(0, 102, 255, 0.12) !important;
+  color: #0066ff !important;
+  border: 1px solid rgba(0, 102, 255, 0.4) !important;
+}
+html[data-theme="dark"] .finding > .severity.medium {
+  background: rgba(0, 102, 255, 0.22) !important;
+  color: #38bdf8 !important;
+}
+
+.finding > .severity.low,
+.finding > .severity.info {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #10b981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+}
+html[data-theme="dark"] .finding > .severity.low,
+html[data-theme="dark"] .finding > .severity.info {
+  background: rgba(16, 185, 129, 0.22) !important;
+  color: #34d399 !important;
+}
+
+/* 4-Tier Left Border Accents with Ambient Glow */
+.finding.finding-tier-critical {
+  border-left: 4.5px solid #ef4444 !important;
+}
+.finding.finding-tier-high {
+  border-left: 4.5px solid #f59e0b !important;
+}
+.finding.finding-tier-medium {
+  border-left: 4.5px solid #0066ff !important;
+}
+.finding.finding-tier-low,
+.finding.finding-tier-info {
+  border-left: 4.5px solid #10b981 !important;
+}
+
+html[data-theme="dark"] .finding.finding-tier-critical {
+  box-shadow: 0 4px 24px -4px rgba(239, 68, 68, 0.22) !important;
+}
+html[data-theme="dark"] .finding.finding-tier-high {
+  box-shadow: 0 4px 24px -4px rgba(245, 158, 11, 0.22) !important;
+}
+html[data-theme="dark"] .finding.finding-tier-medium {
+  box-shadow: 0 4px 24px -4px rgba(0, 102, 255, 0.22) !important;
+}
+html[data-theme="dark"] .finding.finding-tier-low,
+html[data-theme="dark"] .finding.finding-tier-info {
+  box-shadow: 0 4px 24px -4px rgba(16, 185, 129, 0.22) !important;
+}
+
+/* Finding Tags */
+.finding-tags {
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 10px !important;
+}
+.finding-tags span {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 3px 9px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--hh-line, #cbd5e1) !important;
+  background: var(--hh-paper, #f1f5f9) !important;
+  color: var(--hh-muted, #475569) !important;
+}
+html[data-theme="dark"] .finding-tags span {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+.finding h4 {
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  color: var(--hh-ink, #0f172a) !important;
+  margin: 0 0 8px !important;
+}
+html[data-theme="dark"] .finding h4 {
+  color: #ffffff !important;
+}
+
+.finding p{font-size:15px!important;
+  line-height: 1.65 !important;
+  color: var(--hh-muted, #475569) !important;
+  margin: 0 0 10px !important;
+}
+html[data-theme="dark"] .finding p {
+  color: #94a3b8 !important;
+}
+
+.finding-url {
+  display: inline-block !important;
+  font-size: 13px !important;
+  color: #0066ff !important;
+  word-break: break-all !important;
+  margin: 4px 0 10px !important;
+  text-decoration: none !important;
+}
+html[data-theme="dark"] .finding-url {
+  color: #38bdf8 !important;
+}
+
+/* FIX CODE SNIPPET: NEVER LIGHT BEIGE! DARK HIGH-TECH TERMINAL ONLY! */
+.finding code{font-size:13px!important;
+  display: block !important;
+  background: #070a10 !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  line-height: 1.6 !important;
+  margin: 10px 0 !important;
+  word-break: break-all !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Locked Fix Button */
+.locked-fix {
+  margin-top: 12px !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  background: rgba(0, 102, 255, 0.08) !important;
+  border: 1px dashed rgba(0, 102, 255, 0.35) !important;
+  color: #0066ff !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+}
+html[data-theme="dark"] .locked-fix {
+  background: rgba(0, 102, 255, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  color: #38bdf8 !important;
+}
+
+/* ==========================================================================
+   ENTERPRISE DARK POOL VECTORS (6-CARD SYMMETRICAL MATRIX & 4 ACTIVE COLORS)
+   ========================================================================== */
+.classified-section {
+  margin-top: 48px !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border-radius: 28px !important;
+  background: radial-gradient(circle at top center, rgba(245, 158, 11, 0.08), transparent 70%), var(--hh-card, #ffffff) !important;
+  padding: 38px 32px !important;
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.1) !important;
+}
+html[data-theme="dark"] .classified-section {
+  background: radial-gradient(circle at top center, rgba(245, 158, 11, 0.1), transparent 70%), linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 15, 26, 0.98) 100%) !important;
+  border-color: rgba(245, 158, 11, 0.25) !important;
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.65) !important;
+}
+
+.classified-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.classified-card {
+  border-radius: 20px !important;
+  padding: 24px !important;
+  background: var(--hh-paper, #f8fafc) !important;
+  border: 1px solid var(--hh-line, #e2e8f0) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+.classified-card:hover {
+  transform: translateY(-2px) !important;
+}
+
+html[data-theme="dark"] .classified-card {
+  background: rgba(15, 23, 42, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 4 Colors for the 6 Vectors */
+.classified-card:nth-child(1) { border-top: 3px solid #0066ff !important; }
+.classified-card:nth-child(2) { border-top: 3px solid #8b5cf6 !important; }
+.classified-card:nth-child(3) { border-top: 3px solid #10b981 !important; }
+.classified-card:nth-child(4) { border-top: 3px solid #f59e0b !important; }
+.classified-card:nth-child(5) { border-top: 3px solid #0066ff !important; }
+.classified-card:nth-child(6) { border-top: 3px solid #8b5cf6 !important; }
+
+html[data-theme="dark"] .classified-card:nth-child(1) { box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.25) !important; }
+html[data-theme="dark"] .classified-card:nth-child(2) { box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.25) !important; }
+html[data-theme="dark"] .classified-card:nth-child(3) { box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.25) !important; }
+html[data-theme="dark"] .classified-card:nth-child(4) { box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.25) !important; }
+html[data-theme="dark"] .classified-card:nth-child(5) { box-shadow: 0 0 24px -4px rgba(0, 102, 255, 0.25) !important; }
+html[data-theme="dark"] .classified-card:nth-child(6) { box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.25) !important; }
+
+.classified-card-head {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+.vector-tag {
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.08em !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  width: fit-content !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #f59e0b !important;
+}
+
+.vector-metric {
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  width: fit-content !important;
+  background: rgba(0, 102, 255, 0.1) !important;
+  color: #0066ff !important;
+  border: 1px solid rgba(0, 102, 255, 0.25) !important;
+}
+html[data-theme="dark"] .vector-metric {
+  background: rgba(0, 102, 255, 0.2) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+}
+
+.classified-card h4 {
+  font-size: 16.5px !important;
+  font-weight: 800 !important;
+  color: var(--hh-ink, #0f172a) !important;
+  margin: 4px 0 0 !important;
+  line-height: 1.35 !important;
+}
+html[data-theme="dark"] .classified-card h4 {
+  color: #ffffff !important;
+}
+
+.vector-desc {
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: var(--hh-muted, #64748b) !important;
+  margin: 0 0 14px !important;
+}
+html[data-theme="dark"] .vector-desc {
+  color: #94a3b8 !important;
+}
+
+/* High-Tech Classified Overlay */
+.classified-blur-container {
+  position: relative !important;
+  margin-top: auto !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #070a10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  min-height: 96px !important;
+}
+
+.classified-blurred-content {
+  padding: 14px 16px !important;
+  filter: blur(2.5px) !important;
+  user-select: none !important;
+  pointer-events: none !important;
+  opacity: 0.45 !important;
+}
+
+.classified-blurred-content code {
+  display: block !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  font-size: 12px !important;
+  color: #38bdf8 !important;
+  line-height: 1.5 !important;
+  white-space: pre-wrap !important;
+}
+
+.classified-lock-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  background: rgba(10, 15, 26, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  text-align: center !important;
+  padding: 12px !important;
+}
+
+.classified-lock-overlay .lock-icon {
+  font-size: 18px !important;
+}
+
+.classified-lock-overlay strong {
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.08em !important;
+  color: #f59e0b !important;
+}
+
+.classified-lock-overlay small {
+  font-size: 11px !important;
+  color: #cbd5e1 !important;
+  line-height: 1.35 !important;
+}
+
+@media(max-width: 840px) {
+  .classified-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
