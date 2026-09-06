@@ -42,6 +42,8 @@ EN_REPLACEMENTS = [
     ('AI Arama Sözlüğü →', 'AI Search Glossary →'),
     ('PDF Olarak İndir', 'Download Executive PDF'),
     ('LLMS.TXT News', 'News'),
+    ('&quot;inLanguage&quot;: &quot;tr&quot;', '&quot;inLanguage&quot;: &quot;en&quot;'),
+    ('"inLanguage": "tr"', '"inLanguage": "en"'),
 ]
 
 def clean_file(p: Path, is_tr: bool):

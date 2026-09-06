@@ -275,79 +275,240 @@ def build_homepages():
   <div class="classified-header">
     <div class="classified-badge">
       <span class="badge-dot">●</span>
-      <span>6 STRATEJİK ZİNCİR · $499 ENTERPRISE DARK POOL</span>
+      <span>🔒 TOP SECRET · ENTERPRISE DARK POOL</span>
     </div>
-    <h2>Yapay Zekâda Sektör Tekeli Kuran 6 Kurumsal Mimari</h2>
-    <p>Silikon Vadisi'nin $1.000.000+ bütçeli AI araştırma laboratuvarlarının ve elit ajansların kullandığı tescilli algoritmik protokoller. Rakipleriniz arama motorlarında ilk sayfaya çıkmaya çalışırken, siz yapay zekanın doğrudan tavsiyesi olun.</p>
+    <h2>2026 Kurumsal AI Görünürlük İstihbarat Vektörleri</h2>
+    <p>Yıllık $1.000.000+ bütçeli Silikon Vadisi AI arama laboratuvarlarının kapalı devre kullandığı 6 tescilli optimizasyon vektörü. Kamuya açık taramalarda formüller gizlenir.</p>
   </div>
   <div class="classified-grid">
-    <div class="classified-card">
+    <!-- VEKTÖR 01 -->
+    <article class="classified-card vector-blue">
       <div class="classified-card-head">
-        <span class="vector-tag">01 · MODEL HAFIZASINA SIZMA</span>
-        <h4>Model Corpus Seeding &amp; Co-occurrence</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VEKTÖR 01</span>
+          <span class="vector-metric-pill">+420% Tavsiye Olasılığı</span>
+        </div>
+        <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
       </div>
-      <p class="vector-desc">Büyük dil modelleri internetteki her siteye eşit değer vermez. Common Crawl, Arxiv ve The Pile gibi yüksek saflıktaki veri setlerine PMI &gt; 0.88 ile tohumlama yaparak modelin markanızı sektörün doğal bir gerçeği gibi hatırlamasını sağlar.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">Entity &amp; Model Nöron Eşleştirme</span>
+      <p class="vector-desc">LLM ağırlıklarının ön-eğitim havuzlarına (Common Crawl, Reddit, Arxiv, GitHub) marka entity'si aşılama ve Pointwise Mutual Information (PMI) optimizasyonu.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">corpus_seeding_pmi.ts</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">PMI_CO_OCCURRENCE</span> = {{
+  <span class="prop">corpus</span>: [<span class="str">"refinedweb"</span>, <span class="str">"the-pile"</span>, <span class="str">"arxiv"</span>],
+  <span class="prop">pmi_score</span>: <span class="num">0.88</span>,
+  <span class="prop">anchor_term</span>: <span class="str">"ENTERPRISE_SOLUTION"</span>,
+  <span class="prop">weight_injection</span>: <span class="bool">true</span>
+}};
+<span class="kw">function</span> <span class="fn">seedCorpusDistribution</span>() {{
+  <span class="comment">/* CLASSIFIED PROTOCOL */</span>
+}}</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE KİLİTLİ</strong>
+                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VEKTÖR 02 -->
+    <article class="classified-card vector-purple">
       <div class="classified-card-head">
-        <span class="vector-tag">02 · ALINTI ÖNCELİĞİ</span>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VEKTÖR 02</span>
+          <span class="vector-metric-pill">0.95+ Re-rank Skoru</span>
+        </div>
         <h4>Cross-Encoder Attention Hijacking</h4>
       </div>
-      <p class="vector-desc">Perplexity, SearchGPT ve Google Gemini'ın kullandığı reranker algoritmalarında içeriğinizi en yüksek dikkat (attention) ağırlığıyla eşleştirerek cevabın dayandığı ilk resmi dipnot (Citation #1) ve birincil kaynak olma önceliğini kazandırır.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">ColBERT MaxSim &amp; Reranking</span>
+      <p class="vector-desc">Cohere Rerank v3 ve BGE-Reranker matrisinde Perplexity ve Google Gemini AI Overviews'ın ilk alıntısı (Citation #1) olma formülü.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">cross_encoder_rerank.py</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="var">attention_score</span> = <span class="fn">softmax</span>(<span class="var">Q</span> * <span class="var">K.T</span> / <span class="fn">sqrt</span>(<span class="var">d_k</span>))
+<span class="var">template</span> = [
+  <span class="str">QUERY_SYNONYM</span>, <span class="str">ATOMIC_ANSWER_50W</span>,
+  <span class="str">NUMERICAL_FACTS_3X</span>, <span class="str">CONTRAST_CLAUSE</span>
+]
+<span class="kw">export function</span> <span class="fn">formatForRerank</span>()</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE KİLİTLİ</strong>
+                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VEKTÖR 03 -->
+    <article class="classified-card vector-green">
       <div class="classified-card-head">
-        <span class="vector-tag">03 · MODEL HİZALAMA PSİKOLOJİSİ</span>
-        <h4>DPO &amp; RLAIF Tone Calibration</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VEKTÖR 03</span>
+          <span class="vector-metric-pill">%100 Güncelleme Koruması</span>
+        </div>
+        <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
       </div>
-      <p class="vector-desc">AI modellerinin yanıt üretirken tercih ettiği akademik ve güvenilir ton dengesini kurar. Multi-Domain Corroboration Rings mimarisiyle model filtrelerinde 'Chosen' (Tercih Edilen) olarak seçilmenizi sağlar ve halüsinasyonu engeller.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">DPO Alignment &amp; Teyit Halkası</span>
+      <p class="vector-desc">Wikidata QID, Google Knowledge Graph MID ve Resmi Şirket Sicil veritabanı arasında kırılmaz üçgenleme protokolü.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">wikidata_consensus_triple.jsonld</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code>{{
+  <span class="prop">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="prop">"@graph"</span>: [{{
+    <span class="prop">"@id"</span>: <span class="str">"kg:MID_0x892a"</span>,
+    <span class="prop">"sameAs"</span>: [
+      <span class="str">"https://wikidata.org/wiki/Q102938"</span>,
+      <span class="str">"https://crunchbase.com/org/..."</span>
+    ]
+  }}]
+}}</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE KİLİTLİ</strong>
+                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VEKTÖR 04 -->
+    <article class="classified-card vector-amber">
       <div class="classified-card-head">
-        <span class="vector-tag">04 · BİLGİ GRAFİĞİ KİLİDİ</span>
-        <h4>Knowledge Vault Triangulation</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VEKTÖR 04</span>
+          <span class="vector-metric-pill">40x Hızlı Tarama · %95 Tasarruf</span>
+        </div>
+        <h4>KV-Cache Friendly Edge Token Purge</h4>
       </div>
-      <p class="vector-desc">Wikidata QID, Google Knowledge Graph MID ve resmi şirket siciliniz arasında çift yönlü kırılmaz mutabakat kurar. Modellerin şirketiniz hakkında yanıltıcı veya uydurma bilgi üretmesini imkânsız kılar.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">Wikidata QID &amp; @graph Konsensüsü</span>
+      <p class="vector-desc">AI botlarına (GPTBot, ClaudeBot) 14KB saf optimize AST sunarak tarama bütçesi sınırını kaldıran Cloudflare Worker kodu.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">edge_ast_purge_worker.ts</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="kw">export default</span> {{
+  <span class="kw">async</span> <span class="fn">fetch</span>(<span class="var">req</span>, <span class="var">env</span>) {{
+    <span class="kw">const</span> <span class="var">bot</span> = <span class="fn">isAIBot</span>(<span class="var">req</span>.headers.<span class="fn">get</span>(<span class="str">"user-agent"</span>));
+    <span class="kw">if</span> (<span class="var">bot</span>) <span class="kw">return</span> <span class="fn">serveCleanASTStream</span>(<span class="var">req</span>);
+  }}
+}};</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE KİLİTLİ</strong>
+                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VEKTÖR 05 -->
+    <article class="classified-card vector-cyan">
       <div class="classified-card-head">
-        <span class="vector-tag">05 · 14KB KENAR MİMARİSİ</span>
-        <h4>Edge AST Token Purge &amp; 40ms TTFB</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VEKTÖR 05</span>
+          <span class="vector-metric-pill">Sektörel Bilgi Tekeli</span>
+        </div>
+        <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
       </div>
-      <p class="vector-desc">GPTBot ve ClaudeBot gibi yapay zeka tarayıcılarına gereksiz CSS/JS kodlarından arındırılmış 14KB saf semantik mikro-HTML sunan Cloudflare Worker altyapısı kurar. Bot bütçesi limitlerini kaldırır ve %95 token tasarrufu sağlar.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">Cloudflare Worker &amp; Saf AST Kodu</span>
+      <p class="vector-desc">Sektörel kanonik tanım ve benchmark endeksleri üreterek diğer tüm yapay zekaların sizi zorunlu kaynak göstermesini sağlayan döngü.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">synthetic_citation_loop.ts</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">CITATION_ENGINE</span> = {{
+  <span class="prop">primary_definition</span>: <span class="str">"CANONICAL_INDEX_2026"</span>,
+  <span class="prop">recursive_ai_citations</span>: <span class="bool">true</span>,
+  <span class="prop">synthetic_loop_proof</span>: <span class="str">"SHA256_HASH"</span>
+}};</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE KİLİTLİ</strong>
+                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VEKTÖR 06 -->
+    <article class="classified-card vector-rose">
       <div class="classified-card-head">
-        <span class="vector-tag">06 · OTONOM AJAN DEFANSI</span>
-        <h4>Autonomous Agent &amp; MCP Headless API</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VEKTÖR 06</span>
+          <span class="vector-metric-pill">Otonom Satış Hazırlığı</span>
+        </div>
+        <h4>Autonomous Agent Headless Transaction API</h4>
       </div>
-      <p class="vector-desc">Siri, Claude Desktop ve otonom AI ajanlarının sitenizin arayüzüne takılmadan doğrudan fiyat alması, randevu oluşturması veya sipariş vermesi için Model Context Protocol (MCP) server ve A2A Agent Card şeması kurar. 15 modeli izleyen Dark Pool Halüsinasyon Nöbetçisi içerir.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">MCP Server &amp; A2A Agent Card</span>
+      <p class="vector-desc">Siri Agent, ChatGPT Voice ve AutoGPT ajanlarının web arayüzüne takılmadan sitenizden doğrudan işlem yapması için A2A &amp; MCP standardı.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">agent_headless_api_mcp.json</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code>{{
+  <span class="prop">"agentCardVersion"</span>: <span class="str">"1.0"</span>,
+  <span class="prop">"capabilities"</span>: [<span class="str">"headless_quote"</span>, <span class="str">"direct_checkout"</span>],
+  <span class="prop">"mcp_endpoint"</span>: <span class="str">"/.well-known/mcp.json"</span>,
+  <span class="prop">"auth"</span>: <span class="str">"HMAC_BEARER"</span>
+}}</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE KİLİTLİ</strong>
+                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </article>
   </div>
   <div class="classified-footer">
     <div class="classified-footer-info">
-      <strong>Sektörünüzde Yapay Zekanın Tartışmasız Otoritesi Olun.</strong>
-      <span>Bu 6 stratejik mimarinin eksiksiz çalışan Cloudflare Worker kodları, MCP server şablonları, Wikidata mutabakat dosyaları ve 22 parçalık VIP mühendislik paketi Enterprise lisansıyla anında teslim edilir.</span>
+      <strong>Rakiplerinizin Önünde Olun · Kurumsal AI Tekeli</strong>
+      <span>Bu 6 gizli kurumsal vektörün açık kodları, formülleri ve kurulum şablonları Enterprise lisansıyla teslim edilir.</span>
     </div>
-    <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Enterprise Lisansını Başlat — $499 →</a>
+    <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499 →</a>
   </div>
 </section>
 
@@ -809,79 +970,240 @@ def build_homepages():
   <div class="classified-header">
     <div class="classified-badge">
       <span class="badge-dot">●</span>
-      <span>6 STRATEGIC CHAINS · $499 ENTERPRISE DARK POOL</span>
+      <span>🔒 TOP SECRET · ENTERPRISE DARK POOL</span>
     </div>
-    <h2>6 Enterprise Architectures Building Industry Monopoly in AI</h2>
-    <p>Proprietary algorithmic protocols utilized by $1,000,000+ AI search research labs and top Silicon Valley agencies. While competitors fight for first-page search ranks, establish yourself as AI's sole direct recommendation.</p>
+    <h2>2026 Enterprise AI Visibility Intelligence Vectors</h2>
+    <p>Six proprietary optimization vectors used behind closed doors by $1,000,000+ Silicon Valley AI search labs. Formulas redacted in public scans.</p>
   </div>
   <div class="classified-grid">
-    <div class="classified-card">
+    <!-- VECTOR 01 -->
+    <article class="classified-card vector-blue">
       <div class="classified-card-head">
-        <span class="vector-tag">01 · PRE-TRAINING SEEDING</span>
-        <h4>Model Corpus Seeding &amp; Co-occurrence</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VECTOR 01</span>
+          <span class="vector-metric-pill">+420% Recommendation Probability</span>
+        </div>
+        <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
       </div>
-      <p class="vector-desc">Frontier LLMs do not weigh every website equally. Seeding high-purity datasets (Common Crawl, Arxiv, The Pile) with PMI &gt; 0.88 locks your brand into core neuron weights as an indisputable industry fact.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">Entity &amp; Model Weight Anchoring</span>
+      <p class="vector-desc">Pre-training corpus seeding (Common Crawl, Reddit, Arxiv, GitHub) with Pointwise Mutual Information (PMI) optimization directly into core model weights.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">corpus_seeding_pmi.ts</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">PMI_CO_OCCURRENCE</span> = {{
+  <span class="prop">corpus</span>: [<span class="str">"refinedweb"</span>, <span class="str">"the-pile"</span>, <span class="str">"arxiv"</span>],
+  <span class="prop">pmi_score</span>: <span class="num">0.88</span>,
+  <span class="prop">anchor_term</span>: <span class="str">"ENTERPRISE_SOLUTION"</span>,
+  <span class="prop">weight_injection</span>: <span class="bool">true</span>
+}};
+<span class="kw">function</span> <span class="fn">seedCorpusDistribution</span>() {{
+  <span class="comment">/* CLASSIFIED PROTOCOL */</span>
+}}</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE LOCKED</strong>
+                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VECTOR 02 -->
+    <article class="classified-card vector-purple">
       <div class="classified-card-head">
-        <span class="vector-tag">02 · CITATION PRIORITY</span>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VECTOR 02</span>
+          <span class="vector-metric-pill">0.95+ Re-rank Score</span>
+        </div>
         <h4>Cross-Encoder Attention Hijacking</h4>
       </div>
-      <p class="vector-desc">Engineered for Perplexity, SearchGPT, and Gemini rerankers to assign your content peak attention softmax scores (0.95+), securing primary footnote placement (Citation #1).</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">ColBERT MaxSim &amp; Reranking</span>
+      <p class="vector-desc">Formulation to secure Citation #1 in Perplexity and Google Gemini AI Overviews across Cohere Rerank v3 and BGE-Reranker matrices.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">cross_encoder_rerank.py</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="var">attention_score</span> = <span class="fn">softmax</span>(<span class="var">Q</span> * <span class="var">K.T</span> / <span class="fn">sqrt</span>(<span class="var">d_k</span>))
+<span class="var">template</span> = [
+  <span class="str">QUERY_SYNONYM</span>, <span class="str">ATOMIC_ANSWER_50W</span>,
+  <span class="str">NUMERICAL_FACTS_3X</span>, <span class="str">CONTRAST_CLAUSE</span>
+]
+<span class="kw">export function</span> <span class="fn">formatForRerank</span>()</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE LOCKED</strong>
+                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VECTOR 03 -->
+    <article class="classified-card vector-green">
       <div class="classified-card-head">
-        <span class="vector-tag">03 · MODEL ALIGNMENT</span>
-        <h4>DPO &amp; RLAIF Tone Calibration</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VECTOR 03</span>
+          <span class="vector-metric-pill">100% Update Resilience</span>
+        </div>
+        <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
       </div>
-      <p class="vector-desc">Calibrates voice and evidence structures to match model reward functions, consistently passing 'Chosen' filters over competitors and eliminating synthetic hallucinations.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">DPO Alignment &amp; Corroboration</span>
+      <p class="vector-desc">Unbreakable triangulation protocol linking Wikidata QID, Google Knowledge Graph MID, and official corporate registry records.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">wikidata_consensus_triple.jsonld</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code>{{
+  <span class="prop">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="prop">"@graph"</span>: [{{
+    <span class="prop">"@id"</span>: <span class="str">"kg:MID_0x892a"</span>,
+    <span class="prop">"sameAs"</span>: [
+      <span class="str">"https://wikidata.org/wiki/Q102938"</span>,
+      <span class="str">"https://crunchbase.com/org/..."</span>
+    ]
+  }}]
+}}</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE LOCKED</strong>
+                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VECTOR 04 -->
+    <article class="classified-card vector-amber">
       <div class="classified-card-head">
-        <span class="vector-tag">04 · KNOWLEDGE VAULT</span>
-        <h4>Knowledge Vault Triangulation</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VECTOR 04</span>
+          <span class="vector-metric-pill">40x Faster Crawl · 95% Savings</span>
+        </div>
+        <h4>KV-Cache Friendly Edge Token Purge</h4>
       </div>
-      <p class="vector-desc">Constructs unbreakable bidirectional consensus between Wikidata QID, Google MID, and official company registers, preventing AI distortion or fabricated claims.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">Wikidata QID &amp; @graph Consensus</span>
+      <p class="vector-desc">Production Cloudflare Worker serving pure 14KB AST to AI crawlers (GPTBot, ClaudeBot), eliminating crawl budget exhaustion.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">edge_ast_purge_worker.ts</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="kw">export default</span> {{
+  <span class="kw">async</span> <span class="fn">fetch</span>(<span class="var">req</span>, <span class="var">env</span>) {{
+    <span class="kw">const</span> <span class="var">bot</span> = <span class="fn">isAIBot</span>(<span class="var">req</span>.headers.<span class="fn">get</span>(<span class="str">"user-agent"</span>));
+    <span class="kw">if</span> (<span class="var">bot</span>) <span class="kw">return</span> <span class="fn">serveCleanASTStream</span>(<span class="var">req</span>);
+  }}
+}};</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE LOCKED</strong>
+                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VECTOR 05 -->
+    <article class="classified-card vector-cyan">
       <div class="classified-card-head">
-        <span class="vector-tag">05 · 14KB EDGE ENGINE</span>
-        <h4>Edge AST Token Purge &amp; 40ms TTFB</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VECTOR 05</span>
+          <span class="vector-metric-pill">Sector Knowledge Monopoly</span>
+        </div>
+        <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
       </div>
-      <p class="vector-desc">Production Cloudflare Worker delivering pure &lt;14KB micro-HTML AST to GPTBot and ClaudeBot, eliminating bot crawl limits and slashing compute token costs by 95%.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">Cloudflare Worker &amp; AST Engine</span>
+      <p class="vector-desc">Establishes canonical definitions and benchmark indexes, forcing secondary frontier models to mandate your site as root citation.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">synthetic_citation_loop.ts</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">CITATION_ENGINE</span> = {{
+  <span class="prop">primary_definition</span>: <span class="str">"CANONICAL_INDEX_2026"</span>,
+  <span class="prop">recursive_ai_citations</span>: <span class="bool">true</span>,
+  <span class="prop">synthetic_loop_proof</span>: <span class="str">"SHA256_HASH"</span>
+}};</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE LOCKED</strong>
+                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="classified-card">
+    </article>
+
+    <!-- VECTOR 06 -->
+    <article class="classified-card vector-rose">
       <div class="classified-card-head">
-        <span class="vector-tag">06 · AUTONOMOUS AGENTS</span>
-        <h4>Autonomous Agent &amp; MCP Headless API</h4>
+        <div class="vector-meta-bar">
+          <span class="vector-tag">VECTOR 06</span>
+          <span class="vector-metric-pill">Autonomous Sales Readiness</span>
+        </div>
+        <h4>Autonomous Agent Headless Transaction API</h4>
       </div>
-      <p class="vector-desc">Deploy Model Context Protocol (MCP) server endpoints and A2A Agent Cards, enabling Siri and Claude Desktop agents to execute orders directly without web UI scraping.</p>
-      <div class="vector-deliverables">
-        <span class="arch-pill">MCP Server &amp; A2A Agent Card</span>
+      <p class="vector-desc">A2A &amp; MCP standard enabling Siri Agent, ChatGPT Voice, and AutoGPT agents to complete actions directly without web UI friction.</p>
+      <div class="classified-terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+          <span class="terminal-file">agent_headless_api_mcp.json</span>
+          <span class="terminal-status">ENCRYPTED</span>
+        </div>
+        <div class="terminal-code-body">
+          <pre class="terminal-code"><code>{{
+  <span class="prop">"agentCardVersion"</span>: <span class="str">"1.0"</span>,
+  <span class="prop">"capabilities"</span>: [<span class="str">"headless_quote"</span>, <span class="str">"direct_checkout"</span>],
+  <span class="prop">"mcp_endpoint"</span>: <span class="str">"/.well-known/mcp.json"</span>,
+  <span class="prop">"auth"</span>: <span class="str">"HMAC_BEARER"</span>
+}}</code></pre>
+          <div class="classified-lock-overlay">
+            <div class="lock-shield-badge">
+              <span class="lock-glyph">🔒</span>
+              <div class="lock-text-wrap">
+                <strong>ENTERPRISE LOCKED</strong>
+                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </article>
   </div>
   <div class="classified-footer">
     <div class="classified-footer-info">
-      <strong>Establish Uncontested Industry Authority in AI.</strong>
-      <span>Production Cloudflare Worker code, MCP server specifications, Wikidata consensus triples, and the 22-file extended VIP engineering package deliver immediately with an Enterprise license.</span>
+      <strong>Lead Your Industry · Enterprise AI Monopoly</strong>
+      <span>Production Cloudflare Worker code, MCP servers, and the 22-file VIP engineering kit are delivered immediately under Enterprise license.</span>
     </div>
-    <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Unlock Enterprise License — $499 →</a>
+    <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499 →</a>
   </div>
 </section>
 
@@ -1060,7 +1382,7 @@ def build_homepages():
 </main>
 
 <!-- 10 FOOTER -->
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER</span><h2>Your Customer Asks AI “Who Should I Choose?” Is Your Website in the Answer Set?</h2><p class="ai-opportunity-lead">HTML&HTML prepares your website to compete for visibility, citation and recommendation opportunity in AI search. It shows measurable website-side blockers that can prevent discovery, understanding, source consideration and a usable referral path.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/en/guides/llms-txt/">llms.txt</a><a href="/en/geo-optimization/">GEO</a><a href="/en/aeo-answer-engine/">AEO</a><a href="/en/llmo-optimization/">LLMO</a><a href="/en/aao-agent-optimization/">AAO</a><a href="/en/rag-optimization/">RAG</a><a href="/en/e-e-a-t-trust-signals/">E-E-A-T</a><a href="/en/glossary/#sitemap">Sitemap</a><a class="all" href="/en/glossary/">Open AI Search Glossary →</a></div><div class="ai-value-chain"><article><b>01</b><h3>AI MUST DISCOVER YOUR WEBSITE</h3><p>robots.txt, sitemaps, canonicals, indexability and AI crawler access are prerequisites for source discovery.</p></article><article><b>02</b><h3>AI MUST UNDERSTAND YOUR WEBSITE</h3><p>GEO, AEO, LLMO, entity graphs, schema and answer extractability reduce ambiguity for machine readers.</p></article><article><b>03</b><h3>BECOME ELIGIBLE AS A SOURCE</h3><p>RAG/retrieval fitness, original information, E-E-A-T, freshness and evidence structures support source eligibility.</p></article><article><b>04</b><h3>CONNECT CITATION TO COMMERCIAL VALUE</h3><p>AAO, accessible user flows, link integrity, measurable referral paths and clear CTAs turn visibility into customer opportunity.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check My AI Visibility Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Unlock AI Search Visibility Roadmap — $99 →</a></div><p class="ai-opportunity-guard">Recommendations, rankings, citations, traffic, customers, or revenue are never guaranteed. HTML&HTML measures website-side technical and content blockers under your control, not external algorithm choices.</p><div class="ai-market-evidence"><h3>Official reference baseline</h3><div><article><b>Google</b><p>Google publishes official guidance for generative search, recognizing GEO and AEO while treating them as modern technical SEO. Google explicitly confirms it does not require special tags for AI Overviews and does not use llms.txt for Google Search visibility.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article><article><b>OpenAI</b><p>OpenAI confirms public sites can appear in ChatGPT Search; OAI-SearchBot access is critical for discovery, consideration, citation, and referral linking.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article><article><b>Google Search Console</b><p>Google launched dedicated generative AI performance reporting in Search Console globally in 2026.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article></div></div></div></section>
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER</span><h2>Your Customer Asks AI “Who Should I Choose?” Is Your Website in the Answer Set?</h2><p class="ai-opportunity-lead">HTML&HTML prepares your website to compete for visibility, citation and recommendation opportunity in AI search. It shows measurable website-side blockers that can prevent discovery, understanding, source consideration and a usable referral path.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/en/guides/llms-txt/">llms.txt</a><a href="/en/geo-optimization/">GEO</a><a href="/en/aeo-answer-engine-optimization/">AEO</a><a href="/en/llmo-optimization/">LLMO</a><a href="/en/aao-agent-optimization/">AAO</a><a href="/en/rag-readiness/">RAG</a><a href="/en/e-e-a-t-trust-signals/">E-E-A-T</a><a href="/en/glossary/#sitemap">Sitemap</a><a class="all" href="/en/glossary/">Open AI Search Glossary →</a></div><div class="ai-value-chain"><article><b>01</b><h3>AI MUST DISCOVER YOUR WEBSITE</h3><p>robots.txt, sitemaps, canonicals, indexability and AI crawler access are prerequisites for source discovery.</p></article><article><b>02</b><h3>AI MUST UNDERSTAND YOUR WEBSITE</h3><p>GEO, AEO, LLMO, entity graphs, schema and answer extractability reduce ambiguity for machine readers.</p></article><article><b>03</b><h3>BECOME ELIGIBLE AS A SOURCE</h3><p>RAG/retrieval fitness, original information, E-E-A-T, freshness and evidence structures support source eligibility.</p></article><article><b>04</b><h3>CONNECT CITATION TO COMMERCIAL VALUE</h3><p>AAO, accessible user flows, link integrity, measurable referral paths and clear CTAs turn visibility into customer opportunity.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check My AI Visibility Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Unlock AI Search Visibility Roadmap — $99 →</a></div><p class="ai-opportunity-guard">Recommendations, rankings, citations, traffic, customers, or revenue are never guaranteed. HTML&HTML measures website-side technical and content blockers under your control, not external algorithm choices.</p><div class="ai-market-evidence"><h3>Official reference baseline</h3><div><article><b>Google</b><p>Google publishes official guidance for generative search, recognizing GEO and AEO while treating them as modern technical SEO. Google explicitly confirms it does not require special tags for AI Overviews and does not use llms.txt for Google Search visibility.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article><article><b>OpenAI</b><p>OpenAI confirms public sites can appear in ChatGPT Search; OAI-SearchBot access is critical for discovery, consideration, citation, and referral linking.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article><article><b>Google Search Console</b><p>Google launched dedicated generative AI performance reporting in Search Console globally in 2026.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Open Source ↗</a></article></div></div></div></section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
