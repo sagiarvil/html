@@ -10,7 +10,7 @@ type Page={url:URL,status:number,html:string,bytes:number,headers:Headers,title:
 
 type Rule={ok:boolean|null;weight:number};
 const UA='HTMLandHTML-Validator/2.0 (+https://htmlandhtml.com)';
-const MAX_BYTES=1_000_000,MAX_REDIRECTS=4,MAX_PAGES=25,MAX_LINK_PROBES=30,TIMEOUT_MS=7000;
+const MAX_BYTES=1_000_000,MAX_REDIRECTS=4,MAX_PAGES=50,MAX_LINK_PROBES=30,TIMEOUT_MS=7000;
 const REDIRECTS=new Set([301,302,303,307,308]);
 const CATEGORIES:Category[]=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
 const privateName=(h:string)=>h==='localhost'||h.endsWith('.localhost')||h.endsWith('.local')||h.endsWith('.internal')||h.endsWith('.home.arpa');

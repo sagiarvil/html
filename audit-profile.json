@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "profile": "HTML&HTML Open Website AI Readiness Audit Profile",
   "profileId": "hh-owairp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "public-product-profile",
   "published": "2026-09-06",
   "canonical": "https://htmlandhtml.com/standard/",
@@ -16,31 +16,119 @@
     "Experimental agent surfaces must not be published solely to improve a score."
   ],
   "sourceClasses": [
-    {"id":"OFFICIAL_STANDARD","meaning":"Normative or standards-track specification."},
-    {"id":"OFFICIAL_VENDOR","meaning":"Current first-party product or crawler guidance."},
-    {"id":"PROPOSAL","meaning":"Emerging convention that is not treated as a mandatory standard."},
-    {"id":"MEASURED","meaning":"Directly observed HTTP, HTML, header, robots or link evidence."},
-    {"id":"INTERNAL_HEURISTIC","meaning":"HTML&HTML decision-support rule where no normative threshold exists."},
-    {"id":"EXPERIMENTAL","meaning":"Early or optional capability with limited maturity or adoption."}
+    {
+      "id": "OFFICIAL_STANDARD",
+      "meaning": "Normative or standards-track specification."
+    },
+    {
+      "id": "OFFICIAL_VENDOR",
+      "meaning": "Current first-party product or crawler guidance."
+    },
+    {
+      "id": "PROPOSAL",
+      "meaning": "Emerging convention that is not treated as a mandatory standard."
+    },
+    {
+      "id": "MEASURED",
+      "meaning": "Directly observed HTTP, HTML, header, robots or link evidence."
+    },
+    {
+      "id": "INTERNAL_HEURISTIC",
+      "meaning": "HTML&HTML decision-support rule where no normative threshold exists."
+    },
+    {
+      "id": "EXPERIMENTAL",
+      "meaning": "Early or optional capability with limited maturity or adoption."
+    }
   ],
-  "confidenceLevels": ["confirmed","strong","probable","requires-source-verification"],
-  "ruleStates": ["PASS","FAIL","UNKNOWN","NOT_MEASURED"],
+  "confidenceLevels": [
+    "confirmed",
+    "strong",
+    "probable",
+    "requires-source-verification"
+  ],
+  "ruleStates": [
+    "PASS",
+    "FAIL",
+    "UNKNOWN",
+    "NOT_MEASURED"
+  ],
   "engines": [
-    {"id":"crawl","name":"Crawl & Index","overallWeight":12,"purpose":"Public reachability, redirects, robots, sitemap, indexability and page discovery."},
-    {"id":"technical","name":"Technical SEO","overallWeight":14,"purpose":"Titles, descriptions, headings, canonicals, duplicate and route-level technical signals."},
-    {"id":"ai","name":"AI / GEO Access","overallWeight":12,"purpose":"Search, retrieval and AI crawler policy signals without conflating search access with training controls."},
-    {"id":"llms","name":"llms.txt v2","overallWeight":6,"purpose":"Proposal-format, link reachability and discovery relations such as describedby and Markdown alternates."},
-    {"id":"schema","name":"Structured Data","overallWeight":8,"purpose":"JSON-LD parseability, entity types and visible-identity consistency signals."},
-    {"id":"performance","name":"Performance Hygiene","overallWeight":10,"purpose":"Observable HTML/script/render-blocking hygiene; field CWV remain NOT_MEASURED without reliable field or lab data."},
-    {"id":"accessibility","name":"Accessibility","overallWeight":9,"purpose":"Document language, image alternatives, programmatic labels and accessible control names."},
-    {"id":"security","name":"Security Baseline","overallWeight":10,"purpose":"HTTPS, browser security headers, mixed-content and insecure-form baseline controls."},
-    {"id":"trust","name":"Content Trust","overallWeight":7,"purpose":"Organization identity, contact, privacy, terms and editorial accountability signals."},
-    {"id":"agent","name":"Agent Readiness","overallWeight":3,"purpose":"Machine-readable and programmatic discovery surfaces while keeping experimental protocols explicitly optional."},
-    {"id":"conversion","name":"Conversion","overallWeight":4,"purpose":"Visibility and continuity of public next-step/contact/form flows without changing business logic."},
-    {"id":"links","name":"Link Integrity","overallWeight":5,"purpose":"Real HTTP probing of owned internal destinations and unnecessary redirects."}
+    {
+      "id": "crawl",
+      "name": "Crawl & Index",
+      "overallWeight": 12,
+      "purpose": "Public reachability, redirects, robots, sitemap, indexability and page discovery."
+    },
+    {
+      "id": "technical",
+      "name": "Technical SEO",
+      "overallWeight": 14,
+      "purpose": "Titles, descriptions, headings, canonicals, duplicate and route-level technical signals."
+    },
+    {
+      "id": "ai",
+      "name": "AI / GEO Access",
+      "overallWeight": 12,
+      "purpose": "Search, retrieval and AI crawler policy signals without conflating search access with training controls."
+    },
+    {
+      "id": "llms",
+      "name": "llms.txt v2",
+      "overallWeight": 6,
+      "purpose": "Proposal-format, link reachability and discovery relations such as describedby and Markdown alternates."
+    },
+    {
+      "id": "schema",
+      "name": "Structured Data",
+      "overallWeight": 8,
+      "purpose": "JSON-LD parseability, entity types and visible-identity consistency signals."
+    },
+    {
+      "id": "performance",
+      "name": "Performance Hygiene",
+      "overallWeight": 10,
+      "purpose": "Observable HTML/script/render-blocking hygiene; field CWV remain NOT_MEASURED without reliable field or lab data."
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "overallWeight": 9,
+      "purpose": "Document language, image alternatives, programmatic labels and accessible control names."
+    },
+    {
+      "id": "security",
+      "name": "Security Baseline",
+      "overallWeight": 10,
+      "purpose": "HTTPS, browser security headers, mixed-content and insecure-form baseline controls."
+    },
+    {
+      "id": "trust",
+      "name": "Content Trust",
+      "overallWeight": 7,
+      "purpose": "Organization identity, contact, privacy, terms and editorial accountability signals."
+    },
+    {
+      "id": "agent",
+      "name": "Agent Readiness",
+      "overallWeight": 3,
+      "purpose": "Machine-readable and programmatic discovery surfaces while keeping experimental protocols explicitly optional."
+    },
+    {
+      "id": "conversion",
+      "name": "Conversion",
+      "overallWeight": 4,
+      "purpose": "Visibility and continuity of public next-step/contact/form flows without changing business logic."
+    },
+    {
+      "id": "links",
+      "name": "Link Integrity",
+      "overallWeight": 5,
+      "purpose": "Real HTTP probing of owned internal destinations and unnecessary redirects."
+    }
   ],
   "scanBoundaries": {
-    "maxPublicHtmlPages": 25,
+    "maxPublicHtmlPages": 50,
     "maxLinkProbes": 30,
     "privateOrReservedTargets": "reject",
     "credentialBearingUrls": "reject",

@@ -53,7 +53,7 @@ HTML&HTML separates measured facts, vendor/standard guidance, proposals and inte
 
 ## Scan boundaries
 
-- Up to 25 public HTML pages and 30 link probes per scan.
+- Up to 50 public HTML pages and 30 link probes per scan.
 - Private/local/reserved targets, credential-bearing URLs, non-standard ports and redirect pivots into private address space fail closed.
 - Unknown or unavailable measurements are excluded from the relevant score denominator rather than forced to pass or fail.
 - Reliable LCP, INP and CLS require field/lab data integration. If unavailable, those metrics remain NOT_MEASURED.
@@ -71,3 +71,7 @@ HTML&HTML separates measured facts, vendor/standard guidance, proposals and inte
 - Turkish authority pages use /tr/ paths.
 - English authority pages use /en/ paths.
 - Canonical and hreflang pairs are published for the focused tools.
+
+## AI Mention Tracker
+- [TR AI Mention Tracker](https://htmlandhtml.com/tr/ai-mention-tracker/): Paid neutral-prompt measurement across OpenAI web-search, Perplexity Sonar and Gemini Search-grounded API surfaces.
+- [EN AI Mention Tracker](https://htmlandhtml.com/en/ai-mention-tracker/): Provider-by-provider mention and domain citation evidence. Consumer app results may differ.

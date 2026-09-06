@@ -11,6 +11,8 @@ const pages=[
   ['tr/ai-website-readiness/index.html','tr','/tr/ai-website-readiness/','/en/ai-website-readiness/','crawl,technical,ai,llms,schema,performance,accessibility,security,trust,agent,conversion,links'],
   ['en/ai-website-readiness/index.html','en','/en/ai-website-readiness/','/tr/ai-website-readiness/','crawl,technical,ai,llms,schema,performance,accessibility,security,trust,agent,conversion,links']
 ];
+pages.push(['tr/ai-mention-tracker/index.html','tr','/tr/ai-mention-tracker/','/en/ai-mention-tracker/','']);
+pages.push(['en/ai-mention-tracker/index.html','en','/en/ai-mention-tracker/','/tr/ai-mention-tracker/','']);
 const trustPages=['about/index.html','contact/index.html','privacy/index.html','terms/index.html'];
 const authorityReferencePages=['standard/index.html','reference/ai-crawlers/index.html'];
 const required=['assets/css/authority.css','assets/js/authority-tool.js','methodology.html','sitemap.xml','llms.txt','index.md','openapi.json','audit-profile.json','sources.json','scripts/check-source-registry.mjs','.github/workflows/source-registry.yml','.github/workflows/firebase-production.yml','functions-firebase/package.json','functions-firebase/src/index.ts','functions-firebase/scripts/sync-engine.mjs',...trustPages,...authorityReferencePages];
@@ -23,7 +25,7 @@ for(const [rel,lang,canonical,alternate,categories] of pages){
  if(!new RegExp(`<html lang=["']${lang}["']`,'i').test(text))errors.push(`${rel}: wrong html lang`);
  if(!text.includes(`https://htmlandhtml.com${canonical}`))errors.push(`${rel}: canonical missing`);
  if(!text.includes(`https://htmlandhtml.com${alternate}`))errors.push(`${rel}: hreflang pair missing`);
- if(!text.includes(`data-tool-categories="${categories}"`))errors.push(`${rel}: tool category scope drift`);
+ if(categories&&!text.includes(`data-tool-categories="${categories}"`))errors.push(`${rel}: tool category scope drift`);
  if(!/application\/ld\+json/.test(text))errors.push(`${rel}: structured data missing`);
  if(!/rel="describedby"/.test(text))errors.push(`${rel}: llms.txt discovery missing`);
 }
@@ -63,9 +65,9 @@ for(const id of ['RFC9309','OPENAI-SEARCH','OPENAI-PUBLISHERS','ANTHROPIC-CRAWLE
 
 const openapi=JSON.parse(fs.readFileSync(path.join(root,'openapi.json'),'utf8'));
 if(openapi.openapi!=='3.1.0')errors.push('OpenAPI must be 3.1.0');
-for(const route of ['/api/health','/api/scan','/api/mandate'])if(!openapi.paths?.[route])errors.push(`OpenAPI missing ${route}`);
+for(const route of ['/api/health','/api/scan','/api/mentions','/api/mandate'])if(!openapi.paths?.[route])errors.push(`OpenAPI missing ${route}`);
 const firebase=JSON.parse(fs.readFileSync(path.join(root,'firebase.json'),'utf8'));
-const rewrites=firebase.hosting?.rewrites||[];for(const route of ['/api/health','/api/scan','/api/mandate'])if(!rewrites.some(r=>r.source===route&&r.function?.functionId))errors.push(`Firebase missing API rewrite ${route}`);
+const rewrites=firebase.hosting?.rewrites||[];for(const route of ['/api/health','/api/scan','/api/mentions','/api/mandate'])if(!rewrites.some(r=>r.source===route&&r.function?.functionId))errors.push(`Firebase missing API rewrite ${route}`);
 if(!Array.isArray(firebase.functions)||firebase.functions[0]?.source!=='functions-firebase')errors.push('Firebase functions source not configured');
 const adapter=fs.readFileSync(path.join(root,'functions-firebase/src/index.ts'),'utf8');
 if(!adapter.includes("from './scan-request'"))errors.push('Firebase adapter must consume synced canonical scan request wrapper');

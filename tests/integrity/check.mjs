@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root=process.cwd();
 const errors=[];
-const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/js/validator.js','functions/api/scan.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/api/mandate.ts','robots.txt','sitemap.xml','llms.txt'];
+const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/js/validator.js','functions/api/scan.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/api/mandate.ts','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','robots.txt','sitemap.xml','llms.txt'];
 for(const rel of required){if(!fs.existsSync(path.join(root,rel)))errors.push(`missing required file: ${rel}`)}
 const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(root,'assets/css/validator-base.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/validator-v2.css'),'utf8');
@@ -26,7 +26,7 @@ const checks=[
   [!/\$49|\$99/.test(index),'legacy mandate prices still present'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
   [/ROOT FIX/.test(mandate)&&/RECOVERY/.test(mandate)&&/PREVENTION/.test(mandate)&&/ROLLBACK/.test(mandate),'mandate execution contract incomplete'],
-  [/MAX_PAGES=25/.test(engine)&&/MAX_LINK_PROBES=30/.test(engine),'crawl limits missing'],
+  [/MAX_PAGES=50/.test(engine)&&/MAX_LINK_PROBES=30/.test(engine),'crawl limits missing'],
   [/cloudflare-dns\.com\/dns-query/.test(engine)&&/Target resolves to a private or reserved address/.test(engine),'DNS-level SSRF guard missing'],
   [/redirect:'manual'/.test(engine)&&/MAX_REDIRECTS/.test(engine),'redirect boundary control missing'],
   [/MAX_BYTES/.test(engine)&&/AbortSignal\.timeout/.test(engine),'size/timeout controls missing'],
