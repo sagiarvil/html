@@ -44,7 +44,7 @@ def build_homepages():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
-<meta name="description" content="Web sitenizin yapay zeka ajanları tarafından müşterilerinize doğrudan önerilmesini sağlayacak teknik altyapıyı kuruyoruz. 12 motorlu ücretsiz analizi başlatın.">
+<meta name="description" content="Geliştiriciler ve sistem mimarları için 12 bağımsız motorlu deterministik web ve yapay zeka teşhis yazılımı. 12 motorlu ücretsiz analizi başlatın.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -195,7 +195,7 @@ def build_homepages():
         <li data-i18n="m5">30 gün içinde 1 re-scan</li>
       </ul>
       <div class="price">
-        <small data-i18n="oneSite">1 domain / tek çalışma</small>
+        <small data-i18n="oneSite">1 domain / yazılım lisansı</small>
         <strong>$99</strong>
       </div>
       <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Full Site Fix Mandate →</a>
@@ -531,7 +531,7 @@ def build_homepages():
   </div>
   <div class="compare">
     <b data-i18n="compareLabel">ÜRÜN SINIRI</b>
-    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$99:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? → <strong>$499 Enterprise:</strong> $1M+ ajansların uyguladığı 6 gizli AI algoritma vektörünün açık kod ve uygulama protokolleri.</p>
+    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$99:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? → <strong>$499 Enterprise:</strong> $1M+ AI araştırma laboratuvarlarının ve mühendislik ekiplerinin kullandığı 6 tescilli AI optimizasyon vektörünün açık kod ve mimari protokolleri.</p>
   </div>
 </section>
 
@@ -598,6 +598,15 @@ def build_homepages():
         <li><a href="/methodology.html" data-methodology-link data-i18n="footerMethod">Metodoloji</a></li>
       </ul>
     </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu.</p>
@@ -613,7 +622,7 @@ def build_homepages():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI Search Visibility, GEO, AEO &amp; llms.txt | HTML&amp;HTML</title>
-<meta name="description" content="Technical infrastructure that prepares websites to be recommended by AI agents to users. Start the free 12-engine audit.">
+<meta name="description" content="Deterministic web and AI search diagnostic software and automated code generation platform for developers and system architects.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -764,7 +773,7 @@ def build_homepages():
         <li data-i18n="m5">1 re-scan within 30 days</li>
       </ul>
       <div class="price">
-        <small data-i18n="oneSite">1 domain / one engagement</small>
+        <small data-i18n="oneSite">1 domain / software license</small>
         <strong>$99</strong>
       </div>
       <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Full Site Fix Mandate →</a>
@@ -1165,6 +1174,15 @@ def build_homepages():
         <li><a href="/en/glossary/">Glossary</a></li>
         <li><a href="/en/llms-txt-news/">News</a></li>
         <li><a href="/en/methodology/" data-methodology-link data-i18n="footerMethod">Methodology</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company &amp; Legal</h4>
+      <ul>
+        <li><a href="/en/about/">About Us</a></li>
+        <li><a href="/en/terms/">Terms of Service</a></li>
+        <li><a href="/en/privacy/">Privacy Policy</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
       </ul>
     </div>
   </div>

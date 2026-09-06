@@ -347,16 +347,16 @@ def build_company_legal():
             "tr_slug": "tr/hakkimizda",
             "root_slug": "about",
             "en": {
-                "title": "About HTML&HTML — Evidence-Based Site Auditor",
-                "h1": "About HTML&HTML: <em>Evidence Free. Fix Mandate Paid.</em>",
-                "sub": "We build deterministic website diagnosis tools that bridge the gap between technical web standards and modern artificial intelligence retrieval.",
-                "body": """<h2>Our Mission</h2><p>The modern web is inundated with vanity SEO tools that output arbitrary percentages, unmeasured guesses, and bloated recommendations. HTML&HTML was engineered as an evidence-first platform: every single finding is tied to raw HTTP responses, standard RFC specifications, or published vendor documentation.</p><h2>The Core Principle: Epistemic Honesty</h2><p>If something cannot be measured from a public crawl, we do not guess. Core Web Vitals return NOT_MEASURED without real user field data. Emerging formats like llms.txt are treated as proposals, not web standards. We never sell ranking guarantees.</p>"""
+                "title": "About HTML&HTML — Automated Web & AI Diagnostic Software SaaS",
+                "h1": "About HTML&HTML: <em>Automated Diagnostic Software & Code Generator SaaS</em>",
+                "sub": "We develop deterministic web diagnostic software and automated code generation tools that bridge technical web standards and artificial intelligence retrieval.",
+                "body": """<h2>100% Automated Software (SaaS)</h2><p>HTML&HTML is a 100% automated Software-as-a-Service (SaaS) and developer tooling platform. We build autonomous website scanning engines, deterministic diagnostic algorithms, and digital code artifact generators. We do not provide human marketing services, manual agency audits, or consulting. Every diagnostic signal, blueprint, and code patch is produced deterministically by software algorithms.</p><h2>The Core Principle: Epistemic Honesty</h2><p>If something cannot be measured from a public crawl, we do not guess. Core Web Vitals return NOT_MEASURED without real user field data. Emerging formats like llms.txt are treated as proposals, not web standards. We never sell ranking guarantees.</p>"""
             },
             "tr": {
-                "title": "HTML&HTML Hakkında — Kanıta Dayalı Site Denetleyicisi",
-                "h1": "HTML&HTML Hakkında: <em>Kanıt Ücretsiz. Düzeltme Ücretli.</em>",
-                "sub": "Teknik web standartları ile modern yapay zeka arama sistemleri arasındaki boşluğu dolduran deterministik denetim araçları geliştiriyoruz.",
-                "body": """<h2>Misyonumuz</h2><p>Modern web; sahte puanlar, dayanaksız tahminler ve şişirilmiş raporlar üreten pazarlama araçlarıyla doludur. HTML&HTML kanıt odaklı bir platform olarak tasarlandı: tespit edilen her sorun gerçek HTTP yanıtlarına, RFC şartnamelerine veya resmi sağlayıcı dokümanlarına dayanır.</p><h2>Temel İlke: Epistemik Dürüstlük</h2><p>Herkese açık bir taramadan ölçülemeyen hiçbir sinyal uydurulmaz. Saha verisi olmadan Core Web Vitals puanı uydurulmaz, kesinlikle NOT_MEASURED dönülür. llms.txt gibi gelişmekte olan yapılar web standardı değil öneri olarak ele alınır. Asla sıralama garantisi satılmaz.</p>"""
+                "title": "HTML&HTML Hakkında — Deterministik Web & AI Teşhis Yazılımı SaaS",
+                "h1": "HTML&HTML Hakkında: <em>Otomatik Teşhis Yazılımı ve Kod Üretici SaaS</em>",
+                "sub": "Teknik web standartları ile modern yapay zeka sistemleri arasındaki boşluğu dolduran deterministik web teşhis yazılımları ve otomatik kod araçları geliştiriyoruz.",
+                "body": """<h2>%100 Otomatik Yazılım ve SaaS</h2><p>HTML&HTML, web geliştiricileri ve sistem mimarları için geliştirilmiş %100 otomatik bir Yazılım Hizmeti (SaaS) ve dijital kod üretim platformudur. Platformumuz; otonom web tarayıcı motorları, deterministik teşhis algoritmaları ve anında indirilebilir dijital kod paketleri üretir. Şirketimiz insan eliyle yürütülen danışmanlık, ajans veya pazarlama hizmetleri sunmaz; tüm çıktılar yazılım motorlarımız tarafından algoritmik olarak üretilir.</p><h2>Temel İlke: Epistemik Dürüstlük</h2><p>Herkese açık bir taramadan ölçülemeyen hiçbir sinyal uydurulmaz. Saha verisi olmadan Core Web Vitals puanı uydurulmaz, kesinlikle NOT_MEASURED dönülür. llms.txt gibi gelişmekte olan yapılar web standardı değil öneri olarak ele alınır. Asla sıralama garantisi satılmaz.</p>"""
             }
         },
         {
@@ -365,16 +365,16 @@ def build_company_legal():
             "tr_slug": "tr/iletisim",
             "root_slug": "contact",
             "en": {
-                "title": "Contact HTML&HTML — Engineering & Commercial Support",
-                "h1": "Contact HTML&HTML: <em>Engineering & Inquiries</em>",
-                "sub": "Questions regarding our 12-engine scanning methodology, custom API integrations, or the Full Site Fix Mandate commercial engagement.",
-                "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Commercial Support</h2><p>For questions about the $99 Full Site Fix Mandate, receipts, or custom audit scopes, reach out directly at contact@htmlandhtml.com.</p>"""
+                "title": "Contact HTML&HTML — Software Support & Licensing",
+                "h1": "Contact HTML&HTML: <em>Software Support & Licensing</em>",
+                "sub": "Questions regarding our 12-engine scanning software, OpenAPI integration, or digital software package delivery.",
+                "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Software Licensing & Order Support</h2><p>For questions about the $99 Full Site Fix Mandate Software Pack, $499 Enterprise Bundle, digital download delivery, or invoices, reach out directly at contact@htmlandhtml.com.</p>"""
             },
             "tr": {
-                "title": "İletişim — HTML&HTML Mühendislik ve Ticari Destek",
-                "h1": "HTML&HTML İletişim: <em>Mühendislik ve Destek</em>",
-                "sub": "12 analiz motorumuzun metodolojisi, API entegrasyonları veya Full Site Fix Mandate siparişleri hakkında sorularınız için bize ulaşın.",
-                "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Ticari Destek</h2><p>$99 Full Site Fix Mandate sözleşmesi, faturalar veya özel tarama kapsamları hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
+                "title": "İletişim — HTML&HTML Yazılım Desteği ve Lisanslama",
+                "h1": "HTML&HTML İletişim: <em>Yazılım Desteği ve Lisanslama</em>",
+                "sub": "12 analiz motorumuzun yazılım metodolojisi, OpenAPI entegrasyonu veya dijital yazılım paketi teslimatı hakkında sorularınız için bize ulaşın.",
+                "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Yazılım Lisanslama ve Destek</h2><p>$99 Full Site Fix Mandate Yazılım Paketi, $499 Enterprise Paketi, dijital indirme teslimatı veya faturalar hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
             }
         },
         {
@@ -401,16 +401,16 @@ def build_company_legal():
             "tr_slug": "tr/kullanim-kosullari",
             "root_slug": "terms",
             "en": {
-                "title": "Terms of Service — HTML&HTML",
-                "h1": "Terms of Service: <em>Service Boundaries & Fix Mandate</em>",
-                "sub": "Terms governing the free 12-engine diagnostic service and the $99 Full Site Fix Mandate commercial engagement.",
-                "body": """<h2>Service Boundaries</h2><p>HTML&HTML provides technical diagnostics based on deterministic rules. We do not guarantee search engine ranking placement, traffic volume, or ChatGPT citations, as third-party algorithms evolve independently.</p><h2>Commercial Fix Mandate</h2><p>The $99 Fix Mandate delivers prioritized root causes, tests, and a 30-day re-scan. Payment is processed securely, and services are bounded to single public domains.</p>"""
+                "title": "Software License Agreement & Terms of Service — HTML&HTML",
+                "h1": "Terms of Service: <em>Software License & Automated SaaS Agreement</em>",
+                "sub": "Terms governing access to the automated HTML&HTML diagnostic SaaS platform and digital code artifact licenses.",
+                "body": """<h2>1. Software as a Service (SaaS) & Automated Digital Goods</h2><p>HTML&HTML is an automated Software-as-a-Service (SaaS) and developer tooling platform operated by HTML&HTML. The platform provides automated website diagnostic scans and compiles instant digital software packages (ZIP archives containing machine-generated configuration files, code patches, OpenAPI definitions, and automated acceptance test suites).</p><h2>2. Complete Exclusion of Human Advisory and Consulting Services</h2><p>HTML&HTML strictly provides automated software products and digital goods. We DO NOT provide human consulting, managed marketing services, agency retainers, advertising campaigns, or personalized advisory services. All diagnostic scores, technical blueprints, and remediation packages are generated deterministically by algorithmic software execution without human intervention.</p><h2>3. Digital License & Delivery</h2><p>Upon purchase of a software license tier (such as the $99 AI Search Visibility Roadmap or $499 Enterprise Dark Pool Software Bundle), software entitlements and instant digital download links (ZIP archives) are generated and delivered electronically. Because the product consists of instantly delivered digital software assets and machine-generated blueprints, delivery is fulfilled immediately upon cryptographic payment authorization.</p><h2>4. Algorithmic Integrity & Anti-Guarantee Policy</h2><p>HTML&HTML measures compliance against published RFC web specifications, vendor crawler documentation, and deterministic heuristics. We make no representations or guarantees regarding third-party search engine placement, commercial traffic volume, or generative AI citation rankings, as external machine learning algorithms update independently.</p><h2>5. Payment Processing via Paddle (Merchant of Record)</h2><p>All software purchases and digital goods transactions on HTML&HTML are processed securely by Paddle, our Merchant of Record. Paddle provides customer service inquiries and handles returns in accordance with our digital software delivery policy.</p>"""
             },
             "tr": {
-                "title": "Kullanım Koşulları — HTML&HTML",
-                "h1": "Kullanım Koşulları: <em>Hizmet Sınırları ve Fix Mandate</em>",
-                "sub": "Ücretsiz 12 motorlu teşhis hizmeti ve $99 Full Site Fix Mandate sözleşmesini düzenleyen yasal şartlar.",
-                "body": """<h2>Hizmet Sınırları</h2><p>HTML&HTML deterministik kurallara dayalı teknik teşhis sunar. Üçüncü taraf arama motorlarının algoritmaları bağımsız geliştiği için sıralama, trafik veya yapay zeka atıf garantisi verilmez.</p><h2>Ticari Fix Mandate Sözleşmesi</h2><p>$99 Fix Mandate; öncelikli kök nedenleri, testleri ve 30 günlük yeniden taramayı kapsar. Ödemeler güvenle işlenir ve hizmet tek bir alan adı ile sınırlıdır.</p>"""
+                "title": "Yazılım Lisans Sözleşmesi ve Kullanım Koşulları — HTML&HTML",
+                "h1": "Kullanım Koşulları: <em>Yazılım Lisansı ve Otomatik SaaS Sözleşmesi</em>",
+                "sub": "HTML&HTML otomatik web ve AI teşhis yazılımı (SaaS) ve dijital kod lisanslarını düzenleyen yasal şartlar.",
+                "body": """<h2>1. Yazılım Hizmeti (SaaS) ve Otomatik Dijital Ürünler</h2><p>HTML&HTML, web geliştiricileri ve sistem mimarları için geliştirilmiş %100 otomatik bir Yazılım Hizmeti (SaaS) ve dijital kod üretim platformudur. Platform, web siteleri için otomatik teknik taramalar gerçekleştirir ve makine tarafından derlenen hazır dijital yazılım paketleri (kod yamaları, konfigürasyon şablonları, OpenAPI tanımları ve regresyon test betikleri içeren ZIP arşivi) üretir.</p><h2>2. İnsan Danışmanlığı ve Ajans Hizmetlerinin Kesin Olarak Reddi</h2><p>HTML&HTML yalnızca bağımsız çalışan otomatik yazılım ürünleri ve dijital kod dosyaları sunar. Şirketimiz kesinlikle insan eliyle yürütülen danışmanlık, ajans hizmeti, reklam veya pazarlama hizmetleri SUNMAZ. Üretilen tüm teşhis raporları, mimari planlar ve kod paketleri insan müdahalesi olmaksızın, tamamen algoritmik yazılım motorları tarafından deterministik olarak oluşturulur.</p><h2>3. Dijital Lisans ve Anında Teslimat</h2><p>Ücretli bir yazılım lisansı ($99 AI Görünürlük Yol Haritası veya $499 Enterprise Dark Pool Kod Paketi) satın alındığında, yazılım yetkilendirmesi ve anlık dijital indirme bağlantısı (ZIP arşivi) elektronik olarak anında üretilir. Ürün, anında teslim edilen dijital kod varlıklarından ve yazılım dosyalarından oluşur.</p><h2>4. Algoritmik Sınırlar ve Garanti Muafiyeti</h2><p>HTML&HTML, web sitelerini RFC şartnameleri, resmi arama motoru/AI dokümanları ve deterministik kurallar çerçevesinde test eder. Dış yapay zeka modelleri ve arama motorları stokastik olarak çalıştığı için kesin sıralama, organik trafik, atıf veya gelir garantisi verilmez.</p><h2>5. Güvenli Ödeme ve Kayıtlı Satıcı (Paddle)</h2><p>HTML&HTML üzerindeki tüm yazılım lisansı ve dijital ürün satışları, Kayıtlı Satıcımız (Merchant of Record) olan Paddle tarafından güvenle işlenir.</p>"""
             }
         }
     ]

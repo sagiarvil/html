@@ -129,7 +129,7 @@ Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, 
 - Private/local/reserved targets and redirect pivots into private address space fail closed.
 - Unknown or unavailable measurements are excluded from the relevant score denominator rather than forced to pass or fail; where appropriate they remain NOT_MEASURED or REQUIRES_CONTEXT.
 - Free Diagnosis: USD 0. Findings, URLs, severity, confidence, source class, evidence and non-scoring intelligence context are visible.
-- Full Site Fix Mandate: USD 99 for one domain / one engagement, including one re-scan within 30 days.
+- Full Site Fix Mandate: USD 99 for one domain (software license), including one re-scan within 30 days.
 - AI Mention Tracker remains entitlement-gated and reports NOT_CONFIGURED when provider access is absent.
 
 <!-- LLMS_NEWS_START -->

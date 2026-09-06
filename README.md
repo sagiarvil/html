@@ -9,7 +9,8 @@ HTML&HTML is a bilingual TR/EN website diagnosis and implementation-mandate prod
 3. Twelve deterministic engines return all findings, URLs, severity, confidence, evidence class and measured evidence for free.
 4. Free results never expose implementation instructions and never invent source-file paths.
 5. `/api/mandate` re-scans the same domain and converts valid findings into an implementation contract only after paid entitlement verification.
-6. Full Site Fix Mandate is USD 149 for one domain / one engagement, with one re-scan within 30 days in the commercial scope.
+6. Full Site Fix Mandate is USD 99 for one domain (software license), with one re-scan within 30 days in the software license scope.
+7. Enterprise Dark Pool Intelligence is USD 499 for one domain, delivering the extended 22-file software and architectural blueprint bundle.
 
 ## Twelve engines
 

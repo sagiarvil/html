@@ -511,9 +511,9 @@ def build_fix_mandate_hub():
   <div class="authority-callout">
     <div>
       <h3>{'Siteniz için Fix Mandate başlatın.' if lang == 'tr' else 'Order your Fix Mandate today.'}</h3>
-      <p>{'Tek alan adı için $149 sabit fiyat. Ödeme güvenli Stripe altyapısı üzerinden işlenir.' if lang == 'tr' else 'Single $149 engagement per domain. Securely processed via Stripe with instant receipt.'}</p>
+      <p>{'Tek alan adı için $99 dijital yazılım lisansı. Ödeme güvenli Paddle altyapısı üzerinden işlenir ve anında teslim edilir.' if lang == 'tr' else 'Single domain $99 software license. Securely processed via Paddle with instant digital delivery.'}</p>
     </div>
-    <a href="/checkout">{'Fix Mandate — $149' if lang == 'tr' else 'Fix Mandate — $149'}</a>
+    <a href="/checkout">{'Fix Mandate — $99' if lang == 'tr' else 'Fix Mandate — $99'}</a>
   </div>
 </section>
 </main>

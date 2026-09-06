@@ -79,7 +79,7 @@ English counterparts:
 - `/api/mandate`: Entitlement-gated $99 Full Site Fix Mandate.
 
 ## Commercial Boundary
-Evidence and diagnosis are public. Implementation precision is the paid product. Full Site Fix Mandate costs USD 99 for one domain / one engagement and includes one re-scan within 30 days.
+Evidence and diagnosis are public. Implementation precision is the paid product. Full Site Fix Mandate costs USD 99 for one domain (software license) and includes one re-scan within 30 days.
 
 The product sells measurable readiness and recommendation opportunity, not false certainty. Ranking, recommendation, traffic, customer, revenue, featured-snippet, or AI-citation outcomes are never guaranteed.
 
