@@ -6,10 +6,6 @@ if(!llms.includes('https://htmlandhtml.com/en/tools')){
   llms=llms.replace('## Platform and commercial boundary',`## Directory hubs\n- [English tools](https://htmlandhtml.com/en/tools): Focused diagnostic entry points backed by the canonical 12-engine scan core.\n- [Türkçe araçlar](https://htmlandhtml.com/tr/araclar): Canonical 12-motor çekirdeği kullanan odaklı araç girişleri.\n- [English guides](https://htmlandhtml.com/en/guides): Sourced decision-support guides linked to measurable tools.\n- [Türkçe rehberler](https://htmlandhtml.com/tr/rehberler): Ölçülebilir araçlara bağlanan kaynaklı karar destek rehberleri.\n\n## Platform and commercial boundary`);
   write('llms.txt',llms);
 }
-
-// Established authority tools predate the enterprise IA generator. Keep their
-// product behavior intact while bringing them under the same navigation,
-// hreflang and breadcrumb contract as newly generated intent pages.
 const established=[
  ['en/ai-website-readiness/index.html','en','/en/ai-website-readiness','AI Website Readiness'],
  ['tr/ai-website-readiness/index.html','tr','/tr/ai-website-readiness','AI Web Sitesi Hazırlığı'],
@@ -22,45 +18,13 @@ const established=[
 ];
 for(const [file,lang,route,name] of established){
   if(!fs.existsSync(file))continue;
-  let s=read(file);
-  const home=lang==='tr'?'/tr':'/en';
-  const tools=lang==='tr'?'/tr/araclar':'/en/tools';
+  let s=read(file);const home=lang==='tr'?'/tr':'/en';const tools=lang==='tr'?'/tr/araclar':'/en/tools';
   if(!s.includes('hreflang="x-default"'))s=s.replace('<link rel="describedby"',`<link rel="alternate" hreflang="x-default" href="${base}/en"><link rel="describedby"`);
-  if(!s.includes('"@type":"BreadcrumbList"')){
-    const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":lang==='tr'?'Ana sayfa':'Home',"item":base+home},
-      {"@type":"ListItem","position":2,"name":lang==='tr'?'Araçlar':'Tools',"item":base+tools},
-      {"@type":"ListItem","position":3,"name":name,"item":base+route}
-    ]};
-    s=s.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
-  }
-  if(!s.includes('class="breadcrumbs"')){
-    const label=lang==='tr'?'Sayfa yolu':'Breadcrumb';
-    const homeName=lang==='tr'?'Ana sayfa':'Home',toolsName=lang==='tr'?'Araçlar':'Tools';
-    s=s.replace('<main>',`<main><nav class="breadcrumbs" aria-label="${label}"><a href="${home}">${homeName}</a><span>›</span><a href="${tools}">${toolsName}</a><span>›</span><a href="${route}">${name}</a></nav>`);
-  }
+  if(!s.includes('"@type":"BreadcrumbList"')){const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":lang==='tr'?'Ana sayfa':'Home',"item":base+home},{"@type":"ListItem","position":2,"name":lang==='tr'?'Araçlar':'Tools',"item":base+tools},{"@type":"ListItem","position":3,"name":name,"item":base+route}]};s=s.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`)}
+  if(!s.includes('class="breadcrumbs"')){const label=lang==='tr'?'Sayfa yolu':'Breadcrumb';const homeName=lang==='tr'?'Ana sayfa':'Home',toolsName=lang==='tr'?'Araçlar':'Tools';s=s.replace('<main>',`<main><nav class="breadcrumbs" aria-label="${label}"><a href="${home}">${homeName}</a><span>›</span><a href="${tools}">${toolsName}</a><span>›</span><a href="${route}">${name}</a></nav>`)}
   write(file,s);
 }
-
-// Collapse legacy English URLs directly into the locale tree. This avoids
-// duplicate trust/authority pages and avoids two-hop /index.html -> / -> /en.
-const firebase=JSON.parse(read('firebase.json'));
-const legacy=[
- ['/', '/en'],['/index.html','/en'],['/home','/en'],['/products','/en/pricing'],['/products.html','/en/pricing'],['/pricing','/en/pricing'],['/architecture','/en/platform'],['/preview','/en'],
- ['/methodology.html','/en/methodology'],['/standard','/en/evidence-standard'],['/reference/ai-crawlers','/en/reference/ai-crawlers'],
- ['/about','/en/about'],['/contact','/en/contact'],['/privacy','/en/privacy'],['/terms','/en/terms']
-];
-const legacySources=new Set(legacy.map(x=>x[0]));
-firebase.hosting.redirects=(firebase.hosting.redirects||[]).filter(r=>!legacySources.has(r.source));
-firebase.hosting.redirects.unshift(...legacy.map(([source,destination])=>({source,destination,type:301})));
-write('firebase.json',JSON.stringify(firebase,null,2)+'\n');
-write('_redirects',`${legacy.map(([s,d])=>`${s.padEnd(24)} ${d.padEnd(32)} 301`).join('\n')}\n/buy                     /checkout                        302\n`);
-
-// The Turkish locale gets a final human-copy purity pass after all generated
-// and established pages are assembled. Machine/protocol tokens remain exact.
+const firebase=JSON.parse(read('firebase.json'));const legacy=[['/','/en'],['/index.html','/en'],['/home','/en'],['/products','/en/pricing'],['/products.html','/en/pricing'],['/pricing','/en/pricing'],['/architecture','/en/platform'],['/preview','/en'],['/methodology.html','/en/methodology'],['/standard','/en/evidence-standard'],['/reference/ai-crawlers','/en/reference/ai-crawlers'],['/about','/en/about'],['/contact','/en/contact'],['/privacy','/en/privacy'],['/terms','/en/terms']];const legacySources=new Set(legacy.map(x=>x[0]));firebase.hosting.redirects=(firebase.hosting.redirects||[]).filter(r=>!legacySources.has(r.source));firebase.hosting.redirects.unshift(...legacy.map(([source,destination])=>({source,destination,type:301})));write('firebase.json',JSON.stringify(firebase,null,2)+'\n');write('_redirects',`${legacy.map(([s,d])=>`${s.padEnd(24)} ${d.padEnd(32)} 301`).join('\n')}\n/buy                     /checkout                        302\n`);
 await import('./purify-tr-ui.mjs');
-
-const pkg=JSON.parse(read('package.json'));
-pkg.scripts['build:ia']='node scripts/build-enterprise-ia.mjs && node scripts/postbuild-enterprise-ia.mjs';
-write('package.json',JSON.stringify(pkg,null,2)+'\n');
-console.log('Enterprise IA post-build normalization complete');
+await import('./purify-tr-visible.mjs');
+const pkg=JSON.parse(read('package.json'));pkg.scripts['build:ia']='node scripts/build-enterprise-ia.mjs && node scripts/postbuild-enterprise-ia.mjs';write('package.json',JSON.stringify(pkg,null,2)+'\n');console.log('Enterprise IA post-build normalization complete');
