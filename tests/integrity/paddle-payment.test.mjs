@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+
+const read=p=>fs.readFileSync(new URL(`../../${p}`,import.meta.url),'utf8');
+const payment=read('functions/lib/paddle-payment.ts');
+const client=read('assets/js/paddle-checkout.js');
+const firebase=read('firebase.json');
+const fbIndex=read('functions-firebase/src/index.ts');
+const headers=read('_headers');
+
+const errors=[];
+const must=(ok,msg)=>{if(!ok)errors.push(msg)};
+must(payment.includes("PADDLE_PRICE_ID='pri_01m1t2f2jkm8w74n7j9ap4hetm'"),'canonical Paddle price id missing');
+must(payment.includes("status!=='completed'")||payment.includes("status!=='completed'"),'completed transaction gate missing');
+must(payment.includes('price_mismatch'),'server-side price verification missing');
+must(payment.includes('domain_binding_mismatch'),'server-side domain binding missing');
+must(payment.includes('crypto.subtle.verify'),'webhook HMAC verification missing');
+must(payment.includes("'Paddle-Version':'1'"),'Paddle API version pin missing');
+must(client.includes("priceId:config.priceId"),'checkout is not using server-provided price id');
+must(client.includes('target_domain:domain'),'checkout custom data is not domain-bound');
+must(client.includes("event?.name==='checkout.completed'"),'checkout completion handler missing');
+must(client.includes("'/api/paddle/entitlement'"),'server-side entitlement verification call missing');
+must(client.includes("'/api/delivery'"),'verified ZIP delivery call missing');
+must(!/pdl_(live|sdbx)_apikey_/i.test(client),'Paddle API key leaked into client runtime');
+must(firebase.includes('/api/paddle/webhook')&&firebase.includes('paddleWebhook'),'Firebase Paddle webhook rewrite missing');
+must(firebase.includes('/api/paddle/entitlement')&&firebase.includes('paddleEntitlement'),'Firebase entitlement rewrite missing');
+must(firebase.includes('/api/paddle/config')&&firebase.includes('paddleConfig'),'Firebase config rewrite missing');
+must(fbIndex.includes("defineSecret('PADDLE_WEBHOOK_SECRET')"),'Firebase webhook secret binding missing');
+must(fbIndex.includes("defineSecret('PADDLE_API_KEY')"),'Firebase API key binding missing');
+must(fbIndex.includes("defineSecret('DELIVERY_SIGNING_SECRET')"),'Firebase delivery signing secret binding missing');
+must(headers.includes('https://cdn.paddle.com')&&headers.includes('frame-src https://*.paddle.com'),'Paddle CSP allowlist missing');
+if(errors.length)throw new Error('PADDLE PAYMENT CONTRACT FAIL\n- '+errors.join('\n- '));
+console.log('PADDLE PAYMENT CONTRACT PASS: fixed price, server verification, domain+order entitlement, webhook HMAC, CSP and ZIP delivery are wired.');
