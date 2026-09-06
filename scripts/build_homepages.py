@@ -291,32 +291,9 @@ def build_homepages():
         <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
       </div>
       <p class="vector-desc">LLM ağırlıklarının ön-eğitim havuzlarına (Common Crawl, Reddit, Arxiv, GitHub) marka entity'si aşılama ve Pointwise Mutual Information (PMI) optimizasyonu.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">corpus_seeding_pmi.ts</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">PMI_CO_OCCURRENCE</span> = {{
-  <span class="prop">corpus</span>: [<span class="str">"refinedweb"</span>, <span class="str">"the-pile"</span>, <span class="str">"arxiv"</span>],
-  <span class="prop">pmi_score</span>: <span class="num">0.88</span>,
-  <span class="prop">anchor_term</span>: <span class="str">"ENTERPRISE_SOLUTION"</span>,
-  <span class="prop">weight_injection</span>: <span class="bool">true</span>
-}};
-<span class="kw">function</span> <span class="fn">seedCorpusDistribution</span>() {{
-  <span class="comment">/* CLASSIFIED PROTOCOL */</span>
-}}</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE KİLİTLİ</strong>
-                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>corpus_seeding_pmi.ts</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -327,32 +304,12 @@ def build_homepages():
           <span class="vector-tag">VEKTÖR 02</span>
           <span class="vector-metric-pill">0.95+ Re-rank Skoru</span>
         </div>
-        <h4>Cross-Encoder Attention Hijacking</h4>
+        <h4>Cross-Encoder Attention Optimizasyonu</h4>
       </div>
       <p class="vector-desc">Cohere Rerank v3 ve BGE-Reranker matrisinde Perplexity ve Google Gemini AI Overviews'ın ilk alıntısı (Citation #1) olma formülü.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">cross_encoder_rerank.py</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="var">attention_score</span> = <span class="fn">softmax</span>(<span class="var">Q</span> * <span class="var">K.T</span> / <span class="fn">sqrt</span>(<span class="var">d_k</span>))
-<span class="var">template</span> = [
-  <span class="str">QUERY_SYNONYM</span>, <span class="str">ATOMIC_ANSWER_50W</span>,
-  <span class="str">NUMERICAL_FACTS_3X</span>, <span class="str">CONTRAST_CLAUSE</span>
-]
-<span class="kw">export function</span> <span class="fn">formatForRerank</span>()</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE KİLİTLİ</strong>
-                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>cross_encoder_rerank.py</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -366,33 +323,9 @@ def build_homepages():
         <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
       </div>
       <p class="vector-desc">Wikidata QID, Google Knowledge Graph MID ve Resmi Şirket Sicil veritabanı arasında kırılmaz üçgenleme protokolü.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">wikidata_consensus_triple.jsonld</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code>{{
-  <span class="prop">"@context"</span>: <span class="str">"https://schema.org"</span>,
-  <span class="prop">"@graph"</span>: [{{
-    <span class="prop">"@id"</span>: <span class="str">"kg:MID_0x892a"</span>,
-    <span class="prop">"sameAs"</span>: [
-      <span class="str">"https://wikidata.org/wiki/Q102938"</span>,
-      <span class="str">"https://crunchbase.com/org/..."</span>
-    ]
-  }}]
-}}</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE KİLİTLİ</strong>
-                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>wikidata_consensus_triple.jsonld</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -406,29 +339,9 @@ def build_homepages():
         <h4>KV-Cache Friendly Edge Token Purge</h4>
       </div>
       <p class="vector-desc">AI botlarına (GPTBot, ClaudeBot) 14KB saf optimize AST sunarak tarama bütçesi sınırını kaldıran Cloudflare Worker kodu.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">edge_ast_purge_worker.ts</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="kw">export default</span> {{
-  <span class="kw">async</span> <span class="fn">fetch</span>(<span class="var">req</span>, <span class="var">env</span>) {{
-    <span class="kw">const</span> <span class="var">bot</span> = <span class="fn">isAIBot</span>(<span class="var">req</span>.headers.<span class="fn">get</span>(<span class="str">"user-agent"</span>));
-    <span class="kw">if</span> (<span class="var">bot</span>) <span class="kw">return</span> <span class="fn">serveCleanASTStream</span>(<span class="var">req</span>);
-  }}
-}};</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE KİLİTLİ</strong>
-                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>edge_ast_purge_worker.ts</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -442,28 +355,9 @@ def build_homepages():
         <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
       </div>
       <p class="vector-desc">Sektörel kanonik tanım ve benchmark endeksleri üreterek diğer tüm yapay zekaların sizi zorunlu kaynak göstermesini sağlayan döngü.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">synthetic_citation_loop.ts</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">CITATION_ENGINE</span> = {{
-  <span class="prop">primary_definition</span>: <span class="str">"CANONICAL_INDEX_2026"</span>,
-  <span class="prop">recursive_ai_citations</span>: <span class="bool">true</span>,
-  <span class="prop">synthetic_loop_proof</span>: <span class="str">"SHA256_HASH"</span>
-}};</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE KİLİTLİ</strong>
-                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>synthetic_citation_loop.ts</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -477,29 +371,9 @@ def build_homepages():
         <h4>Autonomous Agent Headless Transaction API</h4>
       </div>
       <p class="vector-desc">Siri Agent, ChatGPT Voice ve AutoGPT ajanlarının web arayüzüne takılmadan sitenizden doğrudan işlem yapması için A2A &amp; MCP standardı.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">agent_headless_api_mcp.json</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code>{{
-  <span class="prop">"agentCardVersion"</span>: <span class="str">"1.0"</span>,
-  <span class="prop">"capabilities"</span>: [<span class="str">"headless_quote"</span>, <span class="str">"direct_checkout"</span>],
-  <span class="prop">"mcp_endpoint"</span>: <span class="str">"/.well-known/mcp.json"</span>,
-  <span class="prop">"auth"</span>: <span class="str">"HMAC_BEARER"</span>
-}}</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE KİLİTLİ</strong>
-                <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>agent_headless_api_mcp.json</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
   </div>
@@ -644,7 +518,7 @@ def build_homepages():
         <li><b>$99 Yol Haritasındaki her şey DAHİL</b></li>
         <li><b>6 Gizli Enterprise Protokolü (Açık Kodlarla):</b></li>
         <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
-        <li>2. Cross-Encoder Attention Hijacking (Perplexity 1. Sıra)</li>
+        <li>2. Cross-Encoder Attention Optimizasyonu (Perplexity 1. Sıra)</li>
         <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
         <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
         <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
@@ -986,32 +860,9 @@ def build_homepages():
         <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
       </div>
       <p class="vector-desc">Pre-training corpus seeding (Common Crawl, Reddit, Arxiv, GitHub) with Pointwise Mutual Information (PMI) optimization directly into core model weights.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">corpus_seeding_pmi.ts</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">PMI_CO_OCCURRENCE</span> = {{
-  <span class="prop">corpus</span>: [<span class="str">"refinedweb"</span>, <span class="str">"the-pile"</span>, <span class="str">"arxiv"</span>],
-  <span class="prop">pmi_score</span>: <span class="num">0.88</span>,
-  <span class="prop">anchor_term</span>: <span class="str">"ENTERPRISE_SOLUTION"</span>,
-  <span class="prop">weight_injection</span>: <span class="bool">true</span>
-}};
-<span class="kw">function</span> <span class="fn">seedCorpusDistribution</span>() {{
-  <span class="comment">/* CLASSIFIED PROTOCOL */</span>
-}}</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE LOCKED</strong>
-                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>corpus_seeding_pmi.ts</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -1022,32 +873,12 @@ def build_homepages():
           <span class="vector-tag">VECTOR 02</span>
           <span class="vector-metric-pill">0.95+ Re-rank Score</span>
         </div>
-        <h4>Cross-Encoder Attention Hijacking</h4>
+        <h4>Cross-Encoder Attention Optimization</h4>
       </div>
-      <p class="vector-desc">Formulation to secure Citation #1 in Perplexity and Google Gemini AI Overviews across Cohere Rerank v3 and BGE-Reranker matrices.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">cross_encoder_rerank.py</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="var">attention_score</span> = <span class="fn">softmax</span>(<span class="var">Q</span> * <span class="var">K.T</span> / <span class="fn">sqrt</span>(<span class="var">d_k</span>))
-<span class="var">template</span> = [
-  <span class="str">QUERY_SYNONYM</span>, <span class="str">ATOMIC_ANSWER_50W</span>,
-  <span class="str">NUMERICAL_FACTS_3X</span>, <span class="str">CONTRAST_CLAUSE</span>
-]
-<span class="kw">export function</span> <span class="fn">formatForRerank</span>()</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE LOCKED</strong>
-                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <p class="vector-desc">Algorithmic template to maximize cross-encoder vector attention scores and secure primary citation across Cohere Rerank v3 and BGE-Reranker matrices.</p>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>cross_encoder_rerank.py</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -1061,33 +892,9 @@ def build_homepages():
         <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
       </div>
       <p class="vector-desc">Unbreakable triangulation protocol linking Wikidata QID, Google Knowledge Graph MID, and official corporate registry records.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">wikidata_consensus_triple.jsonld</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code>{{
-  <span class="prop">"@context"</span>: <span class="str">"https://schema.org"</span>,
-  <span class="prop">"@graph"</span>: [{{
-    <span class="prop">"@id"</span>: <span class="str">"kg:MID_0x892a"</span>,
-    <span class="prop">"sameAs"</span>: [
-      <span class="str">"https://wikidata.org/wiki/Q102938"</span>,
-      <span class="str">"https://crunchbase.com/org/..."</span>
-    ]
-  }}]
-}}</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE LOCKED</strong>
-                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>wikidata_consensus_triple.jsonld</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -1101,29 +908,9 @@ def build_homepages():
         <h4>KV-Cache Friendly Edge Token Purge</h4>
       </div>
       <p class="vector-desc">Production Cloudflare Worker serving pure 14KB AST to AI crawlers (GPTBot, ClaudeBot), eliminating crawl budget exhaustion.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">edge_ast_purge_worker.ts</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="kw">export default</span> {{
-  <span class="kw">async</span> <span class="fn">fetch</span>(<span class="var">req</span>, <span class="var">env</span>) {{
-    <span class="kw">const</span> <span class="var">bot</span> = <span class="fn">isAIBot</span>(<span class="var">req</span>.headers.<span class="fn">get</span>(<span class="str">"user-agent"</span>));
-    <span class="kw">if</span> (<span class="var">bot</span>) <span class="kw">return</span> <span class="fn">serveCleanASTStream</span>(<span class="var">req</span>);
-  }}
-}};</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE LOCKED</strong>
-                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>edge_ast_purge_worker.ts</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -1137,28 +924,9 @@ def build_homepages():
         <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
       </div>
       <p class="vector-desc">Establishes canonical definitions and benchmark indexes, forcing secondary frontier models to mandate your site as root citation.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">synthetic_citation_loop.ts</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code><span class="kw">const</span> <span class="var">CITATION_ENGINE</span> = {{
-  <span class="prop">primary_definition</span>: <span class="str">"CANONICAL_INDEX_2026"</span>,
-  <span class="prop">recursive_ai_citations</span>: <span class="bool">true</span>,
-  <span class="prop">synthetic_loop_proof</span>: <span class="str">"SHA256_HASH"</span>
-}};</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE LOCKED</strong>
-                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>synthetic_citation_loop.ts</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
 
@@ -1172,29 +940,9 @@ def build_homepages():
         <h4>Autonomous Agent Headless Transaction API</h4>
       </div>
       <p class="vector-desc">A2A &amp; MCP standard enabling Siri Agent, ChatGPT Voice, and AutoGPT agents to complete actions directly without web UI friction.</p>
-      <div class="classified-terminal-wrap">
-        <div class="terminal-bar">
-          <div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-          <span class="terminal-file">agent_headless_api_mcp.json</span>
-          <span class="terminal-status">ENCRYPTED</span>
-        </div>
-        <div class="terminal-code-body">
-          <pre class="terminal-code"><code>{{
-  <span class="prop">"agentCardVersion"</span>: <span class="str">"1.0"</span>,
-  <span class="prop">"capabilities"</span>: [<span class="str">"headless_quote"</span>, <span class="str">"direct_checkout"</span>],
-  <span class="prop">"mcp_endpoint"</span>: <span class="str">"/.well-known/mcp.json"</span>,
-  <span class="prop">"auth"</span>: <span class="str">"HMAC_BEARER"</span>
-}}</code></pre>
-          <div class="classified-lock-overlay">
-            <div class="lock-shield-badge">
-              <span class="lock-glyph">🔒</span>
-              <div class="lock-text-wrap">
-                <strong>ENTERPRISE LOCKED</strong>
-                <small>Implementation formula &amp; seeding blueprint included in Enterprise ($499) license.</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="classified-file-meta">
+        <span class="file-badge"><code>agent_headless_api_mcp.json</code></span>
+        <span class="lock-pill">🔒 $499 Enterprise</span>
       </div>
     </article>
   </div>
@@ -1339,7 +1087,7 @@ def build_homepages():
         <li><b>Everything in $99 Roadmap INCLUDED</b></li>
         <li><b>6 Classified Enterprise Protocols (Full Code):</b></li>
         <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
-        <li>2. Cross-Encoder Attention Hijacking (Perplexity #1 Rank)</li>
+        <li>2. Cross-Encoder Attention Optimization (Perplexity #1 Rank)</li>
         <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
         <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
         <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
