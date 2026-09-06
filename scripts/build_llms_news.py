@@ -191,7 +191,7 @@ def write_hub(lang, records):
     cards = []
     for item, slug, cover in records:
         topic_disp = esc(item['topic'].replace('_', ' '))
-        cards.append(f'''<article class="news-card"><a class="news-card-image" href="{route}{slug}/"><img src="{cover}" alt="" width="1200" height="675" loading="lazy"></a><div class="news-card-body"><div class="news-meta"><time datetime="{esc(item['publishedAt'])}">{esc(item.get('updatedAt') or item['publishedAt'])}</time><span class="news-topic-pill">{topic_disp}</span><span class="news-read-time">⏱️ {'14 dk okuma' if tr else '14 min read'}</span></div><h2><a href="{route}{slug}/">{esc(item['title'][lang])}</a></h2><p>{esc(item['dek'][lang])}</p><a class="news-read" href="{route}{slug}/">{'Analizi oku →' if tr else 'Read analysis →'}</a></div></article>''')
+        cards.append(f'''<article class="news-card"><a class="news-card-image" href="{route}{slug}/" aria-label="{esc(item['title'][lang])}"><img src="{cover}" alt="" width="1200" height="675" loading="lazy"></a><div class="news-card-body"><div class="news-meta"><time datetime="{esc(item['publishedAt'])}">{esc(item.get('updatedAt') or item['publishedAt'])}</time><span class="news-topic-pill">{topic_disp}</span><span class="news-read-time">⏱️ {'14 dk okuma' if tr else '14 min read'}</span></div><h2><a href="{route}{slug}/">{esc(item['title'][lang])}</a></h2><p>{esc(item['dek'][lang])}</p><div class="news-card-footer"><a class="news-read" href="{route}{slug}/">{'Analizi oku' if tr else 'Read analysis'} <span class="arrow">→</span></a></div></div></article>''')
     
     schema = json.dumps({
         "@context": "https://schema.org",
