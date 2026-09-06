@@ -34,6 +34,7 @@
       {"source":"/api/mandate","function":{"functionId":"mandate","region":"us-central1","pinTag":true}}
     ],
     "redirects": [
+      {"source":"/favicon.ico","destination":"/favicon.svg","type":302},
       {"source":"/index.html","destination":"/","type":301},
       {"source":"/home","destination":"/","type":301},
       {"source":"/products","destination":"/#pricing","type":301},
