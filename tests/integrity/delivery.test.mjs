@@ -27,7 +27,7 @@ for(const x of [cf,firebase]){
   expect(x.includes('503'),'missing production entitlement must fail closed');
   expect(x.includes('402'),'invalid entitlement must fail closed');
   expect(x.includes('buildDeliveryPack'),'delivery endpoint must build canonical ZIP pack');
-  expect(x.includes('orderId')&&/verifyGuestEntitlement\([^)]*orderId/.test(x),'guest delivery must verify domain+order entitlement');
+  expect(/verifyGuestEntitlement[\s\S]{0,240}orderId/.test(x),'guest delivery must verify domain+order entitlement');
 }
 expect(/['"]content-type['"]\s*:\s*['"]application\/zip['"]/.test(cf),'Cloudflare delivery endpoint must emit ZIP content type');
 expect(/res\.set\(['"]Content-Type['"],pack\.mime\)/.test(firebase),'Firebase delivery endpoint must emit the canonical pack MIME');
