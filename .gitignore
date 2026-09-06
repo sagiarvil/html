@@ -15,3 +15,6 @@ Thumbs.db
 *.log
 __pycache__/
 paddle-keys.txt
+.env
+.env.*
+*.env
