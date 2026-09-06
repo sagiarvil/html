@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Web Sitesi Hazırlık Kontrol Listesi — 10 Temel Kural | HTML&HTML</title>
+<meta name="description" content="Web sitenizin modern yapay zeka modelleri ve arama ajanları tarafından sorunsuz taranması, anlaşılması ve doğrulanması için 10 adımlık teknik rehber.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "AI Web Sitesi Hazırlığı: 10 Adımlık Eksiksiz Teknik Kontrol Listesi",
+      "description": "Web sitenizin modern yapay zeka modelleri ve arama ajanları tarafından sorunsuz taranması, anlaşılması ve doğrulanması için 10 adımlık teknik rehber.",
+      "url": "https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/",
+      "inLanguage": "tr",
+      "author": { "@type": "Organization", "name": "HTML&HTML Research Team", "url": "https://htmlandhtml.com/" },
+      "publisher": { "@type": "Organization", "name": "HTML&HTML", "logo": "https://htmlandhtml.com/assets/logo.png" },
+      "datePublished": "2026-02-01T00:00:00Z",
+      "dateModified": "2026-09-06T00:00:00Z"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Rehberler", "item": "https://htmlandhtml.com/tr/rehberler/" },
+        { "@type": "ListItem", "position": 3, "name": "AI Web Sitesi Hazırlık Kontrol Listesi", "item": "https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/guides/ai-website-readiness-checklist/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <span>/</span>
+  <span>TEKNİK REHBER</span>
+</nav>
+
+<main>
+<article class="section" style="max-width: var(--reading-max); margin: 0 auto; padding-top: 56px;">
+  <div class="kicker"><span></span><b>TEKNİK REHBER</b></div>
+  <h1 style="margin: 20px 0 16px; font-size: clamp(38px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -.045em;">AI Web Sitesi Hazırlığı: <em>10 Adımlık Eksiksiz Teknik Kontrol Listesi</em></h1>
+  <p style="font-size: 19px; line-height: 1.7; color: var(--muted); margin-bottom: 24px;">HTTP başlıkları, robots.txt bot izinleri, anlamsal JSON-LD varlıkları ve markdown keşif yüzeylerini otonom AI erişimi için nasıl yapılandırmalısınız?</p>
+  <div style="font-size: 13px; font-weight: 750; color: #88867e; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line);">
+    7 dk okuma · Kanonik tarama kurallarıyla doğrulandı
+  </div>
+
+  <div class="guide-content" style="font-size: 18px; line-height: 1.75;">
+    
+<h2>Giriş: Geleneksel SEO Neden Artık Yetersiz?</h2>
+<p>Arama motorları artık yalnızca kelime frekanslarına ve ters dizinlere güvenmiyor. ChatGPT Search, Perplexity, Claude ve Google Gemini gibi sistemler yanıtları Retrieval-Augmented Generation (RAG) mimarisiyle sentezler. Teknik altyapınız içeriği engeller, gizler veya parçalarsa yapay zeka modelleri sitenizi bulamaz ya da yanlış bilgi üretir (halüsinasyon).</p>
+
+<h2>1. Adım: Belirgin AI Tarayıcı Yönetişimi (RFC 9309)</h2>
+<p>Modern tarayıcılar <code>robots.txt</code> içinde açıkça yönetilmelidir. Yalnızca genel bir <code>User-agent: *</code> kuralına güvenmeyin; bu kural bazen toplu kazımayı engellemek isterken gerçek zamanlı arama botlarını da yanlışlıkla engeller.</p>
+<pre><code># Önerilen robots.txt yapılandırması
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /private/
+Allow: /</code></pre>
+
+<h2>2. Adım: Temiz HTTP Uç Yanıtları ve HSTS</h2>
+<p>Yapay zeka tarayıcıları katı gecikme sınırları ile çalışır. Çok adımlı 301 yönlendirmeleri veya yavaş yanıt süreleri (>1.5 sn) arama ajanlarının sayfayı terk etmesine neden olur. SSL düşürme saldırılarını önlemek için HSTS başlığını <code>max-age=31536000; includeSubDomains; preload</code> ile yapılandırın.</p>
+
+<h2>3. Adım: Tek Ana H1 ve Semantik Başlık Hiyerarşisi</h2>
+<p>Birden fazla H1 içeren veya başlık seviyelerini atlayan (örneğin H1'den doğrudan H4'e geçen) sayfalar anlamsal ayrıştırıcıların kafasını karıştırır. Dizine açık her sayfada ana konuyu özetleyen tam bir H1 ve onu takip eden H2/H3 blokları bulunmalıdır.</p>
+
+<h2>4. Adım: JSON-LD Varlık Grafı ve Yazarlık Bilgisi</h2>
+<p>Yapısal veriler içeriğinizi küresel bilgi grafına bağlar. Microdata yerine doğrudan JSON-LD kullanarak <code>Organization</code>, <code>Author</code> ve <code>WebSite</code> varlıklarını açıkça tanımlayın.</p>
+
+<h2>5. Adım: llms.txt (v2 Standardı) Kurulumu</h2>
+<p>Sitenizin kök dizinine temiz ve seçilmiş bir <code>/llms.txt</code> dosyası yerleştirin. Markdown başlıkları, özet blok alıntıları ve doğrudan dokümantasyona işaret eden temiz bağlantılar kullanın.</p>
+
+<h2>6. Adım: Doğru Kanonik Etiketler ve Kendine Referans</h2>
+<p>Dizine açık her sayfa, tam protokol ve alan adı ile eşleşen bir self-canonical etiketi taşımalıdır. Çelişkili kanonikler AI tarayıcılarının sayfayı tekilleştirememesine yol açar.</p>
+
+<h2>7. Adım: Programatik Erişilebilirlik ve Form Etiketleri</h2>
+<p>Yapay zeka modelleri erişilebilir HTML kodunu çok daha yüksek doğrulukla ayrıştırır. Tüm form alanlarında <code>&lt;label for="..."&gt;</code> veya <code>aria-label</code> ilişkilerini koruyun ve geçerli <code>&lt;html lang="..."&gt;</code> tanımlayın.</p>
+
+<h2>8. Adım: Güvenlik Temeli ve Başlık Savunması</h2>
+<p>Modern ajanlar site güvenilirliğini doğrulamak için temel HTTP başlıklarını kontrol eder: <code>X-Content-Type-Options: nosniff</code>, <code>Referrer-Policy: strict-origin-when-cross-origin</code> ve tutarlı <code>Content-Security-Policy</code> kuralları.</p>
+
+<h2>9. Adım: 404 Hatalarının ve Kırık İç Bağlantıların Temizlenmesi</h2>
+<p>Yapay zeka ajanları iç link grafını tararken kırık linklerle karşılaştıklarında taramayı durdururlar. 404 dönen iç linkleri ve gereksiz yönlendirme zincirlerini kaldırın.</p>
+
+<h2>10. Adım: Rel=Describedby ve Makine Keşfi</h2>
+<p>HTML belgelerinizin head alanına veya HTTP yanıt başlıklarına <code>&lt;link rel="describedby" href="/llms.txt"&gt;</code> ekleyerek LLM ajanlarının dokümantasyon dosyanızı anında keşfetmesini sağlayın.</p>
+
+  </div>
+
+  <div class="authority-callout" style="margin-top: 56px;">
+    <div>
+      <h3>Sitenizi hemen denetleyin</h3>
+      <p>Bu rehberde açıklanan kuralları ücretsiz olarak web siteniz üzerinde test edin.</p>
+    </div>
+    <a href="/tr/ai-website-readiness/">AI Web Sitesi Hazırlık Denetimi →</a>
+  </div>
+
+  <div class="compare" style="margin-top: 32px;">
+    <b>UYGULAMA SÖZLEŞMESİ</b>
+    <p>Tespit edilen teknik engelleri mühendislik ekibiniz için kök neden, kabul testleri ve geri alma planlarıyla çözmek için <a href="/tr/fix-mandate/" style="font-weight: 800; text-decoration: underline;">$149 Full Site Fix Mandate</a> ürününü inceleyin.</p>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 14px; font-weight: 800;">
+    <a href="/tr/rehberler/">← Tüm Rehberler</a>
+    <a href="/tr/methodology/">Metodolojiyi İncele →</a>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

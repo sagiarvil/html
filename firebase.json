@@ -190,22 +190,27 @@
       },
       {
         "source": "/products",
-        "destination": "/#pricing",
+        "destination": "/en/pricing/",
         "type": 301
       },
       {
         "source": "/products.html",
-        "destination": "/#pricing",
+        "destination": "/en/pricing/",
         "type": 301
       },
       {
         "source": "/pricing",
-        "destination": "/#pricing",
-        "type": 302
+        "destination": "/en/pricing/",
+        "type": 301
       },
       {
         "source": "/architecture",
-        "destination": "/#how",
+        "destination": "/en/platform/",
+        "type": 301
+      },
+      {
+        "source": "/buy",
+        "destination": "/en/fix-mandate/",
         "type": 301
       },
       {

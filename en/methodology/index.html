@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scoring Methodology — 12-Engine Architecture | HTML&HTML</title>
+<meta name="description" content="How HTML&HTML measures 12 independent diagnostic categories, assigns evidence classes, handles unmeasured signals, and enforces deterministic scoring boundaries.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/en/methodology/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/methodology/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/methodology/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/methodology/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Scoring Methodology & Governance Standards",
+      "description": "How HTML&HTML measures 12 independent diagnostic categories, assigns evidence classes, handles unmeasured signals, and enforces deterministic scoring boundaries.",
+      "url": "https://htmlandhtml.com/en/methodology/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://htmlandhtml.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Methodology", "item": "https://htmlandhtml.com/en/methodology/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/en/platform/">Platform</a>
+  <a href="/en/tools/">Tools</a>
+  <a href="/en/guides/">Guides</a>
+  <a href="/en/methodology/">Methodology</a>
+  <a href="/en/pricing/">Pricing</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/tr/methodology/" aria-label="Türkçeye geç">TR</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/en/">Home</a>
+  <span>/</span>
+  <span>Methodology</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>GOVERNANCE & METHODOLOGY</b></div>
+  <h1>Scoring Methodology & <em>Governance Standards</em></h1>
+  <p>How HTML&HTML measures 12 independent diagnostic categories, assigns evidence classes, handles unmeasured signals, and enforces deterministic scoring boundaries.</p>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EVIDENCE CLASSES</span>
+    <h2>Six-tier evidence hierarchy.</h2>
+    <p>We never conflate an official standard, a vendor guideline, an evolving proposal, and an internal heuristic.</p>
+  </header>
+  <div class="method-list">
+    <div class="method-item">
+  <b>OFFICIAL_STANDARD</b>
+  <div>
+    <h3>OFFICIAL_STANDARD</h3>
+    <p>RFCs (e.g. RFC 9309 robots.txt), W3C standards, Schema.org official vocabularies.</p>
+  </div>
+</div><div class="method-item">
+  <b>OFFICIAL_VENDOR</b>
+  <div>
+    <h3>OFFICIAL_VENDOR</h3>
+    <p>Published vendor crawler documentation from OpenAI, Anthropic, Google, and Perplexity.</p>
+  </div>
+</div><div class="method-item">
+  <b>PROPOSAL</b>
+  <div>
+    <h3>PROPOSAL</h3>
+    <p>Emerging specifications such as llms.txt v2. Evaluated with limited weight and marked as evolving.</p>
+  </div>
+</div><div class="method-item">
+  <b>MEASURED</b>
+  <div>
+    <h3>MEASURED</h3>
+    <p>Directly observed HTTP responses, status codes, headers, and SSL parameters.</p>
+  </div>
+</div><div class="method-item">
+  <b>INTERNAL_HEURISTIC</b>
+  <div>
+    <h3>INTERNAL_HEURISTIC</h3>
+    <p>Internal algorithmic patterns detecting dead-end navigation or anti-patterns.</p>
+  </div>
+</div><div class="method-item">
+  <b>EXPERIMENTAL</b>
+  <div>
+    <h3>EXPERIMENTAL</h3>
+    <p>Early-stage agent discovery signals (e.g. MCP endpoints), labeled separately without score inflation.</p>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPISTEMIC HONESTY</span>
+    <h2>Unmeasured signals: The NOT_MEASURED contract.</h2>
+    <p>Core Web Vitals cannot be fabricated from raw HTML fetches. Without real user CrUX metrics, performance hygiene strictly reports NOT_MEASURED.</p>
+  </header>
+  <div class="compare">
+    <b>SSRF GUARD</b>
+    <p>Private IPv4/IPv6 ranges, loopback addresses, and cloud metadata endpoints fail closed before any TCP handshake to prevent SSRF vulnerabilities.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Inspect public weights and sources.</h3>
+      <p>Our audit-profile.json and sources.json files are synchronized with our canonical scan engine.</p>
+    </div>
+    <a href="/audit-profile.json">audit-profile.json →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Evidence is free. Implementation precision is the product. Audit your website for search and AI retrieval blockers with deterministic evidence.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/en/platform/">Platform Architecture</a></li>
+        <li><a href="/en/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/en/pricing/">Pricing</a></li>
+        <li><a href="/openapi.json">OpenAPI Specification</a></li>
+        <li><a href="/audit-profile.json">Audit Profile</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="/en/website-scanner/">Website Scanner</a></li>
+        <li><a href="/en/ai-website-readiness/">AI Website Readiness</a></li>
+        <li><a href="/en/llms-txt-validator/">llms.txt Validator</a></li>
+        <li><a href="/en/ai-crawler-checker/">AI Crawler Checker</a></li>
+        <li><a href="/en/schema-validator/">Schema Validator</a></li>
+        <li><a href="/en/technical-seo-checker/">Technical SEO Checker</a></li>
+        <li><a href="/en/security-headers-checker/">Security Headers Checker</a></li>
+        <li><a href="/en/accessibility-checker/">Accessibility Checker</a></li>
+        <li><a href="/en/link-integrity-checker/">Link Integrity Checker</a></li>
+        <li><a href="/en/ai-mention-tracker/">AI Mention Tracker</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/en/guides/">Guides Hub</a></li>
+        <li><a href="/en/guides/ai-website-readiness-checklist/">AI Readiness Checklist</a></li>
+        <li><a href="/en/guides/llms-txt/">llms.txt v2 Standard Guide</a></li>
+        <li><a href="/en/guides/ai-crawler-access/">AI Crawler Access Guide</a></li>
+        <li><a href="/en/guides/structured-data-for-ai/">Structured Data for AI</a></li>
+        <li><a href="/en/guides/ai-search-visibility/">AI Search Visibility (GEO)</a></li>
+        <li><a href="/en/methodology/">Methodology</a></li>
+        <li><a href="/en/evidence-standard/">Evidence Standard</a></li>
+        <li><a href="/en/reference/ai-crawlers/">AI Crawler Directory</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company & Legal</h4>
+      <ul>
+        <li><a href="/en/about/">About Us</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/en/privacy/">Privacy Policy</a></li>
+        <li><a href="/en/terms/">Terms of Service</a></li>
+        <li><a href="/llms.txt">llms.txt (Directory)</a></li>
+        <li><a href="/sources.json">Source Registry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. All rights reserved.</span>
+    <span>12 Independent Diagnostic Engines · 50-Page Deterministic Boundary</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,1 +1,228 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Crawler Checker — ChatGPT, Claude, Perplexity Bot Erişimi | HTML&HTML</title><meta name="description" content="Web sitenizin AI crawler erişimini ücretsiz kontrol edin. OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot, Google-Extended ve robots.txt politika sinyallerini kanıtlarıyla görün."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://htmlandhtml.com/tr/ai-crawler-checker/"><link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-crawler-checker/"><link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-crawler-checker/"><link rel="describedby" href="https://htmlandhtml.com/llms.txt"><link rel="stylesheet" href="/assets/css/authority.css"><script src="/assets/js/authority-tool.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"HTML&HTML AI Crawler Checker","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://htmlandhtml.com/tr/ai-crawler-checker/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script><script src="/assets/js/theme.js"></script></head><body data-tool-categories="ai,crawl"><header class="topbar"><a class="brand" href="/" aria-label="HTML&amp;HTML"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a><nav><a href="/">12 Motor</a><a href="#checker">Kontrol Aracı</a><a href="#scope">Kapsam</a><a href="/tr/methodology/">Metodoloji</a></nav><div class="langs"><a href="/en/ai-crawler-checker/">EN</a></div></header><main><section class="authority-hero"><div class="kicker"><span></span><b>AI CRAWLER ACCESS CHECKER</b></div><h1>AI botları sitenize <em>gerçekten erişebiliyor mu?</em></h1><p>Robots.txt dosyasının varlığı yetmez. HTML&HTML bot bazında Allow/Disallow davranışını, genel crawl engellerini ve ilgili AI/GEO erişim sinyallerini gerçek site yanıtlarından ölçer.</p><div class="authority-proof"><span>OAI-SearchBot</span><span>Claude-SearchBot</span><span>Claude-User</span><span>PerplexityBot</span><span>Google-Extended</span></div></section><section class="tool-shell" id="checker"><div class="tool-panel"><h2>Ücretsiz AI crawler erişim kontrolü</h2><p>Alan adını girin. Tam tarama çalışır; bu sayfa yalnızca crawl ve AI erişim katmanındaki kanıtları gösterir.</p><form class="tool-form" id="toolScanForm"><input id="toolDomain" aria-label="Alan adı" autocomplete="url" placeholder="ornek.com" required><button type="submit">Erişimi kontrol et</button></form><small class="tool-note">Yalnızca public HTTP/HTTPS yüzeyleri. Private/reserved hedefler fail-closed engellenir.</small><div id="toolStatus" class="tool-status" hidden></div><div id="toolResult" class="tool-result" hidden><div class="tool-score" id="toolScore"></div><div><p id="toolMeta" class="tool-note"></p><div id="toolFindings" class="tool-findings"></div></div></div></div></section><section class="section" id="scope"><header><span class="eyebrow">HTML&amp;HTML / SCOPE</span><h2>Tek robots.txt sonucu yeterli değil.</h2><p>AI erişimi üç ayrı seviyede değerlendirilir: crawl edilebilirlik, bot-politika davranışı ve makine-okunabilir keşif yüzeyleri.</p></header><div class="authority-grid"><article class="authority-card"><b>01 / CRAWL</b><h3>Temel erişim</h3><p>HTTP durumu, redirect zinciri, robots.txt, sitemap ve indexability sinyalleri birlikte değerlendirilir.</p></article><article class="authority-card"><b>02 / BOT POLICY</b><h3>Bot bazlı politika</h3><p>AI ve arama botlarının robots gruplarında nasıl ele alındığı ayrı ayrı raporlanır. Genel <code>*</code> grubunun etkisi de hesaba katılır.</p></article><article class="authority-card"><b>03 / DISCOVERY</b><h3>AI keşif katmanı</h3><p>llms.txt ve ilgili discovery işaretleri AI crawler erişiminden ayrı tutulur; erişim ile içerik yönlendirmesi birbirine karıştırılmaz.</p></article></div></section><section class="section"><div class="authority-callout"><div><h3>“AI’ya açığız” iddiasını kanıtlayın.</h3><p>Ücretsiz sonuç politika ve erişim problemini gösterir. Fix Mandate, robots/header/discovery düzeltmelerini test ve rollback koşullarıyla uygulanabilir sıraya çevirir.</p></div><a href="/checkout">Düzeltme Talimatı — $149</a></div></section></main><footer><div><a class="brand" href="/" aria-label="HTML&amp;HTML"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a><div class="authority-footer-links"><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a><a href="/tr/ai-website-readiness/">AI Web Sitesi Hazırlığı</a><a href="/tr/methodology/">Metodoloji</a></div></div><small>© 2026 HTML&amp;HTML</small></footer></body></html> (feat: yeni html&html logosu header ve footera eklendi, dark ve acik temada ters kontrast saglandi)
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Tarayıcı Kontrolü — Robots.txt ve Bot Erişim Denetimi | HTML&HTML</title>
+<meta name="description" content="AI bot erişimini ücretsiz denetleyin. OAI-SearchBot, Claude-SearchBot, PerplexityBot, Google-Extended ve robots.txt kurallarını kanıtıyla görün.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/ai-crawler-checker/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-crawler-checker/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-crawler-checker/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-crawler-checker/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HTML&HTML AI TARAYICI ERİŞİM KONTROLÜ",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://htmlandhtml.com/tr/ai-crawler-checker/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
+        { "@type": "ListItem", "position": 3, "name": "AI TARAYICI ERİŞİM KONTROLÜ", "item": "https://htmlandhtml.com/tr/ai-crawler-checker/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/authority-tool.js" defer></script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body data-tool-categories="ai,crawl">
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/ai-crawler-checker/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/araclar/">Araçlar</a>
+  <span>/</span>
+  <span>AI TARAYICI ERİŞİM KONTROLÜ</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>AI TARAYICI ERİŞİM KONTROLÜ</b></div>
+  <h1>AI botları sitenize <em>gerçekten erişebiliyor mu?</em></h1>
+  <p>Sadece bir robots.txt dosyasının bulunması yetersizdir. HTML&HTML, bot bazlı izin ve engelleme kurallarını, tarama engellerini ve AI erişim sinyallerini canlı yanıtlarla ölçer.</p>
+  <div class="authority-proof">
+    <span>OAI-SearchBot</span><span>Claude-SearchBot</span><span>PerplexityBot</span><span>Google-Extended</span>
+  </div>
+</section>
+
+<section class="tool-shell" id="toolRunner">
+  <div class="tool-panel">
+    <h2>Ücretsiz AI tarayıcı erişim kontrolü</h2>
+    <p>Alan adını girin. Tarama, tarama ve yapay zeka erişim kanıtlarını izole eder.</p>
+    <form class="tool-form" id="toolScanForm">
+      <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required>
+      <button type="submit">Erişimi denetle</button>
+    </form>
+    <div class="scan-chips">
+      <span>Örnekler:</span>
+      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+      <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+      <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+    </div>
+    <small class="tool-note">Yalnızca herkese açık HTTP/HTTPS yüzeyleri ölçülür. Özel ve yerel ağlar fail-closed engellenir.</small>
+    <div id="toolStatus" class="tool-status" hidden></div>
+    <div id="toolResult" class="tool-result" hidden>
+      <div class="tool-score" id="toolScore"></div>
+      <div>
+        <p id="toolMeta" class="tool-note"></p>
+        <div id="toolFindings" class="tool-findings"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scope">
+  <header>
+    <span class="eyebrow">HTML&HTML / KAPSAM</span>
+    <h2>Tek bir robots.txt sonucu yeterli değildir.</h2>
+    <p>Yapay zeka erişimi; temel taranabilirlik, bot politikaları ve keşif katmanları üzerinden değerlendirilir.</p>
+  </header>
+  <div class="authority-grid">
+    <article class="authority-card">
+      <b>01 / TEMEL ERİŞİM</b>
+      <h3>HTTP ve İndekslenebilirlik</h3>
+      <p>HTTP durum kodları, yönlendirme zincirleri, sitemap ve noindex başlıkları birlikte incelenir.</p>
+    </article>
+    <article class="authority-card">
+      <b>02 / BOT POLİTİKALARI</b>
+      <h3>Bot Bazlı Yönetişim</h3>
+      <p>Eğitim botları ve gerçek zamanlı arama botları, joker karakter (*) kuralları dahil ayrı ayrı değerlendirilir.</p>
+    </article>
+    <article class="authority-card">
+      <b>03 / KEŞİF</b>
+      <h3>Ajan Keşif Katmanı</h3>
+      <p>Tarayıcı izinleri ile içerik kılavuzlarının birbirine karışmadığını ve doğru sinyallendiğini doğrular.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPİSTEMİK SINIR</span>
+    <h2>Bu denetimin varsaymadığı şeyler</h2>
+    <p>Botlara izin verilmesi, ChatGPT yanıtlarında veya arama alıntılarında yer almayı garanti etmez.</p>
+  </header>
+  <div class="compare">
+    <b>SORUMLULUK</b>
+    <p>Giriş yapılmış veya kimlik doğrulaması gerektiren oturumlar simüle edilmez.</p>
+  </div>
+</section>
+
+<section class="section faq">
+  <header>
+    <span class="eyebrow">SSS</span>
+    <h2>Sıkça Sorulan Sorular</h2>
+  </header>
+  <details><summary>GPTBot ile OAI-SearchBot arasındaki fark nedir?</summary><p>GPTBot model eğitimi için veri toplar; OAI-SearchBot ise ChatGPT Search içindeki gerçek zamanlı arama sorgularını besler.</p></details><details><summary>Tüm AI tarayıcılarını engellemeli miyim?</summary><p>Tüm tarayıcıları engellemek hem eğitimi hem de AI arama motorlarında kaynak gösterilmeyi engeller. Katmanlı bir politika önerilir.</p></details><details><summary>HTML&HTML robots.txt dosyasını nasıl test eder?</summary><p>RFC 9309 standartlarına göre robots.txt ayrıştırılır ve herkese açık sayfalar için bot kuralları canlıda test edilir.</p></details>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>'AI bize erişebiliyor' iddiasını kanıtlayın.</h3>
+      <p>Robots, header ve yönlendirme bulgularını testler ve geri alma adımlarıyla uygulama sözleşmesine dönüştürün.</p>
+    </div>
+    <a href="/checkout">Full Site Fix Mandate — $149</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Güvenlik Başlıkları Kontrolü — HSTS, CSP ve Güvenlik Temeli | HTML&HTML</title>
+<meta name="description" content="Güvenlik başlıklarınızı ücretsiz denetleyin. HSTS, Content-Security-Policy, X-Content-Type-Options, Referrer-Policy ve clickjacking korumasını kanıtıyla görün.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/security-headers-checker/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/security-headers-checker/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HTML&HTML GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
+        { "@type": "ListItem", "position": 3, "name": "GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ", "item": "https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/authority-tool.js" defer></script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body data-tool-categories="security">
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/security-headers-checker/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/araclar/">Araçlar</a>
+  <span>/</span>
+  <span>GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ</b></div>
+  <h1>Web sitenizin <em>üretim güvenlik başlıklarını</em> doğrulayın.</h1>
+  <p>HSTS (HTTP Strict Transport Security), Content Security Policy (CSP), X-Frame-Options ve nosniff başlıklarını doğrudan canlı uç nokta yanıtlarından denetleyin.</p>
+  <div class="authority-proof">
+    <span>HSTS Preload</span><span>CSP Doğrulama</span><span>Clickjacking Koruması</span><span>nosniff Zorunluluğu</span>
+  </div>
+</section>
+
+<section class="tool-shell" id="toolRunner">
+  <div class="tool-panel">
+    <h2>Ücretsiz güvenlik başlıkları denetimi</h2>
+    <p>Canlı uç noktalardan güvenlik başlıklarını incelemek için alan adı girin.</p>
+    <form class="tool-form" id="toolScanForm">
+      <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required>
+      <button type="submit">Güvenliği denetle</button>
+    </form>
+    <div class="scan-chips">
+      <span>Örnekler:</span>
+      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+      <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+      <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+    </div>
+    <small class="tool-note">Yalnızca herkese açık HTTP/HTTPS yüzeyleri ölçülür. Özel ve yerel ağlar fail-closed engellenir.</small>
+    <div id="toolStatus" class="tool-status" hidden></div>
+    <div id="toolResult" class="tool-result" hidden>
+      <div class="tool-score" id="toolScore"></div>
+      <div>
+        <p id="toolMeta" class="tool-note"></p>
+        <div id="toolFindings" class="tool-findings"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scope">
+  <header>
+    <span class="eyebrow">HTML&HTML / KAPSAM</span>
+    <h2>Güçlendirilmiş HTTP uç savunmaları.</h2>
+    <p>Kullanıcıları, yapay zeka ajanlarını ve marka itibarını tarayıcı taraflı saldırılardan korur.</p>
+  </header>
+  <div class="authority-grid">
+    <article class="authority-card">
+      <b>01 / İLETİM</b>
+      <h3>HSTS ve Şifreleme</h3>
+      <p>max-age, includeSubDomains ve preload durumunu kontrol ederek SSL düşürme saldırılarını önler.</p>
+    </article>
+    <article class="authority-card">
+      <b>02 / İÇERİK POLİTİKASI</b>
+      <h3>CSP ve Çerçeve Koruması</h3>
+      <p>script-src ve frame-ancestors kurallarını clickjacking ve XSS risklerine karşı denetler.</p>
+    </article>
+    <article class="authority-card">
+      <b>03 / SIZINTI</b>
+      <h3>MIME ve Referrer</h3>
+      <p>nosniff zorunluluğunu ve strict-origin-when-cross-origin referrer politikasını doğrular.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPİSTEMİK SINIR</span>
+    <h2>Güvenlik kapsam sınırları</h2>
+    <p>Bu denetim sızma testi (penetration test), port taraması veya güvenlik açığı istismarı yapmaz.</p>
+  </header>
+  <div class="compare">
+    <b>SORUMLULUK</b>
+    <p>İş mantığına dokunmadan yalnızca herkese açık HTTP başlık hijyeni kontrol edilir.</p>
+  </div>
+</section>
+
+<section class="section faq">
+  <header>
+    <span class="eyebrow">SSS</span>
+    <h2>Sıkça Sorulan Sorular</h2>
+  </header>
+  <details><summary>HSTS eksikse ne olur?</summary><p>HSTS olmadan, güvensiz ağlardaki saldırganlar HTTPS trafiğini düz HTTP'ye düşürerek trafiği dinleyebilir (SSL stripping).</p></details><details><summary>nosniff neden kritiktir?</summary><p>X-Content-Type-Options: nosniff tarayıcının içerik türünü tahmin etmesini engeller; resim gibi görünen zararlı scriptlerin çalıştırılmasını durdurur.</p></details><details><summary>Yerel sunucuları test edebilir miyim?</summary><p>Hayır. SSRF riskini önlemek için yerel ve özel ağ hedefleri donanımsal olarak reddedilir.</p></details>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Sunucu güvenlik başlıklarınızı güçlendirin.</h3>
+      <p>$149 Fix Mandate ile Nginx, Cloudflare veya Apache için doğrudan uygulanabilir başlık yapılandırmaları edinin.</p>
+    </div>
+    <a href="/checkout">Full Site Fix Mandate — $149</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

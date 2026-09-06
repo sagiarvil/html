@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>llms.txt Specification & Implementation Guide | HTML&HTML</title>
+<meta name="description" content="Understand the llms.txt standard. Learn file placement, v2 syntax rules, llms-full.txt aggregation, and rel=describedby discovery for AI models.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/en/guides/llms-txt/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/llms-txt/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/llms-txt/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/guides/llms-txt/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "llms.txt v2 Standard: Architecture, Syntax & Discovery",
+      "description": "Understand the llms.txt standard. Learn file placement, v2 syntax rules, llms-full.txt aggregation, and rel=describedby discovery for AI models.",
+      "url": "https://htmlandhtml.com/en/guides/llms-txt/",
+      "inLanguage": "en",
+      "author": { "@type": "Organization", "name": "HTML&HTML Research Team", "url": "https://htmlandhtml.com/" },
+      "publisher": { "@type": "Organization", "name": "HTML&HTML", "logo": "https://htmlandhtml.com/assets/logo.png" },
+      "datePublished": "2026-02-01T00:00:00Z",
+      "dateModified": "2026-09-06T00:00:00Z"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://htmlandhtml.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://htmlandhtml.com/en/guides/" },
+        { "@type": "ListItem", "position": 3, "name": "llms.txt Specification & Implementation Guide | HTML&HTML", "item": "https://htmlandhtml.com/en/guides/llms-txt/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/en/platform/">Platform</a>
+  <a href="/en/tools/">Tools</a>
+  <a href="/en/guides/">Guides</a>
+  <a href="/en/methodology/">Methodology</a>
+  <a href="/en/pricing/">Pricing</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/tr/rehberler/llms-txt/" aria-label="Türkçeye geç">TR</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/en/">Home</a>
+  <span>/</span>
+  <a href="/en/guides/">Guides</a>
+  <span>/</span>
+  <span>SPECIFICATION GUIDE</span>
+</nav>
+
+<main>
+<article class="section" style="max-width: var(--reading-max); margin: 0 auto; padding-top: 56px;">
+  <div class="kicker"><span></span><b>SPECIFICATION GUIDE</b></div>
+  <h1 style="margin: 20px 0 16px; font-size: clamp(38px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -.045em;">llms.txt v2 Standard: <em>Architecture, Syntax & Discovery</em></h1>
+  <p style="font-size: 19px; line-height: 1.7; color: var(--muted); margin-bottom: 24px;">A rigorous technical breakdown of the emerging standard providing clean markdown context to large language models and autonomous agents.</p>
+  <div style="font-size: 13px; font-weight: 750; color: #88867e; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line);">
+    6 min read · Updated for v2 describedby spec
+  </div>
+
+  <div class="guide-content" style="font-size: 18px; line-height: 1.75;">
+    
+<h2>What Is llms.txt?</h2>
+<p>llms.txt is a community-driven specification that standardizes how websites expose structured, token-efficient Markdown content to LLMs. Instead of forcing AI crawlers to parse complex CSS, JavaScript bundles, and navigation chrome, an llms.txt file serves as an index of your most critical documentation in plain Markdown.</p>
+
+<h2>File Structure & Syntax Grammar</h2>
+<p>An llms.txt file must begin with a single H1 header stating the project or organization name, followed immediately by a blockquote summary of its purpose:</p>
+<pre><code># Acme Corporation
+
+> Acme provides enterprise distributed database infrastructure with sub-millisecond replication.
+
+## Documentation
+- [Architecture Overview](https://example.com/docs/architecture.md): Core distributed consensus engine
+- [API Reference](https://example.com/docs/api.md): REST and gRPC endpoint declarations
+- [Deployment Guide](https://example.com/docs/deploy.md): Kubernetes operators and bare-metal setup</code></pre>
+
+<h2>llms.txt vs. llms-full.txt</h2>
+<p>The specification defines two files:</p>
+<ul>
+  <li><code>/llms.txt</code>: The curated directory index of clean Markdown links with short descriptions.</li>
+  <li><code>/llms-full.txt</code>: The complete, concatenated text of all referenced documentation, enabling single-request context window injection.</li>
+</ul>
+
+<h2>Discovery via rel="describedby"</h2>
+<p>Merely placing the file at the root is not enough. You should link to it semantically using the <code>rel="describedby"</code> relationship, both in HTML and HTTP headers:</p>
+<pre><code>&lt;!-- In HTML head --&gt;
+&lt;link rel="describedby" href="/llms.txt" type="text/markdown"&gt;
+
+# In HTTP Response Headers
+Link: &lt;/llms.txt&gt;; rel="describedby"; type="text/markdown"</code></pre>
+
+<h2>Common Syntax Mistakes</h2>
+<ol>
+  <li><strong>Missing Blockquote:</strong> Omitting the blockquote summary immediately beneath the H1 title breaks standard v2 parsers.</li>
+  <li><strong>Broken Links:</strong> Linking to URLs that return HTTP 404, 500, or require login cookies.</li>
+  <li><strong>Unformatted Lists:</strong> Using arbitrary paragraphs instead of standardized markdown bullet lists.</li>
+</ol>
+
+  </div>
+
+  <div class="authority-callout" style="margin-top: 56px;">
+    <div>
+      <h3>Audit your site now</h3>
+      <p>Test the exact criteria explained in this guide against your public site for free.</p>
+    </div>
+    <a href="/en/llms-txt-validator/">llms.txt Validator →</a>
+  </div>
+
+  <div class="compare" style="margin-top: 32px;">
+    <b>FIX MANDATE</b>
+    <p>To resolve detected blockers with root cause analysis, acceptance tests and rollbacks for your engineering team, <a href="/en/fix-mandate/" style="font-weight: 800; text-decoration: underline;">$149 Full Site Fix Mandate</a> is available.</p>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 14px; font-weight: 800;">
+    <a href="/en/guides/">← All Guides</a>
+    <a href="/en/methodology/">View Methodology →</a>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Evidence is free. Implementation precision is the product. Audit your website for search and AI retrieval blockers with deterministic evidence.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/en/platform/">Platform Architecture</a></li>
+        <li><a href="/en/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/en/pricing/">Pricing</a></li>
+        <li><a href="/openapi.json">OpenAPI Specification</a></li>
+        <li><a href="/audit-profile.json">Audit Profile</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="/en/website-scanner/">Website Scanner</a></li>
+        <li><a href="/en/ai-website-readiness/">AI Website Readiness</a></li>
+        <li><a href="/en/llms-txt-validator/">llms.txt Validator</a></li>
+        <li><a href="/en/ai-crawler-checker/">AI Crawler Checker</a></li>
+        <li><a href="/en/schema-validator/">Schema Validator</a></li>
+        <li><a href="/en/technical-seo-checker/">Technical SEO Checker</a></li>
+        <li><a href="/en/security-headers-checker/">Security Headers Checker</a></li>
+        <li><a href="/en/accessibility-checker/">Accessibility Checker</a></li>
+        <li><a href="/en/link-integrity-checker/">Link Integrity Checker</a></li>
+        <li><a href="/en/ai-mention-tracker/">AI Mention Tracker</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/en/guides/">Guides Hub</a></li>
+        <li><a href="/en/guides/ai-website-readiness-checklist/">AI Readiness Checklist</a></li>
+        <li><a href="/en/guides/llms-txt/">llms.txt v2 Standard Guide</a></li>
+        <li><a href="/en/guides/ai-crawler-access/">AI Crawler Access Guide</a></li>
+        <li><a href="/en/guides/structured-data-for-ai/">Structured Data for AI</a></li>
+        <li><a href="/en/guides/ai-search-visibility/">AI Search Visibility (GEO)</a></li>
+        <li><a href="/en/methodology/">Methodology</a></li>
+        <li><a href="/en/evidence-standard/">Evidence Standard</a></li>
+        <li><a href="/en/reference/ai-crawlers/">AI Crawler Directory</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company & Legal</h4>
+      <ul>
+        <li><a href="/en/about/">About Us</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/en/privacy/">Privacy Policy</a></li>
+        <li><a href="/en/terms/">Terms of Service</a></li>
+        <li><a href="/llms.txt">llms.txt (Directory)</a></li>
+        <li><a href="/sources.json">Source Registry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. All rights reserved.</span>
+    <span>12 Independent Diagnostic Engines · 50-Page Deterministic Boundary</span>
+  </div>
+</footer>
+</body>
+</html>

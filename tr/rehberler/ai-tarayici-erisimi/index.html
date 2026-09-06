@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Tarayıcı Erişimi: Robots.txt ve Bot Yönetimi | HTML&HTML</title>
+<meta name="description" content="AI botları için robots.txt yapılandırma rehberi: GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot ve Google-Extended kuralları.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/ai-crawler-access/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/guides/ai-crawler-access/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "AI Tarayıcı Erişimi: Arama Botları ve Eğitim Tarayıcıları",
+      "description": "AI botları için robots.txt yapılandırma rehberi: GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot ve Google-Extended kuralları.",
+      "url": "https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/",
+      "inLanguage": "tr",
+      "author": { "@type": "Organization", "name": "HTML&HTML Research Team", "url": "https://htmlandhtml.com/" },
+      "publisher": { "@type": "Organization", "name": "HTML&HTML", "logo": "https://htmlandhtml.com/assets/logo.png" },
+      "datePublished": "2026-02-01T00:00:00Z",
+      "dateModified": "2026-09-06T00:00:00Z"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Rehberler", "item": "https://htmlandhtml.com/tr/rehberler/" },
+        { "@type": "ListItem", "position": 3, "name": "AI Tarayıcı Erişimi: Robots.txt ve Bot Yönetimi | HTML&HTML", "item": "https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/guides/ai-crawler-access/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <span>/</span>
+  <span>OPERASYONEL REHBER</span>
+</nav>
+
+<main>
+<article class="section" style="max-width: var(--reading-max); margin: 0 auto; padding-top: 56px;">
+  <div class="kicker"><span></span><b>OPERASYONEL REHBER</b></div>
+  <h1 style="margin: 20px 0 16px; font-size: clamp(38px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -.045em;">AI Tarayıcı Erişimi: <em>Arama Botları ve Eğitim Tarayıcıları</em></h1>
+  <p style="font-size: 19px; line-height: 1.7; color: var(--muted); margin-bottom: 24px;">Model eğitimi kazıması ile gerçek zamanlı arama botlarını birbirinden nasıl ayıracağınızı ve sitenizi AI yanıtlarında nasıl görünür kılacağınızı öğrenin.</p>
+  <div style="font-size: 13px; font-weight: 750; color: #88867e; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line);">
+    5 dk okuma · RFC 9309 standartlarıyla uyumlu
+  </div>
+
+  <div class="guide-content" style="font-size: 18px; line-height: 1.75;">
+    
+<h2>Eğitim Botları ile Gerçek Zamanlı Arama Botları Arasındaki Fark</h2>
+<p>Web yöneticilerinin en sık yaptığı hata tüm yapay zeka botlarını aynı kefeye koymaktır. Yapay zeka şirketleri iki farklı bot kategorisi işletir:</p>
+<ul>
+  <li><strong>Model Eğitim Botları (Örn. GPTBot, ClaudeBot):</strong> Gelecekteki temel modelleri eğitmek için herkese açık metinleri toplu olarak kazır.</li>
+  <li><strong>Arama ve Kaynak Botları (Örn. OAI-SearchBot, Claude-SearchBot, PerplexityBot):</strong> Kullanıcılar soru sorduğunda web sitelerini gerçek zamanlı tarayarak özetleyen ve kaynak gösteren botlardır.</li>
+</ul>
+
+<h2>Robots.txt Dosyasını Güvenle Yapılandırma</h2>
+<p>Telif haklı içeriklerinizin toplu eğitimde kullanılmasını istemiyor ancak ChatGPT Search ve Perplexity gibi arama motorlarında kaynak gösterilmek istiyorsanız şu ayrımı yapın:</p>
+<pre><code># Gerçek zamanlı arama botlarına izin verin
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Çevrimdışı eğitim botlarını kısıtlayın veya engelleyin
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /</code></pre>
+
+<h2>Joker Karakter (*) Tuzağı</h2>
+<p>RFC 9309 standardına göre botlar kendi adlarıyla en çok eşleşen kuralları uygular. Eğer bota özel bir blok yoksa genel <code>User-agent: *</code> kuralına geri döner. Genel blokta <code>Disallow: /</code> varsa ve özel kural tanımlamamışsanız tüm AI arama botları da engellenir.</p>
+
+  </div>
+
+  <div class="authority-callout" style="margin-top: 56px;">
+    <div>
+      <h3>Sitenizi hemen denetleyin</h3>
+      <p>Bu rehberde açıklanan kuralları ücretsiz olarak web siteniz üzerinde test edin.</p>
+    </div>
+    <a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü →</a>
+  </div>
+
+  <div class="compare" style="margin-top: 32px;">
+    <b>UYGULAMA SÖZLEŞMESİ</b>
+    <p>Tespit edilen teknik engelleri mühendislik ekibiniz için kök neden, kabul testleri ve geri alma planlarıyla çözmek için <a href="/tr/fix-mandate/" style="font-weight: 800; text-decoration: underline;">$149 Full Site Fix Mandate</a> ürününü inceleyin.</p>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 14px; font-weight: 800;">
+    <a href="/tr/rehberler/">← Tüm Rehberler</a>
+    <a href="/tr/methodology/">Metodolojiyi İncele →</a>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

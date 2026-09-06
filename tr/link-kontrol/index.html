@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Link Kontrolü — Kırık Link ve Yönlendirme Denetimi | HTML&HTML</title>
+<meta name="description" content="İç link sağlığınızı ücretsiz denetleyin. Gerçek HTTP istekleriyle kırık linkleri, 404 hatalarını, yönlendirme zincirlerini ve link sızıntılarını kanıtıyla görün.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/link-kontrol/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/link-integrity-checker/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/link-kontrol/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/link-integrity-checker/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HTML&HTML LİNK BÜTÜNLÜĞÜ VE YÖNLENDİRME DENETİMİ",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://htmlandhtml.com/tr/link-kontrol/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
+        { "@type": "ListItem", "position": 3, "name": "LİNK BÜTÜNLÜĞÜ VE YÖNLENDİRME DENETİMİ", "item": "https://htmlandhtml.com/tr/link-kontrol/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/authority-tool.js" defer></script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body data-tool-categories="links,crawl">
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/link-integrity-checker/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/araclar/">Araçlar</a>
+  <span>/</span>
+  <span>LİNK BÜTÜNLÜĞÜ VE YÖNLENDİRME DENETİMİ</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>LİNK BÜTÜNLÜĞÜ VE YÖNLENDİRME DENETİMİ</b></div>
+  <h1>İç link sağlığınızı <em>gerçek HTTP istekleriyle</em> denetleyin.</h1>
+  <p>Taranan sayfalar içindeki 404 çıkmaz yollarını, 500 sunucu hatalarını, döngüsel yönlendirmeleri ve gereksiz 301 zincirlerini canlı kanıtlarla yakalayın.</p>
+  <div class="authority-proof">
+    <span>Canlı HTTP Probları</span><span>404 Tespiti</span><span>Yönlendirme Döngüleri</span><span>Gerçek Durum Kodları</span>
+  </div>
+</section>
+
+<section class="tool-shell" id="toolRunner">
+  <div class="tool-panel">
+    <h2>Ücretsiz link bütünlüğü denetimi</h2>
+    <p>İç link sağlığını test etmek ve kırık yolları tespit etmek için alan adı girin.</p>
+    <form class="tool-form" id="toolScanForm">
+      <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required>
+      <button type="submit">Linkleri denetle</button>
+    </form>
+    <div class="scan-chips">
+      <span>Örnekler:</span>
+      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+      <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+      <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+    </div>
+    <small class="tool-note">Yalnızca herkese açık HTTP/HTTPS yüzeyleri ölçülür. Özel ve yerel ağlar fail-closed engellenir.</small>
+    <div id="toolStatus" class="tool-status" hidden></div>
+    <div id="toolResult" class="tool-result" hidden>
+      <div class="tool-score" id="toolScore"></div>
+      <div>
+        <p id="toolMeta" class="tool-note"></p>
+        <div id="toolFindings" class="tool-findings"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scope">
+  <header>
+    <span class="eyebrow">HTML&HTML / KAPSAM</span>
+    <h2>Kullanıcılar ve botlar için sıfır kırık bağlantı.</h2>
+    <p>Linkler gerçek HTTP probları ile test edilir; hedef sunucuyu yormamak için tarama başına 30 canlı prob ile sınırlandırılmıştır.</p>
+  </header>
+  <div class="authority-grid">
+    <article class="authority-card">
+      <b>01 / ÇIKMAZ YOLLAR</b>
+      <h3>404 ve 410 Hataları</h3>
+      <p>Silinmiş veya yanlış yazılmış sayfalara işaret eden ve güven sarsan kırık iç bağlantıları yakalar.</p>
+    </article>
+    <article class="authority-card">
+      <b>02 / YÖNLENDİRMELER</b>
+      <h3>Yönlendirme Zincirleri</h3>
+      <p>Kanonik hedef yerine ara yönlendirmelere işaret eden iç linkleri listeler.</p>
+    </article>
+    <article class="authority-card">
+      <b>03 / PROTOKOLLER</b>
+      <h3>Karışık Protokol Linkleri</h3>
+      <p>HTTPS sitede gereksiz HTTP yönlendirmelerine yol açan eski protokol bağlantılarını tespit eder.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPİSTEMİK SINIR</span>
+    <h2>Sınırlandırılmış prob güvenliği</h2>
+    <p>Hedef sunucunun aşırı yüklenmesini önlemek için canlı link probları kesinlikle 30 istek ile sınırlıdır.</p>
+  </header>
+  <div class="compare">
+    <b>SORUMLULUK</b>
+    <p>Harici üçüncü taraf siteler derinlemesine taranmaz, yalnızca doğrudan HTTP durumu kontrol edilir.</p>
+  </div>
+</section>
+
+<section class="section faq">
+  <header>
+    <span class="eyebrow">SSS</span>
+    <h2>Sıkça Sorulan Sorular</h2>
+  </header>
+  <details><summary>Yönlendirme zincirleri neden zararlıdır?</summary><p>Her yönlendirme adımı gecikme ekler, bot tarama bütçesini tüketir ve hedef sayfanın dizinden düşmesine yol açabilir.</p></details><details><summary>Tarayıcı iç linkleri nasıl bulur?</summary><p>Taranan HTML sayfalarındaki href öznitelikleri ayrıştırılır; mailto, tel ve javascript linkleri elenir.</p></details><details><summary>Kırık linkleri nasıl düzeltebilirim?</summary><p>$149 Fix Mandate, kaynak kodunuzdaki tam dosya konumlarını ve güncellenmesi gereken hedef URL'leri sunar.</p></details>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Kırık linkleri ve yönlendirme gecikmelerini temizleyin.</h3>
+      <p>$149 Fix Mandate ile kırık URL'lerin tam envanterini ve düzeltme testlerini edinin.</p>
+    </div>
+    <a href="/checkout">Full Site Fix Mandate — $149</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,1 +1,223 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Mention Tracker — ChatGPT, Perplexity, Gemini Atıf Kontrolü | HTML&HTML</title><meta name="description" content="Markanızın OpenAI web-search, Perplexity Sonar ve Gemini Google Search grounded yanıtlarında anılıp anılmadığını tarafsız sorgularla ölçün."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://htmlandhtml.com/tr/ai-mention-tracker/"><link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-mention-tracker/"><link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-mention-tracker/"><link rel="describedby" href="https://htmlandhtml.com/llms.txt"><link rel="stylesheet" href="/assets/css/authority.css"><script src="/assets/js/theme.js"></script><script src="/assets/js/mention-tracker.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"HTML&HTML AI Mention Tracker","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://htmlandhtml.com/tr/ai-mention-tracker/","offers":{"@type":"Offer","description":"Paid AI mention monitoring module"}}</script></head><body data-mention-tracker><header class="topbar"><a class="brand" href="/" aria-label="HTML&amp;HTML"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a><nav><a href="/tr/ai-website-readiness/">AI Hazırlığı</a><a href="#tracker">Takip Aracı</a><a href="#method">Metodoloji</a><a href="/tr/methodology/">Kanıt Standardı</a></nav><div class="langs"><a href="/en/ai-mention-tracker/">EN</a></div></header><main><section class="authority-hero"><div class="kicker"><span></span><b>AI MENTION TRACKER / PAID MODULE</b></div><h1>AI yanıtlarında markanız <em>gerçekten geçiyor mu?</em></h1><p>OpenAI Responses API + web search, Perplexity Sonar ve Gemini + Google Search grounding yüzeylerinde tarafsız sorguları çalıştırır; marka mention, domain citation ve kullanılan kaynak URL’lerini ayrı ölçer. Tüketici ChatGPT/Perplexity/Gemini arayüzleri birebir aynı sonuçları vermeyebilir.</p><div class="authority-proof"><span>Tarafsız sorgu koruması</span><span>Marka anılması</span><span>Alan adı kaynak gösterimi</span><span>Kaynak URL’leri</span><span>Sağlayıcı bazında kanıt</span></div></section><section class="tool-shell" id="tracker"><div class="tool-panel"><h2>AI görünürlüğünü kanıtla</h2><p>Marka/domain yalnızca sonuçta aranır. Ölçüm sorgularına marka veya domain yazılması engellenir; aksi halde sonuç yapay biçimde yükselir.</p><div id="mentionProviders" class="mention-grid"></div><form id="mentionForm" class="mention-form-grid" style="margin-top:18px"><div><label for="mentionBrand">Marka</label><input id="mentionBrand" autocomplete="organization" placeholder="Örn. HTML&HTML" required></div><div><label for="mentionDomain">Domain</label><input id="mentionDomain" autocomplete="url" placeholder="ornek.com"></div><div class="wide"><label for="mentionAccess">Ücretli erişim anahtarı</label><input id="mentionAccess" type="password" autocomplete="off" placeholder="Access key" required></div><div class="wide mention-queries"><label>1–3 tarafsız sorgu</label><textarea id="mentionQ1" maxlength="280" required placeholder="Örn. Web sitelerinin AI arama motorlarına teknik olarak hazır olup olmadığını kontrol eden araçlar hangileri?"></textarea><textarea id="mentionQ2" maxlength="280" placeholder="Örn. llms.txt, AI crawler erişimi ve schema kontrollerini birlikte yapan site audit araçları hangileri?"></textarea><textarea id="mentionQ3" maxlength="280" placeholder="Örn. AI website readiness için teknik audit hizmeti veren araçlar hangileri?"></textarea></div><div class="wide"><button type="submit" style="min-height:52px;width:100%;border:0;border-radius:12px;background:var(--green);color:#102117;font-weight:900;cursor:pointer">Mention kontrolünü çalıştır →</button></div></form><small class="tool-note">Access key tarayıcıda kalıcı saklanmaz. Sağlayıcı API anahtarları yalnızca sunucu tarafında tutulur.</small><div id="mentionStatus" class="tool-status" hidden></div><div id="mentionResult" class="tool-result" hidden style="grid-template-columns:1fr"><div id="mentionSummary" class="tool-score" style="min-height:auto"></div><div id="mentionRows" class="mention-results"></div></div></div></section><section class="section" id="method"><header><span class="eyebrow">ÖLÇÜM SÖZLEŞMESİ</span><h2>Markayı prompt’a yazıp “mention” üretmiyoruz.</h2><p>Tracker’ın temel kuralı tarafsız sorgudur. Hedef marka veya domain sorguda geçerse istek reddedilir. Böylece ölçüm “prompt injection ile kendini anma” değil, sağlayıcının retrieval/generation davranışındaki organik görünürlüğü test eder.</p></header><div class="authority-grid"><article class="authority-card"><b>01 / OPENAI</b><h3>Responses + Web Search</h3><p>OpenAI’nin web-search destekli API yüzeyi ölçülür. Son metin ve kaynak URL’ler marka/domain açısından kontrol edilir.</p></article><article class="authority-card"><b>02 / PERPLEXITY</b><h3>Sonar + Citations</h3><p>Sonar yanıtı, citations ve search_results birlikte incelenir; yalnız metin mention ile domain citation birbirinden ayrılır.</p></article><article class="authority-card"><b>03 / GEMINI</b><h3>Google Search Grounding</h3><p>Gemini’nin Google Search grounding çıktısındaki yanıt metni ve grounding source URL’leri ölçülür.</p></article></div></section><section class="section"><div class="authority-callout"><div><h3>Tek ölçüm değil, zaman serisi.</h3><p>Bu modülün ticari değeri aynı tarafsız prompt setini düzenli aralıklarla tekrar çalıştırıp mention/citation değişimini göstermektir. API yüzeyleri ile consumer uygulama sonuçlarının aynı olmadığı açıkça raporlanır.</p></div><a href="#tracker">Tracker’ı aç</a></div></section></main><footer><div><a class="brand" href="/" aria-label="HTML&amp;HTML"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a><div class="authority-footer-links"><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a><a href="/tr/ai-website-readiness/">AI Web Sitesi Hazırlığı</a><a href="/tr/methodology/">Metodoloji</a></div></div><small>© 2026 HTML&amp;HTML</small></footer></body></html> (feat: yeni html&html logosu header ve footera eklendi, dark ve acik temada ters kontrast saglandi)
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Marka Görünürlük Takibi — OpenAI, Perplexity, Gemini Alıntı Denetimi | HTML&HTML</title>
+<meta name="description" content="Nötr sorgular kullanarak markanızın OpenAI web-search, Perplexity Sonar ve Gemini Google Search destekli yanıtlarda yer alıp almadığını ölçün.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/ai-mention-tracker/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-mention-tracker/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-mention-tracker/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-mention-tracker/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/mention-tracker.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HTML&HTML AI Marka Görünürlük Takibi",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://htmlandhtml.com/tr/ai-mention-tracker/",
+      "offers": { "@type": "Offer", "description": "Ücretli AI marka görünürlük izleme modülü" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
+        { "@type": "ListItem", "position": 3, "name": "AI Marka Görünürlük Takibi", "item": "https://htmlandhtml.com/tr/ai-mention-tracker/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-mention-tracker>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/ai-mention-tracker/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/araclar/">Araçlar</a>
+  <span>/</span>
+  <span>AI Marka Görünürlük Takibi</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>AI MARKA GÖRÜNÜRLÜK TAKİBİ / ÜCRETLİ MODÜL</b></div>
+  <h1>Markanız AI yanıtlarında <em>gerçekten geçiyor mu?</em></h1>
+  <p>OpenAI Responses API + web search, Perplexity Sonar ve Gemini + Google Search desteği üzerinde nötr sorgular çalıştırır; marka atıfları, alan adı kaynak gösterimleri ve kaynak URL'ler ayrı ölçülür. Tüketici ChatGPT, Perplexity ve Gemini uygulamaları farklı sonuçlar üretebilir.</p>
+  <div class="authority-proof">
+    <span>Nötr sorgu koruması</span>
+    <span>Marka atfı</span>
+    <span>Alan adı kaynak gösterimi</span>
+    <span>Kaynak URL'ler</span>
+    <span>Sağlayıcı bazlı kanıt</span>
+  </div>
+</section>
+
+<section class="tool-shell" id="tracker">
+  <div class="tool-panel">
+    <h2>Yapay zeka görünürlüğünü kanıtlayın</h2>
+    <p>Hedeflenen marka/domain yalnızca yanıtta aranır. Sorguların kendisi hedef marka veya alan adını içerdiğinde istek reddedilir; çünkü bu görünürlüğü yapay olarak şişirir.</p>
+    <div id="mentionProviders" class="mention-grid"></div>
+    <form id="mentionForm" class="mention-form-grid" style="margin-top:18px">
+      <div>
+        <label for="mentionBrand">Marka</label>
+        <input id="mentionBrand" autocomplete="organization" placeholder="Örn. HTML&HTML" required>
+      </div>
+      <div>
+        <label for="mentionDomain">Alan adı</label>
+        <input id="mentionDomain" autocomplete="url" placeholder="ornek.com">
+      </div>
+      <div class="wide">
+        <label for="mentionAccess">Ücretli erişim anahtarı</label>
+        <input id="mentionAccess" type="password" autocomplete="off" placeholder="Erişim anahtarı" required>
+      </div>
+      <div class="wide mention-queries">
+        <label>1–3 nötr sorgu</label>
+        <textarea id="mentionQ1" maxlength="280" required placeholder="Örn. Bir web sitesinin teknik olarak yapay zeka arama motorlarına hazır olup olmadığını hangi araçlar denetler?"></textarea>
+        <textarea id="mentionQ2" maxlength="280" placeholder="Örn. llms.txt, AI tarayıcı erişimi ve şema kontrollerini birleştiren web denetim araçları hangileridir?"></textarea>
+        <textarea id="mentionQ3" maxlength="280" placeholder="Örn. Web siteleri için teknik AI hazırlık denetimi sunan araçlar nelerdir?"></textarea>
+      </div>
+      <div class="wide">
+        <button type="submit" style="min-height:52px;width:100%;border:0;border-radius:12px;background:var(--green);color:#102117;font-weight:900;cursor:pointer">Görünürlük kontrolünü çalıştır →</button>
+      </div>
+    </form>
+    <small class="tool-note">Erişim anahtarı tarayıcıda saklanmaz. Sağlayıcı API anahtarları yalnızca sunucu tarafında kalır.</small>
+    <div id="mentionStatus" class="tool-status" hidden></div>
+    <div id="mentionResult" class="tool-result" hidden style="grid-template-columns:1fr">
+      <div id="mentionSummary" class="tool-score" style="min-height:auto"></div>
+      <div id="mentionRows" class="mention-results"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <header>
+    <span class="eyebrow">ÖLÇÜM SÖZLEŞMESİ</span>
+    <h2>Markayı sorguya koyup buna atıf demeyiz.</h2>
+    <p>Temel kural sorgu tarafsızlığıdır. Hedef marka veya alan adı ölçüm sorgusunda geçerse istek reddedilir. Bu sayede üretilen sinyal yapay tetiklemeyi değil, organik geri çağırma ve üretim görünürlüğünü ölçer.</p>
+  </header>
+  <div class="authority-grid">
+    <article class="authority-card">
+      <b>01 / OPENAI</b>
+      <h3>Responses + Web Search</h3>
+      <p>OpenAI'ın web araması etkin API yüzeyini ölçer. Nihai metin ve kaynak URL'ler marka ve domain varlığı için ayrı ayrı taranır.</p>
+    </article>
+    <article class="authority-card">
+      <b>02 / PERPLEXITY</b>
+      <h3>Sonar + Alıntılar</h3>
+      <p>Sonar yanıt metni, alıntılar ve search_results birlikte analiz edilerek metin atfı ile domain kaynak gösterimi ayrıştırılır.</p>
+    </article>
+    <article class="authority-card">
+      <b>03 / GEMINI</b>
+      <h3>Google Search Grounding</h3>
+      <p>Gemini'ın kaynaklı yanıtını ve Google Search desteği tarafından döndürülen web kaynak URL'lerini ölçer.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Asıl ürün tek anlık görüntü değil, zaman serisidir.</h3>
+      <p>Ticari değer, aynı nötr sorgu kümesini periyodik olarak çalıştırıp zaman içindeki atıf ve kaynak gösterim hareketini görmektir. Rapor her zaman API yüzeylerinin tüketici uygulamalarıyla birebir aynı olmadığını belirtir.</p>
+    </div>
+    <a href="#tracker">Takip modülünü aç</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,1 +1,207 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HTML&HTML Metodoloji — Kanıt, Güven, Skorlama ve Tarama Sınırları</title><meta name="description" content="HTML&HTML 12 motorlu tarayıcının kanıt sınıfları, güven seviyeleri, skorlama kuralları, güvenlik sınırları ve ticari ayrımı."><link rel="canonical" href="https://htmlandhtml.com/tr/methodology/"><link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/methodology/"><link rel="alternate" hreflang="en" href="https://htmlandhtml.com/methodology.html"><link rel="stylesheet" href="/assets/css/authority.css"><script src="/assets/js/theme.js"></script></head><body><header class="topbar"><a class="brand" href="/?lang=tr"><span class="brand-box">H&amp;H</span><span>HTML&amp;HTML</span></a><nav><a href="#sources">Kanıt</a><a href="#confidence">Güven</a><a href="#scoring">Skorlama</a><a href="#boundaries">Sınırlar</a><a href="#governance">Yönetişim</a></nav><div class="langs"><a href="/methodology.html">EN</a></div></header><main><section class="authority-hero"><div class="kicker"><span></span><b>KAMUYA AÇIK METODOLOJİ / SÜRÜM 2.0</b></div><h1>Her skorun <em>izlenebilir bir nedeni</em> olmalı.</h1><p>HTML&HTML, 12 motorlu doğrulayıcının karar modelini açıklar. Standartlar, sağlayıcı dokümanları, öneriler, doğrudan ölçümler ve iç sezgisel kurallar birbirinden ayrılır; 100/100 skor ölçülenden fazlasını ifade etmez.</p><div class="authority-proof"><span>12 motor</span><span>6 kaynak sınıfı</span><span>4 güven seviyesi</span><span>Kapalı güvenlik yaklaşımı</span><span>Uydurma CWV yok</span></div></section><section class="section" id="sources"><header><span class="eyebrow">01 / KANIT</span><h2>Kaynak sınıfları birbirinin yerine geçmez.</h2><p>Her kural yorumlanmadan önce kaynak sınıfı alır. Normatif güç sonuçta açıkça görünür.</p></header><div class="method-list"><div class="method-item"><b>RESMİ STANDART</b><div><h3>Normatif standartlar ve protokoller</h3><p>Robots Exclusion Protocol gibi resmi veya normatif otoritesi olan kurallar.</p></div></div><div class="method-item"><b>RESMİ SAĞLAYICI</b><div><h3>Güncel sağlayıcı dokümantasyonu</h3><p>İlgili sistemi işleten kuruluşun birinci taraf yönlendirmesi. Davranış değişebileceği için kaynaklar yeniden doğrulanır.</p></div></div><div class="method-item"><b>ÖNERİ</b><div><h3>Gelişmekte olan öneriler</h3><p>llms.txt gibi yararlı ancak zorunlu web standardı olmayan uygulamalar.</p></div></div><div class="method-item"><b>ÖLÇÜLMÜŞ</b><div><h3>Doğrudan gözlem</h3><p>HTTP durumu, header, HTML, robots, schema parse durumu ve bağlantı yanıtı gibi dışarıdan ölçülen gerçekler.</p></div></div><div class="method-item"><b>İÇ SEZGİSEL KURAL</b><div><h3>Ürün karar kuralları</h3><p>Resmi eşik bulunmayan durumlarda kullanılan karar destek kuralları; hiçbir zaman standart gibi sunulmaz.</p></div></div><div class="method-item"><b>DENEYSEL</b><div><h3>Erken aşama ajan yüzeyleri</h3><p>Düşük benimsenmiş veya deneysel mekanizmalar olgun crawl/index gereksinimlerinden ayrı tutulur.</p></div></div></div></section><section class="section" id="confidence"><header><span class="eyebrow">02 / GÜVEN</span><h2>Her bulgu kendi kanıt gücünü taşır.</h2><p>Tarayıcı doğrudan gözlemleneni, güçlü olasılığı ve kaynak kod doğrulaması gereken durumu ayırır.</p></header><div class="authority-grid"><article class="authority-card"><b>DOĞRULANMIŞ</b><h3>Doğrudan ölçüldü</h3><p>Public yanıt koşulu doğrudan kanıtlar.</p></article><article class="authority-card"><b>GÜÇLÜ</b><h3>Birden fazla sinyal uyumlu</h3><p>Bağımsız public sinyaller aynı sonuca işaret eder.</p></article><article class="authority-card"><b>OLASI</b><h3>Yararlı fakat eksik</h3><p>Kanıt bulguyu destekler ancak iç mekanizmanın tamamını kanıtlamaz.</p></article><article class="authority-card"><b>KAYNAK DOĞRULAMASI GEREKİR</b><h3>Kod tabanı doğrulaması gerekli</h3><p>Public davranış sorun sınıfını gösterir; değişecek dosya veya fonksiyon uydurulmaz.</p></article></div></section><section class="section" id="scoring"><header><span class="eyebrow">03 / SKORLAMA</span><h2>Bilinmeyen, ne başarısızlık ne de başarıdır.</h2><p>Yalnız güvenilir biçimde ölçülebilen kurallar paydada yer alır. Ölçülemeyen sinyal zorla başarılı veya başarısız sayılmaz.</p></header><div class="comparison-wrap"><table class="comparison-table"><thead><tr><th>Durum</th><th>Paydaya dahil</th><th>Skor katkısı</th><th>Yorum</th></tr></thead><tbody><tr><td>BAŞARILI</td><td>Evet</td><td>Ağırlıklı geçiş</td><td>Ölçülen koşul sağlandı</td></tr><tr><td>BAŞARISIZ</td><td>Evet</td><td>0</td><td>Ölçülen koşul sağlanmadı</td></tr><tr><td>BİLİNMİYOR / ÖLÇÜLMEDİ</td><td>Hayır</td><td>Yok</td><td>Güvenilir kanıt yetersiz</td></tr></tbody></table></div></section><section class="section" id="boundaries"><header><span class="eyebrow">04 / SINIRLAR</span><h2>Tarayıcı bilinçli biçimde sınırlandırılmıştır.</h2><p>Üretim güvenliği ile kanıt güvenliği aynı metodolojinin parçasıdır.</p></header><div class="authority-grid"><article class="authority-card"><b>AĞ</b><h3>SSRF kapalı güvenlik yaklaşımı</h3><p>Private/local/reserved hedefler, credential içeren URL’ler, standart dışı portlar ve private ağa yönlenen redirect’ler reddedilir.</p></article><article class="authority-card"><b>TARAMA</b><h3>Sınırlandırılmış public tarama</h3><p>En fazla 50 public HTML sayfası; response boyutu, redirect derinliği, istek süresi ve link probe sayısı ayrıca sınırlandırılır.</p></article><article class="authority-card"><b>SAHA VERİSİ</b><h3>Uydurma Core Web Vitals yok</h3><p>LCP, INP ve CLS statik HTML’den tahmin edilmez; güvenilir entegrasyon yoksa ÖLÇÜLMEDİ kalır.</p></article><article class="authority-card"><b>KAYNAK KOD</b><h3>Dosya yolu uydurulmaz</h3><p>Kesin dosya hedefi için repository/kod tabanı bağlamı gerekir.</p></article><article class="authority-card"><b>TİCARİ AYRIM</b><h3>Kanıt ücretsiz kalır</h3><p>Bulgu, URL, önem, güven, kaynak sınıfı ve kanıt açıktır; ücretli katman uygulama sırası, kök düzeltme, test ve geri alma sözleşmesini satar.</p></article><article class="authority-card"><b>ERİŞİM HAKKI</b><h3>Ücretli uç nokta kapalı güvenlik yaklaşımıyla çalışır</h3><p>Ödeme altyapısı doğru kurulmadan ücretli çıktı public hale gelmez.</p></article></div></section><section class="section" id="governance"><header><span class="eyebrow">05 / YÖNETİŞİM</span><h2>Dış kurallar ezberlenmez; yeniden doğrulanır.</h2><p>Sağlayıcı crawler adları, politikaları ve gelişmekte olan öneriler değişebilir. Kaynak güncelliği kural setinin bağımlılığıdır.</p></header><div class="authority-callout"><div><h3>Metodolojiyi gerçek bir alan adında çalıştırın.</h3><p>Public tarayıcı ölçülen sonuç ve kanıtı verir; özel araç sayfaları aynı 12 motoru farklı karar yüzeylerinde gösterir.</p></div><a href="/?lang=tr#scanner">12 motoru çalıştır</a></div></section></main><footer><div><a class="brand" href="/?lang=tr"><span class="brand-box">H&amp;H</span><span>HTML&amp;HTML</span></a><div class="authority-footer-links"><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a><a href="/tr/ai-website-readiness/">AI Web Sitesi Hazırlığı</a><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></div></div><small>Metodoloji sürümü 2.0 · 2026-09-06 · © HTML&amp;HTML</small></footer></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puanlama Metodolojisi — 12 Motorlu Mimari | HTML&HTML</title>
+<meta name="description" content="HTML&HTML'in 12 bağımsız analiz motorunu nasıl ölçtüğünü, kanıt sınıflarını nasıl atadığını, ölçülmeyen sinyalleri nasıl ele aldığını ve puanlama sınırlarını nasıl koruduğunu keşfedin.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/methodology/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/methodology/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/methodology/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/methodology/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Puanlama Metodolojisi ve Yönetişim Standartları",
+      "description": "HTML&HTML'in 12 bağımsız analiz motorunu nasıl ölçtüğünü, kanıt sınıflarını nasıl atadığını, ölçülmeyen sinyalleri nasıl ele aldığını ve puanlama sınırlarını nasıl koruduğunu keşfedin.",
+      "url": "https://htmlandhtml.com/tr/methodology/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Metodoloji", "item": "https://htmlandhtml.com/tr/methodology/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/methodology/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <span>Metodoloji</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>YÖNETİŞİM VE METODOLOJİ</b></div>
+  <h1>Puanlama Metodolojisi ve <em>Yönetişim Standartları</em></h1>
+  <p>HTML&HTML'in 12 bağımsız analiz motorunu nasıl ölçtüğünü, kanıt sınıflarını nasıl atadığını, ölçülmeyen sinyalleri nasıl ele aldığını ve puanlama sınırlarını nasıl koruduğunu keşfedin.</p>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">KAYNAK SINIFLARI</span>
+    <h2>Altı kademeli kanıt hiyerarşisi.</h2>
+    <p>Bir standardı, sağlayıcı kılavuzunu, öneriyi ve iç sezgisel kuralı asla birbirine karıştırmayız.</p>
+  </header>
+  <div class="method-list">
+    <div class="method-item">
+  <b>OFFICIAL_STANDARD</b>
+  <div>
+    <h3>OFFICIAL_STANDARD</h3>
+    <p>RFC standartları (örn. RFC 9309 robots.txt), W3C standartları ve Schema.org resmi sözlükleri.</p>
+  </div>
+</div><div class="method-item">
+  <b>OFFICIAL_VENDOR</b>
+  <div>
+    <h3>OFFICIAL_VENDOR</h3>
+    <p>OpenAI, Anthropic, Google ve Perplexity tarafından yayınlanan resmi tarayıcı dokümanları.</p>
+  </div>
+</div><div class="method-item">
+  <b>PROPOSAL</b>
+  <div>
+    <h3>PROPOSAL</h3>
+    <p>llms.txt v2 gibi gelişmekte olan şartnameler. Sınırlı ağırlıkla puanlanır ve açıkça etiketlenir.</p>
+  </div>
+</div><div class="method-item">
+  <b>MEASURED</b>
+  <div>
+    <h3>MEASURED</h3>
+    <p>Doğrudan gözlemlenen HTTP yanıtları, durum kodları, başlıklar ve SSL parametreleri.</p>
+  </div>
+</div><div class="method-item">
+  <b>INTERNAL_HEURISTIC</b>
+  <div>
+    <h3>INTERNAL_HEURISTIC</h3>
+    <p>Çıkmaz yönlendirmeleri veya kod anti-desenlerini yakalayan dahili algoritmik modeller.</p>
+  </div>
+</div><div class="method-item">
+  <b>EXPERIMENTAL</b>
+  <div>
+    <h3>EXPERIMENTAL</h3>
+    <p>Erken aşama ajan keşif sinyalleri (örn. MCP uç noktaları), puanı şişirmeden ayrı etiketlenir.</p>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPİSTEMİK DÜRÜSTLÜK</span>
+    <h2>Ölçülmeyen sinyaller: NOT_MEASURED ilkesi.</h2>
+    <p>Core Web Vitals (LCP, INP, CLS) verileri gerçek tarayıcı ortamı ve CrUX entegrasyonu olmadan üretilemez. HTML çekiminden sahte performans puanı uydurmak yerine kesin olarak NOT_MEASURED döneriz.</p>
+  </header>
+  <div class="compare">
+    <b>GÜVENLİK SINIRI</b>
+    <p>Yerel ağlar, localhost, cloud metadata IP adresleri (169.254.169.254) ve private yönlendirmeler SSRF koruması kapsamında fail-closed olarak engellenir.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Ağırlıklarımızı ve kaynak kayıt defterini inceleyin.</h3>
+      <p>audit-profile.json ve sources.json dosyalarımız üretim tarama motorumuzla birebir senkronize tutulur.</p>
+    </div>
+    <a href="/audit-profile.json">audit-profile.json →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>

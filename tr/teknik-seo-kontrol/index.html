@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teknik SEO Denetimi — Kanonik, Meta ve İndekslenebilirlik | HTML&HTML</title>
+<meta name="description" content="Teknik SEO sağlığınızı ücretsiz denetleyin. Başlıklar, meta açıklamaları, tek H1 kuralı, kanonik etiketler ve OpenGraph verilerini kanıtıyla görün.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/teknik-seo-kontrol/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/technical-seo-checker/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teknik-seo-kontrol/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/technical-seo-checker/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HTML&HTML TEKNİK SEO BÜTÜNLÜK DENETİMİ",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://htmlandhtml.com/tr/teknik-seo-kontrol/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
+        { "@type": "ListItem", "position": 3, "name": "TEKNİK SEO BÜTÜNLÜK DENETİMİ", "item": "https://htmlandhtml.com/tr/teknik-seo-kontrol/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/authority-tool.js" defer></script>
+<script src="/assets/js/theme.js"></script>
+</head>
+<body data-tool-categories="technical,crawl,links">
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav>
+  <a href="/tr/platform/">Platform</a>
+  <a href="/tr/araclar/">Araçlar</a>
+  <a href="/tr/rehberler/">Rehberler</a>
+  <a href="/tr/methodology/">Metodoloji</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlandırma</a>
+  <a href="/openapi.json" target="_blank" rel="noopener">API</a>
+</nav>
+    <div class="nav-actions">
+      <div class="langs">
+        <a href="/en/technical-seo-checker/" aria-label="Switch to English">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/araclar/">Araçlar</a>
+  <span>/</span>
+  <span>TEKNİK SEO BÜTÜNLÜK DENETİMİ</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>TEKNİK SEO BÜTÜNLÜK DENETİMİ</b></div>
+  <h1>Teknik SEO sorunlarını <em>deterministik kanıtlarla</em> tespit edin.</h1>
+  <p>50 sayfaya kadar yinelenen başlıkları, eksik açıklamaları, birden fazla H1 kullanımını, çelişkili kanonik URL'leri ve dizine ekleme engellerini kanıtlarıyla görün.</p>
+  <div class="authority-proof">
+    <span>Kanonik Bütünlüğü</span><span>Tek H1 Kuralı</span><span>Meta Denetimi</span><span>OpenGraph Verisi</span>
+  </div>
+</section>
+
+<section class="tool-shell" id="toolRunner">
+  <div class="tool-panel">
+    <h2>Ücretsiz teknik SEO denetimi</h2>
+    <p>Teknik SEO ve rota sağlığını denetlemek için alan adı girin.</p>
+    <form class="tool-form" id="toolScanForm">
+      <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required>
+      <button type="submit">Teknik SEO'yu denetle</button>
+    </form>
+    <div class="scan-chips">
+      <span>Örnekler:</span>
+      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+      <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+      <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+    </div>
+    <small class="tool-note">Yalnızca herkese açık HTTP/HTTPS yüzeyleri ölçülür. Özel ve yerel ağlar fail-closed engellenir.</small>
+    <div id="toolStatus" class="tool-status" hidden></div>
+    <div id="toolResult" class="tool-result" hidden>
+      <div class="tool-score" id="toolScore"></div>
+      <div>
+        <p id="toolMeta" class="tool-note"></p>
+        <div id="toolFindings" class="tool-findings"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scope">
+  <header>
+    <span class="eyebrow">HTML&HTML / KAPSAM</span>
+    <h2>Yorum yok. Ölçülen HTML gerçekleri.</h2>
+    <p>Kontroller doğrudan resmi arama motoru yönergelerine ve RFC protokollerine bağlıdır.</p>
+  </header>
+  <div class="authority-grid">
+    <article class="authority-card">
+      <b>01 / BAŞLIK VE META</b>
+      <h3>Belge Meta Verileri</h3>
+      <p>Başlık uzunluklarını, benzersiz meta açıklamalarını ve viewport tanımlarını inceler.</p>
+    </article>
+    <article class="authority-card">
+      <b>02 / KANONİK ETİKET</b>
+      <h3>URL Tekilleştirme</h3>
+      <p>Kendi kendine kanonik doğruluğunu, parametre temizliğini ve protokol eşleşmesini doğrular.</p>
+    </article>
+    <article class="authority-card">
+      <b>03 / BAŞLIK HİYERARŞİSİ</b>
+      <h3>Semantik Sıralama</h3>
+      <p>Her dizine eklenebilir sayfada tam olarak bir adet ana H1 başlığı bulunduğunu denetler.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPİSTEMİK SINIR</span>
+    <h2>Teknik SEO taramasının sınırları</h2>
+    <p>Kelime yoğunluğu gibi geçersiz metrikler puanlanmaz; altyapı ve kod bütünlüğü değerlendirilir.</p>
+  </header>
+  <div class="compare">
+    <b>SORUMLULUK</b>
+    <p>VPN veya şifre arkasındaki özel geliştirme ortamları taranmaz.</p>
+  </div>
+</section>
+
+<section class="section faq">
+  <header>
+    <span class="eyebrow">SSS</span>
+    <h2>Sıkça Sorulan Sorular</h2>
+  </header>
+  <details><summary>Neden sayfada tek H1 olmalı?</summary><p>Tek bir ana H1, belgenin birincil konusunu arama motorlarına ve ekran okuyuculara en net biçimde iletir.</p></details><details><summary>Kanonik döngüler nasıl tespit edilir?</summary><p>Tarayıcımız kanonik hedefleri güvenli sınırlar içinde takip ederek döngüsel veya geçersiz kanonikleri raporlar.</p></details><details><summary>Mobil uyumluluk dahil mi?</summary><p>Evet, viewport tanımları ve mobil erişilebilirlik kontrolleri analiz kapsamındadır.</p></details>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Teknik SEO temellerinizi sağlamlaştırın.</h3>
+      <p>$149 Fix Mandate ile kabul testleri ve geri alma planları içeren öncelikli düzeltme sözleşmesi edinin.</p>
+    </div>
+    <a href="/checkout">Full Site Fix Mandate — $149</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Full Site Fix Mandate</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/llms.txt">llms.txt (Makine Formatı)</a></li>
+        <li><a href="/sources.json">Kaynak Kayıt Defteri</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır.</span>
+    <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+</body>
+</html>
