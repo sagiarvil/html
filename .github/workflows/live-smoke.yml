@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! printf '%s' "$body" | grep -Fqi "$marker"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
+          check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! grep -Fqi "$marker" <<<"$body"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
           check 'https://htmlandhtml.com/' 'Website Fix Validator'
           check 'https://htmlandhtml.com/en/website-scanner/' '12-ENGINE WEBSITE SCANNER'
           check 'https://htmlandhtml.com/tr/site-tarama/' '12 MOTOR'
@@ -32,9 +32,9 @@ jobs:
           check 'https://htmlandhtml.com/standard/' 'EVIDENCE & INTEGRITY'
           check 'https://htmlandhtml.com/reference/ai-crawlers/' 'CRAWLER REGISTRY'
           body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
-          ! printf '%s' "$body" | grep -q '\$49\|\$99'
-          printf '%s' "$body" | grep -q '\$149'
-          printf '%s' "$body" | grep -q '/assets/js/theme.js'
+          ! grep -Eq '\$49|\$99' <<<"$body"
+          grep -Fq '$149' <<<"$body"
+          grep -Fq '/assets/js/theme.js' <<<"$body"
 
       - name: Verify static AI discovery-to-demand HTML without JavaScript
         shell: bash
@@ -43,23 +43,26 @@ jobs:
           tr_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/)"
           en_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/)"
           en_tool="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/ai-website-readiness/)"
-          printf '%s' "$tr_home" | grep -Fq 'data-commercial-intent="static"'
-          printf '%s' "$tr_home" | grep -Fq 'AI KEŞİF → TALEP → DÖNÜŞÜM'
-          printf '%s' "$tr_home" | grep -Fq 'Garanti satmıyoruz'
-          printf '%s' "$en_home" | grep -Fq 'data-commercial-intent="static"'
-          printf '%s' "$en_home" | grep -Fq 'AI DISCOVERY → DEMAND → CONVERSION'
-          printf '%s' "$en_home" | grep -Fq 'We do not sell guarantees'
-          printf '%s' "$en_tool" | grep -Fq 'data-commercial-intent="static"'
-          printf '%s' "$en_tool" | grep -Fq 'AI readiness is more than adding a file.'
-          printf '%s' "$en_tool" | grep -Fq '/assets/css/commercial-intent.css?v=1'
+          grep -Fq 'data-commercial-intent="static"' <<<"$tr_home"
+          grep -Fq 'AI KEŞİF → TALEP → DÖNÜŞÜM' <<<"$tr_home"
+          grep -Fq 'Garanti satmıyoruz' <<<"$tr_home"
+          grep -Fq 'data-commercial-intent="static"' <<<"$en_home"
+          grep -Fq 'AI DISCOVERY → DEMAND → CONVERSION' <<<"$en_home"
+          grep -Fq 'We do not sell guarantees' <<<"$en_home"
+          grep -Fq 'data-commercial-intent="static"' <<<"$en_tool"
+          grep -Fq 'AI readiness is more than adding a file.' <<<"$en_tool"
+          grep -Fq '/assets/css/commercial-intent.css?v=1' <<<"$en_tool"
 
       - name: Verify machine-readable authority graph
         shell: bash
         run: |
           set -euo pipefail
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt | grep -q 'AI Mention Tracker'
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md | grep -q 'AI Mention Tracker'
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml | grep -q '/tr/ai-mention-tracker/'
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt -o /tmp/htmlandhtml-llms.txt
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md -o /tmp/htmlandhtml-index.md
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml -o /tmp/htmlandhtml-sitemap.xml
+          grep -Fq 'AI Mention Tracker' /tmp/htmlandhtml-llms.txt
+          grep -Fq 'AI Mention Tracker' /tmp/htmlandhtml-index.md
+          grep -Fq '/tr/ai-mention-tracker/' /tmp/htmlandhtml-sitemap.xml
           openapi="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/openapi.json)"
           profile="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/audit-profile.json)"
           sources="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sources.json)"
