@@ -49,7 +49,6 @@ expect(!rootHome.includes('$149'),'homepage must not retain old $149 price');
 expect(rootHome.includes('data-premium-infographic="tools"'),'homepage must use premium tools infographic');
 expect(rootHome.includes('data-premium-infographic="engines"'),'homepage must use premium engine infographic');
 expect(rootHome.includes('data-premium-infographic="process"'),'homepage must use premium process infographic');
-expect(rootHome.includes('data-premium-infographic="knowledge"'),'homepage must use premium knowledge infographic');
 expect(!glossaryTr.includes('Google doğruluk sınırı'),'TR glossary must not render removed accuracy-boundary callout');
 expect(!glossaryEn.includes('Google accuracy boundary'),'EN glossary must not render removed accuracy-boundary callout');
 expect(llmsGuideTr.includes('Google Search') && llmsGuideTr.includes('llms.txt'),'TR llms guide must explain Google boundary in-context');

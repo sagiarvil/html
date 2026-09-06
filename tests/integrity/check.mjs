@@ -29,7 +29,7 @@ const checks=[
   [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
   [/\$99/.test(index),'single $99 mandate positioning missing'],
   [!/\$49(?!\d)|\$149/.test(index),'legacy mandate prices still present on homepage'],
-  [/data-premium-infographic="tools"/.test(index)&&/data-premium-infographic="engines"/.test(index)&&/data-premium-infographic="process"/.test(index)&&/data-premium-infographic="knowledge"/.test(index),'premium infographic system missing from homepage'],
+  [/data-premium-infographic="tools"/.test(index)&&/data-premium-infographic="engines"/.test(index)&&/data-premium-infographic="process"/.test(index),'premium infographic system missing from homepage'],
   [/premium-experience\.css/.test(index),'premium responsive CSS missing from homepage'],
   [/Yapay Zeka Sizi Buluyor mu\?/.test(index)&&/Tavsiye Edilmeye Hazır mısınız\?/.test(index),'concise customer-first hero missing'],
   [!/Google doğruluk sınırı/i.test(glossary),'removed Google accuracy-boundary callout must not render'],

@@ -13,7 +13,6 @@ expect(home.includes('Tavsiye Edilmeye Hazır mısınız?'),'homepage recommenda
 expect(home.includes('data-premium-infographic="tools"'),'homepage tools infographic missing');
 expect(home.includes('data-premium-infographic="engines"'),'homepage engine infographic missing');
 expect(home.includes('data-premium-infographic="process"'),'homepage process infographic missing');
-expect(home.includes('data-premium-infographic="knowledge"'),'homepage knowledge infographic missing');
 for(const marker of ['Bulun','Anlaşılın','Kaynak Olun','Tıklanın','Talebe Dönüşün'])expect(home.includes(marker),`homepage customer journey missing ${marker}`);
 
 expect(/\.scanbox\{width:min\(760px,100%\)/.test(premium),'scanner width must prioritize long URLs');

@@ -244,17 +244,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 08 AUTHORITY & REHBERLER -->
-<section class="px-section" data-premium-infographic="knowledge">
-  <div class="px-section-head"><span class="eyebrow">REFERANS KATMANI</span><h2>Teknik Rehberler ve Standartlar</h2><p>Terim ezberletmek yerine, yapay zeka görünürlüğünü öğrenme → doğrulama → uygulama → ölçme döngüsüne bağlayan referans katmanı.</p></div>
-  <div class="px-knowledge-flow">
-    <article class="px-knowledge-step"><span class="num">01 · ÖĞREN</span><h3>GEO · AEO · LLMO · AAO · RAG · E-E-A-T</h3><p>Yeni yapay zeka görünürlük kavramlarını kullanıcı diliyle ve kaynak sınıfıyla anlayın.</p><a href="/tr/sozluk/">Referans sözlüğe git →</a></article>
-    <article class="px-knowledge-step"><span class="num">02 · DOĞRULA</span><h3>llms.txt · robots · sitemap · schema</h3><p>Makine yüzeylerini gerçek HTTP ve doküman kanıtıyla kontrol edin.</p><a href="/tr/llms-txt-validator/">llms.txt'yi doğrula →</a></article>
-    <article class="px-knowledge-step"><span class="num">03 · UYGULA</span><h3>$99 Fix Mandate</h3><p>Ücretsiz teşhisi yazılımcı veya AI coding agent için uygulanabilir görev sözleşmesine çevirin.</p><a href="/tr/fix-mandate/">Teslimatı incele →</a></article>
-    <article class="px-knowledge-step"><span class="num">04 · ÖLÇ</span><h3>AI Mention Tracker</h3><p>Hazırlık ile gerçek marka görünürlüğünü karıştırmayın; nötr sorgularda görünürlüğü ayrıca ölçün.</p><a href="/tr/ai-mention-tracker/">Görünürlük takibini incele →</a></article>
-  </div>
-</section>
-
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -528,17 +517,6 @@ def build_homepages():
     <article class="px-three-step"><span class="num">1</span><h3>Scan free</h3><p>Up to 50 public pages are measured by 12 engines and 13 Intelligence Audits.</p><a href="#scanner">Enter a domain →</a></article>
     <article class="px-three-step"><span class="num">2</span><h3>See the evidence</h3><p>Scores, findings, affected URLs, severity, confidence and evidence are visible. Fix code and blueprints remain locked.</p><a href="#scanner">See the free report →</a></article>
     <article class="px-three-step paid"><span class="num">3</span><h3>Unlock the $99 roadmap</h3><p>Root cause, implementation order, file/codebase context, acceptance/regression tests, rollback and re-scan become one execution contract.</p><a href="/checkout">Unlock execution pack →</a></article>
-  </div>
-</section>
-
-<!-- 08 AUTHORITY & REHBERLER -->
-<section class="px-section" data-premium-infographic="knowledge">
-  <div class="px-section-head"><span class="eyebrow">REFERENCE LAYER</span><h2>Technical Guides &amp; Standards</h2><p>A reference layer that connects AI visibility to a learn → verify → implement → measure loop instead of jargon memorization.</p></div>
-  <div class="px-knowledge-flow">
-    <article class="px-knowledge-step"><span class="num">01 · LEARN</span><h3>GEO · AEO · LLMO · AAO · RAG · E-E-A-T</h3><p>Understand emerging AI visibility concepts in plain language with evidence classes.</p><a href="/en/glossary/">Open the reference glossary →</a></article>
-    <article class="px-knowledge-step"><span class="num">02 · VERIFY</span><h3>llms.txt · robots · sitemap · schema</h3><p>Verify machine-readable surfaces with real HTTP and documented evidence.</p><a href="/en/llms-txt-validator/">Validate llms.txt →</a></article>
-    <article class="px-knowledge-step"><span class="num">03 · IMPLEMENT</span><h3>$99 Fix Mandate</h3><p>Turn the free diagnosis into an execution contract for a developer or AI coding agent.</p><a href="/en/fix-mandate/">Review delivery →</a></article>
-    <article class="px-knowledge-step"><span class="num">04 · MEASURE</span><h3>AI Mention Tracker</h3><p>Keep readiness separate from observed visibility; measure neutral-prompt brand visibility independently.</p><a href="/en/ai-mention-tracker/">Review visibility tracking →</a></article>
   </div>
 </section>
 

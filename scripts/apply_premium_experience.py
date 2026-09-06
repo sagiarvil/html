@@ -44,10 +44,8 @@ TR_HOW='''<!-- 06 HOW IT WORKS -->
 '''
 EN_HOW=TR_HOW.replace('Üç adım. Aynı kanıt zinciri.','Three steps. One evidence chain.').replace('Önce gerçeği görün. Sonra neyin para kaybettirebilecek bir görünürlük engeli olduğunu anlayın. Yalnız uygulama reçetesine ihtiyaç duyarsanız ödeme yapın.','See the evidence first. Understand which blockers matter. Pay only when you need an implementation-grade prescription.').replace('Ücretsiz tara','Scan free').replace('En fazla 50 herkese açık sayfa, 12 motor ve 13 Intelligence Audit ile ölçülür.','Up to 50 public pages are measured by 12 engines and 13 Intelligence Audits.').replace('Alan adını gir →','Enter a domain →').replace('Kanıtı görün','See the evidence').replace('Skor, bulgu, etkilenen URL, önem, güven ve kanıt görünür. Düzeltme kodu veya uygulama reçetesi verilmez.','Scores, findings, affected URLs, severity, confidence and evidence are visible. Fix code and execution prescriptions remain locked.').replace('Ücretsiz raporu gör →','See the free report →').replace('$99 reçeteyi aç','Unlock the $99 prescription').replace('Kök neden, uygulama sırası, dosya/codebase bağlamı, kabul/regresyon testleri, rollback ve re-scan sözleşmesine dönüşür.','Root cause, implementation order, file/codebase context, acceptance/regression tests, rollback and re-scan become one execution contract.').replace('Uygulama paketini aç →','Unlock the execution pack →')
 
-TR_KNOW='''<!-- 08 AUTHORITY & REHBERLER -->
-<section class="px-section" data-premium-infographic="knowledge"><div class="px-section-head"><span class="eyebrow">HTML&amp;HTML / 06</span><h2>Teknik Rehberler ve Standartlar</h2><p>Terim ezberletmek yerine, yapay zeka görünürlüğünü öğrenme → doğrulama → uygulama → ölçme döngüsüne bağlayan referans katmanı.</p></div><div class="px-knowledge-flow"><article class="px-knowledge-step"><span class="num">01 · ÖĞREN</span><h3>GEO · AEO · LLMO · AAO · RAG · E-E-A-T</h3><p>Yeni yapay zeka görünürlük kavramlarını kullanıcı diliyle ve kaynak sınıfıyla anlayın.</p><a href="/tr/sozluk/">Referans sözlüğe git →</a></article><article class="px-knowledge-step"><span class="num">02 · DOĞRULA</span><h3>llms.txt · robots · sitemap · schema</h3><p>Makine yüzeylerini gerçek HTTP ve doküman kanıtıyla kontrol edin.</p><a href="/tr/llms-txt-validator/">llms.txt'yi doğrula →</a></article><article class="px-knowledge-step"><span class="num">03 · UYGULA</span><h3>$99 Fix Mandate</h3><p>Ücretsiz teşhisi yazılımcı veya AI coding agent için uygulanabilir görev sözleşmesine çevirin.</p><a href="/tr/fix-mandate/">Teslimatı incele →</a></article><article class="px-knowledge-step"><span class="num">04 · ÖLÇ</span><h3>AI Mention Tracker</h3><p>Hazırlık ile gerçek marka görünürlüğünü karıştırmayın; nötr sorgularda görünürlüğü ayrıca ölçün.</p><a href="/tr/ai-mention-tracker/">Görünürlük takibini incele →</a></article></div></section>
-'''
-EN_KNOW=TR_KNOW.replace('Teknik Rehberler ve Standartlar','Technical Guides & Standards').replace('Terim ezberletmek yerine, yapay zeka görünürlüğünü öğrenme → doğrulama → uygulama → ölçme döngüsüne bağlayan referans katmanı.','A reference layer that connects AI visibility to a learn → verify → implement → measure loop instead of jargon memorization.').replace('ÖĞREN','LEARN').replace('Yeni yapay zeka görünürlük kavramlarını kullanıcı diliyle ve kaynak sınıfıyla anlayın.','Understand emerging AI visibility concepts in plain language with evidence classes.').replace('/tr/sozluk/','/en/glossary/').replace('Referans sözlüğe git →','Open the reference glossary →').replace('DOĞRULA','VERIFY').replace('Makine yüzeylerini gerçek HTTP ve doküman kanıtıyla kontrol edin.','Verify machine-readable surfaces with real HTTP and documented evidence.').replace('/tr/llms-txt-validator/','/en/llms-txt-validator/').replace("llms.txt'yi doğrula →",'Validate llms.txt →').replace('UYGULA','IMPLEMENT').replace('Ücretsiz teşhisi yazılımcı veya AI coding agent için uygulanabilir görev sözleşmesine çevirin.','Turn the free diagnosis into an execution contract for a developer or AI coding agent.').replace('/tr/fix-mandate/','/en/fix-mandate/').replace('Teslimatı incele →','Review delivery →').replace('ÖLÇ','MEASURE').replace('Hazırlık ile gerçek marka görünürlüğünü karıştırmayın; nötr sorgularda görünürlüğü ayrıca ölçün.','Keep readiness separate from observed visibility; measure neutral-prompt brand visibility independently.').replace('/tr/ai-mention-tracker/','/en/ai-mention-tracker/').replace('Görünürlük takibini incele →','Review visibility tracking →')
+TR_KNOW=''
+EN_KNOW=''
 
 TR_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-infographic="report-boundary">
   <article class="px-report-free">
@@ -194,9 +192,16 @@ def transform_home(rel,lang):
         text=text.replace('<b>Check My AI Visibility Free</b>','<b>Check Free</b>').replace('<b>Scan Free</b>','<b>Check Free</b>')
         tool,eng,how,know,report=EN_TOOL,EN_ENG,EN_HOW,EN_KNOW,EN_REPORT
     text=between(text,'<!-- 04 TOOL DIRECTORY -->','<!-- 05 12 ENGINES / EVIDENCE / TRUST -->',tool)
-    next_anchor = '<!-- 07 FIX MANDATE & PRICING -->' if '<!-- 07 FIX MANDATE & PRICING -->' in text else '<!-- 08 AUTHORITY & REHBERLER -->'
+    if '<!-- 07 FIX MANDATE & PRICING -->' in text:
+        next_anchor = '<!-- 07 FIX MANDATE & PRICING -->'
+    elif '<!-- 08 AUTHORITY & REHBERLER -->' in text:
+        next_anchor = '<!-- 08 AUTHORITY & REHBERLER -->'
+    else:
+        next_anchor = '<!-- 09 SHORT FAQ -->'
     text=between(text,'<!-- 06 HOW IT WORKS -->',next_anchor,how)
-    text=between(text,'<!-- 08 AUTHORITY & REHBERLER -->','<!-- 09 SHORT FAQ -->',know)
+    if '<!-- 08 AUTHORITY & REHBERLER -->' in text and '<!-- 09 SHORT FAQ -->' in text:
+        a=text.index('<!-- 08 AUTHORITY & REHBERLER -->'); b=text.index('<!-- 09 SHORT FAQ -->',a)
+        text=text[:a]+text[b:]
     if 'data-premium-infographic="report-boundary"' in text:
         text=re.sub(r'<section[^>]+data-premium-infographic="report-boundary".*?</section>', report, text, flags=re.S)
     elif '<!-- 03 CORE VALUE -->' in text:
