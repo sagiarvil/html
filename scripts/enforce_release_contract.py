@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 PUBLIC_HTML = [p for p in ROOT.rglob('*.html') if 'node_modules' not in p.parts and '.git' not in p.parts]
 PUBLIC_EXTRA = [ROOT / 'assets/js/enterprise-runtime.js']
+RELEASE_CSS = '<link rel="stylesheet" href="/assets/css/release-contract.css?v=1">'
 
 PRODUCT_REPLACEMENTS = [
     ('AI Görünürlük Uygulama Planı', 'AI Görünürlük Yol Haritası'),
@@ -63,13 +64,21 @@ def inject_before_main_end(text: str, block: str) -> str:
     return text + block
 
 
+def attach_release_css(text: str) -> str:
+    if 'release-contract.css?v=1' in text:
+        return text
+    if '</head>' in text:
+        return text.replace('</head>', RELEASE_CSS + '</head>', 1)
+    return text
+
+
 for path in PUBLIC_HTML + [p for p in PUBLIC_EXTRA if p.exists()]:
     write_if_changed(path, normalize_public_text(path.read_text(encoding='utf-8')))
 
 # Pricing must preview the exact filenames the server actually generates.
 for rel in ('tr/fiyatlandirma/index.html', 'en/pricing/index.html'):
     path = ROOT / rel
-    text = path.read_text(encoding='utf-8')
+    text = attach_release_css(path.read_text(encoding='utf-8'))
     for raw, canonical in ZIP_NAMES:
         prefix = canonical.split('_', 1)[0] + '_'
         text = re.sub(rf'(?<!{re.escape(prefix)}){re.escape(raw)}', canonical, text)
@@ -77,7 +86,7 @@ for rel in ('tr/fiyatlandirma/index.html', 'en/pricing/index.html'):
 
 # Make the free/paid decision boundary unmistakable without exposing remediation in free results.
 tr_pricing = ROOT / 'tr/fiyatlandirma/index.html'
-tr_text = tr_pricing.read_text(encoding='utf-8')
+tr_text = attach_release_css(tr_pricing.read_text(encoding='utf-8'))
 tr_line = '<p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Yol Haritası:</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>'
 if 'Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?' not in tr_text:
     tr_text = re.sub(r'(</h1>)', r'\1' + tr_line, tr_text, count=1, flags=re.I)
@@ -87,7 +96,7 @@ if not all(canonical in tr_text for _, canonical in ZIP_NAMES):
 write_if_changed(tr_pricing, tr_text)
 
 en_pricing = ROOT / 'en/pricing/index.html'
-en_text = en_pricing.read_text(encoding='utf-8')
+en_text = attach_release_css(en_pricing.read_text(encoding='utf-8'))
 en_line = '<p class="release-contract-line"><strong>Free diagnosis:</strong> What is wrong? Where? How important? <strong>$99 AI Search Visibility Roadmap:</strong> How should it be fixed? In what order? How will it be verified?</p>'
 if 'How should it be fixed? In what order? How will it be verified?' not in en_text:
     en_text = re.sub(r'(</h1>)', r'\1' + en_line, en_text, count=1, flags=re.I)
