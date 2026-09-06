@@ -49,6 +49,43 @@ EN = {
     'why': 'Why now?', 'source': 'Open source'
 }
 
+INTENT = {
+    'tr': {
+        'ai-mention-tracker': 'Önce görünürlüğü ölçün, sonra hangi sorguların markanızı gerçekten taşıdığını izleyin. Mention tek başına hedef değildir; değer, görünürlüğün nitelikli ziyarete ve talebe bağlanmasıdır.',
+        'ai-crawler-checker': 'AI sistemi sayfanıza ulaşamıyorsa içerik kalitesi tartışması başlamadan biter. Önce erişim ve politika katmanını doğrulayın.',
+        'llms-txt-validator': 'llms.txt bir sıralama garantisi değildir. Doğru kullanıldığında makine tarafından keşfedilebilir bilgi yüzeyinin bir parçasıdır; bozuk bağlantı ve yanlış yapı fırsatı zayıflatabilir.',
+        'schema-validator': 'Makine kim olduğunuzu, ne sunduğunuzu ve sayfalar arasındaki ilişkiyi çözemiyorsa kaynak seçimi zorlaşır. Entity graph bütünlüğünü doğrulayın.',
+        'teknik-seo-kontrol': 'AI keşfi hâlâ taranabilir, kanonik ve anlamlı bir web temeline dayanır. Teknik SEO hataları yalnız Google’ı değil retrieval zincirini de etkileyebilir.',
+        'guvenlik-basliklari-kontrol': 'Güvenli ve erişilebilir HTTP yüzeyi; crawler, agent ve kullanıcı deneyiminin ortak temelidir. Yanlış güvenlik politikaları erişimi istemeden kesebilir.',
+        'erisilebilirlik-kontrol': 'Erişilebilir etiketler yalnız insanlara yardım etmez; ajanların buton, form ve sayfa yapısını doğru yorumlamasını da kolaylaştırır.',
+        'link-kontrol': 'AI veya arama sonucu kullanıcıyı kırık bir URL’ye getiriyorsa keşif ticari değere dönüşmez. Yönlendirme ve link bütünlüğünü koruyun.',
+        'site-tarama': 'Tek bir skor yerine, AI ve arama görünürlüğünün hangi halkada koptuğunu görün: keşif, anlama, kaynak olma veya dönüşüm.',
+        'ai-website-readiness': 'AI hazırlığı; bir dosya eklemekten fazlasıdır. Erişim, entity, cevap çıkarılabilirliği, bilgi değeri, güven ve dönüşüm aynı zincirde çalışmalıdır.',
+        'platform': 'HTML&HTML’nin işi “AI sizi önersin” vaadi satmak değil; öneri ve kaynak gösterimi için gerekli site tarafı koşulların hangilerinin eksik olduğunu kanıtlamaktır.',
+        'araclar': 'Her araç aynı sorunun farklı halkasını ölçer: AI ve arama sistemlerinin sizi bulması, anlaması, kaynak olarak değerlendirmesi ve kullanıcıyı size taşıması.',
+        'rehberler': 'Rehberlerin amacı içerik üretmek değil; AI keşfi ve nitelikli talep için uygulanabilir kararları teknik kanıtla açıklamaktır.',
+        'fiyatlandirma': 'Ücretsiz katman neyin yanlış olduğunu kanıtlar. $149 Fix Mandate, bu engelleri test edilebilir uygulama sırasına çevirir.',
+        'fix-mandate': 'Bir “AI tavsiye garantisi” satın almazsınız. Ölçülen engelleri kaldıran, test eden ve geri dönüş planı olan bir uygulama sözleşmesi satın alırsınız.'
+    },
+    'en': {
+        'ai-mention-tracker': 'Measure visibility first, then track which neutral prompts actually surface your brand. A mention is not the end goal; value comes when visibility becomes qualified visits and demand.',
+        'ai-crawler-checker': 'If an AI system cannot reach your page, content quality never enters the conversation. Validate access and policy before optimizing anything else.',
+        'llms-txt-validator': 'llms.txt is not a ranking guarantee. Used correctly, it can support machine-readable discovery; broken links and weak structure can undermine that surface.',
+        'schema-validator': 'If machines cannot resolve who you are, what you offer, and how entities connect, source selection becomes harder. Validate entity graph integrity.',
+        'technical-seo-checker': 'AI discovery still depends on a crawlable, canonical, meaningful web foundation. Technical SEO failures can break retrieval as well as traditional search.',
+        'security-headers-checker': 'A secure, reachable HTTP surface is shared infrastructure for crawlers, agents, and users. Misconfigured controls can block the very systems you want to reach.',
+        'accessibility-checker': 'Accessible labels help people and also make buttons, forms, and page structure easier for agents to interpret correctly.',
+        'link-integrity-checker': 'If AI or search sends a user to a broken URL, discovery cannot become commercial value. Protect referral paths and internal link integrity.',
+        'website-scanner': 'Do not settle for one score. Find where AI and search visibility breaks: discovery, understanding, source eligibility, or conversion.',
+        'ai-website-readiness': 'AI readiness is more than adding a file. Access, entities, answer extractability, information value, trust, and conversion must work as one chain.',
+        'platform': 'HTML&HTML does not sell recommendation promises. It proves which site-side conditions for discovery, citation eligibility, and conversion are missing.',
+        'tools': 'Each tool measures a different link in the same commercial chain: being found, understood, source-worthy, and able to convert the visit.',
+        'guides': 'The guides exist to turn AI discovery into actionable engineering and content decisions, not to manufacture generic SEO copy.',
+        'pricing': 'The free layer proves what is wrong. The $149 Fix Mandate turns measurable blockers into a testable implementation sequence.',
+        'fix-mandate': 'You are not buying an “AI recommendation guarantee.” You are buying an implementation contract that removes measured blockers, tests the result, and defines rollback.'
+    }
+}
+
 EVIDENCE = {
     'tr': [
         ('OpenAI','Herkese açık sitelerin ChatGPT Search’te görünebileceğini; OAI-SearchBot erişiminin keşif ve kaynak gösterimi için önemli olduğunu ve ChatGPT yönlendirmelerinin ölçülebildiğini açıklıyor.','https://help.openai.com/en/articles/12627856-publishers-and-developers-faq'),
@@ -65,6 +102,12 @@ EVIDENCE = {
 def detect_lang(html: str) -> str:
     return 'tr' if re.search(r'<html[^>]+lang=["\']tr(?:-|["\'])', html, re.I) else 'en'
 
+def route_lead(rel: str, lang: str, default: str) -> str:
+    for key, value in INTENT[lang].items():
+        if f'/{key}/' in f'/{rel}':
+            return value
+    return default
+
 def evidence_html(lang: str, c: dict) -> str:
     cards = ''.join(
         f'<article><b>{name}</b><p>{text}</p><a href="{url}" target="_blank" rel="noopener noreferrer">{c["source"]} ↗</a></article>'
@@ -72,8 +115,9 @@ def evidence_html(lang: str, c: dict) -> str:
     )
     return f'<div class="ai-market-evidence"><h3>{c["why"]}</h3><div>{cards}</div></div>'
 
-def section_html(lang: str, with_evidence: bool) -> str:
+def section_html(rel: str, lang: str, with_evidence: bool) -> str:
     c = TR if lang == 'tr' else EN
+    lead = route_lead(rel, lang, c['lead'])
     stages = ''.join(
         f'<article><b>{n}</b><h3>{title}</h3><p>{desc}</p></article>'
         for n,title,desc in c['stages']
@@ -84,7 +128,7 @@ def section_html(lang: str, with_evidence: bool) -> str:
         '<div class="ai-opportunity-shell">'
         f'<span class="ai-opportunity-eyebrow">{c["eyebrow"]}</span>'
         f'<h2>{c["title"]}</h2>'
-        f'<p class="ai-opportunity-lead">{c["lead"]}</p>'
+        f'<p class="ai-opportunity-lead">{lead}</p>'
         f'<div class="ai-value-chain">{stages}</div>'
         '<div class="ai-opportunity-actions">'
         f'<a class="ai-opportunity-primary" href="{c["scan"]}">{c["primary"]} →</a>'
@@ -110,7 +154,7 @@ def inject(path: Path) -> bool:
     lang = detect_lang(html)
     if '/assets/css/commercial-intent.css' not in html:
         html = html.replace('</head>', '<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=1" data-commercial-intent-css="static">\n</head>', 1)
-    section = section_html(lang, rel in EVIDENCE_ROUTES)
+    section = section_html(rel, lang, rel in EVIDENCE_ROUTES)
     html = html.replace('<footer', section + '\n<footer', 1)
     path.write_text(html, encoding='utf-8')
     return True
