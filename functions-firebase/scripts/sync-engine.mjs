@@ -4,7 +4,8 @@ import path from 'node:path';
 const files=[
   ['scan-engine.ts','scan-engine.ts'],
   ['scan-request.ts','scan-request.ts'],
-  ['mention-engine.ts','mention-engine.ts']
+  ['mention-engine.ts','mention-engine.ts'],
+  ['remediation-engine.ts','remediation-engine.ts']
 ];
 for(const [sourceName,targetName] of files){
   const source=path.resolve(process.cwd(),`../functions/lib/${sourceName}`);

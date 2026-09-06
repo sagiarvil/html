@@ -1,29 +1,66 @@
-import { runScan, type Finding } from '../lib/scan-engine';
+import { runScan } from '../lib/scan-engine';
+import { generateRemediationReport, type PlanType } from '../lib/remediation-engine';
 
-interface Env{MANDATE_ACCESS_TOKEN?:string}
+/**
+ * Autonomous Website Remediation Intelligence Mandate API
+ * Enforces constitutional contracts:
+ * - ROOT FIX: Minimum structural correction removing defect
+ * - RECOVERY: Safe restoration of affected references/routes
+ * - PREVENTION: CI/build gate regression controls
+ * - ROLLBACK: Preserves prior state and isolation
+ */
 
-type Plan={rootFix:string;recovery:string;prevention:string;test:string;rollback:string};
-function plan(f:Finding):Plan{
-  const p=f.id;
-  if(p.startsWith('TECH-CANON'))return{rootFix:'Add a deterministic self-referencing canonical generated from the public canonical origin and route pathname. Do not derive it from untrusted request headers.',recovery:'Publish canonical only on affected indexable routes, then re-crawl the sampled URLs.',prevention:'Add a route-level SEO test asserting exactly one canonical per indexable page.',test:'Fetch affected URLs and assert one rel=canonical, absolute HTTPS URL, same intended host and no conflicting header canonical.',rollback:'Revert the metadata/layout change if routes begin canonicalizing to the wrong origin or path.'};
-  if(p.startsWith('TECH-NOINDEX'))return{rootFix:'Trace the source of the noindex directive across HTML metadata and X-Robots-Tag. Remove it only on routes intended to be indexable.',recovery:'Re-fetch affected routes after cache purge and confirm noindex is absent from both HTML and response headers.',prevention:'Maintain an explicit indexability allow/deny matrix and test it in CI.',test:'curl -I and fetch HTML; fail if an intended-indexable route emits noindex.',rollback:'Restore the previous indexability configuration if protected/private routes become indexable.'};
-  if(p.startsWith('AI-ROBOTS'))return{rootFix:'Edit robots.txt using separate user-agent groups so search/retrieval bots are not accidentally coupled to training controls. Preserve the site owner’s intended policy.',recovery:'Publish robots.txt, purge edge cache if applicable, and verify the exact bot token against path /.',prevention:'Add robots policy regression tests for Googlebot, OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot and any intentional training controls.',test:'GET /robots.txt and evaluate the affected bot using longest-match REP semantics; acceptance requires the intended allow/disallow result.',rollback:'Restore the previous robots.txt immediately if unrelated crawler access changes.'};
-  if(p.startsWith('LLMS-'))return{rootFix:'Bring llms.txt and its discoverability signals into the current llms.txt v2 proposal: valid H1, concise summary, curated link sections, reachable links, rel=describedby and optional Markdown alternates where maintained.',recovery:'Repair only broken/missing llms surfaces first; do not claim search-ranking impact.',prevention:'Run parser/link validation on llms.txt in CI and after content deployments.',test:'GET /llms.txt; parse required structure; probe every published llms link; assert describedby/Markdown alternates where configured.',rollback:'Remove only the newly introduced discovery/alternate metadata if it conflicts with the application; keep the last known-valid llms.txt.'};
-  if(p.startsWith('SCHEMA-'))return{rootFix:'Generate valid JSON-LD from the same source of truth as visible page content. Use stable @id values and only schema types/properties that are actually represented on the page.',recovery:'Remove or correct invalid/conflicting blocks and re-validate the rendered HTML.',prevention:'Add JSON parse tests plus visible-content consistency checks for critical schema fields.',test:'Parse every application/ld+json block and verify required identity/content values appear in the rendered page or canonical data source.',rollback:'Restore the last valid schema block if structured data becomes invalid or diverges from visible content.'};
-  if(p.startsWith('A11Y-'))return{rootFix:'Correct the rendered semantic/accessibility contract at the component that owns the element: document language, alt semantics, programmatic form labels and accessible control names.',recovery:'Patch affected components without changing form business logic or navigation destinations.',prevention:'Add automated accessibility assertions and keyboard/screen-reader smoke checks for reusable components.',test:'Rendered HTML must expose the required language/label/name relationship; run automated accessibility checks on affected routes.',rollback:'Revert only the presentation/semantic patch if event handling, navigation or form submission regresses.'};
-  if(p.startsWith('PERF-'))return{rootFix:'Reduce the measured source of transfer/render blocking without changing business behavior: remove duplicated markup, defer non-critical scripts, split payloads and preserve critical execution order.',recovery:'Apply one performance change at a time and compare before/after transfer and rendering behavior.',prevention:'Set HTML/script budgets in CI and fail regressions above agreed thresholds.',test:'Re-fetch affected pages and compare HTML bytes, blocking script count and functional smoke tests. Field LCP/INP/CLS require CrUX/PageSpeed integration and are not inferred from HTML alone.',rollback:'Revert the specific optimization if hydration, analytics, checkout, auth or interactive behavior changes.'};
-  if(p.startsWith('SEC-'))return{rootFix:'Apply the missing transport/browser security control at the edge or application header layer. For CSP, start with report-only and inventory required origins before enforcement.',recovery:'Eliminate insecure HTTP references/forms and verify all critical resources still load.',prevention:'Add header and mixed-content regression checks to release gates.',test:'Inspect response headers and browser/network errors; acceptance requires the target header/control without blocking required application resources.',rollback:'Restore the previous header policy immediately if production resources, auth, payment or integrations are blocked.'};
-  if(p.startsWith('LINK-'))return{rootFix:'Update internal references to the final canonical destination, repair missing routes, or remove obsolete links. Avoid adding redirect chains as a substitute for fixing owned links.',recovery:'Repair highest-traffic/navigation links first, then re-probe all affected targets.',prevention:'Run internal-link checks in CI/site-map release validation.',test:'HEAD/GET every affected link; accept only intended 2xx targets or explicitly approved redirects.',rollback:'Restore the previous link target if the replacement route is not equivalent or breaks user flow.'};
-  if(p.startsWith('TRUST-'))return{rootFix:'Add or expose the missing trust/identity surface from authoritative business data. Do not invent authors, dates, policies, addresses or credentials.',recovery:'Link existing authoritative pages into the discoverable site structure before creating new content.',prevention:'Maintain ownership for legal/identity pages and include them in release/link checks.',test:'Verify the route is public, internally linked, consistent with visible identity data and not contradicted by schema.',rollback:'Remove newly created claims/content if authoritative source data cannot support them.'};
-  if(p.startsWith('CONV-'))return{rootFix:'Make the primary next action explicit and measurable without changing commercial rules. Trace CTA → destination/form → success state and remove dead ends.',recovery:'Fix broken navigation/form entry points before redesigning the funnel.',prevention:'Add synthetic conversion-path smoke tests for the primary CTA and form/checkout paths.',test:'Complete the primary public conversion path through the last non-destructive step and assert each transition/status.',rollback:'Restore prior CTA routing if the new path changes pricing, checkout, auth or lead-delivery behavior.'};
-  if(p.startsWith('AGENT-'))return{rootFix:'Treat agent-discovery surfaces as optional capabilities. Publish only supported, maintained endpoints and declare experimental features separately from standards.',recovery:'Do not add placeholder MCP/A2A/OpenAPI endpoints that misrepresent capabilities.',prevention:'Version and contract-test any agent endpoint once introduced.',test:'GET the advertised endpoint and validate its documented schema/contract; absence is not a search-ranking failure.',rollback:'Remove the advertised discovery link/endpoint if the capability is not maintained.'};
-  return{rootFix:'Locate the code/configuration owner for the measured behavior, change the source of truth rather than patching the symptom, and preserve business logic.',recovery:'Apply the smallest reversible change that restores the target state.',prevention:'Convert this issue into a deterministic regression check.',test:'Re-run the original evidence check and the affected user flow.',rollback:'Revert the isolated change if acceptance or regression tests fail.'};
+interface Env {
+  MANDATE_ACCESS_TOKEN?: string;
 }
-function esc(s:any){return String(s??'').replace(/\r/g,'')}
-function markdown(domain:string,scan:any){const items=scan.findings.filter((f:Finding)=>f.severity!=='info');let out=`# HTML&HTML — Implementation Fix Mandate\n\n> Domain: ${domain}\n> Scan ID: ${scan.scanId}\n> Baseline score: ${scan.overall}/100\n> Generated: ${new Date().toISOString()}\n\n## Mandate Objective\n\nRemove the verified causes represented by this scan without changing business logic, authentication, payment behavior, database/API contracts, analytics semantics or legal/commercial claims unless an issue explicitly concerns them.\n\n## Hard Constraints\n\n- Work on an isolated branch with a reversible checkpoint before modification.\n- Never log secrets, access tokens, cookies, authorization headers or personal data.\n- Do not bypass authentication or authorization.\n- Public-scan findings must not invent source file names; locate the owning source before editing.\n- Apply P0/P1 before lower-severity work.\n- Stop if observed production behavior contradicts the scan evidence.\n\n## Baseline\n\n| Engine | Score |\n|---|---:|\n`;
-for(const [k,v] of Object.entries(scan.scores))out+=`| ${k} | ${v}/100 |\n`;out+=`\n## Issue Inventory\n\n`;
-for(const f of items){const p=plan(f);out+=`### ${f.id} — ${esc(f.titleEn)}\n\n- Severity: **${f.severity.toUpperCase()}**\n- Confidence: **${f.confidence}**\n- Evidence class: **${f.sourceClass}**\n- URL: ${f.url||scan.url}\n- Evidence: \`${esc(f.evidence).replace(/`/g,"'")}\`\n- Impact: ${esc(f.impactEn)}\n- Source-file status: ${f.requiresSource?'SOURCE VERIFICATION REQUIRED — do not guess a path.':'Public/config surface'}\n\n**ROOT FIX**  \n${p.rootFix}\n\n**RECOVERY**  \n${p.recovery}\n\n**PREVENTION**  \n${p.prevention}\n\n**ACCEPTANCE TEST**  \n${p.test}\n\n**ROLLBACK**  \n${p.rollback}\n\n`}
-out+=`## Implementation Order\n\n1. Create backup/branch and capture baseline responses.\n2. Resolve CRITICAL and HIGH findings in dependency order.\n3. Re-run build/unit/integration checks available in the codebase.\n4. Re-scan the domain with HTML&HTML.\n5. Resolve MEDIUM then LOW findings only if they remain valid after higher-level fixes.\n6. Run regression tests for auth, session, API, forms, analytics and payment/checkout surfaces that were touched.\n\n## Release Gate\n\nFINAL is allowed only when all are true:\n\n1. The measured symptom is gone.\n2. The root cause is confirmed by the acceptance test.\n3. Repeating the same failure mode does not break the system.\n\nIf any gate fails: **DO NOT RELEASE — ROLLBACK OR RE-LOCALIZE THE FAULT BOUNDARY.**\n`;
-return out}
-export const onRequestPost:PagesFunction<Env>=async({request,env})=>{try{const expected=env.MANDATE_ACCESS_TOKEN;if(!expected)return Response.json({error:'Paid mandate service is not activated: entitlement secret is missing.'},{status:503});const auth=request.headers.get('authorization')||'';if(auth!==`Bearer ${expected}`)return Response.json({error:'Valid paid entitlement required'},{status:402});const body:any=await request.json();if(!body||typeof body.domain!=='string')return Response.json({error:'Domain required'},{status:400});const scan=await runScan(body.domain);return Response.json({product:'HTML&HTML Full Site Fix Mandate',priceUsd:149,domain:scan.domain,scanId:scan.scanId,markdown:markdown(scan.domain,scan),scan},{headers:{'cache-control':'no-store'}})}catch(e:any){return Response.json({error:e?.message||'Mandate generation failed'},{status:400})}};
-export const onRequestGet:PagesFunction=()=>Response.json({error:'POST only'},{status:405});
+
+export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+  try {
+    const expected = env.MANDATE_ACCESS_TOKEN;
+    const body: any = await request.json().catch(() => ({}));
+    const target = body?.target_url || body?.url || body?.domain;
+    if (!target || typeof target !== 'string' || !target.trim()) {
+      return Response.json({ error: 'target_url or domain required' }, { status: 400 });
+    }
+
+    const planType: PlanType = String(body?.plan_type || '').toUpperCase() === 'PRO' ? 'PRO' : 'FREE';
+
+    // If PRO plan requested, enforce paid entitlement
+    if (planType === 'PRO') {
+      if (!expected) {
+        return Response.json(
+          { error: 'Paid mandate service is not activated: entitlement secret is missing.' },
+          { status:503 }
+        );
+      }
+      const auth = request.headers.get('authorization') || '';
+      if (auth !== `Bearer ${expected}`) {
+        return Response.json({ error: 'Valid paid entitlement required' }, { status:402 });
+      }
+    }
+
+    const scan = await runScan(target.trim());
+    const report = generateRemediationReport(scan, planType, body?.baseline_scan);
+
+    return Response.json(
+      {
+        product: 'Autonomous Website Remediation Intelligence Mandate',
+        version: '1.0',
+        plan: planType,
+        priceUsd: planType === 'PRO' ? 99 : 0,
+        domain: scan.domain,
+        scanId: scan.scanId,
+        report,
+        markdown: report.markdown,
+        scan
+      },
+      { headers: { 'cache-control': 'no-store' } }
+    );
+  } catch (e: any) {
+    const message = e?.message || 'Mandate generation failed';
+    const status = /not allowed|private|reserved|credentials|port/i.test(message) ? 403 : 400;
+    return Response.json({ error: message }, { status });
+  }
+};
+
+export const onRequestGet: PagesFunction = () => Response.json({ error: 'POST only' }, { status: 405 });
