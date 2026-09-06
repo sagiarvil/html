@@ -1,10 +1,10 @@
 /* HTML&HTML Global Design System */
 :root {
-  --shell-max: 1180px;
+  --shell-max: 1080px;
   --content-max: 1080px;
-  --hero-max: 900px;
-  --reading-max: 760px;
-  --form-max: 700px;
+  --hero-max: 860px;
+  --reading-max: 1080px;
+  --form-max: 640px;
   --paper: #f4f1e9;
   --card: #fbfaf6;
   --ink: #11120f;
@@ -54,7 +54,7 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 .brand {
   display: inline-flex;
@@ -149,7 +149,7 @@ html[data-theme="dark"] .brand-logo { filter: invert(1) brightness(1.1); }
 .hero {
   max-width: var(--shell-max);
   margin: 0 auto;
-  padding: 84px 28px 72px;
+  padding: 76px 24px 64px;
   text-align: center;
   border-bottom: 1px solid var(--line);
   position: relative;
@@ -581,7 +581,7 @@ html[data-theme="dark"] .brand-logo { filter: invert(1) brightness(1.1); }
 .section {
   max-width: var(--shell-max);
   margin: 0 auto;
-  padding: 84px 28px;
+  padding: 72px 24px;
   border-bottom: 1px solid var(--line);
 }
 .section > header {

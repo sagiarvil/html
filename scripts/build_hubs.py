@@ -316,10 +316,10 @@ def build_pricing_hub():
 </nav>
 
 <main>
-<section class="authority-hero" style="max-width: var(--shell-max); margin: 0 auto; padding: 72px 28px 48px; text-align: center;">
+<section class="authority-hero" style="max-width: var(--shell-max); margin: 0 auto; padding: 72px 24px 48px; text-align: center;">
   <div class="kicker"><span></span><b>{'ŞEFFAF FİYATLANDIRMA' if lang == 'tr' else 'TRANSPARENT PRICING'}</b></div>
   <h1>{h1}</h1>
-  <p style="max-width: var(--reading-max); margin: 18px auto 0;">{sub}</p>
+  <p style="max-width: 760px; margin: 18px auto 0; font-size: 18px; line-height: 1.65;">{sub}</p>
 </section>
 
 <section class="section pricing" style="border-top: 0; padding-top: 24px;">

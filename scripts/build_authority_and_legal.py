@@ -475,8 +475,8 @@ def build_company_legal():
   <p>{c['sub']}</p>
 </section>
 
-<section class="section" style="max-width: var(--reading-max); margin: 0 auto;">
-  <div class="legal-body" style="font-size: 18px; line-height: 1.75;">
+<section class="section" style="max-width: var(--shell-max); margin: 0 auto;">
+  <div class="legal-body" style="max-width: 860px; font-size: 18px; line-height: 1.75;">
     {c['body']}
   </div>
 </section>
