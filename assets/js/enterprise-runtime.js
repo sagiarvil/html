@@ -57,7 +57,8 @@ function renderDecisionMap(data){
  let root=document.getElementById('aiDecisionMap');if(!root){root=document.createElement('section');root.id='aiDecisionMap';root.className='ai-decision-map';disclosure.insertAdjacentElement('afterend',root)}
  const l=currentLang(),c=COPY[l];
  const lenses=intel.readinessLenses||{};
- const lensHtml=lensOrder.map(k=>{const x=lenses[k];const score=typeof x?.score==='number'?Math.round(x.score):'—';return `<div class="ai-lens"><span>${safe(k)}</span><strong>${safe(score)}${score==='—'?'':'/100'}</strong></div>`}).join('');
+ const lensThemes={SEO:'blue',GEO:'purple',AEO:'purple',LLMO:'purple',AAO:'amber',RAG:'blue','E-E-A-T':'green'};
+ const lensHtml=lensOrder.map(k=>{const x=lenses[k];const score=typeof x?.score==='number'?Math.round(x.score):'—';const th=lensThemes[k]||'blue';return `<div class="ai-lens ai-lens-${th}"><span>${safe(k)}</span><strong>${safe(score)}${score==='—'?'':'/100'}</strong></div>`}).join('');
  const byKey=new Map(intel.analyses.map(a=>[a.key,a]));
  const priorities=(intel.topPriorities||[]).slice(0,5);
  const rows=priorities.map(p=>{const a=byKey.get(p.analysis)||{};const label=l==='tr'?(a.labelTr||a.labelEn||p.analysis):(a.labelEn||a.labelTr||p.analysis);return `<div class="ai-intelligence-row"><b>${safe(p.rank)}. ${safe(label)}</b><span>${safe(c.status)} · ${safe(a.status||'—')}</span><span>${safe(c.impact)} · ${safe(a.impact||p.impact||'—')}</span><span>${safe(c.effort)} · ${safe(a.effort||p.effort||'—')}</span></div>`}).join('');
