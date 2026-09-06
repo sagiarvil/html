@@ -9,6 +9,7 @@
     "test:python": "python3 -m py_compile scripts/build_ai_visibility_authority.py scripts/inject_commercial_intent.py scripts/apply_customer_positioning.py scripts/apply_premium_experience.py scripts/patch_premium_edgecases.py scripts/build_llms_news.py scripts/normalize_news_freshness.py scripts/update_llms_news.py scripts/apply_enterprise_system.py scripts/finalize_commercial_artifacts.py scripts/patch_guest_delivery_copy.py scripts/enforce_release_contract.py",
     "test:integrity": "node tests/integrity/check.mjs && node tests/integrity/authority.mjs && node tests/integrity/i18n.mjs && node tests/integrity/mandate-suite.mjs && node tests/integrity/remediation.test.mjs && node tests/integrity/intelligence.test.mjs && node tests/integrity/delivery.test.mjs && node tests/integrity/llms-news.test.mjs && node tests/integrity/enterprise-funnel.test.mjs && node tests/integrity/commercial-intent.test.mjs && node tests/integrity/ai-authority.test.mjs && node tests/integrity/customer-positioning.test.mjs",
     "test:client": "node --check assets/js/validator.js && node --check assets/js/authority-tool.js && node --check assets/js/theme.js && node --check assets/js/intelligence-root.js && node --check assets/js/mention-tracker.js && node --check assets/js/commercial-intent.js && node --check assets/js/ai-positioning.js && node --check assets/js/enterprise-runtime.js",
+    "test:visual": "node tests/visual/mobile-qa.mjs",
     "dev": "wrangler pages dev .",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
     "firebase:deploy": "npx -y firebase-tools@latest deploy --only hosting",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250224.0",
+    "playwright": "^1.55.0",
     "wrangler": "^3.109.2"
   }
 }
