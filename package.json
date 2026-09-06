@@ -1,12 +1,12 @@
 {
   "name": "htmlandhtml-com",
-  "version": "6.4.0",
-  "description": "HTML&HTML bilingual AI search visibility, GEO/AEO/LLMO/AAO/RAG/E-E-A-T authority and 12-engine evidence platform with non-scoring intelligence audits and paid implementation mandate",
+  "version": "6.5.0",
+  "description": "HTML&HTML customer-first AI search visibility platform for GEO/AEO/LLMO/AAO/RAG/E-E-A-T, llms.txt and evidence-backed implementation readiness",
   "private": true,
   "scripts": {
-    "build:commercial": "python3 scripts/build_ai_visibility_authority.py && python3 scripts/inject_commercial_intent.py",
+    "build:commercial": "python3 scripts/build_ai_visibility_authority.py && python3 scripts/inject_commercial_intent.py && python3 scripts/apply_customer_positioning.py",
     "test": "npm run build:commercial && npm run test:integrity && npm run test:client",
-    "test:integrity": "node tests/integrity/check.mjs && node tests/integrity/authority.mjs && node tests/integrity/i18n.mjs && node tests/integrity/mandate-suite.mjs && node tests/integrity/remediation.test.mjs && node tests/integrity/intelligence.test.mjs && node tests/integrity/commercial-intent.test.mjs && node tests/integrity/ai-authority.test.mjs",
+    "test:integrity": "node tests/integrity/check.mjs && node tests/integrity/authority.mjs && node tests/integrity/i18n.mjs && node tests/integrity/mandate-suite.mjs && node tests/integrity/remediation.test.mjs && node tests/integrity/intelligence.test.mjs && node tests/integrity/commercial-intent.test.mjs && node tests/integrity/ai-authority.test.mjs && node tests/integrity/customer-positioning.test.mjs",
     "test:client": "node --check assets/js/validator.js && node --check assets/js/authority-tool.js && node --check assets/js/theme.js && node --check assets/js/intelligence-root.js && node --check assets/js/mention-tracker.js && node --check assets/js/commercial-intent.js && node --check assets/js/ai-positioning.js",
     "dev": "wrangler pages dev .",
     "pages:deploy": "wrangler pages deploy . --project-name=htmlandhtml-com",
