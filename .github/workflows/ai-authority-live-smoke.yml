@@ -15,12 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Verify AI search visibility positioning and glossary routes
+      - name: Verify AI search visibility positioning, CTAs and authority routes
         shell: bash
         run: |
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; grep -Fq "$marker" <<<"$body"; echo "AI_AUTHORITY_SMOKE_OK: $url"; }
-          check 'https://htmlandhtml.com/' 'YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ'
+          check 'https://htmlandhtml.com/' 'Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?'
+          check 'https://htmlandhtml.com/' 'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et'
+          check 'https://htmlandhtml.com/tr/ai-website-readiness/' 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap'
+          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?'
+          check 'https://htmlandhtml.com/tr/rehberler/llms-txt/' 'llms.txt Nedir? Yapay Zeka İçin Makine Okunabilir İçerik Haritası Nasıl Kurulur?'
+          check 'https://htmlandhtml.com/tr/ai-crawler-checker/' 'ChatGPT ve Diğer Yapay Zeka Tarayıcıları Sitenize Ulaşabiliyor mu?'
+          check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'Yapay Zeka Cevaplarında Markanız Gerçekten Geçiyor mu?'
           check 'https://htmlandhtml.com/tr/sozluk/' 'Google doğruluk sınırı'
           check 'https://htmlandhtml.com/en/glossary/' 'Google accuracy boundary'
           check 'https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/' 'Müşteriniz yapay zekaya'
