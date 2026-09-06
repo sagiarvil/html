@@ -28,7 +28,7 @@ const checks=[
   [/NON_SCORING_INTELLIGENCE_LAYER/.test(intelligence)&&/INTELLIGENCE_ANALYSIS_COUNT=13/.test(intelligence),'13-audit non-scoring intelligence layer missing'],
   [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
   [/\$99/.test(index),'single $99 mandate positioning missing'],
-  [!/\$49|\$149/.test(index),'legacy mandate prices still present on homepage'],
+  [!/\$49(?!\d)|\$149/.test(index),'legacy mandate prices still present on homepage'],
   [/data-premium-infographic="tools"/.test(index)&&/data-premium-infographic="engines"/.test(index)&&/data-premium-infographic="process"/.test(index)&&/data-premium-infographic="knowledge"/.test(index),'premium infographic system missing from homepage'],
   [/premium-experience\.css/.test(index),'premium responsive CSS missing from homepage'],
   [/Yapay Zeka Sizi Buluyor mu\?/.test(index)&&/Tavsiye Edilmeye Hazır mısınız\?/.test(index),'concise customer-first hero missing'],

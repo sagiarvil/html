@@ -7,13 +7,14 @@ const noticeTitle=notice?.querySelector('strong');
 const noticeBody=notice?.querySelector('span');
 const query=new URLSearchParams(location.search);
 const rawDomain=query.get('domain')||'';
-let domain='',config=null,busy=false,completedTransaction='';
-const copy={
- tr:{ready:'Paddle ile güvenli öde — $99',loading:'Güvenli ödeme hazırlanıyor…',domain:'Ödeme için önce ücretsiz taramadan hedef alan adı seçilmelidir.',configured:'Paddle güvenli ödeme hazır.',configuredBody:'Kart bilgileri HTML&HTML tarafından görülmez veya saklanmaz. Ödeme Paddle tarafından işlenir; teslim yalnız sunucu tarafında doğrulanmış işlem sonrası açılır.',verifying:'Ödeme doğrulanıyor…',building:'Ödeme doğrulandı. ZIP hazırlanıyor…',done:'Ödeme doğrulandı ve ZIP teslimi başlatıldı.',error:'Ödeme doğrulanamadı. Kartınızdan tekrar ödeme yapmayın; sayfayı yenileyip işlem durumunu tekrar kontrol edin.'},
- en:{ready:'Pay securely with Paddle — $99',loading:'Preparing secure checkout…',domain:'Choose a target domain from the free scan before payment.',configured:'Paddle secure checkout is ready.',configuredBody:'HTML&HTML never sees or stores card details. Paddle processes payment; delivery unlocks only after server-side transaction verification.',verifying:'Verifying payment…',building:'Payment verified. Building ZIP…',done:'Payment verified and ZIP delivery started.',error:'Payment could not be verified. Do not pay again; refresh and re-check the transaction state.'}
-};
+let domain='',config=null,busy=false,completedTransaction='',plan=(new URLSearchParams(location.search).get('plan')==='enterprise'?'enterprise':'pro');
+
 const lang=()=>document.documentElement.lang==='tr'?'tr':'en';
-const text=k=>copy[lang()][k];
+const copy={
+ tr:{ready:()=>plan==='enterprise'?'Paddle ile güvenli öde — $499':'Paddle ile güvenli öde — $99',loading:'Güvenli ödeme hazırlanıyor…',domain:'Ödeme için önce ücretsiz taramadan hedef alan adı seçilmelidir.',configured:'Paddle güvenli ödeme hazır.',configuredBody:'Kart bilgileri HTML&HTML tarafından görülmez veya saklanmaz. Ödeme Paddle tarafından işlenir; teslim yalnız sunucu tarafında doğrulanmış işlem sonrası açılır.',verifying:'Ödeme doğrulanıyor…',building:'Ödeme doğrulandı. ZIP hazırlanıyor…',done:'Ödeme doğrulandı ve ZIP teslimi başlatıldı.',error:'Ödeme doğrulanamadı. Kartınızdan tekrar ödeme yapmayın; sayfayı yenileyip işlem durumunu tekrar kontrol edin.'},
+ en:{ready:()=>plan==='enterprise'?'Pay securely with Paddle — $499':'Pay securely with Paddle — $99',loading:'Preparing secure checkout…',domain:'Choose a target domain from the free scan before payment.',configured:'Paddle secure checkout is ready.',configuredBody:'HTML&HTML never sees or stores card details. Paddle processes payment; delivery unlocks only after server-side transaction verification.',verifying:'Verifying payment…',building:'Payment verified. Building ZIP…',done:'Payment verified and ZIP delivery started.',error:'Payment could not be verified. Do not pay again; refresh and re-check the transaction state.'}
+};
+const text=k=>{const v=copy[lang()][k];return typeof v==='function'?v():v};
 function canonical(v){const u=new URL(/^https?:\/\//i.test(v)?v:`https://${v}`);const h=u.hostname.toLowerCase().replace(/^www\./,'');if(!h||!h.includes('.'))throw new Error('invalid domain');return h}
 function setButton(label,disabled){button.textContent=label;button.disabled=disabled;button.style.opacity=disabled?'.58':'1';button.style.cursor=disabled?'not-allowed':'pointer'}
 function setNotice(title,body){if(noticeTitle)noticeTitle.textContent=title;if(noticeBody)noticeBody.textContent=body}
@@ -54,6 +55,7 @@ async function init(){
   setNotice(text('configured'),text('configuredBody'));setButton(text('ready'),false)
  }catch(error){console.error('Paddle checkout initialization failed',error);setButton(text('loading'),true)}
 }
+window.addEventListener('hh-plan-changed',e=>{if(e?.detail?.plan){plan=e.detail.plan;if(!busy&&config)setButton(text('ready'),false)}});
 window.addEventListener('hh-language-changed',()=>{if(config&&!busy)setButton(text('ready'),false)});
 init();
 })();

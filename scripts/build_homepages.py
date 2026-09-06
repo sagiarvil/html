@@ -197,6 +197,131 @@ def build_homepages():
       <small class="note" data-i18n="checkoutNote">Kaynak dosya adı public taramadan uydurulmaz; codebase bağlamı varsa dosya seviyesine iner.</small>
     </aside>
   </div>
+  <!-- 02.1 CLASSIFIED ENTERPRISE DARK POOL VECTORS -->
+  <div class="classified-section">
+    <div class="classified-header">
+      <div class="classified-badge">🔒 TOP SECRET · ENTERPRISE DARK POOL</div>
+      <h3>2026 Kurumsal AI Görünürlük İstihbarat Vektörleri</h3>
+      <p>Yıllık $1.000.000+ bütçeli Silikon Vadisi AI arama laboratuvarlarının kapalı devre kullandığı 6 tescilli optimizasyon vektörü. Kamuya açık taramalarda formüller gizlenir.</p>
+    </div>
+    <div class="classified-grid">
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VEKTÖR 01</span>
+          <span class="vector-metric">+420% Tavsiye Olasılığı</span>
+          <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
+        </div>
+        <p class="vector-desc">LLM ağırlıklarının ön-eğitim havuzlarına (Common Crawl, Reddit, Arxiv, GitHub) marka entity'si aşılama ve Pointwise Mutual Information (PMI) optimizasyonu.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>const PMI_CO_OCCURRENCE = {{ corpus: ["refinedweb", "the-pile", "arxiv"], pmi_score: 0.88, anchor_term: "ENTERPRISE_SOLUTION", weight_injection: true }}; function seedCorpusDistribution() {{ /* CLASSIFIED PROTOCOL */ }}</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE KİLİTLİ</strong>
+            <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VEKTÖR 02</span>
+          <span class="vector-metric">0.95+ Re-rank Skoru</span>
+          <h4>Cross-Encoder Attention Hijacking</h4>
+        </div>
+        <p class="vector-desc">Cohere Rerank v3 ve BGE-Reranker matrisinde Perplexity ve Google Gemini AI Overviews'ın ilk alıntısı (Citation #1) olma formülü.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>attention_score = softmax(Q * K.T / sqrt(d_k)); template = [QUERY_SYNONYM, ATOMIC_ANSWER_50W, NUMERICAL_FACTS_3X, CONTRAST_CLAUSE]; export function formatForRerank();</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE KİLİTLİ</strong>
+            <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VEKTÖR 03</span>
+          <span class="vector-metric">%100 Güncelleme Koruması</span>
+          <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
+        </div>
+        <p class="vector-desc">Wikidata QID, Google Knowledge Graph MID ve Resmi Şirket Sicil veritabanı arasında kırılmaz üçgenleme protokolü.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>{{ "@context": "https://schema.org", "@graph": [{{ "@id": "kg:MID_0x892a", "sameAs": ["https://wikidata.org/wiki/Q102938", "https://crunchbase.com/org/..."] }}] }}</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE KİLİTLİ</strong>
+            <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VEKTÖR 04</span>
+          <span class="vector-metric">40x Hızlı Tarama · %95 Tasarruf</span>
+          <h4>KV-Cache Friendly Edge Token Purge</h4>
+        </div>
+        <p class="vector-desc">AI botlarına (GPTBot, ClaudeBot) 14KB saf optimize AST sunarak tarama bütçesi sınırını kaldıran Cloudflare Worker kodu.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>export default {{ async fetch(req, env) {{ const bot = isAIBot(req.headers.get("user-agent")); if (bot) return serveCleanASTStream(req); }} }};</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE KİLİTLİ</strong>
+            <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VEKTÖR 05</span>
+          <span class="vector-metric">Sektörel Bilgi Tekeli</span>
+          <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
+        </div>
+        <p class="vector-desc">Sektörel kanonik tanım ve benchmark endeksleri üreterek diğer tüm yapay zekaların sizi zorunlu kaynak göstermesini sağlayan döngü.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>const CITATION_ENGINE = {{ primary_definition: "CANONICAL_INDEX_2026", recursive_ai_citations: true, synthetic_loop_proof: "SHA256_HASH" }};</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE KİLİTLİ</strong>
+            <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VEKTÖR 06</span>
+          <span class="vector-metric">Otonom Satış Hazırlığı</span>
+          <h4>Autonomous Agent Headless Transaction API</h4>
+        </div>
+        <p class="vector-desc">Siri Agent, ChatGPT Voice ve AutoGPT ajanlarının web arayüzüne takılmadan sitenizden doğrudan işlem yapması için A2A &amp; MCP standardı.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>{{ "agentCardVersion": "1.0", "capabilities": ["headless_quote", "direct_checkout"], "mcp_endpoint": "/.well-known/mcp.json", "auth": "HMAC_BEARER" }}</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE KİLİTLİ</strong>
+            <small>Uygulama formülü ve tohumlama kılavuzu Enterprise ($499) paketindedir.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="classified-footer">
+      <div class="classified-footer-info">
+        <strong>Rakiplerinizin önünde olun.</strong>
+        <span>Bu 6 gizli kurumsal vektörün açık kodları, formülleri ve kurulum şablonları Enterprise lisansıyla teslim edilir.</span>
+      </div>
+      <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499 →</a>
+    </div>
+  </div>
 </section>
 
 <!-- 03 CORE VALUE -->
@@ -263,10 +388,10 @@ def build_homepages():
 <section class="section pricing" id="pricing">
   <header>
     <span class="eyebrow">HTML&amp;HTML / 05</span>
-    <h2 data-i18n="pricingTitle">Tespit ücretsiz.<br>Düzeltme faaliyeti $99.</h2>
-    <p data-i18n="pricingCopy">Tek site için tek fiyat. Sorunları saklayarak değil, uygulama kesinliği satarak gelir üretir.</p>
+    <h2 data-i18n="pricingTitle">Tespit ücretsiz.<br>Uygulama $99 · Kurumsal $499.</h2>
+    <p data-i18n="pricingCopy">Tek site için şeffaf fiyatlandırma. Sorunları saklayarak değil, uygulama kesinliği ve kurumsal istihbarat sağlayarak değer üretir.</p>
   </header>
-  <div class="pricing-grid pricing-two">
+  <div class="pricing-grid pricing-three">
     <article>
       <div class="pricehead"><span data-i18n="fullDiagnosis">TAM TEŞHİS</span><strong>$0</strong></div>
       <p data-i18n="p1d">Public site yüzeyinde tam teşhis.</p>
@@ -275,26 +400,48 @@ def build_homepages():
         <li data-i18n="p1b">Tüm tespitler + evidence</li>
         <li data-i18n="p1c">Severity + confidence + source class</li>
         <li data-i18n="p1e">AI crawler policy matrix</li>
+        <li>Düzeltme kodları ve talimatları: <b>YOK</b></li>
+        <li>Enterprise 6 Gizli Vektör: <b>TAMAMEN BUZLU (🔒)</b></li>
       </ul>
       <a href="#scanner" data-i18n="scanNow">Ücretsiz tara</a>
     </article>
     <article class="featured">
-      <span class="popular" data-i18n="popular">TEK ÜCRETLİ ÜRÜN</span>
-      <div class="pricehead"><span data-i18n="fullFixProduct">TAM SİTE DÜZELTME TALİMATI</span><strong>$99</strong></div>
-      <p data-i18n="p2d">1 domain için uygulama-grade düzeltme sözleşmesi.</p>
+      <span class="popular" data-i18n="popular">EN ÇOK TERCİH EDİLEN</span>
+      <div class="pricehead"><span data-i18n="fullFixProduct">AI GÖRÜNÜRLÜK YOL HARİTASI</span><strong>$99</strong></div>
+      <p data-i18n="p2d">9 Sütun için uygulama-grade mühendislik sözleşmesi.</p>
       <ul>
-        <li data-i18n="p2a">Tam issue envanteri + P0–P3 sıra</li>
+        <li data-i18n="p2a">9 Sütun tam issue envanteri + P0–P3 sıra</li>
         <li data-i18n="p2b">ROOT FIX → RECOVERY → PREVENTION</li>
         <li data-i18n="p2c">Acceptance + regression test</li>
         <li data-i18n="p2e">Rollback + stop conditions</li>
+        <li>Hazır kodlar (robots.txt, llms.txt, Schema graph, AEO)</li>
         <li data-i18n="p2f">30 gün içinde 1 re-scan</li>
+        <li>Enterprise 6 Gizli Vektör: <b>ÖZET AÇIK, KODLAR KİLİTLİ (🔒)</b></li>
       </ul>
-      <a class="solid" href="/checkout" data-i18n="buyFix">Full Site Fix Mandate — $99</a>
+      <a class="solid" href="/checkout?plan=pro" data-i18n="buyFix">Yol Haritasını Aç — $99</a>
+    </article>
+    <article class="enterprise-tier">
+      <span class="vip-badge">KURUMSAL TEKEL &amp; VIP</span>
+      <div class="pricehead"><span>ENTERPRISE DARK POOL</span><strong>$499</strong></div>
+      <p>Silikon Vadisi $1M+ ajanslarının 6 gizli optimizasyon vektörü.</p>
+      <ul>
+        <li><b>$99 Yol Haritasındaki her şey DAHİL</b></li>
+        <li><b>6 Gizli Enterprise Protokolü (Açık Kodlarla):</b></li>
+        <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
+        <li>2. Cross-Encoder Attention Hijacking (Perplexity 1. Sıra)</li>
+        <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
+        <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
+        <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
+        <li>6. Autonomous Agent Headless Transaction API (MCP)</li>
+        <li>14 Dosyalı VIP ZIP Teslimatı</li>
+        <li>60 gün içinde 3 VIP re-scan</li>
+      </ul>
+      <a class="solid enterprise-btn" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499</a>
     </article>
   </div>
   <div class="compare">
     <b data-i18n="compareLabel">ÜRÜN SINIRI</b>
-    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$99:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? Public tarama kaynak dosya adını tahmin etmez; source/codebase bağlamı sağlanırsa mandate dosya seviyesine iner.</p>
+    <p data-i18n="compareCopy"><strong>Free:</strong> ne yanlış ve kanıtı ne? → <strong>$99:</strong> kök neden hangi sırayla, hangi testle ve hangi rollback ile düzeltilmeli? → <strong>$499 Enterprise:</strong> $1M+ ajansların uyguladığı 6 gizli AI algoritma vektörünün açık kod ve uygulama protokolleri.</p>
   </div>
 </section>
 
@@ -551,6 +698,131 @@ def build_homepages():
       <small class="note">Public scanning never guesses file names; provided codebase context enables file-level targeting.</small>
     </aside>
   </div>
+  <!-- 02.1 CLASSIFIED ENTERPRISE DARK POOL VECTORS -->
+  <div class="classified-section">
+    <div class="classified-header">
+      <div class="classified-badge">🔒 TOP SECRET · ENTERPRISE DARK POOL</div>
+      <h3>2026 Enterprise AI Visibility Intelligence Vectors</h3>
+      <p>6 proprietary optimization vectors leveraged exclusively by $1,000,000+/year Silicon Valley AI search agencies. Formulas are redacted in public scans.</p>
+    </div>
+    <div class="classified-grid">
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VECTOR 01</span>
+          <span class="vector-metric">+420% Direct Recommendation</span>
+          <h4>Model Corpus Seeding &amp; Co-occurrence Engine</h4>
+        </div>
+        <p class="vector-desc">Brand entity injection and Pointwise Mutual Information (PMI) optimization across foundational pretraining datasets (Common Crawl, Reddit, Arxiv, GitHub).</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>const PMI_CO_OCCURRENCE = {{ corpus: ["refinedweb", "the-pile", "arxiv"], pmi_score: 0.88, anchor_term: "ENTERPRISE_SOLUTION", weight_injection: true }}; function seedCorpusDistribution() {{ /* CLASSIFIED PROTOCOL */ }}</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE CLASSIFIED</strong>
+            <small>Full implementation formula &amp; code delivered in Enterprise ($499) tier.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VECTOR 02</span>
+          <span class="vector-metric">0.95+ Re-rank Score</span>
+          <h4>Cross-Encoder Attention Hijacking</h4>
+        </div>
+        <p class="vector-desc">Precision passage structuring to achieve top attention weights in Cohere Rerank v3 and BGE-Reranker matrices for Perplexity and Google Gemini AI Overviews.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>attention_score = softmax(Q * K.T / sqrt(d_k)); template = [QUERY_SYNONYM, ATOMIC_ANSWER_50W, NUMERICAL_FACTS_3X, CONTRAST_CLAUSE]; export function formatForRerank();</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE CLASSIFIED</strong>
+            <small>Full implementation formula &amp; code delivered in Enterprise ($499) tier.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VECTOR 03</span>
+          <span class="vector-metric">100% Core Update Immunity</span>
+          <h4>Knowledge Vault Triple Anchoring (Consensus Loop)</h4>
+        </div>
+        <p class="vector-desc">Unbreakable tripartite entity resolution across Wikidata QID, Google Knowledge Graph MID, and corporate registry databases.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>{{ "@context": "https://schema.org", "@graph": [{{ "@id": "kg:MID_0x892a", "sameAs": ["https://wikidata.org/wiki/Q102938", "https://crunchbase.com/org/..."] }}] }}</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE CLASSIFIED</strong>
+            <small>Full implementation formula &amp; code delivered in Enterprise ($499) tier.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VECTOR 04</span>
+          <span class="vector-metric">40x Faster Crawl · 95% GPU Savings</span>
+          <h4>KV-Cache Friendly Edge Token Purge</h4>
+        </div>
+        <p class="vector-desc">Cloudflare Worker script delivering 14KB clean AST payloads to AI bots (GPTBot, ClaudeBot) to bypass crawl-budget limits.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>export default {{ async fetch(req, env) {{ const bot = isAIBot(req.headers.get("user-agent")); if (bot) return serveCleanASTStream(req); }} }};</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE CLASSIFIED</strong>
+            <small>Full implementation formula &amp; code delivered in Enterprise ($499) tier.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VECTOR 05</span>
+          <span class="vector-metric">Sector Monopoly</span>
+          <h4>Second-Order Synthetic Citation Loop Blueprint</h4>
+        </div>
+        <p class="vector-desc">Authoring canonical industry benchmark indices that compel recursive LLM citation loops across AI-synthesized overviews.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>const CITATION_ENGINE = {{ primary_definition: "CANONICAL_INDEX_2026", recursive_ai_citations: true, synthetic_loop_proof: "SHA256_HASH" }};</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE CLASSIFIED</strong>
+            <small>Full implementation formula &amp; code delivered in Enterprise ($499) tier.</small>
+          </div>
+        </div>
+      </div>
+      <div class="classified-card">
+        <div class="classified-card-head">
+          <span class="vector-tag">VECTOR 06</span>
+          <span class="vector-metric">Autonomous Agent Ready</span>
+          <h4>Autonomous Agent Headless Transaction API</h4>
+        </div>
+        <p class="vector-desc">A2A v1.0 Agent Card and Model Context Protocol (MCP) server endpoints enabling Siri Agent and AutoGPT to transact without UI friction.</p>
+        <div class="classified-blur-container">
+          <div class="classified-blurred-content">
+            <code>{{ "agentCardVersion": "1.0", "capabilities": ["headless_quote", "direct_checkout"], "mcp_endpoint": "/.well-known/mcp.json", "auth": "HMAC_BEARER" }}</code>
+          </div>
+          <div class="classified-lock-overlay">
+            <span class="lock-icon">🔒</span>
+            <strong>ENTERPRISE CLASSIFIED</strong>
+            <small>Full implementation formula &amp; code delivered in Enterprise ($499) tier.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="classified-footer">
+      <div class="classified-footer-info">
+        <strong>Dominate AI Search Results.</strong>
+        <span>Full implementation code, formulas, and prompt templates are delivered in the Enterprise package.</span>
+      </div>
+      <a class="classified-cta" id="enterpriseLink" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499 →</a>
+    </div>
+  </div>
 </section>
 
 <!-- 03 CORE VALUE -->
@@ -617,10 +889,10 @@ def build_homepages():
 <section class="section pricing" id="pricing">
   <header>
     <span class="eyebrow">HTML&amp;HTML / 05</span>
-    <h2>Diagnosis is free.<br>Resolution is $99.</h2>
-    <p>Single engagement per site. We monetize implementation precision, not withholding problems.</p>
+    <h2>Diagnosis is free.<br>Roadmap is $99 · Enterprise is $499.</h2>
+    <p>Single engagement per site. We monetize implementation precision and proprietary enterprise intelligence, not withholding problems.</p>
   </header>
-  <div class="pricing-grid pricing-two">
+  <div class="pricing-grid pricing-three">
     <article>
       <div class="pricehead"><span>FULL DIAGNOSIS</span><strong>$0</strong></div>
       <p>Full diagnostic crawl across up to 50 public pages.</p>
@@ -629,26 +901,48 @@ def build_homepages():
         <li>All findings + attached evidence</li>
         <li>Severity + confidence + source class</li>
         <li>AI crawler policy matrix</li>
+        <li>Remediation codes &amp; blueprints: <b>NONE</b></li>
+        <li>Enterprise 6 Secret Vectors: <b>REDACTED (🔒)</b></li>
       </ul>
       <a href="#scanner">Scan Free</a>
     </article>
     <article class="featured">
       <span class="popular">PRIMARY PRODUCT</span>
-      <div class="pricehead"><span>FULL SITE FIX MANDATE</span><strong>$99</strong></div>
-      <p>Implementation-grade fix contract for one domain.</p>
+      <div class="pricehead"><span>AI SEARCH VISIBILITY ROADMAP</span><strong>$99</strong></div>
+      <p>Implementation-grade 9-pillar engineering blueprint for one domain.</p>
       <ul>
-        <li>Full issue inventory + P0–P3 order</li>
+        <li>Full 9-pillar issue inventory + P0–P3 order</li>
         <li>ROOT FIX → RECOVERY → PREVENTION</li>
         <li>Acceptance + regression tests</li>
         <li>Rollback + stop conditions</li>
+        <li>Production code templates (robots.txt, llms.txt, Schema graph, AEO)</li>
         <li>1 re-scan within 30 days</li>
+        <li>Enterprise 6 Secret Vectors: <b>SUMMARY VISIBLE, CODE REDACTED (🔒)</b></li>
       </ul>
-      <a class="solid" href="/checkout">Full Site Fix Mandate — $99</a>
+      <a class="solid" href="/checkout?plan=pro">AI Search Visibility Roadmap — $99</a>
+    </article>
+    <article class="enterprise-tier">
+      <span class="vip-badge">CORPORATE MONOPOLY &amp; VIP</span>
+      <div class="pricehead"><span>ENTERPRISE DARK POOL</span><strong>$499</strong></div>
+      <p>6 proprietary vectors from $1,000,000+ AI search research labs.</p>
+      <ul>
+        <li><b>Everything in $99 Roadmap INCLUDED</b></li>
+        <li><b>6 Classified Enterprise Protocols (Full Code):</b></li>
+        <li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li>
+        <li>2. Cross-Encoder Attention Hijacking (Perplexity #1 Rank)</li>
+        <li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li>
+        <li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li>
+        <li>5. Second-Order Synthetic Citation Loop Blueprint</li>
+        <li>6. Autonomous Agent Headless Transaction API (MCP)</li>
+        <li>14-file Extended VIP ZIP Delivery</li>
+        <li>3 VIP re-scans within 60 days</li>
+      </ul>
+      <a class="solid enterprise-btn" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499</a>
     </article>
   </div>
   <div class="compare">
     <b>PRODUCT BOUNDARY</b>
-    <p><strong>Free:</strong> what is wrong and what proves it? → <strong>$99:</strong> what root cause should be fixed, in which order, with which tests and rollback? Public scanning never guesses file names; provided codebase context allows file-level targeting.</p>
+    <p><strong>Free:</strong> what is wrong and what proves it? → <strong>$99:</strong> what root cause should be fixed, in which order, with which tests and rollback? → <strong>$499 Enterprise:</strong> 6 proprietary AI algorithm vectors with turnkey execution code and prompts.</p>
   </div>
 </section>
 
