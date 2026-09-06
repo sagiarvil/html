@@ -3,27 +3,34 @@ import path from 'node:path';
 
 const root=process.cwd();
 const errors=[];
-const required=['index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/js/validator.js','functions/api/scan.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/api/mandate.ts','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','robots.txt','sitemap.xml','llms.txt'];
+const required=['index.html','en/index.html','tr/index.html','checkout.html','assets/css/validator.css','assets/css/validator-base.css','assets/css/validator-v2.css','assets/css/site-ia.css','assets/js/validator.js','assets/js/authority-tool.js','functions/api/scan.ts','functions/lib/scan-engine.ts','functions/lib/scan-request.ts','functions/api/mandate.ts','functions/api/mentions.ts','functions/lib/mention-engine.ts','assets/js/theme.js','assets/css/theme.css','assets/js/mention-tracker.js','robots.txt','sitemap.xml','llms.txt'];
 for(const rel of required){if(!fs.existsSync(path.join(root,rel)))errors.push(`missing required file: ${rel}`)}
-const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const css=fs.readFileSync(path.join(root,'assets/css/validator-base.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/validator-v2.css'),'utf8');
+const rootIndex=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const en=fs.readFileSync(path.join(root,'en/index.html'),'utf8');
+const tr=fs.readFileSync(path.join(root,'tr/index.html'),'utf8');
+const css=fs.readFileSync(path.join(root,'assets/css/validator-base.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/validator-v2.css'),'utf8')+fs.readFileSync(path.join(root,'assets/css/site-ia.css'),'utf8');
 const js=fs.readFileSync(path.join(root,'assets/js/validator.js'),'utf8');
+const toolJs=fs.readFileSync(path.join(root,'assets/js/authority-tool.js'),'utf8');
 const api=fs.readFileSync(path.join(root,'functions/api/scan.ts'),'utf8');
 const engine=fs.readFileSync(path.join(root,'functions/lib/scan-engine.ts'),'utf8');
 const request=fs.readFileSync(path.join(root,'functions/lib/scan-request.ts'),'utf8');
 const mandate=fs.readFileSync(path.join(root,'functions/api/mandate.ts'),'utf8');
 const checkout=fs.readFileSync(path.join(root,'checkout.html'),'utf8');
+const fixEn=fs.readFileSync(path.join(root,'en/fix-mandate/index.html'),'utf8');
+const fixTr=fs.readFileSync(path.join(root,'tr/fix-mandate/index.html'),'utf8');
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
 const categories=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
 const checks=[
-  [/<html lang="tr">/i.test(index),'homepage must declare Turkish default language'],
-  [/data-lang="tr"/.test(index)&&/data-lang="en"/.test(index),'TR/EN language controls missing'],
-  [/id="scanForm"/.test(index)&&/id="domainInput"/.test(index),'scanner form missing'],
-  [/\/api\/scan/.test(js),'client scan endpoint missing'],
+  [/<meta name="robots" content="noindex,follow">/i.test(rootIndex)&&/url=\/en/i.test(rootIndex),'root must be a noindex fallback to /en'],
+  [/<html lang="en">/i.test(en)&&/<html lang="tr">/i.test(tr),'locale hubs must declare explicit languages'],
+  [/href="\/tr"/.test(en)&&/href="\/en"/.test(tr),'direct locale switches missing'],
+  [/id="toolScanForm"/.test(en)&&/id="toolDomain"/.test(en)&&/id="toolScanForm"/.test(tr)&&/id="toolDomain"/.test(tr),'locale hub scanner form missing'],
+  [/\/api\/scan/.test(toolJs),'shared focused-tool scan endpoint missing'],
+  [/\/api\/scan/.test(js),'legacy validator client scan endpoint missing'],
   [/runFriendlyScan/.test(api)&&/runScan/.test(request),'server scan handler must use shared engine through normalization wrapper'],
   [/alternateHost/.test(request)&&/https:/.test(request)&&/http:/.test(request),'domain normalization/fallback contract missing'],
-  [/FULL SITE FIX MANDATE/i.test(index)&&/\$149/.test(index),'single $149 mandate positioning missing'],
-  [!/\$49|\$99/.test(index),'legacy mandate prices still present'],
+  [/FULL SITE FIX MANDATE/i.test(fixEn)&&/\$149/.test(fixEn)&&/FULL SITE FIX MANDATE/i.test(fixTr)&&/\$149/.test(fixTr),'single $149 mandate positioning missing'],
+  [!/\$49|\$99/.test(fixEn+fixTr),'legacy mandate prices still present'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],
   [/ROOT FIX/.test(mandate)&&/RECOVERY/.test(mandate)&&/PREVENTION/.test(mandate)&&/ROLLBACK/.test(mandate),'mandate execution contract incomplete'],
   [/MAX_PAGES=50/.test(engine)&&/MAX_LINK_PROBES=30/.test(engine),'crawl limits missing'],
@@ -35,18 +42,18 @@ const checks=[
   [/coreWebVitals:'NOT_MEASURED'/.test(engine),'field CWV must not be fabricated'],
   [/sourceClass/.test(js)&&/confidence/.test(js)&&/locked-fix/.test(js),'free evidence rendering contract missing'],
   [!/fixTr|fixEn/.test(engine),'free scan engine must not expose implementation instructions'],
-  [/application\/ld\+json/.test(index),'structured data missing'],
+  [/application\/ld\+json/.test(en)&&/application\/ld\+json/.test(tr),'localized structured data missing'],
   [/^# HTML&HTML/m.test(llms)&&/^> /m.test(llms)&&/^## /m.test(llms),'llms.txt structure incomplete'],
-  [css.length>7000,'validator CSS unexpectedly small'],
+  [css.length>9000,'combined site CSS unexpectedly small'],
   [js.length>9000,'validator JS unexpectedly small'],
   [/Harici ödeme sağlayıcısı henüz yapılandırılmadı/.test(checkout),'checkout must disclose inactive external payment dependency']
 ];
 for(const c of categories)checks.push([new RegExp(`['\"]${c}['\"]`).test(engine),`missing scoring engine: ${c}`]);
 for(const [ok,msg] of checks)if(!ok)errors.push(msg);
 const forbidden=[/Premium HTML templates/i,/Browse templates/i,/product\.html\?template=/i,/live-preview\.html/i,/HTML5 UP/i,/pixelarity\.com/i];
-for(const p of forbidden)if(p.test(index))errors.push(`legacy homepage reference: ${p}`);
+for(const p of forbidden)for(const [name,text] of [['en',en],['tr',tr]])if(p.test(text))errors.push(`legacy ${name} hub reference: ${p}`);
 const localAttr=/(?:href|src)=["']([^"']+)["']/gi;
-for(const file of ['index.html','checkout.html']){
+for(const file of ['index.html','en/index.html','tr/index.html','checkout.html']){
   const text=fs.readFileSync(path.join(root,file),'utf8');let m;
   while((m=localAttr.exec(text))){
     let t=m[1];
@@ -54,9 +61,10 @@ for(const file of ['index.html','checkout.html']){
     t=t.split('#')[0].split('?')[0];if(!t)continue;
     if(t==='/')t='index.html';else if(t.startsWith('/'))t=t.slice(1);else t=path.relative(root,path.resolve(path.dirname(file),t));
     let resolved=path.join(root,t);
+    if(fs.existsSync(resolved)&&fs.statSync(resolved).isDirectory())resolved=path.join(resolved,'index.html');
     if(!fs.existsSync(resolved)&&!path.extname(resolved)&&fs.existsSync(resolved+'.html'))resolved+='.html';
     if(!fs.existsSync(resolved))errors.push(`${file}: missing local target ${m[1]}`);
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: 12-engine free diagnosis, resilient domain normalization, evidence boundary, SSRF controls, $149 paid mandate gate and machine-readable surfaces verified.');
+console.log('INTEGRITY PASS: locale hubs, shared 12-engine diagnosis, resilient normalization, evidence boundary, SSRF controls and $149 mandate gate verified.');
