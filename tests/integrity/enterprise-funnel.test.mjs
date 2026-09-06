@@ -23,6 +23,14 @@ expect(/@media\(max-width:640px\)/.test(premium)&&/\.scanbox \.field\{grid-templ
 expect(/\.result-columns\{grid-template-columns:1fr\}/.test(premium),'mobile result layout contract missing');
 expect(/\.topbar nav\{order:3;width:100%;display:flex;overflow-x:auto/.test(premium),'tablet navigation overflow contract missing');
 
+// Universal Scanner Single-Input Contract
+for(const [name, doc] of [['home', home], ['trHome', trHome], ['enHome', enHome]]){
+  expect(!/<div class="tabs">/.test(doc), `${name} scanner must not contain mode-splitting tabs`);
+  expect(/id="domainInput"/.test(doc), `${name} scanner must maintain universal input field`);
+}
+expect(validator.includes('cleanRawInput'), 'validator.js must include universal input normalizer');
+expect(validator.includes('universalPlaceholder'), 'validator.js must define universal placeholder');
+
 for(const x of [tools,toolsEn]){
   expect(x.includes('data-premium-infographic="scope-map"'),'tools route must be a unified scan scope map');
   expect(x.includes('12')&&x.includes('13')&&x.includes('7'),'tools scope must expose 12 engines + 13 audits + 7 lenses');

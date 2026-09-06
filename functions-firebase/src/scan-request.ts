@@ -4,9 +4,14 @@ const SECURITY_ERROR=/not allowed|private|reserved|credentials|non-standard port
 const IPV4=/^\d{1,3}(?:\.\d{1,3}){3}$/;
 
 function cleanRaw(input:string){
-  let value=String(input??'').trim().replace(/^["'`]+|["'`]+$/g,'').trim();
-  if(!value)throw new Error('Domain required');
+  let value=String(input??'').trim();
+  value=value.replace(/^[<"'`(\[]+|[>"'`\)\]]+$/g,'').trim();
+  value=value.replace(/[.,]+$/,'').trim();
+  value=value.replace(/^(?:https?|htps?):\/*(?!\/)/i,'https://');
+  value=value.replace(/^(?:https?|htps?)\/\//i,'https://');
+  value=value.replace(/^htps:\/\//i,'https://');
   if(value.startsWith('//'))value='https:'+value;
+  if(!value)throw new Error('Domain required');
   return value;
 }
 
@@ -14,6 +19,7 @@ function parseCandidate(value:string,defaultProtocol='https:'){
   const withScheme=/^https?:\/\//i.test(value)?value:`${defaultProtocol}//${value.replace(/^\/+/, '')}`;
   const url=new URL(withScheme);
   if(!url.hostname)throw new Error('Enter a valid domain');
+  url.hostname=url.hostname.toLowerCase().replace(/\.+$/,'');
   url.hash='';
   return url;
 }

@@ -348,7 +348,7 @@ html[data-theme="dark"] .topbar {
 }
 
 .scanbox .tabs {
-  display: inline-flex;
+  display: none !important;
   gap: 4px;
   background: rgba(0, 0, 0, 0.05);
   padding: 4px;
