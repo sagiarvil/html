@@ -36,6 +36,20 @@ for(const [file,lang,route,name] of established){
   }
 }
 
+// Collapse legacy English URLs directly into the locale tree. This avoids
+// duplicate trust/authority pages and avoids two-hop /index.html -> / -> /en.
+const firebase=JSON.parse(read('firebase.json'));
+const legacy=[
+ ['/', '/en'],['/index.html','/en'],['/home','/en'],['/products','/en/pricing'],['/products.html','/en/pricing'],['/pricing','/en/pricing'],['/architecture','/en/platform'],['/preview','/en'],
+ ['/methodology.html','/en/methodology'],['/standard','/en/evidence-standard'],['/reference/ai-crawlers','/en/reference/ai-crawlers'],
+ ['/about','/en/about'],['/contact','/en/contact'],['/privacy','/en/privacy'],['/terms','/en/terms']
+];
+const legacySources=new Set(legacy.map(x=>x[0]));
+firebase.hosting.redirects=(firebase.hosting.redirects||[]).filter(r=>!legacySources.has(r.source));
+firebase.hosting.redirects.unshift(...legacy.map(([source,destination])=>({source,destination,type:301})));
+write('firebase.json',JSON.stringify(firebase,null,2)+'\n');
+write('_redirects',`${legacy.map(([s,d])=>`${s.padEnd(24)} ${d.padEnd(32)} 301`).join('\n')}\n/buy                     /checkout                        302\n`);
+
 const pkg=JSON.parse(read('package.json'));
 pkg.scripts['build:ia']='node scripts/build-enterprise-ia.mjs && node scripts/postbuild-enterprise-ia.mjs';
 write('package.json',JSON.stringify(pkg,null,2)+'\n');
