@@ -182,48 +182,139 @@ Link: &lt;/llms.txt&gt;; rel="describedby"; type="text/markdown"</code></pre>
 """
         },
         "tr": {
-            "title": "llms.txt Şartnamesi ve Uygulama Rehberi | HTML&HTML",
-            "desc": "llms.txt standardını anlayın. Dosya yerleşimi, v2 sözdizimi kuralları, llms-full.txt birleştirmesi ve rel=describedby keşfi hakkında teknik rehber.",
-            "kicker": "ŞARTNAME REHBERİ",
-            "h1": "llms.txt v2 Standardı: <em>Mimari, Sözdizimi ve Keşif</em>",
-            "sub": "Büyük dil modellerine ve otonom ajanlara temiz markdown bağlamı sunan gelişmekte olan standardın titiz bir teknik analizi.",
-            "read_time": "6 dk okuma · v2 describedby şartnamesine güncellendi",
+            "title": "llms.txt Nedir? Yapay Zeka ve LLM'ler İçin Standart Uygulama Rehberi | HTML&HTML",
+            "desc": "llms.txt standardı nedir, nasıl kurulur? v2 sözdizim kuralları, llms-full.txt mimarisi, AI botlarının (GPTBot, ClaudeBot, Perplexity) tarama mekanizmaları ve sık yapılan hatalar.",
+            "kicker": "ŞARTNAME VE UYGULAMA REHBERİ",
+            "h1": "llms.txt v2 Standardı: <em>Yapay Zeka Ajanları İçin Makine Okunabilir Dokümantasyon Mimarisi</em>",
+            "sub": "Büyük Dil Modelleri (LLM) ve otonom yapay zeka arama motorları için temiz, token dostu ve deterministik Markdown bağlamı sunmanın standart mühendislik rehberi.",
+            "read_time": "12 dk okuma · v2 describedby RFC şartnamesi ile güncellendi",
             "body": """
-<h2>llms.txt Nedir?</h2>
-<p>llms.txt, web sitelerinin yapay zeka modellerine temiz, token tasarruflu Markdown içeriği nasıl sunacağını standartlaştıran bir topluluk şartnamesidir. AI botlarını karmaşık CSS, JavaScript ve görsel kalıpları ayrıştırmaya zorlamak yerine, llms.txt en kritik dokümantasyonunuzu sade Markdown bağlantılarıyla dizinler.</p>
+<div class="callout-box">
+  <h4>Özet ve Temel Çıkarım</h4>
+  <p><strong>llms.txt</strong>, modern web sitelerinin karmaşık HTML, CSS ve JavaScript yükünü eleyerek yapay zeka sistemlerine (ChatGPT Search, Claude, Perplexity, Cursor) sade, token tasarruflu ve yapılandırılmış Markdown içeriği sunmasını sağlayan açık bir web standardıdır. robots.txt veya sitemap'in alternatifi değil; yapay zekaya özel tamamlayıcı bir anlamsal köprüdür.</p>
+</div>
 
-<h2>Dosya Yapısı ve Sözdizimi Grameri</h2>
-<p>Bir llms.txt dosyası mutlaka proje veya kurum adını belirten tek bir H1 başlığı ile başlamalı ve hemen altında amacını açıklayan bir alıntı bloğu (blockquote) yer almalıdır:</p>
-<pre><code># Acme Corporation
+<h2>1. llms.txt Nedir ve Neden Ortaya Çıktı?</h2>
+<p>Geleneksel web sayfaları <em>insan gözü</em> için tasarlanmıştır: stil şablonları (CSS), karmaşık DOM düğümleri, dinamik JavaScript bileşenleri, reklam ağları, açılır pencereler ve navigasyon çubukları. İnsan için zengin olan bu görsel katman, yapay zeka modelleri ve RAG (Retrieval-Augmented Generation) boru hatları için ciddi bir <strong>gürültü (noise)</strong> ve <strong>maliyet (token overhead)</strong> kaynağıdır.</p>
 
-> Acme, milisaniye altı replikasyona sahip kurumsal dağıtık veritabanı altyapısı sunar.
-
-## Dokümantasyon
-- [Mimari Genel Bakış](https://example.com/docs/architecture.md): Dağıtık mutabakat motoru mimarisi
-- [API Referansı](https://example.com/docs/api.md): REST ve gRPC uç nokta tanımları
-- [Kurulum Kılavuzu](https://example.com/docs/deploy.md): Kubernetes operatörleri ve donanım kurulumu</code></pre>
-
-<h2>llms.txt ve llms-full.txt Arasındaki Fark</h2>
-<p>Şartname iki dosya tanımlar:</p>
+<p>Bir yapay zeka ajanı veya arama botu tipik bir HTML sayfasını ayrıştırmaya çalıştığında:</p>
 <ul>
-  <li><code>/llms.txt</code>: Kısa açıklamalar içeren seçilmiş Markdown bağlantıları dizini.</li>
-  <li><code>/llms-full.txt</code>: Modellerin tek seferde tüm bağlamı okuyabilmesi için tüm belgelerin birleştirilmiş tam metni.</li>
+  <li><strong>Bağlam Penceresi İsrafı:</strong> Sayfadaki gerçek metin 500 token iken, çevreleyen HTML şablonları 8.000 token tüketebilir.</li>
+  <li><strong>Ayrıştırma Halüsinasyonu:</strong> Navigasyon linkleri, çerez uyarıları ve alt bilgi (footer) metinleri asıl içerikle karışarak modelin yanlış bilgi üretmesine yol açar.</li>
+  <li><strong>İşlem ve Gecikme Yükü:</strong> İstemci taraflı (CSR / SPA) çalışan sayfaları render etmek için headless tarayıcı (Chromium) çalıştırma zorunluluğu, botların yanıt sürelerini ve kaynak tüketimini katbekat artırır.</li>
 </ul>
 
-<h2>rel="describedby" ile Keşfedilebilirlik</h2>
-<p>Dosyayı yalnızca kök dizine koymak yeterli değildir. Hem HTML içinde hem de HTTP başlıklarında <code>rel="describedby"</code> ile belirtilmelidir:</p>
-<pre><code>&lt;!-- HTML head içinde --&gt;
-&lt;link rel="describedby" href="/llms.txt" type="text/markdown"&gt;
+<p><strong>llms.txt</strong>, bu sorunu kökten çözmek için ortaya atılmıştır: Web sitesinin kök dizininde (<code>/llms.txt</code>) barındırılan, standart sözdizimine sahip tek bir dosya ile yapay zekaya doğrudan projenin amacını, temel kaynaklarını ve sadeleştirilmiş Markdown belgelerini işaret eder.</p>
 
-# HTTP Yanıt Başlıklarında
-Link: &lt;/llms.txt&gt;; rel="describedby"; type="text/markdown"</code></pre>
+<h2>2. llms.txt Dosya Mimarisi ve v2 Sözdizim Grameri</h2>
+<p>Standart bir <code>/llms.txt</code> dosyası, standart Markdown (CommonMark) formatında yazılır ancak ayrıştırıcıların (parser) deterministik çalışabilmesi için kesin kurallara uymak zorundadır.</p>
 
-<h2>En Sık Yapılan Hatalar</h2>
+<h3>Zorunlu Hiyerarşi Kuralları</h3>
 <ol>
-  <li><strong>Eksik Alıntı Bloğu:</strong> H1 başlığının hemen altındaki blok alıntıyı unutmak standart v2 ayrıştırıcılarının hata vermesine neden olur.</li>
-  <li><strong>Kırık Bağlantılar:</strong> 404 veya 500 hatası dönen veya giriş gerektiren bağlantılar vermek.</li>
-  <li><strong>Biçimlendirilmemiş Listeler:</strong> Standart markdown madde işaretleri yerine düz paragraflar kullanmak.</li>
+  <li><strong>Tek H1 Başlığı:</strong> Dosya mutlaka projenin, kurumun veya ürünün resmi adını içeren tek bir H1 (<code># Başlık</code>) ile başlamalıdır. Birden fazla H1 kullanılamaz.</li>
+  <li><strong>Özet Blok Alıntısı (Blockquote):</strong> H1 başlığının hemen altında, projenin ne yaptığını ve kime hizmet ettiğini tek veya iki cümlede anlatan bir blok alıntı (<code>&gt; ...</code>) yer almalıdır. Ayrıştırıcılar bu bölümü sistem istemlerine (system prompt) doğrudan bağlam olarak enjekte eder.</li>
+  <li><strong>Bölüm Başlıkları (H2):</strong> Kaynaklar anlamsal kategorilere ayrılmalıdır (örn. <code>## Dokümantasyon</code>, <code>## API Referansı</code>, <code>## Ürünler</code>).</li>
+  <li><strong>Biçimlendirilmiş Bağlantı Listesi:</strong> Her kaynak, <code>- [Başlık](URL): Kısa açıklama</code> formatında bir liste öğesi olmalıdır. URL'ler mutlak (absolute HTTPS) olmalı ve doğrudan temiz Markdown veya sade HTML içeriğe yönlendirmelidir.</li>
 </ol>
+
+<h3>Eksiksiz Örnek: Üretim Seviyesinde llms.txt</h3>
+<pre><code># HTML&HTML
+
+> HTML&HTML, web sitelerinin yapay zeka arama motorları ve otonom ajanlar tarafından erişilebilirliğini, anlaşılabilirliğini ve taranabilirliğini denetleyen deterministik teşhis platformudur.
+
+## Temel Dokümantasyon
+- [Mimari Genel Bakış](https://htmlandhtml.com/docs/architecture.md): 12 bağımsız teşhis motorunun deterministik çalışma prensipleri.
+- [AI Görünürlük Kriterleri](https://htmlandhtml.com/docs/ai-readiness.md): robots.txt, canonical, HTTP başlıkları ve LLMO kriterleri.
+- [llms.txt Spesifikasyonu](https://htmlandhtml.com/tr/rehberler/llms-txt/): v2 şartnamesi, describedby protokolü ve sözdizimi doğrulaması.
+
+## Araçlar ve Doğrulayıcılar
+- [llms.txt Validator](https://htmlandhtml.com/tr/llms-txt-validator/): Gerçek zamanlı sözdizimi, HTTP başlığı ve bağlantı sağlığı denetleyicisi.
+- [AI Crawler Checker](https://htmlandhtml.com/tr/ai-crawler-checker/): RFC 9309 uyumlu AI bot erişim denetimi.
+
+## İsteğe Bağlı Kaynaklar
+- [Changelog](https://htmlandhtml.com/changelog.md): Sürüm notları ve API değişiklik geçmişi.</code></pre>
+
+<h2>3. llms.txt ile llms-full.txt Arasındaki Fark</h2>
+<p>Şartname iki ayrı dosyayı tanımlar ve her ikisinin de kullanım senaryosu farklıdır:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Özellik</th>
+      <th>/llms.txt (Dizin Dosyası)</th>
+      <th>/llms-full.txt (Tam Metin Dosyası)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Amacı</strong></td>
+      <td>Yapay zekaya içeriğin haritasını sunmak; modelin ihtiyaç duyduğu kaynağı seçerek tek tek indirmesini sağlamak.</td>
+      <td>Tüm kritik belgeleri tek bir dosyada birleştirerek modelin tek HTTP GET isteğiyle tüm bağlamı belleğe almasını sağlamak.</td>
+    </tr>
+    <tr>
+      <td><strong>Dosya Boyutu</strong></td>
+      <td>Küçük (Genellikle 1 KB - 10 KB).</td>
+      <td>Orta / Büyük (50 KB - 500 KB+).</td>
+    </tr>
+    <tr>
+      <td><strong>Kullanıcı Ajanı</strong></td>
+      <td>Web arama ajanları, CLI araçları, hızlı bağlam tarayıcıları.</td>
+      <td>Cursor, Windsurf, Claude Projects, NotebookLM gibi derin kod/doküman asistanları.</td>
+    </tr>
+    <tr>
+      <td><strong>İçerik Yapısı</strong></td>
+      <td>Markdown linkleri ve özet açıklamalar.</td>
+      <td>Belgelerin tam metni (başlıklar, kod örnekleri, açıklamaların tamamı).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>En İyi Uygulama:</strong> Eğer teknik bir ürün, SaaS platformu veya API sunuyorsanız, hem <code>/llms.txt</code> hem de birleştirilmiş <code>/llms-full.txt</code> dosyasını eşzamanlı olarak yayınlamalısınız.</p>
+
+<h2>4. Keşfedilebilirlik: rel="describedby" Standart Protokolü</h2>
+<p>Bir dosyanın sunucuda bulunması, botların onu otomatik keşfedeceği anlamına gelmez. Yapay zeka tarayıcılarının <code>/llms.txt</code> dosyanızı doğrudan bulabilmesi için IETF RFC 9264 uyumlu <strong>rel="describedby"</strong> mekanizması kullanılmalıdır.</p>
+
+<h3>A. HTML &lt;head&gt; Etiketi ile Keşif</h3>
+<p>Sitenizin her sayfasında (özellikle ana sayfada) <code>&lt;head&gt;</code> alanına aşağıdaki satırı ekleyin:</p>
+<pre><code>&lt;link rel="describedby" href="https://example.com/llms.txt" type="text/markdown"&gt;</code></pre>
+
+<h3>B. HTTP Yanıt Başlığı (Response Header) ile Keşif</h3>
+<p>Özellikle API uç noktalarında veya statik dosyalarda HTML DOM'u bulunmadığından, HTTP yanıt başlığı eklemek en kurumsal yöntemdir:</p>
+<pre><code>Link: &lt;https://example.com/llms.txt&gt;; rel="describedby"; type="text/markdown"</code></pre>
+<p>Nginx, Cloudflare Workers, Netlify veya Apache üzerinden bu başlığı tanımlayarak botların sayfayı indirmeden önce makine dokümantasyonundan haberdar olmasını sağlayabilirsiniz.</p>
+
+<h2>5. Yapay Zeka Arama Motorları llms.txt'yi Nasıl İşler?</h2>
+<p>Yapay zeka arama dünyasındaki botların davranışları geleneksel Googlebot'tan farklıdır:</p>
+
+<ul>
+  <li><strong>ChatGPT Search (OAI-SearchBot):</strong> Kullanıcı bir soru sorduğunda canlı web araması yapar. İlgili sitenin <code>/llms.txt</code> dosyası varsa, sayfalar dolusu HTML taramak yerine ilgili Markdown dosyasını doğrudan çekerek yanıt sentezinde kullanır.</li>
+  <li><strong>Perplexity (PerplexityBot):</strong> Kaynak atıfları (citations) üretirken en yüksek bilgi yoğunluğuna sahip temiz metinleri önceler. llms.txt üzerinden sağlanan doğrudan referanslar atıf alma ihtimalini artırır.</li>
+  <li><strong>Claude (Claude-SearchBot / Anthropic):</strong> Uzun bağlam pencerelerinde (200k+ token) birleştirilmiş <code>llms-full.txt</code> dosyalarını doğrudan RAG bağlamı olarak tüketebilir.</li>
+  <li><strong>Google Search ve Googlebot:</strong> Google, web sayfalarını klasik PageRank ve HTML dizinleme motoruyla tarar. Google doğrudan llms.txt'yi organik sıralama faktörü olarak <em>kullanmaz</em>; ancak Google Gemini tabanlı yapay zeka arama modülleri temiz Markdown içeriğini keşif aşamasında değerlendirebilir.</li>
+</ul>
+
+<h2>6. En Yaygın 6 Uygulama Hatası ve Çözümleri</h2>
+<p>HTML&HTML doğrulama motorumuzun yüz binlerce web sitesinde tespit ettiği en kritik llms.txt hataları şunlardır:</p>
+
+<ol>
+  <li><strong>H1 Altındaki Alıntı Bloğunu Unutmak:</strong> Sadece <code># Başlık</code> yazıp altına liste koymak v2 şartnamesine aykırıdır. Blok alıntı (<code>&gt; Açıklama</code>) olmadan dosya standart uyumlu kabul edilmez.</li>
+  <li><strong>HTML Sayfalarına Link Vermek:</strong> llms.txt içindeki bağlantıların arkasında karmaşık CSS/JS dolu HTML bulunuyorsa sistemin amacı zedelenir. Bağlantılar doğrudan <code>.md</code> dosyalarına veya minimum HTML içeren sayfalara gitmelidir.</li>
+  <li><strong>Kırık Linkler (404 / 301 Döngüleri):</strong> Ajanlar liste içerisindeki bir bağlantıya tıkladığında 404 hatası alırsa o domain'e ait güven skorunu düşürür ve taramayı keser.</li>
+  <li><strong>Yanlış Content-Type Başlığı:</strong> Dosya sunulurken HTTP başlığında <code>Content-Type: text/plain; charset=utf-8</code> veya <code>text/markdown; charset=utf-8</code> dönülmelidir. <code>application/octet-stream</code> dönülmesi botların dosyayı indirmesini engelleyebilir.</li>
+  <li><strong>robots.txt ile Kendi Dosyasını Engellemek:</strong> Webmaster'ların sıkça yaptığı hata: <code>Disallow: /*.txt</code> veya <code>Disallow: /llms.txt</code> yazarak AI botlarının dosyaya ulaşmasını engellemektir. robots.txt içinde açıkça <code>Allow: /llms.txt</code> izni verilmelidir.</li>
+  <li><strong>İçeriği Güncellememek:</strong> Değişen dokümantasyon, silinen API uç noktaları veya güncellenmeyen sürümler yapay zekanın eski bilgiyle halüsinasyon görmesine neden olur.</li>
+</ol>
+
+<h2>7. Kontrol Listesi: Sitenizin llms.txt Kurulumunu Doğrulayın</h2>
+<p>Yayına almadan önce aşağıdaki teknik adımları teyit edin:</p>
+<ul>
+  <li>Dosya kök dizinde mi? (<code>https://siteniz.com/llms.txt</code>)</li>
+  <li>HTTP yanıt kodu temiz 200 OK mü? (Yönlendirme veya 301/302 zinciri yok)</li>
+  <li>İlk satırda tek bir H1 ve altında blok alıntı (<code>&gt;</code>) var mı?</li>
+  <li>Tüm linkler çalışan mutlak HTTPS URL'leri mi?</li>
+  <li>HTML &lt;head&gt; içinde <code>rel="describedby"</code> etiketi tanımlandı mı?</li>
+  <li>robots.txt dosyasında AI botları için <code>/llms.txt</code> erişimi açık mı?</li>
+</ul>
 """
         }
     },
@@ -539,8 +630,8 @@ for g in guides_data:
 <article class="section" style="max-width: var(--shell-max); margin: 0 auto; padding-top: 56px;">
   <div class="kicker"><span></span><b>{c['kicker']}</b></div>
   <h1 style="margin: 20px 0 16px; font-size: clamp(38px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -.045em;">{c['h1']}</h1>
-  <p style="font-size: 19px; line-height: 1.7; color: var(--muted); margin-bottom: 24px; max-width: 860px;">{c['sub']}</p>
-  <div style="font-size: 13.5px; font-weight: 750; color: #88867e; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line);">
+  <p style="font-size: 19px; line-height: 1.7; color: var(--fg-soft, #cbd5e1); margin-bottom: 24px; max-width: 860px;">{c['sub']}</p>
+  <div style="font-size: 13.5px; font-weight: 750; color: var(--fg-dim, #94a3b8); margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.1));">
     {c['read_time']}
   </div>
 
