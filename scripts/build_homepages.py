@@ -103,7 +103,7 @@ def build_homepages():
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
-<link rel="stylesheet" href="/assets/css/theme.css?v=9">
+<link rel="stylesheet" href="/assets/css/theme.css?v=10">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
@@ -228,8 +228,8 @@ def build_homepages():
     </div>
     <aside class="mandate-card">
       <span class="eyebrow" data-i18n="paidResolution">ÜCRETLİ DÜZELTME</span>
-      <h3 data-i18n="mandateTitle">Teşhis ücretsiz.<br>████████ $99.</h3>
-      <p data-i18n="mandateCopy">Aynı domain yeniden taranır; her geçerli bulgu ROOT FIX → RECOVERY → PREVENTION → TEST → ████████ kod ve konfigürasyon şablonlarına dönüştürülür.</p>
+      <h3 data-i18n="mandateTitle">Teşhis ücretsiz.<br>Yol Haritası $99.</h3>
+      <p data-i18n="mandateCopy">Aynı domain yeniden taranır; her geçerli bulgu ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK kod ve konfigürasyon şablonlarına dönüştürülür.</p>
       <ul>
         <li data-i18n="m1">████████ uygulama sırası</li>
         <li data-i18n="m2">Issue ID + kanıt + güven seviyesi</li>
@@ -382,7 +382,7 @@ def build_homepages():
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
-<link rel="stylesheet" href="/assets/css/theme.css?v=9">
+<link rel="stylesheet" href="/assets/css/theme.css?v=10">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
@@ -507,7 +507,7 @@ def build_homepages():
     <aside class="mandate-card">
       <span class="eyebrow" data-i18n="paidResolution">PAID RESOLUTION</span>
       <h3 data-i18n="mandateTitle">Evidence is free.<br>Automated code pack is $99.</h3>
-      <p data-i18n="mandateCopy">The same domain is re-scanned and every valid issue becomes a ROOT FIX → RECOVERY → PREVENTION → TEST → ████████ code and configuration template.</p>
+      <p data-i18n="mandateCopy">The same domain is re-scanned and every valid issue becomes a ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK code and configuration template.</p>
       <ul>
         <li data-i18n="m1">████████ implementation order</li>
         <li data-i18n="m2">Issue ID + evidence + confidence</li>
@@ -531,7 +531,7 @@ def build_homepages():
     <span class="eyebrow">FAQ</span>
     <h2 data-i18n="faqTitle">Frequently asked questions</h2>
   </header>
-  <details><summary data-i18n="q1">What is hidden in the free scan?</summary><p data-i18n="a1">The problem is not hidden. URL, severity, confidence, evidence and category are visible. The paid layer unlocks automated code templates, test suites and ████████ plans.</p></details>
+  <details><summary data-i18n="q1">What is hidden in the free scan?</summary><p data-i18n="a1">The problem is not hidden. URL, severity, confidence, evidence and category are visible. The paid layer unlocks automated code templates, test suites and rollback plans.</p></details>
   <details><summary data-i18n="q2">Does 100/100 guarantee Google or AI citations?</summary><p data-i18n="a2">No. The score only represents measured checks. It is not a ranking, traffic or AI citation guarantee.</p></details>
   <details><summary data-i18n="q3">Is llms.txt mandatory?</summary><p data-i18n="a3">No. llms.txt is an evolving proposal, not a web standard. It is therefore labeled PROPOSAL and given limited weight.</p></details>
   <details><summary data-i18n="q4">Are Core Web Vitals measured?</summary><p data-i18n="a4">This version measures HTML/HTTP performance hygiene. Reliable LCP/INP/CLS needs CrUX/PageSpeed data; without it the result is NOT_MEASURED.</p></details>

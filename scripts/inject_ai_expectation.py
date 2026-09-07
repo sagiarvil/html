@@ -107,7 +107,7 @@ INTENT = {
         "site-tarama": "Tek skor değil, yapay zeka görünürlüğünün nerede kırıldığını görün: bulunma, anlaşılma, kaynak olma uygunluğu, tavsiye fırsatı veya dönüşüm yolu.",
         "teknik-seo-kontrol": "Klasik teknik SEO artık yalnız mavi linkler için değildir. Google’ın üretken yapay zeka özellikleri de Arama dizinine dayanır; taranabilirlik, indekslenebilirlik, canonical ve iç linkler hâlâ temeldir.",
         "ai-mention-tracker": "Hazırlığı ölçmekten sonraki adım gerçek görünürlüğü izlemektir: nötr sorgularda markanız geçiyor mu, alan adınız kaynak gösteriliyor mu ve bu görünürlük referral’a dönüşüyor mu?",
-        "fix-mandate": "$99 Yol Haritası, ‘AI sizi tavsiye eder’ vaadi değil; yapay zeka arama görünürlüğü ve tavsiye fırsatı önündeki ölçülmüş engeller için kök neden, uygulama sırası, test ve ████████ kod paketidir.",
+        "fix-mandate": "$99 Yol Haritası, ‘AI sizi tavsiye eder’ vaadi değil; yapay zeka arama görünürlüğü ve tavsiye fırsatı önündeki ölçülmüş engeller için kök neden, uygulama sırası, test ve rollback güvenceli kod paketidir.",
         "fiyatlandirma": "Teşhis ücretsizdir. Ücretli ürün, yapay zeka arama görünürlüğü ve kaynak olma uygunluğu önündeki ölçülmüş engelleri test edilebilir uygulama reçetesine dönüştürür.",
     },
     "en": {
@@ -117,7 +117,7 @@ INTENT = {
         "website-scanner": "Do not settle for one score. Find where AI visibility breaks: discovery, understanding, source eligibility, recommendation opportunity or conversion path.",
         "technical-seo-checker": "Technical SEO is not only about blue links. Google’s generative AI Search features rely on the Search index, so crawlability, indexability, canonicals and internal links remain foundational.",
         "ai-mention-tracker": "After readiness, measure real visibility: does the brand appear for neutral prompts, is the domain cited, and does that exposure produce measurable referral paths?",
-        "fix-mandate": "The $99 Yol Haritası is not an AI recommendation promise. It is a root-cause, implementation, testing and ████████ package for measured blockers to AI search visibility and source eligibility.",
+        "fix-mandate": "The $99 Yol Haritası is not an AI recommendation promise. It is a root-cause, implementation, testing and rollback package for measured blockers to AI search visibility and source eligibility.",
         "pricing": "Diagnosis is free. The paid product converts measured blockers to AI search visibility and source eligibility into a testable implementation prescription.",
     },
 }

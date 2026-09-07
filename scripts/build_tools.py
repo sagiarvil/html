@@ -40,7 +40,7 @@ tools_data = [
             "faq_title": "Frequently Asked Questions",
             "faqs": [
                 ("What is the difference between this and Lighthouse?", "Lighthouse evaluates synthetic browser performance on a single URL. HTML&HTML crawls up to 50 pages across 12 deterministic engines including AI crawlers, llms.txt, schema, and security."),
-                ("Why is implementation detail locked?", "Evidence is free so you know what is broken and where. The $99 Yol Haritası provides root causes, implementation order, regression tests, and ████████ plans for your engineering team."),
+                ("Why is implementation detail locked?", "Evidence is free so you know what is broken and where. The $99 Yol Haritası provides root causes, implementation order, regression tests, and rollback plans for your engineering team."),
                 ("How are private networks protected?", "Localhost, private IP ranges, cloud metadata endpoints, and redirect pivots into private addresses fail closed before any socket connection.")
             ],
             "cta_title": "Turn free diagnosis into code changes.",
@@ -108,7 +108,7 @@ tools_data = [
                 ("Can I fix readiness issues myself?", "Yes. The free audit provides exact issues, affected URLs, and evidence snippets. For automated remediation contracts, use the $99 Yol Haritası.")
             ],
             "cta_title": "Get your implementation-grade Yol Haritası.",
-            "cta_sub": "Turn readiness gaps into sequenced PRs with acceptance tests and ████████ conditions.",
+            "cta_sub": "Turn readiness gaps into sequenced PRs with acceptance tests and rollback conditions.",
             "cta_btn": "Full Site Yol Haritası — $99"
         },
         "tr": {
@@ -134,7 +134,7 @@ tools_data = [
             "faqs": [
                 ("Web Sitesi AI Hazırlığı nedir?", "Bir web sitesinin yapay zeka modelleri ve otonom ajanlar tarafından sorunsuz taranmasını, anlaşılmasını ve doğru kaynak gösterilmesini sağlayan teknik altyapı durumudur."),
                 ("llms.txt AI görünürlüğünü garanti eder mi?", "Hayır. llms.txt, LLM'lere temiz dokümantasyon sunan gelişmekte olan bir öneridir. ÖNERİ statüsünde dengeli bir ağırlıkla puanlanır."),
-                ("Bulunan sorunları kendim düzeltebilir miyim?", "Evet. Ücretsiz tarama sorunları, etkilenen URL'leri ve kanıt parçalarını açıkça gösterir. ████████ için $99 Yol Haritası tercih edilir.")
+                ("Bulunan sorunları kendim düzeltebilir miyim?", "Evet. Ücretsiz tarama sorunları, etkilenen URL'leri ve kanıt parçalarını açıkça gösterir. Kalıcı otomatik düzeltme için $99 Yol Haritası tercih edilir.")
             ],
             "cta_title": "Uygulama-grade Yol Haritası edinin.",
             "cta_sub": "AI hazırlık açıklarını kabul testleri ve geri alma koşullarıyla sıralı PR'lara dönüştürün.",
@@ -236,7 +236,7 @@ tools_data = [
                 ("How does HTML&HTML test robots.txt?", "It parses the canonical robots.txt according to RFC 9309 and evaluates specific user-agent rules against public URLs.")
             ],
             "cta_title": "Prove the claim 'AI can access us.'",
-            "cta_sub": "Convert robots, header, and redirect findings into implementation contracts with tests and ████████.",
+            "cta_sub": "Convert robots, header, and redirect findings into implementation contracts with tests and rollback plans.",
             "cta_btn": "Full Site Yol Haritası — $99"
         },
         "tr": {
@@ -265,7 +265,7 @@ tools_data = [
                 ("HTML&HTML robots.txt dosyasını nasıl test eder?", "RFC 9309 standartlarına göre robots.txt ayrıştırılır ve herkese açık sayfalar için bot kuralları canlıda test edilir.")
             ],
             "cta_title": "'AI bize erişebiliyor' iddiasını kanıtlayın.",
-            "cta_sub": "Robots, header ve yönlendirme bulgularını testler ve geri alma adımlarıyla ████████ne dönüştürün.",
+            "cta_sub": "Robots, header ve yönlendirme bulgularını testler ve geri alma adımlarıyla uygulama planına dönüştürün.",
             "cta_btn": "Full Site Yol Haritası — $99"
         }
     },
@@ -364,7 +364,7 @@ tools_data = [
                 ("Does this audit include mobile friendliness?", "Yes, viewport tags and mobile accessibility baselines are included.")
             ],
             "cta_title": "Fix your technical SEO foundations.",
-            "cta_sub": "Receive prioritized code modifications with tests and ████████ safeguards with the $99 Yol Haritası.",
+            "cta_sub": "Receive prioritized code modifications with tests and rollback safeguards with the $99 Yol Haritası.",
             "cta_btn": "Full Site Yol Haritası — $99"
         },
         "tr": {
@@ -393,7 +393,7 @@ tools_data = [
                 ("Mobil uyumluluk dahil mi?", "Evet, viewport tanımları ve mobil erişilebilirlik kontrolleri analiz kapsamındadır.")
             ],
             "cta_title": "Teknik SEO temellerinizi sağlamlaştırın.",
-            "cta_sub": "$99 Yol Haritası ile kabul testleri ve geri alma planları içeren öncelikli ████████ edinin.",
+            "cta_sub": "$99 Yol Haritası ile kabul testleri ve geri alma planları içeren öncelikli kod paketini edinin.",
             "cta_btn": "Full Site Yol Haritası — $99"
         }
     },
@@ -625,7 +625,7 @@ for t in tools_data:
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/{t['tr_slug']}/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/{t['en_slug']}/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",

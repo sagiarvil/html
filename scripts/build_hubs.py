@@ -62,7 +62,7 @@ def build_tools_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/araclar/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/tools/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -146,7 +146,7 @@ def build_platform_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/platform/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/platform/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -229,7 +229,7 @@ def build_platform_hub():
       <b>04 / FIX</b>
       <div>
         <h3>{'Otomatik Düzeltme Paketi (Fix Mandate)' if lang == 'tr' else 'Automated Fix Package (Fix Mandate)'}</h3>
-        <p>{'AI kodlama ajanınız veya mühendisleriniz için 5 kritik kontrol noktası ████████ ile güvence altına alınır.' if lang == 'tr' else 'Unlocking provides a permanent solution for ALL issues + rollback guarantee formatted for AI coding agents and human engineers.'}</p>
+        <p>{'AI kodlama ajanınız veya mühendisleriniz için 5 kritik kontrol noktası (SEO, GEO, AEO, Schema, Güvenlik) ile güvence altına alınır.' if lang == 'tr' else 'Unlocking provides a permanent solution for ALL issues + rollback guarantee formatted for AI coding agents and human engineers.'}</p>
       </div>
     </div>
     <div class="method-item">
@@ -370,7 +370,7 @@ def build_pricing_hub():
 
   <div class="compare">
     <b>{'ÜRÜN SINIRI' if lang == 'tr' else 'PRODUCT BOUNDARY'}</b>
-    <p>{'Free katmanda neyin yanlış olduğu ve kanıtı gösterilir. Teknik çözüm ████████ paketinde. Kaybı önlemek için kilidi açın. Public tarama dosya adını tahmin etmez; codebase bağlamı verildiğinde dosya düzeyine iner.' if lang == 'tr' else 'Free tier discloses what is broken with evidence. The technical solution is in the ████████ package. Unlock to prevent loss. We never guess file names; provided codebase context allows file-level targeting.'}</p>
+    <p>{'Free katmanda neyin yanlış olduğu ve kanıtı gösterilir. Teknik çözüm $99 Yol Haritası paketinde. Kaybı önlemek için kilidi açın. Public tarama dosya adını tahmin etmez; codebase bağlamı verildiğinde dosya düzeyine iner.' if lang == 'tr' else 'Free tier discloses what is broken with evidence. The technical solution is in the $99 Roadmap package. Unlock to prevent loss. We never guess file names; provided codebase context allows file-level targeting.'}</p>
   </div>
 </section>
 
@@ -405,7 +405,7 @@ def build_fix_mandate_hub():
         bc_home_url = "/en/" if lang == 'en' else "/tr/"
 
         h1 = "Full Site Fix Mandate: <em>$99 Automated Software Bundle</em>" if lang == 'en' else "Full Site Fix Mandate: <em>$99 Otomatik Yazılım Paketi</em>"
-        sub = "Turn diagnostic evidence into automated code artifacts. 5 critical checkpoints are secured via ████████ for human engineers and AI coding agents." if lang == 'en' else "Teşhis kanıtlarını otomatik kod paketine dönüştürün. Mühendisler ve yapay zeka kodlama ajanları için öncelikli kök düzeltmeler, otomatik kabul testleri ve geri alma planları."
+        sub = "Turn diagnostic evidence into automated code artifacts. 5 critical checkpoints are secured via deterministic safeguards for human engineers and AI coding agents." if lang == 'en' else "Teşhis kanıtlarını otomatik kod paketine dönüştürün. Mühendisler ve yapay zeka kodlama ajanları için öncelikli kök düzeltmeler, otomatik kabul testleri ve geri alma planları."
 
         html = f'''<!doctype html>
 <html lang="{lang}">
@@ -420,7 +420,7 @@ def build_fix_mandate_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fix-mandate/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/fix-mandate/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",

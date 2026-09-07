@@ -586,7 +586,7 @@ for g in guides_data:
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/{g['tr_slug']}/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/{g['en_slug']}/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -649,7 +649,7 @@ for g in guides_data:
 
   <div class="compare" style="margin-top: 32px;">
     <b>{'OTOMATİK KOD PAKETİ' if lang == 'tr' else 'Yol Haritası'}</b>
-    <p>{'Tespit edilen teknik engelleri mühendislik ekibiniz için kök neden, kabul testleri ve geri alma planlarıyla çözmek için' if lang == 'tr' else 'To resolve detected blockers with root cause analysis, acceptance tests and ████████s for your engineering team,'} <a href="{fix_mandate_url}" style="font-weight: 800; text-decoration: underline;">$99 Full Site Yol Haritası</a> {'ürününü inceleyin.' if lang == 'tr' else 'is available.'}</p>
+    <p>{'Tespit edilen teknik engelleri mühendislik ekibiniz için kök neden, kabul testleri ve geri alma planlarıyla çözmek için' if lang == 'tr' else 'To resolve detected blockers with root cause analysis, acceptance tests and rollbacks for your engineering team,'} <a href="{fix_mandate_url}" style="font-weight: 800; text-decoration: underline;">$99 Full Site Yol Haritası</a> {'ürününü inceleyin.' if lang == 'tr' else 'is available.'}</p>
   </div>
 
   <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 14px; font-weight: 800;">
@@ -701,7 +701,7 @@ for lang in ['en', 'tr']:
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/guides/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
