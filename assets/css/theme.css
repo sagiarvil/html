@@ -3638,9 +3638,7 @@ html[data-theme="light"] .topbar {
   border-bottom: 1px solid #e2e8f0 !important;
 }
 
-html[data-theme="light"] .brand-logo {
-  filter: invert(1) hue-rotate(180deg); /* If the logo is white text, make it dark */
-}
+
 
 /* ==========================================================================
    URGENT CONTRAST FIX: Validator v2 Components
@@ -3661,4 +3659,299 @@ html[data-theme="light"] .brand-logo {
   background: var(--theme-bg-elevated, #282b36) !important;
   color: var(--theme-text-primary, #cbd5e1) !important;
   border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+}
+
+
+/* FS-AUDIT-002: LIGHT THEME COMPONENT OVERRIDES */
+html[data-theme="light"] .brand-logo {
+  filter: none !important;
+}
+
+html[data-theme="light"] .hero > p,
+html[data-theme="light"] .hero h1 {
+  color: var(--theme-text-strong) !important;
+}
+
+html[data-theme="light"] .ai-decision-map {
+  background: var(--theme-bg-surface) !important;
+  border-color: var(--theme-border) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html[data-theme="light"] .ai-decision-map-head h3,
+html[data-theme="light"] .ai-decision-map-head small {
+  color: var(--theme-text-strong) !important;
+}
+
+html[data-theme="light"] .ai-decision-map-head p {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] .ai-lens {
+  background: var(--theme-bg-base) !important;
+  border-color: var(--theme-border) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html[data-theme="light"] .ai-lens span {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] .ai-lens strong {
+  color: var(--theme-text-strong) !important;
+}
+
+html[data-theme="light"] .ai-intelligence-row {
+  background: var(--theme-bg-base) !important;
+  border-color: var(--theme-border) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html[data-theme="light"] .ai-intelligence-row b {
+  color: var(--theme-text-strong) !important;
+}
+
+html[data-theme="light"] .ai-intelligence-row span {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] .ai-decision-lock {
+  background: var(--theme-bg-base) !important;
+  border-color: var(--theme-border) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html[data-theme="light"] .ai-decision-lock p {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] .news-card {
+  background: var(--theme-bg-base) !important;
+  border-color: var(--theme-border) !important;
+}
+
+html[data-theme="light"] .news-card h3 {
+  color: var(--theme-text-strong) !important;
+}
+
+html[data-theme="light"] .news-card p {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] footer,
+html[data-theme="light"] .footer-grid a,
+html[data-theme="light"] .footer-bottom p {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] .footer-grid h4 {
+  color: var(--theme-text-strong) !important;
+}
+
+/* Ensure borders are visible */
+html[data-theme="light"] .px-report-boundary,
+html[data-theme="light"] .px-report-free,
+html[data-theme="light"] .px-report-paid {
+  border-color: var(--theme-border) !important;
+  background: var(--theme-bg-surface) !important;
+}
+
+html[data-theme="light"] .px-report-free h2,
+html[data-theme="light"] .px-report-paid h2 {
+  color: var(--theme-text-strong) !important;
+}
+
+html[data-theme="light"] .px-report-free p,
+html[data-theme="light"] .px-report-paid p {
+  color: var(--theme-text-secondary) !important;
+}
+
+html[data-theme="light"] .px-report-paid {
+  background: var(--theme-bg-base) !important;
+}
+
+/* Fix "Yapay Zeka Sizi Buluyor mu?" text on homepage */
+html[data-theme="light"] .hero h1 {
+  color: var(--theme-text-strong) !important;
+}
+html[data-theme="light"] .hero > p {
+  color: var(--theme-text-secondary) !important;
+}
+
+/* Fix top nav texts */
+html[data-theme="light"] .primary-nav a {
+  color: var(--theme-text-secondary) !important;
+}
+html[data-theme="light"] .primary-nav a:hover {
+  color: var(--theme-text-strong) !important;
+}
+
+/* Fix buttons in light mode */
+html[data-theme="light"] .nav-scan-cta {
+  background: #0071e3 !important;
+  color: #ffffff !important;
+}
+
+
+/* Light Theme Base Variables Override (validator-base.css compatibility) */
+html[data-theme="light"] {
+  --paper: #ffffff !important;
+  --card: #ffffff !important;
+  --ink: #0f172a !important;
+  --muted: #475569 !important;
+  --line: #e2e8f0 !important;
+  --soft: #f8fafc !important;
+}
+
+html[data-theme="light"] .term-blocks section {
+  background: var(--soft) !important;
+  border-color: var(--line) !important;
+}
+html[data-theme="light"] .term-blocks h2 {
+  color: var(--ink) !important;
+}
+html[data-theme="light"] .term-blocks p {
+  color: var(--muted) !important;
+}
+html[data-theme="light"] .term-sources h3 {
+  color: var(--ink) !important;
+}
+html[data-theme="light"] .term-sources a {
+  color: #0071e3 !important;
+}
+html[data-theme="light"] .term-def {
+  color: var(--muted) !important;
+}
+html[data-theme="light"] .term-head h2 {
+  color: var(--ink) !important;
+}
+html[data-theme="light"] .term-head span {
+  background: var(--soft) !important;
+  color: var(--muted) !important;
+  border-color: var(--line) !important;
+}
+
+html[data-theme="light"] .glossary-card {
+  background: var(--card) !important;
+  border-color: var(--line) !important;
+}
+html[data-theme="light"] .reference-note {
+  background: var(--soft) !important;
+  border-color: var(--line) !important;
+}
+html[data-theme="light"] .reference-note h2 {
+  color: var(--ink) !important;
+}
+html[data-theme="light"] .reference-note p {
+  color: var(--muted) !important;
+}
+
+/* FS-THEME-002: LLMS-TXT-VALIDATOR LIGHT THEME CLONE */
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-soft: #f6f6f7;
+  --bg-card: #ffffff;
+  --fg: #0a0a0a;
+  --fg-soft: #54545b;
+  --fg-dim: #6a6a72;
+  --line: #e7e7ea;
+  --accent: #0071e3;
+  --accent-ink: #ffffff;
+  --good: #2ca24c;
+  --ok: #1f9d8b;
+  --warn: #c9820a;
+  --bad: #d83a3a;
+  
+  --paper: var(--bg) !important;
+  --card: var(--bg-card) !important;
+  --ink: var(--fg) !important;
+  --muted: var(--fg-dim) !important;
+  --soft: var(--bg-soft) !important;
+  --theme-bg-base: var(--bg) !important;
+  --theme-bg-surface: var(--bg-card) !important;
+  --theme-bg-elevated: var(--bg-soft) !important;
+  --theme-text-strong: var(--fg) !important;
+  --theme-text-primary: var(--fg-soft) !important;
+  --theme-text-secondary: var(--fg-dim) !important;
+  --theme-border: var(--line) !important;
+}
+
+html[data-theme="light"] body {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+/* Primary Buttons */
+html[data-theme="light"] .primary,
+html[data-theme="light"] .button.primary,
+html[data-theme="light"] a.primary,
+html[data-theme="light"] .hero-actions a.primary,
+html[data-theme="light"] .nav-scan-cta,
+html[data-theme="light"] .fomo-cta,
+html[data-theme="light"] .value-cta,
+html[data-theme="light"] #scanButton {
+  background: var(--accent) !important;
+  color: var(--accent-ink) !important;
+  border-color: var(--accent) !important;
+  box-shadow: none !important;
+}
+
+/* Secondary Buttons */
+html[data-theme="light"] .hero-actions a:not(.primary) {
+  background: var(--bg-soft) !important;
+  color: var(--fg) !important;
+  border-color: var(--line) !important;
+}
+
+/* Header & Inputs */
+html[data-theme="light"] .topbar {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid var(--line) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+html[data-theme="light"] .scanbox {
+  background: var(--bg-card) !important;
+  border-color: var(--line) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 30px rgba(0,0,0,.06) !important;
+}
+
+html[data-theme="light"] .scanbox input {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--line) !important;
+}
+html[data-theme="light"] .scanbox input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2) !important;
+}
+
+/* Language & Theme Toggle Buttons */
+html[data-theme="light"] .langs button,
+html[data-theme="light"] .langs a {
+  background: var(--bg-soft) !important;
+  color: var(--fg-soft) !important;
+  border: 1px solid var(--line) !important;
+}
+html[data-theme="light"] .langs .active,
+html[data-theme="light"] .langs button:hover {
+  background: var(--fg) !important;
+  color: var(--bg) !important;
+}
+
+/* Footer & Logo */
+html[data-theme="light"] footer {
+  border-top: 1px solid var(--line) !important;
+}
+html[data-theme="light"] .brand-logo {
+  filter: invert(1) brightness(0) !important; /* Turns white logo to pitch black */
+  opacity: 0.9 !important;
+}
+
+/* Grid background fix for Light Mode */
+html[data-theme="light"] .hero,
+html[data-theme="light"] .authority-hero {
+  background: radial-gradient(circle at 50% -20%, rgba(0, 113, 227, 0.08) 0%, transparent 60%),
+              url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm39 39V1H1v38h38z' fill='rgba(0,0,0,0.04)' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
 }
