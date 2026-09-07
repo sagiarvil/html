@@ -161,3 +161,6 @@ Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, 
 - [Streamline your Search Console analysis with the new AI-powered configuration: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-12-01-streamline-your-search-console-analysis-with-the-n-fbdfb9a5ea/)
 - [Introducing the Branded queries filter in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-11-01-introducing-the-branded-queries-filter-in-search-c-9c55e5f0e0/)
 <!-- LLMS_NEWS_END -->
+
+- [FS-THEME-001 Mandate](FS-THEME-001-MANDATE.md): Theme System Mandate
+- [FS-THEME-001 Widget](FS-THEME-001-Widget.html): Theme System Widget Demo

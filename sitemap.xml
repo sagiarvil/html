@@ -1192,4 +1192,14 @@
   <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-28-the-economics-of-ai-crawler-bandwidth-and-edge-ser-1fbe24c3e3/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-28-the-economics-of-ai-crawler-bandwidth-and-edge-ser-1fbe24c3e3/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-08-28-the-economics-of-ai-crawler-bandwidth-and-edge-ser-1fbe24c3e3/"/></url>
   <url><loc>https://htmlandhtml.com/en/llms-txt-news/2026-08-28-the-economics-of-ai-crawler-bandwidth-and-edge-ser-1fbe24c3e3/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-08-28-the-economics-of-ai-crawler-bandwidth-and-edge-ser-1fbe24c3e3/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-28-the-economics-of-ai-crawler-bandwidth-and-edge-ser-1fbe24c3e3/"/></url>
   <!-- LLMS_NEWS_END -->
+  <url>
+    <loc>https://example.com/FS-THEME-001-MANDATE.md</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://example.com/FS-THEME-001-Widget.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
