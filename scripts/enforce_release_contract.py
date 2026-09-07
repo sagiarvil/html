@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 PUBLIC_HTML = [p for p in ROOT.rglob('*.html') if 'node_modules' not in p.parts and '.git' not in p.parts]
 PUBLIC_EXTRA = [ROOT / 'assets/js/enterprise-runtime.js']
-RELEASE_CSS = '<link rel="stylesheet" href="/assets/css/release-contract.css?v=1">'
+RELEASE_CSS = '<link rel="stylesheet" href="/assets/css/release-contract.css?v=2">'
 
 PRODUCT_REPLACEMENTS = [
     ('AI Görünürlük Uygulama Planı', 'AI Görünürlük Yol Haritası'),
@@ -65,8 +65,10 @@ def inject_before_main_end(text: str, block: str) -> str:
 
 
 def attach_release_css(text: str) -> str:
-    if 'release-contract.css?v=1' in text:
+    if 'release-contract.css?v=2' in text:
         return text
+    if 'release-contract.css?v=1' in text:
+        return text.replace('release-contract.css?v=1', 'release-contract.css?v=2')
     if '</head>' in text:
         return text.replace('</head>', RELEASE_CSS + '</head>', 1)
     return text

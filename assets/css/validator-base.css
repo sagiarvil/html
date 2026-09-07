@@ -238,15 +238,18 @@ html[data-theme="dark"] .kicker b {
 .hero h1 em {
   font-style: normal;
   font-weight: 450;
-  color: #5c5a52;
+  color: var(--fg-dim, #94a3b8);
 }
 .hero > p {
   position: relative;
   max-width: var(--reading-max);
   margin: 0 auto;
-  color: #55544d;
+  color: var(--fg-soft, #cbd5e1);
   font-size: 18px;
   line-height: 1.7;
+}
+html[data-theme="dark"] .hero > p {
+  color: #cbd5e1 !important;
 }
 .scanbox {
   position: relative;
