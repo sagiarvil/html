@@ -33,6 +33,7 @@
           {"key":"X-Frame-Options","value":"SAMEORIGIN"},
           {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},
           {"key":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains; preload"},
+          {"key":"X-Robots-Tag","value":"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"},
           {"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},
           {"key":"Content-Security-Policy","value":"default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.paddle.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.paddle.com; connect-src 'self' https://*.paddle.com; frame-src https://*.paddle.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"}
         ]
@@ -44,6 +45,7 @@
       {"source":"/{tr,en}/**","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
       {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/llms/**","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=300, stale-while-revalidate=600"}]},
       {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/openapi.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/audit-profile.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]},

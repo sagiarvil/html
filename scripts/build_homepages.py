@@ -165,7 +165,7 @@ def build_homepages():
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
   <h1 data-i18n="heroTitle">Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em>Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>
-  <p data-i18n="heroCopy">URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
+  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
@@ -450,7 +450,7 @@ def build_homepages():
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">WEBSITE FIX VALIDATOR / V2</b></div>
   <h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>
-  <p data-i18n="heroCopy">Enter a domain. Twelve independent analysis engines inspect the public website surface and show the problem, severity, confidence and evidence. Implementation instructions unlock in the paid layer.</p>
+  <p class="hero-answer" data-i18n="heroCopy">Enter a domain. 18 independent analysis engines inspect the public website surface across 105 control points and 13 audits in 15 seconds. Implementation instructions unlock in the $99 paid layer.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">

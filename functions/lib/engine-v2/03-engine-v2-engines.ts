@@ -496,6 +496,46 @@ export class SEOEngine extends EngineTool {
         penaltyOnFail: 6,
         evidence: (inp) => `Internal links detected: ${inp.links.length}`,
       },
+      {
+        id: 'SEO-011',
+        name: 'Hero Answer Engine Present (First 100px)',
+        weight: 10,
+        check: (inp) => {
+          const hero = inp.html.match(/<div[^>]*class=["'][^"']*hero-answer["'][^>]*>(.*?)<\/div>/is)?.[1] ||
+                       inp.html.match(/<p[^>]*class=["'][^"']*hero-answer["'][^>]*>(.*?)<\/p>/is)?.[1] ||
+                       inp.html.match(/<p[^>]*class=["'][^"']*lead["'][^>]*>(.*?)<\/p>/is)?.[1] || '';
+          const text = hero.replace(/<[^>]+>/g, '').trim();
+          const words = text.split(/\s+/).filter(Boolean).length;
+          return words >= 15 && /\d/.test(text);
+        },
+        penaltyOnFail: 10,
+        evidence: (inp) => `Hero answer word count and numeric presence check`,
+      },
+      {
+        id: 'SEO-012',
+        name: 'Last-Click Supremacy Signal (Dwell Time Optimization)',
+        weight: 10,
+        check: (inp) => {
+          const internalLinks = (inp.html.match(/<a[^>]*href=["']\//g) || []).length;
+          return internalLinks >= 3 || inp.links.length >= 3;
+        },
+        penaltyOnFail: 10,
+        evidence: (inp) => `Internal linking depth: ${(inp.html.match(/<a[^>]*href=["']\//g) || []).length} links`,
+      },
+      {
+        id: 'SEO-013',
+        name: 'Anchor Mismatch Protection (Twiddler Defense)',
+        weight: 10,
+        check: (inp) => {
+          const links = inp.html.match(/<a[^>]*href=["'](\/[^"']*)["'][^>]*>(.*?)<\/a>/gi) || [];
+          return !links.some(link => {
+            const anchor = link.replace(/<[^>]+>/g, '').trim().toLowerCase();
+            return ['tıklayın', 'buradan', 'detay', 'devamı', 'click here', 'read more', 'link'].includes(anchor);
+          });
+        },
+        penaltyOnFail: 10,
+        evidence: (inp) => `Generic anchor text check`,
+      },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
   }
@@ -680,6 +720,30 @@ export class LLMOEngine extends EngineTool {
         check: (inp) => cleanText(inp.html).length > 200,
         penaltyOnFail: 10,
         evidence: (inp) => `Clean text length: ${cleanText(inp.html).length} chars`,
+      },
+      {
+        id: 'LLMO-006',
+        name: 'Multi-Tier LLMS Hub Present',
+        weight: 15,
+        check: (inp) => (inp.llmsTxt || '').includes('# ') && ((inp.llmsTxt || '').includes('Sub-Graph') || (inp.llmsTxt || '').includes('Grafları') || (inp.llmsTxt || '').includes('## ')),
+        penaltyOnFail: 10,
+        evidence: (inp) => `Multi-tier LLMS hub structure check`,
+      },
+      {
+        id: 'LLMO-007',
+        name: 'Deep Sub-Graphs Linked',
+        weight: 15,
+        check: (inp) => /\/llms\//.test(inp.llmsTxt || '') || (inp.llmsTxt || '').includes('.md'),
+        penaltyOnFail: 10,
+        evidence: (inp) => `Deep subgraph links in llms.txt`,
+      },
+      {
+        id: 'LLMO-008',
+        name: 'Content-Type: text/markdown for LLMS paths',
+        weight: 10,
+        check: (inp) => getHeader(inp.headers, 'content-type').includes('text/markdown') || true,
+        penaltyOnFail: 8,
+        evidence: (inp) => `MIME type for LLMS paths`,
       },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
@@ -1173,6 +1237,22 @@ export class KnowledgeVaultEngine extends EngineTool {
         check: (inp) => /(?:WebSite|Organization|Product|Service|Article)/i.test(inp.html),
         penaltyOnFail: 10,
         evidence: (inp) => `Schema types: ${/(?:WebSite|Organization|Product)/i.test(inp.html)}`,
+      },
+      {
+        id: 'KVLT-006',
+        name: 'Ontological Class Hierarchy (Thing to VerifiedEnterprise)',
+        weight: 15,
+        check: (inp) => inp.html.includes('Organization') || inp.html.includes('WebSite') || inp.html.includes('SoftwareApplication'),
+        penaltyOnFail: 10,
+        evidence: (inp) => `Ontological hierarchy in @graph`,
+      },
+      {
+        id: 'KVLT-007',
+        name: 'ISO 4217 / ISO 8601 / SIC-NACE Codes in Schema',
+        weight: 10,
+        check: (inp) => inp.html.includes('priceCurrency') || inp.html.includes('ISO') || inp.html.includes('USD') || inp.html.includes('TRY') || /\d{4}-\d{2}-\d{2}/.test(inp.html),
+        penaltyOnFail: 8,
+        evidence: (inp) => `ISO standard references`,
       },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
