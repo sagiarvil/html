@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/validator.css?v=4">
+<link rel="stylesheet" href="/assets/css/validator.css?v=5">
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
@@ -88,8 +88,8 @@
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=3" defer></script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/validator.js?v=4" defer></script>
+<script src="/assets/js/theme.js?v=2"></script>
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 </head>
 <body>
@@ -118,19 +118,29 @@
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">llms.txt Uygunluk Kontrolü</b></div>
-  <h1 data-i18n="heroTitle">Yapay zeka botlarınız size ulaşabiliyor mu?</h1>
-  <p data-i18n="heroCopy">Site adresinizi söyleyin, kurallara uyup uymadığını ve bağlantıların sağlamlığını saniyeler içinde raporlayalım.</p>
+  <div class="kicker"><b data-i18n="kicker">LLMS.TXT DOĞRULAYICISI</b></div>
+  <h1 data-i18n="heroTitle"><em>llms.txt</em> dosyanız<br>görevini yerine getiriyor mu?</h1>
+  <p data-i18n="heroCopy">Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
+    <div class="tabs">
+      <button type="button" class="tab active" data-mode="domain" data-i18n="tabDomain">Bir alan adını kontrol edin</button>
+      <button type="button" class="tab" data-mode="url" data-i18n="tabUrl">İçeriği yapıştırın</button>
+    </div>
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><i>→</i></button>
+        <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="yourdomain.com" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Kontrol etmek</b><i>→</i></button>
       </div>
       <div id="scanStatus" class="status" hidden></div>
     </form>
+    <small data-i18n="scanHint">Kayıt gerekmiyor. Ücretsiz. Bilgileri otomatik olarak çekiyoruz <code>/llms.txt</code>.</small>
+    <div class="scan-chips">
+      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+      <button type="button" class="chip-btn" data-domain="anthropic.com">antropik.com</button>
+      <button type="button" class="chip-btn" data-domain="cursor.com">cursor.com</button>
+    </div>
   </div>
 </section>
 
