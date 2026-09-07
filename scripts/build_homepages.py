@@ -171,7 +171,7 @@ def build_homepages():
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
+        <input id="domainInput" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><i>→</i></button>
       </div>
       <div class="scan-chips">
@@ -456,7 +456,7 @@ def build_homepages():
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
+        <input id="domainInput" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><i>→</i></button>
       </div>
       <div class="scan-chips">

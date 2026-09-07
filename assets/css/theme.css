@@ -4017,7 +4017,7 @@ form#scanForm input {
   outline: none !important;
   outline-width: 0 !important;
   box-shadow: none !important;
-  border-radius: 0 !important;
+  border-radius: 999px !important;
   -webkit-appearance: none !important;
   appearance: none !important;
   background: transparent !important;
@@ -4043,6 +4043,44 @@ form#scanForm input:active {
   outline: none !important;
   outline-width: 0 !important;
   box-shadow: none !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+}
+
+#domainInput:-webkit-autofill,
+#domainInput:-webkit-autofill:hover, 
+#domainInput:-webkit-autofill:focus, 
+#domainInput:-webkit-autofill:active,
+.scanbox input:-webkit-autofill,
+.scanbox input:-webkit-autofill:hover,
+.scanbox input:-webkit-autofill:focus,
+.scanbox input:-webkit-autofill:active,
+.scanbox .field input:-webkit-autofill,
+.field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  transition: background-color 99999s ease-in-out 0s, color 99999s ease-in-out 0s !important;
+  background-color: transparent !important;
+  border-radius: 999px !important;
+}
+
+html[data-theme="dark"] #domainInput:-webkit-autofill,
+html[data-theme="dark"] .scanbox input:-webkit-autofill,
+html[data-theme="dark"] .scanbox .field input:-webkit-autofill,
+html[data-theme="dark"] .field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #181a22 inset !important;
+  box-shadow: 0 0 0 1000px #181a22 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="light"] #domainInput:-webkit-autofill,
+html[data-theme="light"] .scanbox input:-webkit-autofill,
+html[data-theme="light"] .scanbox .field input:-webkit-autofill,
+html[data-theme="light"] .field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
 }
 
 
