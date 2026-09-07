@@ -105,7 +105,7 @@
   <!-- Top Metadata Ribbon -->
   <rect x="48" y="48" width="130" height="24" rx="4" fill="#F43F5E" fill-opacity="0.15" stroke="#F43F5E" stroke-width="1.2"/>
   <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#F43F5E">PILLAR // RAG</text>
-  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ RETRIEVAL-AUGMENTED GENERATION & VECTOR MANIFOLDS ]</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ RETRIEVAL-AUGMENTED GENERATION &amp; VECTOR MANIFOLDS ]</text>
   <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-ABBB816</text>
 
   <!-- Bottom Caption & Context -->

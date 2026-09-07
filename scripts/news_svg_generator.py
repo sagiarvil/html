@@ -525,9 +525,11 @@ def generate_news_cover_svg(item, slug):
     title = esc(item.get('title', {}).get('en', 'AI Search Visibility'))
     
     seed = int(hashlib.sha256(item['id'].encode()).hexdigest()[:8], 16)
-    pillar_key, pillar_desc, c1, c2, c3, glow = get_pillar_meta(item.get('topic', ''))
+    raw_key, raw_desc, c1, c2, c3, glow = get_pillar_meta(item.get('topic', ''))
+    pillar_key = esc(raw_key)
+    pillar_desc = esc(raw_desc)
     
-    art = render_silhouette_art(pillar_key, c1, c2, c3, seed)
+    art = render_silhouette_art(raw_key, c1, c2, c3, seed)
     
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-{slug} d-{slug}">
   <title id="t-{slug}">HTML&amp;HTML AI Search Intelligence — {pillar_key} ({topic})</title>

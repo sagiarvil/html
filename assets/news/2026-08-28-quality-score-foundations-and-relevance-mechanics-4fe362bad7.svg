@@ -110,7 +110,7 @@
   <!-- Top Metadata Ribbon -->
   <rect x="48" y="48" width="130" height="24" rx="4" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.2"/>
   <text x="113" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="900" text-anchor="middle" fill="#F59E0B">PILLAR // SEO</text>
-  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ TECHNICAL SEO & CRAWLER INFRASTRUCTURE ]</text>
+  <text x="190" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.65)">[ TECHNICAL SEO &amp; CRAWLER INFRASTRUCTURE ]</text>
   <text x="1152" y="64" font-family="ui-monospace,Menlo,monospace" font-size="11" text-anchor="end" letter-spacing="1.5" fill="rgba(255,255,255,0.4)">ID-F52B528F</text>
 
   <!-- Bottom Caption & Context -->
