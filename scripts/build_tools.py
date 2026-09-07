@@ -40,12 +40,12 @@ tools_data = [
             "faq_title": "Frequently Asked Questions",
             "faqs": [
                 ("What is the difference between this and Lighthouse?", "Lighthouse evaluates synthetic browser performance on a single URL. HTML&HTML crawls up to 50 pages across 12 deterministic engines including AI crawlers, llms.txt, schema, and security."),
-                ("Why is implementation detail locked?", "Evidence is free so you know what is broken and where. The $149 Fix Mandate provides root causes, implementation order, regression tests, and rollback plans for your engineering team."),
+                ("Why is implementation detail locked?", "Evidence is free so you know what is broken and where. The $99 Fix Mandate provides root causes, implementation order, regression tests, and rollback plans for your engineering team."),
                 ("How are private networks protected?", "Localhost, private IP ranges, cloud metadata endpoints, and redirect pivots into private addresses fail closed before any socket connection.")
             ],
             "cta_title": "Turn free diagnosis into code changes.",
-            "cta_sub": "The $149 Full Site Fix Mandate delivers prioritized root fixes, acceptance tests, and a 30-day re-scan.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "The $99 Full Site Fix Mandate delivers prioritized root fixes, acceptance tests, and a 30-day re-scan.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "Web Sitesi Tarayıcısı — 12 Motorlu Tam Site Denetimi | HTML&HTML",
@@ -69,12 +69,12 @@ tools_data = [
             "faq_title": "Sıkça Sorulan Sorular",
             "faqs": [
                 ("Lighthouse ile farkı nedir?", "Lighthouse tek bir URL üzerinde sentetik tarayıcı performansı ölçer. HTML&HTML ise 50 sayfaya kadar tarama yaparak AI botları, llms.txt, şema, güvenlik ve link bütünlüğü dahil 12 motoru çalıştırır."),
-                ("Uygulama reçetesi neden kilitli?", "Sorunun ne olduğu ve kanıtı ücretsizdir. $149 Fix Mandate ise mühendislik ekibiniz veya AI kodlama ajanınız için kök nedenleri, uygulama sırasını, testleri ve geri alma planlarını sunar."),
+                ("Uygulama reçetesi neden kilitli?", "Sorunun ne olduğu ve kanıtı ücretsizdir. $99 Fix Mandate ise mühendislik ekibiniz veya AI kodlama ajanınız için kök nedenleri, uygulama sırasını, testleri ve geri alma planlarını sunar."),
                 ("Özel ağlar nasıl korunur?", "Localhost, özel IP blokları, AWS metadata adresleri ve yönlendirme ile özel ağa sızma girişimleri donanımsal olarak engellenir (fail-closed).")
             ],
             "cta_title": "Ücretsiz teşhisi kesin kod değişikliklerine dönüştürün.",
-            "cta_sub": "$149 Full Site Fix Mandate, önceliklendirilmiş kök düzeltmeler, kabul testleri ve 30 günlük yeniden tarama sağlar.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Full Site Fix Mandate, önceliklendirilmiş kök düzeltmeler, kabul testleri ve 30 günlük yeniden tarama sağlar.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -105,11 +105,11 @@ tools_data = [
             "faqs": [
                 ("What is Website AI Readiness?", "Website AI Readiness is the technical state of a site that allows AI models and autonomous agents to crawl, understand, and cite its content accurately."),
                 ("Does llms.txt guarantee AI visibility?", "No. llms.txt is an evolving proposal that guides LLMs to clean markdown documentation. It is evaluated with appropriate weight under PROPOSAL status."),
-                ("Can I fix readiness issues myself?", "Yes. The free audit provides exact issues, affected URLs, and evidence snippets. For automated remediation contracts, use the $149 Fix Mandate.")
+                ("Can I fix readiness issues myself?", "Yes. The free audit provides exact issues, affected URLs, and evidence snippets. For automated remediation contracts, use the $99 Fix Mandate.")
             ],
             "cta_title": "Get your implementation-grade Fix Mandate.",
             "cta_sub": "Turn readiness gaps into sequenced PRs with acceptance tests and rollback conditions.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "AI Web Sitesi Hazırlık Denetimi — LLM ve Ajan Erişimi | HTML&HTML",
@@ -117,7 +117,7 @@ tools_data = [
             "kicker": "WEB SİTESİ AI HAZIRLIK ENDEKSİ",
             "h1": "Siteniz yapay zeka ajanlarına <em>gerçekten hazır mı?</em>",
             "sub": "Modern arama motorları ve AI asistanları yalnızca anahtar kelimelere bakmaz. HTML&HTML, makine tarafından okunabilirliği, ajan keşfini ve bot izinlerini doğrulanmış kanıtlarla denetler.",
-            "proof": ["LLM Keşfedilebilirliği", "Ajan Sözleşmeleri", "Varlık Şemaları", "Sıfır Sahte Veri"],
+            "proof": ["LLM Keşfedilebilirliği", "Ajan Uyumluluğu", "Varlık Şemaları", "Sıfır Sahte Veri"],
             "tool_title": "Ücretsiz AI hazırlık denetimi",
             "tool_sub": "12 analiz motoru genelinde sitenizin yapay zeka hazırlığını ölçmek için alan adınızı girin.",
             "btn": "Hazırlığı denetle",
@@ -134,11 +134,11 @@ tools_data = [
             "faqs": [
                 ("Web Sitesi AI Hazırlığı nedir?", "Bir web sitesinin yapay zeka modelleri ve otonom ajanlar tarafından sorunsuz taranmasını, anlaşılmasını ve doğru kaynak gösterilmesini sağlayan teknik altyapı durumudur."),
                 ("llms.txt AI görünürlüğünü garanti eder mi?", "Hayır. llms.txt, LLM'lere temiz dokümantasyon sunan gelişmekte olan bir öneridir. ÖNERİ statüsünde dengeli bir ağırlıkla puanlanır."),
-                ("Bulunan sorunları kendim düzeltebilir miyim?", "Evet. Ücretsiz tarama sorunları, etkilenen URL'leri ve kanıt parçalarını açıkça gösterir. Otomatik onarım sözleşmesi için $149 Fix Mandate tercih edilir.")
+                ("Bulunan sorunları kendim düzeltebilir miyim?", "Evet. Ücretsiz tarama sorunları, etkilenen URL'leri ve kanıt parçalarını açıkça gösterir. Otomatik kod paketi için $99 Fix Mandate tercih edilir.")
             ],
             "cta_title": "Uygulama-grade Fix Mandate edinin.",
             "cta_sub": "AI hazırlık açıklarını kabul testleri ve geri alma koşullarıyla sıralı PR'lara dönüştürün.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -172,8 +172,8 @@ tools_data = [
                 ("Why did my llms.txt fail validation?", "Common causes include missing H1, missing blockquote summary, unbulleted link entries, or linked URLs returning 404/500 errors.")
             ],
             "cta_title": "Fix your llms.txt architecture with precision.",
-            "cta_sub": "Get exact file structures, clean link inventories, and validation tests with the $149 Fix Mandate.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Get exact file structures, clean link inventories, and validation tests with the $99 Fix Mandate.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "llms.txt Doğrulayıcı — v2 Şartnamesi, Markdown ve Keşif Kontrolü | HTML&HTML",
@@ -201,8 +201,8 @@ tools_data = [
                 ("llms.txt doğrulamasından neden kalınır?", "Eksik H1, blok alıntı özeti eksikliği, maddesiz linkler veya link verilen sayfaların 404 dönmesi en sık görülen hatalardır.")
             ],
             "cta_title": "llms.txt mimarinizi kesin kurallarla düzeltin.",
-            "cta_sub": "$149 Fix Mandate ile temiz dosya yapıları, çalışan linkler ve doğrulama testleri edinin.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Fix Mandate ile temiz dosya yapıları, çalışan linkler ve doğrulama testleri edinin.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -237,7 +237,7 @@ tools_data = [
             ],
             "cta_title": "Prove the claim 'AI can access us.'",
             "cta_sub": "Convert robots, header, and redirect findings into implementation contracts with tests and rollback.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "AI Tarayıcı Kontrolü — Robots.txt ve Bot Erişim Denetimi | HTML&HTML",
@@ -265,8 +265,8 @@ tools_data = [
                 ("HTML&HTML robots.txt dosyasını nasıl test eder?", "RFC 9309 standartlarına göre robots.txt ayrıştırılır ve herkese açık sayfalar için bot kuralları canlıda test edilir.")
             ],
             "cta_title": "'AI bize erişebiliyor' iddiasını kanıtlayın.",
-            "cta_sub": "Robots, header ve yönlendirme bulgularını testler ve geri alma adımlarıyla uygulama sözleşmesine dönüştürün.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Robots, header ve yönlendirme bulgularını testler ve geri alma adımlarıyla otomatik kod paketine dönüştürün.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -300,8 +300,8 @@ tools_data = [
                 ("Can I test raw HTML schema blocks?", "Yes, the homepage direct HTML paste tab allows testing raw snippets directly.")
             ],
             "cta_title": "Implement clean, error-free entity schemas.",
-            "cta_sub": "Fix broken schema blocks with exact code fixes and validation tests in the $149 Fix Mandate.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Fix broken schema blocks with exact code fixes and validation tests in the $99 Fix Mandate.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "Yapısal Veri Kontrolü — JSON-LD ve Schema Doğrulayıcı | HTML&HTML",
@@ -329,8 +329,8 @@ tools_data = [
                 ("Ham HTML şeması test edebilir miyim?", "Evet, ana sayfadaki doğrudan HTML yapıştırma sekmesiyle ham kod bloklarını tarayabilirsiniz.")
             ],
             "cta_title": "Hatasız ve temiz varlık şemaları uygulayın.",
-            "cta_sub": "$149 Fix Mandate ile bozuk şema bloklarını doğrudan çalışan kod parçaları ve testlerle düzeltin.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Fix Mandate ile bozuk şema bloklarını doğrudan çalışan kod parçaları ve testlerle düzeltin.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -364,8 +364,8 @@ tools_data = [
                 ("Does this audit include mobile friendliness?", "Yes, viewport tags and mobile accessibility baselines are included.")
             ],
             "cta_title": "Fix your technical SEO foundations.",
-            "cta_sub": "Receive prioritized code modifications with tests and rollback safeguards with the $149 Fix Mandate.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Receive prioritized code modifications with tests and rollback safeguards with the $99 Fix Mandate.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "Teknik SEO Denetimi — Kanonik, Meta ve İndekslenebilirlik | HTML&HTML",
@@ -393,8 +393,8 @@ tools_data = [
                 ("Mobil uyumluluk dahil mi?", "Evet, viewport tanımları ve mobil erişilebilirlik kontrolleri analiz kapsamındadır.")
             ],
             "cta_title": "Teknik SEO temellerinizi sağlamlaştırın.",
-            "cta_sub": "$149 Fix Mandate ile kabul testleri ve geri alma planları içeren öncelikli düzeltme sözleşmesi edinin.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Fix Mandate ile kabul testleri ve geri alma planları içeren öncelikli otomatik kod paketi edinin.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -428,8 +428,8 @@ tools_data = [
                 ("Can I test local servers?", "No. To protect against SSRF, all private, loopback, and local network requests fail closed.")
             ],
             "cta_title": "Harden your server security headers.",
-            "cta_sub": "Get copy-paste web server and CDN header configurations with verification tests in the $149 Fix Mandate.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Get copy-paste web server and CDN header configurations with verification tests in the $99 Fix Mandate.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "Güvenlik Başlıkları Kontrolü — HSTS, CSP ve Güvenlik Temeli | HTML&HTML",
@@ -457,8 +457,8 @@ tools_data = [
                 ("Yerel sunucuları test edebilir miyim?", "Hayır. SSRF riskini önlemek için yerel ve özel ağ hedefleri donanımsal olarak reddedilir.")
             ],
             "cta_title": "Sunucu güvenlik başlıklarınızı güçlendirin.",
-            "cta_sub": "$149 Fix Mandate ile Nginx, Cloudflare veya Apache için doğrudan uygulanabilir başlık yapılandırmaları edinin.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Fix Mandate ile Nginx, Cloudflare veya Apache için doğrudan uygulanabilir başlık yapılandırmaları edinin.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -492,8 +492,8 @@ tools_data = [
                 ("Why are button divs problematic?", "A div with an onclick handler cannot be navigated with Tab and activated with Enter/Space by keyboard users.")
             ],
             "cta_title": "Fix accessibility defects at the template level.",
-            "cta_sub": "Resolve unlabelled inputs, broken headings, and missing attributes with the $149 Fix Mandate.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Resolve unlabelled inputs, broken headings, and missing attributes with the $99 Fix Mandate.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "Erişilebilirlik Denetimi — WCAG Standartları, Alt ve Form Kontrolü | HTML&HTML",
@@ -521,8 +521,8 @@ tools_data = [
                 ("Neden buton yerine div kullanılmamalı?", "Sadece onclick verilen bir div klavye kullanıcıları tarafından Tab ile seçilemez ve Enter ile tıklanamaz.")
             ],
             "cta_title": "Erişilebilirlik kusurlarını şablon düzeyinde düzeltin.",
-            "cta_sub": "$149 Fix Mandate ile etiketsiz formları ve eksik erişilebilirlik özniteliklerini doğrudan kod seviyesinde çözün.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Fix Mandate ile etiketsiz formları ve eksik erişilebilirlik özniteliklerini doğrudan kod seviyesinde çözün.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     },
     {
@@ -553,11 +553,11 @@ tools_data = [
             "faqs": [
                 ("Why are redirect chains bad for SEO?", "Each redirect hop adds latency, wastes crawler budget, and can cause search engine crawlers to drop the destination."),
                 ("How does the crawler find internal links?", "It parses href attributes from crawled HTML pages and filters out mailto:, tel:, and javascript: pseudo-links."),
-                ("Can I fix broken links automatically?", "The $149 Fix Mandate provides the exact source files and replacement URLs to update broken links in your codebase.")
+                ("Can I fix broken links automatically?", "The $99 Fix Mandate provides the exact source files and replacement URLs to update broken links in your codebase.")
             ],
             "cta_title": "Eliminate dead links and redirect latency.",
-            "cta_sub": "Get an exact inventory of broken URLs and replacement targets with the $149 Fix Mandate.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "Get an exact inventory of broken URLs and replacement targets with the $99 Fix Mandate.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
             "title": "Link Kontrolü — Kırık Link ve Yönlendirme Denetimi | HTML&HTML",
@@ -582,11 +582,11 @@ tools_data = [
             "faqs": [
                 ("Yönlendirme zincirleri neden zararlıdır?", "Her yönlendirme adımı gecikme ekler, bot tarama bütçesini tüketir ve hedef sayfanın dizinden düşmesine yol açabilir."),
                 ("Tarayıcı iç linkleri nasıl bulur?", "Taranan HTML sayfalarındaki href öznitelikleri ayrıştırılır; mailto, tel ve javascript linkleri elenir."),
-                ("Kırık linkleri nasıl düzeltebilirim?", "$149 Fix Mandate, kaynak kodunuzdaki tam dosya konumlarını ve güncellenmesi gereken hedef URL'leri sunar.")
+                ("Kırık linkleri nasıl düzeltebilirim?", "$99 Fix Mandate, kaynak kodunuzdaki tam dosya konumlarını ve güncellenmesi gereken hedef URL'leri sunar.")
             ],
             "cta_title": "Kırık linkleri ve yönlendirme gecikmelerini temizleyin.",
-            "cta_sub": "$149 Fix Mandate ile kırık URL'lerin tam envanterini ve düzeltme testlerini edinin.",
-            "cta_btn": "Full Site Fix Mandate — $149"
+            "cta_sub": "$99 Fix Mandate ile kırık URL'lerin tam envanterini ve düzeltme testlerini edinin.",
+            "cta_btn": "Full Site Fix Mandate — $99"
         }
     }
 ]

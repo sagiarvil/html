@@ -53,8 +53,8 @@ def build_homepages():
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/">
-<meta property="og:title" content="HTML&amp;HTML — Evidence free. Implementation paid.">
-<meta property="og:description" content="12-engine public website diagnosis with implementation-grade Fix Mandates for AI coding agents.">
+<meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
+<meta property="og:description" content="12-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -185,8 +185,8 @@ def build_homepages():
     </div>
     <aside class="mandate-card">
       <span class="eyebrow" data-i18n="paidResolution">ÜCRETLİ DÜZELTME</span>
-      <h3 data-i18n="mandateTitle">Kanıt ücretsiz.<br>Düzeltme sözleşmesi ücretli.</h3>
-      <p data-i18n="mandateCopy">Aynı domain yeniden taranır; her geçerli bulgu ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK sözleşmesine dönüştürülür.</p>
+      <h3 data-i18n="mandateTitle">Teşhis ücretsiz.<br>Otomatik kod paketi $99.</h3>
+      <p data-i18n="mandateCopy">Aynı domain yeniden taranır; her geçerli bulgu ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK kod ve konfigürasyon şablonlarına dönüştürülür.</p>
       <ul>
         <li data-i18n="m1">P0–P3 uygulama sırası</li>
         <li data-i18n="m2">Issue ID + kanıt + güven seviyesi</li>
@@ -210,7 +210,7 @@ def build_homepages():
     <span class="eyebrow">SSS</span>
     <h2 data-i18n="faqTitle">Sık sorulan sorular</h2>
   </header>
-  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır?</summary><p data-i18n="a1">Problem saklanmaz. URL, severity, confidence, evidence ve kategori görünür. Ücretli katmanda kilitlenen şey uygulama planı, test sözleşmesi ve rollback planıdır.</p></details>
+  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır?</summary><p data-i18n="a1">Problem saklanmaz. URL, severity, confidence, evidence ve kategori görünür. $99 yazılım paketi; kod şablonlarını, test komutlarını ve geri alma planlarını otomatik üretir.</p></details>
   <details><summary data-i18n="q2">100/100 Google veya AI citation garantisi mi?</summary><p data-i18n="a2">Hayır. Skor yalnızca ölçülen kontrollerin durumudur. Ranking, trafik veya AI citation garantisi değildir.</p></details>
   <details><summary data-i18n="q3">llms.txt zorunlu mu?</summary><p data-i18n="a3">Hayır. llms.txt bir web standardı değil, gelişmekte olan bir öneridir. Bu nedenle ayrı PROPOSAL etiketi ve düşük ağırlıkla değerlendirilir.</p></details>
   <details><summary data-i18n="q4">Core Web Vitals ölçülüyor mu?</summary><p data-i18n="a4">Bu sürüm HTML/HTTP performans hijyenini ölçer. Güvenilir LCP/INP/CLS için CrUX/PageSpeed verisi gerekir; yoksa NOT_MEASURED döner, değer uydurulmaz.</p></details>
@@ -224,7 +224,7 @@ def build_homepages():
       <a class="brand" href="/" aria-label="HTML&amp;HTML">
         <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
       </a>
-      <p data-i18n="footerTag">Kanıt ücretsizdir. Uygulama kesinliği asıl üründür.</p>
+      <p data-i18n="footerTag">Teşhis ücretsizdir. Otomatik kod ve konfigürasyon paketi asıl üründür.</p>
     </div>
     <div class="footer-col">
       <h4>Platform</h4>
@@ -289,8 +289,8 @@ def build_homepages():
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/en/">
-<meta property="og:title" content="HTML&amp;HTML — Evidence free. Implementation paid.">
-<meta property="og:description" content="12-engine public website diagnosis with implementation-grade Fix Mandates for AI coding agents.">
+<meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
+<meta property="og:description" content="12-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -420,8 +420,8 @@ def build_homepages():
     </div>
     <aside class="mandate-card">
       <span class="eyebrow" data-i18n="paidResolution">PAID RESOLUTION</span>
-      <h3 data-i18n="mandateTitle">Evidence is free.<br>The fix contract is paid.</h3>
-      <p data-i18n="mandateCopy">The same domain is re-scanned and every valid issue becomes a ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK contract.</p>
+      <h3 data-i18n="mandateTitle">Evidence is free.<br>Automated code pack is $99.</h3>
+      <p data-i18n="mandateCopy">The same domain is re-scanned and every valid issue becomes a ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK code and configuration template.</p>
       <ul>
         <li data-i18n="m1">P0–P3 implementation order</li>
         <li data-i18n="m2">Issue ID + evidence + confidence</li>
@@ -445,7 +445,7 @@ def build_homepages():
     <span class="eyebrow">FAQ</span>
     <h2 data-i18n="faqTitle">Frequently asked questions</h2>
   </header>
-  <details><summary data-i18n="q1">What is hidden in the free scan?</summary><p data-i18n="a1">The problem is not hidden. URL, severity, confidence, evidence and category are visible. The paid layer unlocks the implementation roadmap, test contract and rollback plan.</p></details>
+  <details><summary data-i18n="q1">What is hidden in the free scan?</summary><p data-i18n="a1">The problem is not hidden. URL, severity, confidence, evidence and category are visible. The paid layer unlocks automated code templates, test suites and rollback plans.</p></details>
   <details><summary data-i18n="q2">Does 100/100 guarantee Google or AI citations?</summary><p data-i18n="a2">No. The score only represents measured checks. It is not a ranking, traffic or AI citation guarantee.</p></details>
   <details><summary data-i18n="q3">Is llms.txt mandatory?</summary><p data-i18n="a3">No. llms.txt is an evolving proposal, not a web standard. It is therefore labeled PROPOSAL and given limited weight.</p></details>
   <details><summary data-i18n="q4">Are Core Web Vitals measured?</summary><p data-i18n="a4">This version measures HTML/HTTP performance hygiene. Reliable LCP/INP/CLS needs CrUX/PageSpeed data; without it the result is NOT_MEASURED.</p></details>
@@ -459,7 +459,7 @@ def build_homepages():
       <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
         <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
       </a>
-      <p data-i18n="footerTag">Evidence is free. Implementation precision is the product.</p>
+      <p data-i18n="footerTag">Evidence is free. Automated code generator is the product.</p>
     </div>
     <div class="footer-col">
       <h4>Platform</h4>

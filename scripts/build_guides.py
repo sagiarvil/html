@@ -648,8 +648,8 @@ for g in guides_data:
   </div>
 
   <div class="compare" style="margin-top: 32px;">
-    <b>{'UYGULAMA SÖZLEŞMESİ' if lang == 'tr' else 'FIX MANDATE'}</b>
-    <p>{'Tespit edilen teknik engelleri mühendislik ekibiniz için kök neden, kabul testleri ve geri alma planlarıyla çözmek için' if lang == 'tr' else 'To resolve detected blockers with root cause analysis, acceptance tests and rollbacks for your engineering team,'} <a href="{fix_mandate_url}" style="font-weight: 800; text-decoration: underline;">$149 Full Site Fix Mandate</a> {'ürününü inceleyin.' if lang == 'tr' else 'is available.'}</p>
+    <b>{'OTOMATİK KOD PAKETİ' if lang == 'tr' else 'FIX MANDATE'}</b>
+    <p>{'Tespit edilen teknik engelleri mühendislik ekibiniz için kök neden, kabul testleri ve geri alma planlarıyla çözmek için' if lang == 'tr' else 'To resolve detected blockers with root cause analysis, acceptance tests and rollbacks for your engineering team,'} <a href="{fix_mandate_url}" style="font-weight: 800; text-decoration: underline;">$99 Full Site Fix Mandate</a> {'ürününü inceleyin.' if lang == 'tr' else 'is available.'}</p>
   </div>
 
   <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 14px; font-weight: 800;">

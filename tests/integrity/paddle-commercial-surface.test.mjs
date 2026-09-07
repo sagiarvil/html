@@ -46,6 +46,16 @@ test("Paddle commercial surface: pure 2-tier model (" + P0 + " and " + P99 + ") 
     assert.ok(!text.toLowerCase().includes("marketing agency"), "Surface " + rel + " must not claim marketing agency");
     assert.ok(!text.toLowerCase().includes("consulting service"), "Surface " + rel + " must not claim consulting service");
     assert.ok(!text.toLowerCase().includes("bespoke software development"), "Surface " + rel + " must not claim custom development");
+
+    // Assert no service contract, fix contract or human implementation phrases
+    assert.ok(!text.includes("Implementation paid"), "Surface " + rel + " must not contain 'Implementation paid'");
+    assert.ok(!text.includes("düzeltme sözleşmesi"), "Surface " + rel + " must not contain 'düzeltme sözleşmesi'");
+    assert.ok(!text.includes("Düzeltme sözleşmesi"), "Surface " + rel + " must not contain 'Düzeltme sözleşmesi'");
+    assert.ok(!text.includes("engineering contract"), "Surface " + rel + " must not contain 'engineering contract'");
+    assert.ok(!text.includes("Engineering Contract"), "Surface " + rel + " must not contain 'Engineering Contract'");
+    assert.ok(!text.includes("mühendislik sözleşmesi"), "Surface " + rel + " must not contain 'mühendislik sözleşmesi'");
+    assert.ok(!text.includes("Mühendislik Sözleşmesi"), "Surface " + rel + " must not contain 'Mühendislik Sözleşmesi'");
+    assert.ok(!text.includes("fix contract"), "Surface " + rel + " must not contain 'fix contract'");
   }
 });
 

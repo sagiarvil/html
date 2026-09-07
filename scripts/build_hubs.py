@@ -110,9 +110,9 @@ def build_tools_hub():
   <div class="authority-callout">
     <div>
       <h3>{'Tek bir deterministik tarama çekirdeği.' if lang == 'tr' else 'One deterministic scanning engine.'}</h3>
-      <p>{'Her araç aynı 12 motorlu çekirdeği çağırır ve ilgili kategorileri izole eder. Puanlama mantığı araçlar arasında asla sapma göstermez.' if lang == 'tr' else 'Every tool executes the same 12-engine core, filtering categories without score divergence. Implementation instructions unlock in the $149 Fix Mandate.'}</p>
+      <p>{'Her araç aynı 12 motorlu çekirdeği çağırır ve ilgili kategorileri izole eder. Puanlama mantığı araçlar arasında asla sapma göstermez.' if lang == 'tr' else 'Every tool executes the same 12-engine core, filtering categories without score divergence. Automated configuration instructions unlock in the $99 Fix Mandate.'}</p>
     </div>
-    <a href="/{'tr/fix-mandate/' if lang == 'tr' else 'en/fix-mandate/'}">{'Full Site Fix Mandate — $149' if lang == 'tr' else 'Full Site Fix Mandate — $149'}</a>
+    <a href="/{'tr/fix-mandate/' if lang == 'tr' else 'en/fix-mandate/'}">{'Full Site Fix Mandate — $99' if lang == 'tr' else 'Full Site Fix Mandate — $99'}</a>
   </div>
 </section>
 </main>
@@ -228,7 +228,7 @@ def build_platform_hub():
     <div class="method-item">
       <b>04 / FIX</b>
       <div>
-        <h3>{'Uygulama Sözleşmesi (Fix Mandate)' if lang == 'tr' else 'Remediation Mandate (Fix Mandate)'}</h3>
+        <h3>{'Otomatik Düzeltme Paketi (Fix Mandate)' if lang == 'tr' else 'Automated Fix Package (Fix Mandate)'}</h3>
         <p>{'AI kodlama ajanınız veya mühendisleriniz için kök neden, kabul testleri, regresyon testleri ve geri alma planları sunulur.' if lang == 'tr' else 'Delivers root causes, ordered PR steps, acceptance tests, and rollback safeguards formatted for AI coding agents and human engineers.'}</p>
       </div>
     </div>
@@ -298,10 +298,10 @@ def build_pricing_hub():
     {{
       "@type": "Product",
       "name": "HTML&HTML Full Site Fix Mandate",
-      "description": "{'Implementation-grade fix contract for AI coding agents and engineering teams.' if lang == 'en' else 'AI kodlama ajanları ve mühendislik ekipleri için uygulama sözleşmesi.'}",
+      "description": "{'Automated code patches and configuration bundle for developers and AI agents.' if lang == 'en' else 'Yazılımcılar ve AI ajanları için otomatik kod yamaları ve konfigürasyon paketi.'}",
       "offers": [
         {{ "@type": "Offer", "name": "Free Diagnosis", "price": "0", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "Full Site Fix Mandate", "price": "149", "priceCurrency": "USD" }}
+        {{ "@type": "Offer", "name": "Full Site Fix Mandate", "price": "99", "priceCurrency": "USD" }}
       ]
     }},
     {{
@@ -354,17 +354,17 @@ def build_pricing_hub():
       <span class="popular">{'TEK ÜCRETLİ ÜRÜN' if lang == 'tr' else 'PRIMARY COMMERCIAL PRODUCT'}</span>
       <div class="pricehead">
         <span>{'TAM SİTE DÜZELTME TALİMATI' if lang == 'tr' else 'FULL SITE FIX MANDATE'}</span>
-        <strong>$149</strong>
+        <strong>$99</strong>
       </div>
-      <p>{'Tek bir alan adı için uygulama-grade düzeltme sözleşmesi.' if lang == 'tr' else 'Implementation-grade fix contract for one domain.'}</p>
+      <p>{'Tek bir alan adı için otomatik kod ve konfigürasyon paketi.' if lang == 'tr' else 'Automated code patch and config package for one domain.'}</p>
       <ul>
         <li>{'P0–P3 önem derecesine göre sıralı eylem planı' if lang == 'tr' else 'Prioritized P0–P3 implementation sequence'}</li>
-        <li>{'ROOT FIX → RECOVERY → PREVENTION sözleşmesi' if lang == 'tr' else 'ROOT FIX → RECOVERY → PREVENTION framework'}</li>
+        <li>{'ROOT FIX → RECOVERY → PREVENTION mimarisi' if lang == 'tr' else 'ROOT FIX → RECOVERY → PREVENTION framework'}</li>
         <li>{'Kabul testleri ve regresyon testleri' if lang == 'tr' else 'Automated acceptance and regression tests'}</li>
         <li>{'Geri alma (rollback) ve durma koşulları' if lang == 'tr' else 'Rollback plans and stop conditions'}</li>
         <li>{'30 gün içinde 1 adet doğrulama re-scan hakkı' if lang == 'tr' else 'One verification re-scan within 30 days'}</li>
       </ul>
-      <a class="solid" href="/checkout">{'Fix Mandate Satın Al — $149' if lang == 'tr' else 'Buy Fix Mandate — $149'}</a>
+      <a class="solid" href="/checkout">{'Fix Mandate Satın Al — $99' if lang == 'tr' else 'Buy Fix Mandate — $99'}</a>
     </article>
   </div>
 
@@ -404,15 +404,15 @@ def build_fix_mandate_hub():
         bc_home_name = "Home" if lang == 'en' else "Ana Sayfa"
         bc_home_url = "/en/" if lang == 'en' else "/tr/"
 
-        h1 = "Full Site Fix Mandate: <em>$149 Implementation Contract</em>" if lang == 'en' else "Full Site Fix Mandate: <em>$149 Uygulama Sözleşmesi</em>"
-        sub = "Turn diagnostic evidence into engineering action. Prioritized root fixes, automated acceptance tests, regression assertions, and rollback plans for human engineers and AI coding agents." if lang == 'en' else "Teşhis kanıtlarını mühendislik eylemine dönüştürün. Mühendisler ve yapay zeka kodlama ajanları için öncelikli kök düzeltmeler, otomatik kabul testleri ve geri alma planları."
+        h1 = "Full Site Fix Mandate: <em>$99 Automated Software Bundle</em>" if lang == 'en' else "Full Site Fix Mandate: <em>$99 Otomatik Yazılım Paketi</em>"
+        sub = "Turn diagnostic evidence into automated code artifacts. Prioritized root fixes, automated acceptance tests, regression assertions, and rollback plans for human engineers and AI coding agents." if lang == 'en' else "Teşhis kanıtlarını otomatik kod paketine dönüştürün. Mühendisler ve yapay zeka kodlama ajanları için öncelikli kök düzeltmeler, otomatik kabul testleri ve geri alma planları."
 
         html = f'''<!doctype html>
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{'Full Site Fix Mandate — $149 Engineering Contract | HTML&HTML' if lang == 'en' else 'Full Site Fix Mandate — $149 Mühendislik Sözleşmesi | HTML&HTML'}</title>
+<title>{'Full Site Fix Mandate — $99 Automated Software Bundle | HTML&HTML' if lang == 'en' else 'Full Site Fix Mandate — $99 Otomatik Yazılım Paketi | HTML&HTML'}</title>
 <meta name="description" content="{sub}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="{canonical_url}">
@@ -429,7 +429,7 @@ def build_fix_mandate_hub():
       "@type": "Product",
       "name": "HTML&HTML Full Site Fix Mandate",
       "description": "{sub}",
-      "offers": {{ "@type": "Offer", "price": "149", "priceCurrency": "USD" }}
+      "offers": {{ "@type": "Offer", "price": "99", "priceCurrency": "USD" }}
     }},
     {{
       "@type": "BreadcrumbList",
@@ -454,7 +454,7 @@ def build_fix_mandate_hub():
 
 <main>
 <section class="authority-hero">
-  <div class="kicker"><span></span><b>{'TİCARİ MÜHENDİSLİK ÜRÜNÜ' if lang == 'tr' else 'COMMERCIAL ENGINEERING CONTRACT'}</b></div>
+  <div class="kicker"><span></span><b>{'TİCARİ GELİŞTİRİCİ YAZILIMI' if lang == 'tr' else 'COMMERCIAL DEVELOPER SOFTWARE'}</b></div>
   <h1>{h1}</h1>
   <p>{sub}</p>
   <div class="authority-proof">
@@ -464,9 +464,9 @@ def build_fix_mandate_hub():
 
 <section class="section">
   <header>
-    <span class="eyebrow">{'SÖZLEŞME YAPISI' if lang == 'tr' else 'CONTRACT STRUCTURE'}</span>
+    <span class="eyebrow">{'PAKET YAPISI' if lang == 'tr' else 'PACKAGE STRUCTURE'}</span>
     <h2>{'Bir Fix Mandate neleri içerir?' if lang == 'tr' else 'What does a Fix Mandate deliver?'}</h2>
-    <p>{'Yüzeysel öneriler yerine kesin mühendislik sözleşmesi verilir.' if lang == 'tr' else 'Delivers exact operational contracts rather than generic marketing recommendations.'}</p>
+    <p>{'Yüzeysel öneriler yerine deterministik kod ve konfigürasyon paketi verilir.' if lang == 'tr' else 'Delivers deterministic code and configuration packages rather than generic recommendations.'}</p>
   </header>
   <div class="method-list">
     <div class="method-item">

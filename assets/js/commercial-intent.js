@@ -13,7 +13,7 @@ const copy={
     title:'Müşteri AI’ya “kimi seçmeliyim?” diye sorduğunda, siteniz cevapta aday mı?',
     body:'AI görünürlüğü tek başına gelir değildir. Ticari değer; sitenizin bulunabilmesi, doğru anlaşılması, güvenilir bir kaynak olarak değerlendirilebilmesi, tıklanabilmesi ve ziyaretçiyi müşteriye dönüştürebilmesiyle oluşur. HTML&HTML bu zincirin site tarafındaki ölçülebilir kırıklarını bulur.',
     primary:'AI Görünürlük Engellerimi Ücretsiz Tara',
-    paid:'$99 Düzeltme Sözleşmesini Gör',
+    paid:'$99 Otomatik Kod Paketini Gör',
     thesis:'Müşteriniz karar vermeden önce AI’ya sorabilir. Hedef, bir “AI sıralaması” satın almak değil; sitenizi AI ve arama sistemlerinin bulabildiği, anlayabildiği, kaynak gösterebildiği ve kullanıcıya yönlendirebildiği bir yapıya getirmektir.',
     guard:'Garanti satmıyoruz: AI sıralaması, öneri, atıf, trafik veya gelir garanti edilemez. Ölçtüğümüz şey, bu sonuçların önündeki site kaynaklı teknik ve içerik engelleridir.',
     stages:[
@@ -69,7 +69,7 @@ const intentCopy={
     'araclar':'Her araç aynı sorunun farklı halkasını ölçer: AI ve arama sistemlerinin sizi bulması, anlaması, kaynak olarak değerlendirmesi ve kullanıcıyı size taşıması.',
     'rehberler':'Rehberlerin amacı içerik üretmek değil; AI keşfi ve nitelikli talep için uygulanabilir kararları teknik kanıtla açıklamaktır.',
     'fiyatlandirma':'Ücretsiz katman neyin yanlış olduğunu kanıtlar. $99 Fix Mandate, bu engelleri test edilebilir uygulama sırasına çevirir.',
-    'fix-mandate':'Bir “AI tavsiye garantisi” satın almazsınız. Ölçülen engelleri kaldıran, test eden ve geri dönüş planı olan bir uygulama sözleşmesi satın alırsınız.'
+    'fix-mandate':'Bir “AI tavsiye garantisi” satın almazsınız. Ölçülen engelleri kaldıran, test eden ve geri dönüş planı olan otomatik bir yazılım paketi satın alırsınız.'
   },
   en:{
     'ai-mention-tracker':'Measure visibility first, then track which neutral prompts actually surface your brand. A mention is not the end goal; value comes when visibility becomes qualified visits and demand.',
@@ -86,7 +86,7 @@ const intentCopy={
     'tools':'Each tool measures a different link in the same commercial chain: being found, understood, source-worthy, and able to convert the visit.',
     'guides':'The guides exist to turn AI discovery into actionable engineering and content decisions, not to manufacture generic SEO copy.',
     'pricing':'The free layer proves what is wrong. The $99 Fix Mandate turns measurable blockers into a testable implementation sequence.',
-    'fix-mandate':'You are not buying an “AI recommendation guarantee.” You are buying an implementation contract that removes measured blockers, tests the result, and defines rollback.'
+    'fix-mandate':'You are not buying an “AI recommendation guarantee.” You are buying an automated software bundle that removes measured blockers, tests the result, and defines rollback.'
   }
 };
 
@@ -110,7 +110,7 @@ function mountBridge(){
 }
 function mountHeroThesis(){
   if(!home())return;
-  const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>uygulanabilir düzeltmeye çevirin.':'Turn AI visibility blockers<br>into an implementation contract.';if(p)p.textContent=lang()==='tr'?'Bulgu listesini; kök neden, uygulama sırası, kabul testi, regresyon testi ve rollback içeren $99 düzeltme sözleşmesine dönüştürür.':'Convert findings into a $99 fix contract with root cause, implementation order, acceptance tests, regression tests, and rollback.';}
+  const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>otomatik kod paketine çevirin.':'Turn AI visibility blockers<br>into an automated code package.';if(p)p.textContent=lang()==='tr'?'Bulgu listesini; kök neden, uygulama sırası, kabul testi, regresyon testi ve rollback içeren $99 otomatik yazılım paketine dönüştürür.':'Convert findings into a $99 automated code bundle with root cause, implementation order, acceptance tests, regression tests, and rollback.';}
 }
 function loadCss(){if(document.querySelector('link[data-commercial-intent-css]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/commercial-intent.css?v=1';l.dataset.commercialIntentCss='1';document.head.appendChild(l)}
 function mount(){loadCss();mountHeroThesis();mountBridge()}
