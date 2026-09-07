@@ -30,4 +30,160 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   text-align:center;
 }
 
+
 @media(max-width:600px){.hero>p{font-size:17px;line-height:1.72}.section{padding-top:54px;padding-bottom:54px}.section>header>p,.how p,.faq details p{font-size:15px}.engine-grid p,.evidence-grid p,.feature-grid p{font-size:14px}.score-item span{font-size:11px}.scan-disclosure{font-size:13px!important}.finding h4{font-size:16px!important}.finding p{font-size:14px!important}.finding code{font-size:12px!important}.hero .tabs,.hero .scan-chips{justify-content:center}}
+
+/* LLMS_FEATURE_SHOWCASE & HOW_IT_WORKS */
+.llms-feature-section {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 60px 24px 20px;
+}
+.llms-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
+}
+.llms-card {
+  background: var(--bg-card, #1e2028);
+  border: 1px solid var(--line, rgba(255,255,255,0.09));
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.llms-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+.llms-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(56, 189, 248, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #38bdf8;
+}
+.llms-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  color: var(--fg, #f8fafc);
+}
+.llms-card p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--muted, #94a3b8);
+  margin: 0;
+}
+.how-it-works-block {
+  max-width: 860px;
+  margin: 0 auto 40px;
+}
+.how-it-works-block h2 {
+  font-size: 28px;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  color: var(--fg, #f8fafc);
+}
+.how-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.how-step-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-soft, #181a22);
+  border: 1px solid var(--line, rgba(255,255,255,0.09));
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--fg-soft, #cbd5e1);
+}
+.how-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--fg, #f8fafc);
+  color: var(--bg, #14151a);
+  font-weight: 900;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.how-step-text {
+  flex: 1;
+}
+.how-step-text strong {
+  color: var(--fg, #f8fafc);
+  font-weight: 700;
+}
+.how-step-text code {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Mono", monospace;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: #38bdf8;
+}
+.how-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  color: #38bdf8;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.how-guide-link:hover {
+  gap: 10px;
+  text-decoration: underline;
+}
+
+/* SSS FAQ MORE LINK */
+.faq-more-wrap {
+  text-align: center;
+  margin: 36px auto 16px;
+}
+.faq-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card, #1e2028);
+  border: 1px solid var(--line-strong, rgba(255,255,255,0.18));
+  color: var(--fg, #f8fafc);
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.faq-more-btn:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateY(-2px);
+}
+
+@media(max-width:860px){
+  .llms-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
