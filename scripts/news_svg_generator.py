@@ -522,7 +522,10 @@ def render_silhouette_art(pillar_key, c1, c2, c3, seed):
 def generate_news_cover_svg(item, slug):
     topic = esc(item.get('topic', 'LLMO').replace('_', ' '))
     date = esc(item.get('updatedAt') or item.get('publishedAt', '2026-09-06'))
-    title = esc(item.get('title', {}).get('en', 'AI Search Visibility'))
+    raw_title = str(item.get('title', {}).get('en', 'AI Search Visibility'))
+    clean_title = html.unescape(raw_title)
+    title_full_esc = html.escape(clean_title, quote=True)
+    title_short_esc = html.escape(clean_title[:72], quote=True)
     
     seed = int(hashlib.sha256(item['id'].encode()).hexdigest()[:8], 16)
     raw_key, raw_desc, c1, c2, c3, glow = get_pillar_meta(item.get('topic', ''))
@@ -533,7 +536,7 @@ def generate_news_cover_svg(item, slug):
     
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t-{slug} d-{slug}">
   <title id="t-{slug}">HTML&amp;HTML AI Search Intelligence — {pillar_key} ({topic})</title>
-  <desc id="d-{slug}">Vector silhouette blueprint and narrative story for {title}</desc>
+  <desc id="d-{slug}">Vector silhouette blueprint and narrative story for {title_full_esc}</desc>
   <defs>
     <linearGradient id="bg-{slug}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#060709"/>
@@ -589,7 +592,7 @@ def generate_news_cover_svg(item, slug):
 
   <!-- Bottom Caption & Context -->
   <rect x="48" y="585" width="1104" height="42" rx="6" fill="#07090E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">{title[:72]}</text>
+  <text x="64" y="611" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">{title_short_esc}</text>
   <text x="1136" y="611" font-family="ui-monospace,Menlo,monospace" font-size="10.5" font-weight="700" text-anchor="end" letter-spacing="2" fill="{c1}">HTML&amp;HTML // {date}</text>
 </svg>'''
     return svg
