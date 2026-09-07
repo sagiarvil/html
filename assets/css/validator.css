@@ -35,10 +35,17 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 
 /* EXACT REFERENCE STYLING (llmstxtvalidator.dev Clone) */
 .hero {
-  padding-top: 52px !important;
-  padding-bottom: 48px !important;
+  min-height: calc(100vh - 74px) !important;
+  min-height: calc(100dvh - 74px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
   max-width: 980px !important;
   margin: 0 auto !important;
+  box-sizing: border-box !important;
 }
 
 .hero .kicker {
@@ -94,6 +101,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 
 /* SCANBOX INPUT & BUTTON (Exact match to reference) */
 .scanbox {
+  width: 100% !important;
   max-width: 680px !important;
   margin: 0 auto !important;
 }
