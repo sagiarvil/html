@@ -31,7 +31,7 @@ expect(validator.includes('universalPlaceholder'), 'validator.js must define uni
 
 for(const x of [tools,toolsEn]){
   expect(x.includes('data-premium-infographic="scope-map"'),'tools route must be a unified scan scope map');
-  expect(x.includes('12')&&x.includes('13')&&x.includes('7'),'tools scope must expose 12 engines + 13 audits + 7 lenses');
+  expect(x.includes('18')&&x.includes('13')&&x.includes('6'),'tools scope must expose 18 engines + 13 audits + 6 layeres');
 }
 expect(tools.includes('Tek URL.')&&tools.includes('Tüm Yapay Zeka Görünürlük Sistemi'),'TR tools route must explain one-URL system');
 expect(tools.includes('/tr/#scanner'),'TR tools primary flow must return to unified scanner');
@@ -53,7 +53,7 @@ expect(pricing.includes('Üyelik zorunlu değildir'),'guest delivery explanation
 expect(pricingEn.includes('No membership is required'),'EN guest delivery explanation missing');
 
 for(const x of [home,trHome,enHome,pricing,pricingEn,tools,toolsEn])expect(x.includes('/assets/css/enterprise-system.css?v=1'),'enterprise visual system must be attached to major funnel surfaces');
-expect(home.includes('/assets/js/enterprise-runtime.js?v=1'),'central scanner must attach enterprise runtime');
+expect(home.includes('/assets/js/enterprise-runtime.js?v=3'),'central scanner must attach enterprise runtime');
 expect(runtime.includes('ai-decision-map')&&runtime.includes('readinessLenses')&&runtime.includes('topPriorities'),'free result must expose readiness lenses and intelligence priorities');
 expect(runtime.includes('$99')&&runtime.includes('AI Search Visibility Roadmap'),'runtime customer copy must use $99 professional Roadmap language');
 expect(!validator.includes('$149'),'language switch runtime must not resurrect $149');

@@ -223,7 +223,7 @@ Link: &lt;/llms.txt&gt;; rel="describedby"; type="text/markdown"</code></pre>
 > HTML&HTML, web sitelerinin yapay zeka arama motorları ve otonom ajanlar tarafından erişilebilirliğini, anlaşılabilirliğini ve taranabilirliğini denetleyen deterministik teşhis platformudur.
 
 ## Temel Dokümantasyon
-- [Mimari Genel Bakış](https://htmlandhtml.com/docs/architecture.md): 12 bağımsız teşhis motorunun deterministik çalışma prensipleri.
+- [Mimari Genel Bakış](https://htmlandhtml.com/docs/architecture.md): 18 bağımsız teşhis motorunun deterministik çalışma prensipleri.
 - [AI Görünürlük Kriterleri](https://htmlandhtml.com/docs/ai-readiness.md): robots.txt, canonical, HTTP başlıkları ve LLMO kriterleri.
 - [llms.txt Spesifikasyonu](https://htmlandhtml.com/tr/rehberler/llms-txt/): v2 şartnamesi, describedby protokolü ve sözdizimi doğrulaması.
 

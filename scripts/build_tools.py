@@ -19,14 +19,14 @@ tools_data = [
         "tr_slug": "site-tarama",
         "categories": "crawl,technical,ai,llms,schema,performance,accessibility,security,trust,agent,conversion,links",
         "en": {
-            "title": "Website Scanner — Full 12-Engine Site Audit | HTML&HTML",
+            "title": "Website Scanner — Full 18-engine Site Audit | HTML&HTML",
             "desc": "Audit your website with 12 deterministic engines. Discover crawl, technical SEO, AI readiness, schema, performance, accessibility, security and link issues with evidence.",
-            "kicker": "12-ENGINE WEBSITE SCANNER",
+            "kicker": "18-engine WEBSITE SCANNER",
             "h1": "Complete evidence-based <em>website diagnosis.</em>",
-            "sub": "Run all 12 independent diagnostic engines across up to 50 public HTML pages. Identify technical blockers, crawler restrictions and machine-readable discovery gaps.",
-            "proof": ["12 Engines", "Up to 50 Pages", "Evidence Attached", "No Signup"],
+            "sub": "Run all 18 independent diagnostic engines across up to 50 public HTML pages. Identify technical blockers, crawler restrictions and machine-readable discovery gaps.",
+            "proof": ["18 Engines", "Up to 50 Pages", "Evidence Attached", "No Signup"],
             "tool_title": "Full website diagnosis",
-            "tool_sub": "Enter a domain. The full 12-engine scanner executes and presents prioritized evidence.",
+            "tool_sub": "Enter a domain. The full 18-engine scanner executes and presents prioritized evidence.",
             "btn": "Scan website",
             "scope_eyebrow": "HTML&HTML / SCOPE",
             "scope_title": "Every layer of your public web surface.",
@@ -48,14 +48,14 @@ tools_data = [
             "cta_btn": "Full Site Fix Mandate — $99"
         },
         "tr": {
-            "title": "Web Sitesi Tarayıcısı — 12 Motorlu Tam Site Denetimi | HTML&HTML",
+            "title": "Web Sitesi Tarayıcısı — 18 Motorlu Tam Site Denetimi | HTML&HTML",
             "desc": "Web sitenizi 12 analiz motoruyla ücretsiz tarayın. Teknik SEO, AI hazırlığı, schema, performans, erişilebilirlik, güvenlik ve link sorunlarını kanıtıyla görün.",
-            "kicker": "12 MOTORLU WEB SİTESİ TARAYICISI",
+            "kicker": "18 MotorLU WEB SİTESİ TARAYICISI",
             "h1": "Kanıta dayalı eksiksiz <em>web sitesi teşhisi.</em>",
-            "sub": "En fazla 50 herkese açık HTML sayfasını 12 bağımsız analiz motoruyla tarayın. Teknik engelleri, bot kısıtlamalarını ve makine-okunabilir veri eksikliklerini tespit edin.",
+            "sub": "En fazla 50 herkese açık HTML sayfasını 18 bağımsız analiz motoruyla tarayın. Teknik engelleri, bot kısıtlamalarını ve makine-okunabilir veri eksikliklerini tespit edin.",
             "proof": ["12 Analiz Motoru", "50 Sayfa Sınırı", "Doğrulanmış Kanıt", "Kayıt Gerekmez"],
             "tool_title": "Ücretsiz tam web sitesi taraması",
-            "tool_sub": "Alan adını girin. 12 motor çalışır ve önceliklendirilmiş kanıtları listeler.",
+            "tool_sub": "Alan adını girin. 18 motor çalışır ve önceliklendirilmiş kanıtları listeler.",
             "btn": "Siteyi tara",
             "scope_eyebrow": "HTML&HTML / KAPSAM",
             "scope_title": "Herkese açık web yüzeyinizin tüm katmanları.",
@@ -68,7 +68,7 @@ tools_data = [
             "lim_p2": "Arama motoru sıralaması veya ChatGPT atıf garantisi gibi asılsız vaatlerde bulunmaz.",
             "faq_title": "Sıkça Sorulan Sorular",
             "faqs": [
-                ("Lighthouse ile farkı nedir?", "Lighthouse tek bir URL üzerinde sentetik tarayıcı performansı ölçer. HTML&HTML ise 50 sayfaya kadar tarama yaparak AI botları, llms.txt, şema, güvenlik ve link bütünlüğü dahil 12 motoru çalıştırır."),
+                ("Lighthouse ile farkı nedir?", "Lighthouse tek bir URL üzerinde sentetik tarayıcı performansı ölçer. HTML&HTML ise 50 sayfaya kadar tarama yaparak AI botları, llms.txt, şema, güvenlik ve link bütünlüğü dahil 18 motoru çalıştırır."),
                 ("Uygulama reçetesi neden kilitli?", "Sorunun ne olduğu ve kanıtı ücretsizdir. $99 Fix Mandate ise mühendislik ekibiniz veya AI kodlama ajanınız için kök nedenleri, uygulama sırasını, testleri ve geri alma planlarını sunar."),
                 ("Özel ağlar nasıl korunur?", "Localhost, özel IP blokları, AWS metadata adresleri ve yönlendirme ile özel ağa sızma girişimleri donanımsal olarak engellenir (fail-closed).")
             ],
@@ -90,7 +90,7 @@ tools_data = [
             "sub": "Modern search engines and AI assistants inspect more than keywords. HTML&HTML audits machine readability, agent discovery and crawler governance with public evidence.",
             "proof": ["LLM Discovery", "Agent Contracts", "Entity Schemas", "Zero Fabrication"],
             "tool_title": "Free AI website readiness audit",
-            "tool_sub": "Enter a domain to measure your site readiness across all 12 engines.",
+            "tool_sub": "Enter a domain to measure your site readiness across all 18 engines.",
             "btn": "Check readiness",
             "scope_eyebrow": "HTML&HTML / READINESS",
             "scope_title": "Three pillars of generative engine optimization.",
@@ -649,7 +649,7 @@ for t in tools_data:
   ]
 }}
 </script>
-<script src="/assets/js/authority-tool.js?v=3" defer></script>
+<script src="/assets/js/authority-tool.js?v=4" defer></script>
 <script src="/assets/js/theme.js?v=5"></script>
 </head>
 <body data-tool-categories="{t['categories']}">

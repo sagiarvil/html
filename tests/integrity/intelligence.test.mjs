@@ -22,7 +22,7 @@ assert.match(src,/key:'indexnow_readiness'[\s\S]*status:'NOT_MEASURED'/,'IndexNo
 assert.doesNotMatch(src,/Last-Click Supremacy|90\s*seconds|80%|LSI keywords|LLMs\.txt v1\.1 RFC/i,'Rejected folklore must not enter intelligence scoring');
 assert.match(scanApi,/generateIntelligenceReport/,'Canonical scan response must expose intelligence without a second scoring engine');
 assert.match(firebase,/intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT/,'Health contract must advertise 13 analyses');
-assert.match(firebase,/readinessLenses:READINESS_LENS_COUNT/,'Health contract must advertise 7 readiness lenses');
+assert.match(firebase,/readinessLenses:READINESS_LENS_COUNT/,'Health contract must advertise 6 conceptual layers');
 assert.match(firebaseJson,/\/api\/intelligence/,'Firebase Hosting must expose intelligence endpoint');
 
-console.log('INTELLIGENCE CONTRACT PASS: 13 non-scoring audits, 7 readiness lenses, honest measurement boundaries and API activation verified.');
+console.log('INTELLIGENCE CONTRACT PASS: 13 non-scoring audits, 6 conceptual layers, honest measurement boundaries and API activation verified.');

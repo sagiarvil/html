@@ -72,4 +72,4 @@ for(const file of ['index.html','checkout.html']){
   }
 }
 if(errors.length){console.error('INTEGRITY FAIL');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log('INTEGRITY PASS: canonical 12-engine diagnosis, 13-audit intelligence, $99 paid prescription boundary, premium infographics, mobile contract and machine-readable surfaces verified.');
+console.log('INTEGRITY PASS: canonical 18-engine diagnosis, 13-audit intelligence, $99 paid prescription boundary, premium infographics, mobile contract and machine-readable surfaces verified.');

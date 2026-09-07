@@ -12,7 +12,7 @@ def write_page(rel_path, content):
 
 def build_tools_hub():
     tools_list = [
-        {"en_title": "Website Scanner", "tr_title": "Web Sitesi Tarayıcısı", "en_slug": "website-scanner", "tr_slug": "site-tarama", "cat_en": "12 Engines · Full Crawl", "cat_tr": "12 Motor · Tam Tarama", "desc_en": "Complete 12-engine diagnostic crawl inspecting HTTP, SEO, AI, schema, and security across up to 50 public pages.", "desc_tr": "En fazla 50 sayfada HTTP, SEO, AI, şema ve güvenliği denetleyen 12 motorlu tam analiz."},
+        {"en_title": "Website Scanner", "tr_title": "Web Sitesi Tarayıcısı", "en_slug": "website-scanner", "tr_slug": "site-tarama", "cat_en": "18 Engines · Full Crawl", "cat_tr": "18 Motor · Tam Tarama", "desc_en": "Complete 18-engine diagnostic crawl inspecting HTTP, SEO, AI, schema, and security across up to 50 public pages.", "desc_tr": "En fazla 50 sayfada HTTP, SEO, AI, şema ve güvenliği denetleyen 18 motorlu tam analiz."},
         {"en_title": "AI Website Readiness", "tr_title": "AI Web Sitesi Hazırlığı", "en_slug": "ai-website-readiness", "tr_slug": "ai-website-readiness", "cat_en": "LLM & Agent Retrieval", "cat_tr": "LLM ve Ajan Erişimi", "desc_en": "Comprehensive readiness audit evaluating robots.txt bot governance, llms.txt v2, JSON-LD knowledge graphs, and machine interfaces.", "desc_tr": "Bot izinlerini, llms.txt standardını, JSON-LD bilgi graflarını ve makine arayüzlerini ölçen hazırlık denetimi."},
         {"en_title": "llms.txt Validator", "tr_title": "llms.txt Doğrulayıcı", "en_slug": "llms-txt-validator", "tr_slug": "llms-txt-validator", "cat_en": "v2 Specification", "cat_tr": "v2 Şartnamesi", "desc_en": "Rigorous validation for /llms.txt and /llms-full.txt files: syntax, blockquotes, link reachability, and rel=describedby discovery.", "desc_tr": "/llms.txt ve /llms-full.txt dosyaları için sözdizimi, blok alıntı, link erişilebilirliği ve rel=describedby denetimi."},
         {"en_title": "AI Crawler Checker", "tr_title": "AI Tarayıcı Kontrolü", "en_slug": "ai-crawler-checker", "tr_slug": "ai-crawler-checker", "cat_en": "RFC 9309 · Bot Policies", "cat_tr": "RFC 9309 · Bot Kuralları", "desc_en": "Inspect allow/disallow behavior for OAI-SearchBot, Claude-SearchBot, PerplexityBot, GPTBot, and wildcard fallback rules.", "desc_tr": "OAI-SearchBot, Claude-SearchBot, PerplexityBot, GPTBot ve joker karakter kurallarını canlıda denetleyin."},
@@ -31,7 +31,7 @@ def build_tools_hub():
         bc_home_name = "Home" if lang == 'en' else "Ana Sayfa"
         bc_home_url = "/en/" if lang == 'en' else "/tr/"
         h1 = "Specialized Tools for <em>Modern Search & AI Retrieval</em>" if lang == 'en' else "Arama ve Yapay Zeka Keşfi İçin <em>Özel Denetim Araçları</em>"
-        sub = "Ten deterministic, evidence-backed tools powered by our shared 12-engine scanning core. Test crawler policies, schema markup, security headers, and agent interfaces without false claims." if lang == 'en' else "Paylaşımlı 12 motorlu tarama çekirdeğimizle güçlendirilen 10 adet deterministik ve kanıta dayalı araç. Bot izinlerini, şemaları, güvenlik başlıklarını ve ajan arayüzlerini sahte iddialar olmadan test edin."
+        sub = "Ten deterministic, evidence-backed tools powered by our shared 18-engine scanning core. Test crawler policies, schema markup, security headers, and agent interfaces without false claims." if lang == 'en' else "Paylaşımlı 18 motorlu tarama çekirdeğimizle güçlendirilen 10 adet deterministik ve kanıta dayalı araç. Bot izinlerini, şemaları, güvenlik başlıklarını ve ajan arayüzlerini sahte iddialar olmadan test edin."
 
         cards = ""
         for t in tools_list:
@@ -110,7 +110,7 @@ def build_tools_hub():
   <div class="authority-callout">
     <div>
       <h3>{'Tek bir deterministik tarama çekirdeği.' if lang == 'tr' else 'One deterministic scanning engine.'}</h3>
-      <p>{'Her araç aynı 12 motorlu çekirdeği çağırır ve ilgili kategorileri izole eder. Puanlama mantığı araçlar arasında asla sapma göstermez.' if lang == 'tr' else 'Every tool executes the same 12-engine core, filtering categories without score divergence. Automated configuration instructions unlock in the $99 Fix Mandate.'}</p>
+      <p>{'Her araç aynı 18 motorlu çekirdeği çağırır ve ilgili kategorileri izole eder. Puanlama mantığı araçlar arasında asla sapma göstermez.' if lang == 'tr' else 'Every tool executes the same 18-engine core, filtering categories without score divergence. Automated configuration instructions unlock in the $99 Fix Mandate.'}</p>
     </div>
     <a href="/{'tr/fix-mandate/' if lang == 'tr' else 'en/fix-mandate/'}">{'Full Site Fix Mandate — $99' if lang == 'tr' else 'Full Site Fix Mandate — $99'}</a>
   </div>
@@ -207,7 +207,7 @@ def build_platform_hub():
     <div class="method-item">
       <b>01 / SCAN</b>
       <div>
-        <h3>{'Deterministik 12 Motorlu Tarama' if lang == 'tr' else 'Deterministic 12-Engine Scan'}</h3>
+        <h3>{'Deterministik 18 Motorlu Tarama' if lang == 'tr' else 'Deterministic 18-engine Scan'}</h3>
         <p>{'DNS-over-HTTPS güvenlik kontrolü ve SSRF filtreleri sonrası 50 sayfaya kadar herkese açık web yüzeyi taranır.' if lang == 'tr' else 'Up to 50 public HTML pages and core machine endpoints are crawled through strict DNS-over-HTTPS and SSRF security gates.'}</p>
       </div>
     </div>
@@ -253,7 +253,7 @@ def build_platform_hub():
   <div class="authority-callout">
     <div>
       <h3>{'Metodolojimizi ve ağırlıklarımızı inceleyin.' if lang == 'tr' else 'Inspect our methodology and public weights.'}</h3>
-      <p>{'12 analiz motorumuzun ağırlıkları, kural kaynakları ve epistemik sınırları herkese açık olarak belgelenmiştir.' if lang == 'tr' else 'Our 12-engine scoring weights, source registries, and epistemic boundaries are fully published and transparent.'}</p>
+      <p>{'12 analiz motorumuzun ağırlıkları, kural kaynakları ve epistemik sınırları herkese açık olarak belgelenmiştir.' if lang == 'tr' else 'Our 18-engine scoring weights, source registries, and epistemic boundaries are fully published and transparent.'}</p>
     </div>
     <a href="/{'tr/methodology/' if lang == 'tr' else 'en/methodology/'}">{'Metodoloji' if lang == 'tr' else 'Methodology'} →</a>
   </div>

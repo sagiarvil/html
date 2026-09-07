@@ -20,18 +20,18 @@ const copy={
     note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri (ChatGPT, Claude, Perplexity, Gemini) nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır.',
     badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
     badge13:'13 Derin Analiz',
-    badge7:'7 Hazırlık Lensi',
+    badge7:'6 Katmanlı Mimari',
     badgeRemedy:'🔒 Çözüm: $99 Mühendislik Yol Haritası',
     tierGuideTitle:'Hangi Katman Neyi Kapsar? ($0 Teşhis vs. $99 Uygulama Paketi)',
     t0Title:'1. Açık Teşhis Envanteri',
     t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
-    t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 7 hazırlık lensiyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
+    t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 6 katmanlı derin mimariyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
     t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
     t99Title:'2. Mühendislik Yol Haritası',
     t99Price:'$99 Tek Seferlik',
     t99Desc:'Nasıl düzeltilecek? Sitedeki TÜM sorunların çözümü TEK BİR $99 paketindedir. 5 kritik kontrol noktası ████████ ile güvence altına alınır.',
     t99Cta:'$99 Mühendislik Paketini Aç →',
-    lenses:'7 Boyutlu Hazırlık Lensleri',
+    lenses:'6 Katmanlı Derin Mimari',
     priorities:'Öncelikli Stratejik Karar Alanları',
     prioritiesSub:'Acil Düzeltme Sırası: Doğrulanmış kanıtlara göre en yüksek etkiyi sağlayan ilk 3 öncelik ($99 Yol Haritası ile koda dönüşür)',
     audits:'13 Bağımsız İstihbarat Denetimi',
@@ -56,18 +56,18 @@ const copy={
     note:'This section is 100% FREE ($0). It transparently documents 13 technical vulnerabilities and 7 readiness dimensions of your site across search engines and AI models (ChatGPT, Claude, Perplexity, Gemini) with live evidence. Step-by-step code remediation, priority ordering, and the 22-file ZIP package are unlocked in the $99 Roadmap layer.',
     badgeFree:'🟢 $0 Free Diagnostic Layer',
     badge13:'13 Deep Analyses',
-    badge7:'7 Readiness Lenses',
+    badge7:'6 conceptual layers',
     badgeRemedy:'🔒 Fix: $99 Roadmap Pack',
     tierGuideTitle:'Which Tier Covers What? ($0 Diagnostic vs $99 Execution Pack)',
     t0Title:'1. Open Diagnostic Inventory',
     t0Price:'$0 Free (Current Screen)',
-    t0Desc:'What is wrong? Where? 13 deep intelligence audits and 7 readiness lenses provide a complete verified evidence log for free.',
+    t0Desc:'What is wrong? Where? 13 deep intelligence audits and 6 conceptual layers provide a complete verified evidence log for free.',
     t0Status:'✓ Active / Free Live Inspection',
     t99Title:'2. Implementation Roadmap',
     t99Price:'$99 One-Time',
     t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and 22-file ZIP engineering package for your developer.',
     t99Cta:'Unlock $99 Roadmap Package →',
-    lenses:'7-Dimensional Readiness Lenses',
+    lenses:'6-Layer Deep Architecture',
     lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
     priorities:'Priority Strategic Decision Areas',
     prioritiesSub:'Action Sequence: Top 3 priorities with highest verified impact-to-effort ratio (converted to code via $99 Roadmap)',
@@ -168,7 +168,7 @@ function render(intel){
     </div>
   `;
 
-  // 2. The 7 Readiness Lenses (Symmetrical Executive Deck)
+  // 2. The 6 conceptual layers (Symmetrical Executive Deck)
   const lensKeys=['SEO','GEO','AEO','LLMO','AAO','RAG','E-E-A-T'];
   const lensesHtml=lensKeys.map(k=>{
     const v=(intel.readinessLenses||{})[k]||{score:0};

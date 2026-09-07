@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=2">'
 PREMIUM='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">'
 ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">'
-RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=1"></script>'
+RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=3?v=1"></script>'
 SKIP_PARTS={'.git','node_modules','functions','functions-firebase','scripts','tests'}
 
 for p in ROOT.rglob('*.html'):
@@ -24,12 +24,12 @@ for p in ROOT.rglob('*.html'):
         text=text.replace('</head>',PREMIUM+'\n</head>',1)
     if 'enterprise-system.css' not in text and '</head>' in text:
         text=text.replace('</head>',ENTERPRISE+'\n</head>',1)
-    if 'id="scanForm"' in text and 'enterprise-runtime.js' not in text and '</body>' in text:
+    if 'id="scanForm"' in text and 'enterprise-runtime.js?v=3' not in text and '</body>' in text:
         text=text.replace('</body>',RUNTIME+'\n</body>',1)
     p.write_text(text,encoding='utf-8')
 
 # Runtime locale dictionaries are build artifacts too. Never let a language switch resurrect old price/copy.
-validator=ROOT/'assets/js/validator.js'
+validator=ROOT/'assets/js/validator.js?v=3'
 if validator.exists():
     js=validator.read_text(encoding='utf-8')
     js=js.replace('$149','$99')

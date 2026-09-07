@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const erFile = 'assets/js/enterprise-runtime.js';
+const erFile = 'assets/js/enterprise-runtime.js?v=3';
 let er = fs.readFileSync(erFile, 'utf8');
 er = er.replace(
   "mandateCopy:'Ne yanlış olduğunu saklamıyoruz. $99 katmanında kök neden, P0–P3 uygulama sırası, kabul/regresyon testleri, rollback ve yazılımcınıza teslim edilecek ZIP mühendislik paketi açılır.',",
@@ -20,7 +20,7 @@ er = er.replace(
 );
 fs.writeFileSync(erFile, er);
 
-const atFile = 'assets/js/authority-tool.js?v=3';
+const atFile = 'assets/js/authority-tool.js?v=4';
 let at = fs.readFileSync(atFile, 'utf8');
 at = at.replace(
   "intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Hazır düzeltme kodları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanındadır.',",
@@ -56,7 +56,7 @@ at = at.replace(
 );
 fs.writeFileSync(atFile, at);
 
-const irFile = 'assets/js/intelligence-root.js?v=3';
+const irFile = 'assets/js/intelligence-root.js?v=4';
 let ir = fs.readFileSync(irFile, 'utf8');
 ir = ir.replace(
   "note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri (ChatGPT, Claude, Perplexity, Gemini) nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Sorunların nasıl düzeltileceği, hazır kod blokları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanında sunulur.',",

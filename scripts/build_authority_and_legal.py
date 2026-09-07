@@ -19,7 +19,7 @@ def build_methodology():
         bc_home_url = "/en/" if lang == 'en' else "/tr/"
 
         h1 = "Scoring Methodology & <em>Governance Standards</em>" if lang == 'en' else "Puanlama Metodolojisi ve <em>Yönetişim Standartları</em>"
-        sub = "How HTML&HTML measures 12 independent diagnostic categories, assigns evidence classes, handles unmeasured signals, and enforces deterministic scoring boundaries." if lang == 'en' else "HTML&HTML'in 12 bağımsız analiz motorunu nasıl ölçtüğünü, kanıt sınıflarını nasıl atadığını, ölçülmeyen sinyalleri nasıl ele aldığını ve puanlama sınırlarını nasıl koruduğunu keşfedin."
+        sub = "How HTML&HTML measures 18 independent diagnostic categories, assigns evidence classes, handles unmeasured signals, and enforces deterministic scoring boundaries." if lang == 'en' else "HTML&HTML'in 18 bağımsız analiz motorunu nasıl ölçtüğünü, kanıt sınıflarını nasıl atadığını, ölçülmeyen sinyalleri nasıl ele aldığını ve puanlama sınırlarını nasıl koruduğunu keşfedin."
 
         source_classes = [
             ("OFFICIAL_STANDARD", "RFCs (e.g. RFC 9309 robots.txt), W3C standards, Schema.org official vocabularies." if lang == 'en' else "RFC standartları (örn. RFC 9309 robots.txt), W3C standartları ve Schema.org resmi sözlükleri."),
@@ -43,7 +43,7 @@ def build_methodology():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{'Scoring Methodology — 12-Engine Architecture | HTML&HTML' if lang == 'en' else 'Puanlama Metodolojisi — 12 Motorlu Mimari | HTML&HTML'}</title>
+<title>{'Scoring Methodology — 18-engine Architecture | HTML&HTML' if lang == 'en' else 'Puanlama Metodolojisi — 18 Motorlu Mimari | HTML&HTML'}</title>
 <meta name="description" content="{sub}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="{canonical_url}">
@@ -367,7 +367,7 @@ def build_company_legal():
             "en": {
                 "title": "Contact HTML&HTML — Software Support & Licensing",
                 "h1": "Contact HTML&HTML: <em>Software Support & Licensing</em>",
-                "sub": "Questions regarding our 12-engine scanning software, OpenAPI integration, or digital software package delivery.",
+                "sub": "Questions regarding our 18-engine scanning software, OpenAPI integration, or digital software package delivery.",
                 "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Software Licensing & Order Support</h2><p>For questions about the $99 Full Site Fix Mandate Software Pack, digital download delivery, or invoices, reach out directly at contact@htmlandhtml.com.</p>"""
             },
             "tr": {

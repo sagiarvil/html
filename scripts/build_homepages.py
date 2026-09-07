@@ -12,7 +12,7 @@ def write_page(rel_path, content):
 
 def build_homepages():
     tools_en = [
-        ("Website Scanner", "/en/website-scanner/", "Full 12-engine crawl inspecting HTTP, SEO, AI, and security."),
+        ("Website Scanner", "/en/website-scanner/", "Full 18-engine crawl inspecting HTTP, SEO, AI, and security."),
         ("AI Website Readiness", "/en/ai-website-readiness/", "Robots governance, llms.txt v2, JSON-LD, and agent discovery."),
         ("llms.txt Validator", "/en/llms-txt-validator/", "v2 specification, link reachability, and rel=describedby discovery."),
         ("AI Crawler Checker", "/en/ai-crawler-checker/", "Inspect allow/disallow rules for OAI-SearchBot, Claude, and Perplexity."),
@@ -95,7 +95,7 @@ def build_homepages():
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/">
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
-<meta property="og:description" content="12-engine public website diagnosis with automated configuration packages and code templates.">
+<meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -126,7 +126,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=2" defer></script>
+<script src="/assets/js/validator.js?v=3" defer></script>
 <script src="/assets/js/theme.js?v=5"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
@@ -374,7 +374,7 @@ def build_homepages():
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/en/">
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
-<meta property="og:description" content="12-engine public website diagnosis with automated configuration packages and code templates.">
+<meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -405,7 +405,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=2" defer></script>
+<script src="/assets/js/validator.js?v=3" defer></script>
 <script src="/assets/js/theme.js?v=5"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
