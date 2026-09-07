@@ -49,25 +49,20 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 }
 
 .hero .kicker {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  color: #3b82f6 !important;
-  background: rgba(59, 130, 246, 0.08) !important;
-  border: 1px solid rgba(59, 130, 246, 0.25) !important;
-  font-size: 11px !important;
+  display: block !important;
+  color: #2563eb !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: none !important;
-  padding: 6px 14px !important;
-  border-radius: 999px !important;
-  margin-bottom: 24px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 20px !important;
 }
 .hero .kicker span {
-  width: 6px !important;
-  height: 6px !important;
-  background: #3b82f6 !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+  display: none !important;
 }
 
 .hero h1 {
