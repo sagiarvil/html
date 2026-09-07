@@ -59,7 +59,7 @@ button, input, textarea, select { font: inherit; }
 .skip { position: absolute; left: -9999px; }
 .skip:focus {
   left: 16px; top: 16px; z-index: 999;
-  background: #111; color: #fff;
+  background: #111; color: var(--theme-text-strong, #fff);
   padding: 10px 16px; border-radius: 8px;
 }
 .topbar {
@@ -108,7 +108,7 @@ html[data-theme="dark"] .brand-logo { filter: invert(1) brightness(1.1); }
 .brand-box {
   width: 34px; height: 34px;
   display: grid; place-items: center;
-  background: var(--ink); color: #fff;
+  background: var(--ink); color: var(--theme-text-strong, #fff);
   border-radius: 8px; font-size: 12px;
   letter-spacing: -.04em;
 }
@@ -256,7 +256,7 @@ html[data-theme="light"] .kicker b {
   line-height: 1.7;
 }
 html[data-theme="dark"] .hero > p {
-  color: #cbd5e1 !important;
+  color: var(--theme-text-secondary, #cbd5e1) !important;
 }
 .scanbox {
   position: relative;
@@ -286,8 +286,8 @@ html[data-theme="dark"] .hero > p {
 .field {
   display: flex;
   align-items: center;
-  background: #181a22;
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: var(--theme-bg-surface, #181a22);
+  border: 1.5px solid var(--theme-border, rgba(255, 255, 255, 0.15));
   border-radius: 14px;
   min-height: 64px;
   padding-left: 18px;
@@ -321,7 +321,7 @@ html[data-theme="dark"] .hero > p {
   align-self: stretch;
   border: 0;
   background: #111;
-  color: #fff;
+  color: var(--theme-text-strong, #fff);
   min-width: 140px;
   padding: 0 24px;
   cursor: pointer;
@@ -397,7 +397,7 @@ html[data-theme="dark"] .hero > p {
   padding: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  color: #ffffff !important;
+  color: var(--theme-text-strong, #ffffff) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
@@ -414,8 +414,8 @@ html[data-theme="dark"] .hero > p {
   border: 1px solid rgba(56, 189, 248, 0.3) !important;
   border-radius: 14px !important;
   padding: 14px 22px !important;
-  background: #181a22 !important;
-  color: #ffffff !important;
+  background: var(--theme-bg-surface, #181a22) !important;
+  color: var(--theme-text-strong, #ffffff) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
@@ -474,7 +474,7 @@ html[data-theme="dark"] .hero > p {
   gap: 10px !important;
   font-size: 14px !important;
   font-weight: 700 !important;
-  color: #ffffff !important;
+  color: var(--theme-text-strong, #ffffff) !important;
   letter-spacing: -0.01em !important;
 }
 
@@ -495,7 +495,7 @@ html[data-theme="dark"] .hero > p {
 
 .scan-counter-badge b {
   font-size: 13.5px !important;
-  color: #ffffff !important;
+  color: var(--theme-text-strong, #ffffff) !important;
 }
 
 .scan-progress-track {
@@ -505,7 +505,7 @@ html[data-theme="dark"] .hero > p {
   border-radius: 999px !important;
   overflow: hidden !important;
   position: relative !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.12)) !important;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7) !important;
 }
 
@@ -536,7 +536,7 @@ html[data-theme="dark"] .hero > p {
   justify-content: space-between !important;
   gap: 10px !important;
   font-size: 11.5px !important;
-  color: #94a3b8 !important;
+  color: var(--theme-text-secondary, #94a3b8) !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
 }
 
@@ -544,7 +544,7 @@ html[data-theme="dark"] .hero > p {
   display: inline-flex !important;
   align-items: center !important;
   gap: 7px !important;
-  color: #cbd5e1 !important;
+  color: var(--theme-text-secondary, #cbd5e1) !important;
   font-weight: 600 !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -762,7 +762,7 @@ html[data-theme="dark"] .hero > p {
   margin-top: 8px;
   padding: 9px 12px;
   background: #070a10;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.1));
   border-radius: 7px;
   white-space: normal;
   font-size: 13px;
@@ -773,7 +773,7 @@ html[data-theme="dark"] .hero > p {
   position: sticky;
   top: 96px;
   background: #10110f;
-  color: #fff;
+  color: var(--theme-text-strong, #fff);
   border-radius: 18px;
   padding: 28px;
 }
@@ -924,7 +924,7 @@ html[data-theme="dark"] .hero > p {
 }
 .pricing-grid article.featured {
   background: #12130f;
-  color: #fff;
+  color: var(--theme-text-strong, #fff);
   border-color: #12130f;
   box-shadow: 0 24px 70px rgba(20,20,16,.14);
 }

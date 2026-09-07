@@ -83,7 +83,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   letter-spacing: -0.035em !important;
   margin: 0 auto 20px !important;
   max-width: 860px !important;
-  color: #ffffff !important;
+  color: var(--theme-text-strong, #ffffff) !important;
 }
 
 .hero h1 em {
@@ -99,7 +99,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   font-size: 17px !important;
   font-weight: 400 !important;
   line-height: 1.65 !important;
-  color: #94a3b8 !important;
+  color: var(--theme-text-secondary, #94a3b8) !important;
   max-width: 680px !important;
   margin: 0 auto 36px !important;
 }
@@ -114,8 +114,8 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 .scanbox .field {
   display: flex !important;
   align-items: center !important;
-  background: #181a22 !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background: var(--theme-bg-surface, #181a22) !important;
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.15)) !important;
   border-radius: 999px !important;
   padding: 6px 6px 6px 20px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
@@ -133,14 +133,14 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   background: transparent !important;
   font-size: 15px !important;
   font-weight: 400 !important;
-  color: #ffffff !important;
+  color: var(--theme-text-strong, #ffffff) !important;
   outline: none !important;
   padding: 8px 0 !important;
   min-width: 0 !important;
 }
 
 .scanbox .field input::placeholder {
-  color: #64748b !important;
+  color: var(--theme-text-secondary, #64748b) !important;
   font-size: 14.5px !important;
 }
 
@@ -150,7 +150,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   justify-content: center !important;
   gap: 6px !important;
   background: #2563eb !important;
-  color: #ffffff !important;
+  color: var(--theme-text-strong, #ffffff) !important;
   border: none !important;
   border-radius: 999px !important;
   padding: 11px 22px !important;
@@ -189,7 +189,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 }
 .llms-card {
   background: var(--bg-card, #1e2028);
-  border: 1px solid var(--line, rgba(255,255,255,0.09));
+  border: 1px solid var(--line, var(--theme-border, rgba(255,255,255,0.09)));
   border-radius: 16px;
   padding: 28px 24px;
   display: flex;
@@ -246,7 +246,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   align-items: center;
   gap: 16px;
   background: var(--bg-soft, #181a22);
-  border: 1px solid var(--line, rgba(255,255,255,0.09));
+  border: 1px solid var(--line, var(--theme-border, rgba(255,255,255,0.09)));
   border-radius: 12px;
   padding: 16px 20px;
   font-size: 15px;

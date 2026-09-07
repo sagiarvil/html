@@ -613,7 +613,7 @@ for g in guides_data:
   ]
 }}
 </script>
-<script src="/assets/js/theme.js?v=4"></script>
+<script src="/assets/js/theme.js?v=5"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'guides')}
@@ -721,7 +721,7 @@ for lang in ['en', 'tr']:
   ]
 }}
 </script>
-<script src="/assets/js/theme.js?v=4"></script>
+<script src="/assets/js/theme.js?v=5"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'guides')}

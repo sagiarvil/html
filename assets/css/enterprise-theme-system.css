@@ -250,7 +250,7 @@ strong, em, small {
     top: -100%;
     left: var(--space-4);
     background: var(--color-accent);
-    color: #FFFFFF;
+    color: var(--theme-text-strong, #FFFFFF);
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
     font-weight: 600;
