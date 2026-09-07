@@ -105,11 +105,11 @@ def build_homepages():
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
 <meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh2026">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh2026">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh2026">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh2026">
-<link rel="icon" href="/favicon.ico?v=hh2026" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh3">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh3">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh3">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh3">
+<link rel="icon" href="/favicon.ico?v=hh3" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
@@ -449,11 +449,11 @@ def build_homepages():
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
 <meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh2026">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh2026">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh2026">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh2026">
-<link rel="icon" href="/favicon.ico?v=hh2026" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh3">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh3">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh3">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh3">
+<link rel="icon" href="/favicon.ico?v=hh3" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
