@@ -9,6 +9,25 @@ ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=3"></script>'
 SKIP_PARTS={'.git','node_modules','functions','functions-firebase','scripts','tests'}
 
+ZERO_FLASH = """<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>"""
+
 for p in ROOT.rglob('*.html'):
     if any(part in SKIP_PARTS for part in p.relative_to(ROOT).parts):
         continue
@@ -18,6 +37,8 @@ for p in ROOT.rglob('*.html'):
     text=text.replace('Düzeltme reçetesi','Uygulama planı').replace('düzeltme reçetesi','uygulama planı')
     text=text.replace('Fix Prescription','Implementation Blueprint').replace('fix prescription','implementation blueprint')
     text=re.sub(r'\s*\((?:feat|fix|chore|refactor|docs|style|test):[^\n<]{0,240}\)\s*$', '\n', text, flags=re.I)
+    if 'ZERO-FLASH SCRIPT' not in text and 'getInitialTheme' not in text and '<head>' in text:
+        text=text.replace('<head>', '<head>\n'+ZERO_FLASH, 1)
     if 'theme.css' not in text and '<head>' in text:
         text=text.replace('<head>', '<head>\n'+THEME, 1)
     if 'premium-experience.css' not in text and '</head>' in text:

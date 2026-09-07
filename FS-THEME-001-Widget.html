@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

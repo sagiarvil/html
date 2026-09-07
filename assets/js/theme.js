@@ -1,5 +1,6 @@
 (()=>{
 const KEY='hh-theme';const root=document.documentElement;
+const media = matchMedia('(prefers-color-scheme: dark)');
 function getSavedTheme() {
   try {
     const hh = localStorage.getItem('hh-theme');
@@ -19,10 +20,9 @@ function getSavedTheme() {
       if (parsed && parsed.theme) return parsed.theme;
     }
   } catch(e) {}
-  return 'dark';
+  return media.matches ? 'dark' : 'light';
 }
 let selected = getSavedTheme();
-const media = matchMedia('(prefers-color-scheme: dark)');
 
 const apply=()=>{
   let mode = selected;
@@ -38,7 +38,9 @@ const apply=()=>{
   
   // Update buttons
   document.querySelectorAll('.theme-switch button').forEach(b => {
-    b.classList.toggle('active', b.dataset.themeChoice === selected);
+    const act = b.dataset.themeChoice === selected;
+    b.classList.toggle('active', act);
+    b.setAttribute('aria-pressed', act ? 'true' : 'false');
   });
 };
 
@@ -93,7 +95,10 @@ function mount(){
       b.style.alignItems = 'center';
       b.style.justifyContent = 'center';
       
-      if(value === selected) {
+      const isActive = value === selected;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if(isActive) {
         b.style.background = 'var(--theme-text-primary, #ffffff)';
         b.style.color = 'var(--theme-bg-base, #000000)';
       }
@@ -108,7 +113,10 @@ function mount(){
         apply();
         // Update button styles manually for instant feedback without full re-render
         wrap.querySelectorAll('button').forEach(btn => {
-          if(btn.dataset.themeChoice === selected) {
+          const act = btn.dataset.themeChoice === selected;
+          btn.classList.toggle('active', act);
+          btn.setAttribute('aria-pressed', act ? 'true' : 'false');
+          if(act) {
             btn.style.background = 'var(--theme-text-primary, #ffffff)';
             btn.style.color = 'var(--theme-bg-base, #000000)';
           } else {
