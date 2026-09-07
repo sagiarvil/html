@@ -203,7 +203,7 @@ def build_homepages():
 <!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
 <section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
   <div class="px-section-head">
-    <span class="eyebrow">END-TO-END AUTONOMOUS INTELLIGENCE PIPELINE</span>
+    <span class="eyebrow">ÖZEL DENETİM ARAÇLARI / END-TO-END AUTONOMOUS PIPELINE</span>
     <h2>Teknik Karar ve Onarım Mimarisi</h2>
     <p>Silikon Vadisi ve New York kurumsal arama mühendisliği standardında; 18 motor, 105 kontrol ve kanıt kilidiyle çalışan deterministik karar akışı.</p>
   </div>
@@ -251,6 +251,12 @@ def build_homepages():
         <span>🤖 A2A Agent Card &amp; MCP</span>
       </div>
     </article>
+  </div>
+  <div class="px-lenses" style="margin-top:24px;">
+    <div class="px-lens"><b>01 BULUN</b><span>Robots.txt · Sitemap · AI Bot Erişimi</span></div>
+    <div class="px-lens"><b>02 ANLAŞILIN</b><span>Schema Graph · Wikidata QID · llms.txt</span></div>
+    <div class="px-lens"><b>03 KAYNAK OLUN</b><span>Cross-Encoder · RAG 512 · E-E-A-T</span></div>
+    <div class="px-lens"><b>04 DÖNÜŞÜN</b><span>14KB AST Purge · OpenAPI · A2A / MCP</span></div>
   </div>
 </section>
 
@@ -546,7 +552,7 @@ def build_homepages():
 <!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
 <section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
   <div class="px-section-head">
-    <span class="eyebrow">END-TO-END AUTONOMOUS INTELLIGENCE PIPELINE</span>
+    <span class="eyebrow">SPECIALIZED AUDIT TOOLS / END-TO-END AUTONOMOUS PIPELINE</span>
     <h2>Technical Decision &amp; Remediation Architecture</h2>
     <p>Silicon Valley and New York enterprise search engineering standards; deterministic pipeline operating across 18 engines, 105 controls, and cryptographic evidence verification.</p>
   </div>
@@ -594,6 +600,12 @@ def build_homepages():
         <span>🤖 A2A Agent Card &amp; MCP</span>
       </div>
     </article>
+  </div>
+  <div class="px-lenses" style="margin-top:24px;">
+    <div class="px-lens"><b>01 GET DISCOVERED</b><span>Robots.txt · Sitemap · AI Bot Access</span></div>
+    <div class="px-lens"><b>02 BE UNDERSTOOD</b><span>Schema Graph · Wikidata QID · llms.txt</span></div>
+    <div class="px-lens"><b>03 BECOME SOURCE</b><span>Cross-Encoder · RAG 512 · E-E-A-T</span></div>
+    <div class="px-lens"><b>04 CONVERT</b><span>14KB AST Purge · OpenAPI · A2A / MCP</span></div>
   </div>
 </section>
 
