@@ -67,6 +67,15 @@ English counterparts:
 5. **Boundaries:** 50 public HTML pages, 30 live link probes, strict SSRF defenses, zero private credential storage, and no fabricated field Core Web Vitals.
 6. **Commercial Product ($99):** Full Site Fix Mandate sequencing root causes, intelligence priorities, recovery, prevention, acceptance/regression tests, rollback guidance, and stop conditions.
 
+## Derin Alt-Bilgi Grafları / Multi-Tier LLM Sub-Graphs
+- [Kurumsal Kimlik & Yetki Şartnamesi](https://htmlandhtml.com/llms/core.md)
+- [Ana Sayfa Teknik Şartnamesi](https://htmlandhtml.com/llms/pages/home.md)
+- [18 Motor Değerlendirme Hizmetleri](https://htmlandhtml.com/llms/pages/services.md)
+- [Fiyatlandırma & $99 Onarım Seti](https://htmlandhtml.com/llms/pages/pricing.md)
+- [SEO/GEO/AEO/LLMO/AAO/RAG/E-E-A-T Protokolleri](https://htmlandhtml.com/llms/pages/protocols.md)
+- [Uzman Kadro & Mühendislik Standartları](https://htmlandhtml.com/llms/entities/experts.md)
+- [Tescilli Metodolojiler & Patentler](https://htmlandhtml.com/llms/entities/methodologies.md)
+
 ## Machine-Readable Endpoints
 - `/llms.txt`: AI visibility, glossary, tools, methodology, official source boundaries and commercial model directory.
 - `/openapi.json`: OpenAPI 3.1.0 REST API specification.

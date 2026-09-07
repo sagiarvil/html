@@ -285,8 +285,23 @@ def patch_machine_surfaces(records):
         ])
     sitemap = ROOT / 'sitemap.xml'
     s = sitemap.read_text(encoding='utf-8')
+    s = re.sub(r'\n?\s*<!-- LLMS_SUBGRAPHS_START -->[\s\S]*?<!-- LLMS_SUBGRAPHS_END -->\s*', '\n', s)
     s = re.sub(r'\n?\s*<!-- LLMS_NEWS_START -->[\s\S]*?<!-- LLMS_NEWS_END -->\s*', '\n', s)
-    blocks = ['  <!-- LLMS_NEWS_START -->']
+    subgraph_urls = [
+        'https://htmlandhtml.com/llms.txt',
+        'https://htmlandhtml.com/llms/core.md',
+        'https://htmlandhtml.com/llms/entities/experts.md',
+        'https://htmlandhtml.com/llms/entities/methodologies.md',
+        'https://htmlandhtml.com/llms/pages/home.md',
+        'https://htmlandhtml.com/llms/pages/services.md',
+        'https://htmlandhtml.com/llms/pages/pricing.md',
+        'https://htmlandhtml.com/llms/pages/protocols.md'
+    ]
+    blocks = ['  <!-- LLMS_SUBGRAPHS_START -->']
+    for sg in subgraph_urls:
+        blocks.append(f'  <url><loc>{sg}</loc><lastmod>{TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>')
+    blocks.append('  <!-- LLMS_SUBGRAPHS_END -->')
+    blocks.append('  <!-- LLMS_NEWS_START -->')
     for loc, alt, date in [('https://htmlandhtml.com/tr/llms-txt-haberler/', 'https://htmlandhtml.com/en/llms-txt-news/', TODAY), ('https://htmlandhtml.com/en/llms-txt-news/', 'https://htmlandhtml.com/tr/llms-txt-haberler/', TODAY)] + urls:
         hreflang_alt = 'en' if '/tr/' in loc else 'tr'
         self_lang = 'tr' if '/tr/' in loc else 'en'
