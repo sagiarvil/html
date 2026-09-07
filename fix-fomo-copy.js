@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 const files = [
-  'assets/js/intelligence-root.js?v=2',
-  'assets/js/authority-tool.js?v=2',
+  'assets/js/intelligence-root.js?v=3',
+  'assets/js/authority-tool.js?v=3',
   'assets/js/enterprise-runtime.js'
 ];
 

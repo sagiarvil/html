@@ -20,7 +20,7 @@ er = er.replace(
 );
 fs.writeFileSync(erFile, er);
 
-const atFile = 'assets/js/authority-tool.js?v=2';
+const atFile = 'assets/js/authority-tool.js?v=3';
 let at = fs.readFileSync(atFile, 'utf8');
 at = at.replace(
   "intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Hazır düzeltme kodları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanındadır.',",
@@ -56,7 +56,7 @@ at = at.replace(
 );
 fs.writeFileSync(atFile, at);
 
-const irFile = 'assets/js/intelligence-root.js?v=2';
+const irFile = 'assets/js/intelligence-root.js?v=3';
 let ir = fs.readFileSync(irFile, 'utf8');
 ir = ir.replace(
   "note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri (ChatGPT, Claude, Perplexity, Gemini) nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Sorunların nasıl düzeltileceği, hazır kod blokları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanında sunulur.',",
