@@ -2,34 +2,34 @@
 'use strict';
 const COPY={
  tr:{
-  hero:'Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em>',
-  lead:'Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.',
-  scan:'Ücretsiz Kontrol Et',
-  mandateTitle:'Teşhis ücretsiz.<br>Uygulama planı $99.',
-  mandateCopy:'Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır. 5 kritik kontrol noktası mühendislik paketi ile güvence altına alınır.',
-  getMandate:'AI Görünürlük Yol Haritasını Aç →',
-  locked:'🔒 Nasıl düzeltileceği $99 Uygulama Planı içinde',
-  decisionEyebrow:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
+  hero:'Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em>Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em>',
+  lead:"URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz...",
+  scan:'AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et →',
+  mandateTitle:'Kontrol ücretsiz.<br>AI Görünürlük Onarım Seti $99.',
+  mandateCopy:'Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır. 5 kritik kontrol noktası onarım seti ile güvence altına alınır.',
+  getMandate:'Onarım Setini İndir — $99 →',
+  locked:'🔒 Nasıl onarılacağı $99 Onarım Seti içinde',
+  decisionEyebrow:'ÜCRETSİZ KONTROL ($0) · GÖRÜNÜRLÜK RAPORU',
   decisionTitle:'18 Engine Deterministic Chain',
   decisionCopy:'6 Layer, 18 Module, 105 Kontrol',
   priority:'ÖNCELİK',impact:'ETKİ',effort:'ÇABA',status:'DURUM',
-  paidText:'Teşhis ve kanıtlar ücretsiz dökümlendi ($0). Bunları koda döküp çözecek $99 Yol Haritasına hazır mısınız?',
-  paidCta:'$99 Mühendislik Yol Haritasını Aç (ZIP) →'
+  paidText:'Kontrol ve teknik kanıtlar ücretsiz dökümlendi ($0). Bunları koda döküp çözecek $99 Onarım Setine hazır mısınız?',
+  paidCta:'Onarım Setini İndir — $99 →'
  },
  en:{
-  hero:'Can AI Find You?<br><em>Are You Ready to Be Recommended?</em>',
-  lead:'Enter one URL. HTML&HTML evaluates llms.txt, GEO, AEO, LLMO, AAO, RAG, E-E-A-T, AI crawler access and the technical foundation in one scan. See problems and evidence free; unlock the $99 Implementation Blueprint only if you need the execution plan.',
-  scan:'Check Free',
-  mandateTitle:'Diagnosis is free.<br>The implementation blueprint is $99.',
+  hero:'Does AI Recommend You?<br><em>Can AI Find You? Are You Ready to Be Recommended?</em>',
+  lead:'Enter your URL. 18 engines, 105 controls, 13 audits. 15 seconds. Enter one URL. HTML&HTML evaluates llms.txt, GEO, AEO, LLMO, AAO, RAG, E-E-A-T in one scan. Unlock AI Search Visibility Roadmap / Repair Kit only if you need the execution plan.',
+  scan:'Does AI Recommend You? Check Free →',
+  mandateTitle:'Diagnosis is free.<br>The AI Visibility Repair Kit is $99.',
   mandateCopy:'This issue causes search engines to skip your site. Unlocking provides a permanent solution + rollback guarantee. 5 critical checkpoints are secured via automated remediation.',
-  getMandate:'Unlock AI Search Visibility Roadmap →',
-  locked:'🔒 How to fix it is inside the $99 Implementation Blueprint',
+  getMandate:'Download Repair Kit — $99 →',
+  locked:'🔒 How to fix it is inside the $99 Repair Kit',
   decisionEyebrow:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
   decisionTitle:'18 Engine Deterministic Chain',
   decisionCopy:'Seven readiness lenses and 13 intelligence findings are diagnosed 100% FREE ($0). The technical solution is in the $99 Fix Mandate package. Unlock to prevent visibility loss.',
   priority:'PRIORITY',impact:'IMPACT',effort:'EFFORT',status:'STATUS',
   paidText:'Diagnosis and live evidence are disclosed for free ($0). Ready to remediate them in code with the $99 Roadmap?',
-  paidCta:'Unlock $99 Implementation Roadmap (ZIP) →'
+  paidCta:'Download Repair Kit — $99 (ZIP) →'
  }
 };
 const lensOrder=['SEO','GEO','AEO','LLMO','AAO','RAG','E-E-A-T'];
@@ -44,8 +44,8 @@ function applyCopy(){
  const mc=document.querySelector('[data-i18n="mandateCopy"]');if(mc)mc.textContent=c.mandateCopy;
  const gm=document.querySelector('[data-i18n="getMandate"]');if(gm)gm.textContent=c.getMandate;
  document.querySelectorAll('.locked-fix').forEach(el=>el.textContent=c.locked);
- const ptitle=document.querySelector('[data-i18n="pricingTitle"]');if(ptitle)ptitle.innerHTML=l==='tr'?'Teşhis ücretsiz.<br>Uygulama planı $99.':'Diagnosis is free.<br>Implementation Blueprint $99.';
- const buy=document.querySelector('[data-i18n="buyFix"]');if(buy)buy.textContent=l==='tr'?'AI Görünürlük Yol Haritası — $99':'AI Search Visibility Roadmap — $99';
+ const ptitle=document.querySelector('[data-i18n="pricingTitle"]');if(ptitle)ptitle.innerHTML=l==='tr'?'Kontrol ücretsiz.<br>AI Görünürlük Onarım Seti $99.':'Diagnosis is free.<br>AI Search Visibility Roadmap / Repair Kit $99.';
+ const buy=document.querySelector('[data-i18n="buyFix"]');if(buy)buy.textContent=l==='tr'?'AI Görünürlük Onarım Seti — $99':'AI Search Visibility Roadmap — $99';
  document.title=l==='tr'?'Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&HTML':'AI Search Visibility, GEO, AEO & llms.txt | HTML&HTML';
 }
 window.addEventListener('hh-language-changed',()=>{queueMicrotask(()=>{applyCopy();if(window.__HH_LAST_SCAN__)renderDecisionMap(window.__HH_LAST_SCAN__)})});
@@ -66,10 +66,30 @@ function renderDecisionMap(data){
    'ENG-13: AAO Engine', 'ENG-14: E-E-A-T Scoring Engine', 'ENG-15: Knowledge Vault Engine',
    'ENG-16: Hallucination Interception', 'ENG-17: Dark Pool Remediation', 'ENG-18: Historical Corpus Engine'
  ];
- const isOwnSite = (data.domain||'').includes('htmlandhtml.com') || (data.domain||'').includes('htmlandhtml.co');
- const lensHtml = eList.map((name, i) => {
-   let score = Math.floor(Math.random() * (99 - 45 + 1)) + 45;
-   if (isOwnSite) score = Math.floor(Math.random() * (99 - 88 + 1)) + 88;
+ const catMap = {
+   'ENG-01': 'performance', 'ENG-02': 'performance', 'ENG-03': 'trust',
+   'ENG-04': 'technical', 'ENG-05': 'ai', 'ENG-06': 'ai',
+   'ENG-07': 'llms', 'ENG-08': 'schema', 'ENG-09': 'ai',
+   'ENG-10': 'technical', 'ENG-11': 'trust', 'ENG-12': 'trust',
+   'ENG-13': 'agent', 'ENG-14': 'trust', 'ENG-15': 'schema',
+   'ENG-16': 'security', 'ENG-17': 'crawl', 'ENG-18': 'technical'
+ };
+ const lensHtml = eList.map((name) => {
+   const engineId = name.split(':')[0].trim();
+   let score = 0;
+   let status = 'NOT_MEASURED';
+   if (data.engineScores && data.engineScores[engineId] !== undefined) {
+     score = typeof data.engineScores[engineId] === 'number' ? data.engineScores[engineId] : (data.engineScores[engineId]?.score || 0);
+     status = data.engineStatuses?.[engineId] || data.engineScores[engineId]?.status || (score >= 80 ? 'PASS' : score >= 55 ? 'WARN' : 'FAIL');
+   } else if (data.engines && data.engines[engineId]) {
+     score = data.engines[engineId].score ?? 0;
+     status = data.engines[engineId].status || (score >= 80 ? 'PASS' : score >= 55 ? 'WARN' : 'FAIL');
+   } else {
+     const cat = catMap[engineId] || 'technical';
+     score = data.scores?.[cat] !== undefined ? data.scores[cat] : (data.overall || 0);
+     status = score >= 80 ? 'PASS' : score >= 55 ? 'WARN' : 'FAIL';
+   }
+   score = Math.max(0, Math.min(100, Math.round(score)));
    const tier = score >= 80 ? 'green' : score >= 65 ? 'yellow' : score >= 45 ? 'orange' : 'red';
    const tierLabel = l === 'tr' ? (score >= 80 ? 'İYİ' : score >= 65 ? 'ORTA' : score >= 45 ? 'DÜŞÜK' : 'KRİTİK') : (score >= 80 ? 'GOOD' : score >= 65 ? 'FAIR' : score >= 45 ? 'LOW' : 'POOR');
    return `<div class="ai-lens ai-lens-tier-${tier}" style="aspect-ratio:1/0.8"><div class="ai-lens-head"><span style="font-size:10px;line-height:1.2;">${safe(name)}</span><span class="lens-status-tag tag-${tier}">${tierLabel}</span></div><strong class="score-${tier}">${score}/100</strong><div class="ai-lens-meter"><i class="bar-${tier}" style="width:${score}%;"></i></div></div>`;
@@ -87,6 +107,54 @@ function renderDecisionMap(data){
  root.innerHTML=`<div style="background:rgba(255, 69, 58, 0.1); border:1px solid #ff453a; color:#ff453a; padding:12px; margin-bottom:20px; border-radius:8px; text-align:center;"><strong>UYARI:</strong> Bu kritik açıklar arama motorlarının sitenizi atlamasına yol açıyor. Her gün erken düzeltme = daha fazla görünürlük kaybı.</div><div class="ai-decision-map-head"><div><small>${safe(c.decisionEyebrow)}</small><h3>${safe(c.decisionTitle)}</h3></div><p>${safe(c.decisionCopy)}</p></div><div class="ai-lens-grid">${lensHtml}</div>${rows?`<div class="ai-intelligence-top">${rows}</div>`:''}<div class="ai-decision-lock" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); user-select:none; pointer-events:none;"><p>${safe(c.paidText)}</p><a href="/checkout?domain=${encodeURIComponent(data.domain||'')}&scan=${encodeURIComponent(data.scanId||'')}">${safe(c.paidCta)}</a></div>`;
 }
 
+async function renderRealEngines(scanId, domain) {
+ if (!domain) return;
+ try {
+   const res = await nativeFetch('/api/scan-v2', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json', 'Accept': 'application/x-ndjson' },
+     body: JSON.stringify({ domain, streaming: true }),
+   });
+   if (!res.ok || !res.body) return;
+   const reader = res.body.getReader();
+   const decoder = new TextDecoder();
+   let buffer = '';
+
+   while (true) {
+     const { done, value } = await reader.read();
+     if (done) break;
+     buffer += decoder.decode(value, { stream: true });
+     const lines = buffer.split('\n');
+     buffer = lines.pop() || '';
+
+     for (const line of lines) {
+       if (!line.trim()) continue;
+       try {
+         const event = JSON.parse(line);
+         if (event.type === 'engine_complete' && event.engineId) {
+           if (!window.__HH_LAST_SCAN__) window.__HH_LAST_SCAN__ = {};
+           if (!window.__HH_LAST_SCAN__.engines) window.__HH_LAST_SCAN__.engines = {};
+           if (!window.__HH_LAST_SCAN__.engineScores) window.__HH_LAST_SCAN__.engineScores = {};
+           window.__HH_LAST_SCAN__.engines[event.engineId] = event;
+           window.__HH_LAST_SCAN__.engineScores[event.engineId] = event.score;
+           renderDecisionMap(window.__HH_LAST_SCAN__);
+         } else if (event.type === 'scan_complete' && event.payload) {
+           if (!window.__HH_LAST_SCAN__) window.__HH_LAST_SCAN__ = {};
+           window.__HH_LAST_SCAN__.engines = event.payload.engines || window.__HH_LAST_SCAN__.engines;
+           window.__HH_LAST_SCAN__.engineScores = {};
+           for (const [eid, e] of Object.entries(window.__HH_LAST_SCAN__.engines || {})) {
+             window.__HH_LAST_SCAN__.engineScores[eid] = e.score;
+           }
+           renderDecisionMap(window.__HH_LAST_SCAN__);
+         }
+       } catch {}
+     }
+   }
+ } catch (err) {
+   console.warn('Real-time engine stream skipped:', err);
+ }
+}
+
 // Capture the public scan response without changing the canonical scanner or API contract.
 const nativeFetch=window.fetch.bind(window);
 window.fetch=async(...args)=>{
@@ -96,9 +164,13 @@ window.fetch=async(...args)=>{
    if(/\/api\/scan(?:\?|$)/.test(target)&&response.ok){
      const clone=response.clone();const data=await clone.json();
      window.__HH_LAST_SCAN__=data;
-     setTimeout(()=>renderDecisionMap(data),0);
+     setTimeout(()=>{
+       renderDecisionMap(data);
+       if (data.domain) renderRealEngines(data.scanId, data.domain);
+     },0);
    }
  }catch(e){console.warn('AI decision map enhancement skipped:',e)}
  return response;
 };
+
 })();

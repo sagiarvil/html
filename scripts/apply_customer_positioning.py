@@ -27,16 +27,16 @@ PAGES = {
     "index.html": {
         "title": "Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&HTML",
         "description": "Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.",
-        "h1": "Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?",
-        "lead": TR_HOME_LEAD,
-        "cta": "Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et",
+        "h1": "Yapay Zeka Sizi Tavsiye Ediyor mu?",
+        "lead": "URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. " + TR_HOME_LEAD,
+        "cta": "AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et →",
     },
     "tr/index.html": {
         "title": "Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&HTML",
         "description": "Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.",
-        "h1": "Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?",
-        "lead": TR_HOME_LEAD,
-        "cta": "Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et",
+        "h1": "Yapay Zeka Sizi Tavsiye Ediyor mu?",
+        "lead": "URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. " + TR_HOME_LEAD,
+        "cta": "AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et →",
     },
     "en/index.html": {
         "title": "AI Search Visibility, GEO, AEO & llms.txt | HTML&HTML",

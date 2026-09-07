@@ -145,14 +145,14 @@ def build_homepages():
       <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
-      <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
-      <a href="/tr/llms-txt-validator/">llms.txt</a>
+      <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+      <a href="/tr/yapay-zeka-arama-gorunurlugu/">Çözümler</a>
       <a href="/tr/llms-txt-haberler/">Haberler</a>
       <a href="/tr/sozluk/">Sözlük</a>
-      <a href="/tr/fiyatlandirma/" data-i18n="navPrice">Fiyatlar</a>
+      <a href="/tr/fiyatlandirma/" data-i18n="navPrice">Onarım Seti ($99)</a>
     </nav>
     <div class="nav-actions">
-      <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
+      <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Kontrol</a>
       <div class="langs">
         <button data-lang="tr" class="active">TR</button><span>/</span><button data-lang="en">EN</button>
       </div>
@@ -164,15 +164,15 @@ def build_homepages():
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
-  <h1 data-i18n="heroTitle">Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em></h1>
-  <p data-i18n="heroCopy">Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
+  <h1 data-i18n="heroTitle">Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em>Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>
+  <p data-i18n="heroCopy">URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <input id="domainInput" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><i>→</i></button>
+        <button id="scanButton" type="submit"><b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b><i>→</i></button>
       </div>
       <div class="scan-chips">
         <span>Örnekler:</span>
@@ -228,27 +228,27 @@ def build_homepages():
   <div class="result-columns">
     <div>
       <div class="result-title">
-        <h3 data-i18n="findings">Kanıtlı bulgular</h3>
+        <h3 data-i18n="findings">Teknik Kanıtlı Bulgular</h3>
         <span id="findingCount"></span>
       </div>
       <div id="findingsList" class="findings"></div>
     </div>
     <aside class="mandate-card">
-      <span class="eyebrow" data-i18n="paidResolution">ÜCRETLİ DÜZELTME</span>
-      <h3 data-i18n="mandateTitle">Teşhis ücretsiz.<br>Yol Haritası $99.</h3>
+      <span class="eyebrow" data-i18n="paidResolution">ONARIM SETİ</span>
+      <h3 data-i18n="mandateTitle">Kontrol ücretsiz.<br>AI Görünürlük Onarım Seti $99.</h3>
       <p data-i18n="mandateCopy">Aynı domain yeniden taranır; her geçerli bulgu ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK kod ve konfigürasyon şablonlarına dönüştürülür.</p>
       <ul>
         <li data-i18n="m1">P0–P3 uygulama sırası</li>
-        <li data-i18n="m2">Issue ID + kanıt + güven seviyesi</li>
+        <li data-i18n="m2">Issue ID + teknik kanıt + güven seviyesi</li>
         <li data-i18n="m3">Acceptance + regression test</li>
         <li data-i18n="m4">Rollback + stop conditions</li>
         <li data-i18n="m5">30 gün içinde 1 re-scan</li>
       </ul>
       <div class="price">
-        <small data-i18n="oneSite">1 domain / yazılım lisansı</small>
+        <small data-i18n="oneSite">1 domain | Sınırsız indirme | 30 gün garanti</small>
         <strong>$99</strong>
       </div>
-      <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Full Site Yol Haritası →</a>
+      <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Onarım Setini İndir — $99 →</a>
       <small class="note" data-i18n="checkoutNote">Kaynak dosya adı public taramadan uydurulmaz; codebase bağlamı varsa dosya seviyesine iner.</small>
     </aside>
   </div>

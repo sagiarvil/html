@@ -20,7 +20,8 @@ function needle(v:string){return v.toLocaleLowerCase('en-US').replace(/\s+/g,' '
 function count(text:string,target:string){if(!target)return 0;const h=needle(text),n=needle(target);if(!n)return 0;let i=0,c=0;while((i=h.indexOf(n,i))!==-1){c++;i+=n.length}return c}
 function uniq<T>(xs:T[]){return [...new Set(xs)]}
 function citationMatch(url:string,domain:string){if(!domain)return false;try{const h=new URL(url).hostname.toLowerCase().replace(/^www\./,'');return h===domain||h.endsWith(`.${domain}`)}catch{return false}}
-function runId(){return `mention_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,10)}`}
+let runSeq = 0;
+function runId(){return `mention_${Date.now().toString(36)}_${(++runSeq).toString(36)}`}
 function excerpt(text:string){const t=text.replace(/\s+/g,' ').trim();return t.length>MAX_EXCERPT?t.slice(0,MAX_EXCERPT-1)+'…':t}
 function validate(input:MentionInput){
   const brand=trimText(input?.brand);if(brand.length<2||brand.length>80)throw new Error('Brand must be 2–80 characters');

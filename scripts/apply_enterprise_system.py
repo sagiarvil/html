@@ -6,18 +6,18 @@ ROOT=Path(__file__).resolve().parents[1]
 SKIP={'.git','node_modules','functions','functions-firebase','scripts','tests'}
 
 TR_NAV='''<nav class="primary-nav" aria-label="Ana navigasyon">
-  <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
-  <a href="/tr/llms-txt-validator/">llms.txt</a>
+  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Çözümler</a>
   <a href="/tr/llms-txt-haberler/">Haberler</a>
   <a href="/tr/sozluk/">Sözlük</a>
-  <a href="/tr/fiyatlandirma/">Fiyatlar</a>
+  <a href="/tr/fiyatlandirma/">Onarım Seti ($99)</a>
 </nav>'''
 EN_NAV='''<nav class="primary-nav" aria-label="Primary navigation">
-  <a href="/en/ai-search-visibility/">AI Visibility</a>
-  <a href="/en/llms-txt-validator/">llms.txt</a>
+  <a href="/en/website-scanner/">Free Audit</a>
+  <a href="/en/ai-search-visibility/">Solutions</a>
   <a href="/en/llms-txt-news/">News</a>
   <a href="/en/glossary/">Glossary</a>
-  <a href="/en/pricing/">Pricing</a>
+  <a href="/en/pricing/">Repair Kit ($99)</a>
 </nav>'''
 
 TR_TOOLS='''<main>
@@ -54,14 +54,14 @@ EN_TOOLS=TR_TOOLS.replace('TEK TARAMA / TÜM KAPSAM','ONE SCAN / FULL SCOPE').re
 TR_PRICING='''<main>
 <section class="authority-hero px-pricing-hero" data-commercial-intent="static">
  <div class="kicker"><span></span><b>2 ŞEFFAF KATMAN · TEK SİTE · UYGULAMA ODAKLI</b></div>
- <h1>Problemi ücretsiz görün. <em>Yol haritasını $99'a açın.</em></h1>
- <p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Yol Haritası:</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>
+ <h1>Problemi ücretsiz görün. <em>Onarım Setini $99'a açın.</em></h1>
+ <p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Onarım Seti (AI Görünürlük Yol Haritası):</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>
  <div class="hero-actions"><a class="primary" href="/tr/#scanner">Ücretsiz Teşhisi Başlat →</a><a href="#compare">Paketleri İncele</a></div>
 </section>
 <section class="px-section px-pricing-stage" id="compare" data-premium-infographic="report-boundary">
  <div class="px-report-boundary">
-  <article class="px-report-free"><span class="eyebrow">$0 · AI GÖRÜNÜRLÜK TEŞHİSİ</span><h2>Ne yanlış? Nerede? Ne kadar önemli?</h2><p>Ücretsiz rapor sorunu saklamaz. Karar vermek için gereken teşhis ve kanıt görünür.</p><ul><li>12 deterministik motor skoru</li><li>13 Search & AI Intelligence Audit</li><li>6 Mimari Katman: L0 (Altyapı) · L1 (Keşif) · L2 (Zeka) · L3 (Dönüşüm) · L4 (Koruma) · L5 (Sentez)</li><li>Tüm bulgular, etkilenen URL'ler ve kanıt</li><li>Severity · confidence · source class</li><li>Impact × Effort öncelik haritası</li><li>Düzeltme kodları ve talimatları: <b>YOK</b></li><li>Örnek raporu inceleme imkanı</li></ul><a class="px-outline" href="/tr/#scanner">Ücretsiz Tara →</a></article>
-  <article class="px-report-paid"><span class="eyebrow">$99 · AI GÖRÜNÜRLÜK YOL HARİTASI</span><h2>Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</h2><p>9 Sütunun tamamında teşhisi yazılımcının veya teknik ekibin uygulayabileceği doğrulanabilir bir execution blueprint'e dönüştürür. TÜM sorunlar için kalıcı çözüm + rollback güvencesi alır..</p><ul><li>9 Sütun tam teknik uygulama mimarisi</li><li>Kök neden teşhisi ve P0–P3 uygulama sırası</li><li>Hazır kodlar (robots.txt, llms.txt, Schema graph, AEO)</li><li>Root fix · recovery · prevention</li><li>Kabul ve regresyon testleri + Rollback planı</li><li>5 kritik kontrol noktası (SEO, GEO, AEO, Schema, Güvenlik) güvencesi</li><li>30 gün içinde 1 doğrulama re-scan</li><li>100% Deterministik Otomasyon (Danışmanlık/Pazarlama Değildir)</li></ul><a class="primary" href="/checkout?plan=pro">Kaybı Önle — $99 →</a></article>
+  <article class="px-report-free"><span class="eyebrow">$0 · ÜCRETSİZ GÖRÜNÜRLÜK RAPORU</span><h2>Ne yanlış? Nerede? Ne kadar önemli?</h2><p>Ücretsiz rapor sorunu saklamaz. Karar vermek için gereken teşhis ve kanıt görünür.</p><ul><li>12 deterministik motor skoru</li><li>13 Search & AI Intelligence Audit</li><li>6 Mimari Katman: L0 (Altyapı) · L1 (Keşif) · L2 (Zeka) · L3 (Dönüşüm) · L4 (Koruma) · L5 (Sentez)</li><li>Tüm bulgular, etkilenen URL'ler ve kanıt</li><li>Severity · confidence · source class</li><li>Impact × Effort öncelik haritası</li><li>Düzeltme kodları ve talimatları: <b>YOK</b></li><li>Örnek raporu inceleme imkanı</li></ul><a class="px-outline" href="/tr/#scanner">Ücretsiz Tara →</a></article>
+  <article class="px-report-paid"><span class="eyebrow">$99 · AI GÖRÜNÜRLÜK ONARIM SETİ</span><h2>Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</h2><p>9 Sütunun tamamında teşhisi yazılımcının veya teknik ekibin uygulayabileceği doğrulanabilir bir execution blueprint'e dönüştürür. TÜM sorunlar için kalıcı çözüm + rollback güvencesi alır..</p><ul><li>9 Sütun tam teknik uygulama mimarisi</li><li>Kök neden teşhisi ve P0–P3 uygulama sırası</li><li>Hazır kodlar (robots.txt, llms.txt, Schema graph, AEO)</li><li>Root fix · recovery · prevention</li><li>Kabul ve regresyon testleri + Rollback planı</li><li>5 kritik kontrol noktası (SEO, GEO, AEO, Schema, Güvenlik) güvencesi</li><li>30 gün içinde 1 doğrulama re-scan</li><li>100% Deterministik Otomasyon (Danışmanlık/Pazarlama Değildir)</li></ul><a class="primary" href="/checkout?plan=pro">Onarım Setini İndir — $99 →</a></article>
  </div>
 </section>
 
@@ -150,7 +150,7 @@ EN_PRICING='''<main>
 <section class="px-section px-pricing-stage" id="compare" data-premium-infographic="report-boundary">
  <div class="px-report-boundary">
   <article class="px-report-free"><span class="eyebrow">$0 · AI VISIBILITY DIAGNOSTIC</span><h2>What is wrong? Where? How important?</h2><p>The free report does not hide problems. You see the diagnosis and evidence needed to make a decision.</p><ul><li>12 deterministic engine scores</li><li>13 Search & AI Intelligence Audits</li><li>6 Architectural Layers: L0 (Infrastructure) · L1 (Discovery) · L2 (Intelligence) · L3 (Conversion) · L4 (Defense) · L5 (Synthesis)</li><li>All findings, affected URLs and evidence</li><li>Severity · confidence · source class</li><li>Impact × Effort priority map</li><li>Remediation codes & blueprints: <b>NONE</b></li><li>View sample report anytime</li></ul><a class="px-outline" href="/en/#scanner">Scan Free →</a></article>
-  <article class="px-report-paid"><span class="eyebrow">$99 · AI SEARCH VISIBILITY ROADMAP</span><h2>How should it be fixed? In what order? How will it be verified?</h2><p>Turns the 9-pillar diagnosis into a verifiable execution blueprint for your developer or engineering team. Unlocking provides a permanent solution for ALL issues + rollback guarantee..</p><ul><li>Full 9-pillar issue inventory and P0–P3 implementation order</li><li>ROOT FIX → RECOVERY → PREVENTION</li><li>Acceptance and regression test suites</li><li>Rollback + stop conditions</li><li>Production code templates (robots.txt, llms.txt, Schema graph, AEO)</li><li>1 verification re-scan within 30 days</li><li>5 critical checkpoints (SEO, GEO, AEO, Schema, Security) secured</li><li>100% Deterministic Automation (No Agency/Consulting)</li></ul><a class="primary" href="/checkout?plan=pro">Prevent Loss — $99 →</a></article>
+  <article class="px-report-paid"><span class="eyebrow">$99 · AI SEARCH VISIBILITY ROADMAP</span><h2>How should it be fixed? In what order? How will it be verified?</h2><p>Turns the 9-pillar diagnosis into a verifiable execution blueprint for your developer or engineering team. Unlocking provides a permanent solution for ALL issues + rollback guarantee..</p><ul><li>Full 9-pillar issue inventory and P0–P3 implementation order</li><li>ROOT FIX → RECOVERY → PREVENTION</li><li>Acceptance and regression test suites</li><li>Rollback + stop conditions</li><li>Production code templates (robots.txt, llms.txt, Schema graph, AEO)</li><li>1 verification re-scan within 30 days</li><li>5 critical checkpoints (SEO, GEO, AEO, Schema, Security) secured</li><li>100% Deterministic Automation (No Agency/Consulting)</li></ul><a class="primary" href="/checkout?plan=pro">Download Repair Kit — $99 →</a></article>
  </div>
 </section>
 
