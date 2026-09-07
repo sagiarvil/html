@@ -1,0 +1,468 @@
+/* ==========================================================================
+   HTML&HTML 2026 Enterprise Pricing System — Linear / Vercel Tier ($1000+ Level)
+   Pure 2-Tier Architecture: $0 Free Diagnosis & $99 AI Visibility Repair Kit
+   WCAG AAA Contrast & Fluid Mobile System
+   ========================================================================== */
+
+.pricing-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  color: var(--fg, #0f172a);
+}
+
+/* Hero Section */
+.pricing-hero {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 56px;
+}
+
+.pricing-hero .pricing-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  margin-bottom: 20px;
+}
+
+html[data-theme="dark"] .pricing-hero .pricing-eyebrow {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.pricing-hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+  color: var(--theme-text-strong, #0f172a);
+}
+
+html[data-theme="dark"] .pricing-hero h1 {
+  color: #f8fafc;
+}
+
+.pricing-hero .subtitle {
+  font-size: clamp(16px, 2.2vw, 19px);
+  line-height: 1.6;
+  color: var(--theme-text-secondary, #64748b);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+html[data-theme="dark"] .pricing-hero .subtitle {
+  color: #94a3b8;
+}
+
+/* Dual-Tier Cards Grid */
+.pricing-card-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: stretch;
+  max-width: 1040px;
+  margin: 0 auto 72px;
+}
+
+/* Base Card */
+.pricing-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow, 0 4px 20px rgba(0, 0, 0, 0.04));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+html[data-theme="dark"] .pricing-card {
+  background: #181a22;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Featured $99 Card (Primary Pro Solution) */
+.pricing-card.featured {
+  border: 2px solid #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2), 0 20px 48px -10px rgba(37, 99, 235, 0.15);
+}
+
+html[data-theme="dark"] .pricing-card.featured {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 20px 48px -10px rgba(0, 0, 0, 0.7);
+}
+
+.pricing-card.featured .pricing-badge {
+  position: absolute;
+  top: -13px;
+  left: 36px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.pricing-card h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  color: var(--theme-text-strong, #0f172a);
+}
+
+html[data-theme="dark"] .pricing-card h2 {
+  color: #f8fafc;
+}
+
+.pricing-card .card-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--theme-text-secondary, #64748b);
+  margin: 0 0 24px;
+}
+
+html[data-theme="dark"] .pricing-card .card-desc {
+  color: #94a3b8;
+}
+
+/* Price Box */
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 0 0 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line, #e2e8f0);
+}
+
+html[data-theme="dark"] .pricing-price {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.pricing-price .currency {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--theme-text-secondary, #64748b);
+}
+
+.pricing-price .amount {
+  font-size: 58px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--theme-text-strong, #0f172a);
+}
+
+html[data-theme="dark"] .pricing-price .amount {
+  color: #ffffff;
+}
+
+.pricing-price .period {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--theme-text-secondary, #64748b);
+  margin-left: 4px;
+}
+
+/* Feature List */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+  flex: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--theme-text-primary, #334155);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .pricing-features li {
+  color: #cbd5e1;
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li .check {
+  color: #10b981;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+/* CTAs */
+.pricing-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.pricing-cta.primary {
+  background: #2563eb;
+  color: #ffffff !important;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+}
+
+.pricing-cta.primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+}
+
+.pricing-cta.secondary {
+  background: transparent;
+  color: var(--theme-text-strong, #0f172a) !important;
+  border: 1.5px solid var(--line, #cbd5e1);
+}
+
+html[data-theme="dark"] .pricing-cta.secondary {
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-cta.secondary:hover {
+  background: var(--bg-soft, #f1f5f9);
+  border-color: #2563eb;
+}
+
+html[data-theme="dark"] .pricing-cta.secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #38bdf8;
+}
+
+.pricing-guarantee {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--theme-text-secondary, #64748b);
+  margin-top: 14px;
+}
+
+/* Delivery Manifest Section */
+.pricing-manifest-box {
+  background: var(--bg-surface, #f8fafc);
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 1040px;
+  margin: 0 auto 64px;
+}
+
+html[data-theme="dark"] .pricing-manifest-box {
+  background: #14151a;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.pricing-manifest-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line, #e2e8f0);
+}
+
+html[data-theme="dark"] .pricing-manifest-head {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.pricing-manifest-head h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--theme-text-strong, #0f172a);
+}
+
+html[data-theme="dark"] .pricing-manifest-head h3 {
+  color: #f8fafc;
+}
+
+.pricing-manifest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pricing-file-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--line, #e2e8f0);
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--theme-text-primary, #334155);
+}
+
+html[data-theme="dark"] .pricing-file-pill {
+  background: #1e2028;
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+}
+
+.pricing-file-pill .file-type {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+html[data-theme="dark"] .pricing-file-pill .file-type {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+/* FAQ Section */
+.pricing-faq {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.pricing-faq h2 {
+  text-align: center;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 36px;
+  color: var(--theme-text-strong, #0f172a);
+}
+
+html[data-theme="dark"] .pricing-faq h2 {
+  color: #f8fafc;
+}
+
+.pricing-faq details {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 14px;
+  margin-bottom: 14px;
+  padding: 20px 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+html[data-theme="dark"] .pricing-faq details {
+  background: #181a22;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.pricing-faq summary {
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  color: var(--theme-text-strong, #0f172a);
+}
+
+html[data-theme="dark"] .pricing-faq summary {
+  color: #f8fafc;
+}
+
+.pricing-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.pricing-faq summary::after {
+  content: "+";
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--theme-text-secondary, #64748b);
+  transition: transform 0.2s ease;
+}
+
+.pricing-faq details[open] summary::after {
+  content: "−";
+}
+
+.pricing-faq details p {
+  margin: 14px 0 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--theme-text-secondary, #475569);
+}
+
+html[data-theme="dark"] .pricing-faq details p {
+  color: #94a3b8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .pricing-manifest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-page {
+    padding: 32px 16px 60px;
+  }
+  .pricing-card-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pricing-card {
+    padding: 28px 20px;
+  }
+  .pricing-price .amount {
+    font-size: 44px;
+  }
+  .pricing-manifest-box {
+    padding: 24px 16px;
+  }
+  .pricing-manifest-grid {
+    grid-template-columns: 1fr;
+  }
+}
