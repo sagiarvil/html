@@ -35,10 +35,8 @@ jobs:
           grep -Fq 'Tavsiye Edilmeye Hazır mısınız?' index.html
           grep -Fq 'Ücretsiz Kontrol Et' index.html
           grep -Fq 'Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML' index.html
-          grep -Fq 'data-premium-infographic="tools"' index.html
-          grep -Fq 'data-premium-infographic="engines"' index.html
-          grep -Fq 'data-premium-infographic="process"' index.html
-          grep -Fq 'data-premium-infographic="knowledge"' index.html
+          grep -Fq 'data-premium-infographic="scope-map"' tr/araclar/index.html
+          grep -Fq 'data-premium-infographic="report-boundary"' tr/fiyatlandirma/index.html
           grep -Fq '$99' index.html
           ! grep -Fq '$149' index.html
           grep -Fq 'premium-experience.css?v=1' index.html
