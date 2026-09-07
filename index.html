@@ -3,6 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(function(){
+  try {
+    var stored = localStorage.getItem('hh-lang');
+    if (stored === 'tr') {
+      location.replace('/tr/' + (location.search || ''));
+      return;
+    }
+    if (!stored) {
+      var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (navLang.indexOf('tr') === 0) {
+        location.replace('/tr/' + (location.search || ''));
+        return;
+      }
+    }
+  } catch(e) {}
+})();
+</script>
 <title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
 <meta name="description" content="Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
