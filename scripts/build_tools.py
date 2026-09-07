@@ -649,7 +649,7 @@ for t in tools_data:
   ]
 }}
 </script>
-<script src="/assets/js/authority-tool.js" defer></script>
+<script src="/assets/js/authority-tool.js?v=2" defer></script>
 <script src="/assets/js/theme.js?v=5"></script>
 </head>
 <body data-tool-categories="{t['categories']}">

@@ -11,7 +11,7 @@ const COPY={
   locked:'🔒 Nasıl düzeltileceği $99 Uygulama Planı içinde',
   decisionEyebrow:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
   decisionTitle:'12 skorun ötesinde: hangi görünürlük katmanı kaybediyor?',
-  decisionCopy:'7 hazırlık lensi ve 13 istihbarat bulgusu %100 ÜCRETSİZ ($0) teşhis edilir. Teknik çözüm ████████ paketinde. Kaybı önlemek için kilidi açın.',
+  decisionCopy:'7 hazırlık lensi ve 13 istihbarat bulgusu %100 ÜCRETSİZ ($0) teşhis edilir. Sitedeki TÜM sorunların çözümü TEK BİR ████████ paketindedir. Kaybı önlemek için tüm kilidi tek seferde açın.',
   priority:'ÖNCELİK',impact:'ETKİ',effort:'ÇABA',status:'DURUM',
   paidText:'Teşhis ve kanıtlar ücretsiz dökümlendi ($0). Bunları koda döküp çözecek $99 Yol Haritasına hazır mısınız?',
   paidCta:'$99 Mühendislik Yol Haritasını Aç (ZIP) →'

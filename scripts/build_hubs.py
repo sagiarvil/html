@@ -229,7 +229,7 @@ def build_platform_hub():
       <b>04 / FIX</b>
       <div>
         <h3>{'Otomatik Düzeltme Paketi (Fix Mandate)' if lang == 'tr' else 'Automated Fix Package (Fix Mandate)'}</h3>
-        <p>{'AI kodlama ajanınız veya mühendisleriniz için 5 kritik kontrol noktası ████████ ile güvence altına alınır.' if lang == 'tr' else 'Unlocking provides a permanent solution + rollback guarantee formatted for AI coding agents and human engineers.'}</p>
+        <p>{'AI kodlama ajanınız veya mühendisleriniz için 5 kritik kontrol noktası ████████ ile güvence altına alınır.' if lang == 'tr' else 'Unlocking provides a permanent solution for ALL issues + rollback guarantee formatted for AI coding agents and human engineers.'}</p>
       </div>
     </div>
     <div class="method-item">

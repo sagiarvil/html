@@ -110,7 +110,7 @@ function mountBridge(){
 }
 function mountHeroThesis(){
   if(!home())return;
-  const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>otomatik kod paketine çevirin.':'Turn AI visibility blockers<br>into an automated code package.';if(p)p.textContent=lang()==='tr'?'Bulgu listesi için teknik çözüm ████████ paketinde. Kaybı önlemek için kilidi açın.':'The technical solution is in the ████████ package. Unlock to prevent loss.';}
+  const card=document.querySelector('.mandate-card');if(card){const h=card.querySelector('h3');const p=card.querySelector(':scope > p');if(h)h.innerHTML=lang()==='tr'?'AI görünürlüğü önündeki engelleri<br>otomatik kod paketine çevirin.':'Turn AI visibility blockers<br>into an automated code package.';if(p)p.textContent=lang()==='tr'?'Bulgu listesindeki TÜM sorunların teknik çözümü TEK BİR ████████ paketindedir. Kaybı önlemek için tüm kilidi tek seferde açın.':'The technical solution for ALL findings is in ONE SINGLE ████████ package. Unlock all fixes at once to prevent loss.';}
 }
 function loadCss(){if(document.querySelector('link[data-commercial-intent-css]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/commercial-intent.css?v=1';l.dataset.commercialIntentCss='1';document.head.appendChild(l)}
 function mount(){loadCss();mountHeroThesis();mountBridge()}
