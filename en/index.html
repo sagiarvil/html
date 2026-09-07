@@ -20,10 +20,11 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/validator.css?v=4">
+<link rel="stylesheet" href="/assets/css/validator.css?v=2">
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,19 +37,17 @@
       "operatingSystem": "Web",
       "offers": [
         { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Enterprise Dark Pool Intelligence", "price": "499", "priceCurrency": "USD" }
+        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }
       ]
     }
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=3" defer></script>
+<script src="/assets/js/validator.js?v=2" defer></script>
 <script src="/assets/js/theme.js"></script>
-<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
-<body>
-<a class="skip" href="#scanner" data-i18n="skip">Skip to content</a>
+<body class="enterprise-ui">
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
@@ -84,8 +83,25 @@
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><i>→</i></button>
       </div>
-      <div id="scanStatus" class="status" hidden></div>
+      <div class="scan-chips">
+        <span>Examples:</span>
+        <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+        <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+        <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+      </div>
+      <small data-i18n="scanHint">No signup. No secrets. Only public URLs and HTTP surfaces are measured.</small>
     </form>
+    <div id="scanStatus" class="status" hidden></div>
+  </div>
+
+  <div class="signals">
+    <span data-i18n="sigCrawl">CRAWL</span><i></i>
+    <span>SEO</span><i></i>
+    <span>AI / GEO</span><i></i>
+    <span>LLMS V2</span><i></i>
+    <span data-i18n="sigSchema">STRUCTURED DATA</span><i></i>
+    <span data-i18n="sigA11y">ACCESSIBILITY</span><i></i>
+    <span data-i18n="sigSecurity">SECURITY</span>
   </div>
 </section>
 
@@ -147,9 +163,6 @@
   </div>
 </section>
 
-<!-- 04 TOOL DIRECTORY -->
-<!-- 05 12 ENGINES / EVIDENCE / TRUST -->
-<!-- 06 HOW IT WORKS -->
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -164,7 +177,6 @@
 </section>
 </main>
 
-<!-- 10 FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -202,18 +214,19 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Company &amp; Legal</h4>
+      <h4>Company</h4>
       <ul>
-        <li><a href="/en/about/">About Us</a></li>
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
         <li><a href="/en/terms/">Terms of Service</a></li>
         <li><a href="/en/privacy/">Privacy Policy</a></li>
         <li><a href="/en/refund-policy/">Refund Policy</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/en/delivery-policy/">Delivery Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministic AI &amp; website visibility validator. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</p>
+    <p>&copy; 2026 HTML&amp;HTML. All rights reserved. Payments and billing are processed by our authorized reseller and Merchant of Record Paddle.com.</p>
   </div>
 </footer>
 <script src="/assets/js/enterprise-runtime.js?v=1"></script>

@@ -44,7 +44,7 @@ def build_homepages():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
-<meta name="description" content="Geliştiriciler ve sistem mimarları için 12 bağımsız motorlu deterministik web ve yapay zeka teşhis yazılımı. 12 motorlu ücretsiz analizi başlatın.">
+<meta name="description" content="Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -64,6 +64,7 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -76,8 +77,7 @@ def build_homepages():
       "operatingSystem": "Web",
       "offers": [
         {{ "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "Enterprise Dark Pool Intelligence", "price": "499", "priceCurrency": "USD" }}
+        {{ "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }}
       ]
     }}
   ]
@@ -85,6 +85,7 @@ def build_homepages():
 </script>
 <script src="/assets/js/validator.js?v=2" defer></script>
 <script src="/assets/js/theme.js"></script>
+<script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
@@ -257,15 +258,16 @@ def build_homepages():
       <h4>Kurumsal</h4>
       <ul>
         <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
         <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
         <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
         <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
-        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</p>
+    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</p>
   </div>
 </footer>
 </body>
@@ -278,7 +280,7 @@ def build_homepages():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI Search Visibility, GEO, AEO &amp; llms.txt | HTML&amp;HTML</title>
-<meta name="description" content="Deterministic web and AI search diagnostic software and automated code generation platform for developers and system architects.">
+<meta name="description" content="Is your website ready to appear in AI search and earn recommendation opportunity? Check GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt and the technical foundation free.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -298,6 +300,7 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -310,8 +313,7 @@ def build_homepages():
       "operatingSystem": "Web",
       "offers": [
         { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Enterprise Dark Pool Intelligence", "price": "499", "priceCurrency": "USD" }
+        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }
       ]
     }
   ]
@@ -319,6 +321,7 @@ def build_homepages():
 </script>
 <script src="/assets/js/validator.js?v=2" defer></script>
 <script src="/assets/js/theme.js"></script>
+<script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
@@ -487,18 +490,19 @@ def build_homepages():
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Company &amp; Legal</h4>
+      <h4>Company</h4>
       <ul>
-        <li><a href="/en/about/">About Us</a></li>
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
         <li><a href="/en/terms/">Terms of Service</a></li>
         <li><a href="/en/privacy/">Privacy Policy</a></li>
         <li><a href="/en/refund-policy/">Refund Policy</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/en/delivery-policy/">Delivery Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministic AI &amp; website visibility validator. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</p>
+    <p>&copy; 2026 HTML&amp;HTML. All rights reserved. Payments and billing are processed by our authorized reseller and Merchant of Record Paddle.com.</p>
   </div>
 </footer>
 </body>

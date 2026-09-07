@@ -26,7 +26,7 @@ const copy={tr:{
  badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
  badge13:'13 Derin Analiz',
  badge7:'7 Hazırlık Lensi',
- badgeRemedy:'🔒 Çözüm: $99 Yol Haritası & $499 Enterprise',
+ badgeRemedy:'🔒 Çözüm: $99 Mühendislik Yol Haritası',
  t0Title:'1. Açık Teşhis Envanteri',
  t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
  t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 7 hazırlık lensiyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
@@ -35,10 +35,6 @@ const copy={tr:{
  t99Price:'$99 Tek Seferlik',
  t99Desc:'Nasıl düzeltilecek? Bu ekranda listelenen 13 sorunun kök nedeni, hazır kod blokları, P0–P3 sırası ve yazılımcınıza teslim edilecek 22 dosyalık ZIP paketi.',
  t99Cta:'$99 Mühendislik Paketini Aç →',
- t499Title:'3. Kurumsal AI Otoritesi',
- t499Price:'$499 Kurumsal Entegrasyon',
- t499Desc:'Gelişmiş AI ekosistemi: Otonom AI crawler protokolleri, LLM RAG semantik grafı, tersine mühendislik mimarisi ve kurumsal kod tabanları.',
- t499Cta:'$499 Kurumsal Çözümü İncele →',
  lenses:'7 Boyutlu Hazırlık Lensleri',
  lensesSub:'Ücretsiz Teşhis Boyutları: Yapay zeka ve arama ekosistemindeki 7 ana vektörünüzün anlık durum puanı',
  priorities:'Öncelikli Stratejik Karar Alanları',
@@ -50,24 +46,23 @@ const copy={tr:{
  bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
  bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
  bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Yazılımcınızın hemen devreye alabileceği hazır kod blokları, P0–P3 öncelik sırası ve 22 dosyalık mühendislik ZIP paketi için Yol Haritasını açın.',
- bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →',
- bridgeBtn499:'🏢 $499 Kurumsal Çözüm →'
+ bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →'
 },
 en:{
  scanning:'Scanning the site; 12 engines and 13 intelligence audits run on the same evidence chain…',
  failed:'Scan could not be completed.',
  clear:'No verified issue was found in this scope.',
  score:'selected-scope score',
- checked:'checks',
+ checked:'checked',
  pages:'pages',
- finding:'findings',
+ finding:'finding',
  kicker:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
  intelligence:'Search & AI Intelligence Audits',
  intelligenceNote:'This section is 100% FREE ($0). It transparently documents your search and AI vulnerabilities with live evidence. Turn-key code templates and 22-file ZIP package are in the $99 Roadmap layer.',
  badgeFree:'🟢 $0 Free Diagnostic Layer',
  badge13:'13 Deep Analyses',
  badge7:'7 Readiness Lenses',
- badgeRemedy:'🔒 Fix: $99 Roadmap & $499 Enterprise',
+ badgeRemedy:'🔒 Fix: $99 Roadmap Pack',
  t0Title:'1. Open Diagnostic Inventory',
  t0Price:'$0 Free (Current Screen)',
  t0Desc:'What is wrong? Where? 13 deep intelligence audits and 7 readiness lenses provide a complete verified evidence log for free.',
@@ -76,10 +71,6 @@ en:{
  t99Price:'$99 One-Time',
  t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and 22-file ZIP engineering package for your developer.',
  t99Cta:'Unlock $99 Roadmap Package →',
- t499Title:'3. Enterprise AI Authority',
- t499Price:'$499 Enterprise Integration',
- t499Desc:'Advanced AI ecosystem: Autonomous agent protocols, LLM RAG semantic knowledge graph, reverse-engineering architecture, and automated enterprise codebases.',
- t499Cta:'View $499 Enterprise Solution →',
  lenses:'7-Dimensional Readiness Lenses',
  lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
  priorities:'Priority Strategic Decision Areas',
@@ -91,8 +82,7 @@ en:{
  bridgeTag:'DIAGNOSIS COMPLETE · WHAT NEXT?',
  bridgeTitle:'Vulnerabilities & Evidence Disclosed. Ready to Remediate in Code?',
  bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the 22-file ZIP engineering package.',
- bridgeBtn99:'⚡ Unlock $99 Implementation Roadmap (22-File ZIP) →',
- bridgeBtn499:'🏢 View $499 Enterprise Solution →'
+ bridgeBtn99:'⚡ Unlock $99 Implementation Roadmap (22-File ZIP) →'
 }}[lang];
 const sevMap={tr:{critical:'KRİTİK',high:'YÜKSEK',medium:'ORTA',low:'DÜŞÜK',info:'BİLGİ'},en:{critical:'CRITICAL',high:'HIGH',medium:'MEDIUM',low:'LOW',info:'INFO'}};
 const confMap={tr:{confirmed:'DOĞRULANMIŞ',strong:'GÜÇLÜ',probable:'OLASI','requires-source-verification':'KAYNAK DOĞRULAMASI GEREKİR'},en:{confirmed:'CONFIRMED',strong:'STRONG',probable:'PROBABLE','requires-source-verification':'SOURCE VERIFICATION REQUIRED'}};
@@ -155,8 +145,8 @@ function renderIntelligence(data){
   let sb='';if(sc!==null){const tr=sc>=80?'green':sc>=60?'blue':sc>=40?'amber':'red';sb=`<div class="intel-card-meter"><i style="width:${Math.max(0,Math.min(100,sc))}%;background:var(--intel-${tr});"></i></div>`}
   return `<article class="intel-item ${isCap?'intel-capstone':''} intel-${m.theme}" data-key="${esc(a.key)}" data-status="${esc(a.status)}"><div class="intel-item-header"><div class="intel-item-title-wrap"><span class="intel-cat-pill intel-cat-${m.theme}">${esc(cat)}</span><h4>${esc(title)}</h4></div><span class="intel-status-pill status-${esc(a.status)}">${esc(st)}${sc!==null?` · ${sc}/100`:''}</span></div>${sb}<div class="intel-evidence"><code><span class="ev-label">${isTr?'KANIT:':'EVIDENCE:'}</span>${esc(ev)}</code></div><div class="intel-boundary"><strong>⚖️ ${isTr?'Ölçüm Sınırı':'Measurement Boundary'}:</strong> ${esc(isTr?a.boundaryTr:a.boundaryEn)}</div><div class="intel-item-notice"><span>ℹ️ ${esc(copy.auditDiagNotice)}</span></div>${isCap?`<div class="intel-capstone-action"><a href="/checkout?plan=pro" class="intel-mandate-cta">${esc(copy.capstoneCta)}</a></div>`:''}</article>`;
  }).join('');
- const tierGuideHtml=`<div class="intel-tier-guide"><div class="tier-card tier-card-active"><div class="tier-card-header"><span class="tier-card-badge tier-badge-green">${isTr?'AKTİF KATMAN':'ACTIVE LAYER'}</span><span class="tier-card-price">${esc(copy.t0Price)}</span></div><div class="tier-card-title">${esc(copy.t0Title)}</div><p class="tier-card-desc">${esc(copy.t0Desc)}</p><div class="tier-card-status"><span class="status-active-label">${esc(copy.t0Status)}</span></div></div><div class="tier-card"><div class="tier-card-header"><span class="tier-card-badge tier-badge-blue">${isTr?'UYGULAMA PLANI':'EXECUTION PLAN'}</span><span class="tier-card-price price-blue">${esc(copy.t99Price)}</span></div><div class="tier-card-title">${esc(copy.t99Title)}</div><p class="tier-card-desc">${esc(copy.t99Desc)}</p><div class="tier-card-status"><a href="/checkout?plan=pro" class="tier-card-link">${esc(copy.t99Cta)}</a></div></div><div class="tier-card"><div class="tier-card-header"><span class="tier-card-badge tier-badge-purple">${isTr?'VIP ENTEGRASYON':'VIP INTEGRATION'}</span><span class="tier-card-price price-purple">${esc(copy.t499Price)}</span></div><div class="tier-card-title">${esc(copy.t499Title)}</div><p class="tier-card-desc">${esc(copy.t499Desc)}</p><div class="tier-card-status"><a href="/checkout?plan=enterprise" class="tier-card-link link-purple">${esc(copy.t499Cta)}</a></div></div></div>`;
- const bridgeHtml=`<div class="intel-bridge-banner"><div class="intel-bridge-content"><span class="bridge-tag">${esc(copy.bridgeTag)}</span><h4>${esc(copy.bridgeTitle)}</h4><p>${esc(copy.bridgeDesc)}</p></div><div class="intel-bridge-actions"><a href="/checkout?plan=pro" class="intel-btn-primary">${esc(copy.bridgeBtn99)}</a><a href="/checkout?plan=enterprise" class="intel-btn-secondary">${esc(copy.bridgeBtn499)}</a></div></div>`;
+ const tierGuideHtml=`<div class="intel-tier-guide"><div class="tier-card tier-card-active"><div class="tier-card-header"><span class="tier-card-badge tier-badge-green">${isTr?'AKTİF KATMAN':'ACTIVE LAYER'}</span><span class="tier-card-price">${esc(copy.t0Price)}</span></div><div class="tier-card-title">${esc(copy.t0Title)}</div><p class="tier-card-desc">${esc(copy.t0Desc)}</p><div class="tier-card-status"><span class="status-active-label">${esc(copy.t0Status)}</span></div></div><div class="tier-card"><div class="tier-card-header"><span class="tier-card-badge tier-badge-blue">${isTr?'UYGULAMA PLANI':'EXECUTION PLAN'}</span><span class="tier-card-price price-blue">${esc(copy.t99Price)}</span></div><div class="tier-card-title">${esc(copy.t99Title)}</div><p class="tier-card-desc">${esc(copy.t99Desc)}</p><div class="tier-card-status"><a href="/checkout?plan=pro" class="tier-card-link">${esc(copy.t99Cta)}</a></div></div></div>`;
+ const bridgeHtml=`<div class="intel-bridge-banner"><div class="intel-bridge-content"><span class="bridge-tag">${esc(copy.bridgeTag)}</span><h4>${esc(copy.bridgeTitle)}</h4><p>${esc(copy.bridgeDesc)}</p></div><div class="intel-bridge-actions"><a href="/checkout?plan=pro" class="intel-btn-primary">${esc(copy.bridgeBtn99)}</a></div></div>`;
  wrap.innerHTML=`<div class="intel-head"><div><span class="intel-head-kicker">${esc(copy.kicker)}</span><h3>${esc(copy.intelligence)}</h3><p>${esc(copy.intelligenceNote)}</p></div><div class="intel-head-badges"><span class="intel-top-pill pill-green">${esc(copy.badgeFree)}</span><span class="intel-top-pill pill-blue">${esc(copy.badge13)}</span><span class="intel-top-pill pill-purple">${esc(copy.badge7)}</span><span class="intel-top-pill">${esc(copy.badgeRemedy)}</span></div></div>${tierGuideHtml}<div class="intel-section-title"><h4>${esc(copy.lenses)}</h4><span>${esc(copy.lensesSub)}</span></div><div class="intel-lenses">${lensHtml}</div>${priorities.length?`<div class="intel-section-title"><h4>${esc(copy.priorities)}</h4><span>${esc(copy.prioritiesSub)}</span></div><div class="intel-priorities-deck">${priorityHtml}</div>`:''}<div class="intel-section-title"><h4>${esc(copy.audits)}</h4><span>${esc(copy.auditsSub)}</span></div>${filterHtml}<div class="intel-grid" id="toolIntelAuditsGrid">${analysisHtml}</div>${bridgeHtml}`;
  wrap.querySelectorAll('#toolIntelFilterBar .intel-filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{wrap.querySelectorAll('#toolIntelFilterBar .intel-filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;wrap.querySelectorAll('#toolIntelAuditsGrid .intel-item').forEach(item=>{const st=item.dataset.status;if(f==='all'||(f==='CONTEXT'&&(st==='NOT_MEASURED'||st==='REQUIRES_CONTEXT'))||st===f)item.style.display='';else item.style.display='none'})})});
  result.insertAdjacentElement('afterend',wrap);

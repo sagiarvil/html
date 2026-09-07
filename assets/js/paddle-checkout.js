@@ -14,7 +14,7 @@ let domain='',config=null,busy=false,completedTransaction='',plan=(new URLSearch
 const lang=()=>document.documentElement.lang==='tr'?'tr':'en';
 const copy={
  tr:{
-   ready:()=>plan==='enterprise'?'Paddle ile güvenli öde — $499':'Paddle ile güvenli öde — $99',
+   ready:()=>'Paddle ile güvenli öde — $99',
    loading:'Güvenli ödeme hazırlanıyor…',
    domain:'Lütfen ödeme ve ZIP üretimi için hedef web sitesi alan adınızı girin.',
    configured:'Paddle güvenli ödeme hazır.',
@@ -25,7 +25,7 @@ const copy={
    error:'Ödeme doğrulanamadı. Kartınızdan tekrar ödeme yapmayın; sayfayı yenileyip işlem durumunu tekrar kontrol edin.'
  },
  en:{
-   ready:()=>plan==='enterprise'?'Pay securely with Paddle — $499':'Pay securely with Paddle — $99',
+   ready:()=>'Pay securely with Paddle — $99',
    loading:'Preparing secure checkout…',
    domain:'Please enter your target website domain for payment and ZIP delivery.',
    configured:'Paddle secure checkout is ready.',

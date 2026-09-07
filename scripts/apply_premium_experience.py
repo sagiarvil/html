@@ -47,7 +47,7 @@ EN_HOW=TR_HOW.replace('Üç adım. Aynı kanıt zinciri.','Three steps. One evid
 TR_KNOW=''
 EN_KNOW=''
 
-TR_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-infographic="report-boundary">
+TR_REPORT='''<section class="px-report-boundary" data-premium-infographic="report-boundary">
   <article class="px-report-free">
     <span class="eyebrow">AÇIK TEŞHİS · $0</span>
     <h3>Problemi saklamıyoruz.</h3>
@@ -66,16 +66,17 @@ TR_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-inf
     </div>
   </article>
   <article class="px-report-paid featured">
-    <span class="eyebrow">EN ÇOK TERCİH EDİLEN</span>
+    <span class="eyebrow">TAM TEKNİK ÇALIŞMA PAKETİ</span>
     <span class="tier-eyebrow">MÜHENDİSLİK YOL HARİTASI · $99</span>
     <h3>Nasıl düzelteceğinizi açın.</h3>
-    <p>Ücretli ürün “daha fazla hata” satmaz; yazılımcının hemen uygulayacağı 50 sayfalık mühendislik yol haritasını sunar.</p>
+    <p>Ücretli ürün “daha fazla hata” satmaz; yazılımcının hemen uygulayacağı 50 sayfalık mühendislik yol haritasını ve 22 teslimat dosyasını sunar.</p>
     <ul>
       <li>✦ Kök neden ve P0–P3 kod uygulama sözleşmesi</li>
       <li>✦ Dosya ve bileşen seviyesi doğrudan hedefleme</li>
       <li>✦ Kabul testleri ve regresyon koruma kontrolleri</li>
       <li>✦ Rollback planı ve durma koşulları güvencesi</li>
-      <li>✦ Otomatik üretilen 11 dosyalı ZIP mühendislik paketi</li>
+      <li>✦ 18 teknik mimari ve makine birlikte çalışabilirlik vektörü</li>
+      <li>✦ İndirilebilir 22 dosyalı ZIP mühendislik paketi</li>
       <li>✦ 30 gün içinde 1 resmi doğrulama re-scan hakkı</li>
     </ul>
     <div class="tier-footer">
@@ -83,28 +84,8 @@ TR_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-inf
       <a class="primary tier-action" href="/checkout?plan=pro">Yol Haritasını Aç — $99 →</a>
     </div>
   </article>
-  <article class="px-report-enterprise">
-    <span class="vip-tag">KURUMSAL MİMARİ</span>
-    <span class="tier-eyebrow">ENTERPRISE OTORİTE · $499</span>
-    <h3>Yapay Zekâda Birincil Otorite Olun.</h3>
-    <p>ChatGPT, Perplexity ve Claude\'da markanızı doğal öneri ve ilk alıntı (Citation #1) yapan 6 stratejik kurumsal mimari.</p>
-    <ul>
-      <li>✦ <b>$99 Mühendislik Yol Haritası DAHİL</b></li>
-      <li>✦ Model Corpus Seeding &amp; Entity Eşleştirme Kılavuzu</li>
-      <li>✦ Cross-Encoder Reranking &amp; Citation #1 Mimarisi</li>
-      <li>✦ Wikidata &amp; Google MID Bilgi Grafı Mutabakatı</li>
-      <li>✦ AST llms.txt v2 ve Yüksek Hızlı Bot Uç Dağıtımı</li>
-      <li>✦ Otonom Ajan Hazırlığı (A2A JSON-LD &amp; API)</li>
-      <li>✦ 22 dosyalı VIP ZIP + Öncelikli Mühendislik Desteği</li>
-      <li>✦ 60 gün içinde 3 VIP doğrulama re-scan hakkı</li>
-    </ul>
-    <div class="tier-footer">
-      <div class="tier-price"><strong class="amount">$499</strong><span>/ enterprise</span></div>
-      <a class="enterprise-cta tier-action" href="/checkout?plan=enterprise">Enterprise Lisansı Başlat — $499 →</a>
-    </div>
-  </article>
 </section>'''
-EN_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-infographic="report-boundary">
+EN_REPORT='''<section class="px-report-boundary" data-premium-infographic="report-boundary">
   <article class="px-report-free">
     <span class="eyebrow">OPEN DIAGNOSIS · $0</span>
     <h3>We do not hide the problem.</h3>
@@ -123,41 +104,22 @@ EN_REPORT='''<section class="px-report-boundary px-three-tiers" data-premium-inf
     </div>
   </article>
   <article class="px-report-paid featured">
-    <span class="eyebrow">MOST POPULAR</span>
+    <span class="eyebrow">FULL TECHNICAL WORK PACKAGE</span>
     <span class="tier-eyebrow">EXECUTION ROADMAP · $99</span>
     <h3>Unlock how to fix it.</h3>
-    <p>The paid product does not sell “more problems”; it delivers a 50-page engineering roadmap your developer can execute.</p>
+    <p>The paid product does not sell “more problems”; it delivers a 50-page engineering roadmap and 22 deliverable files your developer can execute.</p>
     <ul>
       <li>✦ Root cause and P0–P3 implementation order</li>
       <li>✦ File and component level code targeting</li>
       <li>✦ Acceptance and regression test contracts</li>
       <li>✦ Rollback safeguards and stop conditions</li>
-      <li>✦ Turnkey 11-file downloadable ZIP package</li>
+      <li>✦ 18 technical architecture and machine interoperability vectors</li>
+      <li>✦ Turnkey 22-file downloadable ZIP package</li>
       <li>✦ 1 verification re-scan within 30 days</li>
     </ul>
     <div class="tier-footer">
       <div class="tier-price"><strong class="amount">$99</strong><span>/ 1 domain</span></div>
       <a class="primary tier-action" href="/checkout?plan=pro">Unlock Roadmap — $99 →</a>
-    </div>
-  </article>
-  <article class="px-report-enterprise">
-    <span class="vip-tag">ENTERPRISE ARCHITECTURE</span>
-    <span class="tier-eyebrow">ENTERPRISE AUTHORITY · $499</span>
-    <h3>Establish Primary AI Authority.</h3>
-    <p>The complete 6-pillar enterprise system to win primary citations and natural LLM recommendations across ChatGPT, Perplexity, and Claude.</p>
-    <ul>
-      <li>✦ <b>Everything in $99 Roadmap INCLUDED</b></li>
-      <li>✦ Model Corpus Seeding &amp; Entity Association Guide</li>
-      <li>✦ Cross-Encoder Reranking &amp; Citation #1 Architecture</li>
-      <li>✦ Wikidata &amp; Google MID Knowledge Graph Consensus</li>
-      <li>✦ AST llms.txt v2 &amp; High-Speed Bot Edge Delivery</li>
-      <li>✦ Autonomous Agent Readiness (A2A JSON-LD &amp; API)</li>
-      <li>✦ 22-file extended VIP ZIP + Full Architecture Codebases</li>
-      <li>✦ 3 VIP re-scans within 60 days</li>
-    </ul>
-    <div class="tier-footer">
-      <div class="tier-price"><strong class="amount">$499</strong><span>/ enterprise</span></div>
-      <a class="enterprise-cta tier-action" href="/checkout?plan=enterprise">Unlock Enterprise License — $499 →</a>
     </div>
   </article>
 </section>'''

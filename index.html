@@ -3,24 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<script>
-(function(){
-  try {
-    var stored = localStorage.getItem('hh-lang');
-    if (stored === 'tr') {
-      location.replace('/tr/' + (location.search || ''));
-      return;
-    }
-    if (!stored) {
-      var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      if (navLang.indexOf('tr') === 0) {
-        location.replace('/tr/' + (location.search || ''));
-        return;
-      }
-    }
-  } catch(e) {}
-})();
-</script>
 <title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
 <meta name="description" content="Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -38,10 +20,11 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/validator.css?v=4">
+<link rel="stylesheet" href="/assets/css/validator.css?v=2">
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -54,61 +37,14 @@
       "operatingSystem": "Web",
       "offers": [
         { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Enterprise Dark Pool Intelligence", "price": "499", "priceCurrency": "USD" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "llms.txt nedir?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sitenizin kök dizininde bulunan küçük bir Markdown dosyası, yapay zeka modellerine en faydalı sayfalarınızın temiz ve düzenlenmiş bir haritasını sunar; böylece yapay zekalar içeriğinizi doğru bir şekilde anlayabilir ve alıntılayabilir."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Bu doğrulama aracı ücretsiz mi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Evet. Tamamen ücretsiz ve kayıt olmaya gerek yok; bir alan adı girin veya dosyanızı yapıştırın ve anında rapor alın."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Doğrulayıcı neyi kontrol eder?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Resmi spesifikasyona uygunluk, bağlantılı her URL'nin erişilebilir olması ve HTTPS bağlantıları ve açıklamaları gibi en iyi uygulamalara uyulması — 0-100 arası puanlama."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "llms.txt dosyasını nereye koymalıyım?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Alan adınızın kök dizininde, /llms.txt dosyasından düz metin olarak sunulur; örneğin, https://example.com/llms.txt."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "llms.txt SEO'ya yardımcı olur mu?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Doğrudan Google sıralamalarını etkilemez. Yapay zekâ asistanlarının ve arama motorlarının içeriğinizi anlamasına ve alıntılamasına yardımcı olur; bu da aramanın yapay zekâya doğru kaydığı günümüzde daha da önem kazanmaktadır."
-          }
-        }
+        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }
       ]
     }
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=3" defer></script>
+<script src="/assets/js/validator.js?v=2" defer></script>
 <script src="/assets/js/theme.js"></script>
-<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
 <body>
@@ -137,7 +73,7 @@
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">llms.txt Uygunluk Kontrolü</b></div>
+  <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
   <h1 data-i18n="heroTitle">Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em></h1>
   <p data-i18n="heroCopy">Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
   
@@ -148,8 +84,25 @@
         <input id="domainInput" autocomplete="url" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><i>→</i></button>
       </div>
-      <div id="scanStatus" class="status" hidden></div>
+      <div class="scan-chips">
+        <span>Örnekler:</span>
+        <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+        <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+        <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+      </div>
+      <small data-i18n="scanHint">Kayıt yok. Secret alınmaz. Yalnızca herkese açık URL ve HTTP yüzeyleri ölçülür.</small>
     </form>
+    <div id="scanStatus" class="status" hidden></div>
+  </div>
+
+  <div class="signals">
+    <span data-i18n="sigCrawl">TARAMA</span><i></i>
+    <span>SEO</span><i></i>
+    <span>AI / GEO</span><i></i>
+    <span>LLMS V2</span><i></i>
+    <span data-i18n="sigSchema">YAPISAL VERİ</span><i></i>
+    <span data-i18n="sigA11y">ERİŞİLEBİLİRLİK</span><i></i>
+    <span data-i18n="sigSecurity">GÜVENLİK</span>
   </div>
 </section>
 
@@ -211,79 +164,20 @@
   </div>
 </section>
 
-<!-- 04 TOOL DIRECTORY -->
-<!-- 05 12 ENGINES / EVIDENCE / TRUST -->
-<!-- 06 HOW IT WORKS -->
-<!-- LLMS.TXT ÖZELLİK VE NASIL ÇALIŞIR VİTRİNİ (GÖRSELDEKİ BİREBİR YAPI) -->
-<section class="llms-feature-section" id="llms-nasil-calisir">
-  <div class="llms-cards-grid">
-    <article class="llms-card">
-      <div class="llms-card-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 12l10 10 10-10L12 2z"></path></svg>
-      </div>
-      <h3>Kusursuz yapı</h3>
-      <p>H1 başlığı, blok alıntı özeti, H2 bağlantı bölümleri ve liste biçimlendirmesi, resmi llms.txt spesifikasyonuna göre kontrol edilmiştir.</p>
-    </article>
-
-    <article class="llms-card">
-      <div class="llms-card-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-      </div>
-      <h3>Gerçek bağlantı kontrolleri</h3>
-      <p>Çoğu araç yalnızca metinleri kontrol eder. Biz ise bağlantı verilen her URL'yi talep edip bozuk olanları işaretliyoruz, böylece tarayıcılar asla çıkmaz sokaklara girmiyor.</p>
-    </article>
-
-    <article class="llms-card">
-      <div class="llms-card-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-      </div>
-      <h3>Açık çözümler</h3>
-      <p>Her sayı, sade bir dille yazılmış bir öneri ve yapı, bağlantılar ve en iyi uygulamalar açısından 0-100 arasında bir puanlama ile birlikte sunulmaktadır.</p>
-    </article>
-  </div>
-
-  <div class="how-it-works-block">
-    <h2>Nasıl çalışır?</h2>
-    <div class="how-steps-list">
-      <div class="how-step-item">
-        <span class="how-step-num">1</span>
-        <div class="how-step-text"><strong>Bir alan adı girin.</strong> <code>/llms.txt</code> Biz sizin için çözümleyip getiriyoruz .</div>
-      </div>
-      <div class="how-step-item">
-        <span class="how-step-num">2</span>
-        <div class="how-step-text"><strong>Doğrulama işlemini gerçekleştiriyoruz.</strong> Yapı, biçimlendirme ve her bağlantı eş zamanlı olarak kontrol ediliyor.</div>
-      </div>
-      <div class="how-step-item">
-        <span class="how-step-num">3</span>
-        <div class="how-step-text"><strong>Size bir rapor veriliyor.</strong> Bir puan ve önceliklendirilmiş, düzeltilebilir bulgular listesi.</div>
-      </div>
-    </div>
-    <a href="/tr/rehberler/llms-txt/" class="how-guide-link">llms.txt kılavuzunu okuyun →</a>
-  </div>
-</section>
-
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
     <span class="eyebrow">SSS</span>
     <h2 data-i18n="faqTitle">Sık sorulan sorular</h2>
   </header>
-  <details open><summary data-i18n="q1">llms.txt nedir?</summary><p data-i18n="a1">Sitenizin kök dizininde bulunan küçük bir Markdown dosyası, yapay zeka modellerine en faydalı sayfalarınızın temiz ve düzenlenmiş bir haritasını sunar; böylece yapay zekalar içeriğinizi doğru bir şekilde anlayabilir ve alıntılayabilir.</p></details>
-  <details><summary data-i18n="q2">Bu doğrulama aracı ücretsiz mi?</summary><p data-i18n="a2">Evet. Tamamen ücretsiz ve kayıt olmaya gerek yok; bir alan adı girin veya dosyanızı yapıştırın ve anında rapor alın.</p></details>
-  <details><summary data-i18n="q3">Doğrulayıcı neyi kontrol eder?</summary><p data-i18n="a3">Resmi spesifikasyona uygunluk, bağlantılı her URL'nin erişilebilir olması ve HTTPS bağlantıları ve açıklamaları gibi en iyi uygulamalara uyulması — 0-100 arası puanlama.</p></details>
-  <details><summary data-i18n="q4">llms.txt dosyasını nereye koymalıyım?</summary><p data-i18n="a4">Alan adınızın kök dizininde, /llms.txt dosyasından düz metin olarak sunulur; örneğin, https://example.com/llms.txt.</p></details>
-  <details><summary data-i18n="q5">llms.txt SEO'ya yardımcı olur mu?</summary><p data-i18n="a5">Doğrudan Google sıralamalarını etkilemez. Yapay zekâ asistanlarının ve arama motorlarının içeriğinizi anlamasına ve alıntılamasına yardımcı olur; bu da aramanın yapay zekâya doğru kaydığı günümüzde daha da önem kazanmaktadır.</p></details>
-  
-  <div class="faq-more-wrap">
-    <a href="/tr/sss/" class="faq-more-btn">
-      <span>Devamı ve sonraki SSS için tıklayınız</span>
-      <i>→</i>
-    </a>
-  </div>
+  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır?</summary><p data-i18n="a1">Problem saklanmaz. URL, severity, confidence, evidence ve kategori görünür. Ücretli katmanda kilitlenen şey uygulama planı, test sözleşmesi ve rollback planıdır.</p></details>
+  <details><summary data-i18n="q2">100/100 Google veya AI citation garantisi mi?</summary><p data-i18n="a2">Hayır. Skor yalnızca ölçülen kontrollerin durumudur. Ranking, trafik veya AI citation garantisi değildir.</p></details>
+  <details><summary data-i18n="q3">llms.txt zorunlu mu?</summary><p data-i18n="a3">Hayır. llms.txt bir web standardı değil, gelişmekte olan bir öneridir. Bu nedenle ayrı PROPOSAL etiketi ve düşük ağırlıkla değerlendirilir.</p></details>
+  <details><summary data-i18n="q4">Core Web Vitals ölçülüyor mu?</summary><p data-i18n="a4">Bu sürüm HTML/HTTP performans hijyenini ölçer. Güvenilir LCP/INP/CLS için CrUX/PageSpeed verisi gerekir; yoksa NOT_MEASURED döner, değer uydurulmaz.</p></details>
+  <details><summary data-i18n="q5">Tarayıcı neden bazı siteleri reddeder?</summary><p data-i18n="a5">SSRF riskine karşı localhost/private/reserved hedefler, private DNS çözümü, non-standard portlar ve redirect ile private ağa geçiş fail-closed engellenir.</p></details>
 </section>
 </main>
 
-<!-- 10 FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -298,7 +192,6 @@
         <li><a href="/tr/platform/">Platform</a></li>
         <li><a href="/tr/fix-mandate/">Fix Mandate</a></li>
         <li><a href="/tr/fiyatlandirma/" data-i18n="navPrice">Fiyatlar</a></li>
-        <li><a href="/tr/sss/">Sıkça Sorulan Sorular (SSS)</a></li>
         <li><a href="/openapi.json">OpenAPI</a></li>
         <li><a href="/audit-profile.json">Audit Profile</a></li>
       </ul>
@@ -334,7 +227,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</p>
+    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</p>
   </div>
 </footer>
 <script src="/assets/js/enterprise-runtime.js?v=1"></script>

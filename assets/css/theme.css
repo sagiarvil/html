@@ -912,7 +912,7 @@ html[data-theme="dark"] .px-report-split .paid li {
 }
 
 /* --------------------------------------------------------------------------
-   08. 3-TIER PRICING GRID ($0, $99, $499) - BULLETPROOF DUAL CONTRAST
+   08. 2-TIER PRICING GRID ($0, $99) - BULLETPROOF DUAL CONTRAST
    -------------------------------------------------------------------------- */
 .pricing-grid.pricing-three,
 .px-report-boundary.px-three-tiers {
@@ -1055,10 +1055,9 @@ html[data-theme="dark"] .px-three-tiers .px-report-paid {
   transform: translateY(-1px) !important;
 }
 
-/* Tier 3 ($499 Enterprise VIP) */
+/* Optional VIP / Enterprise accent classes (archived) */
 .pricing-grid.pricing-three article.enterprise-tier,
 .px-three-tiers .px-report-enterprise {
-  border: 2px solid #f59e0b !important;
   box-shadow: 0 12px 36px rgba(245, 158, 11, 0.14) !important;
   padding-top: 68px !important;
 }

@@ -21,8 +21,8 @@ const copy={
     badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
     badge13:'13 Derin Analiz',
     badge7:'7 Hazırlık Lensi',
-    badgeRemedy:'🔒 Çözüm: $99 Yol Haritası & $499 Enterprise',
-    tierGuideTitle:'Hangi Hizmet Neyi Kapsar? ($0 Teşhis vs. $99 Uygulama vs. $499 Kurumsal)',
+    badgeRemedy:'🔒 Çözüm: $99 Mühendislik Yol Haritası',
+    tierGuideTitle:'Hangi Katman Neyi Kapsar? ($0 Teşhis vs. $99 Uygulama Paketi)',
     t0Title:'1. Açık Teşhis Envanteri',
     t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
     t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 7 hazırlık lensiyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
@@ -31,12 +31,7 @@ const copy={
     t99Price:'$99 Tek Seferlik',
     t99Desc:'Nasıl düzeltilecek? Bu ekranda listelenen 13 sorunun kök nedeni, hazır kod blokları, P0–P3 sırası ve yazılımcınıza teslim edilecek 22 dosyalık ZIP paketi.',
     t99Cta:'$99 Mühendislik Paketini Aç →',
-    t499Title:'3. Kurumsal AI Otoritesi',
-    t499Price:'$499 Kurumsal Entegrasyon',
-    t499Desc:'Gelişmiş AI ekosistemi: Otonom AI crawler protokolleri, LLM RAG semantik grafı, tersine mühendislik mimarisi ve kurumsal kod tabanları.',
-    t499Cta:'$499 Kurumsal Çözümü İncele →',
     lenses:'7 Boyutlu Hazırlık Lensleri',
-    lensesSub:'Ücretsiz Teşhis Boyutları: Yapay zeka ve arama ekosistemindeki 7 ana vektörünüzün anlık durum puanı',
     priorities:'Öncelikli Stratejik Karar Alanları',
     prioritiesSub:'Acil Düzeltme Sırası: Doğrulanmış kanıtlara göre en yüksek etkiyi sağlayan ilk 3 öncelik ($99 Yol Haritası ile koda dönüşür)',
     audits:'13 Bağımsız İstihbarat Denetimi',
@@ -53,8 +48,7 @@ const copy={
     bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
     bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
     bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Yazılımcınızın hemen devreye alabileceği hazır kod blokları, P0–P3 öncelik sırası ve 22 dosyalık mühendislik ZIP paketi için Yol Haritasını açın.',
-    bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →',
-    bridgeBtn499:'🏢 $499 Kurumsal Çözüm →'
+    bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →'
   },
   en:{
     kicker:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
@@ -63,8 +57,8 @@ const copy={
     badgeFree:'🟢 $0 Free Diagnostic Layer',
     badge13:'13 Deep Analyses',
     badge7:'7 Readiness Lenses',
-    badgeRemedy:'🔒 Fix: $99 Roadmap & $499 Enterprise',
-    tierGuideTitle:'Which Tier Covers What? ($0 Diagnostic vs $99 Execution vs $499 Enterprise)',
+    badgeRemedy:'🔒 Fix: $99 Roadmap Pack',
+    tierGuideTitle:'Which Tier Covers What? ($0 Diagnostic vs $99 Execution Pack)',
     t0Title:'1. Open Diagnostic Inventory',
     t0Price:'$0 Free (Current Screen)',
     t0Desc:'What is wrong? Where? 13 deep intelligence audits and 7 readiness lenses provide a complete verified evidence log for free.',
@@ -73,10 +67,6 @@ const copy={
     t99Price:'$99 One-Time',
     t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and 22-file ZIP engineering package for your developer.',
     t99Cta:'Unlock $99 Roadmap Package →',
-    t499Title:'3. Enterprise AI Authority',
-    t499Price:'$499 Enterprise Integration',
-    t499Desc:'Advanced AI ecosystem: Autonomous agent protocols, LLM RAG semantic knowledge graph, reverse-engineering architecture, and automated enterprise codebases.',
-    t499Cta:'View $499 Enterprise Solution →',
     lenses:'7-Dimensional Readiness Lenses',
     lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
     priorities:'Priority Strategic Decision Areas',
@@ -95,8 +85,7 @@ const copy={
     bridgeTag:'DIAGNOSIS COMPLETE · WHAT NEXT?',
     bridgeTitle:'Vulnerabilities & Evidence Disclosed. Ready to Remediate in Code?',
     bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the 22-file ZIP engineering package.',
-    bridgeBtn99:'⚡ Unlock $99 Implementation Roadmap (22-File ZIP) →',
-    bridgeBtn499:'🏢 View $499 Enterprise Solution →'
+    bridgeBtn99:'⚡ Unlock $99 Implementation Roadmap (22-File ZIP) →'
   }
 };
 
@@ -175,15 +164,6 @@ function render(intel){
         <div class="tier-card-title">${esc(t.t99Title)}</div>
         <p class="tier-card-desc">${esc(t.t99Desc)}</p>
         <div class="tier-card-status"><a href="/checkout?plan=pro" class="tier-card-link">${esc(t.t99Cta)}</a></div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-card-header">
-          <span class="tier-card-badge tier-badge-purple">${isTr?'VIP ENTEGRASYON':'VIP INTEGRATION'}</span>
-          <span class="tier-card-price price-purple">${esc(t.t499Price)}</span>
-        </div>
-        <div class="tier-card-title">${esc(t.t499Title)}</div>
-        <p class="tier-card-desc">${esc(t.t499Desc)}</p>
-        <div class="tier-card-status"><a href="/checkout?plan=enterprise" class="tier-card-link link-purple">${esc(t.t499Cta)}</a></div>
       </div>
     </div>
   `;
@@ -307,7 +287,6 @@ function render(intel){
       </div>
       <div class="intel-bridge-actions">
         <a href="/checkout?plan=pro" class="intel-btn-primary">${esc(t.bridgeBtn99)}</a>
-        <a href="/checkout?plan=enterprise" class="intel-btn-secondary">${esc(t.bridgeBtn499)}</a>
       </div>
     </div>
   `;
