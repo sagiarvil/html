@@ -21,10 +21,8 @@ jobs:
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! grep -Fqi "$marker" <<<"$body"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
           check 'https://htmlandhtml.com/' 'Yapay Zeka Sizi Buluyor mu?'
-          check 'https://htmlandhtml.com/' 'data-premium-infographic="tools"'
-          check 'https://htmlandhtml.com/' 'data-premium-infographic="engines"'
-          check 'https://htmlandhtml.com/' 'data-premium-infographic="process"'
-          check 'https://htmlandhtml.com/' 'data-premium-infographic="knowledge"'
+          check 'https://htmlandhtml.com/tr/araclar/' 'data-premium-infographic="scope-map"'
+          check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'data-premium-infographic="report-boundary"'
           check 'https://htmlandhtml.com/en/website-scanner/' '12-ENGINE WEBSITE SCANNER'
           check 'https://htmlandhtml.com/tr/site-tarama/' '12 MOTOR'
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT V2 ŞARTNAME DOĞRULAYICISI'
