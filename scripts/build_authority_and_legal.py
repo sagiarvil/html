@@ -368,13 +368,13 @@ def build_company_legal():
                 "title": "Contact HTML&HTML — Software Support & Licensing",
                 "h1": "Contact HTML&HTML: <em>Software Support & Licensing</em>",
                 "sub": "Questions regarding our 18-engine scanning software, OpenAPI integration, or digital software package delivery.",
-                "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Software Licensing & Order Support</h2><p>For questions about the $99 Full Site Fix Mandate Software Pack, digital download delivery, or invoices, reach out directly at contact@htmlandhtml.com.</p>"""
+                "body": """<h2>Engineering Inquiries</h2><p>For technical feedback on scan heuristics, false positives, or source registry updates, our engineering team monitors RFC and vendor standards daily.</p><h2>Software Licensing & Order Support</h2><p>For questions about the $99 Full Site Yol Haritası Software Pack, digital download delivery, or invoices, reach out directly at contact@htmlandhtml.com.</p>"""
             },
             "tr": {
                 "title": "İletişim — HTML&HTML Yazılım Desteği ve Lisanslama",
                 "h1": "HTML&HTML İletişim: <em>Yazılım Desteği ve Lisanslama</em>",
                 "sub": "12 analiz motorumuzun yazılım metodolojisi, OpenAPI entegrasyonu veya dijital yazılım paketi teslimatı hakkında sorularınız için bize ulaşın.",
-                "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Yazılım Lisanslama ve Destek</h2><p>$99 Full Site Fix Mandate Yazılım Paketi, dijital indirme teslimatı veya faturalar hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
+                "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Yazılım Lisanslama ve Destek</h2><p>$99 Full Site Yol Haritası Yazılım Paketi, dijital indirme teslimatı veya faturalar hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
             }
         },
         {
