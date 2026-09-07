@@ -3999,8 +3999,13 @@ html[data-theme="light"] footer {
   border-top: 1px solid var(--line) !important;
 }
 html[data-theme="light"] .brand-logo {
-  filter: invert(1) brightness(0) !important; /* Turns white logo to pitch black */
-  opacity: 0.9 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+html[data-theme="dark"] .brand-logo,
+html:not([data-theme="light"]) .brand-logo {
+  filter: invert(1) brightness(1.1) !important;
+  opacity: 1 !important;
 }
 
 /* Grid background fix for Light Mode */
