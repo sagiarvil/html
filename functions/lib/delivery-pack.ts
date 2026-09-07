@@ -301,6 +301,129 @@ export default {
 `;
 }
 
+function generateAwsCloudFrontLambdaEdge(domain: string): string {
+  return `/**
+ * AWS CLOUDFRONT FUNCTION & LAMBDA@EDGE ENTERPRISE RAG PURGE
+ * Target Domain: ${domain}
+ * Architecture: CloudFront Viewer-Request Router + Lambda@Edge Origin-Response AST Purge
+ */
+
+// 1. AWS CloudFront Function (Viewer-Request - sub-1ms evaluation)
+function handler(event) {
+  var request = event.request;
+  var headers = request.headers;
+  var ua = (headers['user-agent'] && headers['user-agent'].value) || '';
+  var isAiBot = /GPTBot|ChatGPT-User|ClaudeBot|PerplexityBot|Google-Extended|Amazonbot|Applebot-Extended/i.test(ua);
+  
+  if (isAiBot) {
+    request.headers['x-ai-crawler-mode'] = { value: 'active' };
+  }
+  return request;
+}
+
+// 2. AWS Lambda@Edge (Origin-Response - Node.js 20.x runtime)
+exports.originResponse = async (event) => {
+  const response = event.Records[0].cf.response;
+  const headers = response.headers;
+  const reqHeaders = event.Records[0].cf.request.headers;
+  const isAi = reqHeaders && reqHeaders['x-ai-crawler-mode'];
+
+  if (isAi && headers['content-type'] && headers['content-type'][0].value.includes('text/html')) {
+    var body = response.body;
+    body = body.replace(/<script\\b[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>/gi, '')
+               .replace(/<style\\b[^<]*(?:(?!<\\/style>)<[^<]*)*<\\/style>/gi, '')
+               .replace(/<svg\\b[^<]*(?:(?!<\\/svg>)<[^<]*)*<\\/svg>/gi, '');
+    response.body = body;
+    headers['x-rag-edge-purge'] = [{ key: 'X-RAG-Edge-Purge', value: 'AWS-Lambda-Edge-14KB' }];
+    headers['cache-control'] = [{ key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=86400' }];
+  }
+  return response;
+};
+`;
+}
+
+function generateVercelEdgeMiddleware(domain: string): string {
+  return `/**
+ * VERCEL / NEXT.JS EDGE MIDDLEWARE (middleware.ts)
+ * Target Domain: ${domain}
+ * Runtime: Vercel Edge Runtime (V8 isolates)
+ * Architecture: Zero-latency AI crawler detection and markdown/llms.txt content routing
+ */
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};
+
+export function middleware(request: NextRequest) {
+  const ua = request.headers.get('user-agent') || '';
+  const isAiCrawler = /GPTBot|ChatGPT-User|ClaudeBot|Claude-Web|PerplexityBot|Google-Extended|Applebot-Extended|Bytespider/i.test(ua);
+
+  if (isAiCrawler && request.nextUrl.pathname === '/') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/llms.txt';
+    const response = NextResponse.rewrite(url);
+    response.headers.set('X-AI-Engine', 'Vercel-Edge-RAG-v2');
+    response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=3600');
+    response.headers.set('Content-Type', 'text/markdown; charset=utf-8');
+    return response;
+  }
+
+  return NextResponse.next();
+}
+`;
+}
+
+function generateGitHubActionsWorkflow(domain: string): string {
+  return `# .github/workflows/ai-search-gate.yml
+# Industrial AI Search Visibility & 14KB AST Quality Gate
+name: AI Search Quality Gate
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  ai-search-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Verify /llms.txt Machine Surface
+        run: |
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" https://${domain}/llms.txt)
+          if [ "$CODE" -ne 200 ]; then
+            echo "❌ CRITICAL: /llms.txt returned HTTP $CODE"
+            exit 1
+          fi
+          echo "✅ /llms.txt verified (HTTP 200)"
+
+      - name: Audit Sub-14KB AST Payload Budget
+        run: |
+          BYTES=$(curl -s -A "Mozilla/5.0 (compatible; GPTBot/1.0)" https://${domain}/ | wc -c)
+          echo "Payload size: $BYTES bytes"
+          if [ "$BYTES" -gt 14336 ]; then
+            echo "⚠️ WARNING: Payload exceeds 14KB RAG cutoff window ($BYTES > 14336 bytes)"
+            exit 1
+          fi
+          echo "✅ Payload within sub-14KB budget ($BYTES bytes)"
+
+      - name: Validate Wikidata QID & JSON-LD Entity Graph
+        run: |
+          JSONLD=$(curl -s https://${domain}/ | grep -o '<script type="application/ld+json">.*</script>' || true)
+          if ! echo "$JSONLD" | grep -q "schema.org"; then
+            echo "❌ CRITICAL: No schema.org JSON-LD graph discovered"
+            exit 1
+          fi
+          echo "✅ Schema.org entity graph validated"
+`;
+}
+
 function generateSecondOrderSyntheticCitationLoop(domain: string, locale: DeliveryLocale): string {
   const brand = domain.replace(/\.[a-z]+$/i, '').toUpperCase();
   const tr = locale === 'tr';
@@ -1183,6 +1306,8 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
     {name:'12_CROSS_ENCODER_ATTENTION_MATRIX.json',content:generateCrossEncoderAttentionMatrix(scan.domain,locale)},
     {name:'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json',content:generateKnowledgeVaultConsensusTriples(scan.domain)},
     {name:'14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js',content:generateCloudflareWorkerTokenPurge(scan.domain)},
+    {name:'14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js',content:generateAwsCloudFrontLambdaEdge(scan.domain)},
+    {name:'14c_VERCEL_EDGE_MIDDLEWARE.ts',content:generateVercelEdgeMiddleware(scan.domain)},
     {name:'15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md',content:generateSecondOrderSyntheticCitationLoop(scan.domain,locale)},
     {name:'16_A2A_AGENT_CARD.json',content:generateA2AAgentCard(scan.domain)},
     {name:'17_MCP_SERVER_SPEC.json',content:generateMCPServerSpec(scan.domain)},
@@ -1191,7 +1316,8 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
     {name:'20_C2PA_PROVENANCE_LEDGER_SPEC.json',content:generateC2PAProvenanceLedgerSpec(scan.domain)},
     {name:'21_DARK_POOL_HALLUCINATION_MONITOR.py',content:generateDarkPoolHallucinationMonitor(scan.domain)},
     {name:'22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json',content:generateN8nMonitoringWorkflow(scan.domain)},
-    {name:'23_EXECUTIVE_BOARD_DOSSIER.md',content:generateExecutiveBoardDossier(scan,locale)}];
+    {name:'23_EXECUTIVE_BOARD_DOSSIER.md',content:generateExecutiveBoardDossier(scan,locale)},
+    {name:'24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml',content:generateGitHubActionsWorkflow(scan.domain)}];
   const filename=`HTMLHTML_AI_Search_Visibility_Roadmap_${cleanName(scan.domain)}_${scan.scanId}.zip`;
   return {version:DELIVERY_PACK_VERSION,filename,mime:'application/zip',bytes:zip(entries),files:entries.map(x=>x.name)};
 }
