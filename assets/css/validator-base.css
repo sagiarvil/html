@@ -63,15 +63,16 @@ button, input, textarea, select { font: inherit; }
   padding: 10px 16px; border-radius: 8px;
 }
 .topbar {
-  height: 74px;
+  height: 56px;
   border-bottom: 1px solid var(--line);
   position: sticky; top: 0;
-  background: rgba(244,241,233,.94);
-  backdrop-filter: blur(12px);
-  z-index: 30;
+  background: var(--bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  z-index: 50;
 }
 .topbar-shell {
-  max-width: var(--shell-max);
+  max-width: var(--maxw, 1080px);
   margin: 0 auto;
   height: 100%;
   display: flex;
@@ -85,9 +86,9 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  font-weight: 900;
-  letter-spacing: -.035em;
-  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 .brand-logo {

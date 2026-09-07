@@ -31,8 +31,12 @@
   --bad-bg: rgba(239, 68, 68, 0.15);
   --bad-border: rgba(239, 68, 68, 0.4);
   --muted: #94a3b8;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --maxw: 1080px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
 
   /* Legacy & Platform Variables */
   --paper: var(--bg);
@@ -186,7 +190,7 @@ a:hover {
   position: sticky !important;
   top: 0 !important;
   z-index: 99 !important;
-  height: 64px !important;
+  height: 56px !important;
   background: var(--bg) !important;
   border-bottom: 1px solid var(--line) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
@@ -200,8 +204,8 @@ html[data-theme="dark"] .topbar {
 }
 
 .topbar-shell {
-  max-width: 1260px !important;
-  height: 64px !important;
+  max-width: var(--maxw, 1080px) !important;
+  height: 56px !important;
   margin: 0 auto !important;
   padding: 0 24px !important;
   display: flex !important;
@@ -215,6 +219,8 @@ html[data-theme="dark"] .topbar {
   display: inline-flex !important;
   align-items: center !important;
   flex-shrink: 0 !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
 }
 .brand-logo {
   height: 28px !important;
@@ -229,14 +235,14 @@ footer .brand-logo {
 .primary-nav, .topbar nav {
   display: flex !important;
   align-items: center !important;
-  gap: 18px !important;
+  gap: 22px !important;
   flex-shrink: 0 !important;
   white-space: nowrap !important;
 }
 .primary-nav a, .topbar nav a {
-  color: var(--fg-dim) !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
+  color: var(--fg-soft) !important;
+  font-size: .92rem !important;
+  font-weight: 500 !important;
   text-decoration: none !important;
   transition: color 0.15s ease !important;
   white-space: nowrap !important;
@@ -5241,4 +5247,179 @@ html[data-theme="light"] .sample-compliance-box strong {
     border: 1pt solid #fecaca !important;
     color: #991b1b !important;
   }
+}
+
+/* ==========================================================================
+   CANONICAL LLMS-TXT-VALIDATOR.DEV DESIGN SYSTEM SYNCHRONIZATION
+   Exact font-family, font-size hierarchy, scale, radii and layout dimensions
+   ========================================================================== */
+.prose, .authority-content, .subpage-content, main.content, article.content, .authority-article {
+  max-width: 720px !important;
+  margin-inline: auto !important;
+  padding-top: 56px !important;
+  padding-bottom: 80px !important;
+}
+.prose h1, .subpage-content h1, .authority-content h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem) !important;
+  letter-spacing: -.025em !important;
+  line-height: 1.08 !important;
+  font-weight: 700 !important;
+  margin: 0 0 18px !important;
+}
+.prose h2, .subpage-content h2, .authority-content h2, h2.section-h {
+  font-size: 1.35rem !important;
+  margin: 40px 0 12px !important;
+  letter-spacing: -.01em !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+}
+.prose h3, .subpage-content h3, .authority-content h3 {
+  font-size: 1.08rem !important;
+  margin: 26px 0 6px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+}
+.prose p, .prose li, .subpage-content p, .subpage-content li, .authority-content p, .authority-content li {
+  color: var(--fg-soft) !important;
+  font-size: .95rem !important;
+  line-height: 1.55 !important;
+}
+.prose .lead, .subpage-content .lead, .lead {
+  font-size: 1.18rem !important;
+  color: var(--fg-soft) !important;
+  max-width: 60ch !important;
+  margin-bottom: 8px !important;
+  line-height: 1.55 !important;
+}
+.prose ul, .prose ol {
+  padding-inline-start: 22px !important;
+}
+.prose li {
+  margin: 6px 0 !important;
+}
+.prose strong, .subpage-content strong, .authority-content strong {
+  color: var(--fg) !important;
+}
+
+/* Global Section & Card Scaling */
+.section-h, .section > header > h2 {
+  font-size: 1.5rem !important;
+  letter-spacing: -.01em !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin: 56px 0 20px !important;
+}
+.card, .feature, .tool-panel {
+  border-radius: var(--radius, 18px) !important;
+  padding: 28px !important;
+  border: 1px solid var(--line) !important;
+}
+.card h2, .card h3, .feature h2, .feature h3 {
+  font-size: 1.12rem !important;
+  letter-spacing: -.01em !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 8px !important;
+}
+.card p, .feature p {
+  color: var(--fg-soft) !important;
+  font-size: .95rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+/* Code & Pre */
+code, pre, .mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+}
+code {
+  background: var(--bg-soft) !important;
+  padding: .12em .4em !important;
+  border-radius: 6px !important;
+  font-size: .9em !important;
+}
+pre, .code, .news-code-block pre {
+  background: var(--bg-soft) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-sm, 12px) !important;
+  padding: 18px 20px !important;
+  overflow-x: auto !important;
+  font-size: .85rem !important;
+  line-height: 1.6 !important;
+  color: var(--fg) !important;
+  white-space: pre !important;
+}
+
+/* Buttons */
+.btn-primary, .primary-action, .cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--accent, #0071e3) !important;
+  color: var(--accent-ink, #ffffff) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 13px 26px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: filter .2s cubic-bezier(.22,.61,.36,1), transform .15s cubic-bezier(.22,.61,.36,1) !important;
+}
+.btn-primary:hover, .primary-action:hover, .cta-btn:hover {
+  filter: brightness(1.07) !important;
+  text-decoration: none !important;
+}
+.btn-primary:active, .primary-action:active, .cta-btn:active {
+  transform: scale(.97) !important;
+}
+
+/* Footer Scale */
+footer, .site-footer {
+  border-top: 1px solid var(--line) !important;
+  background: var(--bg-soft) !important;
+  padding: 40px 0 !important;
+  margin-top: 40px !important;
+}
+footer .footer-grid, .footer-inner {
+  max-width: var(--maxw, 1080px) !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+footer .brand-logo {
+  height: 24px !important;
+  width: auto !important;
+}
+footer p, footer .footer-brand p {
+  font-size: .92rem !important;
+  line-height: 1.55 !important;
+  color: var(--fg-soft) !important;
+}
+footer h4 {
+  font-size: .95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -.01em !important;
+  margin-bottom: 12px !important;
+}
+footer ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid !important;
+  gap: 8px !important;
+}
+footer a, .footer-nav a, .footer-col a {
+  color: var(--fg-soft) !important;
+  font-size: .9rem !important;
+  text-decoration: none !important;
+  transition: color .15s ease !important;
+}
+footer a:hover, .footer-nav a:hover, .footer-col a:hover {
+  color: var(--fg) !important;
+}
+footer .footer-bottom, .footer-fine {
+  border-top: 1px solid var(--line) !important;
+  margin-top: 28px !important;
+  padding-top: 20px !important;
+  font-size: .82rem !important;
+  color: var(--fg-dim) !important;
 }
