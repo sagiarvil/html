@@ -147,7 +147,7 @@ def transform_home(rel,lang):
     if lang=='tr':
         h='<h1 data-i18n="heroTitle">Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em data-i18n="heroSubtitle">Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>' if rel!='en/index.html' else ''
         text=re.sub(r'<h1 data-i18n="heroTitle">.*?</h1>',h,text,count=1,flags=re.S)
-        text=text.replace('<b data-i18n="scan">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et</b>','<b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">Ücretsiz Tara</b>','<b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b>')
+        text=text.replace('<b data-i18n="scan">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">Ücretsiz Tara</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>')
 
     else:
         text=re.sub(r'<h1[^>]*>Your Customer Asks AI.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)

@@ -175,8 +175,8 @@ def build_homepages():
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
-        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://sirketiniz.com/" required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Derin AI Denetimi Başlat →</b><i>→</i></button>
+        <input id="domainInput" aria-label="Taranacak web sitesi veya alan adı" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="sirketiniz.com" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><span class="btn-arrow" aria-hidden="true">→</span></button>
       </div>
       <div class="scan-chips">
         <span>Örnekler:</span>
@@ -524,8 +524,8 @@ def build_homepages():
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Target website domain</label>
-        <input id="domainInput" aria-label="Target website domain to audit" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://yourcompany.com/" required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Start Deep AI Audit →</b><i>→</i></button>
+        <input id="domainInput" aria-label="Website or domain to scan" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="yourcompany.com" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><span class="btn-arrow" aria-hidden="true">→</span></button>
       </div>
       <div class="scan-chips">
         <span>Examples:</span>

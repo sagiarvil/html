@@ -6,11 +6,13 @@ const IPV4=/^\d{1,3}(?:\.\d{1,3}){3}$/;
 function cleanRaw(input:string){
   let value=String(input??'').trim();
   value=value.replace(/^[<"'`(\[]+|[>"'`\)\]]+$/g,'').trim();
-  value=value.replace(/[.,]+$/,'').trim();
+  value=value.replace(/[.,;:]+$/,'').trim();
   value=value.replace(/^(?:https?|htps?):\/*(?!\/)/i,'https://');
   value=value.replace(/^(?:https?|htps?)\/\//i,'https://');
   value=value.replace(/^htps:\/\//i,'https://');
   if(value.startsWith('//'))value='https:'+value;
+  if(!/^https?:\/\//i.test(value))value=value.replace(/^\/+/, '');
+  value=value.replace(/:443(?=\/|$)/, '').replace(/:80(?=\/|$)/, '');
   if(!value)throw new Error('Domain required');
   return value;
 }
