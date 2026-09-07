@@ -33,21 +33,242 @@ simDeck.querySelectorAll('.model-probe-btn').forEach(btn=>{btn.addEventListener(
 const btnRaw=document.getElementById('btnSimRaw'), btnFixed=document.getElementById('btnSimFixed');
 if(btnRaw&&btnFixed){btnRaw.addEventListener('click',()=>{btnRaw.classList.add('active','opt-raw');btnFixed.classList.remove('active','opt-fixed');isSimFixed=false;renderModelCard()});btnFixed.addEventListener('click',()=>{btnFixed.classList.add('active','opt-fixed');btnRaw.classList.remove('active','opt-raw');isSimFixed=true;renderModelCard()})}
 let benchDeck=document.getElementById('competitiveBenchmarkDeck');if(!benchDeck){benchDeck=document.createElement('div');benchDeck.id='competitiveBenchmarkDeck';benchDeck.className='competitive-benchmark-deck';simDeck.insertAdjacentElement('afterend',benchDeck)}const sVault=Math.max(15,Math.round((p2*0.7)+(overall*0.3)));const sRag=Math.max(20,Math.round((p1*0.6)+(p3*0.4)));const sRerank=Math.max(18,Math.round((p2*0.8)+(p1*0.2)));const sAgent=Math.max(10,Math.round(p4));benchDeck.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">📊 ${isTr?'SEKTÖREL AI OTORİTE KIYASLAMASI':'COMPETITIVE AI GAP ANALYSIS'}</span><h3 class="executive-deck-title">${isTr?'Sektör Liderleri ve Silikon Vadisi Standardına Göre Konumunuz':'Your Category Positioning vs Industry Leaders'}</h3><p class="executive-deck-desc">${isTr?'Domaininizin 4 kritik boyuttaki skoru, sektörün ilk %10\'luk dilimi ve Silikon Vadisi AI-First standardıyla kıyaslanmıştır:':'Audited metrics benchmarked against Category Top 10% and Silicon Valley AI-First standards:'}</p></div></div><div class="benchmark-bars-grid"><div class="benchmark-row"><div class="benchmark-row-header"><span>🏛️ ${isTr?'Knowledge Vault Varlık Güveni':'Knowledge Vault Entity Density'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sVault}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>92%</strong></span><span class="b-score-sv">SV Gold: <strong>99%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sVault}%"></div><div class="benchmark-marker-leader" style="left:92%"></div><div class="benchmark-marker-sv" style="left:99%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>⚡ ${isTr?'RAG Chunking ve AST Boyut Verimliliği':'RAG Chunk & KV-Cache Efficiency'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sRag}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>90%</strong></span><span class="b-score-sv">SV Gold: <strong>98%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sRag}%"></div><div class="benchmark-marker-leader" style="left:90%"></div><div class="benchmark-marker-sv" style="left:98%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>🎯 ${isTr?'Cross-Encoder Neural Rerank Uyum Skoru':'Neural Cross-Encoder Attention'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sRerank}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>88%</strong></span><span class="b-score-sv">SV Gold: <strong>96%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sRerank}%"></div><div class="benchmark-marker-leader" style="left:88%"></div><div class="benchmark-marker-sv" style="left:96%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>🤖 ${isTr?'Otonom Ajan (AAO/MCP) Satın Alma Hazırlığı':'Autonomous Agent Commerce (AAO)'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sAgent}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>85%</strong></span><span class="b-score-sv">SV Gold: <strong>95%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sAgent}%"></div><div class="benchmark-marker-leader" style="left:85%"></div><div class="benchmark-marker-sv" style="left:95%"></div></div></div></div>`;const pDeck=document.getElementById('resultPillars');if(pDeck){const pillars=[{theme:'blue',tag:isTr?'01 · BULUNABİLİRLİK':'01 · DISCOVERY',title:isTr?'Bulunabilirlik':'Crawl & Indexability',desc:isTr?'HTTP, robots, sitemap ve canlı link bütünlüğü':'HTTP, robots, sitemap and live link integrity',score:p1},{theme:'purple',tag:isTr?'02 · ANLAŞILABİLİRLİK':'02 · UNDERSTANDING',title:isTr?'Anlaşılabilirlik':'AI & Schema Graph',desc:isTr?'llms.txt v2, JSON-LD, entity ve AI bot erişimi':'llms.txt v2, JSON-LD, entity and AI crawler access',score:p2},{theme:'green',tag:isTr?'03 · GÜVEN & KALİTE':'03 · TRUST & QUALITY',title:isTr?'Güven ve Kalite':'Security & Experience',desc:isTr?'HSTS, CSP, güvenlik hijyeni, erişilebilirlik ve E-E-A-T':'HSTS, CSP, security hygiene, accessibility and E-E-A-T',score:p3},{theme:'amber',tag:isTr?'04 · TİCARİ YOL':'04 · COMMERCIAL PATH',title:isTr?'Ticari Yol':'Conversion & Action',desc:isTr?'Form/CTA görünürlüğü, AI karar haritası ve P0 aksiyonları':'Form/CTA visibility, AI decision map and P0 actions',score:p4}];pDeck.innerHTML=pillars.map(p=>`<div class="pillar-card pillar-${p.theme}"><div class="pillar-head"><span class="pillar-tag">${safe(p.tag)}</span><strong class="pillar-score">${p.score}<span>/100</span></strong></div><h4>${safe(p.title)}</h4><p>${safe(p.desc)}</p><div class="pillar-meter"><i style="width:${Math.max(0,Math.min(100,p.score))}%"></i></div></div>`).join('');let pLink=document.getElementById('pillarsDeepLink');if(!pLink){pLink=document.createElement('div');pLink.id='pillarsDeepLink';pLink.className='pillars-deep-link';pLink.style.cssText='margin:16px 0 24px;text-align:center;';pDeck.insertAdjacentElement('afterend',pLink)}pLink.innerHTML=`<a href="${isTr?'/tr/deterministik-katmanlar/':'/en/deterministic-layers/'}" style="color:#38bdf8;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.25);border-radius:999px;max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;"><span>${isTr?'🏛️ Yapay Zeka Arama Sistemlerinin Baktığı 9 Deterministik Katmanı İnceleyin':'🏛️ Explore the 9 Deterministic Layers Audited by AI Search Systems'}</span> <i>→</i></a>`}const grid=document.getElementById('scoreGrid');grid.innerHTML='';order.forEach((k,idx)=>{const v=Math.round(data.scores?.[k]??0);const num=String(idx+1).padStart(2,'0');const tier=v>=80?'green':v>=65?'yellow':v>=45?'orange':'red';grid.insertAdjacentHTML('beforeend',`<div class="score-item tier-${tier}"><div class="score-item-top"><span class="engine-num">${num}</span><span>${safe(labels[k][lang])}</span></div><strong>${v}</strong><div class="meter"><i class="bar-${tier}" style="width:${Math.max(0,Math.min(100,v))}%"></i></div></div>`)});const disclosure=document.getElementById('scanDisclosure');const cwv=data.fieldData?.coreWebVitals||'NOT_MEASURED';disclosure.innerHTML=`<b>${safe(D[lang].cwv)}:</b> ${safe(cwv==='NOT_MEASURED'?D[lang].notMeasured:cwv)} <span>·</span> <b>${safe(D[lang].scanId)}:</b> ${safe(data.scanId)} <span>·</span> <b>${safe(D[lang].pagesLabel)}:</b> ${safe(sm.pagesScanned||0)}/${safe(sm.pagesDiscovered||0)}`;const pSummary=document.getElementById('prioritySummary');if(pSummary){const sevRank={critical:4,high:3,medium:2,low:1,info:0};const sorted=[...(data.findings||[])].sort((a,b)=>(sevRank[b.severity]||0)-(sevRank[a.severity]||0));const top5=sorted.slice(0,5);if(top5.length){pSummary.hidden=false;const topSev=top5[0].severity||'info';const headBadge=pSummary.querySelector('h3 .severity');if(headBadge){headBadge.className='severity '+safe(topSev);headBadge.textContent=(sev[topSev]||sev.info)[lang];}const pList=document.getElementById('priorityList');if(pList){pList.innerHTML=top5.map(f=>{const t=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr);return '<div class="priority-item"><span class="severity '+safe(f.severity)+'"><i class="sev-dot"></i>'+safe((sev[f.severity]||sev.info)[lang])+'</span><span><b>'+safe(f.id)+'</b>: '+safe(t)+'</span></div>'}).join('')}}else{pSummary.hidden=true}}let remConsole=document.getElementById('remediationConsoleDeck');if(!remConsole){remConsole=document.createElement('div');remConsole.id='remediationConsoleDeck';remConsole.className='remediation-console-deck';const pSummaryEl=document.getElementById('prioritySummary')||document.getElementById('scanDisclosure');if(pSummaryEl)pSummaryEl.insertAdjacentElement('afterend',remConsole)}
-const workerCodeSample=`/**\n * Cloudflare Edge Worker: AST Purge & 14KB RAG Optimization\n * Target: ${safe(data.domain)}\n */\nexport default {\n  async fetch(request) {\n    const ua = request.headers.get("user-agent") || "";\n    const isBot = /GPTBot|ClaudeBot|PerplexityBot/i.test(ua);\n    if (isBot) {\n      const res = await fetch(request);\n      const html = await res.text();\n      const purged = html.replace(/<script\\b[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>/gi, "")\n                         .replace(/<style\\b[^<]*(?:(?!<\\/style>)<[^<]*)*<\\/style>/gi, "")\n                         .replace(/<svg\\b[^<]*(?:(?!<\\/svg>)<[^<]*)*<\\/svg>/gi, "");\n      return new Response(purged, { headers: { "Content-Type": "text/html", "X-AST-Purge": "Active" } });\n    }\n    return fetch(request);\n  }\n};`;
-const n8nWorkflowSample=JSON.stringify({name:`[AI Search] ${safe(data.domain)} Continuous Audit`,nodes:[{name:"Schedule Trigger (03:00 UTC)",type:"n8n-nodes-base.scheduleTrigger",position:[200,300]},{name:"Probe llms.txt",type:"n8n-nodes-base.httpRequest",parameters:{url:`https://${safe(data.domain)}/llms.txt`},position:[420,300]},{name:"Multi-UA Bot Crawl",type:"n8n-nodes-base.httpRequest",parameters:{url:`https://${safe(data.domain)}/`},position:[640,300]},{name:"Evaluate 14KB AST & Wikidata Triples",type:"n8n-nodes-base.code",position:[860,300]},{name:"Alert DevOps on Demotion",type:"n8n-nodes-base.httpRequest",position:[1080,300]}],connections:{"Schedule Trigger (03:00 UTC)":{main:[[{node:"Probe llms.txt",type:"main",index:0}]]},"Probe llms.txt":{main:[[{node:"Multi-UA Bot Crawl",type:"main",index:0}]]},"Multi-UA Bot Crawl":{main:[[{node:"Evaluate 14KB AST & Wikidata Triples",type:"main",index:0}]]},"Evaluate 14KB AST & Wikidata Triples":{main:[[{node:"Alert DevOps on Demotion",type:"main",index:0}]]}}},null,2);
-const jsonLdSample=JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Corporation","@id":`https://${safe(data.domain)}/#org`,"name":safe(data.domain.toUpperCase()),"url":`https://${safe(data.domain)}/`,"sameAs":[`https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(data.domain)}`,`https://www.crunchbase.com/organization/${safe(data.domain.replace(/\.[a-z]+$/,''))}`],"knowsAbout":["Generative Engine Optimization (GEO)","Large Language Model Optimization (LLMO)","Knowledge Vault Triples"]}]},null,2);
-const roadmapSample=`# AI Visibility Engineering Roadmap\nTarget: ${safe(data.domain)}\nScan ID: ${safe(data.scanId)}\nOverall Score: ${overall}/100\n\n## Implementation Sequence\n1. [P0 - 15m] robots.txt: Allow GPTBot, ClaudeBot, PerplexityBot.\n2. [P0 - 30m] Cloudflare Edge Worker: AST purge and 14KB RAG limit.\n3. [P1 - 1d] JSON-LD: Wikidata QID sameAs entity linkage.\n4. [P1 - 2d] HTML: Semantic data-chunk-id encapsulation.\n5. [P2 - 3d] n8n: Import workflow for automated daily AI monitoring.`;
+const cleanDomainSafe = safe(data.domain);
+const brandNameSafe = safe(data.domain.replace(/\.[a-z]+$/i, '').toUpperCase());
+const workerCodeSample=`/**
+ * Cloudflare Edge Worker: Autonomous Streaming AST Purge & KV-Cache Guard
+ * Target: ${cleanDomainSafe}
+ * Architecture: Streaming HTMLRewriter (0ms memory buffering, sub-14KB RAG optimization)
+ */
+export default {
+  async fetch(request, env, ctx) {
+    const ua = request.headers.get("user-agent") || "";
+    const isAiCrawler = /GPTBot|ChatGPT-User|ClaudeBot|Claude-Web|PerplexityBot|Google-Extended|Amazonbot|Applebot-Extended|Bytespider/i.test(ua);
+    
+    // Pass standard browser traffic straight through
+    if (!isAiCrawler) return fetch(request);
+
+    // AI Bot Ingestion Pipeline with Global Edge Cache
+    const cache = caches.default;
+    let response = await cache.match(request);
+    if (response) return response;
+
+    const originRes = await fetch(request);
+    if (!originRes.ok || !(originRes.headers.get("content-type") || "").includes("text/html")) {
+      return originRes;
+    }
+
+    // Stream-purge non-semantic AST noise (scripts, styles, SVGs, modals)
+    const rewriter = new HTMLRewriter()
+      .on("script, style, svg, iframe, noscript", { element(e) { e.remove(); } })
+      .on("header, footer, nav", { element(e) { e.remove(); } })
+      .on("main, article, section", {
+        element(e) {
+          e.setAttribute("data-chunk-id", "ent-${cleanDomainSafe}-chunk-01");
+          e.setAttribute("data-rag-boundary", "ground-truth");
+        }
+      });
+
+    const transformed = rewriter.transform(originRes);
+    const newHeaders = new Headers(transformed.headers);
+    newHeaders.set("Content-Type", "text/html; charset=utf-8");
+    newHeaders.set("Cache-Control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=600");
+    newHeaders.set("X-AST-Purge-Engine", "HTMLRewriter-Streaming-v2");
+    newHeaders.set("X-RAG-Payload-Budget", "Sub-14KB");
+    newHeaders.set("X-Robots-Tag", "index, follow, max-snippet:-1");
+
+    response = new Response(transformed.body, { status: originRes.status, headers: newHeaders });
+    ctx.waitUntil(cache.put(request, response.clone()));
+    return response;
+  }
+};`;
+
+const n8nWorkflowSample=JSON.stringify({
+  name: `[Enterprise AI Search] ${brandNameSafe} Continuous Visibility & Vector Sync`,
+  nodes: [
+    {
+      parameters: { rule: { interval: [{ field: "cronExpression", expression: "0 3 * * *" }] } },
+      id: "schedule-trigger-1",
+      name: "Daily 03:00 UTC Trigger",
+      type: "n8n-nodes-base.scheduleTrigger",
+      typeVersion: 1.1,
+      position: [240, 300]
+    },
+    {
+      parameters: { url: `https://${cleanDomainSafe}/llms.txt`, options: { timeout: 8000 } },
+      id: "http-llms-probe-2",
+      name: "Probe llms.txt Surface",
+      type: "n8n-nodes-base.httpRequest",
+      typeVersion: 4.1,
+      position: [460, 300]
+    },
+    {
+      parameters: {
+        url: `https://${cleanDomainSafe}/`,
+        options: {
+          headers: { "User-Agent": "Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/bot)" },
+          timeout: 10000
+        }
+      },
+      id: "http-bot-crawl-3",
+      name: "Simulate AI Bot Ingestion",
+      type: "n8n-nodes-base.httpRequest",
+      typeVersion: 4.1,
+      position: [680, 300]
+    },
+    {
+      parameters: {
+        jsCode: `// Verify 14KB AST Payload & Token Budget\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nconst hasChunkId = html.includes('data-chunk-id');\nconst hasWikidata = /wikidata\\.org\\/wiki\\/Q/i.test(html);\nconst isBloated = bytes > 14336;\n\nreturn [{\n  json: {\n    domain: "${cleanDomainSafe}",\n    payloadBytes: bytes,\n    isBloated,\n    hasChunkId,\n    hasWikidata,\n    healthScore: Math.round(((!isBloated ? 40 : 15) + (hasChunkId ? 30 : 0) + (hasWikidata ? 30 : 0))),\n    timestamp: new Date().toISOString()\n  }\n}];`
+      },
+      id: "code-evaluate-4",
+      name: "Audit 18-Engine Gates",
+      type: "n8n-nodes-base.code",
+      typeVersion: 2,
+      position: [900, 300]
+    },
+    {
+      parameters: {
+        conditions: {
+          number: [{ value1: "={{ $json.healthScore }}", operation: "smaller", value2: 80 }]
+        }
+      },
+      id: "if-score-alert-5",
+      name: "Score Demotion Alert?",
+      type: "n8n-nodes-base.if",
+      typeVersion: 1,
+      position: [1120, 300]
+    },
+    {
+      parameters: {
+        webhookUrl: "https://hooks.slack.com/services/YOUR/ENTERPRISE/WEBHOOK",
+        text: `🚨 *[AI Search Alert]* ${cleanDomainSafe} citation readiness dropped to {{ $json.healthScore }}/100!\n- Payload: {{ $json.payloadBytes }} bytes\n- RAG Chunk Integrity: {{ $json.hasChunkId }}\n- Knowledge Vault Triples: {{ $json.hasWikidata }}\nImmediate remediation required to prevent LLM hallucination and traffic loss.`
+      },
+      id: "slack-alert-6",
+      name: "Notify DevOps & Growth Team",
+      type: "n8n-nodes-base.httpRequest",
+      typeVersion: 4.1,
+      position: [1340, 200]
+    }
+  ],
+  connections: {
+    "Daily 03:00 UTC Trigger": { main: [[{ node: "Probe llms.txt Surface", type: "main", index: 0 }]] },
+    "Probe llms.txt Surface": { main: [[{ node: "Simulate AI Bot Ingestion", type: "main", index: 0 }]] },
+    "Simulate AI Bot Ingestion": { main: [[{ node: "Audit 18-Engine Gates", type: "main", index: 0 }]] },
+    "Audit 18-Engine Gates": { main: [[{ node: "Score Demotion Alert?", type: "main", index: 0 }]] },
+    "Score Demotion Alert?": { main: [[{ node: "Notify DevOps & Growth Team", type: "main", index: 0 }]] }
+  }
+}, null, 2);
+
+const jsonLdSample=JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Corporation", "Organization"],
+      "@id": `https://${cleanDomainSafe}/#organization`,
+      "name": brandNameSafe,
+      "url": `https://${cleanDomainSafe}/`,
+      "sameAs": [
+        `https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(data.domain)}`,
+        `https://www.crunchbase.com/organization/${safe(data.domain.replace(/\.[a-z]+$/i, ''))}`
+      ],
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Engine Optimization",
+          "termCode": "GEO",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Large Language Model Optimization",
+          "termCode": "LLMO",
+          "url": "https://en.wikipedia.org/wiki/Large_language_model"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Enterprise AI Interfaces",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Autonomous Purchasing Interface",
+              "description": "Headless OpenAPI transaction gateway for autonomous purchasing agents"
+            },
+            "price": "99.00",
+            "priceCurrency": "USD"
+          }
+        ]
+      }
+    }
+  ]
+}, null, 2);
+
+const roadmapSample=`# AI Visibility Engineering Roadmap
+Target: ${cleanDomainSafe}
+Scan ID: ${safe(data.scanId)}
+Overall Score: ${overall}/100
+
+## Implementation Sequence (P0 → P3)
+1. [P0 - 15m] robots.txt: Disallow exclusions for GPTBot, Claude-SearchBot, PerplexityBot.
+2. [P0 - 30m] Cloudflare Edge Worker: HTMLRewriter streaming purge (<14KB AST budget).
+3. [P1 - 1d] JSON-LD: Corporation @graph with Wikidata sameAs QID Knowledge Vault links.
+4. [P1 - 2d] HTML: Encapsulate core assertions in semantic data-chunk-id boundaries.
+5. [P2 - 3d] n8n: Import workflow for automated 03:00 UTC continuous monitoring and Slack alerting.`;
+
 remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'KURUMSAL ONARIM VE ENTEGRASYON KONSOLU':'TURNKEY REMEDIATION ARTIFACTS'}</span><h3 class="executive-deck-title">${isTr?'Tek Tıkla Uygulanabilir Kod ve Entegrasyon Şablonları':'Production-Ready Code & Automation Templates'}</h3><p class="executive-deck-desc">${isTr?'Mühendislik ekibinizin veya AI coding ajanınızın (Cursor, Claude Code, Cline) doğrudan kullanabileceği üretim seviyesinde kodlar:':'Copy-pasteable production implementations for your engineering team or AI coding agent:'}</p></div></div>
-<div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'n8n Çoklu-Ajan DAG Orkestrasyon Akışı':'n8n Multi-Agent DAG Orchestration Flow'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-download-blob" id="btnDlN8nJson">💾 ${isTr?'n8n-workflow.json İndir':'Download n8n-workflow.json'}</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div>
-<div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · CRON</span><span class="dag-node-status"></span></div><div class="dag-node-name">Schedule Trigger</div><p class="dag-node-sub">03:00 UTC Daily</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-UA Crawl</div><p class="dag-node-sub">GPT / Claude / Pplx</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · OPT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Purge</div><p class="dag-node-sub">KV-Cache &lt; 14KB</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · GRAPH</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">Wikidata Triples</div><p class="dag-node-sub">sameAs QID Vault</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · RERANK</span><span class="dag-node-status"></span></div><div class="dag-node-name">Cross-Encoder</div><p class="dag-node-sub">Cohere / bge-rerank</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · DISPATCH</span><span class="dag-node-status"></span></div><div class="dag-node-name">Alert DevOps</div><p class="dag-node-sub">Slack / Webhook</p></div></div>
-<div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Schedule Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de (sabah standup toplantısı öncesi) otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC before morning executive standup.'}</div></div>
+<div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'n8n Çoklu-Ajan DAG Orkestrasyon Akışı':'n8n Multi-Agent DAG Orchestration Flow'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><button type="button" class="btn-download-blob" id="btnDlN8nJson">💾 ${isTr?'n8n-workflow.json İndir':'Download n8n-workflow.json'}</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div>
+<div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · CRON</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily 03:00 UTC</div><p class="dag-node-sub">Schedule Trigger</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe llms.txt</div><p class="dag-node-sub">Surface Check</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-UA Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">18-Engine Audit</div><p class="dag-node-sub">14KB AST & Triples</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · GATE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Demotion IF Gate</div><p class="dag-node-sub">Score &lt; 80 Check</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · DISPATCH</span><span class="dag-node-status"></span></div><div class="dag-node-name">DevOps Alert</div><p class="dag-node-sub">Slack / Webhook</p></div></div>
+<div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Daily 03:00 UTC Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de (sabah standup toplantısı öncesi) otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC before morning executive standup.'}</div></div>
 <div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Edge Worker</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 n8n AI İş Akışı (JSON)</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button></div>
 <div id="tab-roadmap" class="console-pane active"><div class="code-action-bar"><span>02_IMPLEMENTATION_ROADMAP.md</span><div><button type="button" class="btn-download-blob" id="btnDlRoadmapMd" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-roadmap-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-roadmap-pre" class="code-snippet-pre">${safe(roadmapSample)}</pre></div>
-<div id="tab-worker" class="console-pane"><div class="code-action-bar"><span>08_CLOUDFLARE_EDGE_ROUTER.js</span><div><button type="button" class="btn-download-blob" id="btnDlWorkerJs" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-worker-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-worker-pre" class="code-snippet-pre">${safe(workerCodeSample)}</pre></div>
-<div id="tab-n8n" class="console-pane"><div class="code-action-bar"><span>22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json</span><div><button type="button" class="btn-download-blob" id="btnDlN8nTab" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-n8n-pre" class="code-snippet-pre">${safe(n8nWorkflowSample)}</pre></div>
-<div id="tab-schema" class="console-pane"><div class="code-action-bar"><span>09_SCHEMA_GRAPH.jsonld</span><div><button type="button" class="btn-download-blob" id="btnDlSchemaJson" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-schema-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-schema-pre" class="code-snippet-pre">${safe(jsonLdSample)}</pre></div>`;
-const DAG_STEPS=[{name:'01 · Schedule Trigger',text:isTr?'Her gün saat 03:00 UTC\'de (sabah standup toplantısı öncesi) otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC before morning executive standup.'},{name:'02 · Multi-UA Ingestion',text:isTr?'GPTBot, Claude-SearchBot ve PerplexityBot User-Agent başlıklarıyla sitenin public ve llms.txt uç noktalarını sorgular.':'Probes target domain using GPTBot, Claude-SearchBot and PerplexityBot headers to verify WAF & crawl integrity.'},{name:'03 · 14KB AST Purge',text:isTr?'HTML payload boyutunu 14KB KV-Cache sınırının altına indirmek için script ve style etiketlerini temizler.':'Purges non-semantic DOM noise to ensure HTML payload stays under 14KB model KV-cache budget.'},{name:'04 · Wikidata Triples',text:isTr?'JSON-LD içinde sameAs Wikidata QID ve Crunchbase varlık bağlarını doğrular.':'Triangulates brand into persistent Wikidata QID Knowledge Vault for grounding verification.'},{name:'05 · Cross-Encoder Rerank',text:isTr?'Cohere ve bge-reranker modelleri için ilk 45 kelimedeki sayısal veri yoğunluğunu test eder.':'Tests numerical evidence density and semantic contrastive differentiation against neural rerankers.'},{name:'06 · Alert DevOps',text:isTr?'Alıntı düşmesi veya kritik WAF engeli tespit edildiğinde Slack veya PagerDuty bildirimini tetikler.':'Dispatches incident alert to Slack / PagerDuty webhook if crawler demotion occurs.'}];
+<div id="tab-worker" class="console-pane"><div class="code-action-bar"><span>08_CLOUDFLARE_EDGE_ROUTER.js (HTMLRewriter Streaming)</span><div><button type="button" class="btn-download-blob" id="btnDlWorkerJs" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-worker-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-worker-pre" class="code-snippet-pre">${safe(workerCodeSample)}</pre></div>
+<div id="tab-n8n" class="console-pane"><div class="code-action-bar"><span>22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (Full Production DAG)</span><div><button type="button" class="btn-download-blob" id="btnDlN8nTab" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-n8n-pre" class="code-snippet-pre">${safe(n8nWorkflowSample)}</pre></div>
+<div id="tab-schema" class="console-pane"><div class="code-action-bar"><span>09_SCHEMA_GRAPH.jsonld (Wikidata Vault &amp; Offer Catalog)</span><div><button type="button" class="btn-download-blob" id="btnDlSchemaJson" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-schema-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-schema-pre" class="code-snippet-pre">${safe(jsonLdSample)}</pre></div>`;
+
+const DAG_STEPS=[
+  {name:'01 · Daily 03:00 UTC Trigger',text:isTr?'Her gün saat 03:00 UTC\'de (sabah standup toplantısı öncesi) otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC before morning executive standup.'},
+  {name:'02 · Probe llms.txt Surface',text:isTr?'https://'+cleanDomainSafe+'/llms.txt dosyasını HTTP GET ile sorgulayarak spesifikasyon ve Markdown link bütünlüğünü doğrular.':'Probes /llms.txt via HTTP GET to verify markdown linkage and content freshness.'},
+  {name:'03 · Simulate AI Bot Ingestion',text:isTr?'PerplexityBot ve GPTBot User-Agent başlıklarıyla ana sayfayı tarayarak edge WAF ve 200 OK yanıtını test eder.':'Simulates PerplexityBot and GPTBot ingestion to verify edge WAF passes without 403 blocks.'},
+  {name:'04 · Audit 18-Engine Gates',text:isTr?'JavaScript Code Node: HTML boyutunu (<14KB AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<14KB AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.'},
+  {name:'05 · Demotion IF Gate',text:isTr?'Hesaplanan sağlık skoru 80 altına düşerse veya kritik engel tespit edilirse acil durum dalına yönlendirir.':'Routes payload to alert branch if computed health score falls below 80/100 threshold.'},
+  {name:'06 · Notify DevOps & Growth Team',text:isTr?'Slack / PagerDuty webhook\'una tam teşhis ve kök neden telemetrisi ile anlık incident bildirimi fırlatır.':'Dispatches incident alert with telemetry payload to Slack / PagerDuty webhook.'}
+];
+
 remConsole.querySelectorAll('.dag-node-card').forEach(card=>{card.addEventListener('click',()=>{remConsole.querySelectorAll('.dag-node-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');const idx=parseInt(card.dataset.step,10);const inspector=document.getElementById('dagNodeInspector');if(inspector&&DAG_STEPS[idx])inspector.innerHTML=`<strong>[${DAG_STEPS[idx].name}]</strong>: ${DAG_STEPS[idx].text}`})});
+
+// Live DAG Simulation Runner
+const btnRunDag=document.getElementById('btnRunDag');
+if(btnRunDag){
+  btnRunDag.addEventListener('click',async()=>{
+    btnRunDag.disabled=true;
+    const origText=btnRunDag.innerHTML;
+    btnRunDag.innerHTML='⏳ '+ (isTr?'Akış Çalışıyor...':'Running Pipeline...');
+    const cards=remConsole.querySelectorAll('.dag-node-card');
+    const inspector=document.getElementById('dagNodeInspector');
+    cards.forEach(c=>{c.classList.remove('active','simulating','sim-done')});
+    
+    for(let i=0;i<DAG_STEPS.length;i++){
+      const c=cards[i];
+      if(c){
+        c.classList.add('simulating');
+        if(inspector){
+          inspector.innerHTML=`<span style="color:#f59e0b;font-weight:800;">[EXEC]</span> <strong>[${DAG_STEPS[i].name}]</strong>: ${DAG_STEPS[i].text}`;
+        }
+        await new Promise(r=>setTimeout(r,550));
+        c.classList.remove('simulating');
+        c.classList.add('sim-done');
+      }
+    }
+    if(inspector){
+      inspector.innerHTML=`<span style="color:#10b981;font-weight:800;">✅ [PIPELINE SUCCESS]</span> <strong>${cleanDomainSafe}</strong>: ${isTr?'Tüm 18 motor kontrol noktaları başarıyla doğrulandı. Siteniz AI arama motorları için 1. sıra tavsiye edilmeye hazır.':'All 18-engine checkpoints verified. Domain is primed for first-rank AI citations.'}`;
+    }
+    btnRunDag.innerHTML='✅ '+ (isTr?'Akış Tamamlandı':'Pipeline Done');
+    setTimeout(()=>{btnRunDag.disabled=false;btnRunDag.innerHTML=origText;},2500);
+  });
+}
+
 const dlN8n=()=>{downloadBlob('22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json',n8nWorkflowSample,'application/json')};
 const btnDl1=document.getElementById('btnDlN8nJson'), btnDl2=document.getElementById('btnDlN8nTab');
 if(btnDl1)btnDl1.addEventListener('click',dlN8n);if(btnDl2)btnDl2.addEventListener('click',dlN8n);

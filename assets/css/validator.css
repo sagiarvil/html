@@ -896,10 +896,35 @@ html[data-theme="light"] .authority-hero .kicker b {
   display: flex;
   justify-content: space-between;
 }
-.arr-calc-slider {
-  accent-color: #ef4444;
+/* Live DAG Execution Simulator */
+.btn-run-dag {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: 1px solid rgba(16, 185, 129, 0.6);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.btn-run-dag:hover {
+  background: #059669;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}
+.dag-node-card.simulating {
+  border-color: #f59e0b !important;
+  background: rgba(245, 158, 11, 0.15) !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4) !important;
+  transform: scale(1.03);
+}
+.dag-node-card.sim-done {
+  border-color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.12) !important;
 }
 
 @media print {
