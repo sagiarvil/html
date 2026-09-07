@@ -72,7 +72,7 @@ def build_methodology():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'methodology')}
@@ -182,7 +182,7 @@ def build_evidence_standard():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'methodology')}
@@ -294,7 +294,7 @@ def build_crawler_reference():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'methodology')}
@@ -457,7 +457,7 @@ def build_company_legal():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'company')}

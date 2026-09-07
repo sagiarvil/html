@@ -82,7 +82,7 @@ def build_tools_hub():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'tools')}
@@ -166,7 +166,7 @@ def build_platform_hub():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'platform')}
@@ -314,7 +314,7 @@ def build_pricing_hub():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'pricing')}
@@ -441,7 +441,7 @@ def build_fix_mandate_hub():
   ]
 }}
 </script>
-<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/theme.js?v=4"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'fix-mandate')}
