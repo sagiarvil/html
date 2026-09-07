@@ -93,14 +93,14 @@ button, input, textarea, select { font: inherit; }
 .brand-logo {
   display: inline-block;
   vertical-align: middle;
-  height: 24px;
+  height: 28px;
   width: auto;
   max-width: 180px;
   object-fit: contain;
   transition: filter .2s ease;
 }
-footer .brand-logo { height: 22px; }
-@media (max-width: 600px) { .brand-logo { height: 20px; } }
+footer .brand-logo { height: 24px; }
+@media (max-width: 600px) { .brand-logo { height: 22px; } }
 html[data-theme="dark"] .brand-logo { filter: invert(1) brightness(1.1); }
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) .brand-logo { filter: invert(1) brightness(1.1); }
