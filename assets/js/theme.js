@@ -1,16 +1,40 @@
 (()=>{
 const KEY='hh-theme';const root=document.documentElement;
-let selected=localStorage.getItem(KEY)||'dark';
-const media=matchMedia('(prefers-color-scheme: dark)');
+function getSavedTheme() {
+  try {
+    const hh = localStorage.getItem('hh-theme');
+    if (hh === 'light' || hh === 'dark' || hh === 'system') return hh;
+  } catch(e) {}
+  try {
+    const v2 = localStorage.getItem('htmlandhtml-theme-v2');
+    if (v2) {
+      const p = JSON.parse(v2);
+      if (p && p.theme) return p.theme;
+    }
+  } catch(e) {}
+  try {
+    const match = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+    if (match) {
+      const parsed = JSON.parse(decodeURIComponent(match[1]));
+      if (parsed && parsed.theme) return parsed.theme;
+    }
+  } catch(e) {}
+  return 'dark';
+}
+let selected = getSavedTheme();
+const media = matchMedia('(prefers-color-scheme: dark)');
 
 const apply=()=>{
   let mode = selected;
   if(mode === 'system') {
     mode = media.matches ? 'dark' : 'light';
   }
-  root.dataset.theme=mode;
-  root.dataset.themePreference=selected;
-  root.style.colorScheme=mode;
+  root.dataset.theme = mode;
+  root.setAttribute('data-theme', mode);
+  root.dataset.themePreference = selected;
+  root.style.colorScheme = mode;
+  root.classList.toggle('dark', mode === 'dark');
+  root.classList.toggle('light', mode === 'light');
   
   // Update buttons
   document.querySelectorAll('.theme-switch button').forEach(b => {

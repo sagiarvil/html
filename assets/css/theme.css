@@ -445,14 +445,19 @@ html[data-theme="dark"] .scanbox .tabs {
   border-radius: 999px !important;
   padding: 6px 6px 6px 24px !important;
   min-height: 62px !important;
-  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.35), 0 0 24px rgba(0, 102, 255, 0.25) !important;
+  box-shadow: 0 4px 24px rgba(0, 102, 255, 0.25) !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
   text-align: left !important;
 }
 html[data-theme="dark"] .scanbox .field {
   background: var(--theme-bg-surface, #181a22) !important;
   border: 2px solid #0066ff !important;
-  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.35), 0 0 24px rgba(0, 102, 255, 0.25) !important;
+  box-shadow: 0 4px 24px rgba(0, 102, 255, 0.25) !important;
+}
+html[data-theme="light"] .scanbox .field {
+  background: #ffffff !important;
+  border: 2px solid #0066ff !important;
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.12) !important;
 }
 .scanbox .field:focus-within {
   border-color: #0066ff !important;
@@ -1929,7 +1934,13 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   .copy-bubble,
   [data-commercial-intent],
   .pillar-footer-banner,
-  .banner-cta {
+  .banner-cta,
+  .health-roadmap-deck,
+  #homepageIntelligence,
+  .tool-intelligence,
+  .pillars-deep-link,
+  .intel-bridge-banner,
+  .intel-filter-bar {
     display: none !important;
   }
 
@@ -2098,7 +2109,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   html[data-theme="dark"] .score-item {
     border: 1pt solid #cbd5e1 !important;
     background: #f8fafc !important;
-    background-color: var(--theme-text-primary, #f8fafc) !important;
+    background-color: #f8fafc !important;
     background-image: none !important;
     padding: 5pt 7pt !important;
     border-radius: 3pt !important;
@@ -2365,7 +2376,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   html[data-theme="dark"] .finding code {
     display: block !important;
     background: #f8fafc !important;
-    background-color: var(--theme-text-primary, #f8fafc) !important;
+    background-color: #f8fafc !important;
     color: #000000 !important;
     border: 1pt solid #cbd5e1 !important;
     padding: 5pt 7pt !important;
@@ -2414,8 +2425,7 @@ html[data-theme="dark"] .ai-term-strip a b {
 
 /* Frameless kickers across all pages */
 .kicker,
-html[data-theme="dark"] .kicker,
-html[data-theme="light"] .kicker {
+html[data-theme="dark"] .kicker {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -2424,9 +2434,20 @@ html[data-theme="light"] .kicker {
   color: #38bdf8 !important;
 }
 .kicker b,
-html[data-theme="dark"] .kicker b,
-html[data-theme="light"] .kicker b {
+html[data-theme="dark"] .kicker b {
   color: #38bdf8 !important;
+}
+html[data-theme="light"] .kicker,
+html[data-theme="light"] .kicker b,
+html[data-theme="light"] .hero .kicker,
+html[data-theme="light"] .hero .kicker b,
+html[data-theme="light"] .authority-hero .kicker,
+html[data-theme="light"] .authority-hero .kicker b {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #0284c7 !important;
+  font-weight: 800 !important;
 }
 .kicker span,
 html[data-theme="dark"] .kicker span,
@@ -3314,7 +3335,7 @@ html[data-theme="dark"] .authority-hero h1 em {
   html[data-theme="dark"] .score-item {
     border: 1pt solid #cbd5e1 !important;
     background: #f8fafc !important;
-    background-color: var(--theme-text-primary, #f8fafc) !important;
+    background-color: #f8fafc !important;
     background-image: none !important;
     padding: 5pt 7pt !important;
     border-radius: 3pt !important;
@@ -3576,7 +3597,7 @@ html[data-theme="dark"] .authority-hero h1 em {
   html[data-theme="dark"] .finding code {
     display: block !important;
     background: #f8fafc !important;
-    background-color: var(--theme-text-primary, #f8fafc) !important;
+    background-color: #f8fafc !important;
     color: #000000 !important;
     border: 1pt solid #cbd5e1 !important;
     padding: 5pt 7pt !important;
@@ -3912,9 +3933,9 @@ html[data-theme="light"] .topbar {
 }
 
 html[data-theme="light"] .scanbox {
-  background: var(--bg-card) !important;
-  border-color: var(--line) !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 30px rgba(0,0,0,.06) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 html[data-theme="light"] .scanbox input {
@@ -4153,6 +4174,7 @@ html[data-theme="light"] .score-grid {
 
 html[data-theme="light"] .score-item {
   border-color: #e2e8f0 !important;
+  background: #ffffff !important;
 }
 
 html[data-theme="light"] .score-item strong {
@@ -4196,7 +4218,7 @@ html[data-theme="light"] #findingCount {
 
 html[data-theme="light"] .finding {
   border-bottom: 1px solid #e2e8f0 !important;
-  background: transparent !important;
+  background: #ffffff !important;
 }
 
 html[data-theme="light"] .finding h4 {
@@ -4258,34 +4280,151 @@ html[data-theme="light"] .locked-fix {
 }
 
 html[data-theme="light"] .mandate-card {
-  background: #0f172a !important;
-  color: #ffffff !important;
-  border: 1px solid #1e293b !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-top: 4px solid #0066ff !important;
+  box-shadow: 0 8px 30px rgba(0, 102, 255, 0.08) !important;
 }
 
 html[data-theme="light"] .mandate-card .eyebrow {
-  color: #38bdf8 !important;
+  color: #0284c7 !important;
 }
 
 html[data-theme="light"] .mandate-card h3 {
-  color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 html[data-theme="light"] .mandate-card p {
-  color: #94a3b8 !important;
+  color: #475569 !important;
 }
 
 html[data-theme="light"] .mandate-card li {
-  color: #cbd5e1 !important;
-  border-color: #1e293b !important;
+  color: #334155 !important;
+  border-color: #f1f5f9 !important;
 }
 
 html[data-theme="light"] .mandate-card strong {
-  color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .mandate-card .note {
+  color: #64748b !important;
+}
+
+/* Sample Report Surface Styling (Light/Dark Parity) */
+.sample-report-deck {
+  background: #1e2028;
+  border: 1px solid #2d313e;
+  border-radius: 18px;
+  padding: 32px;
+  margin-bottom: 32px;
+  color: #f8fafc;
+}
+.sample-report-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2d313e;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+.sample-report-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+}
+.sample-report-head h2 {
+  font-size: 24px;
+  margin: 4px 0 0;
+  color: #ffffff;
+}
+.sample-report-status {
+  text-align: right;
+}
+.sample-report-status span {
+  font-size: 11px;
+  color: #94a3b8;
+  display: block;
+}
+.sample-report-status strong {
+  font-size: 22px;
+  font-weight: 900;
+  color: #10b981;
+}
+.sample-report-deck h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 24px 0 12px;
+}
+.sample-report-deck h3:first-of-type {
+  margin-top: 0;
+}
+.sample-code-block {
+  background: #0d0f14;
+  border: 1px solid #1e2330;
+  border-radius: 10px;
+  padding: 18px;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+.sample-compliance-box {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 14px;
+  padding: 18px 24px;
+  margin-bottom: 36px;
+  color: #fca5a5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.sample-compliance-box strong {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+html[data-theme="light"] .sample-report-deck {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sample-report-head {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+html[data-theme="light"] .sample-report-eyebrow {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .sample-report-head h2 {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sample-report-status span {
+  color: #64748b !important;
+}
+html[data-theme="light"] .sample-report-deck h3 {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sample-code-block {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sample-compliance-box {
+  background: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  color: #991b1b !important;
+}
+html[data-theme="light"] .sample-compliance-box strong {
+  color: #991b1b !important;
 }
 
 /* ==========================================================================
-   EXECUTIVE WHITE-LABEL PDF / PRINT ENGINE (STRICT LIGHT MODE AT ALL TIMES)
+   EXECUTIVE WHITE-LABEL PDF / PRINT ENGINE (STRICT 100% LIGHT MODE AT ALL TIMES)
+   Rule: Pure white page, deep black text, zero dark boxes, zero page break overlap
    ========================================================================== */
 @media print {
   @page {
@@ -4293,7 +4432,7 @@ html[data-theme="light"] .mandate-card strong {
     size: A4 portrait !important;
   }
 
-  /* Reset everything to pristine pure white and deep black */
+  /* Reset all elements to pure white background and legible typography */
   *,
   *::before,
   *::after {
@@ -4301,29 +4440,36 @@ html[data-theme="light"] .mandate-card strong {
     box-shadow: none !important;
     filter: none !important;
     backdrop-filter: none !important;
-    color: #000000 !important;
+    -webkit-backdrop-filter: none !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
   html,
+  html[data-theme],
   html[data-theme="dark"],
   html[data-theme="light"],
-  body {
+  body,
+  html[data-theme] body,
+  html[data-theme="dark"] body,
+  html[data-theme="light"] body {
     background: #ffffff !important;
     background-color: #ffffff !important;
     background-image: none !important;
-    color: #000000 !important;
+    color: #0f172a !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 9.5pt !important;
     line-height: 1.45 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Hide non-report chrome */
+  /* 1. Hide All Non-Report Chrome & Interactive UI */
   header,
   .topbar,
   footer,
   .hero,
+  .kicker,
   .scanbox,
   .signals,
   .px-section,
@@ -4338,18 +4484,35 @@ html[data-theme="light"] .mandate-card strong {
   .mandate-card,
   .status,
   .scan-chips,
-  .breadcrumbs {
+  .breadcrumbs,
+  .finding-conversion-teaser,
+  .findings-filter-bar,
+  #findingsFilterBar,
+  .locked-fix,
+  .health-roadmap-deck,
+  #homepageIntelligence,
+  .tool-intelligence,
+  .pillars-deep-link,
+  .intel-bridge-banner,
+  .intel-filter-bar,
+  .ai-decision-map,
+  .ai-decision-lock,
+  .ai-opportunity {
     display: none !important;
     visibility: hidden !important;
   }
 
-  /* Make Result Container Full Width and Print-Friendly */
+  /* 2. Full-Width Clean Report Shell */
   #result.results,
-  .results {
+  .results,
+  html[data-theme] #result.results,
+  html[data-theme="dark"] #result.results,
+  html[data-theme="light"] #result.results {
     display: block !important;
     visibility: visible !important;
     background: #ffffff !important;
     background-color: #ffffff !important;
+    background-image: none !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -4358,70 +4521,262 @@ html[data-theme="light"] .mandate-card strong {
     max-width: 100% !important;
   }
 
-  .result-head {
+  /* 3. Report Header */
+  .result-head,
+  html[data-theme] .result-head,
+  html[data-theme="dark"] .result-head {
     display: flex !important;
     justify-content: space-between !important;
     align-items: flex-end !important;
-    border-bottom: 2pt solid #000000 !important;
+    border-bottom: 2pt solid #0f172a !important;
     padding-bottom: 8pt !important;
     margin-bottom: 12pt !important;
-  }
-
-  #resultDomain {
-    font-size: 20pt !important;
-    font-weight: 900 !important;
-    color: #000000 !important;
-    margin: 0 0 4pt 0 !important;
-  }
-
-  #resultMeta {
-    font-size: 9pt !important;
-    color: #334155 !important;
-  }
-
-  .total-score {
-    width: auto !important;
-    height: auto !important;
-    border: 1.5pt solid #000000 !important;
-    border-radius: 6pt !important;
-    padding: 4pt 10pt !important;
-    display: flex !important;
-    align-items: baseline !important;
-  }
-
-  .total-score strong {
-    font-size: 22pt !important;
-    color: #000000 !important;
-  }
-
-  .total-score span {
-    font-size: 10pt !important;
-    color: #334155 !important;
-  }
-
-  .score-grid {
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    border: 1pt solid #cbd5e1 !important;
     background: #ffffff !important;
-    margin-bottom: 14pt !important;
+    background-color: #ffffff !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
 
-  .score-item {
-    padding: 6pt 8pt !important;
+  .result-head .eyebrow {
+    font-size: 8pt !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #0284c7 !important;
+    display: block !important;
+    margin-bottom: 2pt !important;
+  }
+
+  #resultDomain {
+    font-size: 18pt !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+    margin: 0 0 3pt 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  #resultMeta {
+    font-size: 8.5pt !important;
+    color: #475569 !important;
+    margin: 0 !important;
+  }
+
+  .total-score,
+  html[data-theme] .total-score,
+  html[data-theme="dark"] .total-score {
+    width: auto !important;
+    height: auto !important;
+    border: 1.5pt solid #0f172a !important;
+    border-radius: 4pt !important;
+    padding: 4pt 10pt !important;
+    display: flex !important;
+    align-items: baseline !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .total-score strong,
+  #overallScore {
+    font-size: 20pt !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+    line-height: 1 !important;
+  }
+
+  .total-score span {
+    font-size: 9pt !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+  }
+
+  /* 4. Executive Health Summary Deck */
+  .health-executive-summary,
+  #healthExecutiveDeck,
+  html[data-theme] .health-executive-summary,
+  html[data-theme="dark"] .health-executive-summary,
+  html[data-theme="light"] .health-executive-summary {
+    display: block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1.5pt solid #cbd5e1 !important;
+    border-radius: 4pt !important;
+    padding: 8pt 12pt !important;
+    margin-bottom: 10pt !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .health-executive-badge {
+    display: inline-block !important;
+    padding: 2.5pt 7pt !important;
+    border-radius: 3pt !important;
+    font-size: 7.5pt !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 4pt !important;
+    border: 1pt solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+  }
+  .health-badge-critical {
+    border-color: #f87171 !important;
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
+  }
+  .health-badge-warning {
+    border-color: #fcd34d !important;
+    background: #fffbeb !important;
+    color: #b45309 !important;
+  }
+  .health-badge-healthy {
+    border-color: #6ee7b7 !important;
+    background: #ecfdf5 !important;
+    color: #047857 !important;
+  }
+
+  .health-headline {
+    font-size: 11pt !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 0 3pt 0 !important;
+    line-height: 1.25 !important;
+  }
+
+  .health-subtext {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    line-height: 1.35 !important;
+    margin: 0 0 6pt 0 !important;
+  }
+
+  .health-counts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5pt !important;
+    margin: 0 !important;
+  }
+
+  .health-count-card {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-radius: 3pt !important;
+    padding: 3pt 5pt !important;
+    text-align: center !important;
+  }
+
+  .health-count-card strong {
+    font-size: 12pt !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    margin-bottom: 1pt !important;
+    display: block !important;
+  }
+  .health-count-critical strong { color: #dc2626 !important; }
+  .health-count-high strong { color: #d97706 !important; }
+  .health-count-medium strong { color: #0284c7 !important; }
+  .health-count-low strong { color: #16a34a !important; }
+
+  .health-count-card span {
+    font-size: 6.5pt !important;
+    font-weight: 750 !important;
+    text-transform: uppercase !important;
+    color: #475569 !important;
+  }
+
+  /* 5. 4-Pillars Summary Grid */
+  .result-pillars-grid,
+  html[data-theme] .result-pillars-grid,
+  html[data-theme="dark"] .result-pillars-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5pt !important;
+    margin-bottom: 10pt !important;
+    background: transparent !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .result-pillars-grid .pillar-card,
+  html[data-theme] .result-pillars-grid .pillar-card,
+  html[data-theme="dark"] .result-pillars-grid .pillar-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-radius: 3pt !important;
+    padding: 5pt 7pt !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .result-pillars-grid .pillar-tag {
+    font-size: 6.5pt !important;
+    color: #0f172a !important;
+    font-weight: 800 !important;
+  }
+
+  .result-pillars-grid .pillar-score,
+  .result-pillars-grid strong {
+    font-size: 11pt !important;
+    color: #0f172a !important;
+    font-weight: 900 !important;
+  }
+
+  .result-pillars-grid h4 {
+    font-size: 7.5pt !important;
+    color: #0f172a !important;
+    font-weight: 800 !important;
+    margin: 1pt 0 !important;
+  }
+
+  .result-pillars-grid p {
+    font-size: 6.5pt !important;
+    color: #334155 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  .pillar-meter {
+    display: none !important;
+  }
+
+  /* 6. Score Grid (12-18 Engines) */
+  .score-grid,
+  html[data-theme] .score-grid,
+  html[data-theme="dark"] .score-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    border: 1pt solid #cbd5e1 !important;
+    background: #ffffff !important;
+    margin-bottom: 10pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .score-item,
+  html[data-theme] .score-item,
+  html[data-theme="dark"] .score-item {
+    padding: 4pt 6pt !important;
     border: 0.5pt solid #e2e8f0 !important;
     background: #ffffff !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   .score-item strong {
-    font-size: 13pt !important;
-    color: #000000 !important;
+    font-size: 11pt !important;
+    color: #0f172a !important;
+    font-weight: 900 !important;
   }
 
   .score-item span {
-    font-size: 7.5pt !important;
+    font-size: 7pt !important;
     color: #475569 !important;
     font-weight: 750 !important;
   }
@@ -4430,133 +4785,255 @@ html[data-theme="light"] .mandate-card strong {
     display: none !important;
   }
 
-  .result-columns {
-    display: block !important;
-    width: 100% !important;
-  }
-
-  .result-title {
-    border-bottom: 1.5pt solid #000000 !important;
-    padding-bottom: 4pt !important;
+  .scan-disclosure {
+    font-size: 7pt !important;
+    color: #64748b !important;
+    border-top: 1pt solid #e2e8f0 !important;
+    padding-top: 3pt !important;
     margin-bottom: 10pt !important;
+    background: transparent !important;
   }
 
-  .result-title h3 {
-    font-size: 13pt !important;
-    font-weight: 900 !important;
-    color: #000000 !important;
-  }
-
-  #findingCount {
-    font-size: 9pt !important;
-    color: #475569 !important;
-  }
-
-  /* Single Finding Block: Never Split Across Pages */
-  .finding {
+  /* 7. Priority Summary */
+  .priority-summary,
+  html[data-theme] .priority-summary,
+  html[data-theme="dark"] .priority-summary {
     display: block !important;
-    position: static !important;
+    border: 1.5pt solid #0f172a !important;
+    border-left: 4pt solid #0284c7 !important;
     background: #ffffff !important;
     background-color: #ffffff !important;
-    border: 1pt solid #cbd5e1 !important;
-    border-radius: 6pt !important;
-    padding: 10pt 12pt !important;
+    background-image: none !important;
+    padding: 6pt 10pt !important;
     margin-bottom: 10pt !important;
+    border-radius: 3pt !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
     box-shadow: none !important;
   }
 
-  .finding h4 {
-    font-size: 11pt !important;
-    font-weight: 800 !important;
-    color: #000000 !important;
-    margin: 0 0 4pt 0 !important;
+  .priority-summary h3 {
+    font-size: 8.5pt !important;
+    color: #0f172a !important;
+    font-weight: 900 !important;
+    margin: 0 0 3pt 0 !important;
   }
 
-  .finding p {
-    font-size: 9pt !important;
+  .priority-item {
+    font-size: 7.5pt !important;
+    color: #0f172a !important;
+    padding: 2pt 0 !important;
+    border-bottom: 1pt solid #f1f5f9 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5pt !important;
+    background: transparent !important;
+  }
+
+  .priority-item span,
+  .priority-item span b {
+    color: #0f172a !important;
+  }
+
+  /* 8. Findings List (Full Width, Never Split Card Across Pages) */
+  .result-columns,
+  html[data-theme] .result-columns,
+  html[data-theme="dark"] .result-columns {
+    display: block !important;
+    width: 100% !important;
+  }
+  .result-columns > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .result-title {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    border-bottom: 1.5pt solid #0f172a !important;
+    padding-bottom: 3pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  .result-title h3 {
+    font-size: 11pt !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+  }
+
+  #findingCount {
+    font-size: 8.5pt !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+  }
+
+  .findings {
+    display: block !important;
+    background: transparent !important;
+  }
+
+  .finding,
+  article.finding,
+  html[data-theme] .finding,
+  html[data-theme="dark"] .finding {
+    display: block !important;
+    position: static !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-left: 3.5pt solid #0284c7 !important;
+    border-radius: 4pt !important;
+    padding: 8pt 10pt !important;
+    margin-bottom: 8pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+  .finding.finding-tier-critical,
+  article.finding[data-severity="critical"] {
+    border-left-color: #dc2626 !important;
+  }
+  .finding.finding-tier-high,
+  article.finding[data-severity="high"] {
+    border-left-color: #ea580c !important;
+  }
+  .finding.finding-tier-medium,
+  article.finding[data-severity="medium"] {
+    border-left-color: #0284c7 !important;
+  }
+  .finding.finding-tier-low,
+  article.finding[data-severity="low"],
+  article.finding[data-severity="info"] {
+    border-left-color: #16a34a !important;
+  }
+
+  .finding h4,
+  .finding-content h4 {
+    font-size: 9.5pt !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 0 3pt 0 !important;
+    line-height: 1.25 !important;
+  }
+
+  .finding p,
+  .finding-content p {
+    font-size: 8pt !important;
     color: #1e293b !important;
-    margin: 0 0 4pt 0 !important;
-    line-height: 1.4 !important;
+    margin: 0 0 3pt 0 !important;
+    line-height: 1.35 !important;
   }
 
   .finding-url {
-    font-size: 8pt !important;
-    color: #0f172a !important;
+    font-size: 7.5pt !important;
+    color: #0284c7 !important;
     word-break: break-all !important;
     font-family: monospace !important;
     display: block !important;
-    margin: 2pt 0 4pt !important;
+    margin: 2pt 0 3pt !important;
+    text-decoration: underline !important;
   }
 
   .finding code {
     background: #f8fafc !important;
     background-color: #f8fafc !important;
     border: 1pt solid #cbd5e1 !important;
-    color: #000000 !important;
+    color: #0f172a !important;
     font-family: monospace !important;
-    font-size: 8pt !important;
-    padding: 4pt 6pt !important;
+    font-size: 7.5pt !important;
+    padding: 3pt 5pt !important;
     display: block !important;
     white-space: pre-wrap !important;
     word-break: break-all !important;
-    margin-top: 4pt !important;
+    margin-top: 3pt !important;
+    border-radius: 3pt !important;
   }
 
   .finding-tags {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 4pt !important;
-    margin-bottom: 6pt !important;
+    gap: 3pt !important;
+    margin-bottom: 4pt !important;
   }
 
   .finding-tags span {
     background: #f1f5f9 !important;
     border: 1pt solid #cbd5e1 !important;
-    color: #000000 !important;
-    padding: 2pt 5pt !important;
-    font-size: 7.5pt !important;
-    border-radius: 3pt !important;
+    color: #0f172a !important;
+    padding: 1.5pt 4pt !important;
+    font-size: 7pt !important;
+    border-radius: 2pt !important;
     font-weight: 700 !important;
   }
 
   .finding-tags .severity {
-    border: 1.5pt solid #000000 !important;
+    border: 1.5pt solid #0f172a !important;
     font-weight: 900 !important;
+    color: #0f172a !important;
   }
 
   .health-dossier-box {
     background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    background-image: none !important;
     border: 1pt solid #e2e8f0 !important;
-    padding: 6pt 8pt !important;
-    border-radius: 4pt !important;
+    padding: 4pt 6pt !important;
+    border-radius: 3pt !important;
   }
 
   .health-dossier-label {
-    font-size: 7.5pt !important;
+    font-size: 7pt !important;
     font-weight: 800 !important;
-    color: #000000 !important;
+    color: #0284c7 !important;
+    display: block !important;
+    margin-bottom: 1pt !important;
   }
 
   .health-dossier-text {
-    font-size: 8pt !important;
+    font-size: 7.5pt !important;
     color: #334155 !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
   }
 
   .health-dossier-meta {
-    font-size: 8pt !important;
+    font-size: 7pt !important;
     color: #475569 !important;
     border-top: 0.5pt solid #cbd5e1 !important;
-    margin-top: 6pt !important;
-    padding-top: 4pt !important;
+    margin-top: 4pt !important;
+    padding-top: 3pt !important;
+    display: flex !important;
+    gap: 8pt !important;
   }
 
   .health-dossier-meta strong {
-    color: #000000 !important;
+    color: #0f172a !important;
   }
 
-  .locked-fix {
-    display: none !important;
+  /* 9. Sample Report Pages in Print */
+  .sample-report-deck,
+  .sample-report-deck * {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+  .sample-report-deck {
+    border: 1.5pt solid #cbd5e1 !important;
+    padding: 12pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .sample-code-block {
+    background: #f8fafc !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+  .sample-compliance-box {
+    background: #fef2f2 !important;
+    border: 1pt solid #fecaca !important;
+    color: #991b1b !important;
   }
 }

@@ -104,6 +104,7 @@
     root.classList.toggle(CONFIG.DARK_CLASS, isDark);
     root.classList.toggle(CONFIG.LIGHT_CLASS, !isDark);
     root.dataset.theme = isDark ? 'dark' : 'light';
+    root.setAttribute('data-theme', isDark ? 'dark' : 'light');
     root.style.colorScheme = isDark ? 'dark' : 'light';
     updateMetaThemeColor(isDark);
 

@@ -804,3 +804,23 @@
   }
 }
 
+/* Light Mode Overrides for Authority Surface */
+html[data-theme="light"] .authority-hero .kicker,
+html[data-theme="light"] .authority-hero .kicker b {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .authority-hero h1 em {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .authority-proof span {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+html[data-theme="light"] .guide-content a {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .guide-content a:hover {
+  color: #0369a1 !important;
+}
+

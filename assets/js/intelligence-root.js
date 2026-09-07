@@ -17,7 +17,7 @@ const copy={
   tr:{
     kicker:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
     title:'Arama ve AI İstihbarat Denetimleri',
-    note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri (ChatGPT, Claude, Perplexity, Gemini) nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + ████████ güvencesi alır.',
+    note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri (ChatGPT, Claude, Perplexity, Gemini) nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır.',
     badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
     badge13:'13 Derin Analiz',
     badge7:'6 Katmanlı Mimari',
@@ -29,7 +29,7 @@ const copy={
     t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
     t99Title:'2. Mühendislik Yol Haritası',
     t99Price:'$99 Tek Seferlik',
-    t99Desc:'Nasıl düzeltilecek? Sitedeki TÜM sorunların çözümü TEK BİR $99 paketindedir. 5 kritik kontrol noktası ████████ ile güvence altına alınır.',
+    t99Desc:'Nasıl düzeltilecek? Sitedeki TÜM sorunların çözümü TEK BİR $99 paketindedir. 5 kritik kontrol noktası mühendislik paketi ile güvence altına alınır.',
     t99Cta:'$99 Mühendislik Paketini Aç →',
     lenses:'6 Katmanlı Derin Mimari',
     priorities:'Öncelikli Stratejik Karar Alanları',
@@ -47,13 +47,13 @@ const copy={
     capstoneCta:'🔒 TÜM Çözümleri Tek Paket ($99) ile Aç →',
     bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
     bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
-    bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Sitedeki TÜM sorunların çözümü TEK BİR ████████ paketindedir. Kaybı önlemek için tüm kilidi tek seferde açın.',
+    bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Sitedeki TÜM sorunların çözümü TEK BİR $99 Fix Mandate paketindedir. Kaybı önlemek için tüm kilidi tek seferde açın.',
     bridgeBtn99:'Kaybı Önle →'
   },
   en:{
     kicker:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
     title:'Search & AI Intelligence Audits',
-    note:'This section is 100% FREE ($0). It transparently documents 13 technical vulnerabilities and 7 readiness dimensions of your site across search engines and AI models (ChatGPT, Claude, Perplexity, Gemini) with live evidence. Step-by-step code remediation, priority ordering, and the ████████ package are unlocked in the $99 Roadmap layer.',
+    note:'This section is 100% FREE ($0). It transparently documents 13 technical vulnerabilities and 7 readiness dimensions of your site across search engines and AI models (ChatGPT, Claude, Perplexity, Gemini) with live evidence. Step-by-step code remediation, priority ordering, and the turnkey engineering package are unlocked in the $99 Roadmap layer.',
     badgeFree:'🟢 $0 Free Diagnostic Layer',
     badge13:'13 Deep Analyses',
     badge7:'6 conceptual layers',
@@ -65,7 +65,7 @@ const copy={
     t0Status:'✓ Active / Free Live Inspection',
     t99Title:'2. Implementation Roadmap',
     t99Price:'$99 One-Time',
-    t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, ████████ execution order, and ████████ engineering package for your developer.',
+    t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and full remediation engineering package for your developer.',
     t99Cta:'Unlock $99 Roadmap Package →',
     lenses:'6-Layer Deep Architecture',
     lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
@@ -84,7 +84,7 @@ const copy={
     capstoneCta:'🔒 Unlock Codebase Verification in $99 Visibility Roadmap →',
     bridgeTag:'DIAGNOSIS COMPLETE · WHAT NEXT?',
     bridgeTitle:'Vulnerabilities & Evidence Disclosed. Ready to Remediate in Code?',
-    bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the ████████ engineering package.',
+    bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the full site remediation engineering package.',
     bridgeBtn99:'Kaybı Önle →'
   }
 };

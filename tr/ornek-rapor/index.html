@@ -45,25 +45,25 @@
     Bu sayfa, ücretli bir alan adı için HTML&HTML analiz motoru tarafından otomatik derlenen ( Tek Seferlik Teknik İyileştirme Raporu) deterministik çıktı formatını ve dosya yapısını gösterir.
   </p>
 
-  <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:18px 24px;margin-bottom:36px;color:#fca5a5;font-size:14px;line-height:1.6">
-    <strong style="color:#ffffff;display:block;margin-bottom:4px">⚠️ Uyumluluk Beyanı: Sıfır İnsan Hizmeti</strong>
+  <div class="sample-compliance-box">
+    <strong>⚠️ Uyumluluk Beyanı: Sıfır İnsan Hizmeti</strong>
     HTML&HTML %100 otomatik bir Yazılım Hizmeti (SaaS) platformudur. Tüm teşhis skorları, teknik yol haritaları, konfigürasyon şablonları ve kod yamaları algoritmik makine motorları tarafından deterministik olarak oluşturulur. HTML&HTML kesinlikle reklam, pazarlama, SEO danışmanlığı, insan danışmanlığı veya özel yazılım geliştirme hizmeti SUNMAZ.
   </div>
 
-  <section style="background:#1e2028;border:1px solid #2d313e;border-radius:18px;padding:32px;margin-bottom:32px">
-    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2d313e;padding-bottom:16px;margin-bottom:24px">
+  <section class="sample-report-deck">
+    <div class="sample-report-head">
       <div>
-        <span style="font-size:12px;font-weight:800;color:#38bdf8;letter-spacing:0.08em">HEDEF ALAN ADI BİLGİSİ</span>
-        <h2 style="font-size:24px;margin:4px 0 0;color:#ffffff">ornek-e-ticaret-sitesi.example</h2>
+        <span class="sample-report-eyebrow">HEDEF ALAN ADI BİLGİSİ</span>
+        <h2>ornek-e-ticaret-sitesi.example</h2>
       </div>
-      <div style="text-align:right">
-        <span style="font-size:11px;color:#94a3b8">MOTOR DOĞRULAMASI</span>
-        <div style="font-size:22px;font-weight:900;color:#10b981">GEÇTİ (12/12)</div>
+      <div class="sample-report-status">
+        <span>MOTOR DOĞRULAMASI</span>
+        <strong>GEÇTİ (12/12)</strong>
       </div>
     </div>
 
-    <h3 style="font-size:18px;color:#ffffff;margin-bottom:12px">00_READ_ME.md (Örnek Kesit)</h3>
-    <pre style="background:#0d0f14;border:1px solid #1e2330;border-radius:10px;padding:18px;color:#cbd5e1;font-size:13px;line-height:1.5;overflow-x:auto"><code># Teknik İyileştirme Talimatı: ornek-e-ticaret-sitesi.example
+    <h3>00_READ_ME.md (Örnek Kesit)</h3>
+    <pre class="sample-code-block"><code># Teknik İyileştirme Talimatı: ornek-e-ticaret-sitesi.example
 Oluşturulma: 2026-09-07T12:00:00Z
 Motor Sürümü: 6.8.0-canonical
 Lisans: Tek Alan Adı Yazılım Lisansı (Tek Seferlik)
@@ -75,8 +75,8 @@ Lisans: Tek Alan Adı Yazılım Lisansı (Tek Seferlik)
 - [P2] SSS Sayfasında Cevap Çıkarılabilirliği Semantik HTML Etiketlerini Düzenleyin
 - [P3] Strict Transport Security (HSTS) Başlığını max-age=31536000 Olarak Zorunlu Kılın</code></pre>
 
-    <h3 style="font-size:18px;color:#ffffff;margin:24px 0 12px">08_LLMS_TXT_RECOMMENDED.txt (Deterministik Çıktı)</h3>
-    <pre style="background:#0d0f14;border:1px solid #1e2330;border-radius:10px;padding:18px;color:#cbd5e1;font-size:13px;line-height:1.5;overflow-x:auto"><code># ornek-e-ticaret-sitesi.example Dokümantasyonu
+    <h3>08_LLMS_TXT_RECOMMENDED.txt (Deterministik Çıktı)</h3>
+    <pre class="sample-code-block"><code># ornek-e-ticaret-sitesi.example Dokümantasyonu
 > Yüksek performanslı teknik ekipman ve sürdürülebilir ürünler.
 
 ## Temel Bilgi Yüzeyi
@@ -84,8 +84,8 @@ Lisans: Tek Alan Adı Yazılım Lisansı (Tek Seferlik)
 - [Teknik Mimari](https://ornek-e-ticaret-sitesi.example/about.md): Materyaller, tedarik zinciri doğrulama ve uyumluluk.
 - [API & Entegrasyon](https://ornek-e-ticaret-sitesi.example/api.md): Makine okunabilir stok ve fiyat uç noktaları.</code></pre>
 
-    <h3 style="font-size:18px;color:#ffffff;margin:24px 0 12px">04_ACCEPTANCE_TESTS.md (Deterministik Test Paketi)</h3>
-    <pre style="background:#0d0f14;border:1px solid #1e2330;border-radius:10px;padding:18px;color:#cbd5e1;font-size:13px;line-height:1.5;overflow-x:auto"><code>import { test, expect } from &#39;@playwright/test&#39;;
+    <h3>04_ACCEPTANCE_TESTS.md (Deterministik Test Paketi)</h3>
+    <pre class="sample-code-block"><code>import { test, expect } from &#39;@playwright/test&#39;;
 
 test(&#39;llms.txt uç noktası 200 OK ve text/plain döndürmeli&#39;, async ({ request }) =&gt; {
   const response = await request.get(&#39;https://ornek-e-ticaret-sitesi.example/llms.txt&#39;);

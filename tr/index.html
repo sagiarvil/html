@@ -8,13 +8,17 @@
   (function() {
     'use strict';
     var COOKIE_NAME = 'htmlandhtml-theme';
-    var DARK_CLASS = 'dark';
     function getCookie(name) {
       var match = document.cookie.match(new RegExp('(?:^|; )' + 
         name.replace(/([.$?*|{}()[\]\\/+^])/g, '\$1') + '=([^;]*)'));
       return match ? decodeURIComponent(match[1]) : null;
     }
     function getInitialTheme() {
+      try {
+        var hh = localStorage.getItem('hh-theme');
+        if (hh === 'light' || hh === 'dark') return hh;
+        if (hh === 'system') return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch (e) {}
       var cookie = getCookie(COOKIE_NAME);
       if (cookie) {
         try {
@@ -24,7 +28,7 @@
           }
           return parsed.theme;
         } catch (e) {
-          return cookie;
+          if (cookie === 'light' || cookie === 'dark') return cookie;
         }
       }
       try {
@@ -40,7 +44,10 @@
       return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     var theme = getInitialTheme();
-    document.documentElement.classList.toggle(DARK_CLASS, theme === 'dark');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
@@ -191,10 +198,10 @@
       <h3 data-i18n="mandateTitle">Teşhis ücretsiz.<br>Yol Haritası $99.</h3>
       <p data-i18n="mandateCopy">Aynı domain yeniden taranır; her geçerli bulgu ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK kod ve konfigürasyon şablonlarına dönüştürülür.</p>
       <ul>
-        <li data-i18n="m1">████████ uygulama sırası</li>
+        <li data-i18n="m1">P0–P3 uygulama sırası</li>
         <li data-i18n="m2">Issue ID + kanıt + güven seviyesi</li>
         <li data-i18n="m3">Acceptance + regression test</li>
-        <li data-i18n="m4">████████ + stop conditions</li>
+        <li data-i18n="m4">Rollback + stop conditions</li>
         <li data-i18n="m5">30 gün içinde 1 re-scan</li>
       </ul>
       <div class="price">
@@ -273,6 +280,6 @@
     <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</p>
   </div>
 </footer>
-<script src="/assets/js/enterprise-runtime.js?v=3?v=1"></script>
+<script src="/assets/js/enterprise-runtime.js?v=3"></script>
 </body>
 </html>

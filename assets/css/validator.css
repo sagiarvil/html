@@ -52,7 +52,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 .hero .kicker,
 .authority-hero .kicker {
   display: inline-block !important;
-  color: #38bdf8 !important;
+  color: #38bdf8;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -67,7 +67,15 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
 .kicker b,
 .hero .kicker b,
 .authority-hero .kicker b {
-  color: #38bdf8 !important;
+  color: #38bdf8;
+}
+html[data-theme="light"] .kicker,
+html[data-theme="light"] .hero .kicker,
+html[data-theme="light"] .authority-hero .kicker,
+html[data-theme="light"] .kicker b,
+html[data-theme="light"] .hero .kicker b,
+html[data-theme="light"] .authority-hero .kicker b {
+  color: #0284c7 !important;
 }
 .kicker span,
 .hero .kicker span,

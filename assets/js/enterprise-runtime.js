@@ -6,7 +6,7 @@ const COPY={
   lead:'Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.',
   scan:'Ücretsiz Kontrol Et',
   mandateTitle:'Teşhis ücretsiz.<br>Uygulama planı $99.',
-  mandateCopy:'Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır. 5 kritik kontrol noktası ████████ ile güvence altına alınır.',
+  mandateCopy:'Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır. 5 kritik kontrol noktası mühendislik paketi ile güvence altına alınır.',
   getMandate:'AI Görünürlük Yol Haritasını Aç →',
   locked:'🔒 Nasıl düzeltileceği $99 Uygulama Planı içinde',
   decisionEyebrow:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
@@ -21,12 +21,12 @@ const COPY={
   lead:'Enter one URL. HTML&HTML evaluates llms.txt, GEO, AEO, LLMO, AAO, RAG, E-E-A-T, AI crawler access and the technical foundation in one scan. See problems and evidence free; unlock the $99 Implementation Blueprint only if you need the execution plan.',
   scan:'Check Free',
   mandateTitle:'Diagnosis is free.<br>The implementation blueprint is $99.',
-  mandateCopy:'This issue causes search engines to skip your site. Unlocking provides a permanent solution + rollback guarantee. 5 critical checkpoints are secured via ████████.',
+  mandateCopy:'This issue causes search engines to skip your site. Unlocking provides a permanent solution + rollback guarantee. 5 critical checkpoints are secured via automated remediation.',
   getMandate:'Unlock AI Search Visibility Roadmap →',
   locked:'🔒 How to fix it is inside the $99 Implementation Blueprint',
   decisionEyebrow:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
   decisionTitle:'18 Engine Deterministic Chain',
-  decisionCopy:'Seven readiness lenses and 13 intelligence findings are diagnosed 100% FREE ($0). The technical solution is in the ████████ package. Unlock to prevent visibility loss.',
+  decisionCopy:'Seven readiness lenses and 13 intelligence findings are diagnosed 100% FREE ($0). The technical solution is in the $99 Fix Mandate package. Unlock to prevent visibility loss.',
   priority:'PRIORITY',impact:'IMPACT',effort:'EFFORT',status:'STATUS',
   paidText:'Diagnosis and live evidence are disclosed for free ($0). Ready to remediate them in code with the $99 Roadmap?',
   paidCta:'Unlock $99 Implementation Roadmap (ZIP) →'
@@ -84,7 +84,7 @@ function renderDecisionMap(data){
    const stClass=st==='PASS'?'green':st==='WARN'?'yellow':st==='FAIL'?'red':'blue';
    return `<div class="ai-intelligence-row"><b>${safe(p.rank)}. ${safe(label)}</b><span class="status-pill status-${stClass}">${safe(c.status)} · ${safe(st)}</span><span>${safe(c.impact)} · ${safe(a.impact||p.impact||'—')}</span><span>${safe(c.effort)} · ${safe(a.effort||p.effort||'—')}</span></div>`;
  }).join('');
- root.innerHTML=`<div style="background:rgba(255, 69, 58, 0.1); border:1px solid #ff453a; color:#ff453a; padding:12px; margin-bottom:20px; border-radius:8px; text-align:center;"><strong>UYARI:</strong> Bu kritik açıklar arama motorlarının sitenizi atlamasına yol açıyor. Her gün erken düzeltme = daha fazla görünürlük kaybı.</div><div class="ai-decision-map-head"><div><small>${safe(c.decisionEyebrow)}</small><h3>${safe(c.decisionTitle)}</h3></div><p>${safe(c.decisionCopy)}</p></div><div class="ai-lens-grid">${lensHtml}</div>${rows?`<div class="ai-intelligence-top">${rows}</div>`:''}<div class="ai-decision-lock" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); user-select:none; pointer-events:none; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));"><p>${safe(c.paidText)}</p><a href="/checkout?domain=${encodeURIComponent(data.domain||'')}&scan=${encodeURIComponent(data.scanId||'')}">${safe(c.paidCta)}</a></div>`;
+ root.innerHTML=`<div style="background:rgba(255, 69, 58, 0.1); border:1px solid #ff453a; color:#ff453a; padding:12px; margin-bottom:20px; border-radius:8px; text-align:center;"><strong>UYARI:</strong> Bu kritik açıklar arama motorlarının sitenizi atlamasına yol açıyor. Her gün erken düzeltme = daha fazla görünürlük kaybı.</div><div class="ai-decision-map-head"><div><small>${safe(c.decisionEyebrow)}</small><h3>${safe(c.decisionTitle)}</h3></div><p>${safe(c.decisionCopy)}</p></div><div class="ai-lens-grid">${lensHtml}</div>${rows?`<div class="ai-intelligence-top">${rows}</div>`:''}<div class="ai-decision-lock" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); user-select:none; pointer-events:none;"><p>${safe(c.paidText)}</p><a href="/checkout?domain=${encodeURIComponent(data.domain||'')}&scan=${encodeURIComponent(data.scanId||'')}">${safe(c.paidCta)}</a></div>`;
 }
 
 // Capture the public scan response without changing the canonical scanner or API contract.

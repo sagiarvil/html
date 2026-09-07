@@ -45,25 +45,25 @@
     This page demonstrates the deterministic format and structure of the deliverable output compiled automatically by the HTML&HTML analysis engine for a paid domain ( One-Time Technical Remediation Report).
   </p>
 
-  <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:18px 24px;margin-bottom:36px;color:#fca5a5;font-size:14px;line-height:1.6">
-    <strong style="color:#ffffff;display:block;margin-bottom:4px">⚠️ Compliance Disclaimer: Zero Human Services</strong>
+  <div class="sample-compliance-box">
+    <strong>⚠️ Compliance Disclaimer: Zero Human Services</strong>
     HTML&HTML is strictly an automated Software-as-a-Service (SaaS) platform. All diagnostic scores, technical blueprints, configuration templates, and code patches are compiled 100% deterministically by machine algorithms. HTML&HTML strictly DOES NOT provide advertising campaigns, marketing services, SEO consulting, human advisory, or bespoke IT/software development.
   </div>
 
-  <section style="background:#1e2028;border:1px solid #2d313e;border-radius:18px;padding:32px;margin-bottom:32px">
-    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2d313e;padding-bottom:16px;margin-bottom:24px">
+  <section class="sample-report-deck">
+    <div class="sample-report-head">
       <div>
-        <span style="font-size:12px;font-weight:800;color:#38bdf8;letter-spacing:0.08em">TARGET DOMAIN SPECIFICATION</span>
-        <h2 style="font-size:24px;margin:4px 0 0;color:#ffffff">demo-ecommerce-store.example</h2>
+        <span class="sample-report-eyebrow">TARGET DOMAIN SPECIFICATION</span>
+        <h2>demo-ecommerce-store.example</h2>
       </div>
-      <div style="text-align:right">
-        <span style="font-size:11px;color:#94a3b8">ENGINE VERIFICATION</span>
-        <div style="font-size:22px;font-weight:900;color:#10b981">PASS (12/12)</div>
+      <div class="sample-report-status">
+        <span>ENGINE VERIFICATION</span>
+        <strong>PASS (12/12)</strong>
       </div>
     </div>
 
-    <h3 style="font-size:18px;color:#ffffff;margin-bottom:12px">00_READ_ME.md (Excerpt)</h3>
-    <pre style="background:#0d0f14;border:1px solid #1e2330;border-radius:10px;padding:18px;color:#cbd5e1;font-size:13px;line-height:1.5;overflow-x:auto"><code># Technical Remediation Mandate: demo-ecommerce-store.example
+    <h3>00_READ_ME.md (Excerpt)</h3>
+    <pre class="sample-code-block"><code># Technical Remediation Mandate: demo-ecommerce-store.example
 Generated: 2026-09-07T12:00:00Z
 Engine Version: 6.8.0-canonical
 License: Single Domain Software License (One-Time)
@@ -75,8 +75,8 @@ License: Single Domain Software License (One-Time)
 - [P2] Add Missing Answer Extraction Semantic HTML Tags on FAQ Hub
 - [P3] Enforce Strict Transport Security (HSTS) with max-age=31536000</code></pre>
 
-    <h3 style="font-size:18px;color:#ffffff;margin:24px 0 12px">08_LLMS_TXT_RECOMMENDED.txt (Deterministic Output)</h3>
-    <pre style="background:#0d0f14;border:1px solid #1e2330;border-radius:10px;padding:18px;color:#cbd5e1;font-size:13px;line-height:1.5;overflow-x:auto"><code># demo-ecommerce-store.example Documentation
+    <h3>08_LLMS_TXT_RECOMMENDED.txt (Deterministic Output)</h3>
+    <pre class="sample-code-block"><code># demo-ecommerce-store.example Documentation
 > High-performance technical apparel and sustainable gear.
 
 ## Core Information
@@ -84,8 +84,8 @@ License: Single Domain Software License (One-Time)
 - [Technical Architecture](https://demo-ecommerce-store.example/about.md): Materials, supply chain verification and compliance.
 - [API & Integration](https://demo-ecommerce-store.example/api.md): Machine-readable inventory and pricing endpoints.</code></pre>
 
-    <h3 style="font-size:18px;color:#ffffff;margin:24px 0 12px">04_ACCEPTANCE_TESTS.md (Deterministic Verification Suite)</h3>
-    <pre style="background:#0d0f14;border:1px solid #1e2330;border-radius:10px;padding:18px;color:#cbd5e1;font-size:13px;line-height:1.5;overflow-x:auto"><code>import { test, expect } from &#39;@playwright/test&#39;;
+    <h3>04_ACCEPTANCE_TESTS.md (Deterministic Verification Suite)</h3>
+    <pre class="sample-code-block"><code>import { test, expect } from &#39;@playwright/test&#39;;
 
 test(&#39;llms.txt endpoint returns 200 OK and text/plain&#39;, async ({ request }) =&gt; {
   const response = await request.get(&#39;https://demo-ecommerce-store.example/llms.txt&#39;);

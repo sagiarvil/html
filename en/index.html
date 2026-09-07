@@ -8,13 +8,17 @@
   (function() {
     'use strict';
     var COOKIE_NAME = 'htmlandhtml-theme';
-    var DARK_CLASS = 'dark';
     function getCookie(name) {
       var match = document.cookie.match(new RegExp('(?:^|; )' + 
         name.replace(/([.$?*|{}()[\]\\/+^])/g, '\$1') + '=([^;]*)'));
       return match ? decodeURIComponent(match[1]) : null;
     }
     function getInitialTheme() {
+      try {
+        var hh = localStorage.getItem('hh-theme');
+        if (hh === 'light' || hh === 'dark') return hh;
+        if (hh === 'system') return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch (e) {}
       var cookie = getCookie(COOKIE_NAME);
       if (cookie) {
         try {
@@ -24,7 +28,7 @@
           }
           return parsed.theme;
         } catch (e) {
-          return cookie;
+          if (cookie === 'light' || cookie === 'dark') return cookie;
         }
       }
       try {
@@ -40,7 +44,10 @@
       return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     var theme = getInitialTheme();
-    document.documentElement.classList.toggle(DARK_CLASS, theme === 'dark');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
@@ -190,10 +197,10 @@
       <h3 data-i18n="mandateTitle">Evidence is free.<br>Automated code pack is $99.</h3>
       <p data-i18n="mandateCopy">The same domain is re-scanned and every valid issue becomes a ROOT FIX → RECOVERY → PREVENTION → TEST → ROLLBACK code and configuration template.</p>
       <ul>
-        <li data-i18n="m1">████████ implementation order</li>
+        <li data-i18n="m1">P0–P3 implementation order</li>
         <li data-i18n="m2">Issue ID + evidence + confidence</li>
-        <li data-i18n="m3">Testing and assurance systems ████████</li>
-        <li data-i18n="m4">████████ + stop conditions</li>
+        <li data-i18n="m3">Acceptance + regression tests</li>
+        <li data-i18n="m4">Rollback + stop conditions</li>
         <li data-i18n="m5">1 re-scan within 30 days</li>
       </ul>
       <div class="price">
@@ -272,6 +279,6 @@
     <p>&copy; 2026 HTML&amp;HTML. All rights reserved. Payments and billing are processed by our authorized reseller and Merchant of Record Paddle.com.</p>
   </div>
 </footer>
-<script src="/assets/js/enterprise-runtime.js?v=3?v=1"></script>
+<script src="/assets/js/enterprise-runtime.js?v=3"></script>
 </body>
 </html>

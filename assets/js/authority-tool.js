@@ -22,7 +22,7 @@ const copy={tr:{
  finding:'bulgu',
  kicker:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
  intelligence:'Arama ve AI İstihbarat Denetimleri',
- intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + ████████ güvencesi alır.',
+ intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır.',
  badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
  badge13:'13 Derin Analiz',
  badge7:'6 Katmanlı Mimari',
@@ -33,7 +33,7 @@ const copy={tr:{
  t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
  t99Title:'2. Mühendislik Yol Haritası',
  t99Price:'$99 Tek Seferlik',
- t99Desc:'Nasıl düzeltilecek? Sitedeki TÜM sorunların çözümü TEK BİR $99 paketindedir. 5 kritik kontrol noktası ████████ ile güvence altına alınır.',
+ t99Desc:'Nasıl düzeltilecek? Sitedeki TÜM sorunların çözümü TEK BİR $99 paketindedir. 5 kritik kontrol noktası mühendislik paketi ile güvence altına alınır.',
  t99Cta:'$99 Mühendislik Paketini Aç →',
  lenses:'6 Katmanlı Derin Mimari',
  lensesSub:'Ücretsiz Teşhis Boyutları: Yapay zeka ve arama ekosistemindeki 7 ana vektörünüzün anlık durum puanı',
@@ -45,7 +45,7 @@ const copy={tr:{
  capstoneCta:'🔒 TÜM Çözümleri Tek Paket ($99) ile Aç →',
  bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
  bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
- bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Sitedeki TÜM sorunların çözümü TEK BİR ████████ paketindedir. Kaybı önlemek için tüm kilidi tek seferde açın.',
+ bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Sitedeki TÜM sorunların çözümü TEK BİR $99 Fix Mandate paketindedir. Kaybı önlemek için tüm kilidi tek seferde açın.',
  bridgeBtn99:'Kaybı Önle →'
 },
 en:{
@@ -58,7 +58,7 @@ en:{
  finding:'finding',
  kicker:'OPEN DIAGNOSTIC LAYER · 100% FREE ($0)',
  intelligence:'Search & AI Intelligence Audits',
- intelligenceNote:'This section is 100% FREE ($0). It transparently documents your search and AI vulnerabilities with live evidence. Turn-key code templates and ████████ package are in the $99 Roadmap layer.',
+ intelligenceNote:'This section is 100% FREE ($0). It transparently documents your search and AI vulnerabilities with live evidence. Turn-key code templates and turnkey engineering package are in the $99 Roadmap layer.',
  badgeFree:'🟢 $0 Free Diagnostic Layer',
  badge13:'13 Deep Analyses',
  badge7:'6 conceptual layers',
@@ -69,7 +69,7 @@ en:{
  t0Status:'✓ Active / Free Live Inspection',
  t99Title:'2. Implementation Roadmap',
  t99Price:'$99 One-Time',
- t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, ████████ execution order, and ████████ engineering package for your developer.',
+ t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and full remediation engineering package for your developer.',
  t99Cta:'Unlock $99 Roadmap Package →',
  lenses:'6-Layer Deep Architecture',
  lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
@@ -81,7 +81,7 @@ en:{
  capstoneCta:'🔒 Unlock Codebase Verification in $99 Visibility Roadmap →',
  bridgeTag:'DIAGNOSIS COMPLETE · WHAT NEXT?',
  bridgeTitle:'Vulnerabilities & Evidence Disclosed. Ready to Remediate in Code?',
- bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the ████████ engineering package.',
+ bridgeDesc:'You saw the exact gaps and evidence for free. Unlock the Implementation Roadmap for ready-to-deploy code snippets, regression safeguards, and the full site remediation engineering package.',
  bridgeBtn99:'Kaybı Önle →'
 }}[lang];
 const sevMap={tr:{critical:'KRİTİK',high:'YÜKSEK',medium:'ORTA',low:'DÜŞÜK',info:'BİLGİ'},en:{critical:'CRITICAL',high:'HIGH',medium:'MEDIUM',low:'LOW',info:'INFO'}};
