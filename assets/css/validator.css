@@ -51,7 +51,7 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
+  text-transform: none !important;
   padding: 6px 14px !important;
   border-radius: 999px !important;
   margin-bottom: 24px !important;
