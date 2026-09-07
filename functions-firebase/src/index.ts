@@ -104,3 +104,53 @@ export const paddleWebhook=onRequest({...common,timeoutSeconds:30,memory:'256MiB
   const relevant=eventType==='transaction.completed'&&Array.isArray(data?.items)&&data.items.some((x:any)=>x?.price?.id===PADDLE_PRICE_ID || x?.price?.id===PADDLE_PRICE_ID_ENTERPRISE);
   res.status(200).json({ok:true,event_id:String(event?.event_id||''),event_type:eventType,relevant});
 });
+
+export const agentCard=onRequest({...common,timeoutSeconds:15,memory:'256MiB'},async(req,res)=>{
+  harden(res);
+  res.set('Content-Type','application/json; charset=utf-8');
+  res.set('Access-Control-Allow-Origin','*');
+  if(req.method!=='GET'){res.status(405).json({error:'GET only'});return}
+  res.status(200).json({
+    schemaVersion:'1.0.0',
+    name:'HTML&HTML AI Agent',
+    description:'Deterministic web standards, technical SEO, GEO, AEO, and AI search readiness diagnostic agent.',
+    url:'https://htmlandhtml.com',
+    provider:{name:'HTML&HTML',url:'https://htmlandhtml.com'},
+    capabilities:{tools:true,streaming:false},
+    endpoints:{
+      scan:'https://htmlandhtml.com/api/scan',
+      openapi:'https://htmlandhtml.com/openapi.json',
+      mcp:'https://htmlandhtml.com/mcp'
+    },
+    documentation:'https://htmlandhtml.com/standard/'
+  });
+});
+
+export const mcp=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},async(req,res)=>{
+  harden(res);
+  res.set('Content-Type','application/json; charset=utf-8');
+  res.set('Access-Control-Allow-Origin','*');
+  if(req.method==='GET'||req.method==='POST'){
+    res.status(200).json({
+      name:'htmlandhtml-mcp-server',
+      version:'1.0.0',
+      protocolVersion:'2024-11-05',
+      capabilities:{
+        tools:{
+          scan:{
+            description:'Scan a website URL for 12-engine technical SEO, AI readiness, LLMs.txt, Schema, and accessibility signals.',
+            inputSchema:{
+              type:'object',
+              properties:{url:{type:'string',description:'The URL to scan'}},
+              required:['url']
+            }
+          }
+        }
+      },
+      endpoint:'https://htmlandhtml.com/mcp'
+    });
+    return;
+  }
+  res.status(405).json({error:'GET or POST only'});
+});
+

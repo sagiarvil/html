@@ -89,10 +89,12 @@ def build_mention_tracker():
         <input id="mentionAccess" type="password" autocomplete="off" placeholder="Access key" required>
       </div>
       <div class="wide mention-queries">
-        <label>1–3 neutral prompts</label>
-        <textarea id="mentionQ1" maxlength="280" required placeholder="e.g. Which tools audit whether a website is technically ready for AI search engines?"></textarea>
-        <textarea id="mentionQ2" maxlength="280" placeholder="e.g. Which website audit tools combine llms.txt, AI crawler access and schema checks?"></textarea>
-        <textarea id="mentionQ3" maxlength="280" placeholder="e.g. Which tools provide technical AI website readiness audits?"></textarea>
+        <label for="mentionQ1">Prompt 1 (required)</label>
+        <textarea id="mentionQ1" aria-label="Neutral prompt 1" maxlength="280" required placeholder="e.g. Which tools audit whether a website is technically ready for AI search engines?"></textarea>
+        <label for="mentionQ2" style="margin-top:8px">Prompt 2 (optional)</label>
+        <textarea id="mentionQ2" aria-label="Neutral prompt 2" maxlength="280" placeholder="e.g. Which website audit tools combine llms.txt, AI crawler access and schema checks?"></textarea>
+        <label for="mentionQ3" style="margin-top:8px">Prompt 3 (optional)</label>
+        <textarea id="mentionQ3" aria-label="Neutral prompt 3" maxlength="280" placeholder="e.g. Which tools provide technical AI website readiness audits?"></textarea>
       </div>
       <div class="wide">
         <button type="submit" style="min-height:52px;width:100%;border:0;border-radius:12px;background:var(--green);color:#102117;font-weight:900;cursor:pointer">Run mention check →</button>
@@ -232,10 +234,12 @@ def build_mention_tracker():
         <input id="mentionAccess" type="password" autocomplete="off" placeholder="Erişim anahtarı" required>
       </div>
       <div class="wide mention-queries">
-        <label>1–3 nötr sorgu</label>
-        <textarea id="mentionQ1" maxlength="280" required placeholder="Örn. Bir web sitesinin teknik olarak yapay zeka arama motorlarına hazır olup olmadığını hangi araçlar denetler?"></textarea>
-        <textarea id="mentionQ2" maxlength="280" placeholder="Örn. llms.txt, AI tarayıcı erişimi ve şema kontrollerini birleştiren web denetim araçları hangileridir?"></textarea>
-        <textarea id="mentionQ3" maxlength="280" placeholder="Örn. Web siteleri için teknik AI hazırlık denetimi sunan araçlar nelerdir?"></textarea>
+        <label for="mentionQ1">1. Nötr sorgu (zorunlu)</label>
+        <textarea id="mentionQ1" aria-label="1. Nötr sorgu" maxlength="280" required placeholder="Örn. Bir web sitesinin teknik olarak yapay zeka arama motorlarına hazır olup olmadığını hangi araçlar denetler?"></textarea>
+        <label for="mentionQ2" style="margin-top:8px">2. Nötr sorgu (isteğe bağlı)</label>
+        <textarea id="mentionQ2" aria-label="2. Nötr sorgu" maxlength="280" placeholder="Örn. llms.txt, AI tarayıcı erişimi ve şema kontrollerini birleştiren web denetim araçları hangileridir?"></textarea>
+        <label for="mentionQ3" style="margin-top:8px">3. Nötr sorgu (isteğe bağlı)</label>
+        <textarea id="mentionQ3" aria-label="3. Nötr sorgu" maxlength="280" placeholder="Örn. Web siteleri için teknik AI hazırlık denetimi sunan araçlar nelerdir?"></textarea>
       </div>
       <div class="wide">
         <button type="submit" style="min-height:52px;width:100%;border:0;border-radius:12px;background:var(--green);color:#102117;font-weight:900;cursor:pointer">Görünürlük kontrolünü çalıştır →</button>
