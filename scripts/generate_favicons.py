@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate multi-resolution favicons and touch icons from the user uploaded image with rounded/oval corners.
+Generate multi-resolution favicons, touch icons, and pure vector SVG from the user uploaded image with rounded/oval corners.
 Outputs:
 - assets/icon-512.png (512x512)
 - assets/icon-192.png (192x192)
@@ -8,7 +8,7 @@ Outputs:
 - assets/favicon-32x32.png (32x32)
 - assets/favicon-16x16.png (16x16)
 - favicon.ico (multi-resolution 16x16, 32x32, 48x48)
-- favicon.svg (SVG with embedded high-res squircle)
+- favicon.svg (100% PURE VECTOR SVG with rounded squircle and traced H&H paths)
 """
 
 import os
@@ -16,7 +16,6 @@ import subprocess
 import struct
 import math
 import zlib
-import base64
 
 SOURCE_PATH = "/Users/macair1/.gemini/antigravity/brain/8bc304cf-639e-4a14-86a6-105281c9ab17/.user_uploaded/media_1788813704883.png"
 REPO_ROOT = "/Users/macair1/projects/html"
@@ -146,18 +145,20 @@ def main():
         f.write(ico_data)
     print(f"Wrote {ico_path} (multi-res 16, 32, 48)")
     
-    # Generate vector favicon.svg with embedded crisp high-res squircle
-    with open(icon_512_path, "rb") as f:
-        b64_512 = base64.b64encode(f.read()).decode("utf-8")
-    
-    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <image width="512" height="512" href="data:image/png;base64,{b64_512}"/>
+    # 100% PURE VECTOR SVG with rounded squircle and traced H&H paths (no raster <image> fallback)
+    svg_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <rect width="800" height="800" rx="176" ry="176" fill="#000000"/>
+  <g transform="translate(0,800) scale(0.1,-0.1)" fill="#ffffff" stroke="none">
+    <path d="M1350 4005 l0 -1155 155 0 155 0 0 550 0 550 570 0 570 0 0 -550 0 -550 155 0 155 0 0 1155 0 1155 -155 0 -155 0 0 -475 0 -475 -567 2 -568 3 -3 473 -2 472 -155 0 -155 0 0 -1155z"/>
+    <path d="M4870 4005 l0 -1155 155 0 155 0 0 550 0 550 570 0 570 0 0 -550 0 -550 155 0 155 0 0 1155 0 1155 -155 0 -155 0 0 -475 0 -475 -567 2 -568 3 -3 473 -2 472 -155 0 -155 0 0 -1155z"/>
+    <path d="M3792 4229 c-62 -10 -118 -37 -166 -79 -111 -98 -105 -302 13 -474 17 -25 31 -47 31 -50 0 -3 -24 -18 -52 -32 -137 -69 -254 -178 -283 -262 -22 -66 -20 -179 5 -246 24 -64 93 -141 161 -180 162 -93 470 -89 646 10 l64 36 22 -29 c62 -78 53 -74 159 -71 l96 3 -65 80 c-103 127 -99 119 -69 157 58 77 106 214 106 304 l0 34 -84 0 -84 0 -7 -56 c-8 -69 -30 -143 -48 -168 -13 -18 -25 -5 -166 170 -83 104 -151 192 -151 195 0 4 26 22 57 39 74 42 162 131 193 195 31 65 35 210 7 262 -48 90 -128 145 -238 163 -72 11 -73 11 -147 -1z m142 -140 c80 -22 116 -96 96 -196 -15 -69 -65 -127 -149 -172 l-60 -31 -31 45 c-39 57 -77 139 -85 186 -8 45 9 110 34 133 44 40 125 55 195 35z m4 -795 c90 -113 165 -211 169 -219 9 -24 -104 -71 -204 -85 -234 -33 -393 60 -393 230 0 70 29 130 89 181 53 46 139 98 161 98 8 0 88 -92 178 -205z"/>
+  </g>
 </svg>
 """
     svg_path = os.path.join(REPO_ROOT, "favicon.svg")
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
-    print(f"Wrote {svg_path}")
+    print(f"Wrote pure vector SVG to {svg_path}")
 
 if __name__ == "__main__":
     main()

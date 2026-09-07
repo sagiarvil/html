@@ -9,7 +9,7 @@ Potansiyel müşteri artık yalnızca klasik arama sonucuna bakmayabilir. ChatGP
 
 HTML&HTML yapay zeka sıralaması, tavsiye, marka atfı, kaynak gösterimi, trafik, müşteri veya gelir garantisi vermez. Dış sistemlerin kararını kontrol ettiğini iddia etmez; bu sonuçların önündeki gözlemlenebilir web sitesi engellerini ölçer.
 
-## Google doğruluk sınırı
+## Resmi standart ve arama ekosistemi
 Google, GEO (Generative Engine Optimization) ve AEO (Answer Engine Optimization) terimlerini piyasada kullanılan kavramlar olarak açıkça tanır. Ancak Google Search açısından üretken yapay zeka aramasına optimizasyonun hâlâ SEO olduğunu; AI Overviews ve AI Mode için özel ek teknik şart bulunmadığını söyler.
 
 Google ayrıca Google Search'in llms.txt veya diğer özel AI metin dosyalarını yapay zeka arama görünürlüğü için kullanmadığını açıkça belirtir. HTML&HTML llms.txt'yi buna rağmen gelişen bir PROPOSAL ve bazı ajan/dokümantasyon ekosistemlerinde kullanılabilen isteğe bağlı makine-okunabilir bilgi yüzeyi olarak doğrular; Google sıralama şartı olarak sunmaz.
