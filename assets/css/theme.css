@@ -214,9 +214,13 @@ html[data-theme="dark"] .topbar {
   flex-shrink: 0 !important;
 }
 .brand-logo {
-  height: 24px !important;
+  height: 28px !important;
   width: auto !important;
   display: block !important;
+}
+footer .brand-logo {
+  height: 24px !important;
+  width: auto !important;
 }
 
 .primary-nav, .topbar nav {

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Generate assets/logo.png and assets/logo-dark.png from the user uploaded logo image:
-// html&html
-Extracts alpha channel, crops to balanced bounding box, and creates:
+Generate assets/logo.png and assets/logo-dark.png from the newly uploaded logo image:
+media_1788817607188.png (// html&html)
+Extracts alpha channel, applies symmetric padding, and creates:
 - assets/logo.png (#11120F dark ink on transparent background)
 - assets/logo-dark.png (#F8FAFC light ink on transparent background)
 """
@@ -12,7 +12,7 @@ import subprocess
 import struct
 import zlib
 
-SOURCE_PATH = "/Users/macair1/.gemini/antigravity/brain/8bc304cf-639e-4a14-86a6-105281c9ab17/.user_uploaded/media_1788816857571.png"
+SOURCE_PATH = "/Users/macair1/.gemini/antigravity/brain/8bc304cf-639e-4a14-86a6-105281c9ab17/.user_uploaded/media_1788817607188.png"
 REPO_ROOT = "/Users/macair1/projects/html"
 
 def main():
@@ -21,7 +21,7 @@ def main():
     cmd = ["/opt/homebrew/bin/magick", SOURCE_PATH, "-depth", "8", f"rgba:{raw_bin}"]
     subprocess.check_call(cmd)
 
-    w, h = 1024, 182
+    w, h = 1024, 228
     with open(raw_bin, "rb") as f:
         raw = f.read()
 
@@ -38,11 +38,13 @@ def main():
                 if y < min_y: min_y = y
                 if y > max_y: max_y = y
 
-    print(f"Content bbox: x=[{min_x}, {max_x}] (w={max_x-min_x+1}), y=[{min_y}, {max_y}] (h={max_y-min_y+1})")
+    content_w = max_x - min_x + 1
+    content_h = max_y - min_y + 1
+    print(f"Content bbox: x=[{min_x}, {max_x}] (w={content_w}), y=[{min_y}, {max_y}] (h={content_h})")
 
-    # Symmetric balanced padding for clean rendering in 22px-24px headers and footers
-    pad_y = 10
-    pad_x = 12
+    # Symmetric balanced padding for crisp rendering in header & footer
+    pad_y = 12
+    pad_x = 14
 
     crop_x0 = max(0, min_x - pad_x)
     crop_x1 = min(w - 1, max_x + pad_x)
