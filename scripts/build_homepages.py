@@ -136,7 +136,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=8" defer></script>
+<script src="/assets/js/validator.js?v=9" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
@@ -486,7 +486,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=8" defer></script>
+<script src="/assets/js/validator.js?v=9" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>

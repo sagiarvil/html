@@ -84,7 +84,7 @@ export default {
 };`;
 
 const n8nWorkflowSample=JSON.stringify({
-  name: `[Enterprise AI Search] ${brandNameSafe} Continuous Visibility & Vector Sync`,
+  name: `[Enterprise AI Search] ${brandNameSafe} Self-Healing Visibility & Vector Sync DAG`,
   nodes: [
     {
       parameters: { rule: { interval: [{ field: "cronExpression", expression: "0 3 * * *" }] } },
@@ -93,6 +93,14 @@ const n8nWorkflowSample=JSON.stringify({
       type: "n8n-nodes-base.scheduleTrigger",
       typeVersion: 1.1,
       position: [240, 300]
+    },
+    {
+      parameters: { httpMethod: "POST", path: "trigger-ai-audit", options: {} },
+      id: "webhook-trigger-on-demand",
+      name: "On-Demand CI/CD Trigger",
+      type: "n8n-nodes-base.webhook",
+      typeVersion: 2,
+      position: [240, 480]
     },
     {
       parameters: { url: `https://${cleanDomainSafe}/llms.txt`, options: { timeout: 8000 } },
@@ -111,17 +119,17 @@ const n8nWorkflowSample=JSON.stringify({
         }
       },
       id: "http-bot-crawl-3",
-      name: "Simulate AI Bot Ingestion",
+      name: "Multi-Bot Ingestion Probe (Perplexity/GPTBot)",
       type: "n8n-nodes-base.httpRequest",
       typeVersion: 4.1,
       position: [680, 300]
     },
     {
       parameters: {
-        jsCode: `// Verify 14KB AST Payload & Token Budget\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nconst hasChunkId = html.includes('data-chunk-id');\nconst hasWikidata = /wikidata\\.org\\/wiki\\/Q/i.test(html);\nconst isBloated = bytes > 14336;\n\nreturn [{\n  json: {\n    domain: "${cleanDomainSafe}",\n    payloadBytes: bytes,\n    isBloated,\n    hasChunkId,\n    hasWikidata,\n    healthScore: Math.round(((!isBloated ? 40 : 15) + (hasChunkId ? 30 : 0) + (hasWikidata ? 30 : 0))),\n    timestamp: new Date().toISOString()\n  }\n}];`
+        jsCode: `// Industrial Deterministic AST & Sub-14KB RAG Gate\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nconst hasChunkId = html.includes('data-chunk-id');\nconst hasWikidata = /wikidata\\.org\\/wiki\\/Q/i.test(html);\nconst isBloated = bytes > 14336;\nconst score = Math.round(((!isBloated ? 40 : 15) + (hasChunkId ? 30 : 0) + (hasWikidata ? 30 : 0)));\n\nreturn [{\n  json: {\n    domain: "${cleanDomainSafe}",\n    payloadBytes: bytes,\n    isBloated,\n    hasChunkId,\n    hasWikidata,\n    healthScore: score,\n    status: score >= 80 ? 'HEALTHY' : score >= 50 ? 'DEGRADED' : 'CRITICAL',\n    timestamp: new Date().toISOString()\n  }\n}];`
       },
       id: "code-evaluate-4",
-      name: "Audit 18-Engine Gates",
+      name: "Deterministic AST 14KB Gate",
       type: "n8n-nodes-base.code",
       typeVersion: 2,
       position: [900, 300]
@@ -133,7 +141,7 @@ const n8nWorkflowSample=JSON.stringify({
         }
       },
       id: "if-score-alert-5",
-      name: "Score Demotion Alert?",
+      name: "Bayesian Drift Triage (Score < 80?)",
       type: "n8n-nodes-base.if",
       typeVersion: 1,
       position: [1120, 300]
@@ -141,21 +149,41 @@ const n8nWorkflowSample=JSON.stringify({
     {
       parameters: {
         webhookUrl: "https://hooks.slack.com/services/YOUR/ENTERPRISE/WEBHOOK",
-        text: `🚨 *[AI Search Alert]* ${cleanDomainSafe} citation readiness dropped to {{ $json.healthScore }}/100!\n- Payload: {{ $json.payloadBytes }} bytes\n- RAG Chunk Integrity: {{ $json.hasChunkId }}\n- Knowledge Vault Triples: {{ $json.hasWikidata }}\nImmediate remediation required to prevent LLM hallucination and traffic loss.`
+        text: `🚨 *[Enterprise AI Search Alert]* ${cleanDomainSafe} citation readiness dropped to {{ $json.healthScore }}/100!\n- Severity: {{ $json.status }}\n- Payload: {{ $json.payloadBytes }} bytes\n- RAG Chunk Integrity: {{ $json.hasChunkId }}\n- Knowledge Vault Triples: {{ $json.hasWikidata }}\nTriggering automated Cloudflare Edge Cache Purge & incident escalation.`
       },
       id: "slack-alert-6",
-      name: "Notify DevOps & Growth Team",
+      name: "Dispatch Critical Incident (Slack)",
       type: "n8n-nodes-base.httpRequest",
       typeVersion: 4.1,
-      position: [1340, 200]
+      position: [1360, 200]
+    },
+    {
+      parameters: {
+        method: "POST",
+        url: "https://api.cloudflare.com/client/v4/zones/YOUR_ZONE_ID/purge_cache",
+        options: {
+          headers: {
+            "Authorization": "Bearer YOUR_CF_API_TOKEN",
+            "Content-Type": "application/json"
+          }
+        },
+        body: { purge_everything: false, hosts: [cleanDomainSafe] }
+      },
+      id: "cf-auto-purge-7",
+      name: "Cloudflare Edge Auto-Purge (Self-Healing)",
+      type: "n8n-nodes-base.httpRequest",
+      typeVersion: 4.1,
+      position: [1600, 200]
     }
   ],
   connections: {
     "Daily 03:00 UTC Trigger": { main: [[{ node: "Probe llms.txt Surface", type: "main", index: 0 }]] },
-    "Probe llms.txt Surface": { main: [[{ node: "Simulate AI Bot Ingestion", type: "main", index: 0 }]] },
-    "Simulate AI Bot Ingestion": { main: [[{ node: "Audit 18-Engine Gates", type: "main", index: 0 }]] },
-    "Audit 18-Engine Gates": { main: [[{ node: "Score Demotion Alert?", type: "main", index: 0 }]] },
-    "Score Demotion Alert?": { main: [[{ node: "Notify DevOps & Growth Team", type: "main", index: 0 }]] }
+    "On-Demand CI/CD Trigger": { main: [[{ node: "Probe llms.txt Surface", type: "main", index: 0 }]] },
+    "Probe llms.txt Surface": { main: [[{ node: "Multi-Bot Ingestion Probe (Perplexity/GPTBot)", type: "main", index: 0 }]] },
+    "Multi-Bot Ingestion Probe (Perplexity/GPTBot)": { main: [[{ node: "Deterministic AST 14KB Gate", type: "main", index: 0 }]] },
+    "Deterministic AST 14KB Gate": { main: [[{ node: "Bayesian Drift Triage (Score < 80?)", type: "main", index: 0 }]] },
+    "Bayesian Drift Triage (Score < 80?)": { main: [[{ node: "Dispatch Critical Incident (Slack)", type: "main", index: 0 }]] },
+    "Dispatch Critical Incident (Slack)": { main: [[{ node: "Cloudflare Edge Auto-Purge (Self-Healing)", type: "main", index: 0 }]] }
   }
 }, null, 2);
 
@@ -169,39 +197,125 @@ const jsonLdSample=JSON.stringify({
       "url": `https://${cleanDomainSafe}/`,
       "sameAs": [
         `https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(data.domain)}`,
-        `https://www.crunchbase.com/organization/${safe(data.domain.replace(/\.[a-z]+$/i, ''))}`
+        `https://www.crunchbase.com/organization/${safe(data.domain.replace(/\.[a-z]+$/i, ''))}`,
+        `https://github.com/${safe(data.domain.replace(/\.[a-z]+$/i, ''))}`
       ],
       "knowsAbout": [
         {
           "@type": "DefinedTerm",
           "name": "Generative Engine Optimization",
           "termCode": "GEO",
-          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence"
+          "sameAs": "https://www.wikidata.org/wiki/Q125506086"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Answer Engine Optimization",
+          "termCode": "AEO"
         },
         {
           "@type": "DefinedTerm",
           "name": "Large Language Model Optimization",
-          "termCode": "LLMO",
-          "url": "https://en.wikipedia.org/wiki/Large_language_model"
+          "termCode": "LLMO"
         }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Enterprise AI Interfaces",
+        "name": "AI Visibility & Engine Diagnostic Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Autonomous Purchasing Interface",
-              "description": "Headless OpenAPI transaction gateway for autonomous purchasing agents"
+              "name": "AI Search Visibility Repair Kit (Full Delivery Pack)",
+              "description": "Deterministic 18-engine remediation roadmap, n8n DAG orchestration, and Edge streaming worker."
             },
             "price": "99.00",
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": `https://${cleanDomainSafe}/#checkout`
           }
         ]
       }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `https://${cleanDomainSafe}/#website`,
+      "url": `https://${cleanDomainSafe}/`,
+      "name": brandNameSafe,
+      "publisher": { "@id": `https://${cleanDomainSafe}/#organization` },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `https://${cleanDomainSafe}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
     }
+  ]
+}, null, 2);
+
+const c2paSample=JSON.stringify({
+  "c2pa_manifest_version": "2.1",
+  "asset_domain": cleanDomainSafe,
+  "claim_generator": "HTMLHTML-Provenance-Engine/2026",
+  "signing_standard": "RFC 3161 SHA-256 Trusted Timestamp",
+  "assertions": [
+    {
+      "label": "c2pa.actions",
+      "data": {
+        "actions": [
+          {
+            "action": "c2pa.created",
+            "softwareAgent": "HTMLHTML Verified Engine v2.1.0",
+            "when": new Date().toISOString()
+          }
+        ]
+      }
+    },
+    {
+      "label": "c2pa.provenance",
+      "data": {
+        "author_type": "verified_organization",
+        "canonical_entity": brandNameSafe,
+        "canonical_source": `https://${cleanDomainSafe}`,
+        "cryptographic_hash_algo": "SHA-256",
+        "merkle_leaf_digest": `sha256:ent-${cleanDomainSafe.replace(/[^a-z0-9]/gi, '')}-manifest-proof`
+      }
+    }
+  ]
+}, null, 2);
+
+const mcpSample=JSON.stringify({
+  "mcpVersion": "2024-11-05",
+  "name": `${cleanDomainSafe.replace(/\.[a-z]+$/i, '')}-enterprise-mcp-server`,
+  "description": `Industrial Model Context Protocol server for ${cleanDomainSafe} automated transactions and queries`,
+  "protocol": "JSON-RPC 2.0",
+  "tools": [
+    {
+      "name": `query_${cleanDomainSafe.replace(/\.[a-z]+$/i, '')}_pricing`,
+      "description": `Get authoritative pricing and package details for ${cleanDomainSafe}`,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tier": { "type": "string", "enum": ["free_diagnostic", "repair_kit_99usd"] }
+        },
+        "required": ["tier"]
+      }
+    },
+    {
+      "name": "fetch_rag_chunk",
+      "description": `Fetch sub-14KB demarcated knowledge chunks for query topic on ${cleanDomainSafe}`,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "topic": { "type": "string" },
+          "max_tokens": { "type": "number", "default": 512 }
+        },
+        "required": ["topic"]
+      }
+    }
+  ],
+  "resources": [
+    { "uri": `context://${cleanDomainSafe}/schema-graph`, "name": "Knowledge Graph Triples", "mimeType": "application/ld+json" },
+    { "uri": `context://${cleanDomainSafe}/llms-txt`, "name": "Root LLMs Manifest", "mimeType": "text/markdown" }
   ]
 }, null, 2);
 
@@ -215,25 +329,27 @@ Overall Score: ${overall}/100
 2. [P0 - 30m] Cloudflare Edge Worker: HTMLRewriter streaming purge (<14KB AST budget).
 3. [P1 - 1d] JSON-LD: Corporation @graph with Wikidata sameAs QID Knowledge Vault links.
 4. [P1 - 2d] HTML: Encapsulate core assertions in semantic data-chunk-id boundaries.
-5. [P2 - 3d] n8n: Import workflow for automated 03:00 UTC continuous monitoring and Slack alerting.`;
+5. [P2 - 3d] n8n: Import self-healing DAG for automated 03:00 UTC continuous monitoring, Slack incident dispatch and Cloudflare cache purge.`;
 
 remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'KURUMSAL ONARIM VE ENTEGRASYON KONSOLU':'TURNKEY REMEDIATION ARTIFACTS'}</span><h3 class="executive-deck-title">${isTr?'Tek Tıkla Uygulanabilir Kod ve Entegrasyon Şablonları':'Production-Ready Code & Automation Templates'}</h3><p class="executive-deck-desc">${isTr?'Mühendislik ekibinizin veya AI coding ajanınızın (Cursor, Claude Code, Cline) doğrudan kullanabileceği üretim seviyesinde kodlar:':'Copy-pasteable production implementations for your engineering team or AI coding agent:'}</p></div></div>
-<div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'n8n Çoklu-Ajan DAG Orkestrasyon Akışı':'n8n Multi-Agent DAG Orchestration Flow'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><button type="button" class="btn-download-blob" id="btnDlN8nJson">💾 ${isTr?'n8n-workflow.json İndir':'Download n8n-workflow.json'}</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div>
-<div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · CRON</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily 03:00 UTC</div><p class="dag-node-sub">Schedule Trigger</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe llms.txt</div><p class="dag-node-sub">Surface Check</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-UA Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">18-Engine Audit</div><p class="dag-node-sub">14KB AST & Triples</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · GATE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Demotion IF Gate</div><p class="dag-node-sub">Score &lt; 80 Check</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · DISPATCH</span><span class="dag-node-status"></span></div><div class="dag-node-name">DevOps Alert</div><p class="dag-node-sub">Slack / Webhook</p></div></div>
-<div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Daily 03:00 UTC Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de (sabah standup toplantısı öncesi) otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC before morning executive standup.'}</div></div>
-<div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Edge Worker</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 n8n AI İş Akışı (JSON)</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button></div>
+<div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'n8n Kendi Kendini Onaran (Self-Healing) DAG Akışı':'n8n Self-Healing DAG Orchestration Flow'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><button type="button" class="btn-download-blob" id="btnDlN8nJson">💾 ${isTr?'n8n-workflow.json İndir':'Download n8n-workflow.json'}</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div>
+<div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p></div></div>
+<div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div>
+<div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Edge Worker</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 n8n Self-Healing DAG</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button><button type="button" class="console-tab-btn" data-tab="tab-c2pa">🛡️ C2PA Ledger</button><button type="button" class="console-tab-btn" data-tab="tab-mcp">🔌 MCP Server</button></div>
 <div id="tab-roadmap" class="console-pane active"><div class="code-action-bar"><span>02_IMPLEMENTATION_ROADMAP.md</span><div><button type="button" class="btn-download-blob" id="btnDlRoadmapMd" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-roadmap-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-roadmap-pre" class="code-snippet-pre">${safe(roadmapSample)}</pre></div>
-<div id="tab-worker" class="console-pane"><div class="code-action-bar"><span>08_CLOUDFLARE_EDGE_ROUTER.js (HTMLRewriter Streaming)</span><div><button type="button" class="btn-download-blob" id="btnDlWorkerJs" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-worker-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-worker-pre" class="code-snippet-pre">${safe(workerCodeSample)}</pre></div>
-<div id="tab-n8n" class="console-pane"><div class="code-action-bar"><span>22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (Full Production DAG)</span><div><button type="button" class="btn-download-blob" id="btnDlN8nTab" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-n8n-pre" class="code-snippet-pre">${safe(n8nWorkflowSample)}</pre></div>
-<div id="tab-schema" class="console-pane"><div class="code-action-bar"><span>09_SCHEMA_GRAPH.jsonld (Wikidata Vault &amp; Offer Catalog)</span><div><button type="button" class="btn-download-blob" id="btnDlSchemaJson" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-schema-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-schema-pre" class="code-snippet-pre">${safe(jsonLdSample)}</pre></div>`;
+<div id="tab-worker" class="console-pane"><div class="code-action-bar"><span>14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Streaming HTMLRewriter)</span><div><button type="button" class="btn-download-blob" id="btnDlWorkerJs" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-worker-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-worker-pre" class="code-snippet-pre">${safe(workerCodeSample)}</pre></div>
+<div id="tab-n8n" class="console-pane"><div class="code-action-bar"><span>22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (Self-Healing DAG)</span><div><button type="button" class="btn-download-blob" id="btnDlN8nTab" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-n8n-pre" class="code-snippet-pre">${safe(n8nWorkflowSample)}</pre></div>
+<div id="tab-schema" class="console-pane"><div class="code-action-bar"><span>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata Vault &amp; Offer Catalog)</span><div><button type="button" class="btn-download-blob" id="btnDlSchemaJson" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-schema-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-schema-pre" class="code-snippet-pre">${safe(jsonLdSample)}</pre></div>
+<div id="tab-c2pa" class="console-pane"><div class="code-action-bar"><span>20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 TSA Digest)</span><div><button type="button" class="btn-download-blob" id="btnDlC2paJson" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-c2pa-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-c2pa-pre" class="code-snippet-pre">${safe(c2paSample)}</pre></div>
+<div id="tab-mcp" class="console-pane"><div class="code-action-bar"><span>17_MCP_SERVER_SPEC.json (Model Context Protocol)</span><div><button type="button" class="btn-download-blob" id="btnDlMcpJson" style="margin-right:6px;">💾 İndir</button><button type="button" class="btn-copy-code" data-target="code-mcp-pre">${isTr?'Kopyala':'Copy'}</button></div></div><pre id="code-mcp-pre" class="code-snippet-pre">${safe(mcpSample)}</pre></div>`;
 
 const DAG_STEPS=[
-  {name:'01 · Daily 03:00 UTC Trigger',text:isTr?'Her gün saat 03:00 UTC\'de (sabah standup toplantısı öncesi) otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC before morning executive standup.'},
-  {name:'02 · Probe llms.txt Surface',text:isTr?'https://'+cleanDomainSafe+'/llms.txt dosyasını HTTP GET ile sorgulayarak spesifikasyon ve Markdown link bütünlüğünü doğrular.':'Probes /llms.txt via HTTP GET to verify markdown linkage and content freshness.'},
-  {name:'03 · Simulate AI Bot Ingestion',text:isTr?'PerplexityBot ve GPTBot User-Agent başlıklarıyla ana sayfayı tarayarak edge WAF ve 200 OK yanıtını test eder.':'Simulates PerplexityBot and GPTBot ingestion to verify edge WAF passes without 403 blocks.'},
-  {name:'04 · Audit 18-Engine Gates',text:isTr?'JavaScript Code Node: HTML boyutunu (<14KB AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<14KB AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.'},
-  {name:'05 · Demotion IF Gate',text:isTr?'Hesaplanan sağlık skoru 80 altına düşerse veya kritik engel tespit edilirse acil durum dalına yönlendirir.':'Routes payload to alert branch if computed health score falls below 80/100 threshold.'},
-  {name:'06 · Notify DevOps & Growth Team',text:isTr?'Slack / PagerDuty webhook\'una tam teşhis ve kök neden telemetrisi ile anlık incident bildirimi fırlatır.':'Dispatches incident alert with telemetry payload to Slack / PagerDuty webhook.'}
+  {name:'01 · CRON / CI Webhook Trigger',text:isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'},
+  {name:'02 · Probe Surfaces (llms.txt & robots)',text:isTr?'https://'+cleanDomainSafe+'/llms.txt ve /robots.txt dosyalarını HTTP GET ile sorgulayarak spesifikasyon bütünlüğünü doğrular.':'Probes /llms.txt and /robots.txt via HTTP GET to verify markdown linkage and bot permissions.'},
+  {name:'03 · Multi-Bot Ingestion Probe',text:isTr?'PerplexityBot, GPTBot ve ClaudeBot User-Agent başlıklarıyla tarayarak edge WAF ve HTTP 200 OK yanıtını test eder.':'Simulates PerplexityBot, GPTBot, and ClaudeBot ingestion to verify edge WAF passes without blocks.'},
+  {name:'04 · Deterministic AST 14KB Gate',text:isTr?'JavaScript Code Node: HTML boyutunu (<14KB AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<14KB AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.'},
+  {name:'05 · Bayesian Drift Triage (Score < 80?)',text:isTr?'Hesaplanan sağlık skoru 80 altına düşerse veya kritik engel tespit edilirse acil durum dalına yönlendirir.':'Routes payload to incident branch if computed health score falls below 80/100 threshold.'},
+  {name:'06 · Self-Healing Auto-Purge & Alert',text:isTr?'Cloudflare Edge Cache Purge API çağrısını tetikleyerek önbelleği temizler ve Slack/PagerDuty incident kanallarına alarm fırlatır.':'Executes automated Cloudflare Edge Cache Purge API and dispatches incident telemetry to Slack/PagerDuty.'}
 ];
 
 remConsole.querySelectorAll('.dag-node-card').forEach(card=>{card.addEventListener('click',()=>{remConsole.querySelectorAll('.dag-node-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');const idx=parseInt(card.dataset.step,10);const inspector=document.getElementById('dagNodeInspector');if(inspector&&DAG_STEPS[idx])inspector.innerHTML=`<strong>[${DAG_STEPS[idx].name}]</strong>: ${DAG_STEPS[idx].text}`})});
@@ -262,7 +378,7 @@ if(btnRunDag){
       }
     }
     if(inspector){
-      inspector.innerHTML=`<span style="color:#10b981;font-weight:800;">✅ [PIPELINE SUCCESS]</span> <strong>${cleanDomainSafe}</strong>: ${isTr?'Tüm 18 motor kontrol noktaları başarıyla doğrulandı. Siteniz AI arama motorları için 1. sıra tavsiye edilmeye hazır.':'All 18-engine checkpoints verified. Domain is primed for first-rank AI citations.'}`;
+      inspector.innerHTML=`<span style="color:#10b981;font-weight:800;">✅ [SELF-HEALING SUCCESS]</span> <strong>${cleanDomainSafe}</strong>: ${isTr?'Tüm 18 motor kontrol noktaları doğrulandı. Edge önbellek tazelendi ve site AI arama motorları için 1. sıra tavsiye edilmeye hazır.':'All 18-engine checkpoints verified. Edge cache synchronized and domain primed for top-tier AI citations.'}`;
     }
     btnRunDag.innerHTML='✅ '+ (isTr?'Akış Tamamlandı':'Pipeline Done');
     setTimeout(()=>{btnRunDag.disabled=false;btnRunDag.innerHTML=origText;},2500);
@@ -272,9 +388,11 @@ if(btnRunDag){
 const dlN8n=()=>{downloadBlob('22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json',n8nWorkflowSample,'application/json')};
 const btnDl1=document.getElementById('btnDlN8nJson'), btnDl2=document.getElementById('btnDlN8nTab');
 if(btnDl1)btnDl1.addEventListener('click',dlN8n);if(btnDl2)btnDl2.addEventListener('click',dlN8n);
-const btnDlW=document.getElementById('btnDlWorkerJs');if(btnDlW)btnDlW.addEventListener('click',()=>downloadBlob('08_CLOUDFLARE_EDGE_ROUTER.js',workerCodeSample,'text/javascript'));
-const btnDlS=document.getElementById('btnDlSchemaJson');if(btnDlS)btnDlS.addEventListener('click',()=>downloadBlob('09_SCHEMA_GRAPH.jsonld',jsonLdSample,'application/ld+json'));
+const btnDlW=document.getElementById('btnDlWorkerJs');if(btnDlW)btnDlW.addEventListener('click',()=>downloadBlob('14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js',workerCodeSample,'text/javascript'));
+const btnDlS=document.getElementById('btnDlSchemaJson');if(btnDlS)btnDlS.addEventListener('click',()=>downloadBlob('13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json',jsonLdSample,'application/ld+json'));
 const btnDlR=document.getElementById('btnDlRoadmapMd');if(btnDlR)btnDlR.addEventListener('click',()=>downloadBlob('02_IMPLEMENTATION_ROADMAP.md',roadmapSample,'text/markdown'));
+const btnDlC=document.getElementById('btnDlC2paJson');if(btnDlC)btnDlC.addEventListener('click',()=>downloadBlob('20_C2PA_PROVENANCE_LEDGER_SPEC.json',c2paSample,'application/json'));
+const btnDlM=document.getElementById('btnDlMcpJson');if(btnDlM)btnDlM.addEventListener('click',()=>downloadBlob('17_MCP_SERVER_SPEC.json',mcpSample,'application/json'));
 remConsole.querySelectorAll('.console-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{remConsole.querySelectorAll('.console-tab-btn').forEach(b=>b.classList.remove('active'));remConsole.querySelectorAll('.console-pane').forEach(p=>p.classList.remove('active'));btn.classList.add('active');const targetPane=document.getElementById(btn.dataset.tab);if(targetPane)targetPane.classList.add('active')})});remConsole.querySelectorAll('.btn-copy-code').forEach(btn=>{btn.addEventListener('click',async()=>{const preEl=document.getElementById(btn.dataset.target);if(preEl){try{await navigator.clipboard.writeText(preEl.textContent);const orig=btn.textContent;btn.textContent=isTr?'Kopyalandı!':'Copied!';setTimeout(()=>{btn.textContent=orig},1800)}catch{}}})});
 document.getElementById('findingCount').textContent=`${data.findings.length} ${D[lang].issues}`;const list=document.getElementById('findingsList');list.innerHTML='';let filterBar=document.getElementById('findingsFilterBar');if(!filterBar){filterBar=document.createElement('div');filterBar.id='findingsFilterBar';filterBar.className='findings-filter-bar';list.parentNode.insertBefore(filterBar,list)}filterBar.innerHTML=`<button type="button" class="filter-btn active" data-filter="all">${isTr?'Tüm Bulgular':'All Findings'} (${counts.all})</button><button type="button" class="filter-btn filter-red" data-filter="critical">${isTr?'🔴 Kritik':'🔴 Critical'} (${counts.critical})</button><button type="button" class="filter-btn filter-amber" data-filter="high">${isTr?'🟠 Yüksek':'🟠 High'} (${counts.high})</button><button type="button" class="filter-btn filter-blue" data-filter="medium">${isTr?'🔵 Orta':'🔵 Medium'} (${counts.medium})</button><button type="button" class="filter-btn filter-green" data-filter="low">${isTr?'🟢 Bilgi':'🟢 Info'} (${counts.low})</button>`;filterBar.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{filterBar.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const target=btn.dataset.filter;document.querySelectorAll('#findingsList .finding').forEach(item=>{if(target==='all'||item.dataset.severity===target||(target==='low'&&(item.dataset.severity==='low'||item.dataset.severity==='info'))){item.style.display=''}else{item.style.display='none'}})})});(data.findings = [...new Map(data.findings.map(f=>[f.id||f.title, f])).values()]).forEach(f=>{const title=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr),impact=lang==='tr'?(f.impactTr||f.impactEn):(f.impactEn||f.impactTr),c=(conf[f.confidence]||{tr:f.confidence,en:f.confidence})[lang];      const teaserHtml=isTr?`<div class="finding-conversion-teaser"><div class="teaser-blueprint"><span class="teaser-icon">💡</span><strong>$99 Onarım Seti Çözümü (AI Görünürlük Yol Haritası):</strong> Bu sorun arama ve yapay zeka botlarının sitenizi atlamasına yol açar; kapsamlı mühendislik paketi, hazır kod şablonu, kabul testi ve rollback planıyla kalıcı olarak çözülür. <a href="/checkout?plan=pro" style="color:#38bdf8;font-weight:700;text-decoration:underline;">Onarım Setini İndir — $99 →</a></div></div>`:`<div class="finding-conversion-teaser"><div class="teaser-blueprint"><span class="teaser-icon">💡</span><strong>$99 Repair Kit (AI Search Visibility Roadmap):</strong> This blocker prevents AI crawlers from indexing your site; resolved permanently with comprehensive engineering pack, ready code templates, acceptance tests and rollback blueprint. <a href="/checkout?plan=pro" style="color:#38bdf8;font-weight:700;text-decoration:underline;">Download Repair Kit — $99 →</a></div></div>`;
       const DOSSIER_MAP={'TOKEN-BLOAT-001':{tr:{v:'curl -s -A "GPTBot" [URL] | wc -c ile HTML ham boyutunu ve AST derinliğini ölçün.',b:'14KB AST sınırını aşan sayfalar botlarca erken kesilir; alt kısımdaki ürün/hizmetler RAG vektör hafızasına giremez.'},en:{v:'Measure raw HTML payload via curl -s -A "GPTBot" [URL] | wc -c.',b:'Payloads exceeding 14KB trigger early ingestion termination; lower-page entities are omitted from model vector memory.'}},'ENTITY-VAULT-001':{tr:{v:'JSON-LD schema içinde sameAs Wikidata QID ve Crunchbase MID bağlantılarını kontrol edin.',b:'Google Knowledge Graph ve Perplexity markayı doğrulanmış varlık (ground truth) saymaz; Core Update düşüşlerine açık kalır.'},en:{v:'Verify sameAs Wikidata QID and Crunchbase MID triples in JSON-LD.',b:'Search AI models cannot triangulate brand into persistent Knowledge Vaults, causing loss of authoritative ground-truth status.'}},'RAG-CHUNK-001':{tr:{v:'Kaynak kodunda data-chunk-id semantik bölümlendirme özniteliklerini denetleyin.',b:'512 tokenlık RAG bölünmesinde marka adı ve anahtar önerme parçalanır; semantik sorgularda alıntı ihtimali sıfırlanır.'},en:{v:'Inspect HTML for data-chunk-id semantic boundary encapsulation.',b:'Standard 512-token RAG chunking severs entity definitions, dropping semantic answer retrieval confidence.'}},'RERANK-ATTN-001':{tr:{v:'H2 altındaki ilk 45 kelimede doğrudan cevap ve sayısal veri yoğunluğunu inceleyin.',b:'Cross-Encoder modelleri (Cohere, bge-reranker) sayısal kanıt taşımayan genel metinleri eler ve cevaba almaz.'},en:{v:'Audit opening 45 words under headings for direct answer syntax and numerical metrics.',b:'Cross-encoder neural rerankers demote passages lacking high numerical fact density and contrastive differentiation.'}},'AI-CORPUS-PMI-001':{tr:{v:'Teknik doküman ve GitHub README içinde sektörel standart terimleriyle marka birlikteliğini inceleyin.',b:'Ortak ön-eğitim korpuslarında (Common Crawl) markanız parametrik ağırlık kazanamaz; model hafızasında yer alamaz.'},en:{v:'Audit brand co-occurrence with industry benchmark anchors within 64-token windows.',b:'Fails to establish parametric weights in foundational LLM training corpuses, leading to zero-shot omission.'}},'COLBERT-MAXSIM-001':{tr:{v:'Sayfadaki H2/H3 başlık sayısını ve teknik terim çeşitliliğini denetleyin.',b:'ColBERT ve SPLADE çoklu-vektör motorları başlık tokenları ile sorgu tokenlarını tam eşleştiremediği için sıralama kaybedilir.'},en:{v:'Evaluate H2/H3 heading density and multi-vector query token variety.',b:'Multi-vector retrieval engines fail to achieve maximum late-interaction dot-product scores without rich heading tokens.'}},'DPO-RLAIF-001':{tr:{v:'İçerikte "en iyi", "rakipsiz", "sektör lideri" gibi subjektif abartılı sıfatları arayın.',b:'RLAIF ve DPO tercih hizalama modelleri tarafsız ve metodolojik olmayan pazarlama abartılarını doğrudan cezalandırır.'},en:{v:'Scan content for subjective superlatives ("best-in-class", "revolutionary").',b:'DPO and RLAIF preference models downweight promotional puffery in favor of objective empirical data.'}},'A2A-MCP-CARD-001':{tr:{v:'/.well-known/agent-card.json ve /mcp adreslerini HTTP GET ile sorgulayın.',b:'Otonom satın alma ve işlem ajanları (Siri Agent, Claude Use) sitenizi programatik olarak keşfedip çalıştıramaz.'},en:{v:'Probe /.well-known/agent-card.json and /mcp endpoints via HTTP GET.',b:'Autonomous purchasing agents cannot discover or execute headless transactions on your domain.'}},'AGENTIC-COMMERCE-001':{tr:{v:'Form alanlarının arkasında tokenlı bir OpenAPI uç noktası olup olmadığını test edin.',b:'Kullanıcı adına satın alma yapmaya çalışan otonom ajanlar formları geçemez; doğrudan otonom gelir kaybı oluşur.'},en:{v:'Verify if interactive web forms expose a headless OpenAPI order endpoint.',b:'Purchasing agents fail on human-only form interfaces, dropping autonomous machine-to-machine revenue.'}},'CORROBORATION-RING-001':{tr:{v:'Sitedeki teknik iddiaları doğrulayan dış sektör raporu veya bağımsız kaynak referanslarını denetleyin.',b:'Perplexity ve SearchGPT tek kaynaklı iddiaları halüsinasyon filtresine takarak alıntı havuzundan tamamen eler.'},en:{v:'Audit outbound citation links to third-party industry benchmarks and authoritative registries.',b:'Search AI models suppress single-source claims vulnerable to synthetic hallucination filters.'}},'TOPICAL-CENTROID-001':{tr:{v:'Alt sayfaların embedding vektör mesafesini (cosine similarity) ve başlık dağılımını ölçün.',b:'Vektör veri tabanlarında (Pinecone, Qdrant) MMR algoritması sitenizi odaksız bularak sıralamayı düşürür.'},en:{v:'Measure embedding cosine distance of subpages relative to primary topical centroid.',b:'Vector search engines apply Maximal Marginal Relevance (MMR) penalties, demoting dispersed topical clusters.'}},'C2PA-PROVENANCE-001':{tr:{v:'HTTP yanıtında x-c2pa-manifest başlığını ve RFC 3161 kriptografik menşe imzasını doğrulayın.',b:'LLM modelleri içeriğin ilk size ait olduğunu kriptografik olarak teyit edemez; içerik hırsızlarından ayırt edemez.'},en:{v:'Verify HTTP x-c2pa-manifest header and RFC 3161 cryptographic provenance timestamp.',b:'AI search crawlers cannot verify cryptographic first-party creation rights against scrapers.'}},'ONTOLOGY-SUPERCLASS-001':{tr:{v:'JSON-LD @graph içinde derin sınıf mirasını (Thing -> Organization -> Corporation) denetleyin.',b:'Yüzeysel şema tipleri AI motorlarının şirketi derin kurumsal ontoloji ağacına oturtmasını engeller.'},en:{v:'Audit JSON-LD @graph for deep ontological inheritance (Thing -> Organization -> Corporation).',b:'Shallow schema markup prevents neural search engines from anchoring the brand into deep domain ontologies.'}},'ACADEMIC-SYCOPHANCY-001':{tr:{v:'Metin içinde DOI, RFC, W3C, ISO veya hakemli standart referanslarının varlığını kontrol edin.',b:'Yapay zeka modelleri üçüncü taraf metodolojik dayanağı olmayan iddiaları şüpheyle karşılayıp alıntılamaz.'},en:{v:'Check for formal benchmark standards (DOI, RFC, W3C, ISO, IEEE) referenced in body copy.',b:'Foundation LLMs down-weight unmethodologized claims lacking peer-reviewed or independent benchmark grounding.'}},'TTFB-COLDSTART-001':{tr:{v:'curl -w "%{time_starttransfer}\\n" ile Edge cold-start yanıt süresini ve önbellek başlıklarını ölçün.',b:'AI botlarının crawler worker\'ları 40ms üzeri cold-start gecikmelerinde tarama kotasını hızla tüketip çıkar.'},en:{v:'Measure edge TTFB via curl -w "%{time_starttransfer}\\n" and inspect cf-cache-status / s-maxage headers.',b:'AI crawler worker batches abort ingestion loops on latency spikes exceeding edge budget thresholds.'}},'HALLUCINATION-INTERCEPT-001':{tr:{v:'Sitede açık fiyatlandırma, hizmet sınırları ve SSS varlık ayrıştırma tablolarını denetleyin.',b:'Modeller belirsiz kalan marka ve fiyat sorularında rakip verilerini karıştırarak halüsinasyon üretir.'},en:{v:'Inspect explicit pricing tiers, service boundaries, and entity disambiguation Q&A tables.',b:'Models hallucinate outdated competitors or fabricated pricing when explicit ground-truth boundaries are missing.'}},'SYNTHETIC-CITATION-001':{tr:{v:'Sektörel benchmark endeksi, kanonik terim tanımı veya araştırma raporu formatını inceleyin.',b:'Yapay zekaların birbirini referans göstererek oluşturduğu bilgi tekelinde yer alma fırsatı kaçırılır.'},en:{v:'Evaluate publication of canonical industry benchmark definitions, metrics, or research whitepapers.',b:'Fails to seed reciprocal synthetic citation loops that establish category-level information monopolies.'}},'WAYBACK-INOCULATION-001':{tr:{v:'Kanonik sayfalardaki datePublished, dateModified ve arşiv snapshot tutarlılığını kontrol edin.',b:'Modelin Bayesçi güven öncülü (Bayesian Prior) için köklü ve tutarlı varlık sinyali zayıflar.'},en:{v:'Verify datePublished, dateModified schema attributes and historical archive snapshots.',b:'Weakens Bayesian prior confidence regarding long-term entity stability and historical brand consistency.'}}};
