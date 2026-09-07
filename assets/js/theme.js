@@ -1,6 +1,6 @@
 (()=>{
-const KEY='hh-theme';const root=document.documentElement;let selected='light';localStorage.setItem(KEY,'light');const media=matchMedia('(prefers-color-scheme: dark)');
-const apply=()=>{root.dataset.theme='light';root.dataset.themePreference='light';root.style.colorScheme='light'};apply();
+const KEY='hh-theme';const root=document.documentElement;let selected='dark';localStorage.setItem(KEY,'dark');const media=matchMedia('(prefers-color-scheme: dark)');
+const apply=()=>{root.dataset.theme='dark';root.dataset.themePreference='dark';root.style.colorScheme='dark'};apply();
 const link=document.createElement('link');link.rel='stylesheet';link.href='/assets/css/theme.css?v=2';if(!document.querySelector('link[href*="/assets/css/theme.css"]'))document.head.appendChild(link);
 const labels={tr:{light:'Gece (Koyu)',dark:'Gece (Koyu)',system:'Gece (Koyu)',aria:'Görünüm'},en:{light:'Dark (Night)',dark:'Dark (Night)',system:'Dark (Night)',aria:'Appearance'}};
 const icons={
