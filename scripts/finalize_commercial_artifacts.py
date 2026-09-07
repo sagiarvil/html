@@ -3,8 +3,8 @@ from pathlib import Path
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
-THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=2">'
-PREMIUM='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">'
+THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=9">'
+PREMIUM='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">'
 ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">'
 RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=3?v=1"></script>'
 SKIP_PARTS={'.git','node_modules','functions','functions-firebase','scripts','tests'}
