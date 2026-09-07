@@ -658,6 +658,248 @@ html[data-theme="light"] .authority-hero .kicker b {
     flex-direction: column;
     align-items: flex-start;
   }
+  .arr-calculator-controls {
+    grid-template-columns: 1fr;
+  }
+  .n8n-dag-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   ENTERPRISE N8N DAG & SIMULATOR EXTENSIONS
+   ========================================================================== */
+.n8n-dag-container {
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 18px 16px;
+  margin-bottom: 18px;
+}
+.n8n-dag-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.n8n-dag-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.n8n-dag-actions {
+  display: flex;
+  gap: 8px;
+}
+.btn-download-blob {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(16, 185, 129, 0.18));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #f8fafc;
+  font-size: 11.5px;
+  font-weight: 750;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+.btn-download-blob:hover {
+  background: #38bdf8;
+  color: #050811;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+.n8n-dag-nodes-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  overflow-x: auto;
+}
+.dag-node-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-width: 160px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.dag-node-card:hover, .dag-node-card.active {
+  border-color: #38bdf8;
+  background: rgba(30, 41, 59, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -4px rgba(56, 189, 248, 0.25);
+}
+.dag-node-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.dag-node-step {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+.dag-node-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  display: inline-block;
+}
+.dag-node-status.status-amber {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+.dag-node-name {
+  font-size: 12px;
+  font-weight: 750;
+  color: #f8fafc;
+  line-height: 1.35;
+  margin: 0 0 4px;
+}
+.dag-node-sub {
+  font-size: 10.5px;
+  color: #64748b;
+  margin: 0;
+}
+.dag-connector {
+  color: #475569;
+  font-size: 16px;
+  font-weight: 900;
+  flex-shrink: 0;
+  user-select: none;
+}
+.dag-inspector-panel {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+.dag-inspector-panel code {
+  color: #38bdf8;
+  font-size: 11.5px;
+}
+
+/* Model Probe Tabs & Simulator */
+.model-probe-nav {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.model-probe-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.model-probe-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+.model-probe-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+.sim-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sim-toggle-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+.sim-toggle-switch {
+  display: inline-flex;
+  background: #0f172a;
+  border-radius: 999px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 2px;
+}
+.sim-toggle-opt {
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 999px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  transition: all 0.15s ease;
+}
+.sim-toggle-opt.active.opt-raw {
+  background: #ef4444;
+  color: #ffffff;
+}
+.sim-toggle-opt.active.opt-fixed {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* ARR Calculator */
+.arr-calculator-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(239, 68, 68, 0.25);
+  width: 100%;
+}
+.arr-calc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.arr-calc-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #cbd5e1;
+  display: flex;
+  justify-content: space-between;
+}
+.arr-calc-slider {
+  accent-color: #ef4444;
+  cursor: pointer;
+  width: 100%;
 }
 
 @media print {
