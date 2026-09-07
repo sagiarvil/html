@@ -77,6 +77,10 @@ function mount(){
       b.addEventListener('click',()=>{
         selected=value;
         localStorage.setItem(KEY,value);
+        try {
+          localStorage.setItem('htmlandhtml-theme-v2', JSON.stringify({theme: value, effective: value==='system' ? (media.matches?'dark':'light') : value, timestamp: Date.now()}));
+          document.cookie = 'htmlandhtml-theme=' + encodeURIComponent(JSON.stringify({theme: value})) + '; path=/; max-age=31536000; SameSite=Lax; Secure';
+        } catch(e) {}
         apply();
         // Update button styles manually for instant feedback without full re-render
         wrap.querySelectorAll('button').forEach(btn => {

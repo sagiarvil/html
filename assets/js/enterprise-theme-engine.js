@@ -41,6 +41,10 @@
 
   var Storage = {
     get: function() {
+      var hhTheme = localStorage.getItem('hh-theme');
+      if (hhTheme) {
+        return { theme: hhTheme, effective: hhTheme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : hhTheme };
+      }
       var cookieValue = Cookie.get(CONFIG.COOKIE_NAME);
       if (cookieValue) {
         try {

@@ -19,7 +19,7 @@ def build_mention_tracker():
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-mention-tracker/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <link rel="stylesheet" href="/assets/css/authority.css">
-<script src="/assets/js/theme.js?v=5"></script>
+<script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/mention-tracker.js" defer></script>
 <script type="application/ld+json">
 {{
@@ -162,7 +162,7 @@ def build_mention_tracker():
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-mention-tracker/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <link rel="stylesheet" href="/assets/css/authority.css">
-<script src="/assets/js/theme.js?v=5"></script>
+<script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/mention-tracker.js" defer></script>
 <script type="application/ld+json">
 {{
