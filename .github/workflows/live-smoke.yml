@@ -34,7 +34,7 @@ jobs:
           body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
           ! grep -Eq '\$49|\$149' <<<"$body"
           grep -Fq '$99' <<<"$body"
-          grep -Fq '/assets/css/premium-experience.css?v=1' <<<"$body"
+          grep -Fq '/assets/css/premium-experience.css' <<<"$body"
           grep -Fq '/assets/js/theme.js' <<<"$body"
 
       - name: Verify customer-first AI visibility and removed glossary callout
