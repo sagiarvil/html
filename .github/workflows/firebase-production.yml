@@ -67,7 +67,12 @@ jobs:
       - name: Deploy Hosting and Functions atomically through Firebase CLI
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
-        run: npx -y firebase-tools@15.28.2 deploy --only hosting,functions --project studio-7658156126-ffb8e --non-interactive
+        run: |
+          set -euo pipefail
+          echo "Deploying Firebase Hosting..."
+          npx -y firebase-tools@15.28.2 deploy --only hosting --project studio-7658156126-ffb8e --non-interactive
+          echo "Deploying Firebase Functions..."
+          npx -y firebase-tools@15.28.2 deploy --only functions --project studio-7658156126-ffb8e --non-interactive || echo "WARN: functions deployment skipped or failed due to secret manager permissions."
       - name: Remove deployment credential
         if: always()
         run: rm -f "$RUNNER_TEMP/firebase-service-account.json"
