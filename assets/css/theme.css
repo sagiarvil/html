@@ -3641,3 +3641,24 @@ html[data-theme="light"] .topbar {
 html[data-theme="light"] .brand-logo {
   filter: invert(1) hue-rotate(180deg); /* If the logo is white text, make it dark */
 }
+
+/* ==========================================================================
+   URGENT CONTRAST FIX: Validator v2 Components
+   ========================================================================== */
+.scan-disclosure {
+  background: var(--theme-bg-elevated, #282b36) !important;
+  color: var(--theme-text-secondary, #94a3b8) !important;
+  border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+}
+
+.finding-tags span {
+  background: var(--theme-bg-elevated, #282b36) !important;
+  color: var(--theme-text-secondary, #94a3b8) !important;
+  border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+}
+
+.locked-fix {
+  background: var(--theme-bg-elevated, #282b36) !important;
+  color: var(--theme-text-primary, #cbd5e1) !important;
+  border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+}

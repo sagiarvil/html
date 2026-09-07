@@ -20,7 +20,7 @@ const apply=()=>{
 
 apply();
 
-const link=document.createElement('link');link.rel='stylesheet';link.href='/assets/css/theme.css?v=5';
+const link=document.createElement('link');link.rel='stylesheet';link.href='/assets/css/theme.css?v=6';
 if(!document.querySelector('link[href*="/assets/css/theme.css"]'))document.head.appendChild(link);
 
 const labels={
