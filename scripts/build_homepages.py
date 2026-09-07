@@ -175,8 +175,8 @@ def build_homepages():
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
-        <input id="domainInput" aria-label="Taranacak web sitesi veya alan adı" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="sirketiniz.com" required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><span class="btn-arrow" aria-hidden="true">→</span></button>
+        <input id="domainInput" aria-label="Taranacak web sitesi veya alan adı" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://sirketiniz.com/" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Derin AI Denetimi Başlat</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Ücretsiz Kontrol Et</span></button>
       </div>
       <div class="scan-chips">
         <span>Örnekler:</span>
@@ -204,7 +204,7 @@ def build_homepages():
 <section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
   <div class="px-section-head">
     <span class="eyebrow">ÖZEL DENETİM ARAÇLARI / END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>Teknik Karar ve Onarım Mimarisi</h2>
+    <h2>Özel Denetim Araçları ve Karar Mimarisi</h2>
     <p>Silikon Vadisi ve New York kurumsal arama mühendisliği standardında; 18 motor, 105 kontrol ve kanıt kilidiyle çalışan deterministik karar akışı.</p>
   </div>
   <div class="px-pipeline-flow">
@@ -524,8 +524,8 @@ def build_homepages():
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Target website domain</label>
-        <input id="domainInput" aria-label="Website or domain to scan" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="yourcompany.com" required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><span class="btn-arrow" aria-hidden="true">→</span></button>
+        <input id="domainInput" aria-label="Website or domain to scan" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://yourcompany.com/" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Start Deep AI Audit</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Check Free</span></button>
       </div>
       <div class="scan-chips">
         <span>Examples:</span>
@@ -553,7 +553,7 @@ def build_homepages():
 <section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
   <div class="px-section-head">
     <span class="eyebrow">SPECIALIZED AUDIT TOOLS / END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>Technical Decision &amp; Remediation Architecture</h2>
+    <h2>Specialized Diagnostic Tools &amp; Decision Architecture</h2>
     <p>Silicon Valley and New York enterprise search engineering standards; deterministic pipeline operating across 18 engines, 105 controls, and cryptographic evidence verification.</p>
   </div>
   <div class="px-pipeline-flow">
