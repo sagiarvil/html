@@ -650,7 +650,7 @@ for t in tools_data:
 }}
 </script>
 <script src="/assets/js/authority-tool.js" defer></script>
-<script src="/assets/js/theme.js?v=3"></script>
+<script src="/assets/js/theme.js"></script>
 </head>
 <body data-tool-categories="{t['categories']}">
 {get_header(lang, alt_url, 'tools')}
