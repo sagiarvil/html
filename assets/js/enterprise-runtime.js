@@ -2,9 +2,9 @@
 'use strict';
 const COPY={
  tr:{
-  hero:'Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em>Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em>',
-  lead:"URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz...",
-  scan:'AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et →',
+  hero:'Yapay zeka sitenizi tavsiye ediyor mu?<br><em>Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em>',
+  lead:'ChatGPT, Claude ve Perplexity için 18 motorlu otonom denetim ve dağıtım paketi. 15 saniyede tek tıkla sitenizi tarayın, model ağırlıklarındaki ve RAG mimarisindeki görünürlük kayıplarını kanıtıyla görün.',
+  scan:'Derin AI Denetimi Başlat →',
   mandateTitle:'Kontrol ücretsiz.<br>AI Görünürlük Onarım Seti $99.',
   mandateCopy:'Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır. 5 kritik kontrol noktası onarım seti ile güvence altına alınır.',
   getMandate:'Onarım Setini İndir — $99 →',
@@ -18,8 +18,8 @@ const COPY={
  },
  en:{
   hero:'Does AI Recommend You?<br><em>Can AI Find You? Are You Ready to Be Recommended?</em>',
-  lead:'Enter your URL. 18 engines, 105 controls, 13 audits. 15 seconds. Enter one URL. HTML&HTML evaluates llms.txt, GEO, AEO, LLMO, AAO, RAG, E-E-A-T in one scan. Unlock AI Search Visibility Roadmap / Repair Kit only if you need the execution plan.',
-  scan:'Does AI Recommend You? Check Free →',
+  lead:'Autonomous 18-engine diagnostic & deployment pack for ChatGPT, Claude, and Perplexity. Run a 1-click deep audit in 15 seconds to uncover model weight and RAG architectural gaps.',
+  scan:'Start Deep AI Audit →',
   mandateTitle:'Diagnosis is free.<br>The AI Visibility Repair Kit is $99.',
   mandateCopy:'This issue causes search engines to skip your site. Unlocking provides a permanent solution + rollback guarantee. 5 critical checkpoints are secured via automated remediation.',
   getMandate:'Download Repair Kit — $99 →',

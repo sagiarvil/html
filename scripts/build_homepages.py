@@ -105,9 +105,11 @@ def build_homepages():
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
 <meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh2026">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh2026">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh2026">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh2026">
+<link rel="icon" href="/favicon.ico?v=hh2026" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
@@ -164,17 +166,17 @@ def build_homepages():
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
-  <h1 data-i18n="heroTitle">Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em>Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>
-  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
+  <div class="kicker"><span></span><b data-i18n="kicker">KURUMSAL AI ARAMA İSTİHBARATI / V4.1</b></div>
+  <h1 data-i18n="heroTitle">Yapay zeka sitenizi tavsiye ediyor mu?<br><em data-i18n="heroSubtitle">Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>
+  <p class="hero-answer" data-i18n="heroCopy">ChatGPT, Claude ve Perplexity için 18 motorlu otonom denetim ve dağıtım paketi. 15 saniyede tek tıkla sitenizi tarayın, model ağırlıklarındaki ve RAG mimarisindeki görünürlük kayıplarını kanıtıyla görün.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
-        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b><i>→</i></button>
+        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://sirketiniz.com/" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Derin AI Denetimi Başlat →</b><i>→</i></button>
       </div>
       <div class="scan-chips">
         <span>Örnekler:</span>
@@ -195,6 +197,60 @@ def build_homepages():
     <span data-i18n="sigSchema">YAPISAL VERİ</span><i></i>
     <span data-i18n="sigA11y">ERİŞİLEBİLİRLİK</span><i></i>
     <span data-i18n="sigSecurity">GÜVENLİK</span>
+  </div>
+</section>
+
+<!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
+<section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
+  <div class="px-section-head">
+    <span class="eyebrow">END-TO-END AUTONOMOUS INTELLIGENCE PIPELINE</span>
+    <h2>Teknik Karar ve Onarım Mimarisi</h2>
+    <p>Silikon Vadisi ve New York kurumsal arama mühendisliği standardında; 18 motor, 105 kontrol ve kanıt kilidiyle çalışan deterministik karar akışı.</p>
+  </div>
+  <div class="px-pipeline-flow">
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">ADIM 01</div>
+      <h3>Canlı URL Girişi</h3>
+      <p>DoH (DNS-over-HTTPS) ve RFC 1918 SSRF izolasyonu ile hedef host güvenlik çemberine alınır.</p>
+      <div class="pipeline-micro-stream">
+        <span>🛡️ DoH DNS Koruması</span>
+        <span>⚡ HTTP/2 Handshake</span>
+        <span>🔒 Fail-Closed Gate</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">ADIM 02</div>
+      <h3>18 Motorlu Paralel Tarama</h3>
+      <p>cl100k AST token ayrıştırma, 14KB bütçe kontrolü, Cross-Encoder attention ve RAG chunk testleri.</p>
+      <div class="pipeline-micro-stream">
+        <span>🎯 ColBERT MaxSim</span>
+        <span>🧠 Knowledge Vault QID</span>
+        <span>📦 14KB AST Token Purge</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">ADIM 03</div>
+      <h3>Deterministik Kanıt Kilidi</h3>
+      <p>UNKNOWN ≠ PASS kuralı. Varsayımsız, kablo seviyesi HTTP/DOM ispatı ve P0–P3 etki matrisi.</p>
+      <div class="pipeline-micro-stream">
+        <span>⚖️ P0–P3 Etki Matrisi</span>
+        <span>📋 24 Alanlı Bulgu Şeması</span>
+        <span>🛑 Stop-Gate Denetimi</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card px-pipeline-card-highlight">
+      <div class="pipeline-step-badge highlight">ADIM 04</div>
+      <h3>22 Dosyalık Onarım Paketi</h3>
+      <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
+      <div class="pipeline-micro-stream">
+        <span>⚙️ test.js Scriptleri</span>
+        <span>🔄 Geri Alma Güvencesi</span>
+        <span>🤖 A2A Agent Card &amp; MCP</span>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -393,9 +449,11 @@ def build_homepages():
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
 <meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh2026">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh2026">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh2026">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh2026">
+<link rel="icon" href="/favicon.ico?v=hh2026" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
@@ -451,17 +509,17 @@ def build_homepages():
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">WEBSITE FIX VALIDATOR / V2</b></div>
-  <h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>
-  <p class="hero-answer" data-i18n="heroCopy">Enter a domain. 18 independent analysis engines inspect the public website surface across 105 control points and 13 audits in 15 seconds. Implementation instructions unlock in the $99 paid layer.</p>
+  <div class="kicker"><span></span><b data-i18n="kicker">ENTERPRISE AI SEARCH INTELLIGENCE / V4.1</b></div>
+  <h1 data-i18n="heroTitle">Does AI Recommend You?<br><em data-i18n="heroSubtitle">Can AI Find You? Are You Ready to Be Recommended?</em></h1>
+  <p class="hero-answer" data-i18n="heroCopy">Autonomous 18-engine diagnostic &amp; deployment pack for ChatGPT, Claude, and Perplexity. Run a 1-click deep audit in 15 seconds to uncover model weight and RAG architectural gaps.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Target website domain</label>
-        <input id="domainInput" aria-label="Target website domain to audit" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><i>→</i></button>
+        <input id="domainInput" aria-label="Target website domain to audit" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://yourcompany.com/" required>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Start Deep AI Audit →</b><i>→</i></button>
       </div>
       <div class="scan-chips">
         <span>Examples:</span>
@@ -482,6 +540,60 @@ def build_homepages():
     <span data-i18n="sigSchema">STRUCTURED DATA</span><i></i>
     <span data-i18n="sigA11y">ACCESSIBILITY</span><i></i>
     <span data-i18n="sigSecurity">SECURITY</span>
+  </div>
+</section>
+
+<!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
+<section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
+  <div class="px-section-head">
+    <span class="eyebrow">END-TO-END AUTONOMOUS INTELLIGENCE PIPELINE</span>
+    <h2>Technical Decision &amp; Remediation Architecture</h2>
+    <p>Silicon Valley and New York enterprise search engineering standards; deterministic pipeline operating across 18 engines, 105 controls, and cryptographic evidence verification.</p>
+  </div>
+  <div class="px-pipeline-flow">
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">STEP 01</div>
+      <h3>Live URL Ingestion</h3>
+      <p>DoH (DNS-over-HTTPS) resolution and RFC 1918 SSRF isolation sandbox the target host safely.</p>
+      <div class="pipeline-micro-stream">
+        <span>🛡️ DoH DNS Shield</span>
+        <span>⚡ HTTP/2 Handshake</span>
+        <span>🔒 Fail-Closed Gate</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">STEP 02</div>
+      <h3>18-Engine Parallel Crawl</h3>
+      <p>cl100k AST token parsing, 14KB budget enforcement, Cross-Encoder attention, and RAG chunk boundary tests.</p>
+      <div class="pipeline-micro-stream">
+        <span>🎯 ColBERT MaxSim</span>
+        <span>🧠 Knowledge Vault QID</span>
+        <span>📦 14KB AST Token Purge</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">STEP 03</div>
+      <h3>Deterministic Evidence Gate</h3>
+      <p>UNKNOWN ≠ PASS principle. Wire-level HTTP/DOM proof without heuristics, mapped to P0–P3 impact matrix.</p>
+      <div class="pipeline-micro-stream">
+        <span>⚖️ P0–P3 Impact Matrix</span>
+        <span>📋 24-Field Finding Schema</span>
+        <span>🛑 Stop-Gate Assertion</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card px-pipeline-card-highlight">
+      <div class="pipeline-step-badge highlight">STEP 04</div>
+      <h3>22-File Enterprise Repair Kit</h3>
+      <p>Root-cause remediation, test.js verification suites, 00_ROLLBACK_PLAN, and 30-page machine surface.</p>
+      <div class="pipeline-micro-stream">
+        <span>⚙️ test.js Suites</span>
+        <span>🔄 Rollback Guarantees</span>
+        <span>🤖 A2A Agent Card &amp; MCP</span>
+      </div>
+    </article>
   </div>
 </section>
 

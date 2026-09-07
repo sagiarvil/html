@@ -65,9 +65,11 @@
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
 <meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
 <meta name="theme-color" content="#14151a">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh2026">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh2026">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh2026">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh2026">
+<link rel="icon" href="/favicon.ico?v=hh2026" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
@@ -124,7 +126,7 @@
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
+  <div class="kicker"><span></span><b data-i18n="kicker">KURUMSAL AI ARAMA İSTİHBARATI / V4.1</b></div>
   <h1 data-i18n="heroTitle">Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em data-i18n="heroSubtitle">Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>
   <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. 18 motor, 105 kontrol, 13 denetim. 15 saniye. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
   
@@ -133,7 +135,7 @@
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
         <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
-        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
+        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://sirketiniz.com/" required>
         <button id="scanButton" type="submit"><b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et →</b><i>→</i></button>
       </div>
       <div class="scan-chips">
@@ -155,6 +157,60 @@
     <span data-i18n="sigSchema">YAPISAL VERİ</span><i></i>
     <span data-i18n="sigA11y">ERİŞİLEBİLİRLİK</span><i></i>
     <span data-i18n="sigSecurity">GÜVENLİK</span>
+  </div>
+</section>
+
+<!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
+<section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
+  <div class="px-section-head">
+    <span class="eyebrow">END-TO-END AUTONOMOUS INTELLIGENCE PIPELINE</span>
+    <h2>Teknik Karar ve Onarım Mimarisi</h2>
+    <p>Silikon Vadisi ve New York kurumsal arama mühendisliği standardında; 18 motor, 105 kontrol ve kanıt kilidiyle çalışan deterministik karar akışı.</p>
+  </div>
+  <div class="px-pipeline-flow">
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">ADIM 01</div>
+      <h3>Canlı URL Girişi</h3>
+      <p>DoH (DNS-over-HTTPS) ve RFC 1918 SSRF izolasyonu ile hedef host güvenlik çemberine alınır.</p>
+      <div class="pipeline-micro-stream">
+        <span>🛡️ DoH DNS Koruması</span>
+        <span>⚡ HTTP/2 Handshake</span>
+        <span>🔒 Fail-Closed Gate</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">ADIM 02</div>
+      <h3>18 Motorlu Paralel Tarama</h3>
+      <p>cl100k AST token ayrıştırma, 14KB bütçe kontrolü, Cross-Encoder attention ve RAG chunk testleri.</p>
+      <div class="pipeline-micro-stream">
+        <span>🎯 ColBERT MaxSim</span>
+        <span>🧠 Knowledge Vault QID</span>
+        <span>📦 14KB AST Token Purge</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card">
+      <div class="pipeline-step-badge">ADIM 03</div>
+      <h3>Deterministik Kanıt Kilidi</h3>
+      <p>UNKNOWN ≠ PASS kuralı. Varsayımsız, kablo seviyesi HTTP/DOM ispatı ve P0–P3 etki matrisi.</p>
+      <div class="pipeline-micro-stream">
+        <span>⚖️ P0–P3 Etki Matrisi</span>
+        <span>📋 24 Alanlı Bulgu Şeması</span>
+        <span>🛑 Stop-Gate Denetimi</span>
+      </div>
+    </article>
+    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
+    <article class="px-pipeline-card px-pipeline-card-highlight">
+      <div class="pipeline-step-badge highlight">ADIM 04</div>
+      <h3>22 Dosyalık Onarım Paketi</h3>
+      <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
+      <div class="pipeline-micro-stream">
+        <span>⚙️ test.js Scriptleri</span>
+        <span>🔄 Geri Alma Güvencesi</span>
+        <span>🤖 A2A Agent Card &amp; MCP</span>
+      </div>
+    </article>
   </div>
 </section>
 
