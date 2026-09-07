@@ -27,13 +27,43 @@ def header(lang):
     other_href = '/en/llms-txt-news/' if tr else '/tr/llms-txt-haberler/'
     other_label = 'EN' if tr else 'TR'
     other_aria = 'Switch to English' if tr else 'Türkçeye geç'
-    nav_news = 'Haberler' if tr else 'News'
-    nav_tools = 'Araçlar' if tr else 'Tools'
-    nav_platform = 'Platform'
-    nav_guides = 'Rehberler' if tr else 'Guides'
-    nav_pricing = 'Fiyatlar' if tr else 'Pricing'
     nav_aria = 'Ana navigasyon' if tr else 'Primary navigation'
-    return f'''<header class="executive-header"><div class="exec-header-inner"><div class="exec-brand-group"><a class="exec-brand-link" href="{'/tr/' if tr else '/en/'}"><span class="exec-brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.8"/><path d="M7 8v8M17 8v8M7 12h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="exec-brand-title">HTML&amp;HTML</span></a><span class="exec-brand-divider" aria-hidden="true">/</span><span class="exec-brand-sub">AI SEARCH INTELLIGENCE</span></div><nav class="exec-nav-cluster" aria-label="{nav_aria}"><div class="exec-nav-links"><a href="{'/tr/araclar/' if tr else '/en/tools/'}">{nav_tools}</a><a href="{'/tr/platform/' if tr else '/en/platform/'}">{nav_platform}</a><a href="{'/tr/rehberler/' if tr else '/en/guides/'}">{nav_guides}</a><a href="{'/tr/llms-txt-haberler/' if tr else '/en/llms-txt-news/'}" class="active">{nav_news}</a><a href="{'/tr/fiyatlandirma/' if tr else '/en/pricing/'}">{nav_pricing}</a></div><div class="exec-nav-actions"><button type="button" class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme"><span class="theme-toggle-indicator"></span></button><a class="exec-lang-pill" href="{other_href}" hreflang="{'en' if tr else 'tr'}" aria-label="{other_aria}">{other_label}</a><a class="exec-cta-btn" href="{'/tr/#scanner' if tr else '/en/#scanner'}">{'Ücretsiz Teşhis' if tr else 'Free Diagnosis'}</a></div></nav></div></header>'''
+    
+    if tr:
+        nav_html = '''<nav class="primary-nav" aria-label="Ana navigasyon">
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">AI Görünürlük</a>
+  <a href="/tr/llms-txt-validator/">llms.txt</a>
+  <a href="/tr/llms-txt-haberler/" class="active">Haberler</a>
+  <a href="/tr/sozluk/">Sözlük</a>
+  <a href="/tr/fiyatlandirma/">Fiyatlar</a>
+</nav>'''
+        cta_text = 'Ücretsiz Tara'
+        cta_href = '/tr/#scanner'
+    else:
+        nav_html = '''<nav class="primary-nav" aria-label="Primary navigation">
+  <a href="/en/ai-search-visibility/">AI Visibility</a>
+  <a href="/en/llms-txt-validator/">llms.txt</a>
+  <a href="/en/llms-txt-news/" class="active">News</a>
+  <a href="/en/glossary/">Glossary</a>
+  <a href="/en/pricing/">Pricing</a>
+</nav>'''
+        cta_text = 'Scan Free'
+        cta_href = '/en/#scanner'
+
+    return f'''<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="{'/tr/' if tr else '/en/'}" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    {nav_html}
+    <div class="nav-actions">
+      <a class="nav-scan-cta" href="{cta_href}">{cta_text}</a>
+      <div class="langs">
+        <a href="{other_href}" hreflang="{'en' if tr else 'tr'}" aria-label="{other_aria}">{other_label}</a>
+      </div>
+    </div>
+  </div>
+</header>'''
 
 def footer(lang):
     tr = lang == 'tr'
