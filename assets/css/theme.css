@@ -3954,14 +3954,19 @@ html[data-theme="light"] .scanbox input:focus {
 /* Language & Theme Toggle Buttons */
 html[data-theme="light"] .langs button,
 html[data-theme="light"] .langs a {
-  background: var(--bg-soft) !important;
-  color: var(--fg-soft) !important;
-  border: 1px solid var(--line) !important;
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
 }
 html[data-theme="light"] .langs .active,
-html[data-theme="light"] .langs button:hover {
-  background: var(--fg) !important;
-  color: var(--bg) !important;
+html[data-theme="light"] .langs a.active,
+html[data-theme="light"] .langs button.active,
+html[data-theme="light"] .langs button:hover,
+html[data-theme="light"] .langs a:hover {
+  background: #0066ff !important;
+  color: #ffffff !important;
+  border-color: #0066ff !important;
+  box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2) !important;
 }
 
 /* Footer & Logo */

@@ -823,4 +823,73 @@ html[data-theme="light"] .guide-content a {
 html[data-theme="light"] .guide-content a:hover {
   color: #0369a1 !important;
 }
+html[data-theme="light"] .authority-callout {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .authority-callout h3 {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .authority-callout p {
+  color: #475569 !important;
+}
+html[data-theme="light"] .guide-content pre {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+html[data-theme="light"] .guide-content code {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .guide-content p code,
+html[data-theme="light"] .guide-content li code {
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .guide-content blockquote {
+  background: #f8fafc !important;
+  border-left: 4px solid #0066ff !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .guide-content blockquote p {
+  color: #475569 !important;
+}
+html[data-theme="light"] .guide-content table {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+html[data-theme="light"] .guide-content th {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+html[data-theme="light"] .guide-content td {
+  color: #334155 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+html[data-theme="light"] .guide-content .callout-box {
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  color: #0369a1 !important;
+}
+html[data-theme="light"] .tool-finding code {
+  background: #f8fafc !important;
+  color: #0369a1 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+html[data-theme="light"] .mention-row {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+html[data-theme="light"] .mention-row header b {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .executive-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
 

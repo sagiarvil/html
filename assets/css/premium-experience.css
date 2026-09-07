@@ -576,6 +576,44 @@ html[data-theme="dark"] .px-engine-phase:nth-child(4) .px-engine-outcome {
 }
 
 /* 4 Lenses in Tool Directory */
+html[data-theme="light"] .px-lens {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .px-lens:hover {
+  background: #f8fafc !important;
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.08) !important;
+}
+html[data-theme="light"] .px-lens span {
+  color: #475569 !important;
+}
+html[data-theme="light"] .px-lens:nth-child(1) {
+  border-left: 3.5px solid #0066ff !important;
+}
+html[data-theme="light"] .px-lens:nth-child(1) b {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .px-lens:nth-child(2) {
+  border-left: 3.5px solid #8b5cf6 !important;
+}
+html[data-theme="light"] .px-lens:nth-child(2) b {
+  color: #7c3aed !important;
+}
+html[data-theme="light"] .px-lens:nth-child(3) {
+  border-left: 3.5px solid #10b981 !important;
+}
+html[data-theme="light"] .px-lens:nth-child(3) b {
+  color: #059669 !important;
+}
+html[data-theme="light"] .px-lens:nth-child(4) {
+  border-left: 3.5px solid #f59e0b !important;
+}
+html[data-theme="light"] .px-lens:nth-child(4) b {
+  color: #d97706 !important;
+}
+
 html[data-theme="dark"] .px-lens:nth-child(1) {
   border-left: 3px solid #0066ff !important;
 }
