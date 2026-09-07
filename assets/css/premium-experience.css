@@ -1845,9 +1845,26 @@ html[data-theme="light"] .locked-fix {
     font-weight: 700 !important;
   }
 
-  .findings {
+  .findings,
+  #findingsList,
+  .result-columns,
+  .results,
+  #result {
     display: block !important;
     background: transparent !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding-right: 0 !important;
+  }
+
+  .findings::-webkit-scrollbar,
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   .finding,
