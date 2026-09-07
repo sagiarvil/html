@@ -927,31 +927,369 @@ html[data-theme="light"] .authority-hero .kicker b {
   background: rgba(16, 185, 129, 0.12) !important;
 }
 
+/* Light theme overrides for Enterprise Simulation, Benchmark, Remediation and DAG */
+html[data-theme="light"] .executive-simulation-deck,
+html[data-theme="light"] .competitive-benchmark-deck,
+html[data-theme="light"] .remediation-console-deck {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .executive-deck-title {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .executive-deck-desc {
+  color: #475569 !important;
+}
+html[data-theme="light"] .simulation-arr-box {
+  background: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+html[data-theme="light"] .arr-metric-label {
+  color: #b45309 !important;
+}
+html[data-theme="light"] .arr-metric-val {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .arr-metric-context {
+  color: #334155 !important;
+}
+html[data-theme="light"] .simulation-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+}
+html[data-theme="light"] .sim-model-name {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sim-query-box {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+html[data-theme="light"] .sim-query-box b {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sim-reason-box {
+  color: #334155 !important;
+}
+html[data-theme="light"] .sim-reason-box strong {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .benchmark-row-header {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .benchmark-track {
+  background: #e2e8f0 !important;
+}
+html[data-theme="light"] .n8n-dag-container {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+html[data-theme="light"] .n8n-dag-title {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .dag-node-card {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+html[data-theme="light"] .dag-node-card:hover,
+html[data-theme="light"] .dag-node-card.active {
+  background: #ffffff !important;
+  border-color: #0066ff !important;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.15) !important;
+}
+html[data-theme="light"] .dag-node-step {
+  color: #64748b !important;
+}
+html[data-theme="light"] .dag-node-name {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .dag-node-sub {
+  color: #64748b !important;
+}
+html[data-theme="light"] .dag-connector {
+  color: #94a3b8 !important;
+}
+html[data-theme="light"] .dag-inspector-panel {
+  background: #f8fafc !important;
+  border: 1px dashed #cbd5e1 !important;
+  color: #334155 !important;
+}
+html[data-theme="light"] .dag-inspector-panel code {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .model-probe-btn {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+html[data-theme="light"] .model-probe-btn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .model-probe-btn.active {
+  background: rgba(0, 102, 255, 0.08) !important;
+  border-color: #0066ff !important;
+  color: #0066ff !important;
+}
+html[data-theme="light"] .sim-toggle-row {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .sim-toggle-label {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .sim-toggle-switch {
+  background: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+html[data-theme="light"] .sim-toggle-opt {
+  color: #64748b !important;
+}
+html[data-theme="light"] .code-action-bar {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .btn-download-blob,
+html[data-theme="light"] .btn-copy-code {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .btn-download-blob:hover,
+html[data-theme="light"] .btn-copy-code:hover {
+  background: #0066ff !important;
+  color: #ffffff !important;
+  border-color: #0066ff !important;
+}
+html[data-theme="light"] .code-snippet-pre {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .console-tabs-nav {
+  border-bottom-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .console-tab-btn {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+html[data-theme="light"] .console-tab-btn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .console-tab-btn.active {
+  background: #0066ff !important;
+  border-color: #0066ff !important;
+  color: #ffffff !important;
+}
+
 @media print {
   .executive-simulation-deck,
   .competitive-benchmark-deck,
-  .remediation-console-deck {
+  .remediation-console-deck,
+  .vector-attention-deck,
+  .n8n-dag-container {
     background: #ffffff !important;
-    border: 1px solid #000000 !important;
-    color: #000000 !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
     box-shadow: none !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12pt !important;
   }
   .executive-deck-title,
   .sim-model-name,
-  .benchmark-row-header {
-    color: #000000 !important;
+  .benchmark-row-header,
+  .vector-title {
+    color: #0f172a !important;
+    font-weight: 800 !important;
   }
-  .simulation-card,
-  .sim-query-box,
-  .code-snippet-pre {
+  .executive-deck-desc,
+  .vector-desc {
+    color: #475569 !important;
+  }
+  .simulation-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .simulation-card {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    padding: 8pt !important;
+  }
+  .sim-query-box {
     background: #f8fafc !important;
-    border: 1px solid #cccccc !important;
-    color: #000000 !important;
+    border: 0.5pt solid #cbd5e1 !important;
+    color: #334155 !important;
+  }
+  .sim-query-box b {
+    color: #0f172a !important;
+  }
+  .sim-reason-box {
+    color: #334155 !important;
+  }
+  .sim-reason-box strong {
+    color: #0284c7 !important;
+  }
+  .simulation-arr-box {
+    background: #fffbeb !important;
+    border: 1pt solid #fcd34d !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .arr-metric-label {
+    color: #b45309 !important;
   }
   .arr-metric-val {
-    color: #000000 !important;
+    color: #0f172a !important;
+  }
+  .arr-metric-context {
+    color: #334155 !important;
+  }
+  .benchmark-row {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .benchmark-track {
+    background: #e2e8f0 !important;
+  }
+  .benchmark-fill-site {
+    background: #0284c7 !important;
+  }
+  .n8n-dag-nodes-flow {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .dag-node-card {
+    background: #f8fafc !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    padding: 6pt 8pt !important;
+    min-width: 120pt !important;
+  }
+  .dag-node-step {
+    color: #64748b !important;
+  }
+  .dag-node-name {
+    color: #0f172a !important;
+  }
+  .dag-node-sub {
+    color: #475569 !important;
+  }
+  .dag-connector {
+    color: #94a3b8 !important;
+  }
+  .dag-inspector-panel {
+    background: #f8fafc !important;
+    border: 1pt dashed #cbd5e1 !important;
+    color: #334155 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .dag-inspector-panel strong {
+    color: #0f172a !important;
+  }
+  .code-action-bar {
+    background: #f1f5f9 !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+  .code-snippet-pre {
+    background: #f8fafc !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+    font-size: 7.5pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .n8n-dag-actions,
+  .btn-run-dag,
+  .btn-download-blob,
+  .btn-copy-code,
+  .sim-toggle-row,
+  .model-probe-nav,
+  .console-tabs-nav,
+  .vector-tabs-nav,
+  .multicloud-selector {
+    display: none !important;
+  }
+  .console-pane {
+    display: block !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 8pt !important;
+  }
+  .colbert-matrix-wrapper,
+  .cross-encoder-grid,
+  .rag-waterfall-container {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .colbert-matrix-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+  .colbert-matrix-table td {
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+  }
+  .colbert-q-token {
+    background: #eff6ff !important;
+    color: #0284c7 !important;
+  }
+  .colbert-cell.colbert-max {
+    background: #ecfdf5 !important;
+    color: #047857 !important;
+    border: 1.5pt solid #10b981 !important;
+  }
+  .ce-row,
+  .wf-step-row {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .ce-label,
+  .wf-step-title {
+    color: #0f172a !important;
+  }
+  .ce-bar-track,
+  .wf-track {
+    background: #e2e8f0 !important;
+  }
+  .ce-val {
+    color: #0f172a !important;
+  }
+  .wf-step-time {
+    color: #0284c7 !important;
+  }
+  .wf-cutoff-banner {
+    background: #fef2f2 !important;
+    border: 1pt solid #fecaca !important;
+    color: #991b1b !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }
 

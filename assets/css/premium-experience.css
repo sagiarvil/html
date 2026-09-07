@@ -1483,7 +1483,6 @@ html[data-theme="light"] .locked-fix {
   .finding-conversion-teaser,
   .findings-filter-bar,
   #findingsFilterBar,
-  .locked-fix,
   .health-roadmap-deck,
   #homepageIntelligence,
   .tool-intelligence,
@@ -2114,10 +2113,133 @@ html[data-theme="light"] .locked-fix {
     border: 1pt solid #cbd5e1 !important;
     color: #0f172a !important;
   }
-  .sample-compliance-box {
+  /* 10. Locked Paywall Fix in Print: Clean Executive Box */
+  .locked-fix {
+    display: block !important;
+    visibility: visible !important;
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border: 1pt dashed #cbd5e1 !important;
+    border-radius: 4pt !important;
+    padding: 6pt 10pt !important;
+    margin-top: 6pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .locked-fix-blurred {
+    display: none !important;
+  }
+  .locked-fix-overlay {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 8pt !important;
+  }
+  .locked-fix-overlay span {
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+  }
+  .locked-fix-btn {
+    display: inline-block !important;
+    font-size: 7pt !important;
+    font-weight: 800 !important;
+    padding: 2.5pt 7pt !important;
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    border-radius: 3pt !important;
+    text-decoration: none !important;
+  }
+
+  /* 11. Decks & Labs in Print: Clean Executive Whitepaper Standards */
+  .vector-attention-deck,
+  .remediation-console-deck,
+  .executive-simulation-deck,
+  .competitive-benchmark-deck,
+  .n8n-dag-container {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 12pt !important;
+  }
+  .vector-title,
+  .executive-deck-title,
+  .benchmark-row-header {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+  }
+  .vector-desc,
+  .executive-deck-desc {
+    color: #475569 !important;
+  }
+  .colbert-matrix-wrapper,
+  .cross-encoder-grid,
+  .rag-waterfall-container {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .colbert-matrix-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+  .colbert-matrix-table td {
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+  }
+  .colbert-q-token {
+    background: #eff6ff !important;
+    color: #0284c7 !important;
+  }
+  .colbert-cell.colbert-max {
+    background: #ecfdf5 !important;
+    color: #047857 !important;
+    border: 1.5pt solid #10b981 !important;
+  }
+  .ce-row,
+  .wf-step-row {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .ce-label,
+  .wf-step-title {
+    color: #0f172a !important;
+  }
+  .ce-bar-track,
+  .wf-track {
+    background: #e2e8f0 !important;
+  }
+  .ce-val {
+    color: #0f172a !important;
+  }
+  .wf-step-time {
+    color: #0284c7 !important;
+  }
+  .wf-cutoff-banner {
     background: #fef2f2 !important;
     border: 1pt solid #fecaca !important;
     color: #991b1b !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .vector-tabs-nav,
+  .multicloud-selector,
+  .console-tabs-nav,
+  .n8n-dag-actions {
+    display: none !important;
   }
 }
 
