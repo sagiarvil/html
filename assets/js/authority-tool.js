@@ -22,7 +22,7 @@ const copy={tr:{
  finding:'bulgu',
  kicker:'AÇIK TEŞHİS KATMANI · %100 ÜCRETSİZ ($0)',
  intelligence:'Arama ve AI İstihbarat Denetimleri',
- intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Hazır düzeltme kodları ve 22 dosyalık ZIP paketi $99 Yol Haritası katmanındadır.',
+ intelligenceNote:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama ve yapay zeka eksikliklerini ve kanıtlarını şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır.',
  badgeFree:'🟢 $0 Ücretsiz Teşhis Katmanı',
  badge13:'13 Derin Analiz',
  badge7:'7 Hazırlık Lensi',
@@ -33,7 +33,7 @@ const copy={tr:{
  t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
  t99Title:'2. Mühendislik Yol Haritası',
  t99Price:'$99 Tek Seferlik',
- t99Desc:'Nasıl düzeltilecek? Bu ekranda listelenen 13 sorunun kök nedeni, hazır kod blokları, P0–P3 sırası ve yazılımcınıza teslim edilecek 22 dosyalık ZIP paketi.',
+ t99Desc:'Nasıl düzeltilecek? Bu ekranda listelenen 13 sorunun kök nedeni ve 5 kritik kontrol noktası ████████ ile güvence altına alınır. Kaybı önlemek için kilidi açın.',
  t99Cta:'$99 Mühendislik Paketini Aç →',
  lenses:'7 Boyutlu Hazırlık Lensleri',
  lensesSub:'Ücretsiz Teşhis Boyutları: Yapay zeka ve arama ekosistemindeki 7 ana vektörünüzün anlık durum puanı',
@@ -45,7 +45,7 @@ const copy={tr:{
  capstoneCta:'🔒 Kod Tabanı İncelemesini $99 Yol Haritası ile Başlat →',
  bridgeTag:'TEŞHİS TAMAMLANDI · PEKİ ŞİMDİ?',
  bridgeTitle:'13 Açık ve Kanıtlar Ortada. Bunları Kod Seviyesinde Düzeltmeye Hazır mısınız?',
- bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Yazılımcınızın hemen devreye alabileceği hazır kod blokları, P0–P3 öncelik sırası ve 22 dosyalık mühendislik ZIP paketi için Yol Haritasını açın.',
+ bridgeDesc:'Ücretsiz raporda eksikleri ve kanıtları gördünüz. Teknik çözüm ████████ paketinde. Kaybı önlemek için kilidi açın.',
  bridgeBtn99:'⚡ $99 Mühendislik Yol Haritasını Aç (22 Dosyalı ZIP) →'
 },
 en:{

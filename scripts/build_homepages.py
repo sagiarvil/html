@@ -511,7 +511,7 @@ def build_homepages():
       <ul>
         <li data-i18n="m1">P0–P3 implementation order</li>
         <li data-i18n="m2">Issue ID + evidence + confidence</li>
-        <li data-i18n="m3">Acceptance + regression tests</li>
+        <li data-i18n="m3">Testing and assurance systems ████████</li>
         <li data-i18n="m4">Rollback + stop conditions</li>
         <li data-i18n="m5">1 re-scan within 30 days</li>
       </ul>
