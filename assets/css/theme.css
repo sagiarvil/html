@@ -2383,8 +2383,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
    Eliminates all unreadable text, low-contrast pills and muddy card backgrounds.
    ========================================================================== */
 
-/* 1. BADGES, PILLS, KICKERS & CHIPS */
-html[data-theme="dark"] .kicker,
+/* 1. BADGES, PILLS & CHIPS */
 html[data-theme="dark"] .authority-proof span,
 html[data-theme="dark"] .term-class,
 html[data-theme="dark"] .source-chip,
@@ -2405,16 +2404,32 @@ html[data-theme="dark"] .ai-term-strip a {
   text-shadow: none !important;
 }
 
-html[data-theme="dark"] .kicker b,
 html[data-theme="dark"] .authority-proof span b,
 html[data-theme="dark"] .news-topic-pill,
 html[data-theme="dark"] .ai-term-strip a b {
   color: #f8fafc !important;
 }
 
-html[data-theme="dark"] .kicker span {
-  background: #10b981 !important;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25) !important;
+/* Frameless kickers across all pages */
+.kicker,
+html[data-theme="dark"] .kicker,
+html[data-theme="light"] .kicker {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #38bdf8 !important;
+}
+.kicker b,
+html[data-theme="dark"] .kicker b,
+html[data-theme="light"] .kicker b {
+  color: #38bdf8 !important;
+}
+.kicker span,
+html[data-theme="dark"] .kicker span,
+html[data-theme="light"] .kicker span {
+  display: none !important;
 }
 
 /* 2. ALL CARDS & SURFACES ACROSS HOMEPAGE & SUBPAGES */
@@ -2645,7 +2660,6 @@ html[data-theme="dark"] .authority-hero h1 em {
 
 /* SYSTEM DARK MODE (PREFERS-COLOR-SCHEME) FALLBACK */
 @media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .kicker,
   html:not([data-theme="light"]) .authority-proof span,
   html:not([data-theme="light"]) .term-class,
   html:not([data-theme="light"]) .source-chip,
@@ -2666,16 +2680,10 @@ html[data-theme="dark"] .authority-hero h1 em {
     text-shadow: none !important;
   }
 
-  html:not([data-theme="light"]) .kicker b,
   html:not([data-theme="light"]) .authority-proof span b,
   html:not([data-theme="light"]) .news-topic-pill,
   html:not([data-theme="light"]) .ai-term-strip a b {
     color: #f8fafc !important;
-  }
-
-  html:not([data-theme="light"]) .kicker span {
-    background: #10b981 !important;
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25) !important;
   }
 
   html:not([data-theme="light"]) .tool-panel,

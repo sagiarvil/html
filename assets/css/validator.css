@@ -48,11 +48,14 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   box-sizing: border-box !important;
 }
 
-.hero .kicker {
-  display: block !important;
-  color: #2563eb !important;
+.kicker,
+.hero .kicker,
+.authority-hero .kicker {
+  display: inline-block !important;
+  color: #38bdf8 !important;
   background: transparent !important;
   border: none !important;
+  box-shadow: none !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   letter-spacing: 0.1em !important;
@@ -61,7 +64,14 @@ body{line-height:1.55}.hero>p{font-size:19px;line-height:1.75;max-width:760px}.s
   border-radius: 0 !important;
   margin-bottom: 20px !important;
 }
-.hero .kicker span {
+.kicker b,
+.hero .kicker b,
+.authority-hero .kicker b {
+  color: #38bdf8 !important;
+}
+.kicker span,
+.hero .kicker span,
+.authority-hero .kicker span {
   display: none !important;
 }
 
