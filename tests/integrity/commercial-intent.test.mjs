@@ -38,7 +38,7 @@ assert(missingTheme.length===0,`Commercial enhancement cannot reach pages missin
 assert(missingStatic.length===0,`Static commercial intent missing from canonical HTML: ${missingStatic.join(', ')}`);
 assert(missingStaticCss.length===0,`Static commercial CSS missing from canonical HTML: ${missingStaticCss.join(', ')}`);
 
-const rootTr=read('tr/index.html'),rootEn=read('en/index.html');
+const rootTr=read('tr/llms-txt-validator/index.html'),rootEn=read('en/llms-txt-validator/index.html');
 assert(rootTr.includes('YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ'),'TR static commercial thesis missing');
 assert(rootEn.includes('AI SEARCH VISIBILITY'),'EN static commercial thesis missing');
 assert(rootTr.includes('garanti edilmez'),'TR static anti-guarantee boundary missing');

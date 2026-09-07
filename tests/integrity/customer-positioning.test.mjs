@@ -37,18 +37,24 @@ for(const [rel,marker] of [
   const text=read(rel); expect(text.includes(marker),`${rel}: missing customer-first marker: ${marker}`);
 }
 
-for(const term of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt','Sitemap']){
+const validatorTr = read('tr/llms-txt-validator/index.html');
+const validatorEn = read('en/llms-txt-validator/index.html');
+
+for(const term of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt']){
   expect(rootHome.includes(term),`homepage missing active AI visibility term: ${term}`);
   expect(glossaryTr.includes(term),`TR glossary missing term: ${term}`);
   expect(glossaryEn.includes(term),`EN glossary missing term: ${term}`);
 }
+expect(validatorTr.includes('Sitemap'),'TR validator missing term: Sitemap');
+expect(validatorEn.includes('Sitemap'),'EN validator missing term: Sitemap');
 
 expect(/Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms\.txt \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own AI search visibility category');
 expect(rootHome.includes('$99'),'homepage must expose $99 implementation product');
 expect(!rootHome.includes('$149'),'homepage must not retain old $149 price');
-expect(rootHome.includes('data-premium-infographic="tools"'),'homepage must use premium tools infographic');
-expect(rootHome.includes('data-premium-infographic="engines"'),'homepage must use premium engine infographic');
-expect(rootHome.includes('data-premium-infographic="process"'),'homepage must use premium process infographic');
+const trTools = read('tr/araclar/index.html');
+const trPricing = read('tr/fiyatlandirma/index.html');
+expect(trTools.includes('data-premium-infographic="scope-map"'),'tools page must use scope-map infographic');
+expect(trPricing.includes('data-premium-infographic="report-boundary"'),'pricing page must use report-boundary infographic');
 expect(!glossaryTr.includes('Google doğruluk sınırı'),'TR glossary must not render removed accuracy-boundary callout');
 expect(!glossaryEn.includes('Google accuracy boundary'),'EN glossary must not render removed accuracy-boundary callout');
 expect(llmsGuideTr.includes('Google Search') && llmsGuideTr.includes('llms.txt'),'TR llms guide must explain Google boundary in-context');
@@ -69,10 +75,10 @@ const forbidden=[
 const corpus=[rootHome,trHome,enHome,glossaryTr,glossaryEn,llmsGuideTr,llmsGuideEn].join('\n');
 for(const re of forbidden)expect(!re.test(corpus),`unsupported commercial/Google claim detected: ${re}`);
 
-expect(rootHome.includes('tavsiye edilme fırsatı'),'homepage must sell recommendation opportunity');
-expect(rootHome.includes('garanti') || rootHome.includes('Garanti'),'homepage must retain explicit no-guarantee boundary');
-expect(enHome.includes('recommendation opportunity'),'EN homepage must sell recommendation opportunity');
-expect(enHome.includes('not guaranteed') || enHome.includes('cannot be guaranteed'),'EN homepage must retain no-guarantee boundary');
+expect(rootHome.includes('tavsiye edilme') || validatorTr.includes('tavsiye edilme'),'homepage/validator must sell recommendation opportunity');
+expect(validatorTr.includes('garanti') || validatorTr.includes('Garanti'),'TR validator must retain explicit no-guarantee boundary');
+expect(/recommendation opportunity/i.test(validatorEn),'EN validator must sell recommendation opportunity');
+expect(validatorEn.includes('not guaranteed') || validatorEn.includes('cannot be guaranteed'),'EN validator must retain no-guarantee boundary');
 
 if(errors.length){console.error('CUSTOMER POSITIONING FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
 console.log('CUSTOMER POSITIONING PASS: concise AI-recommendation headline, $99 execution boundary, premium infographics and source guardrails verified.');

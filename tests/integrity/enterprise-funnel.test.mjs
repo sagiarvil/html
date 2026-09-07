@@ -10,10 +10,9 @@ const runtime=read('assets/js/enterprise-runtime.js'),validator=read('assets/js/
 
 expect(home.includes('Yapay Zeka Sizi Buluyor mu?'),'homepage concise AI visibility headline missing');
 expect(home.includes('Tavsiye Edilmeye Hazır mısınız?'),'homepage recommendation-opportunity headline missing');
-expect(home.includes('data-premium-infographic="tools"'),'homepage tools infographic missing');
-expect(home.includes('data-premium-infographic="engines"'),'homepage engine infographic missing');
-expect(home.includes('data-premium-infographic="process"'),'homepage process infographic missing');
-for(const marker of ['Bulun','Anlaşılın','Kaynak Olun','Tıklanın','Talebe Dönüşün'])expect(home.includes(marker),`homepage customer journey missing ${marker}`);
+expect(tools.includes('data-premium-infographic="scope-map"'),'tools infographic scope map missing');
+expect(pricing.includes('data-premium-infographic="report-boundary"'),'pricing report boundary infographic missing');
+for(const marker of ['Keşfedilebilirlik','Anlamlandırma','Kaynak Uygunluğu','Kullanıcı & Ajan Yolu'])expect(tools.includes(marker),`tools customer journey missing ${marker}`);
 
 expect(/\.scanbox\{width:min\(760px,100%\)/.test(premium),'scanner width must prioritize long URLs');
 expect(/grid-template-columns:minmax\(0,1fr\) auto/.test(premium),'desktop scanner must preserve flexible input and compact CTA');

@@ -180,32 +180,22 @@ def transform_home(rel,lang):
     if not p.exists(): return
     text=p.read_text(encoding='utf-8')
     text=add_css(text)
+    if '<main data-commercial-intent=' not in text:
+        text=text.replace('<main>','<main data-commercial-intent="static">')
     if lang=='tr':
         h='<h1 data-i18n="heroTitle">Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em></h1>' if rel!='en/index.html' else ''
         text=re.sub(r'<h1 data-i18n="heroTitle">.*?</h1>',h,text,count=1,flags=re.S)
         text=text.replace('<b data-i18n="scan">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">Ücretsiz Tara</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>')
-        tool,eng,how,know,report=TR_TOOL,TR_ENG,TR_HOW,TR_KNOW,TR_REPORT
     else:
         text=re.sub(r'<h1[^>]*>Your Customer Asks AI.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
         text=re.sub(r'<h1[^>]*>Know what blocks your website.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
         text=text.replace('<b data-i18n="scan">Check My AI Visibility Free</b>','<b data-i18n="scan">Check Free</b>').replace('<b data-i18n="scan">Scan Free</b>','<b data-i18n="scan">Check Free</b>')
         text=text.replace('<b>Check My AI Visibility Free</b>','<b>Check Free</b>').replace('<b>Scan Free</b>','<b>Check Free</b>')
-        tool,eng,how,know,report=EN_TOOL,EN_ENG,EN_HOW,EN_KNOW,EN_REPORT
-    text=between(text,'<!-- 04 TOOL DIRECTORY -->','<!-- 05 12 ENGINES / EVIDENCE / TRUST -->',tool)
-    if '<!-- 07 FIX MANDATE & PRICING -->' in text:
-        next_anchor = '<!-- 07 FIX MANDATE & PRICING -->'
-    elif '<!-- 08 AUTHORITY & REHBERLER -->' in text:
-        next_anchor = '<!-- 08 AUTHORITY & REHBERLER -->'
-    else:
-        next_anchor = '<!-- 09 SHORT FAQ -->'
-    text=between(text,'<!-- 06 HOW IT WORKS -->',next_anchor,how)
-    if '<!-- 08 AUTHORITY & REHBERLER -->' in text and '<!-- 09 SHORT FAQ -->' in text:
-        a=text.index('<!-- 08 AUTHORITY & REHBERLER -->'); b=text.index('<!-- 09 SHORT FAQ -->',a)
-        text=text[:a]+text[b:]
-    if 'data-premium-infographic="report-boundary"' in text:
-        text=re.sub(r'<section[^>]+data-premium-infographic="report-boundary".*?</section>', report, text, flags=re.S)
-    elif '<!-- 03 CORE VALUE -->' in text:
-        text=text.replace('<!-- 03 CORE VALUE -->',report+'\n\n<!-- 03 CORE VALUE -->',1)
+    # Remove #tools, #engines, #how if present
+    for sec_id in ['tools', 'engines', 'how']:
+        text=re.sub(fr'<section[^>]*id="{sec_id}"[^>]*>.*?</section>\s*', '', text, flags=re.S)
+    # Remove section.ai-opportunity from homepage
+    text=re.sub(r'<section class="ai-opportunity".*?</section>\s*(?=<footer)', '', text, flags=re.S)
     text=text.replace('$149','$99').replace('"price": "149"','"price": "99"')
     p.write_text(text,encoding='utf-8')
 

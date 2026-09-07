@@ -9,6 +9,7 @@ EXCLUDED = {
     "en/privacy/index.html", "en/terms/index.html",
     "tr/gizlilik/index.html", "tr/kullanim-kosullari/index.html",
     "privacy/index.html", "terms/index.html",
+    "index.html", "tr/index.html", "en/index.html",
 }
 
 EVIDENCE_ROUTES = {

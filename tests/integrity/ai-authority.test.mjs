@@ -45,7 +45,10 @@ const enEvidenceChecks=[
 for(const [name,rx] of enEvidenceChecks)if(!rx.test(enGloss))errors.push(`EN glossary evidence boundary missing: ${name}`);
 for(const u of ['developers.google.com/search/docs/fundamentals/ai-optimization-guide','developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap','help.openai.com/en/articles/12627856-publishers-and-developers-faq','llmstxt.org/changes.html'])if(!trGloss.includes(u)||!enGloss.includes(u))errors.push(`glossary source missing ${u}`);
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
-for(const marker of ['YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ','GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt','Sitemap','/assets/js/ai-positioning.js'])if(!home.includes(marker))errors.push(`homepage expectation vocabulary missing: ${marker}`);
+const validatorTr=fs.readFileSync(path.join(root,'tr/llms-txt-validator/index.html'),'utf8');
+for(const marker of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt','/assets/js/ai-positioning.js'])if(!home.includes(marker))errors.push(`homepage expectation vocabulary missing: ${marker}`);
+if(!/Yapay Zeka Arama Görünürlüğü/i.test(home))errors.push('homepage missing Yapay Zeka Arama Görünürlüğü title/meta');
+if(!validatorTr.includes('Sitemap'))errors.push('validator page missing Sitemap term');
 if(/Ahmet Y\.|120\.000\+ site|%300 Artırdı|sınırsız sayfa/i.test(home+trGloss+enGloss))errors.push('unverified mandate marketing claim leaked into public authority content');
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 for(const [en,tr] of pairs){for(const rel of [en,tr]){const url='https://htmlandhtml.com/'+rel.replace(/index\.html$/,'');if(!sitemap.includes(url))errors.push(`sitemap missing ${url}`)}}

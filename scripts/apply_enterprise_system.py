@@ -58,15 +58,47 @@ TR_PRICING='''<main>
  <p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Yol Haritası:</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>
  <div class="hero-actions"><a class="primary" href="/tr/#scanner">Ücretsiz Teşhisi Başlat →</a><a href="#compare">Paketleri İncele</a></div>
 </section>
-<section class="px-section px-pricing-stage" id="compare">
+<section class="px-section px-pricing-stage" id="compare" data-premium-infographic="report-boundary">
  <div class="px-report-boundary px-three-tiers">
   <article class="px-report-free"><span class="eyebrow">$0 · AI GÖRÜNÜRLÜK TEŞHİSİ</span><h2>Ne yanlış? Nerede? Ne kadar önemli?</h2><p>Ücretsiz rapor sorunu saklamaz. Karar vermek için gereken teşhis ve kanıt görünür.</p><ul><li>12 deterministik motor skoru</li><li>13 Search & AI Intelligence Audit</li><li>9 hazırlık lensi: SEO · GEO · AEO · LLMO · AAO · RAG · E-E-A-T · Sitemaps · Schema</li><li>Tüm bulgular, etkilenen URL'ler ve kanıt</li><li>Severity · confidence · source class</li><li>Impact × Effort öncelik haritası</li><li>Düzeltme kodları ve talimatları: <b>YOK</b></li><li>Enterprise 6 Gizli Vektör: <b>TAMAMEN BUZLU (🔒)</b></li></ul><a class="px-outline" href="/tr/#scanner">Ücretsiz Tara →</a></article>
-  <article class="px-report-paid"><span class="eyebrow">$99 · AI GÖRÜNÜRLÜK YOL HARİTASI</span><h2>Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</h2><p>9 Sütunun tamamında teşhisi yazılımcının veya teknik ekibin uygulayabileceği doğrulanabilir bir execution blueprint'e dönüştürür.</p><ul><li>9 Sütun tam mühendislik sözleşmesi</li><li>Kök neden ve P0–P3 uygulama sırası</li><li>Hazır kodlar (robots.txt, llms.txt, Schema graph, AEO)</li><li>Root fix · recovery · prevention</li><li>Kabul ve regresyon testleri + Rollback planı</li><li>Otomatik ZIP teslim paketi (8 ana dosya)</li><li>30 gün içinde 1 doğrulama re-scan</li><li>Enterprise 6 Gizli Vektör: <b>ÖZET AÇIK, KODLAR KİLİTLİ (🔒)</b></li></ul><a class="primary" href="/checkout?plan=pro">Yol Haritasını Aç — $99 →</a></article>
+  <article class="px-report-paid"><span class="eyebrow">$99 · AI GÖRÜNÜRLÜK YOL HARİTASI</span><h2>Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</h2><p>9 Sütunun tamamında teşhisi yazılımcının veya teknik ekibin uygulayabileceği doğrulanabilir bir execution blueprint'e dönüştürür.</p><ul><li>9 Sütun tam mühendislik sözleşmesi</li><li>Kök neden ve P0–P3 uygulama sırası</li><li>Hazır kodlar (robots.txt, llms.txt, Schema graph, AEO)</li><li>Root fix · recovery · prevention</li><li>Kabul ve regresyon testleri + Rollback planı</li><li>Otomatik ZIP teslim paketi (11 temel dosya)</li><li>30 gün içinde 1 doğrulama re-scan</li><li>Enterprise 6 Gizli Vektör: <b>ÖZET AÇIK, KODLAR KİLİTLİ (🔒)</b></li></ul><a class="primary" href="/checkout?plan=pro">Yol Haritasını Aç — $99 →</a></article>
   <article class="px-report-enterprise"><span class="eyebrow vip-tag">$499 · ENTERPRISE DARK POOL INTELLIGENCE</span><h2>Kurumsal Tekel &amp; 6 Gizli Silikon Vadisi Protokolü</h2><p>$1.000.000+ bütçeli AI laboratuvarlarının kullandığı 6 tescilli vektörün açık kaynak kodları ve VIP uygulama kiti.</p><ul><li><b>$99 Yol Haritasındaki her şey DAHİL</b></li><li><b>6 Gizli Enterprise Protokolü (Açık Kodlarla):</b></li><li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li><li>2. Cross-Encoder Attention Optimizasyonu (Perplexity 1. Sıra)</li><li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li><li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li><li>5. Second-Order Synthetic Citation Loop Blueprint</li><li>6. Autonomous Agent Headless Transaction API (MCP)</li><li>22 Dosyalı Mühürlü VIP ZIP Teslimatı</li><li>60 gün içinde 3 VIP re-scan</li></ul><a class="primary enterprise-cta" href="/checkout?plan=enterprise">Enterprise İstihbaratı Aç — $499 →</a></article>
  </div>
 </section>
+
+<!-- 9 DETERMINISTIK KATMAN SECTION -->
+<section class="px-section" id="deterministik-katmanlar">
+ <div class="px-section-head"><span class="eyebrow">DETERMİNİSTİK DENETİM MİMARİSİ</span><h2>Yapay Zeka Arama Sistemlerinin Baktığı 9 Deterministik Katman</h2><p>ChatGPT, Perplexity, Google Gemini ve Claude; anahtar kelime saymaz. Sitenizi tavsiye kümesine almak için bu 9 sütunun teknik ve anlamsal mutabakatını denetler.</p></div>
+ <div class="px-delivery-grid-22">
+  <article class="px-file-card"><div class="px-file-card-head"><b>01 · TEKNİK SEO & KEŞFEDİLİRLİK</b><span class="format-pill">P0</span></div><p>HTTP 200 OK, taranabilirlik, indekslenebilirlik, canonical tutarlılığı ve DNS çözümlenebilirliği.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>02 · LLMS.TXT & MAKİNE DOKÜMANTASYONU</b><span class="format-pill">P0</span></div><p>v2 şartnamesine uygun /llms.txt, rel=describedby keşfi ve markdown bilgi yüzeyi.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>03 · GEO (GENERATIVE ENGINE OPTIMIZATION)</b><span class="format-pill">P1</span></div><p>Üretken motorların içerik özümsemesi, konu derinliği ve bilgi yoğunluğu optimizasyonu.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>04 · AEO (ANSWER ENGINE OPTIMIZATION)</b><span class="format-pill">P1</span></div><p>Doğrudan yanıt motorları (Perplexity, Claude) için yapılandırılmış soru-cevap ve kanıt blokları.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>05 · LLMO (LARGE LANGUAGE MODEL OPTIMIZATION)</b><span class="format-pill">P1</span></div><p>LLM'lerin bağlam penceresine (context window) en yüksek bilgi/token oranıyla giren semantik metinler.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>06 · RAG & RETRIEVAL READINESS</b><span class="format-pill">P2</span></div><p>Vektör veritabanları ve RAG sistemleri için ayrıştırılabilir chunking ve embedding uygunluğu.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>07 · AAO (AUTONOMOUS AGENT OPTIMIZATION)</b><span class="format-pill">P2</span></div><p>Otonom web ajanları için A2A JSON-LD, form/CTA erişilebilirliği ve etkileşim şemaları.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>08 · SCHEMA.ORG & ENTITY GRAPH</b><span class="format-pill">P2</span></div><p>@graph JSON-LD, Organization, Product, Article tipleri ve açık bilgi grafı ilişkileri.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>09 · E-E-A-T & GÜVEN SİNYALLERİ</b><span class="format-pill">P3</span></div><p>Yazar yetkinliği, yayın tarihi, kaynak atıfları, HTTPS, HSTS ve güvenlik hijyeni.</p></article>
+ </div>
+ <div class="px-actions" style="margin-top:20px;text-align:center;"><a class="px-outline" href="/tr/deterministik-katmanlar/">9 Katman Detaylı Teknik Dokümanını İncele →</a></div>
+</section>
+
+<!-- ENTERPRISE DARK POOL VEKTÖRLERİ -->
+<section class="px-section" id="enterprise-vectors">
+ <div class="px-section-head"><span class="eyebrow">🔒 TOP SECRET · ENTERPRISE DARK POOL</span><h2>2026 Kurumsal AI Görünürlük İstihbarat Vektörleri</h2><p>Yıllık $1.000.000+ bütçeli Silikon Vadisi AI arama laboratuvarlarının kapalı devre kullandığı 6 stratejik zincir ve 18 tescilli optimizasyon vektörü.</p></div>
+ <div class="px-delivery-grid-22">
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>1. MODEL CORPUS SEEDING</b><span class="format-pill">ZİNCİR 01</span></div><p>Common Crawl, Arxiv ve RedPajama havuzlarına marka entity ve PMI co-occurrence tohumlaması.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>2. CROSS-ENCODER ATTENTION</b><span class="format-pill">ZİNCİR 02</span></div><p>Perplexity/Cohere Reranker için 0.965+ alıntı skorlama dikkat matrisi ve rerank optimizasyonu.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>3. KNOWLEDGE VAULT CONSENSUS</b><span class="format-pill">ZİNCİR 03</span></div><p>Wikidata QID ve Google Knowledge Graph MID mutabakat üçlüleri ile entity doğrulama.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>4. 14KB KV-CACHE EDGE PURGE</b><span class="format-pill">ZİNCİR 04</span></div><p>AI botlarına 14KB altı mikro-HTML sunan Cloudflare HTMLRewriter Worker ucu.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>5. SYNTHETIC CITATION LOOP</b><span class="format-pill">ZİNCİR 05</span></div><p>LLM'lerin halüsinasyonunu engelleyen 2. derece sentetik atıf mimarisi ve kanonik indeks.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>6. AUTONOMOUS MCP TRANSACTIONS</b><span class="format-pill">ZİNCİR 06</span></div><p>Claude Desktop, Cursor ve otonom ajanlar için Headless MCP Server API ve A2A Agent Card.</p></article>
+ </div>
+ <div class="px-actions" style="margin-top:20px;text-align:center;"><a class="px-outline" href="/tr/enterprise-dark-pool/">18 Kurumsal Vektörün Tam Haritasını Gör →</a></div>
+</section>
+
 <section class="px-section">
- <div class="px-section-head"><span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVENTARİ)</span><h2>Bir PDF değil. 22 dosyalı üretim sınıfı mühendislik paketi.</h2><p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile teslim edilebilir.</p></div>
+ <div class="px-section-head"><span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVANTERİ)</span><h2>Bir PDF değil. 22 dosyalı üretim sınıfı mühendislik paketi.</h2><p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile teslim edilebilir.</p></div>
  <div class="px-delivery-category">
   <div class="px-delivery-category-title"><span>Standart Mühendislik Seti ($99 ve $499 Paketlerinde)</span><span class="badge">11 Temel Dosya</span></div>
   <div class="px-delivery-grid-22">
@@ -117,6 +149,38 @@ EN_PRICING='''<main>
   <article class="px-report-enterprise"><span class="eyebrow vip-tag">$499 · ENTERPRISE DARK POOL INTELLIGENCE</span><h2>Corporate Monopoly &amp; 6 Classified Silicon Valley Protocols</h2><p>6 proprietary vectors from $1,000,000+ AI search research labs with turnkey code and VIP execution kit.</p><ul><li><b>Everything in $99 Roadmap INCLUDED</b></li><li><b>6 Classified Enterprise Protocols (Full Code):</b></li><li>1. Model Corpus Seeding &amp; Co-occurrence Engine</li><li>2. Cross-Encoder Attention Optimization (Perplexity #1 Rank)</li><li>3. Knowledge Vault Triple Anchoring (Wikidata Consensus)</li><li>4. 14KB KV-Cache Friendly Edge Token Purge (Worker)</li><li>5. Second-Order Synthetic Citation Loop Blueprint</li><li>6. Autonomous Agent Headless Transaction API (MCP)</li><li>22-file Extended VIP ZIP Delivery</li><li>3 VIP re-scans within 60 days</li></ul><a class="primary enterprise-cta" href="/checkout?plan=enterprise">Unlock Enterprise Intelligence — $499 →</a></article>
  </div>
 </section>
+
+<!-- 9 DETERMINISTIC LAYERS SECTION -->
+<section class="px-section" id="deterministic-layers">
+ <div class="px-section-head"><span class="eyebrow">DETERMINISTIC AUDIT ARCHITECTURE</span><h2>9 Deterministic Layers Evaluated by AI Search Systems</h2><p>ChatGPT, Perplexity, Google Gemini, and Claude evaluate technical and semantic consensus across these 9 pillars to include your domain in recommendation sets.</p></div>
+ <div class="px-delivery-grid-22">
+  <article class="px-file-card"><div class="px-file-card-head"><b>01 · TECHNICAL SEO & DISCOVERABILITY</b><span class="format-pill">P0</span></div><p>HTTP 200 OK, crawlability, indexability, canonical consistency and DNS resolution.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>02 · LLMS.TXT & MACHINE DOCUMENTATION</b><span class="format-pill">P0</span></div><p>v2 specification /llms.txt, rel=describedby discovery and Markdown knowledge surface.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>03 · GEO (GENERATIVE ENGINE OPTIMIZATION)</b><span class="format-pill">P1</span></div><p>Generative engine ingestion, topical depth and information density optimization.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>04 · AEO (ANSWER ENGINE OPTIMIZATION)</b><span class="format-pill">P1</span></div><p>Structured question-answer and evidence blocks for direct answer engines (Perplexity, Claude).</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>05 · LLMO (LARGE LANGUAGE MODEL OPTIMIZATION)</b><span class="format-pill">P1</span></div><p>Semantic content engineered to enter LLM context windows with maximum info/token ratio.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>06 · RAG & RETRIEVAL READINESS</b><span class="format-pill">P2</span></div><p>Parseable chunking and embedding compatibility for vector databases and RAG systems.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>07 · AAO (AUTONOMOUS AGENT OPTIMIZATION)</b><span class="format-pill">P2</span></div><p>A2A JSON-LD, form/CTA accessibility and interaction schemas for autonomous web agents.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>08 · SCHEMA.ORG & ENTITY GRAPH</b><span class="format-pill">P2</span></div><p>@graph JSON-LD, Organization, Product, Article types and open knowledge graph relations.</p></article>
+  <article class="px-file-card"><div class="px-file-card-head"><b>09 · E-E-A-T & TRUST SIGNALS</b><span class="format-pill">P3</span></div><p>Author credentialing, publishing timestamps, citation provenance, HTTPS, HSTS and security hygiene.</p></article>
+ </div>
+ <div class="px-actions" style="margin-top:20px;text-align:center;"><a class="px-outline" href="/en/deterministic-layers/">Review 9 Layers Technical Specification →</a></div>
+</section>
+
+<!-- ENTERPRISE DARK POOL VECTORS -->
+<section class="px-section" id="enterprise-vectors">
+ <div class="px-section-head"><span class="eyebrow">🔒 TOP SECRET · ENTERPRISE DARK POOL</span><h2>2026 Enterprise AI Visibility Intelligence Vectors</h2><p>6 strategic chains and 18 proprietary optimization vectors used closed-loop by Silicon Valley AI search labs with $1,000,000+ budgets.</p></div>
+ <div class="px-delivery-grid-22">
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>1. MODEL CORPUS SEEDING</b><span class="format-pill">CHAIN 01</span></div><p>Brand entity and PMI co-occurrence seeding into Common Crawl, Arxiv and RedPajama pools.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>2. CROSS-ENCODER ATTENTION</b><span class="format-pill">CHAIN 02</span></div><p>0.965+ citation scoring attention matrix and rerank optimization for Perplexity/Cohere Reranker.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>3. KNOWLEDGE VAULT CONSENSUS</b><span class="format-pill">CHAIN 03</span></div><p>Wikidata QID and Google Knowledge Graph MID consensus triples entity verification.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>4. 14KB KV-CACHE EDGE PURGE</b><span class="format-pill">CHAIN 04</span></div><p>Cloudflare HTMLRewriter Worker edge serving &lt;14KB micro-HTML to AI bots.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>5. SYNTHETIC CITATION LOOP</b><span class="format-pill">CHAIN 05</span></div><p>Second-order synthetic citation architecture and canonical index preventing AI hallucination.</p></article>
+  <article class="px-file-card vip"><div class="px-file-card-head"><b>6. AUTONOMOUS MCP TRANSACTIONS</b><span class="format-pill">CHAIN 06</span></div><p>Headless MCP Server API and A2A Agent Card for Claude Desktop, Cursor and autonomous agents.</p></article>
+ </div>
+ <div class="px-actions" style="margin-top:20px;text-align:center;"><a class="px-outline" href="/en/enterprise-dark-pool/">View Full Map of 18 Enterprise Vectors →</a></div>
+</section>
+
 <section class="px-section">
  <div class="px-section-head"><span class="eyebrow">ENGINEERING DELIVERY PACKAGE (ZIP MANIFEST)</span><h2>Not another PDF. A 22-file production-grade engineering package.</h2><p>After payment entitlement is verified, the system re-scans the same domain and automatically produces the implementation package as a ZIP. No membership is required; delivery can use a secure guest-checkout entitlement token.</p></div>
  <div class="px-delivery-category">

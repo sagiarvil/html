@@ -109,7 +109,7 @@ def build_homepages():
   </div>
 </header>
 
-<main>
+<main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">WEB SİTESİ DÜZELTME DOĞRULAYICISI / V2</b></div>
@@ -203,46 +203,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 04 TOOL DIRECTORY -->
-<section class="px-section" id="tools" data-premium-infographic="tools">
-  <div class="px-section-head"><span class="eyebrow">MÜŞTERİ YOLCULUĞU</span><h2>Özel Denetim Araçları</h2><p>Teknik araç listesinden fazlası: müşterinin yapay zekaya sorduğu sorudan sitenize gelen ticari fırsata kadar hangi halkanın koptuğunu görün.</p></div>
-  <div class="px-tool-flow">
-    <article class="px-flow-card"><span class="node">01</span><h3>Bulun</h3><p>Robots, sitemap, crawl ve AI tarayıcı erişimi. Yapay zeka sitenize ulaşabiliyor mu?</p></article>
-    <article class="px-flow-card"><span class="node">02</span><h3>Anlaşılın</h3><p>Schema, entity graph, semantik HTML ve llms.txt. Kim olduğunuz ve ne sunduğunuz net mi?</p></article>
-    <article class="px-flow-card"><span class="node">03</span><h3>Kaynak Olun</h3><p>AEO, RAG, E-E-A-T ve özgün bilgi sinyalleri. İçeriğiniz cevapta kullanılmaya elverişli mi?</p></article>
-    <article class="px-flow-card"><span class="node">04</span><h3>Tıklanın</h3><p>Canlı link, canonical ve yönlendirme bütünlüğü. Kaynak gösterildiğinizde kullanıcı doğru sayfaya geliyor mu?</p></article>
-    <article class="px-flow-card"><span class="node">05</span><h3>Talebe Dönüşün</h3><p>CTA, form ve erişilebilir aksiyonlar. Yapay zeka kaynaklı ilgi gerçek müşteri yoluna bağlanabiliyor mu?</p></article>
-  </div>
-  <div class="px-lenses">
-    <div class="px-lens"><b>AI GÖRÜNÜRLÜK</b><span>AI Hazırlığı · AI Tarayıcı · AI Mention</span></div>
-    <div class="px-lens"><b>MAKİNE BİLGİ YÜZEYİ</b><span>llms.txt · Schema · Entity Graph</span></div>
-    <div class="px-lens"><b>TEKNİK TEMEL</b><span>12 Motor · Teknik SEO · Link · Güvenlik</span></div>
-    <div class="px-lens"><b>KULLANICI &amp; AJAN YOLU</b><span>Erişilebilirlik · Dönüşüm · AAO</span></div>
-  </div>
-  <div class="px-actions"><a class="primary" href="/tr/site-tarama/">Sitemde Hangi Halka Kopuyor? →</a><a href="/tr/araclar/">10 Aracın Tamamını Gör</a></div>
-</section>
-
-<!-- 05 12 ENGINES / EVIDENCE / TRUST -->
-<section class="px-section" id="engines" data-premium-infographic="engines">
-  <div class="px-section-head"><span class="eyebrow">DETERMİNİSTİK KARAR</span><h2>12 motor. Tek karar zinciri.</h2><p>12 ayrı skor görmek yerine, sitenizin yapay zekada görünme fırsatını dört iş sonucuna bağlayan tek bir kanıt akışı görün.</p></div>
-  <div class="px-engine-rail">
-    <article class="px-engine-phase"><span>01 · KEŞFEDİLİRLİK</span><h3>Önce bulunabilir olun.</h3><ul><li><b>01</b>Tarama &amp; İndeksleme</li><li><b>02</b>Teknik SEO</li><li><b>12</b>Bağlantı Bütünlüğü</li></ul><div class="px-engine-outcome">ÇIKTI → Arama ve AI sistemleri doğru URL'lere ulaşabiliyor.</div></article>
-    <article class="px-engine-phase"><span>02 · ANLAMLANDIRMA</span><h3>Sonra doğru anlaşılın.</h3><ul><li><b>03</b>AI / GEO Erişimi</li><li><b>04</b>llms.txt</li><li><b>05</b>Yapısal Veri</li><li><b>10</b>Ajan Hazırlığı</li></ul><div class="px-engine-outcome">ÇIKTI → Marka, içerik ve makine yüzeyleri daha az belirsiz.</div></article>
-    <article class="px-engine-phase"><span>03 · GÜVEN &amp; DENEYİM</span><h3>Kaynak olmaya hazır hale gelin.</h3><ul><li><b>06</b>Performans Hijyeni</li><li><b>07</b>Erişilebilirlik</li><li><b>08</b>Güvenlik Temeli</li><li><b>09</b>İçerik Güveni</li></ul><div class="px-engine-outcome">ÇIKTI → Teknik güven ve insan/ajan deneyimi korunuyor.</div></article>
-    <article class="px-engine-phase"><span>04 · TİCARİ YOL</span><h3>İlgiyi aksiyona bağlayın.</h3><ul><li><b>11</b>Dönüşüm</li><li><b>+13</b>Intelligence Audits</li><li><b>+7</b>Hazırlık Merceği</li></ul><div class="px-engine-outcome">ÇIKTI → Sorun listesi değil, önceliklendirilmiş ticari risk haritası.</div></article>
-  </div>
-</section>
-
-<!-- 06 HOW IT WORKS -->
-<section class="px-section" id="how" data-premium-infographic="process">
-  <div class="px-section-head"><span class="eyebrow">ŞEFFAF İŞ AKIŞI</span><h2>Üç adım. Aynı kanıt zinciri.</h2><p>Önce gerçeği görün. Sonra neyin para kaybettirebilecek bir görünürlük engeli olduğunu anlayın. Yalnız uygulama yol haritasına ihtiyaç duyarsanız ödeme yapın.</p></div>
-  <div class="px-three-flow">
-    <article class="px-three-step"><span class="num">1</span><h3>Ücretsiz tara</h3><p>En fazla 50 herkese açık sayfa, 12 motor ve 13 Intelligence Audit ile ölçülür.</p><a href="#scanner">Alan adını gir →</a></article>
-    <article class="px-three-step"><span class="num">2</span><h3>Kanıtı görün</h3><p>Skor, bulgu, etkilenen URL, önem, güven ve kanıt görünür. Düzeltme kodu veya uygulama planı verilmez.</p><a href="#scanner">Ücretsiz raporu gör →</a></article>
-    <article class="px-three-step paid"><span class="num">3</span><h3>$99 yol haritasını aç</h3><p>Kök neden, uygulama sırası, dosya/codebase bağlamı, kabul/regresyon testleri, rollback ve re-scan sözleşmesine dönüşür.</p><a href="/checkout">Uygulama paketini aç →</a></article>
-  </div>
-</section>
-
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -257,8 +217,6 @@ def build_homepages():
 </section>
 </main>
 
-<!-- 10 FOOTER -->
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. Sitenizin bulunmasını, anlaşılmasını ve değerlendirme kümesine girmesini engelleyen ölçülebilir sorunları kanıtıyla gösterir.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">AI Görünürlük Yol Haritasını Aç — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p><div class="ai-market-evidence"><h3>Resmi kaynaklarla doğrulanan zemin</h3><div><article><b>Google</b><p>Google, üretken yapay zeka Arama için resmi rehber yayımlıyor; GEO ve AEO terimlerini tanıyor ancak bunları Google Search açısından SEO’nun parçası sayıyor. AI Overviews/AI Mode için özel ek teknik şart olmadığını ve llms.txt dosyasını Google Search görünürlüğü için kullanmadığını açıkça belirtiyor.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Kaynağı aç ↗</a></article><article><b>OpenAI</b><p>OpenAI, herkese açık sitelerin ChatGPT Search’te görünebileceğini; OAI-SearchBot erişiminin içeriğin keşfedilmesi, öne çıkarılması, kaynak gösterilmesi ve bağlantılanması için önemli olduğunu belirtiyor.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Kaynağı aç ↗</a></article><article><b>Google Search Console</b><p>Google, 2026’da üretken yapay zeka özellikleri için ayrı Search Console görünürlük raporlarını küresel olarak kullanıma sunduğunu açıkladı.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Kaynağı aç ↗</a></article></div></div></div></section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -384,7 +342,7 @@ def build_homepages():
   </div>
 </header>
 
-<main>
+<main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">WEBSITE FIX VALIDATOR / V2</b></div>
@@ -478,46 +436,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 04 TOOL DIRECTORY -->
-<section class="px-section" id="tools" data-premium-infographic="tools">
-  <div class="px-section-head"><span class="eyebrow">CUSTOMER JOURNEY</span><h2>Specialized Diagnostic Tools</h2><p>More than a tool list: see which link breaks between a customer asking AI and a usable commercial path to your website.</p></div>
-  <div class="px-tool-flow">
-    <article class="px-flow-card"><span class="node">01</span><h3>Bulun</h3><p>Robots, sitemaps, crawl and AI crawler access. Can AI systems reach your website?</p></article>
-    <article class="px-flow-card"><span class="node">02</span><h3>Anlaşılın</h3><p>Schema, entity graphs, semantic HTML and llms.txt. Is who you are and what you offer unambiguous?</p></article>
-    <article class="px-flow-card"><span class="node">03</span><h3>Kaynak Olun</h3><p>AEO, RAG, E-E-A-T and original-information signals. Is your content usable as an answer source?</p></article>
-    <article class="px-flow-card"><span class="node">04</span><h3>Tıklanın</h3><p>Live links, canonicals and redirect integrity. If cited, does the user land on the right page?</p></article>
-    <article class="px-flow-card"><span class="node">05</span><h3>Talebe Dönüşün</h3><p>CTA, form and accessible actions. Can AI-sourced interest connect to a real customer journey?</p></article>
-  </div>
-  <div class="px-lenses">
-    <div class="px-lens"><b>AI VISIBILITY</b><span>AI Readiness · AI Crawler · AI Mention</span></div>
-    <div class="px-lens"><b>MACHINE KNOWLEDGE</b><span>llms.txt · Schema · Entity Graph</span></div>
-    <div class="px-lens"><b>TECHNICAL FOUNDATION</b><span>12 Engines · Technical SEO · Links · Security</span></div>
-    <div class="px-lens"><b>USER &amp; AGENT JOURNEY</b><span>Accessibility · Conversion · AAO</span></div>
-  </div>
-  <div class="px-actions"><a class="primary" href="/en/website-scanner/">Find My Broken Link →</a><a href="/en/tools/">View All 10 Tools</a></div>
-</section>
-
-<!-- 05 12 ENGINES / EVIDENCE / TRUST -->
-<section class="px-section" id="engines" data-premium-infographic="engines">
-  <div class="px-section-head"><span class="eyebrow">DETERMINISTIC DECISION</span><h2>12 engines. One decision chain.</h2><p>Instead of twelve disconnected scores, see one evidence chain mapping AI visibility readiness to four business outcomes.</p></div>
-  <div class="px-engine-rail">
-    <article class="px-engine-phase"><span>01 · DISCOVERY</span><h3>First, be discoverable.</h3><ul><li><b>01</b>Crawl &amp; Index</li><li><b>02</b>Technical SEO</li><li><b>12</b>Link Integrity</li></ul><div class="px-engine-outcome">OUTCOME → Search and AI systems can reach the intended URLs.</div></article>
-    <article class="px-engine-phase"><span>02 · UNDERSTANDING</span><h3>Then, be understood correctly.</h3><ul><li><b>03</b>AI / GEO Access</li><li><b>04</b>llms.txt</li><li><b>05</b>Structured Data</li><li><b>10</b>Agent Readiness</li></ul><div class="px-engine-outcome">OUTCOME → Brand, content and machine surfaces are less ambiguous.</div></article>
-    <article class="px-engine-phase"><span>03 · TRUST &amp; EXPERIENCE</span><h3>Become source-ready.</h3><ul><li><b>06</b>Performance Hygiene</li><li><b>07</b>Accessibility</li><li><b>08</b>Security Baseline</li><li><b>09</b>Content Trust</li></ul><div class="px-engine-outcome">OUTCOME → Technical trust and human/agent experience are protected.</div></article>
-    <article class="px-engine-phase"><span>04 · COMMERCIAL PATH</span><h3>Connect interest to action.</h3><ul><li><b>11</b>Conversion</li><li><b>+13</b>Intelligence Audits</li><li><b>+7</b>Readiness Lens</li></ul><div class="px-engine-outcome">OUTCOME → A prioritized commercial risk map, not another issue dump.</div></article>
-  </div>
-</section>
-
-<!-- 06 HOW IT WORKS -->
-<section class="px-section" id="how" data-premium-infographic="process">
-  <div class="px-section-head"><span class="eyebrow">TRANSPARENT WORKFLOW</span><h2>Three steps. One evidence chain.</h2><p>See the evidence first. Understand which blockers matter. Pay only when you need an implementation-grade roadmap.</p></div>
-  <div class="px-three-flow">
-    <article class="px-three-step"><span class="num">1</span><h3>Scan free</h3><p>Up to 50 public pages are measured by 12 engines and 13 Intelligence Audits.</p><a href="#scanner">Enter a domain →</a></article>
-    <article class="px-three-step"><span class="num">2</span><h3>See the evidence</h3><p>Scores, findings, affected URLs, severity, confidence and evidence are visible. Fix code and blueprints remain locked.</p><a href="#scanner">See the free report →</a></article>
-    <article class="px-three-step paid"><span class="num">3</span><h3>Unlock the $99 roadmap</h3><p>Root cause, implementation order, file/codebase context, acceptance/regression tests, rollback and re-scan become one execution contract.</p><a href="/checkout">Unlock execution pack →</a></article>
-  </div>
-</section>
-
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -532,8 +450,6 @@ def build_homepages():
 </section>
 </main>
 
-<!-- 10 FOOTER -->
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY → RECOMMENDATION OPPORTUNITY → CUSTOMER</span><h2>Your customer asks AI ‘who should I choose?’ Is your website in the consideration set?</h2><p class="ai-opportunity-lead">HTML&HTML prepares your website for visibility, citation eligibility and recommendation opportunity across AI search experiences. It shows measurable website-side blockers that can prevent discovery, understanding and source consideration.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/en/guides/llms-txt/">llms.txt</a><a href="/en/geo-optimization/">GEO</a><a href="/en/aeo-answer-engine-optimization/">AEO</a><a href="/en/llmo-optimization/">LLMO</a><a href="/en/aao-agent-optimization/">AAO</a><a href="/en/rag-readiness/">RAG</a><a href="/en/e-e-a-t-trust-signals/">E-E-A-T</a><a href="/en/glossary/#sitemap">Sitemap</a><a class="all" href="/en/glossary/">Open AI Search Glossary →</a></div><div class="ai-value-chain"><article><b>01</b><h3>BE DISCOVERABLE BY AI</h3><p>robots.txt, sitemaps, canonicals, indexability and AI crawler access form the discovery foundation.</p></article><article><b>02</b><h3>BE UNDERSTANDABLE</h3><p>GEO, AEO, LLMO, entity graphs, schema and answer extractability reduce machine ambiguity.</p></article><article><b>03</b><h3>BE SOURCE-READY</h3><p>RAG/retrieval, original information, E-E-A-T, freshness and evidence support source eligibility.</p></article><article><b>04</b><h3>TURN OPPORTUNITY INTO DEMAND</h3><p>AAO, accessible journeys, intact links, measurable referrals and clear CTAs connect AI discovery to commercial action.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check My AI Visibility Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Prepare My Site for AI Search — $99 →</a></div><p class="ai-opportunity-guard">Recommendations, rankings, citations, traffic, customers and revenue are not guaranteed. HTML&HTML measures website-side technical and content blockers; it does not claim control over external AI systems.</p><div class="ai-market-evidence"><h3>Grounded in primary guidance</h3><div><article><b>Google</b><p>Google publishes official guidance for generative AI Search, recognizes GEO/AEO as market terms but treats this work as SEO for Google Search, says there are no special extra AI Overview/AI Mode requirements, and says Google Search does not use llms.txt for this visibility.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Open source ↗</a></article><article><b>OpenAI</b><p>OpenAI says any public website can appear in ChatGPT Search and OAI-SearchBot access helps content be discovered, surfaced, clearly cited and linked.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Open source ↗</a></article><article><b>Google Search Console</b><p>Google announced dedicated generative AI Search visibility reporting in Search Console and worldwide rollout in 2026.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Open source ↗</a></article></div></div></div></section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
