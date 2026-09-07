@@ -513,6 +513,22 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iade-politikasi/"/>
   </url>
   <url>
+    <loc>https://htmlandhtml.com/en/delivery-policy/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teslimat-politikasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/delivery-policy/"/>
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/teslimat-politikasi/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/delivery-policy/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teslimat-politikasi/"/>
+  </url>
+  <url>
     <loc>https://htmlandhtml.com/en/deterministic-layers/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>

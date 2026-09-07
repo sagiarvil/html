@@ -112,6 +112,10 @@ Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, 
 - https://htmlandhtml.com/contact/
 - https://htmlandhtml.com/privacy/
 - https://htmlandhtml.com/terms/
+- https://htmlandhtml.com/en/refund-policy/
+- https://htmlandhtml.com/tr/iade-politikasi/
+- https://htmlandhtml.com/en/delivery-policy/
+- https://htmlandhtml.com/tr/teslimat-politikasi/
 - https://github.com/sagiarvil/html
 
 ## Evidence policy
