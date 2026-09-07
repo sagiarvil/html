@@ -99,6 +99,7 @@ def build_homepages():
 <link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="alternate" type="text/markdown" href="https://htmlandhtml.com/index.md">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/">
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
@@ -171,7 +172,8 @@ def build_homepages():
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <input id="domainInput" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
+        <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
+        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b><i>→</i></button>
       </div>
       <div class="scan-chips">
@@ -385,6 +387,7 @@ def build_homepages():
 <link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="alternate" type="text/markdown" href="https://htmlandhtml.com/index.md">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/en/">
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
@@ -456,7 +459,8 @@ def build_homepages():
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <input id="domainInput" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
+        <label for="domainInput" class="sr-only">Target website domain</label>
+        <input id="domainInput" aria-label="Target website domain to audit" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="example.com, https://example.com or www.example.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">Check Free</b><i>→</i></button>
       </div>
       <div class="scan-chips">
@@ -609,7 +613,14 @@ def build_homepages():
 </html>'''
 
     write_page("index.html", root_html)
-    write_page("tr/index.html", root_html)
+    tr_html = root_html.replace(
+        "<title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>",
+        "<title>Web Sitesi Yapay Zeka Arama Hazırlığı ve Teşhis | HTML&amp;HTML</title>"
+    ).replace(
+        '<link rel="canonical" href="https://htmlandhtml.com/">',
+        '<link rel="canonical" href="https://htmlandhtml.com/tr/">'
+    )
+    write_page("tr/index.html", tr_html)
     write_page("en/index.html", en_html)
     print("All homepages built cleanly.")
 

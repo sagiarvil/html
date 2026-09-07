@@ -54,11 +54,12 @@
 <title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
 <meta name="description" content="Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://htmlandhtml.com/">
+<link rel="canonical" href="https://htmlandhtml.com/tr/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
 <link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="alternate" type="text/markdown" href="https://htmlandhtml.com/index.md">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/">
 <meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
@@ -131,7 +132,8 @@
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <input id="domainInput" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
+        <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
+        <input id="domainInput" aria-label="Taranacak web sitesi adresi (Domain)" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="saat.com, https://saat.com veya www.saat.com..." required>
         <button id="scanButton" type="submit"><b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et →</b><i>→</i></button>
       </div>
       <div class="scan-chips">

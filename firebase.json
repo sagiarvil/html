@@ -49,9 +49,13 @@
       {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/openapi.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/audit-profile.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]},
-      {"source":"/sources.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]}
+      {"source":"/sources.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=3600"}]},
+      {"source":"/.well-known/agent-card.json","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
+      {"source":"/mcp","headers":[{"key":"Content-Type","value":"application/json; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]}
     ],
     "rewrites": [
+      {"source":"/.well-known/agent-card.json","function":{"functionId":"agentCard","region":"us-central1"}},
+      {"source":"/mcp","function":{"functionId":"mcp","region":"us-central1"}},
       {"source":"/api/health","function":{"functionId":"health","region":"us-central1"}},
       {"source":"/api/scan","function":{"functionId":"scan","region":"us-central1"}},
       {"source":"/api/intelligence","function":{"functionId":"intelligence","region":"us-central1"}},

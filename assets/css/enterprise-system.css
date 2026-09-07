@@ -2471,7 +2471,7 @@ html[data-theme="light"] .theme-switch button[data-theme-choice="system"].active
   html[data-theme="dark"] .result-pillars-grid {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 5pt !important;
+    gap: 4pt !important;
     margin-bottom: 10pt !important;
     background: transparent !important;
     page-break-inside: avoid !important;
@@ -2486,36 +2486,68 @@ html[data-theme="light"] .theme-switch button[data-theme-choice="system"].active
     background-image: none !important;
     border: 1pt solid #cbd5e1 !important;
     border-radius: 3pt !important;
-    padding: 5pt 7pt !important;
+    padding: 4pt 5pt !important;
     box-shadow: none !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    overflow: hidden !important;
+  }
+
+  .result-pillars-grid .pillar-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 2pt !important;
+    margin-bottom: 3pt !important;
+    width: 100% !important;
   }
 
   .result-pillars-grid .pillar-tag {
-    font-size: 6.5pt !important;
+    font-size: 5.5pt !important;
     color: #0f172a !important;
     font-weight: 800 !important;
+    letter-spacing: -0.01em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
   }
 
   .result-pillars-grid .pillar-score,
   .result-pillars-grid strong {
-    font-size: 11pt !important;
+    font-size: 9pt !important;
     color: #0f172a !important;
     font-weight: 900 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1 !important;
+  }
+
+  .result-pillars-grid .pillar-score span {
+    font-size: 6.5pt !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    white-space: nowrap !important;
+    display: inline !important;
   }
 
   .result-pillars-grid h4 {
-    font-size: 7.5pt !important;
+    font-size: 7pt !important;
     color: #0f172a !important;
     font-weight: 800 !important;
     margin: 1pt 0 !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   .result-pillars-grid p {
-    font-size: 6.5pt !important;
+    font-size: 5.8pt !important;
     color: #334155 !important;
-    line-height: 1.25 !important;
+    line-height: 1.2 !important;
     margin: 0 !important;
   }
 
@@ -2529,33 +2561,72 @@ html[data-theme="light"] .theme-switch button[data-theme-choice="system"].active
   html[data-theme="dark"] .score-grid {
     display: grid !important;
     grid-template-columns: repeat(6, 1fr) !important;
+    gap: 3pt !important;
     border: 1pt solid #cbd5e1 !important;
     background: #ffffff !important;
     margin-bottom: 10pt !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    letter-spacing: -0.02em !important;
   }
 
   .score-item,
   html[data-theme] .score-item,
   html[data-theme="dark"] .score-item {
-    padding: 4pt 6pt !important;
+    padding: 3pt 4pt !important;
     border: 0.5pt solid #e2e8f0 !important;
     background: #ffffff !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    overflow: hidden !important;
   }
 
-  .score-item strong {
+  .score-item-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1pt !important;
+    margin-bottom: 2pt !important;
+    width: 100% !important;
+  }
+
+  .score-item-top span.engine-num {
+    font-size: 5.5pt !important;
+    font-weight: 800 !important;
+    color: #0284c7 !important;
+    white-space: nowrap !important;
+    letter-spacing: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .score-item-top span:not(.engine-num),
+  .score-item span {
+    font-size: 5.8pt !important;
+    color: #334155 !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    letter-spacing: -0.025em !important;
+    text-transform: uppercase !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+    max-width: 100% !important;
+    line-height: 1.15 !important;
+  }
+
+  .score-item strong,
+  html[data-theme] .score-item strong,
+  html[data-theme="dark"] .score-item strong,
+  html[data-theme="light"] .score-item strong {
     font-size: 11pt !important;
     color: #0f172a !important;
     font-weight: 900 !important;
-  }
-
-  .score-item span {
-    font-size: 7pt !important;
-    color: #475569 !important;
-    font-weight: 750 !important;
+    line-height: 1 !important;
+    display: block !important;
   }
 
   .meter {

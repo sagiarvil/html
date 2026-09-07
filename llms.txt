@@ -50,7 +50,7 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 - [Google — Build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
 - [Google — Third-party SEO tools and advice](https://developers.google.com/search/docs/fundamentals/third-party-seo)
 - [Google — Generative AI performance reports in Search Console](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
-- [OpenAI — Publishers and Developers FAQ](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq)
+- [OpenAI — Publishers and Developers FAQ](https://platform.openai.com/docs/bots)
 - [llms.txt proposal](https://llmstxt.org/)
 - [llms.txt v2 changes](https://llmstxt.org/changes.html)
 

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="tr">
 <head>
+<link rel="stylesheet" href="/assets/css/theme.css?v=11">
 <!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
 <script>
   (function() {
@@ -19,7 +20,6 @@
     } catch(e) {}
   })();
 </script>
-<link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI Marka Görünürlük Takibi — OpenAI, Perplexity, Gemini Alıntı Denetimi | HTML&HTML</title>
@@ -31,7 +31,7 @@
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-mention-tracker/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <link rel="stylesheet" href="/assets/css/authority.css">
-<script src="/assets/js/theme.js?v=5"></script>
+<script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/mention-tracker.js" defer></script>
 <script type="application/ld+json">
 {
@@ -57,7 +57,7 @@
 }
 </script>
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 </head>
 <body data-mention-tracker>
@@ -122,10 +122,12 @@
         <input id="mentionAccess" type="password" autocomplete="off" placeholder="Erişim anahtarı" required>
       </div>
       <div class="wide mention-queries">
-        <label>1–3 nötr sorgu</label>
-        <textarea id="mentionQ1" maxlength="280" required placeholder="Örn. Bir web sitesinin teknik olarak yapay zeka arama motorlarına hazır olup olmadığını hangi araçlar denetler?"></textarea>
-        <textarea id="mentionQ2" maxlength="280" placeholder="Örn. llms.txt, AI tarayıcı erişimi ve şema kontrollerini birleştiren web denetim araçları hangileridir?"></textarea>
-        <textarea id="mentionQ3" maxlength="280" placeholder="Örn. Web siteleri için teknik AI hazırlık denetimi sunan araçlar nelerdir?"></textarea>
+        <label for="mentionQ1">1. Nötr sorgu (zorunlu)</label>
+        <textarea id="mentionQ1" aria-label="1. Nötr sorgu" maxlength="280" required placeholder="Örn. Bir web sitesinin teknik olarak yapay zeka arama motorlarına hazır olup olmadığını hangi araçlar denetler?"></textarea>
+        <label for="mentionQ2" style="margin-top:8px">2. Nötr sorgu (isteğe bağlı)</label>
+        <textarea id="mentionQ2" aria-label="2. Nötr sorgu" maxlength="280" placeholder="Örn. llms.txt, AI tarayıcı erişimi ve şema kontrollerini birleştiren web denetim araçları hangileridir?"></textarea>
+        <label for="mentionQ3" style="margin-top:8px">3. Nötr sorgu (isteğe bağlı)</label>
+        <textarea id="mentionQ3" aria-label="3. Nötr sorgu" maxlength="280" placeholder="Örn. Web siteleri için teknik AI hazırlık denetimi sunan araçlar nelerdir?"></textarea>
       </div>
       <div class="wide">
         <button type="submit" style="min-height:52px;width:100%;border:0;border-radius:12px;background:var(--green);color:#102117;font-weight:900;cursor:pointer">Görünürlük kontrolünü çalıştır →</button>
@@ -225,19 +227,19 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Company</h4>
+      <h4>Kurumsal</h4>
       <ul>
-        <li><a href="/en/about/">About</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
-        <li><a href="/en/terms/">Terms of Service</a></li>
-        <li><a href="/en/privacy/">Privacy Policy</a></li>
-        <li><a href="/en/refund-policy/">Refund Policy</a></li>
-        <li><a href="/en/delivery-policy/">Delivery Policy</a></li>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
+        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</span>
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
     <span>12 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
   </div>
 </footer>

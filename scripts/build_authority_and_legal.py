@@ -129,10 +129,15 @@ def build_methodology():
 </html>'''
         write_page(rel_path, html)
 
-    # Sync root methodology.html
-    root_en = html if lang == 'en' else html
-    # Let's ensure methodology.html has all required tokens
-    write_page("methodology.html", html)
+    # Sync root methodology.html with unique title and canonical
+    methodology_html = html.replace(
+        "<title>Puanlama Metodolojisi — 18 Motorlu Mimari | HTML&HTML</title>",
+        "<title>Deterministik Puanlama Metodolojisi ve Standartlar | HTML&HTML</title>"
+    ).replace(
+        '<link rel="canonical" href="https://htmlandhtml.com/tr/methodology/">',
+        '<link rel="canonical" href="https://htmlandhtml.com/methodology.html">'
+    )
+    write_page("methodology.html", methodology_html)
 
 build_methodology()
 print("Methodology built.")
@@ -230,7 +235,14 @@ def build_evidence_standard():
 </html>'''
         write_page(rel_path, html)
         if lang == 'en':
-            write_page("standard/index.html", html)
+            std_html = html.replace(
+                "<title>Evidence Standard — Verifiable Web Signals | HTML&HTML</title>",
+                "<title>Open Audit Standard &amp; Governance Profile | HTML&HTML</title>"
+            ).replace(
+                '<link rel="canonical" href="https://htmlandhtml.com/en/evidence-standard/">',
+                '<link rel="canonical" href="https://htmlandhtml.com/standard/">'
+            )
+            write_page("standard/index.html", std_html)
 
 def build_crawler_reference():
     for lang in ['en', 'tr']:
@@ -337,7 +349,14 @@ def build_crawler_reference():
 </html>'''
         write_page(rel_path, html)
         if lang == 'en':
-            write_page("reference/ai-crawlers/index.html", html)
+            ref_html = html.replace(
+                "<title>AI Crawler Directory — User-Agents & Purpose | HTML&HTML</title>",
+                "<title>AI Crawlers Reference Database &amp; Specifications | HTML&HTML</title>"
+            ).replace(
+                '<link rel="canonical" href="https://htmlandhtml.com/en/reference/ai-crawlers/">',
+                '<link rel="canonical" href="https://htmlandhtml.com/reference/ai-crawlers/">'
+            )
+            write_page("reference/ai-crawlers/index.html", ref_html)
 
 def build_company_legal():
     pages = [
@@ -487,7 +506,17 @@ def build_company_legal():
 </html>'''
             write_page(rel_path, html)
             if lang == 'en':
-                write_page(f"{p['root_slug']}/index.html", html)
+                root_titles = {
+                    "about": "About HTML&HTML — Platform &amp; Diagnostic SaaS",
+                    "contact": "Support &amp; Enterprise Licensing Contacts — HTML&HTML",
+                    "privacy": "Platform Privacy Policy &amp; Data Governance — HTML&HTML",
+                    "terms": "Terms of Service &amp; Developer License Agreement — HTML&HTML"
+                }
+                root_html = html
+                if p['root_slug'] in root_titles:
+                    root_html = root_html.replace(f"<title>{c['title']}</title>", f"<title>{root_titles[p['root_slug']]}</title>")
+                    root_html = root_html.replace(f'<link rel="canonical" href="https://htmlandhtml.com/{p["en_slug"]}/">', f'<link rel="canonical" href="https://htmlandhtml.com/{p["root_slug"]}/">')
+                write_page(f"{p['root_slug']}/index.html", root_html)
 
 build_evidence_standard()
 build_crawler_reference()
