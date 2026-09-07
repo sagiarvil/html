@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
-THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=9">'
+THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=11">'
 PREMIUM='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">'
 ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">'
 RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=3?v=1"></script>'
@@ -29,7 +29,7 @@ for p in ROOT.rglob('*.html'):
     p.write_text(text,encoding='utf-8')
 
 # Runtime locale dictionaries are build artifacts too. Never let a language switch resurrect old price/copy.
-validator=ROOT/'assets/js/validator.js?v=3'
+validator=ROOT/'assets/js/validator.js?v=4'
 if validator.exists():
     js=validator.read_text(encoding='utf-8')
     js=js.replace('$149','$99')

@@ -1886,7 +1886,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   html[data-theme="dark"] body,
   html[data-theme="light"] body {
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     color: #000000 !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
@@ -1944,7 +1944,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     margin: 0 !important;
     padding: 0 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -1961,7 +1961,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     justify-content: space-between !important;
     align-items: flex-end !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
   }
 
   .result-head .eyebrow,
@@ -2005,7 +2005,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     padding: 6pt 12pt !important;
     text-align: center !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     box-shadow: none !important;
   }
 
@@ -2043,7 +2043,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   html[data-theme] .result-pillars-grid .pillar-card,
   html[data-theme="dark"] .result-pillars-grid .pillar-card {
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     border: 1pt solid #cbd5e1 !important;
     border-radius: 4pt !important;
@@ -2147,7 +2147,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     border: 1.5pt solid #000000 !important;
     border-left: 5pt solid #000000 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     padding: 8pt 10pt !important;
     margin-bottom: 14pt !important;
@@ -2237,7 +2237,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   html[data-theme] article.finding,
   html[data-theme="dark"] article.finding {
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     border: 1pt solid #cbd5e1 !important;
     border-bottom: 2pt solid #64748b !important;
@@ -2269,7 +2269,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     border-radius: 2pt !important;
     border: 1pt solid #cbd5e1 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     color: #000000 !important;
     font-weight: 700 !important;
   }
@@ -2281,7 +2281,7 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
     border: 1.5pt solid #000000 !important;
     color: #000000 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     font-weight: 900 !important;
     text-transform: uppercase !important;
   }
@@ -3108,7 +3108,7 @@ html[data-theme="dark"] .authority-hero h1 em {
   html[data-theme="dark"] body,
   html[data-theme="light"] body {
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     color: #000000 !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
@@ -3164,7 +3164,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     margin: 0 !important;
     padding: 0 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -3180,7 +3180,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     justify-content: space-between !important;
     align-items: flex-end !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
   }
 
   .result-head .eyebrow,
@@ -3223,7 +3223,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     padding: 6pt 12pt !important;
     text-align: center !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     box-shadow: none !important;
   }
 
@@ -3260,7 +3260,7 @@ html[data-theme="dark"] .authority-hero h1 em {
   html[data-theme] .result-pillars-grid .pillar-card,
   html[data-theme="dark"] .result-pillars-grid .pillar-card {
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     border: 1pt solid #cbd5e1 !important;
     border-radius: 4pt !important;
@@ -3362,7 +3362,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     border: 1.5pt solid #000000 !important;
     border-left: 5pt solid #000000 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     padding: 8pt 10pt !important;
     margin-bottom: 14pt !important;
@@ -3450,7 +3450,7 @@ html[data-theme="dark"] .authority-hero h1 em {
   html[data-theme] article.finding,
   html[data-theme="dark"] article.finding {
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     background-image: none !important;
     border: 1pt solid #cbd5e1 !important;
     border-bottom: 2pt solid #64748b !important;
@@ -3481,7 +3481,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     border-radius: 2pt !important;
     border: 1pt solid #cbd5e1 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     color: #000000 !important;
     font-weight: 700 !important;
   }
@@ -3493,7 +3493,7 @@ html[data-theme="dark"] .authority-hero h1 em {
     border: 1.5pt solid #000000 !important;
     color: #000000 !important;
     background: #ffffff !important;
-    background-color: var(--theme-text-strong, #ffffff) !important;
+    background-color: #ffffff !important;
     font-weight: 900 !important;
     text-transform: uppercase !important;
   }
@@ -4041,4 +4041,522 @@ html[data-theme="dark"] .breadcrumbs span {
 html[data-theme="dark"] .breadcrumbs span:last-child {
   color: #f8fafc !important;
   font-weight: 800 !important;
+}
+
+
+/* ==========================================================================
+   ENTERPRISE REPORT SYSTEM (LIGHT & DARK THEME PARITY)
+   ========================================================================== */
+
+/* Dark Mode Results Defaults */
+html[data-theme="dark"] #result.results {
+  background: var(--theme-bg-surface, #181a22) !important;
+  border-color: var(--theme-border, rgba(255, 255, 255, 0.1)) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .score-grid {
+  background: #14151a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .score-item {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .score-item strong {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .score-item span {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .priority-summary {
+  background: #181a22 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .finding {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .finding h4 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .finding p {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .finding code {
+  background: #090d16 !important;
+  border-color: rgba(56, 189, 248, 0.25) !important;
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .health-dossier-box {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .health-dossier-label {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .health-dossier-text {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .health-dossier-meta {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .health-dossier-meta strong {
+  color: #ffffff !important;
+}
+
+/* Light Mode Results Standards */
+html[data-theme="light"] #result.results {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .result-head h2 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .result-head p {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .total-score {
+  border: 2px solid #0f172a !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .total-score strong {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .total-score span {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .score-grid {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .score-item {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .score-item strong {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .score-item span {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .meter {
+  background: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .meter i {
+  background: #0071e3 !important;
+}
+
+html[data-theme="light"] .priority-summary {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .priority-summary h3 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .priority-item {
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .result-title h3 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] #findingCount {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .finding {
+  border-bottom: 1px solid #e2e8f0 !important;
+  background: transparent !important;
+}
+
+html[data-theme="light"] .finding h4 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .finding p {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .finding-url {
+  color: #0071e3 !important;
+}
+
+html[data-theme="light"] .finding code {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0369a1 !important;
+}
+
+html[data-theme="light"] .finding-tags span {
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .finding-tags .tag-id {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .health-dossier-box {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .health-dossier-label {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .health-dossier-text {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .health-dossier-meta {
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .health-dossier-meta strong {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .locked-fix {
+  background: #f8fafc !important;
+  border: 1px dashed #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .mandate-card {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid #1e293b !important;
+}
+
+html[data-theme="light"] .mandate-card .eyebrow {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="light"] .mandate-card h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .mandate-card p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .mandate-card li {
+  color: #cbd5e1 !important;
+  border-color: #1e293b !important;
+}
+
+html[data-theme="light"] .mandate-card strong {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   EXECUTIVE WHITE-LABEL PDF / PRINT ENGINE (STRICT LIGHT MODE AT ALL TIMES)
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 1.2cm 1cm !important;
+    size: A4 portrait !important;
+  }
+
+  /* Reset everything to pristine pure white and deep black */
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  html[data-theme="dark"],
+  html[data-theme="light"],
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Hide non-report chrome */
+  header,
+  .topbar,
+  footer,
+  .hero,
+  .scanbox,
+  .signals,
+  .px-section,
+  .faq,
+  .btn-pdf-export,
+  .theme-switch,
+  .langs,
+  .nav-scan-cta,
+  .nav-actions,
+  .primary-nav,
+  .skip,
+  .mandate-card,
+  .status,
+  .scan-chips,
+  .breadcrumbs {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Make Result Container Full Width and Print-Friendly */
+  #result.results,
+  .results {
+    display: block !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .result-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    border-bottom: 2pt solid #000000 !important;
+    padding-bottom: 8pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  #resultDomain {
+    font-size: 20pt !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+    margin: 0 0 4pt 0 !important;
+  }
+
+  #resultMeta {
+    font-size: 9pt !important;
+    color: #334155 !important;
+  }
+
+  .total-score {
+    width: auto !important;
+    height: auto !important;
+    border: 1.5pt solid #000000 !important;
+    border-radius: 6pt !important;
+    padding: 4pt 10pt !important;
+    display: flex !important;
+    align-items: baseline !important;
+  }
+
+  .total-score strong {
+    font-size: 22pt !important;
+    color: #000000 !important;
+  }
+
+  .total-score span {
+    font-size: 10pt !important;
+    color: #334155 !important;
+  }
+
+  .score-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    border: 1pt solid #cbd5e1 !important;
+    background: #ffffff !important;
+    margin-bottom: 14pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .score-item {
+    padding: 6pt 8pt !important;
+    border: 0.5pt solid #e2e8f0 !important;
+    background: #ffffff !important;
+  }
+
+  .score-item strong {
+    font-size: 13pt !important;
+    color: #000000 !important;
+  }
+
+  .score-item span {
+    font-size: 7.5pt !important;
+    color: #475569 !important;
+    font-weight: 750 !important;
+  }
+
+  .meter {
+    display: none !important;
+  }
+
+  .result-columns {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .result-title {
+    border-bottom: 1.5pt solid #000000 !important;
+    padding-bottom: 4pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  .result-title h3 {
+    font-size: 13pt !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+  }
+
+  #findingCount {
+    font-size: 9pt !important;
+    color: #475569 !important;
+  }
+
+  /* Single Finding Block: Never Split Across Pages */
+  .finding {
+    display: block !important;
+    position: static !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-radius: 6pt !important;
+    padding: 10pt 12pt !important;
+    margin-bottom: 10pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  .finding h4 {
+    font-size: 11pt !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+    margin: 0 0 4pt 0 !important;
+  }
+
+  .finding p {
+    font-size: 9pt !important;
+    color: #1e293b !important;
+    margin: 0 0 4pt 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  .finding-url {
+    font-size: 8pt !important;
+    color: #0f172a !important;
+    word-break: break-all !important;
+    font-family: monospace !important;
+    display: block !important;
+    margin: 2pt 0 4pt !important;
+  }
+
+  .finding code {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #000000 !important;
+    font-family: monospace !important;
+    font-size: 8pt !important;
+    padding: 4pt 6pt !important;
+    display: block !important;
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    margin-top: 4pt !important;
+  }
+
+  .finding-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4pt !important;
+    margin-bottom: 6pt !important;
+  }
+
+  .finding-tags span {
+    background: #f1f5f9 !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #000000 !important;
+    padding: 2pt 5pt !important;
+    font-size: 7.5pt !important;
+    border-radius: 3pt !important;
+    font-weight: 700 !important;
+  }
+
+  .finding-tags .severity {
+    border: 1.5pt solid #000000 !important;
+    font-weight: 900 !important;
+  }
+
+  .health-dossier-box {
+    background: #f8fafc !important;
+    border: 1pt solid #e2e8f0 !important;
+    padding: 6pt 8pt !important;
+    border-radius: 4pt !important;
+  }
+
+  .health-dossier-label {
+    font-size: 7.5pt !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+  }
+
+  .health-dossier-text {
+    font-size: 8pt !important;
+    color: #334155 !important;
+  }
+
+  .health-dossier-meta {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    border-top: 0.5pt solid #cbd5e1 !important;
+    margin-top: 6pt !important;
+    padding-top: 4pt !important;
+  }
+
+  .health-dossier-meta strong {
+    color: #000000 !important;
+  }
+
+  .locked-fix {
+    display: none !important;
+  }
 }

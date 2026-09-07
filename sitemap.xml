@@ -513,22 +513,6 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iade-politikasi/"/>
   </url>
   <url>
-    <loc>https://htmlandhtml.com/en/delivery-policy/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teslimat-politikasi/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/delivery-policy/"/>
-  </url>
-  <url>
-    <loc>https://htmlandhtml.com/tr/teslimat-politikasi/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/delivery-policy/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teslimat-politikasi/"/>
-  </url>
-  <url>
     <loc>https://htmlandhtml.com/en/deterministic-layers/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -560,7 +544,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/enterprise-dark-pool/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/enterprise-dark-pool/"/>
   </url>
-  <url>
+<url>
     <loc>https://htmlandhtml.com/en/glossary/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -687,16 +671,6 @@
     <priority>0.86</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/e-e-a-t-guven-sinyalleri/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/e-e-a-t-trust-signals/"/>
-  </url>
-<url>
-    <loc>https://htmlandhtml.com/FS-THEME-001-MANDATE.md</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://htmlandhtml.com/FS-THEME-001-Widget.html</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
   </url>
   <!-- LLMS_NEWS_START -->
   <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/"/></url>

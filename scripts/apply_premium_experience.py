@@ -178,7 +178,7 @@ def clean_glossary():
         p.write_text(add_css(text),encoding='utf-8')
 
 def patch_assets():
-    js=ROOT/'assets/js/validator.js?v=3'
+    js=ROOT/'assets/js/validator.js?v=4'
     if js.exists():
         t=js.read_text(encoding='utf-8').replace('$149','$99').replace("scan:'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et'","scan:'Ücretsiz Kontrol Et'").replace("scan:'Ücretsiz Tara'","scan:'Ücretsiz Kontrol Et'").replace("scan:'Check My AI Visibility Free'","scan:'Check Free'").replace("scan:'Scan Free'","scan:'Check Free'")
         t=t.replace("heroTitle:'Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?'","heroTitle:'Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em>'")

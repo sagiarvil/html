@@ -103,7 +103,7 @@ def build_homepages():
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
-<link rel="stylesheet" href="/assets/css/theme.css?v=10">
+<link rel="stylesheet" href="/assets/css/theme.css?v=11">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
@@ -126,7 +126,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=3" defer></script>
+<script src="/assets/js/validator.js?v=4" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
@@ -382,7 +382,7 @@ def build_homepages():
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
-<link rel="stylesheet" href="/assets/css/theme.css?v=10">
+<link rel="stylesheet" href="/assets/css/theme.css?v=11">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
@@ -405,7 +405,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=3" defer></script>
+<script src="/assets/js/validator.js?v=4" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 </head>
