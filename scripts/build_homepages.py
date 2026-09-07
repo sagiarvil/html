@@ -145,7 +145,7 @@ def build_homepages():
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      <img class="brand-logo" src="/assets/logo.png?v=hh5" alt="HTML&amp;HTML" width="127" height="28">
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
       <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
@@ -336,7 +336,7 @@ def build_homepages():
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+        <img class="brand-logo" src="/assets/logo.png?v=hh5" alt="HTML&amp;HTML" width="109" height="24">
       </a>
       <p data-i18n="footerTag">Teşhis ücretsizdir. Otomatik kod ve konfigürasyon paketi asıl üründür.</p>
     </div>
@@ -494,7 +494,7 @@ def build_homepages():
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      <img class="brand-logo" src="/assets/logo.png?v=hh5" alt="HTML&amp;HTML" width="127" height="28">
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="/en/ai-search-visibility/">AI Visibility</a>
@@ -685,7 +685,7 @@ def build_homepages():
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+        <img class="brand-logo" src="/assets/logo.png?v=hh5" alt="HTML&amp;HTML" width="109" height="24">
       </a>
       <p data-i18n="footerTag">Evidence is free. Automated code generator is the product.</p>
     </div>
