@@ -1932,7 +1932,9 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   #findingsFilterBar,
   .status,
   .copy-bubble,
-  [data-commercial-intent],
+  section[data-commercial-intent],
+  aside[data-commercial-intent],
+  div[data-commercial-intent],
   .pillar-footer-banner,
   .banner-cta,
   .health-roadmap-deck,
@@ -1942,6 +1944,20 @@ html[data-theme="dark"] .px-file-card.vip .format-pill {
   .intel-bridge-banner,
   .intel-filter-bar {
     display: none !important;
+  }
+
+  /* Explicitly ensure main is displayed in print */
+  main,
+  html[data-theme] main,
+  html[data-theme="dark"] main,
+  html[data-theme="light"] main {
+    display: block !important;
+    visibility: visible !important;
+    background: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* 3. Report Container */
@@ -3169,7 +3185,9 @@ html[data-theme="dark"] .authority-hero h1 em {
   #findingsFilterBar,
   .status,
   .copy-bubble,
-  [data-commercial-intent],
+  section[data-commercial-intent],
+  aside[data-commercial-intent],
+  div[data-commercial-intent],
   .pillar-footer-banner,
   .banner-cta {
     display: none !important;
@@ -4774,16 +4792,24 @@ html[data-theme="light"] .sample-compliance-box strong {
     break-inside: avoid !important;
   }
 
-  .score-item strong {
-    font-size: 11pt !important;
+  .score-item strong,
+  html[data-theme] .score-item strong,
+  html[data-theme="dark"] .score-item strong,
+  html[data-theme="light"] .score-item strong {
+    font-size: 12pt !important;
     color: #0f172a !important;
     font-weight: 900 !important;
+    display: block !important;
   }
 
-  .score-item span {
+  .score-item span,
+  html[data-theme] .score-item span,
+  html[data-theme="dark"] .score-item span,
+  html[data-theme="light"] .score-item span {
     font-size: 7pt !important;
     color: #475569 !important;
     font-weight: 750 !important;
+    display: block !important;
   }
 
   .meter {
@@ -4942,18 +4968,22 @@ html[data-theme="light"] .sample-compliance-box strong {
     text-decoration: underline !important;
   }
 
-  .finding code {
-    background: #f8fafc !important;
-    background-color: #f8fafc !important;
+  .finding code,
+  html[data-theme] .finding code,
+  html[data-theme="dark"] .finding code,
+  html[data-theme="light"] .finding code {
+    background: #f1f5f9 !important;
+    background-color: #f1f5f9 !important;
+    background-image: none !important;
     border: 1pt solid #cbd5e1 !important;
     color: #0f172a !important;
     font-family: monospace !important;
-    font-size: 7.5pt !important;
-    padding: 3pt 5pt !important;
+    font-size: 8pt !important;
+    padding: 4pt 6pt !important;
     display: block !important;
     white-space: pre-wrap !important;
     word-break: break-all !important;
-    margin-top: 3pt !important;
+    margin-top: 4pt !important;
     border-radius: 3pt !important;
   }
 
@@ -4980,12 +5010,15 @@ html[data-theme="light"] .sample-compliance-box strong {
     color: #0f172a !important;
   }
 
-  .health-dossier-box {
+  .health-dossier-box,
+  html[data-theme] .health-dossier-box,
+  html[data-theme="dark"] .health-dossier-box,
+  html[data-theme="light"] .health-dossier-box {
     background: #f8fafc !important;
     background-color: #f8fafc !important;
     background-image: none !important;
-    border: 1pt solid #e2e8f0 !important;
-    padding: 4pt 6pt !important;
+    border: 1pt solid #cbd5e1 !important;
+    padding: 5pt 7pt !important;
     border-radius: 3pt !important;
   }
 
