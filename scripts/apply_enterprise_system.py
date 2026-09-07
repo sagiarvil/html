@@ -107,7 +107,7 @@ TR_PRICING='''<main>
  </div>
 </section>
 
-<section class="px-section">
+<section class="px-section pricing-delivery-manifest">
  <div class="px-section-head"><span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVANTERİ)</span><h2>Bir PDF değil. 22 dosyalı üretim sınıfı mühendislik paketi.</h2><p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve $99 Yol Haritası uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile anında teslim edilir.</p></div>
  <div class="px-delivery-category">
   <div class="px-delivery-category-title"><span>$99 AI Görünürlük Yol Haritası Tam Teslimat Seti</span><span class="badge">22 Dosyalı Eksiksiz Arşiv</span></div>
@@ -196,7 +196,7 @@ EN_PRICING='''<main>
  </div>
 </section>
 
-<section class="px-section">
+<section class="px-section pricing-delivery-manifest">
  <div class="px-section-head"><span class="eyebrow">ENGINEERING DELIVERY PACKAGE (ZIP MANIFEST)</span><h2>Not another PDF. A 22-file production-grade engineering package.</h2><p>After payment entitlement is verified, the system re-scans the same domain and automatically produces the $99 Roadmap implementation package as a ZIP. No membership is required; delivery uses a secure guest-checkout entitlement token.</p></div>
  <div class="px-delivery-category">
   <div class="px-delivery-category-title"><span>$99 AI Search Visibility Roadmap Full Delivery Set</span><span class="badge">Complete 22-File Archive</span></div>

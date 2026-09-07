@@ -1672,6 +1672,9 @@ html[data-theme="dark"] .finding.finding-tier-info {
    14. RESPONSIVE MEDIA QUERIES
    -------------------------------------------------------------------------- */
 @media (max-width: 980px) {
+  .primary-nav, .topbar nav {
+    display: none !important;
+  }
   .pricing-grid.pricing-three,
   .px-report-boundary.px-three-tiers,
   .classified-grid,
