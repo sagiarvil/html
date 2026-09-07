@@ -29,13 +29,13 @@ export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},asyn
   });
 });
 
-export const scan=onRequest({...common,timeoutSeconds:240},async(req,res)=>{
+export const scan=onRequest({...common,timeoutSeconds:240,memory:'1GiB'},async(req,res)=>{
   harden(res);if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
-  try{const body=req.body;if(!body||typeof body.domain!=='string'||!body.domain.trim()){res.status(400).json({error:'Domain required'});return}const result=await runFriendlyScan(body.domain);const intelligence=generateIntelligenceReport(result);res.status(200).json({...result,intelligence})}
+  try{const body=req.body;if(!body||typeof body.domain!=='string'||!body.domain.trim()){res.status(400).json({error:'Domain required'});return}const result=await runFriendlyScan(body.domain);const intelligence=generateIntelligenceReport(result);res.status(200).json({...result,intelligence,v2Available:true})}
   catch(e:any){const message=e?.message||'Scan failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
 });
 
-export const intelligence=onRequest({...common,timeoutSeconds:240},async(req,res)=>{
+export const intelligence=onRequest({...common,timeoutSeconds:240,memory:'1GiB'},async(req,res)=>{
   harden(res);if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
   try{const body=req.body;const target=body?.domain||body?.url||body?.target_url;if(typeof target!=='string'||!target.trim()){res.status(400).json({error:'Domain required'});return}const scan=await runFriendlyScan(target.trim());const report=generateIntelligenceReport(scan);res.status(200).json({scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScores:scan.scores,intelligence:report})}
   catch(e:any){const message=e?.message||'Intelligence audit failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
