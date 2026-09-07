@@ -38,11 +38,52 @@ def build_homepages():
     ]
 
     # Root index.html (Bilingual default, Turkish primary, satisfies all test assertions)
-    root_html = f'''<!doctype html>
+    root_html = '''<!doctype html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 1. ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    var COOKIE_NAME = 'htmlandhtml-theme';
+    var DARK_CLASS = 'dark';
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(?:^|; )' + 
+        name.replace(/([.$?*|{}()[\\]\\\\/+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+    function getInitialTheme() {
+      var cookie = getCookie(COOKIE_NAME);
+      if (cookie) {
+        try {
+          var parsed = JSON.parse(cookie);
+          if (parsed.theme === 'system' || !parsed.theme) {
+            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          return parsed.theme;
+        } catch (e) {
+          return cookie;
+        }
+      }
+      try {
+        var ls = localStorage.getItem('htmlandhtml-theme-v2');
+        if (ls) {
+          var p = JSON.parse(ls);
+          if (p.theme === 'system' || !p.theme) {
+            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          return p.theme;
+        }
+      } catch (e) {}
+      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var theme = getInitialTheme();
+    document.documentElement.classList.toggle(DARK_CLASS, theme === 'dark');
+    document.documentElement.style.colorScheme = theme;
+  })();
+</script>
 <title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
 <meta name="description" content="Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -60,28 +101,30 @@ def build_homepages():
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=2">
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<script src="/assets/js/enterprise-theme-engine.js" defer></script>
 <script type="application/ld+json">
-{{
+{
   "@context": "https://schema.org",
   "@graph": [
-    {{
+    {
       "@type": "WebApplication",
       "name": "HTML&HTML Website Fix Validator",
       "url": "https://htmlandhtml.com/",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web",
       "offers": [
-        {{ "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" }},
-        {{ "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }}
+        { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }
       ]
-    }}
+    }
   ]
-}}
+}
 </script>
 <script src="/assets/js/validator.js?v=2" defer></script>
 <script src="/assets/js/theme.js"></script>
@@ -279,6 +322,47 @@ def build_homepages():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 1. ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    var COOKIE_NAME = 'htmlandhtml-theme';
+    var DARK_CLASS = 'dark';
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(?:^|; )' + 
+        name.replace(/([.$?*|{}()[\\]\\\\/+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+    function getInitialTheme() {
+      var cookie = getCookie(COOKIE_NAME);
+      if (cookie) {
+        try {
+          var parsed = JSON.parse(cookie);
+          if (parsed.theme === 'system' || !parsed.theme) {
+            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          return parsed.theme;
+        } catch (e) {
+          return cookie;
+        }
+      }
+      try {
+        var ls = localStorage.getItem('htmlandhtml-theme-v2');
+        if (ls) {
+          var p = JSON.parse(ls);
+          if (p.theme === 'system' || !p.theme) {
+            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          return p.theme;
+        }
+      } catch (e) {}
+      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var theme = getInitialTheme();
+    document.documentElement.classList.toggle(DARK_CLASS, theme === 'dark');
+    document.documentElement.style.colorScheme = theme;
+  })();
+</script>
 <title>AI Search Visibility, GEO, AEO &amp; llms.txt | HTML&amp;HTML</title>
 <meta name="description" content="Is your website ready to appear in AI search and earn recommendation opportunity? Check GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt and the technical foundation free.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -296,11 +380,13 @@ def build_homepages():
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=2">
 <link rel="stylesheet" href="/assets/css/theme.css?v=2">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=1">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<script src="/assets/js/enterprise-theme-engine.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
