@@ -3683,21 +3683,21 @@ html[data-theme="light"] .topbar {
    URGENT CONTRAST FIX: Validator v2 Components
    ========================================================================== */
 .scan-disclosure {
-  background: var(--theme-bg-elevated, #282b36) !important;
-  color: var(--theme-text-secondary, #94a3b8) !important;
-  border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+  background: var(--theme-bg-elevated, var(--bg-soft)) !important;
+  color: var(--theme-text-secondary, var(--fg-dim)) !important;
+  border-color: var(--theme-border, var(--line)) !important;
 }
 
 .finding-tags span {
-  background: var(--theme-bg-elevated, #282b36) !important;
-  color: var(--theme-text-secondary, #94a3b8) !important;
-  border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+  background: var(--theme-bg-elevated, var(--bg-soft)) !important;
+  color: var(--theme-text-secondary, var(--fg-dim)) !important;
+  border-color: var(--theme-border, var(--line)) !important;
 }
 
 .locked-fix {
-  background: var(--theme-bg-elevated, #282b36) !important;
-  color: var(--theme-text-primary, #cbd5e1) !important;
-  border-color: var(--theme-border, rgba(255,255,255,0.1)) !important;
+  background: var(--theme-bg-elevated, var(--bg-soft)) !important;
+  color: var(--theme-text-primary, var(--fg-soft)) !important;
+  border-color: var(--theme-border, var(--line)) !important;
 }
 
 

@@ -91,7 +91,13 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 
 The non-scoring Intelligence layer adds decision context across Search Intent & Cannibalization, Information Gain Signals, Answer Extractability, Entity Graph Integrity, Freshness Integrity, Hydration / Render Parity, LLM Knowledge Surface, Internal Link Semantic Alignment, Orphan Page Detection, Discovery Path, IndexNow Readiness, Structured @graph Consistency, and Codebase SEO Governance.
 
-Seven decision-support lenses summarize impact across SEO, GEO, AEO, LLMO, AAO, RAG, and E-E-A-T. These lenses do not mutate the canonical 12-engine technical score.
+Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-side blockers, complemented by 13 non-scoring intelligence audits and seven decision-support lenses.
+
+## Commercial surfaces and delivery
+
+- [Pricing & Delivery — English](https://htmlandhtml.com/en/pricing/)
+- [Fiyatlandırma ve Teslimat — Türkçe](https://htmlandhtml.com/tr/fiyatlandirma/)
+- [AI Search Visibility Roadmap / Repair Kit](https://htmlandhtml.com/checkout)
 
 ## Technical Guides
 

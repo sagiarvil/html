@@ -138,13 +138,13 @@ html[data-theme="light"] .news-card-footer{border-top-color:#e2e8f0!important}
 .news-cta p{color:var(--theme-text-secondary, #cbd5e1);line-height:1.65;font-size:16px;max-width:680px;margin:0 0 18px}
 .news-cta .primary{display:inline-flex;min-height:46px;align-items:center;background:#2563eb!important;color:var(--theme-text-strong, #ffffff)!important;border-radius:999px;padding:0 22px;text-decoration:none;font-weight:700;font-size:14.5px;transition:background 0.15s ease}
 .news-cta .primary:hover{background:#1d4ed8!important}
-@media(max-width:1200px){.ai-lens-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.news-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
+@media(max-width:1200px){.ai-lens-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.news-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
 @media(max-width:1080px){.primary-nav{gap:14px}.primary-nav a{font-size:13px}.nav-scan-cta{display:none}.px-value-strip{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:960px){.primary-nav{display:none!important}.px-report-boundary{grid-template-columns:1fr!important;max-width:560px!important;margin:0 auto!important}.px-delivery-grid{grid-template-columns:repeat(2,1fr)}.ai-decision-map-head{display:block}.ai-decision-map-head p{margin-top:12px}.ai-intelligence-row{grid-template-columns:1fr 1fr}.ai-intelligence-row b{grid-column:1/-1}.ai-decision-lock{align-items:stretch;flex-direction:column;gap:14px}.news-hero{padding-top:48px}}
-@media(max-width:768px){.ai-lens-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:768px){.ai-lens-grid{grid-template-columns:1fr!important;gap:12px!important}.ai-lens{padding:16px!important}}
 @media(max-width:680px){.news-grid{grid-template-columns:1fr!important;gap:16px;width:min(100% - 32px,1280px)}}
 @media(max-width:640px){.px-report-free,.px-report-paid{padding:24px 20px;border-radius:22px}.px-delivery-grid{grid-template-columns:1fr}.px-value-strip{grid-template-columns:1fr}.ai-decision-map{padding:18px 14px;border-radius:20px}.ai-lens strong{font-size:20px}.ai-intelligence-row{display:flex;flex-wrap:wrap}.ai-intelligence-row b{width:100%}.ai-decision-lock a{width:100%}.news-article{width:min(100% - 28px,1120px)}.news-card-body{padding:16px}.news-hero h1{font-size:clamp(37px,12vw,54px)}.news-hero>p{font-size:17px}.news-body{margin-top:36px}.news-body h2{font-size:26px}.news-body p,.news-body li{font-size:16px}.news-cta{padding:27px 22px;border-radius:22px}.news-cover{border-radius:20px}}
-@media(max-width:480px){.ai-lens-grid{grid-template-columns:1fr!important}.px-report-boundary h2{font-size:28px}}
+@media(max-width:480px){.ai-lens-grid{grid-template-columns:1fr!important;gap:8px!important}.ai-lens{padding:12px!important;border-radius:10px!important}.px-report-boundary h2{font-size:28px}}
 
 /* LLMS.TXT News Executive Architecture & Pillar Infographics */
 .news-filters-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px auto 10px;max-width:860px}
@@ -464,83 +464,159 @@ html[data-theme="dark"] .ai-lens:hover {
 }
 
 /* Green Tier (İyi / 80+) */
-html[data-theme="dark"] .ai-lens.ai-lens-tier-green, .ai-lens.ai-lens-tier-green {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-green, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-green {
   border: 1px solid rgba(16, 185, 129, 0.4) !important;
   border-top: 3.5px solid #10b981 !important;
   box-shadow: 0 0 20px -4px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(16, 185, 129, 0.2) !important;
 }
-html[data-theme="dark"] .ai-lens.ai-lens-tier-green strong, .ai-lens.ai-lens-tier-green strong, strong.score-green {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-green strong, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-green strong, strong.score-green {
   color: #10b981 !important;
   text-shadow: 0 0 16px rgba(16, 185, 129, 0.4) !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-green {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: 3.5px solid #10b981 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-green strong {
+  color: #059669 !important;
+  text-shadow: none !important;
 }
 .lens-status-tag.tag-green, .lens-tier.tier-green {
   color: #34d399 !important;
   background: rgba(16, 185, 129, 0.18) !important;
   border: 1px solid rgba(16, 185, 129, 0.35) !important;
 }
+html[data-theme="light"] .lens-status-tag.tag-green, html[data-theme="light"] .lens-tier.tier-green {
+  color: #065f46 !important;
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+}
 .ai-lens-meter i.bar-green, .lens-meter i.bar-green {
   background: linear-gradient(90deg, #059669, #10b981) !important;
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important;
 }
+html[data-theme="light"] .ai-lens-meter i.bar-green, html[data-theme="light"] .lens-meter i.bar-green {
+  box-shadow: none !important;
+}
 
 /* Yellow Tier (Orta / 65-79) */
-html[data-theme="dark"] .ai-lens.ai-lens-tier-yellow, .ai-lens.ai-lens-tier-yellow {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-yellow, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-yellow {
   border: 1px solid rgba(234, 179, 8, 0.4) !important;
   border-top: 3.5px solid #eab308 !important;
   box-shadow: 0 0 20px -4px rgba(234, 179, 8, 0.35), inset 0 1px 0 rgba(234, 179, 8, 0.2) !important;
 }
-html[data-theme="dark"] .ai-lens.ai-lens-tier-yellow strong, .ai-lens.ai-lens-tier-yellow strong, strong.score-yellow {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-yellow strong, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-yellow strong, strong.score-yellow {
   color: #eab308 !important;
   text-shadow: 0 0 16px rgba(234, 179, 8, 0.4) !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-yellow {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: 3.5px solid #eab308 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-yellow strong {
+  color: #ca8a04 !important;
+  text-shadow: none !important;
 }
 .lens-status-tag.tag-yellow, .lens-tier.tier-yellow {
   color: #fde047 !important;
   background: rgba(234, 179, 8, 0.18) !important;
   border: 1px solid rgba(234, 179, 8, 0.35) !important;
 }
+html[data-theme="light"] .lens-status-tag.tag-yellow, html[data-theme="light"] .lens-tier.tier-yellow {
+  color: #854d0e !important;
+  background: #fefce8 !important;
+  border: 1px solid #fef08a !important;
+}
 .ai-lens-meter i.bar-yellow, .lens-meter i.bar-yellow {
   background: linear-gradient(90deg, #ca8a04, #eab308) !important;
   box-shadow: 0 0 10px rgba(234, 179, 8, 0.5) !important;
 }
+html[data-theme="light"] .ai-lens-meter i.bar-yellow, html[data-theme="light"] .lens-meter i.bar-yellow {
+  box-shadow: none !important;
+}
 
 /* Orange Tier (Düşük / 45-64) */
-html[data-theme="dark"] .ai-lens.ai-lens-tier-orange, .ai-lens.ai-lens-tier-orange {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-orange, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-orange {
   border: 1px solid rgba(249, 115, 22, 0.4) !important;
   border-top: 3.5px solid #f97316 !important;
   box-shadow: 0 0 20px -4px rgba(249, 115, 22, 0.35), inset 0 1px 0 rgba(249, 115, 22, 0.2) !important;
 }
-html[data-theme="dark"] .ai-lens.ai-lens-tier-orange strong, .ai-lens.ai-lens-tier-orange strong, strong.score-orange {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-orange strong, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-orange strong, strong.score-orange {
   color: #f97316 !important;
   text-shadow: 0 0 16px rgba(249, 115, 22, 0.4) !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-orange {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: 3.5px solid #f97316 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-orange strong {
+  color: #ea580c !important;
+  text-shadow: none !important;
 }
 .lens-status-tag.tag-orange, .lens-tier.tier-orange {
   color: #fdba74 !important;
   background: rgba(249, 115, 22, 0.18) !important;
   border: 1px solid rgba(249, 115, 22, 0.35) !important;
 }
+html[data-theme="light"] .lens-status-tag.tag-orange, html[data-theme="light"] .lens-tier.tier-orange {
+  color: #9a3412 !important;
+  background: #fff7ed !important;
+  border: 1px solid #fed7aa !important;
+}
 .ai-lens-meter i.bar-orange, .lens-meter i.bar-orange {
   background: linear-gradient(90deg, #ea580c, #f97316) !important;
   box-shadow: 0 0 10px rgba(249, 115, 22, 0.5) !important;
 }
+html[data-theme="light"] .ai-lens-meter i.bar-orange, html[data-theme="light"] .lens-meter i.bar-orange {
+  box-shadow: none !important;
+}
 
 /* Red Tier (Kritik / <45) */
-html[data-theme="dark"] .ai-lens.ai-lens-tier-red, .ai-lens.ai-lens-tier-red {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-red, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-red {
   border: 1px solid rgba(239, 68, 68, 0.4) !important;
   border-top: 3.5px solid #ef4444 !important;
   box-shadow: 0 0 20px -4px rgba(239, 68, 68, 0.35), inset 0 1px 0 rgba(239, 68, 68, 0.2) !important;
 }
-html[data-theme="dark"] .ai-lens.ai-lens-tier-red strong, .ai-lens.ai-lens-tier-red strong, strong.score-red {
+html[data-theme="dark"] .ai-lens.ai-lens-tier-red strong, html:not([data-theme="light"]) .ai-lens.ai-lens-tier-red strong, strong.score-red {
   color: #ef4444 !important;
   text-shadow: 0 0 16px rgba(239, 68, 68, 0.4) !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-red {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: 3.5px solid #ef4444 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .ai-lens.ai-lens-tier-red strong {
+  color: #dc2626 !important;
+  text-shadow: none !important;
 }
 .lens-status-tag.tag-red, .lens-tier.tier-red {
   color: #fca5a5 !important;
   background: rgba(239, 68, 68, 0.18) !important;
   border: 1px solid rgba(239, 68, 68, 0.35) !important;
 }
+html[data-theme="light"] .lens-status-tag.tag-red, html[data-theme="light"] .lens-tier.tier-red {
+  color: #991b1b !important;
+  background: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+}
 .ai-lens-meter i.bar-red, .lens-meter i.bar-red {
   background: linear-gradient(90deg, #dc2626, #ef4444) !important;
   box-shadow: 0 0 10px rgba(239, 68, 68, 0.5) !important;
+}
+html[data-theme="light"] .ai-lens-meter i.bar-red, html[data-theme="light"] .lens-meter i.bar-red {
+  box-shadow: none !important;
 }
 
 /* Status Pills in Priority Rows */
