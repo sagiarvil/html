@@ -35,7 +35,7 @@ Therefore HTML&HTML must never claim:
 - https://llmstxt.org/changes.html
 
 ## Architecture invariants
-- Canonical 12-engine technical score is unchanged.
+- Canonical 18-engine technical score is unchanged.
 - 13 Search & AI Intelligence Audits remain non-scoring.
 - Seven readiness lenses remain SEO, GEO, AEO, LLMO, AAO, RAG and E-E-A-T.
 - Deep Crawl remains exactly 50 public HTML pages.

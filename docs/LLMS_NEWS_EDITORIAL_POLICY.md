@@ -39,7 +39,7 @@ The source set may only be changed by a reviewed repository change.
 14. Articles must be bilingual before publication. A TR-only or EN-only automated item must not go live.
 15. The canonical source link must remain crawlable and visible on the article page.
 16. News pages must use canonical, reciprocal hreflang, Article/NewsArticle structured data, sitemap inclusion and machine-readable discovery links.
-17. A news update must never mutate the canonical 12-engine scoring weights, the 13 Intelligence Audit contract, security boundaries or paid-entitlement logic.
+17. A news update must never mutate the canonical 18-engine scoring weights, the 13 Intelligence Audit contract, security boundaries or paid-entitlement logic.
 
 ## What the automation may ingest
 

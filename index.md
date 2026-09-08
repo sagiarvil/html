@@ -60,9 +60,9 @@ English counterparts:
 - llms.txt v2 changes: https://llmstxt.org/changes.html
 
 ## Core Capabilities
-1. **12 Independent Diagnostic Engines:** Crawl & Index, Technical SEO, AI/GEO Access, llms.txt, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion, and Link Integrity.
+1. **18 Independent Diagnostic Engines:** Crawl & Index, Technical SEO, AI/GEO Access, llms.txt, Structured Data, Performance Hygiene, Accessibility, Security Baseline, Content Trust, Agent Readiness, Conversion, Link Integrity, Ontology & Knowledge Vault, RAG Chunking & AST Gate, Neural Cross-Encoder Rerank, Epistemic Corroboration, C2PA Cryptographic Provenance, and Cold-Start Edge Latency.
 2. **13 Search & AI Intelligence Audits:** Search Intent & Cannibalization, Information Gain Signals, Answer Extractability, Entity Graph Integrity, Freshness Integrity, Hydration / Render Parity, LLM Knowledge Surface, Internal Link Semantic Alignment, Orphan Page Detection, Discovery Path, IndexNow Readiness, Structured @graph Consistency, and Codebase SEO Governance.
-3. **7 Readiness Lenses:** SEO, GEO, AEO, LLMO, AAO, RAG, and E-E-A-T. These are decision-support lenses and do not replace or mutate the canonical 12-engine score.
+3. **7 Readiness Lenses:** SEO, GEO, AEO, LLMO, AAO, RAG, and E-E-A-T. These are decision-support lenses and do not replace or mutate the canonical 18-engine score.
 4. **Deterministic Governance:** Every finding is linked to observable evidence. Unknown, unmeasured, or source-context-only conditions remain NOT_MEASURED or REQUIRES_CONTEXT instead of becoming artificial pass/fail values.
 5. **Boundaries:** 50 public HTML pages, 30 live link probes, strict SSRF defenses, zero private credential storage, and no fabricated field Core Web Vitals.
 6. **Commercial Product ($99):** Full Site Fix Mandate sequencing root causes, intelligence priorities, recovery, prevention, acceptance/regression tests, rollback guidance, and stop conditions.
@@ -79,10 +79,10 @@ English counterparts:
 ## Machine-Readable Endpoints
 - `/llms.txt`: AI visibility, glossary, tools, methodology, official source boundaries and commercial model directory.
 - `/openapi.json`: OpenAPI 3.1.0 REST API specification.
-- `/audit-profile.json`: Canonical 12-engine weights plus the non-scoring 13-audit Intelligence layer and seven readiness lenses.
+- `/audit-profile.json`: Canonical 18-engine weights plus the non-scoring 13-audit Intelligence layer and seven readiness lenses.
 - `/sources.json`: Registry of standards, proposals and first-party vendor guidance.
 - `/api/health`: Runtime capability and configuration status.
-- `/api/scan`: Public 12-engine diagnosis with attached non-scoring Intelligence Audit report.
+- `/api/scan`: Public 18-engine diagnosis with attached non-scoring Intelligence Audit report.
 - `/api/intelligence`: Dedicated public response for the 13 Intelligence Audits and seven readiness lenses.
 - `/api/mentions`: Entitlement-gated AI Mention Tracker.
 - `/api/mandate`: Entitlement-gated $99 Full Site Fix Mandate.
