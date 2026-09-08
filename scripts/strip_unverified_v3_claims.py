@@ -17,38 +17,54 @@ def is_public(path: Path) -> bool:
 
 
 def normalize(text: str) -> str:
+    # Known customer-facing variants from legacy board/report copy.
+    direct = (
+        ('14KB AST bütçe aşımı', 'ölçülen HTML yükü ve semantik yapı sorunları'),
+        ('14KB AST Budama Şablonu', 'HTML Yük ve Semantik Yapı Optimizasyonu'),
+        ('14KB AST budget window', 'measured HTML payload and semantic-structure budget'),
+        ('14KB AST budget', 'measured HTML payload budget'),
+        ('Sub-14KB AST Purge Template', 'HTML Payload & Semantic Structure Template'),
+        ('14.336 baytlık pencere', 'ölçülen HTML ve semantik yapı'),
+        ('14,336-byte window', 'measured HTML and semantic structure'),
+    )
+    for old, new in direct:
+        text = text.replace(old, new)
+
     # 14KB/14,336-byte "AI first window" is not a verified runtime measurement in current production.
     text = re.sub(
-        r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,120}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,120}',
+        r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,160}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,160}',
         'measured HTML payload, semantic structure and source-readiness evidence',
         text,
     )
     text = re.sub(
-        r'(?i)(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,120}(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,120}',
+        r'(?i)(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,160}(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,160}',
         'measured HTML payload, semantic structure and source-readiness evidence',
         text,
     )
+    # Absolute fallback: no public artifact may retain the unverified fixed-window token.
+    text = re.sub(r'(?i)14\s*KB', 'measured HTML payload', text)
+    text = re.sub(r'(?i)14,?336\s*(?:bytes?|bayt)', 'measured HTML payload', text)
 
     # Do not claim live Wikidata/Common Crawl empirical verification unless the runtime actually performs it.
     text = re.sub(
-        r'(?i)Wikidata[^\n<]{0,140}(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,140}',
+        r'(?i)Wikidata[^\n<]{0,180}(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,180}',
         'public entity and structured-data evidence',
         text,
     )
     text = re.sub(
-        r'(?i)(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,140}Wikidata[^\n<]{0,140}',
+        r'(?i)(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,180}Wikidata[^\n<]{0,180}',
         'public entity and structured-data evidence',
         text,
     )
     text = re.sub(
-        r'(?i)Common Crawl[^\n<]{0,160}(?:live|canlı|CDX|pre.?training|ön.?eğitim|verify|doğrula)[^\n<]{0,160}',
+        r'(?i)Common Crawl[^\n<]{0,200}(?:live|canlı|CDX|pre.?training|ön.?eğitim|verify|doğrula)[^\n<]{0,200}',
         'public crawl and discovery evidence',
         text,
     )
 
     # Fixed application-time promises are not deterministic across customer stacks.
     text = re.sub(
-        r'(?i)\b(?:30|60)\s*(?:seconds?|saniye)(?:de|da)?\b[^\n<]{0,120}(?:apply|uygula|uygulama|zero.?code|sıfır.?kod)[^\n<]{0,80}',
+        r'(?i)\b(?:30|60)\s*(?:seconds?|saniye)(?:de|da)?\b[^\n<]{0,140}(?:apply|uygula|uygulama|zero.?code|sıfır.?kod)[^\n<]{0,100}',
         'implementation time depends on the customer stack and evidence scope',
         text,
     )
