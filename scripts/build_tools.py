@@ -625,6 +625,8 @@ for t in tools_data:
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/{t['tr_slug']}/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/{t['en_slug']}/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
@@ -636,7 +638,17 @@ for t in tools_data:
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web",
       "url": "{canonical_url}",
-      "offers": {{ "@type": "Offer", "price": "0", "priceCurrency": "USD" }}
+      "offers": {{ "@type": "Offer", "price": "0", "priceCurrency": "USD" }},
+      "publisher": {{ "@id": "https://htmlandhtml.com/#organization" }}
+    }},
+    {{
+      "@type": ["Organization", "Corporation"],
+      "@id": "https://htmlandhtml.com/#organization",
+      "name": "HTML&HTML",
+      "url": "https://htmlandhtml.com/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q116503894"],
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-09-08T00:00:00Z"
     }},
     {{
       "@type": "BreadcrumbList",
@@ -651,6 +663,7 @@ for t in tools_data:
 </script>
 <script src="/assets/js/authority-tool.js?v=4" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body data-tool-categories="{t['categories']}">
 {get_header(lang, alt_url, 'tools')}

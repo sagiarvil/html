@@ -424,6 +424,69 @@ jobs:
 `;
 }
 
+function generateGooglePreferredSourcesIntegration(domain: string, locale: DeliveryLocale): string {
+  const isTr = locale === 'tr';
+  return `<!doctype html>
+<html lang="${isTr ? 'tr' : 'en'}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${isTr ? 'Google Preferred Sources Entegrasyon Şablonu' : 'Google Preferred Sources Integration Template'} — ${domain}</title>
+<style>
+  :root { --bg: #0b0f19; --card: #151c2d; --text: #f1f5f9; --muted: #94a3b8; --accent: #38bdf8; --border: #222f47; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+  h1, h2, h3 { color: #fff; }
+  pre, code { background: #060911; border: 1px solid var(--border); border-radius: 6px; padding: 0.2rem 0.4rem; font-family: monospace; color: var(--accent); }
+  pre { padding: 1rem; overflow-x: auto; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+  .alert { background: rgba(56, 189, 248, 0.1); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0; }
+  .btn-preview { display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 500; }
+</style>
+</head>
+<body>
+<h1>${isTr ? 'Google Preferred Sources Entegrasyon Kılavuzu & Kod Şablonları' : 'Google Preferred Sources Integration Guide & Templates'}</h1>
+<p><strong>${isTr ? 'Hedef Alan Adı' : 'Target Domain'}:</strong> ${domain} | <strong>${isTr ? 'Resmî Standart Tarihi' : 'Official Standard Release'}:</strong> 2026-08-20 (Google Search Central)</p>
+
+<div class="alert">
+  <strong>${isTr ? 'Önemli Mimari Not' : 'Architectural Notice'}:</strong>
+  ${isTr ? 'Bu entegrasyon kullanıcıların arama ve AI deneyimini kişiselleştirmesini sağlar. Google sitenizi onaylamış sayılmaz; kullanıcı tercihine dayalı olarak Top Stories, AI Overviews ve AI Mode içinde "Preferred" etiketiyle dağıtım önceliği kazandırır.' : 'This integration enables users to personalize their search and AI experience. It is not an algorithmic certification by Google; it provides distribution priority under the "Preferred" badge in Top Stories, AI Overviews, and AI Mode based on explicit user preference.'}
+</div>
+
+<div class="card">
+  <h2>${isTr ? '1. Standart JavaScript Entegrasyonu (Önerilen)' : '1. Standard JavaScript Integration (Recommended)'}</h2>
+  <p>${isTr ? 'HTML şablonunuza sadece iki satır ekleyerek otomatik yerelleştirilmiş butonu render edebilirsiniz:' : 'Add two simple lines to your HTML template to render the automatically localized Google button:'}</p>
+  <pre><code>&lt;!-- 1. &lt;head&gt; içine ekleyin --&gt;
+&lt;script async src="https://news.google.com/swg/js/v1/publisher.js"&gt;&lt;/script&gt;
+
+&lt;!-- 2. Makale sonu veya footer alanına ekleyin --&gt;
+&lt;div google-add-preferred-source-btn data-theme="dark" data-lang="${isTr ? 'tr' : 'en'}"&gt;&lt;/div&gt;</code></pre>
+</div>
+
+<div class="card">
+  <h2>${isTr ? '2. No-JS / Deeplink Entegrasyonu' : '2. No-JS / Deeplink Integration'}</h2>
+  <p>${isTr ? 'JavaScript çalıştırmayan ortamlarda veya bülten/sosyal medya paylaşımlarında doğrudan Google Tercih Aracına yönlendirin:' : 'For non-JS contexts, email newsletters, or social posts, direct users straight to the Google Preference tool:'}</p>
+  <pre><code>&lt;a href="https://www.google.com/preferences/source?q=${domain}" target="_blank" rel="noreferrer"&gt;
+  ${isTr ? 'Google\'da ' + domain + ' kaynağını tercih edilen olarak ekleyin' : 'Add ' + domain + ' as a Preferred Source on Google'}
+&lt;/a&gt;</code></pre>
+</div>
+
+<div class="card">
+  <h2>${isTr ? '3. Content-Security-Policy (CSP) Güncellemesi' : '3. Content-Security-Policy (CSP) Directives'}</h2>
+  <p>${isTr ? 'Web sunucunuz veya edge worker güvenlik başlığınızda aşağıdaki domainlere izin verin:' : 'Ensure your web server or edge worker CSP headers include the required Google domains:'}</p>
+  <pre><code>script-src 'self' 'unsafe-inline' https://news.google.com;
+connect-src 'self' https://news.google.com https://*.google.com;
+frame-src https://news.google.com https://*.google.com;</code></pre>
+</div>
+
+<div class="card">
+  <h2>${isTr ? '4. Otomatik Kabul ve Regresyon Testi' : '4. Automated Acceptance & Regression Test'}</h2>
+  <pre><code># Canlı ortamda butonu ve kütüphaneyi doğrulayın:
+curl -sL https://${domain}/ | grep -E "news\\.google\\.com/swg/js|google-add-preferred-source-btn|preferences/source" &amp;&amp; echo "PASS: Preferred Sources active"</code></pre>
+</div>
+</body>
+</html>`;
+}
+
 function generateSecondOrderSyntheticCitationLoop(domain: string, locale: DeliveryLocale): string {
   const brand = domain.replace(/\.[a-z]+$/i, '').toUpperCase();
   const tr = locale === 'tr';
@@ -1013,6 +1076,213 @@ export function generateScoreProjection(currentScore: number): string {
 `;
 }
 
+export function generateApplyWithAIAgentPrompt(domain: string, locale: DeliveryLocale): string {
+  const tr = locale === 'tr';
+  return `# MASTER AI CODING AGENT DIRECTIVE: ENTERPRISE AI SEARCH INTEGRATION
+Target Domain: ${domain}
+Standard: W3C / RFC 9110 / Schema.org / LLMs.txt v2 Spec / Cloudflare Edge AST
+Generated: ${new Date().toISOString()}
+
+${tr ? `BU TALİMATI CURSOR COMPOSER, CLAUDE CODE, WINDSURF VEYA COPILOT AGENT'A DİREKT YAPIŞTIRIN.
+Sen bu yazılım deposunun Kıdemli Baş Sistem Mimarı ve Otonom DevOps Ajanısın.
+Müşteri ${domain} için $99 Enterprise AI Görünürlük Yol Haritası ZIP paketini satın almıştır.
+Görevin: Proje dosyalarını analiz ederek aşağıdaki adımları sıfır insan müdahalesiyle projeye entegre etmektir.` : `PASTE THIS DIRECTIVE DIRECTLY INTO CURSOR COMPOSER, CLAUDE CODE, WINDSURF, OR GITHUB COPILOT AGENT.
+You are the Senior Principal Systems Architect & Autonomous DevOps Agent for this repository.
+The client has purchased the $99 Enterprise AI Search Visibility Roadmap ZIP for ${domain}.
+Your objective: Inspect the repository and apply the following architecture changes with zero human intervention.`}
+
+---
+
+## EXECUTION STEP 1: ROOT DISCOVERY & LLMS.TXT
+1. Locate the public/static assets directory in this project (\`public/\`, \`static/\`, or \`web/\`).
+2. Copy \`08_LLMS_TXT_RECOMMENDED.txt\` into that directory as \`llms.txt\` and \`llms-full.txt\`.
+3. In the root HTML template (\`index.html\`, \`layout.tsx\`, \`base.html\`, or \`header.php\`), inject inside \`<head>\`:
+\`\`\`html
+<link rel="describedby" href="https://${domain}/llms.txt" />
+<link rel="alternate" type="text/markdown" href="https://${domain}/index.md" />
+\`\`\`
+
+---
+
+## EXECUTION STEP 2: KNOWLEDGE VAULT CONSENSUS SCHEMA (JSON-LD)
+1. Read \`13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json\`.
+2. Locate the primary layout or head injection component.
+3. Embed the JSON-LD \`<script type="application/ld+json">\` graph into the primary \`<head>\`.
+4. Ensure the organization has verified \`sameAs\` links to Wikidata, LinkedIn, and Crunchbase.
+
+---
+
+## EXECUTION STEP 3: SUB-14KB TCP WINDOW & BOT OPTIMIZATION
+Choose the appropriate platform file from this pack:
+- **Cloudflare**: Deploy \`14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js\` (see \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\`).
+- **Next.js / Vercel**: Integrate the logic from \`14c_VERCEL_EDGE_MIDDLEWARE.ts\` into \`middleware.ts\`.
+- **AWS CloudFront**: Deploy \`14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js\` as Lambda@Edge viewer-request.
+- **WordPress**: Install the single-file plugin \`26_WORDPRESS_DROPIN_PLUGIN.php\`.
+- **Shopify / Webflow**: Copy snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\`.
+
+---
+
+## EXECUTION STEP 4: AUTONOMOUS AGENT CARD & MCP
+1. Copy \`16_A2A_AGENT_CARD.json\` into the public \`/.well-known/agent-card.json\` route.
+2. If the project runs Node/API routes, implement \`/mcp\` endpoint using \`17_MCP_SERVER_SPEC.json\`.
+
+---
+
+## EXECUTION STEP 5: TERMINAL ACCEPTANCE VERIFICATION
+Run the automated tests from \`04_ACCEPTANCE_TESTS.md\` to verify each fix:
+\`\`\`bash
+curl -sI "https://${domain}/llms.txt" | grep -E "200 OK"
+curl -sL "https://${domain}/" | grep -E "wikidata\\.org"
+\`\`\`
+Commit all changes with message: \`chore: apply enterprise AI Search roadmap integration for ${domain}\`.
+`;
+}
+
+export function generateCloudflare1ClickDeploy(domain: string): string {
+  return `# Cloudflare Workers: 1-Click Zero-Code Edge Deployment
+Target Domain: ${domain}
+Architecture: Cloudflare Edge Streaming HTMLRewriter (Zero Origin Changes Required)
+
+This guide enables you to deploy the 14KB AST Token Purge and AI Bot Optimizer to Cloudflare in 30 seconds without modifying your underlying application code.
+
+---
+
+## OPTION 1: 30-Second Wrangler CLI Terminal Deploy (Recommended)
+If your computer or server has Node.js/npm installed:
+
+1. Open your terminal in the directory where this ZIP is extracted.
+2. Run this single command:
+\`\`\`bash
+npx wrangler deploy 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js --name htmlandhtml-edge-guard --route "${domain}/*"
+\`\`\`
+3. Log in with your Cloudflare account when prompted. Done! The worker will automatically intercept GPTBot, ClaudeBot, and PerplexityBot requests at the edge.
+
+---
+
+## OPTION 2: 1-Click Cloudflare Dashboard Manual Paste
+1. Go to your **Cloudflare Dashboard** -> **Workers & Pages** -> **Create Application**.
+2. Name it \`htmlandhtml-edge-guard\` and click **Deploy**.
+3. Click **Quick Edit**, select all existing code, and replace it with the exact contents of \`14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js\`.
+4. Click **Save and Deploy**.
+5. Under your domain's **Workers Routes**, add a route:
+   - Route: \`${domain}/*\`
+   - Service: \`htmlandhtml-edge-guard\`
+   - Environment: \`production\`
+
+---
+
+## VERIFICATION
+Verify deployment with this terminal command:
+\`\`\`bash
+curl -s -A "GPTBot" -I "https://${domain}/" | grep -i "cf-cache-status"
+\`\`\`
+`;
+}
+
+export function generateWordPressDropinPlugin(domain: string): string {
+  const brand = domain.replace(/\.[a-z]+$/i, '').toUpperCase();
+  return `<?php
+/**
+ * Plugin Name: HTML&HTML — Autonomous AI Search Visibility Engine (${brand})
+ * Plugin URI: https://htmlandhtml.com/
+ * Description: Zero-code enterprise AI Search optimizer for ${domain}. Delivers /llms.txt, C2PA provenance headers, JSON-LD knowledge graphs, and 14KB AST optimization for GPTBot, ClaudeBot, and PerplexityBot.
+ * Version: 2.1.0
+ * Author: HTML&HTML Enterprise Intelligence
+ * License: GPL-2.0+
+ */
+
+defined('ABSPATH') || exit;
+
+// 1. Deliver spec-v2 /llms.txt and /.well-known/agent-card.json
+add_action('init', function() {
+    $uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if ($uri === '/llms.txt' || $uri === '/llms-full.txt') {
+        header('Content-Type: text/markdown; charset=utf-8');
+        header('Cache-Control: public, max-age=3600, s-maxage=86400');
+        header('Access-Control-Allow-Origin: *');
+        echo "# " . get_bloginfo('name') . "\\n";
+        echo "> " . get_bloginfo('description') . "\\n\\n";
+        echo "## Core Canonical Machine Surfaces\\n";
+        echo "- [" . get_bloginfo('name') . " Home](" . home_url('/') . ")\\n";
+        echo "- [Sitemap](" . home_url('/sitemap.xml') . ")\\n";
+        exit;
+    }
+    if ($uri === '/.well-known/agent-card.json') {
+        header('Content-Type: application/json; charset=utf-8');
+        header('Access-Control-Allow-Origin: *');
+        echo json_encode([
+            '@context' => 'https://agent-protocol.org/v1',
+            '@type' => 'AgentCard',
+            'name' => get_bloginfo('name') . ' AI Agent',
+            'url' => home_url('/'),
+            'version' => '2.1.0'
+        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        exit;
+    }
+});
+
+// 2. Inject discovery links & C2PA headers into <head>
+add_action('wp_head', function() {
+    echo '<link rel="describedby" href="' . esc_url(home_url('/llms.txt')) . '" />' . "\\n";
+    echo '<link rel="alternate" type="text/markdown" href="' . esc_url(home_url('/index.md')) . '" />' . "\\n";
+    echo '<meta name="c2pa-manifest" content="' . esc_url(home_url('/.well-known/c2pa/manifest.json')) . '" />' . "\\n";
+}, 1);
+
+// 3. Security hardening & nosniff
+add_action('send_headers', function() {
+    if (!is_admin()) {
+        header('X-Content-Type-Options: nosniff');
+        header('Referrer-Policy: strict-origin-when-cross-origin');
+    }
+});
+`;
+}
+
+export function generateShopifyWebflowInjectors(domain: string): string {
+  return `<!-- ================================================================= -->
+<!-- HTML&HTML ENTERPRISE INJECTORS FOR SHOPIFY & WEBFLOW (${domain})  -->
+<!-- ================================================================= -->
+
+<!-- 1. SHOPIFY INJECTION GUIDE:
+  1. Go to Shopify Admin -> Online Store -> Themes -> Edit code.
+  2. Open Layout / theme.liquid.
+  3. Paste the following block right before the closing </head> tag:
+-->
+
+<!-- [HTML&HTML AI SEARCH HEAD INJECTOR] -->
+<link rel="describedby" href="https://${domain}/llms.txt" />
+<link rel="alternate" type="text/markdown" href="https://${domain}/index.md" />
+<meta name="c2pa-manifest" content="https://${domain}/.well-known/c2pa/manifest.json" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "Corporation"],
+      "@id": "https://${domain}/#organization",
+      "name": "${domain}",
+      "url": "https://${domain}",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(domain)}",
+        "https://www.linkedin.com/company/${domain.replace(/\.[a-z]+$/i, '')}"
+      ]
+    }
+  ]
+}
+</script>
+<!-- [/HTML&HTML AI SEARCH HEAD INJECTOR] -->
+
+
+<!-- 2. WEBFLOW INJECTION GUIDE:
+  1. Open your Webflow Project Settings -> Custom Code.
+  2. In the "Head Code" textarea, paste the exact same block above.
+  3. Publish to your custom domain.
+-->
+`;
+}
+
 export interface LLMSPageConfig {
   pageType: 'home' | 'about' | 'services' | 'pricing' | 'contact' | 'blog' | 'product' | 'team' | 'faq' | 'testimonials' | 'case-study' | 'whitepaper' | 'guide' | 'api-docs' | 'partners' | 'careers' | 'press' | 'legal' | 'support' | 'changelog' | 'roadmap' | 'integration' | 'webinar' | 'podcast' | 'community' | 'status' | 'security' | 'compliance' | 'onboarding' | 'resources';
   url: string;
@@ -1265,7 +1535,7 @@ export function generateLLMSBundle(domain: string, pages: any[], lang: 'tr' | 'e
 
 export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateReport,locale:DeliveryLocale='en'):DeliveryPack{
   const tr=locale==='tr',surfaces=machineSurfaces(scan);
-  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Kullanım sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 21)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA imza)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM halüsinasyon denetimi)\n\nNOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi” sayılmaz. Page-specific machine surfaces root llms.txt değildir; root için tek önerilen yüzey 08_LLMS_TXT_RECOMMENDED.txt dosyasıdır.\n`:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Execution order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 21)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
+  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 27)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA imza)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM halüsinasyon denetimi)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 P1)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress tek tıkla eklenti)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow enjektörü)\n\nNOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi” sayılmaz. Page-specific machine surfaces root llms.txt değildir; root için tek önerilen yüzey 08_LLMS_TXT_RECOMMENDED.txt dosyasıdır.\n`:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Quick Deployment Options (100/100 Zero Effort)\n- 🤖 **If using Cursor / Claude Code / Windsurf:** Paste \`00_APPLY_WITH_AI_AGENT.prompt\` directly into your AI coding tool. It automatically locates files and applies fixes in 60 seconds.\n- ⚡ **If using Cloudflare:** Follow \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` for instant edge activation.\n- 🌐 **If using WordPress:** Upload \`26_WORDPRESS_DROPIN_PLUGIN.php\` directly to activate machine surfaces without touching code.\n- 🛍️ **If using Shopify / Webflow:** Paste snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` into your site head.\n\n## Execution Order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 27)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 P1)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress drop-in plugin)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow injectors)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
   const exec=tr?`# Yönetim Özeti\n\n- Alan adı: ${scan.domain}\n- Ana teknik skor: ${Math.round(scan.overall)}/100\n- Analiz edilen sayfa: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Toplam issue: ${report.health_summary.total_issues}\n- Öncelik dağılımı: ${prioritySummary(report)}\n- Intelligence analizleri: ${report.intelligence.analyses.length}\n- Readiness lensleri: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Ürün sınırı\nBu paket yapay zeka tavsiyesi, Google sıralaması, citation, trafik, müşteri veya gelir garantisi vermez. Ölçülen site kaynaklı engelleri uygulanabilir teknik değişikliklere ve doğrulama testlerine dönüştürür.\n`:`# Executive Summary\n\n- Domain: ${scan.domain}\n- Core technical score: ${Math.round(scan.overall)}/100\n- Pages analyzed: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Total issues: ${report.health_summary.total_issues}\n- Priority distribution: ${prioritySummary(report)}\n- Intelligence analyses: ${report.intelligence.analyses.length}\n- Readiness lenses: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Product boundary\nThis package does not guarantee AI recommendations, Google rankings, citations, traffic, customers or revenue. It converts measured website-side blockers into executable technical changes and verification tests.\n`;
 
   const llmsBundle = generateLLMSBundle(
@@ -1285,6 +1555,7 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
 
   const entries:Entry[]=[
     {name:'00_READ_ME.md',content:readme},
+    {name:'00_APPLY_WITH_AI_AGENT.prompt',content:generateApplyWithAIAgentPrompt(scan.domain,locale)},
     {name:'01_EXECUTIVE_SUMMARY.md',content:exec},
     {name:'02_IMPLEMENTATION_BLUEPRINT.md',content:String(report.markdown||'')},
     {name:'03_FINDINGS.json',content:JSON.stringify({domain:scan.domain,scanId:scan.scanId,coverage:report.coverage,health:report.health_summary,issues:report.issues,intelligenceActions:report.intelligence_actions},null,2)},
@@ -1301,13 +1572,14 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
     ...llmsBundle.map((b) => ({name: b.filename, content: b.content})),
     ...surfaces.map(s=>({name:s.filename,content:surfaceManifest(s,scan,locale)}))
   ,
-    // ENTERPRISE DARK POOL ASSETS (11 VIP FILES)
+    // ENTERPRISE DARK POOL ASSETS (11 VIP FILES + 100/100 INTEGRATORS)
     {name:'11_MODEL_CORPUS_SEEDING_BLUEPRINT.md',content:generateCorpusSeedingBlueprint(scan.domain,locale)},
     {name:'12_CROSS_ENCODER_ATTENTION_MATRIX.json',content:generateCrossEncoderAttentionMatrix(scan.domain,locale)},
     {name:'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json',content:generateKnowledgeVaultConsensusTriples(scan.domain)},
     {name:'14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js',content:generateCloudflareWorkerTokenPurge(scan.domain)},
     {name:'14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js',content:generateAwsCloudFrontLambdaEdge(scan.domain)},
     {name:'14c_VERCEL_EDGE_MIDDLEWARE.ts',content:generateVercelEdgeMiddleware(scan.domain)},
+    {name:'14d_CLOUDFLARE_1CLICK_DEPLOY.md',content:generateCloudflare1ClickDeploy(scan.domain)},
     {name:'15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md',content:generateSecondOrderSyntheticCitationLoop(scan.domain,locale)},
     {name:'16_A2A_AGENT_CARD.json',content:generateA2AAgentCard(scan.domain)},
     {name:'17_MCP_SERVER_SPEC.json',content:generateMCPServerSpec(scan.domain)},
@@ -1317,7 +1589,10 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
     {name:'21_DARK_POOL_HALLUCINATION_MONITOR.py',content:generateDarkPoolHallucinationMonitor(scan.domain)},
     {name:'22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json',content:generateN8nMonitoringWorkflow(scan.domain)},
     {name:'23_EXECUTIVE_BOARD_DOSSIER.md',content:generateExecutiveBoardDossier(scan,locale)},
-    {name:'24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml',content:generateGitHubActionsWorkflow(scan.domain)}];
+    {name:'24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml',content:generateGitHubActionsWorkflow(scan.domain)},
+    {name:'25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html',content:generateGooglePreferredSourcesIntegration(scan.domain,locale)},
+    {name:'26_WORDPRESS_DROPIN_PLUGIN.php',content:generateWordPressDropinPlugin(scan.domain)},
+    {name:'27_SHOPIFY_WEBFLOW_INJECTORS.html',content:generateShopifyWebflowInjectors(scan.domain)}];
   const filename=`HTMLHTML_AI_Search_Visibility_Roadmap_${cleanName(scan.domain)}_${scan.scanId}.zip`;
   return {version:DELIVERY_PACK_VERSION,filename,mime:'application/zip',bytes:zip(entries),files:entries.map(x=>x.name)};
 }

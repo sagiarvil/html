@@ -108,7 +108,7 @@ INTENT = {
         "teknik-seo-kontrol": "Klasik teknik SEO artık yalnız mavi linkler için değildir. Google’ın üretken yapay zeka özellikleri de Arama dizinine dayanır; taranabilirlik, indekslenebilirlik, canonical ve iç linkler hâlâ temeldir.",
         "ai-mention-tracker": "Hazırlığı ölçmekten sonraki adım gerçek görünürlüğü izlemektir: nötr sorgularda markanız geçiyor mu, alan adınız kaynak gösteriliyor mu ve bu görünürlük referral’a dönüşüyor mu?",
         "fix-mandate": "$99 Yol Haritası, ‘AI sizi tavsiye eder’ vaadi değil; yapay zeka arama görünürlüğü ve tavsiye fırsatı önündeki ölçülmüş engeller için kök neden, uygulama sırası, test ve rollback güvenceli kod paketidir.",
-        "fiyatlandirma": "Teşhis ücretsizdir. Ücretli ürün, yapay zeka arama görünürlüğü ve kaynak olma uygunluğu önündeki ölçülmüş engelleri test edilebilir uygulama reçetesine dönüştürür.",
+        "fiyatlandirma": "Teşhis ücretsizdir. Ücretli ürün, yapay zeka arama görünürlüğü ve kaynak olma uygunluğu önündeki ölçülmüş engelleri test edilebilir uygulama yol haritasına dönüştürür.",
     },
     "en": {
         "llms-txt-validator": "llms.txt interest is real, but the claim must be precise. Google Search does not use llms.txt for AI Search visibility. HTML&HTML validates it as an emerging machine-readable knowledge surface without treating it as a replacement for sitemaps, robots.txt, crawlable HTML or internal links.",

@@ -62,6 +62,8 @@ def build_tools_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/araclar/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/tools/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
@@ -83,6 +85,7 @@ def build_tools_hub():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'tools')}
@@ -146,6 +149,8 @@ def build_platform_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/platform/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/platform/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
@@ -167,6 +172,7 @@ def build_platform_hub():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'platform')}

@@ -51,7 +51,7 @@ Her modul bagimsiz calisir, kendi skorlama algoritmasina sahiptir, kendi kanitla
 |---|-----------|-----------|-----------|-------------|
 | 01 | `SCAN-INDEX` | Tarama & Indeksleme | robots.txt, sitemap.xml, HTTP status, canli link probu | 0-100 |
 | 02 | `TECH-SEO` | Teknik SEO | Title, meta description, canonical, H1, H2, yapısal hiyerarsi | 0-100 |
-| 03 | `AI-GEO` | AI / GEO Uygunluk | llms.txt v2, agent-card, MCP endpoint, AI bot erisimi | 0-100 |
+| 03 | `AI-GEO` | AI / GEO Uygunluk | llms.txt v2, agent-card, MCP endpoint, AI bot erisimi, Google Preferred Sources | 0-100 |
 | 04 | `LLMS-V2` | LLMS.TXT v2 | Markdown yapi, baglanti butunlugu, spesifikasyon uygunlugu | 0-100 |
 | 05 | `SCHEMA` | Yapisal Veri | JSON-LD, @graph, Organization, WebSite, FAQPage, BreadcrumbList | 0-100 |
 | 06 | `PERF` | Performans | LCP, CLS, INP, TTFB, Core Web Vitals | 0-100 |

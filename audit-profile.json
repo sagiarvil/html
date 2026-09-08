@@ -29,7 +29,7 @@
   "engines":[
     {"id":"crawl","name":"Crawl & Index","overallWeight":12,"purpose":"Public reachability, redirects, robots, sitemap, indexability and page discovery."},
     {"id":"technical","name":"Technical SEO","overallWeight":14,"purpose":"Titles, descriptions, headings, canonicals, duplicate and route-level technical signals."},
-    {"id":"ai","name":"AI / GEO Access","overallWeight":12,"purpose":"Search, retrieval and AI crawler policy signals without conflating search access with training controls."},
+    {"id":"ai","name":"AI / GEO Access","overallWeight":12,"purpose":"Search, retrieval, Google Preferred Sources, and AI crawler policy signals without conflating search access with training controls."},
     {"id":"llms","name":"llms.txt v2","overallWeight":6,"purpose":"Proposal-format, link reachability and discovery relations such as describedby and Markdown alternates."},
     {"id":"schema","name":"Structured Data","overallWeight":8,"purpose":"JSON-LD parseability, entity types and visible-identity consistency signals."},
     {"id":"performance","name":"Performance Hygiene","overallWeight":10,"purpose":"Observable HTML/script/render-blocking hygiene; field CWV remain NOT_MEASURED without reliable field or lab data."},

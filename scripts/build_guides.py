@@ -586,6 +586,8 @@ for g in guides_data:
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/{g['tr_slug']}/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/{g['en_slug']}/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
@@ -598,9 +600,9 @@ for g in guides_data:
       "url": "{canonical_url}",
       "inLanguage": "{lang}",
       "author": {{ "@type": "Organization", "name": "HTML&HTML Research Team", "url": "https://htmlandhtml.com/" }},
-      "publisher": {{ "@type": "Organization", "name": "HTML&HTML", "logo": "https://htmlandhtml.com/assets/logo.png" }},
+      "publisher": {{ "@type": "Organization", "name": "HTML&HTML", "logo": "https://htmlandhtml.com/assets/logo.png", "sameAs": ["https://www.wikidata.org/wiki/Q116503894"] }},
       "datePublished": "2026-02-01T00:00:00Z",
-      "dateModified": "2026-09-06T00:00:00Z"
+      "dateModified": "2026-09-08T00:00:00Z"
     }},
     {{
       "@type": "BreadcrumbList",
@@ -614,6 +616,7 @@ for g in guides_data:
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'guides')}

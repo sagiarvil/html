@@ -729,6 +729,7 @@ The output delivered upon payment is a **30-file deterministic ZIP package** com
 ```
 HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 00_READ_ME.md                              # Müşteri yazılımcısı için adım adım rehber
+├── 00_APPLY_WITH_AI_AGENT.prompt              # Cursor / Claude Code / Windsurf için tek tıkla otonom enjeksiyon
 ├── 01_EXECUTIVE_SUMMARY.md                    # C-Level yönetim özeti ve skor durumu
 ├── 02_IMPLEMENTATION_BLUEPRINT.md             # P0 -> P3 tam onarım reçetesi
 ├── 03_FINDINGS.json                           # Ham bulgular ve telemetri
@@ -748,6 +749,7 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js   # Cloudflare HTMLRewriter AST budayıcı
 ├── 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js          # AWS CloudFront Lambda@Edge alternatifi
 ├── 14c_VERCEL_EDGE_MIDDLEWARE.ts              # Vercel Edge Middleware alternatifi
+├── 14d_CLOUDFLARE_1CLICK_DEPLOY.md            # Cloudflare 30 saniyelik 1-Click kurulum rehberi
 ├── 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md # Sentetik alıntı döngüsü şablonu
 ├── 16_A2A_AGENT_CARD.json                     # A2A v1.0 Agent Card
 ├── 17_MCP_SERVER_SPEC.json                    # Model Context Protocol sunucu spesifikasyonu
@@ -757,11 +759,17 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 21_DARK_POOL_HALLUCINATION_MONITOR.py      # 15 LLM halüsinasyon denetim betiği
 ├── 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json  # Hazır n8n içe aktarma iş akışı (DAG)
 ├── 23_EXECUTIVE_BOARD_DOSSIER.md              # Yönetim Kurulu brifing dosyası
-└── 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml       # CI/CD dağıtım öncesi doğrulama kapısı
+├── 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml       # CI/CD dağıtım öncesi doğrulama kapısı
+├── 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html # Google Preferred Sources 2026 P1 entegrasyonu
+├── 26_WORDPRESS_DROPIN_PLUGIN.php             # WordPress tek tıkla drop-in eklentisi (Sıfır Kod)
+└── 27_SHOPIFY_WEBFLOW_INJECTORS.html          # Shopify & Webflow kopyala-yapıştır enjektörleri
 ```
 
-**Müşteri El Sıkışması Kuralı**:
-Bu paket müşterinin kendi yazılım ekibine teslim edilir. HTML&HTML mühendisleri müşterinin sunucusuna veya kod deposuna doğrudan erişmez veya manuel danışmanlık vermez. Ürünün değeri %100 otomatik ve hatasız kod üretiminde yatar.
+**Müşteri El Sıkışması & 100/100 Uygulama Standartları**:
+1. **Yazılımcısı Olan Ekipler:** `00_APPLY_WITH_AI_AGENT.prompt` dosyasını Cursor, Windsurf veya Claude Code'a aktarır; AI ajan tüm repodaki eksikleri 60 saniyede otomatik uygular.
+2. **Yazılımcısı Olmayan KOBİ'ler:** `26_WORDPRESS_DROPIN_PLUGIN.php` veya `14d_CLOUDFLARE_1CLICK_DEPLOY.md` ile sıfır kod bilgisiyle 30 saniyede canlıya alır.
+3. **Sıfır İnsan Müdahalesi:** HTML&HTML mühendisleri müşterinin sunucusuna veya kod deposuna doğrudan erişmez veya manuel danışmanlık vermez. Ürünün değeri %100 otomatik ve hatasız kod üretiminde yatar.
+
 
 ---
 

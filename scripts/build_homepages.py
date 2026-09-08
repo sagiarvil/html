@@ -117,17 +117,51 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/tr/hakkimizda/">
 <script src="/assets/js/enterprise-theme-engine.js?v=2" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://htmlandhtml.com/#website",
+      "url": "https://htmlandhtml.com/",
+      "name": "HTML&HTML",
+      "publisher": { "@id": "https://htmlandhtml.com/#organization" },
+      "inLanguage": "tr"
+    },
+    {
+      "@type": ["Organization", "Corporation", "SoftwareApplication"],
+      "@id": "https://htmlandhtml.com/#organization",
+      "name": "HTML&HTML",
+      "url": "https://htmlandhtml.com/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q116503894"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "HTML&HTML Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "HTML&HTML"
+      },
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-09-08T00:00:00Z",
+      "description": "Customer-first AI search visibility platform for GEO, AEO, LLMO, AAO, RAG, and E-E-A-T readiness."
+    },
+    {
       "@type": "WebApplication",
+      "@id": "https://htmlandhtml.com/#app",
       "name": "HTML&HTML Website Fix Validator",
       "url": "https://htmlandhtml.com/",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web",
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-09-08T00:00:00Z",
+      "publisher": { "@id": "https://htmlandhtml.com/#organization" },
       "offers": [
         { "@type": "Offer", "name": "Tam Site Teşhisi", "price": "0", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "AI Görünürlük Onarım Seti", "price": "99", "priceCurrency": "USD" }
@@ -139,6 +173,7 @@ def build_homepages():
 <script src="/assets/js/validator.js?v=15" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
@@ -200,58 +235,277 @@ def build_homepages():
   </div>
 </section>
 
+<!-- 02.4 ENTERPRISE ANALYZER SUITE & DIAGNOSTIC LAB -->
+<section class="section px-section ea-showcase-section" id="enterprise-analyzer" data-component="enterprise-analyzer-suite">
+  <div class="ea-container">
+    <div class="ea-header">
+      <span class="ea-eyebrow">
+        <span class="ea-live-dot" aria-hidden="true"></span>
+        CANLI KURUMSAL DENETİM LABORATUVARI · ENTERPRISE AI DIAGNOSTIC SUITE
+      </span>
+      <h2>Kurumsal AI Görünürlük Analizörü &amp; Kod Çözüm Laboratuvarı</h2>
+      <p>120 derin kontrol, 43 sayfa taraması ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım yol haritaları ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformunu keşfedin.</p>
+    </div>
+
+    <!-- Metric Ribbon -->
+    <div class="ea-ribbon">
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">🛡️</div>
+        <div>
+          <strong>120 Kontrol Noktası</strong>
+          <span>HTTP, robots, sitemap, DOM, Schema, CWV</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">📑</div>
+        <div>
+          <strong>43 Sayfa &amp; 30 Canlı Prob</strong>
+          <span>Kablo seviyesinde kanıt tespiti</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <strong>15 Teknik Kanıtlı Bulgu</strong>
+          <span>Kök neden tespiti ve iş etkisi</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">⚡</div>
+        <div>
+          <strong>45 Çözüm Yol Haritası</strong>
+          <span>Geri alma güvenceli kod blokları</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">📦</div>
+        <div>
+          <strong>n8n CI/CD &amp; Bash Paketi</strong>
+          <span>Otomatik doğrulama ve izleme</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Console Grid -->
+    <div class="ea-console-grid">
+      <!-- Left Card: Telemetry & Score Matrix -->
+      <div class="ea-telemetry-card">
+        <div class="ea-card-head">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            Canlı Telemetri &amp; Skor Matrisi
+          </h3>
+          <span class="ea-badge-status">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Tarama Tamamlandı
+          </span>
+        </div>
+
+        <div class="ea-score-box">
+          <div class="ea-dial-wrap">
+            <svg viewBox="0 0 92 92" aria-hidden="true">
+              <defs>
+                <linearGradient id="eaDialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00d4ff"></stop>
+                  <stop offset="100%" stop-color="#8b5cf6"></stop>
+                </linearGradient>
+              </defs>
+              <circle class="ea-dial-bg" cx="46" cy="46" r="38"></circle>
+              <circle class="ea-dial-bar" cx="46" cy="46" r="38"></circle>
+            </svg>
+            <div class="ea-dial-value">
+              <span class="ea-dial-num">70</span>
+              <span class="ea-dial-max">/ 100</span>
+            </div>
+          </div>
+          <div class="ea-score-meta">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              Dikkat Gerekiyor — Acil Eylem
+            </h4>
+            <p>120 kontrolde 108 bulgu tespit edildi. Yapay zeka arama motorları için kritik engelleyiciler mevcut.</p>
+          </div>
+        </div>
+
+        <div class="ea-pillars-grid">
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Keşif (Crawl &amp; Index)</span>
+              <span class="num">80%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" style="width: 80%;"></div></div>
+          </div>
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Anlama (Schema &amp; llms.txt)</span>
+              <span class="num">81%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" style="width: 81%;"></div></div>
+          </div>
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Güven &amp; Kalite (HSTS/E-E-A-T)</span>
+              <span class="num">59%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" style="width: 59%;"></div></div>
+          </div>
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Ticari Yol (Action &amp; CTA)</span>
+              <span class="num">100%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" style="width: 100%;"></div></div>
+          </div>
+        </div>
+
+        <div class="ea-telemetry-strip">
+          <div class="ea-telemetry-item">
+            <span>HTML Boyutu:</span>
+            <strong>319 KB (Kritik)</strong>
+          </div>
+          <div class="ea-telemetry-item">
+            <span>Canonical:</span>
+            <strong>Eksik (RFC 6596)</strong>
+          </div>
+          <div class="ea-telemetry-item">
+            <span>Mixed Content:</span>
+            <strong>1 Güvensiz Kaynak</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Interactive Terminal & Frosted Recipe -->
+      <div class="ea-terminal-card">
+        <div class="ea-terminal-topbar">
+          <div class="ea-mac-dots" aria-hidden="true">
+            <span class="ea-dot-red"></span>
+            <span class="ea-dot-yellow"></span>
+            <span class="ea-dot-green"></span>
+          </div>
+          <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
+        </div>
+
+        <div class="ea-tab-bar" aria-label="Bulgu seçici">
+          <span class="ea-tab active">TECH-CANON-001 (Yüksek)</span>
+          <span class="ea-tab">A11Y-FORM-001 (Yüksek)</span>
+          <span class="ea-tab">SEC-MIXED-001 (Yüksek)</span>
+          <span class="ea-tab">PERF-HTML-001 (Orta)</span>
+        </div>
+
+        <div class="ea-finding-meta-row">
+          <span class="ea-finding-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+            TECH-CANON-001 · YÜKSEK
+          </span>
+          <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
+        </div>
+
+        <div class="ea-finding-summary">
+          Canonical tag tanımlı değil. Yinelenen içerik versiyonları yapay zeka alaka sinyallerini böler.
+        </div>
+
+        <div class="ea-evidence-block">
+          &lt;head&gt; içinde arama: rel=canonical BULUNAMADI&lt;br&gt;
+          AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek
+        </div>
+
+        <div class="ea-code-sandbox">
+          <pre class="ea-code-underlay"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu --&gt;
+&lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
+&lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
+&lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
+export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Cloudflare edge cache</code></pre>
+          <div class="ea-frosted-cover">
+            <span class="ea-lock-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Kilitli Çözüm Yol Haritası (3 Adım)
+            </span>
+            <p>15 bulgunun tamamı için kök neden çözümleri, kod örnekleri ve n8n CI/CD otomasyon şablonları.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Launch Bar -->
+    <div class="ea-actions-bar">
+      <a href="/enterprise-analyzer/" class="ea-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        Canlı Enterprise Analizörü Başlat ↗
+      </a>
+      <a href="/enterprise-analyzer/htmlandhtml-ai-report.html" class="ea-btn-secondary" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Örnek Raporu İncele →
+      </a>
+    </div>
+
+    <div class="ea-footnote">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      <span><strong>Müdahalesiz Denetim Güvencesi:</strong> Müşterinin kaynak koduna doğrudan dokunulmaz. Teşhis ve çözüm yol haritaları kendi yazılım ekibinize teslim edilmek üzere üretilir.</span>
+    </div>
+  </div>
+</section>
+
 <!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
 <section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
   <div class="px-section-head">
     <span class="eyebrow">ÖZEL DENETİM ARAÇLARI / END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>Özel Denetim Araçları ve Karar Mimarisi</h2>
-    <p>Silikon Vadisi ve New York kurumsal arama mühendisliği standardında; 18 motor, 105 kontrol ve kanıt kilidiyle çalışan deterministik karar akışı.</p>
+    <h2>Yapay Zeka Sizi Nasıl Tavsiye Eder ve Görünürlük Nedir?</h2>
+    <p>Yapay zeka görünürlüğü (GEO/AEO) nedir? GEO, arama ve yapay zeka modellerinin sitenizi doğrudan referans almasıdır. HTML&amp;HTML, 18 motor (18 engines) ve %100 deterministik kanıt standardıyla çalışır.</p>
   </div>
-  <div class="px-pipeline-flow">
-    <article class="px-pipeline-card">
-      <div class="pipeline-step-badge">ADIM 01</div>
-      <h3>Canlı URL Girişi</h3>
-      <p>DoH (DNS-over-HTTPS) ve RFC 1918 SSRF izolasyonu ile hedef host güvenlik çemberine alınır.</p>
-      <div class="pipeline-micro-stream">
-        <span>🛡️ DoH DNS Koruması</span>
-        <span>⚡ HTTP/2 Handshake</span>
-        <span>🔒 Fail-Closed Gate</span>
-      </div>
-    </article>
-    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
-    <article class="px-pipeline-card">
-      <div class="pipeline-step-badge">ADIM 02</div>
-      <h3>18 Motorlu Paralel Tarama</h3>
-      <p>cl100k AST token ayrıştırma, 14KB bütçe kontrolü, Cross-Encoder attention ve RAG chunk testleri.</p>
-      <div class="pipeline-micro-stream">
-        <span>🎯 ColBERT MaxSim</span>
-        <span>🧠 Knowledge Vault QID</span>
-        <span>📦 14KB AST Token Purge</span>
-      </div>
-    </article>
-    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
-    <article class="px-pipeline-card">
-      <div class="pipeline-step-badge">ADIM 03</div>
-      <h3>Deterministik Kanıt Kilidi</h3>
-      <p>UNKNOWN ≠ PASS kuralı. Varsayımsız, kablo seviyesi HTTP/DOM ispatı ve P0–P3 etki matrisi.</p>
-      <div class="pipeline-micro-stream">
-        <span>⚖️ P0–P3 Etki Matrisi</span>
-        <span>📋 24 Alanlı Bulgu Şeması</span>
-        <span>🛑 Stop-Gate Denetimi</span>
-      </div>
-    </article>
-    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
-    <article class="px-pipeline-card px-pipeline-card-highlight">
-      <div class="pipeline-step-badge highlight">ADIM 04</div>
-      <h3>22 Dosyalık Onarım Paketi</h3>
-      <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
-      <div class="pipeline-micro-stream">
-        <span>⚙️ test.js Scriptleri</span>
-        <span>🔄 Geri Alma Güvencesi</span>
-        <span>🤖 A2A Agent Card &amp; MCP</span>
-      </div>
-    </article>
-  </div>
+  <ol class="px-pipeline-flow">
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card">
+        <div class="pipeline-step-badge">ADIM 01</div>
+        <h3>Canlı URL Girişi</h3>
+        <p>DoH (DNS-over-HTTPS) ve RFC 1918 SSRF izolasyonu ile hedef host güvenlik çemberine alınır.</p>
+        <div class="pipeline-micro-stream">
+          <span>🛡️ DoH DNS Koruması</span>
+          <span>⚡ HTTP/2 Handshake</span>
+          <span>🔒 Fail-Closed Gate</span>
+        </div>
+      </article>
+    </li>
+    <li class="pipeline-flow-arrow" aria-hidden="true">⟶</li>
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card">
+        <div class="pipeline-step-badge">ADIM 02</div>
+        <h3>18 Motorlu Paralel Tarama</h3>
+        <p>cl100k AST token ayrıştırma, 14KB bütçe kontrolü, Cross-Encoder attention ve RAG chunk testleri.</p>
+        <div class="pipeline-micro-stream">
+          <span>🎯 ColBERT MaxSim</span>
+          <span>🧠 Knowledge Vault QID</span>
+          <span>📦 14KB AST Token Purge</span>
+        </div>
+      </article>
+    </li>
+    <li class="pipeline-flow-arrow" aria-hidden="true">⟶</li>
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card">
+        <div class="pipeline-step-badge">ADIM 03</div>
+        <h3>Deterministik Kanıt Kilidi</h3>
+        <p>UNKNOWN ≠ PASS kuralı. Varsayımsız, kablo seviyesi HTTP/DOM ispatı ve P0–P3 etki matrisi.</p>
+        <div class="pipeline-micro-stream">
+          <span>⚖️ P0–P3 Etki Matrisi</span>
+          <span>📋 24 Alanlı Bulgu Şeması</span>
+          <span>🛑 Stop-Gate Denetimi</span>
+        </div>
+      </article>
+    </li>
+    <li class="pipeline-flow-arrow" aria-hidden="true">⟶</li>
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card px-pipeline-card-highlight">
+        <div class="pipeline-step-badge highlight">ADIM 04</div>
+        <h3>22 Dosyalık Onarım Paketi</h3>
+        <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
+        <div class="pipeline-micro-stream">
+          <span>⚙️ test.js Scriptleri</span>
+          <span>🔄 Geri Alma Güvencesi</span>
+          <span>🤖 A2A Agent Card &amp; MCP</span>
+        </div>
+      </article>
+    </li>
+  </ol>
   <div class="px-lenses" style="margin-top:24px;">
     <div class="px-lens"><b>01 BULUN</b><span>Robots.txt · Sitemap · AI Bot Erişimi</span></div>
     <div class="px-lens"><b>02 ANLAŞILIN</b><span>Schema Graph · Wikidata QID · llms.txt</span></div>
@@ -318,108 +572,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 08.5 AI VISIBILITY FUNNEL & RECIPE ARCHITECTURE -->
-<section class="hhtml-funnel-section" id="ai-visibility-funnel">
-  <div class="hhtml-funnel-wrap">
-    <div class="hhtml-funnel-hero">
-      <span class="hhtml-funnel-badge">Şeffaf Teşhis &amp; Mühendislik Çözüm Modeli</span>
-      <h2>18 Motorlu Teşhis Ücretsiz, Çözüm Reçeteleri $99</h2>
-      <p>Sitenizdeki tüm teknik açıkları ve iş etkisini şeffaf şekilde listeliyoruz. Yazılımcınıza teslim edeceğiniz 24 dosyalık hazır kod paketini ve adım adım düzeltme reçetesini tek seferlik $99 ile açın.</p>
-    </div>
-
-    <div class="hhtml-funnel-flow">
-      <div class="hhtml-funnel-step" data-step="free">
-        <div class="hhtml-funnel-icon free-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
-        <h4>1. Ücretsiz Canlı Teşhis</h4>
-        <p>18 uzman motor sitenizi tarar. 4 sütun skoru, simülasyonlar, tüm teknik açıklar, kanıtlar ve iş etkisi şeffafça sunulur.</p>
-        <div class="hhtml-funnel-tags">
-          <span class="hhtml-tag hhtml-tag-open">100% Açık &amp; Ücretsiz</span>
-        </div>
-      </div>
-
-      <div class="hhtml-funnel-arrow">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-
-      <div class="hhtml-funnel-step" data-step="frosted">
-        <div class="hhtml-funnel-icon frosted-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-        </div>
-        <h4>2. Kilitli Çözüm Reçeteleri</h4>
-        <p>Her tespitin hemen altında, yazılımcınızın sorunu nasıl düzelteceğini gösteren adım adım reçete ve kod şablonu yer alır.</p>
-        <div class="hhtml-funnel-tags">
-          <span class="hhtml-tag hhtml-tag-frosted">Buzlu Gölge Önizleme</span>
-        </div>
-      </div>
-
-      <div class="hhtml-funnel-arrow">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-
-      <div class="hhtml-funnel-step" data-step="premium">
-        <div class="hhtml-funnel-icon premium-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-        </div>
-        <h4>3. 24 Dosyalık Kod Paketi</h4>
-        <p>$99 ödeme sonrası tüm kilitler kalkar; yazılımcınıza teslim edebileceğiniz 24 dosyalı eksiksiz ZIP anında indirilir.</p>
-        <div class="hhtml-funnel-tags">
-          <span class="hhtml-tag hhtml-tag-premium">Tek Seferlik $99</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hhtml-compare-table">
-      <div class="hhtml-compare-header">
-        <div>Özellik &amp; Kapsam</div>
-        <div style="text-align:center;">Ücretsiz Teşhis</div>
-        <div style="text-align:center;">$99 Çözüm Paketi</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">18 Motorlu Kapsamlı Canlı Tarama</div>
-        <div class="hhtml-compare-free">✅ Açık</div>
-        <div class="hhtml-compare-premium">✅ Açık</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">4 Sütun Skoru ve Bayesçi Görünürlük Simülasyonu</div>
-        <div class="hhtml-compare-free">✅ Açık</div>
-        <div class="hhtml-compare-premium">✅ Açık</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Tüm Teknik Açıklar, URL'ler, Kanıtlar ve İş Etkisi</div>
-        <div class="hhtml-compare-free">✅ Açık</div>
-        <div class="hhtml-compare-premium">✅ Açık</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Her Tespitin Altında 3 Adımlı Düzeltme Reçetesi</div>
-        <div class="hhtml-compare-free"><span class="hhtml-blur-demo">🔒 Buzlu Gölge</span></div>
-        <div class="hhtml-compare-premium">✅ Tam Açık <span class="hhtml-price-tag">$99</span></div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Cloudflare Worker AST Budama ve Proxy Kod Şablonları</div>
-        <div class="hhtml-compare-free">🔒 Kilitli</div>
-        <div class="hhtml-compare-premium">✅ Üretime Hazır</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Wikidata QID &amp; Corporation @graph JSON-LD Şemaları</div>
-        <div class="hhtml-compare-free">🔒 Kilitli</div>
-        <div class="hhtml-compare-premium">✅ Doğrulanmış Kod</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Yazılımcıya Teslim Edilebilir 24 Dosyalık ZIP Paketi</div>
-        <div class="hhtml-compare-free">❌ Yok</div>
-        <div class="hhtml-compare-premium">✅ Anında Otomatik İndirme</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Sitede İnsan Müdahalesi / Manuel Kodlama</div>
-        <div class="hhtml-compare-free" style="color:#94a3b8;font-size:12px;">❌ Yok (Yazılımcınız Yapar)</div>
-        <div class="hhtml-compare-premium" style="color:#94a3b8;font-size:12px;">❌ Yok (Yazılımcınıza Teslim Edin)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -441,6 +593,10 @@ def build_homepages():
         <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="139" height="24">
       </a>
       <p data-i18n="footerTag">Teşhis ücretsizdir. Otomatik kod ve konfigürasyon paketi asıl üründür.</p>
+      <div class="preferred-source-wrap" style="margin-top:0.75rem;">
+        <div google-add-preferred-source-btn data-theme="dark" data-lang="tr"></div>
+        <noscript><a href="https://www.google.com/preferences/source?q=htmlandhtml.com" target="_blank" rel="noreferrer" style="font-size:0.75rem;color:var(--text-muted, #94a3b8);">Google'da Tercih Edilen Kaynak Olarak Ekle</a></noscript>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Platform</h4>
@@ -483,7 +639,7 @@ def build_homepages():
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. Deterministik yapay zeka ve web sitesi analiz platformu. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</p>
+    <p>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. All rights reserved. Deterministik yapay zeka ve web sitesi analiz platformu. Güncellenme / Son revizyon tarihi: 2026-09-08. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</p>
   </div>
 </footer>
 </body>
@@ -569,17 +725,51 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/en/about/">
 <script src="/assets/js/enterprise-theme-engine.js?v=2" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://htmlandhtml.com/#website",
+      "url": "https://htmlandhtml.com/en/",
+      "name": "HTML&HTML",
+      "publisher": { "@id": "https://htmlandhtml.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": ["Organization", "Corporation", "SoftwareApplication"],
+      "@id": "https://htmlandhtml.com/#organization",
+      "name": "HTML&HTML",
+      "url": "https://htmlandhtml.com/en/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q116503894"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "HTML&HTML Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "HTML&HTML"
+      },
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-09-08T00:00:00Z",
+      "description": "Customer-first AI search visibility platform for GEO, AEO, LLMO, AAO, RAG, and E-E-A-T readiness."
+    },
+    {
       "@type": "WebApplication",
+      "@id": "https://htmlandhtml.com/#app",
       "name": "HTML&HTML Website Fix Validator",
       "url": "https://htmlandhtml.com/en/",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web",
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-09-08T00:00:00Z",
+      "publisher": { "@id": "https://htmlandhtml.com/#organization" },
       "offers": [
         { "@type": "Offer", "name": "Full Website Diagnosis", "price": "0", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "AI Search Visibility Roadmap", "price": "99", "priceCurrency": "USD" }
@@ -591,6 +781,7 @@ def build_homepages():
 <script src="/assets/js/validator.js?v=15" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
@@ -651,58 +842,277 @@ def build_homepages():
   </div>
 </section>
 
+<!-- 02.4 ENTERPRISE ANALYZER SUITE & DIAGNOSTIC LAB -->
+<section class="section px-section ea-showcase-section" id="enterprise-analyzer" data-component="enterprise-analyzer-suite">
+  <div class="ea-container">
+    <div class="ea-header">
+      <span class="ea-eyebrow">
+        <span class="ea-live-dot" aria-hidden="true"></span>
+        LIVE ENTERPRISE AUDIT LAB · ENTERPRISE AI DIAGNOSTIC SUITE
+      </span>
+      <h2>Enterprise AI Visibility Analyzer &amp; Solution Lab</h2>
+      <p>Deterministic diagnostic environment operating across 120 deep checks, 43-page crawl, and 30 live link probes. Explore wire-level technical evidence, locked remediation roadmaps, and n8n CI/CD automation packages.</p>
+    </div>
+
+    <!-- Metric Ribbon -->
+    <div class="ea-ribbon">
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">🛡️</div>
+        <div>
+          <strong>120 Control Checks</strong>
+          <span>HTTP, robots, sitemap, DOM, Schema, CWV</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">📑</div>
+        <div>
+          <strong>43 Pages &amp; 30 Probes</strong>
+          <span>Wire-level evidence assertion</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <strong>15 Evidence Findings</strong>
+          <span>Root-cause identification &amp; impact</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">⚡</div>
+        <div>
+          <strong>45 Solution Roadmaps</strong>
+          <span>Rollback-guaranteed code templates</span>
+        </div>
+      </div>
+      <div class="ea-ribbon-item">
+        <div class="ea-ribbon-icon" aria-hidden="true">📦</div>
+        <div>
+          <strong>n8n CI/CD &amp; Bash Kit</strong>
+          <span>Automated validation &amp; monitoring</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Console Grid -->
+    <div class="ea-console-grid">
+      <!-- Left Card: Telemetry & Score Matrix -->
+      <div class="ea-telemetry-card">
+        <div class="ea-card-head">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            Live Telemetry &amp; Score Matrix
+          </h3>
+          <span class="ea-badge-status">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Scan Complete
+          </span>
+        </div>
+
+        <div class="ea-score-box">
+          <div class="ea-dial-wrap">
+            <svg viewBox="0 0 92 92" aria-hidden="true">
+              <defs>
+                <linearGradient id="eaDialGradEn" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00d4ff"></stop>
+                  <stop offset="100%" stop-color="#8b5cf6"></stop>
+                </linearGradient>
+              </defs>
+              <circle class="ea-dial-bg" cx="46" cy="46" r="38"></circle>
+              <circle class="ea-dial-bar" style="stroke: url(#eaDialGradEn);" cx="46" cy="46" r="38"></circle>
+            </svg>
+            <div class="ea-dial-value">
+              <span class="ea-dial-num">70</span>
+              <span class="ea-dial-max">/ 100</span>
+            </div>
+          </div>
+          <div class="ea-score-meta">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              Attention Required — Urgent Action
+            </h4>
+            <p>108 findings detected across 120 checks. Critical blockers exist for AI search engines.</p>
+          </div>
+        </div>
+
+        <div class="ea-pillars-grid">
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Discovery (Crawl &amp; Index)</span>
+              <span class="num">80%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" style="width: 80%;"></div></div>
+          </div>
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Understanding (Schema &amp; Graph)</span>
+              <span class="num">81%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" style="width: 81%;"></div></div>
+          </div>
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Trust &amp; Quality (HSTS/E-E-A-T)</span>
+              <span class="num">59%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" style="width: 59%;"></div></div>
+          </div>
+          <div class="ea-pillar-cell">
+            <div class="ea-pillar-label">
+              <span>Action Path (Forms &amp; CTA)</span>
+              <span class="num">100%</span>
+            </div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" style="width: 100%;"></div></div>
+          </div>
+        </div>
+
+        <div class="ea-telemetry-strip">
+          <div class="ea-telemetry-item">
+            <span>HTML Payload:</span>
+            <strong>319 KB (Critical)</strong>
+          </div>
+          <div class="ea-telemetry-item">
+            <span>Canonical:</span>
+            <strong>Missing (RFC 6596)</strong>
+          </div>
+          <div class="ea-telemetry-item">
+            <span>Mixed Content:</span>
+            <strong>1 Insecure Ref</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Interactive Terminal & Frosted Recipe -->
+      <div class="ea-terminal-card">
+        <div class="ea-terminal-topbar">
+          <div class="ea-mac-dots" aria-hidden="true">
+            <span class="ea-dot-red"></span>
+            <span class="ea-dot-yellow"></span>
+            <span class="ea-dot-green"></span>
+          </div>
+          <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
+        </div>
+
+        <div class="ea-tab-bar" aria-label="Finding switcher">
+          <span class="ea-tab active">TECH-CANON-001 (High)</span>
+          <span class="ea-tab">A11Y-FORM-001 (High)</span>
+          <span class="ea-tab">SEC-MIXED-001 (High)</span>
+          <span class="ea-tab">PERF-HTML-001 (Medium)</span>
+        </div>
+
+        <div class="ea-finding-meta-row">
+          <span class="ea-finding-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+            TECH-CANON-001 · HIGH
+          </span>
+          <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
+        </div>
+
+        <div class="ea-finding-summary">
+          Canonical tag not defined. Duplicate content variants dilute AI relevance signals.
+        </div>
+
+        <div class="ea-evidence-block">
+          Search in &lt;head&gt;: rel=canonical NOT FOUND<br>
+          AI Crawler State: Primary URL Unresolved | Duplicate Risk: High
+        </div>
+
+        <div class="ea-code-sandbox">
+          <pre class="ea-code-underlay"><code>&lt;!-- Remediation Roadmap &amp; Code Template --&gt;
+&lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
+&lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
+&lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
+export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Cloudflare edge cache</code></pre>
+          <div class="ea-frosted-cover">
+            <span class="ea-lock-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Locked Remediation Roadmap (3 Steps)
+            </span>
+            <p>Step-by-step root-cause fixes, code samples, and n8n CI/CD automation templates for all 15 findings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Launch Bar -->
+    <div class="ea-actions-bar">
+      <a href="/enterprise-analyzer/" class="ea-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        Launch Live Enterprise Analyzer ↗
+      </a>
+      <a href="/enterprise-analyzer/htmlandhtml-ai-report.html" class="ea-btn-secondary" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        View Sample Report →
+      </a>
+    </div>
+
+    <div class="ea-footnote">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      <span><strong>Zero-Interference Assurance:</strong> Client source code is never touched directly. Diagnostics and remediation roadmaps are generated for handover to your own engineering team.</span>
+    </div>
+  </div>
+</section>
+
 <!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
 <section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
   <div class="px-section-head">
     <span class="eyebrow">SPECIALIZED AUDIT TOOLS / END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>Specialized Diagnostic Tools &amp; Decision Architecture</h2>
-    <p>Silicon Valley and New York enterprise search engineering standards; deterministic pipeline operating across 18 engines, 105 controls, and cryptographic evidence verification.</p>
+    <h2>How Do AI Models Recommend Your Website and What is GEO?</h2>
+    <p>What is Generative Engine Optimization (GEO)? GEO is the optimization of content for AI engines. HTML&amp;HTML audits websites across 18 engines with 100% deterministic evidence.</p>
   </div>
-  <div class="px-pipeline-flow">
-    <article class="px-pipeline-card">
-      <div class="pipeline-step-badge">STEP 01</div>
-      <h3>Live URL Ingestion</h3>
-      <p>DoH (DNS-over-HTTPS) resolution and RFC 1918 SSRF isolation sandbox the target host safely.</p>
-      <div class="pipeline-micro-stream">
-        <span>🛡️ DoH DNS Shield</span>
-        <span>⚡ HTTP/2 Handshake</span>
-        <span>🔒 Fail-Closed Gate</span>
-      </div>
-    </article>
-    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
-    <article class="px-pipeline-card">
-      <div class="pipeline-step-badge">STEP 02</div>
-      <h3>18-Engine Parallel Crawl</h3>
-      <p>cl100k AST token parsing, 14KB budget enforcement, Cross-Encoder attention, and RAG chunk boundary tests.</p>
-      <div class="pipeline-micro-stream">
-        <span>🎯 ColBERT MaxSim</span>
-        <span>🧠 Knowledge Vault QID</span>
-        <span>📦 14KB AST Token Purge</span>
-      </div>
-    </article>
-    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
-    <article class="px-pipeline-card">
-      <div class="pipeline-step-badge">STEP 03</div>
-      <h3>Deterministic Evidence Gate</h3>
-      <p>UNKNOWN ≠ PASS principle. Wire-level HTTP/DOM proof without heuristics, mapped to P0–P3 impact matrix.</p>
-      <div class="pipeline-micro-stream">
-        <span>⚖️ P0–P3 Impact Matrix</span>
-        <span>📋 24-Field Finding Schema</span>
-        <span>🛑 Stop-Gate Assertion</span>
-      </div>
-    </article>
-    <div class="pipeline-flow-arrow" aria-hidden="true">⟶</div>
-    <article class="px-pipeline-card px-pipeline-card-highlight">
-      <div class="pipeline-step-badge highlight">STEP 04</div>
-      <h3>22-File Enterprise Repair Kit</h3>
-      <p>Root-cause remediation, test.js verification suites, 00_ROLLBACK_PLAN, and 30-page machine surface.</p>
-      <div class="pipeline-micro-stream">
-        <span>⚙️ test.js Suites</span>
-        <span>🔄 Rollback Guarantees</span>
-        <span>🤖 A2A Agent Card &amp; MCP</span>
-      </div>
-    </article>
-  </div>
+  <ol class="px-pipeline-flow">
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card">
+        <div class="pipeline-step-badge">STEP 01</div>
+        <h3>Live URL Ingestion</h3>
+        <p>DoH (DNS-over-HTTPS) resolution and RFC 1918 SSRF isolation sandbox the target host safely.</p>
+        <div class="pipeline-micro-stream">
+          <span>🛡️ DoH DNS Shield</span>
+          <span>⚡ HTTP/2 Handshake</span>
+          <span>🔒 Fail-Closed Gate</span>
+        </div>
+      </article>
+    </li>
+    <li class="pipeline-flow-arrow" aria-hidden="true">⟶</li>
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card">
+        <div class="pipeline-step-badge">STEP 02</div>
+        <h3>18-Engine Parallel Crawl</h3>
+        <p>cl100k AST token parsing, 14KB budget enforcement, Cross-Encoder attention, and RAG chunk boundary tests.</p>
+        <div class="pipeline-micro-stream">
+          <span>🎯 ColBERT MaxSim</span>
+          <span>🧠 Knowledge Vault QID</span>
+          <span>📦 14KB AST Token Purge</span>
+        </div>
+      </article>
+    </li>
+    <li class="pipeline-flow-arrow" aria-hidden="true">⟶</li>
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card">
+        <div class="pipeline-step-badge">STEP 03</div>
+        <h3>Deterministic Evidence Gate</h3>
+        <p>UNKNOWN ≠ PASS principle. Wire-level HTTP/DOM proof without heuristics, mapped to P0–P3 impact matrix.</p>
+        <div class="pipeline-micro-stream">
+          <span>⚖️ P0–P3 Impact Matrix</span>
+          <span>📋 24-Field Finding Schema</span>
+          <span>🛑 Stop-Gate Assertion</span>
+        </div>
+      </article>
+    </li>
+    <li class="pipeline-flow-arrow" aria-hidden="true">⟶</li>
+    <li class="px-pipeline-step">
+      <article class="px-pipeline-card px-pipeline-card-highlight">
+        <div class="pipeline-step-badge highlight">STEP 04</div>
+        <h3>22-File Enterprise Repair Kit</h3>
+        <p>Root-cause remediation, test.js verification suites, 00_ROLLBACK_PLAN, and 30-page machine surface.</p>
+        <div class="pipeline-micro-stream">
+          <span>⚙️ test.js Suites</span>
+          <span>🔄 Rollback Guarantees</span>
+          <span>🤖 A2A Agent Card &amp; MCP</span>
+        </div>
+      </article>
+    </li>
+  </ol>
   <div class="px-lenses" style="margin-top:24px;">
     <div class="px-lens"><b>01 GET DISCOVERED</b><span>Robots.txt · Sitemap · AI Bot Access</span></div>
     <div class="px-lens"><b>02 BE UNDERSTOOD</b><span>Schema Graph · Wikidata QID · llms.txt</span></div>
@@ -769,108 +1179,6 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 08.5 AI VISIBILITY FUNNEL & RECIPE ARCHITECTURE -->
-<section class="hhtml-funnel-section" id="ai-visibility-funnel">
-  <div class="hhtml-funnel-wrap">
-    <div class="hhtml-funnel-hero">
-      <span class="hhtml-funnel-badge">Transparent Diagnostic &amp; Resolution Model</span>
-      <h2>18-Engine Diagnosis Free, Resolution Recipes $99</h2>
-      <p>We transparently diagnose every blocker and business impact on your domain. Unlock the 24-file production code package and step-by-step resolution playbook for your in-house developers for a single $99.</p>
-    </div>
-
-    <div class="hhtml-funnel-flow">
-      <div class="hhtml-funnel-step" data-step="free">
-        <div class="hhtml-funnel-icon free-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
-        <h4>1. Free Live Diagnostic</h4>
-        <p>18 specialized engines audit your domain. 4 pillar scores, simulations, all blockers, evidence, and business outcomes are displayed openly.</p>
-        <div class="hhtml-funnel-tags">
-          <span class="hhtml-tag hhtml-tag-open">100% Open &amp; Free</span>
-        </div>
-      </div>
-
-      <div class="hhtml-funnel-arrow">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-
-      <div class="hhtml-funnel-step" data-step="frosted">
-        <div class="hhtml-funnel-icon frosted-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-        </div>
-        <h4>2. Frosted Resolution Recipes</h4>
-        <p>Directly beneath each finding, the exact 3-step developer recipe and code template are frosted with curious shadow previews.</p>
-        <div class="hhtml-funnel-tags">
-          <span class="hhtml-tag hhtml-tag-frosted">Frosted Preview</span>
-        </div>
-      </div>
-
-      <div class="hhtml-funnel-arrow">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-
-      <div class="hhtml-funnel-step" data-step="premium">
-        <div class="hhtml-funnel-icon premium-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-        </div>
-        <h4>3. 24-File Resolution Pack</h4>
-        <p>$99 payment unlocks all frosted recipes and delivers the complete 24-file production ZIP directly for your engineering team.</p>
-        <div class="hhtml-funnel-tags">
-          <span class="hhtml-tag hhtml-tag-premium">One-Time $99</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hhtml-compare-table">
-      <div class="hhtml-compare-header">
-        <div>Feature &amp; Scope</div>
-        <div style="text-align:center;">Free Diagnostic</div>
-        <div style="text-align:center;">$99 Resolution Pack</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">18-Engine Comprehensive Live Audit</div>
-        <div class="hhtml-compare-free">✅ Open</div>
-        <div class="hhtml-compare-premium">✅ Open</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">4-Pillar Score &amp; Bayesian Ingestion Simulations</div>
-        <div class="hhtml-compare-free">✅ Open</div>
-        <div class="hhtml-compare-premium">✅ Open</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">All Findings, URLs, Evidence &amp; Business Impact</div>
-        <div class="hhtml-compare-free">✅ Open</div>
-        <div class="hhtml-compare-premium">✅ Open</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Under-Finding 3-Step Resolution Recipe</div>
-        <div class="hhtml-compare-free"><span class="hhtml-blur-demo">🔒 Frosted Shadow</span></div>
-        <div class="hhtml-compare-premium">✅ Fully Unlocked <span class="hhtml-price-tag">$99</span></div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Cloudflare Worker AST Prune &amp; Edge Code Templates</div>
-        <div class="hhtml-compare-free">🔒 Locked</div>
-        <div class="hhtml-compare-premium">✅ Production-Ready</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">Wikidata QID &amp; Corporation @graph JSON-LD Schemas</div>
-        <div class="hhtml-compare-free">🔒 Locked</div>
-        <div class="hhtml-compare-premium">✅ Validated Code</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">24-File Engineering Handover ZIP Package</div>
-        <div class="hhtml-compare-free">❌ None</div>
-        <div class="hhtml-compare-premium">✅ Instant Automated Download</div>
-      </div>
-      <div class="hhtml-compare-row">
-        <div class="hhtml-compare-col">On-Site Human Engineering / Origin Coding Work</div>
-        <div class="hhtml-compare-free" style="color:#94a3b8;font-size:12px;">❌ None (Your In-House Devs)</div>
-        <div class="hhtml-compare-premium" style="color:#94a3b8;font-size:12px;">❌ None (Handover to Your Devs)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -892,6 +1200,10 @@ def build_homepages():
         <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="139" height="24">
       </a>
       <p data-i18n="footerTag">Evidence is free. Automated code generator is the product.</p>
+      <div class="preferred-source-wrap" style="margin-top:0.75rem;">
+        <div google-add-preferred-source-btn data-theme="dark" data-lang="en"></div>
+        <noscript><a href="https://www.google.com/preferences/source?q=htmlandhtml.com" target="_blank" rel="noreferrer" style="font-size:0.75rem;color:var(--text-muted, #94a3b8);">Add as Preferred Source on Google</a></noscript>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Platform</h4>
@@ -934,7 +1246,7 @@ def build_homepages():
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 HTML&amp;HTML. All rights reserved. Payments and billing are processed by our authorized reseller and Merchant of Record Paddle.com.</p>
+    <p>© 2026 HTML&amp;HTML. All rights reserved. Updated / Revision date: 2026-09-08. Payments and billing are processed by our authorized reseller and Merchant of Record Paddle.com.</p>
   </div>
 </footer>
 </body>

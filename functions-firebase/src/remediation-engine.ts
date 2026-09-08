@@ -117,7 +117,7 @@ function calculatePriority(findingId: string, sev: Severity, reachRatio: number)
   if (findingId === 'A11Y-FORM-001' && reachRatio >= 0.3) return 'P1';
   if (findingId === 'LINK-BROKEN-001' && reachRatio >= 0.2) return 'P1';
   if (findingId.startsWith('AI-ROBOTS-GOOGLEBOT') || findingId.startsWith('AI-ROBOTS-OAI')) return 'P1';
-  if (findingId === 'TOKEN-BLOAT-001' || findingId === 'ENTITY-VAULT-001' || findingId === 'RAG-CHUNK-001' || findingId === 'RERANK-ATTN-001' || findingId === 'A2A-MCP-CARD-001' || findingId === 'AGENTIC-COMMERCE-001' || findingId === 'AI-CORPUS-PMI-001') return 'P1';
+  if (findingId === 'TOKEN-BLOAT-001' || findingId === 'ENTITY-VAULT-001' || findingId === 'RAG-CHUNK-001' || findingId === 'RERANK-ATTN-001' || findingId === 'A2A-MCP-CARD-001' || findingId === 'AGENTIC-COMMERCE-001' || findingId === 'AI-CORPUS-PMI-001' || findingId === 'AI-PREFERRED-SOURCES-001') return 'P1';
   if (sev === 'critical') return 'P1';
 
   // P2: measurable performance degradation, repeated metadata/schema defects, broken internal links
@@ -726,6 +726,45 @@ function generateBlueprint(f: Finding, observedUrls: string[], totalPages: numbe
       regression_tests: ['Verify standard human web forms continue to operate normally with CSRF protection'],
       do_not_break: ['Do not expose unrate-limited endpoints to prevent automated credential or card stuffing'],
       rollback_guidance: ['Disable headless agent route in API gateway configuration']
+    };
+  }
+
+  if (pId === 'AI-PREFERRED-SOURCES-001') {
+    return {
+      title: 'Missing Google Preferred Sources Integration (Google Search Central P1 Standard)',
+      impact: 'Loyal visitors and search users cannot add your publication as a Preferred Source in Google Search, forfeiting the "Preferred" badge and citation priority in Top Stories, AI Overviews, and AI Mode.',
+      root_cause: 'Publication and content templates lack Google Search Central\'s 2-line Preferred Sources JavaScript integration (<div google-add-preferred-source-btn>) or fallback deeplink.',
+      root_fix: {
+        target_behavior: 'Eligible article, guide, and footer surfaces feature a non-intrusive Preferred Sources interactive button or deeplink directing users to google.com/preferences/source?q=[domain].',
+        current_behavior: 'No google-add-preferred-source-btn attribute, publisher.js script, or source preference deeplink detected on public pages.',
+        required_change: 'Embed the 2-line Google Preferred Sources standard JS button or deeplink into publication footers and high-traffic content templates without disrupting primary commercial CTAs.',
+        scope: urlScope,
+        non_goals: [
+          'Do not make the Preferred Sources button the primary commercial CTA',
+          'Do not represent Preferred Sources as Google endorsement or algorithmic ranking certification'
+        ]
+      },
+      recovery: [
+        'Deploy the standard 2-line Google snippet: <script async src="https://news.google.com/swg/js/v1/publisher.js"></script> and <div google-add-preferred-source-btn data-theme="dark"></div>',
+        'Add https://news.google.com and https://*.google.com to Content-Security-Policy header'
+      ],
+      prevention: [
+        'Add CI gate verifying presence of google-add-preferred-source-btn or publisher.js on article templates'
+      ],
+      acceptance_tests: [
+        `curl -sL ${observedUrls[0] || '[URL]'} | grep -E -q "publisher\\.js|google-add-preferred-source-btn|preferences/source" && echo "PASS"`
+      ],
+      regression_tests: [
+        'Verify button does not shift Core Web Vitals (CLS < 0.1)',
+        'Confirm primary checkout/signup CTAs maintain first visual hierarchy'
+      ],
+      do_not_break: [
+        'Do not place button over primary conversion flows',
+        'Ensure CSP allows https://news.google.com script-src and connect-src'
+      ],
+      rollback_guidance: [
+        'Remove the 2-line publisher.js script and div element from template'
+      ]
     };
   }
 

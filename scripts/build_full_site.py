@@ -59,6 +59,10 @@ def get_footer(lang):
         <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
       </a>
       <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+      <div class="preferred-source-wrap" style="margin-top:0.75rem;">
+        <div google-add-preferred-source-btn data-theme="dark" data-lang="tr"></div>
+        <noscript><a href="https://www.google.com/preferences/source?q=htmlandhtml.com" target="_blank" rel="noreferrer" style="font-size:0.75rem;color:var(--text-muted, #94a3b8);">Google'da Tercih Edilen Kaynak Olarak Ekle</a></noscript>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Platform</h4>
@@ -113,7 +117,7 @@ def get_footer(lang):
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. All rights reserved. Güncellenme / Son revizyon tarihi: 2026-09-08. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
     <span>18 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
   </div>
 </footer>'''
@@ -125,6 +129,10 @@ def get_footer(lang):
         <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
       </a>
       <p>Evidence is free. Implementation precision is the product. Audit your website for search and AI retrieval blockers with deterministic evidence.</p>
+      <div class="preferred-source-wrap" style="margin-top:0.75rem;">
+        <div google-add-preferred-source-btn data-theme="dark" data-lang="en"></div>
+        <noscript><a href="https://www.google.com/preferences/source?q=htmlandhtml.com" target="_blank" rel="noreferrer" style="font-size:0.75rem;color:var(--text-muted, #94a3b8);">Add as Preferred Source on Google</a></noscript>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
@@ -179,7 +187,7 @@ def get_footer(lang):
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. All rights reserved. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</span>
+    <span>© 2026 HTML&amp;HTML. All rights reserved. Updated / Revision date: 2026-09-08. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</span>
     <span>18 Independent Diagnostic Engines · 50-Page Deterministic Boundary</span>
   </div>
 </footer>'''
