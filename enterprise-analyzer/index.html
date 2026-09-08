@@ -53,7 +53,7 @@
   <link rel="stylesheet" href="/assets/css/validator.css?v=8">
   <link rel="stylesheet" href="/assets/css/theme.css?v=11">
   <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
-  <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+  <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">
   <link rel="stylesheet" href="/enterprise-analyzer/style.css?v=6">
   <script src="/enterprise-analyzer/vendor/jszip.min.js"></script>
   <script src="/enterprise-analyzer/vendor/FileSaver.min.js"></script>
@@ -767,6 +767,40 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- SECTION: SYNTHETIC AI QUERY & MODEL REACTION SIMULATION -->
+  <section class="ea-simulation-section" id="aiSimulationSection" style="margin-bottom: 32px;">
+    <div class="ea-section-head">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+        <span>Yapay Zeka Arama Motorları Model Tepki &amp; Alıntı Simülasyonu</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px;">BAYESIAN REACTION SIM</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:14px;">
+      Aşağıdaki simülasyon; alan adınızın Perplexity Pro, OpenAI SearchGPT, Claude 3.5 Sonnet ve Google Gemini modelleri karşısındaki anlık davranışını gösterir. Ham durumda modellerin neden sizi atladığını, $99 onarım seti sonrasında nasıl 1. sıra doğrulanmış kaynağa dönüştüğünüzü test edin.
+    </p>
+
+    <!-- Simulation Controls -->
+    <div class="sim-toggle-row">
+      <span class="sim-toggle-label">Yapay Zeka Durumu:</span>
+      <div class="sim-toggle-switch">
+        <button type="button" class="sim-toggle-opt active opt-raw" id="eaSimRawBtn">🔴 Ham Durum (Engelli / Sıfır Alıntı)</button>
+        <button type="button" class="sim-toggle-opt" id="eaSimFixedBtn">🟢 Onarım Paketi Sonrası (1. Sıra Doğrulanmış Alıntı)</button>
+      </div>
+    </div>
+
+    <!-- Model Navigation -->
+    <div class="model-probe-nav">
+      <button type="button" class="model-probe-btn active" data-model="pplx">🟣 Perplexity Pro (Sonar-Large)</button>
+      <button type="button" class="model-probe-btn" data-model="sgpt">🟢 OpenAI SearchGPT &amp; Operator</button>
+      <button type="button" class="model-probe-btn" data-model="claude">🟡 Anthropic Claude 3.5 Sonnet</button>
+      <button type="button" class="model-probe-btn" data-model="gemini">🔵 Google Gemini 1.5 Pro &amp; Overviews</button>
+    </div>
+
+    <!-- Simulation Card Container -->
+    <div id="eaSimCardContainer" class="simulation-grid" style="margin-top:14px;"></div>
   </section>
 
   <!-- Findings Section -->
@@ -1715,7 +1749,141 @@
       </div>
     </section>
 
-  <!-- versioned Engineering Delivery Manifest Section -->
+  <!-- SECTION: AI REVENUE LOSS & ROI CALCULATOR -->
+  <section class="ea-roi-section" id="roiCalculatorSection" style="margin-bottom: 32px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+    <div class="ea-section-head" style="margin-bottom:14px;">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>Yapay Zeka Arama Kaybı &amp; Finansal Risk Hesaplayıcısı</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px; background:rgba(239,68,68,0.15); color:#ef4444; border:1px solid rgba(239,68,68,0.3);">AYLIK RİSK PROJEKSİYONU</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:18px;">
+      <div class="arr-impact-card">
+        <span class="arr-impact-card-label">📉 AYDA KAYBEDİLEN POTANSİYEL LEAD</span>
+        <strong class="arr-impact-card-val arr-impact-red" id="eaArrLeads">8 – 15 Müşteri</strong>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Arama botunun 14KB kesilmesine takılması kaynaklı</small>
+      </div>
+      <div class="arr-impact-card">
+        <span class="arr-impact-card-label">🚫 ALINTI RED ORANI</span>
+        <strong class="arr-impact-card-val arr-impact-amber" id="eaArrDrop">74%</strong>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Wikidata / Bilgi grafiği eksikliği kaynaklı</small>
+      </div>
+      <div class="arr-impact-card">
+        <span class="arr-impact-card-label">💰 AYLIK RİSKTEKİ PIPELINE GELİRİ</span>
+        <strong class="arr-impact-card-val arr-impact-emerald" id="eaArrLoss">$40,000</strong>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Mevcut kurumsal sepet ve arama hacmine göre</small>
+      </div>
+    </div>
+
+    <p class="arr-metric-context" style="font-size:13px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:16px;">
+      <strong>Sektörel Kayıp Analizi:</strong> Arama motoru robotu sitenizde boğulup fiyat ve hizmet katmanınıza ulaşamadığı için yüksek satın alma niyetli kurumsal ziyaretçiler doğrudan rakiplerinize ve aracı platformlara yönlendirilmektedir. Aşağıdaki sürgülerle şirketinizin aylık hacmine göre risk büyüklüğünü hesaplayın:
+    </p>
+
+    <div class="arr-calculator-controls" style="margin-bottom:20px;">
+      <div class="arr-calc-col">
+        <div class="arr-calc-label"><span>Aylık Sektörel AI Arama Hacmi:</span> <b id="eaLblQueries">60,000</b></div>
+        <input type="range" class="arr-calc-slider" id="eaSliderQueries" min="10000" max="500000" step="10000" value="60000">
+      </div>
+      <div class="arr-calc-col">
+        <div class="arr-calc-label"><span>Ortalama Müşteri / Sipariş Değeri:</span> <b id="eaLblDeal">$5,000</b></div>
+        <input type="range" class="arr-calc-slider" id="eaSliderDeal" min="100" max="10000" step="100" value="5000">
+      </div>
+    </div>
+
+    <!-- CTA & Action Buttons -->
+    <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <button type="button" class="btn-stop-loss" id="eaBtnOpenFixPack" style="height:48px; padding:0 24px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer;">
+        ⚡ $99 — 22 Dosyalık Onarım Paketini Al &amp; Kaybı Durdur →
+      </button>
+      <button type="button" class="btn-board-memo" id="eaBtnOpenBoardMemo" style="height:48px; padding:0 20px; border-radius:10px; font-weight:700; font-size:13.5px; cursor:pointer; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--ea-text-primary);">
+        📄 1-Sayfalık Yönetim Kurulu Notu (Board Memo)
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION: 3-STEP NO-CODE INTEGRATION MATRIX -->
+  <section class="ea-integration-section" style="margin-bottom: 32px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+    <div class="ea-section-head" style="margin-bottom:10px;">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span>3 Adımda Sıfır Kod Entegrasyon: "Ben Bu Dosyaları Ne Yapacağım?"</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px; background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.3);">SIFIR RİSK · ANINDA ÇALIŞIR</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:18px;">
+      Paketteki 22 dosya, firmanızın kullandığı platforma göre 3 dakikada yüklenebilecek şekilde organize edilmiştir. Veritabanı veya kaynak kod değişikliği gerekmez; sisteminizde bozulma riski sıfırdır.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#21759b; color:#fff; font-size:11px; padding:2px 6px; border-radius:4px;">WordPress</span>
+          WooCommerce &amp; WP
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li><code>08_LLMS_TXT_RECOMMENDED.txt</code> dosyasını sitenizin kök klasörüne <code>llms.txt</code> olarak yükleyin.</li>
+          <li><code>13_KNOWLEDGE_VAULT.json</code> kodunu Header and Footer Scripts eklentisine yapıştırın.</li>
+          <li>Test cURL komutunu çalıştırıp anında teyit edin. (Toplam: 2 dk)</li>
+        </ol>
+      </div>
+
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#96bf48; color:#000; font-size:11px; font-weight:800; padding:2px 6px; border-radius:4px;">Shopify</span>
+          E-Ticaret Mağazaları
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li>Shopify Admin -> Online Mağaza -> Temalar -> Düzenle adımlarını açın.</li>
+          <li><code>theme.liquid</code> dosyasındaki <code>&lt;/head&gt;</code> öncesine şema kodunu yapıştırın.</li>
+          <li>Kaydedin. Ürün ve kurumsal kimliğiniz AI ajanlarına hazır. (Toplam: 1.5 dk)</li>
+        </ol>
+      </div>
+
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#f38020; color:#fff; font-size:11px; padding:2px 6px; border-radius:4px;">Cloudflare</span>
+          Next.js / Vercel / Edge
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li>Paketteki <code>14_CLOUDFLARE_WORKER.js</code> dosyasını Cloudflare Workers'a yapıştırın.</li>
+          <li>Route olarak <code>alanadiniz.com/*</code> tanımlayın.</li>
+          <li>AI botlarına 14KB altı mikro-HTML otomatik sunulur. (Toplam: 3 dk)</li>
+        </ol>
+      </div>
+
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#4353ff; color:#fff; font-size:11px; padding:2px 6px; border-radius:4px;">Webflow</span>
+          Wix &amp; Framer
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li>Site Ayarları -> Custom Code sekmesine gidin.</li>
+          <li>Head Code kutusuna paketteki JSON-LD bloğunu bırakın.</li>
+          <li>Publish butonuna basın. (Toplam: 1 dk)</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Enterprise Trust & Guarantee Badges -->
+    <div style="margin-top:20px; padding:14px 18px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ea-text-secondary);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span><strong>Paddle.com Yetkili Satıcı (MoR):</strong> 256-Bit SSL, Global Kart &amp; Kurumsal Fatura / Tax ID Desteği</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ea-text-secondary);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>Anında Otomatik Teslim:</strong> Ödeme sonrası saniyeler içinde alan adına özel ZIP indirme</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ea-text-secondary);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Sıfır Sunucu Müdahalesi:</strong> Kaynak koda ve veritabanına dokunulmaz, geri dönüşü risksizdir</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 22-File Engineering Delivery Manifest Section -->
   <section class="ea-delivery-section" id="delivery-manifest">
     <div class="ea-delivery-header">
       <span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVANTERİ)</span>
@@ -1892,8 +2060,51 @@
     <button class="modal-cta" id="payButton" type="button">Onarım yol haritasılerini Aç ve İndir</button>
     <p class="modal-guarantee">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      30 gün koşulsuz memnuniyet garantisi
+      Paddle.com Güvenli Ödeme · Anında Otomatik Teslimat · Sıfır Risk
     </p>
+  </div>
+</div>
+
+<!-- Executive Board Memo Modal -->
+<div class="board-memo-modal" id="eaBoardMemoModal" style="display:none;" hidden role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="board-memo-paper">
+    <button type="button" class="board-memo-close" id="eaBtnCloseBoardMemo" aria-label="Kapat">✕</button>
+    <div class="board-memo-header">
+      <div style="font-size:11px;font-weight:800;letter-spacing:0.08em;color:#64748b;text-transform:uppercase;">GİZLİ // YÖNETİM KURULU İÇ MEMORANDUMU</div>
+      <h2 class="board-memo-title">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ &amp; ÇÖZÜM yol haritası RAPORU</h2>
+      <div class="board-memo-meta-grid">
+        <div class="board-memo-meta-item"><strong>KİME:</strong> İcra Kurulu, CEO &amp; CTO</div>
+        <div class="board-memo-meta-item"><strong>TARİH:</strong> <span id="memoDateSpan">9 Eylül 2026</span></div>
+        <div class="board-memo-meta-item"><strong>HEDEF:</strong> <span id="memoTargetSpan">htmlandhtml.com</span></div>
+        <div class="board-memo-meta-item"><strong>KAPSAM:</strong> 18 AI Engine Audit &amp; 3-Planes Architecture</div>
+      </div>
+    </div>
+    <div class="board-memo-section-title">1. YÖNETİCİ ÖZETİ VE RİSK TEŞHİSİ</div>
+    <p class="board-memo-p">Şirketimizin ana alan adı (<strong id="memoDomainStrong">htmlandhtml.com</strong>) üzerinde yürütülen yapay zeka arama motorları (Perplexity, SearchGPT, Claude, Gemini) denetiminde; 14KB AST bütçe aşımı ve şema eksikliği nedeniyle aylık nitelikli kurumsal müşteri / B2B satış fırsatlarının doğrudan rakiplere yönlendirildiği tespit edilmiştir.</p>
+    
+    <div class="board-memo-highlight">
+      ⚖️ <strong>Finansal Etki &amp; Risk:</strong> Mevcut kurumsal sepet hacmimize göre her ay önemli miktarda satın alma niyetli trafik sitemizi göremeden aracı platformlara kaymaktadır.
+    </div>
+
+    <div class="board-memo-section-title">2. ÖNERİLEN ÇÖZÜM: 22 DOSYALIK MÜHENDİSLİK ÇÖZÜM yol haritası PAKETİ</div>
+    <p class="board-memo-p">Yazılım ekibimize teslim edilecek üretime hazır kod şablonları, JSON-LD şemaları ve n8n izleme iş akışları ile:</p>
+    <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
+      <li><strong>14KB AST Budama Şablonu:</strong> Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.</li>
+      <li><strong>Knowledge Vault @graph:</strong> Wikidata QID ve Corporation şeması doğrudan &lt;head&gt; içine eklenerek marka teyit edilir.</li>
+      <li><strong>llms.txt v2 &amp; Dinamik Markdown:</strong> Otonom yapay zeka satın alma ajanları için temiz makine-okunabilir arayüz.</li>
+      <li><strong>Önemli İlke:</strong> Biz analiz eder ve yol haritasını hazırlarız. Düzeltme çalışmasını firmanızın kendi yazılım ekibi uygular. Kaynak koda doğrudan müdahale edilmez.</li>
+    </ul>
+
+    <div class="board-memo-actions">
+      <div>
+        <div style="font-size:11px;color:#64748b;">Lisans Maliyeti: <strong style="font-size:16px;color:#0f172a;">$99</strong> (Tek seferlik sabit · Abonelik yok)</div>
+        <div style="font-size:10.5px;color:#10b981;">✓ 22 Dosyalık Tam Çözüm yol haritasıleri Paketi &amp; Anında ZIP İndirme</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button type="button" class="btn-board-memo" id="eaBtnPrintMemo" style="padding:10px 16px;font-size:12.5px;">🖨️ Yazdır / PDF Kaydet</button>
+        <button type="button" class="saas-modal-cta" id="eaBtnMemoUnlock" style="padding:10px 18px;font-size:13px;border:none;cursor:pointer;background:linear-gradient(135deg,#00d4ff,#0066ff);color:#fff;border-radius:8px;font-weight:700;">⚡ yol haritası Paketini Al ($99) →</button>
+      </div>
+    </div>
   </div>
 </div>
 

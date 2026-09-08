@@ -311,6 +311,12 @@
         }
       };
     });
+
+    // 11. Update AI Query Simulation and ARR Pipeline Risk Calculator
+    try {
+      renderSimulationCard();
+      updateArrCalculator();
+    } catch(e) {}
   }
 
   function renderDynamicFindings(domain, data) {
@@ -1040,6 +1046,131 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     });
   }
 
+  /* -------------------------------------------------------------
+   * Synthetic AI Query & Model Reaction Simulation
+   * ----------------------------------------------------------- */
+  let activeModelKey = 'pplx';
+  let isSimFixed = false;
+
+  function getProbeData(domain) {
+    const d = domain || currentTargetDomain || 'htmlandhtml.com';
+    return {
+      pplx: {
+        name: '🟣 Perplexity Pro (Sonar-Large)',
+        prompt: `"${d} kurumsal hizmetleri, fiyatlandırma ve yetkinlikleri"`,
+        rawStatus: 'Alıntı Reddedildi',
+        rawClass: 'sim-tag-red',
+        rawReason: '<strong>Kök Neden: ENTITY-VAULT-001</strong> (Wikidata QID / Doğrulanabilir Varlık kaydı yok).<br><strong>💡 İş Sonucu Tercümesi:</strong> Yapay zeka markanızı resmi ve onaylı bir kurum olarak tanıyamıyor; sektör sorularında sizi atlayıp doğrudan rakiplerinizi öneriyor.',
+        fixedReason: `<strong>Doğrulandı:</strong> Wikidata QID ve Corporation sameAs JSON-LD entegrasyonu sayesinde Perplexity Sonar markayı birincil kaynak olarak seçti. [Alıntı 1: https://${d}/]`
+      },
+      sgpt: {
+        name: '🟢 OpenAI SearchGPT & Operator',
+        prompt: `"${d} teknik mimari şartname ve API uç noktaları"`,
+        rawStatus: '14KB Erken Kesilme',
+        rawClass: 'sim-tag-amber',
+        rawReason: '<strong>Kök Neden: TOKEN-BLOAT-001 & RAG-CHUNK-001</strong>.<br><strong>💡 İş Sonucu Tercümesi:</strong> Arama motoru robotu sitenizde boğuluyor; 14KB bütçesini aştığı için fiyat ve hizmet sayfalarınızı göremeden çıkıyor.',
+        fixedReason: '<strong>KV-Cache Optimize Edildi:</strong> Cloudflare AST purge middleware devreye girdi; 14KB altı mikro-HTML SearchGPT Operator tarafından eksiksiz indekslendi.'
+      },
+      claude: {
+        name: '🟡 Anthropic Claude 3.5 Sonnet',
+        prompt: `"${d} sektör benchmarkları ve güvenilirlik kanıtı"`,
+        rawStatus: 'DPO Ceza Filtresi',
+        rawClass: 'sim-tag-amber',
+        rawReason: '<strong>Kök Neden: CORROBORATION-RING-001 & DPO-RLAIF-001</strong>.<br><strong>💡 İş Sonucu Tercümesi:</strong> Sayfanız somut veri yerine genel pazarlama lafları ettiği için robot filtrelerine takılıyor; arama motoru sitenizi tavsiye listesinden eliyor.',
+        fixedReason: '<strong>DPO Hizalaması Sağlandı:</strong> Bağımsız DOI/RFC ve üçüncü taraf benchmark korroborasyonu ile Claude Bayesçi güven filtresinden en yüksek güven puanını aldı.'
+      },
+      gemini: {
+        name: '🔵 Google Gemini 1.5 Pro & Overviews',
+        prompt: `"${d} kurumsal varlık ve organizasyon kimliği"`,
+        rawStatus: 'Yüzeysel Ontoloji',
+        rawClass: 'sim-tag-blue',
+        rawReason: '<strong>Kök Neden: ONTOLOGY-SUPERCLASS-001</strong>.<br><strong>💡 İş Sonucu Tercümesi:</strong> Şirket yapınız şemada derin tanımlanmadığı için Google AI Özetleri kutusunda yer alamıyor, potansiyel müşteriyi karşılayamıyorsunuz.',
+        fixedReason: '<strong>Bilgi Grafiği Eşleşti:</strong> Derin ontolojik JSON-LD şeması (Corporation -> knowsAbout -> sameAs) Google AI Overviews kutusunda doğrudan panel açtı.'
+      }
+    };
+  }
+
+  function renderSimulationCard() {
+    const container = document.getElementById('eaSimCardContainer');
+    if (!container) return;
+    const probeData = getProbeData(currentTargetDomain);
+    const m = probeData[activeModelKey] || probeData.pplx;
+    const statusTag = isSimFixed
+      ? '<span class="sim-status-tag sim-tag-blue" style="background:rgba(16,185,129,0.2);color:#34d399;border-color:rgba(16,185,129,0.4);padding:4px 10px;border-radius:6px;font-weight:800;">✅ 1. SIRA DOĞRULANMIŞ ALINTI</span>'
+      : `<span class="sim-status-tag ${m.rawClass}" style="padding:4px 10px;border-radius:6px;font-weight:800;">${m.rawStatus}</span>`;
+    const reasonText = isSimFixed ? m.fixedReason : m.rawReason;
+
+    container.innerHTML = `
+      <div class="simulation-card" style="grid-column:1 / -1; background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:14px; padding:20px;">
+        <div class="sim-head" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+          <span class="sim-model-name" style="font-size:15px; font-weight:800; color:var(--ea-text-primary);">${m.name}</span>
+          ${statusTag}
+        </div>
+        <div class="sim-query-box" style="background:rgba(255,255,255,0.04); border-left:3px solid var(--ea-accent, #00d4ff); padding:10px 14px; border-radius:6px; font-size:13px; color:var(--ea-text-primary); margin-bottom:12px;">
+          <strong style="color:var(--ea-accent, #00d4ff);">MODEL SORGUSU (PROMPT):</strong> ${m.prompt}
+        </div>
+        <p class="sim-reason-box" style="font-size:13.5px; line-height:1.6; color:var(--ea-text-secondary); margin:0;">
+          ${reasonText}
+        </p>
+      </div>
+    `;
+  }
+
+  /* -------------------------------------------------------------
+   * AI Pipeline Risk & ROI Calculator
+   * ----------------------------------------------------------- */
+  function calcArr(queries, deal) {
+    const leadRate = 0.0002;
+    const minLeads = Math.max(1, Math.round(queries * leadRate * 0.7));
+    const maxLeads = Math.max(minLeads + 2, Math.round(queries * leadRate * 1.3));
+    const minLoss = Math.round(minLeads * deal);
+    return { minLeads, maxLeads, minLoss };
+  }
+
+  function updateArrCalculator() {
+    const sQueries = document.getElementById('eaSliderQueries');
+    const sDeal = document.getElementById('eaSliderDeal');
+    if (!sQueries || !sDeal) return;
+    const q = parseInt(sQueries.value, 10) || 60000;
+    const d = parseInt(sDeal.value, 10) || 5000;
+    const lblQ = document.getElementById('eaLblQueries');
+    const lblD = document.getElementById('eaLblDeal');
+    const elLeads = document.getElementById('eaArrLeads');
+    const elLoss = document.getElementById('eaArrLoss');
+
+    if (lblQ) lblQ.textContent = q.toLocaleString('tr-TR');
+    if (lblD) lblD.textContent = '$' + d.toLocaleString('en-US');
+    const res = calcArr(q, d);
+    if (elLeads) elLeads.textContent = `${res.minLeads} – ${res.maxLeads} Müşteri`;
+    if (elLoss) elLoss.textContent = '$' + res.minLoss.toLocaleString('en-US');
+  }
+
+  /* -------------------------------------------------------------
+   * Executive Board Memo Modal
+   * ----------------------------------------------------------- */
+  function openEaBoardMemoModal() {
+    const modal = document.getElementById('eaBoardMemoModal');
+    if (!modal) return;
+    const domainSpan = document.getElementById('memoDomainStrong');
+    const targetSpan = document.getElementById('memoTargetSpan');
+    const dateSpan = document.getElementById('memoDateSpan');
+
+    if (domainSpan) domainSpan.textContent = currentTargetDomain;
+    if (targetSpan) targetSpan.textContent = currentTargetDomain;
+    if (dateSpan) {
+      dateSpan.textContent = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    modal.style.display = 'flex';
+    modal.hidden = false;
+  }
+
+  function closeEaBoardMemoModal() {
+    const modal = document.getElementById('eaBoardMemoModal');
+    if (!modal) return;
+    modal.hidden = true;
+    modal.style.display = 'none';
+  }
+
   // Initialize
   document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle
@@ -1082,6 +1213,73 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
       });
     });
 
+    // Simulation Toggles & Navigation
+    const btnRaw = document.getElementById('eaSimRawBtn');
+    const btnFixed = document.getElementById('eaSimFixedBtn');
+    if (btnRaw && btnFixed) {
+      btnRaw.addEventListener('click', function() {
+        isSimFixed = false;
+        btnRaw.classList.add('active');
+        btnFixed.classList.remove('active');
+        renderSimulationCard();
+      });
+      btnFixed.addEventListener('click', function() {
+        isSimFixed = true;
+        btnFixed.classList.add('active');
+        btnRaw.classList.remove('active');
+        renderSimulationCard();
+      });
+    }
+
+    document.querySelectorAll('.model-probe-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.model-probe-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        activeModelKey = this.dataset.model || 'pplx';
+        renderSimulationCard();
+      });
+    });
+
+    // Initial Simulation Render
+    renderSimulationCard();
+
+    // ARR Calculator Sliders
+    const sQueries = document.getElementById('eaSliderQueries');
+    const sDeal = document.getElementById('eaSliderDeal');
+    if (sQueries && sDeal) {
+      sQueries.addEventListener('input', updateArrCalculator);
+      sDeal.addEventListener('input', updateArrCalculator);
+      updateArrCalculator();
+    }
+
+    // Board Memo Modal Wiring
+    const btnOpenMemo = document.getElementById('eaBtnOpenBoardMemo');
+    if (btnOpenMemo) btnOpenMemo.addEventListener('click', openEaBoardMemoModal);
+
+    const btnCloseMemo = document.getElementById('eaBtnCloseBoardMemo');
+    if (btnCloseMemo) btnCloseMemo.addEventListener('click', closeEaBoardMemoModal);
+
+    const btnPrintMemo = document.getElementById('eaBtnPrintMemo');
+    if (btnPrintMemo) btnPrintMemo.addEventListener('click', function() { window.print(); });
+
+    const btnMemoUnlock = document.getElementById('eaBtnMemoUnlock');
+    if (btnMemoUnlock) {
+      btnMemoUnlock.addEventListener('click', function() {
+        closeEaBoardMemoModal();
+        showPaymentModal();
+      });
+    }
+
+    const memoModal = document.getElementById('eaBoardMemoModal');
+    if (memoModal) {
+      memoModal.addEventListener('click', function(e) {
+        if (e.target === memoModal) closeEaBoardMemoModal();
+      });
+    }
+
+    const btnOpenFix = document.getElementById('eaBtnOpenFixPack');
+    if (btnOpenFix) btnOpenFix.addEventListener('click', showPaymentModal);
+
     // Modals
     document.querySelectorAll('.recipe-cta, #actionBarBtn, .unlock-all-cta').forEach(function(btn) {
       btn.addEventListener('click', showPaymentModal);
@@ -1099,7 +1297,10 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
 
     // Close modal on escape
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') hidePaymentModal();
+      if (e.key === 'Escape') {
+        hidePaymentModal();
+        closeEaBoardMemoModal();
+      }
     });
 
     // Close modal on click outside
