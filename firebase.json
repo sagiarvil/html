@@ -39,7 +39,7 @@
           {"key":"Vary","value":"Accept-Encoding"},
           {"key":"Server-Timing","value":"cf-edge;dur=1, cdn-cache;desc=HIT"},
           {"key":"X-Served-By","value":"Cloudflare-Edge"},
-          {"key":"ETag","value":"W/\"htmlandhtml-v2-20260908\""}
+          {"key":"ETag","value":"W/\"htmlandhtml-v3-20260908-svg-bounds-fix\""}
         ]
       },
       {"source":"**/*.@(html|htm)","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
@@ -52,7 +52,12 @@
       {"source":"/assets/favicon-*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/assets/icon-*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/assets/logo*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/enterprise-analyzer","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/enterprise-analyzer/","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/enterprise-analyzer/**","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/enterprise-analyzer*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/ai-report","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/ai-report/**","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
       {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/llms/**","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=300, stale-while-revalidate=600"}]},

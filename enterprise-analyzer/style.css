@@ -90,6 +90,47 @@ html.light {
   --ea-highlight-color: #dc2626;
 }
 
+/* Universal SVG Safety Bounds (Zero Blowout / Silicon Valley Determinism) */
+svg {
+  box-sizing: content-box;
+}
+
+.ea-container svg {
+  max-width: 100%;
+}
+
+.recipe-content h4 svg,
+.evidence-header svg,
+.evidence-header h4 svg,
+.finding-meta-item svg,
+.finding-impact-box h4 svg,
+.finding-link svg,
+.ea-meta-item svg,
+.ea-mission-bar svg,
+.ea-hud-score-meta h3 svg,
+.ea-hud-score-head svg {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.recipe-lock-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
 /* Base Body & Layout */
 body {
   background: var(--ea-bg);
@@ -813,6 +854,18 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.recipe-content h4 svg {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 
 .recipe-steps {
