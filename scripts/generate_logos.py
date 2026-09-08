@@ -12,37 +12,55 @@ import subprocess
 import struct
 import zlib
 
-SOURCE_PATH = "/Users/macair1/.gemini/antigravity/brain/8bc304cf-639e-4a14-86a6-105281c9ab17/.user_uploaded/media_1788823464356.png"
 REPO_ROOT = "/Users/macair1/projects/html"
+SOURCE_PATH = os.path.join(REPO_ROOT, "assets", "brand", "logo-master-2026.png")
 
 def main():
     print(f"Reading source logo from {SOURCE_PATH}")
     logo_path = os.path.join(REPO_ROOT, "assets", "logo.png")
     logo_dark_path = os.path.join(REPO_ROOT, "assets", "logo-dark.png")
 
-    # 1. Generate logo.png with symmetric 8px padding around content (1014x211+5+10)
+    # 1. Detect content trim box based on alpha channel
+    trim_info = subprocess.check_output([
+        "magick", SOURCE_PATH,
+        "-alpha", "extract",
+        "-trim", "-format", "%wx%h%O",
+        "info:"
+    ]).decode().strip()
+    print(f"Detected content trim box: {trim_info}")
+
+    # 2. Generate logo.png with symmetric 8px transparent padding
     cmd_light = [
         "magick", SOURCE_PATH,
-        "-crop", "1014x211+5+10",
+        "-crop", trim_info,
         "+repage",
         "-bordercolor", "none",
         "-border", "8x8",
+        "-channel", "RGB",
+        "-evaluate", "set", "0",
+        "+channel",
+        "-colorspace", "sRGB",
+        "-type", "TrueColorAlpha",
         "-strip",
-        logo_path
+        f"PNG32:{logo_path}"
     ]
     subprocess.check_call(cmd_light)
 
-    # 2. Generate logo-dark.png (inverted colors for dark backgrounds)
+    # 3. Generate logo-dark.png (crisp white ink on transparent background)
     cmd_dark = [
         "magick", logo_path,
         "-channel", "RGB",
         "-negate",
         "+channel",
+        "-colorspace", "sRGB",
+        "-type", "TrueColorAlpha",
         "-strip",
-        logo_dark_path
+        f"PNG32:{logo_dark_path}"
     ]
     subprocess.check_call(cmd_dark)
-    print("Logo generation complete:", logo_path, logo_dark_path)
+    print("Logo generation complete:")
+    print(" - Light logo:", subprocess.check_output(["magick", "identify", logo_path]).decode().strip())
+    print(" - Dark logo:", subprocess.check_output(["magick", "identify", logo_dark_path]).decode().strip())
 
 if __name__ == "__main__":
     main()
