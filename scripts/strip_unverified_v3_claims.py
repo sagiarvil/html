@@ -17,7 +17,6 @@ def is_public(path: Path) -> bool:
 
 
 def normalize(text: str) -> str:
-    # Known customer-facing variants from legacy board/report copy.
     direct = (
         ('14KB AST bütçe aşımı', 'ölçülen HTML yükü ve semantik yapı sorunları'),
         ('14KB AST Budama Şablonu', 'HTML Yük ve Semantik Yapı Optimizasyonu'),
@@ -30,7 +29,6 @@ def normalize(text: str) -> str:
     for old, new in direct:
         text = text.replace(old, new)
 
-    # 14KB/14,336-byte "AI first window" is not a verified runtime measurement in current production.
     text = re.sub(
         r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,160}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,160}',
         'measured HTML payload, semantic structure and source-readiness evidence',
@@ -41,11 +39,11 @@ def normalize(text: str) -> str:
         'measured HTML payload, semantic structure and source-readiness evidence',
         text,
     )
-    # Absolute fallback: no public artifact may retain the unverified fixed-window token.
-    text = re.sub(r'(?i)14\s*KB', 'measured HTML payload', text)
-    text = re.sub(r'(?i)14,?336\s*(?:bytes?|bayt)', 'measured HTML payload', text)
 
-    # Do not claim live Wikidata/Common Crawl empirical verification unless the runtime actually performs it.
+    # Absolute literal fallback for minified JS/template literals.
+    text = text.replace('14KB', 'HTML payload').replace('14kb', 'HTML payload')
+    text = text.replace('14,336 bytes', 'measured HTML payload').replace('14.336 bayt', 'ölçülen HTML yükü')
+
     text = re.sub(
         r'(?i)Wikidata[^\n<]{0,180}(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,180}',
         'public entity and structured-data evidence',
@@ -62,7 +60,6 @@ def normalize(text: str) -> str:
         text,
     )
 
-    # Fixed application-time promises are not deterministic across customer stacks.
     text = re.sub(
         r'(?i)\b(?:30|60)\s*(?:seconds?|saniye)(?:de|da)?\b[^\n<]{0,140}(?:apply|uygula|uygulama|zero.?code|sıfır.?kod)[^\n<]{0,100}',
         'implementation time depends on the customer stack and evidence scope',
