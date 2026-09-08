@@ -59,12 +59,12 @@ test("Paddle commercial surface: pure 2-tier model (" + P0 + " and " + P99 + ") 
   }
 });
 
-test("Checkout surface: single " + P99 + " product displaying 22 delivery files", () => {
+test("Checkout surface: single " + P99 + " product displaying the 30+ file V3 package", () => {
   const checkout = readFileSync(resolve(ROOT, "checkout.html"), "utf-8");
   assert.ok(checkout.includes(P99), "Checkout must offer " + P99);
   assert.ok(!checkout.includes(P499), "Checkout must not contain " + P499);
   assert.ok(!checkout.includes("plan-toggle"), "Checkout must not contain plan-toggle");
-  assert.ok(checkout.includes("22 Dosya") || checkout.includes("22 Files"), "Checkout must highlight 22 files");
+  assert.ok(checkout.includes("30+ Dosya") || checkout.includes("30+ Files"), "Checkout must highlight the 30+ file package");
   assert.ok(checkout.includes("00_READ_ME.md"), "Checkout must list 00_READ_ME.md");
   assert.ok(checkout.includes("21_HALLUCINATION_TEST.py"), "Checkout must list 21_HALLUCINATION_TEST.py");
 });

@@ -52,7 +52,7 @@ OpenAI guidance is represented accurately:
 llms.txt remains labeled **PROPOSAL**. It is sold as an emerging machine-readable knowledge surface and validator opportunity, not as a Google ranking requirement.
 
 ## Commercial boundary
-Free diagnosis exposes evidence and readiness context. The implementation-grade product remains the **$149 Full Site Fix Mandate**. No unapproved $49/$99/$499 tiers or fake social proof are introduced by this positioning layer.
+Free diagnosis exposes evidence and readiness context. The implementation-grade product remains the **$99 Full Site Fix Mandate**. No unapproved $49/$99/$499 tiers or fake social proof are introduced by this positioning layer.
 
 ## Architecture invariants
 This content layer must not change:

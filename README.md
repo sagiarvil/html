@@ -9,7 +9,7 @@ HTML&HTML is a bilingual TR/EN website diagnosis and implementation-mandate prod
 3. Eighteen deterministic engines return all findings, URLs, severity, confidence, evidence class and measured evidence for free.
 4. Free results never expose implementation instructions and never invent source-file paths.
 5. `/api/mandate` re-scans the same domain and converts valid findings into an implementation contract only after paid entitlement verification.
-6. Full Site Fix Mandate is USD 99 for one domain (software license), delivering the turnkey 22-file software, code patches, and architectural blueprint bundle with one re-scan within 30 days.
+6. Full Site Fix Mandate is USD 99 for one domain (software license), delivering the turnkey versioned implementation software, code patches, and architectural blueprint bundle with one re-scan within 30 days.
 
 ## Eighteen engines
 

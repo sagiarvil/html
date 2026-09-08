@@ -2,7 +2,7 @@
  * HTML&HTML — Enterprise AI Visibility Diagnostic Suite
  * Silicon Valley / NYC / London Principal Engineering Architecture
  * Zero external unhandled exceptions, deterministic state, dual-theme sync, n8n automation,
- * and complete 22-file production delivery manifest compilation.
+ * and complete versioned production delivery manifest compilation.
  */
 (function(window, document) {
   'use strict';
@@ -91,7 +91,7 @@
         scoreMetaDesc.textContent = domain + ' için tespit edilen engeller yapay zeka görünürlük ve alıntı güven puanını baskılıyor.';
       } else {
         scoreMetaTitle.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Kritik Risk Tespit Edildi';
-        scoreMetaDesc.textContent = domain + ' yapay zeka arama botları tarafından taranırken kritik engellere takılıyor, model ağırlıklarında kayıp riski var.';
+        scoreMetaDesc.textContent = domain + ' yapay zeka arama botları tarafından taranırken kritik engellere takılıyor, açık webde bulunabilirlik ve kaynak olma riski var.';
       }
     }
 
@@ -413,7 +413,7 @@
         btn.disabled = false;
         hidePaymentModal();
         unlockPremium();
-        showToast('Ödeme doğrulandı! 22 Dosyalı Kurumsal Onarım Paketi aktif.', 'check');
+        showToast('Ödeme doğrulandı! sürümlenmiş Kurumsal Onarım Paketi aktif.', 'check');
       }, 900);
     }, 1100);
   }
@@ -455,14 +455,14 @@
     const timestamp = new Date().toISOString();
 
     // ==========================================
-    // CANONICAL 22-FILE PRODUCTION MANIFEST
+    // CANONICAL versioned PRODUCTION MANIFEST
     // Matching SUPER-MANDATE-V3.md Section 9
     // ==========================================
 
     const targetDomain = currentTargetDomain || 'htmlandhtml.com';
 
     // 00. Read Me
-    zip.file('00_READ_ME.md', `# HTML&HTML — AI Visibility Kurumsal Yol Haritası ve Onarım Paketi (22 Dosyalı Eksiksiz Arşiv)\n\nOluşturulma: ${timestamp}\nHedef: ${targetDomain}\nToplam Tespit: ${findings.length}\nLisans: Kurumsal Özel ($99 Tek Seferlik — Guest Checkout)\nMimari: Silikon Vadisi AI Search, ColBERT MaxSim, AEO & GEO Standartları\n\n---\n\n## Giriş ve Mühendislik Prensibi\nBu paket, HTML&HTML Enterprise Intelligence motoru tarafından üretilmiş deterministik bir üretim sınıfı mühendislik setidir.\nBiz analiz eder, önceliklendirir ve mühendislik planını hazırlarız. Kaynak kodunuza dokunmayız; bu belgeleri doğrudan kendi yazılım ekibinize veya DevOps mühendisinize teslim edersiniz.\n\n## 22 Dosyalı Envanter Dizini\n1. 00_READ_ME.md — Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik uygulama rehberi\n2. 01_EXECUTIVE_SUMMARY.md — C-Level yönetim özeti, 18 motor skoru ve kritik risk dağılım matrisi\n3. 02_IMPLEMENTATION_BLUEPRINT.md — P0–P3 uygulama sırası, kod şablonları ve teknik uygulama spesifikasyonu\n4. 03_FINDINGS.json — Makine okunabilir bulgular, URL'ler ve kanıt issue envanteri\n5. 04_ACCEPTANCE_TESTS.md — Düzeltmenin çalıştığını kanıtlayan Playwright ve cURL kabul testleri\n6. 05_ROLLBACK_PLAN.md — Hata halinde sıfır kesintili güvenli geri dönüş ve durdurma şartları\n7. 06_AI_READINESS.json — 6 layer + 13 audit makine okunabilir hazırlık verisi yüzeyi\n8. 07_IMPLEMENTATION_CHECKLIST.txt — Yazılım ekibi için adım adım yürütme kontrol listesi\n9. 08_LLMS_TXT_RECOMMENDED.txt — Müşterinin alan adına özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt\n10. 09_MACHINE_SURFACE_MAP.json — Alan adına özel doğrulanmış Markdown makine yüzey haritası\n11. 10_EVALUATION_REPORT.md — 18 motorlu deterministik değerlendirme ve saha verisi denetim raporu\n12. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md — Açık web veri havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu\n13. 12_CROSS_ENCODER_ATTENTION_MATRIX.json — Reranker sistemleri için alıntı skorlama dikkat matrisi mimarisi\n14. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json — Wikidata QID ve Knowledge Graph mutabakat üçlüleri (@graph kodu)\n15. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js — AI botlarına 14KB altı mikro-HTML sunan çalışan Cloudflare HTMLRewriter Worker kodu\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md — Halüsinasyonu engelleyen kanonik endeks ve sentetik atıf mimarisi\n17. 16_A2A_AGENT_CARD.json — Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card\n18. 17_MCP_SERVER_SPEC.json — Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması\n19. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md — AI model filtrelerinde teknik doğruluk ton ve biçim standardı\n20. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json — ColBERT geç etkileşimli iç çarpım vektör hizalama matrisi ve token kümeleri\n21. 20_C2PA_PROVENANCE_LEDGER_SPEC.json — RFC 3161 zaman damgası ve C2PA kriptografik içerik orijinallik manifest şeması\n22. 21_DARK_POOL_HALLUCINATION_MONITOR.py — Farklı modellerde (ChatGPT, Claude, Perplexity) marka halüsinasyonunu izleyen Python nöbetçisi\n+ workflows/n8n-ai-visibility-monitor.json — n8n CI/CD otomasyon şablonu\n+ scripts/validate-deployment.sh — Otomatik Bash doğrulama testi\n`);
+    zip.file('00_READ_ME.md', `# HTML&HTML — AI Visibility Kurumsal Yol Haritası ve Onarım Paketi (30+ Dosyalık Sürümlenmiş Arşiv)\n\nOluşturulma: ${timestamp}\nHedef: ${targetDomain}\nToplam Tespit: ${findings.length}\nLisans: Kurumsal Özel ($99 Tek Seferlik — Guest Checkout)\nMimari: Silikon Vadisi AI Search, ColBERT MaxSim, AEO & GEO Standartları\n\n---\n\n## Giriş ve Mühendislik Prensibi\nBu paket, HTML&HTML Enterprise Intelligence motoru tarafından üretilmiş deterministik bir üretim sınıfı mühendislik setidir.\nBiz analiz eder, önceliklendirir ve mühendislik planını hazırlarız. Kaynak kodunuza dokunmayız; bu belgeleri doğrudan kendi yazılım ekibinize veya DevOps mühendisinize teslim edersiniz.\n\n## 30+ Dosyalık Envanter Dizini\n1. 00_READ_ME.md — Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik uygulama rehberi\n2. 01_EXECUTIVE_SUMMARY.md — C-Level yönetim özeti, 18 motor skoru ve kritik risk dağılım matrisi\n3. 02_IMPLEMENTATION_BLUEPRINT.md — P0–P3 uygulama sırası, kod şablonları ve teknik uygulama spesifikasyonu\n4. 03_FINDINGS.json — Makine okunabilir bulgular, URL'ler ve kanıt issue envanteri\n5. 04_ACCEPTANCE_TESTS.md — Düzeltmenin çalıştığını kanıtlayan Playwright ve cURL kabul testleri\n6. 05_ROLLBACK_PLAN.md — Hata halinde sıfır kesintili güvenli geri dönüş ve durdurma şartları\n7. 06_AI_READINESS.json — 6 layer + 13 puan dışı istihbarat analizi makine okunabilir hazırlık verisi yüzeyi\n8. 07_IMPLEMENTATION_CHECKLIST.txt — Yazılım ekibi için adım adım yürütme kontrol listesi\n9. 08_LLMS_TXT_RECOMMENDED.txt — Müşterinin alan adına özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt\n10. 09_MACHINE_SURFACE_MAP.json — Alan adına özel doğrulanmış Markdown makine yüzey haritası\n11. 10_EVALUATION_REPORT.md — 18 motorlu deterministik değerlendirme ve saha verisi denetim raporu\n12. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md — Açık web veri havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu\n13. 12_CROSS_ENCODER_ATTENTION_MATRIX.json — Reranker sistemleri için alıntı skorlama dikkat matrisi mimarisi\n14. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json — Wikidata QID ve Knowledge Graph mutabakat üçlüleri (@graph kodu)\n15. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js — AI botlarına 14KB altı mikro-HTML sunan çalışan Cloudflare HTMLRewriter Worker kodu\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md — Halüsinasyonu engelleyen kanonik endeks ve sentetik atıf mimarisi\n17. 16_A2A_AGENT_CARD.json — Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card\n18. 17_MCP_SERVER_SPEC.json — Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması\n19. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md — AI model filtrelerinde teknik doğruluk ton ve biçim standardı\n20. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json — ColBERT geç etkileşimli iç çarpım vektör hizalama matrisi ve token kümeleri\n21. 20_C2PA_PROVENANCE_LEDGER_SPEC.json — RFC 3161 zaman damgası ve C2PA kriptografik içerik orijinallik manifest şeması\n22. 21_DARK_POOL_HALLUCINATION_MONITOR.py — Farklı modellerde (ChatGPT, Claude, Perplexity) marka halüsinasyonunu izleyen Python nöbetçisi\n+ workflows/n8n-ai-visibility-monitor.json — n8n CI/CD otomasyon şablonu\n+ scripts/validate-deployment.sh — Otomatik Bash doğrulama testi\n`);
 
     // 01. Executive Summary
     zip.file('01_EXECUTIVE_SUMMARY.md', `# 01. Yönetici Özeti (Executive Summary)\n\n**Hedef:** ${targetDomain}\n**Tarih:** ${timestamp}\n**Genel Skor:** 70 / 100\n**Bulgu Sayısı:** ${findings.length} adet (3 Yüksek, 6 Orta, 3 Düşük, 3 Bilgi)\n\n### Kritik Değerlendirme\nSiteniz Google AI Overviews, Perplexity ve Claude botları tarafından taranabilmekte ancak yapısal bariyerler (eksik canonical, ağır HTML, isimsiz kontroller, mixed content riski) nedeniyle alıntı güven puanı (Citation Confidence) baskılanmaktadır.\n\n### P0 Öncelikli Eylemler\n1. Form kontrollerine erişilebilir label eşleştirmeleri (WCAG AA)\n2. Mixed content kaynak referanslarının TLS 1.3 zorunluluğuna yükseltilmesi\n3. Self-referencing canonical etiketlerinin head başına eklenmesi\n\n### Tahmini İyileşme\nBu yol haritasındaki onarımlar tamamlandığında AI Visibility Skoru 70'ten 92+'ye yükselecektir.\n`);
@@ -721,7 +721,7 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     zip.generateAsync({ type: 'blob' }).then(function(content) {
       const fileName = targetDomain.replace(/[^a-z0-9.-]/gi, '_') + '-enterprise-delivery-pack.zip';
       saveAs(content, fileName);
-      showToast(targetDomain + ' için 22 Dosyalı Kurumsal Paket Başarıyla İndirildi!', 'download');
+      showToast(targetDomain + ' için sürümlenmiş Kurumsal Paket Başarıyla İndirildi!', 'download');
     }).catch(function(err) {
       console.error('ZIP Error:', err);
       showToast('ZIP paketi oluşturulurken bir hata oluştu.', 'x');

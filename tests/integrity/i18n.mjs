@@ -8,8 +8,8 @@ if(!trPricing.includes('data-premium-infographic="report-boundary"'))errors.push
 for(const token of ["domainPlaceholder:'ornek.com'","urlPlaceholder:'https://ornek.com/sayfa'","domainPlaceholder:'example.com'","urlPlaceholder:'https://example.com/page'",'sourceLabel(f.sourceClass)','D[lang].scanId','D[lang].implementationLocked'])if(!js.includes(token))errors.push(`validator locale contract missing ${token}`);
 if(!theme.includes('hh-language-changed'))errors.push('theme switch does not relabel on language change');
 for(const token of ['.finding p{font-size:15px!important','.finding code{font-size:13px!important','.scan-disclosure{font-size:14px!important','.tool-finding p{font-size:14px','.mention-row p{font-size:14px'])if(!(css+auth).includes(token))errors.push(`readability contract missing ${token}`);
-if(!/Yapay Zeka Sizi Buluyor mu\?/.test(trHome))errors.push('TR home concise hero missing');
-if(!/Can AI Find You\?/.test(enHome))errors.push('EN home concise hero missing');
+if(!/Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu\?/.test(trHome))errors.push('TR home AI SEO intent hero missing');
+if(!/Can ChatGPT, Gemini and Perplexity Find Your Website\?/.test(enHome))errors.push('EN home AI SEO intent hero missing');
 if(!/Ücretsiz Kontrol Et/.test(trHome))errors.push('TR scanner CTA missing');
 if(!/Check Free/.test(enHome))errors.push('EN scanner CTA missing');
 const trFiles=['tr/llms-txt-validator/index.html','tr/ai-crawler-checker/index.html','tr/ai-website-readiness/index.html','tr/ai-mention-tracker/index.html'];

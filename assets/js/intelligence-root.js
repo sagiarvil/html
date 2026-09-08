@@ -21,7 +21,7 @@ const copy={
     badgeFree:'🟢 Ücretsiz Kontrol ($0)',
     badge13:'13 Derin Analiz',
     badge7:'6 Katmanlı Mimari',
-    badgeRemedy:'🔒 Çözüm: $99 Onarım Seti (22 Dosya)',
+    badgeRemedy:'🔒 Çözüm: $99 Onarım Seti (sürümlenmiş teslim dosyaları)',
     tierGuideTitle:'Hangi Katman Neyi Kapsar? ($0 Kontrol vs. $99 Onarım Seti)',
     t0Title:'1. Ücretsiz Görünürlük Raporu',
     t0Price:'$0 Ücretsiz (Şu Anki Ekran)',

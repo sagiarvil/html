@@ -145,13 +145,13 @@ def transform_home(rel,lang):
     if '<main data-commercial-intent=' not in text:
         text=text.replace('<main>','<main data-commercial-intent="static">')
     if lang=='tr':
-        h='<h1 data-i18n="heroTitle">Yapay Zeka Sizi Tavsiye Ediyor mu?<br><em data-i18n="heroSubtitle">Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>' if rel!='en/index.html' else ''
+        h='<h1 data-i18n="heroTitle">Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?</h1>' if rel!='en/index.html' else ''
         text=re.sub(r'<h1 data-i18n="heroTitle">.*?</h1>',h,text,count=1,flags=re.S)
         text=text.replace('<b data-i18n="scan">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">Ücretsiz Tara</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>').replace('<b data-i18n="scan">AI Sizi Tavsiye Ediyor mu? Ücretsiz Kontrol Et</b>','<b data-i18n="scan">Ücretsiz Kontrol Et</b>')
 
     else:
-        text=re.sub(r'<h1[^>]*>Your Customer Asks AI.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
-        text=re.sub(r'<h1[^>]*>Know what blocks your website.*?</h1>','<h1 data-i18n="heroTitle">Can AI Find You?<br><em>Are You Ready to Be Recommended?</em></h1>',text,count=1,flags=re.S)
+        text=re.sub(r'<h1[^>]*>Your Customer Asks AI.*?</h1>','<h1 data-i18n="heroTitle">Can ChatGPT, Gemini and Perplexity Find Your Website?</h1>',text,count=1,flags=re.S)
+        text=re.sub(r'<h1[^>]*>Know what blocks your website.*?</h1>','<h1 data-i18n="heroTitle">Can ChatGPT, Gemini and Perplexity Find Your Website?</h1>',text,count=1,flags=re.S)
         text=text.replace('<b data-i18n="scan">Check My AI Visibility Free</b>','<b data-i18n="scan">Check Free</b>').replace('<b data-i18n="scan">Scan Free</b>','<b data-i18n="scan">Check Free</b>')
         text=text.replace('<b>Check My AI Visibility Free</b>','<b>Check Free</b>').replace('<b>Scan Free</b>','<b>Check Free</b>')
     # Remove #tools, #engines, #how if present
@@ -182,7 +182,7 @@ def patch_assets():
     js=ROOT/'assets/js/validator.js?v=4'
     if js.exists():
         t=js.read_text(encoding='utf-8').replace('$149','$99').replace("scan:'Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et'","scan:'Ücretsiz Kontrol Et'").replace("scan:'Ücretsiz Tara'","scan:'Ücretsiz Kontrol Et'").replace("scan:'Check My AI Visibility Free'","scan:'Check Free'").replace("scan:'Scan Free'","scan:'Check Free'")
-        t=t.replace("heroTitle:'Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?'","heroTitle:'Yapay Zeka Sizi Buluyor mu?<br><em>Tavsiye Edilmeye Hazır mısınız?</em>'")
+        t=t.replace("heroTitle:'Müşteriniz Yapay Zekaya “Kimi Tavsiye Edersin?” Diye Soruyor. Cevapta Siz Var mısınız?'","heroTitle:'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'")
         js.write_text(t,encoding='utf-8')
     for rel in ['checkout.html','openapi.json']:
         p=ROOT/rel

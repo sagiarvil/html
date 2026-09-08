@@ -31,7 +31,7 @@ const checks=[
   [!/\$49(?!\d)|\$149/.test(index),'legacy mandate prices still present on homepage'],
   [fs.readFileSync(path.join(root,'tr/araclar/index.html'),'utf8').includes('data-premium-infographic="scope-map"')&&fs.readFileSync(path.join(root,'tr/fiyatlandirma/index.html'),'utf8').includes('data-premium-infographic="report-boundary"'),'premium infographic system missing from authority routes'],
   [/premium-experience\.css/.test(index),'premium responsive CSS missing from homepage'],
-  [/Yapay Zeka Sizi Buluyor mu\?/.test(index)&&/Tavsiye Edilmeye Hazır mısınız\?/.test(index),'concise customer-first hero missing'],
+  [/Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu\?/.test(index),'search-intent customer-first hero missing'],
   [!/Google doğruluk sınırı/i.test(glossary),'removed Google accuracy-boundary callout must not render'],
   [!/\((?:feat|fix|chore|refactor|docs|style|test):/i.test(index),'git commit metadata leaked into homepage DOM'],
   [/MANDATE_ACCESS_TOKEN/.test(mandate)&&/status:402/.test(mandate)&&/status:503/.test(mandate),'paid mandate must fail closed without entitlement/config'],

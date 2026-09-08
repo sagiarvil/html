@@ -13,7 +13,7 @@ const meta=document.getElementById('toolMeta');
 const findings=document.getElementById('toolFindings');
 const btn=form?.querySelector('button');
 const copy={tr:{
- scanning:'Site taranıyor; 18 motor ve 13 istihbarat denetimi aynı kanıt zincirinde çalışıyor…',
+ scanning:'Site taranıyor; 18 motor ve 13 puan dışı istihbarat analizi aynı kanıt zincirinde çalışıyor…',
  failed:'Tarama tamamlanamadı.',
  clear:'Bu kapsamda doğrulanmış sorun bulunmadı.',
  score:'seçili kapsam skoru',
@@ -26,7 +26,7 @@ const copy={tr:{
  badgeFree:'🟢 Ücretsiz Kontrol ($0)',
  badge13:'13 Derin Analiz',
  badge7:'6 Katmanlı Mimari',
- badgeRemedy:'🔒 Çözüm: $99 Onarım Seti (22 Dosya)',
+ badgeRemedy:'🔒 Çözüm: $99 Onarım Seti (sürümlenmiş teslim dosyaları)',
  t0Title:'1. Ücretsiz Görünürlük Raporu',
  t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
  t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 6 katmanlı derin mimariyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
@@ -49,7 +49,7 @@ const copy={tr:{
  bridgeBtn99:'Skoru Yükselt →'
 },
 en:{
- scanning:'Scanning the site; 18 engines and 13 intelligence audits run on the same evidence chain…',
+ scanning:'Scanning the site; 18 engines and 13 non-scoring intelligence analyses run on the same evidence chain…',
  failed:'Scan could not be completed.',
  clear:'No verified issue was found in this scope.',
  score:'selected-scope score',
