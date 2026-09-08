@@ -13,7 +13,7 @@ export const onRequest: PagesFunction = async ({ request }) => {
       capabilities: {
         tools: {
           scan: {
-            description: 'Scan a website URL for 12-engine technical SEO, AI readiness, LLMs.txt, Schema, and accessibility signals.',
+            description: 'Scan a website URL for 18-engine technical SEO, AI readiness, LLMs.txt, Schema, and accessibility signals.',
             inputSchema: {
               type: 'object',
               properties: { url: { type: 'string', description: 'The URL to scan' } },

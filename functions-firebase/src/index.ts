@@ -22,7 +22,7 @@ export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},asyn
   if(req.method!=='GET'){res.status(405).json({error:'GET only'});return}
   res.status(200).json({
     status:'ok',service:'htmlandhtml-validator',version:'2.5.0',remediationMandateVersion:'1.1',intelligenceLayerVersion:INTELLIGENCE_VERSION,deliveryPackVersion:DELIVERY_PACK_VERSION,
-    scanEngines:12,intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT,readinessLenses:READINESS_LENS_COUNT,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,freeDiagnosis:true,
+    scanEngines:18,intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT,readinessLenses:READINESS_LENS_COUNT,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,freeDiagnosis:true,
     fullSiteFixMandatePriceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,deliveryPack:true,paidMandateConfigured:Boolean(process.env.MANDATE_ACCESS_TOKEN),guestDeliveryConfigured:Boolean(process.env.DELIVERY_SIGNING_SECRET),guestEntitlementBoundary:'domain+order',
     paddleCheckout:true,paddlePriceId:PADDLE_PRICE_ID,paddleWebhook:'/api/paddle/webhook',
     aiMentionTracker:true,aiMentionAccessConfigured:Boolean(process.env.AI_MENTION_ACCESS_TOKEN),timestamp:new Date().toISOString()
@@ -138,7 +138,7 @@ export const mcp=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},async(r
       capabilities:{
         tools:{
           scan:{
-            description:'Scan a website URL for 12-engine technical SEO, AI readiness, LLMs.txt, Schema, and accessibility signals.',
+            description:'Scan a website URL for 18-engine technical SEO, AI readiness, LLMs.txt, Schema, and accessibility signals.',
             inputSchema:{
               type:'object',
               properties:{url:{type:'string',description:'The URL to scan'}},

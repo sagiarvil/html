@@ -18,6 +18,7 @@
   --blue: #3f61df;
   --radius: 18px;
   --shadow: 0 24px 70px rgba(20,20,16,.08);
+  --hero-grid-color: rgba(17, 18, 15, 0.038);
 }
 html[data-theme="dark"] {
   --paper: #14151a;
@@ -28,6 +29,7 @@ html[data-theme="dark"] {
   --soft: #181a22;
   --blue: #2563eb;
   --shadow: 0 20px 50px rgba(0,0,0,.5);
+  --hero-grid-color: rgba(255, 255, 255, 0.048);
 }
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) {
@@ -39,6 +41,7 @@ html[data-theme="dark"] {
     --soft: #181a22;
     --blue: #2563eb;
     --shadow: 0 20px 50px rgba(0,0,0,.5);
+    --hero-grid-color: rgba(255, 255, 255, 0.048);
   }
 }
 * { box-sizing: border-box; }
@@ -171,23 +174,72 @@ html[data-theme="dark"] .brand-logo { filter: invert(1) brightness(1.1); }
   font-weight: 800;
   font-size: 13px;
 }
+.hero,
+.authority-hero,
+.concept-hero,
+.glossary-hero,
+.pricing-hero,
+.news-hero,
+.news-hub-hero,
+.px-pricing-hero,
+.px-scope-hero {
+  position: relative;
+  overflow: hidden;
+}
 .hero {
   max-width: var(--shell-max);
   margin: 0 auto;
   padding: 76px 24px 64px;
   text-align: center;
   border-bottom: 1px solid var(--line);
-  position: relative;
-  overflow: hidden;
 }
-.hero:before {
+.hero:before,
+.authority-hero:before,
+.concept-hero:before,
+.glossary-hero:before,
+.pricing-hero:before,
+.news-hero:before,
+.news-hub-hero:before,
+.px-pricing-hero:before,
+.px-scope-hero:before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to right, rgba(17,18,15,.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,18,15,.035) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to right, var(--hero-grid-color, rgba(17,18,15,.038)) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--hero-grid-color, rgba(17,18,15,.038)) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: linear-gradient(to bottom, black, transparent 80%);
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(
+    ellipse 42% 40% at 50% 42%,
+    #000 0%,
+    #000 16%,
+    rgba(0, 0, 0, 0.6) 42%,
+    rgba(0, 0, 0, 0.15) 68%,
+    transparent 84%
+  );
+  mask-image: radial-gradient(
+    ellipse 42% 40% at 50% 42%,
+    #000 0%,
+    #000 16%,
+    rgba(0, 0, 0, 0.6) 42%,
+    rgba(0, 0, 0, 0.15) 68%,
+    transparent 84%
+  );
   pointer-events: none;
+  z-index: 0;
+}
+.hero > *,
+.authority-hero > *,
+.concept-hero > *,
+.glossary-hero > *,
+.pricing-hero > *,
+.news-hero > *,
+.news-hub-hero > *,
+.px-pricing-hero > *,
+.px-scope-hero > * {
+  position: relative;
+  z-index: 1;
 }
 .kicker {
   position: relative;

@@ -14,7 +14,7 @@
     "Public scanning must not invent private source-code ownership or file paths.",
     "Security boundaries must fail closed for private, local, reserved or credential-bearing targets.",
     "Experimental agent surfaces must not be published solely to improve a score.",
-    "The Intelligence Audit layer is decision support and never mutates the canonical 12-engine overall score."
+    "The Intelligence Audit layer is decision support and never mutates the canonical 18-engine overall score."
   ],
   "sourceClasses":[
     {"id":"OFFICIAL_STANDARD","meaning":"Normative or standards-track specification."},

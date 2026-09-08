@@ -253,7 +253,7 @@ def build_platform_hub():
   <div class="authority-callout">
     <div>
       <h3>{'Metodolojimizi ve ağırlıklarımızı inceleyin.' if lang == 'tr' else 'Inspect our methodology and public weights.'}</h3>
-      <p>{'12 analiz motorumuzun ağırlıkları, kural kaynakları ve epistemik sınırları herkese açık olarak belgelenmiştir.' if lang == 'tr' else 'Our 18-engine scoring weights, source registries, and epistemic boundaries are fully published and transparent.'}</p>
+      <p>{'18 analiz motorumuzun ağırlıkları, kural kaynakları ve epistemik sınırları herkese açık olarak belgelenmiştir.' if lang == 'tr' else 'Our 18-engine scoring weights, source registries, and epistemic boundaries are fully published and transparent.'}</p>
     </div>
     <a href="/{'tr/methodology/' if lang == 'tr' else 'en/methodology/'}">{'Metodoloji' if lang == 'tr' else 'Methodology'} →</a>
   </div>
@@ -341,7 +341,7 @@ def build_pricing_hub():
       </div>
       <p>{'Herkese açık web sitesi yüzeyinde tam teşhis.' if lang == 'tr' else 'Full diagnostic crawl across up to 50 public pages.'}</p>
       <ul>
-        <li>{'12 deterministik motor skoru' if lang == 'tr' else '12 deterministic engine scores'}</li>
+        <li>{'18 deterministik motor skoru' if lang == 'tr' else '18 deterministic engine scores'}</li>
         <li>{'Tüm bulgular + doğrulanmış kanıtlar' if lang == 'tr' else 'All findings with attached evidence'}</li>
         <li>{'Severity + confidence + source class etiketleri' if lang == 'tr' else 'Severity, confidence, and source class'}</li>
         <li>{'Robots.txt ve AI tarayıcı politika matrisi' if lang == 'tr' else 'AI crawler policy matrix'}</li>

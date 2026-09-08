@@ -20,7 +20,7 @@ tools_data = [
         "categories": "crawl,technical,ai,llms,schema,performance,accessibility,security,trust,agent,conversion,links",
         "en": {
             "title": "Website Scanner — Full 18-engine Site Audit | HTML&HTML",
-            "desc": "Audit your website with 12 deterministic engines. Discover crawl, technical SEO, AI readiness, schema, performance, accessibility, security and link issues with evidence.",
+            "desc": "Audit your website with 18 deterministic engines. Discover crawl, technical SEO, AI readiness, schema, performance, accessibility, security and link issues with evidence.",
             "kicker": "18-engine WEBSITE SCANNER",
             "h1": "Complete evidence-based <em>website diagnosis.</em>",
             "sub": "Run all 18 independent diagnostic engines across up to 50 public HTML pages. Identify technical blockers, crawler restrictions and machine-readable discovery gaps.",
@@ -39,7 +39,7 @@ tools_data = [
             "lim_p2": "Does not sell false promises or guarantee search engine or ChatGPT ranking outcomes.",
             "faq_title": "Frequently Asked Questions",
             "faqs": [
-                ("What is the difference between this and Lighthouse?", "Lighthouse evaluates synthetic browser performance on a single URL. HTML&HTML crawls up to 50 pages across 12 deterministic engines including AI crawlers, llms.txt, schema, and security."),
+                ("What is the difference between this and Lighthouse?", "Lighthouse evaluates synthetic browser performance on a single URL. HTML&HTML crawls up to 50 pages across 18 deterministic engines including AI crawlers, llms.txt, schema, and security."),
                 ("Why is implementation detail locked?", "Evidence is free so you know what is broken and where. The $99 Yol Haritası provides root causes, implementation order, regression tests, and rollback plans for your engineering team."),
                 ("How are private networks protected?", "Localhost, private IP ranges, cloud metadata endpoints, and redirect pivots into private addresses fail closed before any socket connection.")
             ],
@@ -49,11 +49,11 @@ tools_data = [
         },
         "tr": {
             "title": "Web Sitesi Tarayıcısı — 18 Motorlu Tam Site Denetimi | HTML&HTML",
-            "desc": "Web sitenizi 12 analiz motoruyla ücretsiz tarayın. Teknik SEO, AI hazırlığı, schema, performans, erişilebilirlik, güvenlik ve link sorunlarını kanıtıyla görün.",
+            "desc": "Web sitenizi 18 analiz motoruyla ücretsiz tarayın. Teknik SEO, AI hazırlığı, schema, performans, erişilebilirlik, güvenlik ve link sorunlarını kanıtıyla görün.",
             "kicker": "18 MotorLU WEB SİTESİ TARAYICISI",
             "h1": "Kanıta dayalı eksiksiz <em>web sitesi teşhisi.</em>",
             "sub": "En fazla 50 herkese açık HTML sayfasını 18 bağımsız analiz motoruyla tarayın. Teknik engelleri, bot kısıtlamalarını ve makine-okunabilir veri eksikliklerini tespit edin.",
-            "proof": ["12 Analiz Motoru", "50 Sayfa Sınırı", "Doğrulanmış Kanıt", "Kayıt Gerekmez"],
+            "proof": ["18 Analiz Motoru", "50 Sayfa Sınırı", "Doğrulanmış Kanıt", "Kayıt Gerekmez"],
             "tool_title": "Ücretsiz tam web sitesi taraması",
             "tool_sub": "Alan adını girin. 18 motor çalışır ve önceliklendirilmiş kanıtları listeler.",
             "btn": "Siteyi tara",
@@ -119,7 +119,7 @@ tools_data = [
             "sub": "Modern arama motorları ve AI asistanları yalnızca anahtar kelimelere bakmaz. HTML&HTML, makine tarafından okunabilirliği, ajan keşfini ve bot izinlerini doğrulanmış kanıtlarla denetler.",
             "proof": ["LLM Keşfedilebilirliği", "Ajan Uyumluluğu", "Varlık Şemaları", "Sıfır Sahte Veri"],
             "tool_title": "Ücretsiz AI hazırlık denetimi",
-            "tool_sub": "12 analiz motoru genelinde sitenizin yapay zeka hazırlığını ölçmek için alan adınızı girin.",
+            "tool_sub": "18 analiz motoru genelinde sitenizin yapay zeka hazırlığını ölçmek için alan adınızı girin.",
             "btn": "Hazırlığı denetle",
             "scope_eyebrow": "HTML&HTML / KAPSAM",
             "scope_title": "Üretken motor optimizasyonunun üç temel ayağı.",

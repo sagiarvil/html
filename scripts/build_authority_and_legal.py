@@ -392,7 +392,7 @@ def build_company_legal():
             "tr": {
                 "title": "İletişim — HTML&HTML Yazılım Desteği ve Lisanslama",
                 "h1": "HTML&HTML İletişim: <em>Yazılım Desteği ve Lisanslama</em>",
-                "sub": "12 analiz motorumuzun yazılım metodolojisi, OpenAPI entegrasyonu veya dijital yazılım paketi teslimatı hakkında sorularınız için bize ulaşın.",
+                "sub": "18 analiz motorumuzun yazılım metodolojisi, OpenAPI entegrasyonu veya dijital yazılım paketi teslimatı hakkında sorularınız için bize ulaşın.",
                 "body": """<h2>Mühendislik İletişimi</h2><p>Tarama motoru kuralları, yanlış pozitif bildirimleri veya kaynak kayıt defteri güncellemeleri için mühendislik ekibimizle iletişime geçebilirsiniz.</p><h2>Yazılım Lisanslama ve Destek</h2><p>$99 Full Site Yol Haritası Yazılım Paketi, dijital indirme teslimatı veya faturalar hakkındaki tüm sorularınız için contact@htmlandhtml.com adresinden bize ulaşabilirsiniz.</p>"""
             }
         },
