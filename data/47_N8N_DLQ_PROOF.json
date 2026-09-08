@@ -1,12 +1,12 @@
 {
   "testTitle": "Mandate V4 Section 17 & 22.4 Controlled Failure & DLQ Proof",
-  "verifiedAt": "2026-09-08T17:21:48.460Z",
-  "executionMs": 2,
+  "verifiedAt": "2026-09-08T18:17:02.331Z",
+  "executionMs": 3,
   "validRunUncorrupted": true,
   "validTargetScore": 88,
   "controlledFailureRecord": {
     "nodeId": "03_SSRF_GUARD",
-    "timestamp": "2026-09-08T17:21:48.460Z",
+    "timestamp": "2026-09-08T18:17:02.331Z",
     "inputTarget": "https://unreachable-bogus-target-99881122.invalid",
     "inputHash": "1ee03c845fb5d9bf7ea251dd1e35bda4acdc7dc40d74363d69aff4c73a8d41d1",
     "errorClass": "DNS_NXDOMAIN_UNREACHABLE",
