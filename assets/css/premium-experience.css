@@ -4915,3 +4915,175 @@ html[data-theme="light"] .sim-tag-blue {
   border-color: #bfdbfe !important;
 }
 
+/* ==========================================================================
+   ENTERPRISE N8N NODE INSPECTOR & TELEMETRY SYSTEM
+   ========================================================================== */
+.dag-inspector-panel {
+  background: rgba(10, 15, 30, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  line-height: 1.55;
+  transition: all 0.2s ease;
+}
+html[data-theme="light"] .dag-inspector-panel {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+.dag-inspector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+html[data-theme="light"] .dag-inspector-header {
+  border-bottom-color: #e2e8f0 !important;
+}
+.dag-inspector-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+html[data-theme="light"] .dag-inspector-title {
+  color: #0284c7 !important;
+}
+.dag-node-type-badge {
+  font-size: 10.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #c084fc;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+html[data-theme="light"] .dag-node-type-badge {
+  background: #faf5ff !important;
+  border-color: #d8b4fe !important;
+  color: #7e22ce !important;
+}
+.dag-inspector-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.dag-insp-tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 750;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.dag-insp-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+}
+.dag-insp-tab-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+html[data-theme="light"] .dag-insp-tab-btn {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+html[data-theme="light"] .dag-insp-tab-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .dag-insp-tab-btn.active {
+  background: #eff6ff !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
+.dag-inspector-body {
+  font-size: 12.5px;
+}
+.dag-json-box {
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #38bdf8;
+  max-height: 220px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  margin: 0;
+}
+html[data-theme="light"] .dag-json-box {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0369a1 !important;
+}
+.dag-dlq-box {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #fca5a5;
+  line-height: 1.55;
+}
+html[data-theme="light"] .dag-dlq-box {
+  background: #fef2f2 !important;
+  border-color: #fecaca !important;
+  border-left: 4px solid #dc2626 !important;
+  color: #991b1b !important;
+}
+
+/* Finding Telemetry Strip (Deterministic Math & Evidence) */
+.finding-telemetry-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 10px;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  font-size: 11px;
+}
+html[data-theme="light"] .finding-telemetry-strip {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.finding-telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #94a3b8;
+}
+html[data-theme="light"] .finding-telemetry-item {
+  color: #64748b !important;
+}
+.finding-telemetry-item strong {
+  color: #f1f5f9;
+  font-weight: 750;
+}
+html[data-theme="light"] .finding-telemetry-item strong {
+  color: #0f172a !important;
+}
+
+

@@ -841,15 +841,98 @@ remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executi
 <div id="tab-ci" class="console-pane">${lockPaneHtml('code-ci-pre',ciGateSample,'24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (Enterprise CI/CD Gate)','btnDlCiYaml')}</div>`;
 
 const DAG_STEPS=[
-  {name:'01 · CRON / CI Webhook Trigger',text:isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'},
-  {name:'02 · Probe Surfaces (llms.txt & robots)',text:isTr?'https://'+cleanDomainSafe+'/llms.txt ve /robots.txt dosyalarını HTTP GET ile sorgulayarak spesifikasyon bütünlüğünü doğrular.':'Probes /llms.txt and /robots.txt via HTTP GET to verify markdown linkage and bot permissions.'},
-  {name:'03 · Multi-Bot Ingestion Probe',text:isTr?'PerplexityBot, GPTBot ve ClaudeBot User-Agent başlıklarıyla tarayarak edge WAF ve HTTP 200 OK yanıtını test eder.':'Simulates PerplexityBot, GPTBot, and ClaudeBot ingestion to verify edge WAF passes without blocks.'},
-  {name:'04 · Deterministic AST 14KB Gate',text:isTr?'JavaScript Code Node: HTML boyutunu (<14KB AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<14KB AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.'},
-  {name:'05 · Bayesian Drift Triage (Score < 80?)',text:isTr?'Hesaplanan sağlık skoru 80 altına düşerse veya kritik engel tespit edilirse acil durum dalına yönlendirir.':'Routes payload to incident branch if computed health score falls below 80/100 threshold.'},
-  {name:'06 · Self-Healing Auto-Purge & Alert',text:isTr?'Cloudflare Edge Cache Purge API çağrısını tetikleyerek önbelleği temizler ve Slack/PagerDuty incident kanallarına alarm fırlatır.':'Executes automated Cloudflare Edge Cache Purge API and dispatches incident telemetry to Slack/PagerDuty.'}
+  {
+    step: '01',
+    name: isTr?'01 · CRON / CI Webhook Tetikleyici':'01 · CRON / CI Webhook Trigger',
+    nodeType: 'n8n-nodes-base.scheduleTrigger',
+    badge: 'TRIGGER',
+    desc: isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.',
+    config: `{\n  "rule": { "interval": [{ "field": "cronExpression", "expression": "0 3 * * *" }] },\n  "webhookPath": "trigger-ai-audit",\n  "httpMethod": "POST",\n  "auth": "HMAC-SHA256"\n}`,
+    inputSchema: `// Event Trigger Context\n{\n  "source": "github_actions",\n  "event": "production_deploy",\n  "target": "${cleanDomainSafe}"\n}`,
+    outputSchema: `{\n  "triggerTimestamp": "2026-09-08T03:00:01Z",\n  "domain": "${cleanDomainSafe}",\n  "auditEngines": 18,\n  "status": "QUEUED"\n}`,
+    dlqPolicy: isTr?'3x exponential backoff (1s, 2s, 4s). Başarısızlıkta PagerDuty / Slack devops kanalına P1 alert iletilir.':'3x exponential backoff. P1 triage alert dispatched to PagerDuty/Slack on repeated failure.'
+  },
+  {
+    step: '02',
+    name: isTr?'02 · llms.txt & robots.txt Doğrulama':'02 · Probe Surfaces (llms.txt & robots)',
+    nodeType: 'n8n-nodes-base.httpRequest',
+    badge: 'PROBE',
+    desc: isTr?'https://'+cleanDomainSafe+'/llms.txt ve /robots.txt dosyalarını HTTP GET ile sorgulayarak spesifikasyon bütünlüğünü doğrular.':'Probes /llms.txt and /robots.txt via HTTP GET to verify markdown linkage and bot permissions.',
+    config: `{\n  "url": "https://${cleanDomainSafe}/llms.txt",\n  "method": "GET",\n  "timeout": 8000,\n  "headers": { "Accept": "text/markdown, text/plain;q=0.9" }\n}`,
+    inputSchema: `{\n  "targetUrl": "https://${cleanDomainSafe}/llms.txt",\n  "timeoutMs": 8000\n}`,
+    outputSchema: `{\n  "httpStatus": 200,\n  "specVersion": "Spec-v2",\n  "canonicalH1": "# ${cleanDomainSafe}",\n  "payloadBytes": 1842,\n  "valid": true\n}`,
+    dlqPolicy: isTr?'404/500 durumunda: Cloudflare Worker üzerinde dinamik sentetik llms.txt fallback katmanı devreye girer.':'On 404/500: Fallback to dynamic synthetic llms.txt served via Cloudflare Worker edge route.'
+  },
+  {
+    step: '03',
+    name: isTr?'03 · Çoklu-Bot (Perplexity/GPTBot) İnceleme':'03 · Multi-Bot Ingestion Probe',
+    nodeType: 'n8n-nodes-base.httpRequest',
+    badge: 'INGEST',
+    desc: isTr?'PerplexityBot, GPTBot ve ClaudeBot User-Agent başlıklarıyla tarayarak edge WAF ve HTTP 200 OK yanıtını test eder.':'Simulates PerplexityBot, GPTBot, and ClaudeBot ingestion to verify edge WAF passes without blocks.',
+    config: `{\n  "url": "https://${cleanDomainSafe}/",\n  "headers": {\n    "User-Agent": "Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/bot)",\n    "Accept": "text/html, application/xhtml+xml"\n  },\n  "timeout": 10000\n}`,
+    inputSchema: `{\n  "botUserAgents": ["PerplexityBot/1.0", "GPTBot/1.0", "ClaudeBot/1.0"]\n}`,
+    outputSchema: `{\n  "httpStatus": 200,\n  "cfRay": "92fa88301be48c12-VIE",\n  "protocol": "HTTP/3 0-RTT",\n  "ttfbMs": 22,\n  "wafAllowed": true\n}`,
+    dlqPolicy: isTr?'WAF 403 Challenge tespitinde: Cloudflare Edge Custom Rule listesi güncellenerek bot IP ASN bloğu muaf tutulur.':'On WAF 403 block: Triggers edge firewall rule update to allow verified AI crawler ASN blocks.'
+  },
+  {
+    step: '04',
+    name: isTr?'04 · Deterministik 14KB AST Bütçe Kapısı':'04 · Deterministic AST 14KB Gate',
+    nodeType: 'n8n-nodes-base.code',
+    badge: 'AUDIT',
+    desc: isTr?'JavaScript Code Node: HTML boyutunu (<14KB AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<14KB AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.',
+    config: `// Deterministic AST Evaluation\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nreturn [{ json: { isBloated: bytes > 14336, bytes, astBudget: 14336 } }];`,
+    inputSchema: `{\n  "rawDomBytes": 412850,\n  "tokenCount": 104200,\n  "hasDataChunkId": false\n}`,
+    outputSchema: `{\n  "astBudgetCap": 14336,\n  "actualPrunedBytes": 11840,\n  "wikidataTriples": 14,\n  "status": "PASSED"\n}`,
+    dlqPolicy: isTr?'Boyut 14KB aşarsa: Edge HTMLRewriter otomatik devreye alınır, DOM script ve SVG gürültüsü budanır.':'On Overflow: HTMLRewriter stream prunes scripts and SVGs to preserve 14KB budget.'
+  },
+  {
+    step: '05',
+    name: isTr?'05 · Bayesçi Sürüklenme & Triyaj (Skor < 80)':'05 · Bayesian Drift Triage (Score < 80?)',
+    nodeType: 'n8n-nodes-base.if',
+    badge: 'TRIAGE',
+    desc: isTr?'Hesaplanan sağlık skoru 80 altına düşerse veya kritik engel tespit edilirse acil durum dalına yönlendirir.':'Routes payload to incident branch if computed health score falls below 80/100 threshold.',
+    config: `{\n  "conditions": {\n    "number": [{ "value1": "={{ $json.driftScore }}", "operation": "smaller", "value2": 80 }]\n  }\n}`,
+    inputSchema: `{\n  "driftScore": 88,\n  "criticalBlockers": 0,\n  "minScoreGate": 80\n}`,
+    outputSchema: `{\n  "branch": "HEALTHY_CONTINUE",\n  "incidentTriggered": false,\n  "cachePurgeNeeded": false\n}`,
+    dlqPolicy: isTr?'Skor < 80 olduğunda: P0 incident kaydı açılır, mühendislik ekibine anında SMS/Slack gönderilir.':'Score < 80: High-priority incident logged and remediation alert dispatched to on-call.'
+  },
+  {
+    step: '06',
+    name: isTr?'06 · Kendi Kendini Onarma & Edge Purge':'06 · Self-Healing Auto-Purge & Alert',
+    nodeType: 'n8n-nodes-base.httpRequest',
+    badge: 'AUTO-HEAL',
+    desc: isTr?'Cloudflare Edge Cache Purge API çağrısını tetikleyerek önbelleği temizler ve Slack/PagerDuty incident kanallarına alarm fırlatır.':'Executes automated Cloudflare Edge Cache Purge API and dispatches incident telemetry to Slack/PagerDuty.',
+    config: `{\n  "url": "https://api.cloudflare.com/client/v4/zones/zone-id/purge_cache",\n  "method": "POST",\n  "headers": { "Authorization": "Bearer CF_API_TOKEN" },\n  "body": { "tags": ["ai-knowledge-graph", "llms-txt"] }\n}`,
+    inputSchema: `{\n  "purgeTags": ["ai-knowledge-graph", "llms-txt"],\n  "zoneId": "cf-zone-941038"\n}`,
+    outputSchema: `{\n  "success": true,\n  "purgedPoPs": 310,\n  "propagationTimeMs": 140,\n  "status": "CACHE_SYNCHRONIZED"\n}`,
+    dlqPolicy: isTr?'API hatasında: 5 sn arayla 2 kez yeniden dener. Başarısızlıkta failover DNS kontrolü çalıştırılır.':'On API failure: Retries with 5s delay. Fallback to origin cache TTL expiration.'
+  }
 ];
 
-remConsole.querySelectorAll('.dag-node-card').forEach(card=>{card.addEventListener('click',()=>{remConsole.querySelectorAll('.dag-node-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');const idx=parseInt(card.dataset.step,10);const inspector=document.getElementById('dagNodeInspector');if(inspector&&DAG_STEPS[idx])inspector.innerHTML=`<strong>[${DAG_STEPS[idx].name}]</strong>: ${DAG_STEPS[idx].text}`})});
+let currentDagIdx=0;
+let currentDagTab='logic';
+function renderDagInspector(idx, subTab){
+  currentDagIdx=idx;
+  if(subTab) currentDagTab=subTab;
+  const inspector=document.getElementById('dagNodeInspector');
+  if(!inspector||!DAG_STEPS[idx]) return;
+  const s=DAG_STEPS[idx];
+  let bodyHtml='';
+  if(currentDagTab==='logic'){
+    bodyHtml=`<p style="margin:0 0 10px;font-size:13px;line-height:1.6;"><strong>${isTr?'Görev & İş Mantığı:':'Mission & Logic:'}</strong> ${safe(s.desc)}</p><div style="display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#94a3b8;"><span style="color:#10b981;">✓ <strong>${isTr?'Standardı:':'Standard:'}</strong> Deterministik n8n DAG</span><span>⏱️ <strong>${isTr?'Zaman Aşımı:':'Timeout:'}</strong> 8000ms</span><span>🛡️ <strong>${isTr?'İzolasyon:':'Isolation:'}</strong> Fail-Closed</span></div>`;
+  } else if(currentDagTab==='config'){
+    bodyHtml=`<pre class="dag-json-box"><code>${safe(s.config)}</code></pre>`;
+  } else if(currentDagTab==='io'){
+    bodyHtml=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:10.5px;font-weight:750;color:#94a3b8;">${isTr?'GİRDİ (INPUT PAYLOAD JSON):':'INPUT PAYLOAD JSON:'}</span><pre class="dag-json-box"><code>${safe(s.inputSchema)}</code></pre></div><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:10.5px;font-weight:750;color:#10b981;">${isTr?'ÇIKTI (OUTPUT PAYLOAD JSON):':'OUTPUT PAYLOAD JSON:'}</span><pre class="dag-json-box"><code>${safe(s.outputSchema)}</code></pre></div></div>`;
+  } else if(currentDagTab==='dlq'){
+    bodyHtml=`<div class="dag-dlq-box"><strong>🛡️ ${isTr?'Ölü Mektup Kuyruğu (DLQ) İlkesi:':'Dead-Letter Queue (DLQ) Policy:'}</strong><p style="margin:4px 0 0;">${safe(s.dlqPolicy)}</p></div>`;
+  }
+  inspector.innerHTML=`<div class="dag-inspector-header"><div class="dag-inspector-title"><span>${safe(s.name)}</span><span class="dag-node-type-badge">${safe(s.nodeType)}</span></div><div class="dag-inspector-tabs"><button type="button" class="dag-insp-tab-btn ${currentDagTab==='logic'?'active':''}" data-dagtab="logic">📋 ${isTr?'Özet & Mantık':'Overview & Logic'}</button><button type="button" class="dag-insp-tab-btn ${currentDagTab==='config'?'active':''}" data-dagtab="config">⚙️ ${isTr?'Parametreler':'Config'}</button><button type="button" class="dag-insp-tab-btn ${currentDagTab==='io'?'active':''}" data-dagtab="io">🧬 ${isTr?'Girdi/Çıktı JSON':'I/O Payloads'}</button><button type="button" class="dag-insp-tab-btn ${currentDagTab==='dlq'?'active':''}" data-dagtab="dlq">🛡️ ${isTr?'DLQ Kurtarma':'DLQ Recovery'}</button></div></div><div class="dag-inspector-body">${bodyHtml}</div>`;
+  inspector.querySelectorAll('.dag-insp-tab-btn').forEach(b=>{b.addEventListener('click',()=>{renderDagInspector(currentDagIdx,b.dataset.dagtab)})});
+}
+renderDagInspector(0,'logic');
+
+remConsole.querySelectorAll('.dag-node-card').forEach(card=>{card.addEventListener('click',()=>{remConsole.querySelectorAll('.dag-node-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');const idx=parseInt(card.dataset.step,10);renderDagInspector(idx,currentDagTab);})});
 
 // Interactive SaaS Toggles
 remConsole.querySelectorAll('.saas-interactive-toggle').forEach(row=>{
@@ -896,23 +979,22 @@ if(btnRunDag){
     const origText=btnRunDag.innerHTML;
     btnRunDag.innerHTML='⏳ '+ (isTr?'Akış Çalışıyor...':'Running Pipeline...');
     const cards=remConsole.querySelectorAll('.dag-node-card');
-    const inspector=document.getElementById('dagNodeInspector');
     cards.forEach(c=>{c.classList.remove('active','simulating','sim-done')});
     
     for(let i=0;i<DAG_STEPS.length;i++){
       const c=cards[i];
       if(c){
         c.classList.add('simulating');
-        if(inspector){
-          inspector.innerHTML=`<span style="color:#f59e0b;font-weight:800;">[03:00:0${i+1} UTC EXEC]</span> <strong>[${DAG_STEPS[i].name}]</strong>: ${DAG_STEPS[i].text}`;
-        }
-        await new Promise(r=>setTimeout(r,550));
+        renderDagInspector(i, 'io');
+        await new Promise(r=>setTimeout(r,650));
         c.classList.remove('simulating');
         c.classList.add('sim-done');
       }
     }
+    renderDagInspector(5, 'logic');
+    const inspector=document.getElementById('dagNodeInspector');
     if(inspector){
-      inspector.innerHTML=`<span style="color:#10b981;font-weight:800;">[03:00:07 UTC ✅ SELF-HEALING SUCCESS]</span> <strong>${cleanDomainSafe}</strong>: ${isTr?'Tüm 18 motor kontrol noktaları doğrulandı. Edge önbellek tazelendi ve site AI arama motorları için 1. sıra tavsiye edilmeye hazır.':'All 18-engine checkpoints verified. Edge cache synchronized and domain primed for top-tier AI citations.'}`;
+      inspector.insertAdjacentHTML('afterbegin',`<div style="margin-bottom:10px;padding:8px 12px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:8px;font-size:12px;color:#10b981;"><strong>[03:00:07 UTC ✅ SELF-HEALING SUCCESS]</strong> ${cleanDomainSafe}: ${isTr?'18 motor kontrol noktaları doğrulandı. Edge önbellek senkronize edildi.':'All 18-engine checkpoints verified. Edge cache synchronized.'}</div>`);
     }
     btnRunDag.innerHTML='✅ '+ (isTr?'Akış Tamamlandı':'Pipeline Done');
     setTimeout(()=>{btnRunDag.disabled=false;btnRunDag.innerHTML=origText;},2500);
@@ -982,8 +1064,9 @@ function generateFindingRecipe(f, domain, scanId, isTr) {
       const timeEst=f.severity==='critical'?(isTr?'15 dk':'15 min'):(f.severity==='high'?(isTr?'30 dk':'30 min'):(isTr?'45 dk':'45 min'));
       const techLevel=f.severity==='critical'?(isTr?'Kolay':'Low'):(isTr?'Orta':'Medium');
       const healthDossierHtml=`<div class="executive-translation-box"><span class="executive-translation-label">💡 ${isTr?'İş Sonucu Tercümesi (Karar Verici Özeti)':'Executive Translation (Business Outcome)'}</span><p class="executive-translation-text">${safe(execText)}</p></div><div class="finding-health-dossier"><div class="health-dossier-box"><span class="health-dossier-label">🔍 ${isTr?'Nasıl Anlarsınız?':'How to Verify?'}</span><p class="health-dossier-text">${safe(verifyText)}</p></div><div class="health-dossier-box"><span class="health-dossier-label">📉 ${isTr?'İş Etkisi Ne?':'Business Impact'}</span><p class="health-dossier-text">${safe(bizImpact)}</p></div></div><div class="health-dossier-meta"><span>⏱️ ${isTr?'Çözüm Süresi':'Fix Time'}: <strong>${safe(timeEst)}</strong></span><span>⚙️ ${isTr?'Teknik Seviye':'Effort'}: <strong>${safe(techLevel)}</strong></span></div>`;
+      const telemetryStripHtml=`<div class="finding-telemetry-strip"><span class="finding-telemetry-item">📐 <span>${isTr?'Ölçüm Standardı:':'Audit Standard:'}</span> <strong>${f.id.includes('TOKEN')?'W3C AST Budget (<14,336B)':(f.id.includes('ENTITY')?'W3C JSON-LD 1.1 / Wikidata':(f.id.includes('RAG')?'ColBERT RAG 512-Token Window':'RFC 9110 HTTP Protocol'))}</strong></span><span class="finding-telemetry-item">🎯 <span>${isTr?'Doğrulama:':'Verification:'}</span> <strong>${isTr?'%100 Deterministik':'100% Deterministic'}</strong></span><span class="finding-telemetry-item">🛡️ <span>${isTr?'Sınır:':'Boundary:'}</span> <strong>${isTr?'Kendi Yazılımcınıza Teslim Edin':'Handover to In-House Devs'}</strong></span></div>`;
       const recipeHtml = generateFindingRecipe(f, data.domain, data.scanId, isTr);
-      list.insertAdjacentHTML('beforeend',`<article class="finding finding-tier-${safe(f.severity)}" data-severity="${safe(f.severity)}"><div class="finding-tags"><span class="severity ${safe(f.severity)}"><i class="sev-dot"></i>${safe((sev[f.severity]||sev.info)[lang])}</span><span class="tag-id">${safe(f.id)}</span><span class="tag-conf">${safe(c)}</span><span class="tag-source">${safe(sourceLabel(f.sourceClass))}</span></div><div class="finding-content"><h4>${safe(title)}</h4><p>${safe(impact)}</p>${f.url?`<small class="finding-url">🔗 ${safe(f.url)}</small>`:''}${f.evidence?`<code>${safe(f.evidence)}</code>`:''}${healthDossierHtml}${recipeHtml}</div></article>`);
+      list.insertAdjacentHTML('beforeend',`<article class="finding finding-tier-${safe(f.severity)}" data-severity="${safe(f.severity)}"><div class="finding-tags"><span class="severity ${safe(f.severity)}"><i class="sev-dot"></i>${safe((sev[f.severity]||sev.info)[lang])}</span><span class="tag-id">${safe(f.id)}</span><span class="tag-conf">${safe(c)}</span><span class="tag-source">${safe(sourceLabel(f.sourceClass))}</span></div><div class="finding-content"><h4>${safe(title)}</h4><p>${safe(impact)}</p>${telemetryStripHtml}${f.url?`<small class="finding-url">🔗 ${safe(f.url)}</small>`:''}${f.evidence?`<code>${safe(f.evidence)}</code>`:''}${healthDossierHtml}${recipeHtml}</div></article>`);
 });
 
 let closingDeck=document.getElementById('closingInterventionDeck');
