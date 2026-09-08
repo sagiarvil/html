@@ -318,6 +318,108 @@ def build_homepages():
   </div>
 </section>
 
+<!-- 08.5 AI VISIBILITY FUNNEL & RECIPE ARCHITECTURE -->
+<section class="hhtml-funnel-section" id="ai-visibility-funnel">
+  <div class="hhtml-funnel-wrap">
+    <div class="hhtml-funnel-hero">
+      <span class="hhtml-funnel-badge">Şeffaf Teşhis &amp; Mühendislik Çözüm Modeli</span>
+      <h2>18 Motorlu Teşhis Ücretsiz, Çözüm Reçeteleri $99</h2>
+      <p>Sitenizdeki tüm teknik açıkları ve iş etkisini şeffaf şekilde listeliyoruz. Yazılımcınıza teslim edeceğiniz 24 dosyalık hazır kod paketini ve adım adım düzeltme reçetesini tek seferlik $99 ile açın.</p>
+    </div>
+
+    <div class="hhtml-funnel-flow">
+      <div class="hhtml-funnel-step" data-step="free">
+        <div class="hhtml-funnel-icon free-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h4>1. Ücretsiz Canlı Teşhis</h4>
+        <p>18 uzman motor sitenizi tarar. 4 sütun skoru, simülasyonlar, tüm teknik açıklar, kanıtlar ve iş etkisi şeffafça sunulur.</p>
+        <div class="hhtml-funnel-tags">
+          <span class="hhtml-tag hhtml-tag-open">100% Açık &amp; Ücretsiz</span>
+        </div>
+      </div>
+
+      <div class="hhtml-funnel-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+
+      <div class="hhtml-funnel-step" data-step="frosted">
+        <div class="hhtml-funnel-icon frosted-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h4>2. Kilitli Çözüm Reçeteleri</h4>
+        <p>Her tespitin hemen altında, yazılımcınızın sorunu nasıl düzelteceğini gösteren adım adım reçete ve kod şablonu yer alır.</p>
+        <div class="hhtml-funnel-tags">
+          <span class="hhtml-tag hhtml-tag-frosted">Buzlu Gölge Önizleme</span>
+        </div>
+      </div>
+
+      <div class="hhtml-funnel-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+
+      <div class="hhtml-funnel-step" data-step="premium">
+        <div class="hhtml-funnel-icon premium-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </div>
+        <h4>3. 24 Dosyalık Kod Paketi</h4>
+        <p>$99 ödeme sonrası tüm kilitler kalkar; yazılımcınıza teslim edebileceğiniz 24 dosyalı eksiksiz ZIP anında indirilir.</p>
+        <div class="hhtml-funnel-tags">
+          <span class="hhtml-tag hhtml-tag-premium">Tek Seferlik $99</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hhtml-compare-table">
+      <div class="hhtml-compare-header">
+        <div>Özellik &amp; Kapsam</div>
+        <div style="text-align:center;">Ücretsiz Teşhis</div>
+        <div style="text-align:center;">$99 Çözüm Paketi</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">18 Motorlu Kapsamlı Canlı Tarama</div>
+        <div class="hhtml-compare-free">✅ Açık</div>
+        <div class="hhtml-compare-premium">✅ Açık</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">4 Sütun Skoru ve Bayesçi Görünürlük Simülasyonu</div>
+        <div class="hhtml-compare-free">✅ Açık</div>
+        <div class="hhtml-compare-premium">✅ Açık</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Tüm Teknik Açıklar, URL'ler, Kanıtlar ve İş Etkisi</div>
+        <div class="hhtml-compare-free">✅ Açık</div>
+        <div class="hhtml-compare-premium">✅ Açık</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Her Tespitin Altında 3 Adımlı Düzeltme Reçetesi</div>
+        <div class="hhtml-compare-free"><span class="hhtml-blur-demo">🔒 Buzlu Gölge</span></div>
+        <div class="hhtml-compare-premium">✅ Tam Açık <span class="hhtml-price-tag">$99</span></div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Cloudflare Worker AST Budama ve Proxy Kod Şablonları</div>
+        <div class="hhtml-compare-free">🔒 Kilitli</div>
+        <div class="hhtml-compare-premium">✅ Üretime Hazır</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Wikidata QID &amp; Corporation @graph JSON-LD Şemaları</div>
+        <div class="hhtml-compare-free">🔒 Kilitli</div>
+        <div class="hhtml-compare-premium">✅ Doğrulanmış Kod</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Yazılımcıya Teslim Edilebilir 24 Dosyalık ZIP Paketi</div>
+        <div class="hhtml-compare-free">❌ Yok</div>
+        <div class="hhtml-compare-premium">✅ Anında Otomatik İndirme</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Sitede İnsan Müdahalesi / Manuel Kodlama</div>
+        <div class="hhtml-compare-free" style="color:#94a3b8;font-size:12px;">❌ Yok (Yazılımcınız Yapar)</div>
+        <div class="hhtml-compare-premium" style="color:#94a3b8;font-size:12px;">❌ Yok (Yazılımcınıza Teslim Edin)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 09 SHORT FAQ -->
 <section class="section faq" id="faq">
   <header>
@@ -661,9 +763,111 @@ def build_homepages():
         <small data-i18n="oneSite">1 domain / software license</small>
         <strong>$99</strong>
       </div>
-      <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Full Site Yol Haritası →</a>
+      <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Download Resolution Pack — $99 →</a>
       <small class="note" data-i18n="checkoutNote">Public scanning never invents source file names; source context enables file-level targeting.</small>
     </aside>
+  </div>
+</section>
+
+<!-- 08.5 AI VISIBILITY FUNNEL & RECIPE ARCHITECTURE -->
+<section class="hhtml-funnel-section" id="ai-visibility-funnel">
+  <div class="hhtml-funnel-wrap">
+    <div class="hhtml-funnel-hero">
+      <span class="hhtml-funnel-badge">Transparent Diagnostic &amp; Resolution Model</span>
+      <h2>18-Engine Diagnosis Free, Resolution Recipes $99</h2>
+      <p>We transparently diagnose every blocker and business impact on your domain. Unlock the 24-file production code package and step-by-step resolution playbook for your in-house developers for a single $99.</p>
+    </div>
+
+    <div class="hhtml-funnel-flow">
+      <div class="hhtml-funnel-step" data-step="free">
+        <div class="hhtml-funnel-icon free-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h4>1. Free Live Diagnostic</h4>
+        <p>18 specialized engines audit your domain. 4 pillar scores, simulations, all blockers, evidence, and business outcomes are displayed openly.</p>
+        <div class="hhtml-funnel-tags">
+          <span class="hhtml-tag hhtml-tag-open">100% Open &amp; Free</span>
+        </div>
+      </div>
+
+      <div class="hhtml-funnel-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+
+      <div class="hhtml-funnel-step" data-step="frosted">
+        <div class="hhtml-funnel-icon frosted-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h4>2. Frosted Resolution Recipes</h4>
+        <p>Directly beneath each finding, the exact 3-step developer recipe and code template are frosted with curious shadow previews.</p>
+        <div class="hhtml-funnel-tags">
+          <span class="hhtml-tag hhtml-tag-frosted">Frosted Preview</span>
+        </div>
+      </div>
+
+      <div class="hhtml-funnel-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+
+      <div class="hhtml-funnel-step" data-step="premium">
+        <div class="hhtml-funnel-icon premium-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </div>
+        <h4>3. 24-File Resolution Pack</h4>
+        <p>$99 payment unlocks all frosted recipes and delivers the complete 24-file production ZIP directly for your engineering team.</p>
+        <div class="hhtml-funnel-tags">
+          <span class="hhtml-tag hhtml-tag-premium">One-Time $99</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hhtml-compare-table">
+      <div class="hhtml-compare-header">
+        <div>Feature &amp; Scope</div>
+        <div style="text-align:center;">Free Diagnostic</div>
+        <div style="text-align:center;">$99 Resolution Pack</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">18-Engine Comprehensive Live Audit</div>
+        <div class="hhtml-compare-free">✅ Open</div>
+        <div class="hhtml-compare-premium">✅ Open</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">4-Pillar Score &amp; Bayesian Ingestion Simulations</div>
+        <div class="hhtml-compare-free">✅ Open</div>
+        <div class="hhtml-compare-premium">✅ Open</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">All Findings, URLs, Evidence &amp; Business Impact</div>
+        <div class="hhtml-compare-free">✅ Open</div>
+        <div class="hhtml-compare-premium">✅ Open</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Under-Finding 3-Step Resolution Recipe</div>
+        <div class="hhtml-compare-free"><span class="hhtml-blur-demo">🔒 Frosted Shadow</span></div>
+        <div class="hhtml-compare-premium">✅ Fully Unlocked <span class="hhtml-price-tag">$99</span></div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Cloudflare Worker AST Prune &amp; Edge Code Templates</div>
+        <div class="hhtml-compare-free">🔒 Locked</div>
+        <div class="hhtml-compare-premium">✅ Production-Ready</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">Wikidata QID &amp; Corporation @graph JSON-LD Schemas</div>
+        <div class="hhtml-compare-free">🔒 Locked</div>
+        <div class="hhtml-compare-premium">✅ Validated Code</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">24-File Engineering Handover ZIP Package</div>
+        <div class="hhtml-compare-free">❌ None</div>
+        <div class="hhtml-compare-premium">✅ Instant Automated Download</div>
+      </div>
+      <div class="hhtml-compare-row">
+        <div class="hhtml-compare-col">On-Site Human Engineering / Origin Coding Work</div>
+        <div class="hhtml-compare-free" style="color:#94a3b8;font-size:12px;">❌ None (Your In-House Devs)</div>
+        <div class="hhtml-compare-premium" style="color:#94a3b8;font-size:12px;">❌ None (Handover to Your Devs)</div>
+      </div>
+    </div>
   </div>
 </section>
 

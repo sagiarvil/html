@@ -21,3 +21,4 @@ paddle-keys.txt
 .secret*
 *.secret
 *.local
+enterprise-analyzer/
