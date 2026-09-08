@@ -463,9 +463,9 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     }
 
     // Filter tabs
-    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    document.querySelectorAll('.filter-btn, .ea-filter-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.filter-btn, .ea-filter-btn').forEach(function(b) { b.classList.remove('active'); });
         this.classList.add('active');
         filterFindings(this.dataset.filter);
       });
