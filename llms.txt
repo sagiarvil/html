@@ -164,6 +164,10 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [Enterprise AI Agents via Cloudflare Agent Cloud and OpenAI Integration](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/)
+- [Google Tests Traditional Search Campaigns in AI Mode](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/)
+- [Managing Artificial Intelligence Investments in the Agentic Era](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/)
+- [Endava Builds an Agentic Organization with Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/)
 - [Update to the Site Reputation Policy: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/)
 - [Platform properties roll out globally, plus a new social and video performance guide: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/)
 - [See how content from social and video platforms performs on Google Search: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f/)
@@ -180,8 +184,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Google's February 2026 Discover core update: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0/)
 - [Search Central Live is coming back to South America: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5/)
 - [Search Central Live APAC 2025 Recap: A Note of Gratitude: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745/)
-- [Introducing weekly and monthly views in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d/)
-- [Introducing social channels in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-social-channels-in-search-console-62c336c509/)
-- [Streamline your Search Console analysis with the new AI-powered configuration: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-12-01-streamline-your-search-console-analysis-with-the-n-fbdfb9a5ea/)
-- [Introducing the Branded queries filter in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2025-11-01-introducing-the-branded-queries-filter-in-search-c-9c55e5f0e0/)
 <!-- LLMS_NEWS_END -->

@@ -39,24 +39,6 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/platform/"/>
   </url>
   <url>
-    <loc>https://htmlandhtml.com/enterprise-analyzer/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report-LIGHT.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://htmlandhtml.com/en/tools/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
@@ -572,9 +554,9 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/sozluk/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.86</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/sozluk/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/glossary/"/>
   </url>
@@ -691,18 +673,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/e-e-a-t-trust-signals/"/>
   </url>
   <!-- LLMS_SUBGRAPHS_START -->
-  <url><loc>https://htmlandhtml.com/llms.txt</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/core.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/entities/experts.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/entities/methodologies.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/pages/home.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/pages/services.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/pages/pricing.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://htmlandhtml.com/llms/pages/protocols.md</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms.txt</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/core.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/entities/experts.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/entities/methodologies.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/pages/home.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/pages/services.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/pages/pricing.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://htmlandhtml.com/llms/pages/protocols.md</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <!-- LLMS_SUBGRAPHS_END -->
   <!-- LLMS_NEWS_START -->
-  <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/"/></url>
-  <url><loc>https://htmlandhtml.com/en/llms-txt-news/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/"/></url>
+  <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/"/></url>
+  <url><loc>https://htmlandhtml.com/en/llms-txt-news/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/"/></url>
+  <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/"/></url>
+  <url><loc>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/"/></url>
+  <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/"/></url>
+  <url><loc>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/"/></url>
+  <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/"/></url>
+  <url><loc>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/"/></url>
+  <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/"/></url>
+  <url><loc>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/</loc><lastmod>2026-09-08</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/"/></url>
   <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/"/></url>
   <url><loc>https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/"/><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/"/></url>
   <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/</loc><lastmod>2026-09-06</lastmod><changefreq>daily</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/"/><xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/"/></url>
