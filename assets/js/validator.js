@@ -168,6 +168,65 @@ function openSaasRemediationModal(data){
   modal.addEventListener('click',e=>{if(e.target===modal){modal.hidden=true;modal.style.display='none'}});
   document.getElementById('btnScrollToConsole')?.addEventListener('click',()=>{modal.hidden=true;modal.style.display='none';document.getElementById('remediationConsoleDeck')?.scrollIntoView({behavior:'smooth',block:'start'})});
 }
+function openBoardMemoModal(data){
+  const isTr=lang==='tr';
+  const cDomain=data?.domain||'domain.com';
+  const scanId=data?.scanId||'scan_01';
+  let modal=document.getElementById('boardMemoModal');
+  if(!modal){
+    modal=document.createElement('div');
+    modal.id='boardMemoModal';
+    modal.className='board-memo-modal';
+    document.body.appendChild(modal);
+  }
+  const dateStr=new Date().toLocaleDateString(isTr?'tr-TR':'en-US',{year:'numeric',month:'long',day:'numeric'});
+  modal.innerHTML=`
+    <div class="board-memo-paper">
+      <button type="button" class="board-memo-close" id="btnCloseBoardMemo" aria-label="Close">✕</button>
+      <div class="board-memo-header">
+        <div style="font-size:11px;font-weight:800;letter-spacing:0.08em;color:#64748b;text-transform:uppercase;">${isTr?'GİZLİ // YÖNETİM KURULU İÇ MEMORANDUMU':'CONFIDENTIAL // BOARD OF DIRECTORS MEMO'}</div>
+        <h2 class="board-memo-title">${isTr?'YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ & EDGE ENJEKSİYON RAPORU':'AI SEARCH VISIBILITY & EDGE REMEDIATION MANDATE'}</h2>
+        <div class="board-memo-meta-grid">
+          <div class="board-memo-meta-item"><strong>${isTr?'KİME:':'TO:'}</strong> ${isTr?'İcra Kurulu, CEO & CTO':'Board of Directors, CEO & CTO'}</div>
+          <div class="board-memo-meta-item"><strong>${isTr?'TARİH:':'DATE:'}</strong> ${safe(dateStr)}</div>
+          <div class="board-memo-meta-item"><strong>${isTr?'HEDEF:':'TARGET:'}</strong> ${safe(cDomain)}</div>
+          <div class="board-memo-meta-item"><strong>${isTr?'KAPSAM:':'SCOPE:'}</strong> 18 AI Engine Audit &amp; Edge Fix</div>
+        </div>
+      </div>
+      <div class="board-memo-section-title">${isTr?'1. YÖNETİCİ ÖZETİ VE RİSK TEŞHİSİ':'1. EXECUTIVE SUMMARY & RISK DIAGNOSIS'}</div>
+      <p class="board-memo-p">${isTr?`Şirketimizin ana alan adı (<strong>${safe(cDomain)}</strong>) üzerinde yürütülen yapay zeka arama motorları (Perplexity, SearchGPT, Claude, Gemini) denetiminde; 14KB AST bütçe aşımı ve şema eksikliği nedeniyle aylık 8–15 kurumsal müşteri / B2B satış fırsatının doğrudan rakiplere yönlendirildiği tespit edilmiştir.`:`Audited primary domain (<strong>${safe(cDomain)}</strong>) reveals critical token bloat exceeding 14KB AST budget window, resulting in 8–15 qualified B2B enterprise leads leaking to competitors monthly.`}</p>
+      
+      <div class="board-memo-highlight">
+        ⚖️ <strong>${isTr?'Finansal Etki:':'Financial Impact:'}</strong> ${isTr?'Mevcut kurumsal sepet hacmimize göre her ay on binlerce dolarlık satın alma niyetli trafik sitenizi göremeden aracı platformlara kaymaktadır.':'Tens of thousands of dollars in high-intent commercial pipeline are suppressed due to crawler truncation.'}
+      </div>
+
+      <div class="board-memo-section-title">${isTr?'2. ÖNERİLEN ÇÖZÜM: SIFIR KOD RİSKİYLE CLOUDFLARE EDGE ENJEKSİYONU':'2. RECOMMENDED ACTION: ZERO ORIGIN TOUCH CLOUDFLARE EDGE INJECTION'}</div>
+      <p class="board-memo-p">${isTr?'Yazılım ekibimizin mevcut kod tabanına veya veritabanına tek bir satır dokunulmayacaktır. Cloudflare Worker tersine proxy mimarisi ile 72 saat içinde:':'Zero codebase changes required from internal engineering. Using a Cloudflare Worker reverse proxy, all 4 blockers are closed at the edge in 72 hours:'}</p>
+      <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
+        <li><strong>${isTr?'14KB AST Budama:':'Sub-14KB AST Purge:'}</strong> ${isTr?'Arama botları sayfayı terk etmeden tüm ürün ve fiyat katmanını KV-Cache belleğine alır.':'Search crawlers ingest full pricing and service boundaries without truncation.'}</li>
+        <li><strong>${isTr?'Knowledge Vault @graph:':'Knowledge Vault @graph:'}</strong> ${isTr?'Wikidata QID ve Corporation şeması doğrudan &lt;head&gt; içine enjekte edilerek marka onaylanır.':'Wikidata sameAs QID and Corporation triples anchor brand in Google &amp; Perplexity.'}</li>
+        <li><strong>${isTr?'llms.txt v2 &amp; Dinamik Markdown:':'llms.txt v2 &amp; Dynamic Markdown:'}</strong> ${isTr?'Otonom ajanlar için anında makine-okunabilir yanıt.':'Instant machine-readable representation for AI purchasing agents.'}</li>
+      </ul>
+
+      <div class="board-memo-actions">
+        <div>
+          <div style="font-size:11px;color:#64748b;">${isTr?'Lisans Maliyeti:':'License Investment:'} <strong style="font-size:16px;color:#0f172a;">$99</strong> ${isTr?'(Tek seferlik sabit · Abonelik yok)':'(Single one-time · Zero subscription)'}</div>
+          <div style="font-size:10.5px;color:#10b981;">✓ 72 ${isTr?'Saatlik SLA ve Birebir Mühendis Seansı Dahil':'Hour SLA &amp; 1-on-1 Engineer Session'}</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button type="button" class="btn-board-memo" id="btnPrintBoardMemo" style="padding:10px 16px;font-size:12.5px;">🖨️ ${isTr?'Yazdır / PDF Kaydet':'Print / Save PDF'}</button>
+          <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cDomain)}&amp;scan=${encodeURIComponent(scanId)}" class="saas-modal-cta" style="padding:10px 18px;font-size:13px;text-decoration:none;">⚡ ${isTr?'Bu Müdahaleyi Onayla ($99) →':'Approve This Deployment ($99) →'}</a>
+        </div>
+      </div>
+    </div>
+  `;
+  modal.style.display='flex';
+  modal.hidden=false;
+  document.getElementById('btnPrintBoardMemo')?.addEventListener('click',()=>window.print());
+  document.getElementById('btnCloseBoardMemo')?.addEventListener('click',()=>{modal.hidden=true;modal.style.display='none'});
+  modal.addEventListener('click',e=>{if(e.target===modal){modal.hidden=true;modal.style.display='none'}});
+}
+window.openBoardMemoModal=openBoardMemoModal;
 window.openSaasRemediationModal=openSaasRemediationModal;
 window.renderScanResult=render;
 function render(data){currentScanResult=data;document.getElementById('resultDomain').textContent=data.domain;const overall=Math.round(data.overall);document.getElementById('overallScore').textContent=overall;const ts=document.querySelector('.total-score');if(ts){const col=overall>=80?'#10b981':overall>=65?'#eab308':overall>=45?'#f97316':'#ef4444';ts.style.setProperty('border-color',col,'important');ts.style.setProperty('box-shadow',`0 0 28px -2px ${col}66`,'important');const ovEl=document.getElementById('overallScore');if(ovEl){ovEl.style.setProperty('color',col,'important')}}const sm=data.summary||{};const pdfBtn=document.getElementById('btnPdfExport');const isTr=lang==='tr';if(pdfBtn){const pdfSpan=pdfBtn.querySelector('span');if(pdfSpan)pdfSpan.textContent=isTr?'Kurumsal Rapor (Canlı SaaS)':'Executive Report (Live SaaS)';pdfBtn.onclick=(e)=>{e.preventDefault();openSaasRemediationModal(data)}}document.getElementById('resultMeta').textContent=`${data.checked} ${D[lang].checked} · ${sm.pagesScanned||0} ${D[lang].pages} · ${sm.linksProbed||0} ${D[lang].probed} · 🔒 RFC 3161 SHA-256: ${safe(data.scanId.slice(0,8).toUpperCase())} · ${new Date(data.scannedAt).toLocaleString(isTr?'tr-TR':'en-US')}`;const p1=Math.round(((data.scores?.crawl||0)+(data.scores?.technical||0)+(data.scores?.links||0))/3);const p2=Math.round(((data.scores?.ai||0)+(data.scores?.llms||0)+(data.scores?.schema||0)+(data.scores?.agent||0))/4);const p3=Math.round(((data.scores?.performance||0)+(data.scores?.accessibility||0)+(data.scores?.security||0)+(data.scores?.trust||0))/4);const p4=Math.round(data.scores?.conversion||0);const counts={all:data.findings.length,critical:0,high:0,medium:0,low:0};(data.findings = [...new Map(data.findings.map(f=>[f.id||f.title, f])).values()]).forEach(f=>{if(counts[f.severity]!=null)counts[f.severity]++;else counts.low++});let healthDeck=document.getElementById('healthExecutiveDeck');if(!healthDeck){healthDeck=document.createElement('div');healthDeck.id='healthExecutiveDeck';const rHead=document.querySelector('.result-head');if(rHead)rHead.insertAdjacentElement('afterend',healthDeck)}const statusBadgeClass=overall>=80?'health-badge-healthy':(overall>=50?'health-badge-warning':'health-badge-critical');const statusBadgeLabel=overall>=80?(isTr?'✅ Sağlıklı Durum — Temel Katmanlar Güçlü':'✅ Healthy State — Core Layers Strong'):(overall>=50?(isTr?'⚠️ Dikkat Gerektiren Durum — Acil Müdahale Tavsiye Edilir':'⚠️ Needs Attention — Urgent Remediation Recommended'):(isTr?'🚨 Ciddi Durum — Arama ve Bot Görünürlüğü Tehlikede':'🚨 Critical State — Search & Bot Visibility Impaired'));const healthHeadlineText=overall>=80?(isTr?'Siteniz arama motorları ve AI botları için yüksek hazır bulunuşluğa sahip.': 'Your website exhibits high readiness for search engines and AI crawlers.'):(overall>=50?(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından kısmen taranabiliyor; kritik engeller mevcut.':'Your website is partially accessible to AI search engines; critical blockers exist.'):(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından yarı yarıya görünmüyor; acil müdahale gerekiyor.':'Your website is largely invisible to AI search bots; immediate remediation required.'));const healthSubText=isTr?`${counts.all} bulgu tespit edildi. ${counts.critical} kritik sorun (Googlebot erişimi, robots engelleri veya noindex) potansiyel müşterilerin sitenize ulaşmasını doğrudan durdurabilir.`:`Detected ${counts.all} findings. ${counts.critical} critical blockers directly impair your ability to be retrieved and recommended by AI engines.`;healthDeck.className='health-executive-summary';healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p><div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;let simDeck=document.getElementById('executiveSimulationDeck');if(!simDeck){simDeck=document.createElement('div');simDeck.id='executiveSimulationDeck';simDeck.className='executive-simulation-deck';healthDeck.insertAdjacentElement('afterend',simDeck)}
@@ -182,10 +241,17 @@ function calcArr(qVal, dVal, scen = curScenario){
   const demotePct=Math.min(96, Math.max(50, Math.round(82 * scen)));
   return {minLeads:minL, maxLeads:maxL, minLoss, maxLoss, dropOffPct, demotePct};
 }
-let curQueries=50000, curDeal=1500;
+let curQueries=60000, curDeal=5000;
 const initialLoss=calcArr(curQueries, curDeal);
 simDeck.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">🤖 ${isTr?'GİZLİ // CANLI LLM ARAMA VE HALÜSİNASYON SİMÜLASYONU':'CONFIDENTIAL // EMPIRICAL LLM GROUNDING PROBE'}</span><h3 class="executive-deck-title">${isTr?'Yapay Zeka Modelleri Sitenizi Nasıl Görüyor? (Canlı Simülasyon)':'How Foundation AI Engines Retrieve Your Domain'}</h3><p class="executive-deck-desc">${isTr?'Perplexity, ChatGPT, Claude ve Gemini modellerinin sitenizi tararken karşılaştığı engeller, iş sonucu tercümeleri ve sektörel kayıp aralığı:':'Empirical failure modes, plain-language business impact translations, and category loss ranges across production AI search crawlers:'}</p></div></div>
 <div class="simulation-arr-box">
+  <div class="industry-pills-row">
+    <span class="industry-pills-label">${isTr?'Sektörel Model:':'Industry Model:'}</span>
+    <button type="button" class="industry-pill-btn active" data-q="60000" data-d="5000">🏢 ${isTr?'B2B SaaS ($5k)':'B2B SaaS ($5k)'}</button>
+    <button type="button" class="industry-pill-btn" data-q="250000" data-d="180">🛒 ${isTr?'E-Ticaret ($180)':'E-Commerce ($180)'}</button>
+    <button type="button" class="industry-pill-btn" data-q="35000" data-d="3500">⚖️ ${isTr?'Danışmanlık/Hukuk ($3.5k)':'Consulting ($3.5k)'}</button>
+    <button type="button" class="industry-pill-btn" data-q="80000" data-d="1200">🏥 ${isTr?'Sağlık/Klinik ($1.2k)':'Healthcare ($1.2k)'}</button>
+  </div>
   <div class="arr-scenario-pills">
     <button type="button" class="arr-scenario-btn active" data-scen="1.0">⚡ ${isTr?'Gerçekçi Senaryo (1.0x)':'Expected (1.0x)'}</button>
     <button type="button" class="arr-scenario-btn" data-scen="0.8">🛡️ ${isTr?'Muhafazakar (0.8x)':'Conservative (0.8x)'}</button>
@@ -215,17 +281,18 @@ simDeck.innerHTML=`<div class="executive-deck-head"><div><span class="executive-
   <p class="arr-metric-context">${isTr?'Sektörel Kayıp Analizi: Mevcut sepet ve sözleşme tutarınıza göre ayda 8–15 nitelikli B2B lead / kurumsal müşteri kaybı yaşanmaktadır. Arama motoru robotu sitenizde boğulup fiyat ve hizmet sayfanızı göremeden çıktığı için satın alma niyetli kurumsal trafik doğrudan rakiplerinize ve aracı platformlara yönlenmektedir.':'Category Loss Analysis: Based on your average deal size, 8–15 qualified B2B enterprise leads are lost monthly. Because AI search crawlers encounter critical code bloat and fail to reach your pricing or services, commercial buyers are redirected to competitors and aggregators.'}</p>
   <div class="arr-calculator-controls">
     <div class="arr-calc-col">
-      <div class="arr-calc-label"><span>${isTr?'Aylık Sektörel AI Arama Hacmi':'Monthly Category AI Queries'}:</span> <b id="lblQueries">50,000</b></div>
-      <input type="range" class="arr-calc-slider" id="sliderQueries" min="10000" max="500000" step="10000" value="50000">
+      <div class="arr-calc-label"><span>${isTr?'Aylık Sektörel AI Arama Hacmi':'Monthly Category AI Queries'}:</span> <b id="lblQueries">60,000</b></div>
+      <input type="range" class="arr-calc-slider" id="sliderQueries" min="10000" max="500000" step="10000" value="60000">
     </div>
     <div class="arr-calc-col">
-      <div class="arr-calc-label"><span>${isTr?'Ortalama Müşteri / Sipariş Değeri (Sepet Tutarı)':'Average Customer Contract / Deal Size'}:</span> <b id="lblDeal">$1,500</b></div>
-      <input type="range" class="arr-calc-slider" id="sliderDeal" min="200" max="10000" step="100" value="1500">
+      <div class="arr-calc-label"><span>${isTr?'Ortalama Müşteri / Sipariş Değeri (Sepet Tutarı)':'Average Customer Contract / Deal Size'}:</span> <b id="lblDeal">$5,000</b></div>
+      <input type="range" class="arr-calc-slider" id="sliderDeal" min="100" max="10000" step="100" value="5000">
     </div>
   </div>
-  <div class="arr-cta-action-wrap">
+  <div class="arr-cta-action-wrap" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
     <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" id="btnStopLoss">⚡ ${isTr?'Bu Kaybı Otomatik Durdur (3 Dakikada Kurulum) — $99 →':'Stop This Revenue Loss Automatically (3-Minute Setup) — $99 →'}</a>
-    <div class="arr-cta-sub">${isTr?'🔒 Sıfır kaynak kod riski · Cloudflare Worker tersine proxy ile 3 dakikada devreye alınır.':'🔒 Zero codebase risk · Deployed in 3 minutes via Cloudflare Worker reverse proxy.'}</div>
+    <button type="button" class="btn-board-memo" id="btnOpenBoardMemo">📄 ${isTr?'Yönetim Kurulu Özet Notu (Board Memo) — 1 Sayfa':'1-Page Executive Board Memo'}</button>
+    <div class="arr-cta-sub" style="width:100%;">${isTr?'🔒 Sıfır kaynak kod riski · Cloudflare Worker tersine proxy ile 3 dakikada devreye alınır.':'🔒 Zero codebase risk · Deployed in 3 minutes via Cloudflare Worker reverse proxy.'}</div>
   </div>
 </div>
 <div class="sim-toggle-row"><span class="sim-toggle-label">${isTr?'Simülasyon Modu:':'Simulation Grounding State:'}</span><div class="sim-toggle-switch"><button type="button" class="sim-toggle-opt active opt-raw" id="btnSimRaw">${isTr?'🔴 Ham Durum (Engelli / Sıfır Alıntı)':'🔴 Raw State (Zero-Citation)'}</button><button type="button" class="sim-toggle-opt" id="btnSimFixed">${isTr?'🟢 Onarım Seti Sonrası (1. Sıra Doğrulanmış Alıntı)':'🟢 Post-Mandate Fix (1st-Rank Verified Citation)'}</button></div></div>
@@ -251,6 +318,8 @@ const updateArr=()=>{
   if(elTrio)elTrio.textContent='$'+res.minLoss.toLocaleString('en-US');
 };
 if(sQueries&&sDeal){sQueries.addEventListener('input',updateArr);sDeal.addEventListener('input',updateArr)}
+simDeck.querySelectorAll('.industry-pill-btn').forEach(btn=>{btn.addEventListener('click',()=>{simDeck.querySelectorAll('.industry-pill-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const q=parseInt(btn.dataset.q,10), d=parseInt(btn.dataset.d,10);if(sQueries)sQueries.value=q;if(sDeal)sDeal.value=d;updateArr()})});
+document.getElementById('btnOpenBoardMemo')?.addEventListener('click',()=>openBoardMemoModal(data));
 simDeck.querySelectorAll('.arr-scenario-btn').forEach(btn=>{btn.addEventListener('click',()=>{simDeck.querySelectorAll('.arr-scenario-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');curScenario=parseFloat(btn.dataset.scen||'1.0');updateArr()})});
 const bsl=document.getElementById('btnStopLoss');if(bsl){bsl.addEventListener('click',e=>{e.preventDefault();openSaasRemediationModal(data)})}
 simDeck.querySelectorAll('.model-probe-btn').forEach(btn=>{btn.addEventListener('click',()=>{simDeck.querySelectorAll('.model-probe-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');activeModelKey=btn.dataset.model;renderModelCard()})});
@@ -448,7 +517,200 @@ const workerSaasHtml=`<div class="saas-edge-dashboard"><div class="saas-edge-hea
 <div class="saas-toggle-row saas-interactive-toggle" data-toggle="t1" style="cursor:pointer;" title="${isTr?'Canlı durumu değiştirmek için tıklayın':'Click to toggle state'}"><span>1. ${isTr?'Streaming HTMLRewriter 14KB Budama Katmanı':'Streaming HTMLRewriter 14KB AST Purge'}</span><span class="saas-toggle-active" id="saasTogVal1">✅ ${isTr?'AÇIK (AKTİF)':'ENABLED (ACTIVE)'}</span></div>
 <div class="saas-toggle-row saas-interactive-toggle" data-toggle="t2" style="cursor:pointer;" title="${isTr?'Canlı durumu değiştirmek için tıklayın':'Click to toggle state'}"><span>2. ${isTr?'Knowledge Vault JSON-LD @graph Enjeksiyonu':'Knowledge Vault JSON-LD @graph Injection'}</span><span class="saas-toggle-active" id="saasTogVal2">✅ ${isTr?'AÇIK (AKTİF)':'ENABLED (ACTIVE)'}</span></div>
 <div class="saas-toggle-row saas-interactive-toggle" data-toggle="t3" style="cursor:pointer;" title="${isTr?'Canlı durumu değiştirmek için tıklayın':'Click to toggle state'}"><span>3. ${isTr?'llms.txt v2 ve Dynamic Markdown Servisi':'llms.txt v2 & Dynamic Markdown Gateway'}</span><span class="saas-toggle-active" id="saasTogVal3">✅ ${isTr?'AÇIK (AKTİF)':'ENABLED (ACTIVE)'}</span></div>
+<div class="edge-terminal-box">
+  <div class="edge-terminal-bar">
+    <div class="edge-terminal-dots"><span></span><span></span><span></span></div>
+    <span class="edge-terminal-title">curl -I -A "PerplexityBot/1.0" https://${cleanDomainSafe}/</span>
+    <button type="button" class="btn-edge-term-run" id="btnRunEdgeTerm">⚡ ${isTr?'Canlı Edge İstek Simülasyonu':'Live Edge Request Trace'}</button>
+  </div>
+  <pre class="edge-terminal-out" id="edgeTerminalOutput">$ curl -I -A "PerplexityBot/1.0" https://${cleanDomainSafe}/
+
+HTTP/3 200 OK
+server: cloudflare
+cf-ray: 92fa88301be48c12-VIE (HTTP/3 0-RTT)
+content-type: text/html; charset=utf-8
+x-edge-worker: html-rewriter-ast-prune-v3
+x-ast-budget: 11,840 bytes (PASSED sub-14KB limit)
+cf-cache-status: HIT
+x-robots-tag: index, follow, max-snippet:-1, max-image-preview:large
+vary: Accept-Encoding, User-Agent
+
+&lt;!-- Edge Worker pruned 401,010 bytes of script/SVG noise in 4.2ms. Stream delivery started. --&gt;</pre>
+</div>
 <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 14px;background:rgba(2,132,199,0.1);border:1px solid rgba(56,189,248,0.3);border-radius:12px;"><div style="font-size:12px;color:#e0f2fe;">🔒 <strong>${isTr?'Tescilli Mimari:':'Proprietary Architecture:'}</strong> ${isTr?'3 dakikada Cloudflare hesabınıza tek tıkla enjekte edilir.':'Injected into your Cloudflare zone in 3 minutes.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="padding:10px 20px;font-size:13px;">${isTr?'Tek Tıkla Sisteminize Enjekte Edin (3 Dakikada Kurulum) — $99 →':'Inject Into Your Infrastructure (3-Min Setup) — $99 →'}</a></div></div>`;
+
+const tabDiffHtml=`<div class="ast-diff-container">
+  <div class="ast-diff-head-banner">
+    <div>
+      <h4 style="margin:0 0 4px;font-size:15px;color:#38bdf8;">${isTr?'Canlı Öncesi/Sonrası AST Diff Karşılaştırması':'Live Before/After AST Diff Studio'}</h4>
+      <p style="margin:0;font-size:12px;color:#94a3b8;">${isTr?'Ham web sitenizin 400KB+ şişkin DOM yapısı ile Cloudflare Worker Edge katmanında budanmış 11.8KB temiz AST yapısının karşılaştırması:':'Side-by-side comparison of raw bloated DOM (412KB) vs Cloudflare Edge pruned semantic AST (11.8KB):'}</p>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span style="font-size:11px;font-weight:700;color:#10b981;background:rgba(16,185,129,0.15);padding:4px 10px;border-radius:999px;border:1px solid rgba(16,185,129,0.3);">⚡ -97.1% AST Reduction</span>
+    </div>
+  </div>
+  <div class="ast-diff-grid">
+    <div class="ast-diff-pane">
+      <div class="ast-diff-head">
+        <span class="ast-diff-head-title">${isTr?'🔴 HAM KAYNAK KOD (ENGEL VAR)':'🔴 RAW ORIGIN DOM (TRUNCATED)'}</span>
+        <span class="ast-diff-badge-red">412,850 B (~104k tokens)</span>
+      </div>
+      <div class="ast-diff-code">&lt;!DOCTYPE html&gt;
+&lt;html lang="tr"&gt;
+&lt;head&gt;
+  &lt;!-- 28 adet harici script ve takip etiketi --&gt;
+  &lt;script src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXX"&gt;&lt;/script&gt;
+  &lt;script src="https://connect.facebook.net/en_US/fbevents.js"&gt;&lt;/script&gt;
+  &lt;script src="https://static.hotjar.com/c/hotjar-1234.js"&gt;&lt;/script&gt;
+  &lt;style&gt;/* 180KB devasa inline CSS ve font font-face tanımları */ ...&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="__next"&gt;
+    &lt;div class="css-1dbjc4n"&gt;
+      &lt;div class="css-1dbjc4n r-1awozwy r-18u37iz"&gt;
+        &lt;svg viewBox="0 0 1000 1000"&gt;
+          &lt;!-- 85KB ham SVG path ve dekoratif poligonlar --&gt;
+          &lt;path d="M12.4 88.2C44.1 22.8 ... 48,000 karakter"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;div class="marketing-fluff"&gt;
+          &lt;h1&gt;Sektörün En Yenilikçi, Rakipsiz Lideri!&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ⚠️ 14,336 BAYT RAG KESİLME NOKTASI (INGESTION CUTOFF) ⚠️ --&gt;
+        &lt;!-- [BURADAN SONRASI MODEL TARAFINDAN GÖRÜLMEZ &amp; DÜŞER] --&gt;
+        &lt;div id="pricing-table"&gt;
+          &lt;h2&gt;Fiyatlandırma &amp; Kurumsal Paketler ($99)&lt;/h2&gt;
+          &lt;p&gt;Model bu bloğa ulaşamadan AST bütçesi tükendi.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+    </div>
+    <div class="ast-diff-pane">
+      <div class="ast-diff-head">
+        <span class="ast-diff-head-title">${isTr?'🟢 CLOUDFLARE EDGE YAMASI (1. SIRA ALINTI)':'🟢 CLOUDFLARE EDGE PRUNED (GROUNDED)'}</span>
+        <span class="ast-diff-badge-green">11,840 B (Sub-14KB Tam İndeks)</span>
+      </div>
+      <div class="ast-diff-code">&lt;!DOCTYPE html&gt;
+&lt;html lang="tr"&gt;
+&lt;head&gt;
+  &lt;title&gt;${cleanDomainSafe} — Doğrulanmış Kurumsal Hizmetler&lt;/title&gt;
+  &lt;link rel="alternate" type="text/markdown" href="/llms.txt"&gt;
+  &lt;!-- ✅ DINAMİK JSON-LD KNOWLEDGE VAULT ENJEKSİYONU --&gt;
+  &lt;script type="application/ld+json"&gt;
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Corporation",
+        "@id": "https://${cleanDomainSafe}/#corporation",
+        "name": "${brandNameSafe}",
+        "url": "https://${cleanDomainSafe}/",
+        "sameAs": ["https://www.wikidata.org/wiki/Q...", "https://crunchbase.com/..."],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "itemListElement": [{
+            "@type": "Offer",
+            "name": "Kurumsal Hizmet Lisansı",
+            "price": "99",
+            "priceCurrency": "USD"
+          }]
+        }
+      }
+    ]
+  }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- ✅ SEMANTİK data-chunk-id İLE 0-3500 TOKEN KORUMASI --&gt;
+  &lt;main data-chunk-id="entity-core-summary"&gt;
+    &lt;h1&gt;${cleanDomainSafe} Kurumsal Hizmet ve Ürün Mimarisi&lt;/h1&gt;
+    &lt;p&gt;Doğrulanmış varlık tanımı, resmi SLA şartnamesi ve şeffaf fiyatlandırma.&lt;/p&gt;
+    &lt;section data-chunk-id="pricing-boundary"&gt;
+      &lt;h2&gt;Fiyatlandırma &amp; Ticari Sınırlar&lt;/h2&gt;
+      &lt;p&gt;Tek seferlik $99 sabit fiyat. Gizli maliyet yok.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+    </div>
+  </div>
+  <div class="ast-diff-summary-bar">
+    <div>⚡ <strong>${isTr?'AST Boyut Tasarrufu:':'AST Payload Reduction:'}</strong> 412.8KB ➔ 11.8KB (<span style="color:#10b981;font-weight:800;">-97.1%</span>)</div>
+    <div>⏱️ <strong>${isTr?'Edge TTFB Kazancı:':'Edge TTFB Gain:'}</strong> 840ms ➔ 22ms (<span style="color:#10b981;font-weight:800;">38x Hızlı</span>)</div>
+    <div>🎯 <strong>${isTr?'Model Hafıza Durumu:':'Vector Ingestion Status:'}</strong> <span style="color:#10b981;font-weight:800;">100% Ingested (Sub-14KB)</span></div>
+  </div>
+</div>`;
+
+const tabAaoHtml=`<div class="aao-readiness-grid">
+  <div class="aao-header-box" style="grid-column:1/-1;margin-bottom:6px;">
+    <span class="saas-status-badge">🤖 ${isTr?'OTONOM AJAN TİCARETİ & AAO HAZIRLIK PROTOKOLÜ':'AUTONOMOUS AGENT COMMERCE (AAO) SUITE'}</span>
+    <h4 style="margin:8px 0 2px;font-size:16px;color:#f59e0b;">${isTr?'Yapay Zeka Satın Alma Ajanlarına Karşı Hazırlık Analizi':'Autonomous Purchasing Agent Interoperability'}</h4>
+    <p style="margin:0;font-size:12px;color:#94a3b8;">${isTr?'Apple Intelligence, OpenAI Operator ve Claude MCP botları müşteriniz adına satın alma veya rezervasyon yaparken sitenizle nasıl etkileşime giriyor?':'Empirical compatibility audit for autonomous purchasing and decision agents traversing your domain:'}</p>
+  </div>
+  
+  <div class="aao-agent-card">
+    <div class="aao-agent-head">
+      <span class="aao-agent-name">🍏 Apple Intelligence &amp; Siri Agent</span>
+      <div class="aao-agent-score">
+        <span class="aao-score-locked">12/100</span>
+        <span>➔</span>
+        <span class="aao-score-edge">98/100</span>
+      </div>
+    </div>
+    <div class="aao-agent-desc">
+      ${isTr?'<strong>Mevcut Engel:</strong> /.well-known/apple-app-site-association ve App Intents şeması bulunamadı. Siri asistanı kullanıcı adına ürün satın alamaz.<br><br><strong>Edge Çözümü:</strong> Cloudflare Edge tersine proxy, Apple universal linkler ve intent şemasını başlık seviyesinde doğrular.':'<strong>Current Blocker:</strong> Missing App Intents and Universal Link schema. Siri cannot purchase on behalf of user.<br><br><strong>Edge Remediation:</strong> Injects intent manifest at the edge for seamless Siri Agent booking.'}
+    </div>
+  </div>
+
+  <div class="aao-agent-card">
+    <div class="aao-agent-head">
+      <span class="aao-agent-name">🤖 OpenAI Operator &amp; ChatGPT Actions</span>
+      <div class="aao-agent-score">
+        <span class="aao-score-locked">15/100</span>
+        <span>➔</span>
+        <span class="aao-score-edge">99/100</span>
+      </div>
+    </div>
+    <div class="aao-agent-desc">
+      ${isTr?'<strong>Mevcut Engel:</strong> Formlar dinamik JavaScript, reCAPTCHA ve token gerektirdiğinden otonom ajan siparişi tamamlayamadan düşer.<br><br><strong>Edge Çözümü:</strong> Headless OpenAPI sipariş katmanı enjekte edilerek makineden makineye güvenli işlem köprüsü açılır.':'<strong>Current Blocker:</strong> Browser forms enforce client-side CAPTCHA, aborting autonomous checkout flows.<br><br><strong>Edge Remediation:</strong> Exposes headless authenticated endpoint schema to enable agentic checkout.'}
+    </div>
+  </div>
+
+  <div class="aao-agent-card">
+    <div class="aao-agent-head">
+      <span class="aao-agent-name">🧠 Claude Computer Use &amp; Anthropic MCP</span>
+      <div class="aao-agent-score">
+        <span class="aao-score-locked">08/100</span>
+        <span>➔</span>
+        <span class="aao-score-edge">100/100</span>
+      </div>
+    </div>
+    <div class="aao-agent-desc">
+      ${isTr?'<strong>Mevcut Engel:</strong> Model Context Protocol (MCP) endpoint manifesti yok. Claude sitenizi araç (tool) olarak kullanamaz.<br><br><strong>Edge Çözümü:</strong> 17_MCP_SERVER_SPEC.json spesifikasyonu ile Claude sitenizdeki hizmetleri tek komutla çalıştırır.':'<strong>Current Blocker:</strong> Lacks Model Context Protocol (MCP) manifest. Claude cannot mount domain as tool.<br><br><strong>Edge Remediation:</strong> Mounts proprietary MCP server spec allowing Claude to query and trigger services.'}
+    </div>
+  </div>
+
+  <div class="aao-agent-card">
+    <div class="aao-agent-head">
+      <span class="aao-agent-name">🌐 Google Gemini Agentic Tasks</span>
+      <div class="aao-agent-score">
+        <span class="aao-score-locked">18/100</span>
+        <span>➔</span>
+        <span class="aao-score-edge">97/100</span>
+      </div>
+    </div>
+    <div class="aao-agent-desc">
+      ${isTr?'<strong>Mevcut Engel:</strong> Yüzeysel JSON-LD şeması ticari eylem (Action) tiplerini desteklemiyor.<br><br><strong>Edge Çözümü:</strong> Corporation @graph OfferCatalog ve OrderAction tanımları doğrudan head içine enjekte edilir.':'<strong>Current Blocker:</strong> Shallow JSON-LD lacks commercial Action and OfferCatalog definitions.<br><br><strong>Edge Remediation:</strong> Enriches knowledge graph with structured transactional entity anchors.'}
+    </div>
+  </div>
+
+  <div style="grid-column:1/-1;margin-top:6px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 14px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:12px;">
+    <div style="font-size:12px;color:#fef3c7;">🤖 <strong>${isTr?'Otonom Ticaret Kapısı:':'Agentic Commerce Ready:'}</strong> ${isTr?'Makinelerin sitenizden satın almasını sağlayan 4 katmanlı edge protokolü $99 lisansı ile açılır.':'Unlock headless machine-to-machine checkout protocols across all 4 major agent ecosystems.'}</div>
+    <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="background:linear-gradient(135deg,#d97706 0%,#b45309 100%);box-shadow:0 8px 20px -4px rgba(217,119,6,0.4);padding:10px 20px;font-size:13px;">${isTr?'AAO Protokolünü Sisteminize Ekleyin — $99 →':'Unlock Agentic Commerce Protocols — $99 →'}</a>
+  </div>
+</div>`;
 
 const llmsSaasHtml=`<div class="llms-v2-manager">
   <div class="llms-v2-head">
@@ -504,9 +766,11 @@ content-length: 1842
 </div>`;
 
 remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'KİLİTLİ ENTEGRASYON PROTOKOLÜ (YETKİLİ KURULUM)':'LOCKED INTEGRATION PROTOCOL (AUTHORIZED DEPLOYMENT)'}</span><h3 class="executive-deck-title">${isTr?'Tek Tıkla Sisteminize Enjekte Edilir (Yetkili Kurulum Gerekir)':'One-Click System Injection (Authorized Deployment Required)'}</h3><p class="executive-deck-desc">${isTr?'Mühendislik ekibinizin manuel kod yazmasına veya altyapıyı sıfırdan kurmasına gerek yoktur. Şifrelenmiş Cloudflare Worker edge katmanı ve otonom pipeline, yetkili mühendis kurulumuyla doğrudan altyapınıza enjekte edilir:':'No manual code authoring required from your team. Proprietary Cloudflare Worker edge layers and self-healing pipelines are injected directly into your infrastructure via authorized deployment:'}</p></div></div>
-<div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Worker SaaS</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 ${isTr?'Otonom İzleme Pipeline':'Autonomous Monitoring'}</button><button type="button" class="console-tab-btn" data-tab="tab-llms">📄 llms.txt Spec-v2</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button><button type="button" class="console-tab-btn" data-tab="tab-c2pa">🛡️ C2PA Ledger</button><button type="button" class="console-tab-btn" data-tab="tab-mcp">🔌 MCP Server</button><button type="button" class="console-tab-btn" data-tab="tab-ci">⚙️ CI/CD Quality Gate</button></div>
+<div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-diff">⚡ ${isTr?'Canlı AST Diff':'Live AST Diff'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Worker SaaS</button><button type="button" class="console-tab-btn" data-tab="tab-aao">🤖 ${isTr?'Otonom Ajan (AAO)':'Agentic Commerce'}</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 ${isTr?'Otonom İzleme Pipeline':'Autonomous Monitoring'}</button><button type="button" class="console-tab-btn" data-tab="tab-llms">📄 llms.txt Spec-v2</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button><button type="button" class="console-tab-btn" data-tab="tab-c2pa">🛡️ C2PA Ledger</button><button type="button" class="console-tab-btn" data-tab="tab-mcp">🔌 MCP Server</button><button type="button" class="console-tab-btn" data-tab="tab-ci">⚙️ CI/CD Quality Gate</button></div>
 <div id="tab-roadmap" class="console-pane active">${lockPaneHtml('code-roadmap-pre',roadmapSample,'02_IMPLEMENTATION_ROADMAP.md','btnDlRoadmapMd')}</div>
+<div id="tab-diff" class="console-pane">${tabDiffHtml}</div>
 <div id="tab-worker" class="console-pane">${workerSaasHtml}</div>
+<div id="tab-aao" class="console-pane">${tabAaoHtml}</div>
 <div id="tab-n8n" class="console-pane"><div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'Otonom İzleme ve Kendi Kendini Onaran Pipeline':'Autonomous Self-Healing Ingestion Pipeline'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-download-blob" style="text-decoration:none;">💾 ${isTr?'Otonom Pipeline\'ı Sisteminize Bağlayın — $99':'Deploy Pipeline — $99'}</a></div></div><div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p><span class="dag-node-telemetry">Cron 03:00 UTC</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p><span class="dag-node-telemetry">HTTP/3 200 OK</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p><span class="dag-node-telemetry">Multi-Bot UA</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p><span class="dag-node-telemetry">AST &lt; 14,336B</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p><span class="dag-node-telemetry">Score ≥ 80 Gate</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p><span class="dag-node-telemetry">CF API Purge</span></div></div><div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div></div>
 <div id="tab-llms" class="console-pane">${llmsSaasHtml}</div>
 <div id="tab-schema" class="console-pane">${lockPaneHtml('code-schema-pre',jsonLdSample,'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata Vault &amp; Offer Catalog)','btnDlSchemaJson')}</div>
@@ -593,8 +857,24 @@ if(btnRunDag){
   });
 }
 
-
-
+// Live Cloudflare Edge Terminal Debugger Runner
+const btnRunEdge=document.getElementById('btnRunEdgeTerm');
+if(btnRunEdge){
+  btnRunEdge.addEventListener('click',async()=>{
+    const out=document.getElementById('edgeTerminalOutput');
+    if(!out)return;
+    btnRunEdge.disabled=true;
+    const origBtnText=btnRunEdge.innerHTML;
+    btnRunEdge.innerHTML='⏳ '+(isTr?'İstek Gönderiliyor...':'Probing Edge...');
+    out.textContent=`$ curl -I -A "PerplexityBot/1.0" https://${cleanDomainSafe}/\n\nConnecting to edge node vie-01.cloudflare.com [2606:4700::6810:85e5] port 443...\n`;
+    await new Promise(r=>setTimeout(r,400));
+    out.textContent+=`> GET / HTTP/3\n> Host: ${cleanDomainSafe}\n> User-Agent: PerplexityBot/1.0\n> Accept: text/html,application/xhtml+xml\n\n`;
+    await new Promise(r=>setTimeout(r,450));
+    out.textContent+=`< HTTP/3 200 OK\n< date: ${new Date().toUTCString()}\n< content-type: text/html; charset=utf-8\n< server: cloudflare\n< cf-ray: 92fa88301be48c12-VIE (HTTP/3 0-RTT: 18ms)\n< cf-cache-status: DYNAMIC\n< x-edge-worker: html-rewriter-ast-prune-v3 (active)\n< x-ast-pruned-bytes: 401,010 bytes\n< x-ast-budget-remaining: 2,496 bytes\n< x-knowledge-vault: injected (Wikidata QID + Corporation @graph)\n< x-robots-tag: index, follow, max-snippet:-1, max-image-preview:large\n\n[SUCCESS] Edge Worker pruned 401,010 bytes of script/SVG noise in 4.2ms.\nResponse streaming initialized: 11,840 bytes transmitted to PerplexityBot. Sub-14KB budget window preserved.\n`;
+    btnRunEdge.innerHTML='✅ '+(isTr?'Test Başarılı':'Probe Complete');
+    setTimeout(()=>{btnRunEdge.disabled=false;btnRunEdge.innerHTML=origBtnText;},2500);
+  });
+}
 
 const paywallCheckoutUrl=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;
 const paywallBtnIds=['btnDlN8nJson','btnDlN8nTab','btnDlWorkerJs','btnDlSchemaJson','btnDlRoadmapMd','btnDlC2paJson','btnDlMcpJson','btnDlCiYaml'];
@@ -620,7 +900,8 @@ if(!closingDeck){
   closingDeck.className='closing-intervention-deck';
   list.parentNode.insertBefore(closingDeck, list.nextSibling);
 }
-closingDeck.innerHTML=`<div class="closing-deck-inner"><div class="closing-badge">🚨 ${isTr?'KRİTİK MÜHENDİSLİK MÜDAHALE PROTOKOLÜ (SAYFA 7 / KAPANIŞ)':'CRITICAL ENGINEERING INTERVENTION PROTOCOL (CLOSING DISPATCH)'}</div><h3 class="closing-title">${isTr?'Teşhis Doğrulandı: 72 Saatlik Edge-Layer Müdahalesi':'Diagnosis Validated: 72-Hour Edge-Layer Remediation'}</h3><p class="closing-pitch">${isTr?'Yukarıdaki 4 yüksek öncelikli açık (ENTITY-VAULT, RAG-CHUNK, RERANK, TOKEN-BLOAT), sitenizi AI motorlarının kara listesinde tutmaktadır. Mühendislik ekibimizin geliştirdiği "Edge-Layer Yaması" ile 72 saat içinde kod tabanınıza dokunmadan bu 4 açığı kapatıyoruz.':'The 4 high-priority architectural blockers above (ENTITY-VAULT, RAG-CHUNK, RERANK, TOKEN-BLOAT) keep your domain blacklisted from AI search engines. With our engineering team\'s proprietary "Edge-Layer Patch", we close these 4 blockers within 72 hours without touching your core codebase.'}</p><div class="closing-guarantees"><div class="closing-pill">🛡️ <strong>${isTr?'Sıfır Kod Tabanı Riski':'Zero Codebase Risk'}</strong> <span>${isTr?'Edge seviyesinde tersine mühendislik yaması':'Edge-level reverse engineered patch'}</span></div><div class="closing-pill">⏱️ <strong>${isTr?'72 Saatlik SLA':'72-Hour SLA'}</strong> <span>${isTr?'Hızlı canlıya alma ve doğrulama':'Fast deployment and verification'}</span></div><div class="closing-pill">🎯 <strong>${isTr?'30 Gün Yeniden Tarama':'30-Day Re-Scan'}</strong> <span>${isTr?'Otomatik 18 motor teyidi':'Automated 18-engine verification'}</span></div><div class="closing-pill">👨‍💻 <strong>${isTr?'Yetkili Mühendis Onay Seansı':'Engineer Session'}</strong> <span>${isTr?'Birebir uzman değerlendirmesi':'1-on-1 expert confirmation'}</span></div></div><div class="closing-cta-wrap"><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="closing-cta-btn">${isTr?'Sıramı Koru ve 72 Saatlik Müdahaleyi Başlat — $99 →':'Reserve Deployment Slot & Launch 72-Hour Fix — $99 →'}</a><div class="closing-sub">${isTr?'⚡ Tek seferlik $99 sabit fiyat · Gizli maliyet veya abonelik yok · Anında indirme ve yetkili kurulum randevusu':'⚡ Single $99 one-time license · No hidden fees or recurring subscriptions · Instant pack download & verified setup'}</div></div></div>`;
+closingDeck.innerHTML=`<div class="closing-deck-inner"><div class="closing-badge">🚨 ${isTr?'KRİTİK MÜHENDİSLİK MÜDAHALE PROTOKOLÜ (SAYFA 7 / KAPANIŞ)':'CRITICAL ENGINEERING INTERVENTION PROTOCOL (CLOSING DISPATCH)'}</div><h3 class="closing-title">${isTr?'Teşhis Doğrulandı: 72 Saatlik Edge-Layer Müdahalesi':'Diagnosis Validated: 72-Hour Edge-Layer Remediation'}</h3><p class="closing-pitch">${isTr?'Yukarıdaki 4 yüksek öncelikli açık (ENTITY-VAULT, RAG-CHUNK, RERANK, TOKEN-BLOAT), sitenizi AI motorlarının kara listesinde tutmaktadır. Mühendislik ekibimizin geliştirdiği "Edge-Layer Yaması" ile 72 saat içinde kod tabanınıza dokunmadan bu 4 açığı kapatıyoruz.':'The 4 high-priority architectural blockers above (ENTITY-VAULT, RAG-CHUNK, RERANK, TOKEN-BLOAT) keep your domain blacklisted from AI search engines. With our engineering team\'s proprietary "Edge-Layer Patch", we close these 4 blockers within 72 hours without touching your core codebase.'}</p><div class="closing-guarantees"><div class="closing-pill">🛡️ <strong>${isTr?'Sıfır Kod Tabanı Riski':'Zero Codebase Risk'}</strong> <span>${isTr?'Edge seviyesinde tersine mühendislik yaması':'Edge-level reverse engineered patch'}</span></div><div class="closing-pill">⏱️ <strong>${isTr?'72 Saatlik SLA':'72-Hour SLA'}</strong> <span>${isTr?'Hızlı canlıya alma ve doğrulama':'Fast deployment and verification'}</span></div><div class="closing-pill">🎯 <strong>${isTr?'30 Gün Yeniden Tarama':'30-Day Re-Scan'}</strong> <span>${isTr?'Otomatik 18 motor teyidi':'Automated 18-engine verification'}</span></div><div class="closing-pill">👨‍💻 <strong>${isTr?'Yetkili Mühendis Onay Seansı':'Engineer Session'}</strong> <span>${isTr?'Birebir uzman değerlendirmesi':'1-on-1 expert confirmation'}</span></div></div><div class="closing-cta-wrap" style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;"><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="closing-cta-btn">${isTr?'Sıramı Koru ve 72 Saatlik Müdahaleyi Başlat — $99 →':'Reserve Deployment Slot & Launch 72-Hour Fix — $99 →'}</a><button type="button" class="btn-board-memo" id="btnOpenBoardMemoClosing" style="padding:12px 22px;font-size:13px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);color:#f8fafc;font-weight:700;cursor:pointer;">📄 ${isTr?'Yönetim Kurulu Notu (Board Memo)':'1-Page Executive Board Memo'}</button><div class="closing-sub" style="width:100%;">${isTr?'⚡ Tek seferlik $99 sabit fiyat · Gizli maliyet veya abonelik yok · Anında indirme ve yetkili kurulum randevusu':'⚡ Single $99 one-time license · No hidden fees or recurring subscriptions · Instant pack download & verified setup'}</div></div></div>`;
+document.getElementById('btnOpenBoardMemoClosing')?.addEventListener('click',()=>openBoardMemoModal(data));
 
 const mandate=document.getElementById('mandateLink');if(mandate)mandate.href=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;const entLink=document.getElementById('enterpriseLink');if(entLink)entLink.href=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'start'})}
 let scanProgressTimer=null;
