@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Remove customer-facing V3 claims not directly implemented by the current runtime."""
+
+from pathlib import Path
+import re
+
+ROOT = Path(__file__).resolve().parents[1]
+PUBLIC_DIRS = {'tr', 'en', 'llms', 'ai-report', 'enterprise-analyzer', 'assets'}
+PUBLIC_ROOTS = {'index.html', 'index.md', 'llms.txt', 'openapi.json', 'audit-profile.json', 'pricing.html', 'methodology.html', 'enterprise-analyzer.html'}
+
+
+def is_public(path: Path) -> bool:
+    rel = path.relative_to(ROOT)
+    if path.suffix.lower() not in {'.html', '.md', '.json', '.js', '.txt'}:
+        return False
+    return rel.as_posix() in PUBLIC_ROOTS or (len(rel.parts) > 1 and rel.parts[0] in PUBLIC_DIRS)
+
+
+def normalize(text: str) -> str:
+    # 14KB/14,336-byte "AI first window" is not a verified runtime measurement in current production.
+    text = re.sub(
+        r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,120}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,120}',
+        'measured HTML payload, semantic structure and source-readiness evidence',
+        text,
+    )
+    text = re.sub(
+        r'(?i)(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,120}(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,120}',
+        'measured HTML payload, semantic structure and source-readiness evidence',
+        text,
+    )
+
+    # Do not claim live Wikidata/Common Crawl empirical verification unless the runtime actually performs it.
+    text = re.sub(
+        r'(?i)Wikidata[^\n<]{0,140}(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,140}',
+        'public entity and structured-data evidence',
+        text,
+    )
+    text = re.sub(
+        r'(?i)(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,140}Wikidata[^\n<]{0,140}',
+        'public entity and structured-data evidence',
+        text,
+    )
+    text = re.sub(
+        r'(?i)Common Crawl[^\n<]{0,160}(?:live|canlı|CDX|pre.?training|ön.?eğitim|verify|doğrula)[^\n<]{0,160}',
+        'public crawl and discovery evidence',
+        text,
+    )
+
+    # Fixed application-time promises are not deterministic across customer stacks.
+    text = re.sub(
+        r'(?i)\b(?:30|60)\s*(?:seconds?|saniye)(?:de|da)?\b[^\n<]{0,120}(?:apply|uygula|uygulama|zero.?code|sıfır.?kod)[^\n<]{0,80}',
+        'implementation time depends on the customer stack and evidence scope',
+        text,
+    )
+    return text
+
+changed = 0
+for path in ROOT.rglob('*'):
+    if not path.is_file() or not is_public(path):
+        continue
+    old = path.read_text(encoding='utf-8', errors='ignore')
+    new = normalize(old)
+    if new != old:
+        path.write_text(new, encoding='utf-8')
+        changed += 1
+
+print(f'UNVERIFIED V3 CLAIM STRIP PASS: normalized {changed} public files.')
