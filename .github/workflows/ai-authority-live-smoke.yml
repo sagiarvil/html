@@ -55,7 +55,8 @@ jobs:
           grep -Fq 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/sitemap-news.xml
           grep -Fq 'Sitemap: https://htmlandhtml.com/sitemap-news.xml' /tmp/robots.txt
 
-          article_url="$(grep -oE 'https://htmlandhtml\.com/tr/llms-txt-haberler/[a-z0-9-]+/' /tmp/sitemap.xml | head -n 1)"
+          # sed consumes the complete grep stream; unlike `head -n 1` it cannot SIGPIPE grep under pipefail.
+          article_url="$(grep -oE 'https://htmlandhtml\.com/tr/llms-txt-haberler/[a-z0-9-]+/' /tmp/sitemap.xml | sed -n '1p')"
           test -n "$article_url"
           curl -fLsS --connect-timeout 8 --max-time 25 "$article_url" -o /tmp/news-article.html
           grep -Fq '"@type":"NewsArticle"' /tmp/news-article.html
