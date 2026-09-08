@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr" style="scroll-behavior: smooth;">
 <head>
+<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise AI Diagnostic Lab | HTML&amp;HTML</title>
@@ -46,13 +64,13 @@
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
     </a>
-    <nav class="primary-nav" aria-label="Ana navigasyon">
-      <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-      <a href="/tr/yapay-zeka-arama-gorunurlugu/">Çözümler</a>
-      <a href="/tr/llms-txt-haberler/">Haberler</a>
-      <a href="/tr/sozluk/">Sözlük</a>
-      <a href="/tr/fiyatlandirma/">Onarım Seti ($99)</a>
-    </nav>
+    <nav class="primary-nav" aria-label="Primary navigation">
+  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Çözümler</a>
+  <a href="/tr/llms-txt-haberler/">Haberler</a>
+  <a href="/tr/sozluk/">Sözlük</a>
+  <a href="/tr/fiyatlandirma/">Onarım Seti ($99)</a>
+</nav>
     <div class="nav-actions">
       <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Kontrol</a>
       <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Temayı Değiştir">
@@ -81,7 +99,7 @@
       CANLI KURUMSAL DENETİM LABORATUVARI · ENTERPRISE AI DIAGNOSTIC SUITE
     </span>
     <h1>Kurumsal AI Görünürlük Analizörü &amp; Teşhis Laboratuvarı</h1>
-    <p>120 derin kontrol, 43 sayfa taraması ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım reçeteleri ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformu.</p>
+    <p>120 derin kontrol, 43 sayfa taraması ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım yol haritasıleri ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformu.</p>
   </div>
 
   <!-- Scan Meta Ribbon -->
@@ -111,7 +129,7 @@
   <!-- Mission Bar -->
   <div class="ea-mission-bar">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm reçetelerini kendi yazılım ekibinize teslim edersiniz.</p>
+    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm yol haritasılerini kendi yazılım ekibinize teslim edersiniz.</p>
   </div>
 
   <!-- Executive Summary HUD -->
@@ -152,7 +170,7 @@
       </div>
       <div class="ea-hud-score-footer">
         <span>Kritik Risk: 3 Bulgu</span>
-        <span>Reçete: 15 Adet</span>
+        <span>yol haritası: 15 Adet</span>
       </div>
     </div>
 
@@ -213,7 +231,7 @@
   <!-- Findings Section -->
   <section class="ea-findings-section">
     <div class="ea-section-bar">
-      <h2>Tespitler ve Çözüm Reçeteleri <span class="badge-count">15 bulgu</span></h2>
+      <h2>Tespitler ve Çözüm yol haritasıleri <span class="badge-count">15 bulgu</span></h2>
       <div class="ea-filter-group">
         <button class="ea-filter-btn active" data-filter="all" type="button">Tümü</button>
         <button class="ea-filter-btn" data-filter="high" type="button">Yüksek</button>
@@ -256,13 +274,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="a11y-form-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her <code>&lt;input&gt;</code> elemanına <code>&lt;label&gt;</code> ile <code>for</code> attribute'ü ekleyin. Label ve input ID'si birebir eşleşmeli.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p><code>aria-required</code> ve <code>aria-describedby</code> attribute'lerini ekleyerek AI tarayıcıların form alanını doğru yorumlamasını sağlayın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Placeholder'ı yedek etiket olarak kullanmayın. Placeholder sadece ipucu, asıl etiket <code>&lt;label&gt;</code> olmalı.</p></div>
@@ -275,11 +293,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -321,13 +339,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="sec-mixed-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Tüm <code>http://</code> kaynak referanslarını <code>https://</code> ile değiştirin. Görseller, scriptler, CSS dosyaları ve iframe'ler dahil.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Content-Security-Policy header'ına <code>upgrade-insecure-requests</code> direktifini ekleyin. Bu, tarayıcının otomatik olarak HTTP'yi HTTPS'ye yükseltmesini sağlar.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CDN ve üçüncü taraf kaynakları kontrol edin. Eski HTTP CDN URL'lerini HTTPS versiyonlarıyla güncelleyin.</p></div>
@@ -340,11 +358,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -386,13 +404,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-canon-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfanın <code>&lt;head&gt;</code> bölümüne <strong>self-referencing canonical</strong> link ekleyin. URL mutlak (absolute) olmalı, asla relative.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Dinamik sayfalarda sunucu tarafında canonical üretin. <code>?utm_source</code> gibi parametreler canonical URL'de olmamalı.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>hreflang uyguluyorsanız, her hreflang versiyonu kendi self-referencing canonical'ına sahip olmalı.</p></div>
@@ -405,11 +423,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -451,13 +469,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="perf-html-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Kritik CSS'yi inline olarak <code>&lt;head&gt;</code> içine yerleştirin. Ana CSS dosyasını <code>preload</code> + <code>onload</code> ile asenkron yükleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kullanılmayan HTML, CSS ve JS'i kaldırın. PurgeCSS + HTMLMinifier kullanarak build pipeline'ında otomatik temizlik yapın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Next.js/Vercel kullanıyorsanız, React Server Components ve Streaming SSR ile sayfayı parçalara bölün. ISR ile edge cache kullanın.</p></div>
@@ -470,11 +488,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -516,13 +534,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="a11y-name-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>İkon-only butonlara <code>aria-label</code> ekleyin. Örnek: <code>aria-label=Kapat</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Visually-hidden text pattern'ini kullanın. <code>.sr-only</code> CSS class'ı ile buton içine gizli ama erişilebilir metin ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>SVG ikonlara <code>aria-hidden=true</code> ekleyin, böylece ekran okuyucu ikonu değil buton amacını okur.</p></div>
@@ -535,11 +553,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -581,13 +599,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="crawl-sitemap-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>sitemap.xml</code> dosyası oluşturun. Tüm önemli URL'leri <code>loc</code>, <code>lastmod</code>, <code>changefreq</code> ve <code>priority</code> ile listeleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p><code>robots.txt</code> dosyasına <code>Sitemap:</code> direktifini ekleyin. Mutlak URL kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Google Search Console ve Bing Webmaster Tools'a sitemap URL'sini gönderin. Otomatik ping için n8n workflow kurun.</p></div>
@@ -600,11 +618,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -646,13 +664,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-duptitle-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfa için <strong>benzersiz, açıklayıcı</strong> başlık oluşturun. Formül: <code>[Sayfa Adı] | [Marka] — [Değer Önerisi]</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Başlık uzunluğu 50-60 karakter arasında tutun. AI snippet görünümü için optimal.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Dinamik sayfalarda sunucu tarafında başlık üretin. CMS'den otomatik çekin.</p></div>
@@ -665,11 +683,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -711,13 +729,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-h1-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Sayfa başına <strong>tek bir H1</strong> kullanın. H1, <code>&lt;body&gt;</code> içinde ilk sıradaki ana başlık olmalı.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Semantik HTML5 outline kullanın: <code>&lt;main&gt;</code> > <code>&lt;h1&gt;</code> > <code>&lt;section&gt;</code> > <code>&lt;h2&gt;</code> > <code>&lt;h3&gt;</code></p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CSS ile görsel büyük başlık yapmayın. <code>&lt;div class=hero-title&gt;</code> yerine <code>&lt;h1&gt;</code> kullanın.</p></div>
@@ -730,11 +748,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -776,13 +794,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-meta-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfa için <strong>benzersiz, anahtar kelime zengini</strong> meta description yazın. Formül: <code>[Ne] + [Kime] + [Eşsiz Değer] + [CTA]</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Uzunluk 150-160 karakter arasında tutun. Optimal AI snippet görünümü için.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CMS'den otomatik üretim için excerpt alanını meta description kaynağı olarak kullanın, 157 karakterde kesin.</p></div>
@@ -795,11 +813,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -841,13 +859,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="llms-discovery-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>&lt;head&gt;</code> içine <code>rel=describedby</code> link'i ekleyin. Bu, AI tarayıcılara llms.txt konumunu bildirir.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kök dizinde <code>/llms.txt</code> dosyası oluşturun. Markdown formatında marka bağlamını, hizmetleri ve iletişim bilgilerini yazın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CMS yayını tetiklediğinde llms.txt'i otomatik güncelleyen n8n workflow kurun.</p></div>
@@ -860,11 +878,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -906,13 +924,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="sec-perm-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Web sunucusu config'ine (Nginx, Apache, Vercel, Cloudflare) Permissions-Policy header'ı ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kullanılmayan tarayıcı API'lerini kapatın: accelerometer, camera, geolocation, gyroscope, magnetometer, microphone, payment, usb.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Next.js kullanıyorsanız <code>middleware.ts</code> ile header'ı tüm yanıtlara ekleyin.</p></div>
@@ -925,11 +943,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -971,13 +989,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="trust-privacy-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/gizlilik</code> veya <code>/privacy</code> sayfası oluşturun. H1 başlık, maddeleme ve net dil kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>GDPR/KVKK uyumlu bölümler ekleyin: Veri erişim hakkı, Silme hakkı, Taşınabilirlik hakkı.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Tüm sayfaların footer'ına gizlilik politikası link'i ekleyin. Schema.org PrivacyPolicy markup'ı kullanın.</p></div>
@@ -990,11 +1008,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1036,13 +1054,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="agent-a2a-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/.well-known/agent.json</code> dosyası oluşturun. A2A protokolüne uygun JSON schema kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Agent adı, açıklama, yetenekler, endpoint ve iletişim bilgilerini ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Servis değişikliklerinde agent.json'i otomatik güncelleyen n8n workflow kurun.</p></div>
@@ -1055,11 +1073,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1101,13 +1119,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="agent-openapi-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/openapi.json</code> dosyası oluşturun. OpenAPI 3.1.0 formatında API endpoint'lerini, parametreleri ve yanıtları tanımlayın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Fastify/Swagger veya Next.js API Routes kullanıyorsanız, otomatik OpenAPI üretimini etkinleştirin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Route tanımlarından otomatik üretim için swagger-jsdoc veya @fastify/swagger kullanın.</p></div>
@@ -1120,11 +1138,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1166,13 +1184,13 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm Reçetesi) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="llms-md-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm Reçetesi & Uygulama Adımları
+                Kurumsal Çözüm yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>&lt;head&gt;</code> içine <code>rel=alternate type=text/markdown</code> link'i ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>CMS'den otomatik HTML→Markdown dönüşümü yapın. Sayfa başına bir <code>.md</code> dosyası oluşturun.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Edge cache ile Markdown dosyalarını sunun. n8n workflow ile CMS yayınında otomatik güncelle.</p></div>
@@ -1185,11 +1203,11 @@
               <div class="recipe-lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm Reçetesi Kilitli</h4>
+              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm Reçetesi Dahil
+                15 Çözüm yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1309,14 +1327,14 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Kurumsal</h4>
+      <h4>Company</h4>
       <ul>
-        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
-        <li><a href="/tr/iletisim/">İletişim</a></li>
-        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
-        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
-        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
-        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/en/terms/">Terms of Service</a></li>
+        <li><a href="/en/privacy/">Privacy Policy</a></li>
+        <li><a href="/en/refund-policy/">Refund Policy</a></li>
+        <li><a href="/en/delivery-policy/">Delivery Policy</a></li>
       </ul>
     </div>
   </div>
@@ -1330,7 +1348,7 @@
 <div class="action-bar" id="actionBar">
   <div class="action-bar-inner">
     <span class="action-bar-text">
-      <span class="highlight">15 Kurumsal Çözüm Reçetesi</span> Kilitli — Tümünü Açın
+      <span class="highlight">15 Kurumsal Çözüm yol haritası</span> Kilitli — Tümünü Açın
     </span>
     <button class="action-bar-btn" id="actionBarBtn" type="button">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1354,7 +1372,7 @@
     <div class="modal-features">
       <div class="modal-feature">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>15 Detaylı Çözüm Reçetesi &amp; Yol Haritası</span>
+        <span>15 Detaylı Çözüm yol haritası &amp; Yol Haritası</span>
       </div>
       <div class="modal-feature">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
