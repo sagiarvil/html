@@ -1,4 +1,4 @@
-# HTML&HTML — 12-Engine Website Fix Validator
+# HTML&HTML — 18-Engine Website Fix Validator
 
 HTML&HTML is a bilingual TR/EN website diagnosis and implementation-mandate product.
 
@@ -6,12 +6,12 @@ HTML&HTML is a bilingual TR/EN website diagnosis and implementation-mandate prod
 
 1. User enters a public domain or URL.
 2. `/api/scan` applies DNS/redirect SSRF gates and scans up to 25 public HTML pages plus machine-readable surfaces.
-3. Twelve deterministic engines return all findings, URLs, severity, confidence, evidence class and measured evidence for free.
+3. Eighteen deterministic engines return all findings, URLs, severity, confidence, evidence class and measured evidence for free.
 4. Free results never expose implementation instructions and never invent source-file paths.
 5. `/api/mandate` re-scans the same domain and converts valid findings into an implementation contract only after paid entitlement verification.
 6. Full Site Fix Mandate is USD 99 for one domain (software license), delivering the turnkey 22-file software, code patches, and architectural blueprint bundle with one re-scan within 30 days.
 
-## Twelve engines
+## Eighteen engines
 
 - Crawl & Index
 - Technical SEO
@@ -25,6 +25,12 @@ HTML&HTML is a bilingual TR/EN website diagnosis and implementation-mandate prod
 - Agent Readiness
 - Conversion
 - Link Integrity
+- Ontology & Knowledge Vault
+- RAG Chunking & AST Gate
+- Neural Cross-Encoder Rerank
+- Epistemic Corroboration
+- C2PA Cryptographic Provenance
+- Cold-Start Edge Latency
 
 ## Evidence model
 

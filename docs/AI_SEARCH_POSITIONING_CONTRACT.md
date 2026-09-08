@@ -57,7 +57,7 @@ Free diagnosis exposes evidence and readiness context. The implementation-grade 
 ## Architecture invariants
 This content layer must not change:
 
-- canonical 12-engine score
+- canonical 18-engine score
 - 13 non-scoring Intelligence Audits
 - seven readiness lenses
 - Deep Crawl maximum 50 public HTML pages

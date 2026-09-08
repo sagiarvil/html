@@ -382,7 +382,7 @@ html[data-theme="light"] .pillar-amber .pillar-score {
   color: #d97706 !important;
 }
 
-/* 12-Engine Score Grid Enhancement */
+/* 18-Engine Score Grid Enhancement */
 .score-grid {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -498,7 +498,7 @@ html[data-theme="light"] .pillar-amber .pillar-score {
   background: linear-gradient(90deg, #0066ff, #38bdf8) !important;
 }
 
-/* Light Mode 12-Engine Score Items */
+/* Light Mode 18-Engine Score Items */
 html[data-theme="light"] .score-item {
   background: #ffffff !important;
   background-color: #ffffff !important;
