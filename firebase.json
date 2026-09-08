@@ -39,7 +39,7 @@
           {"key":"Vary","value":"Accept-Encoding"},
           {"key":"Server-Timing","value":"cf-edge;dur=1, cdn-cache;desc=HIT"},
           {"key":"X-Served-By","value":"Cloudflare-Edge"},
-          {"key":"ETag","value":"W/\"htmlandhtml-v3-20260908-svg-bounds-fix\""}
+          {"key":"ETag","value":"W/\"htmlandhtml-v4-20260908-typography-upgrade\""}
         ]
       },
       {"source":"**/*.@(html|htm)","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
