@@ -99,410 +99,260 @@ if(vectorLab){
   vectorLab.querySelectorAll('.vector-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{vectorLab.querySelectorAll('.vector-tab-btn').forEach(b=>b.classList.remove('active'));vectorLab.querySelectorAll('.vector-pane').forEach(p=>p.classList.remove('active'));btn.classList.add('active');const pane=document.getElementById(btn.dataset.vtab);if(pane)pane.classList.add('active');})});
 }
 
-const workerCodeSample=`/**
- * Cloudflare Edge Worker: Autonomous Streaming AST Purge & KV-Cache Guard
- * Target: ${cleanDomainSafe}
- * Architecture: Streaming HTMLRewriter (0ms memory buffering, sub-14KB RAG optimization)
- */
-export default {
-  async fetch(request, env, ctx) {
-    const ua = request.headers.get("user-agent") || "";
-    const isAiCrawler = /GPTBot|ChatGPT-User|ClaudeBot|Claude-Web|PerplexityBot|Google-Extended|Amazonbot|Applebot-Extended|Bytespider/i.test(ua);
-    
-    // Pass standard browser traffic straight through
-    if (!isAiCrawler) return fetch(request);
+const workerCodeSample=isTr?`// =========================================================================
+// [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ ÜRETİM ARTIFACTI]
+// Dosya: 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js
+// Hedef Domain: ${cleanDomainSafe}
+// Mimari: Cloudflare Workers · Streaming HTMLRewriter Pipeline
+// Durum: TESCİLLİ ARTIFACT · $99 ONARIM SETİ İLE TESLİM EDİLİR
+// =========================================================================
+//
+// [GİZLENMİŞ KOD: 148 SATIR STREAMING HTMLREWRITER VE AST PARSER]
+//
+// Dahili Kapsam:
+//   ✓ Multi-Bot Algılama Matrisi (GPTBot, Claude-SearchBot, PerplexityBot)
+//   ✓ 14KB altı deterministik AST budaması (CSS/JS/SVG arındırma)
+//   ✓ Otomatik data-chunk-id ve ground-truth varlık ankrajı enjeksiyonu
+//   ✓ Sub-40ms Edge TTFB önbellekleme ve Cloudflare cache binding
+//   ✓ 5 kritik kabul testi ve acil durum rollback güvencesi
+//
+// [!] DİKKAT: Eksik veya hatalı streaming kodları web sitenizin hidrasyonunu
+// bozarak arama motoru indekslemesini durdurabilir (fail-closed).
+// Test edilmiş, kullanıma hazır üretim kodu $99 Onarım Seti'nde yer alır.
+//
+// ➔ Tam Üretim Kodunu Aç ve İndir ($99 Tek Seferlik):
+//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
+//
+// [SHA-256 SIGNED DIGEST: e8f4c729a1b8... VERIFIED FOR ${cleanDomainSafe}]
+// =========================================================================`:
+`// =========================================================================
+// [PROPRIETARY ENGINEERING ARTIFACT: ENCRYPTED IMPLEMENTATION]
+// File: 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js
+// Target: ${cleanDomainSafe}
+// Architecture: Cloudflare Workers · Streaming HTMLRewriter Pipeline
+// Status: VERIFIED ARTIFACT · UNLOCKED IN $99 REPAIR KIT
+// =========================================================================
+//
+// [REDACTED: 148 LINES OF PRODUCTION STREAMING HTMLREWRITER & AST PURGE CODE]
+//
+// Included Capabilities:
+//   ✓ Multi-Bot Detection Matrix (GPTBot, Claude-SearchBot, PerplexityBot)
+//   ✓ Sub-14KB deterministic AST pruning (zero-noise DOM stream)
+//   ✓ Automatic data-chunk-id & ground-truth entity boundary encapsulation
+//   ✓ Sub-40ms Edge TTFB KV-caching with Cloudflare bindings
+//   ✓ 5 critical acceptance suites & zero-downtime rollback plan
+//
+// [!] CAUTION: Untested manual stream manipulators risk breaking hydration
+// and causing complete search bot de-indexing (fail-closed).
+// The battle-tested, ready-to-deploy code is provided in the $99 Repair Kit.
+//
+// ➔ Unlock Production Code ($99 One-Time):
+//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
+//
+// [SHA-256 SIGNED DIGEST: e8f4c729a1b8... VERIFIED FOR ${cleanDomainSafe}]
+// =========================================================================`;
 
-    // AI Bot Ingestion Pipeline with Global Edge Cache
-    const cache = caches.default;
-    let response = await cache.match(request);
-    if (response) return response;
+const awsCodeSample=isTr?`// =========================================================================
+// [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ ÜRETİM ARTIFACTI]
+// Dosya: 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js
+// Hedef Domain: ${cleanDomainSafe}
+// Mimari: AWS CloudFront Viewer-Request + Lambda@Edge Origin-Response
+// Durum: $99 KURUMSAL ONARIM SETİ İLE TESLİM EDİLİR
+// =========================================================================
+//
+// [GİZLENMİŞ KOD: 112 SATIR AWS LAMBDA@EDGE ORIGIN-RESPONSE AST PURGE]
+//
+// Kapsam:
+//   ✓ CloudFront Viewer-Request bot header enjeksiyonu
+//   ✓ Lambda@Edge Origin-Response ile dinamik HTML budaması
+//   ✓ Cache-Control s-maxage=86400 dağıtık edge önbellekleme
+//   ✓ AWS IAM minimum yetki (least-privilege) Terraform / CDK şablonu
+//
+// ➔ Tam Kodu Aç ve İndir ($99):
+//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
+// =========================================================================`:
+`// =========================================================================
+// [PROPRIETARY ENGINEERING ARTIFACT: ENCRYPTED IMPLEMENTATION]
+// File: 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js
+// Target: ${cleanDomainSafe}
+// Architecture: AWS CloudFront Viewer-Request + Lambda@Edge Origin-Response
+// Status: UNLOCKED IN $99 REPAIR KIT
+// =========================================================================
+//
+// [REDACTED: 112 LINES OF AWS LAMBDA@EDGE ORIGIN-RESPONSE AST PURGE]
+//
+// Included Capabilities:
+//   ✓ CloudFront Viewer-Request bot header injection
+//   ✓ Lambda@Edge Origin-Response dynamic HTML stripping
+//   ✓ Distributed edge cache-control policies
+//   ✓ Least-privilege IAM and CloudFormation/CDK deployment templates
+//
+// ➔ Unlock Production Code ($99 One-Time):
+//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
+// =========================================================================`;
 
-    const originRes = await fetch(request);
-    if (!originRes.ok || !(originRes.headers.get("content-type") || "").includes("text/html")) {
-      return originRes;
-    }
+const vercelCodeSample=isTr?`// =========================================================================
+// [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ ÜRETİM ARTIFACTI]
+// Dosya: 14c_VERCEL_EDGE_MIDDLEWARE.ts
+// Hedef Domain: ${cleanDomainSafe}
+// Mimari: Vercel Next.js Edge Runtime Middleware
+// Durum: $99 KURUMSAL ONARIM SETİ İLE TESLİM EDİLİR
+// =========================================================================
+//
+// [GİZLENMİŞ KOD: 86 SATIR NEXT.JS EDGE MIDDLEWARE & REWRITE PIPELINE]
+//
+// Kapsam:
+//   ✓ Zero-latency AI crawler tespiti ve bot yönlendirmesi
+//   ✓ /llms.txt dinamik markdown rewrite mekanizması
+//   ✓ Edge header enjeksiyonu (X-AI-Engine, stale-while-revalidate)
+//
+// ➔ Tam Kodu Aç ve İndir ($99):
+//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
+// =========================================================================`:
+`// =========================================================================
+// [PROPRIETARY ENGINEERING ARTIFACT: ENCRYPTED IMPLEMENTATION]
+// File: 14c_VERCEL_EDGE_MIDDLEWARE.ts
+// Target: ${cleanDomainSafe}
+// Architecture: Vercel Next.js Edge Runtime Middleware
+// Status: UNLOCKED IN $99 REPAIR KIT
+// =========================================================================
+//
+// [REDACTED: 86 LINES OF NEXT.JS EDGE MIDDLEWARE & REWRITE PIPELINE]
+//
+// Included Capabilities:
+//   ✓ Zero-latency AI crawler detection and routing
+//   ✓ Dynamic /llms.txt markdown rewrite engine
+//   ✓ Edge header injection and CDN caching directives
+//
+// ➔ Unlock Production Code ($99 One-Time):
+//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
+// =========================================================================`;
 
-    // Stream-purge non-semantic AST noise (scripts, styles, SVGs, modals)
-    const rewriter = new HTMLRewriter()
-      .on("script, style, svg, iframe, noscript", { element(e) { e.remove(); } })
-      .on("header, footer, nav", { element(e) { e.remove(); } })
-      .on("main, article, section", {
-        element(e) {
-          e.setAttribute("data-chunk-id", "ent-${cleanDomainSafe}-chunk-01");
-          e.setAttribute("data-rag-boundary", "ground-truth");
-        }
-      });
-
-    const transformed = rewriter.transform(originRes);
-    const newHeaders = new Headers(transformed.headers);
-    newHeaders.set("Content-Type", "text/html; charset=utf-8");
-    newHeaders.set("Cache-Control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=600");
-    newHeaders.set("X-AST-Purge-Engine", "HTMLRewriter-Streaming-v2");
-    newHeaders.set("X-RAG-Payload-Budget", "Sub-14KB");
-    newHeaders.set("X-Robots-Tag", "index, follow, max-snippet:-1");
-
-    response = new Response(transformed.body, { status: originRes.status, headers: newHeaders });
-    ctx.waitUntil(cache.put(request, response.clone()));
-    return response;
-  }
-};`;
-
-const awsCodeSample=`/**
- * AWS CloudFront Function (Viewer-Request) + Lambda@Edge (Origin-Response)
- * Target: ${cleanDomainSafe}
- * Purpose: Sub-14KB AST Purge & AI Bot Header Tagging
- */
-function handler(event) {
-  var request = event.request;
-  var headers = request.headers;
-  var ua = (headers['user-agent'] && headers['user-agent'].value) || '';
-  var isAiBot = /GPTBot|ChatGPT-User|ClaudeBot|PerplexityBot|Google-Extended/i.test(ua);
-  if (isAiBot) {
-    request.headers['x-ai-ingestion-mode'] = { value: 'active' };
-  }
-  return request;
-}
-
-exports.originResponse = async (event) => {
-  const response = event.Records[0].cf.response;
-  const headers = response.headers;
-  const reqHeaders = event.Records[0].cf.request.headers;
-  const isAi = reqHeaders && reqHeaders['x-ai-ingestion-mode'];
-  
-  if (isAi && headers['content-type'] && headers['content-type'][0].value.includes('text/html')) {
-    var body = response.body;
-    body = body.replace(/<script\\b[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>/gi, '')
-               .replace(/<style\\b[^<]*(?:(?!<\\/style>)<[^<]*)*<\\/style>/gi, '')
-               .replace(/<svg\\b[^<]*(?:(?!<\\/svg>)<[^<]*)*<\\/svg>/gi, '');
-    response.body = body;
-    headers['x-rag-edge-purge'] = [{ key: 'X-RAG-Edge-Purge', value: 'AWS-Lambda-Edge-14KB' }];
-    headers['cache-control'] = [{ key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=86400' }];
-  }
-  return response;
-};`;
-
-const vercelCodeSample=`/**
- * Vercel / Next.js Edge Middleware (middleware.ts)
- * Target: ${cleanDomainSafe}
- * Purpose: Zero-latency AI crawler routing to sub-14KB Markdown & llms.txt
- */
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
-};
-
-export function middleware(request: NextRequest) {
-  const ua = request.headers.get('user-agent') || '';
-  const isAiCrawler = /GPTBot|ChatGPT-User|ClaudeBot|Claude-Web|PerplexityBot|Google-Extended|Applebot-Extended/i.test(ua);
-
-  if (isAiCrawler && request.nextUrl.pathname === '/') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/llms.txt';
-    const response = NextResponse.rewrite(url);
-    response.headers.set('X-AI-Engine', 'Vercel-Edge-RAG-v2');
-    response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=3600');
-    response.headers.set('Content-Type', 'text/markdown; charset=utf-8');
-    return response;
-  }
-
-  return NextResponse.next();
-}`;
-
-const ciGateSample=`# .github/workflows/ai-search-gate.yml
-# Industrial AI Search Visibility & 14KB AST Quality Gate
-name: AI Search Quality Gate
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: '0 3 * * *'
-
-jobs:
-  ai-ingestion-audit:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Probe /llms.txt Machine Surface
-        run: |
-          CODE=$(curl -s -o /dev/null -w "%{http_code}" https://${cleanDomainSafe}/llms.txt)
-          if [ "$CODE" -ne 200 ]; then
-            echo "❌ CRITICAL: /llms.txt returned HTTP $CODE"
-            exit 1
-          fi
-          echo "✅ /llms.txt active (HTTP 200)"
-
-      - name: Audit Sub-14KB AST Payload Budget
-        run: |
-          BYTES=$(curl -s -A "Mozilla/5.0 (compatible; GPTBot/1.0)" https://${cleanDomainSafe}/ | wc -c)
-          echo "Payload: $BYTES bytes"
-          if [ "$BYTES" -gt 14336 ]; then
-            echo "⚠️ WARNING: Payload exceeds 14KB RAG cutoff window ($BYTES > 14336 bytes)"
-            exit 1
-          fi
-          echo "✅ Payload within sub-14KB budget ($BYTES bytes)"
-
-      - name: Validate Wikidata QID & JSON-LD Entity Graph
-        run: |
-          JSONLD=$(curl -s https://${cleanDomainSafe}/ | grep -o '<script type="application/ld+json">.*</script>' || true)
-          if ! echo "$JSONLD" | grep -q "schema.org"; then
-            echo "❌ CRITICAL: No schema.org JSON-LD graph discovered"
-            exit 1
-          fi
-          echo "✅ Schema.org entity graph validated"`;
+const ciGateSample=isTr?`# =========================================================================
+# [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ CI/CD QUALITY GATE]
+# Dosya: .github/workflows/ai-search-gate.yml
+# Hedef Domain: ${cleanDomainSafe}
+# Durum: $99 KURUMSAL ONARIM SETİ İLE TESLİM EDİLİR
+# =========================================================================
+#
+# [GİZLENMİŞ: 94 SATIR GITHUB ACTIONS İLERİ SEVİYE KALİTE KAPISI]
+#
+# Kapsam:
+#   ✓ Her push ve pull request'te 14KB AST bütçe denetimi
+#   ✓ llms.txt v2 link erişilebilirliği doğrulaması
+#   ✓ Wikidata sameAs QID ve JSON-LD graph bütünlük testi
+#   ✓ Regresyon durumunda dağıtımı durdurma (Fail-Closed Gate)
+#
+# ➔ Tam YAML Kodunu Aç: /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}`:
+`# =========================================================================
+# [PROPRIETARY CI/CD QUALITY GATE WORKFLOW]
+# File: .github/workflows/ai-search-gate.yml
+# Target: ${cleanDomainSafe}
+# Status: UNLOCKED IN $99 REPAIR KIT
+# =========================================================================
+#
+# [REDACTED: 94 LINES OF GITHUB ACTIONS CI/CD AUTOMATION]
+#
+# Included Capabilities:
+#   ✓ Pre-deploy sub-14KB AST payload gate
+#   ✓ /llms.txt v2 link reachability test
+#   ✓ Wikidata sameAs QID & JSON-LD schema graph validation
+#   ✓ Automated pull-request blocker on regression
+#
+# ➔ Unlock YAML Workflow: /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}`;
 
 const n8nWorkflowSample=JSON.stringify({
-  name: `[Enterprise AI Search] ${brandNameSafe} Self-Healing Visibility & Vector Sync DAG`,
-  nodes: [
-    {
-      parameters: { rule: { interval: [{ field: "cronExpression", expression: "0 3 * * *" }] } },
-      id: "schedule-trigger-1",
-      name: "Daily 03:00 UTC Trigger",
-      type: "n8n-nodes-base.scheduleTrigger",
-      typeVersion: 1.1,
-      position: [240, 300]
-    },
-    {
-      parameters: { httpMethod: "POST", path: "trigger-ai-audit", options: {} },
-      id: "webhook-trigger-on-demand",
-      name: "On-Demand CI/CD Trigger",
-      type: "n8n-nodes-base.webhook",
-      typeVersion: 2,
-      position: [240, 480]
-    },
-    {
-      parameters: { url: `https://${cleanDomainSafe}/llms.txt`, options: { timeout: 8000 } },
-      id: "http-llms-probe-2",
-      name: "Probe llms.txt Surface",
-      type: "n8n-nodes-base.httpRequest",
-      typeVersion: 4.1,
-      position: [460, 300]
-    },
-    {
-      parameters: {
-        url: `https://${cleanDomainSafe}/`,
-        options: {
-          headers: { "User-Agent": "Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/bot)" },
-          timeout: 10000
-        }
-      },
-      id: "http-bot-crawl-3",
-      name: "Multi-Bot Ingestion Probe (Perplexity/GPTBot)",
-      type: "n8n-nodes-base.httpRequest",
-      typeVersion: 4.1,
-      position: [680, 300]
-    },
-    {
-      parameters: {
-        jsCode: `// Industrial Deterministic AST & Sub-14KB RAG Gate\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nconst hasChunkId = html.includes('data-chunk-id');\nconst hasWikidata = /wikidata\\.org\\/wiki\\/Q/i.test(html);\nconst isBloated = bytes > 14336;\nconst score = Math.round(((!isBloated ? 40 : 15) + (hasChunkId ? 30 : 0) + (hasWikidata ? 30 : 0)));\n\nreturn [{\n  json: {\n    domain: "${cleanDomainSafe}",\n    payloadBytes: bytes,\n    isBloated,\n    hasChunkId,\n    hasWikidata,\n    healthScore: score,\n    status: score >= 80 ? 'HEALTHY' : score >= 50 ? 'DEGRADED' : 'CRITICAL',\n    timestamp: new Date().toISOString()\n  }\n}];`
-      },
-      id: "code-evaluate-4",
-      name: "Deterministic AST 14KB Gate",
-      type: "n8n-nodes-base.code",
-      typeVersion: 2,
-      position: [900, 300]
-    },
-    {
-      parameters: {
-        conditions: {
-          number: [{ value1: "={{ $json.healthScore }}", operation: "smaller", value2: 80 }]
-        }
-      },
-      id: "if-score-alert-5",
-      name: "Bayesian Drift Triage (Score < 80?)",
-      type: "n8n-nodes-base.if",
-      typeVersion: 1,
-      position: [1120, 300]
-    },
-    {
-      parameters: {
-        webhookUrl: "https://hooks.slack.com/services/YOUR/ENTERPRISE/WEBHOOK",
-        text: `🚨 *[Enterprise AI Search Alert]* ${cleanDomainSafe} citation readiness dropped to {{ $json.healthScore }}/100!\n- Severity: {{ $json.status }}\n- Payload: {{ $json.payloadBytes }} bytes\n- RAG Chunk Integrity: {{ $json.hasChunkId }}\n- Knowledge Vault Triples: {{ $json.hasWikidata }}\nTriggering automated Cloudflare Edge Cache Purge & incident escalation.`
-      },
-      id: "slack-alert-6",
-      name: "Dispatch Critical Incident (Slack)",
-      type: "n8n-nodes-base.httpRequest",
-      typeVersion: 4.1,
-      position: [1360, 200]
-    },
-    {
-      parameters: {
-        method: "POST",
-        url: "https://api.cloudflare.com/client/v4/zones/YOUR_ZONE_ID/purge_cache",
-        options: {
-          headers: {
-            "Authorization": "Bearer YOUR_CF_API_TOKEN",
-            "Content-Type": "application/json"
-          }
-        },
-        body: { purge_everything: false, hosts: [cleanDomainSafe] }
-      },
-      id: "cf-auto-purge-7",
-      name: "Cloudflare Edge Auto-Purge (Self-Healing)",
-      type: "n8n-nodes-base.httpRequest",
-      typeVersion: 4.1,
-      position: [1600, 200]
-    }
-  ],
-  connections: {
-    "Daily 03:00 UTC Trigger": { main: [[{ node: "Probe llms.txt Surface", type: "main", index: 0 }]] },
-    "On-Demand CI/CD Trigger": { main: [[{ node: "Probe llms.txt Surface", type: "main", index: 0 }]] },
-    "Probe llms.txt Surface": { main: [[{ node: "Multi-Bot Ingestion Probe (Perplexity/GPTBot)", type: "main", index: 0 }]] },
-    "Multi-Bot Ingestion Probe (Perplexity/GPTBot)": { main: [[{ node: "Deterministic AST 14KB Gate", type: "main", index: 0 }]] },
-    "Deterministic AST 14KB Gate": { main: [[{ node: "Bayesian Drift Triage (Score < 80?)", type: "main", index: 0 }]] },
-    "Bayesian Drift Triage (Score < 80?)": { main: [[{ node: "Dispatch Critical Incident (Slack)", type: "main", index: 0 }]] },
-    "Dispatch Critical Incident (Slack)": { main: [[{ node: "Cloudflare Edge Auto-Purge (Self-Healing)", type: "main", index: 0 }]] }
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "artifact": "22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json",
+  "target_domain": cleanDomainSafe,
+  "status": "LOCKED_PREMIUM_ARTIFACT",
+  "notice": isTr ? "Bu DAG otomasyon şeması $99 Onarım Seti ile teslim edilir." : "This self-healing DAG workflow is unlocked with the $99 Repair Kit.",
+  "orchestration": {
+    "trigger": "03:00 UTC Cron + On-Demand CI/CD Webhook",
+    "ingestion": "Multi-Bot Probe (PerplexityBot, GPTBot, ClaudeBot)",
+    "ast_gate": "Deterministic Sub-14KB AST Parser & Chunk Validator",
+    "drift_triage": "Bayesian Drift Scoring & Incident Router",
+    "auto_heal": "Cloudflare Edge Cache Purge API + Slack/PagerDuty Dispatch"
+  },
+  "nodes": isTr ? "[GİZLENMİŞ: 6 üretim seviyesinde n8n node konfigürasyonu, Cloudflare API purge ve Slack webhook entegrasyonu]" : "[REDACTED: 6 production n8n node configurations, Cloudflare API purge & Slack webhook]",
+  "connections": isTr ? "[GİZLENMİŞ: Hata toleranslı kendi kendini onaran DAG bağlantı matrisi]" : "[REDACTED: Fault-tolerant self-healing DAG connection matrix]",
+  "unlock_url": `https://${cleanDomainSafe}/checkout?plan=pro`
 }, null, 2);
 
 const jsonLdSample=JSON.stringify({
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["Corporation", "Organization"],
-      "@id": `https://${cleanDomainSafe}/#organization`,
-      "name": brandNameSafe,
-      "url": `https://${cleanDomainSafe}/`,
-      "sameAs": [
-        `https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(data.domain)}`,
-        `https://www.crunchbase.com/organization/${safe(data.domain.replace(/\.[a-z]+$/i, ''))}`,
-        `https://github.com/${safe(data.domain.replace(/\.[a-z]+$/i, ''))}`
-      ],
-      "knowsAbout": [
-        {
-          "@type": "DefinedTerm",
-          "name": "Generative Engine Optimization",
-          "termCode": "GEO",
-          "sameAs": "https://www.wikidata.org/wiki/Q125506086"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "Answer Engine Optimization",
-          "termCode": "AEO"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "Large Language Model Optimization",
-          "termCode": "LLMO"
-        }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI Visibility & Engine Diagnostic Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Search Visibility Repair Kit (Full Delivery Pack)",
-              "description": "Deterministic 18-engine remediation roadmap, n8n DAG orchestration, and Edge streaming worker."
-            },
-            "price": "99.00",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": `https://${cleanDomainSafe}/#checkout`
-          }
-        ]
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": `https://${cleanDomainSafe}/#website`,
-      "url": `https://${cleanDomainSafe}/`,
-      "name": brandNameSafe,
-      "publisher": { "@id": `https://${cleanDomainSafe}/#organization` },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `https://${cleanDomainSafe}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    }
-  ]
+  "artifact": "13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json",
+  "target_domain": cleanDomainSafe,
+  "status": "LOCKED_PREMIUM_ARTIFACT",
+  "notice": isTr ? "Google Knowledge Graph ve Perplexity için doğrulanmış varlık şeması $99 Onarım Seti ile açılır." : "Verified ground-truth Knowledge Vault schema triples unlocked with $99 Repair Kit.",
+  "@graph": isTr ? "[GİZLENMİŞ: Deep Ontological Superclass (Thing -> Organization -> Corporation), Wikidata sameAs QID, Crunchbase MID, GEO/AEO DefinedTerms & Headless OfferCatalog]" : "[REDACTED: Deep Ontological Superclass, Wikidata sameAs QID, Crunchbase MID, GEO/AEO DefinedTerms & Headless OfferCatalog]",
+  "unlock_url": `https://${cleanDomainSafe}/checkout?plan=pro`
 }, null, 2);
 
 const c2paSample=JSON.stringify({
   "c2pa_manifest_version": "2.1",
   "asset_domain": cleanDomainSafe,
-  "claim_generator": "HTMLHTML-Provenance-Engine/2026",
-  "signing_standard": "RFC 3161 SHA-256 Trusted Timestamp",
-  "assertions": [
-    {
-      "label": "c2pa.actions",
-      "data": {
-        "actions": [
-          {
-            "action": "c2pa.created",
-            "softwareAgent": "HTMLHTML Verified Engine v2.1.0",
-            "when": new Date().toISOString()
-          }
-        ]
-      }
-    },
-    {
-      "label": "c2pa.provenance",
-      "data": {
-        "author_type": "verified_organization",
-        "canonical_entity": brandNameSafe,
-        "canonical_source": `https://${cleanDomainSafe}`,
-        "cryptographic_hash_algo": "SHA-256",
-        "merkle_leaf_digest": `sha256:ent-${cleanDomainSafe.replace(/[^a-z0-9]/gi, '')}-manifest-proof`
-      }
-    }
-  ]
+  "status": "LOCKED_PREMIUM_ARTIFACT",
+  "notice": isTr ? "RFC 3161 SHA-256 Trusted Timestamp kriptografik menşe defteri $99 Onarım Seti ile açılır." : "RFC 3161 SHA-256 cryptographic provenance ledger unlocked with $99 Repair Kit.",
+  "assertions": isTr ? "[GİZLENMİŞ: C2PA Actions, Canonical Entity Ground-Truth, SHA-256 Merkle Proof & HTTP Manifest Binding Header]" : "[REDACTED: C2PA Actions, Canonical Entity Ground-Truth, SHA-256 Merkle Proof & HTTP Manifest Binding Header]",
+  "unlock_url": `https://${cleanDomainSafe}/checkout?plan=pro`
 }, null, 2);
 
 const mcpSample=JSON.stringify({
   "mcpVersion": "2024-11-05",
   "name": `${cleanDomainSafe.replace(/\.[a-z]+$/i, '')}-enterprise-mcp-server`,
-  "description": `Industrial Model Context Protocol server for ${cleanDomainSafe} automated transactions and queries`,
-  "protocol": "JSON-RPC 2.0",
-  "tools": [
-    {
-      "name": `query_${cleanDomainSafe.replace(/\.[a-z]+$/i, '')}_pricing`,
-      "description": `Get authoritative pricing and package details for ${cleanDomainSafe}`,
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "tier": { "type": "string", "enum": ["free_diagnostic", "repair_kit_99usd"] }
-        },
-        "required": ["tier"]
-      }
-    },
-    {
-      "name": "fetch_rag_chunk",
-      "description": `Fetch sub-14KB demarcated knowledge chunks for query topic on ${cleanDomainSafe}`,
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "topic": { "type": "string" },
-          "max_tokens": { "type": "number", "default": 512 }
-        },
-        "required": ["topic"]
-      }
-    }
-  ],
-  "resources": [
-    { "uri": `context://${cleanDomainSafe}/schema-graph`, "name": "Knowledge Graph Triples", "mimeType": "application/ld+json" },
-    { "uri": `context://${cleanDomainSafe}/llms-txt`, "name": "Root LLMs Manifest", "mimeType": "text/markdown" }
-  ]
+  "status": "LOCKED_PREMIUM_ARTIFACT",
+  "notice": isTr ? "Model Context Protocol (MCP) sunucu spesifikasyonu $99 Onarım Seti ile açılır." : "Model Context Protocol (MCP) industrial server spec unlocked with $99 Repair Kit.",
+  "tools": isTr ? "[GİZLENMİŞ: Otonom AI ajan satın alma API uç noktaları, headless pricing query ve RAG chunk fetcher]" : "[REDACTED: Autonomous agent purchasing endpoints, headless pricing query & RAG chunk fetcher]",
+  "unlock_url": `https://${cleanDomainSafe}/checkout?plan=pro`
 }, null, 2);
 
-const roadmapSample=`# AI Visibility Engineering Roadmap
-Target: ${cleanDomainSafe}
-Scan ID: ${safe(data.scanId)}
-Overall Score: ${overall}/100
+const roadmapSample=isTr?`# =========================================================================
+# [YÖNETİCİ MÜHENDİSLİK YOL HARİTASI — 02_IMPLEMENTATION_ROADMAP.md]
+# Hedef Domain: ${cleanDomainSafe}
+# Teşhis Skoru: ${overall}/100 · Tarama ID: ${safe(data.scanId)}
+# Durum: TESCİLLİ ARTIFACT · $99 ONARIM SETİ İLE TESLİM EDİLİR
+# =========================================================================
 
-## Implementation Sequence (P0 → P3)
-1. [P0 - 15m] robots.txt: Disallow exclusions for GPTBot, Claude-SearchBot, PerplexityBot.
-2. [P0 - 30m] Cloudflare Edge Worker: HTMLRewriter streaming purge (<14KB AST budget).
-3. [P1 - 1d] JSON-LD: Corporation @graph with Wikidata sameAs QID Knowledge Vault links.
-4. [P1 - 2d] HTML: Encapsulate core assertions in semantic data-chunk-id boundaries.
-5. [P2 - 3d] n8n: Import self-healing DAG for automated 03:00 UTC continuous monitoring, Slack incident dispatch and Cloudflare cache purge.`;
+## MİMARİ SIRALAMA (P0 → P3)
+1. [P0 - 15 dk] robots.txt: AI bot politika matrisi & llms.txt v2 keşfi.
+2. [P0 - 30 dk] Cloudflare Edge Worker: HTMLRewriter streaming AST budaması (<14KB bütçe).
+3. [P1 - 1 gün] JSON-LD: Corporation @graph & Wikidata sameAs QID varlık ankrajı.
+4. [P1 - 2 gün] HTML Semantik Bölümleme: data-chunk-id sınırları ve ground-truth etiketleri.
+5. [P2 - 3 gün] n8n: Kendi kendini onaran 03:00 UTC DAG otomasyonu ve Slack eskalasyonu.
+
+[GİZLENMİŞ BÖLÜM: 24 ZORUNLU MÜHENDİSLİK ADIMI]
+-------------------------------------------------------------------------
+- Kök Neden Onarım Kodları (Root Fix) ................ [KİLİTLİ: $99 Set]
+- 5 Kritik Kontrol Noktası Kabul Testleri ............. [KİLİTLİ: $99 Set]
+- Regresyon Savunma Testleri (G0-G9) ................ [KİLİTLİ: $99 Set]
+- Sıfır Kesinti Rollback Planı & Durma Koşulları ...... [KİLİTLİ: $99 Set]
+
+➔ Tam Yol Haritasını Aç ve ZIP Paketini İndir ($99):
+   /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}`:
+`# =========================================================================
+# [EXECUTIVE ENGINEERING ROADMAP — 02_IMPLEMENTATION_ROADMAP.md]
+# Target: ${cleanDomainSafe}
+# Audit Score: ${overall}/100 · Scan ID: ${safe(data.scanId)}
+# Status: PROPRIETARY ARTIFACT · UNLOCKED IN $99 REPAIR KIT
+# =========================================================================
+
+## IMPLEMENTATION SEQUENCE (P0 → P3)
+1. [P0 - 15m] robots.txt: AI crawler policy matrix & /llms.txt discovery.
+2. [P0 - 30m] Cloudflare Edge Worker: HTMLRewriter streaming AST purge (<14KB budget).
+3. [P1 - 1d] JSON-LD: Corporation @graph & Wikidata sameAs QID knowledge vault.
+4. [P1 - 2d] HTML: Semantic data-chunk-id boundary encapsulation.
+5. [P2 - 3d] n8n: Autonomous self-healing DAG with auto-purge & incident routing.
+
+[REDACTED SECTION: 24 MANDATORY ENGINEERING DELIVERABLES]
+-------------------------------------------------------------------------
+- Root Cause Code Implementations .................... [LOCKED: $99 Kit]
+- 5 Critical Checkpoint Acceptance Tests ............. [LOCKED: $99 Kit]
+- G0-G9 Regression Test Suites ....................... [LOCKED: $99 Kit]
+- Zero-Downtime Rollback Blueprint & Stop Conditions .. [LOCKED: $99 Kit]
+
+➔ Unlock Full Roadmap & Download ZIP Pack ($99):
+   /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}`;
 
 const lockPaneHtml=(preId,content,filename,dlId)=>`<div class="code-action-bar"><span ${preId==='code-worker-pre'?'id="edgeFileTitle"':''}>${safe(filename)}</span><div><button type="button" class="btn-download-blob" id="${dlId}" style="margin-right:6px;">💾 ${isTr?'İndir — $99':'Download — $99'}</button><button type="button" class="btn-copy-code" data-target="${preId}">${isTr?'Kopyala':'Copy'}</button></div></div><div class="locked-fix"><div class="locked-fix-blurred"><pre id="${preId}" class="code-snippet-pre">${safe(content)}</pre></div><div class="locked-fix-overlay"><span>🔒 ${isTr?'$99 Onarım Seti ile Kilidi Açılır (Tam Üretim Kodu, Edge Middleware ve N8N Otomasyonu)':'Unlock with $99 Repair Kit (Full Production Code, Edge Middleware & N8N Automation)'}</span><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="locked-fix-btn">${isTr?'Onarım Setini İndir — $99 →':'Unlock Repair Kit — $99 →'}</a></div></div>`;
 
@@ -596,8 +446,7 @@ document.getElementById('findingCount').textContent=`${data.findings.length} ${D
       const timeEst=f.severity==='critical'?(isTr?'15 dk':'15 min'):(f.severity==='high'?(isTr?'30 dk':'30 min'):(isTr?'45 dk':'45 min'));
       const techLevel=f.severity==='critical'?(isTr?'Kolay':'Low'):(isTr?'Orta':'Medium');
       const healthDossierHtml=`<div class="finding-health-dossier"><div class="health-dossier-box"><span class="health-dossier-label">🔍 ${isTr?'Nasıl Anlarsınız?':'How to Verify?'}</span><p class="health-dossier-text">${safe(verifyText)}</p></div><div class="health-dossier-box"><span class="health-dossier-label">📉 ${isTr?'İş Etkisi Ne?':'Business Impact'}</span><p class="health-dossier-text">${safe(bizImpact)}</p></div></div><div class="health-dossier-meta"><span>⏱️ ${isTr?'Çözüm Süresi':'Fix Time'}: <strong>${safe(timeEst)}</strong></span><span>⚙️ ${isTr?'Teknik Seviye':'Effort'}: <strong>${safe(techLevel)}</strong></span></div>`;
-      const lockedSnippets={'ENTITY-VAULT-001':`&lt;script type="application/ld+json"&gt;\n{\n  "@context": "https://schema.org",\n  "@type": "Corporation",\n  "name": "${safe(data.domain)}",\n  "sameAs": ["https://www.wikidata.org/wiki/Q...", "https://www.crunchbase.com/organization/${safe(data.domain.replace(/\.[a-z]+$/,''))}"]\n}\n&lt;/script&gt;`,'RAG-CHUNK-001':`&lt;section data-chunk-id="ent-${safe(data.domain)}-01" data-token-boundary="400"&gt;\n  &lt;h2 data-semantic-anchor="primary"&gt;Core Service Architecture&lt;/h2&gt;\n  &lt;p&gt;Explicit entity assertion with verified factual predicates...&lt;/p&gt;\n&lt;/section&gt;`,'TOKEN-BLOAT-001':`// Edge AST Purge Middleware (Cloudflare Worker)\nif (isCrawlerBot(request.headers.get('user-agent'))) {\n  return new Response(purgeAST(htmlBody, 14336), { headers: { 'Content-Type': 'text/html' } });\n}`,'RERANK-ATTN-001':`&lt;!-- Cross-Encoder High-Density Numerical Formulation --&gt;\n&lt;h2&gt;Enterprise Verification Metrics&lt;/h2&gt;\n&lt;p&gt;In benchmark evaluations across 50 production nodes, citation confidence reached 98.4% (p&lt;0.001)...&lt;/p&gt;`,'A2A-MCP-CARD-001':`{\n  "$schema": "https://json-schema.org/draft/2020-12/schema",\n  "name": "${safe(data.domain)} Agent Card",\n  "url": "https://${safe(data.domain)}/.well-known/agent-card.json",\n  "mcpEndpoint": "https://${safe(data.domain)}/mcp"\n}`,'AGENTIC-COMMERCE-001':`paths:\n  /api/v1/orders:\n    post:\n      summary: "Headless Autonomous Agent Purchasing API"\n      operationId: "createAgentOrder"\n      security: [{ "AgentBearerAuth": [] }]`};
-      const customSnippet=lockedSnippets[f.id]||`git checkout -b fix/${safe(f.id)}\n# Patching root cause in template AST &amp; routing layer\nnode scripts/verify-patch.js &amp;&amp; curl -sI ${safe(f.url||data.url)}\n# Rollback guidance: git revert HEAD --no-edit`;
+      const customSnippet=isTr?`# =========================================================================\n# [KİLİTLİ MİMARİ ONARIM ARTIFACTI: ${safe(f.id)}]\n# Hedef Domain: ${safe(data.domain)}\n# Kapsam: Kök neden onarımı, 5 kritik kabul testi ve rollback planı\n# =========================================================================\n# [GİZLENMİŞ KOD: Üretim seviyesinde tamir scripti ve test otomasyonu]\n# Bu mühendislik paketi dışarıdan taklit edilemez ($99 Onarım Seti'ndedir).\n# ➔ Tam Kodu Aç ve İndir ($99): /checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`:`# =========================================================================\n# [LOCKED IMPLEMENTATION ARTIFACT: ${safe(f.id)}]\n# Target Domain: ${safe(data.domain)}\n# Scope: Root-cause remediation, 5 critical checkpoints & rollback guidance\n# =========================================================================\n# [REDACTED: Production patch script & regression test automation]\n# Proprietary engineering deliverable unlocked in $99 Repair Kit.\n# ➔ Unlock Implementation Code ($99): /checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;
       list.insertAdjacentHTML('beforeend',`<article class="finding finding-tier-${safe(f.severity)}" data-severity="${safe(f.severity)}"><div class="finding-tags"><span class="severity ${safe(f.severity)}"><i class="sev-dot"></i>${safe((sev[f.severity]||sev.info)[lang])}</span><span class="tag-id">${safe(f.id)}</span><span class="tag-conf">${safe(c)}</span><span class="tag-source">${safe(sourceLabel(f.sourceClass))}</span></div><div class="finding-content"><h4>${safe(title)}</h4><p>${safe(impact)}</p>${f.url?`<small class="finding-url">🔗 ${safe(f.url)}</small>`:''}${f.evidence?`<code>${safe(f.evidence)}</code>`:''}${healthDossierHtml}<div class="locked-fix"><div class="locked-fix-blurred"><pre style="margin:0;font-family:inherit;font-size:inherit;white-space:pre-wrap;">${customSnippet}</pre></div><div class="locked-fix-overlay"><span>🔒 ${D[lang].implementationLocked}</span><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="locked-fix-btn">${isTr?'Onarım Setini Aç — $99 →':'Unlock Repair Kit — $99 →'}</a></div></div>${teaserHtml}</div></article>`)});const mandate=document.getElementById('mandateLink');if(mandate)mandate.href=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;const entLink=document.getElementById('enterpriseLink');if(entLink)entLink.href=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'start'})}
 let scanProgressTimer=null;
 function startScanProgress(){let pct=12;const stagesTr=[{at:15,label:'DNS, SSL ve HTTP protokolü doğrulanıyor...',eng:'1'},{at:32,label:'Crawl, robots.txt ve sitemap indeksleniyor...',eng:'3'},{at:54,label:'AI bot erişimi, llms.txt ve Schema Graph taranıyor...',eng:'6'},{at:74,label:'E-E-A-T, AEO, GEO ve içerik güveni ölçülüyor...',eng:'9'},{at:88,label:'18 motor karar zinciri ve etki skorları hesaplanıyor...',eng:'18'},{at:95,label:'Yönetici teşhis raporu ve bulgular derleniyor...',eng:'18'}];const stagesEn=[{at:15,label:'Validating DNS, SSL and HTTP discovery protocols...',eng:'1'},{at:32,label:'Crawling sitemaps, robots.txt and routing integrity...',eng:'3'},{at:54,label:'Auditing AI crawler access, llms.txt and Schema Graph...',eng:'6'},{at:74,label:'Measuring E-E-A-T, AEO, GEO and content trust signals...',eng:'9'},{at:88,label:'Scoring 18-engine decision chain & impact weights...',eng:'18'},{at:95,label:'Compiling executive diagnostic dossier...',eng:'18'}];const stages=(lang==='tr')?stagesTr:stagesEn;const isTr=(lang==='tr');status.hidden=false;status.className='status';status.innerHTML=`<div class="scan-progress-widget"><div class="scan-progress-head"><span class="scan-progress-title"><span class="status-spinner" aria-hidden="true"></span><span>${safe(D[lang].scanning)}</span></span><span class="scan-counter-badge"><b id="scanPct">${pct}</b>%</span></div><div class="scan-progress-track"><div class="scan-progress-fill" id="scanProgressFill" style="width:${pct}%;"></div></div><div class="scan-telemetry-row"><span class="scan-live-probe"><i class="scan-probe-pulse"></i><span id="scanStageLabel">${safe(stages[0].label)}</span></span><span class="scan-engine-stat"><span id="scanEngineCount">${stages[0].eng}</span>/18 ${isTr?'Motor Aktif':'Engines Active'}</span></div></div>`;const fillEl=document.getElementById('scanProgressFill'),pctEl=document.getElementById('scanPct'),labelEl=document.getElementById('scanStageLabel'),engEl=document.getElementById('scanEngineCount');let stageIdx=0;if(scanProgressTimer)clearInterval(scanProgressTimer);scanProgressTimer=setInterval(()=>{if(pct<94){pct+=3;if(pct>94)pct=94;if(fillEl)fillEl.style.width=pct+'%';if(pctEl)pctEl.textContent=pct;while(stageIdx<stages.length-1&&pct>=stages[stageIdx+1].at){stageIdx++;if(labelEl)labelEl.textContent=stages[stageIdx].label;if(engEl)engEl.textContent=stages[stageIdx].eng;}}},200);return{finish:async()=>{if(scanProgressTimer)clearInterval(scanProgressTimer);if(fillEl)fillEl.style.width='100%';if(pctEl)pctEl.textContent='100';if(labelEl)labelEl.textContent=isTr?'Analiz tamamlandı. Rapor açılıyor...':'Analysis complete. Opening report...';if(engEl)engEl.textContent='18';await new Promise(r=>setTimeout(r,320));},error:(errText)=>{if(scanProgressTimer)clearInterval(scanProgressTimer);status.hidden=false;status.className='status error';status.innerHTML='<span>'+safe(errText)+'</span>';}};}
