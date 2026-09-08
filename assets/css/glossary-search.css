@@ -1,0 +1,676 @@
+/* ==========================================================================
+   HTML&HTML - Dev & Premium Sözlük Arama Motoru Stilleri
+   Dual Theme (Dark & Light) Full Parity + Glassmorphism + Micro-interactions
+   ========================================================================== */
+
+:root {
+  --gsearch-glow: rgba(99, 102, 241, 0.25);
+  --gsearch-accent: #6366f1;
+  --gsearch-accent-rgb: 99, 102, 241;
+  --gsearch-gold: #f59e0b;
+  --gsearch-emerald: #10b981;
+}
+
+/* Kapsayıcı Alan */
+.sozluk-search-section {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto 36px;
+  padding: 0 24px;
+  z-index: 30;
+}
+
+.sozluk-search-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* DEV ARAMA KUTUSU (Giant Search Box) */
+.sozluk-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 8px 20px;
+  background: color-mix(in srgb, var(--card, #14161a) 88%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 2px solid var(--line, rgba(255, 255, 255, 0.12));
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35),
+              0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sozluk-search-box:focus-within {
+  border-color: var(--gsearch-accent);
+  background: var(--card, #14161a);
+  box-shadow: 0 14px 40px -10px rgba(99, 102, 241, 0.3),
+              0 0 0 4px rgba(99, 102, 241, 0.2),
+              0 0 20px rgba(99, 102, 241, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Büyüteç İkonu */
+.sozluk-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--muted, #9ba1ad);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sozluk-search-box:focus-within .sozluk-search-icon {
+  color: var(--gsearch-accent);
+  transform: scale(1.1);
+}
+
+/* Arama Giriş Alanı (Dev Typography) */
+.sozluk-search-input {
+  flex: 1;
+  min-width: 0;
+  height: 52px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink, #f5f4ed);
+  letter-spacing: -0.015em;
+}
+
+.sozluk-search-input::placeholder {
+  color: var(--muted, #8b92a0);
+  opacity: 0.75;
+  font-size: 17px;
+  font-weight: 450;
+  transition: opacity 0.2s ease;
+}
+
+.sozluk-search-input:focus::placeholder {
+  opacity: 0.45;
+}
+
+/* Sağ Kontroller & Eylemler */
+.sozluk-search-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Temizle Butonu */
+.sozluk-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--soft, rgba(255, 255, 255, 0.08));
+  color: var(--muted, #9ba1ad);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sozluk-search-clear:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  transform: scale(1.08);
+}
+
+/* Klavye Kısayolu Rozeti */
+.sozluk-search-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sozluk-search-kbd kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted, #9ba1ad);
+  background: var(--soft, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Dev Ara / Sonuçları Getir Butonu */
+.sozluk-search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.sozluk-search-btn:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.55);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.sozluk-search-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.sozluk-search-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.sozluk-search-btn:hover svg {
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   Akıllı Yazım Hatası / Yakın Eşleşme Bildirim Şeridi (Fuzzy Feedback Bar)
+   ========================================================================== */
+.sozluk-feedback-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.12) 0%, rgba(245, 158, 11, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  animation: slideDownFade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink, #f5f4ed);
+}
+
+.feedback-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.feedback-badge.exact {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.feedback-text {
+  font-weight: 500;
+}
+
+.feedback-text strong {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.feedback-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--soft, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.15));
+  color: var(--ink, #f5f4ed);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.feedback-reset-btn:hover {
+  background: var(--line, rgba(255, 255, 255, 0.2));
+  color: #ef4444;
+}
+
+/* ==========================================================================
+   Hızlı Konu Hapları (Quick Topic Pills)
+   ========================================================================== */
+.sozluk-quick-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-tag-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted, #9ba1ad);
+  margin-right: 4px;
+}
+
+.quick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: var(--card, #14161a);
+  color: var(--muted, #9ba1ad);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.quick-pill:hover {
+  color: var(--ink, #f5f4ed);
+  border-color: var(--gsearch-accent);
+  background: var(--soft, rgba(99, 102, 241, 0.08));
+  transform: translateY(-1px);
+}
+
+.quick-pill.is-active {
+  background: var(--gsearch-accent);
+  color: #ffffff;
+  border-color: var(--gsearch-accent);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+}
+
+/* ==========================================================================
+   Canlı Öneri & Açılır Liste (Dropdown Autocomplete)
+   ========================================================================== */
+.sozluk-dropdown-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  max-height: 420px;
+  overflow-y: auto;
+  background: var(--card, #14161a);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.15));
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45),
+              0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 50;
+  animation: dropdownIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.05));
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item.is-selected {
+  background: var(--soft, rgba(99, 102, 241, 0.1));
+  transform: translateX(3px);
+}
+
+.dropdown-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dropdown-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink, #f5f4ed);
+}
+
+.dropdown-item-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--soft, rgba(255, 255, 255, 0.08));
+  color: var(--muted, #9ba1ad);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+}
+
+.dropdown-item-snippet {
+  font-size: 13px;
+  color: var(--muted, #9ba1ad);
+  line-height: 1.45;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-match-reason {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+/* ==========================================================================
+   Sonuç Sayaç Rozeti & Boş Durum (Counter & Empty State)
+   ========================================================================== */
+.sozluk-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 0 4px;
+  font-size: 14px;
+  color: var(--muted, #9ba1ad);
+}
+
+.results-count-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--ink, #f5f4ed);
+}
+
+.results-count-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.results-count-pill.empty .dot {
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+/* Vurgulanan Arama Kelimeleri */
+mark.sozluk-highlight {
+  background: rgba(99, 102, 241, 0.28);
+  color: inherit;
+  font-weight: 750;
+  border-radius: 4px;
+  padding: 0 2px;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4);
+}
+
+html[data-theme="light"] mark.sozluk-highlight {
+  background: #fef08a;
+  color: #854d0e;
+  box-shadow: 0 0 0 1px #facc15;
+}
+
+/* Aranan Karta Odaklanma Efekti */
+.glossary-card.pulse-focus {
+  animation: cardPulseGlow 1.8s ease-out;
+}
+
+@keyframes cardPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.8),
+                0 0 30px rgba(99, 102, 241, 0.4);
+    border-color: #6366f1;
+    transform: scale(1.015);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.2),
+                0 0 40px rgba(99, 102, 241, 0.3);
+    border-color: #818cf8;
+  }
+  100% {
+    box-shadow: none;
+    border-color: var(--line);
+    transform: scale(1);
+  }
+}
+
+/* Sonuç Bulunamadı Kartı (Empty State) */
+.sozluk-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 56px 24px;
+  background: var(--card, #14161a);
+  border: 2px dashed var(--line, rgba(255, 255, 255, 0.15));
+  border-radius: 20px;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 750;
+  color: var(--ink, #f5f4ed);
+  letter-spacing: -0.02em;
+}
+
+.empty-desc {
+  margin: 0;
+  max-width: 480px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted, #9ba1ad);
+}
+
+.empty-suggestions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.empty-suggestions span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted, #9ba1ad);
+}
+
+.suggestion-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #818cf8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestion-btn:hover {
+  background: #6366f1;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Açık Tema (Light Mode) Uyarlamaları
+   ========================================================================== */
+html[data-theme="light"] .sozluk-search-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #d8d4ca;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08),
+              0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="light"] .sozluk-search-box:focus-within {
+  border-color: #4f46e5;
+  background: #ffffff;
+  box-shadow: 0 14px 40px -10px rgba(79, 70, 229, 0.25),
+              0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+html[data-theme="light"] .sozluk-search-input {
+  color: #11120f;
+}
+
+html[data-theme="light"] .sozluk-search-input::placeholder {
+  color: #71717a;
+}
+
+html[data-theme="light"] .quick-pill {
+  background: #ffffff;
+  border-color: #e2e0d8;
+  color: #52525b;
+}
+
+html[data-theme="light"] .quick-pill:hover {
+  background: #f4f4f5;
+  color: #18181b;
+  border-color: #4f46e5;
+}
+
+html[data-theme="light"] .quick-pill.is-active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+}
+
+html[data-theme="light"] .sozluk-dropdown-results {
+  background: #ffffff;
+  border-color: #e2e0d8;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .dropdown-item:hover,
+html[data-theme="light"] .dropdown-item.is-selected {
+  background: #f4f4f5;
+}
+
+html[data-theme="light"] .dropdown-item-title {
+  color: #11120f;
+}
+
+html[data-theme="light"] .sozluk-empty-state {
+  background: #ffffff;
+  border-color: #e2e0d8;
+}
+
+/* ==========================================================================
+   Mobil ve Duyarlı Tasarım (Responsive)
+   ========================================================================== */
+@media (max-width: 760px) {
+  .sozluk-search-section {
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+
+  .sozluk-search-box {
+    padding: 6px 8px 6px 14px;
+    gap: 8px;
+  }
+
+  .sozluk-search-input {
+    height: 46px;
+    font-size: 16px; /* iOS zoom engelleme */
+  }
+
+  .sozluk-search-input::placeholder {
+    font-size: 14px;
+  }
+
+  .sozluk-search-btn {
+    height: 42px;
+    padding: 0 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .sozluk-search-kbd {
+    display: none; /* Mobilde Cmd+K gizlenir */
+  }
+
+  .sozluk-quick-tags {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sozluk-quick-tags::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quick-tag-label {
+    flex-shrink: 0;
+  }
+
+  .quick-pill {
+    flex-shrink: 0;
+  }
+}
