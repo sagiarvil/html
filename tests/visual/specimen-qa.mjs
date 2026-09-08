@@ -134,6 +134,19 @@ try {
   await pageLight.screenshot({ path: '/Users/macair1/.gemini/antigravity/brain/6d129c2d-7f53-49cb-ba79-bab7c91195de/v4_specimen_light.png', fullPage: false });
   await pageLight.close();
 
+  // Test Enterprise Analyzer Index Page
+  const pageAnalyzer = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  pageAnalyzer.on('console', msg => {
+    if (msg.type() === 'error') errors.push(`[Analyzer Console Error]: ${msg.text()}`);
+  });
+  pageAnalyzer.on('pageerror', err => errors.push(`[Analyzer Page Error]: ${err.message}`));
+
+  const respAnalyzer = await pageAnalyzer.goto(base + '/enterprise-analyzer/', { waitUntil: 'networkidle' });
+  if (!respAnalyzer || !respAnalyzer.ok()) throw new Error(`Failed to load Analyzer index: ${respAnalyzer?.status()}`);
+
+  await pageAnalyzer.screenshot({ path: '/Users/macair1/.gemini/antigravity/brain/6d129c2d-7f53-49cb-ba79-bab7c91195de/v4_analyzer_index.png', fullPage: false });
+  await pageAnalyzer.close();
+
   if (errors.length > 0) {
     console.error('Errors found during Playwright QA:', errors);
     process.exit(1);

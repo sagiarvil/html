@@ -110,9 +110,9 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
           <span id="eaScanBtnText">Canlı Enterprise Taramayı Başlat</span>
         </button>
-        <a href="/enterprise-analyzer/htmlandhtml-ai-report.html" class="ea-filter-btn" style="height:50px; padding:0 20px; text-decoration:none; font-weight:700; border-radius:12px; display:inline-flex; align-items:center; gap:6px; box-sizing:border-box; white-space:nowrap;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Örnek Rapor (htmlandhtml.com) →
+        <a href="/enterprise-analyzer/htmlandhtml-ai-report" class="ea-filter-btn ea-sample-demo-btn" style="height:50px; padding:0 22px; text-decoration:none; font-weight:800; border-radius:12px; display:inline-flex; align-items:center; gap:8px; box-sizing:border-box; white-space:nowrap; border:1.5px solid var(--ea-accent, #00d4ff); background:rgba(0,212,255,0.08); color:var(--ea-accent, #00d4ff); font-size:14.5px;">
+          <span style="background:rgba(0,212,255,0.2); color:#00d4ff; font-size:11px; font-weight:900; padding:2px 7px; border-radius:4px; letter-spacing:0.5px;">CANLI DEMO</span>
+          Örnek Raporu İncele →
         </a>
       </form>
       <div id="eaScanStatus" style="display:none; margin-top:14px; padding:12px 16px; border-radius:10px; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.25); color:var(--ea-accent, #00d4ff); font-size:14px; font-weight:700; align-items:center; gap:10px;">
@@ -149,7 +149,7 @@
   <!-- Mission Bar -->
   <div class="ea-mission-bar">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm yol haritasılerini kendi yazılım ekibinize teslim edersiniz.</p>
+    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm onarım yol haritasılerini kendi yazılım ekibinize teslim edersiniz.</p>
   </div>
 
   <!-- Executive Summary HUD -->
@@ -190,7 +190,7 @@
       </div>
       <div class="ea-hud-score-footer">
         <span>Kritik Risk: 3 Bulgu</span>
-        <span>yol haritası: 15 Adet</span>
+        <span>Onarım yol haritası: 15 Adet</span>
       </div>
     </div>
 
@@ -539,7 +539,7 @@
   <!-- Findings Section -->
   <section class="ea-findings-section">
     <div class="ea-section-bar">
-      <h2>Tespitler ve Çözüm yol haritasıleri <span class="badge-count">15 bulgu</span></h2>
+      <h2>Tespitler ve Onarım yol haritasıleri <span class="badge-count">15 bulgu</span></h2>
       <div class="ea-filter-group">
         <button class="ea-filter-btn active" data-filter="all" type="button">Tümü</button>
         <button class="ea-filter-btn" data-filter="high" type="button">Yüksek</button>
@@ -559,15 +559,15 @@
             <h3 class="finding-title">Erişilebilir etiketleri olmayan form kontrolleri</h3>
             <p class="finding-desc">Yardımcı teknolojiler ve AI tarayıcılar form amacını ayrıştırırken başarısız olabilir. 1 etiketsiz kontrol tespit edildi.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: WCAG 2.1 AA</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: WCAG 2.1 AA</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Ekran okuyucular form amacını tanımlayamaz, erişilebilirlik skoru ve AI güven sinyalleri düşer. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Ekran okuyucular form amacını tanımlayamaz, erişilebilirlik skoru ve AI güven sinyalleri düşer. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -581,12 +581,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="a11y-form-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her <code>&lt;input&gt;</code> elemanına <code>&lt;label&gt;</code> ile <code>for</code> attribute'ü ekleyin. Label ve input ID'si birebir eşleşmeli.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p><code>aria-required</code> ve <code>aria-describedby</code> attribute'lerini ekleyerek AI tarayıcıların form alanını doğru yorumlamasını sağlayın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Placeholder'ı yedek etiket olarak kullanmayın. Placeholder sadece ipucu, asıl etiket <code>&lt;label&gt;</code> olmalı.</p></div>
@@ -598,15 +598,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -621,15 +621,15 @@
             <h3 class="finding-title">Karışık içerik (Mixed Content) tespit edildi</h3>
             <p class="finding-desc">Tarayıcı güvenliği ve kaynak yüklemesi tehlikeye girebilir. https://vercel.com/about adresinde 1 güvensiz referans tespit edildi.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: CSP Level 3</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: CSP Level 3</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Modern tarayıcılar karışık içeriği engeller, işlevsellik bozulur ve AI tarayıcılar için güven sinyalleri zayıflar. Trafik kaybı riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Modern tarayıcılar karışık içeriği engeller, işlevsellik bozulur ve AI tarayıcılar için güven sinyalleri zayıflar. Trafik kaybı riski.</p>
             </div>
             <a href="https://vercel.com/about" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -643,12 +643,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="sec-mixed-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Tüm <code>http://</code> kaynak referanslarını <code>https://</code> ile değiştirin. Görseller, scriptler, CSS dosyaları ve iframe'ler dahil.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Content-Security-Policy header'ına <code>upgrade-insecure-requests</code> direktifini ekleyin. Bu, tarayıcının otomatik olarak HTTP'yi HTTPS'ye yükseltmesini sağlar.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CDN ve üçüncü taraf kaynakları kontrol edin. Eski HTTP CDN URL'lerini HTTPS versiyonlarıyla güncelleyin.</p></div>
@@ -660,15 +660,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -683,15 +683,15 @@
             <h3 class="finding-title">Canonical tag eksik</h3>
             <p class="finding-desc">Canonicalization sinyali mevcut değil. rel=canonical bulunamadı. Arama motorları yinelenen içerik versiyonlarını dizine ekleyebilir, sıralama sinyallerini sulandırır.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: RFC 6596</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: RFC 6596</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Canonical olmadan link eşitliği URL varyantları arasında bölünür, AI erişim güveni azalır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Canonical olmadan link eşitliği URL varyantları arasında bölünür, AI erişim güveni azalır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -705,12 +705,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-canon-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfanın <code>&lt;head&gt;</code> bölümüne <strong>self-referencing canonical</strong> link ekleyin. URL mutlak (absolute) olmalı, asla relative.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Dinamik sayfalarda sunucu tarafında canonical üretin. <code>?utm_source</code> gibi parametreler canonical URL'de olmamalı.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>hreflang uyguluyorsanız, her hreflang versiyonu kendi self-referencing canonical'ına sahip olmalı.</p></div>
@@ -722,15 +722,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -745,15 +745,15 @@
             <h3 class="finding-title">HTML yanıtı ağır</h3>
             <p class="finding-desc">İlk yükleme süresi ve TTFB artabilir. 319.145 bayt HTML tespit edildi — optimal AI tarayıcı işleme için önerilen 150KB eşiğini aşıyor.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: Core Web Vitals</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: Core Web Vitals</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Ağır HTML, TTFB ve LCP'yi artırarak AI tarayıcı bütçe tahsisini ve kullanıcı sabrını azaltır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Ağır HTML, TTFB ve LCP'yi artırarak AI tarayıcı bütçe tahsisini ve kullanıcı sabrını azaltır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -767,12 +767,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="perf-html-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Kritik CSS'yi inline olarak <code>&lt;head&gt;</code> içine yerleştirin. Ana CSS dosyasını <code>preload</code> + <code>onload</code> ile asenkron yükleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kullanılmayan HTML, CSS ve JS'i kaldırın. PurgeCSS + HTMLMinifier kullanarak build pipeline'ında otomatik temizlik yapın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Next.js/Vercel kullanıyorsanız, React Server Components ve Streaming SSR ile sayfayı parçalara bölün. ISR ile edge cache kullanın.</p></div>
@@ -784,15 +784,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -807,15 +807,15 @@
             <h3 class="finding-title">Erişilebilir isimleri olmayan etkileşimli kontroller</h3>
             <p class="finding-desc">Klavye ve ekran okuyucu deneyimi bozulabilir. 1 isimsiz kontrol tespit edildi. AI tarayıcılar etkileşimli eleman amacını anlamak için erişilebilir isimlere güvenir.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: WCAG 2.1 AA</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: WCAG 2.1 AA</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>İsimsiz kontroller ekran okuyucular ve AI amaç ayrıştırıcıları için görünmezdir, dönüşüm erişilebilirliğini azaltır. Trafik kaybı riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>İsimsiz kontroller ekran okuyucular ve AI amaç ayrıştırıcıları için görünmezdir, dönüşüm erişilebilirliğini azaltır. Trafik kaybı riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -829,12 +829,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="a11y-name-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>İkon-only butonlara <code>aria-label</code> ekleyin. Örnek: <code>aria-label=Kapat</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Visually-hidden text pattern'ini kullanın. <code>.sr-only</code> CSS class'ı ile buton içine gizli ama erişilebilir metin ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>SVG ikonlara <code>aria-hidden=true</code> ekleyin, böylece ekran okuyucu ikonu değil buton amacını okur.</p></div>
@@ -846,15 +846,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -869,15 +869,15 @@
             <h3 class="finding-title">sitemap.xml erişilemiyor</h3>
             <p class="finding-desc">URL keşfi ve kapsamı azalır. HTTP 0 yanıtı — sitemap ulaşılamıyor veya yapılandırılmamış. AI tarayıcılar sitemap'i birincil keşif yüzeyi olarak kullanır.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: sitemaps.org</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: sitemaps.org</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Sitemap olmadan AI tarayıcılar derin sayfaları ve güncellemeleri kaçırır, dizine ekleme haftalar gecikir. Trafik kaybı riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Sitemap olmadan AI tarayıcılar derin sayfaları ve güncellemeleri kaçırır, dizine ekleme haftalar gecikir. Trafik kaybı riski.</p>
             </div>
             <a href="https://htmlandhtml.com/sitemap.xml" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -891,12 +891,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="crawl-sitemap-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>sitemap.xml</code> dosyası oluşturun. Tüm önemli URL'leri <code>loc</code>, <code>lastmod</code>, <code>changefreq</code> ve <code>priority</code> ile listeleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p><code>robots.txt</code> dosyasına <code>Sitemap:</code> direktifini ekleyin. Mutlak URL kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Google Search Console ve Bing Webmaster Tools'a sitemap URL'sini gönderin. Otomatik ping için n8n workflow kurun.</p></div>
@@ -908,15 +908,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -931,15 +931,15 @@
             <h3 class="finding-title">Tekrarlayan sayfa başlıkları</h3>
             <p class="finding-desc">Sayfa farklılaşması ve tıklama oranları zayıflar. 2 sayfa aynı başlığı paylaşıyor: login – vercel. AI motorları başlıkları birincil alaka sinyali olarak kullanır.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Spec</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Spec</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Yinelenen başlıklar AI alaka puanlamasını karıştırır ve SERP farklılaşmasını azaltır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Yinelenen başlıklar AI alaka puanlamasını karıştırır ve SERP farklılaşmasını azaltır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -953,12 +953,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-duptitle-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfa için <strong>benzersiz, açıklayıcı</strong> başlık oluşturun. Formül: <code>[Sayfa Adı] | [Marka] — [Değer Önerisi]</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Başlık uzunluğu 50-60 karakter arasında tutun. AI snippet görünümü için optimal.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Dinamik sayfalarda sunucu tarafında başlık üretin. CMS'den otomatik çekin.</p></div>
@@ -970,15 +970,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -993,15 +993,15 @@
             <h3 class="finding-title">Tutarsız H1 hiyerarşisi</h3>
             <p class="finding-desc">Birincil konu sinyali ve erişilebilir doküman yapısı zayıflar. H1 etiketleri eksik veya hatalı yerleştirilmiş. AI tarayıcılar H1'i birincil içerik konusu çıkarıcı olarak kullanır.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Outline</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Outline</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Eksik H1, AI konu alaka güvenini azaltır, erişim önceliğini düşürür. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik H1, AI konu alaka güvenini azaltır, erişim önceliğini düşürür. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1015,12 +1015,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-h1-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Sayfa başına <strong>tek bir H1</strong> kullanın. H1, <code>&lt;body&gt;</code> içinde ilk sıradaki ana başlık olmalı.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Semantik HTML5 outline kullanın: <code>&lt;main&gt;</code> > <code>&lt;h1&gt;</code> > <code>&lt;section&gt;</code> > <code>&lt;h2&gt;</code> > <code>&lt;h3&gt;</code></p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CSS ile görsel büyük başlık yapmayın. <code>&lt;div class=hero-title&gt;</code> yerine <code>&lt;h1&gt;</code> kullanın.</p></div>
@@ -1032,15 +1032,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1055,15 +1055,15 @@
             <h3 class="finding-title">Meta description eksik</h3>
             <p class="finding-desc">Arama snippet'i ve AI özet üretimi üzerindeki kontrol azalır. meta[name=description] bulunamadı. AI motorları otomatik snippet'lere düşer, genellikle yetersiz.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Meta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Meta</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Eksik meta description, AI'ın sayfa alaka düzeyini tahmin etmesine zorlar, tıklama ve yanıt dahil etme olasılığını azaltır. Trafik kaybı riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik meta description, AI'ın sayfa alaka düzeyini tahmin etmesine zorlar, tıklama ve yanıt dahil etme olasılığını azaltır. Trafik kaybı riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1077,12 +1077,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="tech-meta-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfa için <strong>benzersiz, anahtar kelime zengini</strong> meta description yazın. Formül: <code>[Ne] + [Kime] + [Eşsiz Değer] + [CTA]</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Uzunluk 150-160 karakter arasında tutun. Optimal AI snippet görünümü için.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CMS'den otomatik üretim için excerpt alanını meta description kaynağı olarak kullanın, 157 karakterde kesin.</p></div>
@@ -1094,15 +1094,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1117,15 +1117,15 @@
             <h3 class="finding-title">llms.txt keşif linki yok</h3>
             <p class="finding-desc">v2 önerisi rel=describedby sinyali eksik. AI tarayıcılar llms.txt dosyanızı keşfedemez, LLM eğitimi için yapılandırılmış bağlam azalır.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: llms.txt v2</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: llms.txt v2</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>llms.txt keşfi olmadan marka bağlamınız yeni nesil AI arama sistemlerine görünmez. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>llms.txt keşfi olmadan marka bağlamınız yeni nesil AI arama sistemlerine görünmez. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1139,12 +1139,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="llms-discovery-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>&lt;head&gt;</code> içine <code>rel=describedby</code> link'i ekleyin. Bu, AI tarayıcılara llms.txt konumunu bildirir.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kök dizinde <code>/llms.txt</code> dosyası oluşturun. Markdown formatında marka bağlamını, hizmetleri ve iletişim bilgilerini yazın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CMS yayını tetiklediğinde llms.txt'i otomatik güncelleyen n8n workflow kurun.</p></div>
@@ -1156,15 +1156,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1179,15 +1179,15 @@
             <h3 class="finding-title">Permissions-Policy header eksik</h3>
             <p class="finding-desc">Tarayıcı güvenlik sertleştirmesi tamamlanmamış. permissions-policy header yok. Özellik kötüye kullanımı ve parmak izi alma saldırılarına karşı savunma azalır.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: W3C Permissions Policy</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: W3C Permissions Policy</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Eksik güvenlik header'ları güven sinyallerini azaltır ve tarayıcı uyarılarına yol açabilir. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik güvenlik header'ları güven sinyallerini azaltır ve tarayıcı uyarılarına yol açabilir. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1201,12 +1201,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="sec-perm-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p>Web sunucusu config'ine (Nginx, Apache, Vercel, Cloudflare) Permissions-Policy header'ı ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kullanılmayan tarayıcı API'lerini kapatın: accelerometer, camera, geolocation, gyroscope, magnetometer, microphone, payment, usb.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Next.js kullanıyorsanız <code>middleware.ts</code> ile header'ı tüm yanıtlara ekleyin.</p></div>
@@ -1218,15 +1218,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1241,15 +1241,15 @@
             <h3 class="finding-title">Gizlilik sayfası bulunamadı</h3>
             <p class="finding-desc">Kullanıcı verisi işleyen sitelerde güven/uyum sinyalleri zayıflayabilir. Gizlilik/KVKK rotası tespit edilmedi. AI motorları net veri yönetişimi olan siteleri önceliklendirir.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: GDPR / KVKK / CCPA</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: GDPR / KVKK / CCPA</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Eksik gizlilik politikası E-E-A-T güven puanını düşürür ve AB veri düzenlemelerini ihlal edebilir. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik gizlilik politikası E-E-A-T güven puanını düşürür ve AB veri düzenlemelerini ihlal edebilir. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1263,12 +1263,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="trust-privacy-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/gizlilik</code> veya <code>/privacy</code> sayfası oluşturun. H1 başlık, maddeleme ve net dil kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>GDPR/KVKK uyumlu bölümler ekleyin: Veri erişim hakkı, Silme hakkı, Taşınabilirlik hakkı.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Tüm sayfaların footer'ına gizlilik politikası link'i ekleyin. Schema.org PrivacyPolicy markup'ı kullanın.</p></div>
@@ -1280,15 +1280,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1303,15 +1303,15 @@
             <h3 class="finding-title">A2A agent card algılanmadı</h3>
             <p class="finding-desc">İsteğe bağlı agent-to-agent keşif yüzeyi eksik. HTTP 404 on /.well-known/agent.json. Otonom AI agent ekosistemleri için geleceğe hazırlık.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: A2A Protocol</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: A2A Protocol</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>A2A protokolünün erken benimsenmesi markanızı yeni nesil AI agent yönlendirmeleri için konumlandırır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>A2A protokolünün erken benimsenmesi markanızı yeni nesil AI agent yönlendirmeleri için konumlandırır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
             </div>
             <a href="https://htmlandhtml.com/.well-known/agent.json" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1325,12 +1325,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="agent-a2a-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/.well-known/agent.json</code> dosyası oluşturun. A2A protokolüne uygun JSON schema kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Agent adı, açıklama, yetenekler, endpoint ve iletişim bilgilerini ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Servis değişikliklerinde agent.json'i otomatik güncelleyen n8n workflow kurun.</p></div>
@@ -1342,15 +1342,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1365,15 +1365,15 @@
             <h3 class="finding-title">OpenAPI keşif dosyası algılanmadı</h3>
             <p class="finding-desc">Programatik servis keşfi sınırlı olabilir. HTTP 0 on /openapi.json. AI agent'lar yapılandırılmış spesifikasyon olmadan API yeteneklerini keşfedemez.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: OpenAPI 3.1</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: OpenAPI 3.1</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>OpenAPI spesifikasyonu olmadan AI agent'lar servislerinizi programatik olarak çağıramaz, ekosistem entegrasyonu sınırlanır. Trafik kaybı riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>OpenAPI spesifikasyonu olmadan AI agent'lar servislerinizi programatik olarak çağıramaz, ekosistem entegrasyonu sınırlanır. Trafik kaybı riski.</p>
             </div>
             <a href="https://htmlandhtml.com/openapi.json" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1387,12 +1387,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="agent-openapi-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/openapi.json</code> dosyası oluşturun. OpenAPI 3.1.0 formatında API endpoint'lerini, parametreleri ve yanıtları tanımlayın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Fastify/Swagger veya Next.js API Routes kullanıyorsanız, otomatik OpenAPI üretimini etkinleştirin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Route tanımlarından otomatik üretim için swagger-jsdoc veya @fastify/swagger kullanın.</p></div>
@@ -1404,15 +1404,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1427,15 +1427,15 @@
             <h3 class="finding-title">Markdown alternatif bulunamadı</h3>
             <p class="finding-desc">Temiz Markdown alternatifi mevcut değil. rel=alternate type=text/markdown bulunamadı. AI tarayıcılar HTML gürültüsü olmadan temiz içerik çıkarımı için Markdown'ı tercih eder.</p>
             <div class="finding-meta">
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
-            <div class="finding-meta-item"><svg width="14" height="14" viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: llms.txt v2</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: llms.txt v2</div>
             </div>
             <div class="finding-impact-box">
-              <h4><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1=12 y1=9 x2=12 y2=13/><line x1=12 y1=17 x2=12.01 y2=17/></svg>İş Etkisi</h4><p>Markdown alternatifi, AI içerik çıkarım doğruluğunu %40+ artırır, yanıt dahil etme olasılığını yükseltir. Trafik kaybı riski.</p>
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Markdown alternatifi, AI içerik çıkarım doğruluğunu %40+ artırır, yanıt dahil etme olasılığını yükseltir. Trafik kaybı riski.</p>
             </div>
             <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><svg width=14 height=14 viewBox='0 0 24 24' fill=none stroke=currentColor stroke-width=2><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1=10 y1=14 x2=21 y2=3/></svg>Etkilenen URL'yi İncele
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
             </a>
           </div>
 
@@ -1449,12 +1449,12 @@
             </div>
           </div>
 
-          <!-- Frosted Remediation Recipe (Tersine Mühendislik Çözüm yol haritası) -->
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
           <div class="recipe-section locked" data-recipe-id="llms-md-001">
             <div class="recipe-glow"></div>
             <div class="recipe-content">
               <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                Kurumsal Çözüm yol haritası & Uygulama Adımları
+                Kurumsal Onarım yol haritası & Uygulama Adımları
               </h4>
               <div class="recipe-steps">
                 <div class=recipe-step><div class=recipe-step-num>1</div><p><code>&lt;head&gt;</code> içine <code>rel=alternate type=text/markdown</code> link'i ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>CMS'den otomatik HTML→Markdown dönüşümü yapın. Sayfa başına bir <code>.md</code> dosyası oluşturun.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Edge cache ile Markdown dosyalarını sunun. n8n workflow ile CMS yayınında otomatik güncelle.</p></div>
@@ -1466,15 +1466,15 @@
             <div class="recipe-overlay">
               <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h4>Kurumsal Çözüm yol haritası Kilitli</h4>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
               <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
               <span class="recipe-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                15 Çözüm yol haritası Dahil
+                15 Onarım yol haritası Dahil
               </span>
               <button class="recipe-cta" onclick="showPaymentModal()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                $99 — Çözüm Yol Haritasını Aç
+                $99 — Onarım yol haritasılerini Aç
               </button>
             </div>
           </div>
@@ -1611,11 +1611,11 @@
 <div class="action-bar" id="actionBar">
   <div class="action-bar-inner">
     <span class="action-bar-text">
-      <span class="highlight">15 Kurumsal Çözüm yol haritası</span> Kilitli — Tümünü Açın
+      <span class="highlight">15 Kurumsal Onarım yol haritası</span> Kilitli — Tümünü Açın
     </span>
     <button class="action-bar-btn" id="actionBarBtn" type="button">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      $99 — Çözüm Yol Haritasını Aç
+      $99 — Onarım yol haritasılerini Aç
     </button>
   </div>
 </div>
@@ -1635,7 +1635,7 @@
     <div class="modal-features">
       <div class="modal-feature">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>15 Detaylı Çözüm yol haritası &amp; Yol Haritası</span>
+        <span>15 Detaylı Onarım yol haritası &amp; Yol Haritası</span>
       </div>
       <div class="modal-feature">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1656,7 +1656,7 @@
       <span class="period"> tek seferlik kurumsal lisans</span>
     </div>
 
-    <button class="modal-cta" id="payButton" type="button">Çözüm Yol Haritasını Aç ve İndir</button>
+    <button class="modal-cta" id="payButton" type="button">Onarım yol haritasılerini Aç ve İndir</button>
     <p class="modal-guarantee">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       30 gün koşulsuz memnuniyet garantisi
