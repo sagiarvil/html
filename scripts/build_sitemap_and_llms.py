@@ -90,7 +90,7 @@ routes = [
 # Generate sitemap.xml
 xml_items = []
 for r in routes:
-    item = f"  <url>\n    <loc>{r['loc']}</loc>\n    <lastmod>2026-09-06</lastmod>\n    <changefreq>{r['changefreq']}</changefreq>\n    <priority>{r['priority']}</priority>"
+    item = f"  <url>\n    <loc>{r['loc']}</loc>\n    <lastmod>2026-09-08</lastmod>\n    <changefreq>{r['changefreq']}</changefreq>\n    <priority>{r['priority']}</priority>"
     if "alt_tr" in r:
         item += f'\n    <xhtml:link rel="alternate" hreflang="tr" href="{r["alt_tr"]}"/>'
         item += f'\n    <xhtml:link rel="alternate" hreflang="en" href="{r["loc"]}"/>'

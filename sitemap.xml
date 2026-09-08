@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://htmlandhtml.com/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/"/>
@@ -16,7 +16,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/"/>
@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/platform/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/platform/"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/platform/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/platform/"/>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/tools/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/araclar/"/>
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/araclar/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/tools/"/>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/guides/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/"/>
@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/rehberler/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/"/>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/pricing/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fiyatlandirma/"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/fiyatlandirma/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/pricing/"/>
@@ -88,7 +88,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/fix-mandate/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fix-mandate/"/>
@@ -96,7 +96,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/fix-mandate/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/fix-mandate/"/>
@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/website-scanner/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/site-tarama/"/>
@@ -112,7 +112,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/site-tarama/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/website-scanner/"/>
@@ -120,7 +120,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/ai-website-readiness/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-website-readiness/"/>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/ai-website-readiness/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-website-readiness/"/>
@@ -136,7 +136,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/llms-txt-validator/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-validator/"/>
@@ -144,7 +144,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/llms-txt-validator/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-validator/"/>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/ai-crawler-checker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-crawler-checker/"/>
@@ -160,7 +160,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/ai-crawler-checker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-crawler-checker/"/>
@@ -168,7 +168,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/schema-validator/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/schema-validator/"/>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/schema-validator/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/schema-validator/"/>
@@ -184,7 +184,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/technical-seo-checker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teknik-seo-kontrol/"/>
@@ -192,7 +192,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/teknik-seo-kontrol/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/technical-seo-checker/"/>
@@ -200,7 +200,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/security-headers-checker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/"/>
@@ -208,7 +208,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/security-headers-checker/"/>
@@ -216,7 +216,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/accessibility-checker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/erisilebilirlik-kontrol/"/>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/erisilebilirlik-kontrol/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/accessibility-checker/"/>
@@ -232,7 +232,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/link-integrity-checker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/link-kontrol/"/>
@@ -240,7 +240,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/link-kontrol/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/link-integrity-checker/"/>
@@ -248,7 +248,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/ai-mention-tracker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-mention-tracker/"/>
@@ -256,7 +256,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/ai-mention-tracker/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-mention-tracker/"/>
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/"/>
@@ -272,7 +272,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/"/>
@@ -280,7 +280,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/guides/llms-txt/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/llms-txt/"/>
@@ -288,7 +288,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/rehberler/llms-txt/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/llms-txt/"/>
@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/guides/ai-crawler-access/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/"/>
@@ -304,7 +304,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/ai-crawler-access/"/>
@@ -312,7 +312,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/guides/structured-data-for-ai/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/ai-icin-yapisal-veri/"/>
@@ -320,7 +320,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/rehberler/ai-icin-yapisal-veri/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/structured-data-for-ai/"/>
@@ -328,7 +328,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/guides/ai-search-visibility/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu/"/>
@@ -336,7 +336,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/guides/ai-search-visibility/"/>
@@ -344,13 +344,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/methodology.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/methodology/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/methodology/"/>
@@ -358,7 +358,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/methodology/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/methodology/"/>
@@ -366,13 +366,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/standard/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/evidence-standard/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/kanit-standardi/"/>
@@ -380,7 +380,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/kanit-standardi/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/evidence-standard/"/>
@@ -388,13 +388,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/reference/ai-crawlers/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/reference/ai-crawlers/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/referans/ai-tarayicilar/"/>
@@ -402,7 +402,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/referans/ai-tarayicilar/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/reference/ai-crawlers/"/>
@@ -410,13 +410,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/about/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/about/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/hakkimizda/"/>
@@ -424,7 +424,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/hakkimizda/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/about/"/>
@@ -432,13 +432,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/contact/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/contact/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iletisim/"/>
@@ -446,7 +446,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/iletisim/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/contact/"/>
@@ -454,13 +454,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/privacy/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/privacy/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/gizlilik/"/>
@@ -468,7 +468,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/gizlilik/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/privacy/"/>
@@ -476,13 +476,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/terms/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/terms/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/kullanim-kosullari/"/>
@@ -490,7 +490,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/kullanim-kosullari/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/terms/"/>
@@ -498,7 +498,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/refund-policy/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iade-politikasi/"/>
@@ -506,7 +506,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/iade-politikasi/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/refund-policy/"/>
@@ -514,7 +514,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/deterministic-layers/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/deterministik-katmanlar/"/>
@@ -522,7 +522,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/deterministik-katmanlar/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/deterministic-layers/"/>
@@ -530,7 +530,7 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/en/enterprise-dark-pool/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/enterprise-dark-pool/"/>
@@ -538,13 +538,13 @@
   </url>
   <url>
     <loc>https://htmlandhtml.com/tr/enterprise-dark-pool/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/enterprise-dark-pool/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/enterprise-dark-pool/"/>
   </url>
-<url>
+  <url>
     <loc>https://htmlandhtml.com/en/glossary/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>

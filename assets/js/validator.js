@@ -13,13 +13,63 @@ const order=['crawl','technical','ai','llms','schema','performance','accessibili
 const sourceNames={tr:{OFFICIAL_STANDARD:'RESMİ STANDART',OFFICIAL_VENDOR:'RESMİ SAĞLAYICI',PROPOSAL:'ÖNERİ',MEASURED:'ÖLÇÜLMÜŞ',INTERNAL_HEURISTIC:'İÇ SEZGİSEL KURAL',EXPERIMENTAL:'DENEYSEL'},en:{OFFICIAL_STANDARD:'OFFICIAL STANDARD',OFFICIAL_VENDOR:'OFFICIAL VENDOR',PROPOSAL:'PROPOSAL',MEASURED:'MEASURED',INTERNAL_HEURISTIC:'INTERNAL HEURISTIC',EXPERIMENTAL:'EXPERIMENTAL'}};function sourceLabel(v){return sourceNames[lang]?.[v]||v}
 function safe(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function downloadBlob(filename,content,mime){try{const b=new Blob([content],{type:mime||'text/plain;charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=filename;document.body.appendChild(a);a.click();setTimeout(()=>{try{document.body.removeChild(a);URL.revokeObjectURL(u)}catch{}},300)}catch(e){console.error('Blob download failed',e)}}
-function render(data){document.getElementById('resultDomain').textContent=data.domain;const overall=Math.round(data.overall);document.getElementById('overallScore').textContent=overall;const ts=document.querySelector('.total-score');if(ts){const col=overall>=80?'#10b981':overall>=65?'#eab308':overall>=45?'#f97316':'#ef4444';ts.style.setProperty('border-color',col,'important');ts.style.setProperty('box-shadow',`0 0 28px -2px ${col}66`,'important');const ovEl=document.getElementById('overallScore');if(ovEl){ovEl.style.setProperty('color',col,'important')}}const sm=data.summary||{};const pdfBtn=document.getElementById('btnPdfExport');const isTr=lang==='tr';if(pdfBtn){const pdfSpan=pdfBtn.querySelector('span');if(pdfSpan)pdfSpan.textContent=isTr?'Kurumsal PDF Raporu (Board-Ready)':'Download Executive PDF (Board-Ready)'}document.getElementById('resultMeta').textContent=`${data.checked} ${D[lang].checked} · ${sm.pagesScanned||0} ${D[lang].pages} · ${sm.linksProbed||0} ${D[lang].probed} · 🔒 RFC 3161 SHA-256: ${safe(data.scanId.slice(0,8).toUpperCase())} · ${new Date(data.scannedAt).toLocaleString(isTr?'tr-TR':'en-US')}`;const p1=Math.round(((data.scores?.crawl||0)+(data.scores?.technical||0)+(data.scores?.links||0))/3);const p2=Math.round(((data.scores?.ai||0)+(data.scores?.llms||0)+(data.scores?.schema||0)+(data.scores?.agent||0))/4);const p3=Math.round(((data.scores?.performance||0)+(data.scores?.accessibility||0)+(data.scores?.security||0)+(data.scores?.trust||0))/4);const p4=Math.round(data.scores?.conversion||0);const counts={all:data.findings.length,critical:0,high:0,medium:0,low:0};(data.findings = [...new Map(data.findings.map(f=>[f.id||f.title, f])).values()]).forEach(f=>{if(counts[f.severity]!=null)counts[f.severity]++;else counts.low++});let healthDeck=document.getElementById('healthExecutiveDeck');if(!healthDeck){healthDeck=document.createElement('div');healthDeck.id='healthExecutiveDeck';const rHead=document.querySelector('.result-head');if(rHead)rHead.insertAdjacentElement('afterend',healthDeck)}const statusBadgeClass=overall>=80?'health-badge-healthy':(overall>=50?'health-badge-warning':'health-badge-critical');const statusBadgeLabel=overall>=80?(isTr?'✅ Sağlıklı Durum — Temel Katmanlar Güçlü':'✅ Healthy State — Core Layers Strong'):(overall>=50?(isTr?'⚠️ Dikkat Gerektiren Durum — Acil Müdahale Tavsiye Edilir':'⚠️ Needs Attention — Urgent Remediation Recommended'):(isTr?'🚨 Ciddi Durum — Arama ve Bot Görünürlüğü Tehlikede':'🚨 Critical State — Search & Bot Visibility Impaired'));const healthHeadlineText=overall>=80?(isTr?'Siteniz arama motorları ve AI botları için yüksek hazır bulunuşluğa sahip.': 'Your website exhibits high readiness for search engines and AI crawlers.'):(overall>=50?(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından kısmen taranabiliyor; kritik engeller mevcut.':'Your website is partially accessible to AI search engines; critical blockers exist.'):(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından yarı yarıya görünmüyor; acil müdahale gerekiyor.':'Your website is largely invisible to AI search bots; immediate remediation required.'));const healthSubText=isTr?`${counts.all} bulgu tespit edildi. ${counts.critical} kritik sorun (Googlebot erişimi, robots engelleri veya noindex) potansiyel müşterilerin sitenize ulaşmasını doğrudan durdurabilir.`:`Detected ${counts.all} findings. ${counts.critical} critical blockers directly impair your ability to be retrieved and recommended by AI engines.`;healthDeck.className='health-executive-summary';healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p><div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;let simDeck=document.getElementById('executiveSimulationDeck');if(!simDeck){simDeck=document.createElement('div');simDeck.id='executiveSimulationDeck';simDeck.className='executive-simulation-deck';healthDeck.insertAdjacentElement('afterend',simDeck)}
+let currentScanResult = null;
+function openSaasRemediationModal(data){
+  if(!data) data = currentScanResult;
+  let modal=document.getElementById('saasRemediationModal');
+  if(!modal){
+    modal=document.createElement('div');
+    modal.id='saasRemediationModal';
+    modal.className='saas-modal-backdrop';
+    document.body.appendChild(modal);
+  }
+  const isTr=lang==='tr';
+  const cDomain=safe(data?.domain||document.getElementById('resultDomain')?.textContent?.replace(/^[—\s]+|[—\s]+$/g, '')||document.getElementById('domainInput')?.value?.trim()||'siteniz.com');
+  const scanId=safe(data?.scanId||'');
+  const savedEmail=localStorage.getItem('hh-checkout-email')||'';
+  modal.hidden=false;
+  modal.style.display='flex';
+  modal.innerHTML=`<div class="saas-modal-dialog"><div class="saas-modal-header"><span class="saas-modal-badge">⚡ ${isTr?'CANLI İNTERAKTİF ONARIM & KURULUM':'LIVE INTERACTIVE REMEDIATION & SETUP'}</span><button type="button" class="saas-modal-close" id="btnCloseSaasModal" aria-label="Kapat">&times;</button></div><h3 class="saas-modal-title">${isTr?'Teşhis Doğrulandı: 3 Dakikada Otomatik Edge Onarımı':'Diagnosis Validated: 3-Minute Automated Edge Remediation'}</h3><p class="saas-modal-desc">${isTr?'Statik PDF indirmek oturumu sonlandırır. Bunun yerine, Cloudflare Worker SaaS tersine proxy ile kod tabanınıza dokunmadan 14KB bütçesini ve JSON-LD şemasını doğrudan devreye alın:':'Downloading a static PDF terminates the active session. Instead, deploy the 14KB AST budget and JSON-LD schema dynamically via Cloudflare Worker SaaS reverse proxy directly in your browser:'}</p><div class="saas-summary-box"><div class="saas-summary-plan"><strong class="saas-summary-title">${isTr?'Tam Site Düzeltme Lisansı (Edge SaaS)':'Full Site Fix Mandate (Edge SaaS)'}</strong><span class="saas-summary-sub">${cDomain} · 18 ${isTr?'Motor Onaylı':'Engines Verified'} · 48-72h SLA</span></div><div class="saas-summary-price">$99</div></div><form id="saasDirectCheckoutForm" class="saas-checkout-form"><div class="saas-form-group"><label for="saasCustomerEmail" class="saas-form-label">${isTr?'KURUMSAL E-POSTA':'WORK EMAIL'}</label><input type="email" id="saasCustomerEmail" class="saas-form-input" placeholder="${isTr?'kurumsal@sirketiniz.com':'engineer@yourcompany.com'}" value="${safe(savedEmail)}" required></div><div class="saas-form-group"><label for="saasCardNum" class="saas-form-label"><span>${isTr?'KART NUMARASI':'CARD NUMBER'}</span><span class="saas-card-icons">💳 VISA · MC · AMEX</span></label><input type="text" id="saasCardNum" class="saas-form-input" placeholder="•••• •••• •••• ••••" maxlength="19" autocomplete="cc-number" inputmode="numeric"></div><div class="saas-form-row"><div class="saas-form-group"><label for="saasCardExp" class="saas-form-label">${isTr?'SKT':'EXPIRY'}</label><input type="text" id="saasCardExp" class="saas-form-input" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" inputmode="numeric"></div><div class="saas-form-group"><label for="saasCardCvc" class="saas-form-label">CVC / CVP</label><input type="password" id="saasCardCvc" class="saas-form-input" placeholder="CVC" maxlength="4" autocomplete="cc-csc" inputmode="numeric"></div></div><div class="saas-security-guarantee">🔒 ${isTr?'256-Bit SSL Şifreli Ödeme · Paddle.com Kayıtlı Satıcı (MoR) Güvencesi · Tek seferlik $99 sabit lisans':'256-Bit SSL Encrypted · Paddle.com Merchant of Record (MoR) Verified · Single $99 one-time license'}</div><div class="saas-modal-actions"><button type="submit" class="saas-modal-cta" id="btnSubmitSaasPay">⚡ ${isTr?'Bu Kaybı Otomatik Durdur (3 Dakikada Kurulum) — $99 →':'Stop This Revenue Loss Automatically (3-Minute Setup) — $99 →'}</button><button type="button" class="saas-modal-secondary" id="btnScrollToConsole">${isTr?'İnteraktif Dashboard\'u İncele ↓':'Explore Interactive Dashboard ↓'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cDomain)}&amp;scan=${encodeURIComponent(scanId)}" class="saas-direct-checkout-link">${isTr?'Veya doğrudan tam fatura sayfasına geç →':'Or proceed to full invoice page →'}</a></div></form></div>`;
+  const emailIn=document.getElementById('saasCustomerEmail');
+  const cardIn=document.getElementById('saasCardNum');
+  const expIn=document.getElementById('saasCardExp');
+  if(cardIn){
+    cardIn.addEventListener('input',()=>{
+      let v=cardIn.value.replace(/\D/g,'').slice(0,16);
+      cardIn.value=v.replace(/(\d{4})(?=\d)/g,'$1 ');
+    });
+  }
+  if(expIn){
+    expIn.addEventListener('input',()=>{
+      let v=expIn.value.replace(/\D/g,'').slice(0,4);
+      if(v.length>=2)expIn.value=v.slice(0,2)+' / '+v.slice(2);
+      else expIn.value=v;
+    });
+  }
+  document.getElementById('saasDirectCheckoutForm')?.addEventListener('submit',e=>{
+    e.preventDefault();
+    const em=emailIn?.value?.trim()||'';
+    if(em)localStorage.setItem('hh-checkout-email',em);
+    const btn=document.getElementById('btnSubmitSaasPay');
+    if(btn){
+      btn.disabled=true;
+      btn.textContent=isTr?'⏳ Güvenli Ödeme Gateway\'ine Aktarılıyor...':'⏳ Connecting to Secure Gateway...';
+    }
+    const targetUrl=`/checkout?plan=pro&domain=${encodeURIComponent(cDomain)}&scan=${encodeURIComponent(scanId)}${em?('&email='+encodeURIComponent(em)):''}`;
+    setTimeout(()=>{location.href=targetUrl;},350);
+  });
+  document.getElementById('btnCloseSaasModal')?.addEventListener('click',()=>{modal.hidden=true;modal.style.display='none'});
+  modal.addEventListener('click',e=>{if(e.target===modal){modal.hidden=true;modal.style.display='none'}});
+  document.getElementById('btnScrollToConsole')?.addEventListener('click',()=>{modal.hidden=true;modal.style.display='none';document.getElementById('remediationConsoleDeck')?.scrollIntoView({behavior:'smooth',block:'start'})});
+}
+window.openSaasRemediationModal=openSaasRemediationModal;
+function render(data){currentScanResult=data;document.getElementById('resultDomain').textContent=data.domain;const overall=Math.round(data.overall);document.getElementById('overallScore').textContent=overall;const ts=document.querySelector('.total-score');if(ts){const col=overall>=80?'#10b981':overall>=65?'#eab308':overall>=45?'#f97316':'#ef4444';ts.style.setProperty('border-color',col,'important');ts.style.setProperty('box-shadow',`0 0 28px -2px ${col}66`,'important');const ovEl=document.getElementById('overallScore');if(ovEl){ovEl.style.setProperty('color',col,'important')}}const sm=data.summary||{};const pdfBtn=document.getElementById('btnPdfExport');const isTr=lang==='tr';if(pdfBtn){const pdfSpan=pdfBtn.querySelector('span');if(pdfSpan)pdfSpan.textContent=isTr?'Kurumsal Rapor (Canlı SaaS)':'Executive Report (Live SaaS)';pdfBtn.onclick=(e)=>{e.preventDefault();openSaasRemediationModal(data)}}document.getElementById('resultMeta').textContent=`${data.checked} ${D[lang].checked} · ${sm.pagesScanned||0} ${D[lang].pages} · ${sm.linksProbed||0} ${D[lang].probed} · 🔒 RFC 3161 SHA-256: ${safe(data.scanId.slice(0,8).toUpperCase())} · ${new Date(data.scannedAt).toLocaleString(isTr?'tr-TR':'en-US')}`;const p1=Math.round(((data.scores?.crawl||0)+(data.scores?.technical||0)+(data.scores?.links||0))/3);const p2=Math.round(((data.scores?.ai||0)+(data.scores?.llms||0)+(data.scores?.schema||0)+(data.scores?.agent||0))/4);const p3=Math.round(((data.scores?.performance||0)+(data.scores?.accessibility||0)+(data.scores?.security||0)+(data.scores?.trust||0))/4);const p4=Math.round(data.scores?.conversion||0);const counts={all:data.findings.length,critical:0,high:0,medium:0,low:0};(data.findings = [...new Map(data.findings.map(f=>[f.id||f.title, f])).values()]).forEach(f=>{if(counts[f.severity]!=null)counts[f.severity]++;else counts.low++});let healthDeck=document.getElementById('healthExecutiveDeck');if(!healthDeck){healthDeck=document.createElement('div');healthDeck.id='healthExecutiveDeck';const rHead=document.querySelector('.result-head');if(rHead)rHead.insertAdjacentElement('afterend',healthDeck)}const statusBadgeClass=overall>=80?'health-badge-healthy':(overall>=50?'health-badge-warning':'health-badge-critical');const statusBadgeLabel=overall>=80?(isTr?'✅ Sağlıklı Durum — Temel Katmanlar Güçlü':'✅ Healthy State — Core Layers Strong'):(overall>=50?(isTr?'⚠️ Dikkat Gerektiren Durum — Acil Müdahale Tavsiye Edilir':'⚠️ Needs Attention — Urgent Remediation Recommended'):(isTr?'🚨 Ciddi Durum — Arama ve Bot Görünürlüğü Tehlikede':'🚨 Critical State — Search & Bot Visibility Impaired'));const healthHeadlineText=overall>=80?(isTr?'Siteniz arama motorları ve AI botları için yüksek hazır bulunuşluğa sahip.': 'Your website exhibits high readiness for search engines and AI crawlers.'):(overall>=50?(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından kısmen taranabiliyor; kritik engeller mevcut.':'Your website is partially accessible to AI search engines; critical blockers exist.'):(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından yarı yarıya görünmüyor; acil müdahale gerekiyor.':'Your website is largely invisible to AI search bots; immediate remediation required.'));const healthSubText=isTr?`${counts.all} bulgu tespit edildi. ${counts.critical} kritik sorun (Googlebot erişimi, robots engelleri veya noindex) potansiyel müşterilerin sitenize ulaşmasını doğrudan durdurabilir.`:`Detected ${counts.all} findings. ${counts.critical} critical blockers directly impair your ability to be retrieved and recommended by AI engines.`;healthDeck.className='health-executive-summary';healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p><div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;let simDeck=document.getElementById('executiveSimulationDeck');if(!simDeck){simDeck=document.createElement('div');simDeck.id='executiveSimulationDeck';simDeck.className='executive-simulation-deck';healthDeck.insertAdjacentElement('afterend',simDeck)}
 function calcArr(qVal, dVal){const lossFraction=Math.max(0.20, (100 - overall)/100);const minL=Math.max(1, Math.round((qVal / 50000) * 8 * lossFraction));const maxL=Math.max(minL + 2, Math.round((qVal / 50000) * 15 * lossFraction));const minLoss=minL * dVal;const maxLoss=maxL * dVal;return {minLeads:minL, maxLeads:maxL, minLoss, maxLoss};}
 let curQueries=50000, curDeal=1500;
 const initialLoss=calcArr(curQueries, curDeal);
 simDeck.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">🤖 ${isTr?'GİZLİ // CANLI LLM ARAMA VE HALÜSİNASYON SİMÜLASYONU':'CONFIDENTIAL // EMPIRICAL LLM GROUNDING PROBE'}</span><h3 class="executive-deck-title">${isTr?'Yapay Zeka Modelleri Sitenizi Nasıl Görüyor? (Canlı Simülasyon)':'How Foundation AI Engines Retrieve Your Domain'}</h3><p class="executive-deck-desc">${isTr?'Perplexity, ChatGPT, Claude ve Gemini modellerinin sitenizi tararken karşılaştığı engeller, iş sonucu tercümeleri ve sektörel kayıp aralığı:':'Empirical failure modes, plain-language business impact translations, and category loss ranges across production AI search crawlers:'}</p></div></div>
 <div class="simulation-arr-box"><div class="arr-metric-wrap"><span class="arr-metric-label">${isTr?'Sektörel Kayıp Aralığı: Aylık 8–15 Nitelikli B2B Lead / Satış Kaybı':'Category Risk Range: 8–15 Qualified B2B Leads Lost Monthly'}</span><strong class="arr-metric-val" id="arrMetricVal">${isTr?`Ayda ${initialLoss.minLeads}–${initialLoss.maxLeads} Nitelikli Lead ($${initialLoss.minLoss.toLocaleString('en-US')} – $${initialLoss.maxLoss.toLocaleString('en-US')} / ay)`:`${initialLoss.minLeads}–${initialLoss.maxLeads} Qualified Leads / mo ($${initialLoss.minLoss.toLocaleString('en-US')} – $${initialLoss.maxLoss.toLocaleString('en-US')} / mo)`}</strong></div><p class="arr-metric-context">${isTr?'Sektörel Kayıp Analizi: Mevcut sepet ve sözleşme tutarınıza göre ayda 8–15 nitelikli B2B lead / kurumsal müşteri kaybı yaşanmaktadır. Arama motoru robotu sitenizde boğulup fiyat ve hizmet sayfanızı göremeden çıktığı için satın alma niyetli kurumsal trafik doğrudan rakiplerinize ve aracı platformlara yönlenmektedir.':'Category Loss Analysis: Based on your average deal size, 8–15 qualified B2B enterprise leads are lost monthly. Because AI search crawlers encounter critical code bloat and fail to reach your pricing or services, commercial buyers are redirected to competitors and aggregators.'}</p>
-<div class="arr-calculator-controls"><div class="arr-calc-col"><div class="arr-calc-label"><span>${isTr?'Aylık Sektörel AI Arama Hacmi':'Monthly Category AI Queries'}:</span> <b id="lblQueries">50,000</b></div><input type="range" class="arr-calc-slider" id="sliderQueries" min="10000" max="500000" step="10000" value="50000"></div><div class="arr-calc-col"><div class="arr-calc-label"><span>${isTr?'Ortalama Müşteri / Sipariş Değeri (Sepet Tutarı)':'Average Customer Contract / Deal Size'}:</span> <b id="lblDeal">$1,500</b></div><input type="range" class="arr-calc-slider" id="sliderDeal" min="200" max="10000" step="100" value="1500"></div></div></div>
+<div class="arr-calculator-controls"><div class="arr-calc-col"><div class="arr-calc-label"><span>${isTr?'Aylık Sektörel AI Arama Hacmi':'Monthly Category AI Queries'}:</span> <b id="lblQueries">50,000</b></div><input type="range" class="arr-calc-slider" id="sliderQueries" min="10000" max="500000" step="10000" value="50000"></div><div class="arr-calc-col"><div class="arr-calc-label"><span>${isTr?'Ortalama Müşteri / Sipariş Değeri (Sepet Tutarı)':'Average Customer Contract / Deal Size'}:</span> <b id="lblDeal">$1,500</b></div><input type="range" class="arr-calc-slider" id="sliderDeal" min="200" max="10000" step="100" value="1500"></div></div><div class="arr-cta-action-wrap"><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" id="btnStopLoss">⚡ ${isTr?'Bu Kaybı Otomatik Durdur (3 Dakikada Kurulum) — $99 →':'Stop This Revenue Loss Automatically (3-Minute Setup) — $99 →'}</a><div class="arr-cta-sub">${isTr?'🔒 Sıfır kaynak kod riski · Cloudflare Worker tersine proxy ile 3 dakikada devreye alınır.':'🔒 Zero codebase risk · Deployed in 3 minutes via Cloudflare Worker reverse proxy.'}</div></div></div>
 <div class="sim-toggle-row"><span class="sim-toggle-label">${isTr?'Simülasyon Modu:':'Simulation Grounding State:'}</span><div class="sim-toggle-switch"><button type="button" class="sim-toggle-opt active opt-raw" id="btnSimRaw">${isTr?'🔴 Ham Durum (Engelli / Sıfır Alıntı)':'🔴 Raw State (Zero-Citation)'}</button><button type="button" class="sim-toggle-opt" id="btnSimFixed">${isTr?'🟢 Onarım Seti Sonrası (1. Sıra Doğrulanmış Alıntı)':'🟢 Post-Mandate Fix (1st-Rank Verified Citation)'}</button></div></div>
 <div class="model-probe-nav"><button type="button" class="model-probe-btn active" data-model="pplx">🟣 Perplexity Pro (Sonar-Large)</button><button type="button" class="model-probe-btn" data-model="sgpt">🟢 OpenAI SearchGPT & Operator</button><button type="button" class="model-probe-btn" data-model="claude">🟡 Anthropic Claude 3.5 Sonnet</button><button type="button" class="model-probe-btn" data-model="gemini">🔵 Google Gemini 1.5 Pro</button></div>
 <div id="simModelCardContainer" class="simulation-grid"></div>`;
@@ -29,6 +79,7 @@ function renderModelCard(){const m=PROBE_DATA[activeModelKey];const c=document.g
 renderModelCard();
 const sQueries=document.getElementById('sliderQueries'), sDeal=document.getElementById('sliderDeal');
 if(sQueries&&sDeal){const updateArr=()=>{curQueries=parseInt(sQueries.value,10);curDeal=parseInt(sDeal.value,10);const elQ=document.getElementById('lblQueries'), elD=document.getElementById('lblDeal'), elV=document.getElementById('arrMetricVal');if(elQ)elQ.textContent=curQueries.toLocaleString('en-US');if(elD)elD.textContent='$'+curDeal.toLocaleString('en-US');const res=calcArr(curQueries,curDeal);if(elV)elV.textContent=isTr?`Ayda ${res.minLeads}–${res.maxLeads} Nitelikli Lead ($${res.minLoss.toLocaleString('en-US')} – $${res.maxLoss.toLocaleString('en-US')} / ay)`:`${res.minLeads}–${res.maxLeads} Qualified Leads / mo ($${res.minLoss.toLocaleString('en-US')} – $${res.maxLoss.toLocaleString('en-US')} / mo)`};sQueries.addEventListener('input',updateArr);sDeal.addEventListener('input',updateArr)}
+const bsl=document.getElementById('btnStopLoss');if(bsl){bsl.addEventListener('click',e=>{e.preventDefault();openSaasRemediationModal(data)})}
 simDeck.querySelectorAll('.model-probe-btn').forEach(btn=>{btn.addEventListener('click',()=>{simDeck.querySelectorAll('.model-probe-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');activeModelKey=btn.dataset.model;renderModelCard()})});
 const btnRaw=document.getElementById('btnSimRaw'), btnFixed=document.getElementById('btnSimFixed');
 if(btnRaw&&btnFixed){btnRaw.addEventListener('click',()=>{btnRaw.classList.add('active','opt-raw');btnFixed.classList.remove('active','opt-fixed');isSimFixed=false;renderModelCard()});btnFixed.addEventListener('click',()=>{btnFixed.classList.add('active','opt-fixed');btnRaw.classList.remove('active','opt-raw');isSimFixed=true;renderModelCard()})}
@@ -99,134 +150,7 @@ if(vectorLab){
   vectorLab.querySelectorAll('.vector-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{vectorLab.querySelectorAll('.vector-tab-btn').forEach(b=>b.classList.remove('active'));vectorLab.querySelectorAll('.vector-pane').forEach(p=>p.classList.remove('active'));btn.classList.add('active');const pane=document.getElementById(btn.dataset.vtab);if(pane)pane.classList.add('active');})});
 }
 
-const workerCodeSample=isTr?`// =========================================================================
-// [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ ÜRETİM ARTIFACTI]
-// Dosya: 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js
-// Hedef Domain: ${cleanDomainSafe}
-// Mimari: Cloudflare Workers · Streaming HTMLRewriter Pipeline
-// Durum: TESCİLLİ ARTIFACT · $99 ONARIM SETİ İLE TESLİM EDİLİR
-// =========================================================================
-//
-// [GİZLENMİŞ KOD: 148 SATIR STREAMING HTMLREWRITER VE AST PARSER]
-//
-// Dahili Kapsam:
-//   ✓ Multi-Bot Algılama Matrisi (GPTBot, Claude-SearchBot, PerplexityBot)
-//   ✓ 14KB altı deterministik AST budaması (CSS/JS/SVG arındırma)
-//   ✓ Otomatik data-chunk-id ve ground-truth varlık ankrajı enjeksiyonu
-//   ✓ Sub-40ms Edge TTFB önbellekleme ve Cloudflare cache binding
-//   ✓ 5 kritik kabul testi ve acil durum rollback güvencesi
-//
-// [!] DİKKAT: Eksik veya hatalı streaming kodları web sitenizin hidrasyonunu
-// bozarak arama motoru indekslemesini durdurabilir (fail-closed).
-// Test edilmiş, kullanıma hazır üretim kodu $99 Onarım Seti'nde yer alır.
-//
-// ➔ Tam Üretim Kodunu Aç ve İndir ($99 Tek Seferlik):
-//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
-//
-// [SHA-256 SIGNED DIGEST: e8f4c729a1b8... VERIFIED FOR ${cleanDomainSafe}]
-// =========================================================================`:
-`// =========================================================================
-// [PROPRIETARY ENGINEERING ARTIFACT: ENCRYPTED IMPLEMENTATION]
-// File: 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js
-// Target: ${cleanDomainSafe}
-// Architecture: Cloudflare Workers · Streaming HTMLRewriter Pipeline
-// Status: VERIFIED ARTIFACT · UNLOCKED IN $99 REPAIR KIT
-// =========================================================================
-//
-// [REDACTED: 148 LINES OF PRODUCTION STREAMING HTMLREWRITER & AST PURGE CODE]
-//
-// Included Capabilities:
-//   ✓ Multi-Bot Detection Matrix (GPTBot, Claude-SearchBot, PerplexityBot)
-//   ✓ Sub-14KB deterministic AST pruning (zero-noise DOM stream)
-//   ✓ Automatic data-chunk-id & ground-truth entity boundary encapsulation
-//   ✓ Sub-40ms Edge TTFB KV-caching with Cloudflare bindings
-//   ✓ 5 critical acceptance suites & zero-downtime rollback plan
-//
-// [!] CAUTION: Untested manual stream manipulators risk breaking hydration
-// and causing complete search bot de-indexing (fail-closed).
-// The battle-tested, ready-to-deploy code is provided in the $99 Repair Kit.
-//
-// ➔ Unlock Production Code ($99 One-Time):
-//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
-//
-// [SHA-256 SIGNED DIGEST: e8f4c729a1b8... VERIFIED FOR ${cleanDomainSafe}]
-// =========================================================================`;
 
-const awsCodeSample=isTr?`// =========================================================================
-// [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ ÜRETİM ARTIFACTI]
-// Dosya: 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js
-// Hedef Domain: ${cleanDomainSafe}
-// Mimari: AWS CloudFront Viewer-Request + Lambda@Edge Origin-Response
-// Durum: $99 KURUMSAL ONARIM SETİ İLE TESLİM EDİLİR
-// =========================================================================
-//
-// [GİZLENMİŞ KOD: 112 SATIR AWS LAMBDA@EDGE ORIGIN-RESPONSE AST PURGE]
-//
-// Kapsam:
-//   ✓ CloudFront Viewer-Request bot header enjeksiyonu
-//   ✓ Lambda@Edge Origin-Response ile dinamik HTML budaması
-//   ✓ Cache-Control s-maxage=86400 dağıtık edge önbellekleme
-//   ✓ AWS IAM minimum yetki (least-privilege) Terraform / CDK şablonu
-//
-// ➔ Tam Kodu Aç ve İndir ($99):
-//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
-// =========================================================================`:
-`// =========================================================================
-// [PROPRIETARY ENGINEERING ARTIFACT: ENCRYPTED IMPLEMENTATION]
-// File: 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js
-// Target: ${cleanDomainSafe}
-// Architecture: AWS CloudFront Viewer-Request + Lambda@Edge Origin-Response
-// Status: UNLOCKED IN $99 REPAIR KIT
-// =========================================================================
-//
-// [REDACTED: 112 LINES OF AWS LAMBDA@EDGE ORIGIN-RESPONSE AST PURGE]
-//
-// Included Capabilities:
-//   ✓ CloudFront Viewer-Request bot header injection
-//   ✓ Lambda@Edge Origin-Response dynamic HTML stripping
-//   ✓ Distributed edge cache-control policies
-//   ✓ Least-privilege IAM and CloudFormation/CDK deployment templates
-//
-// ➔ Unlock Production Code ($99 One-Time):
-//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
-// =========================================================================`;
-
-const vercelCodeSample=isTr?`// =========================================================================
-// [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ ÜRETİM ARTIFACTI]
-// Dosya: 14c_VERCEL_EDGE_MIDDLEWARE.ts
-// Hedef Domain: ${cleanDomainSafe}
-// Mimari: Vercel Next.js Edge Runtime Middleware
-// Durum: $99 KURUMSAL ONARIM SETİ İLE TESLİM EDİLİR
-// =========================================================================
-//
-// [GİZLENMİŞ KOD: 86 SATIR NEXT.JS EDGE MIDDLEWARE & REWRITE PIPELINE]
-//
-// Kapsam:
-//   ✓ Zero-latency AI crawler tespiti ve bot yönlendirmesi
-//   ✓ /llms.txt dinamik markdown rewrite mekanizması
-//   ✓ Edge header enjeksiyonu (X-AI-Engine, stale-while-revalidate)
-//
-// ➔ Tam Kodu Aç ve İndir ($99):
-//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
-// =========================================================================`:
-`// =========================================================================
-// [PROPRIETARY ENGINEERING ARTIFACT: ENCRYPTED IMPLEMENTATION]
-// File: 14c_VERCEL_EDGE_MIDDLEWARE.ts
-// Target: ${cleanDomainSafe}
-// Architecture: Vercel Next.js Edge Runtime Middleware
-// Status: UNLOCKED IN $99 REPAIR KIT
-// =========================================================================
-//
-// [REDACTED: 86 LINES OF NEXT.JS EDGE MIDDLEWARE & REWRITE PIPELINE]
-//
-// Included Capabilities:
-//   ✓ Zero-latency AI crawler detection and routing
-//   ✓ Dynamic /llms.txt markdown rewrite engine
-//   ✓ Edge header injection and CDN caching directives
-//
-// ➔ Unlock Production Code ($99 One-Time):
-//    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}
-// =========================================================================`;
 
 const ciGateSample=isTr?`# =========================================================================
 # [MÜHENDİSLİK MÜLKİYETİ: KİLİTLİ CI/CD QUALITY GATE]
@@ -261,23 +185,7 @@ const ciGateSample=isTr?`# =====================================================
 #
 # ➔ Unlock YAML Workflow: /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}`;
 
-const n8nWorkflowSample=JSON.stringify({
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "artifact": "22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json",
-  "target_domain": cleanDomainSafe,
-  "status": "LOCKED_PREMIUM_ARTIFACT",
-  "notice": isTr ? "Bu DAG otomasyon şeması $99 Onarım Seti ile teslim edilir." : "This self-healing DAG workflow is unlocked with the $99 Repair Kit.",
-  "orchestration": {
-    "trigger": "03:00 UTC Cron + On-Demand CI/CD Webhook",
-    "ingestion": "Multi-Bot Probe (PerplexityBot, GPTBot, ClaudeBot)",
-    "ast_gate": "Deterministic Sub-14KB AST Parser & Chunk Validator",
-    "drift_triage": "Bayesian Drift Scoring & Incident Router",
-    "auto_heal": "Cloudflare Edge Cache Purge API + Slack/PagerDuty Dispatch"
-  },
-  "nodes": isTr ? "[GİZLENMİŞ: 6 üretim seviyesinde n8n node konfigürasyonu, Cloudflare API purge ve Slack webhook entegrasyonu]" : "[REDACTED: 6 production n8n node configurations, Cloudflare API purge & Slack webhook]",
-  "connections": isTr ? "[GİZLENMİŞ: Hata toleranslı kendi kendini onaran DAG bağlantı matrisi]" : "[REDACTED: Fault-tolerant self-healing DAG connection matrix]",
-  "unlock_url": `https://${cleanDomainSafe}/checkout?plan=pro`
-}, null, 2);
+
 
 const jsonLdSample=JSON.stringify({
   "@context": "https://schema.org",
@@ -354,16 +262,27 @@ const roadmapSample=isTr?`# ====================================================
 ➔ Unlock Full Roadmap & Download ZIP Pack ($99):
    /checkout?plan=pro&domain=${encodeURIComponent(cleanDomainSafe)}`;
 
-const lockPaneHtml=(preId,content,filename,dlId)=>`<div class="code-action-bar"><span ${preId==='code-worker-pre'?'id="edgeFileTitle"':''}>${safe(filename)}</span><div><button type="button" class="btn-download-blob" id="${dlId}" style="margin-right:6px;">💾 ${isTr?'Yetkili Kurulum — $99':'Authorized Setup — $99'}</button><button type="button" class="btn-copy-code" data-target="${preId}">${isTr?'Kopyala':'Copy'}</button></div></div><div class="locked-fix"><div class="locked-fix-blurred"><pre id="${preId}" class="code-snippet-pre">${safe(content)}</pre></div><div class="locked-fix-overlay"><span>🔒 ${isTr?'Kilitli Entegrasyon Protokolü: Tek tıkla sisteminize enjekte edilir (Yetkili Kurulum Gerekir — $99)':'Locked Integration Protocol: One-click system injection (Authorized Deployment Required — $99)'}</span><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="locked-fix-btn">${isTr?'Yetkili Kurulumu Başlat — $99 →':'Launch Authorized Deployment — $99 →'}</a></div></div>`;
+const lockPaneHtml=(preId,content,filename,dlId)=>`<div class="code-action-bar"><span ${preId==='code-worker-pre'?'id="edgeFileTitle"':''}>${safe(filename)}</span><div><button type="button" class="btn-download-blob" id="${dlId}" style="margin-right:6px;">💾 ${isTr?'Yetkili Kurulum — $99':'Authorized Setup — $99'}</button><button type="button" class="btn-copy-code" data-target="${preId}">${isTr?'Kopyala':'Copy'}</button></div></div><div class="locked-fix"><div class="locked-fix-blurred"><pre id="${preId}" class="code-snippet-pre">${safe(content)}</pre></div><div class="locked-fix-overlay"><span>🔒 ${D[lang].implementationLocked}</span><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="locked-fix-btn">${isTr?'Yetkili Kurulumu Başlat — $99 →':'Launch Authorized Deployment — $99 →'}</a></div></div>`;
 
-remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'KİLİTLİ ENTEGRASYON PROTOKOLÜ (YETKİLİ KURULUM)':'LOCKED INTEGRATION PROTOCOL (AUTHORIZED DEPLOYMENT)'}</span><h3 class="executive-deck-title">${isTr?'Tek Tıkla Sisteminize Enjekte Edilir (Yetkili Kurulum Gerekir)':'One-Click System Injection (Authorized Deployment Required)'}</h3><p class="executive-deck-desc">${isTr?'Mühendislik ekibinizin manuel kod yazmasına veya mimariyi sıfırdan kurmasına gerek yoktur. Şifrelenmiş edge katmanı ve n8n otomasyonu, yetkili mühendis kurulumuyla doğrudan altyapınıza enjekte edilir:':'No manual code authoring required from your team. Proprietary edge layers and self-healing n8n DAG workflows are injected directly into your infrastructure via authorized deployment:'}</p></div></div>
-<div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'n8n Kendi Kendini Onaran (Self-Healing) DAG Akışı':'n8n Self-Healing DAG Orchestration Flow'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><button type="button" class="btn-download-blob" id="btnDlN8nJson">💾 ${isTr?'n8n Akışını Enjekte Et (Yetkili Kurulum — $99)':'Inject n8n DAG (Authorized Setup — $99)'}</button><button type="button" class="btn-copy-code" data-target="code-n8n-pre">${isTr?'Kopyala':'Copy'}</button></div></div>
-<div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p></div></div>
-<div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div>
-<div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ ${isTr?'Multi-Cloud Edge':'Edge Middleware'}</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 n8n Self-Healing DAG</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button><button type="button" class="console-tab-btn" data-tab="tab-c2pa">🛡️ C2PA Ledger</button><button type="button" class="console-tab-btn" data-tab="tab-mcp">🔌 MCP Server</button><button type="button" class="console-tab-btn" data-tab="tab-ci">⚙️ CI/CD Quality Gate</button></div>
+const workerSaasHtml=`<div class="saas-edge-dashboard"><div class="saas-edge-head"><div><span class="saas-status-badge"><span class="saas-status-pulse"></span> ${isTr?'● AKTİF EDGE TERSİNE PROXY (SIFIRDAN KODSUZ ENTEGRASYON)':'● ACTIVE EDGE REVERSE PROXY (ZERO ORIGIN TOUCH)'}</span><h4 style="margin:8px 0 2px;font-size:16px;color:#38bdf8;">${isTr?'Cloudflare Worker SaaS Edge Mimarisi':'Cloudflare Worker SaaS Edge Architecture'}</h4><p style="margin:0;font-size:12px;color:#94a3b8;">${isTr?'Müşterinin kaynak koduna dokunmadan araya girip 14KB bütçesini ve JSON-LD şemasını dinamik basan bulut altyapısı:':'Zero-code reverse proxy intercepting AI crawler traffic at the edge to stream sub-14KB HTML and JSON-LD graphs:'}</p></div></div><div class="saas-grid-cards"><div class="saas-card"><div class="saas-card-title">⚡ ${isTr?'14KB AST Bütçe Muhafızı':'14KB AST Budget Gate'}</div><p class="saas-card-desc">${isTr?'Streaming HTMLRewriter ile script, SVG ve stil gürültüsü budanarak yanıt ilk 14KB penceresinde tutulur.':'Streaming HTMLRewriter prunes scripts, styles, and SVG bloat to preserve the sub-14KB initial ingestion window.'}</p></div><div class="saas-card"><div class="saas-card-title">🕸️ ${isTr?'Dinamik JSON-LD Enjeksiyonu':'Dynamic JSON-LD Injection'}</div><p class="saas-card-desc">${isTr?'Doğrulanmış Corporation @graph ve Wikidata sameAs QID varlık şeması doğrudan <head> içine enjekte edilir.':'Verified Corporation @graph and Wikidata sameAs QID schema triples are dynamically inserted into <head>.'}</p></div><div class="saas-card"><div class="saas-card-title">🤖 ${isTr?'Multi-Bot Akıllı Yönlendirici':'Multi-Bot Adaptive Router'}</div><p class="saas-card-desc">${isTr?'GPTBot, ClaudeBot, PerplexityBot ve Google-Extended için sub-25ms TTFB ile 200 OK yanıt üretir.':'Detects AI search bots and dispatches optimized responses with sub-25ms TTFB and HTTP/3 0-RTT.'}</p></div><div class="saas-card"><div class="saas-card-title">📄 ${isTr?'Dinamik Markdown Servisi':'Dynamic Markdown Delivery'}</div><p class="saas-card-desc">${isTr?'Accept: text/markdown başlığı veya bot isteklerinde sayfayı anında temiz LLM markdown formatında servis eder.':'Delivers on-the-fly markdown representation for AI agents negotiating text/markdown.'}</p></div></div><div class="saas-toggle-row"><span>1. ${isTr?'Streaming HTMLRewriter 14KB Budama Katmanı':'Streaming HTMLRewriter 14KB AST Purge'}</span><span class="saas-toggle-active">✅ ${isTr?'AÇIK (AKTİF)':'ENABLED (ACTIVE)'}</span></div><div class="saas-toggle-row"><span>2. ${isTr?'Knowledge Vault JSON-LD @graph Enjeksiyonu':'Knowledge Vault JSON-LD @graph Injection'}</span><span class="saas-toggle-active">✅ ${isTr?'AÇIK (AKTİF)':'ENABLED (ACTIVE)'}</span></div><div class="saas-toggle-row"><span>3. ${isTr?'llms.txt v2 ve Dynamic Markdown Servisi':'llms.txt v2 & Dynamic Markdown Gateway'}</span><span class="saas-toggle-active">✅ ${isTr?'AÇIK (AKTİF)':'ENABLED (ACTIVE)'}</span></div><div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 14px;background:rgba(2,132,199,0.1);border:1px solid rgba(56,189,248,0.3);border-radius:12px;"><div style="font-size:12px;color:#e0f2fe;">🔒 <strong>${isTr?'Tescilli Mimari:':'Proprietary Architecture:'}</strong> ${isTr?'3 dakikada Cloudflare hesabınıza tek tıkla enjekte edilir.':'Injected into your Cloudflare zone in 3 minutes.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="padding:10px 20px;font-size:13px;">${isTr?'Tek Tıkla Sisteminize Enjekte Edin (3 Dakikada Kurulum) — $99 →':'Inject Into Your Infrastructure (3-Min Setup) — $99 →'}</a></div></div>`;
+
+const llmsSaasHtml=`<div class="llms-v2-manager"><div class="llms-v2-head"><div><span class="llms-v2-badge">📄 ${isTr?'llms.txt Spec-v2 Yönetim Paneli':'llms.txt Spec-v2 SaaS Manager'}</span><h4 style="margin:8px 0 2px;font-size:16px;color:#c084fc;">${isTr?'Tek Panelden llms.txt Yönetimi & Dinamik Markdown Servisi':'Single-Panel llms.txt & Dynamic Markdown Orchestrator'}</h4><p style="margin:0;font-size:12px;color:#94a3b8;">${isTr?'Web sitenizin yapay zeka arama motorlarına sunacağı makine-okunabilir bilgi haritasını tek merkezden yönetin:':'Orchestrate your domain machine-readable AI knowledge surface and markdown endpoints from one console:'}</p></div><span style="font-size:11px;font-weight:800;color:#34d399;background:rgba(16,185,129,0.15);padding:4px 10px;border-radius:999px;border:1px solid rgba(16,185,129,0.3);">✅ ${isTr?'Spec-v2 Uyumlu (Doğrulandı)':'Spec-v2 Validated'}</span></div><div class="llms-preview-box"># ${cleanDomainSafe}
+> ${cleanDomainSafe} ${isTr?'resmî kurumsal varlık tanımı ve doğrulanmış servis dizini.':'official enterprise service index and grounded knowledge surface.'}
+
+## Core Information
+- [${cleanDomainSafe} ${isTr?'Anasayfa':'Overview'}](https://${cleanDomainSafe}/): ${isTr?'Resmî kurumsal çözüm özeti ve yetkinlikleri.':'Grounded company overview and solutions.'}
+- [${isTr?'Hizmet Kataloğu':'Service Catalog'}](https://${cleanDomainSafe}/services/): ${isTr?'Kurumsal servis şartnameleri ve operasyonel SLA.':'Enterprise capability definitions and operational SLA.'}
+- [${isTr?'Fiyatlandırma & Lisans':'Pricing & Licensing'}](https://${cleanDomainSafe}/pricing/): ${isTr?'Şeffaf lisanslama ve ticari sınırlar.':'Transparent licensing tiers and commercial boundaries.'}
+
+## Optional
+- [${isTr?'Teknik Şartname':'Full Technical Spec'}](https://${cleanDomainSafe}/llms-full.txt): ${isTr?'Kapsamlı makine-okunabilir dizin.':'Comprehensive machine-readable index.'}</div><div class="saas-toggle-row"><span>${isTr?'Dinamik Markdown Servisi (Accept: text/markdown & Bot Edge Delivery)':'Dynamic Markdown Delivery (Accept: text/markdown & Bot Negotiation)'}</span><span class="saas-toggle-active">✅ ${isTr?'AÇIK (EDGE AKTİF)':'ENABLED (EDGE ACTIVE)'}</span></div><div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 14px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);border-radius:12px;"><div style="font-size:12px;color:#f3e8ff;">⚡ <strong>/llms.txt</strong> ${isTr?'Cloudflare Worker SaaS üzerinden otomatik servis edilir.':'Served automatically via Cloudflare Worker SaaS.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="background:linear-gradient(135deg,#9333ea 0%,#2563eb 100%);box-shadow:0 8px 20px -4px rgba(147,51,234,0.4);padding:10px 20px;font-size:13px;">${isTr?'Değişiklikleri Edge Katmanına Dağıt — $99 →':'Deploy Spec-v2 to Edge Layer — $99 →'}</a></div></div>`;
+
+remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'KİLİTLİ ENTEGRASYON PROTOKOLÜ (YETKİLİ KURULUM)':'LOCKED INTEGRATION PROTOCOL (AUTHORIZED DEPLOYMENT)'}</span><h3 class="executive-deck-title">${isTr?'Tek Tıkla Sisteminize Enjekte Edilir (Yetkili Kurulum Gerekir)':'One-Click System Injection (Authorized Deployment Required)'}</h3><p class="executive-deck-desc">${isTr?'Mühendislik ekibinizin manuel kod yazmasına veya altyapıyı sıfırdan kurmasına gerek yoktur. Şifrelenmiş Cloudflare Worker edge katmanı ve otonom pipeline, yetkili mühendis kurulumuyla doğrudan altyapınıza enjekte edilir:':'No manual code authoring required from your team. Proprietary Cloudflare Worker edge layers and self-healing pipelines are injected directly into your infrastructure via authorized deployment:'}</p></div></div>
+<div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Worker SaaS</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 ${isTr?'Otonom İzleme Pipeline':'Autonomous Monitoring'}</button><button type="button" class="console-tab-btn" data-tab="tab-llms">📄 llms.txt Spec-v2</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button><button type="button" class="console-tab-btn" data-tab="tab-c2pa">🛡️ C2PA Ledger</button><button type="button" class="console-tab-btn" data-tab="tab-mcp">🔌 MCP Server</button><button type="button" class="console-tab-btn" data-tab="tab-ci">⚙️ CI/CD Quality Gate</button></div>
 <div id="tab-roadmap" class="console-pane active">${lockPaneHtml('code-roadmap-pre',roadmapSample,'02_IMPLEMENTATION_ROADMAP.md','btnDlRoadmapMd')}</div>
-<div id="tab-worker" class="console-pane"><div class="multicloud-selector"><button type="button" class="multicloud-btn active" data-cloud="cf">☁️ Cloudflare Worker</button><button type="button" class="multicloud-btn" data-cloud="aws">🟧 AWS CloudFront</button><button type="button" class="multicloud-btn" data-cloud="vercel">▲ Vercel Edge</button></div>${lockPaneHtml('code-worker-pre',workerCodeSample,'14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Streaming HTMLRewriter)','btnDlWorkerJs')}</div>
-<div id="tab-n8n" class="console-pane">${lockPaneHtml('code-n8n-pre',n8nWorkflowSample,'22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (Self-Healing DAG)','btnDlN8nTab')}</div>
+<div id="tab-worker" class="console-pane">${workerSaasHtml}</div>
+<div id="tab-n8n" class="console-pane"><div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'Otonom İzleme ve Kendi Kendini Onaran Pipeline':'Autonomous Self-Healing Ingestion Pipeline'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-download-blob" style="text-decoration:none;">💾 ${isTr?'Otonom Pipeline\'ı Sisteminize Bağlayın — $99':'Deploy Pipeline — $99'}</a></div></div><div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p></div></div><div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div></div>
+<div id="tab-llms" class="console-pane">${llmsSaasHtml}</div>
 <div id="tab-schema" class="console-pane">${lockPaneHtml('code-schema-pre',jsonLdSample,'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata Vault &amp; Offer Catalog)','btnDlSchemaJson')}</div>
 <div id="tab-c2pa" class="console-pane">${lockPaneHtml('code-c2pa-pre',c2paSample,'20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 TSA Digest)','btnDlC2paJson')}</div>
 <div id="tab-mcp" class="console-pane">${lockPaneHtml('code-mcp-pre',mcpSample,'17_MCP_SERVER_SPEC.json (Model Context Protocol)','btnDlMcpJson')}</div>
@@ -411,27 +330,8 @@ if(btnRunDag){
   });
 }
 
-// Multi-cloud edge switcher
-let currentCloud='cf';
-remConsole.querySelectorAll('.multicloud-btn').forEach(b=>{
-  b.addEventListener('click',()=>{
-    remConsole.querySelectorAll('.multicloud-btn').forEach(btn=>btn.classList.remove('active'));
-    b.classList.add('active');
-    currentCloud=b.dataset.cloud;
-    const preEl=document.getElementById('code-worker-pre');
-    const titleEl=document.getElementById('edgeFileTitle');
-    if(currentCloud==='cf'){
-      if(titleEl)titleEl.textContent='14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Streaming HTMLRewriter)';
-      if(preEl)preEl.textContent=workerCodeSample;
-    } else if(currentCloud==='aws'){
-      if(titleEl)titleEl.textContent='14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js (Origin-Response AST Purge)';
-      if(preEl)preEl.textContent=awsCodeSample;
-    } else {
-      if(titleEl)titleEl.textContent='14c_VERCEL_EDGE_MIDDLEWARE.ts (Next.js Edge Runtime)';
-      if(preEl)preEl.textContent=vercelCodeSample;
-    }
-  });
-});
+
+
 
 const paywallCheckoutUrl=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;
 const paywallBtnIds=['btnDlN8nJson','btnDlN8nTab','btnDlWorkerJs','btnDlSchemaJson','btnDlRoadmapMd','btnDlC2paJson','btnDlMcpJson','btnDlCiYaml'];
