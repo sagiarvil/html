@@ -6223,3 +6223,40 @@ html[data-theme="light"] .ea-footnote {
   color: #10b981;
   flex-shrink: 0;
 }
+
+/* Mobile Responsive Polish for Enterprise Analyzer Showcase */
+@media (max-width: 768px) {
+  .ea-showcase-section {
+    padding: 60px 16px 48px;
+  }
+  .ea-telemetry-card, .ea-terminal-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+  .ea-actions-bar {
+    flex-direction: column;
+    width: 100%;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 12px;
+  }
+  .ea-btn-primary, .ea-btn-secondary {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+  .ea-tab-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+  .ea-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
