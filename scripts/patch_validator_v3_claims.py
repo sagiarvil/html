@@ -18,9 +18,10 @@ replacements = (
 for old, new in replacements:
     text = text.replace(old, new)
 
-# Case-insensitive absolute cleanup for every remaining fixed-window spelling.
+# Case-insensitive absolute cleanup for every remaining fixed-window spelling,
+# including bare 14336/14,336 numeric forms used by older generated templates.
 text = re.sub(r'14\s*kb', 'HTML payload', text, flags=re.I)
-text = re.sub(r'14[,.]?336\s*(?:bytes?|bayt)', 'measured HTML payload', text, flags=re.I)
+text = re.sub(r'14[,.]?336(?:\s*(?:bytes?|bayt))?', 'measured HTML payload', text, flags=re.I)
 
 text = text.replace('Wikidata sameAs QID and Corporation triples anchor brand in Google &amp; Perplexity.', 'Verified sameAs and Organization/Corporation schema strengthen explicit entity identity signals.')
 text = text.replace('Wikidata QID ve Corporation şeması doğrudan &lt;head&gt; içine eklenerek marka teyit edilir.', 'Doğrulanmış sameAs ve Organization/Corporation schema alanlarıyla açık varlık kimliği güçlendirilir.')
@@ -31,7 +32,7 @@ text = text.replace('High-intent commercial pipeline is suppressed due to crawle
 path.write_text(text, encoding='utf-8')
 
 final_text = path.read_text(encoding='utf-8')
-remaining = re.search(r'14\s*kb|14[,.]?336\s*(?:bytes?|bayt)', final_text, flags=re.I)
+remaining = re.search(r'14\s*kb|14[,.]?336', final_text, flags=re.I)
 if remaining:
     start = max(0, remaining.start() - 80)
     end = min(len(final_text), remaining.end() + 120)
