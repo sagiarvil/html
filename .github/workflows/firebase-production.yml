@@ -24,30 +24,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Materialize AI authority, customer positioning and premium infographics
+      - name: Materialize AI authority, customer positioning and verified V3 sales contract
         run: npm run build:commercial
-      - name: Verify premium customer artifact before deploy
+      - name: Verify V3 customer artifact before deploy
         shell: bash
         run: |
           set -euo pipefail
           grep -Fq 'data-commercial-intent="static"' index.html
-          grep -Fq 'Yapay Zeka Sizi Buluyor mu?' index.html
-          grep -Fq 'Tavsiye Edilmeye Hazır mısınız?' index.html
+          grep -Fq 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi' index.html
+          grep -Fq 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?' index.html
           grep -Fq 'Ücretsiz Kontrol Et' index.html
-          grep -Fq 'Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML' index.html
-          grep -Fq 'data-premium-infographic="scope-map"' tr/araclar/index.html
-          grep -Fq 'data-premium-infographic="report-boundary"' tr/fiyatlandirma/index.html
+          grep -Fq 'v3-capability-contract' index.html
+          grep -Fq '18 Engine V3' index.html
+          grep -Fq '105' index.html
           grep -Fq '$99' index.html
           ! grep -Fq '$149' index.html
-          grep -Fq 'premium-experience.css' index.html
-          grep -Fq 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap' tr/ai-website-readiness/index.html
-          grep -Fq 'llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?' tr/llms-txt-validator/index.html
-          grep -Fq 'llms.txt Nedir? Yapay Zeka İçin Makine Okunabilir İçerik Haritası Nasıl Kurulur?' tr/rehberler/llms-txt/index.html
-          grep -Fq 'ChatGPT ve Diğer Yapay Zeka Tarayıcıları Sitenize Ulaşabiliyor mu?' tr/ai-crawler-checker/index.html
+          ! grep -Eq 'Engine V2|120 (deep )?(checks|controls)|43[- ]page|22[- ]file|15[- ]prompt' index.html
+          grep -Fq 'data-premium-infographic="scope-map"' tr/araclar/index.html
+          grep -Fq 'data-premium-infographic="report-boundary"' tr/fiyatlandirma/index.html
+          grep -Fq 'AI SEO Uygulama Paketi $99' tr/fiyatlandirma/index.html
+          grep -Fq 'AI SEO Implementation Pack $99' en/pricing/index.html
+          grep -Fq 'Yapay Zeka SEO Analizi ve AI Web Sitesi Hazırlık Testi' tr/ai-website-readiness/index.html
+          grep -Fq 'ChatGPT Bot ve AI Crawler Erişim Testi' tr/ai-crawler-checker/index.html
+          grep -Fq 'llms.txt Validator ve Yapay Zeka Site Testi' tr/llms-txt-validator/index.html
           ! grep -Fq 'Google doğruluk sınırı' tr/sozluk/index.html
           ! grep -Fq 'Google accuracy boundary' en/glossary/index.html
-          grep -Fq 'Problemi ücretsiz görün.' tr/fiyatlandirma/index.html
-          grep -Fq '/assets/css/commercial-intent.css?v=2' en/ai-website-readiness/index.html
+          grep -Fq 'premium-experience.css' index.html
       - name: Install Firebase function dependencies
         run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
       - name: Build Firebase function adapter
