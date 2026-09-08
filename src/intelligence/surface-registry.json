@@ -1,0 +1,62 @@
+{
+  "registry": "HTML&HTML Canonical Surface Registry",
+  "version": "4.0.0",
+  "mandate": "HTMLHTML-EAI-2026-V4",
+  "surfaces": [
+    {
+      "surfaceId": "chatgpt-search",
+      "name": "ChatGPT Search Surface",
+      "provider": "OpenAI",
+      "model": "gpt-5.6-luna",
+      "measurementMethod": "PROVIDER_API",
+      "isActive": true,
+      "citationCapable": true,
+      "recommendationCapable": true,
+      "complianceDisclosure": "Measured via OpenAI Responses API with official web_search tool integration."
+    },
+    {
+      "surfaceId": "perplexity-sonar",
+      "name": "Perplexity Sonar Search Surface",
+      "provider": "Perplexity",
+      "model": "sonar-pro",
+      "measurementMethod": "PROVIDER_API",
+      "isActive": true,
+      "citationCapable": true,
+      "recommendationCapable": true,
+      "complianceDisclosure": "Measured via Perplexity Sonar API online search completion with verified citations."
+    },
+    {
+      "surfaceId": "gemini-grounding",
+      "name": "Gemini Search Grounding Surface",
+      "provider": "Google",
+      "model": "gemini-3.8-flash",
+      "measurementMethod": "PROVIDER_API",
+      "isActive": true,
+      "citationCapable": true,
+      "recommendationCapable": true,
+      "complianceDisclosure": "Measured via Gemini API with Google Search grounding metadata."
+    },
+    {
+      "surfaceId": "claude-retrieval",
+      "name": "Claude Search & Retrieval Surface",
+      "provider": "Anthropic",
+      "model": "claude-3-7-sonnet",
+      "measurementMethod": "PROVIDER_API",
+      "isActive": true,
+      "citationCapable": true,
+      "recommendationCapable": true,
+      "complianceDisclosure": "Measured via Anthropic API with web retrieval grounding citations."
+    },
+    {
+      "surfaceId": "copilot-search",
+      "name": "Microsoft Copilot Bing Search Surface",
+      "provider": "Microsoft",
+      "model": "copilot-bing-grounding",
+      "measurementMethod": "PROVIDER_API",
+      "isActive": true,
+      "citationCapable": true,
+      "recommendationCapable": true,
+      "complianceDisclosure": "Measured via Azure OpenAI / Bing Search Grounding API."
+    }
+  ]
+}

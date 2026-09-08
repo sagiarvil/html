@@ -1,0 +1,32 @@
+{
+  "registry": "HTML&HTML Canonical Deliverables Registry",
+  "version": "4.0.0",
+  "mandate": "HTMLHTML-EAI-2026-V4",
+  "totalFiles": 24,
+  "files": [
+    { "code": "DELIV-30", "filename": "30_EXECUTIVE_DECISION_MEMO.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-31", "filename": "31_PROMPT_PANEL.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-32", "filename": "32_AI_ENGINE_OBSERVATIONS.ndjson", "tier": "ENTERPRISE_AI_999", "format": "NDJSON" },
+    { "code": "DELIV-33", "filename": "33_AI_SHARE_OF_VOICE.csv", "tier": "ENTERPRISE_AI_999", "format": "CSV" },
+    { "code": "DELIV-34", "filename": "34_ENGINE_DIVERGENCE.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-35", "filename": "35_COMPETITOR_GAP_MATRIX.csv", "tier": "ENTERPRISE_AI_999", "format": "CSV" },
+    { "code": "DELIV-36", "filename": "36_CITATION_SOURCE_GRAPH.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-37", "filename": "37_SOURCE_CAPTURE_TARGETS.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-38", "filename": "38_ENTITY_VERIFICATION_DOSSIER.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-39", "filename": "39_ENTITY_CONFLICT_LEDGER.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-40", "filename": "40_AI_CRAWLER_POLICY_MATRIX.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-41", "filename": "41_AI_TDM_GOVERNANCE_DOSSIER.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-42", "filename": "42_VERTICAL_VECTOR_PACK.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-43", "filename": "43_BEFORE_AFTER_PROTOCOL.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-44", "filename": "44_RUNTIME_EVIDENCE_INDEX.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-45", "filename": "45_N8N_AI_INTELLIGENCE_WORKFLOW.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-46", "filename": "46_N8N_RUNBOOK.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-47", "filename": "47_N8N_DLQ_PROOF.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-48", "filename": "48_ROOT_CAUSE_GRAPH.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-49", "filename": "49_OPPORTUNITY_PRIORITY.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-50", "filename": "50_BASELINE_MEASUREMENT.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-51", "filename": "51_RESCAN_DELTA_REPORT.md", "tier": "ENTERPRISE_AI_999", "format": "MD" },
+    { "code": "DELIV-52", "filename": "52_AUDIT_TRAIL.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" },
+    { "code": "DELIV-53", "filename": "53_PACKAGE_MANIFEST.json", "tier": "ENTERPRISE_AI_999", "format": "JSON" }
+  ]
+}

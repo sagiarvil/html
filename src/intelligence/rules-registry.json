@@ -1,0 +1,25 @@
+{
+  "registry": "HTML&HTML Canonical Rules Registry",
+  "version": "4.0.0",
+  "mandate": "HTMLHTML-EAI-2026-V4",
+  "totalRules": 17,
+  "rules": [
+    { "ruleId": "RULE-HSTS-001", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["RFC6797"], "maxSourceAgeDays": 180 },
+    { "ruleId": "RULE-CANON-002", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["RFC6596"], "maxSourceAgeDays": 180 },
+    { "ruleId": "RULE-CRAWL-OAI-003", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_VENDOR", "sourceIds": ["OPENAI-PUBLISHERS", "RFC9309"], "maxSourceAgeDays": 45 },
+    { "ruleId": "RULE-CRAWL-ANTH-004", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_VENDOR", "sourceIds": ["ANTHROPIC-CRAWLERS", "RFC9309"], "maxSourceAgeDays": 45 },
+    { "ruleId": "RULE-CRAWL-GOOG-005", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_VENDOR", "sourceIds": ["GOOGLE-COMMON-CRAWLERS"], "maxSourceAgeDays": 45 },
+    { "ruleId": "RULE-PROP-LLMS-006", "plane": "TECHNICAL", "evidenceClass": "PROPOSAL", "sourceIds": ["LLMS-TXT-V2"], "maxSourceAgeDays": 60 },
+    { "ruleId": "RULE-SCHEMA-GRAPH-007", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["SCHEMA-ORG"], "maxSourceAgeDays": 90 },
+    { "ruleId": "RULE-AGENT-OPENAPI-008", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["OPENAPI31"], "maxSourceAgeDays": 180 },
+    { "ruleId": "RULE-AGENT-A2A-009", "plane": "TECHNICAL", "evidenceClass": "PROPOSAL", "sourceIds": ["A2A-SPEC"], "maxSourceAgeDays": 60 },
+    { "ruleId": "RULE-AGENT-MCP-010", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["MCP-SPEC"], "maxSourceAgeDays": 60 },
+    { "ruleId": "RULE-C2PA-PROV-011", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["C2PA-SPEC"], "maxSourceAgeDays": 90 },
+    { "ruleId": "RULE-GOV-TDM-012", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["EU-TDM-DIR2019-790"], "maxSourceAgeDays": 180 },
+    { "ruleId": "RULE-OBS-MENTION-020", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS"], "maxSourceAgeDays": 30 },
+    { "ruleId": "RULE-OBS-CITATION-021", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS"], "maxSourceAgeDays": 30 },
+    { "ruleId": "RULE-OBS-RECOMMEND-022", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS"], "maxSourceAgeDays": 30 },
+    { "ruleId": "RULE-DEC-ROOT-030", "plane": "DECISION", "evidenceClass": "INTERNAL_HEURISTIC", "sourceIds": [], "maxSourceAgeDays": 45 },
+    { "ruleId": "RULE-DEC-PRIORITY-031", "plane": "DECISION", "evidenceClass": "INTERNAL_HEURISTIC", "sourceIds": [], "maxSourceAgeDays": 45 }
+  ]
+}

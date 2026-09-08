@@ -1,0 +1,15 @@
+{
+  "registry": "HTML&HTML Canonical Scoring Registry",
+  "version": "4.0.0",
+  "mandate": "HTMLHTML-EAI-2026-V4",
+  "constitution": "Never use one opaque AI Visibility Score. Separate Technical Readiness from Observed AI Presence. EAI composite requires >= 80% coverage.",
+  "dimensions": [
+    { "key": "planeA_technicalReadiness", "label": "Plane A: Technical Readiness", "weight": 25, "plane": "PLANE_A" },
+    { "key": "planeB_observedAIPresence", "label": "Plane B: Observed AI Answer Presence", "weight": 25, "plane": "PLANE_B" },
+    { "key": "citationAuthority", "label": "Citation Authority & Citability", "weight": 15, "plane": "PLANE_B" },
+    { "key": "competitiveShareOfAnswer", "label": "Competitive Share of Answer", "weight": 15, "plane": "PLANE_B" },
+    { "key": "entityConsistency", "label": "Entity Consistency & Knowledge Graph", "weight": 10, "plane": "PLANE_A" },
+    { "key": "agentOperability", "label": "Agent Operability (A2A / MCP)", "weight": 5, "plane": "PLANE_A" },
+    { "key": "governancePosture", "label": "Crawler & TDM Governance Posture", "weight": 5, "plane": "PLANE_A" }
+  ]
+}

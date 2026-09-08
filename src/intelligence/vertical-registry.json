@@ -1,0 +1,49 @@
+{
+  "registry": "HTML&HTML Canonical Vertical Registry",
+  "version": "4.0.0",
+  "mandate": "HTMLHTML-EAI-2026-V4",
+  "packs": [
+    {
+      "id": "ECOMMERCE",
+      "nameEn": "E-Commerce & Digital Merchandising Vector Pack",
+      "nameTr": "E-Ticaret & Dijital Satış Vektör Paketi",
+      "requiredSchemas": ["Product", "Offer", "AggregateRating", "MerchantReturnPolicy"],
+      "hallucinationMultiplier": 1.5
+    },
+    {
+      "id": "SAAS_B2B",
+      "nameEn": "SaaS & Enterprise B2B Vector Pack",
+      "nameTr": "SaaS & Kurumsal B2B Vektör Paketi",
+      "requiredSchemas": ["SoftwareApplication", "Organization", "TechArticle", "FAQPage"],
+      "hallucinationMultiplier": 1.25
+    },
+    {
+      "id": "LOCAL",
+      "nameEn": "Local Business & Multi-Location Vector Pack",
+      "nameTr": "Yerel İşletme & Lokasyon Vektör Paketi",
+      "requiredSchemas": ["LocalBusiness", "PostalAddress", "GeoCoordinates", "OpeningHoursSpecification"],
+      "hallucinationMultiplier": 1.2
+    },
+    {
+      "id": "REGULATED_YMYL",
+      "nameEn": "Regulated & YMYL (Finance/Health/Legal) Vector Pack",
+      "nameTr": "Regüle & YMYL (Finans/Sağlık/Hukuk) Vektör Paketi",
+      "requiredSchemas": ["MedicalEntity", "FinancialProduct", "Legislation", "Person"],
+      "hallucinationMultiplier": 2.5
+    },
+    {
+      "id": "PUBLISHER",
+      "nameEn": "Publisher & Digital Media Vector Pack",
+      "nameTr": "Yayıncılık & Dijital Medya Vektör Paketi",
+      "requiredSchemas": ["NewsArticle", "Article", "Person", "WebSite"],
+      "hallucinationMultiplier": 1.3
+    },
+    {
+      "id": "GENERAL",
+      "nameEn": "General Web Vector Pack",
+      "nameTr": "Genel Web Vektör Paketi",
+      "requiredSchemas": ["WebSite", "Organization"],
+      "hallucinationMultiplier": 1.0
+    }
+  ]
+}
