@@ -28,6 +28,8 @@ export interface ScanInput {
   llmsTxt: string;
   pages: PageData[];
   links: string[];
+  wikidata?: { qid: string | null; label: string | null; status: string };
+  commonCrawl?: { captured: boolean; recordsCount: number; status: string };
 }
 
 export interface ExecutionConfig {

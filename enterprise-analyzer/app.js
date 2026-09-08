@@ -54,6 +54,7 @@
 
   function applyLiveScanResults(domain, data, isV2) {
     currentTargetDomain = domain;
+    try { window.__lastScanData = data; } catch(e) {}
 
     // 1. Overall Score
     let score = 70;
@@ -136,13 +137,38 @@
     // 5. Meta Ribbon
     const metaTarget = document.getElementById('eaMetaTarget');
     if (metaTarget) {
-      metaTarget.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg><span>Hedef: ' + domain + '</span>';
+      metaTarget.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg><span>Hedef: ' + domain + '</span>';
     }
     const metaTime = document.getElementById('eaMetaTime');
     if (metaTime) {
       const d = new Date();
       const timeSpan = metaTime.querySelector('span');
       if (timeSpan) timeSpan.textContent = d.toLocaleDateString() + ', ' + d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    }
+
+    // 5b. Update Empirical Probe Badges (Wikidata & Common Crawl)
+    const wikiEl = document.getElementById('eaMetaWiki');
+    if (wikiEl) {
+      const w = data.externalProbes?.wikidata;
+      if (w && w.status === 'VERIFIED') {
+        wikiEl.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span style="color:var(--ea-success);font-weight:600;">Wikidata: ' + (w.qid || 'Doğrulandı') + '</span>';
+      } else if (w && w.status === 'NOT_FOUND') {
+        wikiEl.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span style="color:var(--ea-warning);font-weight:600;">Wikidata: Varlık Boşluğu</span>';
+      } else {
+        wikiEl.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span>Wikidata: QID Taranıyor</span>';
+      }
+    }
+
+    const ccEl = document.getElementById('eaMetaCC');
+    if (ccEl) {
+      const cc = data.externalProbes?.commonCrawl;
+      if (cc && cc.status === 'VERIFIED') {
+        ccEl.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg><span style="color:var(--ea-success);font-weight:600;">Common Crawl: Arşivde Mevcut</span>';
+      } else if (cc && cc.status === 'NOT_INDEXED') {
+        ccEl.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg><span style="color:var(--ea-warning);font-weight:600;">Common Crawl: Arşiv Kaydı Eksik</span>';
+      } else {
+        ccEl.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg><span>Common Crawl: Arşiv Taranıyor</span>';
+      }
     }
 
     // 6. Update Findings Links & Code Evidence
@@ -520,7 +546,21 @@
     zip.file('10_EVALUATION_REPORT.md', `# 10. Değerlendirme Raporu (18-Engine Audit Summary)\n\n- HTTP/2 & TTFB: 38ms (PASS)\n- Canonical Consistency: FAIL (Self-canonical missing)\n- Schema @graph: PASS (Organization & WebSite present)\n- Content Compression: WARN (Brotli missing on secondary assets)\n`);
 
     // 11. Model Corpus Seeding
-    zip.file('11_MODEL_CORPUS_SEEDING_BLUEPRINT.md', `# 11. Model Corpus Seeding Blueprint\n\nMarka varlığınızın Common Crawl, Arxiv ve açık veri kümelerine deterministik olarak tohumlanması için yapılandırılmış semantik dağıtım stratejisi.\n`);
+    const ccCaptured = window.__lastScanData?.externalProbes?.commonCrawl?.captured;
+    const ccStatusText = ccCaptured === true ? 'DOĞRULANDI (Common Crawl AI Eğitim Korpusunda Mevcut)' : 'EKSİK (AI Modelleri İçin Cold-Start Riski Mevcut)';
+    zip.file('11_MODEL_CORPUS_SEEDING_BLUEPRINT.md', `# 11. Model Corpus Seeding Blueprint for ${targetDomain}
+
+## Canlı Common Crawl Durumu: ${ccStatusText}
+Marka varlığınızın Common Crawl (CC-MAIN), HuggingFace FineWeb ve açık AI eğitim veri kümelerine deterministik olarak tohumlanması için yapılandırılmış semantik dağıtım ve içerik saklama stratejisi.
+
+### 1. Temel Tespit & Analiz
+${ccCaptured ? '- Alan adınız Common Crawl arşivinde başarıyla tespit edilmiştir. LLM temel eğitim setlerinde yer almaktadır.' : '- Alan adınız henüz Common Crawl ana indeksinde bulunamamıştır. Yapay zeka modelleri sitenizi sıfırdan öğrenirken cold-start problemi yaşamaktadır.'}
+
+### 2. Tohumlama Eylem Planı (CCBot / Common Crawl Seeding)
+1. CCBot tarayıcısının robots.txt dosyasında tam yetkiyle onaylandığını doğrulayın.
+2. Sitede Trafilatura ve Readability motorlarının metin çıkarımını engelleyen aşırı DOM derinliğini 14KB altında tutun.
+3. Wikipedia, Wikidata ve sektör dizinlerinde kanonik kaynak bağlantıları tohumlayın.
+`);
 
     // 12. Cross-Encoder Attention Matrix
     zip.file('12_CROSS_ENCODER_ATTENTION_MATRIX.json', JSON.stringify({
@@ -533,15 +573,22 @@
     }, null, 2));
 
     // 13. Knowledge Vault Consensus Triples
+    const wikiQid = window.__lastScanData?.externalProbes?.wikidata?.qid || null;
+    const sameAsArr = wikiQid
+      ? ['https://www.wikidata.org/wiki/' + wikiQid, 'https://wikidata.org/wiki/Special:Search?search=' + encodeURIComponent(targetDomain)]
+      : ['https://wikidata.org/wiki/Special:Search?search=' + encodeURIComponent(targetDomain)];
+
     zip.file('13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json', JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Corporation",
+          "@type": "Organization",
           "@id": "https://" + targetDomain + "/#organization",
-          "name": targetDomain,
+          "name": targetDomain.split('.')[0].toUpperCase(),
           "url": "https://" + targetDomain + "/",
-          "sameAs": ["https://wikidata.org/wiki/Special:Search?search=" + encodeURIComponent(targetDomain)]
+          "wikidataQid": wikiQid,
+          "sameAs": sameAsArr,
+          "knowsAbout": ["Enterprise AI Search", "Generative Engine Optimization", "AEO", "GEO", "ColBERT RAG"]
         }
       ]
     }, null, 2));

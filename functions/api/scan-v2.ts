@@ -7,8 +7,58 @@ import { buildEngineV2Registry } from '../lib/engine-v2/03-engine-v2-engines.ts'
 import type { ScanInput } from '../lib/engine-v2/02-engine-v2-core.ts';
 import { runFriendlyScan } from '../lib/scan-request.ts';
 import { createNDJSONStream, executeV2Scan } from '../lib/engine-v2/04-engine-v2-api.ts';
+import { runEnterpriseIntelligenceAudit } from '../lib/enterprise-intelligence-v4.ts';
 
+export async function probeWikidataEntity(domain: string): Promise<{
+  qid: string | null;
+  label: string | null;
+  status: 'VERIFIED' | 'NOT_FOUND' | 'TIMEOUT_FALLBACK';
+}> {
+  try {
+    const brand = domain.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\.[a-z]{2,}.*$/, '');
+    const url = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(brand)}&language=en&format=json&limit=1`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'HTMLandHTML-Enterprise-Bot/4.0' },
+      signal: AbortSignal.timeout(1800),
+    });
+    if (!res.ok) return { qid: null, label: null, status: 'NOT_FOUND' };
+    const data = (await res.json()) as any;
+    if (data?.search && data.search.length > 0) {
+      return {
+        qid: data.search[0].id || null,
+        label: data.search[0].label || null,
+        status: 'VERIFIED',
+      };
+    }
+    return { qid: null, label: null, status: 'NOT_FOUND' };
+  } catch {
+    return { qid: null, label: null, status: 'TIMEOUT_FALLBACK' };
+  }
+}
 
+export async function probeCommonCrawlCorpus(domain: string): Promise<{
+  captured: boolean;
+  recordsCount: number;
+  status: 'VERIFIED' | 'NOT_INDEXED' | 'TIMEOUT_FALLBACK';
+}> {
+  try {
+    const cleanDomain = domain.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+    const url = `https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=${encodeURIComponent(cleanDomain)}&output=json&limit=1`;
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(1800),
+    });
+    if (!res.ok) return { captured: false, recordsCount: 0, status: 'NOT_INDEXED' };
+    const text = await res.text();
+    const captured = text.trim().length > 0 && text.includes('filename');
+    return {
+      captured,
+      recordsCount: captured ? 1 : 0,
+      status: captured ? 'VERIFIED' : 'NOT_INDEXED',
+    };
+  } catch {
+    return { captured: false, recordsCount: 0, status: 'TIMEOUT_FALLBACK' };
+  }
+}
 
 export async function gatherScanInput(domain: string): Promise<ScanInput> {
   const baseResult = await runFriendlyScan(domain);
@@ -17,38 +67,51 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
   let robotsTxt = '';
   let sitemapXml = '';
   let llmsTxt = '';
+  let wikidataProbe: { qid: string | null; label: string | null; status: any } = {
+    qid: null,
+    label: null,
+    status: 'NOT_MEASURED',
+  };
+  let commonCrawlProbe: { captured: boolean; recordsCount: number; status: any } = {
+    captured: false,
+    recordsCount: 0,
+    status: 'NOT_MEASURED',
+  };
 
-  try {
-    const r = await fetch(baseResult.url, {
+  const [targetRes, robRes, smRes, llRes, wikiRes, ccRes] = await Promise.allSettled([
+    fetch(baseResult.url, {
       headers: { 'user-agent': 'HTMLandHTML-Validator/2.0' },
       signal: AbortSignal.timeout(5000),
-    });
-    homeHtml = await r.text();
-    r.headers.forEach((val, key) => {
-      headers[key.toLowerCase()] = val;
-    });
-  } catch {}
-
-  try {
-    const rob = await fetch(new URL('/robots.txt', baseResult.url).href, {
+    }).then(async (r) => {
+      const text = await r.text();
+      const hdrs: Record<string, string> = {};
+      r.headers.forEach((val, key) => {
+        hdrs[key.toLowerCase()] = val;
+      });
+      return { html: text, headers: hdrs };
+    }),
+    fetch(new URL('/robots.txt', baseResult.url).href, {
       signal: AbortSignal.timeout(3000),
-    });
-    if (rob.ok) robotsTxt = await rob.text();
-  } catch {}
-
-  try {
-    const sm = await fetch(new URL('/sitemap.xml', baseResult.url).href, {
+    }).then((r) => (r.ok ? r.text() : '')),
+    fetch(new URL('/sitemap.xml', baseResult.url).href, {
       signal: AbortSignal.timeout(3000),
-    });
-    if (sm.ok) sitemapXml = await sm.text();
-  } catch {}
-
-  try {
-    const ll = await fetch(new URL('/llms.txt', baseResult.url).href, {
+    }).then((r) => (r.ok ? r.text() : '')),
+    fetch(new URL('/llms.txt', baseResult.url).href, {
       signal: AbortSignal.timeout(3000),
-    });
-    if (ll.ok) llmsTxt = await ll.text();
-  } catch {}
+    }).then((r) => (r.ok ? r.text() : '')),
+    probeWikidataEntity(baseResult.domain),
+    probeCommonCrawlCorpus(baseResult.domain),
+  ]);
+
+  if (targetRes.status === 'fulfilled' && targetRes.value) {
+    homeHtml = targetRes.value.html;
+    Object.assign(headers, targetRes.value.headers);
+  }
+  if (robRes.status === 'fulfilled') robotsTxt = robRes.value;
+  if (smRes.status === 'fulfilled') sitemapXml = smRes.value;
+  if (llRes.status === 'fulfilled') llmsTxt = llRes.value;
+  if (wikiRes.status === 'fulfilled') wikidataProbe = wikiRes.value;
+  if (ccRes.status === 'fulfilled') commonCrawlProbe = ccRes.value;
 
   if (!homeHtml) {
     homeHtml = `<!doctype html><html><head><title>${baseResult.domain}</title></head><body><h1>${baseResult.domain}</h1></body></html>`;
@@ -70,6 +133,8 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
     robotsTxt,
     sitemapXml,
     llmsTxt,
+    wikidata: wikidataProbe,
+    commonCrawl: commonCrawlProbe,
     pages: [
       {
         url: baseResult.url,
@@ -133,9 +198,26 @@ export async function onRequestPost(context: any): Promise<Response> {
 
   try {
     const input = await gatherScanInput(cleanDomain);
+    const externalProbes = {
+      wikidata: input.wikidata,
+      commonCrawl: input.commonCrawl,
+    };
 
     if (isStreaming) {
-      const stream = createNDJSONStream((emit) => executeV2Scan(input, emit));
+      const stream = createNDJSONStream(async (emit) => {
+        const scanRes = await executeV2Scan(input, emit);
+        let eaiV4 = null;
+        try {
+          eaiV4 = runEnterpriseIntelligenceAudit(cleanDomain, undefined, 'SAAS_B2B', {
+            externalProbes,
+          });
+        } catch {}
+        return {
+          ...scanRes,
+          externalProbes,
+          eaiV4,
+        };
+      });
       return new Response(stream, {
         headers: {
           'Content-Type': 'application/x-ndjson',
@@ -146,8 +228,21 @@ export async function onRequestPost(context: any): Promise<Response> {
     }
 
     const result = await executeV2Scan(input);
+    let eaiV4 = null;
+    try {
+      eaiV4 = runEnterpriseIntelligenceAudit(cleanDomain, undefined, 'SAAS_B2B', {
+        externalProbes,
+      });
+    } catch {}
+
+    const enriched = {
+      ...result,
+      externalProbes,
+      eaiV4,
+    };
+
     return new Response(
-      JSON.stringify(result),
+      JSON.stringify(enriched),
       { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } }
     );
   } catch (err: any) {

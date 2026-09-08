@@ -157,8 +157,13 @@ const scanCode = fs.readFileSync(path.join(root, 'functions/api/scan.ts'), 'utf8
 assert.ok(scanV2Code.includes('buildEngineV2Registry'), 'scan-v2.ts must invoke buildEngineV2Registry');
 assert.ok(scanV2Code.includes('gatherScanInput'), 'scan-v2.ts must implement gatherScanInput');
 assert.ok(scanV2Code.includes('createNDJSONStream'), 'scan-v2.ts must support NDJSON streaming via createNDJSONStream');
+assert.ok(scanV2Code.includes('probeWikidataEntity'), 'scan-v2.ts must implement probeWikidataEntity empirical probe');
+assert.ok(scanV2Code.includes('probeCommonCrawlCorpus'), 'scan-v2.ts must implement probeCommonCrawlCorpus empirical probe');
+assert.ok(scanV2Code.includes('runEnterpriseIntelligenceAudit'), 'scan-v2.ts must integrate runEnterpriseIntelligenceAudit');
+assert.ok(scanV2Code.includes('externalProbes'), 'scan-v2.ts must forward externalProbes to audit and payload');
+assert.ok(scanV2Code.includes('eaiV4'), 'scan-v2.ts must return eaiV4 3-Planes payload');
 assert.ok(scanCode.includes('v2Available: true') || scanCode.includes('v2Available:true'), 'scan.ts must advertise v2Available flag');
-console.log('✓ Scan V2 endpoint, NDJSON streaming & v2Available flag verified.');
+console.log('✓ Scan V2 endpoint, empirical probes (Wikidata/Common Crawl), 3-Planes V4 & v2Available flag verified.');
 
 // 7. Engine V2 Directory Architecture Verification
 console.log('Testing Engine V2 canonical directory structure (02, 03, 04, index)...');

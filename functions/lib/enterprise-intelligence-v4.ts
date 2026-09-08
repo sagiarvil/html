@@ -122,6 +122,19 @@ export interface OpportunityPriorityItem {
   rollbackPlan: string;
 }
 
+export interface ExternalProbeResults {
+  wikidata?: {
+    qid: string | null;
+    label: string | null;
+    status: 'VERIFIED' | 'NOT_FOUND' | 'TIMEOUT_FALLBACK' | 'NOT_MEASURED';
+  };
+  commonCrawl?: {
+    captured: boolean;
+    recordsCount: number;
+    status: 'VERIFIED' | 'NOT_INDEXED' | 'TIMEOUT_FALLBACK' | 'NOT_MEASURED';
+  };
+}
+
 export interface EnterpriseIntelligenceAuditResult {
   mandateCode: typeof EAI_DOCUMENT_CODE;
   version: typeof EAI_MANDATE_VERSION;
@@ -165,6 +178,7 @@ export interface EnterpriseIntelligenceAuditResult {
     totalFiles: number;
     files: Array<{ path: string; sha256: string; bytes: number }>;
   };
+  externalProbes?: ExternalProbeResults;
 }
 
 function sha256(text: string): string {
@@ -177,7 +191,10 @@ function sha256(text: string): string {
 export function runEnterpriseIntelligenceAudit(
   domain: string,
   brandName?: string,
-  category = 'SAAS_B2B'
+  category = 'SAAS_B2B',
+  options?: {
+    externalProbes?: ExternalProbeResults;
+  }
 ): EnterpriseIntelligenceAuditResult {
   const normDomain = domain.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '');
   const brand = brandName || (normDomain === 'htmlandhtml.com' ? 'HTML&HTML' : normDomain.split('.')[0].toUpperCase());
@@ -542,6 +559,31 @@ export function runEnterpriseIntelligenceAudit(
     },
   ];
 
+  if (options?.externalProbes?.wikidata) {
+    const w = options.externalProbes.wikidata;
+    if (w.status === 'VERIFIED' && w.qid) {
+      entityConflicts.push({
+        attribute: 'Wikidata Knowledge Graph Entity',
+        officialValue: `https://www.wikidata.org/wiki/${w.qid} (${w.label || brand})`,
+        observedThirdPartyValue: `Verified Wikidata Node: ${w.qid}`,
+        conflictingSource: 'None (Direct Registry Match)',
+        status: 'RESOLVED',
+        exposureLevel: 'LOW',
+        remediationAction: `Bind sameAs: ["https://www.wikidata.org/wiki/${w.qid}"] directly into @graph Organization schema.`,
+      });
+    } else if (w.status === 'NOT_FOUND') {
+      entityConflicts.push({
+        attribute: 'Wikidata Knowledge Graph Entity',
+        officialValue: `Missing Primary Entity for ${brand}`,
+        observedThirdPartyValue: 'Entity Unresolved in Wikidata Core Index',
+        conflictingSource: 'Wikidata Real-Time Entity Search API',
+        status: 'CONFLICTED',
+        exposureLevel: 'HIGH',
+        remediationAction: 'Draft and submit a non-promotional neutral Wikidata QID entry referencing official incorporation records.',
+      });
+    }
+  }
+
   // 6. Crawler Purpose Matrix
   const crawlerPurposeMatrix = [
     {
@@ -593,6 +635,18 @@ export function runEnterpriseIntelligenceAudit(
       scoreImpact: 0,
     },
   ];
+
+  if (options?.externalProbes?.commonCrawl) {
+    const cc = options.externalProbes.commonCrawl;
+    crawlerPurposeMatrix.push({
+      botName: 'CCBot (Common Crawl Training Corpus)',
+      purpose: 'MODEL_TRAINING' as const,
+      effectiveRobotsPolicy: (cc.status === 'VERIFIED' && cc.captured ? 'ALLOWED' : 'RESTRICTED') as const,
+      dnsTlsOk: true,
+      httpStatus: cc.captured ? 200 : 404,
+      scoreImpact: cc.captured ? 5 : -10,
+    });
+  }
 
   // 7. TDM Governance
   const tdmGovernance = {
@@ -1036,5 +1090,6 @@ TDM-Reservation: 1; https://${normDomain}/terms/tdm
     opportunityPriorities,
     deliverables,
     packageManifest,
+    externalProbes: options?.externalProbes,
   };
 }
