@@ -17,7 +17,7 @@ expect(fs.existsSync(path.join(root,'scripts/enhance_llms_news_seo.py')),'NewsAr
 const workflow=read('.github/workflows/llms-news.yml');
 expect(workflow.includes("cron: '0 0 * * *'"),'news schedule must run at 00:00 UTC / 03:00 Turkey');
 expect(workflow.includes('NEWS_EDITORIAL_OPENAI_KEY'),'news workflow must use explicit editorial credential');
-expect(workflow.includes('steps.editorial.outputs.changed'),'news workflow must avoid no-op editorial commits');
+expect(workflow.includes('steps.materialized.outputs.changed'),'news workflow must avoid no-op materialized commits');
 expect(workflow.includes('scripts/enhance_llms_news_seo.py'),'news workflow must run NewsArticle SEO hardening');
 expect(workflow.includes('sitemap-news.xml'),'news workflow must commit dedicated Google News sitemap');
 
