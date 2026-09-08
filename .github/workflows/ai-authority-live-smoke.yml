@@ -63,7 +63,13 @@ jobs:
           grep -Fq '"datePublished"' /tmp/news-article.html
           grep -Fq '"dateModified"' /tmp/news-article.html
           grep -Fq '"headline"' /tmp/news-article.html
-          grep -Fq '"author":[{"@type":"Organization"' /tmp/news-article.html
+          grep -Fq '"author":[{"@type":"Person"' /tmp/news-article.html
+          grep -Fq '"name":"Barış Bağırlar"' /tmp/news-article.html
+          grep -Fq '"url":"https://www.linkedin.com/in/barisbagirlar/"' /tmp/news-article.html
+          grep -Fq '"sameAs":["https://www.linkedin.com/in/barisbagirlar/"]' /tmp/news-article.html
+          grep -Fq 'name="author" content="Barış Bağırlar"' /tmp/news-article.html
+          grep -Fq 'class="news-author"' /tmp/news-article.html
+          grep -Fq '"publisher":{"@type":"Organization"' /tmp/news-article.html
           grep -Fq '"url":"https://htmlandhtml.com/about/"' /tmp/news-article.html
           grep -Fq -- '-16x9.svg' /tmp/news-article.html
           grep -Fq -- '-4x3.svg' /tmp/news-article.html

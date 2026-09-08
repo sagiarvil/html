@@ -12,6 +12,7 @@ on:
       - 'scripts/enhance_llms_news_seo.py'
       - 'scripts/news_svg_generator.py'
       - 'data/llms-news.json'
+      - 'data/editorial-author.json'
       - '.github/workflows/llms-news.yml'
 
 permissions:

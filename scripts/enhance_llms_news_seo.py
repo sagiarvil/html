@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""Harden LLMS.TXT News for Google Article/News discovery.
+"""Deterministically harden LLMS.TXT News for Google Article/News discovery.
 
-This post-build step is intentionally deterministic and idempotent:
-- enriches each generated NewsArticle JSON-LD with truthful publisher/author identity
-- emits three local crawlable article-image variants (16:9, 4:3, 1:1)
+The generated news pages remain independent HTML&HTML analysis. External source
+bylines are never inferred or copied. Editorial authorship is sourced from the
+single `data/editorial-author.json` contract, while HTML&HTML remains publisher.
+
+This post-build step is intentionally idempotent and fail-closed:
+- validates one Person editorial identity and HTTPS evidence URL
+- enriches every NewsArticle with author, publisher, truthful dates and provenance
+- emits local 16:9, 4:3 and 1:1 crawlable article-image variants
+- keeps the visible byline compact inside the existing news metadata row
 - writes a dedicated Google News sitemap containing only articles <=48h old
-- keeps robots.txt discovery explicit
-- fails closed on invalid dates, missing generated pages, or malformed JSON-LD
-
-Source authors are deliberately not inferred from external publishers. HTML&HTML is
-the editorial author/publisher of the independent analysis rendered on these pages.
+- keeps robots.txt News sitemap discovery explicit
 """
 from __future__ import annotations
 
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 import html
@@ -23,6 +25,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data/llms-news.json"
+AUTHOR_PATH = ROOT / "data/editorial-author.json"
 SITE = "https://htmlandhtml.com"
 ORG_ID = f"{SITE}/#organization"
 ORG_URL = f"{SITE}/about/"
@@ -64,6 +67,43 @@ def _parse_iso(value: str, *, field: str) -> tuple[datetime, bool]:
     return dt.astimezone(timezone.utc), date_only
 
 
+def _https_url(value: str, *, field: str) -> str:
+    url = str(value or "").strip()
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise ValueError(f"{field} must be an absolute HTTPS URL")
+    return url
+
+
+def load_author() -> dict:
+    if not AUTHOR_PATH.exists():
+        raise FileNotFoundError("data/editorial-author.json missing")
+    author = json.loads(AUTHOR_PATH.read_text(encoding="utf-8"))
+    if author.get("version") != "1.0.0":
+        raise ValueError("editorial author contract version must be 1.0.0")
+    if author.get("type") != "Person":
+        raise ValueError("editorial author type must be Person")
+    name = str(author.get("name") or "").strip()
+    if not name:
+        raise ValueError("editorial author name is required")
+    entity_id = _https_url(author.get("entityId"), field="editorial author entityId")
+    profile_url = _https_url(author.get("profileUrl"), field="editorial author profileUrl")
+    same_as = author.get("sameAs")
+    if not isinstance(same_as, list) or not same_as:
+        raise ValueError("editorial author sameAs must be a non-empty list")
+    same_as = [_https_url(v, field="editorial author sameAs") for v in same_as]
+    if profile_url not in same_as:
+        raise ValueError("editorial author profileUrl must also appear in sameAs")
+    return {
+        "version": "1.0.0",
+        "type": "Person",
+        "name": name,
+        "entityId": entity_id,
+        "profileUrl": profile_url,
+        "sameAs": same_as,
+    }
+
+
 def editorial_now(data: dict) -> datetime:
     dt, _ = _parse_iso(str(data.get("lastUpdated") or ""), field="lastUpdated")
     return dt
@@ -80,7 +120,6 @@ def modified_at(item: dict) -> str:
 
 
 def recent_for_news_sitemap(item: dict, now: datetime) -> bool:
-    """Include only URLs provably created inside Google's two-day news window."""
     published, _ = _parse_iso(str(item["publishedAt"]), field=f"{item.get('id')}.publishedAt")
     age = now - published
     return timedelta(0) <= age <= timedelta(hours=48)
@@ -110,8 +149,8 @@ def make_image_variants(item: dict, slug: str) -> dict[str, dict]:
                 f'  <rect width="{width}" height="{height}" fill="#060709"/>\n'
                 f'  <svg x="0" y="{y_text}" width="1200" height="675" viewBox="0 0 1200 675">\n'
                 f"{inner}\n"
-                f"  </svg>\n"
-                f"</svg>"
+                "  </svg>\n"
+                "</svg>"
             )
         target.write_text(payload, encoding="utf-8")
         out[ratio] = {
@@ -138,7 +177,24 @@ def organization_node() -> dict:
     }
 
 
-def enrich_newsarticle(doc: dict, item: dict, lang: str, canonical: str, images: dict[str, dict]) -> dict:
+def author_node(author: dict) -> dict:
+    return {
+        "@type": "Person",
+        "@id": author["entityId"],
+        "name": author["name"],
+        "url": author["profileUrl"],
+        "sameAs": author["sameAs"],
+    }
+
+
+def enrich_newsarticle(
+    doc: dict,
+    item: dict,
+    lang: str,
+    canonical: str,
+    images: dict[str, dict],
+    author: dict,
+) -> dict:
     graph = doc.get("@graph")
     if not isinstance(graph, list):
         raise ValueError(f"{item['id']} {lang}: JSON-LD @graph missing")
@@ -165,14 +221,7 @@ def enrich_newsarticle(doc: dict, item: dict, lang: str, canonical: str, images:
             "dateModified": modified,
             "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
             "image": [images["1x1"], images["4x3"], images["16x9"]],
-            "author": [
-                {
-                    "@type": "Organization",
-                    "@id": ORG_ID,
-                    "name": "HTML&HTML",
-                    "url": ORG_URL,
-                }
-            ],
+            "author": [author_node(author)],
             "publisher": organization_node(),
             "inLanguage": lang,
             "articleSection": str(item.get("topic") or "AI Search").replace("_", " "),
@@ -182,49 +231,47 @@ def enrich_newsarticle(doc: dict, item: dict, lang: str, canonical: str, images:
         }
     )
 
+    identity_ids = {ORG_ID, author["entityId"]}
     graph[:] = [
-        node
-        for node in graph
-        if not (isinstance(node, dict) and node.get("@id") == ORG_ID and node is not article)
+        node for node in graph
+        if not (isinstance(node, dict) and node.get("@id") in identity_ids and node is not article)
     ]
+    graph.append(author_node(author))
     graph.append(organization_node())
     return doc
 
 
-def patch_meta(html_doc: str, *, images: dict[str, dict], published: str, modified: str) -> str:
+def upsert_meta(html_doc: str, *, attr: str, key: str, content: str) -> str:
+    pattern = re.compile(
+        rf'<meta\s+{attr}="{re.escape(key)}"\s+content="[^"]*"\s*/?>',
+        re.IGNORECASE,
+    )
+    tag = f'<meta {attr}="{key}" content="{html.escape(content, quote=True)}">'
+    if pattern.search(html_doc):
+        return pattern.sub(tag, html_doc, count=1)
+    return html_doc.replace("</head>", tag + "</head>", 1)
+
+
+def patch_meta(
+    html_doc: str,
+    *,
+    images: dict[str, dict],
+    published: str,
+    modified: str,
+    author: dict,
+) -> str:
     og = images["16x9"]["url"]
-    replacements = {
-        "og:image": og,
-        "twitter:image": og,
-        "article:published_time": published,
-        "article:modified_time": modified,
-    }
-    for prop, content in replacements.items():
-        attr = "name" if prop.startswith("twitter:") else "property"
-        pattern = re.compile(
-            rf'<meta\s+{attr}="{re.escape(prop)}"\s+content="[^"]*"\s*/?>',
-            re.IGNORECASE,
-        )
-        tag = f'<meta {attr}="{prop}" content="{html.escape(content, quote=True)}">'
-        if pattern.search(html_doc):
-            html_doc = pattern.sub(tag, html_doc, count=1)
-        else:
-            html_doc = html_doc.replace("</head>", tag + "</head>", 1)
-
-    for prop, content in (("og:image:width", "1200"), ("og:image:height", "675")):
-        pattern = re.compile(
-            rf'<meta\s+property="{re.escape(prop)}"\s+content="[^"]*"\s*/?>',
-            re.IGNORECASE,
-        )
-        tag = f'<meta property="{prop}" content="{content}">'
-        if pattern.search(html_doc):
-            html_doc = pattern.sub(tag, html_doc, count=1)
-        else:
-            html_doc = html_doc.replace("</head>", tag + "</head>", 1)
-
-    card = '<meta name="twitter:card" content="summary_large_image">'
-    if not re.search(r'<meta\s+name="twitter:card"\b', html_doc, re.IGNORECASE):
-        html_doc = html_doc.replace("</head>", card + "</head>", 1)
+    for attr, key, content in (
+        ("property", "og:image", og),
+        ("name", "twitter:image", og),
+        ("property", "article:published_time", published),
+        ("property", "article:modified_time", modified),
+        ("name", "author", author["name"]),
+        ("property", "og:image:width", "1200"),
+        ("property", "og:image:height", "675"),
+        ("name", "twitter:card", "summary_large_image"),
+    ):
+        html_doc = upsert_meta(html_doc, attr=attr, key=key, content=content)
     return html_doc
 
 
@@ -258,7 +305,29 @@ def patch_visible_dates(html_doc: str, item: dict, lang: str) -> str:
     raise ValueError(f"{item['id']} {lang}: expected visible date markup missing")
 
 
-def patch_article_file(item: dict, lang: str, slug: str, images: dict[str, dict]) -> None:
+def patch_visible_author(html_doc: str, *, lang: str, author: dict, item_id: str) -> str:
+    label = "Yazar" if lang == "tr" else "Author"
+    byline = (
+        f'<span class="news-author">{label}: '
+        f'<a href="{html.escape(author["profileUrl"], quote=True)}" '
+        f'rel="author noopener noreferrer external">{html.escape(author["name"])}</a></span>'
+    )
+    pattern = re.compile(r'<span class="news-author">[\s\S]*?</span>', re.IGNORECASE)
+    if pattern.search(html_doc):
+        return pattern.sub(byline, html_doc, count=1)
+    marker = '<span class="news-topic-pill">'
+    if marker not in html_doc:
+        raise ValueError(f"{item_id} {lang}: news metadata insertion point missing")
+    return html_doc.replace(marker, byline + marker, 1)
+
+
+def patch_article_file(
+    item: dict,
+    lang: str,
+    slug: str,
+    images: dict[str, dict],
+    author: dict,
+) -> None:
     canonical = expected_canonical(lang, slug)
     base = "tr/llms-txt-haberler" if lang == "tr" else "en/llms-txt-news"
     path = ROOT / base / slug / "index.html"
@@ -281,8 +350,7 @@ def patch_article_file(item: dict, lang: str, slug: str, images: dict[str, dict]
             return match.group(0)
         graph = obj.get("@graph") if isinstance(obj, dict) else None
         if not isinstance(graph, list) or not any(
-            isinstance(node, dict)
-            and (
+            isinstance(node, dict) and (
                 node.get("@type") == "NewsArticle"
                 or (isinstance(node.get("@type"), list) and "NewsArticle" in node["@type"])
             )
@@ -292,8 +360,8 @@ def patch_article_file(item: dict, lang: str, slug: str, images: dict[str, dict]
         if patched:
             raise ValueError(f"{path.relative_to(ROOT)}: multiple NewsArticle JSON-LD blocks")
         patched = True
-        obj = enrich_newsarticle(obj, item, lang, canonical, images)
-        payload = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+        obj = enrich_newsarticle(obj, item, lang, canonical, images, author)
+        payload = json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
         return f"{match.group(1)}{payload}{match.group(3)}"
 
     text = LD_RE.sub(repl, text)
@@ -305,8 +373,10 @@ def patch_article_file(item: dict, lang: str, slug: str, images: dict[str, dict]
         images=images,
         published=str(item["publishedAt"]).strip(),
         modified=modified_at(item),
+        author=author,
     )
     text = patch_visible_dates(text, item, lang)
+    text = patch_visible_author(text, lang=lang, author=author, item_id=item["id"])
     path.write_text(text, encoding="utf-8")
 
 
@@ -362,6 +432,7 @@ def patch_robots() -> None:
 
 def main() -> int:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+    author = load_author()
     items = data.get("items")
     if not isinstance(items, list) or not items:
         raise SystemExit("LLMS NEWS SEO FAIL: data.items must be a non-empty list")
@@ -378,14 +449,15 @@ def main() -> int:
         slug = slugify(item_id)
         images = make_image_variants(item, slug)
         for lang in ("tr", "en"):
-            patch_article_file(item, lang, slug, images)
+            patch_article_file(item, lang, slug, images, author)
         records.append((item, slug))
 
     count = write_news_sitemap(data, records)
     patch_robots()
     print(
         f"LLMS NEWS SEO PASS: {len(records)} bilingual NewsArticle pairs hardened; "
-        f"{len(records) * 3} ratio-specific local images; {count} <=48h Google News URLs."
+        f"author={author['name']}; {len(records) * 3} ratio-specific local images; "
+        f"{count} <=48h Google News URLs."
     )
     return 0
 

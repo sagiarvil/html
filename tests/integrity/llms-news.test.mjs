@@ -6,6 +6,7 @@ const errors=[];
 const expect=(ok,msg)=>{if(!ok)errors.push(msg)};
 const read=(rel)=>fs.readFileSync(path.join(root,rel),'utf8');
 const data=JSON.parse(read('data/llms-news.json'));
+const editorialAuthor=JSON.parse(read('data/editorial-author.json'));
 
 expect(data.version==='1.0.0','news data version must be 1.0.0');
 expect(data.editorialPolicy==='ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK','news editorial policy marker missing');
@@ -13,6 +14,13 @@ expect(Array.isArray(data.items)&&data.items.length>=5,'news seed must contain a
 expect(fs.existsSync(path.join(root,'docs/LLMS_NEWS_EDITORIAL_POLICY.md')),'editorial policy document missing');
 expect(fs.existsSync(path.join(root,'.github/workflows/llms-news.yml')),'daily news workflow missing');
 expect(fs.existsSync(path.join(root,'scripts/enhance_llms_news_seo.py')),'NewsArticle SEO hardening step missing');
+
+expect(editorialAuthor.version==='1.0.0','editorial author contract version must be 1.0.0');
+expect(editorialAuthor.type==='Person','editorial author must be Person');
+expect(editorialAuthor.name==='Barış Bağırlar','editorial author identity mismatch');
+expect(editorialAuthor.entityId==='https://htmlandhtml.com/#baris-bagirlar','editorial author entity id mismatch');
+expect(editorialAuthor.profileUrl==='https://www.linkedin.com/in/barisbagirlar/','editorial author profile URL mismatch');
+expect(Array.isArray(editorialAuthor.sameAs)&&editorialAuthor.sameAs.includes(editorialAuthor.profileUrl),'editorial author sameAs must include profile URL');
 
 const workflow=read('.github/workflows/llms-news.yml');
 expect(workflow.includes("cron: '0 0 * * *'"),'news schedule must run at 00:00 UTC / 03:00 Turkey');
@@ -44,6 +52,10 @@ function newsArticleFrom(x){
     n['@type']==='NewsArticle' ||
     (Array.isArray(n['@type'])&&n['@type'].includes('NewsArticle'))
   ));
+}
+function personFrom(x){
+  const nodes=ldJsonBlocks(x).flatMap(obj=>Array.isArray(obj?.['@graph'])?obj['@graph']:[obj]);
+  return nodes.filter(n=>n&&n['@type']==='Person'&&n['@id']===editorialAuthor.entityId);
 }
 function imageDims(rel){
   const x=read(rel);
@@ -121,9 +133,11 @@ for(const item of data.items){
       expect(a.isAccessibleForFree===true,`${rel}: free-access declaration missing`);
       expect(a.isBasedOn===item.sourceUrl,`${rel}: source provenance mismatch`);
       expect(Array.isArray(a.author)&&a.author.length===1,`${rel}: exactly one editorial author required`);
-      expect(a.author?.[0]?.['@type']==='Organization',`${rel}: editorial author must be Organization`);
-      expect(a.author?.[0]?.name==='HTML&HTML',`${rel}: editorial author identity mismatch`);
-      expect(a.author?.[0]?.url==='https://htmlandhtml.com/about/',`${rel}: author.url missing or unstable`);
+      expect(a.author?.[0]?.['@type']==='Person',`${rel}: editorial author must be Person`);
+      expect(a.author?.[0]?.['@id']===editorialAuthor.entityId,`${rel}: editorial author entity mismatch`);
+      expect(a.author?.[0]?.name===editorialAuthor.name,`${rel}: editorial author name mismatch`);
+      expect(a.author?.[0]?.url===editorialAuthor.profileUrl,`${rel}: author.url missing or unstable`);
+      expect(Array.isArray(a.author?.[0]?.sameAs)&&a.author[0].sameAs.includes(editorialAuthor.profileUrl),`${rel}: author sameAs evidence missing`);
       expect(a.publisher?.name==='HTML&HTML'&&a.publisher?.url==='https://htmlandhtml.com/about/',`${rel}: publisher identity incomplete`);
       expect(a.publisher?.logo?.url==='https://htmlandhtml.com/assets/brand/logo-master-2026.png',`${rel}: publisher logo missing`);
       expect(Array.isArray(a.image)&&a.image.length===3,`${rel}: three Article image variants required`);
@@ -132,6 +146,17 @@ for(const item of data.items){
       for(const i of a.image||[])expect(String(i.url||'').startsWith('https://htmlandhtml.com/assets/news/'),`${rel}: schema image must be local and crawlable`);
     }
 
+    const persons=personFrom(x);
+    expect(persons.length===1,`${rel}: one graph-level editorial Person identity required`);
+    if(persons.length===1){
+      expect(persons[0].name===editorialAuthor.name,`${rel}: Person graph name mismatch`);
+      expect(persons[0].url===editorialAuthor.profileUrl,`${rel}: Person graph profile mismatch`);
+    }
+
+    expect(x.includes(`name="author" content="${editorialAuthor.name}"`),`${rel}: compact meta author missing`);
+    expect(x.includes('class="news-author"'),`${rel}: compact visible author byline missing`);
+    expect(x.includes(`href="${editorialAuthor.profileUrl}"`),`${rel}: visible author evidence link missing`);
+    expect(x.includes('rel="author noopener noreferrer external"'),`${rel}: author link relationship contract missing`);
     expect(x.includes('property="article:published_time"'),`${rel}: article:published_time missing`);
     expect(x.includes('property="article:modified_time"'),`${rel}: article:modified_time missing`);
     expect(x.includes('name="twitter:card" content="summary_large_image"'),`${rel}: Twitter large-image card missing`);
@@ -193,11 +218,13 @@ expect(robots.includes('Sitemap: https://htmlandhtml.com/sitemap-news.xml'),'Goo
 const liveSmoke=read('.github/workflows/ai-authority-live-smoke.yml');
 expect(liveSmoke.includes('sitemap-news.xml'),'live smoke must verify dedicated News sitemap');
 expect(liveSmoke.includes('NewsArticle'),'live smoke must verify production NewsArticle markup');
-expect(liveSmoke.includes('htmlandhtml.com/about/'),'live smoke must verify production author identity');
+expect(liveSmoke.includes('Barış Bağırlar'),'live smoke must verify production person author');
+expect(liveSmoke.includes('linkedin.com/in/barisbagirlar/'),'live smoke must verify author evidence URL');
+expect(liveSmoke.includes('htmlandhtml.com/about/'),'live smoke must keep HTML&HTML publisher identity');
 
 if(errors.length){
   console.error('LLMS NEWS CONTRACT FAIL');
   for(const e of errors)console.error('- '+e);
   process.exit(1);
 }
-console.log(`LLMS NEWS CONTRACT PASS: ${data.items.length} bilingual briefs, Google News 48h lifecycle, author/date/image Article contract, local visuals and live regression guard verified.`);
+console.log(`LLMS NEWS CONTRACT PASS: ${data.items.length} bilingual briefs, Google News 48h lifecycle, Person author/date/image Article contract, local visuals and live regression guard verified.`);
