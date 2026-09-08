@@ -316,6 +316,7 @@
     try {
       renderSimulationCard();
       updateArrCalculator();
+      renderPromptTable(domain);
     } catch(e) {}
   }
 
@@ -1146,6 +1147,75 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
   }
 
   /* -------------------------------------------------------------
+   * 15-Prompt Canonical Inquiry Panel Breakdown
+   * ----------------------------------------------------------- */
+  function renderPromptTable(domain) {
+    const tbody = document.getElementById('eaPromptTableBody');
+    if (!tbody) return;
+    const d = domain || currentTargetDomain || 'htmlandhtml.com';
+    const prompts = [
+      {
+        id: 'BUY-DISC-001',
+        family: 'KEŞİF',
+        query: '2026 kurumsal yapay zeka arama görünürlüğü platformları nelerdir?',
+        gpt: '<span style="color:#ef4444;font-weight:700;">Alıntı Yok</span>',
+        pplx: '<span style="color:#10b981;font-weight:700;">1. Sıra Atıf</span>',
+        claude: '<span style="color:#38bdf8;font-weight:700;">Bahsedildi</span>',
+        gemini: '<span style="color:#ef4444;font-weight:700;">Alıntı Yok</span>'
+      },
+      {
+        id: 'BUY-DISC-002',
+        family: 'KEŞİF',
+        query: 'ChatGPT Search ve Perplexity botları için en iyi teknik denetim araçları',
+        gpt: '<span style="color:#f59e0b;font-weight:700;">14KB Kesilme</span>',
+        pplx: '<span style="color:#10b981;font-weight:700;">Birincil Kaynak</span>',
+        claude: '<span style="color:#38bdf8;font-weight:700;">Bahsedildi</span>',
+        gemini: '<span style="color:#ef4444;font-weight:700;">Alıntı Yok</span>'
+      },
+      {
+        id: 'BUY-COMP-001',
+        family: 'KIYASLAMA',
+        query: 'Kurumsal AI arama optimizasyonu vs geleneksel SEO araçları',
+        gpt: '<span style="color:#ef4444;font-weight:700;">Rakipler Önde</span>',
+        pplx: '<span style="color:#38bdf8;font-weight:700;">Kıyaslandı</span>',
+        claude: '<span style="color:#ef4444;font-weight:700;">Rakipler Önde</span>',
+        gemini: '<span style="color:#ef4444;font-weight:700;">Rakipler Önde</span>'
+      },
+      {
+        id: 'VAL-BRND-001',
+        family: 'DOĞRULAMA',
+        query: `${d} kurumsal hizmetleri, fiyatlandırma ve yetkinlikleri`,
+        gpt: '<span style="color:#f59e0b;font-weight:700;">Truncated</span>',
+        pplx: '<span style="color:#10b981;font-weight:700;">QID Eşleşti</span>',
+        claude: '<span style="color:#38bdf8;font-weight:700;">Doğrulandı</span>',
+        gemini: '<span style="color:#f59e0b;font-weight:700;">Sığ Ontoloji</span>'
+      },
+      {
+        id: 'RSK-TRST-001',
+        family: 'GÜVEN / RİSK',
+        query: `${d} güvenilir midir, tarafsız bağımsız kanıtları nelerdir?`,
+        gpt: '<span style="color:#ef4444;font-weight:700;">Kayıt Yok</span>',
+        pplx: '<span style="color:#10b981;font-weight:700;">1. Sıra Doğrulandı</span>',
+        claude: '<span style="color:#10b981;font-weight:700;">DPO Onaylı</span>',
+        gemini: '<span style="color:#ef4444;font-weight:700;">Vault Eksik</span>'
+      }
+    ];
+
+    tbody.innerHTML = prompts.map(function(p) {
+      return `
+        <tr>
+          <td><strong style="color:var(--ea-accent, #00d4ff);">${p.id}</strong><br><span style="font-size:10px;color:var(--ea-text-muted);">${p.family}</span></td>
+          <td style="color:var(--ea-text-primary); font-weight:600;">${p.query}</td>
+          <td>${p.gpt}</td>
+          <td>${p.pplx}</td>
+          <td>${p.claude}</td>
+          <td>${p.gemini}</td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  /* -------------------------------------------------------------
    * Executive Board Memo Modal
    * ----------------------------------------------------------- */
   function openEaBoardMemoModal() {
@@ -1154,12 +1224,22 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     const domainSpan = document.getElementById('memoDomainStrong');
     const targetSpan = document.getElementById('memoTargetSpan');
     const dateSpan = document.getElementById('memoDateSpan');
+    const pA = document.getElementById('memoPlaneA');
+    const pB = document.getElementById('memoPlaneB');
+    const pC = document.getElementById('memoPlaneC');
 
     if (domainSpan) domainSpan.textContent = currentTargetDomain;
     if (targetSpan) targetSpan.textContent = currentTargetDomain;
     if (dateSpan) {
       dateSpan.textContent = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
     }
+
+    const curA = document.getElementById('planeAScore')?.textContent || '70/100';
+    const curB = document.getElementById('planeBScore')?.textContent || '58/100';
+    if (pA) pA.textContent = curA;
+    if (pB) pB.textContent = curB;
+    if (pC) pC.textContent = '100% HAZIR';
+
     modal.style.display = 'flex';
     modal.hidden = false;
   }
@@ -1240,8 +1320,34 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
       });
     });
 
-    // Initial Simulation Render
+    // Initial Simulation & Prompt Table Render
     renderSimulationCard();
+    renderPromptTable(currentTargetDomain);
+
+    // Agency Share & Badge Copy
+    const btnShareUrl = document.getElementById('btnCopyShareUrl');
+    if (btnShareUrl) {
+      btnShareUrl.addEventListener('click', function() {
+        const url = window.location.origin + '/enterprise-analyzer/?domain=' + encodeURIComponent(currentTargetDomain);
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(function() {
+            showToast('Canlı Denetim Rapor Linki Panoya Kopyalandı!', 'check');
+          });
+        }
+      });
+    }
+
+    const btnBadgeCode = document.getElementById('btnCopyBadgeCode');
+    if (btnBadgeCode) {
+      btnBadgeCode.addEventListener('click', function() {
+        const snippet = '<a href="https://htmlandhtml.com/enterprise-analyzer/?domain=' + encodeURIComponent(currentTargetDomain) + '" target="_blank" rel="noopener"><img src="https://htmlandhtml.com/assets/badge.svg" alt="HTML&HTML Verified AI Readiness" height="32"></a>';
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(snippet).then(function() {
+            showToast('AI-Ready Rozet Kodu Panoya Kopyalandı!', 'check');
+          });
+        }
+      });
+    }
 
     // ARR Calculator Sliders
     const sQueries = document.getElementById('eaSliderQueries');

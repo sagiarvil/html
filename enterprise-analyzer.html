@@ -157,7 +157,23 @@
   <!-- Mission Bar -->
   <div class="ea-mission-bar">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm onarım yol haritasılerini kendi yazılım ekibinize teslim edersiniz.</p>
+    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm yol haritasılerini kendi yazılım ekibinize teslim edersiniz.</p>
+  </div>
+
+  <!-- Agency & Executive Share Bar -->
+  <div class="ea-agency-share-bar" style="margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid var(--ea-border, rgba(255,255,255,0.1)); border-radius:12px; padding:10px 18px; flex-wrap:wrap; gap:10px;">
+    <div style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ea-text-secondary);">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span><strong>Kurumsal / Ajans Paylaşım Modu:</strong> Bu denetim sonucunu müşterinizle veya yönetimle paylaşın:</span>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button type="button" class="ea-filter-btn" id="btnCopyShareUrl" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer;">
+        🔗 Canlı Rapor Linkini Kopyala
+      </button>
+      <button type="button" class="ea-filter-btn" id="btnCopyBadgeCode" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer;">
+        🛡️ AI-Ready Rozet Kodunu Al (SVG)
+      </button>
+    </div>
   </div>
 
   <!-- Executive Summary HUD -->
@@ -801,6 +817,36 @@
 
     <!-- Simulation Card Container -->
     <div id="eaSimCardContainer" class="simulation-grid" style="margin-top:14px;"></div>
+
+    <!-- 15-Prompt Canonical Inquiry Panel Breakdown -->
+    <div class="ea-prompt-panel-wrap" style="margin-top:20px; background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.1)); border-radius:14px; padding:18px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+        <h4 style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin:0;">
+          📋 15-Sorgulu Kanonik Alıcı Paneli (Observed Prompt Inquiries across 3 Runs)
+        </h4>
+        <span style="font-size:11px; padding:3px 8px; border-radius:4px; background:rgba(0,212,255,0.1); color:var(--ea-accent, #00d4ff); font-weight:700;">3-RUN TARAFIZ TESPİT</span>
+      </div>
+      <p style="font-size:12.5px; color:var(--ea-text-secondary); line-height:1.5; margin-bottom:12px;">
+        Aşağıdaki matris, Mandate V4 standardı gereğince 5 soru ailesinde yürütülen canlı arama sorgularında alan adınızın 4 ana modeldeki atıf ve tavsiye durumunu gösterir:
+      </p>
+      <div class="ea-data-table-wrapper" style="max-height:280px; overflow-y:auto;">
+        <table class="ea-data-table" id="eaPromptTable" style="font-size:12px;">
+          <thead>
+            <tr>
+              <th>ID &amp; Aile</th>
+              <th>Kanonik Soru / Arama Niyeti</th>
+              <th>ChatGPT Search</th>
+              <th>Perplexity Sonar</th>
+              <th>Claude Sonnet</th>
+              <th>Gemini Grounding</th>
+            </tr>
+          </thead>
+          <tbody id="eaPromptTableBody">
+            <!-- Dynamically populated by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <!-- Findings Section -->
@@ -2079,14 +2125,31 @@
         <div class="board-memo-meta-item"><strong>KAPSAM:</strong> 18 AI Engine Audit &amp; 3-Planes Architecture</div>
       </div>
     </div>
+    
     <div class="board-memo-section-title">1. YÖNETİCİ ÖZETİ VE RİSK TEŞHİSİ</div>
     <p class="board-memo-p">Şirketimizin ana alan adı (<strong id="memoDomainStrong">htmlandhtml.com</strong>) üzerinde yürütülen yapay zeka arama motorları (Perplexity, SearchGPT, Claude, Gemini) denetiminde; 14KB AST bütçe aşımı ve şema eksikliği nedeniyle aylık nitelikli kurumsal müşteri / B2B satış fırsatlarının doğrudan rakiplere yönlendirildiği tespit edilmiştir.</p>
     
     <div class="board-memo-highlight">
-      ⚖️ <strong>Finansal Etki &amp; Risk:</strong> Mevcut kurumsal sepet hacmimize göre her ay önemli miktarda satın alma niyetli trafik sitemizi göremeden aracı platformlara kaymaktadır.
+      ⚖️ <strong>Finansal Etki &amp; Risk:</strong> Mevcut kurumsal sepet hacmimize göre her ay tahmini 8–15 kurumsal müşteri kaybı yaşanmakta ve $40.000 risk altındadır.
     </div>
 
-    <div class="board-memo-section-title">2. ÖNERİLEN ÇÖZÜM: 22 DOSYALIK MÜHENDİSLİK ÇÖZÜM yol haritası PAKETİ</div>
+    <div class="board-memo-section-title">2. 3-DÜZLEMLİ KURUMSAL TEŞHİS SKORLARI</div>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:14px;">
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
+        <div style="font-size:10.5px; font-weight:700; color:#64748b;">DÜZLEM A: GÖRÜNÜRLÜK</div>
+        <strong style="font-size:16px; color:#0f172a;" id="memoPlaneA">70/100</strong>
+      </div>
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
+        <div style="font-size:10.5px; font-weight:700; color:#64748b;">DÜZLEM B: OTORİTE</div>
+        <strong style="font-size:16px; color:#0f172a;" id="memoPlaneB">58/100</strong>
+      </div>
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
+        <div style="font-size:10.5px; font-weight:700; color:#64748b;">DÜZLEM C: AJAN HAZIRLIĞI</div>
+        <strong style="font-size:16px; color:#10b981;" id="memoPlaneC">100%</strong>
+      </div>
+    </div>
+
+    <div class="board-memo-section-title">3. ÖNERİLEN ÇÖZÜM: 22 DOSYALIK MÜHENDİSLİK ÇÖZÜM yol haritası PAKETİ</div>
     <p class="board-memo-p">Yazılım ekibimize teslim edilecek üretime hazır kod şablonları, JSON-LD şemaları ve n8n izleme iş akışları ile:</p>
     <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
       <li><strong>14KB AST Budama Şablonu:</strong> Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.</li>
