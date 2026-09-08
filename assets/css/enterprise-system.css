@@ -3529,7 +3529,48 @@ html[data-theme="light"] .multicloud-btn {
   color: #ffffff;
 }
 
+/* ============================================================================
+   ENTERPRISE ANALYZER LIGHT-MODE HARD STOP
+   Keep report surfaces readable when the persisted theme is light. The report
+   contains legacy inline diagnostic blocks and shared analyzer selectors whose
+   dark-mode values must never leak into the light surface. These rules are
+   intentionally scoped to .ea-container and use !important only where the
+   inline style attribute would otherwise win the cascade.
+   ============================================================================ */
+html[data-theme="light"] .ea-container .ea-url-chip,
+html[data-theme="light"] .ea-container .ea-target-action {
+  background: var(--ea-bg-card, #ffffff) !important;
+  color: var(--ea-text-secondary, #334155) !important;
+}
 
+html[data-theme="light"] .ea-container .ea-file-item:hover {
+  background: var(--ea-bg-hover, #f1f5f9) !important;
+  color: var(--ea-text-primary, #0f172a) !important;
+}
+
+html[data-theme="light"] .ea-container .ea-file-badge {
+  background: var(--ea-bg-card, #ffffff) !important;
+  color: var(--ea-text-muted, #64748b) !important;
+}
+
+html[data-theme="light"] .ea-container [style*="background:rgba(0,0,0"],
+html[data-theme="light"] .ea-container [style*="background: rgba(0,0,0"],
+html[data-theme="light"] .ea-container [style*="background:rgba(0, 0, 0"],
+html[data-theme="light"] .ea-container [style*="background: rgba(0, 0, 0"],
+html[data-theme="light"] .ea-container [style*="background: rgba(0,0,0"] {
+  background: var(--ea-bg-card, #ffffff) !important;
+  color: var(--ea-text-primary, #0f172a) !important;
+}
+
+html[data-theme="light"] .ea-container .modal-overlay {
+  background: rgba(15, 23, 42, 0.18) !important;
+}
+
+html[data-theme="light"] .ea-container .modal-content {
+  background: var(--ea-modal-bg, linear-gradient(135deg, #ffffff, #f8fafc)) !important;
+  color: var(--ea-text-primary, #0f172a) !important;
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12) !important;
+}
 
 
 

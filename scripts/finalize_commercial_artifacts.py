@@ -5,7 +5,9 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 THEME='<link rel="stylesheet" href="/assets/css/theme.css?v=11">'
 PREMIUM='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">'
-ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">'
+# Keep the enterprise analyzer hard-stop rules cache-busted across every build.
+# v=2 includes the light-theme dark-surface overrides used by report pages.
+ENTERPRISE='<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">'
 RUNTIME='<script src="/assets/js/enterprise-runtime.js?v=3"></script>'
 SKIP_PARTS={'.git','node_modules','functions','functions-firebase','scripts','tests'}
 

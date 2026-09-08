@@ -2116,3 +2116,341 @@ body {
   max-height: 480px;
   white-space: pre;
 }
+
+/* ==========================================================================
+   MANDATE V4 ENTERPRISE AI INTELLIGENCE SYSTEM STYLES
+   Document Code: HTMLHTML-EAI-2026-V4
+   ========================================================================== */
+
+/* Dual HUD Dials */
+.ea-hud-dual-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.ea-hud-dual-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ea-bg-elevated);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--ea-border);
+  flex: 1;
+  min-width: 220px;
+}
+.ea-hud-dual-meta h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ea-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ea-hud-dual-meta p {
+  margin: 3px 0 0;
+  font-size: 11.5px;
+  color: var(--ea-text-muted);
+}
+
+/* Competitor Parity Benchmark */
+.ea-competitor-section, .ea-graph-section, .ea-conflict-section, .ea-plan-comparison-section {
+  background: var(--ea-bg-card);
+  border: 1px solid var(--ea-border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+  box-shadow: var(--ea-shadow-card);
+}
+.ea-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.ea-section-head h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ea-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.ea-data-table-wrapper {
+  overflow-x: auto;
+  margin-top: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--ea-border);
+}
+.ea-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  text-align: left;
+}
+.ea-data-table th {
+  background: var(--ea-bg-elevated);
+  padding: 10px 14px;
+  color: var(--ea-text-secondary);
+  font-weight: 700;
+  border-bottom: 1px solid var(--ea-border);
+  white-space: nowrap;
+}
+.ea-data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ea-border);
+  color: var(--ea-text-primary);
+}
+.ea-data-table tr:last-child td {
+  border-bottom: none;
+}
+.ea-data-table tr.highlight {
+  background: rgba(0, 212, 255, 0.05);
+  font-weight: 700;
+}
+.ea-data-table tr.highlight td:first-child {
+  color: var(--ea-accent);
+}
+
+/* Citation Source Targets Matrix */
+.ea-targets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.ea-target-card {
+  background: var(--ea-bg-elevated);
+  border: 1px solid var(--ea-border);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ea-target-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.ea-target-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ea-text-primary);
+  margin: 0 0 6px;
+}
+.ea-target-meta {
+  font-size: 11.5px;
+  color: var(--ea-text-secondary);
+  line-height: 1.45;
+}
+.ea-target-action {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: var(--ea-accent);
+  border-left: 2px solid var(--ea-accent);
+}
+
+/* 3-Tier Plan Comparison Matrix */
+.ea-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+@media (max-width: 860px) {
+  .ea-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ea-plan-card {
+  background: var(--ea-bg-elevated);
+  border: 1px solid var(--ea-border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.ea-plan-card.featured {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.15);
+}
+.ea-plan-card.enterprise {
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.15);
+}
+.ea-plan-badge {
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ea-plan-head h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ea-text-primary);
+}
+.ea-plan-price {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--ea-text-primary);
+  margin: 10px 0 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.ea-plan-period {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ea-text-muted);
+}
+.ea-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 18px;
+  font-size: 12.5px;
+  color: var(--ea-text-secondary);
+}
+.ea-plan-list li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ea-plan-list li .chk {
+  color: var(--ea-success);
+  font-weight: 800;
+}
+.ea-plan-btn {
+  display: block;
+  text-align: center;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.ea-plan-btn.primary {
+  background: linear-gradient(135deg, #00d4ff, #0284c7);
+  color: #fff;
+}
+.ea-plan-btn.featured-btn {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #fff;
+}
+.ea-plan-btn.secondary {
+  background: transparent;
+  color: var(--ea-text-primary);
+  border: 1px solid var(--ea-border);
+}
+.ea-plan-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+/* 3-Planes Architecture Visualization (Mandate Section 28.2) */
+.ea-planes-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+@media (max-width: 900px) {
+  .ea-planes-summary {
+    grid-template-columns: 1fr;
+  }
+}
+.ea-plane-card {
+  background: var(--ea-bg-card);
+  border: 1px solid var(--ea-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.ea-plane-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.ea-plane-card.plane-a::before { background: linear-gradient(90deg, #00d4ff, #0284c7); }
+.ea-plane-card.plane-b::before { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+.ea-plane-card.plane-c::before { background: linear-gradient(90deg, #10b981, #00d4ff); }
+
+.ea-plane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.ea-plane-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.ea-plane-card.plane-a .ea-plane-tag { background: rgba(0,212,255,0.12); color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
+.ea-plane-card.plane-b .ea-plane-tag { background: rgba(139,92,246,0.12); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+.ea-plane-card.plane-c .ea-plane-tag { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+
+.ea-plane-score {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: var(--font-mono, monospace);
+  color: var(--ea-text-primary);
+}
+.ea-plane-title {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: var(--ea-text-primary);
+}
+.ea-plane-desc {
+  font-size: 12.5px;
+  color: var(--ea-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.ea-plane-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--ea-border);
+  padding-top: 12px;
+  font-size: 12px;
+  color: var(--ea-text-secondary);
+}
+.ea-plane-features li {
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+

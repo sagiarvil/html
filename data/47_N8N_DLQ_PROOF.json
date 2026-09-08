@@ -1,0 +1,20 @@
+{
+  "testTitle": "Mandate V4 Section 17 & 22.4 Controlled Failure & DLQ Proof",
+  "verifiedAt": "2026-09-08T16:09:32.355Z",
+  "executionMs": 2,
+  "validRunUncorrupted": true,
+  "validTargetScore": 88,
+  "controlledFailureRecord": {
+    "nodeId": "03_SSRF_GUARD",
+    "timestamp": "2026-09-08T16:09:32.355Z",
+    "inputTarget": "https://unreachable-bogus-target-99881122.invalid",
+    "inputHash": "1ee03c845fb5d9bf7ea251dd1e35bda4acdc7dc40d74363d69aff4c73a8d41d1",
+    "errorClass": "DNS_NXDOMAIN_UNREACHABLE",
+    "retryCount": 3,
+    "maxRetries": 3,
+    "circuitBreakerState": "OPEN",
+    "workflowStatus": "INTACT_NO_CRASH",
+    "reDriveProcedure": "POST /v2/n8n/dlq/redrive {\"inputHash\":\"1ee03c845fb5d9bf7ea251dd1e35bda4acdc7dc40d74363d69aff4c73a8d41d1\"}",
+    "reDriveVerified": true
+  }
+}

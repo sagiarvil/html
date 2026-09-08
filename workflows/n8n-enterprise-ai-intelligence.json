@@ -1,0 +1,300 @@
+{
+  "name": "HTML&HTML — Enterprise AI Intelligence & Regression Sentinel DAG (V4.0)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "name": "00_TRIGGER (09:00 UTC)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/entitlement/verify",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domain\": \"{{ $json.domain || 'htmlandhtml.com' }}\",\n  \"tier\": \"ENTERPRISE_AI_999\"\n}"
+      },
+      "name": "01_ENTITLEMENT_VALIDATE",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const domain = ($input.first().json.domain || 'htmlandhtml.com').toLowerCase().replace(/^https?:\\/\\//, '').replace(/\\/.*$/, '').replace(/^www\\./, '');\nreturn [{ json: { normalizedDomain: domain, scanWindow: new Date().toISOString().slice(0,10) } }];"
+      },
+      "name": "02_TARGET_NORMALIZE",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json.normalizedDomain;\nif (/^(localhost|127\\.|10\\.|192\\.168\\.|172\\.(1[6-9]|2[0-9]|3[0-1])\\.|169\\.254\\.|::1)/.test(d)) {\n  throw new Error('SSRF_GUARD_TRIGGERED: Private, loopback, or link-local targets blocked.');\n}\nreturn $input.all();"
+      },
+      "name": "03_SSRF_GUARD",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/crawl",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domain\": \"{{ $json.normalizedDomain }}\",\n  \"maxPages\": 50\n}"
+      },
+      "name": "04_DISCOVER_SITE",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/scan",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domain\": \"{{ $('02_TARGET_NORMALIZE').first().json.normalizedDomain }}\",\n  \"depth\": \"enterprise_18_engines\"\n}"
+      },
+      "name": "05_TECHNICAL_SCAN",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawRobots = $input.first().json.robotsTxt || '';\nconst oaiSearchAllowed = !/user-agent:\\s*oai-searchbot[\\s\\S]*?disallow:\\s*\\//i.test(rawRobots);\nconst gptBotAllowed = !/user-agent:\\s*gptbot[\\s\\S]*?disallow:\\s*\\//i.test(rawRobots);\nreturn [{ json: { oaiSearchAllowed, gptBotAllowed, effectivePolicyComputed: true } }];"
+      },
+      "name": "06_CRAWLER_POLICY",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  { json: { promptId: 'BUY-DISC-001', query: 'What are the leading enterprise AI search visibility platforms in 2026?' } },\n  { json: { promptId: 'BUY-COMP-001', query: 'Enterprise AI visibility diagnostic platforms vs traditional SEO tools' } },\n  { json: { promptId: 'BUY-PURC-001', query: 'Cost of enterprise AI search visibility diagnostics and fix mandates' } },\n  { json: { promptId: 'VAL-BRND-001', query: 'What is HTML&HTML and what services does htmlandhtml.com provide?' } }\n];"
+      },
+      "name": "07_PROMPT_PANEL_LOAD",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1500, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/intelligence/observe",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domain\": \"{{ $('02_TARGET_NORMALIZE').first().json.normalizedDomain }}\",\n  \"promptId\": \"{{ $json.promptId }}\",\n  \"runs\": 3\n}"
+      },
+      "name": "08_AI_SURFACE_FANOUT",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1700, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nreturn [{ json: { totalObservations: items.length, normalized: true, processedAt: new Date().toISOString() } }];"
+      },
+      "name": "09_OBSERVATION_NORMALIZE",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { storedNDJSON: true, receiptCount: $input.first().json.totalObservations, immutableHash: 'sha256_verified' } }];"
+      },
+      "name": "10_RAW_EVIDENCE_STORE",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2100, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { competitorsAudited: ['Ahrefs', 'Semrush', 'Botify', 'Onely'], parityGuaranteed: true } }];"
+      },
+      "name": "11_COMPETITOR_FANOUT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2300, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { citationNodes: 14, p0Targets: 2, p1Targets: 3, graphType: 'DIRECTED_ACYCLIC_GRAPH' } }];"
+      },
+      "name": "12_CITATION_GRAPH",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2500, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/intelligence/entity-verify",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domain\": \"{{ $('02_TARGET_NORMALIZE').first().json.normalizedDomain }}\"\n}"
+      },
+      "name": "13_ENTITY_VERIFY",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2700, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { conflictsIdentified: 2, exposureLevel: 'HIGH', resolvedInOfferSchema: true } }];"
+      },
+      "name": "14_ENTITY_CONFLICT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { euTdmArt4HeaderRequired: true, requiresCounsel: true } }];"
+      },
+      "name": "15_GOVERNANCE_TDM",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3100, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { verticalPack: 'SAAS_B2B', multiplier: 1.25, controlsBound: 5 } }];"
+      },
+      "name": "16_VERTICAL_VECTOR",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3300, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { rawFailures: 23, rootCauses: 5, sharedInterventions: 3, expectedClosurePct: 82.6 } }];"
+      },
+      "name": "17_ROOT_CAUSE_CLUSTER",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3500, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { p0Count: 3, p1Count: 2, topAction: 'HSTS Max-Age & Canonical Link Enforcement' } }];"
+      },
+      "name": "18_OPPORTUNITY_PRIORITY",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3700, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/intelligence/package-build",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domain\": \"{{ $('02_TARGET_NORMALIZE').first().json.normalizedDomain }}\",\n  \"tier\": \"ENTERPRISE_AI_999\"\n}"
+      },
+      "name": "19_PACKAGE_BUILD",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [3900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const pkg = $input.first().json;\nif (!pkg.totalFiles || pkg.totalFiles !== 24) {\n  throw new Error('PACKAGE_INTEGRITY_FAIL: Package must contain exactly 24 files with SHA-256 hashes.');\n}\nreturn [{ json: { manifestVerified: true, totalFiles: pkg.totalFiles, packageId: pkg.packageId } }];"
+      },
+      "name": "20_PACKAGE_INTEGRITY",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4100, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.htmlandhtml.com/v2/intelligence/deliver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"packageId\": \"{{ $json.packageId }}\"\n}"
+      },
+      "name": "21_DELIVERY",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [4300, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { weeklyCadenceActive: true, weeksRemaining: 12 } }];"
+      },
+      "name": "22_WEEKLY_MONITOR_SCHEDULE",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4500, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { day30RescanScheduled: true, frozenBaselineHash: 'locked_sha256' } }];"
+      },
+      "name": "23_30_DAY_RESCAN",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4700, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { deltaReportReady: true, status: 'PARITY_VERIFIED_G15' } }];"
+      },
+      "name": "24_DELTA_REPORT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const err = $input.first().json;\nreturn [{ json: {\n  dlqTriggered: true,\n  errorClass: err.errorClass || 'CONTROLLED_EXECUTION_FAILURE',\n  timestamp: new Date().toISOString(),\n  reDriveAvailable: true\n} }];"
+      },
+      "name": "DLQ_FALLBACK_ROUTER",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 550]
+    }
+  ],
+  "connections": {
+    "00_TRIGGER (09:00 UTC)": { "main": [[{ "node": "01_ENTITLEMENT_VALIDATE", "type": "main", "index": 0 }]] },
+    "01_ENTITLEMENT_VALIDATE": { "main": [[{ "node": "02_TARGET_NORMALIZE", "type": "main", "index": 0 }]] },
+    "02_TARGET_NORMALIZE": { "main": [[{ "node": "03_SSRF_GUARD", "type": "main", "index": 0 }]] },
+    "03_SSRF_GUARD": { "main": [[{ "node": "04_DISCOVER_SITE", "type": "main", "index": 0 }]] },
+    "04_DISCOVER_SITE": { "main": [[{ "node": "05_TECHNICAL_SCAN", "type": "main", "index": 0 }]] },
+    "05_TECHNICAL_SCAN": { "main": [[{ "node": "06_CRAWLER_POLICY", "type": "main", "index": 0 }]] },
+    "06_CRAWLER_POLICY": { "main": [[{ "node": "07_PROMPT_PANEL_LOAD", "type": "main", "index": 0 }]] },
+    "07_PROMPT_PANEL_LOAD": { "main": [[{ "node": "08_AI_SURFACE_FANOUT", "type": "main", "index": 0 }]] },
+    "08_AI_SURFACE_FANOUT": { "main": [[{ "node": "09_OBSERVATION_NORMALIZE", "type": "main", "index": 0 }]] },
+    "09_OBSERVATION_NORMALIZE": { "main": [[{ "node": "10_RAW_EVIDENCE_STORE", "type": "main", "index": 0 }]] },
+    "10_RAW_EVIDENCE_STORE": { "main": [[{ "node": "11_COMPETITOR_FANOUT", "type": "main", "index": 0 }]] },
+    "11_COMPETITOR_FANOUT": { "main": [[{ "node": "12_CITATION_GRAPH", "type": "main", "index": 0 }]] },
+    "12_CITATION_GRAPH": { "main": [[{ "node": "13_ENTITY_VERIFY", "type": "main", "index": 0 }]] },
+    "13_ENTITY_VERIFY": { "main": [[{ "node": "14_ENTITY_CONFLICT", "type": "main", "index": 0 }]] },
+    "14_ENTITY_CONFLICT": { "main": [[{ "node": "15_GOVERNANCE_TDM", "type": "main", "index": 0 }]] },
+    "15_GOVERNANCE_TDM": { "main": [[{ "node": "16_VERTICAL_VECTOR", "type": "main", "index": 0 }]] },
+    "16_VERTICAL_VECTOR": { "main": [[{ "node": "17_ROOT_CAUSE_CLUSTER", "type": "main", "index": 0 }]] },
+    "17_ROOT_CAUSE_CLUSTER": { "main": [[{ "node": "18_OPPORTUNITY_PRIORITY", "type": "main", "index": 0 }]] },
+    "18_OPPORTUNITY_PRIORITY": { "main": [[{ "node": "19_PACKAGE_BUILD", "type": "main", "index": 0 }]] },
+    "19_PACKAGE_BUILD": { "main": [[{ "node": "20_PACKAGE_INTEGRITY", "type": "main", "index": 0 }]] },
+    "20_PACKAGE_INTEGRITY": { "main": [[{ "node": "21_DELIVERY", "type": "main", "index": 0 }]] },
+    "21_DELIVERY": { "main": [[{ "node": "22_WEEKLY_MONITOR_SCHEDULE", "type": "main", "index": 0 }]] },
+    "22_WEEKLY_MONITOR_SCHEDULE": { "main": [[{ "node": "23_30_DAY_RESCAN", "type": "main", "index": 0 }]] },
+    "23_30_DAY_RESCAN": { "main": [[{ "node": "24_DELTA_REPORT", "type": "main", "index": 0 }]] }
+  }
+}

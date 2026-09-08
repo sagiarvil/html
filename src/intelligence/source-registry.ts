@@ -3,7 +3,7 @@
  * Document Code: HTMLHTML-EAI-2026-V4 (Section 2.2 & Section 40)
  */
 
-import type { EvidenceClass } from './evidence-classes';
+import type { EvidenceClass } from './evidence-classes.ts';
 
 export interface ExternalSourceRecord {
   id: string;
