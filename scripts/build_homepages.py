@@ -91,8 +91,8 @@ def build_homepages():
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
-<title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>
-<meta name="description" content="Web siteniz yapay zeka arama sonuçlarında çıkmaya ve tavsiye edilme fırsatı kazanmaya hazır mı? GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt ve teknik temeli ücretsiz kontrol edin.">
+<title>Yapay Zeka SEO Analizi ve AI Görünürlük Testi | HTML&amp;HTML</title>
+<meta name="description" content="Web sitenizin ChatGPT, Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz ölçün. 18 motor, 105 kontrol ve $99 uygulama paketi.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -222,8 +222,8 @@ def build_homepages():
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">KURUMSAL AI ARAMA İSTİHBARATI / V4.1</b></div>
-  <h1 data-i18n="heroTitle">Yapay zeka sitenizi tavsiye ediyor mu?<br><em data-i18n="heroSubtitle">Yapay Zeka Sizi Buluyor mu? Tavsiye Edilmeye Hazır mısınız?</em></h1>
-  <p class="hero-answer" data-i18n="heroCopy">ChatGPT, Claude ve Perplexity için 18 motorlu otonom denetim ve dağıtım paketi. 15 saniyede tek tıkla sitenizi tarayın, model ağırlıklarındaki ve RAG mimarisindeki görünürlük kayıplarını kanıtıyla görün.</p>
+  <h1 data-i18n="heroTitle">Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?</h1>
+  <p class="hero-answer" data-i18n="heroCopy">Ücretsiz yapay zeka SEO analizi; sitenizin ChatGPT, Gemini, Claude ve Perplexity tarafından bulunmasını ve kaynak olarak değerlendirilmesini engelleyen sorunları kanıtıyla gösterir.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
@@ -264,7 +264,7 @@ def build_homepages():
         CANLI KURUMSAL DENETİM LABORATUVARI · ENTERPRISE AI DIAGNOSTIC SUITE
       </span>
       <h2>Kurumsal AI Görünürlük Analizörü &amp; Kod Çözüm Laboratuvarı</h2>
-      <p>120 derin kontrol, 43 sayfa taraması ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım yol haritaları ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformunu keşfedin.</p>
+      <p>105 deterministik kontrol, 50'ye kadar herkese açık HTML sayfası ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım yol haritaları ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformunu keşfedin.</p>
     </div>
 
     <!-- Metric Ribbon -->
@@ -272,14 +272,14 @@ def build_homepages():
       <div class="ea-ribbon-item">
         <div class="ea-ribbon-icon" aria-hidden="true">🛡️</div>
         <div>
-          <strong>120 Kontrol Noktası</strong>
+          <strong>105 Deterministik Kontrol</strong>
           <span>WCAG 2.1 AA · RFC 6596 · OpenAPI 3.1</span>
         </div>
       </div>
       <div class="ea-ribbon-item">
         <div class="ea-ribbon-icon" aria-hidden="true">📑</div>
         <div>
-          <strong>43 Sayfa &amp; 30 Canlı Prob</strong>
+          <strong>50'ye Kadar Sayfa · 30 Prob</strong>
           <span>Kablo seviyesinde kanıt tespiti</span>
         </div>
       </div>
@@ -293,7 +293,7 @@ def build_homepages():
       <div class="ea-ribbon-item">
         <div class="ea-ribbon-icon" aria-hidden="true">⚡</div>
         <div>
-          <strong>45 Çözüm Yol Haritası</strong>
+          <strong>G0–G9 Yayın Kapıları</strong>
           <span>Geri alma güvenceli kod blokları</span>
         </div>
       </div>
@@ -343,7 +343,7 @@ def build_homepages():
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
               Dikkat Gerekiyor — Acil Eylem
             </h4>
-            <p>120 kontrolde 108 bulgu tespit edildi. Yapay zeka arama motorları için kritik engelleyiciler mevcut.</p>
+            <p>105 kontrol kapsamında örnek kritik bulgular gösteriliyor. Yapay zeka arama motorları için kritik engelleyiciler mevcut.</p>
           </div>
         </div>
 
@@ -524,7 +524,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <li class="px-pipeline-step">
       <article class="px-pipeline-card px-pipeline-card-highlight">
         <div class="pipeline-step-badge highlight">ADIM 04</div>
-        <h3>22 Dosyalık Onarım Paketi</h3>
+        <h3>30+ Dosyalık V3 Uygulama Paketi</h3>
         <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
         <div class="pipeline-micro-stream">
           <span>⚙️ test.js Scriptleri</span>
@@ -591,7 +591,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
         <li data-i18n="m5">30 gün içinde 1 re-scan</li>
       </ul>
       <div class="price">
-        <small data-i18n="oneSite">1 domain | Sınırsız indirme | 30 gün garanti</small>
+        <small data-i18n="oneSite">1 domain | Sınırsız indirme | 30 gün içinde yeniden tarama</small>
         <strong>$99</strong>
       </div>
       <a class="cta" id="mandateLink" href="/checkout" data-i18n="getMandate">Onarım Setini İndir — $99 →</a>
@@ -727,8 +727,8 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
-<title>AI Search Visibility, GEO, AEO &amp; llms.txt | HTML&amp;HTML</title>
-<meta name="description" content="Is your website ready to appear in AI search and earn recommendation opportunity? Check GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt and the technical foundation free.">
+<title>AI SEO Audit &amp; ChatGPT Visibility Test | HTML&amp;HTML</title>
+<meta name="description" content="Audit your website for ChatGPT, Gemini, Claude and Perplexity visibility. Get evidence from 18 engines and 105 checks; unlock the implementation pack for $99.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/en/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -857,8 +857,8 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <!-- 01 HERO -->
 <section class="hero" id="scanner">
   <div class="kicker"><span></span><b data-i18n="kicker">ENTERPRISE AI SEARCH INTELLIGENCE / V4.1</b></div>
-  <h1 data-i18n="heroTitle">Does AI Recommend You?<br><em data-i18n="heroSubtitle">Can AI Find You? Are You Ready to Be Recommended?</em></h1>
-  <p class="hero-answer" data-i18n="heroCopy">Autonomous 18-engine diagnostic &amp; deployment pack for ChatGPT, Claude, and Perplexity. Run a 1-click deep audit in 15 seconds to uncover model weight and RAG architectural gaps.</p>
+  <h1 data-i18n="heroTitle">Can ChatGPT, Gemini and Perplexity Find Your Website?</h1>
+  <p class="hero-answer" data-i18n="heroCopy">Run a free AI SEO audit to see the evidence-backed website issues that block discovery, correct understanding and source consideration across leading AI search systems.</p>
   
   <!-- 02 SCANNER -->
   <div class="scanbox">
@@ -899,7 +899,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
         LIVE ENTERPRISE AUDIT LAB · ENTERPRISE AI DIAGNOSTIC SUITE
       </span>
       <h2>Enterprise AI Visibility Analyzer &amp; Solution Lab</h2>
-      <p>Deterministic diagnostic environment operating across 120 deep checks, 43-page crawl, and 30 live link probes. Explore wire-level technical evidence, locked remediation roadmaps, and n8n CI/CD automation packages.</p>
+      <p>Deterministic diagnostic environment operating across 105 deterministic controls, up to 50 public HTML pages, and 30 live link probes. Explore wire-level technical evidence, locked remediation roadmaps, and n8n CI/CD automation packages.</p>
     </div>
 
     <!-- Metric Ribbon -->
@@ -914,7 +914,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       <div class="ea-ribbon-item">
         <div class="ea-ribbon-icon" aria-hidden="true">📑</div>
         <div>
-          <strong>43 Pages &amp; 30 Probes</strong>
+          <strong>Up to 50 Pages · 30 Probes</strong>
           <span>Wire-level evidence assertion</span>
         </div>
       </div>
@@ -928,7 +928,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       <div class="ea-ribbon-item">
         <div class="ea-ribbon-icon" aria-hidden="true">⚡</div>
         <div>
-          <strong>45 Solution Roadmaps</strong>
+          <strong>G0–G9 Release Gates</strong>
           <span>Rollback-guaranteed code templates</span>
         </div>
       </div>
@@ -978,7 +978,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
               Attention Required — Urgent Action
             </h4>
-            <p>108 findings detected across 120 checks. Critical blockers exist for AI search engines.</p>
+            <p>108 findings detected across 105 controls. Critical blockers exist for AI search engines.</p>
           </div>
         </div>
 
@@ -1159,7 +1159,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <li class="px-pipeline-step">
       <article class="px-pipeline-card px-pipeline-card-highlight">
         <div class="pipeline-step-badge highlight">STEP 04</div>
-        <h3>22-File Enterprise Repair Kit</h3>
+        <h3>Versioned Engine V3 Implementation ZIP</h3>
         <p>Root-cause remediation, test.js verification suites, 00_ROLLBACK_PLAN, and 30-page machine surface.</p>
         <div class="pipeline-micro-stream">
           <span>⚙️ test.js Suites</span>
@@ -1310,8 +1310,8 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 
     write_page("index.html", root_html)
     tr_html = root_html.replace(
-        "<title>Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms.txt | HTML&amp;HTML</title>",
-        "<title>Web Sitesi Yapay Zeka Arama Hazırlığı ve Teşhis | HTML&amp;HTML</title>"
+        "<title>Yapay Zeka SEO Analizi ve AI Görünürlük Testi | HTML&amp;HTML</title>",
+        "<title>Yapay Zeka SEO Analizi ve AI Görünürlük Testi | HTML&amp;HTML</title>"
     ).replace(
         '<link rel="canonical" href="https://htmlandhtml.com/">',
         '<link rel="canonical" href="https://htmlandhtml.com/tr/">'

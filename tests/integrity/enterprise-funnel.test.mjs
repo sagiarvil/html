@@ -8,8 +8,7 @@ const pricing=read('tr/fiyatlandirma/index.html'),pricingEn=read('en/pricing/ind
 const premium=read('assets/css/premium-experience.css'),enterprise=read('assets/css/enterprise-system.css');
 const runtime=read('assets/js/enterprise-runtime.js'),validator=read('assets/js/validator.js');
 
-expect(home.includes('Yapay Zeka Sizi Buluyor mu?'),'homepage concise AI visibility headline missing');
-expect(home.includes('Tavsiye Edilmeye Hazır mısınız?'),'homepage recommendation-opportunity headline missing');
+expect(home.includes('Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'),'homepage AI SEO search-intent headline missing');
 expect(tools.includes('data-premium-infographic="scope-map"'),'tools infographic scope map missing');
 expect(pricing.includes('data-premium-infographic="report-boundary"'),'pricing report boundary infographic missing');
 for(const marker of ['Keşfedilebilirlik','Anlamlandırma','Kaynak Uygunluğu','Kullanıcı & Ajan Yolu'])expect(tools.includes(marker),`tools customer journey missing ${marker}`);

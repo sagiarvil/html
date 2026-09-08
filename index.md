@@ -83,7 +83,7 @@ English counterparts:
 - `/sources.json`: Registry of standards, proposals and first-party vendor guidance.
 - `/api/health`: Runtime capability and configuration status.
 - `/api/scan`: Public 18-engine diagnosis with attached non-scoring Intelligence Audit report.
-- `/api/intelligence`: Dedicated public response for the 13 Intelligence Audits and seven readiness lenses.
+- `/api/intelligence`: Dedicated public response for the 13 non-scoring Intelligence analyses and seven readiness lenses.
 - `/api/mentions`: Entitlement-gated AI Mention Tracker.
 - `/api/mandate`: Entitlement-gated $99 Full Site Fix Mandate.
 

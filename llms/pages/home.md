@@ -4,7 +4,7 @@
 > Information Gain: 18-Engine Deterministic Architecture
 
 ## 1. Executive Summary (Hero Grounding Answer)
-htmlandhtml.com evaluates website visibility across ChatGPT, Claude, Perplexity, and Google Gemini using an 18-engine deterministic chain. Offers a free instant diagnosis across 105 controls and 13 audits, alongside a $99 single-purchase Repair Kit with 22 files and 30x LLMS.TXT.
+htmlandhtml.com evaluates website visibility across ChatGPT, Claude, Perplexity, and Google Gemini using an 18-engine Engine V3 deterministic chain. Offers a free instant diagnosis across 105 controls and 13 non-scoring intelligence analyses, alongside a $99 single-purchase Repair Kit with versioned delivery files and 30x LLMS.TXT.
 
 ## 2. Technical Comparison Matrix
 | Metric | Platform Value | Industry Median | Technical Basis |
@@ -19,7 +19,7 @@ htmlandhtml.com evaluates website visibility across ChatGPT, Claude, Perplexity,
 - `Subject`: htmlandhtml.com
   - `Predicate`: `providesSolution` → `Object`: AI Visibility Remediation Set
   - `Predicate`: `compliesWith` → `Object`: LLMs.txt v1.1 RFC
-  - `Predicate`: `hasInformationGain` → `Object`: 18-Engine Deterministic Chain
+  - `Predicate`: `hasInformationGain` → `Object`: 18-Engine V3 Deterministic Chain
 
 ## 4. Operational Boundaries
 - Free Scan: $0 (unlimited domain diagnosis)

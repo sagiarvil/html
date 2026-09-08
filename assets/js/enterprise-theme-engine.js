@@ -1,5 +1,5 @@
 /**
- * HTML&HTML.COM — ENTERPRISE THEME ENGINE v2.0.0
+ * HTML&HTML.COM — ENTERPRISE THEME Engine V3.0.0
  * Principal Architect | Zero-Defect | Formal Verification
  */
 (function(global) {

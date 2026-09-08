@@ -14,11 +14,12 @@ const glossaryEn=read('en/glossary/index.html');
 const llmsGuideTr=read('tr/rehberler/llms-txt/index.html');
 const llmsGuideEn=read('en/guides/llms-txt/index.html');
 const sources=read('sources.json');
+const runtimeCopy=read('assets/js/validator.js');
 
 for(const [rel,marker] of [
-  ['index.html','Yapay Zeka Sizi Buluyor mu?'],
-  ['tr/index.html','Tavsiye Edilmeye Hazır mısınız?'],
-  ['en/index.html','Can AI Find You?'],
+  ['index.html','Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'],
+  ['tr/index.html','Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'],
+  ['en/index.html','Can ChatGPT, Gemini and Perplexity Find Your Website?'],
   ['tr/ai-website-readiness/index.html','GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap'],
   ['tr/llms-txt-validator/index.html','llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?'],
   ['tr/ai-crawler-checker/index.html','ChatGPT ve Diğer Yapay Zeka Tarayıcıları'],
@@ -48,7 +49,7 @@ for(const term of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt']){
 expect(validatorTr.includes('Sitemap'),'TR validator missing term: Sitemap');
 expect(validatorEn.includes('Sitemap'),'EN validator missing term: Sitemap');
 
-expect(/Yapay Zeka Arama Görünürlüğü, GEO, AEO ve llms\.txt \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own AI search visibility category');
+expect(/Yapay Zeka SEO Analizi ve AI Görünürlük Testi \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own transactional AI SEO audit intent');
 expect(rootHome.includes('$99'),'homepage must expose $99 implementation product');
 expect(!rootHome.includes('$149'),'homepage must not retain old $149 price');
 const trTools = read('tr/araclar/index.html');
@@ -75,9 +76,9 @@ const forbidden=[
 const corpus=[rootHome,trHome,enHome,glossaryTr,glossaryEn,llmsGuideTr,llmsGuideEn].join('\n');
 for(const re of forbidden)expect(!re.test(corpus),`unsupported commercial/Google claim detected: ${re}`);
 
-expect(rootHome.includes('tavsiye edilme') || validatorTr.includes('tavsiye edilme'),'homepage/validator must sell recommendation opportunity');
+expect(rootHome.includes('kaynak olarak değerlendirilmesini') || runtimeCopy.includes('kaynak olarak değerlendirilmesini'),'homepage runtime must explain source-consideration value');
 expect(validatorTr.includes('garanti') || validatorTr.includes('Garanti'),'TR validator must retain explicit no-guarantee boundary');
-expect(/recommendation opportunity/i.test(validatorEn),'EN validator must sell recommendation opportunity');
+expect(/source consideration/i.test(runtimeCopy),'EN homepage runtime must explain source-consideration value');
 expect(validatorEn.includes('not guaranteed') || validatorEn.includes('cannot be guaranteed'),'EN validator must retain no-guarantee boundary');
 
 if(errors.length){console.error('CUSTOMER POSITIONING FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}

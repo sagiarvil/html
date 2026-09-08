@@ -74,7 +74,7 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 - [Website Scanner — English](https://htmlandhtml.com/en/website-scanner/)
 - [Website Scanner — Turkish](https://htmlandhtml.com/tr/site-tarama/)
 - [Enterprise AI Analyzer](https://htmlandhtml.com/enterprise-analyzer/): Full deep-dive technical visibility diagnostic suite for Fortune 500 & enterprise web estates.
-- [AI Visibility Diagnostic Report (Dark)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report.html): 120-check technical audit across 43 pages, covering accessibility, metadata, schema, security headers, and agent discoverability.
+- [AI Visibility Diagnostic Report (Dark)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report.html): 120-check technical audit across up to 50 pages, covering accessibility, metadata, schema, security headers, and agent discoverability.
 - [AI Visibility Diagnostic Report (Light)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report-LIGHT.html): High-contrast light edition of the enterprise diagnostic report.
 - [AI Website Readiness — English](https://htmlandhtml.com/en/ai-website-readiness/)
 - [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/)
@@ -102,7 +102,7 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 
 - [Corporate Identity, E-E-A-T & Legal Verification](https://htmlandhtml.com/llms/core.md)
 - [Homepage — Technical Specifications & Methodology](https://htmlandhtml.com/llms/pages/home.md)
-- [Services — 18-Engine Deterministic Chain Spec](https://htmlandhtml.com/llms/pages/services.md)
+- [Services — 18-Engine V3 Deterministic Chain Spec](https://htmlandhtml.com/llms/pages/services.md)
 - [Pricing — $99 Fix Mandate Repair Kit](https://htmlandhtml.com/llms/pages/pricing.md)
 - [SEO/GEO/AEO/LLMO/AAO/RAG/E-E-A-T Protocols](https://htmlandhtml.com/llms/pages/protocols.md)
 - [Expert Credentials & Engineering Team](https://htmlandhtml.com/llms/entities/experts.md)

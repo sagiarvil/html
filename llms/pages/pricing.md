@@ -12,7 +12,7 @@ htmlandhtml.com strictly enforces a transparent 2-tier pricing model:
   - Instant on-screen report
   - No credit card, registration, or commitment required
 - **Tier 2: AI Visibility Fix Mandate / Repair Kit ($99 one-time)**:
-  - Complete 22-file production ZIP bundle
+  - Complete versioned production ZIP bundle
   - 30 custom per-page LLMS.TXT surfaces
   - Priority Roadmap (.md + .ics calendar file)
   - Deterministic score projection and gap analysis
@@ -20,7 +20,7 @@ htmlandhtml.com strictly enforces a transparent 2-tier pricing model:
   - 30-day re-scan verification guarantee
   - Handled securely via Paddle Merchant of Record
 
-## 2. Delivery Bundle Content (22 Files)
+## 2. Delivery Bundle Content (versioned delivery files)
 1. `00_READ_ME.md` — Quick start and bundle manifest
 2. `01_EXECUTIVE_SUMMARY.md` — High-level stakeholder briefing
 3. `02_IMPLEMENTATION_BLUEPRINT.md` — Step-by-step engineering instructions
