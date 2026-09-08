@@ -16,6 +16,10 @@
 
 1. [Executive Architecture & The $5M Enterprise Paradigm](#1-executive-architecture--the-5m-enterprise-paradigm)
 2. [n8n Operational Principles & Resilient Event Loops](#2-n8n-operational-principles--resilient-event-loops)
+   - [2.1 The 6-Node Execution Chain](#21-the-6-node-execution-chain)
+   - [2.2 Dead-Letter Queue (DLQ) & Fault Tolerance](#22-dead-letter-queue-dlq--fault-tolerance)
+   - [2B. The Deterministic Scanning Engine (8-Phase Execution Pipeline)](#2b-the-deterministic-scanning-engine-8-phase-execution-pipeline)
+   - [2C. The Deterministic Recipe & Remediation Engine (P0–P3 Root-Fix Contract)](#2c-the-deterministic-recipe--remediation-engine-p0p3-root-fix-contract)
 3. [SSOT Registry & Canonical Truth Constitution](#3-ssot-registry--canonical-truth-constitution)
 4. [Master Diagnosis & Production Code Recipes (Vector by Vector)](#4-master-diagnosis--production-code-recipes-vector-by-vector)
    - [Vector 1: Core Technical & Structural SEO (ENG-04, ENG-12)](#vector-1-core-technical--structural-seo-eng-04-eng-12)
@@ -26,11 +30,13 @@
    - [Vector 6: RAG (Retrieval-Augmented Generation) & Dense Retrieval (ENG-09, ENG-10)](#vector-6-rag-retrieval-augmented-generation--dense-retrieval-eng-09-eng-10)
    - [Vector 7: E-E-A-T & Knowledge Vault Consensus Triangulation (ENG-08, ENG-14, ENG-15)](#vector-7-e-e-a-t--knowledge-vault-consensus-triangulation-eng-08-eng-14-eng-15)
    - [Vector 8: Defense, Historical Stability & Anti-Demotion (ENG-16, ENG-17, ENG-18)](#vector-8-defense-historical-stability--anti-demotion-eng-16-eng-17-eng-18)
+   - [4B. The Strict Engineering Implementation Order (Uygulama Sırası & Fazlandırma Mimarisi)](#4b-the-strict-engineering-implementation-order-uygulama-sras--fazlandrma-mimarisi)
 5. [The 18 Engine V3.0 Deterministic Formulas & Weight Matrix](#5-the-18-engine-v30-deterministic-formulas--weight-matrix)
 6. [CI/CD Quality Gates (G0–G9)](#6-cicd-quality-gates-g0g9)
 7. [Edge CDN & Tokenomics Architecture](#7-edge-cdn--tokenomics-architecture)
 8. [Real-Time Discovery & Multi-Hub IndexNow Distribution](#8-real-time-discovery--multi-hub-indexnow-distribution)
 9. [The 30-File Remediation & Delivery Engine ($99 Model)](#9-the-30-file-remediation--delivery-engine-99-model)
+   - [9B. Binary STORE CRC32 ZIP Compilation & Entitlement Architecture](#9b-binary-store-crc32-zip-compilation--entitlement-architecture)
 10. [Master LLM Implementation Prompt (Ready-to-Inject)](#10-master-llm-implementation-prompt-ready-to-inject)
 
 ---
@@ -123,6 +129,211 @@ Every automated workflow in this system is structured according to industrial **
 
 ### 2.2 Dead-Letter Queue (DLQ) & Fault Tolerance
 When any individual engine throws a network socket timeout or unhandled exception, it **NEVER halts the pipeline**. The orchestrator intercepts the error, serializes the input snapshot, error stack, and timestamp into a `DeadLetterEntry`, sets the engine result to `NOT_MEASURED`, and appends it to `dlq.json`.
+
+
+---
+
+## 2B. THE DETERMINISTIC SCANNING ENGINE (8-PHASE EXECUTION PIPELINE)
+
+The `htmlandhtml.com` scanning engine (`functions/lib/scan-engine.ts` & `functions/lib/engine-v2/`) executes an 8-phase deterministic pipeline designed to inspect any target URL under zero-trust, enterprise-grade constraints without risking SSRF, memory leaks, or indefinite socket hangs.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    THE 8-PHASE SCANNING ENGINE PIPELINE                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ PHASE 0: Input Normalization & SSRF Fortress (DNS-over-HTTPS Verification)  │
+│                                  │                                          │
+│ PHASE 1: Multi-Bot 0-RTT Safe Fetch (7000ms Timeout & 1MB Streaming Buffer) │
+│                                  │                                          │
+│ PHASE 2: Parallel Probe DAG (/robots, /sitemap, /llms, /agent-card, /mcp)   │
+│                                  │                                          │
+│ PHASE 3: Shallow Crawl Graph (Up to 50 Pages with Domain Origin Isolation)  │
+│                                  │                                          │
+│ PHASE 4: DOM & AST Decomposition (Canonical, H1, Schema @graph, Vitals)     │
+│                                  │                                          │
+│ PHASE 5: 18-Engine Vector Telemetry & Deterministic Rule Scoring (0-100)    │
+│                                  │                                          │
+│ PHASE 6: Dead-Letter Queue (DLQ) Exception Interception & NOT_MEASURED Fallback │
+│                                  │                                          │
+│ PHASE 7: Live Empirical Cross-Probes (Wikidata SPARQL + Common Crawl CDX)   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Phase 0: Input Normalization & SSRF Fortress
+- **RFC 3986 Normalization**: Scheme enforcement (`http` or `https` only). Rejects all userinfo credentials (`user:pass@host`), fragments, and non-standard ports (strictly restricts to `80` and `443`).
+- **Private Name & Localhost Guard**: Blocks `localhost`, `*.localhost`, `*.local`, `*.internal`, `*.home.arpa`.
+- **Cloudflare DNS-over-HTTPS (DoH) Resolution**: Prior to establishing any TCP socket, the host resolves both `A` and `AAAA` records via `https://cloudflare-dns.com/dns-query?name={host}&type=A|AAAA`.
+- **Zero-Trust IP Filter (RFC 1918, RFC 3927, RFC 6598, RFC 5737, RFC 2544, RFC 1112/5771, RFC 4193, RFC 4291)**:
+  - IPv4 checks reject: `0.0.0.0/8`, `10.0.0.0/8`, `100.64.0.0/10`, `127.0.0.0/8`, `169.254.0.0/16`, `172.16.0.0/12`, `192.168.0.0/16`, `198.18.0.0/15`, `>= 224.0.0.0` (multicast/reserved).
+  - IPv6 checks reject: `::1`, `::`, `fc00::/7` (ULA), `fe80::/10` (link-local), and IPv4-mapped private ranges.
+  - If any resolved IP is private or reserved, the scan immediately aborts with `Target resolves to a private or reserved address`.
+
+### Phase 1: Multi-Bot 0-RTT Safe Fetch
+- **Hard Timeout Budget**: 7,000ms enforced via native `AbortSignal.timeout(7000)`.
+- **Strict Redirect Budget**: Capped at maximum 4 redirects (`MAX_REDIRECTS = 4`). Each hop undergoes fresh DoH resolution and private IP verification.
+- **Streaming Byte-Ceiling Buffer (`readLimited`)**: Ingests bytes via `ReadableStreamDefaultReader` into `Uint8Array` chunks up to `MAX_BYTES = 1,000,000` (1MB). If the response exceeds 1MB, the reader cancels and throws `Response exceeds scan size limit` to eliminate memory exhaustion attacks.
+- **Bimodal User-Agent Negotiation**:
+  - Primary User-Agent: `HTMLandHTML-Validator/2.0 (+https://htmlandhtml.com)`.
+  - WAF / Edge Mitigation Fallback: If HTTP `401` or `403` is returned, immediately retries with standard desktop Chrome User-Agent (`Mozilla/5.0 ... Chrome/126.0.0.0 Safari/537.36`).
+- **HTML Content-Type Enforcement**: Validates `content-type` header and scans initial payload for structural HTML tokens (`<!doctype`, `<html`, `<head`, `<body`, `<main`, `<div`).
+
+### Phase 2: Parallel Probe DAG (Direct Machine Surfaces)
+Executes a concurrent `Promise.allSettled` fan-out probing the canonical discovery endpoints of the target root:
+1. `GET /robots.txt`: Parses multi-agent blocks (`Googlebot`, `OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `GPTBot`, `ClaudeBot`, `Google-Extended`).
+2. `GET /sitemap.xml`: Extracts up to 100 internal `<loc>` URLs.
+3. `GET /llms.txt`: Validates v2 spec (H1 `# Domain`, blockquote summary `> Summary`, markdown links).
+4. `GET /.well-known/agent-card.json`: Validates A2A autonomous agent discovery card schema.
+5. `GET /openapi.json`: Validates OpenAPI 3.0 programmatic specification.
+6. `GET /mcp`: Tests Model Context Protocol JSON-RPC tool availability.
+7. `GET Wikidata SPARQL API`: Queries `https://www.wikidata.org/w/api.php` for brand entity QID in ground-truth knowledge graphs.
+8. `GET Common Crawl CDX Server`: Probes `index.commoncrawl.org` for presence in pre-training corpuses.
+
+### Phase 3: Shallow Crawl Sub-Graph Ingestion
+- Aggregates unique internal URLs discovered from homepage `<a href="...">` links and `sitemap.xml`.
+- Filters strictly by target origin, discarding media assets (`.jpg`, `.png`, `.svg`, `.pdf`, `.zip`, `.mp4`).
+- Concurrently fetches pages in batches of 4 (`Promise.all`), capped at 50 pages (`MAX_PAGES = 50`) to bound execution duration.
+
+### Phase 4: DOM & AST Decomposition
+Each retrieved page is parsed into an immutable `Page` record:
+- Document metadata: `<title>`, meta description, `<html lang="...">`, robots meta directives.
+- Structure & Heading hierarchy: Single `<h1>` check, heading sequence `<h2>`/`<h3>`.
+- URL normalization: Canonical `<link rel="canonical">` validation against served URL.
+- Structured Data: Extraction of all `<script type="application/ld+json">` blocks, unwrapping `@graph` trees, validating JSON syntax.
+- Machine surfaces: `<link rel="describedby" href="/llms.txt">`, `<link rel="alternate" type="text/markdown">`.
+- Performance & Accessibility: Render-blocking `<script src="...">` in `<head>`, missing image `alt` attributes, unlabelled form inputs, unnamed button elements.
+- Security & Forms: Mixed content references (`http://` resources on `https://` origin), insecure form actions.
+
+### Phase 5: 18-Engine Vector Telemetry & Deterministic Scoring
+Applies the 18 specialized evaluation engines (`ENG-01` through `ENG-18`). Each engine evaluates an array of boolean/null rules:
+$$\text{RuleScore} = \text{round}\left( \frac{\sum \text{Rule.ok} \times \text{Rule.weight}}{\sum \text{Rule.weight}} \times 100 \right)$$
+- If no rules are measurable, the engine returns `100` (neutral baseline) or triggers DLQ.
+- Scores are mapped into status badges: `PASS` ($\ge 80\%$), `WARN` ($55\% - 79\%$), `FAIL` ($< 55\%$).
+
+### Phase 6: Dead-Letter Queue (DLQ) & Fault Tolerance
+- Zero runtime crashes: If an external probe or sub-routine throws, the orchestrator intercepts the exception.
+- The engine logs:
+  ```json
+  {
+    "engineId": "ENG-XX",
+    "timestamp": "2026-09-08T12:00:00.000Z",
+    "error": "Timeout or DNS failure",
+    "status": "NOT_MEASURED"
+  }
+  ```
+- The execution chain completes successfully and outputs the remaining 17 engines without blocking.
+
+### Phase 7: Live Empirical Cross-Verification
+- Cross-references JSON-LD `sameAs` links against resolved Wikidata QID.
+- Flags **Entity Vault Gap** if no Wikidata triple or Knowledge Graph MID is bound.
+- Flags **Common Crawl Exclusion** if domain is absent from pre-training archives, warning of offline LLM model weight blindness.
+
+---
+
+## 2C. THE DETERMINISTIC RECIPE & REMEDIATION ENGINE (P0–P3 ROOT-FIX CONTRACT)
+
+The remediation engine (`functions/lib/remediation-engine.ts` & `remediation-engine-v2.ts`) takes raw findings and compiles production-ready engineering fixes. It operates under strict constitutional rules guaranteeing zero hallucination, bit-for-bit determinism, and full developer sovereignty.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 THE DETERMINISTIC RECIPE & REMEDIATION PIPELINE             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ STAGE 0: Constitutional Rules Verification (Rules 0.1 – 0.10)              │
+│                                  │                                          │
+│ STAGE 1: False-Positive Validation Gate (Gates A through E)                 │
+│                                  │                                          │
+│ STAGE 2: Deterministic Issue Clustering (Section 17 Systemic Root Causes)   │
+│                                  │                                          │
+│ STAGE 3: Mathematical Priority Engine (P0, P1, P2, P3 Triage)               │
+│                                  │                                          │
+│ STAGE 4: 24-Field Root-Fix Remediation Blueprint Generation                 │
+│                                  │                                          │
+│ STAGE 5: Implementation Stop Condition Guard (Section 15 Boundary Lock)    │
+│                                  │                                          │
+│ STAGE 6: 30-Day Re-Scan Comparison Engine (Section 21 Delta Tracker)        │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### The 10 Constitutional Rules of Remediation
+1. **Rule 0.1 (Determinism First)**: Identical scan inputs MUST generate bit-for-bit identical remediation reports and code recipes. `Math.random()` is banned across all runtime paths.
+2. **Rule 0.2 (Evidence Bound)**: Every reported defect MUST cite raw response evidence (e.g. byte length, line snippet, HTTP status, or header value).
+3. **Rule 0.3 (Autonomous Code Delivery)**: Recipes MUST be complete, production-ready code blocks (HTML, JS, Nginx, Cloudflare Workers, JSON-LD), not vague recommendations.
+4. **Rule 0.4 (Mandatory Rollback Guarantee)**: Every recipe MUST provide an explicit, zero-downtime rollback command or instruction.
+5. **Rule 0.5 (Zero Agency Overhead)**: Zero billable hours, zero manual consulting claims, zero human agency intervention.
+6. **Rule 0.6 (Strict Boundary Demarcation)**: The engine diagnoses the root cause and writes the recipe; the client's engineering team executes the deployment.
+7. **Rule 0.7 (Non-Destructive Ingestion)**: All scans and probes are strictly read-only and non-invasive.
+8. **Rule 0.8 (Mathematical Scoring Integrity)**: Weights sum strictly to 129 across 18 engines. No hidden multiplier or biased scoring.
+9. **Rule 0.9 (Fail-Closed DLQ Isolation)**: Unreachable third-party services fail into Dead-Letter Queues without halting the remediation compile.
+10. **Rule 0.10 (Client Sovereignty)**: All code recipes must be cloud-agnostic, portable, and drop-in compatible with standard web frameworks.
+
+### Stage 1: False-Positive Validation Gate (A – E)
+Before a defect is confirmed, it must pass through 5 deterministic verification gates:
+- **Gate A (Raw Byte Verification)**: The issue string or AST token must exist in the raw unparsed response.
+- **Gate B (Header Verification)**: Header-based findings (HSTS, CSP, X-Robots-Tag) must be confirmed via raw HTTP response headers.
+- **Gate C (Multi-Page Correlation)**: Structural issues (e.g. H1 or Canonical) are verified across multiple pages to determine if the failure is template-wide or isolated.
+- **Gate D (Robots Parser Verification)**: Bot disallow tokens are evaluated strictly against RFC 9309 path matching logic.
+- **Gate E (Schema Syntax Gate)**: JSON-LD blocks are parsed using strict JSON parser; only malformed JSON or schema.org type violations trigger warnings.
+
+### Stage 2: Deterministic Issue Clustering (Section 17)
+Instead of overwhelming engineering teams with hundreds of individual URL warnings, findings are clustered into systemic root causes:
+- `CLUSTER_TEMPLATE_H1`: Template-wide H1 duplication in header/navigation.
+- `CLUSTER_CANONICAL_ORIGIN`: Global canonical tag mismatch across HTTPS/HTTP or WWW.
+- `CLUSTER_SCHEMA_GRAPH`: Universal lack of ontological `@graph` Organization triples.
+- `CLUSTER_BOT_BLOCK`: Edge firewall or robots.txt blocking AI search crawlers.
+
+### Stage 3: Mathematical Priority Engine (P0 – P3)
+Priorities are computed deterministically based on three factors:
+$$\text{PriorityScore} = \text{SeverityWeight} \times \text{ScopeReach} \times \text{Confidence}$$
+
+| Priority | Criteria & Score Threshold | Impact Description | SLA / Target Fix Window |
+|:---:|:---|:---|:---:|
+| **P0** | Score $\ge 90$<br>HTTP 5xx errors, accidental `noindex`, mixed content insecure forms, severe SSR starvation. | Complete indexing failure, permanent exclusion from AI crawlers. | **0 – 48 Hours** |
+| **P1** | Score $75 - 89$<br>Missing canonical, 14KB AST overflow, invalid JSON-LD, blocked AI search bots (`GPTBot`, `ClaudeBot`). | Significant ranking demotion, early crawler scrape abort. | **Day 3 – Day 7** |
+| **P2** | Score $50 - 74$<br>Missing `/llms.txt`, no Wikidata QID in `sameAs`, duplicate titles, generic internal anchors. | Hallucination risk, weak entity grounding in Knowledge Vaults. | **Week 2 – Week 3** |
+| **P3** | Score $< 50$<br>Missing A2A agent card, MCP tools, missing Markdown alternates, DPO tone calibration. | Reduced agent-to-agent transactions and conversational citation. | **Week 4 (Post-Sprint)** |
+
+### Stage 4: 24-Field Root-Fix Remediation Blueprint
+Every issue in the remediation report contains exactly 24 structured fields:
+1. `issue_id`: Canonical unique identifier (e.g. `TECH-CANON-001`).
+2. `title`: Human-readable title in target language.
+3. `priority`: Categorized as `P0`, `P1`, `P2`, or `P3`.
+4. `status`: `CONFIRMED` | `HIGH_CONFIDENCE` | `PROBABLE`.
+5. `category`: Mapped to one of 12 primary categories.
+6. `observed_urls`: Exact array of URLs exhibiting the defect.
+7. `estimated_scope`: Percentage of analyzed pages affected.
+8. `evidence`: Raw string proof (e.g. `<title> missing`, `18240 bytes`).
+9. `reproduction`: Step-by-step cURL command to reproduce locally.
+10. `impact`: Direct business and search model citation consequence.
+11. `root_cause_status`: Verification degree of the underlying cause.
+12. `root_cause`: Technical explanation of why the defect occurs in the stack.
+13. `root_fix.target_behavior`: The exact RFC / W3C expected behavior.
+14. `root_fix.current_behavior`: The measured faulty behavior.
+15. `root_fix.required_change`: Exact code modification needed.
+16. `root_fix.scope`: Template-level, edge-level, or page-level.
+17. `root_fix.non_goals`: Explicit declaration of what NOT to alter.
+18. `recovery`: Production-ready code block to copy and paste.
+19. `prevention`: Linting rules or CI/CD pre-commit hooks to prevent regression.
+20. `acceptance_tests`: Single-line cURL / AST shell commands that return `PASS`.
+21. `regression_tests`: Automated unit test assertions.
+22. `do_not_break`: Critical dependent systems protected during rollout.
+23. `rollback_guidance`: Step-by-step git revert or edge config rollback.
+24. `confidence`: Mathematical confidence metric ($0.75 - 1.00$).
+
+### Stage 5: Implementation Stop Condition Guard (Section 15)
+If a remediation action requires proprietary internal database credentials, custom backend routing logic, or unmeasured business intent, the engine sets:
+- `implementation_stop: true`
+- `stop_reason: "Requires proprietary backend context or credentials"`
+- `safe_next_action: "Expose endpoint via standard Edge Worker without modifying database core."`
+This prevents destructive or unverified modifications to production environments.
+
+### Stage 6: 30-Day Re-Scan Comparison Engine (Section 21)
+When an updated scan is executed against a domain, the engine automatically compares results against the baseline `scanId`:
+- `resolved`: Issues completely absent from the new scan.
+- `partially_resolved`: Evidence count or affected URL scope reduced.
+- `persisting`: Issues present with identical signatures.
+- `regressed`: Issues where severity increased or more URLs were infected.
+- `unverifiable`: Issues where target was blocked or returned non-200.
+- `new_findings`: New defects introduced since baseline.
+
 
 ---
 
@@ -615,6 +826,70 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
 - **Production Code Recipe**:
   Compute SHA-256 hash of text body. Only update `modifiedAt` if the Levenshtein distance between previous and current text versions exceeds 15%.
 
+
+---
+
+## 4B. THE STRICT ENGINEERING IMPLEMENTATION ORDER (UYGULAMA SIRASI & FAZLANDIRMA MİMARİSİ)
+
+Enterprise systems fail when engineering teams attempt to apply high-level AI optimizations (such as MCP endpoints or DPO tone calibration) before foundational HTTP and AST infrastructure is stabilized.
+
+The following **4-Stage Sequential Deployment Hierarchy** is mandatory. Each sprint must achieve 100% acceptance test pass rates before proceeding to subsequent stages:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 MANDATORY ENGINEERING DEPLOYMENT HIERARCHY                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ SPRINT 0 (0–48 Hours)   : P0 Emergency Fixes (Crawl Blockers & Security)    │
+│                                  │                                          │
+│ SPRINT 1 (Day 3–Day 7)  : P1 Core Structural & 14KB AST Edge Infrastructure │
+│                                  │                                          │
+│ SPRINT 2 (Week 2–Week 3): P2 Knowledge Vault Grounding & Multi-Tier LLMS    │
+│                                  │                                          │
+│ SPRINT 3 (Week 4)       : P3 Autonomous Agent (AAO) & DPO Tone Calibration  │
+│                                  │                                          │
+│ SPRINT 4 (Day 30)       : Formal Verification & 30-Day Re-Scan Comparison   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Sprint 0: P0 Emergency Fixes (0 – 48 Hours)
+*Objective: Ensure search crawlers and AI bots can reach the domain without being dropped by HTTP errors, accidental security blocks, or insecure forms.*
+1. **Unblock Crawl & Robots**: Remove accidental `Disallow: /` directives affecting `Googlebot`, `OAI-SearchBot`, and `Claude-SearchBot` in `robots.txt`.
+2. **Purge Accidental `noindex`**: Audit production headers and remove `<meta name="robots" content="noindex">` on canonical indexable routes.
+3. **Resolve HTTP $\ge 500$ & Redirect Loops**: Fix server errors and circular 301/302 chains.
+4. **Enforce Transport Security**: Eliminate mixed-content HTTP resources and redirect insecure form submissions (`action="http://..."`) to secure HTTPS endpoints.
+- **Sprint 0 Exit Gate**: Zero HTTP 5xx errors, clean `200 OK` on root, verified `robots.txt` access.
+
+### Sprint 1: P1 Core Structural & 14KB AST Edge Budget (Day 3 – Day 7)
+*Objective: Guarantee that the document's primary semantic entity and answer fit within the initial 14KB TCP window, and establish canonical clarity.*
+1. **Deploy 14KB Edge Worker / CDN Stripper**: Implement `14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js` (or AWS/Vercel equivalents) to prune unneeded scripts, SVGs, and inline styles for AI crawler User-Agents.
+2. **Single H1 Hierarchy Alignment**: Enforce exactly one semantic `<h1>` element per page encapsulating the primary topic and target entity.
+3. **Canonical Origin Lock**: Configure absolute `<link rel="canonical" href="https://domain.com/exact-slug/">` matching served protocol and host.
+4. **Valid JSON-LD Architecture**: Inject base schema (`Organization` / `WebSite`) and resolve any JSON syntax parse errors.
+- **Sprint 1 Exit Gate**: Initial payload $< 14.336$ bytes for AI User-Agents, canonical consistency verified, 1 H1 per page.
+
+### Sprint 2: P2 Knowledge Vault Grounding & Multi-Tier LLMS (Week 2 – Week 3)
+*Objective: Anchor the brand entity into parametric LLM weights (Wikidata / Google Knowledge Graph) and provide deep machine surfaces.*
+1. **Deploy `/llms.txt` Hub & Deep Subgraphs**: Publish root `/llms.txt` with mandatory `# Domain` H1 and blockquote summary. Deploy linked Markdown surfaces in `/llms/pages/*.md`.
+2. **Inject Knowledge Vault Triples**: Add Wikidata QID (`https://www.wikidata.org/wiki/Q...`) and Google MID (`https://www.google.com/search?kgmid=/m/...`) to JSON-LD `sameAs` arrays.
+3. **Embed Hero Answer Engine (First 100px)**: Place a 29-to-80 word atomic direct answer in the top 100 pixels of key intent pages.
+4. **Remediate Generic Internal Anchors**: Replace low-information anchors ("click here", "tıklayın") with descriptive entity-rich anchors matching target H1s.
+- **Sprint 2 Exit Gate**: `/llms.txt` returns `200 OK` with valid v2 syntax, at least 1 verified Wikidata QID bound in JSON-LD, zero generic internal anchors.
+
+### Sprint 3: P3 Autonomous Agent Optimization & DPO Calibration (Week 4)
+*Objective: Enable headless programmatic interactions for autonomous agents and protect citation probability against DPO/RLAIF suppression.*
+1. **Deploy Signed A2A Agent Card**: Publish `/.well-known/agent-card.json` conforming to Agent Protocol v1.0.
+2. **Deploy Model Context Protocol (MCP) Tool Endpoint**: Expose `/mcp` or `/.well-known/mcp.json` with structured tool definitions.
+3. **DPO / RLAIF Tone Calibration**: Purge subjective promotional superlatives ("en iyi", "rakipsiz", "revolutionary") across all canonical surfaces, replacing with verified quantitative benchmarks.
+4. **Broadcast Multi-Hub IndexNow**: Trigger real-time discovery mesh push to Bing, Yandex, and IndexNow endpoints.
+- **Sprint 3 Exit Gate**: `agent-card.json` validates, MCP endpoint responds, IndexNow key verified, zero subjective puffery warnings.
+
+### Sprint 4: Formal Verification & 30-Day Re-Scan Comparison (Day 30)
+*Objective: Validate end-to-end score elevation and certify enterprise compliance.*
+1. **Automated Acceptance Execution**: Run `04_ACCEPTANCE_TESTS.md` shell verification suite across all remediated endpoints.
+2. **Execute Re-Scan Engine**: Compare new scan against baseline `scanId` via Section 21 engine. Verify all P0 and P1 issues transition to `resolved`.
+3. **Score Projection Certification**: Confirm overall score achieves $\ge 85/100$ (`PASS` status) across all 18 engines.
+
+
 ---
 
 ## 5. THE 18 ENGINE V3.0 DETERMINISTIC FORMULAS & WEIGHT MATRIX
@@ -771,6 +1046,65 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 1. **Yazılımcısı Olan Ekipler:** `00_APPLY_WITH_AI_AGENT.prompt` dosyasını Cursor, Windsurf veya Claude Code'a aktarır; AI ajan tüm repodaki eksikleri 60 saniyede otomatik uygular.
 2. **Yazılımcısı Olmayan KOBİ'ler:** `26_WORDPRESS_DROPIN_PLUGIN.php` veya `14d_CLOUDFLARE_1CLICK_DEPLOY.md` ile sıfır kod bilgisiyle 30 saniyede canlıya alır.
 3. **Sıfır İnsan Müdahalesi:** HTML&HTML mühendisleri müşterinin sunucusuna veya kod deposuna doğrudan erişmez veya manuel danışmanlık vermez. Ürünün değeri %100 otomatik ve hatasız kod üretiminde yatar.
+
+
+
+---
+
+## 9B. BINARY STORE CRC32 ZIP COMPILATION & ENTITLEMENT ARCHITECTURE
+
+The 30-file delivery package (`functions/lib/delivery-pack.ts`) is generated without relying on heavy external runtime dependencies (such as JSZip or native C++ modules). It implements a bit-level, deterministic binary ZIP writer adhering to the PKWARE PKZIP 2.0 specification using **STORE (Compression Method 0)**.
+
+### 9B.1 Deterministic Binary ZIP Serialization (STORE / Method 0)
+Because Method 0 stores bytes without probabilistic compression heuristics, two runs with identical file entries produce **bit-for-bit identical ZIP archives**:
+
+```typescript
+// Deterministic PKWARE Local File Header & Central Directory Serialization
+function zip(entries: Entry[]): Uint8Array {
+  const locals: Uint8Array[] = [];
+  const centrals: Uint8Array[] = [];
+  let offset = 0;
+
+  for (const entry of entries) {
+    const name = te.encode(entry.name);
+    const data = te.encode(entry.content);
+    const crc = crc32(data); // IEEE 802.3 CRC-32 checksum
+
+    // 0x04034b50: Local File Header Signature
+    const local = concat([
+      u32(0x04034b50), u16(20), u16(0x0800), u16(0), u16(0), u16(0),
+      u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0),
+      name, data
+    ]);
+    locals.push(local);
+
+    // 0x02014b50: Central Directory File Header Signature
+    const central = concat([
+      u32(0x02014b50), u16(20), u16(20), u16(0x0800), u16(0), u16(0), u16(0),
+      u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0),
+      u16(0), u16(0), u16(0), u32(0), u32(offset), name
+    ]);
+    centrals.push(central);
+    offset += local.length;
+  }
+
+  const localBlob = concat(locals);
+  const centralBlob = concat(centrals);
+
+  // 0x06054b50: End of Central Directory Record (EOCD)
+  return concat([
+    localBlob, centralBlob,
+    u32(0x06054b50), u16(0), u16(0),
+    u16(entries.length), u16(entries.length),
+    u32(centralBlob.length), u32(localBlob.length), u16(0)
+  ]);
+}
+```
+
+### 9B.2 Zero-Knowledge Guest Entitlement & Webhook Verification
+- **HMAC-SHA256 Webhook Integrity (`functions/lib/paddle-payment.ts`)**: Incoming Paddle transaction webhooks are cryptographically authenticated using `Paddle-Signature`. Replay attacks are blocked via timestamp tolerance checking ($\pm 300$ seconds).
+- **Stateless HMAC Entitlement Tokens (`functions/lib/guest-entitlement.ts`)**: Guests who purchase a $99 single license receive an encrypted, signed entitlement token binding the licensed `domain`, `orderId`, and expiry timestamp. No user passwords or persistent database sessions are required.
+- **Fail-Closed Download Gateway (`functions/api/delivery.ts`)**: Delivery requests require both a valid `orderId` and a matching cryptographic signature. If the signature is invalid or the domain does not match, access is strictly rejected (`403 Forbidden`).
 
 
 ---
