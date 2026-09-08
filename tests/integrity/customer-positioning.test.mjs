@@ -49,7 +49,8 @@ for(const term of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt']){
 expect(validatorTr.includes('Sitemap'),'TR validator missing term: Sitemap');
 expect(validatorEn.includes('Sitemap'),'EN validator missing term: Sitemap');
 
-expect(/Yapay Zeka SEO Analizi ve AI Görünürlük Testi \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own transactional AI SEO audit intent');
+expect(/Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own transactional AI SEO + ChatGPT visibility intent');
+expect(/AI SEO Audit &(?:amp;)? ChatGPT Visibility Test \| HTML(?:&|&amp;)HTML/.test(enHome),'EN homepage title must own AI SEO + ChatGPT visibility intent');
 expect(rootHome.includes('$99'),'homepage must expose $99 implementation product');
 expect(!rootHome.includes('$149'),'homepage must not retain old $149 price');
 const trTools = read('tr/araclar/index.html');
@@ -72,8 +73,10 @@ const forbidden=[
   /%300 artırdı/i,
   /AEO.*3 kat/i,
   /E-E-A-T.*en önemli kriter/i,
+  /dünyanın ilk|world.?s first/i,
+  /14\s*KB|14[,.]?336/i,
 ];
-const corpus=[rootHome,trHome,enHome,glossaryTr,glossaryEn,llmsGuideTr,llmsGuideEn].join('\n');
+const corpus=[rootHome,trHome,enHome,glossaryTr,glossaryEn,llmsGuideTr,llmsGuideEn,runtimeCopy].join('\n');
 for(const re of forbidden)expect(!re.test(corpus),`unsupported commercial/Google claim detected: ${re}`);
 
 expect(rootHome.includes('kaynak olarak değerlendirilmesini') || runtimeCopy.includes('kaynak olarak değerlendirilmesini'),'homepage runtime must explain source-consideration value');
@@ -82,4 +85,4 @@ expect(/source consideration/i.test(runtimeCopy),'EN homepage runtime must expla
 expect(validatorEn.includes('not guaranteed') || validatorEn.includes('cannot be guaranteed'),'EN validator must retain no-guarantee boundary');
 
 if(errors.length){console.error('CUSTOMER POSITIONING FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('CUSTOMER POSITIONING PASS: concise AI-recommendation headline, $99 execution boundary, premium infographics and source guardrails verified.');
+console.log('CUSTOMER POSITIONING PASS: AI SEO/ChatGPT transactional title, $99 execution boundary, premium infographics and source guardrails verified.');
