@@ -896,3 +896,331 @@ html[data-theme="light"] .related-page-footer {
 html[data-theme="light"] .dropdown-item.is-page-link .dropdown-item-title {
   color: #4f46e5;
 }
+
+/* ==========================================================================
+   Card-Level Related Pages & Action Chips (Silicon Valley SEO/GEO Standard)
+   ========================================================================== */
+.card-related-pages {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: color-mix(in srgb, var(--card, #14161a) 85%, #6366f1 15%);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-related-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink, #f5f4ed);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-related-title::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.card-related-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.card-related-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--card, #14161a);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  color: var(--ink, #f5f4ed);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-related-chip:hover {
+  background: color-mix(in srgb, var(--card, #14161a) 90%, #6366f1 10%);
+  border-color: #6366f1;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.25);
+}
+
+.card-related-chip .chip-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.card-related-chip .chip-badge {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.card-related-chip.cozum .chip-badge {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.card-related-chip.arac .chip-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.card-related-chip.rehber .chip-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.card-related-chip.standart .chip-badge {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.card-related-chip .chip-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.card-related-chip .chip-arrow {
+  color: var(--muted, #9ba1ad);
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 0.2s ease, color 0.2s ease;
+  margin-left: 6px;
+}
+
+.card-related-chip:hover .chip-arrow {
+  transform: translateX(3px);
+  color: #6366f1;
+}
+
+/* Light Mode Adaptations */
+html[data-theme="light"] .card-related-pages {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .card-related-title {
+  color: #0f172a;
+}
+
+html[data-theme="light"] .card-related-chip {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #1e293b;
+}
+
+html[data-theme="light"] .card-related-chip:hover {
+  background: #ffffff;
+  border-color: #4f46e5;
+  color: #4338ca;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12);
+}
+
+
+/* ==========================================================================
+   Enterprise CSS Aliases (Ensuring 100% markup-to-style binding)
+   ========================================================================== */
+.search-lens-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted, #9ba1ad);
+  pointer-events: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sozluk-search-box:focus-within .search-lens-icon {
+  color: var(--gsearch-accent, #6366f1);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.search-input-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 4px;
+}
+
+.search-clear-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  background: var(--soft, rgba(255, 255, 255, 0.08));
+  color: var(--muted, #9ba1ad);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.search-clear-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.search-shortcut-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted, #8b92a0);
+  background: var(--soft, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  padding: 4px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.search-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45);
+  filter: brightness(1.08);
+}
+
+.search-submit-btn:active {
+  transform: translateY(0);
+}
+
+.search-submit-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.search-submit-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.sozluk-quick-pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 4px 2px;
+}
+
+.pills-label {
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #9ba1ad);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pills-scroll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.pills-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.feedback-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sozluk-no-term-hint {
+  max-width: 1080px;
+  margin: 0 auto 24px;
+  padding: 16px 20px;
+  background: var(--soft, rgba(255, 255, 255, 0.04));
+  border: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
+  border-radius: 12px;
+  color: var(--muted, #9ba1ad);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sozluk-no-term-hint strong {
+  color: var(--ink, #f5f4ed);
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 760px) {
+  .search-shortcut-badge {
+    display: none !important;
+  }
+  .search-submit-btn span {
+    display: none;
+  }
+  .search-submit-btn {
+    padding: 0 14px;
+    height: 42px;
+  }
+  .sozluk-quick-pills {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

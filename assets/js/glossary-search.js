@@ -438,6 +438,26 @@
       keywords: ['fix mandate', 'onarim', 'direktif', 'duzeltme', 'teknik onarim', 'uygulama']
     },
     {
+      id: 'iletisim',
+      title: 'İletişim & Kurumsal AI Danışmanlığı',
+      url: '/tr/iletisim/',
+      category: 'cozum',
+      badge: 'İLETİŞİM & DANIŞMANLIK',
+      badgeClass: 'cozum',
+      desc: 'Yapay zeka arama görünürlüğü, GEO entegrasyonu ve teknik denetim için uzman ekibimizle iletişime geçin.',
+      keywords: ['iletisim', 'danismanlik', 'destek', 'teklif', 'uzman', 'kurumsal']
+    },
+    {
+      id: 'sss',
+      title: 'Sıkça Sorulan Sorular (SSS)',
+      url: '/tr/sss/',
+      category: 'rehber',
+      badge: 'BİLGİ MERKEZİ',
+      badgeClass: 'rehber',
+      desc: 'Yapay zeka görünürlüğü, GEO, LLM indeksleme ve platform çalışma prensiplerine dair merak edilenler.',
+      keywords: ['sss', 'sikca sorulan sorular', 'sorular', 'faq', 'destek', 'rehber', 'nasil calisir']
+    },
+    {
       id: 'platform',
       title: 'HTML Platformu - Kurumsal AI Görünürlük Altyapısı',
       url: '/tr/platform/',
@@ -607,17 +627,19 @@
     const compareWord = qTokens.length === 1 ? qNorm : qTokens[0];
     if (compareWord.length >= 3) {
       for (const word of allWords) {
-        if (Math.abs(word.length - compareWord.length) > 2) continue;
+        const maxLen = Math.max(compareWord.length, word.length);
+        const lenDiff = Math.abs(word.length - compareWord.length);
+        const maxAllowedDiff = maxLen >= 8 ? 3 : 2;
+        if (lenDiff > maxAllowedDiff) continue;
 
         const dist = damerauLevenshtein(compareWord, word);
-        const maxLen = Math.max(compareWord.length, word.length);
         const sim = (maxLen - dist) / maxLen;
 
         let maxAllowedDist = 1;
-        if (maxLen >= 6) maxAllowedDist = 2;
-        if (maxLen >= 10) maxAllowedDist = 3;
+        if (maxLen >= 5) maxAllowedDist = 2;
+        if (maxLen >= 8) maxAllowedDist = 3;
 
-        if (dist <= maxAllowedDist && sim >= 0.65) {
+        if (dist <= maxAllowedDist && sim >= 0.60) {
           const fuzzyScore = 400 * sim;
           if (fuzzyScore > maxScore) {
             maxScore = fuzzyScore;
@@ -775,35 +797,88 @@
     sectionEl.style.display = 'block';
   }
 
-  // 9. Metin Vurgulama (Highlighting)
-  function highlightText(rootEl, token) {
-    if (!rootEl || !token || token.length < 2) return;
+  // 9. Gelişmiş Türkçe Regex Üreteci & Sıfır Kaymalı Metin Vurgulama
+  function makeTurkishRegex(term) {
+    if (!term) return null;
+    const map = {
+      'c': '[cçCÇ]', 'ç': '[cçCÇ]',
+      'g': '[gğGĞ]', 'ğ': '[gğGĞ]',
+      'i': '[iıİI]', 'ı': '[iıİI]',
+      'o': '[oöOÖ]', 'ö': '[oöOÖ]',
+      's': '[sşSŞ]', 'ş': '[sşSŞ]',
+      'u': '[uüUÜ]', 'ü': '[uüUÜ]'
+    };
+    
+    let pattern = '';
+    for (const ch of term) {
+      const lower = ch.toLowerCase();
+      if (map[lower]) {
+        pattern += map[lower];
+      } else if (/[a-z0-9]/i.test(ch)) {
+        pattern += ch;
+      } else if (!/\s/.test(ch)) {
+        pattern += '\\' + ch;
+      } else {
+        pattern += '\\s+';
+      }
+    }
+    try {
+      return new RegExp(pattern, 'gi');
+    } catch (e) {
+      return null;
+    }
+  }
 
-    const normToken = trNormalize(token);
+  function highlightText(rootEl, token) {
+    if (!rootEl || !token || token.trim().length < 2) return;
+
+    const regex = makeTurkishRegex(token.trim());
+    if (!regex) return;
+
     const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null, false);
     const nodesToReplace = [];
 
     while (walker.nextNode()) {
       const node = walker.currentNode;
-      if (node.parentElement && node.parentElement.classList.contains('highlight-match')) continue;
+      if (node.parentElement && (node.parentElement.classList.contains('highlight-match') || node.parentElement.tagName === 'MARK')) continue;
 
-      const normText = trNormalize(node.nodeValue);
-      const matchIdx = normText.indexOf(normToken);
-      if (matchIdx !== -1) {
-        nodesToReplace.push({ node, matchIdx, length: normToken.length });
+      const text = node.nodeValue;
+      if (regex.test(text)) {
+        nodesToReplace.push(node);
       }
+      regex.lastIndex = 0;
     }
 
-    nodesToReplace.forEach(({ node, matchIdx, length }) => {
-      const originalText = node.nodeValue;
-      const before = originalText.substring(0, matchIdx);
-      const matched = originalText.substring(matchIdx, matchIdx + length);
-      const after = originalText.substring(matchIdx + length);
+    nodesToReplace.forEach(node => {
+      const text = node.nodeValue;
+      regex.lastIndex = 0;
+      
+      const fragment = document.createDocumentFragment();
+      let lastIdx = 0;
+      let match;
 
-      const span = document.createElement('span');
-      span.innerHTML = `${escapeHtml(before)}<mark class="highlight-match">${escapeHtml(matched)}</mark>${escapeHtml(after)}`;
+      while ((match = regex.exec(text)) !== null) {
+        const matchIdx = match.index;
+        const matchedText = match[0];
+
+        if (matchIdx > lastIdx) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIdx, matchIdx)));
+        }
+
+        const mark = document.createElement('mark');
+        mark.className = 'highlight-match';
+        mark.textContent = matchedText;
+        fragment.appendChild(mark);
+
+        lastIdx = matchIdx + matchedText.length;
+      }
+
+      if (lastIdx < text.length) {
+        fragment.appendChild(document.createTextNode(text.substring(lastIdx)));
+      }
+
       if (node.parentNode) {
-        node.parentNode.replaceChild(span, node);
+        node.parentNode.replaceChild(fragment, node);
       }
     });
   }
@@ -938,6 +1013,36 @@
 
       clearHighlights();
 
+      // URL Parametresini Güncelle (Bookmarkable & Shareable)
+      if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
+        try {
+          const u = new URL(window.location);
+          if (q) {
+            u.searchParams.set('q', q);
+          } else {
+            u.searchParams.delete('q');
+          }
+          window.history.replaceState({}, '', u);
+        } catch(e) {}
+      }
+
+      // Hızlı Konu Haplarını Senkronize Et
+      if (quickPills) {
+        quickPills.forEach(pill => {
+          const filter = pill.getAttribute('data-filter');
+          if (!q && filter === 'all') {
+            pill.classList.add('is-active');
+          } else if (filter && filter.toLowerCase() === q.toLowerCase()) {
+            pill.classList.add('is-active');
+          } else {
+            pill.classList.remove('is-active');
+          }
+        });
+      }
+
+      const noTermHint = document.getElementById('glossaryNoTermHint');
+      const noTermHolder = document.getElementById('noTermQueryHolder');
+
       // Boş sorgu durumunda tüm kartları göster, ilgili sayfaları gizle
       if (!q) {
         cards.forEach(card => {
@@ -947,6 +1052,7 @@
         if (feedbackBanner) feedbackBanner.style.display = 'none';
         if (dropdownResults) dropdownResults.style.display = 'none';
         if (emptyState) emptyState.style.display = 'none';
+        if (noTermHint) noTermHint.style.display = 'none';
         renderRelatedPages([], '');
 
         if (resultsCountEl) {
@@ -1026,7 +1132,16 @@
         }
       }
 
-      // 5. Boş Durum (Empty State) Yönetimi
+      // 5. Boş Durum (Empty State) ve İpucu Şeridi Yönetimi
+      if (noTermHint) {
+        if (visibleTermCount === 0 && topPages.length > 0) {
+          noTermHint.style.display = 'block';
+          if (noTermHolder) noTermHolder.textContent = q;
+        } else {
+          noTermHint.style.display = 'none';
+        }
+      }
+
       if (visibleTermCount === 0 && topPages.length === 0) {
         if (emptyState) {
           emptyState.style.display = 'flex';
@@ -1035,6 +1150,7 @@
         }
         if (feedbackBanner) feedbackBanner.style.display = 'none';
         if (dropdownResults) dropdownResults.style.display = 'none';
+        if (noTermHint) noTermHint.style.display = 'none';
         return;
       } else {
         if (emptyState) emptyState.style.display = 'none';
@@ -1121,7 +1237,12 @@
       } else if (e.key === 'Enter') {
         e.preventDefault();
         if (dropdownSelectedIndex >= 0 && items[dropdownSelectedIndex]) {
-          items[dropdownSelectedIndex].click();
+          const sel = items[dropdownSelectedIndex];
+          if (sel.tagName === 'A' && sel.href) {
+            window.location.href = sel.href;
+          } else {
+            sel.click();
+          }
         } else {
           executeSearch(searchInput.value, true);
         }
