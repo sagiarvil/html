@@ -5,6 +5,14 @@ on:
     # Turkey uses UTC+3 year-round: 00:00 UTC = 03:00 Europe/Istanbul.
     - cron: '0 0 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_llms_news.py'
+      - 'scripts/enhance_llms_news_seo.py'
+      - 'scripts/news_svg_generator.py'
+      - 'data/llms-news.json'
+      - '.github/workflows/llms-news.yml'
 
 permissions:
   contents: write
@@ -26,6 +34,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Discover and editorialize relevant AI Search updates
+        if: github.event_name != 'push'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NEWS_EDITORIAL_OPENAI_KEY: ${{ secrets.NEWS_EDITORIAL_OPENAI_KEY }}
@@ -37,23 +46,35 @@ jobs:
         run: |
           if git diff --quiet -- data/llms-news.json; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
-            echo 'LLMS_NEWS_NO_CHANGE: source discovery produced no new validated bilingual brief.'
+            echo 'LLMS_NEWS_NO_EDITORIAL_CHANGE'
           else
             echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
-      - name: Materialize bilingual news pages and machine-readable discovery
-        if: steps.editorial.outputs.changed == 'true'
-        run: python3 scripts/build_llms_news.py
+      - name: Materialize bilingual news pages and Google Article/News discovery
+        run: |
+          set -euo pipefail
+          python3 scripts/build_llms_news.py
+          python3 scripts/enhance_llms_news_seo.py
       - name: Validate news editorial and SEO contract
-        if: steps.editorial.outputs.changed == 'true'
         run: node tests/integrity/llms-news.test.mjs
+      - name: Detect validated materialized change
+        id: materialized
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -z "$(git status --porcelain -- data/llms-news.json tr/llms-txt-haberler en/llms-txt-news assets/news sitemap.xml sitemap-news.xml robots.txt llms.txt index.md)"; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'LLMS_NEWS_NO_MATERIALIZED_CHANGE'
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
       - name: Commit validated update
-        if: steps.editorial.outputs.changed == 'true'
+        if: steps.materialized.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'htmlandhtml-news-bot'
           git config user.email 'htmlandhtml-news-bot@users.noreply.github.com'
-          git add data/llms-news.json tr/llms-txt-haberler en/llms-txt-news assets/news sitemap.xml llms.txt index.md
+          git add data/llms-news.json tr/llms-txt-haberler en/llms-txt-news assets/news sitemap.xml sitemap-news.xml robots.txt llms.txt index.md
           git commit -m 'content: refresh LLMS.TXT News intelligence'
           git push origin HEAD:main
