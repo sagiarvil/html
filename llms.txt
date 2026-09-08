@@ -73,6 +73,9 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 
 - [Website Scanner — English](https://htmlandhtml.com/en/website-scanner/)
 - [Website Scanner — Turkish](https://htmlandhtml.com/tr/site-tarama/)
+- [Enterprise AI Analyzer](https://htmlandhtml.com/enterprise-analyzer/): Full deep-dive technical visibility diagnostic suite for Fortune 500 & enterprise web estates.
+- [AI Visibility Diagnostic Report (Dark)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report.html): 120-check technical audit across 43 pages, covering accessibility, metadata, schema, security headers, and agent discoverability.
+- [AI Visibility Diagnostic Report (Light)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report-LIGHT.html): High-contrast light edition of the enterprise diagnostic report.
 - [AI Website Readiness — English](https://htmlandhtml.com/en/ai-website-readiness/)
 - [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/)
 - [llms.txt Validator — English](https://htmlandhtml.com/en/llms-txt-validator/)
