@@ -229,6 +229,213 @@
         scoreVal.style.color = engScore >= 80 ? 'var(--ea-success)' : engScore >= 60 ? 'var(--ea-warning)' : 'var(--ea-danger)';
       }
     });
+
+    // 8. Update Demo Report Button Link with Scanned Domain
+    const demoBtn = document.querySelector('.ea-sample-demo-btn');
+    if (demoBtn) {
+      demoBtn.href = '/enterprise-analyzer/htmlandhtml-ai-report?domain=' + encodeURIComponent(domain);
+      demoBtn.innerHTML = '<span style="background:rgba(0,212,255,0.2); color:#00d4ff; font-size:11px; font-weight:900; padding:2px 7px; border-radius:4px; letter-spacing:0.5px;">CANLI DEMO</span> ' + domain + ' AI Raporunu Aç →';
+    }
+
+    // 9. Render Dynamic Empirical Probe Findings (Wikidata & Common Crawl)
+    renderDynamicFindings(domain, data);
+
+    // 10. Enable One-Click Copy on all Recipe Code Blocks
+    document.querySelectorAll('.recipe-code').forEach(function(codeEl) {
+      codeEl.style.cursor = 'pointer';
+      codeEl.title = 'Kodu kopyalamak için tıklayın';
+      codeEl.onclick = function() {
+        const text = codeEl.innerText || codeEl.textContent;
+        if (text && navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(function() {
+            showToast('Reçete Kodu Panoya Kopyalandı!', 'check');
+          });
+        }
+      };
+    });
+  }
+
+  function renderDynamicFindings(domain, data) {
+    const grid = document.getElementById('findingsGrid');
+    if (!grid) return;
+
+    // Remove any previously injected dynamic probe cards
+    grid.querySelectorAll('.dynamic-probe-finding').forEach(function(el) { el.remove(); });
+
+    const newCards = [];
+
+    // 1. Wikidata Missing Entity Card
+    if (data.externalProbes?.wikidata?.status === 'NOT_FOUND') {
+      const card = document.createElement('div');
+      card.className = 'finding-card high dynamic-probe-finding';
+      card.setAttribute('data-severity', 'high');
+      card.innerHTML = `
+        <div class="finding-body">
+          <div class="finding-header">
+            <span class="finding-id">EAI-WIKI-001</span>
+            <span class="finding-severity sev-high">Kritik (P0)</span>
+          </div>
+          <h3 class="finding-title">Wikidata Bilgi Grafı (Knowledge Graph) Varlık Boşluğu</h3>
+          <p class="finding-desc">Yapay zeka modelleri (ChatGPT Search, Perplexity Sonar, Gemini) <strong>\${domain}</strong> için Wikidata üzerinde doğrulanmış kurumsal varlık kaydı bulamadı. Bu durum AI yanıtlarında ve tavsiye motorlarında rakiplerinizin öne çıkmasına neden olur.</p>
+          <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14"/></svg>Çözüm Süresi: 15 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Efor: Düşük ($0)</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Standart: W3C / Schema.org @id</div>
+          </div>
+          <div class="finding-impact-box">
+            <h4>İş Etkisi</h4>
+            <p>Varlık eşleşmesi eksik olduğu için AI motorları kullanıcı sorgularında markanızı bağımsız güvenilir otorite olarak tanıyamaz, sektör alıntı payınız düşer.</p>
+          </div>
+        </div>
+        <div class="evidence-section">
+          <div class="evidence-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span>Tespit Kanıtı (Canlı Wikidata API Sorgusu)</span>
+          </div>
+          <div class="evidence-box">
+            <span class="comment">// Canlı Wikidata API Sorgusu:</span><br>
+            https://www.wikidata.org/w/api.php?action=wbsearchentities&amp;search=\${encodeURIComponent(domain)}<br><br>
+            <span class="comment">// API Yanıtı:</span><br>
+            Status: <span class="highlight">NOT_FOUND</span><br>
+            Entities: <span class="highlight">0 Eşleşme (Varlık Kaydı Eksik)</span>
+          </div>
+        </div>
+        <div class="recipe-section \${UNLOCKED ? '' : 'locked'}" data-recipe-id="eai-wiki-001">
+          <div class="recipe-glow"></div>
+          <div class="recipe-content">
+            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              Kurumsal Onarım Reçetesi &amp; Uygulama Adımları
+            </h4>
+            <div class="recipe-steps">
+              <div class="recipe-step"><div class="recipe-step-num">1</div><p>Resmi şirket tescili ve tarafsız basın bülteni kaynaklarıyla Wikidata üzerinden yeni bir QID varlık öğesi oluşturun.</p></div>
+              <div class="recipe-step"><div class="recipe-step-num">2</div><p>Web sitenizin <code>&lt;head&gt;</code> bölümündeki Organization JSON-LD şemasına <code>sameAs</code> dizisi ekleyin.</p></div>
+            </div>
+            <div class="recipe-code">
+              <span class="comment">&lt;!-- Unified Diff: JSON-LD @graph Entity Triples --&gt;</span><br>
+              <span class="tag">&lt;script</span> <span class="attr">type</span>=<span class="value">"application/ld+json"</span><span class="tag">&gt;</span><br>
+              {<br>
+              &nbsp;&nbsp;<span class="attr">"@context"</span>: <span class="value">"https://schema.org"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"@type"</span>: <span class="value">"Organization"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"@id"</span>: <span class="value">"https://\${domain}/#organization"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"name"</span>: <span class="value">"\${domain.split('.')[0].toUpperCase()}"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"url"</span>: <span class="value">"https://\${domain}/"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"sameAs"</span>: [<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"https://wikidata.org/wiki/Special:Search?search=\${encodeURIComponent(domain)}"</span><br>
+              &nbsp;&nbsp;]<br>
+              }<br>
+              <span class="tag">&lt;/script&gt;</span>
+            </div>
+            <div style="display:flex; gap:10px; margin-top:14px;">
+              <button class="ea-filter-btn btn-copy-code" data-code="curl -s 'https://www.wikidata.org/w/api.php?action=wbsearchentities&search=\${domain}&language=en&format=json' | jq ." style="font-size:12.5px; padding:6px 14px;">CLI Testini Kopyala</button>
+            </div>
+          </div>
+          <div class="recipe-overlay">
+            <div class="recipe-lock-icon">\${SVG.lock}</div>
+            <h4>Kurumsal Onarım Reçetesi Kilitli</h4>
+            <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+            <span class="recipe-badge">\${SVG.lock} 15 Onarım Reçetesi Dahil</span>
+            <button class="recipe-cta" onclick="showPaymentModal()">\${SVG.lock} $99 — Tüm Onarım Reçetelerini Aç</button>
+          </div>
+        </div>
+      `;
+      newCards.push(card);
+    }
+
+    // 2. Common Crawl Missing Capture Card
+    if (data.externalProbes?.commonCrawl?.status === 'NOT_INDEXED') {
+      const card = document.createElement('div');
+      card.className = 'finding-card medium dynamic-probe-finding';
+      card.setAttribute('data-severity', 'medium');
+      card.innerHTML = `
+        <div class="finding-body">
+          <div class="finding-header">
+            <span class="finding-id">EAI-CC-001</span>
+            <span class="finding-severity sev-med">Yüksek (P1)</span>
+          </div>
+          <h3 class="finding-title">Common Crawl AI Eğitim Veritabanı Eksikliği (Pre-Training Gap)</h3>
+          <p class="finding-desc">GPT-4, Claude ve Gemini temel eğitim kümesi olan Common Crawl (CC-MAIN) arşivinde <strong>\${domain}</strong> için yakalanmış kayıt bulunamadı. AI modelleri sitenizi sıfırdan öğrenirken cold-start problemi yaşar.</p>
+          <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14"/></svg>Çözüm Süresi: 10 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Efor: Düşük ($0)</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Standart: RFC 9309 (robots.txt)</div>
+          </div>
+          <div class="finding-impact-box">
+            <h4>İş Etkisi</h4>
+            <p>LLM'ler offline eğitim safhasında sitenizi okumadığı için, prompt yanıtlarında markanızı 'bilinmeyen' veya 'düşük ağırlıklı' olarak değerlendirir.</p>
+          </div>
+        </div>
+        <div class="evidence-section">
+          <div class="evidence-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span>Tespit Kanıtı (Canlı Common Crawl CDX Sunucusu)</span>
+          </div>
+          <div class="evidence-box">
+            <span class="comment">// Canlı CDX API Sorgusu:</span><br>
+            https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=\${encodeURIComponent(domain)}&amp;output=json<br><br>
+            <span class="comment">// API Yanıtı:</span><br>
+            Status: <span class="highlight">404 NOT_FOUND (Arşivde Kayıt Yok)</span>
+          </div>
+        </div>
+        <div class="recipe-section \${UNLOCKED ? '' : 'locked'}" data-recipe-id="eai-cc-001">
+          <div class="recipe-glow"></div>
+          <div class="recipe-content">
+            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              Kurumsal Onarım Reçetesi &amp; Uygulama Adımları
+            </h4>
+            <div class="recipe-steps">
+              <div class="recipe-step"><div class="recipe-step-num">1</div><p><code>robots.txt</code> dosyasına <code>User-agent: CCBot</code> için açık <code>Allow: /</code> kuralı ekleyin.</p></div>
+              <div class="recipe-step"><div class="recipe-step-num">2</div><p>HuggingFace fine-web ve Common Crawl tarayıcılarının 14KB ilk TCP penceresinde metin yakalayabilmesi için HTML başlığını optimize edin.</p></div>
+            </div>
+            <div class="recipe-code">
+              <span class="comment"># robots.txt CCBot İzin Kuralı</span><br>
+              User-agent: CCBot<br>
+              Allow: /<br>
+              Crawl-delay: 1<br><br>
+              <span class="comment"># llms.txt Keşif Bağlantısı</span><br>
+              Sitemap: https://\${domain}/sitemap.xml<br>
+              Link: &lt;https://\${domain}/llms.txt&gt;; rel="alternate"; type="text/markdown"
+            </div>
+            <div style="display:flex; gap:10px; margin-top:14px;">
+              <button class="ea-filter-btn btn-copy-code" data-code="curl -s 'https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=\${domain}&output=json' | jq ." style="font-size:12.5px; padding:6px 14px;">CLI Testini Kopyala</button>
+            </div>
+          </div>
+          <div class="recipe-overlay">
+            <div class="recipe-lock-icon">\${SVG.lock}</div>
+            <h4>Kurumsal Onarım Reçetesi Kilitli</h4>
+            <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+            <span class="recipe-badge">\${SVG.lock} 15 Onarım Reçetesi Dahil</span>
+            <button class="recipe-cta" onclick="showPaymentModal()">\${SVG.lock} $99 — Tüm Onarım Reçetelerini Aç</button>
+          </div>
+        </div>
+      `;
+      newCards.push(card);
+    }
+
+    // Prepend new cards to grid
+    newCards.reverse().forEach(function(c) {
+      grid.insertBefore(c, grid.firstChild);
+    });
+
+    // Update badge count
+    const badgeCount = document.querySelector('.badge-count');
+    if (badgeCount) {
+      const totalFindings = grid.querySelectorAll('.finding-card').length;
+      badgeCount.textContent = totalFindings + ' bulgu';
+    }
+
+    // Bind copy buttons
+    grid.querySelectorAll('.btn-copy-code').forEach(function(btn) {
+      btn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const code = btn.getAttribute('data-code');
+        if (code && navigator.clipboard) {
+          navigator.clipboard.writeText(code).then(function() {
+            showToast('CLI Test Komutu Panoya Kopyalandı!', 'check');
+          });
+        }
+      };
+    });
   }
 
   async function runEnterpriseScan(rawDomain) {
