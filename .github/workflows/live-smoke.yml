@@ -83,7 +83,7 @@ jobs:
           body="$(curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/api/health)"
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY);
-          if(x.status!=='ok'||x.scanEngines!==12||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==99||x.aiMentionTracker!==true) throw new Error('health contract');
+          if(x.status!=='ok'||(x.scanEngines!==18&&x.scanEngines!==12)||x.intelligenceAnalyses!==13||x.readinessLenses!==7||x.maxPages!==50||x.freeDiagnosis!==true||x.fullSiteFixMandatePriceUsd!==99||x.aiMentionTracker!==true) throw new Error('health contract');
           NODE
 
       - name: Verify production scan and Intelligence Audit contract
