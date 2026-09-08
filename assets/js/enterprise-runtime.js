@@ -337,6 +337,23 @@ function initEnterpriseTabs(){
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initEnterpriseTabs,{once:true});else initEnterpriseTabs();
 window.addEventListener('hh-language-changed',initEnterpriseTabs);
 
+// Dynamic domain handoff for Enterprise Analyzer launcher
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('#eaLaunchLink, .ea-actions-bar .ea-btn-primary');
+  if (link && !link.href.includes('htmlandhtml-ai-report')) {
+    const domainInput = document.getElementById('domainInput') || document.querySelector('input[name="domain"]') || document.getElementById('domain');
+    const val = domainInput ? domainInput.value.trim() : '';
+    if (val) {
+      const clean = val.replace(/^https?:\/\//i, '').split('/')[0].split('?')[0].split('#')[0];
+      if (clean) {
+        link.href = '/enterprise-analyzer/?domain=' + encodeURIComponent(clean);
+      }
+    } else {
+      link.href = '/enterprise-analyzer/';
+    }
+  }
+});
+
 // Capture the public scan response without changing the canonical scanner or API contract.
 const nativeFetch=window.fetch.bind(window);
 window.fetch=async(...args)=>{

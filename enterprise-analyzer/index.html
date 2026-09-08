@@ -100,33 +100,47 @@
     </span>
     <h1>Kurumsal AI Görünürlük Analizörü &amp; Teşhis Laboratuvarı</h1>
     <p>120 derin kontrol, 43 sayfa taraması ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım yol haritasıleri ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformu.</p>
-    <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-      <a href="/enterprise-analyzer/htmlandhtml-ai-report.html" class="ea-filter-btn active" style="text-decoration:none; padding:8px 18px; font-weight:700; border-radius:100px; display:inline-flex; align-items:center; gap:6px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Örnek Raporu İncele (Canlı Demo) →
-      </a>
+    <div class="ea-live-scan-container" style="margin-top:22px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:20px 24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+      <form id="eaLiveScanForm" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <div style="position:relative; flex:1; min-width:280px;">
+          <svg style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--ea-text-muted, #64748b); pointer-events:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="url" id="eaDomainInput" name="domain" placeholder="https://sirketiniz.com (veya taranacak alan adı)" autocomplete="url" spellcheck="false" style="width:100%; height:50px; padding:0 16px 0 46px; border-radius:12px; border:1px solid var(--ea-border, rgba(255,255,255,0.18)); background:var(--ea-code-bg, #070a12); color:var(--ea-text-primary, #f8fafc); font-size:15px; font-weight:600; outline:none; transition:border-color .2s, box-shadow .2s; box-sizing:border-box;" required>
+        </div>
+        <button type="submit" id="eaScanBtn" style="height:50px; padding:0 28px; border-radius:12px; border:none; background:linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #8b5cf6 100%); color:#fff; font-size:15px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 6px 20px rgba(0,102,255,0.4); transition:all .2s ease; white-space:nowrap;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <span id="eaScanBtnText">Canlı Enterprise Taramayı Başlat</span>
+        </button>
+        <a href="/enterprise-analyzer/htmlandhtml-ai-report.html" class="ea-filter-btn" style="height:50px; padding:0 20px; text-decoration:none; font-weight:700; border-radius:12px; display:inline-flex; align-items:center; gap:6px; box-sizing:border-box; white-space:nowrap;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Örnek Rapor (htmlandhtml.com) →
+        </a>
+      </form>
+      <div id="eaScanStatus" style="display:none; margin-top:14px; padding:12px 16px; border-radius:10px; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.25); color:var(--ea-accent, #00d4ff); font-size:14px; font-weight:700; align-items:center; gap:10px;">
+        <span class="ea-live-dot" style="margin:0;"></span>
+        <span id="eaScanStatusText">18-Motorlu Dağıtık Telemetri ve N8N DAG Orkestrasyonu Çalışıyor...</span>
+      </div>
     </div>
   </div>
 
   <!-- Scan Meta Ribbon -->
   <div class="ea-meta-ribbon">
-    <div class="ea-meta-item">
+    <div class="ea-meta-item" id="eaMetaTime">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       <span>9/7/2026, 23:14</span>
     </div>
-    <div class="ea-meta-item">
+    <div class="ea-meta-item" id="eaMetaChecks">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       <span>120 kontrol</span>
     </div>
-    <div class="ea-meta-item">
+    <div class="ea-meta-item" id="eaMetaPages">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       <span>43 sayfa</span>
     </div>
-    <div class="ea-meta-item">
+    <div class="ea-meta-item" id="eaMetaProbes">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
       <span>30 link probu</span>
     </div>
-    <div class="ea-meta-item target">
+    <div class="ea-meta-item target" id="eaMetaTarget">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
       <span>Hedef: htmlandhtml.com</span>
     </div>

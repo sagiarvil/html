@@ -1779,3 +1779,340 @@ body {
   border-color: var(--ea-accent);
   transform: translateY(-1px);
 }
+
+
+/* === 18 DETERMINISTIC ENGINES TELEMETRY GRID === */
+.ea-engines-section {
+  margin: 28px 0;
+  background: var(--ea-bg-card);
+  border: 1px solid var(--ea-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--ea-shadow-card);
+}
+.ea-engines-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.ea-engines-head h2 {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ea-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ea-engines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+@media(max-width: 1024px) {
+  .ea-engines-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width: 640px) {
+  .ea-engines-grid { grid-template-columns: 1fr; }
+}
+.ea-engine-card {
+  background: var(--ea-bg-elevated);
+  border: 1px solid var(--ea-border);
+  border-radius: 12px;
+  padding: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ea-engine-card:hover {
+  border-color: var(--ea-border-glow);
+  transform: translateY(-2px);
+}
+.ea-engine-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.ea-engine-id {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ea-accent);
+  background: rgba(0, 212, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+.ea-engine-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+.badge-pass { background: rgba(16, 185, 129, 0.12); color: var(--ea-success); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warn { background: rgba(245, 158, 11, 0.12); color: var(--ea-warning); border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-fail { background: rgba(239, 68, 68, 0.12); color: var(--ea-danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+.ea-engine-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ea-text-primary);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+.ea-engine-desc {
+  font-size: 12px;
+  color: var(--ea-text-secondary);
+  line-height: 1.45;
+  margin: 0 0 10px;
+  flex: 1;
+}
+.ea-engine-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--ea-border);
+  font-size: 11.5px;
+  color: var(--ea-text-muted);
+}
+.ea-engine-score-val {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+}
+
+/* === 24-FIELD FINDING CARD ENHANCEMENTS === */
+.ea-observed-box {
+  background: var(--ea-bg-elevated);
+  border: 1px solid var(--ea-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.ea-observed-head {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--ea-accent);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ea-observed-urls-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ea-url-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  color: var(--ea-text-secondary);
+  background: rgba(0,0,0,0.15);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--ea-border);
+  text-decoration: none;
+}
+.ea-url-chip:hover {
+  color: var(--ea-accent);
+  border-color: var(--ea-border-glow);
+}
+
+.ea-behavior-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+@media(max-width: 768px) {
+  .ea-behavior-grid { grid-template-columns: 1fr; }
+}
+.ea-behavior-cell {
+  background: var(--ea-bg-elevated);
+  border: 1px solid var(--ea-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+}
+.ea-behavior-cell.target { border-left: 3px solid var(--ea-success); }
+.ea-behavior-cell.current { border-left: 3px solid var(--ea-warning); }
+.ea-behavior-cell b {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+.ea-behavior-cell.target b { color: var(--ea-success); }
+.ea-behavior-cell.current b { color: var(--ea-warning); }
+
+.ea-diff-box {
+  margin: 12px 0;
+  border: 1px solid var(--ea-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ea-diff-header {
+  background: var(--ea-bg-elevated);
+  padding: 6px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ea-text-muted);
+  border-bottom: 1px solid var(--ea-border);
+  display: flex;
+  justify-content: space-between;
+}
+.ea-diff-code {
+  margin: 0;
+  padding: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  line-height: 1.5;
+  background: var(--ea-code-bg);
+  color: var(--ea-text-primary);
+  overflow-x: auto;
+}
+
+.ea-non-goals-box {
+  background: rgba(245, 158, 11, 0.04);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--ea-text-secondary);
+  margin: 10px 0;
+}
+.ea-non-goals-box b {
+  color: var(--ea-warning);
+  font-size: 11px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* === INTERACTIVE 22-FILE EXPLORER === */
+.ea-explorer-section {
+  margin-top: 32px;
+  background: var(--ea-bg-card);
+  border: 1px solid var(--ea-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--ea-shadow-card);
+}
+.ea-explorer-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  min-height: 480px;
+}
+@media(max-width: 900px) {
+  .ea-explorer-layout { grid-template-columns: 1fr; }
+}
+.ea-file-list {
+  background: var(--ea-bg-elevated);
+  border: 1px solid var(--ea-border);
+  border-radius: 10px;
+  padding: 8px;
+  max-height: 520px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.ea-file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  color: var(--ea-text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.ea-file-item:hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--ea-text-primary);
+}
+.ea-file-item.active {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--ea-accent);
+  border-color: rgba(0, 212, 255, 0.25);
+  font-weight: 700;
+}
+.ea-file-badge {
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  color: var(--ea-text-muted);
+}
+.ea-file-viewer {
+  background: var(--ea-code-bg);
+  border: 1px solid var(--ea-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ea-viewer-header {
+  background: var(--ea-bg-elevated);
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--ea-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ea-viewer-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ea-text-primary);
+}
+.ea-btn-copy {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--ea-border);
+  background: var(--ea-bg-card);
+  color: var(--ea-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ea-btn-copy:hover {
+  color: var(--ea-accent);
+  border-color: var(--ea-border-glow);
+}
+.ea-viewer-body {
+  flex: 1;
+  padding: 14px;
+  margin: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ea-text-primary);
+  overflow: auto;
+  max-height: 480px;
+  white-space: pre;
+}
