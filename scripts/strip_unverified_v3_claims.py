@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
-"""Remove customer-facing V3 claims not directly implemented by the current runtime."""
+"""Remove unsupported V3 claims from generated text/markup surfaces.
+
+JavaScript is intentionally excluded here: broad prose regex over executable source
+can corrupt template literals. Client runtime copy is handled separately by
+patch_validator_v3_claims.py with exact, syntax-preserving replacements.
+"""
 
 from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_DIRS = {'tr', 'en', 'llms', 'ai-report', 'enterprise-analyzer', 'assets'}
+PUBLIC_DIRS = {'tr', 'en', 'llms', 'ai-report', 'enterprise-analyzer'}
 PUBLIC_ROOTS = {'index.html', 'index.md', 'llms.txt', 'openapi.json', 'audit-profile.json', 'pricing.html', 'methodology.html', 'enterprise-analyzer.html'}
 
 
-def is_public(path: Path) -> bool:
+def is_public_text(path: Path) -> bool:
     rel = path.relative_to(ROOT)
-    if path.suffix.lower() not in {'.html', '.md', '.json', '.js', '.txt'}:
+    if path.suffix.lower() not in {'.html', '.md', '.json', '.txt'}:
         return False
     return rel.as_posix() in PUBLIC_ROOTS or (len(rel.parts) > 1 and rel.parts[0] in PUBLIC_DIRS)
 
@@ -29,6 +34,7 @@ def normalize(text: str) -> str:
     for old, new in direct:
         text = text.replace(old, new)
 
+    # Generated prose only; executable JavaScript never enters this function.
     text = re.sub(
         r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,160}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,160}',
         'measured HTML payload, semantic structure and source-readiness evidence',
@@ -39,10 +45,8 @@ def normalize(text: str) -> str:
         'measured HTML payload, semantic structure and source-readiness evidence',
         text,
     )
-
-    # Absolute literal fallback for minified JS/template literals.
-    text = text.replace('14KB', 'HTML payload').replace('14kb', 'HTML payload')
-    text = text.replace('14,336 bytes', 'measured HTML payload').replace('14.336 bayt', 'ölçülen HTML yükü')
+    text = text.replace('14KB', 'measured HTML payload').replace('14kb', 'measured HTML payload')
+    text = re.sub(r'(?i)14[,.]?336\s*(?:bytes?|bayt)', 'measured HTML payload', text)
 
     text = re.sub(
         r'(?i)Wikidata[^\n<]{0,180}(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,180}',
@@ -59,7 +63,6 @@ def normalize(text: str) -> str:
         'public crawl and discovery evidence',
         text,
     )
-
     text = re.sub(
         r'(?i)\b(?:30|60)\s*(?:seconds?|saniye)(?:de|da)?\b[^\n<]{0,140}(?:apply|uygula|uygulama|zero.?code|sıfır.?kod)[^\n<]{0,100}',
         'implementation time depends on the customer stack and evidence scope',
@@ -69,7 +72,7 @@ def normalize(text: str) -> str:
 
 changed = 0
 for path in ROOT.rglob('*'):
-    if not path.is_file() or not is_public(path):
+    if not path.is_file() or not is_public_text(path):
         continue
     old = path.read_text(encoding='utf-8', errors='ignore')
     new = normalize(old)
@@ -77,4 +80,4 @@ for path in ROOT.rglob('*'):
         path.write_text(new, encoding='utf-8')
         changed += 1
 
-print(f'UNVERIFIED V3 CLAIM STRIP PASS: normalized {changed} public files.')
+print(f'UNVERIFIED V3 CLAIM STRIP PASS: normalized {changed} non-executable public files; JS preserved for syntax-safe patching.')
