@@ -11,8 +11,10 @@ on:
       - 'scripts/build_llms_news.py'
       - 'scripts/enhance_llms_news_seo.py'
       - 'scripts/news_svg_generator.py'
+      - 'scripts/verify_news_sitemap_guard.py'
       - 'data/llms-news.json'
       - 'data/editorial-author.json'
+      - 'sitemap-news.xml'
       - '.github/workflows/llms-news.yml'
 
 permissions:
@@ -54,10 +56,13 @@ jobs:
       - name: Materialize bilingual news pages and Google Article/News discovery
         run: |
           set -euo pipefail
+          # This step is also the self-heal path for any direct sitemap-news.xml edit.
           python3 scripts/build_llms_news.py
           python3 scripts/enhance_llms_news_seo.py
       - name: Validate news editorial and SEO contract
-        run: node tests/integrity/llms-news.test.mjs
+        run: |
+          python3 scripts/verify_news_sitemap_guard.py
+          node tests/integrity/llms-news.test.mjs
       - name: Detect validated materialized change
         id: materialized
         shell: bash

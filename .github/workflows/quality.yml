@@ -11,6 +11,8 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
+      - name: Protect generated Google News sitemap before build
+        run: python3 scripts/verify_news_sitemap_guard.py
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
