@@ -745,7 +745,7 @@ function generateBlueprint(f: Finding, observedUrls: string[], totalPages: numbe
         ]
       },
       recovery: [
-        'Deploy the standard 2-line Google snippet: <script async src="https://news.google.com/swg/js/v1/publisher.js"></script> and <div google-add-preferred-source-btn data-theme="dark"></div>',
+        'Deploy 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html: <script async src="https://news.google.com/swg/js/v1/publisher.js"></script> and <div google-add-preferred-source-btn data-theme="dark"></div>',
         'Add https://news.google.com and https://*.google.com to Content-Security-Policy header'
       ],
       prevention: [

@@ -158,6 +158,66 @@ async function renderRealEngines(scanId, domain) {
  }
 }
 
+function initEnterpriseTabs(){
+  const showcase=document.getElementById('enterprise-analyzer');
+  if(!showcase)return;
+  const tabs=showcase.querySelectorAll('.ea-tab');
+  if(!tabs.length)return;
+  const badge=showcase.querySelector('.ea-finding-badge');
+  const tag=showcase.querySelector('.ea-standard-tag');
+  const summary=showcase.querySelector('.ea-finding-summary');
+  const evidence=showcase.querySelector('.ea-evidence-block');
+  const code=showcase.querySelector('.ea-code-underlay code');
+  const l=()=>document.documentElement.lang==='tr'?'tr':'en';
+  const svgWarn='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>';
+  const FINDINGS={
+    canon:{
+      badge:()=>l()==='tr'?'TECH-CANON-001 · YÜKSEK':'TECH-CANON-001 · HIGH',
+      tag:()=>'RFC 6596 Canonicalization',
+      summary:()=>l()==='tr'?'Canonical tag tanımlı değil. Yinelenen içerik versiyonları yapay zeka alaka sinyallerini böler.':'Canonical tag not defined. Duplicate content variants dilute AI relevance signals.',
+      evidence:()=>l()==='tr'?'&lt;head&gt; içinde arama: rel=canonical BULUNAMADI<br>AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek':'Search in &lt;head&gt;: rel=canonical NOT FOUND<br>AI Crawler State: Primary URL Unresolved | Duplicate Risk: High',
+      code:()=>`<!-- ${l()==='tr'?'Çözüm Yol Haritası & Kod Şablonu':'Remediation Roadmap & Code Template'} -->\n<link rel="canonical" href="https://htmlandhtml.com/en">\n<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr">\n<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en">\nexport const dynamic = 'force-dynamic';\nexport const revalidate = 3600; // Cloudflare edge cache`
+    },
+    a11y:{
+      badge:()=>l()==='tr'?'A11Y-FORM-001 · YÜKSEK':'A11Y-FORM-001 · HIGH',
+      tag:()=>'WCAG 2.1 AA Form Accessibility',
+      summary:()=>l()==='tr'?'Form kontrollerinde ilişkilendirilmiş label etiketi veya aria-label eksik. Otonom web ajanları formu dolduramaz.':'Form controls missing accessible labels or aria-label attributes. Autonomous AI web agents fail to parse input fields.',
+      evidence:()=>l()==='tr'?'&lt;input type="url" id="domainInput"&gt; eşleşen &lt;label&gt; YOK<br>Web Agent Durumu: Input intent belirsiz | Form submission: FAIL':'&lt;input type="url" id="domainInput"&gt; matching &lt;label&gt; MISSING<br>Web Agent State: Input intent ambiguous | Autonomous submit: FAIL',
+      code:()=>`<!-- ${l()==='tr'?'Erişilebilir Label & Agent Binding':'Accessible Label & Agent Binding'} -->\n<label for="domainInput" class="sr-only">Target Domain</label>\n<input type="url" id="domainInput" name="domain"\n  placeholder="example.com" autocomplete="url"\n  aria-label="Target domain URL for inspection" required>\n<button type="submit" aria-label="Start Audit">Run</button>`
+    },
+    mixed:{
+      badge:()=>l()==='tr'?'SEC-MIXED-001 · YÜKSEK':'SEC-MIXED-001 · HIGH',
+      tag:()=>'W3C Mixed Content Level 2',
+      summary:()=>l()==='tr'?'HTTPS sayfası üzerinde güvensiz HTTP kaynak referansı mevcut. Modern AI tarayıcıları ve LLM botları güvensiz kaynakları engeller.':'Insecure HTTP resource references found on HTTPS origin. Search bots and LLM agents block insecure subresources.',
+      evidence:()=>l()==='tr'?'Kaynaktan çekilen script: http://cdn.internal.net/analytics.js<br>Güvenlik Durumu: Mixed Content Engellendi | Trust Score: -15 Puan':'Loaded script: http://cdn.internal.net/analytics.js<br>Security State: Insecure Content Blocked | Trust Penalty: -15 Pts',
+      code:()=>`<!-- ${l()==='tr'?'CSP Kuralı & Kaynak Yükseltme':'CSP Policy & Resource Upgrade'} -->\nHeader set Content-Security-Policy "upgrade-insecure-requests; default-src 'self'"\n<!-- ${l()==='tr'?'Tüm HTTP bağlantıları HTTPS yapılmalı':'All HTTP subresources rewritten to HTTPS'} -->\n<script src="https://cdn.internal.net/analytics.js" defer></script>`
+    },
+    perf:{
+      badge:()=>l()==='tr'?'PERF-HTML-001 · ORTA':'PERF-HTML-001 · MEDIUM',
+      tag:()=>'W3C Performance / HTML Payload Budget',
+      summary:()=>l()==='tr'?'İlk HTML yanıt boyutu 319 KB (150 KB eşiği aşıldı). Yüksek token maliyeti ve gecikme nedeniyle LLM botları sayfayı truncate edebilir.':'Initial HTML payload is 319 KB, exceeding the 150 KB crawl budget. High token latency causes LLM crawlers to truncate.',
+      evidence:()=>l()==='tr'?'Content-Length: 326,656 bytes (Budget: 153,600 bytes)<br>LLM Context Window: Truncation Riski %62 | TTFB: 420ms':'Content-Length: 326,656 bytes (Budget: 153,600 bytes)<br>LLM Context Window: Truncation Risk: 62% | TTFB: 420ms',
+      code:()=>`// ${l()==='tr'?'Brotli / Edge Compression & Streaming':'Brotli / Edge Compression & Streaming'}\nexport const config = { runtime: 'edge', uncompressedSizeLimit: '128kb' };\n// Externalize heavy JSON-LD and SVGs to static edge assets\nexport async function getStaticProps() { return { revalidate: 3600 }; }`
+    }
+  };
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const key=tab.dataset.findingTab;
+      const f=FINDINGS[key];
+      if(!f)return;
+      if(badge)badge.innerHTML=`${svgWarn} ${f.badge()}`;
+      if(tag)tag.textContent=f.tag();
+      if(summary)summary.textContent=f.summary();
+      if(evidence)evidence.innerHTML=f.evidence();
+      if(code)code.textContent=f.code();
+    });
+  });
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initEnterpriseTabs,{once:true});else initEnterpriseTabs();
+window.addEventListener('hh-language-changed',initEnterpriseTabs);
+
 // Capture the public scan response without changing the canonical scanner or API contract.
 const nativeFetch=window.fetch.bind(window);
 window.fetch=async(...args)=>{

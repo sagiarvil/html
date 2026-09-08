@@ -51,6 +51,8 @@ def build_methodology():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/methodology/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/methodology/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css">
 <script type="application/ld+json">
 {{
@@ -60,7 +62,9 @@ def build_methodology():
       "@type": "TechArticle",
       "headline": "{h1.replace('<em>', '').replace('</em>', '')}",
       "description": "{sub}",
-      "url": "{canonical_url}"
+      "url": "{canonical_url}",
+      "author": {{ "@type": "Organization", "name": "HTML&HTML Team" }},
+      "publisher": {{ "@type": "Organization", "name": "HTML&HTML", "sameAs": ["https://www.wikidata.org/wiki/Q116503894"] }}
     }},
     {{
       "@type": "BreadcrumbList",
@@ -73,6 +77,7 @@ def build_methodology():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'methodology')}
@@ -166,6 +171,8 @@ def build_evidence_standard():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/kanit-standardi/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/evidence-standard/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css">
 <script type="application/ld+json">
 {{
@@ -175,7 +182,9 @@ def build_evidence_standard():
       "@type": "TechArticle",
       "headline": "{h1.replace('<em>', '').replace('</em>', '')}",
       "description": "{sub}",
-      "url": "{canonical_url}"
+      "url": "{canonical_url}",
+      "author": {{ "@type": "Organization", "name": "HTML&HTML Team" }},
+      "publisher": {{ "@type": "Organization", "name": "HTML&HTML", "sameAs": ["https://www.wikidata.org/wiki/Q116503894"] }}
     }},
     {{
       "@type": "BreadcrumbList",
@@ -188,6 +197,7 @@ def build_evidence_standard():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'methodology')}
@@ -285,6 +295,8 @@ def build_crawler_reference():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/referans/ai-tarayicilar/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/reference/ai-crawlers/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css">
 <script type="application/ld+json">
 {{
@@ -294,7 +306,9 @@ def build_crawler_reference():
       "@type": "TechArticle",
       "headline": "{h1.replace('<em>', '').replace('</em>', '')}",
       "description": "{sub}",
-      "url": "{canonical_url}"
+      "url": "{canonical_url}",
+      "author": {{ "@type": "Organization", "name": "HTML&HTML Team" }},
+      "publisher": {{ "@type": "Organization", "name": "HTML&HTML", "sameAs": ["https://www.wikidata.org/wiki/Q116503894"] }}
     }},
     {{
       "@type": "BreadcrumbList",
@@ -307,6 +321,7 @@ def build_crawler_reference():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'methodology')}
@@ -456,6 +471,8 @@ def build_company_legal():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/{p['tr_slug']}/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/{p['en_slug']}/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css">
 <script type="application/ld+json">
 {{
@@ -464,7 +481,9 @@ def build_company_legal():
     {{
       "@type": "WebPage",
       "name": "{c['title']}",
-      "url": "{canonical_url}"
+      "url": "{canonical_url}",
+      "author": {{ "@type": "Organization", "name": "HTML&HTML Team" }},
+      "publisher": {{ "@type": "Organization", "name": "HTML&HTML", "sameAs": ["https://www.wikidata.org/wiki/Q116503894"] }}
     }},
     {{
       "@type": "BreadcrumbList",
@@ -477,6 +496,7 @@ def build_company_legal():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'company')}

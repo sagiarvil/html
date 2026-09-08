@@ -618,10 +618,11 @@ export class GEOEngine extends EngineTool {
         name: 'Google Preferred Sources Integration (AI Overviews & AI Mode)',
         weight: 15,
         check: (inp) => inp.html.includes('google-add-preferred-source-btn') || 
-                        inp.html.includes('news.google.com/swg/js') || 
+                        inp.html.includes('news.google.com/swg/js/v1/publisher.js') || 
+                        inp.html.includes('data-preferred-source') ||
                         inp.html.includes('google.com/preferences/source'),
         penaltyOnFail: 10,
-        evidence: (inp) => `Google Preferred Sources marker detected: ${inp.html.includes('google-add-preferred-source-btn') || inp.html.includes('news.google.com/swg/js') || inp.html.includes('google.com/preferences/source')}`,
+        evidence: (inp) => `Google Preferred Sources marker detected: ${inp.html.includes('google-add-preferred-source-btn') || inp.html.includes('news.google.com/swg/js/v1/publisher.js') || inp.html.includes('data-preferred-source') || inp.html.includes('google.com/preferences/source')}`,
       },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
@@ -1185,7 +1186,11 @@ export class EEATScoringEngine extends EngineTool {
         id: 'EEAT-002',
         name: 'About / Corporate Identity Page Accessible',
         weight: 25,
-        check: () => links.some((l) => /about|hakkimizda|hakkımızda|kimiz/i.test(l)) || text.includes('hakkımızda') || text.includes('about us'),
+        check: (inp) => links.some((l) => /about|hakkimizda|hakkımızda|kimiz/i.test(l)) || 
+                        /href=["'][^"']*(?:about|hakkimizda|hakkımızda|kimiz)/i.test(inp.html) ||
+                        text.includes('hakkımızda') || 
+                        text.includes('about us') ||
+                        /about/i.test(text),
         penaltyOnFail: 15,
         evidence: () => `About page detected: true`,
       },

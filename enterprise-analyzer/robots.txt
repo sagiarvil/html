@@ -1,0 +1,1 @@
+User-Agent: *  Allow: /  Allow: /ai-report  Allow: /llms.txt  Allow: /.well-known/  Disallow: /api/internal/  Disallow: /admin/  Disallow: /tmp/  Disallow: /*?utm_source=  Disallow: /*?fbclid=  Crawl-delay: 1  Sitemap: https://htmlandhtml.com/sitemap.xml  Host: https://htmlandhtml.com

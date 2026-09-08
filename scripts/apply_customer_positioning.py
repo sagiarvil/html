@@ -42,7 +42,7 @@ PAGES = {
         "title": "AI Search Visibility, GEO, AEO & llms.txt | HTML&HTML",
         "description": "Is your website ready to appear in AI search and earn recommendation opportunity? Check GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt and the technical foundation free.",
         "h1": "Your Customer Asks AI “Who Should I Choose?” Is Your Website in the Answer Set?",
-        "lead": EN_COMMON,
+        "lead": "Enter your URL. 18 engines, 105 checkpoints, 13 audits in 15 seconds. " + EN_COMMON,
         "cta": "Check Free",
     },
 

@@ -295,6 +295,8 @@ def build_pricing_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fiyatlandirma/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/pricing/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/validator.css?v=3">
 <style>.pricing-grid.pricing-two .featured{{padding-top:72px}}.pricing-grid.pricing-two .featured .popular{{top:20px;left:24px;right:auto;max-width:calc(100% - 48px);white-space:nowrap}}.pricing-grid.pricing-two .featured .pricehead{{gap:24px}}@media(max-width:600px){{.pricing-grid.pricing-two .featured{{padding-top:68px}}.pricing-grid.pricing-two .featured .popular{{left:20px;max-width:calc(100% - 40px)}}}}</style>
 <script type="application/ld+json">
@@ -321,6 +323,7 @@ def build_pricing_hub():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'pricing')}
@@ -426,6 +429,8 @@ def build_fix_mandate_hub():
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fix-mandate/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/fix-mandate/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<meta name="author" content="HTML&amp;HTML">
+<link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
 <link rel="stylesheet" href="/assets/css/authority.css?v=3">
 <script type="application/ld+json">
 {{
@@ -448,6 +453,7 @@ def build_fix_mandate_hub():
 }}
 </script>
 <script src="/assets/js/theme.js?v=7"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 {get_header(lang, alt_url, 'fix-mandate')}

@@ -160,9 +160,11 @@ function generateCrossEncoderAttentionMatrix(domain: string, locale: DeliveryLoc
   }, null, 2);
 }
 
-function generateKnowledgeVaultConsensusTriples(domain: string): string {
+function generateKnowledgeVaultConsensusTriples(domain: string, wikidataQid?: string): string {
   const brand = domain.replace(/\.[a-z]+$/i, '').toUpperCase();
   const cleanDomain = domain.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+  const exactQid = wikidataQid && /^Q\d+$/i.test(wikidataQid.trim()) ? wikidataQid.trim() : null;
+  const wikidataUrl = exactQid ? `https://www.wikidata.org/wiki/${exactQid}` : `https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(brand)}`;
   return JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -173,7 +175,7 @@ function generateKnowledgeVaultConsensusTriples(domain: string): string {
         "url": `https://${cleanDomain}`,
         "logo": `https://${cleanDomain}/assets/logo.png`,
         "sameAs": [
-          `https://www.wikidata.org/wiki/Special:Search?search=${encodeURIComponent(brand)}`,
+          wikidataUrl,
           `https://www.crunchbase.com/organization/${cleanDomain.replace(/\.[a-z]+$/i, '')}`,
           `https://www.linkedin.com/company/${cleanDomain.replace(/\.[a-z]+$/i, '')}`,
           `https://github.com/${cleanDomain.replace(/\.[a-z]+$/i, '')}`
@@ -805,7 +807,21 @@ function generateN8nMonitoringWorkflow(domain: string): string {
       },
       {
         "parameters": {
-          "jsCode": `// Industrial Deterministic AST & Sub-14KB RAG Gate\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nconst hasChunkId = html.includes('data-chunk-id');\nconst hasWikidata = /wikidata\\.org\\/wiki\\/Q/i.test(html);\nconst isBloated = bytes > 14336;\nconst score = Math.round(((!isBloated ? 40 : 15) + (hasChunkId ? 30 : 0) + (hasWikidata ? 30 : 0)));\n\nreturn [{\n  json: {\n    domain: "${domain}",\n    payloadBytes: bytes,\n    isBloated,\n    hasChunkId,\n    hasWikidata,\n    healthScore: score,\n    status: score >= 80 ? 'HEALTHY' : score >= 50 ? 'DEGRADED' : 'CRITICAL',\n    timestamp: new Date().toISOString()\n  }\n}];`
+          "url": `https://${domain}/`,
+          "options": {
+            "headers": { "User-Agent": "Google-Extended/1.0; (+https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers)" },
+            "timeout": 10000
+          }
+        },
+        "id": "http-preferred-sources-probe",
+        "name": "Google Preferred Sources & Publisher SDK Probe",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.1,
+        "position": [680, 480]
+      },
+      {
+        "parameters": {
+          "jsCode": `// Industrial Deterministic AST, Sub-14KB RAG & Google Preferred Sources Gate\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nconst hasChunkId = html.includes('data-chunk-id');\nconst hasWikidata = /wikidata\\.org\\/wiki\\/Q/i.test(html);\nconst hasPreferredSources = /news\\.google\\.com\\/swg\\/js\\/v1\\/publisher\\.js|data-preferred-source/i.test(html);\nconst isBloated = bytes > 14336;\nconst score = Math.round(((!isBloated ? 30 : 10) + (hasChunkId ? 25 : 0) + (hasWikidata ? 25 : 0) + (hasPreferredSources ? 20 : 0)));\n\nreturn [{\n  json: {\n    domain: "${domain}",\n    payloadBytes: bytes,\n    isBloated,\n    hasChunkId,\n    hasWikidata,\n    hasPreferredSources,\n    healthScore: score,\n    status: score >= 80 ? 'HEALTHY' : score >= 50 ? 'DEGRADED' : 'CRITICAL',\n    timestamp: new Date().toISOString()\n  }\n}];`
         },
         "id": "code-evaluate-4",
         "name": "Deterministic AST 14KB Gate",
@@ -828,7 +844,7 @@ function generateN8nMonitoringWorkflow(domain: string): string {
       {
         "parameters": {
           "webhookUrl": "https://hooks.slack.com/services/YOUR/ENTERPRISE/WEBHOOK",
-          "text": `🚨 *[Enterprise AI Search Alert]* ${domain} citation readiness dropped to {{ $json.healthScore }}/100!\n- Severity: {{ $json.status }}\n- Payload: {{ $json.payloadBytes }} bytes\n- RAG Chunk Integrity: {{ $json.hasChunkId }}\n- Knowledge Vault Triples: {{ $json.hasWikidata }}\nTriggering automated Cloudflare Edge Cache Purge & incident escalation.`
+          "text": `🚨 *[Enterprise AI Search Alert]* ${domain} citation readiness dropped to {{ $json.healthScore }}/100!\n- Severity: {{ $json.status }}\n- Payload: {{ $json.payloadBytes }} bytes\n- RAG Chunk Integrity: {{ $json.hasChunkId }}\n- Knowledge Vault Triples: {{ $json.hasWikidata }}\n- Preferred Sources SDK: {{ $json.hasPreferredSources }}\nTriggering automated Cloudflare Edge Cache Purge & incident escalation.`
         },
         "id": "slack-alert-6",
         "name": "Dispatch Critical Incident (Slack)",
@@ -872,7 +888,8 @@ function generateN8nMonitoringWorkflow(domain: string): string {
       "Daily 03:00 UTC Trigger": { "main": [[{ "node": "Probe llms.txt Surface", "type": "main", "index": 0 }]] },
       "On-Demand CI/CD Trigger": { "main": [[{ "node": "Probe llms.txt Surface", "type": "main", "index": 0 }]] },
       "Probe llms.txt Surface": { "main": [[{ "node": "Multi-Bot Ingestion Probe (Perplexity/GPTBot)", "type": "main", "index": 0 }]] },
-      "Multi-Bot Ingestion Probe (Perplexity/GPTBot)": { "main": [[{ "node": "Deterministic AST 14KB Gate", "type": "main", "index": 0 }]] },
+      "Multi-Bot Ingestion Probe (Perplexity/GPTBot)": { "main": [[{ "node": "Google Preferred Sources & Publisher SDK Probe", "type": "main", "index": 0 }]] },
+      "Google Preferred Sources & Publisher SDK Probe": { "main": [[{ "node": "Deterministic AST 14KB Gate", "type": "main", "index": 0 }]] },
       "Deterministic AST 14KB Gate": { "main": [[{ "node": "Bayesian Drift Triage (Score < 80?)", "type": "main", "index": 0 }]] },
       "Bayesian Drift Triage (Score < 80?)": {
         "main": [
@@ -1535,7 +1552,27 @@ export function generateLLMSBundle(domain: string, pages: any[], lang: 'tr' | 'e
 
 export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateReport,locale:DeliveryLocale='en'):DeliveryPack{
   const tr=locale==='tr',surfaces=machineSurfaces(scan);
-  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 27)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA imza)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM halüsinasyon denetimi)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 P1)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress tek tıkla eklenti)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow enjektörü)\n\nNOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi” sayılmaz. Page-specific machine surfaces root llms.txt değildir; root için tek önerilen yüzey 08_LLMS_TXT_RECOMMENDED.txt dosyasıdır.\n`:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Quick Deployment Options (100/100 Zero Effort)\n- 🤖 **If using Cursor / Claude Code / Windsurf:** Paste \`00_APPLY_WITH_AI_AGENT.prompt\` directly into your AI coding tool. It automatically locates files and applies fixes in 60 seconds.\n- ⚡ **If using Cloudflare:** Follow \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` for instant edge activation.\n- 🌐 **If using WordPress:** Upload \`26_WORDPRESS_DROPIN_PLUGIN.php\` directly to activate machine surfaces without touching code.\n- 🛍️ **If using Shopify / Webflow:** Paste snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` into your site head.\n\n## Execution Order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 27)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 P1)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress drop-in plugin)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow injectors)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
+  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 27)
+11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)
+12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)
+13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)
+14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)
+15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)
+16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)
+17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)
+18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)
+19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)
+20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA imza)
+21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM halüsinasyon denetimi)
+22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Otomasyon & Kendi Kendini Onaran DAG)
+23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Yönetim Kurulu İstihbarat Dosyası)
+24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Otomatik AI Kalite Kapısı)
+25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Teknik Entegrasyon & publisher.js)
+26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress tek tıkla eklenti)
+27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow enjektörü)
+
+NOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi” sayılmaz. Page-specific machine surfaces root llms.txt değildir; root için tek önerilen yüzey 08_LLMS_TXT_RECOMMENDED.txt dosyasıdır.
+`:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Quick Deployment Options (100/100 Zero Effort)\n- 🤖 **If using Cursor / Claude Code / Windsurf:** Paste \`00_APPLY_WITH_AI_AGENT.prompt\` directly into your AI coding tool. It automatically locates files and applies fixes in 60 seconds.\n- ⚡ **If using Cloudflare:** Follow \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` for instant edge activation.\n- 🌐 **If using WordPress:** Upload \`26_WORDPRESS_DROPIN_PLUGIN.php\` directly to activate machine surfaces without touching code.\n- 🛍️ **If using Shopify / Webflow:** Paste snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` into your site head.\n\n## Execution Order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 27)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Automation & Self-Healing DAG)\n23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Executive Board Dossier)\n24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Automated AI Quality Gate)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Technical Integration & publisher.js)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress drop-in plugin)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow injectors)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
   const exec=tr?`# Yönetim Özeti\n\n- Alan adı: ${scan.domain}\n- Ana teknik skor: ${Math.round(scan.overall)}/100\n- Analiz edilen sayfa: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Toplam issue: ${report.health_summary.total_issues}\n- Öncelik dağılımı: ${prioritySummary(report)}\n- Intelligence analizleri: ${report.intelligence.analyses.length}\n- Readiness lensleri: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Ürün sınırı\nBu paket yapay zeka tavsiyesi, Google sıralaması, citation, trafik, müşteri veya gelir garantisi vermez. Ölçülen site kaynaklı engelleri uygulanabilir teknik değişikliklere ve doğrulama testlerine dönüştürür.\n`:`# Executive Summary\n\n- Domain: ${scan.domain}\n- Core technical score: ${Math.round(scan.overall)}/100\n- Pages analyzed: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Total issues: ${report.health_summary.total_issues}\n- Priority distribution: ${prioritySummary(report)}\n- Intelligence analyses: ${report.intelligence.analyses.length}\n- Readiness lenses: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Product boundary\nThis package does not guarantee AI recommendations, Google rankings, citations, traffic, customers or revenue. It converts measured website-side blockers into executable technical changes and verification tests.\n`;
 
   const llmsBundle = generateLLMSBundle(
@@ -1575,7 +1612,7 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
     // ENTERPRISE DARK POOL ASSETS (11 VIP FILES + 100/100 INTEGRATORS)
     {name:'11_MODEL_CORPUS_SEEDING_BLUEPRINT.md',content:generateCorpusSeedingBlueprint(scan.domain,locale)},
     {name:'12_CROSS_ENCODER_ATTENTION_MATRIX.json',content:generateCrossEncoderAttentionMatrix(scan.domain,locale)},
-    {name:'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json',content:generateKnowledgeVaultConsensusTriples(scan.domain)},
+    {name:'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json',content:generateKnowledgeVaultConsensusTriples(scan.domain,scan.summary?.wikidataQid)},
     {name:'14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js',content:generateCloudflareWorkerTokenPurge(scan.domain)},
     {name:'14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js',content:generateAwsCloudFrontLambdaEdge(scan.domain)},
     {name:'14c_VERCEL_EDGE_MIDDLEWARE.ts',content:generateVercelEdgeMiddleware(scan.domain)},

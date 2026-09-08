@@ -964,7 +964,7 @@ remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executi
 <div id="tab-diff" class="console-pane">${tabDiffHtml}</div>
 <div id="tab-worker" class="console-pane">${workerSaasHtml}</div>
 <div id="tab-aao" class="console-pane">${tabAaoHtml}</div>
-<div id="tab-n8n" class="console-pane"><div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'Otonom İzleme ve Kendi Kendini Onaran Pipeline':'Autonomous Self-Healing Ingestion Pipeline'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-download-blob" style="text-decoration:none;">💾 ${isTr?'24 Dosyalık Çözüm Paketini İndir — $99':'Download 24-File Pack — $99'}</a></div></div><div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p><span class="dag-node-telemetry">Cron 03:00 UTC</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p><span class="dag-node-telemetry">HTTP/3 200 OK</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p><span class="dag-node-telemetry">Multi-Bot UA</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p><span class="dag-node-telemetry">AST &lt; 14,336B</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p><span class="dag-node-telemetry">Score ≥ 80 Gate</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p><span class="dag-node-telemetry">CF API Purge</span></div></div><div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div></div>
+<div id="tab-n8n" class="console-pane"><div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'Otonom İzleme ve Kendi Kendini Onaran Pipeline':'Autonomous Self-Healing Ingestion Pipeline'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-download-blob" style="text-decoration:none;">💾 ${isTr?'24 Dosyalık Çözüm Paketini İndir — $99':'Download 24-File Pack — $99'}</a></div></div><div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p><span class="dag-node-telemetry">Cron 03:00 UTC</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p><span class="dag-node-telemetry">HTTP/3 200 OK</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p><span class="dag-node-telemetry">Multi-Bot UA</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · PREFERRED</span><span class="dag-node-status"></span></div><div class="dag-node-name">Google Preferred</div><p class="dag-node-sub">publisher.js &amp; SDK</p><span class="dag-node-telemetry">Official 2026 P1</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p><span class="dag-node-telemetry">AST &lt; 14,336B</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p><span class="dag-node-telemetry">Score ≥ 80 Gate</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="6"><div class="dag-node-head"><span class="dag-node-step">07 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p><span class="dag-node-telemetry">CF API Purge</span></div></div><div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div></div>
 <div id="tab-llms" class="console-pane">${llmsSaasHtml}</div>
 <div id="tab-schema" class="console-pane">${lockPaneHtml('code-schema-pre',jsonLdSample,'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata Vault &amp; Offer Catalog)','btnDlSchemaJson')}</div>
 <div id="tab-c2pa" class="console-pane">${lockPaneHtml('code-c2pa-pre',c2paSample,'20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 TSA Digest)','btnDlC2paJson')}</div>
@@ -1007,7 +1007,18 @@ const DAG_STEPS=[
   },
   {
     step: '04',
-    name: isTr?'04 · Deterministik 14KB AST Bütçe Kapısı':'04 · Deterministic AST 14KB Gate',
+    name: isTr?'04 · Google Preferred Sources & SDK Doğrulama':'04 · Google Preferred Sources & SDK Probe',
+    nodeType: 'n8n-nodes-base.httpRequest',
+    badge: 'PREFERRED',
+    desc: isTr?'Google Search 20 Ağustos 2026 resmî teknik dokümanına göre publisher.js ve data-preferred-source entegrasyonunu doğrular.':'Probes publisher.js SDK and data-preferred-source markup against official Google Search Aug 20, 2026 standard.',
+    config: `{\n  "url": "https://${cleanDomainSafe}/",\n  "headers": {\n    "User-Agent": "Mozilla/5.0 (compatible; Google-Extended/1.0; +https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers)"\n  },\n  "timeout": 10000\n}`,
+    inputSchema: `{\n  "targetUrl": "https://${cleanDomainSafe}/",\n  "checkVendor": "Google Preferred Sources 2026"\n}`,
+    outputSchema: `{\n  "hasPublisherSdk": true,\n  "hasPreferredSourceBtn": true,\n  "canonicalSourceUrl": "https://${cleanDomainSafe}/",\n  "status": "PASSED"\n}`,
+    dlqPolicy: isTr?'Eksiklik durumunda: 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html şablonundan head ve footer kod blokları enjekte edilir.':'On missing: Automatically injects 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html snippets into edge worker.'
+  },
+  {
+    step: '05',
+    name: isTr?'05 · Deterministik 14KB AST Bütçe Kapısı':'05 · Deterministic AST 14KB Gate',
     nodeType: 'n8n-nodes-base.code',
     badge: 'AUDIT',
     desc: isTr?'JavaScript Code Node: HTML boyutunu (<14KB AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<14KB AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.',
@@ -1017,8 +1028,8 @@ const DAG_STEPS=[
     dlqPolicy: isTr?'Boyut 14KB aşarsa: Edge HTMLRewriter otomatik devreye alınır, DOM script ve SVG gürültüsü budanır.':'On Overflow: HTMLRewriter stream prunes scripts and SVGs to preserve 14KB budget.'
   },
   {
-    step: '05',
-    name: isTr?'05 · Bayesçi Sürüklenme & Triyaj (Skor < 80)':'05 · Bayesian Drift Triage (Score < 80?)',
+    step: '06',
+    name: isTr?'06 · Bayesçi Sürüklenme & Triyaj (Skor < 80)':'06 · Bayesian Drift Triage (Score < 80?)',
     nodeType: 'n8n-nodes-base.if',
     badge: 'TRIAGE',
     desc: isTr?'Hesaplanan sağlık skoru 80 altına düşerse veya kritik engel tespit edilirse acil durum dalına yönlendirir.':'Routes payload to incident branch if computed health score falls below 80/100 threshold.',
@@ -1028,8 +1039,8 @@ const DAG_STEPS=[
     dlqPolicy: isTr?'Skor < 80 olduğunda: P0 incident kaydı açılır, mühendislik ekibine anında SMS/Slack gönderilir.':'Score < 80: High-priority incident logged and remediation alert dispatched to on-call.'
   },
   {
-    step: '06',
-    name: isTr?'06 · Kendi Kendini Onarma & Edge Purge':'06 · Self-Healing Auto-Purge & Alert',
+    step: '07',
+    name: isTr?'07 · Kendi Kendini Onarma & Edge Purge':'07 · Self-Healing Auto-Purge & Alert',
     nodeType: 'n8n-nodes-base.httpRequest',
     badge: 'AUTO-HEAL',
     desc: isTr?'Cloudflare Edge Cache Purge API çağrısını tetikleyerek önbelleği temizler ve Slack/PagerDuty incident kanallarına alarm fırlatır.':'Executes automated Cloudflare Edge Cache Purge API and dispatches incident telemetry to Slack/PagerDuty.',
@@ -1122,7 +1133,7 @@ if(btnRunDag){
         c.classList.add('sim-done');
       }
     }
-    renderDagInspector(5, 'logic');
+    renderDagInspector(DAG_STEPS.length - 1, 'logic');
     const inspector=document.getElementById('dagNodeInspector');
     if(inspector){
       inspector.insertAdjacentHTML('afterbegin',`<div style="margin-bottom:10px;padding:8px 12px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:8px;font-size:12px;color:#10b981;"><strong>[03:00:07 UTC ✅ SELF-HEALING SUCCESS]</strong> ${cleanDomainSafe}: ${isTr?'18 motor kontrol noktaları doğrulandı. Edge önbellek senkronize edildi.':'All 18-engine checkpoints verified. Edge cache synchronized.'}</div>`);
@@ -1225,6 +1236,23 @@ export default {
   </div>
 </section>
 <!-- Doğrulama: curl -sL https://${cleanDom}/ | grep "data-chunk-id" -->`;
+  } else if (f.id === 'AI-PREFERRED-SOURCES-001') {
+    recipeFileName = '25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html';
+    step1 = isTr ? 'Google Search 2026 Spesifikasyon Analizi: Sitede Google Preferred Sources entegrasyonu (publisher.js SDK ve data-preferred-source butonu) eksik.' : 'Google Search 2026 Spec Audit: Missing Google Preferred Sources integration (publisher.js SDK and data-preferred-source button).';
+    step2 = isTr ? 'Mühendislik Yaması: Aşağıdaki Google Preferred Sources SDK scriptini <head> içine, takip butonunu ise sayfa footer/navigasyon alanına ekleyin.' : 'Engineering Patch: Deliver the Google Preferred Sources SDK <head> snippet and follow button below to your developers.';
+    step3 = isTr ? 'Kabul Testi: curl -sL https://' + cleanDom + ' | grep "publisher.js" komutuyla SDK yüklemesini ve buton tetikleyicisini doğrulayın.' : 'Verification Gate: Verify publisher.js and button markup via curl -sL https://' + cleanDom + ' | grep "publisher.js".';
+    codeSnippet = `<!-- 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html -->
+<!-- 1. Adım: <head> içerisine Google Publisher SDK ekleyin -->
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+
+<!-- 2. Adım: Footer veya navigasyon barına Google Preferred Sources Butonu ekleyin -->
+<button type="button" class="google-add-preferred-source-btn"
+  data-source-name="${cleanDom}"
+  data-source-url="https://${cleanDom}/"
+  onclick="if(window.GooglePublisher){window.GooglePublisher.addPreferredSource({name:'${cleanDom}',url:'https://${cleanDom}/'})}else{window.open('https://www.google.com/preferences/source?url=https://${cleanDom}/','_blank')}">
+  ⭐ Google Preferred Source Ekle
+</button>
+<!-- Kabul Testi: curl -sL https://${cleanDom}/ | grep -E "publisher.js|google-add-preferred-source" -->`;
   } else if (f.id.includes('LLMS')) {
     recipeFileName = '08_LLMS_TXT_RECOMMENDED.txt';
     step1 = isTr ? 'llms.txt Spesifikasyon Testi: v2 RFC formatına göre H1 başlığı ve bloknot özeti eksikliği izole edildi.' : 'llms.txt RFC Spec Audit: Missing H1 root anchor and blockquote summary isolated.';

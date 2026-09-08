@@ -386,10 +386,10 @@ def build_homepages():
         </div>
 
         <div class="ea-tab-bar" aria-label="Bulgu seçici">
-          <span class="ea-tab active">TECH-CANON-001 (Yüksek)</span>
-          <span class="ea-tab">A11Y-FORM-001 (Yüksek)</span>
-          <span class="ea-tab">SEC-MIXED-001 (Yüksek)</span>
-          <span class="ea-tab">PERF-HTML-001 (Orta)</span>
+          <button type="button" class="ea-tab active" data-finding-tab="canon">TECH-CANON-001 (Yüksek)</button>
+          <button type="button" class="ea-tab" data-finding-tab="a11y">A11Y-FORM-001 (Yüksek)</button>
+          <button type="button" class="ea-tab" data-finding-tab="mixed">SEC-MIXED-001 (Yüksek)</button>
+          <button type="button" class="ea-tab" data-finding-tab="perf">PERF-HTML-001 (Orta)</button>
         </div>
 
         <div class="ea-finding-meta-row">
@@ -993,10 +993,10 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
         </div>
 
         <div class="ea-tab-bar" aria-label="Finding switcher">
-          <span class="ea-tab active">TECH-CANON-001 (High)</span>
-          <span class="ea-tab">A11Y-FORM-001 (High)</span>
-          <span class="ea-tab">SEC-MIXED-001 (High)</span>
-          <span class="ea-tab">PERF-HTML-001 (Medium)</span>
+          <button type="button" class="ea-tab active" data-finding-tab="canon">TECH-CANON-001 (High)</button>
+          <button type="button" class="ea-tab" data-finding-tab="a11y">A11Y-FORM-001 (High)</button>
+          <button type="button" class="ea-tab" data-finding-tab="mixed">SEC-MIXED-001 (High)</button>
+          <button type="button" class="ea-tab" data-finding-tab="perf">PERF-HTML-001 (Medium)</button>
         </div>
 
         <div class="ea-finding-meta-row">
