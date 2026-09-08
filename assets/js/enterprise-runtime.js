@@ -269,6 +269,26 @@ function initEnterpriseTabs(){
     });
   });
 
+  // Live Diagnostic Launch Action
+  const startBtns=showcase.querySelectorAll('.ea-btn-primary');
+  startBtns.forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+      const scanner=document.getElementById('scanner');
+      const input=document.getElementById('domainInput');
+      if(scanner){
+        e.preventDefault();
+        scanner.scrollIntoView({behavior:'smooth',block:'start'});
+        if(input){
+          setTimeout(()=>{
+            input.focus({preventScroll:true});
+            input.classList.add('domain-pulse-highlight');
+            setTimeout(()=>input.classList.remove('domain-pulse-highlight'),2600);
+          },450);
+        }
+      }
+    });
+  });
+
   // Scroll-Driven Reactive Telemetry Animation
   if('IntersectionObserver' in window && !showcase.dataset.telemetryBound){
     showcase.dataset.telemetryBound='true';
