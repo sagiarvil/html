@@ -250,6 +250,40 @@
     const pC = document.getElementById('planeCScore');
     if (pC) pC.textContent = '100% HAZIR';
 
+    // 8b-2. Update 7-Pillar Hepta-Framework Scores (SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T)
+    const setPill = function(id, val) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.textContent = val + '%';
+        el.style.color = val >= 80 ? 'var(--ea-success, #10b981)' : val >= 60 ? 'var(--ea-accent, #00d4ff)' : '#f59e0b';
+      }
+    };
+    if (isV2 && data.engines) {
+      const getEng = function(id) { return data.engines[id]?.score ?? score; };
+      const sSEO = Math.round((getEng('ENG-01') + getEng('ENG-02') + getEng('ENG-04') + getEng('ENG-18')) / 4);
+      const sGEO = Math.round((getEng('ENG-07') + getEng('ENG-09') + getEng('ENG-17')) / 3);
+      const sAEO = Math.round((getEng('ENG-05') + getEng('ENG-06') + getEng('ENG-10')) / 3);
+      const sLLMO = Math.round((getEng('ENG-08') + getEng('ENG-15') + getEng('ENG-16')) / 3);
+      const sAAO = Math.round(getEng('ENG-13'));
+      const sRAG = Math.round((getEng('ENG-05') + getEng('ENG-08') + getEng('ENG-10')) / 3);
+      const sEEAT = Math.round((getEng('ENG-03') + getEng('ENG-11') + getEng('ENG-12') + getEng('ENG-14')) / 4);
+      setPill('scorePillarSEO', sSEO);
+      setPill('scorePillarGEO', sGEO);
+      setPill('scorePillarAEO', sAEO);
+      setPill('scorePillarLLMO', sLLMO);
+      setPill('scorePillarAAO', sAAO);
+      setPill('scorePillarRAG', sRAG);
+      setPill('scorePillarEEAT', sEEAT);
+    } else {
+      setPill('scorePillarSEO', Math.min(100, Math.round(score * 1.05)));
+      setPill('scorePillarGEO', Math.round(score * 0.95));
+      setPill('scorePillarAEO', Math.min(100, Math.round(score * 1.02)));
+      setPill('scorePillarLLMO', Math.round(score * 0.96));
+      setPill('scorePillarAAO', Math.max(30, Math.round(score * 0.85)));
+      setPill('scorePillarRAG', Math.round(score * 0.92));
+      setPill('scorePillarEEAT', Math.min(100, Math.round(score * 0.98)));
+    }
+
     // 8c. Update Competitor Parity Benchmark Table
     const compTargetCell = document.getElementById('compTargetCell');
     if (compTargetCell) {
