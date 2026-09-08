@@ -19,7 +19,7 @@ import subprocess
 import struct
 
 REPO_ROOT = "/Users/macair1/projects/html"
-SOURCE_PATH = "/Users/macair1/.gemini/antigravity/brain/8bc304cf-639e-4a14-86a6-105281c9ab17/.user_uploaded/media_1788817645322.png"
+SOURCE_PATH = "/Users/macair1/.gemini/antigravity/brain/767053e1-5c3d-4578-9b7a-1a50bdebe146/.user_uploaded/media_1788879878377.png"
 
 def build_ico(image_files):
     images = []
@@ -88,8 +88,8 @@ def main():
     svg_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
   <rect width="800" height="800" rx="176" ry="176" fill="#000000"/>
   <g transform="translate(0,800) scale(0.1,-0.1)" fill="#ffffff" stroke="none">
-    <path d="M2746 7451 c-3 -5 -528 -1552 -1165 -3437 -638 -1886 -1163 -3437 -1166 -3446 -7 -17 23 -18 546 -18 l554 0 1156 3448 c983 2930 1154 3448 1140 3454 -24 10 -1059 9 -1065 -1z"/>
-    <path d="M5505 4498 c-549 -1624 -1074 -3177 -1166 -3450 l-168 -498 552 0 552 0 779 2323 c428 1277 949 2829 1157 3450 l378 1127 -543 0 -543 0 -998 -2952z"/>
+    <path d="M2883 6364 c-44 -115 -1539 -4721 -1534 -4727 4 -4 232 -6 506 -5 l498 3 773 2370 c426 1304 774 2371 774 2373 0 1 -227 2 -505 2 -457 0 -506 -2 -512 -16z"/>
+    <path d="M5443 6364 c-44 -115 -1539 -4721 -1534 -4727 4 -4 232 -6 506 -5 l498 3 773 2370 c426 1304 774 2371 774 2373 0 1 -227 2 -505 2 -457 0 -506 -2 -512 -16z"/>
   </g>
 </svg>
 """
