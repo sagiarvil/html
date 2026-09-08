@@ -43,18 +43,18 @@ function openSaasRemediationModal(data){
       <button type="button" class="saas-modal-tab-btn" data-mtab="mtab-delivery">📦 ${isTr?'3. Teslimat & Sınırlar':'3. Delivery & Scope'}</button>
     </div>
     <div id="mtab-setup" class="saas-modal-view">
-      <h3 class="saas-modal-title">${isTr?'Teşhis Doğrulandı: 24 Dosyalık Mühendislik Reçete Paketi':'Audit Validated: 24-File Engineering Recipe Bundle'}</h3>
+      <h3 class="saas-modal-title">${isTr?'Teşhis Doğrulandı: 30+ Dosyalık Mühendislik Reçete Paketi':'Audit Validated: 30+ File Engineering Recipe Bundle'}</h3>
       <p class="saas-modal-desc">${isTr?'18 motor tarafından tespit edilen tüm engeller için üretime hazır kod şablonları, n8n iş akışları ve testler hazırlandı. Paketi indirip doğrudan kendi yazılımcınıza teslim edebilirsiniz:':'All detected blockers across 18 engines are mapped into production-grade code templates, n8n workflows, and regression tests for your in-house engineering team:'}</p>
       <div class="saas-summary-box">
         <div class="saas-summary-plan">
           <strong class="saas-summary-title">${isTr?'Tam Çözüm Reçeteleri Paketi (Tek Seferlik)':'Full Fix Recipe Bundle (One-Time)'}</strong>
-          <span class="saas-summary-sub">${cDomain} · 18 ${isTr?'Motor Onaylı':'Engines Verified'} · ${isTr?'24 Mühendislik Dosyası (ZIP)':'24 Engineering Files (ZIP)'}</span>
+          <span class="saas-summary-sub">${cDomain} · 18 ${isTr?'Motor Onaylı':'Engines Verified'} · ${isTr?'30+ Mühendislik Dosyası (ZIP)':'30+ Engineering Files (ZIP)'}</span>
         </div>
         <div class="saas-summary-price">$99</div>
       </div>
       <div class="saas-modal-guarantees">
         <div>✓ <strong>${isTr?'Kendi Yazılımcınıza Teslim Edin:':'Handover to In-House Devs:'}</strong> ${isTr?'Her bulgu için kök neden (ROOT FIX), kurtarma (RECOVERY) ve önleme (PREVENTION) kod şablonları.':'ROOT FIX, RECOVERY, and PREVENTION code templates for every valid finding.'}</div>
-        <div>✓ <strong>${isTr?'24 Dosyalık Tam ZIP Paketi:':'Complete 24-File ZIP Bundle:'}</strong> ${isTr?'JSON-LD şemaları, AST optimizasyon kodları, n8n otomasyonu ve bash test scriptleri.':'JSON-LD schemas, AST optimization code, n8n workflows, and bash test scripts.'}</div>
+        <div>✓ <strong>${isTr?'30+ Dosyalık Tam ZIP Paketi:':'Complete 30+ File ZIP Bundle:'}</strong> ${isTr?'JSON-LD şemaları, AST optimizasyon kodları, n8n otomasyonu ve bash test scriptleri.':'JSON-LD schemas, AST optimization code, n8n workflows, and bash test scripts.'}</div>
         <div>✓ <strong>${isTr?'30 Gün İçinde 1 Re-Scan:':'30-Day Re-Scan Included:'}</strong> ${isTr?'Yazılımcınız düzeltmeleri canlıya aldığında 18 motorla yeniden tarayarak skor artışını teyit edin.':'Re-scan across all 18 engines after your developers deploy fixes to empirically verify improvements.'}</div>
         <div>✓ <strong>${isTr?'Sıfır Müdahale Riski:':'Zero Origin Touch Risk:'}</strong> ${isTr?'Sunucunuza veya kodunuza dışarıdan müdahale edilmez; tüm kontrol kendi ekibinizdedir.':'Zero external origin tampering; implementation control remains completely in your hands.'}</div>
       </div>
@@ -204,7 +204,7 @@ function openBoardMemoModal(data){
         ⚖️ <strong>${isTr?'Finansal Etki:':'Financial Impact:'}</strong> ${isTr?'Mevcut kurumsal sepet hacmimize göre her ay önemli miktarda satın alma niyetli trafik sitenizi göremeden aracı platformlara kaymaktadır.':'High-intent commercial pipeline is suppressed due to crawler truncation and missing schema.'}
       </div>
 
-      <div class="board-memo-section-title">${isTr?'2. ÖNERİLEN ÇÖZÜM: 24 DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ PAKETİ':'2. RECOMMENDED ACTION: 24-FILE ENGINEERING RESOLUTION RECIPE PACK'}</div>
+      <div class="board-memo-section-title">${isTr?'2. ÖNERİLEN ÇÖZÜM: 30+ DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ PAKETİ':'2. RECOMMENDED ACTION: 30+ FILE ENGINEERING RESOLUTION RECIPE PACK'}</div>
       <p class="board-memo-p">${isTr?'Yazılım ekibinize teslim edilecek üretime hazır kod şablonları, JSON-LD şemaları ve n8n izleme iş akışları ile:':'Deliverable production code templates, JSON-LD schemas, and n8n monitoring workflows for your internal engineering team:'}</p>
       <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
         <li><strong>${isTr?'14KB AST Budama Şablonu:':'Sub-14KB AST Purge Template:'}</strong> ${isTr?'Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.':'Code optimization ensuring search crawlers ingest full pricing and service boundaries.'}</li>
@@ -216,7 +216,7 @@ function openBoardMemoModal(data){
       <div class="board-memo-actions">
         <div>
           <div style="font-size:11px;color:#64748b;">${isTr?'Lisans Maliyeti:':'License Investment:'} <strong style="font-size:16px;color:#0f172a;">$99</strong> ${isTr?'(Tek seferlik sabit · Abonelik yok)':'(Single one-time · Zero subscription)'}</div>
-          <div style="font-size:10.5px;color:#10b981;">✓ ${isTr?'24 Dosyalık Tam Çözüm Reçeteleri Paketi &amp; Anında ZIP İndirme':'24-File Resolution Recipe Pack &amp; Instant ZIP Delivery'}</div>
+          <div style="font-size:10.5px;color:#10b981;">✓ ${isTr?'30+ Dosyalık Tam Çözüm Reçeteleri Paketi &amp; Anında ZIP İndirme':'30+ File Resolution Recipe Pack &amp; Instant ZIP Delivery'}</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center;">
           <button type="button" class="btn-board-memo" id="btnPrintBoardMemo" style="padding:10px 16px;font-size:12.5px;">🖨️ ${isTr?'Yazdır / PDF Kaydet':'Print / Save PDF'}</button>
@@ -284,7 +284,16 @@ function render(data){
   const healthHeadlineText=overall>=80?(isTr?'Siteniz arama motorları ve AI botları için yüksek hazır bulunuşluğa sahip.': 'Your website exhibits high readiness for search engines and AI crawlers.'):(overall>=50?(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından kısmen taranabiliyor; kritik engeller mevcut.':'Your website is partially accessible to AI search engines; critical blockers exist.'):(isTr?'Siteniz arama motorları ve yapay zeka botları tarafından yarı yarıya görünmüyor; acil reçete uygulaması gerekiyor.':'Your website is largely invisible to AI search bots; urgent recipe remediation required.'));
   const healthSubText=isTr?`${counts.all} bulgu tespit edildi. ${counts.critical} kritik sorun (Googlebot erişimi, robots engelleri veya noindex) potansiyel müşterilerin sitenize ulaşmasını doğrudan durdurabilir.`:`Detected ${counts.all} findings. ${counts.critical} critical blockers directly impair your ability to be retrieved and recommended by AI engines.`;
   healthDeck.className='health-executive-summary';
-  healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p><div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;
+  const qid=sm.wikidataQid;
+  const qidBadge=qid
+    ? `<div class="health-entity-tag health-entity-verified" style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">🎯 ${isTr?'Doğrulanmış Wikidata Varlığı:':'Verified Wikidata Entity:'} <a href="https://www.wikidata.org/wiki/${safe(qid)}" target="_blank" rel="noopener" style="color:#15803d;text-decoration:underline;">${safe(qid)}</a></div>`
+    : `<div class="health-entity-tag health-entity-unlinked" style="display:inline-flex;align-items:center;gap:6px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">⚠️ ${isTr?'Wikidata Varlık Bağlantısı Eksik — 13_KNOWLEDGE_VAULT Reçetesi Gereklidir':'Wikidata Entity Unlinked — 13_KNOWLEDGE_VAULT Recipe Required'}</div>`;
+  const cruxData=data.fieldData?.cruxOriginReadiness;
+  const cruxBadge=cruxData
+    ? `<div class="health-entity-tag health-crux-tag" style="display:inline-flex;align-items:center;gap:6px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">⚡ CrUX Origin: <strong>${safe(cruxData.status)}</strong> (${safe(cruxData.estimatedLcpRange)}) · CLS Risk: <strong>${safe(cruxData.clsRisk)}</strong></div>`
+    : '';
+  const badgesRow=`<div class="health-trust-badges-row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 16px;">${qidBadge}${cruxBadge}</div>`;
+  healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p>${badgesRow}<div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;
   // Navigation Tabs & Panes Architecture
   let dashTabsWrap = document.getElementById('dashViewNavWrapper');
   if (!dashTabsWrap) {
@@ -381,14 +390,14 @@ function render(data){
     <div class="master-license-header">
       <div class="master-license-icon">📦</div>
       <div class="master-license-title-wrap">
-        <h3>${isTr ? '🎯 TEK BİR $99 LİSANS İLE BU SİTEDEKİ TÜM BULGULAR VE 24 KOD DOSYASI AÇILIR' : '🎯 SINGLE $99 LICENSE UNLOCKS ALL FINDINGS & 24 CODE FILES'}</h3>
-        <p>${isTr ? '<strong>Her eksiklik için ayrı para ödenmez!</strong> 99$ tek seferlik bir tam site lisansıdır. Satın aldığınızda hem aşağıdaki <strong>TÜM kilitli reçeteler</strong> anında açılır, hem de sitenizin tüm açıklarını kapatan <strong>24 dosyalık mühendislik ZIP paketi</strong> yazılımcınıza teslim edilmek üzere anında indirilir.' : '<strong>No separate payment per issue!</strong> $99 is a single all-inclusive license. Purchasing it unlocks <strong>ALL locked recipes below</strong> and immediately delivers the <strong>24-file engineering ZIP package</strong> for your developers.'}</p>
+        <h3>${isTr ? '🎯 TEK BİR $99 LİSANS İLE BU SİTEDEKİ TÜM BULGULAR VE 30+ KOD DOSYASI AÇILIR' : '🎯 SINGLE $99 LICENSE UNLOCKS ALL FINDINGS & 30+ CODE FILES'}</h3>
+        <p>${isTr ? '<strong>Her eksiklik için ayrı para ödenmez!</strong> 99$ tek seferlik bir tam site lisansıdır. Satın aldığınızda hem aşağıdaki <strong>TÜM kilitli reçeteler</strong> anında açılır, hem de sitenizin tüm açıklarını kapatan <strong>30+ dosyalık mühendislik ZIP paketi</strong> yazılımcınıza teslim edilmek üzere anında indirilir.' : '<strong>No separate payment per issue!</strong> $99 is a single all-inclusive license. Purchasing it unlocks <strong>ALL locked recipes below</strong> and immediately delivers the <strong>30+ file engineering ZIP package</strong> for your developers.'}</p>
       </div>
     </div>
     <div class="master-license-deliverables-grid">
       <div class="master-deliv-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        <span><strong>${isTr ? '24 Dosyalık ZIP Paketi:' : '24-File ZIP Package:'}</strong> ${isTr ? 'Cloudflare Worker, JSON-LD @graph, llms.txt, C2PA, A2A Agent Card' : 'Cloudflare Worker, JSON-LD, llms.txt, C2PA, A2A Agent Card'}</span>
+        <span><strong>${isTr ? '30+ Dosyalık ZIP Paketi:' : '30+ File ZIP Package:'}</strong> ${isTr ? 'Cloudflare Worker, JSON-LD @graph, llms.txt, C2PA, A2A Agent Card' : 'Cloudflare Worker, JSON-LD, llms.txt, C2PA, A2A Agent Card'}</span>
       </div>
       <div class="master-deliv-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -404,7 +413,7 @@ function render(data){
       </div>
     </div>
     <div class="master-license-actions">
-      <a href="${checkoutUrlForBanner}" class="master-license-cta-btn">⚡ ${isTr ? '99$ Tek Seferlik Lisansı Aç ve 24 Dosyayı İndir →' : 'Unlock $99 All-Inclusive License & Download 24 Files →'}</a>
+      <a href="${checkoutUrlForBanner}" class="master-license-cta-btn">⚡ ${isTr ? '99$ Tek Seferlik Lisansı Aç ve 30+ Dosyayı İndir →' : 'Unlock $99 All-Inclusive License & Download 30+ Files →'}</a>
       <span class="master-license-guarantee-note">🔒 ${isTr ? 'Sıfır dış kod müdahalesi riski · Kodları kendi yazılım ekibiniz uygular' : 'Zero origin touch risk · Handed over directly to your developers'}</span>
     </div>
   `;
@@ -478,7 +487,7 @@ function render(data){
     </div>
   </div>
   <div class="arr-cta-action-wrap" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-    <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" id="btnStopLoss">⚡ ${isTr?'24 Dosyalık Çözüm Reçete Paketini Aç ($99) →':'Unlock 24-File Resolution Recipe Pack ($99) →'}</a>
+    <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" id="btnStopLoss">⚡ ${isTr?'30+ Dosyalık Çözüm Reçete Paketini Aç ($99) →':'Unlock 30+ File Resolution Recipe Pack ($99) →'}</a>
     <button type="button" class="btn-board-memo" id="btnOpenBoardMemo">📄 ${isTr?'Yönetim Kurulu Özet Notu (Board Memo) — 1 Sayfa':'1-Page Executive Board Memo'}</button>
     <div class="arr-cta-sub" style="width:100%;">${isTr?'🔒 Sıfır dış müdahale riski · 24 dosyalık mühendislik reçetelerini kendi yazılımcınıza teslim edin.':'🔒 Zero origin touch risk · Handover 24-file engineering recipes to your in-house developers.'}</div>
   </div>
@@ -687,7 +696,7 @@ const roadmapSample=isTr?`# ====================================================
 4. [P1 - 2d] HTML: Semantic data-chunk-id boundary encapsulation.
 5. [P2 - 3d] n8n: Autonomous self-healing DAG with auto-purge & incident routing.
 
-[REDACTED SECTION: 24 MANDATORY ENGINEERING DELIVERABLES]
+[REDACTED SECTION: 30+ MANDATORY ENGINEERING DELIVERABLES]
 -------------------------------------------------------------------------
 - Root Cause Code Implementations .................... [LOCKED: $99 Kit]
 - 5 Critical Checkpoint Acceptance Tests ............. [LOCKED: $99 Kit]
@@ -730,7 +739,7 @@ vary: Accept-Encoding, User-Agent
 
 &lt;!-- Edge Worker pruned 401,010 bytes of script/SVG noise in 4.2ms. Stream delivery started. --&gt;</pre>
 </div>
-<div class="saas-banner-bar saas-banner-blue"><div class="saas-banner-text">🔒 <strong>${isTr?'Mühendislik Kod Şablonu:':'Engineering Code Template:'}</strong> ${isTr?'Yazılımcınıza teslim edebileceğiniz 24 dosyalı hazır mühendislik çözüm paketi.':'24-file ready-to-deploy code and recipe package for your in-house engineering team.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="padding:10px 20px;font-size:13px;">${isTr?'24 Dosyalık Çözüm Paketini İndir — $99 →':'Download 24-File Resolution Pack — $99 →'}</a></div></div>`;
+<div class="saas-banner-bar saas-banner-blue"><div class="saas-banner-text">🔒 <strong>${isTr?'Mühendislik Kod Şablonu:':'Engineering Code Template:'}</strong> ${isTr?'Yazılımcınıza teslim edebileceğiniz 30+ dosyalı hazır mühendislik çözüm paketi.':'30+ file ready-to-deploy code and recipe package for your in-house engineering team.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="padding:10px 20px;font-size:13px;">${isTr?'30+ Dosyalık Çözüm Paketini İndir — $99 →':'Download 30+ File Resolution Pack — $99 →'}</a></div></div>`;
 
 const tabDiffHtml=`<div class="ast-diff-container">
   <div class="ast-diff-head-banner">
@@ -901,7 +910,7 @@ const tabAaoHtml=`<div class="aao-readiness-grid">
 
   <div class="saas-banner-bar saas-banner-amber">
     <div class="saas-banner-text">🤖 <strong>${isTr?'Otonom Ticaret Reçetesi:':'Agentic Commerce Recipe:'}</strong> ${isTr?'Makinelerin sitenizden işlem yapmasını sağlayan protokol spesifikasyonları ve kod şablonları $99 çözüm paketiyle açılır.':'Machine-to-machine transaction specifications and code templates are unlocked with the $99 resolution pack.'}</div>
-    <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss btn-stop-loss-amber">${isTr?'24 Dosyalık Çözüm Paketini İndir — $99 →':'Download 24-File Resolution Pack — $99 →'}</a>
+    <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss btn-stop-loss-amber">${isTr?'30+ Dosyalık Çözüm Paketini İndir — $99 →':'Download 30+ File Resolution Pack — $99 →'}</a>
   </div>
 </div>`;
 
@@ -955,16 +964,16 @@ content-length: 1842
 > Verified Ground-Truth Entity Index for AI Engines...</div>
   </div>
   <div class="saas-toggle-row"><span>${isTr?'Dinamik Markdown Servisi (Accept: text/markdown & Bot Edge Delivery)':'Dynamic Markdown Delivery (Accept: text/markdown & Bot Negotiation)'}</span><span class="saas-toggle-active">✅ ${isTr?'AÇIK (EDGE AKTİF)':'ENABLED (EDGE ACTIVE)'}</span></div>
-  <div class="saas-banner-bar saas-banner-purple"><div class="saas-banner-text">⚡ <strong>/llms.txt</strong> ${isTr?'Yazılımcınızın sitenize yükleyeceği doğrulanmış Spec-v2 şablonu.':'Spec-v2 validated markdown template ready for your developers to deploy.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss btn-stop-loss-purple">${isTr?'24 Dosyalık Çözüm Paketini İndir — $99 →':'Download 24-File Resolution Pack — $99 →'}</a></div>
+  <div class="saas-banner-bar saas-banner-purple"><div class="saas-banner-text">⚡ <strong>/llms.txt</strong> ${isTr?'Yazılımcınızın sitenize yükleyeceği doğrulanmış Spec-v2 şablonu.':'Spec-v2 validated markdown template ready for your developers to deploy.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss btn-stop-loss-purple">${isTr?'30+ Dosyalık Çözüm Paketini İndir — $99 →':'Download 30+ File Resolution Pack — $99 →'}</a></div>
 </div>`;
 
-remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'24 DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ VE KOD PAKETİ ($99)':'24-FILE RESOLUTION RECIPES & PRODUCTION CODE PACK ($99)'}</span><h3 class="executive-deck-title">${isTr?'Yazılımcınıza Teslim Edeceğiniz 24 Dosyalık Mühendislik Çözüm Paketi':'24 Production-Ready Engineering Files for Your Developers'}</h3><p class="executive-deck-desc">${isTr?'Sistemlerimiz sitenizi 18 gelişmiş motorla inceleyerek en ince ayrıntısına kadar teşhis eder. Yazılımcınızın sitenize uygulayabileceği hazır Cloudflare Worker kodları, JSON-LD şemaları, n8n iş akışları ve adım adım düzeltme reçeteleri tek pakette sunulur:':'Our 18 specialized diagnostic engines analyze your domain and generate complete, ready-to-deploy remediation files. Deliver this 24-file recipe package directly to your in-house developers:'}</p></div></div>
+remConsole.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">⚡ ${isTr?'30+ DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ VE KOD PAKETİ ($99)':'30+ FILE RESOLUTION RECIPES & PRODUCTION CODE PACK ($99)'}</span><h3 class="executive-deck-title">${isTr?'Yazılımcınıza Teslim Edeceğiniz 30+ Dosyalık Mühendislik Çözüm Paketi':'30+ Production-Ready Engineering Files for Your Developers'}</h3><p class="executive-deck-desc">${isTr?'Sistemlerimiz sitenizi 18 gelişmiş motorla inceleyerek en ince ayrıntısına kadar teşhis eder. Yazılımcınızın sitenize uygulayabileceği hazır Cloudflare Worker kodları, JSON-LD şemaları, n8n iş akışları ve adım adım düzeltme reçeteleri tek pakette sunulur:':'Our 18 specialized diagnostic engines analyze your domain and generate complete, ready-to-deploy remediation files. Deliver this 30+ file recipe package directly to your in-house developers:'}</p></div></div>
 <div class="console-tabs-nav"><button type="button" class="console-tab-btn active" data-tab="tab-roadmap">📋 ${isTr?'P0-P3 Yol Haritası':'Roadmap'}</button><button type="button" class="console-tab-btn" data-tab="tab-diff">⚡ ${isTr?'Canlı AST Diff':'Live AST Diff'}</button><button type="button" class="console-tab-btn" data-tab="tab-worker">⚡ Cloudflare Worker SaaS</button><button type="button" class="console-tab-btn" data-tab="tab-aao">🤖 ${isTr?'Otonom Ajan (AAO)':'Agentic Commerce'}</button><button type="button" class="console-tab-btn" data-tab="tab-n8n">🤖 ${isTr?'Otonom İzleme Pipeline':'Autonomous Monitoring'}</button><button type="button" class="console-tab-btn" data-tab="tab-llms">📄 llms.txt Spec-v2</button><button type="button" class="console-tab-btn" data-tab="tab-schema">🕸️ Wikidata JSON-LD</button><button type="button" class="console-tab-btn" data-tab="tab-c2pa">🛡️ C2PA Ledger</button><button type="button" class="console-tab-btn" data-tab="tab-mcp">🔌 MCP Server</button><button type="button" class="console-tab-btn" data-tab="tab-ci">⚙️ CI/CD Quality Gate</button></div>
 <div id="tab-roadmap" class="console-pane active">${lockPaneHtml('code-roadmap-pre',roadmapSample,'02_IMPLEMENTATION_ROADMAP.md','btnDlRoadmapMd')}</div>
 <div id="tab-diff" class="console-pane">${tabDiffHtml}</div>
 <div id="tab-worker" class="console-pane">${workerSaasHtml}</div>
 <div id="tab-aao" class="console-pane">${tabAaoHtml}</div>
-<div id="tab-n8n" class="console-pane"><div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'Otonom İzleme ve Kendi Kendini Onaran Pipeline':'Autonomous Self-Healing Ingestion Pipeline'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-download-blob" style="text-decoration:none;">💾 ${isTr?'24 Dosyalık Çözüm Paketini İndir — $99':'Download 24-File Pack — $99'}</a></div></div><div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p><span class="dag-node-telemetry">Cron 03:00 UTC</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p><span class="dag-node-telemetry">HTTP/3 200 OK</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p><span class="dag-node-telemetry">Multi-Bot UA</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · PREFERRED</span><span class="dag-node-status"></span></div><div class="dag-node-name">Google Preferred</div><p class="dag-node-sub">publisher.js &amp; SDK</p><span class="dag-node-telemetry">Official 2026 P1</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p><span class="dag-node-telemetry">AST &lt; 14,336B</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p><span class="dag-node-telemetry">Score ≥ 80 Gate</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="6"><div class="dag-node-head"><span class="dag-node-step">07 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p><span class="dag-node-telemetry">CF API Purge</span></div></div><div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div></div>
+<div id="tab-n8n" class="console-pane"><div class="n8n-dag-container"><div class="n8n-dag-title-row"><div class="n8n-dag-title"><span>⚡ ${isTr?'Otonom İzleme ve Kendi Kendini Onaran Pipeline':'Autonomous Self-Healing Ingestion Pipeline'}</span></div><div class="n8n-dag-actions"><button type="button" class="btn-run-dag" id="btnRunDag">▶️ ${isTr?'Akışı Test Et':'Run Test Pipeline'}</button><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-download-blob" style="text-decoration:none;">💾 ${isTr?'30+ Dosyalık Çözüm Paketini İndir — $99':'Download 30+ File Pack — $99'}</a></div></div><div class="n8n-dag-nodes-flow"><div class="dag-node-card active" data-step="0"><div class="dag-node-head"><span class="dag-node-step">01 · TRIGGER</span><span class="dag-node-status"></span></div><div class="dag-node-name">Daily / CI-CD</div><p class="dag-node-sub">Cron + Webhook</p><span class="dag-node-telemetry">Cron 03:00 UTC</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="1"><div class="dag-node-head"><span class="dag-node-step">02 · PROBE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Probe Surfaces</div><p class="dag-node-sub">llms.txt &amp; robots</p><span class="dag-node-telemetry">HTTP/3 200 OK</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="2"><div class="dag-node-head"><span class="dag-node-step">03 · INGEST</span><span class="dag-node-status"></span></div><div class="dag-node-name">Multi-Bot Crawl</div><p class="dag-node-sub">Perplexity / GPTBot</p><span class="dag-node-telemetry">Multi-Bot UA</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="3"><div class="dag-node-head"><span class="dag-node-step">04 · PREFERRED</span><span class="dag-node-status"></span></div><div class="dag-node-name">Google Preferred</div><p class="dag-node-sub">publisher.js &amp; SDK</p><span class="dag-node-telemetry">Official 2026 P1</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="4"><div class="dag-node-head"><span class="dag-node-step">05 · AUDIT</span><span class="dag-node-status status-amber"></span></div><div class="dag-node-name">14KB AST Gate</div><p class="dag-node-sub">AST &amp; Chunk IDs</p><span class="dag-node-telemetry">AST &lt; 14,336B</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="5"><div class="dag-node-head"><span class="dag-node-step">06 · TRIAGE</span><span class="dag-node-status"></span></div><div class="dag-node-name">Bayesian Drift</div><p class="dag-node-sub">Score &lt; 80 Triage</p><span class="dag-node-telemetry">Score ≥ 80 Gate</span></div><span class="dag-connector">→</span><div class="dag-node-card" data-step="6"><div class="dag-node-head"><span class="dag-node-step">07 · AUTO-HEAL</span><span class="dag-node-status"></span></div><div class="dag-node-name">Slack + CF Purge</div><p class="dag-node-sub">Self-Healing Edge</p><span class="dag-node-telemetry">CF API Purge</span></div></div><div class="dag-inspector-panel" id="dagNodeInspector"><strong>[01 · Cron / CI-CD Trigger]</strong>: ${isTr?'Her gün saat 03:00 UTC\'de veya CI/CD dağıtımında otonom AI bot taramasını tetikler.':'Triggers autonomous multi-agent crawl at 03:00 UTC or on-demand CI/CD push.'}</div></div></div>
 <div id="tab-llms" class="console-pane">${llmsSaasHtml}</div>
 <div id="tab-schema" class="console-pane">${lockPaneHtml('code-schema-pre',jsonLdSample,'13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata Vault &amp; Offer Catalog)','btnDlSchemaJson')}</div>
 <div id="tab-c2pa" class="console-pane">${lockPaneHtml('code-c2pa-pre',c2paSample,'20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 TSA Digest)','btnDlC2paJson')}</div>
@@ -1253,6 +1262,43 @@ export default {
   ⭐ Google Preferred Source Ekle
 </button>
 <!-- Kabul Testi: curl -sL https://${cleanDom}/ | grep -E "publisher.js|google-add-preferred-source" -->`;
+  } else if (f.id === 'SPA-HYDRATION-001') {
+    recipeFileName = '14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js';
+    step1 = isTr ? 'CSR İstemci Taraması: Sitedeki boş root container (<div id="root">) ve <250 kelimelik ham SSR gövdesi AI botlarını aç bırakıyor.' : 'CSR Starvation Audit: Empty root container (<div id="root">) with <250 words raw SSR text starves AI scrapers.';
+    step2 = isTr ? 'Edge SSR Yaması: Aşağıdaki Cloudflare Worker şablonu ile bot isteklerinde dinamik prerender HTML servis edin.' : 'Edge SSR Patch: Deliver the Cloudflare Worker streaming dynamic prerender template below to your developers.';
+    step3 = isTr ? 'Doğrulama: curl -sL -A "GPTBot" https://' + cleanDom + '/ | grep -v "root" ile içeriğin doğrudan geldiğini doğrulayın.' : 'Verification Gate: Verify direct SSR content via curl -sL -A "GPTBot" https://' + cleanDom + '/ | grep -v "root".';
+    codeSnippet = `// 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js — Dynamic SSR Fallback
+export default {
+  async fetch(request, env) {
+    const ua = request.headers.get("user-agent") || "";
+    const isBot = /GPTBot|ClaudeBot|PerplexityBot|Google-Extended/i.test(ua);
+    if (isBot) {
+      // Dynamic Edge Prerender for AI Bots: Serves indexed semantic HTML
+      const originRes = await fetch(request);
+      return new HTMLRewriter()
+        .on("#root, #app, #__next", {
+          element(e) {
+            e.setInnerContent('<main data-ai-ssr="active"><h1>${cleanDom}</h1><p>Verified Enterprise AI Services & Products</p></main>', { html: true });
+          }
+        })
+        .transform(originRes);
+    }
+    return fetch(request);
+  }
+};`;
+  } else if (f.id === 'C2PA-PROVENANCE-001') {
+    recipeFileName = '20_C2PA_PROVENANCE_LEDGER_SPEC.json';
+    step1 = isTr ? 'Kriptografik Menşe Doğrulaması: Sayfa yanıtında x-c2pa-manifest başlığı ve RFC 3161 zaman damgası eksik.' : 'Provenance Audit: Missing x-c2pa-manifest header and RFC 3161 digital timestamp in HTTP response.';
+    step2 = isTr ? 'Sunucu Başlık Yaması: Nginx, Cloudflare veya sunucu yapılandırmasına x-c2pa-manifest başlığını ekleyin.' : 'Server Header Patch: Add x-c2pa-manifest and RFC 9264 link headers in Nginx or Cloudflare configuration.';
+    step3 = isTr ? 'Kabul Testi: curl -sI https://' + cleanDom + '/ | grep -i c2pa ile 200 OK yanıtında başlığı teyit edin.' : 'Verification Gate: Verify c2pa header via curl -sI https://' + cleanDom + '/ | grep -i c2pa.';
+    codeSnippet = `<!-- 20_C2PA_PROVENANCE_LEDGER_SPEC.html -->
+<!-- <head> içerisine C2PA Provenance meta etiketini ekleyin -->
+<meta name="c2pa-manifest" content="https://${cleanDom}/.well-known/c2pa/manifest.json" />
+<meta name="generator" content="HTMLandHTML Engine V2.1.0 (RFC 3161 Provenance Ledger)" />
+<!-- Sunucu yanıt başlığı (Nginx / Cloudflare):
+  Link: </.well-known/c2pa/manifest.json>; rel="author"; type="application/c2pa"
+  X-C2PA-Manifest: https://${cleanDom}/.well-known/c2pa/manifest.json
+-->`;
   } else if (f.id.includes('LLMS')) {
     recipeFileName = '08_LLMS_TXT_RECOMMENDED.txt';
     step1 = isTr ? 'llms.txt Spesifikasyon Testi: v2 RFC formatına göre H1 başlığı ve bloknot özeti eksikliği izole edildi.' : 'llms.txt RFC Spec Audit: Missing H1 root anchor and blockquote summary isolated.';
@@ -1288,13 +1334,13 @@ export const configPatch = {
   }
 
   const badgeText = isTr ? '🔒 TEK BİR $99 LİSANS İLE TÜM BULGULAR AÇILIR' : '🔒 SINGLE $99 LICENSE UNLOCKS ALL FINDINGS';
-  const headingText = isTr ? 'Bu Reçete 24 Dosyalık Tam Çözüm Paketine Dahildir' : 'Included in 24-File Complete Resolution Pack';
+  const headingText = isTr ? 'Bu Reçete 30+ Dosyalık Tam Çözüm Paketine Dahildir' : 'Included in 30+ File Complete Resolution Pack';
   const descText = isTr 
-    ? 'Bu reçete için ayrı ücret ödenmez! Tek bir 99$ lisansı satın aldığınızda; bu bulgunun ve sitedeki DİĞER TÜM tespitlerin hazır kodları, Cloudflare Worker şablonları ve 24 dosyalık ZIP paketi birlikte açılır.'
-    : 'No separate payment for this recipe! A single $99 license unlocks this finding, all other findings, Cloudflare Worker templates, and the full 24-file ZIP package together.';
+    ? 'Bu reçete için ayrı ücret ödenmez! Tek bir 99$ lisansı satın aldığınızda; bu bulgunun ve sitedeki DİĞER TÜM tespitlerin hazır kodları, Cloudflare Worker şablonları ve 30+ dosyalık ZIP paketi birlikte açılır.'
+    : 'No separate payment for this recipe! A single $99 license unlocks this finding, all other findings, Cloudflare Worker templates, and the full 30+ file ZIP package together.';
   const ctaText = isTr 
-    ? '🔓 99$ Tek Seferlik Lisans İle TÜM Reçeteleri Aç (24 Dosya ZIP) →' 
-    : '🔓 Unlock ALL Recipes with Single $99 License (24-File ZIP) →';
+    ? '🔓 99$ Tek Seferlik Lisans İle TÜM Reçeteleri Aç (30+ Dosya ZIP) →' 
+    : '🔓 Unlock ALL Recipes with Single $99 License (30+ File ZIP) →';
 
   return `<div class="recipe-section locked">
     <div class="recipe-glow"></div>
@@ -1349,7 +1395,7 @@ if(!closingDeck){
   closingDeck.className='closing-intervention-deck';
   paneFindings.appendChild(closingDeck);
 }
-closingDeck.innerHTML=`<div class="closing-deck-inner"><div class="closing-badge">⚡ ${isTr?'24 DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ VE KOD PAKETİ':'24-FILE RESOLUTION RECIPES & CODE PACK'}</div><h3 class="closing-title">${isTr?'Teşhis Doğrulandı: 18 Motorlu Çözüm Reçeteleri Paketi':'Diagnosis Validated: 18-Engine Resolution Recipes Pack'}</h3><p class="closing-pitch">${isTr?'Yukarıdaki tüm tespitler için üretilmiş 24 adet mühendislik reçetesi ve hazır kod dosyasını indirin. Raporu doğrudan kendi yazılımcınıza veya ajansınıza teslim ederek tüm açıkları hızla kapatın. Hiçbir insan müdahalesi beklemeden, ödeme sonrası anında ZIP olarak teslim edilir.':'Download all 24 engineering recipes and production code files generated for the findings above. Hand the complete pack directly to your in-house software engineers or agency to eliminate all blockers rapidly. 100% automated software delivery with instant ZIP download.'}</p><div class="closing-guarantees"><div class="closing-pill">📋 <strong>${isTr?'Yazılımcınıza Teslim Edin':'For Your Developers'}</strong> <span>${isTr?'24 dosyalı hazır mühendislik reçetesi':'24 ready-to-use recipe files'}</span></div><div class="closing-pill">⚡ <strong>${isTr?'Anında Teslimat':'Instant Delivery'}</strong> <span>${isTr?'Ödeme sonrası otomatik ZIP indirme':'Automated ZIP download post-payment'}</span></div><div class="closing-pill">🎯 <strong>${isTr?'30 Gün Yeniden Tarama':'30-Day Re-Scan'}</strong> <span>${isTr?'18 motorla sınırsız canlı teyit':'Unlimited live re-scans on 18 engines'}</span></div><div class="closing-pill">🤖 <strong>${isTr?'%100 Otonom Yazılım':'100% Autonomous Software'}</strong> <span>${isTr?'İnsan müdahalesi yok, tek seferlik $99':'Zero human overhead, one-time $99'}</span></div></div><div class="closing-cta-wrap" style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;"><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="closing-cta-btn">${isTr?'24 Dosyalık Çözüm Paketini İndir ($99) →':'Download 24-File Resolution Pack ($99) →'}</a><button type="button" class="btn-board-memo" id="btnOpenBoardMemoClosing">📄 ${isTr?'Yönetim Kurulu Notu (Board Memo)':'1-Page Executive Board Memo'}</button><div class="closing-sub" style="width:100%;">${isTr?'⚡ Tek seferlik $99 sabit fiyat · Gizli maliyet veya abonelik yok · Anında ZIP indirme':'⚡ Single $99 one-time license · No hidden fees or recurring subscriptions · Instant ZIP download'}</div></div></div>`;
+closingDeck.innerHTML=`<div class="closing-deck-inner"><div class="closing-badge">⚡ ${isTr?'30+ DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ VE KOD PAKETİ':'30+ FILE RESOLUTION RECIPES & CODE PACK'}</div><h3 class="closing-title">${isTr?'Teşhis Doğrulandı: 18 Motorlu Çözüm Reçeteleri Paketi':'Diagnosis Validated: 18-Engine Resolution Recipes Pack'}</h3><p class="closing-pitch">${isTr?'Yukarıdaki tüm tespitler için üretilmiş 30+ adet mühendislik reçetesi ve hazır kod dosyasını indirin. Raporu doğrudan kendi yazılımcınıza veya ajansınıza teslim ederek tüm açıkları hızla kapatın. Hiçbir insan müdahalesi beklemeden, ödeme sonrası anında ZIP olarak teslim edilir.':'Download all 30+ engineering recipes and production code files generated for the findings above. Hand the complete pack directly to your in-house software engineers or agency to eliminate all blockers rapidly. 100% automated software delivery with instant ZIP download.'}</p><div class="closing-guarantees"><div class="closing-pill">📋 <strong>${isTr?'Yazılımcınıza Teslim Edin':'For Your Developers'}</strong> <span>${isTr?'30+ dosyalı hazır mühendislik reçetesi':'30+ ready-to-use recipe files'}</span></div><div class="closing-pill">⚡ <strong>${isTr?'Anında Teslimat':'Instant Delivery'}</strong> <span>${isTr?'Ödeme sonrası otomatik ZIP indirme':'Automated ZIP download post-payment'}</span></div><div class="closing-pill">🎯 <strong>${isTr?'30 Gün Yeniden Tarama':'30-Day Re-Scan'}</strong> <span>${isTr?'18 motorla sınırsız canlı teyit':'Unlimited live re-scans on 18 engines'}</span></div><div class="closing-pill">🤖 <strong>${isTr?'%100 Otonom Yazılım':'100% Autonomous Software'}</strong> <span>${isTr?'İnsan müdahalesi yok, tek seferlik $99':'Zero human overhead, one-time $99'}</span></div></div><div class="closing-cta-wrap" style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;"><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="closing-cta-btn">${isTr?'30+ Dosyalık Çözüm Paketini İndir ($99) →':'Download 30+ File Resolution Pack ($99) →'}</a><button type="button" class="btn-board-memo" id="btnOpenBoardMemoClosing">📄 ${isTr?'Yönetim Kurulu Notu (Board Memo)':'1-Page Executive Board Memo'}</button><div class="closing-sub" style="width:100%;">${isTr?'⚡ Tek seferlik $99 sabit fiyat · Gizli maliyet veya abonelik yok · Anında ZIP indirme':'⚡ Single $99 one-time license · No hidden fees or recurring subscriptions · Instant ZIP download'}</div></div></div>`;
 document.getElementById('btnOpenBoardMemoClosing')?.addEventListener('click',()=>openBoardMemoModal(data));
 
 const mandate=document.getElementById('mandateLink');if(mandate)mandate.href=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;const entLink=document.getElementById('enterpriseLink');if(entLink)entLink.href=`/checkout?plan=pro&domain=${encodeURIComponent(data.domain)}&scan=${encodeURIComponent(data.scanId)}`;result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'start'})}

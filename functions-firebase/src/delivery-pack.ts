@@ -489,6 +489,113 @@ curl -sL https://${domain}/ | grep -E "news\\.google\\.com/swg/js|google-add-pre
 </html>`;
 }
 
+function generateGoogleRegionalCarouselStructuredData(domain: string, locale: DeliveryLocale): string {
+  const isTr = locale === 'tr';
+  return `<!doctype html>
+<html lang="${isTr ? 'tr' : 'en'}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${isTr ? 'Google Bölgesel Arama & Carousel Yapılandırılmış Veri Şablonu' : 'Google Regional Search & Carousel Structured Data Template'} — ${domain}</title>
+<style>
+  :root { --bg: #0b0f19; --card: #151c2d; --text: #f1f5f9; --muted: #94a3b8; --accent: #38bdf8; --border: #222f47; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+  h1, h2, h3 { color: #fff; }
+  pre, code { background: #060911; border: 1px solid var(--border); border-radius: 6px; padding: 0.2rem 0.4rem; font-family: monospace; color: var(--accent); }
+  pre { padding: 1rem; overflow-x: auto; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+  .alert { background: rgba(56, 189, 248, 0.1); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0; }
+  .badge { display: inline-block; background: #0284c7; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>${isTr ? 'Google Bölgesel Arama (Places Sites & Carousels) Entegrasyon Kılavuzu' : 'Google Regional Search (Places Sites & Carousels) Integration Guide'}</h1>
+<p><strong>${isTr ? 'Hedef Alan Adı' : 'Target Domain'}:</strong> ${domain} | <strong>${isTr ? 'Resmî Standart Tarihi' : 'Official Standard Release'}:</strong> 2026-09-08 (Google Search Central: Regional differences in Search experience)</p>
+
+<div class="alert">
+  <strong>${isTr ? 'Google 8 Eylül 2026 Resmî Kuralı' : 'Google Sept 8, 2026 Official Standard'}:</strong><br>
+  ${isTr
+    ? 'Google, Türkiye ve bölgesel pazarlarda iki önemli arama deneyimi tanımlamıştır: (1) "Places sites" özellikleri ve (2) "Structured data carousels" (Host Carousel). Yerel işletmeler/oteller için doğrulanmış fiziksel konum schema verisi, dijital SaaS ve yayıncılar için ise ItemList tabanlı Host Carousel gereklidir.'
+    : 'Google has formalized two visibility surfaces for Turkey and regional markets: (1) "Places sites" features and (2) "Structured data carousels" (Host Carousels). Physical local businesses/hotels require verified location schema, while digital SaaS platforms and multi-service organizations require ItemList host carousels.'
+  }
+</div>
+
+<div class="card">
+  <span class="badge">${isTr ? 'Seçenek A: Dijital SaaS / Araçlar / Kataloglar (Önerilen)' : 'Option A: Digital SaaS / Tools / Catalogs (Recommended)'}</span>
+  <h2>${isTr ? '1. ItemList Structured Data Host Carousel' : '1. ItemList Structured Data Host Carousel'}</h2>
+  <p>${isTr ? 'Eğer fiziksel bir dükkan/otel değilseniz, Google yönergelerine göre sahte adres UYDURMAYIN. Bunun yerine araçlarınızı veya hizmetlerinizi temsil eden ItemList Host Carousel JSON-LD bloğunu ana sayfanıza ekleyin:' : 'If you are not a walk-in storefront or hotel, DO NOT fabricate physical address coordinates. Instead, publish an ItemList Host Carousel JSON-LD block representing your products, services, or tools:'}</p>
+  <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://${domain}/#carousel",
+  "name": "${domain} Services &amp; Tools",
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "numberOfItems": 3,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Audit &amp; Intelligence Scanner",
+      "url": "https://${domain}/scanner/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AI Search Readiness Evaluation",
+      "url": "https://${domain}/readiness/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Remediation Blueprints",
+      "url": "https://${domain}/remediation/"
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+</div>
+
+<div class="card">
+  <span class="badge">${isTr ? 'Seçenek B: Yerel İşletme / Otel / Şube' : 'Option B: Local Business / Hotel / Branch Office'}</span>
+  <h2>${isTr ? '2. LocalBusiness & Places Sites Şeması' : '2. LocalBusiness & Places Sites Schema'}</h2>
+  <p>${isTr ? 'Fiziksel adrese sahip yerel işletmeler (oteller, klinikler, acenteler, restoranlar) için Google Places sites carousellerine uygun şema:' : 'For physical locations (hotels, clinics, agencies, restaurants) qualifying for Google Places sites carousels:'}</p>
+  <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://${domain}/#localbusiness",
+  "name": "${domain}",
+  "url": "https://${domain}/",
+  "telephone": "+90-212-000-0000",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Maslak Mah. Buyukdere Cad. No: 123",
+    "addressLocality": "Sariyer",
+    "addressRegion": "Istanbul",
+    "postalCode": "34485",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.1118,
+    "longitude": 29.0205
+  },
+  "areaServed": ["TR", "Global"]
+}
+&lt;/script&gt;</code></pre>
+</div>
+
+<div class="card">
+  <h2>${isTr ? '3. Doğrulama ve Kabul Testi' : '3. Acceptance & Validation Test'}</h2>
+  <p>${isTr ? 'Terminal üzerinden sayfanızın geçerli yapılandırılmış veriyi sağladığını test edin:' : 'Verify that your deployed surface provides valid structured data carousel markup via CLI:'}</p>
+  <pre><code>curl -sL https://${domain}/ | grep -E '"@type":\\s*"(ItemList|LocalBusiness)"' &amp;&amp; echo "PASS: Regional carousel schema active"</code></pre>
+</div>
+</body>
+</html>`;
+}
+
 function generateSecondOrderSyntheticCitationLoop(domain: string, locale: DeliveryLocale): string {
   const brand = domain.replace(/\.[a-z]+$/i, '').toUpperCase();
   const tr = locale === 'tr';
@@ -1300,6 +1407,94 @@ export function generateShopifyWebflowInjectors(domain: string): string {
 `;
 }
 
+export function generateNginxApacheEdgeHeaders(domain: string): string {
+  return `# ==============================================================================
+# ENTERPRISE EDGE HEADERS & CONTENT NEGOTIATION FOR NGINX & APACHE
+# Target Domain: ${domain}
+# Standards: RFC 9264 (Link Headers), RFC 3161 (C2PA Provenance), AI Bot Routing
+# ==============================================================================
+
+# ==============================================================================
+# SECTION 1: NGINX CONFIGURATION (/etc/nginx/sites-available/${domain})
+# ==============================================================================
+
+# 1. Map AI Crawler User Agents to optimized machine surfaces
+map $http_user_agent $is_ai_crawler {
+    default 0;
+    ~*(GPTBot|ChatGPT-User|ClaudeBot|PerplexityBot|Google-Extended|Applebot-Extended|Amazonbot|Bytespider) 1;
+}
+
+server {
+    server_name ${domain} www.${domain};
+
+    # 2. Universal RFC 9264 Link Headers for AI Entity Discovery
+    add_header Link '</llms.txt>; rel="describedby"; type="text/markdown"' always;
+    add_header Link '</.well-known/agent-card.json>; rel="service-desc"; type="application/json"' always;
+    add_header X-Robots-Tag "all, max-snippet:-1, max-image-preview:large, max-video-preview:-1" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-AI-Entity-Authority "${domain}" always;
+
+    # 3. Direct Route for /llms.txt with permissive CORS for LLM Context Windows
+    location = /llms.txt {
+        add_header Access-Control-Allow-Origin "*" always;
+        add_header Access-Control-Allow-Methods "GET, HEAD, OPTIONS" always;
+        add_header Content-Type "text/markdown; charset=utf-8" always;
+        add_header Cache-Control "public, max-age=3600, stale-while-revalidate=86400" always;
+        try_files $uri /llms.txt =404;
+    }
+
+    # 4. Direct Route for .well-known AI Agent & MCP files
+    location ^~ /.well-known/ {
+        add_header Access-Control-Allow-Origin "*" always;
+        add_header Content-Type "application/json; charset=utf-8" always;
+        add_header Cache-Control "public, max-age=86400" always;
+    }
+
+    # 5. Content Negotiation: Serve Markdown surface to AI scrapers requesting text/markdown
+    location / {
+        if ($http_accept ~* "text/markdown") {
+            rewrite ^/(.*)$ /machine-surfaces/$1.md break;
+        }
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+# ==============================================================================
+# SECTION 2: APACHE / LITESPEED CONFIGURATION (.htaccess)
+# ==============================================================================
+
+<IfModule mod_headers.c>
+    # Universal RFC 9264 AI Link Headers
+    Header always set Link '</llms.txt>; rel="describedby"; type="text/markdown"'
+    Header always set Link '</.well-known/agent-card.json>; rel="service-desc"; type="application/json"'
+    Header always set X-Robots-Tag "all, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-AI-Entity-Authority "${domain}"
+
+    # Permissive CORS for AI Machine Surfaces
+    <FilesMatch "\\.(txt|md|json)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType text/markdown .md
+    AddType text/plain .txt
+    AddType application/json .json
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect or serve Markdown alternate if AI crawler explicitly requests text/markdown
+    RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ /llms.txt [L]
+</IfModule>
+`;
+}
+
 export interface LLMSPageConfig {
   pageType: 'home' | 'about' | 'services' | 'pricing' | 'contact' | 'blog' | 'product' | 'team' | 'faq' | 'testimonials' | 'case-study' | 'whitepaper' | 'guide' | 'api-docs' | 'partners' | 'careers' | 'press' | 'legal' | 'support' | 'changelog' | 'roadmap' | 'integration' | 'webinar' | 'podcast' | 'community' | 'status' | 'security' | 'compliance' | 'onboarding' | 'resources';
   url: string;
@@ -1552,12 +1747,13 @@ export function generateLLMSBundle(domain: string, pages: any[], lang: 'tr' | 'e
 
 export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateReport,locale:DeliveryLocale='en'):DeliveryPack{
   const tr=locale==='tr',surfaces=machineSurfaces(scan);
-  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 27)
+  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 28)
 11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)
 12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)
 13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)
 14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)
-15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)
+15. 14e_NGINX_APACHE_EDGE_HEADERS.conf (Nginx & Apache .htaccess edge headers)
+16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)
 16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)
 17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)
 18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)
@@ -1570,9 +1766,10 @@ export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateRepor
 25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Teknik Entegrasyon & publisher.js)
 26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress tek tıkla eklenti)
 27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow enjektörü)
+28. 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html (Google Regional Differences & Host Carousel 2026 Şablonu)
 
 NOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi” sayılmaz. Page-specific machine surfaces root llms.txt değildir; root için tek önerilen yüzey 08_LLMS_TXT_RECOMMENDED.txt dosyasıdır.
-`:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Quick Deployment Options (100/100 Zero Effort)\n- 🤖 **If using Cursor / Claude Code / Windsurf:** Paste \`00_APPLY_WITH_AI_AGENT.prompt\` directly into your AI coding tool. It automatically locates files and applies fixes in 60 seconds.\n- ⚡ **If using Cloudflare:** Follow \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` for instant edge activation.\n- 🌐 **If using WordPress:** Upload \`26_WORDPRESS_DROPIN_PLUGIN.php\` directly to activate machine surfaces without touching code.\n- 🛍️ **If using Shopify / Webflow:** Paste snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` into your site head.\n\n## Execution Order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 27)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Automation & Self-Healing DAG)\n23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Executive Board Dossier)\n24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Automated AI Quality Gate)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Technical Integration & publisher.js)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress drop-in plugin)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow injectors)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
+`:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Quick Deployment Options (100/100 Zero Effort)\n- 🤖 **If using Cursor / Claude Code / Windsurf:** Paste \`00_APPLY_WITH_AI_AGENT.prompt\` directly into your AI coding tool. It automatically locates files and applies fixes in 60 seconds.\n- ⚡ **If using Cloudflare:** Follow \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` for instant edge activation.\n- 🌐 **If using WordPress:** Upload \`26_WORDPRESS_DROPIN_PLUGIN.php\` directly to activate machine surfaces without touching code.\n- 🛍️ **If using Shopify / Webflow:** Paste snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` into your site head.\n\n## Execution Order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 28)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 14e_NGINX_APACHE_EDGE_HEADERS.conf (Nginx & Apache .htaccess edge headers)\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Automation & Self-Healing DAG)\n23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Executive Board Dossier)\n24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Automated AI Quality Gate)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Technical Integration & publisher.js)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress drop-in plugin)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow injectors)\n28. 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html (Google Regional Differences & Host Carousel 2026 Template)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
   const exec=tr?`# Yönetim Özeti\n\n- Alan adı: ${scan.domain}\n- Ana teknik skor: ${Math.round(scan.overall)}/100\n- Analiz edilen sayfa: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Toplam issue: ${report.health_summary.total_issues}\n- Öncelik dağılımı: ${prioritySummary(report)}\n- Intelligence analizleri: ${report.intelligence.analyses.length}\n- Readiness lensleri: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Ürün sınırı\nBu paket yapay zeka tavsiyesi, Google sıralaması, citation, trafik, müşteri veya gelir garantisi vermez. Ölçülen site kaynaklı engelleri uygulanabilir teknik değişikliklere ve doğrulama testlerine dönüştürür.\n`:`# Executive Summary\n\n- Domain: ${scan.domain}\n- Core technical score: ${Math.round(scan.overall)}/100\n- Pages analyzed: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Total issues: ${report.health_summary.total_issues}\n- Priority distribution: ${prioritySummary(report)}\n- Intelligence analyses: ${report.intelligence.analyses.length}\n- Readiness lenses: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Product boundary\nThis package does not guarantee AI recommendations, Google rankings, citations, traffic, customers or revenue. It converts measured website-side blockers into executable technical changes and verification tests.\n`;
 
   const llmsBundle = generateLLMSBundle(
@@ -1617,6 +1814,7 @@ NOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi�
     {name:'14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js',content:generateAwsCloudFrontLambdaEdge(scan.domain)},
     {name:'14c_VERCEL_EDGE_MIDDLEWARE.ts',content:generateVercelEdgeMiddleware(scan.domain)},
     {name:'14d_CLOUDFLARE_1CLICK_DEPLOY.md',content:generateCloudflare1ClickDeploy(scan.domain)},
+    {name:'14e_NGINX_APACHE_EDGE_HEADERS.conf',content:generateNginxApacheEdgeHeaders(scan.domain)},
     {name:'15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md',content:generateSecondOrderSyntheticCitationLoop(scan.domain,locale)},
     {name:'16_A2A_AGENT_CARD.json',content:generateA2AAgentCard(scan.domain)},
     {name:'17_MCP_SERVER_SPEC.json',content:generateMCPServerSpec(scan.domain)},
@@ -1629,7 +1827,8 @@ NOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi�
     {name:'24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml',content:generateGitHubActionsWorkflow(scan.domain)},
     {name:'25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html',content:generateGooglePreferredSourcesIntegration(scan.domain,locale)},
     {name:'26_WORDPRESS_DROPIN_PLUGIN.php',content:generateWordPressDropinPlugin(scan.domain)},
-    {name:'27_SHOPIFY_WEBFLOW_INJECTORS.html',content:generateShopifyWebflowInjectors(scan.domain)}];
+    {name:'27_SHOPIFY_WEBFLOW_INJECTORS.html',content:generateShopifyWebflowInjectors(scan.domain)},
+    {name:'28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html',content:generateGoogleRegionalCarouselStructuredData(scan.domain,locale)}];
   const filename=`HTMLHTML_AI_Search_Visibility_Roadmap_${cleanName(scan.domain)}_${scan.scanId}.zip`;
   return {version:DELIVERY_PACK_VERSION,filename,mime:'application/zip',bytes:zip(entries),files:entries.map(x=>x.name)};
 }

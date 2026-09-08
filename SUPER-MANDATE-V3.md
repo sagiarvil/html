@@ -750,6 +750,7 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js          # AWS CloudFront Lambda@Edge alternatifi
 ├── 14c_VERCEL_EDGE_MIDDLEWARE.ts              # Vercel Edge Middleware alternatifi
 ├── 14d_CLOUDFLARE_1CLICK_DEPLOY.md            # Cloudflare 30 saniyelik 1-Click kurulum rehberi
+├── 14e_NGINX_APACHE_EDGE_HEADERS.conf         # Nginx & Apache .htaccess edge başlıkları ve müzakere
 ├── 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md # Sentetik alıntı döngüsü şablonu
 ├── 16_A2A_AGENT_CARD.json                     # A2A v1.0 Agent Card
 ├── 17_MCP_SERVER_SPEC.json                    # Model Context Protocol sunucu spesifikasyonu
@@ -762,7 +763,8 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml       # CI/CD dağıtım öncesi doğrulama kapısı
 ├── 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html # Google Preferred Sources 2026 P1 entegrasyonu
 ├── 26_WORDPRESS_DROPIN_PLUGIN.php             # WordPress tek tıkla drop-in eklentisi (Sıfır Kod)
-└── 27_SHOPIFY_WEBFLOW_INJECTORS.html          # Shopify & Webflow kopyala-yapıştır enjektörleri
+├── 27_SHOPIFY_WEBFLOW_INJECTORS.html          # Shopify & Webflow kopyala-yapıştır enjektörleri
+└── 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html # Google Bölgesel Farklılıklar & Host Carousel Şablonu
 ```
 
 **Müşteri El Sıkışması & 100/100 Uygulama Standartları**:

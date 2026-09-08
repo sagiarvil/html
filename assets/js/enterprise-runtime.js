@@ -166,8 +166,9 @@ function initEnterpriseTabs(){
   const badge=showcase.querySelector('.ea-finding-badge');
   const tag=showcase.querySelector('.ea-standard-tag');
   const summary=showcase.querySelector('.ea-finding-summary');
-  const evidence=showcase.querySelector('.ea-evidence-block');
+  const evidence=showcase.querySelector('.ea-evidence-body')||showcase.querySelector('.ea-evidence-block');
   const code=showcase.querySelector('.ea-code-underlay code');
+  const panel=showcase.querySelector('.ea-finding-content');
   const l=()=>document.documentElement.lang==='tr'?'tr':'en';
   const svgWarn='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>';
   const FINDINGS={
@@ -200,20 +201,118 @@ function initEnterpriseTabs(){
       code:()=>`// ${l()==='tr'?'Brotli / Edge Compression & Streaming':'Brotli / Edge Compression & Streaming'}\nexport const config = { runtime: 'edge', uncompressedSizeLimit: '128kb' };\n// Externalize heavy JSON-LD and SVGs to static edge assets\nexport async function getStaticProps() { return { revalidate: 3600 }; }`
     }
   };
-  tabs.forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      tabs.forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-      const key=tab.dataset.findingTab;
-      const f=FINDINGS[key];
-      if(!f)return;
-      if(badge)badge.innerHTML=`${svgWarn} ${f.badge()}`;
-      if(tag)tag.textContent=f.tag();
-      if(summary)summary.textContent=f.summary();
-      if(evidence)evidence.innerHTML=f.evidence();
-      if(code)code.textContent=f.code();
+
+  function selectTab(tab){
+    tabs.forEach(t=>{
+      t.classList.remove('active');
+      t.setAttribute('aria-selected','false');
+      t.setAttribute('tabindex','-1');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    tab.setAttribute('tabindex','0');
+    
+    const key=tab.dataset.findingTab;
+    const f=FINDINGS[key];
+    if(!f)return;
+    
+    if(panel){
+      panel.classList.remove('ea-tab-content-anim');
+      void panel.offsetWidth;
+      panel.classList.add('ea-tab-content-anim');
+    }
+    
+    if(badge)badge.innerHTML=`${svgWarn} ${f.badge()}`;
+    if(tag)tag.textContent=f.tag();
+    if(summary)summary.textContent=f.summary();
+    if(evidence)evidence.innerHTML=f.evidence();
+    if(code)code.textContent=f.code();
+  }
+
+  tabs.forEach((tab, index)=>{
+    tab.addEventListener('click',()=>selectTab(tab));
+    tab.addEventListener('keydown',(e)=>{
+      let targetIndex=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown'){
+        targetIndex=(index+1)%tabs.length;
+      }else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+        targetIndex=(index-1+tabs.length)%tabs.length;
+      }else if(e.key==='Home'){
+        targetIndex=0;
+      }else if(e.key==='End'){
+        targetIndex=tabs.length-1;
+      }
+      if(targetIndex!==null){
+        e.preventDefault();
+        tabs[targetIndex].focus();
+        selectTab(tabs[targetIndex]);
+      }
     });
   });
+
+  // Copy Evidence Action
+  const copyBtns=showcase.querySelectorAll('.ea-copy-btn');
+  copyBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const target=showcase.querySelector('.ea-evidence-body')||showcase.querySelector('.ea-evidence-block');
+      if(!target)return;
+      const text=target.innerText||target.textContent;
+      navigator.clipboard?.writeText(text).then(()=>{
+        btn.classList.add('copied');
+        const lbl=btn.querySelector('.ea-copy-label');
+        if(lbl)lbl.textContent=l()==='tr'?'Kopyalandı!':'Copied!';
+        setTimeout(()=>{
+          btn.classList.remove('copied');
+          if(lbl)lbl.textContent=l()==='tr'?'Kopyala':'Copy';
+        },2000);
+      }).catch(()=>{});
+    });
+  });
+
+  // Scroll-Driven Reactive Telemetry Animation
+  if('IntersectionObserver' in window && !showcase.dataset.telemetryBound){
+    showcase.dataset.telemetryBound='true';
+    const dialBar=showcase.querySelector('.ea-dial-bar');
+    const dialNum=showcase.querySelector('.ea-dial-num');
+    const meterFills=showcase.querySelectorAll('.ea-meter-fill');
+    
+    let animated=false;
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !animated){
+          animated=true;
+          if(dialBar)dialBar.classList.add('ea-animated');
+          if(dialNum){
+            const target=70;
+            const duration=1100;
+            const start=performance.now();
+            const step=(now)=>{
+              const elapsed=now-start;
+              const progress=Math.min(elapsed/duration,1);
+              const eased=1-Math.pow(1-progress,3);
+              dialNum.textContent=Math.round(eased*target);
+              if(progress<1){
+                requestAnimationFrame(step);
+              }else{
+                dialNum.textContent=target;
+              }
+            };
+            requestAnimationFrame(step);
+          }
+          meterFills.forEach(meter=>{
+            const targetWidth=meter.getAttribute('data-target-width')||meter.style.width;
+            meter.style.width='0%';
+            requestAnimationFrame(()=>{
+              meter.style.transition='width 1.1s cubic-bezier(0.16, 1, 0.3, 1)';
+              meter.style.width=targetWidth;
+            });
+          });
+          observer.disconnect();
+        }
+      });
+    },{threshold:0.2});
+    observer.observe(showcase);
+  }
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initEnterpriseTabs,{once:true});else initEnterpriseTabs();
 window.addEventListener('hh-language-changed',initEnterpriseTabs);

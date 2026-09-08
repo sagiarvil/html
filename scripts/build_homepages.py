@@ -137,9 +137,17 @@ def build_homepages():
       "@id": "https://htmlandhtml.com/#organization",
       "name": "HTML&HTML",
       "url": "https://htmlandhtml.com/",
+      "logo": "https://htmlandhtml.com/assets/logo.png",
+      "areaServed": ["TR", "US", "GB", "DE", "Global"],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q116503894"
       ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://htmlandhtml.com/tr/hakkimizda/",
+        "availableLanguage": ["Turkish", "English"]
+      },
       "author": {
         "@type": "Organization",
         "name": "HTML&HTML Team"
@@ -151,6 +159,18 @@ def build_homepages():
       "datePublished": "2026-01-01T00:00:00Z",
       "dateModified": "2026-09-08T00:00:00Z",
       "description": "Customer-first AI search visibility platform for GEO, AEO, LLMO, AAO, RAG, and E-E-A-T readiness."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://htmlandhtml.com/#tools-carousel",
+      "name": "Yapay Zeka Görünürlük Araçları ve Teşhis Paketi",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Web Sitesi Yapay Zeka Arama Taraması", "url": "https://htmlandhtml.com/tr/site-tarama/" },
+        { "@type": "ListItem", "position": 2, "name": "Yapay Zeka Arama Görünürlüğü (GEO/AEO/LLMO)", "url": "https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/" },
+        { "@type": "ListItem", "position": 3, "name": "llms.txt Doğrulayıcı ve Test Aracı", "url": "https://htmlandhtml.com/tr/llms-txt-validator/" },
+        { "@type": "ListItem", "position": 4, "name": "Yapay Zeka Hazırlık ve 18 Motor Teşhisi", "url": "https://htmlandhtml.com/tr/ai-website-readiness/" },
+        { "@type": "ListItem", "position": 5, "name": "AI Görünürlük Onarım Seti ($99)", "url": "https://htmlandhtml.com/tr/fiyatlandirma/" }
+      ]
     },
     {
       "@type": "WebApplication",
@@ -333,28 +353,28 @@ def build_homepages():
               <span>Keşif (Crawl &amp; Index)</span>
               <span class="num">80%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" style="width: 80%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" data-target-width="80%" style="width: 80%;"></div></div>
           </div>
           <div class="ea-pillar-cell">
             <div class="ea-pillar-label">
               <span>Anlama (Schema &amp; llms.txt)</span>
               <span class="num">81%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" style="width: 81%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" data-target-width="81%" style="width: 81%;"></div></div>
           </div>
           <div class="ea-pillar-cell">
             <div class="ea-pillar-label">
               <span>Güven &amp; Kalite (HSTS/E-E-A-T)</span>
               <span class="num">59%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" style="width: 59%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" data-target-width="59%" style="width: 59%;"></div></div>
           </div>
           <div class="ea-pillar-cell">
             <div class="ea-pillar-label">
               <span>Ticari Yol (Action &amp; CTA)</span>
               <span class="num">100%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" style="width: 100%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" data-target-width="100%" style="width: 100%;"></div></div>
           </div>
         </div>
 
@@ -385,43 +405,51 @@ def build_homepages():
           <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
         </div>
 
-        <div class="ea-tab-bar" aria-label="Bulgu seçici">
-          <button type="button" class="ea-tab active" data-finding-tab="canon">TECH-CANON-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" data-finding-tab="a11y">A11Y-FORM-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" data-finding-tab="mixed">SEC-MIXED-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" data-finding-tab="perf">PERF-HTML-001 (Orta)</button>
+        <div class="ea-tab-bar" role="tablist" aria-label="Bulgu seçici">
+          <button type="button" class="ea-tab active" role="tab" id="ea-tab-canon" aria-controls="eaFindingPanel" aria-selected="true" tabindex="0" data-finding-tab="canon">TECH-CANON-001 (Yüksek)</button>
+          <button type="button" class="ea-tab" role="tab" id="ea-tab-a11y" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="a11y">A11Y-FORM-001 (Yüksek)</button>
+          <button type="button" class="ea-tab" role="tab" id="ea-tab-mixed" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="mixed">SEC-MIXED-001 (Yüksek)</button>
+          <button type="button" class="ea-tab" role="tab" id="ea-tab-perf" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="perf">PERF-HTML-001 (Orta)</button>
         </div>
 
-        <div class="ea-finding-meta-row">
-          <span class="ea-finding-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-            TECH-CANON-001 · YÜKSEK
-          </span>
-          <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
-        </div>
+        <div class="ea-finding-content ea-tab-content-anim" id="eaFindingPanel" role="tabpanel" aria-labelledby="ea-tab-canon">
+          <div class="ea-finding-meta-row">
+            <span class="ea-finding-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+              TECH-CANON-001 · YÜKSEK
+            </span>
+            <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
+          </div>
 
-        <div class="ea-finding-summary">
-          Canonical tag tanımlı değil. Yinelenen içerik versiyonları yapay zeka alaka sinyallerini böler.
-        </div>
+          <div class="ea-finding-summary">
+            Canonical tag tanımlı değil. Yinelenen içerik versiyonları yapay zeka alaka sinyallerini böler.
+          </div>
 
-        <div class="ea-evidence-block">
-          &lt;head&gt; içinde arama: rel=canonical BULUNAMADI&lt;br&gt;
-          AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek
-        </div>
+          <div class="ea-evidence-block">
+            <div class="ea-evidence-head">
+              <span>Kablo Seviyesi Telemetri Kanıtı</span>
+              <button type="button" class="ea-copy-btn" data-copy-target="evidence" aria-label="Kanıtı kopyala">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span class="ea-copy-label">Kopyala</span>
+              </button>
+            </div>
+            <div class="ea-evidence-body">&lt;head&gt; içinde arama: rel=canonical BULUNAMADI&lt;br&gt;AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek</div>
+          </div>
 
-        <div class="ea-code-sandbox">
-          <pre class="ea-code-underlay"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu --&gt;
+          <div class="ea-code-sandbox">
+            <pre class="ea-code-underlay"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu --&gt;
 &lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
 &lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
 &lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-          <div class="ea-frosted-cover">
-            <span class="ea-lock-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              Kilitli Çözüm Yol Haritası (3 Adım)
-            </span>
-            <p>15 bulgunun tamamı için kök neden çözümleri, kod örnekleri ve n8n CI/CD otomasyon şablonları.</p>
+            <div class="ea-frosted-cover">
+              <span class="ea-lock-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Kilitli Çözüm Yol Haritası (3 Adım)
+              </span>
+              <p>15 bulgunun tamamı için kök neden çözümleri, kod örnekleri ve n8n CI/CD otomasyon şablonları.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -745,9 +773,17 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       "@id": "https://htmlandhtml.com/#organization",
       "name": "HTML&HTML",
       "url": "https://htmlandhtml.com/en/",
+      "logo": "https://htmlandhtml.com/assets/logo.png",
+      "areaServed": ["TR", "US", "GB", "DE", "Global"],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q116503894"
       ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://htmlandhtml.com/en/about/",
+        "availableLanguage": ["Turkish", "English"]
+      },
       "author": {
         "@type": "Organization",
         "name": "HTML&HTML Team"
@@ -759,6 +795,18 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       "datePublished": "2026-01-01T00:00:00Z",
       "dateModified": "2026-09-08T00:00:00Z",
       "description": "Customer-first AI search visibility platform for GEO, AEO, LLMO, AAO, RAG, and E-E-A-T readiness."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://htmlandhtml.com/#tools-carousel",
+      "name": "AI Search Visibility Tools & Diagnostic Suite",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Website AI Search Scanner", "url": "https://htmlandhtml.com/en/website-scanner/" },
+        { "@type": "ListItem", "position": 2, "name": "AI Search Visibility (GEO/AEO/LLMO)", "url": "https://htmlandhtml.com/en/ai-search-visibility/" },
+        { "@type": "ListItem", "position": 3, "name": "llms.txt Validator & Testing Tool", "url": "https://htmlandhtml.com/en/llms-txt-validator/" },
+        { "@type": "ListItem", "position": 4, "name": "AI Website Readiness & 18-Engine Audit", "url": "https://htmlandhtml.com/en/ai-website-readiness/" },
+        { "@type": "ListItem", "position": 5, "name": "AI Search Visibility Roadmap ($99)", "url": "https://htmlandhtml.com/en/pricing/" }
+      ]
     },
     {
       "@type": "WebApplication",
@@ -940,28 +988,28 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
               <span>Discovery (Crawl &amp; Index)</span>
               <span class="num">80%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" style="width: 80%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" data-target-width="80%" style="width: 80%;"></div></div>
           </div>
           <div class="ea-pillar-cell">
             <div class="ea-pillar-label">
               <span>Understanding (Schema &amp; Graph)</span>
               <span class="num">81%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" style="width: 81%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" data-target-width="81%" style="width: 81%;"></div></div>
           </div>
           <div class="ea-pillar-cell">
             <div class="ea-pillar-label">
               <span>Trust &amp; Quality (HSTS/E-E-A-T)</span>
               <span class="num">59%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" style="width: 59%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" data-target-width="59%" style="width: 59%;"></div></div>
           </div>
           <div class="ea-pillar-cell">
             <div class="ea-pillar-label">
               <span>Action Path (Forms &amp; CTA)</span>
               <span class="num">100%</span>
             </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" style="width: 100%;"></div></div>
+            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" data-target-width="100%" style="width: 100%;"></div></div>
           </div>
         </div>
 
@@ -992,43 +1040,51 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
           <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
         </div>
 
-        <div class="ea-tab-bar" aria-label="Finding switcher">
-          <button type="button" class="ea-tab active" data-finding-tab="canon">TECH-CANON-001 (High)</button>
-          <button type="button" class="ea-tab" data-finding-tab="a11y">A11Y-FORM-001 (High)</button>
-          <button type="button" class="ea-tab" data-finding-tab="mixed">SEC-MIXED-001 (High)</button>
-          <button type="button" class="ea-tab" data-finding-tab="perf">PERF-HTML-001 (Medium)</button>
+        <div class="ea-tab-bar" role="tablist" aria-label="Finding switcher">
+          <button type="button" class="ea-tab active" role="tab" id="ea-tab-canon-en" aria-controls="eaFindingPanelEn" aria-selected="true" tabindex="0" data-finding-tab="canon">TECH-CANON-001 (High)</button>
+          <button type="button" class="ea-tab" role="tab" id="ea-tab-a11y-en" aria-controls="eaFindingPanelEn" aria-selected="false" tabindex="-1" data-finding-tab="a11y">A11Y-FORM-001 (High)</button>
+          <button type="button" class="ea-tab" role="tab" id="ea-tab-mixed-en" aria-controls="eaFindingPanelEn" aria-selected="false" tabindex="-1" data-finding-tab="mixed">SEC-MIXED-001 (High)</button>
+          <button type="button" class="ea-tab" role="tab" id="ea-tab-perf-en" aria-controls="eaFindingPanelEn" aria-selected="false" tabindex="-1" data-finding-tab="perf">PERF-HTML-001 (Medium)</button>
         </div>
 
-        <div class="ea-finding-meta-row">
-          <span class="ea-finding-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-            TECH-CANON-001 · HIGH
-          </span>
-          <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
-        </div>
+        <div class="ea-finding-content ea-tab-content-anim" id="eaFindingPanelEn" role="tabpanel" aria-labelledby="ea-tab-canon-en">
+          <div class="ea-finding-meta-row">
+            <span class="ea-finding-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+              TECH-CANON-001 · HIGH
+            </span>
+            <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
+          </div>
 
-        <div class="ea-finding-summary">
-          Canonical tag not defined. Duplicate content variants dilute AI relevance signals.
-        </div>
+          <div class="ea-finding-summary">
+            Canonical tag not defined. Duplicate content variants dilute AI relevance signals.
+          </div>
 
-        <div class="ea-evidence-block">
-          Search in &lt;head&gt;: rel=canonical NOT FOUND<br>
-          AI Crawler State: Primary URL Unresolved | Duplicate Risk: High
-        </div>
+          <div class="ea-evidence-block">
+            <div class="ea-evidence-head">
+              <span>Wire-Level Telemetry Evidence</span>
+              <button type="button" class="ea-copy-btn" data-copy-target="evidence" aria-label="Copy evidence">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span class="ea-copy-label">Copy</span>
+              </button>
+            </div>
+            <div class="ea-evidence-body">Search in &lt;head&gt;: rel=canonical NOT FOUND&lt;br&gt;AI Crawler State: Primary URL Unresolved | Duplicate Risk: High</div>
+          </div>
 
-        <div class="ea-code-sandbox">
-          <pre class="ea-code-underlay"><code>&lt;!-- Remediation Roadmap &amp; Code Template --&gt;
+          <div class="ea-code-sandbox">
+            <pre class="ea-code-underlay"><code>&lt;!-- Remediation Roadmap &amp; Code Template --&gt;
 &lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
 &lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
 &lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-          <div class="ea-frosted-cover">
-            <span class="ea-lock-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              Locked Remediation Roadmap (3 Steps)
-            </span>
-            <p>Step-by-step root-cause fixes, code samples, and n8n CI/CD automation templates for all 15 findings.</p>
+            <div class="ea-frosted-cover">
+              <span class="ea-lock-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Locked Remediation Roadmap (3 Steps)
+              </span>
+              <p>Step-by-step root-cause fixes, code samples, and n8n CI/CD automation templates for all 15 findings.</p>
+            </div>
           </div>
         </div>
       </div>

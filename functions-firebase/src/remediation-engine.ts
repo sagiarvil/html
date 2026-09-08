@@ -126,7 +126,7 @@ function calculatePriority(findingId: string, sev: Severity, reachRatio: number)
   if (findingId.startsWith('SEC-') && sev === 'high') return 'P2';
   if (findingId === 'TECH-TITLE-001') return 'P2';
   if (findingId === 'A11Y-NAME-001') return 'P2';
-  if (findingId.startsWith('COLBERT-') || findingId.startsWith('TOPICAL-') || findingId.startsWith('DPO-') || findingId.startsWith('ONTOLOGY-') || findingId.startsWith('TTFB-') || findingId.startsWith('HALLUCINATION-') || findingId.startsWith('SYNTHETIC-')) return 'P2';
+  if (findingId.startsWith('COLBERT-') || findingId.startsWith('TOPICAL-') || findingId.startsWith('DPO-') || findingId.startsWith('ONTOLOGY-') || findingId.startsWith('TTFB-') || findingId.startsWith('HALLUCINATION-') || findingId.startsWith('SYNTHETIC-') || findingId === 'REGIONAL-CAROUSEL-001') return 'P2';
   if (sev === 'high') return 'P2';
   if (sev === 'medium') return 'P2';
 
@@ -764,6 +764,45 @@ function generateBlueprint(f: Finding, observedUrls: string[], totalPages: numbe
       ],
       rollback_guidance: [
         'Remove the 2-line publisher.js script and div element from template'
+      ]
+    };
+  }
+
+  if (pId === 'REGIONAL-CAROUSEL-001') {
+    return {
+      title: 'Missing Google Regional Search & Structured Data Carousel (Google Sept 8, 2026 P2 Standard)',
+      impact: 'Your site is ineligible for Google\'s "Places sites" features and Structured Data Host Carousels in Turkey and regional search surfaces, forfeiting dominant multi-entity carousel visibility.',
+      root_cause: 'Templates lack Google Search Central\'s Sept 8, 2026 regional schema specifications (either ItemList Host Carousel for multi-entity catalogs or LocalBusiness/Places sites schema with address & areaServed).',
+      root_fix: {
+        target_behavior: 'Eligible listing, catalog, and location surfaces publish valid ItemList carousel or compliant LocalBusiness structured data with areaServed ("TR", "Global") matching canonical entity routes.',
+        current_behavior: 'No ItemList carousel, areaServed, hasOfferCatalog, or LocalBusiness address markup detected on scanned surfaces.',
+        required_change: 'Deploy 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html structured data template to inject ItemList Host Carousel or verified LocalBusiness schema.',
+        scope: urlScope,
+        non_goals: [
+          'Do not declare physical walk-in LocalBusiness coordinates for pure digital SaaS platforms (violates Google guidelines)',
+          'Do not nest ItemList items with non-canonical or cross-domain URLs'
+        ]
+      },
+      recovery: [
+        'Deploy 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html: embed ItemList schema with ListItem elements pointing to canonical subpages, or valid LocalBusiness schema with postalAddress and areaServed',
+        'Verify JSON-LD passes Google Rich Results Test without warnings'
+      ],
+      prevention: [
+        'Add automated CI gate validating JSON-LD ItemList / LocalBusiness schema compliance prior to deployment'
+      ],
+      acceptance_tests: [
+        `curl -sL ${observedUrls[0] || '[URL]'} | grep -E -q '"@type":\\s*"(ItemList|LocalBusiness)"' && echo "PASS"`
+      ],
+      regression_tests: [
+        'Confirm canonical URLs match exactly between ItemList items and page canonical links',
+        'Ensure no duplicate or conflicting Organization vs LocalBusiness @id nodes exist'
+      ],
+      do_not_break: [
+        'Do not alter primary Organization @id or logo schema',
+        'Do not generate fake physical addresses for online services'
+      ],
+      rollback_guidance: [
+        'Remove or revert the ItemList / LocalBusiness JSON-LD script block'
       ]
     };
   }

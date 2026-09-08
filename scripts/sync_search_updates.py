@@ -48,6 +48,13 @@ def node_ingest_sources():
         log("Missing GOOGLE-PREFERRED-SOURCES in sources.json!", "ERROR")
         return None
     log(f"Verified Google Preferred Sources registry entry: '{pref_source.get('title')}' ({pref_source.get('lastVerified')})", "SUCCESS")
+
+    # Check Google Regional Search 2026 entry
+    reg_source = next((s for s in sources if s.get("id") == "GOOGLE-REGIONAL-SEARCH"), None)
+    if not reg_source:
+        log("Missing GOOGLE-REGIONAL-SEARCH in sources.json!", "ERROR")
+        return None
+    log(f"Verified Google Regional Search registry entry: '{reg_source.get('title')}' ({reg_source.get('lastVerified')})", "SUCCESS")
     return data
 
 def node_validate_engines():
@@ -58,10 +65,10 @@ def node_validate_engines():
     delivery_pack_path = os.path.join(ROOT_DIR, "functions", "lib", "delivery-pack.ts")
 
     files_to_check = {
-        "Engine V2 Core": (engine_v2_path, ["GEO-006", "publisher.js", "data-preferred-source", "cleanText"]),
-        "Scan Engine V1": (scan_engine_path, ["AI-PREFERRED-SOURCES-001", "hasPreferredSource", "publisher.js"]),
-        "Remediation Engine": (remediation_path, ["AI-PREFERRED-SOURCES-001", "25_GOOGLE_PREFERRED_SOURCES"]),
-        "Delivery Pack": (delivery_pack_path, ["25_GOOGLE_PREFERRED_SOURCES_INTEGRATION", "http-preferred-sources-probe"])
+        "Engine V2 Core": (engine_v2_path, ["GEO-006", "publisher.js", "GEO-007", "Regional Search", "cleanText"]),
+        "Scan Engine V1": (scan_engine_path, ["AI-PREFERRED-SOURCES-001", "REGIONAL-CAROUSEL-001", "hasRegionalCarousel", "publisher.js"]),
+        "Remediation Engine": (remediation_path, ["AI-PREFERRED-SOURCES-001", "REGIONAL-CAROUSEL-001", "25_GOOGLE_PREFERRED_SOURCES", "28_GOOGLE_REGIONAL_CAROUSEL"]),
+        "Delivery Pack": (delivery_pack_path, ["25_GOOGLE_PREFERRED_SOURCES_INTEGRATION", "28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA", "http-preferred-sources-probe"])
     }
 
     coverage_ok = True
@@ -82,7 +89,7 @@ def node_validate_engines():
     return coverage_ok
 
 def node_audit_canonical_surfaces():
-    log("Node 03: Auditing canonical HTML surfaces for Google Preferred Sources & AI standards...", "NODE")
+    log("Node 03: Auditing canonical HTML surfaces for Google Preferred Sources & Regional Carousel standards...", "NODE")
     surfaces = [
         ("index.html", os.path.join(ROOT_DIR, "index.html")),
         ("tr/index.html", os.path.join(ROOT_DIR, "tr", "index.html")),
@@ -104,18 +111,22 @@ def node_audit_canonical_surfaces():
         has_author = 'name="author"' in html or 'rel="author"' in html
         has_wikidata = "wikidata.org/wiki/Q" in html
         has_schema = 'application/ld+json' in html
+        has_carousel = 'ItemList' in html
+        has_area_served = 'areaServed' in html
 
-        passed = has_sdk and has_btn and has_author and has_wikidata and has_schema
+        passed = has_sdk and has_btn and has_author and has_wikidata and has_schema and has_carousel and has_area_served
         results[name] = {
             "has_sdk": has_sdk,
             "has_btn": has_btn,
             "has_author": has_author,
             "has_wikidata": has_wikidata,
             "has_schema": has_schema,
+            "has_carousel": has_carousel,
+            "has_area_served": has_area_served,
             "status": "PASSED" if passed else "FAILED"
         }
         if passed:
-            log(f"Surface '{name}' verified: Preferred SDK + Button + Author + Wikidata QID present.", "SUCCESS")
+            log(f"Surface '{name}' verified: Preferred SDK + Button + Author + Wikidata QID + Carousel + areaServed present.", "SUCCESS")
         else:
             log(f"Surface '{name}' failed audit check: {results[name]}", "ERROR")
             all_passed = False
@@ -131,6 +142,7 @@ def node_emit_telemetry(sources_data, audit_results):
         "registry_version": sources_data.get("version") if sources_data else "unknown",
         "official_vendors_verified": len(sources_data.get("sources", [])) if sources_data else 0,
         "google_preferred_sources_status": "ACTIVE_ENFORCED",
+        "google_regional_search_status": "ACTIVE_ENFORCED",
         "surface_audit": audit_results,
         "dogfooding_score_target": "100/100",
         "status": "HEALTHY_AND_SYNCHRONIZED"

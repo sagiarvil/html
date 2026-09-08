@@ -624,6 +624,17 @@ export class GEOEngine extends EngineTool {
         penaltyOnFail: 10,
         evidence: (inp) => `Google Preferred Sources marker detected: ${inp.html.includes('google-add-preferred-source-btn') || inp.html.includes('news.google.com/swg/js/v1/publisher.js') || inp.html.includes('data-preferred-source') || inp.html.includes('google.com/preferences/source')}`,
       },
+      {
+        id: 'GEO-007',
+        name: 'Google Regional Search & Structured Data Carousel Readiness (Sept 8, 2026)',
+        weight: 15,
+        check: (inp) => inp.html.includes('ItemList') || 
+                        inp.html.includes('areaServed') || 
+                        inp.html.includes('LocalBusiness') || 
+                        inp.html.includes('hasOfferCatalog'),
+        penaltyOnFail: 10,
+        evidence: (inp) => `Regional carousel & areaServed markup detected: ${inp.html.includes('ItemList') || inp.html.includes('areaServed') || inp.html.includes('LocalBusiness')}`,
+      },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
   }

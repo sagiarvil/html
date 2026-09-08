@@ -2719,16 +2719,16 @@ html[data-theme="light"] .pipeline-step-badge {
   background: rgba(15, 23, 42, 0.6) !important;
 }
 .locked-fix-blurred {
-  filter: blur(5px) !important;
-  -webkit-filter: blur(5px) !important;
+  filter: blur(3.2px) !important;
+  -webkit-filter: blur(3.2px) !important;
   user-select: none !important;
   pointer-events: none !important;
-  opacity: 0.45 !important;
+  opacity: 0.78 !important;
   padding: 16px !important;
   font-family: -apple-system, BlinkMacSystemFont, "SF Mono", "Fira Code", monospace !important;
-  font-size: 12px !important;
-  line-height: 1.6 !important;
-  color: #94a3b8 !important;
+  font-size: 12.5px !important;
+  line-height: 1.65 !important;
+  color: #334155 !important;
 }
 .locked-fix-overlay {
   position: absolute !important;
@@ -2738,13 +2738,15 @@ html[data-theme="light"] .pipeline-step-badge {
   align-items: center !important;
   justify-content: center !important;
   gap: 10px !important;
-  background: radial-gradient(circle, rgba(15, 23, 42, 0.85) 0%, rgba(10, 14, 26, 0.96) 100%) !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(6px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(160%) !important;
   padding: 14px !important;
   text-align: center !important;
 }
 .locked-fix-overlay span {
   font-size: 13px !important;
-  font-weight: 700 !important;
+  font-weight: 750 !important;
   color: #f8fafc !important;
   letter-spacing: -0.01em !important;
 }
@@ -2771,7 +2773,9 @@ html[data-theme="light"] .locked-fix {
   border-color: #cbd5e1 !important;
 }
 html[data-theme="light"] .locked-fix-overlay {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.88) 0%, rgba(241, 245, 249, 0.97) 100%) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(6px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(160%) !important;
 }
 html[data-theme="light"] .locked-fix-overlay span {
   color: #0f172a !important;
@@ -5281,11 +5285,12 @@ html[data-theme="light"] .finding-telemetry-item strong {
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
 }
 .recipe-section.locked .recipe-content {
-  filter: blur(5px) !important;
-  opacity: 0.52 !important;
+  filter: blur(3.2px) !important;
+  -webkit-filter: blur(3.2px) !important;
+  opacity: 0.82 !important;
   user-select: none;
   pointer-events: none;
-  transform: scale(0.995);
+  transform: scale(0.998);
 }
 .recipe-section.locked .recipe-overlay {
   position: absolute;
@@ -5296,9 +5301,9 @@ html[data-theme="light"] .finding-telemetry-item strong {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.92) 48%, rgba(255, 255, 255, 0.98) 100%) !important;
-  backdrop-filter: blur(4px) !important;
-  -webkit-backdrop-filter: blur(4px) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(248, 250, 252, 0.96) 100%) !important;
+  backdrop-filter: blur(6px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(160%) !important;
   padding: 24px 20px;
   text-align: center;
 }
@@ -5668,7 +5673,12 @@ html[data-theme="light"] .ea-dial-bg {
   stroke-width: 8;
   stroke-linecap: round;
   stroke: url(#eaDialGrad);
-  stroke-dasharray: 238;
+  stroke-dasharray: 239;
+  stroke-dashoffset: 239; /* Animates to 71 on scroll into view */
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ea-dial-bar.ea-animated {
   stroke-dashoffset: 71; /* 70% */
 }
 
@@ -5901,7 +5911,7 @@ html[data-theme="light"] .ea-terminal-topbar {
 }
 
 .ea-tab {
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 8px;
   font-size: 11px;
   font-weight: 700;
@@ -5912,19 +5922,28 @@ html[data-theme="light"] .ea-terminal-topbar {
   white-space: nowrap;
   cursor: pointer;
   outline: none;
-  transition: all 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
 }
 
 .ea-tab:hover {
   background: rgba(255, 255, 255, 0.08);
   color: var(--theme-text-primary, #f8fafc);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
 }
 
 .ea-tab.active {
-  background: rgba(0, 212, 255, 0.12);
-  border-color: rgba(0, 212, 255, 0.35);
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.45);
   color: #00d4ff;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.ea-tab:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
 }
 
 html[data-theme="light"] .ea-tab {
@@ -5937,6 +5956,17 @@ html[data-theme="light"] .ea-tab.active {
   background: #e0f2fe;
   border-color: #0284c7;
   color: #0284c7;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+/* Fluid Finding Content Fade */
+@keyframes eaTabFade {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.ea-tab-content-anim {
+  animation: eaTabFade 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Wire Evidence Header */
@@ -5984,18 +6014,58 @@ html[data-theme="light"] .ea-finding-summary {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(239, 68, 68, 0.25);
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 12px 14px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 11.5px;
   color: #f87171;
   margin-bottom: 16px;
   line-height: 1.5;
+  position: relative;
 }
 
 html[data-theme="light"] .ea-evidence-block {
   background: #fef2f2;
   border-color: #fca5a5;
   color: #b91c1c;
+}
+
+.ea-evidence-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f87171;
+  opacity: 0.85;
+}
+
+.ea-copy-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 10.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ea-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ea-copy-btn.copied {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
 }
 
 /* Frosted Code Sandbox */
