@@ -3484,5 +3484,211 @@ html[data-theme="light"] .saas-direct-checkout-link {
   color: #0284c7;
 }
 
+/* Modal Multi-Step Tabs */
+.saas-modal-tabs {
+  display: flex;
+  gap: 6px;
+  background: rgba(2, 6, 23, 0.6);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+html[data-theme="light"] .saas-modal-tabs {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+.saas-modal-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+html[data-theme="light"] .saas-modal-tab-btn {
+  color: #64748b;
+}
+.saas-modal-tab-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+}
+html[data-theme="light"] .saas-modal-tab-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+/* Card Issuer Badges */
+.saas-card-issuer-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.05);
+  color: #64748b;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.saas-card-issuer-pill.active {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+/* ARR Scenario Pills */
+.arr-scenario-pills {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.arr-scenario-btn {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+html[data-theme="light"] .arr-scenario-btn {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+.arr-scenario-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+html[data-theme="light"] .arr-scenario-btn.active {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0369a1;
+}
+
+/* ARR Impact Trio */
+.arr-impact-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+@media (max-width: 640px) {
+  .arr-impact-trio {
+    grid-template-columns: 1fr;
+  }
+}
+.arr-impact-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+html[data-theme="light"] .arr-impact-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+.arr-impact-card-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+html[data-theme="light"] .arr-impact-card-label {
+  color: #64748b;
+}
+.arr-impact-card-val {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.arr-impact-red { color: #f87171; }
+.arr-impact-amber { color: #fbbf24; }
+.arr-impact-emerald { color: #34d399; }
+
+/* Edge Telemetry Bar */
+.saas-edge-telemetry-strip {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(2, 6, 23, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 11px;
+  color: #94a3b8;
+}
+html[data-theme="light"] .saas-edge-telemetry-strip {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+.saas-edge-telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.saas-edge-telemetry-item strong {
+  color: #38bdf8;
+}
+html[data-theme="light"] .saas-edge-telemetry-item strong {
+  color: #0284c7;
+}
+
+/* DAG Node Telemetry Badge */
+.dag-node-telemetry {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-top: 3px;
+}
+html[data-theme="light"] .dag-node-telemetry {
+  color: #0284c7;
+  background: #e0f2fe;
+}
+
+/* Linter Items */
+.llms-linter-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 12px;
+  color: #e2e8f0;
+}
+html[data-theme="light"] .llms-linter-item {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+.llms-linter-badge {
+  font-size: 10px;
+  font-weight: 800;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+
 
 
