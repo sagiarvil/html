@@ -21,3 +21,4 @@ Disallow: /checkout
 Disallow: /api/
 
 Sitemap: https://htmlandhtml.com/sitemap.xml
+Sitemap: https://htmlandhtml.com/sitemap-news.xml

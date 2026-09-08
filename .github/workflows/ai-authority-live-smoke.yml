@@ -45,9 +45,27 @@ jobs:
         run: |
           set -euo pipefail
           curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/sitemap.xml -o /tmp/sitemap.xml
+          curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/sitemap-news.xml -o /tmp/sitemap-news.xml
+          curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/robots.txt -o /tmp/robots.txt
           curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/llms.txt -o /tmp/llms.txt
           grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/sitemap.xml
           grep -Fq 'https://htmlandhtml.com/en/glossary/' /tmp/sitemap.xml
           grep -Fq 'https://htmlandhtml.com/tr/geo-optimizasyon/' /tmp/sitemap.xml
           grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/llms.txt
+          grep -Fq 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/sitemap-news.xml
+          grep -Fq 'Sitemap: https://htmlandhtml.com/sitemap-news.xml' /tmp/robots.txt
+
+          article_url="$(grep -oE 'https://htmlandhtml\.com/tr/llms-txt-haberler/[a-z0-9-]+/' /tmp/sitemap.xml | head -n 1)"
+          test -n "$article_url"
+          curl -fLsS --connect-timeout 8 --max-time 25 "$article_url" -o /tmp/news-article.html
+          grep -Fq '"@type":"NewsArticle"' /tmp/news-article.html
+          grep -Fq '"datePublished"' /tmp/news-article.html
+          grep -Fq '"dateModified"' /tmp/news-article.html
+          grep -Fq '"headline"' /tmp/news-article.html
+          grep -Fq '"author":[{"@type":"Organization"' /tmp/news-article.html
+          grep -Fq '"url":"https://htmlandhtml.com/about/"' /tmp/news-article.html
+          grep -Fq -- '-16x9.svg' /tmp/news-article.html
+          grep -Fq -- '-4x3.svg' /tmp/news-article.html
+          grep -Fq -- '-1x1.svg' /tmp/news-article.html
+          echo "NEWSARTICLE_LIVE_SMOKE_OK: $article_url"
           echo 'AI_AUTHORITY_MACHINE_GRAPH_OK'
