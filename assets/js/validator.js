@@ -285,12 +285,138 @@ function render(data){
   const healthSubText=isTr?`${counts.all} bulgu tespit edildi. ${counts.critical} kritik sorun (Googlebot erişimi, robots engelleri veya noindex) potansiyel müşterilerin sitenize ulaşmasını doğrudan durdurabilir.`:`Detected ${counts.all} findings. ${counts.critical} critical blockers directly impair your ability to be retrieved and recommended by AI engines.`;
   healthDeck.className='health-executive-summary';
   healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p><div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;
+  // Navigation Tabs & Panes Architecture
+  let dashTabsWrap = document.getElementById('dashViewNavWrapper');
+  if (!dashTabsWrap) {
+    dashTabsWrap = document.createElement('div');
+    dashTabsWrap.id = 'dashViewNavWrapper';
+    dashTabsWrap.className = 'dash-view-nav-wrapper';
+    const refTarget = document.getElementById('pillarsDeepLink') || document.getElementById('resultPillars') || healthDeck;
+    if (refTarget) refTarget.insertAdjacentElement('afterend', dashTabsWrap);
+  }
+  dashTabsWrap.innerHTML = `
+    <div class="dash-view-tabs" role="tablist">
+      <button type="button" class="dash-view-btn active" data-pane="paneFindings">
+        📋 ${isTr ? '1. Teşhis & Kod Reçeteleri' : '1. Diagnosis & Code Recipes'}
+        <span class="dash-view-badge">${counts.all}</span>
+      </button>
+      <button type="button" class="dash-view-btn" data-pane="paneSimulation">
+        💰 ${isTr ? '2. Gelir & AI Arama Kaybı' : '2. Revenue & AI Query Loss'}
+      </button>
+      <button type="button" class="dash-view-btn" data-pane="paneVector">
+        🧠 ${isTr ? '3. Vektör & Retrieval Lab' : '3. Vector & Retrieval Lab'}
+      </button>
+      <button type="button" class="dash-view-btn" data-pane="paneN8n">
+        ⚙️ ${isTr ? '4. n8n Otonom İş Akışı' : '4. n8n Autonomous Workflow'}
+      </button>
+    </div>
+  `;
+
+  let dashPanesWrap = document.getElementById('dashPanesContainer');
+  if (!dashPanesWrap) {
+    dashPanesWrap = document.createElement('div');
+    dashPanesWrap.id = 'dashPanesContainer';
+    dashPanesWrap.className = 'dash-panes-container';
+    dashTabsWrap.insertAdjacentElement('afterend', dashPanesWrap);
+  }
+
+  let paneFindings = document.getElementById('paneFindings');
+  if (!paneFindings) {
+    paneFindings = document.createElement('div');
+    paneFindings.id = 'paneFindings';
+    paneFindings.className = 'dash-pane active';
+    dashPanesWrap.appendChild(paneFindings);
+  }
+
+  let paneSimulation = document.getElementById('paneSimulation');
+  if (!paneSimulation) {
+    paneSimulation = document.createElement('div');
+    paneSimulation.id = 'paneSimulation';
+    paneSimulation.className = 'dash-pane';
+    dashPanesWrap.appendChild(paneSimulation);
+  }
+
+  let paneVector = document.getElementById('paneVector');
+  if (!paneVector) {
+    paneVector = document.createElement('div');
+    paneVector.id = 'paneVector';
+    paneVector.className = 'dash-pane';
+    dashPanesWrap.appendChild(paneVector);
+  }
+
+  let paneN8n = document.getElementById('paneN8n');
+  if (!paneN8n) {
+    paneN8n = document.createElement('div');
+    paneN8n.id = 'paneN8n';
+    paneN8n.className = 'dash-pane';
+    dashPanesWrap.appendChild(paneN8n);
+  }
+
+  // Tab switcher click handlers
+  dashTabsWrap.querySelectorAll('.dash-view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      dashTabsWrap.querySelectorAll('.dash-view-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const targetPaneId = btn.dataset.pane;
+      dashPanesWrap.querySelectorAll('.dash-pane').forEach(p => p.classList.remove('active'));
+      const targetPane = document.getElementById(targetPaneId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+        dashTabsWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Master Single-License Clarity Banner (Prepend to paneFindings)
+  let masterBanner = document.getElementById('masterSingleLicenseBanner');
+  if (!masterBanner) {
+    masterBanner = document.createElement('div');
+    masterBanner.id = 'masterSingleLicenseBanner';
+    masterBanner.className = 'master-single-license-banner';
+    paneFindings.appendChild(masterBanner);
+  }
+  const cleanDomForBanner = safe(data.domain || 'example.com');
+  const checkoutUrlForBanner = `/checkout?plan=pro&domain=${encodeURIComponent(cleanDomForBanner)}&scan=${encodeURIComponent(data.scanId || '')}`;
+  masterBanner.innerHTML = `
+    <div class="master-license-header">
+      <div class="master-license-icon">📦</div>
+      <div class="master-license-title-wrap">
+        <h3>${isTr ? '🎯 TEK BİR $99 LİSANS İLE BU SİTEDEKİ TÜM BULGULAR VE 24 KOD DOSYASI AÇILIR' : '🎯 SINGLE $99 LICENSE UNLOCKS ALL FINDINGS & 24 CODE FILES'}</h3>
+        <p>${isTr ? '<strong>Her eksiklik için ayrı para ödenmez!</strong> 99$ tek seferlik bir tam site lisansıdır. Satın aldığınızda hem aşağıdaki <strong>TÜM kilitli reçeteler</strong> anında açılır, hem de sitenizin tüm açıklarını kapatan <strong>24 dosyalık mühendislik ZIP paketi</strong> yazılımcınıza teslim edilmek üzere anında indirilir.' : '<strong>No separate payment per issue!</strong> $99 is a single all-inclusive license. Purchasing it unlocks <strong>ALL locked recipes below</strong> and immediately delivers the <strong>24-file engineering ZIP package</strong> for your developers.'}</p>
+      </div>
+    </div>
+    <div class="master-license-deliverables-grid">
+      <div class="master-deliv-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>${isTr ? '24 Dosyalık ZIP Paketi:' : '24-File ZIP Package:'}</strong> ${isTr ? 'Cloudflare Worker, JSON-LD @graph, llms.txt, C2PA, A2A Agent Card' : 'Cloudflare Worker, JSON-LD, llms.txt, C2PA, A2A Agent Card'}</span>
+      </div>
+      <div class="master-deliv-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>${isTr ? 'Tüm Bulguların Kod Reçeteleri:' : 'All Finding Code Recipes:'}</strong> ${isTr ? 'Aşağıdaki tüm kilitli çözümlerin açık kopyalanabilir kodları' : 'Unrestricted copy-paste code for every audited finding below'}</span>
+      </div>
+      <div class="master-deliv-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>${isTr ? 'Kabul ve Doğrulama Testleri:' : 'Acceptance & Verification Tests:'}</strong> ${isTr ? 'Terminal cURL ve AST test komutları ile %100 kesinlik' : 'Deterministic terminal cURL & AST test scripts'}</span>
+      </div>
+      <div class="master-deliv-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>${isTr ? '30 Gün Sınırsız Canlı Re-Scan:' : '30-Day Unlimited Re-Scans:'}</strong> ${isTr ? 'Yazılımcınız uyguladıktan sonra canlıda anında yeniden teyit' : 'Re-verify your live domain on 18 engines after implementation'}</span>
+      </div>
+    </div>
+    <div class="master-license-actions">
+      <a href="${checkoutUrlForBanner}" class="master-license-cta-btn">⚡ ${isTr ? '99$ Tek Seferlik Lisansı Aç ve 24 Dosyayı İndir →' : 'Unlock $99 All-Inclusive License & Download 24 Files →'}</a>
+      <span class="master-license-guarantee-note">🔒 ${isTr ? 'Sıfır dış kod müdahalesi riski · Kodları kendi yazılım ekibiniz uygular' : 'Zero origin touch risk · Handed over directly to your developers'}</span>
+    </div>
+  `;
+
   let simDeck=document.getElementById('executiveSimulationDeck');
   if(!simDeck){
     simDeck=document.createElement('div');
     simDeck.id='executiveSimulationDeck';
     simDeck.className='executive-simulation-deck';
-    healthDeck.insertAdjacentElement('afterend',simDeck);
+    paneSimulation.appendChild(simDeck);
+  } else {
+    paneSimulation.appendChild(simDeck);
   }
   let curScenario = 1.0;
   function calcArr(qVal, dVal, scen = curScenario){
@@ -387,7 +513,12 @@ const bsl=document.getElementById('btnStopLoss');if(bsl){bsl.addEventListener('c
 simDeck.querySelectorAll('.model-probe-btn').forEach(btn=>{btn.addEventListener('click',()=>{simDeck.querySelectorAll('.model-probe-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');activeModelKey=btn.dataset.model;renderModelCard()})});
 const btnRaw=document.getElementById('btnSimRaw'), btnFixed=document.getElementById('btnSimFixed');
 if(btnRaw&&btnFixed){btnRaw.addEventListener('click',()=>{btnRaw.classList.add('active','opt-raw');btnFixed.classList.remove('active','opt-fixed');isSimFixed=false;renderModelCard()});btnFixed.addEventListener('click',()=>{btnFixed.classList.add('active','opt-fixed');btnRaw.classList.remove('active','opt-raw');isSimFixed=true;renderModelCard()})}
-let benchDeck=document.getElementById('competitiveBenchmarkDeck');if(!benchDeck){benchDeck=document.createElement('div');benchDeck.id='competitiveBenchmarkDeck';benchDeck.className='competitive-benchmark-deck';simDeck.insertAdjacentElement('afterend',benchDeck)}const sVault=Math.max(15,Math.round((p2*0.7)+(overall*0.3)));const sRag=Math.max(20,Math.round((p1*0.6)+(p3*0.4)));const sRerank=Math.max(18,Math.round((p2*0.8)+(p1*0.2)));const sAgent=Math.max(10,Math.round(p4));benchDeck.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">📊 ${isTr?'SEKTÖREL AI OTORİTE KIYASLAMASI':'COMPETITIVE AI GAP ANALYSIS'}</span><h3 class="executive-deck-title">${isTr?'Sektör Liderleri ve Silikon Vadisi Standardına Göre Konumunuz':'Your Category Positioning vs Industry Leaders'}</h3><p class="executive-deck-desc">${isTr?'Domaininizin 4 kritik boyuttaki skoru, sektörün ilk %10\'luk dilimi ve Silikon Vadisi AI-First standardıyla kıyaslanmıştır:':'Audited metrics benchmarked against Category Top 10% and Silicon Valley AI-First standards:'}</p></div></div><div class="benchmark-bars-grid"><div class="benchmark-row"><div class="benchmark-row-header"><span>🏛️ ${isTr?'Knowledge Vault Varlık Güveni':'Knowledge Vault Entity Density'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sVault}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>92%</strong></span><span class="b-score-sv">SV Gold: <strong>99%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sVault}%"></div><div class="benchmark-marker-leader" style="left:92%"></div><div class="benchmark-marker-sv" style="left:99%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>⚡ ${isTr?'RAG Chunking ve AST Boyut Verimliliği':'RAG Chunk & KV-Cache Efficiency'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sRag}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>90%</strong></span><span class="b-score-sv">SV Gold: <strong>98%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sRag}%"></div><div class="benchmark-marker-leader" style="left:90%"></div><div class="benchmark-marker-sv" style="left:98%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>🎯 ${isTr?'Cross-Encoder Neural Rerank Uyum Skoru':'Neural Cross-Encoder Attention'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sRerank}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>88%</strong></span><span class="b-score-sv">SV Gold: <strong>96%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sRerank}%"></div><div class="benchmark-marker-leader" style="left:88%"></div><div class="benchmark-marker-sv" style="left:96%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>🤖 ${isTr?'Otonom Ajan (AAO/MCP) Satın Alma Hazırlığı':'Autonomous Agent Commerce (AAO)'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sAgent}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>85%</strong></span><span class="b-score-sv">SV Gold: <strong>95%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sAgent}%"></div><div class="benchmark-marker-leader" style="left:85%"></div><div class="benchmark-marker-sv" style="left:95%"></div></div></div></div>`;const pDeck=document.getElementById('resultPillars');if(pDeck){const pillars=[{theme:'blue',tag:isTr?'01 · BULUNABİLİRLİK':'01 · DISCOVERY',title:isTr?'Bulunabilirlik':'Crawl & Indexability',desc:isTr?'HTTP, robots, sitemap ve canlı link bütünlüğü':'HTTP, robots, sitemap and live link integrity',score:p1},{theme:'purple',tag:isTr?'02 · ANLAŞILABİLİRLİK':'02 · UNDERSTANDING',title:isTr?'Anlaşılabilirlik':'AI & Schema Graph',desc:isTr?'llms.txt v2, JSON-LD, entity ve AI bot erişimi':'llms.txt v2, JSON-LD, entity and AI crawler access',score:p2},{theme:'green',tag:isTr?'03 · GÜVEN & KALİTE':'03 · TRUST & QUALITY',title:isTr?'Güven ve Kalite':'Security & Experience',desc:isTr?'HSTS, CSP, güvenlik hijyeni, erişilebilirlik ve E-E-A-T':'HSTS, CSP, security hygiene, accessibility and E-E-A-T',score:p3},{theme:'amber',tag:isTr?'04 · TİCARİ YOL':'04 · COMMERCIAL PATH',title:isTr?'Ticari Yol':'Conversion & Action',desc:isTr?'Form/CTA görünürlüğü, AI karar haritası ve P0 aksiyonları':'Form/CTA visibility, AI decision map and P0 actions',score:p4}];pDeck.innerHTML=pillars.map(p=>`<div class="pillar-card pillar-${p.theme}"><div class="pillar-head"><span class="pillar-tag">${safe(p.tag)}</span><strong class="pillar-score">${p.score}<span>/100</span></strong></div><h4>${safe(p.title)}</h4><p>${safe(p.desc)}</p><div class="pillar-meter"><i style="width:${Math.max(0,Math.min(100,p.score))}%"></i></div></div>`).join('');let pLink=document.getElementById('pillarsDeepLink');if(!pLink){pLink=document.createElement('div');pLink.id='pillarsDeepLink';pLink.className='pillars-deep-link';pLink.style.cssText='margin:16px 0 24px;text-align:center;';pDeck.insertAdjacentElement('afterend',pLink)}pLink.innerHTML=`<a href="${isTr?'/tr/deterministik-katmanlar/':'/en/deterministic-layers/'}" class="pillars-deep-link-btn"><span>${isTr?'🏛️ Yapay Zeka Arama Sistemlerinin Baktığı 9 Deterministik Katmanı İnceleyin':'🏛️ Explore the 9 Deterministic Layers Audited by AI Search Systems'}</span> <i>→</i></a>`}const grid=document.getElementById('scoreGrid');grid.innerHTML='';order.forEach((k,idx)=>{const v=Math.round(data.scores?.[k]??0);const num=String(idx+1).padStart(2,'0');const tier=v>=80?'green':v>=65?'yellow':v>=45?'orange':'red';grid.insertAdjacentHTML('beforeend',`<div class="score-item tier-${tier}"><div class="score-item-top"><span class="engine-num">${num}</span><span>${safe(labels[k][lang])}</span></div><strong>${v}</strong><div class="meter"><i class="bar-${tier}" style="width:${Math.max(0,Math.min(100,v))}%"></i></div></div>`)});const disclosure=document.getElementById('scanDisclosure');const cwv=data.fieldData?.coreWebVitals||'NOT_MEASURED';disclosure.innerHTML=`<b>${safe(D[lang].cwv)}:</b> ${safe(cwv==='NOT_MEASURED'?D[lang].notMeasured:cwv)} <span>·</span> <b>${safe(D[lang].scanId)}:</b> ${safe(data.scanId)} <span>·</span> <b>${safe(D[lang].pagesLabel)}:</b> ${safe(sm.pagesScanned||0)}/${safe(sm.pagesDiscovered||0)}`;const pSummary=document.getElementById('prioritySummary');if(pSummary){const sevRank={critical:4,high:3,medium:2,low:1,info:0};const sorted=[...(data.findings||[])].sort((a,b)=>(sevRank[b.severity]||0)-(sevRank[a.severity]||0));const top5=sorted.slice(0,5);if(top5.length){pSummary.hidden=false;const topSev=top5[0].severity||'info';const headBadge=pSummary.querySelector('h3 .severity');if(headBadge){headBadge.className='severity '+safe(topSev);headBadge.textContent=(sev[topSev]||sev.info)[lang];}const pList=document.getElementById('priorityList');if(pList){pList.innerHTML=top5.map(f=>{const t=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr);return '<div class="priority-item"><span class="severity '+safe(f.severity)+'"><i class="sev-dot"></i>'+safe((sev[f.severity]||sev.info)[lang])+'</span><span><b>'+safe(f.id)+'</b>: '+safe(t)+'</span></div>'}).join('')}}else{pSummary.hidden=true}}let remConsole=document.getElementById('remediationConsoleDeck');if(!remConsole){remConsole=document.createElement('div');remConsole.id='remediationConsoleDeck';remConsole.className='remediation-console-deck';const pSummaryEl=document.getElementById('prioritySummary')||document.getElementById('scanDisclosure');if(pSummaryEl)pSummaryEl.insertAdjacentElement('afterend',remConsole)}
+let benchDeck=document.getElementById('competitiveBenchmarkDeck');if(!benchDeck){benchDeck=document.createElement('div');benchDeck.id='competitiveBenchmarkDeck';benchDeck.className='competitive-benchmark-deck';paneSimulation.appendChild(benchDeck)}else{paneSimulation.appendChild(benchDeck)}const sVault=Math.max(15,Math.round((p2*0.7)+(overall*0.3)));const sRag=Math.max(20,Math.round((p1*0.6)+(p3*0.4)));const sRerank=Math.max(18,Math.round((p2*0.8)+(p1*0.2)));const sAgent=Math.max(10,Math.round(p4));benchDeck.innerHTML=`<div class="executive-deck-head"><div><span class="executive-deck-badge">📊 ${isTr?'SEKTÖREL AI OTORİTE KIYASLAMASI':'COMPETITIVE AI GAP ANALYSIS'}</span><h3 class="executive-deck-title">${isTr?'Sektör Liderleri ve Silikon Vadisi Standardına Göre Konumunuz':'Your Category Positioning vs Industry Leaders'}</h3><p class="executive-deck-desc">${isTr?'Domaininizin 4 kritik boyuttaki skoru, sektörün ilk %10\'luk dilimi ve Silikon Vadisi AI-First standardıyla kıyaslanmıştır:':'Audited metrics benchmarked against Category Top 10% and Silicon Valley AI-First standards:'}</p></div></div><div class="benchmark-bars-grid"><div class="benchmark-row"><div class="benchmark-row-header"><span>🏛️ ${isTr?'Knowledge Vault Varlık Güveni':'Knowledge Vault Entity Density'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sVault}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>92%</strong></span><span class="b-score-sv">SV Gold: <strong>99%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sVault}%"></div><div class="benchmark-marker-leader" style="left:92%"></div><div class="benchmark-marker-sv" style="left:99%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>⚡ ${isTr?'RAG Chunking ve AST Boyut Verimliliği':'RAG Chunk & KV-Cache Efficiency'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sRag}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>90%</strong></span><span class="b-score-sv">SV Gold: <strong>98%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sRag}%"></div><div class="benchmark-marker-leader" style="left:90%"></div><div class="benchmark-marker-sv" style="left:98%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>🎯 ${isTr?'Cross-Encoder Neural Rerank Uyum Skoru':'Neural Cross-Encoder Attention'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sRerank}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>88%</strong></span><span class="b-score-sv">SV Gold: <strong>96%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sRerank}%"></div><div class="benchmark-marker-leader" style="left:88%"></div><div class="benchmark-marker-sv" style="left:96%"></div></div></div><div class="benchmark-row"><div class="benchmark-row-header"><span>🤖 ${isTr?'Otonom Ajan (AAO/MCP) Satın Alma Hazırlığı':'Autonomous Agent Commerce (AAO)'}</span><div class="benchmark-row-scores"><span class="b-score-site">${isTr?'Siteniz':'Site'}: <strong>${sAgent}%</strong></span><span class="b-score-leader">${isTr?'Liderler':'Top 10%'}: <strong>85%</strong></span><span class="b-score-sv">SV Gold: <strong>95%</strong></span></div></div><div class="benchmark-track"><div class="benchmark-fill-site" style="width:${sAgent}%"></div><div class="benchmark-marker-leader" style="left:85%"></div><div class="benchmark-marker-sv" style="left:95%"></div></div></div></div>`;const pDeck=document.getElementById('resultPillars');if(pDeck){const pillars=[{theme:'blue',tag:isTr?'01 · BULUNABİLİRLİK':'01 · DISCOVERY',title:isTr?'Bulunabilirlik':'Crawl & Indexability',desc:isTr?'HTTP, robots, sitemap ve canlı link bütünlüğü':'HTTP, robots, sitemap and live link integrity',score:p1},{theme:'purple',tag:isTr?'02 · ANLAŞILABİLİRLİK':'02 · UNDERSTANDING',title:isTr?'Anlaşılabilirlik':'AI & Schema Graph',desc:isTr?'llms.txt v2, JSON-LD, entity ve AI bot erişimi':'llms.txt v2, JSON-LD, entity and AI crawler access',score:p2},{theme:'green',tag:isTr?'03 · GÜVEN & KALİTE':'03 · TRUST & QUALITY',title:isTr?'Güven ve Kalite':'Security & Experience',desc:isTr?'HSTS, CSP, güvenlik hijyeni, erişilebilirlik ve E-E-A-T':'HSTS, CSP, security hygiene, accessibility and E-E-A-T',score:p3},{theme:'amber',tag:isTr?'04 · TİCARİ YOL':'04 · COMMERCIAL PATH',title:isTr?'Ticari Yol':'Conversion & Action',desc:isTr?'Form/CTA görünürlüğü, AI karar haritası ve P0 aksiyonları':'Form/CTA visibility, AI decision map and P0 actions',score:p4}];pDeck.innerHTML=pillars.map(p=>`<div class="pillar-card pillar-${p.theme}"><div class="pillar-head"><span class="pillar-tag">${safe(p.tag)}</span><strong class="pillar-score">${p.score}<span>/100</span></strong></div><h4>${safe(p.title)}</h4><p>${safe(p.desc)}</p><div class="pillar-meter"><i style="width:${Math.max(0,Math.min(100,p.score))}%"></i></div></div>`).join('');let pLink=document.getElementById('pillarsDeepLink');if(!pLink){pLink=document.createElement('div');pLink.id='pillarsDeepLink';pLink.className='pillars-deep-link';pLink.style.cssText='margin:16px 0 24px;text-align:center;';pDeck.insertAdjacentElement('afterend',pLink)}pLink.innerHTML=`<a href="${isTr?'/tr/deterministik-katmanlar/':'/en/deterministic-layers/'}" class="pillars-deep-link-btn"><span>${isTr?'🏛️ Yapay Zeka Arama Sistemlerinin Baktığı 9 Deterministik Katmanı İnceleyin':'🏛️ Explore the 9 Deterministic Layers Audited by AI Search Systems'}</span> <i>→</i></a>`}const grid=document.getElementById('scoreGrid');grid.innerHTML='';order.forEach((k,idx)=>{const v=Math.round(data.scores?.[k]??0);const num=String(idx+1).padStart(2,'0');const tier=v>=80?'green':v>=65?'yellow':v>=45?'orange':'red';grid.insertAdjacentHTML('beforeend',`<div class="score-item tier-${tier}"><div class="score-item-top"><span class="engine-num">${num}</span><span>${safe(labels[k][lang])}</span></div><strong>${v}</strong><div class="meter"><i class="bar-${tier}" style="width:${Math.max(0,Math.min(100,v))}%"></i></div></div>`)});paneFindings.appendChild(document.getElementById('prioritySummary'));
+  paneFindings.appendChild(document.getElementById('scoreGrid'));
+  paneFindings.appendChild(document.getElementById('scanDisclosure'));
+  const rCols = document.querySelector('.result-columns');
+  if (rCols) paneFindings.appendChild(rCols);
+  const disclosure=document.getElementById('scanDisclosure');const cwv=data.fieldData?.coreWebVitals||'NOT_MEASURED';disclosure.innerHTML=`<b>${safe(D[lang].cwv)}:</b> ${safe(cwv==='NOT_MEASURED'?D[lang].notMeasured:cwv)} <span>·</span> <b>${safe(D[lang].scanId)}:</b> ${safe(data.scanId)} <span>·</span> <b>${safe(D[lang].pagesLabel)}:</b> ${safe(sm.pagesScanned||0)}/${safe(sm.pagesDiscovered||0)}`;const pSummary=document.getElementById('prioritySummary');if(pSummary){const sevRank={critical:4,high:3,medium:2,low:1,info:0};const sorted=[...(data.findings||[])].sort((a,b)=>(sevRank[b.severity]||0)-(sevRank[a.severity]||0));const top5=sorted.slice(0,5);if(top5.length){pSummary.hidden=false;const topSev=top5[0].severity||'info';const headBadge=pSummary.querySelector('h3 .severity');if(headBadge){headBadge.className='severity '+safe(topSev);headBadge.textContent=(sev[topSev]||sev.info)[lang];}const pList=document.getElementById('priorityList');if(pList){pList.innerHTML=top5.map(f=>{const t=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr);return '<div class="priority-item"><span class="severity '+safe(f.severity)+'"><i class="sev-dot"></i>'+safe((sev[f.severity]||sev.info)[lang])+'</span><span><b>'+safe(f.id)+'</b>: '+safe(t)+'</span></div>'}).join('')}}else{pSummary.hidden=true}}let remConsole=document.getElementById('remediationConsoleDeck');if(!remConsole){remConsole=document.createElement('div');remConsole.id='remediationConsoleDeck';remConsole.className='remediation-console-deck';paneN8n.appendChild(remConsole)}else{paneN8n.appendChild(remConsole)}
 const cleanDomainSafe = safe(data.domain);
 const brandNameSafe = safe(data.domain.replace(/\.[a-z]+$/i, '').toUpperCase());
 
@@ -406,7 +537,7 @@ if(!vectorLab){
   vectorLab=document.createElement('div');
   vectorLab.id='vectorAttentionLabDeck';
   vectorLab.className='vector-attention-deck';
-  if(remConsole)remConsole.insertAdjacentElement('beforebegin',vectorLab);
+  paneVector.appendChild(vectorLab);
 }
 if(vectorLab){
   const qTokens=['who','provides',brandNameSafe.toLowerCase(),'enterprise','pricing','indexing'];
@@ -1030,29 +1161,143 @@ document.getElementById('findingCount').textContent=`${data.findings.length} ${D
 function generateFindingRecipe(f, domain, scanId, isTr) {
   const cleanDom = (domain || 'example.com').replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
   const checkoutUrl = `/checkout?plan=pro&domain=${encodeURIComponent(cleanDom)}&scan=${encodeURIComponent(scanId || '')}`;
-  let step1 = '', step2 = '', step3 = '', codeSnippet = '';
+  let step1 = '', step2 = '', step3 = '', codeSnippet = '', recipeFileName = '';
+
   if (f.id === 'TOKEN-BLOAT-001') {
+    recipeFileName = '14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js';
     step1 = isTr ? 'Kaynak Kod / AST Analizi: 14KB AST bütçesini aşan script, inline style ve SVG düğümleri tespit edildi.' : 'Source & AST Audit: Script, inline style, and SVG nodes exceeding the 14KB budget window isolated.';
     step2 = isTr ? 'Mühendislik Yaması: Aşağıdaki streaming HTMLRewriter worker şablonunu yazılımcınıza teslim edin.' : 'Engineering Patch: Deliver the streaming HTMLRewriter edge worker template below to your developers.';
     step3 = isTr ? 'Doğrulama & Kabul Testi: curl -s -A "GPTBot" https://' + cleanDom + ' | wc -c ile payloadın <14,336 bayt olduğunu teyit edin.' : 'Verification Gate: Verify raw response payload is <14,336 bytes via curl -s -A "GPTBot" https://' + cleanDom + ' | wc -c.';
-    codeSnippet = `// 01_CLOUDFLARE_WORKER_AST_PRUNE.js (Production Template)\nexport default {\n  async fetch(request, env) {\n    const res = await fetch(request);\n    const contentType = res.headers.get("content-type") || "";\n    if (!contentType.includes("text/html")) return res;\n    return new HTMLRewriter()\n      .on("script:not([type='application/ld+json'])", { element(e) { e.remove(); } })\n      .on("svg, style, noscript, iframe", { element(e) { e.remove(); } })\n      .on("main, article, [data-chunk-id]", {\n        element(e) { e.setAttribute("data-rag-budget", "enforced-14kb"); }\n      })\n      .transform(res);\n  }\n};`;
+    codeSnippet = `// 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Production Code Recipe)
+export default {
+  async fetch(request, env) {
+    const res = await fetch(request);
+    const contentType = res.headers.get("content-type") || "";
+    if (!contentType.includes("text/html")) return res;
+    return new HTMLRewriter()
+      .on("script:not([type='application/ld+json'])", { element(e) { e.remove(); } })
+      .on("svg:not(.critical-icon)", { element(e) { e.remove(); } })
+      .on("style, noscript, iframe, canvas", { element(e) { e.remove(); } })
+      .on("main, article, [data-chunk-id]", {
+        element(e) { e.setAttribute("data-rag-budget", "enforced-14kb"); }
+      })
+      .transform(res);
+  }
+};
+// Kabul Testi: curl -s -A "GPTBot" https://${cleanDom}/ | wc -c (<14336B)`;
   } else if (f.id === 'ENTITY-VAULT-001' || f.id === 'ONTOLOGY-SUPERCLASS-001') {
+    recipeFileName = '13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json';
     step1 = isTr ? 'Varlık Eşleme: Şirketinizin Wikidata QID ve Crunchbase MID kurumsal kayıtları belirlendi.' : 'Entity Vault Triangulation: Corporate Wikidata QID and Crunchbase MID registry anchors identified.';
     step2 = isTr ? 'JSON-LD Enjeksiyonu: Aşağıdaki derin Corporation @graph şemasını sitenizin <head> etiketine ekletin.' : 'JSON-LD Insertion: Have your developers embed the deep Corporation @graph schema below into <head>.';
     step3 = isTr ? 'Doğrulama: Google Rich Results Test ve Schema.org Validator ile entity graph bağlantılarını onaylayın.' : 'Acceptance Test: Validate schema graph node connections via Google Rich Results Test & Schema Validator.';
-    codeSnippet = `<!-- 03_CORPORATION_KNOWLEDGE_GRAPH.html -->\n<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@graph": [\n    {\n      "@type": "Corporation",\n      "@id": "https://${cleanDom}/#corporation",\n      "name": "${cleanDom}",\n      "url": "https://${cleanDom}",\n      "sameAs": [\n        "https://www.wikidata.org/wiki/Q[COMPANY_QID]",\n        "https://www.crunchbase.com/organization/[COMPANY_SLUG]"\n      ],\n      "knowsAbout": ["Enterprise Solutions", "AI Engine Optimization", "LLM Discovery"]\n    }\n  ]\n}\n</script>`;
+    codeSnippet = `<!-- 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "Corporation", "VerifiedEnterprise"],
+      "@id": "https://${cleanDom}/#corporation",
+      "name": "${cleanDom}",
+      "url": "https://${cleanDom}",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q[COMPANY_QID]",
+        "https://www.crunchbase.com/organization/[COMPANY_SLUG]",
+        "https://www.linkedin.com/company/[COMPANY_SLUG]"
+      ],
+      "knowsAbout": ["Enterprise Solutions", "AI Engine Optimization", "LLM Discovery"]
+    }
+  ]
+}
+</script>
+<!-- Doğrulama: curl -sL https://${cleanDom}/ | grep "wikidata.org/wiki/Q" -->`;
   } else if (f.id === 'RAG-CHUNK-001') {
+    recipeFileName = '19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json';
     step1 = isTr ? 'Semantik Sınır Analizi: 512 tokenlık RAG bölünmesinde parçalanan kritik ürün/fiyat blokları işaretlendi.' : 'Semantic Boundary Audit: Product and value blocks severed across 512-token RAG windows mapped.';
     step2 = isTr ? 'HTML İşaretleme: Yazılımcınızın kritik bölümleri data-chunk-id ve data-ground-truth öznitelikleriyle sarmasını sağlayın.' : 'Semantic Markup: Instruct your developers to encapsulate core blocks with data-chunk-id attributes.';
     step3 = isTr ? 'Test: LLM chunking simülasyonunda marka adı ve anahtar önermenin bölünmeden tek parça kaldığını test edin.' : 'Acceptance Test: Verify brand name and core proposition remain unified within single RAG chunk.';
-    codeSnippet = `<!-- 05_SEMANTIC_CHUNK_BOUNDARIES.html -->\n<section data-chunk-id="${cleanDom}-core-offering" data-entity-type="ServiceOffering" data-ground-truth="verified">\n  <h2>Kurumsal Hizmet ve Çözümler</h2>\n  <p data-qa-anchor="direct-answer">Şirketimiz doğrulanmış yapay zeka görünürlüğü ve makine-okunabilir altyapı sunar.</p>\n</section>`;
+    codeSnippet = `<!-- 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.html -->
+<section data-chunk-id="${cleanDom}-core-offering" data-entity-type="ServiceOffering" data-ground-truth="verified">
+  <h2 class="colbert-token-anchor">Kurumsal Hizmet ve Çözümler</h2>
+  <p data-qa-anchor="direct-answer">Şirketimiz doğrulanmış yapay zeka görünürlüğü ve makine-okunabilir altyapı sunar.</p>
+  <div data-metric-cluster="benchmarks">
+    <span>18 Bağımsız Motor · 105 Kontrol Noktası · %100 Deterministik</span>
+  </div>
+</section>
+<!-- Doğrulama: curl -sL https://${cleanDom}/ | grep "data-chunk-id" -->`;
+  } else if (f.id.includes('LLMS')) {
+    recipeFileName = '08_LLMS_TXT_RECOMMENDED.txt';
+    step1 = isTr ? 'llms.txt Spesifikasyon Testi: v2 RFC formatına göre H1 başlığı ve bloknot özeti eksikliği izole edildi.' : 'llms.txt RFC Spec Audit: Missing H1 root anchor and blockquote summary isolated.';
+    step2 = isTr ? 'Manifest Üretimi: Aşağıdaki onaylı llms.txt manifestini kök dizine (root) yükleyin.' : 'Manifest Deployment: Deploy the verified llms.txt manifest below to public root.';
+    step3 = isTr ? 'Doğrulama: curl -sI https://' + cleanDom + '/llms.txt ile 200 OK yanıtını teyit edin.' : 'Verification Gate: Verify HTTP 200 via curl -sI https://' + cleanDom + '/llms.txt.';
+    codeSnippet = `# ${cleanDom}
+> 18 motorlu deterministik AI Search görünürlük ve teknik denetim platformu.
+
+## Kurumsal Bilgiler & E-E-A-T
+- [Kurumsal Kimlik](https://${cleanDom}/llms/core.md): Platform mimarisi ve kanıt standartları.
+- [Hizmet Spesifikasyonu](https://${cleanDom}/llms/pages/services.md): 105 kontrol noktası.
+
+## Kanonik Makine Yüzeyleri
+- [Ana Sayfa](https://${cleanDom}/llms/pages/home.md): AI Görünürlük Tarayıcısı.
+- [Fiyatlandırma](https://${cleanDom}/llms/pages/pricing.md): $99 Tek Seferlik Kod Reçetesi Lisansı.`;
   } else {
+    recipeFileName = `07_ENGINEERING_REMEDIATION_RECIPE_${f.id}.js`;
     step1 = isTr ? `Kök Neden Tespiti: ${f.id} darboğazı için kaynak kod ve sunucu yapılandırma parametreleri izole edildi.` : `Root Cause Isolation: Source code and configuration parameters for ${f.id} isolated.`;
     step2 = isTr ? `Yazılımcı Reçetesi: Aşağıdaki üretim kod şablonunu ve yapılandırma dosyasını yazılımcınıza teslim edin.` : `Developer Recipe: Deliver the production code configuration template below directly to your developer.`;
     step3 = isTr ? `Otomatik Doğrulama: Dağıtım sonrası CI/CD test adımları ve HTTP durum başlıklarıyla hatayı teyit edin.` : `Acceptance Test: Verify resolution via automated CI/CD assertion test commands and HTTP status headers.`;
-    codeSnippet = `// 07_ENGINEERING_REMEDIATION_RECIPE_${f.id}.js\n// Yazılımcınıza teslim edin / Handover to your software engineering team\nexport const configPatch = {\n  findingId: "${f.id}",\n  targetDomain: "${cleanDom}",\n  remediationStatus: "READY_FOR_DEPLOYMENT",\n  headers: {\n    "X-Robots-Tag": "index, follow, max-snippet:-1, max-image-preview:large",\n    "X-AI-Engine-Verification": "PASSED"\n  }\n};`;
+    codeSnippet = `// 07_ENGINEERING_REMEDIATION_RECIPE_${f.id}.js
+// Yazılımcınıza teslim edin / Handover to your in-house developers
+export const configPatch = {
+  findingId: "${f.id}",
+  targetDomain: "${cleanDom}",
+  remediationStatus: "READY_FOR_DEPLOYMENT",
+  headers: {
+    "X-Robots-Tag": "index, follow, max-snippet:-1, max-image-preview:large",
+    "X-AI-Engine-Verification": "PASSED"
+  },
+  acceptanceCommand: "curl -sI https://${cleanDom}/ | grep -i x-robots-tag"
+};`;
   }
-  return `<div class="recipe-section locked"><div class="recipe-glow"></div><div class="recipe-content"><h4>🛠️ ${isTr ? 'Mühendislik Çözüm Reçetesi (Yazılımcınıza Teslim Edin)' : 'Engineering Resolution Recipe (For Your In-House Developers)'}</h4><div class="recipe-steps"><div class="recipe-step"><span class="recipe-step-num">1</span><p><strong>${isTr ? 'Adım 1 — Kök Neden &amp; Mimari Analiz:' : 'Step 1 — Root Cause &amp; Architecture:'}</strong> ${safe(step1)}</p></div><div class="recipe-step"><span class="recipe-step-num">2</span><p><strong>${isTr ? 'Adım 2 — Uygulanacak Kod Şablonu:' : 'Step 2 — Implementation Code Template:'}</strong> ${safe(step2)}</p></div><div class="recipe-step"><span class="recipe-step-num">3</span><p><strong>${isTr ? 'Adım 3 — Kabul Kriteri &amp; Test:' : 'Step 3 — Acceptance Criteria &amp; Verification:'}</strong> ${safe(step3)}</p></div></div><pre class="recipe-code"><code>${safe(codeSnippet)}</code></pre></div><div class="recipe-overlay"><div class="recipe-lock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div><span class="recipe-badge">🔒 ${isTr ? 'KİLİTLİ MÜHENDİSLİK REÇETESİ' : 'LOCKED ENGINEERING RECIPE'}</span><h4>${isTr ? 'Yazılımcınıza Teslim Edeceğiniz Çözüm Reçetesi &amp; Kod Şablonu' : 'Resolution Recipe &amp; Production Code Template'}</h4><p>${isTr ? 'Bu bulguyu sitenizde kalıcı olarak gidermek için gereken 3 adımlı uygulama reçetesi ve üretim kodları $99 kurumsal çözüm paketi ile açılır.' : 'The step-by-step implementation recipe and verified production code to eliminate this blocker are unlocked in the $99 engineering pack.'}</p><a href="${checkoutUrl}" class="recipe-cta">🔓 ${isTr ? '$99 — Çözüm Reçetesini Aç' : '$99 — Unlock Resolution Recipe'}</a></div></div>`;
+
+  const badgeText = isTr ? '🔒 TEK BİR $99 LİSANS İLE TÜM BULGULAR AÇILIR' : '🔒 SINGLE $99 LICENSE UNLOCKS ALL FINDINGS';
+  const headingText = isTr ? 'Bu Reçete 24 Dosyalık Tam Çözüm Paketine Dahildir' : 'Included in 24-File Complete Resolution Pack';
+  const descText = isTr 
+    ? 'Bu reçete için ayrı ücret ödenmez! Tek bir 99$ lisansı satın aldığınızda; bu bulgunun ve sitedeki DİĞER TÜM tespitlerin hazır kodları, Cloudflare Worker şablonları ve 24 dosyalık ZIP paketi birlikte açılır.'
+    : 'No separate payment for this recipe! A single $99 license unlocks this finding, all other findings, Cloudflare Worker templates, and the full 24-file ZIP package together.';
+  const ctaText = isTr 
+    ? '🔓 99$ Tek Seferlik Lisans İle TÜM Reçeteleri Aç (24 Dosya ZIP) →' 
+    : '🔓 Unlock ALL Recipes with Single $99 License (24-File ZIP) →';
+
+  return `<div class="recipe-section locked">
+    <div class="recipe-glow"></div>
+    <div class="recipe-content">
+      <h4>🛠️ ${isTr ? 'Mühendislik Çözüm Reçetesi (Yazılımcınıza Teslim Edin)' : 'Engineering Resolution Recipe (For Your In-House Developers)'} — <span style="font-family:monospace;font-size:11px;color:#0284c7;">${safe(recipeFileName)}</span></h4>
+      <div class="recipe-steps">
+        <div class="recipe-step">
+          <span class="recipe-step-num">1</span>
+          <p><strong>${isTr ? 'Adım 1 — Kök Neden &amp; Mimari Analiz:' : 'Step 1 — Root Cause &amp; Architecture:'}</strong> ${safe(step1)}</p>
+        </div>
+        <div class="recipe-step">
+          <span class="recipe-step-num">2</span>
+          <p><strong>${isTr ? 'Adım 2 — Uygulanacak Kod Şablonu:' : 'Step 2 — Implementation Code Template:'}</strong> ${safe(step2)}</p>
+        </div>
+        <div class="recipe-step">
+          <span class="recipe-step-num">3</span>
+          <p><strong>${isTr ? 'Adım 3 — Kabul Kriteri &amp; Test:' : 'Step 3 — Acceptance Criteria &amp; Verification:'}</strong> ${safe(step3)}</p>
+        </div>
+      </div>
+      <pre class="recipe-code"><code>${safe(codeSnippet)}</code></pre>
+    </div>
+    <div class="recipe-overlay">
+      <div class="recipe-lock-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <span class="recipe-badge-single-license">${badgeText}</span>
+      <h4 class="recipe-overlay-title">${headingText}</h4>
+      <p class="recipe-overlay-sub">${descText}</p>
+      <a href="${checkoutUrl}" class="recipe-cta-unlock">${ctaText}</a>
+    </div>
+  </div>`;
 }
 
 (data.findings = [...new Map(data.findings.map(f=>[f.id||f.title, f])).values()]).forEach(f=>{const title=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr),impact=lang==='tr'?(f.impactTr||f.impactEn):(f.impactEn||f.impactTr),c=(conf[f.confidence]||{tr:f.confidence,en:f.confidence})[lang];
@@ -1074,7 +1319,7 @@ if(!closingDeck){
   closingDeck=document.createElement('section');
   closingDeck.id='closingInterventionDeck';
   closingDeck.className='closing-intervention-deck';
-  list.parentNode.insertBefore(closingDeck, list.nextSibling);
+  paneFindings.appendChild(closingDeck);
 }
 closingDeck.innerHTML=`<div class="closing-deck-inner"><div class="closing-badge">⚡ ${isTr?'24 DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ VE KOD PAKETİ':'24-FILE RESOLUTION RECIPES & CODE PACK'}</div><h3 class="closing-title">${isTr?'Teşhis Doğrulandı: 18 Motorlu Çözüm Reçeteleri Paketi':'Diagnosis Validated: 18-Engine Resolution Recipes Pack'}</h3><p class="closing-pitch">${isTr?'Yukarıdaki tüm tespitler için üretilmiş 24 adet mühendislik reçetesi ve hazır kod dosyasını indirin. Raporu doğrudan kendi yazılımcınıza veya ajansınıza teslim ederek tüm açıkları hızla kapatın. Hiçbir insan müdahalesi beklemeden, ödeme sonrası anında ZIP olarak teslim edilir.':'Download all 24 engineering recipes and production code files generated for the findings above. Hand the complete pack directly to your in-house software engineers or agency to eliminate all blockers rapidly. 100% automated software delivery with instant ZIP download.'}</p><div class="closing-guarantees"><div class="closing-pill">📋 <strong>${isTr?'Yazılımcınıza Teslim Edin':'For Your Developers'}</strong> <span>${isTr?'24 dosyalı hazır mühendislik reçetesi':'24 ready-to-use recipe files'}</span></div><div class="closing-pill">⚡ <strong>${isTr?'Anında Teslimat':'Instant Delivery'}</strong> <span>${isTr?'Ödeme sonrası otomatik ZIP indirme':'Automated ZIP download post-payment'}</span></div><div class="closing-pill">🎯 <strong>${isTr?'30 Gün Yeniden Tarama':'30-Day Re-Scan'}</strong> <span>${isTr?'18 motorla sınırsız canlı teyit':'Unlimited live re-scans on 18 engines'}</span></div><div class="closing-pill">🤖 <strong>${isTr?'%100 Otonom Yazılım':'100% Autonomous Software'}</strong> <span>${isTr?'İnsan müdahalesi yok, tek seferlik $99':'Zero human overhead, one-time $99'}</span></div></div><div class="closing-cta-wrap" style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;"><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(data.domain)}&amp;scan=${encodeURIComponent(data.scanId)}" class="closing-cta-btn">${isTr?'24 Dosyalık Çözüm Paketini İndir ($99) →':'Download 24-File Resolution Pack ($99) →'}</a><button type="button" class="btn-board-memo" id="btnOpenBoardMemoClosing">📄 ${isTr?'Yönetim Kurulu Notu (Board Memo)':'1-Page Executive Board Memo'}</button><div class="closing-sub" style="width:100%;">${isTr?'⚡ Tek seferlik $99 sabit fiyat · Gizli maliyet veya abonelik yok · Anında ZIP indirme':'⚡ Single $99 one-time license · No hidden fees or recurring subscriptions · Instant ZIP download'}</div></div></div>`;
 document.getElementById('btnOpenBoardMemoClosing')?.addEventListener('click',()=>openBoardMemoModal(data));
