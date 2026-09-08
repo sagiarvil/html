@@ -1,7 +1,7 @@
 /**
  * HTML&HTML — Enterprise AI Visibility Diagnostic Suite
- * Silicon Valley / NYC / London Principal Engineering Standard
- * Zero external unhandled exceptions, deterministic state, full window bindings.
+ * Silicon Valley / NYC / London Principal Engineering Architecture
+ * Zero external unhandled exceptions, deterministic state, dual-theme sync, n8n automation.
  */
 (function(window, document) {
   'use strict';
@@ -15,6 +15,47 @@
     lock: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
     download: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
   };
+
+  /* Theme Sync Engine */
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 
+           (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.style.colorScheme = theme;
+
+    try {
+      localStorage.setItem('hh-theme', theme);
+      localStorage.setItem('htmlandhtml-theme-v2', JSON.stringify({ theme: theme }));
+      document.cookie = 'htmlandhtml-theme=' + encodeURIComponent(JSON.stringify({ theme: theme })) + '; path=/; max-age=31536000; SameSite=Lax';
+    } catch(e) {}
+
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+      const icon = toggleBtn.querySelector('.theme-icon');
+      const label = toggleBtn.querySelector('.theme-label');
+      if (theme === 'dark') {
+        if (icon) icon.textContent = '🌙';
+        if (label) label.textContent = 'Koyu';
+        toggleBtn.setAttribute('aria-label', 'Açık temaya geç');
+      } else {
+        if (icon) icon.textContent = '☀️';
+        if (label) label.textContent = 'Açık';
+        toggleBtn.setAttribute('aria-label', 'Koyu temaya geç');
+      }
+    }
+  }
+
+  function toggleTheme() {
+    const current = getCurrentTheme();
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    showToast(next === 'dark' ? 'Koyu Tema Aktif' : 'Açık Tema Aktif', 'check');
+  }
 
   function showToast(msg, icon) {
     icon = icon || 'check';
@@ -58,7 +99,7 @@
     });
 
     document.querySelectorAll('.recipe-cta').forEach(function(btn) {
-      btn.innerHTML = SVG.check + ' Açıldı';
+      btn.innerHTML = SVG.check + ' Reçete Açıldı';
       btn.disabled = true;
       btn.style.opacity = '0.6';
       btn.style.cursor = 'default';
@@ -67,7 +108,7 @@
     const ab = document.getElementById('actionBar');
     if (ab) ab.style.display = 'none';
 
-    showToast('Premium Yol Haritaları Açıldı — Tüm çözümler görünür!', 'check');
+    showToast('Premium Çözüm Reçeteleri ve Yol Haritası Açıldı!', 'check');
   }
 
   function showPaymentModal() {
@@ -94,15 +135,15 @@
     btn.disabled = true;
 
     setTimeout(function() {
-      btn.innerHTML = 'Hazırlanıyor…';
+      btn.innerHTML = 'Paket Hazırlanıyor…';
       setTimeout(function() {
         btn.innerHTML = orig;
         btn.disabled = false;
         hidePaymentModal();
         unlockPremium();
-        showToast('Ödeme doğrulandı! Premium yol haritası ve onarım seti aktif.', 'check');
-      }, 1000);
-    }, 1200);
+        showToast('Ödeme doğrulandı! 15 Çözüm Reçetesi ve Onarım Paketi aktif.', 'check');
+      }, 900);
+    }, 1100);
   }
 
   function generateEnterpriseZip() {
@@ -126,7 +167,7 @@
       });
       const codeBlocks = section?.querySelectorAll('.recipe-code') || [];
       const solutionCode = codeBlocks[0]?.textContent?.trim() || '// Çözüm kodu';
-      const evidenceCode = codeBlocks[1]?.textContent?.trim() || '// Tespit kanıtı';
+      const evidenceCode = card.querySelector('.evidence-box')?.textContent?.trim() || '// Tespit kanıtı';
 
       findings.push({
         id: id,
@@ -142,7 +183,7 @@
     const timestamp = new Date().toISOString();
 
     // 1. Canonical 8 core architecture files
-    zip.file('00_READ_ME.md', `# HTML&HTML — AI Visibility Kurumsal Yol Haritası ve Onarım Paketi\n\nOluşturulma: ${timestamp}\nHedef: htmlandhtml.com\nToplam Tespit: ${findings.length}\nLisans: Kurumsal Özel ($99 Tek Seferlik)\nMimari: Silikon Vadisi AI Search & GEO Standartları\n\n---\n\n## Giriş ve Metot\nBu paket, HTML&HTML Enterprise Intelligence motoru tarafından üretilmiş deterministik bir onarım ve uygulama setidir.\nBiz analiz eder, önceliklendirir ve mühendislik planını hazırlarız. Kaynak kodunuza dokunmayız; bu belgeleri doğrudan kendi yazılım ekibinize veya DevOps mühendisinize teslim edersiniz.\n\n## Dizin Yapısı\n- 00_READ_ME.md — Bu kılavuz\n- 01_EXECUTIVE_SUMMARY.md — Yönetici Özeti ve P0/P1 Matrisi\n- 02_IMPLEMENTATION_BLUEPRINT.md — Adım adım mühendislik uygulama planı\n- 03_FINDINGS.json — Makine tarafından okunabilir tüm bulgu seti\n- 04_ACCEPTANCE_TESTS.md — QA kabul ve doğrulama kriterleri\n- 05_ROLLBACK_PLAN.md — Geri alma ve acil durum prosedürleri\n- 06_AI_READINESS.json — AI arama motorları için erişilebilirlik grafiği\n- 07_IMPLEMENTATION_CHECKLIST.txt — Geliştirici kontrol listesi\n- workflows/n8n-ai-visibility-monitor.json — n8n CI/CD otomasyon şablonu\n- scripts/validate-deployment.sh — Otomatik Bash doğrulama testi\n- docs/IMPLEMENTATION-GUIDE.md — Kurumsal mimari uygulama rehberi\n- blueprints/ — 15 tespitin bağımsız çözüm rehberleri\n`);
+    zip.file('00_READ_ME.md', `# HTML&HTML — AI Visibility Kurumsal Yol Haritası ve Onarım Paketi\n\nOluşturulma: ${timestamp}\nHedef: htmlandhtml.com\nToplam Tespit: ${findings.length}\nLisans: Kurumsal Özel ($99 Tek Seferlik)\nMimari: Silikon Vadisi AI Search, AEO & GEO Standartları\n\n---\n\n## Giriş ve Metot\nBu paket, HTML&HTML Enterprise Intelligence motoru tarafından üretilmiş deterministik bir onarım ve uygulama setidir.\nBiz analiz eder, önceliklendirir ve mühendislik planını hazırlarız. Kaynak kodunuza dokunmayız; bu belgeleri doğrudan kendi yazılım ekibinize veya DevOps mühendisinize teslim edersiniz.\n\n## Dizin Yapısı\n- 00_READ_ME.md — Bu kılavuz\n- 01_EXECUTIVE_SUMMARY.md — Yönetici Özeti ve P0/P1 Matrisi\n- 02_IMPLEMENTATION_BLUEPRINT.md — Adım adım mühendislik uygulama planı\n- 03_FINDINGS.json — Makine tarafından okunabilir tüm bulgu seti\n- 04_ACCEPTANCE_TESTS.md — QA kabul ve doğrulama kriterleri\n- 05_ROLLBACK_PLAN.md — Geri alma ve acil durum prosedürleri\n- 06_AI_READINESS.json — AI arama motorları için erişilebilirlik grafiği\n- 07_IMPLEMENTATION_CHECKLIST.txt — Geliştirici kontrol listesi\n- workflows/n8n-ai-visibility-monitor.json — n8n CI/CD otomasyon şablonu\n- scripts/validate-deployment.sh — Otomatik Bash doğrulama testi\n- docs/IMPLEMENTATION-GUIDE.md — Kurumsal mimari uygulama rehberi\n- blueprints/ — 15 tespitin bağımsız çözüm rehberleri\n`);
 
     zip.file('01_EXECUTIVE_SUMMARY.md', `# 01. Yönetici Özeti (Executive Summary)\n\n**Hedef:** htmlandhtml.com\n**Tarih:** ${timestamp}\n**Genel Skor:** 70 / 100\n**Bulgu Sayısı:** ${findings.length} adet (3 Yüksek, 6 Orta, 3 Düşük, 3 Bilgi)\n\n### Kritik Değerlendirme\nSiteniz Google AI Overviews, Perplexity ve Claude botları tarafından taranabilmekte ancak yapısal bariyerler (eksik canonical, ağır HTML, isimsiz kontroller, mixed content riski) nedeniyle alıntı güven puanı (Citation Confidence) baskılanmaktadır.\n\n### P0 Öncelikli Eylemler\n1. Form kontrollerine erişilebilir label eşleştirmeleri (WCAG AA)\n2. Mixed content kaynak referanslarının TLS 1.3 zorunluluğuna yükseltilmesi\n3. Self-referencing canonical etiketlerinin head başına eklenmesi\n\n### Tahmini İyileşme\nBu yol haritasındaki onarımlar tamamlandığında AI Visibility Skoru 70'ten 92+'ye yükselecektir.\n`);
 
@@ -182,7 +223,7 @@
         {
           parameters: { rule: '0 9 * * *' },
           id: 'trigger-cron',
-          name: 'Zamanlayıcı (Her Sabah 09:00)',
+          name: 'Zamanlayıcı (Her Sabah 09:00 UTC)',
           type: 'n8n-nodes-base.scheduleTrigger',
           position: [250, 300]
         },
@@ -200,14 +241,14 @@
           parameters: {
             jsCode: 'const findings = $input.first().json.findings || [];\nconst critical = findings.filter(f => f.severity === "high" || f.severity === "critical");\nreturn [{ json: { alert: critical.length > 0, count: critical.length, findings: critical } }];'
           },
-          name: 'Risk Filtresi',
+          name: 'Risk ve Anomali Filtresi',
           type: 'n8n-nodes-base.code',
           position: [650, 300]
         },
         {
           parameters: {
             channel: '#ai-visibility-alerts',
-            text: '={{ $json.count }} adet kritik AI Visibility uyarısı tespit edildi.'
+            text: '🚨 [HTML&HTML AI Intelligence Alert]: {{ $json.count }} adet kritik AI Visibility bariyeri tespit edildi. Yönetici raporunu inceleyin.'
           },
           name: 'Slack / Teams Bildirimi',
           type: 'n8n-nodes-base.slack',
@@ -215,12 +256,12 @@
         }
       ],
       connections: {
-        'Zamanlayıcı (Her Sabah 09:00)': { main: [[{ node: 'AI Görünürlük Taraması', type: 'main', index: 0 }]] },
-        'AI Görünürlük Taraması': { main: [[{ node: 'Risk Filtresi', type: 'main', index: 0 }]] },
-        'Risk Filtresi': { main: [[{ node: 'Slack / Teams Bildirimi', type: 'main', index: 0 }]] }
+        'Zamanlayıcı (Her Sabah 09:00 UTC)': { main: [[{ node: 'AI Görünürlük Taraması', type: 'main', index: 0 }]] },
+        'AI Görünürlük Taraması': { main: [[{ node: 'Risk ve Anomali Filtresi', type: 'main', index: 0 }]] },
+        'Risk ve Anomali Filtresi': { main: [[{ node: 'Slack / Teams Bildirimi', type: 'main', index: 0 }]] }
       },
       settings: { executionOrder: 'v1' },
-      tags: ['production', 'geo', 'enterprise-monitoring']
+      tags: ['production', 'geo', 'enterprise-monitoring', 'n8n-dag']
     };
     zip.file('workflows/n8n-ai-visibility-monitor.json', JSON.stringify(n8nWorkflow, null, 2));
 
@@ -251,7 +292,7 @@
           a.remove();
           setTimeout(function() { URL.revokeObjectURL(url); }, 10000);
         }
-        showToast('Kurumsal Yol Haritası Paketi (ZIP) indirildi!', 'download');
+        showToast('Kurumsal Çözüm Paketi (ZIP) indirildi!', 'download');
       })
       .catch(function(err) {
         console.error('ZIP generation error:', err);
@@ -259,7 +300,7 @@
       });
   }
 
-  // EXPOSE TO WINDOW EXPLICITLY (Silicon Valley best practice for inline handlers & external scripts)
+  // EXPOSE TO WINDOW EXPLICITLY (Silicon Valley principal pattern)
   window.showPaymentModal = showPaymentModal;
   window.hidePaymentModal = hidePaymentModal;
   window.simulatePayment = simulatePayment;
@@ -267,9 +308,13 @@
   window.filterFindings = filterFindings;
   window.generateEnterpriseZip = generateEnterpriseZip;
   window.showToast = showToast;
+  window.toggleTheme = toggleTheme;
 
   // ROBUST DOM ATTACHMENT & DELEGATION
   function setupEvents() {
+    // Initial Theme Sync
+    applyTheme(getCurrentTheme());
+
     if (UNLOCKED) {
       unlockPremium();
     }
@@ -283,9 +328,16 @@
       });
     });
 
-    // Delegated click handler on document to catch any CTA or modal triggers
+    // Delegated click handler on document to catch any CTA, theme, or modal triggers
     document.addEventListener('click', function(e) {
       const target = e.target;
+
+      if (target.closest('#themeToggle')) {
+        e.preventDefault();
+        toggleTheme();
+        return;
+      }
+
       const ctaBtn = target.closest('.recipe-cta, #actionBarBtn, [data-action="show-payment"]');
       if (ctaBtn) {
         e.preventDefault();
