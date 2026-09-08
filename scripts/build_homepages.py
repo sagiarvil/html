@@ -446,7 +446,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
             <div class="ea-frosted-cover">
               <span class="ea-lock-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Kilitli Çözüm Yol Haritası —  ile Aç
+                Kilitli Çözüm Yol Haritası — $99 ile Aç
               </span>
               <p>15 bulgunun tamamı için kök neden çözümleri, production-ready kodlar ve n8n CI/CD otomasyon şablonu.</p>
             </div>
@@ -1081,7 +1081,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
             <div class="ea-frosted-cover">
               <span class="ea-lock-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Locked Remediation Roadmap — Unlock for 
+                Locked Remediation Roadmap — Unlock for $99
               </span>
               <p>Step-by-step root-cause fixes, code samples, and n8n CI/CD automation templates for all 15 findings.</p>
             </div>
