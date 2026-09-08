@@ -15,29 +15,37 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - name: Verify production routes and premium customer experience
+      - name: Verify production routes and V3 customer experience
         shell: bash
         run: |
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! grep -Fqi "$marker" <<<"$body"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
-          check 'https://htmlandhtml.com/' 'Yapay Zeka Sizi Buluyor mu?'
+          check 'https://htmlandhtml.com/' 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi'
+          check 'https://htmlandhtml.com/tr/' 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'
+          check 'https://htmlandhtml.com/en/' 'AI SEO Audit &amp; ChatGPT Visibility Test'
           check 'https://htmlandhtml.com/tr/araclar/' 'data-premium-infographic="scope-map"'
-          check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'data-premium-infographic="report-boundary"'
+          check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'AI SEO Uygulama Paketi $99'
+          check 'https://htmlandhtml.com/en/pricing/' 'AI SEO Implementation Pack $99'
           check 'https://htmlandhtml.com/en/website-scanner/' '18-engine WEBSITE SCANNER'
           check 'https://htmlandhtml.com/tr/site-tarama/' '18 Motor'
-          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'LLMS.TXT V2 ŞARTNAME DOĞRULAYICISI'
-          check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'AI CRAWLER ACCESS CHECKER'
-          check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI WEBSITE READINESS'
+          check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'llms.txt Validator ve Yapay Zeka Site Testi'
+          check 'https://htmlandhtml.com/tr/ai-crawler-checker/' 'ChatGPT Bot ve AI Crawler Erişim Testi'
+          check 'https://htmlandhtml.com/en/ai-crawler-checker/' 'ChatGPT Bot &amp; AI Crawler Access Checker'
+          check 'https://htmlandhtml.com/tr/ai-website-readiness/' 'Yapay Zeka SEO Analizi ve AI Web Sitesi Hazırlık Testi'
+          check 'https://htmlandhtml.com/en/ai-website-readiness/' 'AI Website Readiness &amp; AI SEO Audit'
           check 'https://htmlandhtml.com/tr/ai-mention-tracker/' 'AI MARKA GÖRÜNÜRLÜK TAKİBİ'
           check 'https://htmlandhtml.com/en/ai-mention-tracker/' 'AI MENTION TRACKER'
-          check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'Problemi ücretsiz görün.'
           body="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/)"
           ! grep -Eq '\$49|\$149' <<<"$body"
+          ! grep -Eq 'Engine V2|120 (deep )?(checks|controls)|43[- ]page|22[- ]file|15[- ]prompt' <<<"$body"
           grep -Fq '$99' <<<"$body"
+          grep -Fq 'v3-capability-contract' <<<"$body"
+          grep -Fq '18 Engine V3' <<<"$body"
+          grep -Fq '105' <<<"$body"
           grep -Fq '/assets/css/premium-experience.css' <<<"$body"
           grep -Fq '/assets/js/theme.js' <<<"$body"
 
-      - name: Verify customer-first AI visibility and removed glossary callout
+      - name: Verify SEO metadata and evidence boundary
         shell: bash
         run: |
           set -euo pipefail
@@ -45,10 +53,12 @@ jobs:
           en_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/)"
           tr_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/sozluk/)"
           en_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/glossary/)"
-          grep -Fq 'Tavsiye Edilmeye Hazır mısınız?' <<<"$tr_home"
-          grep -Fq 'Can AI Find You?' <<<"$en_home"
+          grep -Fq 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi' <<<"$tr_home"
+          grep -Fq 'AI SEO Audit &amp; ChatGPT Visibility Test' <<<"$en_home"
           grep -Fq 'Ücretsiz Kontrol Et' <<<"$tr_home"
           grep -Fq 'Check Free' <<<"$en_home"
+          grep -Fq 'Sıralama, atıf, trafik veya gelir garantisi vermez' <<<"$tr_home"
+          grep -Fq 'does not guarantee rankings, citations, traffic or revenue' <<<"$en_home"
           ! grep -Fq 'Google doğruluk sınırı' <<<"$tr_glossary"
           ! grep -Fq 'Google accuracy boundary' <<<"$en_glossary"
 
@@ -69,10 +79,13 @@ jobs:
           const api=JSON.parse(process.env.OPENAPI), p=JSON.parse(process.env.PROFILE), s=JSON.parse(process.env.SOURCES);
           if(api.openapi!=='3.1.0') throw new Error('OpenAPI version');
           for(const x of ['/api/health','/api/scan','/api/intelligence','/api/mentions','/api/mandate']) if(!api.paths?.[x]) throw new Error('missing API path '+x);
-          if(p.version!=='1.2.0'||p.engines?.length!==12) throw new Error('audit profile contract');
+          if(p.version!=='3.0.0'||p.engines?.length!==12) throw new Error('audit profile compatibility contract');
+          if(p.engineContract?.name!=='Engine V3 Deterministic Chain'||p.engineContract?.moduleCount!==18||p.engineContract?.controlCount!==105) throw new Error('V3 engine contract');
           if(p.intelligenceLayer?.analysisCount!==13||p.intelligenceLayer?.readinessLensCount!==7) throw new Error('intelligence profile contract');
-          if(p.scanBoundaries?.maxPublicHtmlPages!==50) throw new Error('Deep Crawl boundary');
-          if(p.engines.reduce((a,x)=>a+x.overallWeight,0)!==100) throw new Error('audit weights');
+          if(p.scanBoundaries?.maxPublicHtmlPages!==50||p.scanBoundaries?.maxLinkProbes!==30) throw new Error('scan boundary');
+          if(p.engines.reduce((a,x)=>a+x.overallWeight,0)!==100) throw new Error('compatibility score weights');
+          if(p.executionContract?.neutralQueryMaximum!==3||p.executionContract?.providerMaximum!==3||p.executionContract?.maximumObservationsPerRun!==9) throw new Error('AI mention measurement boundary');
+          if(p.machineSurfaceContract?.maxPageLevelMarkdownManifests!==30) throw new Error('machine surface boundary');
           if(!Array.isArray(s.sources)||s.sources.length<8) throw new Error('source registry contract');
           NODE
 
@@ -94,7 +107,7 @@ jobs:
           BODY="$body" node - <<'NODE'
           const x=JSON.parse(process.env.BODY); const expected=['crawl','technical','ai','llms','schema','performance','accessibility','security','trust','agent','conversion','links'];
           for(const k of expected) if(typeof x.scores?.[k] !== 'number') throw new Error('missing score '+k);
-          if(!Array.isArray(x.findings)||!x.scanId||x.fieldData?.coreWebVitals!=='NOT_MEASURED'||Object.keys(x.scores).length!==12) throw new Error('scan contract');
+          if(!Array.isArray(x.findings)||!x.scanId||x.fieldData?.coreWebVitals!=='NOT_MEASURED'||Object.keys(x.scores).length!==12) throw new Error('scan compatibility contract');
           if((x.summary?.pagesScanned||0)>50) throw new Error('Deep Crawl exceeded 50-page boundary');
           const i=x.intelligence;
           if(i?.classification!=='NON_SCORING_INTELLIGENCE_LAYER'||i.coreScoreUnchanged!==true||i.analyses?.length!==13||Object.keys(i.readinessLenses||{}).length!==7) throw new Error('intelligence contract');
