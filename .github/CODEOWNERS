@@ -1,0 +1,7 @@
+# Generated Google News sitemap contract.
+# NOTE: GitHub only enforces Code Owner review when branch/ruleset protection enables it.
+/sitemap-news.xml @sagiarvil
+/data/llms-news.json @sagiarvil
+/scripts/enhance_llms_news_seo.py @sagiarvil
+/scripts/verify_news_sitemap_guard.py @sagiarvil
+/.github/workflows/llms-news.yml @sagiarvil
