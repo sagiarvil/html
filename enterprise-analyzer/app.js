@@ -158,6 +158,51 @@
         el.textContent = el.textContent.split('htmlandhtml.com').join(domain);
       }
     });
+
+    // 7. Update 18 Deterministic Engine Cards Telemetry
+    const catMap = {
+      'ENG-01': 'performance', 'ENG-02': 'performance', 'ENG-03': 'trust',
+      'ENG-04': 'technical',   'ENG-05': 'ai',          'ENG-06': 'ai',
+      'ENG-07': 'llms',        'ENG-08': 'schema',      'ENG-09': 'ai',
+      'ENG-10': 'technical',   'ENG-11': 'trust',       'ENG-12': 'trust',
+      'ENG-13': 'agent',       'ENG-14': 'trust',       'ENG-15': 'schema',
+      'ENG-16': 'security',    'ENG-17': 'crawl',       'ENG-18': 'technical'
+    };
+
+    document.querySelectorAll('.ea-engine-card').forEach(function(card) {
+      const idEl = card.querySelector('.ea-engine-id');
+      if (!idEl) return;
+      const engId = idEl.textContent.trim();
+      let engScore = score;
+      let engStatus = engScore >= 80 ? 'PASS' : engScore >= 60 ? 'WARN' : 'FAIL';
+
+      if (isV2 && data.engines && data.engines[engId]) {
+        engScore = data.engines[engId].score ?? score;
+        engStatus = data.engines[engId].status || (engScore >= 80 ? 'PASS' : engScore >= 60 ? 'WARN' : 'FAIL');
+      } else if (data.engineScores && data.engineScores[engId] !== undefined) {
+        const entry = data.engineScores[engId];
+        engScore = typeof entry === 'number' ? entry : (entry.score ?? score);
+        engStatus = engScore >= 80 ? 'PASS' : engScore >= 60 ? 'WARN' : 'FAIL';
+      } else if (data.scores) {
+        const cat = catMap[engId] || 'technical';
+        engScore = data.scores[cat] !== undefined ? data.scores[cat] : score;
+        engStatus = engScore >= 80 ? 'PASS' : engScore >= 60 ? 'WARN' : 'FAIL';
+      }
+
+      engScore = Math.max(0, Math.min(100, Math.round(engScore)));
+
+      const badge = card.querySelector('.ea-engine-badge');
+      if (badge) {
+        badge.className = 'ea-engine-badge ' + (engStatus === 'PASS' ? 'badge-pass' : engStatus === 'WARN' ? 'badge-warn' : 'badge-fail');
+        badge.textContent = engStatus;
+      }
+
+      const scoreVal = card.querySelector('.ea-engine-score-val');
+      if (scoreVal) {
+        scoreVal.textContent = engScore + '%';
+        scoreVal.style.color = engScore >= 80 ? 'var(--ea-success)' : engScore >= 60 ? 'var(--ea-warning)' : 'var(--ea-danger)';
+      }
+    });
   }
 
   async function runEnterpriseScan(rawDomain) {

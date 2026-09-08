@@ -248,6 +248,294 @@
     </div>
   </div>
 
+      <!-- 18 DETERMINISTIC ENGINES TELEMETRY MATRIX -->
+    <section class="ea-engines-section">
+      <div class="ea-engines-head">
+        <h2>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span data-i18n="enginesTitle">18 Deterministik Motor Telemetri Matrisi (Engine V2)</span>
+        </h2>
+        <span class="badge-count" style="font-size:12px; padding:4px 10px;">18/18 ENGINE PASS/FAIL AUDIT</span>
+      </div>
+      <p style="font-size:13.5px; color:var(--ea-text-secondary); margin:0 0 16px; line-height:1.55;" data-i18n="enginesDesc">
+        Aşağıdaki 18 bağımsız motor, hedef siteyi kablo seviyesinde deterministik kurallarla denetler. Her motorun ağırlığı, telemetri kural zinciri ve ceza puanları doğrudan kaynak kod mimarisine dayalıdır.
+      </p>
+
+      <div class="ea-engines-grid">
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-01</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="KV Önbellek &amp; Prompt Optimizasyon Motoru" data-en="KV Cache &amp; Prompt Optimization Engine">KV Önbellek & Prompt Optimizasyon Motoru</h4>
+            <p class="ea-engine-desc" data-tr="LLM önbellek hizalaması, statik prompt token verimliliği ve gereksiz context yükü eliminasyonu." data-en="LLM prompt cache alignment, static token reuse efficiency, and zero context bloat.">LLM önbellek hizalaması, statik prompt token verimliliği ve gereksiz context yükü eliminasyonu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %6</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">88%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-02</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Kenar TTFB &amp; TCP 14KB CWND Ağ Motoru" data-en="Edge TTFB &amp; TCP 14KB CWND Network Engine">Kenar TTFB & TCP 14KB CWND Ağ Motoru</h4>
+            <p class="ea-engine-desc" data-tr="İlk TCP penceresinde (14.600 bayt / CWND 10) RAG gövde teslimi ve kenar sunucu yanıt gecikmesi." data-en="Initial TCP window delivery (14,600 bytes / CWND 10) for RAG chunks and edge latency.">İlk TCP penceresinde (14.600 bayt / CWND 10) RAG gövde teslimi ve kenar sunucu yanıt gecikmesi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %7</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">62%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-03</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="C2PA Menşei &amp; RFC 3161 Zaman Damgası Motoru" data-en="C2PA Provenance &amp; RFC 3161 Timestamp Engine">C2PA Menşei & RFC 3161 Zaman Damgası Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Yapay zeka halüsinasyon mimicry koruması için dijital içerik kimlik doğrulama manifesti." data-en="Content provenance credentials and cryptographic timestamps distinguishing original analysis from AI mimicry.">Yapay zeka halüsinasyon mimicry koruması için dijital içerik kimlik doğrulama manifesti.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">65%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-04</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Teknik SEO &amp; Kanonik RFC 6596 Motoru" data-en="Technical SEO &amp; RFC 6596 Canonical Engine">Teknik SEO & Kanonik RFC 6596 Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Mutlak self-referencing canonical etiketleri, çapraz hreflang doğrulaması ve tarayıcı bot direktifleri." data-en="Absolute self-referencing canonical headers, reciprocal hreflang validation, and crawler directives.">Mutlak self-referencing canonical etiketleri, çapraz hreflang doğrulaması ve tarayıcı bot direktifleri.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %7</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">74%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-05</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="GEO &amp; /llms.txt Makine Manifest Motoru" data-en="GEO &amp; /llms.txt Machine Manifest Engine">GEO & /llms.txt Makine Manifest Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Generative Engine Optimization (GEO), kök /llms.txt protokolü ve LLM botları için semantik özet yüzeyi." data-en="Generative Engine Optimization standard, root /llms.txt manifest, and machine surface mapping.">Generative Engine Optimization (GEO), kök /llms.txt protokolü ve LLM botları için semantik özet yüzeyi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %8</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">60%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-06</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="AEO &amp; Doğrudan Cevap Çıkarılabilirlik Motoru" data-en="AEO &amp; Direct Answer Extractability Engine">AEO & Doğrudan Cevap Çıkarılabilirlik Motoru</h4>
+            <p class="ea-engine-desc" data-tr="SearchGPT, Perplexity ve Gemini için ilk 45 kelimede atomik doğrudan cevap yapılandırması." data-en="Atomic 45-word direct answer structures optimized for SearchGPT, Perplexity, and Gemini citation synthesis.">SearchGPT, Perplexity ve Gemini için ilk 45 kelimede atomik doğrudan cevap yapılandırması.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %7</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">82%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-07</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="LLMO &amp; Bilgi Yoğunluğu (Entropy) Motoru" data-en="LLMO &amp; Information Density (Entropy) Engine">LLMO & Bilgi Yoğunluğu (Entropy) Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Pazarlama dolgusu temizliği, yüksek shingling entropisi ve sayısal veri yoğunluğu analizi." data-en="Fluff suppression, high n-gram shingling entropy, and triangulated numerical fact density.">Pazarlama dolgusu temizliği, yüksek shingling entropisi ve sayısal veri yoğunluğu analizi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %6</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">78%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-08</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Varlık Grafiği (@graph &amp; Wikidata) Motoru" data-en="Entity Graph (@graph &amp; Wikidata) Engine">Varlık Grafiği (@graph & Wikidata) Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Schema.org @graph DAG mutabakatı, Wikidata QID varlık bağı ve Organization/WebSite kimliği." data-en="Schema.org @graph DAG reconciliation, Wikidata QID entity linkage, and canonical publisher node binding.">Schema.org @graph DAG mutabakatı, Wikidata QID varlık bağı ve Organization/WebSite kimliği.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %8</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">68%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-09</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Cross-Encoder Attention Matrisi Motoru" data-en="Cross-Encoder Attention Matrix Engine">Cross-Encoder Attention Matrisi Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Cohere-Rerank-v3 ve BGE-Reranker için sorgu-token kesişim ağırlığı ve reranker sıralama optimizasyonu." data-en="Cross-encoder attention alignment and passage reranking scores for Cohere-Rerank-v3 and BGE-Reranker.">Cohere-Rerank-v3 ve BGE-Reranker için sorgu-token kesişim ağırlığı ve reranker sıralama optimizasyonu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %6</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">71%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-10</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="ColBERT MaxSim Vektör Hizalama Motoru" data-en="ColBERT MaxSim Vector Alignment Engine">ColBERT MaxSim Vektör Hizalama Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Geç etkileşimli (late-interaction) ColBERT iç çarpım matrisi ve token kümeleme uyumu." data-en="ColBERT late-interaction token dot product maximization and semantic cluster alignment.">Geç etkileşimli (late-interaction) ColBERT iç çarpım matrisi ve token kümeleme uyumu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %8</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">66%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-11</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="DPO / RLAIF Ton &amp; Uyum Kalibrasyon Motoru" data-en="DPO / RLAIF Tone &amp; Alignment Engine">DPO / RLAIF Ton & Uyum Kalibrasyon Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Direct Preference Optimization (DPO) Chosen vs. Rejected filtrelemesi, abartılı sıfat temizliği." data-en="Direct Preference Optimization (DPO) chosen vector calibration and superlative marketing removal.">Direct Preference Optimization (DPO) Chosen vs. Rejected filtrelemesi, abartılı sıfat temizliği.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %5</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">79%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-12</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Sentetik Alıntı &amp; Recursive Feedback Döngüsü" data-en="Synthetic Citation &amp; Recursive Feedback Engine">Sentetik Alıntı & Recursive Feedback Döngüsü</h4>
+            <p class="ea-engine-desc" data-tr="İkinci dereceden yapay zeka alıntı zinciri, kanonik endüstri endeksi ve kalıcı benchmark mimarisi." data-en="Second-order AI citation loops, canonical industry benchmark indices, and immutable attribution anchors.">İkinci dereceden yapay zeka alıntı zinciri, kanonik endüstri endeksi ve kalıcı benchmark mimarisi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %5</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">75%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-13</span>
+              <span class="ea-engine-badge badge-fail">FAIL</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="AAO (A2A Agent Card &amp; MCP) Ajan Motoru" data-en="AAO (A2A Agent Card &amp; MCP) Agent Engine">AAO (A2A Agent Card & MCP) Ajan Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Otonom AI ajanları için .well-known/agent-card.json ve Anthropic Model Context Protocol (MCP) şeması." data-en="Agent-to-Agent discovery card (.well-known/agent-card.json) and Model Context Protocol (MCP) server endpoints.">Otonom AI ajanları için .well-known/agent-card.json ve Anthropic Model Context Protocol (MCP) şeması.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %5</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-danger);">58%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-14</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="E-E-A-T &amp; Güven Otorite Motoru" data-en="E-E-A-T &amp; Trust Authority Engine">E-E-A-T & Güven Otorite Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Deneyim, Uzmanlık, Yetkinlik ve Güvenilirlik sinyalleri, yazar profilleri ve teknik doğruluk." data-en="Experience, Expertise, Authoritativeness, and Trustworthiness signals with transparent citations.">Deneyim, Uzmanlık, Yetkinlik ve Güvenilirlik sinyalleri, yazar profilleri ve teknik doğruluk.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">73%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-15</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Knowledge Vault Mutabakat Üçlüleri Motoru" data-en="Knowledge Vault Consensus Triples Engine">Knowledge Vault Mutabakat Üçlüleri Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Semantik RDF mutabakat üçlüleri, knowAbout alan kodları ve endüstri standardı ontolojileri." data-en="Semantic RDF consensus triples, knowsAbout taxonomy codes, and verified entity graphs.">Semantik RDF mutabakat üçlüleri, knowAbout alan kodları ve endüstri standardı ontolojileri.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">80%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-16</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Halüsinasyon &amp; Sürüklenme Önleme Motoru" data-en="Hallucination &amp; Drift Interception Engine">Halüsinasyon & Sürüklenme Önleme Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Büyük frontier modellerde (GPT-4o, Claude 3.5, Perplexity) marka algı sapmasını izleyen sentetik problar." data-en="Automated synthetic cross-probing detecting brand drift, false pricing, or ungrounded model output.">Büyük frontier modellerde (GPT-4o, Claude 3.5, Perplexity) marka algı sapmasını izleyen sentetik problar.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">84%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-17</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Dark Pool &amp; Parametrik Ağırlık Tohumlama" data-en="Dark Pool &amp; Model Weight Seeding Engine">Dark Pool & Parametrik Ağırlık Tohumlama</h4>
+            <p class="ea-engine-desc" data-tr="Common Crawl ve açık veri havuzlarında marka PMI (Pointwise Mutual Information) matrisi optimizasyonu." data-en="Pointwise Mutual Information (PMI) matrix optimization inside Common Crawl &amp; web training sets.">Common Crawl ve açık veri havuzlarında marka PMI (Pointwise Mutual Information) matrisi optimizasyonu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %3</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">70%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-18</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Tarihsel Ön-Eğitim Korpus Varlığı Motoru" data-en="Historical Pretraining Corpus Presence Engine">Tarihsel Ön-Eğitim Korpus Varlığı Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Web arşivi, Common Crawl WET indeksleri ve kalıcı dijital referans ayak izi analizi." data-en="Common Crawl WET archive footprints and persistent historical citation validation.">Web arşivi, Common Crawl WET indeksleri ve kalıcı dijital referans ayak izi analizi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %3</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">85%</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   <!-- Findings Section -->
   <section class="ea-findings-section">
     <div class="ea-section-bar">

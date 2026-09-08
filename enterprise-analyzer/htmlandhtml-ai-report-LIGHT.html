@@ -9,7 +9,7 @@
       var h = localStorage.getItem('hh-theme');
       var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
       var t = "light";
-      if (!t || t === 'system') {
+      if (t === 'system') {
         t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
       document.documentElement.setAttribute('data-theme', t);
@@ -2544,9 +2544,9 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
   (function() {{
     'use strict';
 
-    const RAW_FILES = {json.dumps(DELIVERY_FILES)};
-    const RAW_FINDINGS = {json.dumps(FINDINGS_DATA)};
-    const RAW_ENGINES = {json.dumps(ENGINES_DATA)};
+    const RAW_FILES = {raw_files_json};
+    const RAW_FINDINGS = {raw_findings_json};
+    const RAW_ENGINES = {raw_engines_json};
 
     const dict = {{
       tr: {{
