@@ -240,5 +240,58 @@
     "defaultRuleSourceClass": "INTERNAL_HEURISTIC",
     "vendorClaimsRequireSourceId": true,
     "modelInternalClaimsFromPublicHtml": "FORBIDDEN"
+  },
+  "blackBoxIntelligenceLayer": {
+    "classification": "NON_SCORING_BLACK_BOX_INTELLIGENCE",
+    "domainCount": 6,
+    "coreScoreUnchanged": true,
+    "domains": [
+      {
+        "key": "retrieval_activation_uncertainty",
+        "state": "REQUIRES_CONTEXT",
+        "requires": [
+          "provider observations",
+          "grounding/search-use signal"
+        ]
+      },
+      {
+        "key": "citation_source_concentration",
+        "state": "REQUIRES_CONTEXT",
+        "requires": [
+          "provider citation URLs"
+        ]
+      },
+      {
+        "key": "competitive_share_of_answer",
+        "state": "REQUIRES_CONTEXT",
+        "requires": [
+          "neutral prompts",
+          "competitor set",
+          "provider observations"
+        ]
+      },
+      {
+        "key": "entity_resolution_drift",
+        "state": "EVALUATED_FROM_CURRENT_SCAN",
+        "requires": [
+          "previous baseline for temporal drift"
+        ]
+      },
+      {
+        "key": "temporal_visibility_drift",
+        "state": "NOT_MEASURED",
+        "requires": [
+          "same prompt/provider cohort over time"
+        ]
+      },
+      {
+        "key": "agent_interaction_friction",
+        "state": "EVALUATED_FROM_SITE_SIGNALS",
+        "requires": [
+          "controlled agent task execution for end-to-end proof"
+        ]
+      }
+    ],
+    "policy": "No black-box domain modifies the canonical engine score. Missing observations remain NOT_MEASURED or REQUIRES_CONTEXT."
   }
 }
