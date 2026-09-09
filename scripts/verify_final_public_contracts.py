@@ -33,7 +33,9 @@ BANNED = {
     'unverified Common Crawl live verification': r'Common Crawl[^\n<]{0,120}(?:live|canlı|verify|doğrula)',
     'fixed implementation-speed promise': r'\b(?:30|60)\s*(?:seconds?|saniye)(?:de|da)?\b[^\n<]{0,100}(?:apply|uygula|uygulama|zero.?code|sıfır.?kod)',
     'world-first claim': r'(?:world.?s first|dünyanın ilk)',
-    'guaranteed external AI outcome': r'(?:guaranteed?|garanti)[^\n<]{0,80}(?:citation|ranking|recommendation|atıf|sıralama|tavsiye)',
+    # Positive promise only. Explicit disclaimers such as "does not guarantee ranking"
+    # or "no ranking guarantee" are evidence boundaries and must remain allowed.
+    'guaranteed external AI outcome': r'(?:\bguarantee(?:d|s)?\s+(?:a\s+)?(?:top\s+|first\s+|#?1\s+)?(?:citation|ranking|recommendation)\b|\b(?:citation|ranking|recommendation)\s+is\s+guaranteed\b|\bgaranti\s+(?:ediyoruz|veriyoruz|sunuyoruz)\b[^\n<]{0,80}(?:atıf|sıralama|tavsiye)|\b(?:atıf|sıralama|tavsiye)\s+garantisi\s+(?:veriyoruz|sunuyoruz|vardır)\b)',
 }
 
 
