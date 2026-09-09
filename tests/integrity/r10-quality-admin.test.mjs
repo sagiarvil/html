@@ -1,0 +1,26 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const ui=fs.readFileSync('assets/js/r10-quality-hotfix.js','utf8');
+const fn=fs.readFileSync('functions-firebase/src/index.ts','utf8');
+const telemetry=fs.readFileSync('functions-firebase/src/scan-telemetry.ts','utf8');
+const admin=fs.readFileSync('admin/index.html','utf8');
+const cache=fs.readFileSync('scripts/patch_r10_quality_cache.py','utf8');
+assert.match(ui,/RFC 9309 — Robots Exclusion Protocol/);
+assert.match(ui,/NOT_MEASURED/);
+assert.match(ui,/Bu bulgu bir AI bot erişim testi değildir/);
+assert.match(fn,/googlebot\.category='crawl'/);
+assert.match(fn,/weightedScore\(/);
+assert.match(fn,/recordScanTelemetry/);
+assert.match(telemetry,/ADMIN_PBKDF2_ITERATIONS=600_000/);
+assert.match(telemetry,/timingSafeEqual/);
+assert.match(telemetry,/ADMIN_MAX_FAILURES=5/);
+assert.doesNotMatch(telemetry,/Deneme1974/);
+assert.doesNotMatch(telemetry,/req\.ip|x-forwarded-for|user-agent/i);
+assert.match(admin,/noindex,nofollow,noarchive,nosnippet/);
+assert.match(admin,/type="password"/);
+// Theme persistence may legitimately use localStorage. The admin password itself must never be persisted.
+assert.doesNotMatch(admin,/(?:localStorage|sessionStorage)\.(?:setItem|getItem)\([^\n)]*(?:password|adminPassword)|(?:password|adminPassword)[^\n;]{0,80}(?:localStorage|sessionStorage)/i);
+assert.doesNotMatch(admin,/setItem\([^\n)]*Deneme1974/i);
+assert.match(cache,/quality=003/);
+assert.match(cache,/r10-quality-hotfix/);
+console.log('R10_QUALITY_ADMIN_GUARD_PASS');
