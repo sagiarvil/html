@@ -16,6 +16,9 @@ import { EngineOrchestrator, EngineTool } from './02-engine-v2-core.ts';
 
 
 
+type SourceClass = 'OFFICIAL_STANDARD' | 'OFFICIAL_VENDOR' | 'PROPOSAL' | 'MEASURED' | 'INTERNAL_HEURISTIC' | 'EXPERIMENTAL';
+type MeasurementState = 'MEASURED' | 'NOT_MEASURED' | 'REQUIRES_CONTEXT';
+
 interface Rule {
   id: string;
   name: string;
@@ -23,6 +26,36 @@ interface Rule {
   check: (input: ScanInput, context: ExecutionContext, sharedState: Map<string, any>) => boolean;
   penaltyOnFail: number;
   evidence: (input: ScanInput) => string;
+  sourceClass?: SourceClass;
+  sourceIds?: string[];
+  measurementState?: MeasurementState;
+}
+
+const OFFICIAL_VENDOR_RULES: Record<string, string[]> = {
+  'SEO-004': ['GOOGLE-CANONICAL'],
+  'SEO-005': ['GOOGLE-INTERNATIONAL'],
+  'SEO-006': ['GOOGLE-SEARCH-ESSENTIALS'],
+  'SEO-007': ['GOOGLE-SITEMAPS'],
+  'SEO-008': ['GOOGLE-STRUCTURED-DATA'],
+  'GEO-006': ['GOOGLE-PREFERRED-SOURCES'],
+  'GEO-007': ['GOOGLE-REGIONAL-SEARCH'],
+  'EEAT-001': ['GOOGLE-HELPFUL-CONTENT'],
+  'EEAT-002': ['GOOGLE-HELPFUL-CONTENT'],
+  'EEAT-003': ['GOOGLE-HELPFUL-CONTENT'],
+  'EEAT-004': ['GOOGLE-HELPFUL-CONTENT'],
+};
+
+const OFFICIAL_STANDARD_RULES: Record<string, string[]> = {
+  'AAO-002': ['OPENAPI31'],
+};
+
+function ruleSource(rule: Rule): { sourceClass: SourceClass; sourceIds: string[] } {
+  if (rule.sourceClass) return { sourceClass: rule.sourceClass, sourceIds: rule.sourceIds || [] };
+  if (OFFICIAL_VENDOR_RULES[rule.id]) return { sourceClass: 'OFFICIAL_VENDOR', sourceIds: OFFICIAL_VENDOR_RULES[rule.id] };
+  if (OFFICIAL_STANDARD_RULES[rule.id]) return { sourceClass: 'OFFICIAL_STANDARD', sourceIds: OFFICIAL_STANDARD_RULES[rule.id] };
+  if (rule.id.startsWith('LLMO-')) return { sourceClass: 'PROPOSAL', sourceIds: ['LLMS-TXT-V2'] };
+  if (rule.id.startsWith('AAO-001') || rule.id.startsWith('AAO-003')) return { sourceClass: 'EXPERIMENTAL', sourceIds: [] };
+  return { sourceClass: 'INTERNAL_HEURISTIC', sourceIds: [] };
 }
 
 function calculateChecksum(data: string): string {
@@ -60,8 +93,19 @@ function evaluateRules(
   const findings: Finding[] = [];
   const computationSteps: string[] = [];
   const ruleChain: string[] = [];
+  const measurementStates: Record<string, MeasurementState> = {};
 
   for (const rule of rules) {
+    const measurementState = rule.measurementState || 'MEASURED';
+    const source = ruleSource(rule);
+    measurementStates[rule.id] = measurementState;
+
+    if (measurementState !== 'MEASURED') {
+      ruleChain.push(`${rule.id}=${measurementState}`);
+      computationSteps.push(`${rule.id}: ${measurementState} (excluded from score)`);
+      continue;
+    }
+
     totalWeight += rule.weight;
     let passed = false;
     try {
@@ -81,11 +125,14 @@ function evaluateRules(
         category: engineId,
         severity: rule.penaltyOnFail >= 20 ? 'high' : rule.penaltyOnFail >= 12 ? 'medium' : 'low',
         status: 'confirmed',
-        standard: 'OFFICIAL_STANDARD',
+        standard: source.sourceClass,
+        sourceClass: source.sourceClass,
+        sourceIds: source.sourceIds,
+        measurementState,
         titleTR: `${rule.name} başarısız`,
         titleEN: `${rule.name} failed`,
-        descriptionTR: `Kural ${rule.id} hedef site üzerinde doğrulanamadı.`,
-        descriptionEN: `Rule ${rule.id} could not be verified on target site.`,
+        descriptionTR: `Kural ${rule.id} hedef site üzerinde doğrulanamadı. Kaynak sınıfı: ${source.sourceClass}.`,
+        descriptionEN: `Rule ${rule.id} could not be verified on the target site. Source class: ${source.sourceClass}.`,
         evidence: rule.evidence(input),
         url: input.domain,
         penaltyWeight: rule.penaltyOnFail,
@@ -109,6 +156,7 @@ function evaluateRules(
       `CLAMPED = ${clampedScore}`,
       ...computationSteps,
     ],
+    measurementStates,
   };
 
   const checksumInput = JSON.stringify({
