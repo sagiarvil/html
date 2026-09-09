@@ -25,7 +25,9 @@ def inject(path:Path)->None:
         if is_en else
         '<p class="v3-delivery-boundary"><b>Ücretli teslim sınırı:</b> Kanıtlanan URL’lere bağlı 30\'a kadar sayfa bazlı Markdown makine yüzeyi ve sürümlenmiş ZIP teslim paketi.</p>'
     )
-    pattern=re.compile(r'(<section class="v3-capability-contract"\b.*?)(</section>)',re.S)
+    # A word-boundary after the closing quote is invalid here because both the quote
+    # and following whitespace are non-word characters. Use an explicit tag boundary.
+    pattern=re.compile(r'(<section class="v3-capability-contract"(?=\s|>).*?)(</section>)',re.S)
     updated,count=pattern.subn(lambda m:m.group(1)+boundary+m.group(2),text,count=1)
     if count!=1: raise SystemExit(f'FINAL DELIVERY BOUNDARY FAIL: v3 block missing in {path.relative_to(ROOT)}')
     path.write_text(updated,encoding='utf-8')
