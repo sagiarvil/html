@@ -59,6 +59,7 @@
       {"source":"/ai-report","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/ai-report/**","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/assets/**","headers":[{"key":"Cache-Control","value":"public, max-age=604800, immutable"}]},
+      {"source":"/assets/css/enterprise-theme-system.css","headers":[{"key":"Cache-Control","value":"no-cache, max-age=0, must-revalidate"}]},
       {"source":"/llms.txt","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
       {"source":"/llms/**","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"},{"key":"Cache-Control","value":"public, max-age=300, stale-while-revalidate=600"}]},
       {"source":"/index.md","headers":[{"key":"Content-Type","value":"text/markdown; charset=utf-8"},{"key":"Access-Control-Allow-Origin","value":"*"}]},
