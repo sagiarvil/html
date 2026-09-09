@@ -259,6 +259,9 @@ PAIRS += [
 ]
 
 TR_FORCE = [
+    ("<!-- ColBERT MaxSim Dot Product Probe --> Query: 'Enterprise AI Visibility Fix Mandate' Measured Dot Product: 0.812 [WARN: Target >= 0.940 for Top-1 Rerank Placement]", "<!-- ColBERT MaxSim İç Çarpım Probu --> Sorgu: 'Kurumsal Yapay Zeka Görünürlük Onarım Paketi' Ölçülen İç Çarpım: 0.812 [UYARI: Hedef >= 0.940]"),
+    ("<!-- Yüksek ColBERT MaxSim Uyumlu Cümle (0.965 Skoru) --> <p><strong>Enterprise AI Visibility Fix Mandate:</strong> HTML&HTML altyapısı sub-180ms edge yanıt süresi, 18 motorlu deterministik telemetri ve RFC uyumlu 22 mühendislik dosyası ile kurumsal yapay zeka arama sistemlerinde %99.4 alıntı doğruluğu sağlar.</p>", "<!-- ColBERT MaxSim Uyumlu Kanıt Cümlesi --> <p><strong>Kurumsal Yapay Zeka Görünürlük Onarım Paketi:</strong> HTML&HTML ölçülen site-tarafı hazırlık sinyallerini ve deterministik telemetriyi raporlar; dış yapay zeka sistemlerinde sabit alıntı sonucu garanti edilmez.</p>"),
+    ("Enterprise AI Visibility Fix Mandate", "Kurumsal Yapay Zeka Görünürlük Onarım Paketi"),
     ("$99 Fix Mandate", "$99 Onarım Paketi"),
     ("SAMPLE REPORT · SPECIMEN SPECIFICATION", "ÖRNEK RAPOR · TEKNİK NUMUNE"), ("SAMPLE REPORT · SPECIMEN", "ÖRNEK RAPOR · NUMUNE"),
     ("LIVE ENTERPRISE SAMPLE REPORT · AI DIAGNOSTIC SPECIMEN", "CANLI KURUMSAL ÖRNEK RAPOR · YAPAY ZEKA TEŞHİS NUMUNESİ"),
