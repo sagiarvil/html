@@ -3,6 +3,7 @@ import type { Finding, ScanResult, SourceClass } from './scan-engine';
 export const INTELLIGENCE_VERSION='1.0.0' as const;
 export const INTELLIGENCE_ANALYSIS_COUNT=13 as const;
 export const READINESS_LENS_COUNT=7 as const;
+export const ADVANCED_BLACKBOX_RISK_COUNT=6 as const;
 
 export type IntelligenceKey=
   |'intent_cannibalization'
@@ -20,6 +21,13 @@ export type IntelligenceKey=
   |'codebase_seo_governance';
 
 export type ReadinessLens='SEO'|'GEO'|'AEO'|'LLMO'|'AAO'|'RAG'|'E-E-A-T';
+export type AdvancedBlackBoxRiskKey=
+  |'query_fanout_coverage'
+  |'citation_volatility'
+  |'crawler_policy_divergence'
+  |'render_retrieval_gap'
+  |'entity_identity_drift'
+  |'agent_action_friction';
 export type IntelligenceStatus='PASS'|'WARN'|'FAIL'|'NOT_MEASURED'|'REQUIRES_CONTEXT';
 export type MeasurementMode='MEASURED'|'EVALUATED'|'REQUIRES_CONTEXT';
 export type Effort='EASY'|'MEDIUM'|'HARD'|'REQUIRES_CONTEXT';
@@ -41,6 +49,31 @@ export interface IntelligenceAnalysis {
   affectedUrls:string[];
   boundaryEn:string;
   boundaryTr:string;
+}
+
+export interface AdvancedBlackBoxRiskAnalysis {
+  key:AdvancedBlackBoxRiskKey;
+  labelEn:string;
+  labelTr:string;
+  status:IntelligenceStatus;
+  mode:MeasurementMode;
+  score:number|null;
+  confidence:number;
+  sourceClass:SourceClass;
+  impact:Impact;
+  effort:Effort;
+  lenses:ReadinessLens[];
+  evidence:string[];
+  affectedUrls:string[];
+  boundaryEn:string;
+  boundaryTr:string;
+}
+
+export interface AdvancedBlackBoxRiskLayer {
+  classification:'NON_SCORING_ADVANCED_BLACKBOX_RISK_LAYER';
+  count:typeof ADVANCED_BLACKBOX_RISK_COUNT;
+  analyses:AdvancedBlackBoxRiskAnalysis[];
+  boundaries:string[];
 }
 
 export interface ReadinessLensResult {
@@ -71,6 +104,7 @@ export interface IntelligenceReport {
   coreOverall:number;
   coreScoreUnchanged:true;
   analyses:IntelligenceAnalysis[];
+  advancedBlackBoxRiskLayer:AdvancedBlackBoxRiskLayer;
   readinessLenses:Record<ReadinessLens,ReadinessLensResult>;
   topPriorities:IntelligencePriority[];
   measured:number;
@@ -183,6 +217,56 @@ function codebaseAudit(scan:ScanResult):IntelligenceAnalysis{
   return analysis({key:'codebase_seo_governance',labelEn:'Codebase SEO Governance Audit',labelTr:'Kod Tabanı SEO Yönetişim Denetimi',status:'REQUIRES_CONTEXT',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'MEASURED',impact:'HIGH',effort:'HARD',lenses:['SEO','GEO','LLMO','AAO'],evidence:['Public HTTP scanning cannot inspect route registries, metadata generators, CI quality gates, source-level canonical logic or deployment drift. Repository/source context is required.'],affectedUrls:[],boundaryEn:'Only activates with authorized source/repository context; public scanning never guesses source-file paths.',boundaryTr:'Yalnız yetkili kaynak/repo bağlamıyla etkinleşir; herkese açık tarama kaynak dosya yollarını tahmin etmez.'});
 }
 
+function advancedRisk(x:AdvancedBlackBoxRiskAnalysis){return x}
+
+function queryFanoutRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
+  return advancedRisk({key:'query_fanout_coverage',labelEn:'Query Fan-Out Coverage',labelTr:'Sorgu Yayılımı Kapsama Riski',status:'NOT_MEASURED',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'OFFICIAL_VENDOR',impact:'HIGH',effort:'MEDIUM',lenses:['SEO','GEO','AEO','RAG'],evidence:['Public HTTP scanning does not expose Google Search Console generative-AI query fan-out, impressions, countries, devices, or provider-side query decomposition.'],affectedUrls:[],boundaryEn:'Requires connected Search Console generative-AI performance data or an authorized query-observation dataset. Google states AI Mode and AI Overviews may fan out into multiple related searches; this scanner does not infer those hidden query branches.',boundaryTr:'Bağlı Search Console üretken AI performans verisi veya yetkili sorgu gözlem veri seti gerekir. Google AI Mode ve AI Overviews birden fazla ilişkili sorguya yayılabilir; bu tarayıcı gizli sorgu dallarını tahmin etmez.'});
+}
+
+function citationVolatilityRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
+  return advancedRisk({key:'citation_volatility',labelEn:'Citation & Recommendation Volatility',labelTr:'Alıntı ve Öneri Volatilitesi',status:'NOT_MEASURED',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'INTERNAL_HEURISTIC',impact:'HIGH',effort:'MEDIUM',lenses:['GEO','AEO','LLMO','E-E-A-T'],evidence:['One website crawl cannot establish how often external AI providers cite, omit, or recommend a brand across repeated prompts and time windows.'],affectedUrls:[],boundaryEn:'Requires repeated provider observations with fixed prompts, locale, timestamp and citation extraction. Consumer UI behavior must not be inferred from a single API response.',boundaryTr:'Sabit prompt, dil, zaman damgası ve alıntı çıkarımıyla tekrarlı sağlayıcı gözlemleri gerekir. Tek bir API yanıtından tüketici arayüzü davranışı çıkarılamaz.'});
+}
+
+function crawlerPolicyDivergenceRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
+  const names=['Googlebot','OAI-SearchBot','GPTBot','Claude-SearchBot','ClaudeBot','PerplexityBot'];
+  const observed=names.map(name=>({name,allowed:(scan.policies as any)?.[name]?.allowed}));
+  const known=observed.filter(x=>typeof x.allowed==='boolean');
+  const states=new Set(known.map(x=>x.allowed));
+  const divergent=states.size>1;
+  const missing=observed.filter(x=>typeof x.allowed!=='boolean').map(x=>x.name);
+  const score=known.length?clamp((divergent?55:92)-missing.length*5):null;
+  return advancedRisk({key:'crawler_policy_divergence',labelEn:'Crawler Purpose & Policy Divergence',labelTr:'Crawler Amaç ve Politika Ayrışması',status:score===null?'NOT_MEASURED':statusFor(score),mode:score===null?'REQUIRES_CONTEXT':'MEASURED',score,confidence:score===null?1:0.96,sourceClass:'OFFICIAL_VENDOR',impact:divergent?'HIGH':'MEDIUM',effort:'EASY',lenses:['SEO','GEO','LLMO'],evidence:[...known.map(x=>`${x.name}: ${x.allowed?'ALLOW':'BLOCK'}`),...(missing.length?[`No explicit effective-policy observation for: ${missing.join(', ')}`]:[])],affectedUrls:[],boundaryEn:'Different crawler purposes are not treated as an error by default. Search discovery, user-request retrieval and training controls remain separate policy decisions.',boundaryTr:'Farklı crawler amaçları varsayılan olarak hata sayılmaz. Arama keşfi, kullanıcı talebiyle erişim ve eğitim kontrolleri ayrı politika kararlarıdır.'});
+}
+
+function renderRetrievalGapRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
+  const rawThin=pref(scan,'RAW-HTML-CONTENT');
+  return advancedRisk({key:'render_retrieval_gap',labelEn:'Render-to-Retrieval Gap',labelTr:'Render–Erişim Farkı',status:'NOT_MEASURED',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'MEASURED',impact:rawThin.length?'CRITICAL':'HIGH',effort:'HARD',lenses:['SEO','GEO','AEO','RAG','AAO'],evidence:rawThin.length?evidence(rawThin):['Raw HTTP HTML was scanned, but no controlled browser-render snapshot exists for DOM/text parity.'],affectedUrls:urls(rawThin),boundaryEn:'Requires the same URL captured as raw response HTML and controlled rendered DOM. The scanner does not claim that any specific AI crawler executes or does not execute JavaScript.',boundaryTr:'Aynı URL için ham HTTP HTML ve kontrollü render edilmiş DOM gerekir. Tarayıcı belirli bir AI crawler’ın JavaScript çalıştırdığı veya çalıştırmadığı iddiasında bulunmaz.'});
+}
+
+function entityIdentityDriftRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
+  const schema=cat(scan,'schema');
+  const types=(scan.summary?.schemaTypes||[]) as string[];
+  const score=clamp(scan.scores.schema-Math.min(24,penalty(schema)/2));
+  return advancedRisk({key:'entity_identity_drift',labelEn:'Entity Identity Drift',labelTr:'Varlık Kimliği Sapması',status:statusFor(score),mode:'EVALUATED',score,confidence:0.78,sourceClass:'INTERNAL_HEURISTIC',impact:'HIGH',effort:'MEDIUM',lenses:['SEO','GEO','LLMO','E-E-A-T'],evidence:[...evidence(schema),`Observed structured entity types: ${types.join(', ')||'none'}.`],affectedUrls:urls(schema),boundaryEn:'This evaluates public schema consistency signals only. Cross-domain knowledge-graph consensus, hidden entity IDs and model-internal entity resolution are not measured.',boundaryTr:'Yalnız herkese açık schema tutarlılığı sinyallerini değerlendirir. Alanlar arası bilgi grafı konsensüsü, gizli entity ID’leri ve model içi varlık çözümleme ölçülmez.'});
+}
+
+function agentActionFrictionRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
+  const related=[...cat(scan,'accessibility'),...cat(scan,'agent'),...cat(scan,'conversion')];
+  const score=clamp(scan.scores.accessibility*.45+scan.scores.agent*.30+scan.scores.conversion*.25);
+  return advancedRisk({key:'agent_action_friction',labelEn:'Agent Action Friction',labelTr:'Ajan İşlem Sürtünmesi',status:statusFor(score),mode:'EVALUATED',score,confidence:0.84,sourceClass:'INTERNAL_HEURISTIC',impact:'HIGH',effort:'MEDIUM',lenses:['AAO','AEO','E-E-A-T'],evidence:related.length?evidence(related):['No current accessibility, agent-discovery or conversion finding was emitted inside the bounded public scan.'],affectedUrls:urls(related),boundaryEn:'Measures website-side accessibility, machine-discovery and action-surface friction. It does not guarantee autonomous purchase completion in any external agent.',boundaryTr:'Site tarafındaki erişilebilirlik, makine keşfi ve işlem yüzeyi sürtünmesini değerlendirir. Herhangi bir dış ajanda otonom satın alma tamamlanacağını garanti etmez.'});
+}
+
+function advancedBlackBoxRiskLayer(scan:ScanResult):AdvancedBlackBoxRiskLayer{
+  const analyses=[queryFanoutRisk(scan),citationVolatilityRisk(scan),crawlerPolicyDivergenceRisk(scan),renderRetrievalGapRisk(scan),entityIdentityDriftRisk(scan),agentActionFrictionRisk(scan)];
+  if(analyses.length!==ADVANCED_BLACKBOX_RISK_COUNT)throw new Error('Advanced black-box risk registry drift');
+  return {classification:'NON_SCORING_ADVANCED_BLACKBOX_RISK_LAYER',count:ADVANCED_BLACKBOX_RISK_COUNT,analyses,boundaries:[
+    'This layer does not claim access to proprietary model weights, embeddings, rerankers, hidden prompts or private search-engine systems.',
+    'Black-box risk means externally observable uncertainty or an evidence gap, not secret platform access.',
+    'NOT_MEASURED and REQUIRES_CONTEXT remain score-excluded.',
+    'The canonical overall score and 13 Intelligence Audit analyses remain unchanged by this layer.'
+  ]};
+}
+
 function lens(scan:ScanResult, analyses:IntelligenceAnalysis[], lensName:ReadinessLens, core:[string,number][]):ReadinessLensResult{
   const relevant=analyses.filter(a=>a.lenses.includes(lensName));
   const available=relevant.filter(a=>a.score!==null) as (IntelligenceAnalysis&{score:number})[];
@@ -212,5 +296,5 @@ export function generateIntelligenceReport(scan:ScanResult):IntelligenceReport{
     RAG:lens(scan,analyses,'RAG',[['technical',2],['ai',2],['links',1]]),
     'E-E-A-T':lens(scan,analyses,'E-E-A-T',[['trust',3],['schema',2],['security',1]])
   };
-  return {version:INTELLIGENCE_VERSION,classification:'NON_SCORING_INTELLIGENCE_LAYER',generatedAt:new Date().toISOString(),scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScoreUnchanged:true,analyses,readinessLenses,topPriorities:priorities(analyses),measured:analyses.filter(a=>a.mode==='MEASURED').length,evaluated:analyses.filter(a=>a.mode==='EVALUATED').length,notMeasured:analyses.filter(a=>a.status==='NOT_MEASURED').length,requiresContext:analyses.filter(a=>a.status==='REQUIRES_CONTEXT').length,boundaries:['The 12 canonical engine scores and overall score are not modified by this intelligence layer.','Evaluated signals are internal heuristics, not official search-engine scores.','NOT_MEASURED and REQUIRES_CONTEXT are preserved rather than converted into artificial pass/fail values.','Information Gain means public within-site differentiation signals; it is not a reproduction of any Google ranking system.']};
+  return {version:INTELLIGENCE_VERSION,classification:'NON_SCORING_INTELLIGENCE_LAYER',generatedAt:new Date().toISOString(),scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScoreUnchanged:true,analyses,advancedBlackBoxRiskLayer:advancedBlackBoxRiskLayer(scan),readinessLenses,topPriorities:priorities(analyses),measured:analyses.filter(a=>a.mode==='MEASURED').length,evaluated:analyses.filter(a=>a.mode==='EVALUATED').length,notMeasured:analyses.filter(a=>a.status==='NOT_MEASURED').length,requiresContext:analyses.filter(a=>a.status==='REQUIRES_CONTEXT').length,boundaries:['The 12 canonical engine scores and overall score are not modified by this intelligence layer.','Evaluated signals are internal heuristics, not official search-engine scores.','NOT_MEASURED and REQUIRES_CONTEXT are preserved rather than converted into artificial pass/fail values.','Information Gain means public within-site differentiation signals; it is not a reproduction of any Google ranking system.']};
 }
