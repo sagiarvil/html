@@ -20,8 +20,8 @@ jobs:
         run: |
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; grep -Fq "$marker" <<<"$body"; echo "AI_AUTHORITY_SMOKE_OK: $url"; }
-          check 'https://htmlandhtml.com/' 'Yapay Zeka Sizi Buluyor mu?'
-          check 'https://htmlandhtml.com/' 'Tavsiye Edilmeye Hazır mısınız?'
+          check 'https://htmlandhtml.com/' 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi'
+          check 'https://htmlandhtml.com/' 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'
           check 'https://htmlandhtml.com/tr/araclar/' 'data-premium-infographic="scope-map"'
           check 'https://htmlandhtml.com/tr/ai-website-readiness/' 'GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap'
           check 'https://htmlandhtml.com/tr/llms-txt-validator/' 'llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?'
