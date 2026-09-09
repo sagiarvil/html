@@ -23,6 +23,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Force R10 campaign asset cache bust
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in index.html tr/index.html en/index.html; do
+            sed -i 's#ai-positioning\.js?v=1#ai-positioning.js?v=r10-20260910-2000#g' "$f"
+            grep -Fq 'ai-positioning.js?v=r10-20260910-2000' "$f"
+          done
       - name: Validate Firebase deployment credential
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STUDIO_7658156126_FFB8E || secrets.FIREBASE_SERVICE_ACCOUNT }}
@@ -36,6 +44,25 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
         run: npx -y firebase-tools@15.28.2 deploy --only hosting --project studio-7658156126-ffb8e --non-interactive
+      - name: Verify R10 campaign is live and scan is non-empty
+        shell: bash
+        run: |
+          set -euo pipefail
+          home="$(curl -fLsS --retry 5 --retry-delay 2 --connect-timeout 8 --max-time 30 https://htmlandhtml.com/)"
+          grep -Fq 'ai-positioning.js?v=r10-20260910-2000' <<<"$home"
+          js="$(curl -fLsS --retry 5 --retry-delay 2 --connect-timeout 8 --max-time 30 'https://htmlandhtml.com/assets/js/ai-positioning.js?v=r10-20260910-2000')"
+          grep -Fq 'R10_CAMPAIGN_END' <<<"$js"
+          grep -Fq '2026-09-10T17:00:00Z' <<<"$js"
+          body="$(curl -fsS --retry 2 --connect-timeout 10 --max-time 240 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
+          BODY="$body" node - <<'NODE'
+          const x=JSON.parse(process.env.BODY);
+          if(!x.scanId) throw new Error('scanId missing');
+          if(typeof x.overall!=='number') throw new Error('overall score missing');
+          if(!Array.isArray(x.findings)||x.findings.length<1) throw new Error('findings blank');
+          if(!x.scores||Object.keys(x.scores).length<12) throw new Error('scores blank');
+          if(!x.intelligence||!Array.isArray(x.intelligence.analyses)||x.intelligence.analyses.length!==13) throw new Error('intelligence blank');
+          console.log(`R10_SMOKE_OK scanId=${x.scanId} overall=${x.overall} findings=${x.findings.length} scores=${Object.keys(x.scores).length} intelligence=${x.intelligence.analyses.length}`);
+          NODE
       - name: Remove deployment credential
         if: always()
         run: rm -f "$RUNNER_TEMP/firebase-service-account.json"
