@@ -409,8 +409,13 @@ def patch_locale_state(source: str, locale: str) -> str:
 def inject_runtime(source: str, locale: str) -> str:
     source = re.sub(r'\s*<!-- EA_LOCALE_CONTRACT:[^>]*-->\s*', '\n', source)
     marker = f'<!-- EA_LOCALE_CONTRACT:{locale}:URL_SSOT -->'
-    if RUNTIME_SRC not in source: return source.replace('</body>', f'<script src="{RUNTIME_SRC}" defer></script>\n{marker}\n</body>', 1)
-    return source.replace('</body>', marker + '\n</body>', 1)
+    scripts = []
+    if '/assets/js/theme.js' not in source:
+        scripts.append('<script src="/assets/js/theme.js" defer></script>')
+    if RUNTIME_SRC not in source:
+        scripts.append(f'<script src="{RUNTIME_SRC}" defer></script>')
+    payload = ('\n'.join(scripts) + '\n' if scripts else '') + marker + '\n'
+    return source.replace('</body>', payload + '</body>', 1)
 
 
 def visible_segments(source: str) -> list[str]:
