@@ -48,6 +48,12 @@ def normalize(text: str) -> str:
     text = text.replace('14KB', 'measured HTML payload').replace('14kb', 'measured HTML payload')
     text = re.sub(r'(?i)14[,.]?336\s*(?:bytes?|bayt)', 'measured HTML payload', text)
 
+    # Fixed prompt counts are not a production capability contract. Keep the
+    # observation concept while removing unsupported cardinality claims.
+    text = re.sub(r'(?i)\b15[- ]prompt\b', 'prompt', text)
+    text = re.sub(r'(?i)15\s+nötr\s+prompt', 'nötr prompt', text)
+    text = re.sub(r'(?i)15\s+neutral\s+prompt', 'neutral prompt', text)
+
     text = re.sub(
         r'(?i)Wikidata[^\n<]{0,180}(?:SPARQL|live|canlı|query|sorgu|verify|doğrula)[^\n<]{0,180}',
         'public entity and structured-data evidence',
