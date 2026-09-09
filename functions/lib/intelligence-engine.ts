@@ -42,7 +42,7 @@ export interface IntelligenceAnalysis {
   score:number|null;
   confidence:number;
   sourceClass:SourceClass;
-  sourceIds:string[];
+  sourceIds?:string[];
   impact:Impact;
   effort:Effort;
   lenses:ReadinessLens[];
@@ -61,6 +61,7 @@ export interface AdvancedBlackBoxRiskAnalysis {
   score:number|null;
   confidence:number;
   sourceClass:SourceClass;
+  sourceIds:string[];
   impact:Impact;
   effort:Effort;
   lenses:ReadinessLens[];
