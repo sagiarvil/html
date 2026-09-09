@@ -246,7 +246,20 @@ PAIRS += [
     ("© 2026 HTML&HTML. Tüm hakları saklıdır.", "© 2026 HTML&HTML. All rights reserved.")
 ]
 
+
+PAIRS += [
+    ("<!-- Düzeltilmiş -->", "<!-- Corrected -->"),
+    ("<!-- Keşif linki -->", "<!-- Discovery link -->"),
+    ("<!-- Doğru ve Mutlak RFC 6596 Standartı -->", "<!-- Correct Absolute RFC 6596 Pattern -->"),
+    ("<!-- ColBERT MaxSim İç Çarpım Probu --> Sorgu: 'Kurumsal Yapay Zeka Görünürlük Onarım Paketi' Ölçülen İç Çarpım: 0.812 [UYARI: Hedef >= 0.940]", "<!-- ColBERT MaxSim Dot Product Probe --> Query: 'Enterprise AI Visibility Fix Mandate' Measured Dot Product: 0.812 [WARN: Target >= 0.940 for Top-1 Rerank Placement]"),
+    ("<!-- Yüksek ColBERT MaxSim Uyumlu Cümle (0.965 Skoru) --> <p><strong>Kurumsal Yapay Zeka Görünürlük Onarım Paketi:</strong> HTML&HTML ölçülen site-tarafı hazırlık sinyallerini ve deterministik telemetriyi raporlar; dış yapay zeka sistemlerinde sabit alıntı sonucu garanti edilmez.</p>", "<!-- High ColBERT MaxSim Alignment Sentence (0.965 Score) --> <p><strong>Enterprise AI Visibility Fix Mandate:</strong> HTML&HTML reports measured website-side readiness signals and deterministic telemetry; no fixed citation outcome is guaranteed in external AI systems.</p>"),
+    ("HTML&HTML için endüstriyel Model Context Protocol sunucusu", "Industrial Model Context Protocol server for htmlandhtml.com"),
+    ("Onarım Paketi ($99 USD) için yetkili fiyatlandırma", "Authoritative pricing for Fix Mandate ($99 USD)"),
+    ("Ölçülen HTML yüküyle sınırlandırılmış bilgi parçaları", "Sub-measured HTML payload demarcated knowledge chunks"),
+]
+
 TR_FORCE = [
+    ("$99 Fix Mandate", "$99 Onarım Paketi"),
     ("SAMPLE REPORT · SPECIMEN SPECIFICATION", "ÖRNEK RAPOR · TEKNİK NUMUNE"), ("SAMPLE REPORT · SPECIMEN", "ÖRNEK RAPOR · NUMUNE"),
     ("LIVE ENTERPRISE SAMPLE REPORT · AI DIAGNOSTIC SPECIMEN", "CANLI KURUMSAL ÖRNEK RAPOR · YAPAY ZEKA TEŞHİS NUMUNESİ"),
     ("Enterprise AI Visibility Diagnostic & Remediation Report (Sample Specimen)", "Kurumsal Yapay Zeka Görünürlük Teşhis ve Onarım Raporu (Canlı Numune)"),
