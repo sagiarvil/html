@@ -287,7 +287,7 @@ export class KVCacheOptimizationEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class EdgeTTFBEngine extends EngineTool {
   id = 'ENG-02';
-  name = 'Edge TTFB Engine';
+  name = 'Delivery & Response Hygiene Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'HIGH' as const;
@@ -563,7 +563,7 @@ export class SEOEngine extends EngineTool {
       },
       {
         id: 'SEO-011',
-        name: 'Hero Answer Engine Present (First 100px)',
+        name: 'Prominent Direct-Answer Surface Heuristic',
         weight: 10,
         check: (inp) => {
           const hero = inp.html.match(/<div[^>]*class=["'][^"']*hero-answer["'][^>]*>(.*?)<\/div>/is)?.[1] ||
@@ -571,14 +571,14 @@ export class SEOEngine extends EngineTool {
                        inp.html.match(/<p[^>]*class=["'][^"']*lead["'][^>]*>(.*?)<\/p>/is)?.[1] || '';
           const text = hero.replace(/<[^>]+>/g, '').trim();
           const words = text.split(/\s+/).filter(Boolean).length;
-          return words >= 15 && /\d/.test(text);
+          return words >= 15;
         },
         penaltyOnFail: 10,
         evidence: (inp) => `Hero answer word count and numeric presence check`,
       },
       {
         id: 'SEO-012',
-        name: 'Last-Click Supremacy Signal (Dwell Time Optimization)',
+        name: 'Internal Navigation Depth Heuristic',
         weight: 10,
         check: (inp) => {
           const internalLinks = (inp.html.match(/<a[^>]*href=["']\//g) || []).length;
@@ -589,7 +589,7 @@ export class SEOEngine extends EngineTool {
       },
       {
         id: 'SEO-013',
-        name: 'Anchor Mismatch Protection (Twiddler Defense)',
+        name: 'Descriptive Anchor Text Hygiene',
         weight: 10,
         check: (inp) => {
           const links = inp.html.match(/<a[^>]*href=["'](\/[^"']*)["'][^>]*>(.*?)<\/a>/gi) || [];
@@ -655,9 +655,9 @@ export class GEOEngine extends EngineTool {
       },
       {
         id: 'GEO-005',
-        name: 'Substantial Informational Depth (> 250 words)',
+        name: 'Substantial Informational Depth (>= 250 words)',
         weight: 20,
-        check: () => text.split(/\s+/).length >= 200,
+        check: () => text.split(/\s+/).length >= 250,
         penaltyOnFail: 15,
         evidence: () => `Word count: ${text.split(/\s+/).length} words`,
       },
@@ -705,11 +705,11 @@ export class AEOEngine extends EngineTool {
     const rules: Rule[] = [
       {
         id: 'AEO-001',
-        name: 'FAQ Schema or Question-Answer Markup',
+        name: 'Question / Answer Content Structure',
         weight: 25,
-        check: (inp) => inp.html.includes('FAQPage') || inp.html.includes('Question') || /sss|faq/i.test(inp.html),
+        check: (inp) => inp.html.includes('Question') || /<details\b|<summary\b|sss|faq|sıkça sorulan|frequently asked/i.test(inp.html),
         penaltyOnFail: 15,
-        evidence: (inp) => `FAQ patterns present: ${inp.html.includes('FAQPage') || /sss|faq/i.test(inp.html)}`,
+        evidence: (inp) => `Question/answer structure present: ${inp.html.includes('Question') || /<details\b|<summary\b|sss|faq|sıkça sorulan|frequently asked/i.test(inp.html)}`,
       },
       {
         id: 'AEO-002',
@@ -826,11 +826,12 @@ export class LLMOEngine extends EngineTool {
       },
       {
         id: 'LLMO-008',
-        name: 'Content-Type: text/markdown for LLMS paths',
+        name: 'LLMS Path MIME-Type Verification',
         weight: 10,
-        check: (inp) => getHeader(inp.headers, 'content-type').includes('text/markdown') || true,
+        check: () => false,
+        measurementState: 'NOT_MEASURED',
         penaltyOnFail: 8,
-        evidence: (inp) => `MIME type for LLMS paths`,
+        evidence: () => `Root-page response headers do not prove the Content-Type served by /llms.txt or Markdown alternates.`,
       },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
@@ -901,7 +902,7 @@ export class EntityGraphEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class CrossEncoderEngine extends EngineTool {
   id = 'ENG-09';
-  name = 'Cross-Encoder Engine';
+  name = 'Semantic Coherence Heuristics Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'MEDIUM' as const;
@@ -973,7 +974,7 @@ export class CrossEncoderEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class ColBERTMaxSimEngine extends EngineTool {
   id = 'ENG-10';
-  name = 'ColBERT MaxSim Engine';
+  name = 'Retrieval Chunking Heuristics Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'MEDIUM' as const;
@@ -1037,7 +1038,7 @@ export class ColBERTMaxSimEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class DPOAlignmentEngine extends EngineTool {
   id = 'ENG-11';
-  name = 'DPO Alignment Engine';
+  name = 'Content Quality Heuristics Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'MEDIUM' as const;
@@ -1081,7 +1082,7 @@ export class DPOAlignmentEngine extends EngineTool {
       },
       {
         id: 'DPO-005',
-        name: 'RLAIF/DPO Chosen Formatting Preference',
+        name: 'Structured Formatting Heuristic',
         weight: 15,
         check: (inp) => (inp.html.match(/<(?:ul|ol|table|blockquote)\b/gi) || []).length >= 1,
         penaltyOnFail: 10,
@@ -1097,7 +1098,7 @@ export class DPOAlignmentEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class SyntheticCitationEngine extends EngineTool {
   id = 'ENG-12';
-  name = 'Synthetic Citation Engine';
+  name = 'Citation Readiness Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'HIGH' as const;
@@ -1172,9 +1173,9 @@ export class AAOEngine extends EngineTool {
         id: 'AAO-001',
         name: 'A2A Agent Card Discovery Support',
         weight: 25,
-        check: (inp) => inp.html.includes('agent-card') || inp.llmsTxt.length > 0,
+        check: (inp) => inp.html.includes('agent-card') || inp.html.includes('/.well-known/agent.json'),
         penaltyOnFail: 15,
-        evidence: (inp) => `Agent discovery readiness: ${inp.llmsTxt.length > 0}`,
+        evidence: (inp) => `Explicit agent-card discovery marker: ${inp.html.includes('agent-card') || inp.html.includes('/.well-known/agent.json')}`,
       },
       {
         id: 'AAO-002',
@@ -1188,9 +1189,9 @@ export class AAOEngine extends EngineTool {
         id: 'AAO-003',
         name: 'Model Context Protocol (MCP) or Tool Surface Readiness',
         weight: 20,
-        check: (inp) => inp.llmsTxt.includes('##') || inp.html.includes('mcp'),
+        check: (inp) => /model context protocol|\bmcp\b/i.test(inp.html) || /model context protocol|\bmcp\b/i.test(inp.llmsTxt || ''),
         penaltyOnFail: 12,
-        evidence: (inp) => `MCP/Tool surface ready: ${inp.llmsTxt.includes('##')}`,
+        evidence: (inp) => `Explicit MCP marker detected: ${/model context protocol|\bmcp\b/i.test(inp.html) || /model context protocol|\bmcp\b/i.test(inp.llmsTxt || '')}`,
       },
       {
         id: 'AAO-004',
@@ -1218,7 +1219,7 @@ export class AAOEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class EEATScoringEngine extends EngineTool {
   id = 'ENG-14';
-  name = 'EEAT Scoring Engine';
+  name = 'E-E-A-T Evidence Signals Engine';
   version = '2.2.0';
   weight = 8;
   impact = 'HIGH' as const;
@@ -1287,7 +1288,7 @@ export class EEATScoringEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class KnowledgeVaultEngine extends EngineTool {
   id = 'ENG-15';
-  name = 'Knowledge Vault Engine';
+  name = 'Entity Consistency & Structured Knowledge Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'HIGH' as const;
@@ -1322,11 +1323,12 @@ export class KnowledgeVaultEngine extends EngineTool {
       },
       {
         id: 'KVLT-004',
-        name: 'Factual Consistency across Document Nodes',
+        name: 'Cross-Node Factual Consistency Verification',
         weight: 15,
-        check: (inp) => cleanText(inp.html).length > 100,
+        check: () => false,
+        measurementState: 'NOT_MEASURED',
         penaltyOnFail: 10,
-        evidence: () => `Node consistency validated`,
+        evidence: () => `Public HTML length alone cannot establish factual consistency across document nodes.`,
       },
       {
         id: 'KVLT-005',
@@ -1338,7 +1340,7 @@ export class KnowledgeVaultEngine extends EngineTool {
       },
       {
         id: 'KVLT-006',
-        name: 'Ontological Class Hierarchy (Thing to VerifiedEnterprise)',
+        name: 'Schema Class Hierarchy Presence',
         weight: 15,
         check: (inp) => inp.html.includes('Organization') || inp.html.includes('WebSite') || inp.html.includes('SoftwareApplication'),
         penaltyOnFail: 10,
@@ -1362,7 +1364,7 @@ export class KnowledgeVaultEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class HallucinationInterceptionEngine extends EngineTool {
   id = 'ENG-16';
-  name = 'Hallucination Interception';
+  name = 'Claim Consistency Heuristics Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'HIGH' as const;
@@ -1430,7 +1432,7 @@ export class HallucinationInterceptionEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class DarkPoolRemediationEngine extends EngineTool {
   id = 'ENG-17';
-  name = 'Dark Pool Remediation';
+  name = 'Discovery Coverage Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'MEDIUM' as const;
@@ -1492,7 +1494,7 @@ export class DarkPoolRemediationEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class HistoricalCorpusEngine extends EngineTool {
   id = 'ENG-18';
-  name = 'Historical Corpus Engine';
+  name = 'Freshness & Revision Signals Engine';
   version = '2.2.0';
   weight = 5;
   impact = 'LOW' as const;
