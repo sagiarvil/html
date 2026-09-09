@@ -54,6 +54,9 @@ export interface Finding {
   severity: EngineSeverity;
   status: FindingStatus;
   standard: string;
+  sourceClass?: 'OFFICIAL_STANDARD' | 'OFFICIAL_VENDOR' | 'PROPOSAL' | 'MEASURED' | 'INTERNAL_HEURISTIC' | 'EXPERIMENTAL';
+  sourceIds?: string[];
+  measurementState?: 'MEASURED' | 'NOT_MEASURED' | 'REQUIRES_CONTEXT';
   titleTR: string;
   titleEN: string;
   descriptionTR: string;
@@ -69,6 +72,7 @@ export interface EvidenceLog {
   rawData: any;
   ruleChain: string[];
   computationSteps: string[];
+  measurementStates?: Record<string, 'MEASURED' | 'NOT_MEASURED' | 'REQUIRES_CONTEXT'>;
 }
 
 export interface EngineResult {
