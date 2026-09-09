@@ -77,15 +77,15 @@ jobs:
           umask 077
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
           node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/firebase-service-account.json','utf8')); if(!x.client_email||!x.private_key||!x.project_id) throw new Error('invalid service-account JSON'); if(x.project_id!=='studio-7658156126-ffb8e') throw new Error('service-account project_id must be studio-7658156126-ffb8e, got '+x.project_id);"
-      - name: Deploy Hosting and Functions
+      - name: Deploy Hosting and changed non-secret Functions
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
         run: |
           set -euo pipefail
           echo "Deploying Firebase Hosting..."
           npx -y firebase-tools@15.28.2 deploy --only hosting --project studio-7658156126-ffb8e --non-interactive
-          echo "Deploying Firebase Functions..."
-          npx -y firebase-tools@15.28.2 deploy --only functions --project studio-7658156126-ffb8e --non-interactive
+          echo "Deploying only the functions changed by this release. Secret-bound Paddle/delivery functions are intentionally left on their existing production revisions because this deploy identity has no Secret Manager metadata-read permission and those functions are outside this release scope."
+          npx -y firebase-tools@15.28.2 deploy --only "functions:validator:health,functions:validator:scan,functions:validator:intelligence" --project studio-7658156126-ffb8e --non-interactive
       - name: Verify production scan, admin boundary and telemetry storage
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
