@@ -199,7 +199,8 @@
   "machineSurfaceContract": {
     "rootLlmsTxt": 1,
     "maxPageLevelMarkdownManifests": 30,
-    "llmsTxtClassification": "PROPOSAL"
+    "llmsTxtClassification": "PROPOSAL",
+    "googleSearchImpact": "NONE_DOCUMENTED_BY_GOOGLE"
   },
   "executionContract": {
     "scannerPhases": 8,
@@ -212,10 +213,32 @@
       "RAG",
       "E-E-A-T"
     ],
-    "neutralPromptFamilies": 5,
-    "neutralPromptMaximum": 15,
-    "promptMeasurementBoundary": "PAID_AND_PROVIDER_CONFIGURATION_REQUIRED",
+    "neutralQueryMaximum": 3,
+    "providerMaximum": 3,
+    "providerSurfaces": [
+      "OpenAI Responses API + web search",
+      "Perplexity Sonar API web-search surface",
+      "Gemini API + Google Search grounding"
+    ],
+    "maximumObservationsPerRun": 9,
+    "promptMeasurementBoundary": "PAID_AND_PROVIDER_CONFIGURATION_REQUIRED; API/search-grounded surfaces are not identical to consumer UI results",
     "arrRiskClassification": "SCENARIO_ESTIMATE_NOT_MEASURED_REVENUE",
-    "implementationPackage": "30+ VERSIONED FILES; ACTUAL COUNT VARIES WITH EVIDENCED PAGE MANIFESTS"
+    "implementationPackage": "VERSIONED ZIP; EXACT FILE COUNT VARIES WITH EVIDENCED FINDINGS AND UP TO 30 PAGE-LEVEL MACHINE-SURFACE MANIFESTS"
+  },
+  "measurementTaxonomy": {
+    "SEO": "Measured crawl/index/technical signals plus Google vendor guidance; no ranking guarantee.",
+    "GEO": "Website-side source-readiness and generative-search eligibility signals; model recommendation is not measured.",
+    "AEO": "Question/answer structure and answer-extractability heuristics; FAQ rich-result eligibility is not claimed.",
+    "LLMO": "Machine-readable surfaces and llms.txt proposal checks; Google ranking impact is explicitly none.",
+    "AAO": "Explicit agent/API/tool discovery surfaces only; experimental protocols remain EXPERIMENTAL.",
+    "RAG": "Retrieval/chunking/readability heuristics; internal model embeddings, rerankers and vector scores are not observed.",
+    "E-E-A-T": "Public trust, identity and accountability evidence; not a reproduction of a Google ranking score."
+  },
+  "epistemicPolicy": {
+    "unmeasuredSignals": "NOT_MEASURED_AND_EXCLUDED_FROM_SCORE",
+    "privateCodeSignals": "REQUIRES_CONTEXT",
+    "defaultRuleSourceClass": "INTERNAL_HEURISTIC",
+    "vendorClaimsRequireSourceId": true,
+    "modelInternalClaimsFromPublicHtml": "FORBIDDEN"
   }
 }

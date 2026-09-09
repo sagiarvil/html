@@ -16,6 +16,9 @@ import { EngineOrchestrator, EngineTool } from './02-engine-v2-core.ts';
 
 
 
+type SourceClass = 'OFFICIAL_STANDARD' | 'OFFICIAL_VENDOR' | 'PROPOSAL' | 'MEASURED' | 'INTERNAL_HEURISTIC' | 'EXPERIMENTAL';
+type MeasurementState = 'MEASURED' | 'NOT_MEASURED' | 'REQUIRES_CONTEXT';
+
 interface Rule {
   id: string;
   name: string;
@@ -23,6 +26,36 @@ interface Rule {
   check: (input: ScanInput, context: ExecutionContext, sharedState: Map<string, any>) => boolean;
   penaltyOnFail: number;
   evidence: (input: ScanInput) => string;
+  sourceClass?: SourceClass;
+  sourceIds?: string[];
+  measurementState?: MeasurementState;
+}
+
+const OFFICIAL_VENDOR_RULES: Record<string, string[]> = {
+  'SEO-004': ['GOOGLE-CANONICAL'],
+  'SEO-005': ['GOOGLE-INTERNATIONAL'],
+  'SEO-006': ['GOOGLE-SEARCH-ESSENTIALS'],
+  'SEO-007': ['GOOGLE-SITEMAPS'],
+  'SEO-008': ['GOOGLE-STRUCTURED-DATA'],
+  'GEO-006': ['GOOGLE-PREFERRED-SOURCES'],
+  'GEO-007': ['GOOGLE-REGIONAL-SEARCH'],
+  'EEAT-001': ['GOOGLE-HELPFUL-CONTENT'],
+  'EEAT-002': ['GOOGLE-HELPFUL-CONTENT'],
+  'EEAT-003': ['GOOGLE-HELPFUL-CONTENT'],
+  'EEAT-004': ['GOOGLE-HELPFUL-CONTENT'],
+};
+
+const OFFICIAL_STANDARD_RULES: Record<string, string[]> = {
+  'AAO-002': ['OPENAPI31'],
+};
+
+function ruleSource(rule: Rule): { sourceClass: SourceClass; sourceIds: string[] } {
+  if (rule.sourceClass) return { sourceClass: rule.sourceClass, sourceIds: rule.sourceIds || [] };
+  if (OFFICIAL_VENDOR_RULES[rule.id]) return { sourceClass: 'OFFICIAL_VENDOR', sourceIds: OFFICIAL_VENDOR_RULES[rule.id] };
+  if (OFFICIAL_STANDARD_RULES[rule.id]) return { sourceClass: 'OFFICIAL_STANDARD', sourceIds: OFFICIAL_STANDARD_RULES[rule.id] };
+  if (rule.id.startsWith('LLMO-')) return { sourceClass: 'PROPOSAL', sourceIds: ['LLMS-TXT-V2'] };
+  if (rule.id.startsWith('AAO-001') || rule.id.startsWith('AAO-003')) return { sourceClass: 'EXPERIMENTAL', sourceIds: [] };
+  return { sourceClass: 'INTERNAL_HEURISTIC', sourceIds: [] };
 }
 
 function calculateChecksum(data: string): string {
@@ -60,8 +93,19 @@ function evaluateRules(
   const findings: Finding[] = [];
   const computationSteps: string[] = [];
   const ruleChain: string[] = [];
+  const measurementStates: Record<string, MeasurementState> = {};
 
   for (const rule of rules) {
+    const measurementState = rule.measurementState || 'MEASURED';
+    const source = ruleSource(rule);
+    measurementStates[rule.id] = measurementState;
+
+    if (measurementState !== 'MEASURED') {
+      ruleChain.push(`${rule.id}=${measurementState}`);
+      computationSteps.push(`${rule.id}: ${measurementState} (excluded from score)`);
+      continue;
+    }
+
     totalWeight += rule.weight;
     let passed = false;
     try {
@@ -81,11 +125,14 @@ function evaluateRules(
         category: engineId,
         severity: rule.penaltyOnFail >= 20 ? 'high' : rule.penaltyOnFail >= 12 ? 'medium' : 'low',
         status: 'confirmed',
-        standard: 'OFFICIAL_STANDARD',
+        standard: source.sourceClass,
+        sourceClass: source.sourceClass,
+        sourceIds: source.sourceIds,
+        measurementState,
         titleTR: `${rule.name} başarısız`,
         titleEN: `${rule.name} failed`,
-        descriptionTR: `Kural ${rule.id} hedef site üzerinde doğrulanamadı.`,
-        descriptionEN: `Rule ${rule.id} could not be verified on target site.`,
+        descriptionTR: `Kural ${rule.id} hedef site üzerinde doğrulanamadı. Kaynak sınıfı: ${source.sourceClass}.`,
+        descriptionEN: `Rule ${rule.id} could not be verified on the target site. Source class: ${source.sourceClass}.`,
         evidence: rule.evidence(input),
         url: input.domain,
         penaltyWeight: rule.penaltyOnFail,
@@ -109,6 +156,7 @@ function evaluateRules(
       `CLAMPED = ${clampedScore}`,
       ...computationSteps,
     ],
+    measurementStates,
   };
 
   const checksumInput = JSON.stringify({
@@ -239,7 +287,7 @@ export class KVCacheOptimizationEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class EdgeTTFBEngine extends EngineTool {
   id = 'ENG-02';
-  name = 'Edge TTFB Engine';
+  name = 'Delivery & Response Hygiene Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'HIGH' as const;
@@ -515,7 +563,7 @@ export class SEOEngine extends EngineTool {
       },
       {
         id: 'SEO-011',
-        name: 'Hero Answer Engine Present (First 100px)',
+        name: 'Prominent Direct-Answer Surface Heuristic',
         weight: 10,
         check: (inp) => {
           const hero = inp.html.match(/<div[^>]*class=["'][^"']*hero-answer["'][^>]*>(.*?)<\/div>/is)?.[1] ||
@@ -523,14 +571,14 @@ export class SEOEngine extends EngineTool {
                        inp.html.match(/<p[^>]*class=["'][^"']*lead["'][^>]*>(.*?)<\/p>/is)?.[1] || '';
           const text = hero.replace(/<[^>]+>/g, '').trim();
           const words = text.split(/\s+/).filter(Boolean).length;
-          return words >= 15 && /\d/.test(text);
+          return words >= 15;
         },
         penaltyOnFail: 10,
         evidence: (inp) => `Hero answer word count and numeric presence check`,
       },
       {
         id: 'SEO-012',
-        name: 'Last-Click Supremacy Signal (Dwell Time Optimization)',
+        name: 'Internal Navigation Depth Heuristic',
         weight: 10,
         check: (inp) => {
           const internalLinks = (inp.html.match(/<a[^>]*href=["']\//g) || []).length;
@@ -541,7 +589,7 @@ export class SEOEngine extends EngineTool {
       },
       {
         id: 'SEO-013',
-        name: 'Anchor Mismatch Protection (Twiddler Defense)',
+        name: 'Descriptive Anchor Text Hygiene',
         weight: 10,
         check: (inp) => {
           const links = inp.html.match(/<a[^>]*href=["'](\/[^"']*)["'][^>]*>(.*?)<\/a>/gi) || [];
@@ -607,9 +655,9 @@ export class GEOEngine extends EngineTool {
       },
       {
         id: 'GEO-005',
-        name: 'Substantial Informational Depth (> 250 words)',
+        name: 'Substantial Informational Depth (>= 250 words)',
         weight: 20,
-        check: () => text.split(/\s+/).length >= 200,
+        check: () => text.split(/\s+/).length >= 250,
         penaltyOnFail: 15,
         evidence: () => `Word count: ${text.split(/\s+/).length} words`,
       },
@@ -657,11 +705,11 @@ export class AEOEngine extends EngineTool {
     const rules: Rule[] = [
       {
         id: 'AEO-001',
-        name: 'FAQ Schema or Question-Answer Markup',
+        name: 'Question / Answer Content Structure',
         weight: 25,
-        check: (inp) => inp.html.includes('FAQPage') || inp.html.includes('Question') || /sss|faq/i.test(inp.html),
+        check: (inp) => inp.html.includes('Question') || /<details\b|<summary\b|sss|faq|sıkça sorulan|frequently asked/i.test(inp.html),
         penaltyOnFail: 15,
-        evidence: (inp) => `FAQ patterns present: ${inp.html.includes('FAQPage') || /sss|faq/i.test(inp.html)}`,
+        evidence: (inp) => `Question/answer structure present: ${inp.html.includes('Question') || /<details\b|<summary\b|sss|faq|sıkça sorulan|frequently asked/i.test(inp.html)}`,
       },
       {
         id: 'AEO-002',
@@ -778,11 +826,12 @@ export class LLMOEngine extends EngineTool {
       },
       {
         id: 'LLMO-008',
-        name: 'Content-Type: text/markdown for LLMS paths',
+        name: 'LLMS Path MIME-Type Verification',
         weight: 10,
-        check: (inp) => getHeader(inp.headers, 'content-type').includes('text/markdown') || true,
+        check: () => false,
+        measurementState: 'NOT_MEASURED',
         penaltyOnFail: 8,
-        evidence: (inp) => `MIME type for LLMS paths`,
+        evidence: () => `Root-page response headers do not prove the Content-Type served by /llms.txt or Markdown alternates.`,
       },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);
@@ -849,11 +898,11 @@ export class EntityGraphEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-09: Cross-Encoder Engine
+// ENG-09: Semantic Coherence Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class CrossEncoderEngine extends EngineTool {
+export class SemanticCoherenceHeuristicsEngine extends EngineTool {
   id = 'ENG-09';
-  name = 'Cross-Encoder Engine';
+  name = 'Semantic Coherence Heuristics Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'MEDIUM' as const;
@@ -921,11 +970,11 @@ export class CrossEncoderEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-10: ColBERT MaxSim Engine
+// ENG-10: Retrieval Chunking Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class ColBERTMaxSimEngine extends EngineTool {
+export class RetrievalChunkingHeuristicsEngine extends EngineTool {
   id = 'ENG-10';
-  name = 'ColBERT MaxSim Engine';
+  name = 'Retrieval Chunking Heuristics Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'MEDIUM' as const;
@@ -985,11 +1034,11 @@ export class ColBERTMaxSimEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-11: DPO Alignment Engine (Direct Preference Optimization)
+// ENG-11: Content Quality Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class DPOAlignmentEngine extends EngineTool {
+export class ContentQualityHeuristicsEngine extends EngineTool {
   id = 'ENG-11';
-  name = 'DPO Alignment Engine';
+  name = 'Content Quality Heuristics Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'MEDIUM' as const;
@@ -1033,7 +1082,7 @@ export class DPOAlignmentEngine extends EngineTool {
       },
       {
         id: 'DPO-005',
-        name: 'RLAIF/DPO Chosen Formatting Preference',
+        name: 'Structured Formatting Heuristic',
         weight: 15,
         check: (inp) => (inp.html.match(/<(?:ul|ol|table|blockquote)\b/gi) || []).length >= 1,
         penaltyOnFail: 10,
@@ -1045,11 +1094,11 @@ export class DPOAlignmentEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-12: Synthetic Citation Engine
+// ENG-12: Citation Readiness Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class SyntheticCitationEngine extends EngineTool {
+export class CitationReadinessEngine extends EngineTool {
   id = 'ENG-12';
-  name = 'Synthetic Citation Engine';
+  name = 'Citation Readiness Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'HIGH' as const;
@@ -1124,9 +1173,9 @@ export class AAOEngine extends EngineTool {
         id: 'AAO-001',
         name: 'A2A Agent Card Discovery Support',
         weight: 25,
-        check: (inp) => inp.html.includes('agent-card') || inp.llmsTxt.length > 0,
+        check: (inp) => inp.html.includes('agent-card') || inp.html.includes('/.well-known/agent.json'),
         penaltyOnFail: 15,
-        evidence: (inp) => `Agent discovery readiness: ${inp.llmsTxt.length > 0}`,
+        evidence: (inp) => `Explicit agent-card discovery marker: ${inp.html.includes('agent-card') || inp.html.includes('/.well-known/agent.json')}`,
       },
       {
         id: 'AAO-002',
@@ -1140,9 +1189,9 @@ export class AAOEngine extends EngineTool {
         id: 'AAO-003',
         name: 'Model Context Protocol (MCP) or Tool Surface Readiness',
         weight: 20,
-        check: (inp) => inp.llmsTxt.includes('##') || inp.html.includes('mcp'),
+        check: (inp) => /model context protocol|\bmcp\b/i.test(inp.html) || /model context protocol|\bmcp\b/i.test(inp.llmsTxt || ''),
         penaltyOnFail: 12,
-        evidence: (inp) => `MCP/Tool surface ready: ${inp.llmsTxt.includes('##')}`,
+        evidence: (inp) => `Explicit MCP marker detected: ${/model context protocol|\bmcp\b/i.test(inp.html) || /model context protocol|\bmcp\b/i.test(inp.llmsTxt || '')}`,
       },
       {
         id: 'AAO-004',
@@ -1170,7 +1219,7 @@ export class AAOEngine extends EngineTool {
 // ═══════════════════════════════════════════════════════════════════════════════
 export class EEATScoringEngine extends EngineTool {
   id = 'ENG-14';
-  name = 'EEAT Scoring Engine';
+  name = 'E-E-A-T Evidence Signals Engine';
   version = '2.2.0';
   weight = 8;
   impact = 'HIGH' as const;
@@ -1235,11 +1284,11 @@ export class EEATScoringEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-15: Knowledge Vault Engine
+// ENG-15: Entity Consistency & Structured Knowledge Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class KnowledgeVaultEngine extends EngineTool {
+export class EntityConsistencyStructuredKnowledgeEngine extends EngineTool {
   id = 'ENG-15';
-  name = 'Knowledge Vault Engine';
+  name = 'Entity Consistency & Structured Knowledge Engine';
   version = '2.2.0';
   weight = 7;
   impact = 'HIGH' as const;
@@ -1274,11 +1323,12 @@ export class KnowledgeVaultEngine extends EngineTool {
       },
       {
         id: 'KVLT-004',
-        name: 'Factual Consistency across Document Nodes',
+        name: 'Cross-Node Factual Consistency Verification',
         weight: 15,
-        check: (inp) => cleanText(inp.html).length > 100,
+        check: () => false,
+        measurementState: 'NOT_MEASURED',
         penaltyOnFail: 10,
-        evidence: () => `Node consistency validated`,
+        evidence: () => `Public HTML length alone cannot establish factual consistency across document nodes.`,
       },
       {
         id: 'KVLT-005',
@@ -1290,7 +1340,7 @@ export class KnowledgeVaultEngine extends EngineTool {
       },
       {
         id: 'KVLT-006',
-        name: 'Ontological Class Hierarchy (Thing to VerifiedEnterprise)',
+        name: 'Schema Class Hierarchy Presence',
         weight: 15,
         check: (inp) => inp.html.includes('Organization') || inp.html.includes('WebSite') || inp.html.includes('SoftwareApplication'),
         penaltyOnFail: 10,
@@ -1310,11 +1360,11 @@ export class KnowledgeVaultEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-16: Hallucination Interception Engine
+// ENG-16: Claim Consistency Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class HallucinationInterceptionEngine extends EngineTool {
+export class ClaimConsistencyHeuristicsEngine extends EngineTool {
   id = 'ENG-16';
-  name = 'Hallucination Interception';
+  name = 'Claim Consistency Heuristics Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'HIGH' as const;
@@ -1378,11 +1428,11 @@ export class HallucinationInterceptionEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-17: Dark Pool Remediation Engine
+// ENG-17: Discovery Coverage Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class DarkPoolRemediationEngine extends EngineTool {
+export class DiscoveryCoverageEngine extends EngineTool {
   id = 'ENG-17';
-  name = 'Dark Pool Remediation';
+  name = 'Discovery Coverage Engine';
   version = '2.2.0';
   weight = 6;
   impact = 'MEDIUM' as const;
@@ -1440,11 +1490,11 @@ export class DarkPoolRemediationEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-18: Historical Corpus Engine
+// ENG-18: Freshness & Revision Signals Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class HistoricalCorpusEngine extends EngineTool {
+export class FreshnessRevisionSignalsEngine extends EngineTool {
   id = 'ENG-18';
-  name = 'Historical Corpus Engine';
+  name = 'Freshness & Revision Signals Engine';
   version = '2.2.0';
   weight = 5;
   impact = 'LOW' as const;
@@ -1511,15 +1561,15 @@ export function buildEngineV2Registry(): EngineOrchestrator {
   orchestrator.register(new AEOEngine());
   orchestrator.register(new LLMOEngine());
   orchestrator.register(new EntityGraphEngine());
-  orchestrator.register(new CrossEncoderEngine());
-  orchestrator.register(new ColBERTMaxSimEngine());
-  orchestrator.register(new DPOAlignmentEngine());
-  orchestrator.register(new SyntheticCitationEngine());
+  orchestrator.register(new SemanticCoherenceHeuristicsEngine());
+  orchestrator.register(new RetrievalChunkingHeuristicsEngine());
+  orchestrator.register(new ContentQualityHeuristicsEngine());
+  orchestrator.register(new CitationReadinessEngine());
   orchestrator.register(new AAOEngine());
   orchestrator.register(new EEATScoringEngine());
-  orchestrator.register(new KnowledgeVaultEngine());
-  orchestrator.register(new HallucinationInterceptionEngine());
-  orchestrator.register(new DarkPoolRemediationEngine());
-  orchestrator.register(new HistoricalCorpusEngine());
+  orchestrator.register(new EntityConsistencyStructuredKnowledgeEngine());
+  orchestrator.register(new ClaimConsistencyHeuristicsEngine());
+  orchestrator.register(new DiscoveryCoverageEngine());
+  orchestrator.register(new FreshnessRevisionSignalsEngine());
   return orchestrator;
 }
