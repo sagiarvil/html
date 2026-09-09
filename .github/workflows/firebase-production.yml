@@ -26,6 +26,13 @@ jobs:
           node-version: '22'
       - name: Materialize AI authority, customer positioning and verified V3 sales contract
         run: npm run build:commercial
+      - name: Preserve R10 campaign cache bust
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in index.html tr/index.html en/index.html; do
+            sed -i 's#ai-positioning\.js?v=1#ai-positioning.js?v=r10-20260910-2000#g' "$f"
+          done
       - name: Verify V3 customer artifact before deploy
         shell: bash
         run: |
@@ -38,6 +45,7 @@ jobs:
           grep -Fq '18 Engine V3' index.html
           grep -Fq '105' index.html
           grep -Fq '$99' index.html
+          grep -Fq 'ai-positioning.js?v=r10-20260910-2000' index.html
           ! grep -Fq '$149' index.html
           ! grep -Eq 'Engine V2|120 (deep )?(checks|controls)|43[- ]page|22[- ]file|15[- ]prompt' index.html
           grep -Fq 'data-premium-infographic="scope-map"' tr/araclar/index.html
