@@ -3,6 +3,7 @@ import type { Finding, ScanResult, SourceClass } from './scan-engine';
 export const INTELLIGENCE_VERSION='1.0.0' as const;
 export const INTELLIGENCE_ANALYSIS_COUNT=13 as const;
 export const READINESS_LENS_COUNT=7 as const;
+export const BLACK_BOX_DOMAIN_COUNT=6 as const;
 
 export type IntelligenceKey=
   |'intent_cannibalization'
@@ -20,6 +21,13 @@ export type IntelligenceKey=
   |'codebase_seo_governance';
 
 export type ReadinessLens='SEO'|'GEO'|'AEO'|'LLMO'|'AAO'|'RAG'|'E-E-A-T';
+export type BlackBoxKey=
+  |'retrieval_activation_uncertainty'
+  |'citation_source_concentration'
+  |'competitive_share_of_answer'
+  |'entity_resolution_drift'
+  |'temporal_visibility_drift'
+  |'agent_interaction_friction';
 export type IntelligenceStatus='PASS'|'WARN'|'FAIL'|'NOT_MEASURED'|'REQUIRES_CONTEXT';
 export type MeasurementMode='MEASURED'|'EVALUATED'|'REQUIRES_CONTEXT';
 export type Effort='EASY'|'MEDIUM'|'HARD'|'REQUIRES_CONTEXT';
@@ -51,6 +59,21 @@ export interface ReadinessLensResult {
   unavailableInputs:IntelligenceKey[];
 }
 
+export interface BlackBoxDomain {
+  key:BlackBoxKey;
+  labelEn:string;
+  labelTr:string;
+  status:IntelligenceStatus;
+  mode:MeasurementMode;
+  score:number|null;
+  confidence:number;
+  sourceClass:SourceClass;
+  evidence:string[];
+  requiredContext:string[];
+  boundaryEn:string;
+  boundaryTr:string;
+}
+
 export interface IntelligencePriority {
   rank:number;
   analysis:IntelligenceKey;
@@ -72,6 +95,7 @@ export interface IntelligenceReport {
   coreScoreUnchanged:true;
   analyses:IntelligenceAnalysis[];
   readinessLenses:Record<ReadinessLens,ReadinessLensResult>;
+  blackBoxLayer:{classification:'NON_SCORING_BLACK_BOX_INTELLIGENCE';domainCount:typeof BLACK_BOX_DOMAIN_COUNT;domains:BlackBoxDomain[]};
   topPriorities:IntelligencePriority[];
   measured:number;
   evaluated:number;
@@ -193,6 +217,70 @@ function lens(scan:ScanResult, analyses:IntelligenceAnalysis[], lensName:Readine
   return {lens:lensName,score,sourceClass:'INTERNAL_HEURISTIC',inputs:[...core.map(([k])=>`core:${k}`),...available.map(a=>`intelligence:${a.key}`)],unavailableInputs:relevant.filter(a=>a.score===null).map(a=>a.key)};
 }
 
+function blackBoxDomains(scan:ScanResult,analyses:IntelligenceAnalysis[]):BlackBoxDomain[]{
+  const entity=analyses.find(a=>a.key==='entity_graph_integrity');
+  const graph=analyses.find(a=>a.key==='structured_graph_consistency');
+  const agentScore=Number(scan.scores.agent||0);
+  const accessScore=Number(scan.scores.accessibility||0);
+  const securityScore=Number(scan.scores.security||0);
+  const entityScore=entity?.score!==null&&entity?.score!==undefined&&graph?.score!==null&&graph?.score!==undefined
+    ?clamp((Number(entity.score)+Number(graph.score))/2):null;
+  const agentFriction=clamp((agentScore*.45)+(accessScore*.35)+(securityScore*.20));
+  const domains:BlackBoxDomain[]=[
+    {
+      key:'retrieval_activation_uncertainty',labelEn:'Retrieval Activation Uncertainty',labelTr:'Arama/Retrieval Aktivasyon Belirsizliği',
+      status:'REQUIRES_CONTEXT',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'MEASURED',
+      evidence:['A public site crawl cannot observe whether a provider decides to invoke retrieval/search for a neutral user prompt.'],
+      requiredContext:['provider API/search-grounded observation run','per-prompt grounding/search-use signal'],
+      boundaryEn:'Must be measured on provider surfaces without pretending forced-search results equal default consumer behavior.',
+      boundaryTr:'Sağlayıcı yüzeyinde ölçülmelidir; zorlanmış arama sonucu varsayılan tüketici davranışıyla eşit kabul edilmez.'
+    },
+    {
+      key:'citation_source_concentration',labelEn:'Citation Source Concentration',labelTr:'Alıntı Kaynağı Yoğunlaşması',
+      status:'REQUIRES_CONTEXT',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'MEASURED',
+      evidence:['Citation-domain concentration requires actual provider citations; website HTML alone cannot establish it.'],
+      requiredContext:['provider citation URLs','successful observation count'],
+      boundaryEn:'Measure unique cited domains and concentration from observed responses; do not infer citations from outbound links.',
+      boundaryTr:'Benzersiz alıntı alan adları ve yoğunlaşma gözlenen yanıtlardan ölçülür; sitedeki dış linklerden alıntı sonucu çıkarılmaz.'
+    },
+    {
+      key:'competitive_share_of_answer',labelEn:'Competitive Share of Answer',labelTr:'Rekabetçi Cevap Payı',
+      status:'REQUIRES_CONTEXT',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'MEASURED',
+      evidence:['Competitive share requires neutral prompts plus an explicit competitor set.'],
+      requiredContext:['neutral prompt set','tracked competitors','provider observations'],
+      boundaryEn:'Share of Answer is an observed sample metric, not market share and not a forecast of revenue.',
+      boundaryTr:'Cevap Payı gözlenen örneklem metriğidir; pazar payı veya gelir tahmini değildir.'
+    },
+    {
+      key:'entity_resolution_drift',labelEn:'Entity Resolution Drift',labelTr:'Varlık Çözümleme Sapması',
+      status:entityScore===null?'NOT_MEASURED':statusFor(entityScore),mode:entityScore===null?'REQUIRES_CONTEXT':'EVALUATED',score:entityScore,
+      confidence:entityScore===null?1:0.84,sourceClass:entityScore===null?'MEASURED':'INTERNAL_HEURISTIC',
+      evidence:entityScore===null?['Entity/schema observations are unavailable.']:[`Entity graph score ${entity?.score}; structured graph score ${graph?.score}. Cross-run identity drift still requires a previous baseline.`],
+      requiredContext:entityScore===null?['public JSON-LD/entity observations']:['previous scan baseline for drift delta'],
+      boundaryEn:'Current scan evaluates identity consistency; temporal drift is only proven when compared with a previous baseline.',
+      boundaryTr:'Mevcut tarama kimlik tutarlılığını değerlendirir; zamansal sapma ancak önceki baz çizgiyle kanıtlanır.'
+    },
+    {
+      key:'temporal_visibility_drift',labelEn:'Temporal Visibility Drift',labelTr:'Zamansal Görünürlük Sapması',
+      status:'NOT_MEASURED',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'MEASURED',
+      evidence:['A single scan cannot establish week-over-week citation, mention, ranking or source volatility.'],
+      requiredContext:['versioned prior observations','same prompt/provider cohort','timestamped baseline'],
+      boundaryEn:'Requires like-for-like repeated observations; no volatility score is fabricated from one run.',
+      boundaryTr:'Aynı prompt/sağlayıcı kohortunda tekrarlı gözlem gerekir; tek çalışmadan volatilite skoru üretilmez.'
+    },
+    {
+      key:'agent_interaction_friction',labelEn:'Agent Interaction Friction',labelTr:'Ajan Etkileşim Sürtünmesi',
+      status:statusFor(agentFriction),mode:'EVALUATED',score:agentFriction,confidence:0.78,sourceClass:'INTERNAL_HEURISTIC',
+      evidence:[`Agent readiness ${agentScore}/100; accessibility ${accessScore}/100; security ${securityScore}/100.`],
+      requiredContext:['controlled agent task execution for end-to-end success proof'],
+      boundaryEn:'Website-side operability heuristic only; successful purchase, login or task completion by an external agent is not claimed.',
+      boundaryTr:'Yalnız site-tarafı çalışabilirlik sezgisidir; dış ajanın satın alma, giriş veya görevi başarıyla bitireceği iddia edilmez.'
+    }
+  ];
+  if(domains.length!==BLACK_BOX_DOMAIN_COUNT)throw new Error('Black-box domain registry drift');
+  return domains;
+}
+
 function priorities(analyses:IntelligenceAnalysis[]):IntelligencePriority[]{
   return analyses.filter(a=>a.score!==null&&a.status!=='PASS').map(a=>{
     const priorityScore=Number(((impactRank[a.impact]*a.confidence*25)/effortDiv[a.effort]).toFixed(2));
@@ -212,5 +300,6 @@ export function generateIntelligenceReport(scan:ScanResult):IntelligenceReport{
     RAG:lens(scan,analyses,'RAG',[['technical',2],['ai',2],['links',1]]),
     'E-E-A-T':lens(scan,analyses,'E-E-A-T',[['trust',3],['schema',2],['security',1]])
   };
-  return {version:INTELLIGENCE_VERSION,classification:'NON_SCORING_INTELLIGENCE_LAYER',generatedAt:new Date().toISOString(),scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScoreUnchanged:true,analyses,readinessLenses,topPriorities:priorities(analyses),measured:analyses.filter(a=>a.mode==='MEASURED').length,evaluated:analyses.filter(a=>a.mode==='EVALUATED').length,notMeasured:analyses.filter(a=>a.status==='NOT_MEASURED').length,requiresContext:analyses.filter(a=>a.status==='REQUIRES_CONTEXT').length,boundaries:['The 12 canonical engine scores and overall score are not modified by this intelligence layer.','Evaluated signals are internal heuristics, not official search-engine scores.','NOT_MEASURED and REQUIRES_CONTEXT are preserved rather than converted into artificial pass/fail values.','Information Gain means public within-site differentiation signals; it is not a reproduction of any Google ranking system.']};
+  const blackBoxLayer={classification:'NON_SCORING_BLACK_BOX_INTELLIGENCE' as const,domainCount:BLACK_BOX_DOMAIN_COUNT,domains:blackBoxDomains(scan,analyses)};
+  return {version:INTELLIGENCE_VERSION,classification:'NON_SCORING_INTELLIGENCE_LAYER',generatedAt:new Date().toISOString(),scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScoreUnchanged:true,analyses,readinessLenses,blackBoxLayer,topPriorities:priorities(analyses),measured:analyses.filter(a=>a.mode==='MEASURED').length,evaluated:analyses.filter(a=>a.mode==='EVALUATED').length,notMeasured:analyses.filter(a=>a.status==='NOT_MEASURED').length,requiresContext:analyses.filter(a=>a.status==='REQUIRES_CONTEXT').length,boundaries:['The 12 canonical engine scores and overall score are not modified by this intelligence layer.','Evaluated signals are internal heuristics, not official search-engine scores.','NOT_MEASURED and REQUIRES_CONTEXT are preserved rather than converted into artificial pass/fail values.','Information Gain means public within-site differentiation signals; it is not a reproduction of any Google ranking system.']};
 }
