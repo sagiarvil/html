@@ -22,7 +22,11 @@ BANNED={
  'world-first claim':r'(?:world.?s first|dünyanın ilk)',
 }
 GUARANTEE=re.compile(r'\b(?:guarantee(?:d|s)?|garanti)\b[^\n<]{0,80}\b(?:citation|ranking|recommendation|atıf|sıralama|tavsiye)\b',re.I)
-NEGATED_GUARANTEE=re.compile(r'(?:\b(?:not|never|no|without)\s+(?:a\s+)?guarantee(?:d|s)?\b|\bguarantee(?:d|s)?\b[^\n<]{0,24}\b(?:not|never)\b|\bgaranti\b[^\n<]{0,24}\b(?:değil|edilmez|verilmez|vermez|yok|etmez)\b)',re.I)
+NEGATED_GUARANTEE=re.compile(
+ r'(?:\b(?:no|not|never|cannot|can\x27t|doesn\x27t|does\s+not|do\s+not|without)\b[^\n<.!?]{0,80}\bguarantee(?:d|s)?\b'
+ r'|\b(?:is|are|was|were)\s+not\s+guaranteed\b'
+ r'|\bguarantee(?:d|s)?\b[^\n<.!?]{0,80}\b(?:not|never|none|no)\b'
+ r'|\bgaranti\b[^\n<.!?]{0,80}\b(?:değil|edilmez|verilmez|vermez|yok|etmez)\b)',re.I)
 
 def is_public(path:Path)->bool:
  rel=path.relative_to(ROOT)
@@ -41,7 +45,7 @@ def verify_locale(errors:list[str])->None:
 
 def has_positive_guarantee(text:str)->bool:
  for m in GUARANTEE.finditer(text):
-  context=text[max(0,m.start()-30):min(len(text),m.end()+30)]
+  context=text[max(0,m.start()-100):min(len(text),m.end()+100)]
   if NEGATED_GUARANTEE.search(context): continue
   return True
  return False
