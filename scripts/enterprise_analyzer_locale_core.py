@@ -406,6 +406,18 @@ def patch_locale_state(source: str, locale: str) -> str:
     return source
 
 
+def inject_commercial_contract(source: str, locale: str) -> str:
+    if '/assets/css/commercial-intent.css?v=2' not in source:
+        source = source.replace('</head>', '  <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2">\n</head>', 1)
+    if 'data-commercial-intent="static"' not in source:
+        if locale == 'tr':
+            block = '''<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ</span><h2>Ölçülen bulguyu uygulama kararına bağlayın.</h2><p class="ai-opportunity-lead">Bu rapor aynı 18 motor, aynı skorlar ve aynı bulgularla çalışır; Türkçe yüzey yalnızca açıklama dilini değiştirir.</p><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Onarım Paketini Aç — $99 →</a></div><p class="ai-opportunity-guard">Sıralama, atıf, trafik veya gelir garantisi verilmez; yalnızca ölçülen site kaynaklı engeller raporlanır.</p></div></section>'''
+        else:
+            block = '''<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY</span><h2>Turn measured findings into an implementation decision.</h2><p class="ai-opportunity-lead">This report uses the same 18 engines, scores and findings in both locales; the English surface changes presentation language only.</p><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Unlock Remediation Package — $99 →</a></div><p class="ai-opportunity-guard">Rankings, citations, traffic and revenue are not guaranteed; only measured website-side barriers are reported.</p></div></section>'''
+        source = source.replace('<footer', block + '\n<footer', 1)
+    return source
+
+
 def inject_runtime(source: str, locale: str) -> str:
     source = re.sub(r'\s*<!-- EA_LOCALE_CONTRACT:[^>]*-->\s*', '\n', source)
     marker = f'<!-- EA_LOCALE_CONTRACT:{locale}:URL_SSOT -->'
@@ -446,6 +458,7 @@ def build_page(template: str, filename: str, locale: str, en_path: str, tr_path:
     out = set_head(out, filename, locale, en_path, tr_path)
     out = set_nav(out, locale)
     out = patch_locale_state(out, locale)
+    out = inject_commercial_contract(out, locale)
     out = inject_runtime(out, locale)
     if f'<html lang="{locale}"' not in out: raise SystemExit(f'EA LOCALE CONTRACT FAIL: html lang mismatch {filename} {locale}')
     return out
