@@ -1,0 +1,39 @@
+name: scan-report-contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/js/ai-positioning.js'
+      - 'tests/integrity/scan-report-mode.test.mjs'
+      - 'scripts/build_homepages.py'
+      - 'index.html'
+      - 'tr/index.html'
+      - 'en/index.html'
+      - 'package.json'
+      - '.github/workflows/scan-report-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report-state-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate client syntax
+        run: node --check assets/js/ai-positioning.js
+      - name: Validate report-state invariant
+        run: node tests/integrity/scan-report-mode.test.mjs
+      - name: Rebuild homepage sentinels and revalidate
+        run: |
+          python3 scripts/build_homepages.py
+          node tests/integrity/scan-report-mode.test.mjs
+      - name: Assert generator did not erase the runtime contract
+        run: |
+          git diff --exit-code -- assets/js/ai-positioning.js tests/integrity/scan-report-mode.test.mjs
