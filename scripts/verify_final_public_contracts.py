@@ -26,7 +26,7 @@ NEGATED_GUARANTEE=re.compile(
  r'(?:\b(?:no|not|never|cannot|can\x27t|doesn\x27t|does\s+not|do\s+not|without)\b[^\n<.!?]{0,80}\bguarantee(?:d|s)?\b'
  r'|\b(?:is|are|was|were)\s+not\s+guaranteed\b'
  r'|\bguarantee(?:d|s)?\b[^\n<.!?]{0,80}\b(?:not|never|none|no)\b'
- r'|\bgaranti\b[^\n<.!?]{0,80}\b(?:değil|edilmez|verilmez|vermez|yok|etmez)\b)',re.I)
+ r'|\bgaranti\b[^\n<.!?]{0,80}\b(?:değil|edilmez|edilemez|verilmez|vermez|vermiyoruz|satmıyoruz|sunmuyoruz|yok|etmez)\b)',re.I)
 
 def is_public(path:Path)->bool:
  rel=path.relative_to(ROOT)
