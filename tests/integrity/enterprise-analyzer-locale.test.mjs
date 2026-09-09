@@ -46,7 +46,7 @@ for (const [file, enPath, trPath] of cases) {
 
 const enReport = read('enterprise-analyzer/htmlandhtml-ai-report.html');
 const trReport = read('tr/enterprise-analyzer/htmlandhtml-ai-report.html');
-assert.ok(visible(enReport).includes('Enterprise AI Visibility Diagnostic & Remediation Report'), 'English report title missing');
-assert.ok(visible(trReport).includes('Kurumsal Yapay Zeka Görünürlük Teşhis ve Onarım Raporu'), 'Turkish report title missing');
+assert.ok(visible(enReport).includes('Live Sample AI Visibility Report'), 'English report title missing');
+assert.ok(visible(trReport).includes('Canlı Örnek Yapay Zeka Görünürlük Raporu'), 'Turkish report title missing');
 assert.equal((enReport.match(/data-i18n=/g) || []).length, (trReport.match(/data-i18n=/g) || []).length, 'report localization key structure must remain parallel');
 console.log('ENTERPRISE ANALYZER LOCALE CONTRACT PASS: URL SSOT, language purity, hreflang reciprocity and EN/TR score/finding parity verified.');
