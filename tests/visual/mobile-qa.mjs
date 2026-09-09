@@ -23,8 +23,9 @@ const server=http.createServer((req,res)=>{
 await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve)});
 const port=server.address().port;
 const base=`http://127.0.0.1:${port}`;
-const viewports=[{width:360,height:800},{width:390,height:844},{width:430,height:932},{width:768,height:1024}];
-const routes=['/','/tr/fiyatlandirma/','/tr/araclar/'];
+const viewports=[{width:360,height:800},{width:390,height:844},{width:430,height:932},{width:768,height:1024},{width:1280,height:900}];
+const reportRoute='/enterprise-analyzer/htmlandhtml-ai-report';
+const routes=['/','/tr/fiyatlandirma/','/tr/araclar/',reportRoute];
 const errors=[];
 const browser=await chromium.launch({headless:true});
 try{
@@ -32,6 +33,12 @@ try{
     for(const route of routes){
       const page=await browser.newPage({viewport:vp});
       await page.emulateMedia({reducedMotion:'reduce'});
+      if(route===reportRoute){
+        await page.addInitScript(()=>{
+          localStorage.setItem('hh-theme','light');
+          localStorage.setItem('htmlandhtml-theme-v2',JSON.stringify({theme:'light'}));
+        });
+      }
       const response=await page.goto(base+route,{waitUntil:'networkidle'});
       if(!response||!response.ok()){errors.push(`${vp.width}px ${route}: HTTP ${response?.status()}`);await page.close();continue}
       const state=await page.evaluate(()=>{
@@ -62,10 +69,53 @@ try{
         const scope=await page.locator('[data-premium-infographic="scope-map"]').count();
         if(!scope)errors.push(`${vp.width}px tools: unified scan scope map missing`);
       }
+      if(route===reportRoute){
+        const lightAudit=await page.evaluate(()=>{
+          const root=document.documentElement;
+          const parseRgb=(value)=>{
+            const m=value&&value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/i);
+            return m?{r:+m[1],g:+m[2],b:+m[3],a:m[4]===undefined?1:+m[4]}:null;
+          };
+          const isNeutralDark=(value)=>{
+            const c=parseRgb(value);if(!c||c.a<0.45)return false;
+            const max=Math.max(c.r,c.g,c.b),min=Math.min(c.r,c.g,c.b),mean=(c.r+c.g+c.b)/3;
+            return mean<105&&(max-min)<32;
+          };
+          const samples={};
+          for(const selector of ['body','.topbar','.ea-hud-score-card','.ea-hud-pillars-card','.ea-engine-card','.finding-card','.evidence-box','.ea-file-viewer','.action-bar-inner']){
+            const el=document.querySelector(selector);
+            if(el){const cs=getComputedStyle(el);samples[selector]={backgroundColor:cs.backgroundColor,backgroundImage:cs.backgroundImage,color:cs.color};}
+          }
+          const darkNeutral=[];
+          for(const el of document.querySelectorAll('body *')){
+            const rect=el.getBoundingClientRect();
+            if(rect.width<120||rect.height<24||rect.bottom<0||rect.top>document.documentElement.scrollHeight)continue;
+            const cs=getComputedStyle(el);
+            if(cs.display==='none'||cs.visibility==='hidden'||Number(cs.opacity)===0)continue;
+            if(isNeutralDark(cs.backgroundColor)){
+              darkNeutral.push({tag:el.tagName,cls:String(el.className||'').slice(0,120),bg:cs.backgroundColor,w:Math.round(rect.width),h:Math.round(rect.height)});
+              if(darkNeutral.length>=20)break;
+            }
+          }
+          return {theme:root.getAttribute('data-theme'),hasLightClass:root.classList.contains('light'),samples,darkNeutral};
+        });
+        if(lightAudit.theme!=='light'||!lightAudit.hasLightClass)errors.push(`${vp.width}px report: explicit LIGHT theme state not applied`);
+        for(const [selector,sample] of Object.entries(lightAudit.samples)){
+          const m=sample.backgroundColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+          if(!m)continue;
+          const [r,g,b]=m.slice(1).map(Number);
+          if(selector==='body'||selector==='.topbar'||selector==='.ea-hud-score-card'||selector==='.ea-hud-pillars-card'||selector==='.ea-engine-card'||selector==='.finding-card'||selector==='.evidence-box'||selector==='.ea-file-viewer'){
+            if((r+g+b)/3<210)errors.push(`${vp.width}px report: ${selector} is not a light surface (${sample.backgroundColor})`);
+          }
+        }
+        if(lightAudit.darkNeutral.length){
+          errors.push(`${vp.width}px report: neutral dark surface leakage in LIGHT: ${JSON.stringify(lightAudit.darkNeutral.slice(0,5))}`);
+        }
+      }
       await page.screenshot({path:`/tmp/htmlhtml-${vp.width}-${route.replace(/\W+/g,'-')||'home'}.png`,fullPage:true});
       await page.close();
     }
   }
 } finally {await browser.close();server.close()}
-if(errors.length){console.error('MOBILE VISUAL QA FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('MOBILE VISUAL QA PASS: Chromium 360/390/430/768, no horizontal overflow/control collision, focusable UI, pricing ZIP manifest and unified tools scope verified.');
+if(errors.length){console.error('MOBILE/VISUAL THEME QA FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
+console.log('MOBILE/VISUAL THEME QA PASS: Chromium 360/390/430/768/1280, no overflow/control collision and Enterprise report LIGHT mode has no neutral dark surface leakage.');
