@@ -1,6 +1,6 @@
 {
   "name": "htmlandhtml-18-engine-automation",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "N8N Orchestration for 18 Deterministic Search & AI Engines, Daily 03:00 Drift Remediation & Multi-Hub IndexNow Broadcast",
   "workflows": [
     {
@@ -71,6 +71,86 @@
         {
           "name": "Dead Letter Queue on Error",
           "type": "n8n-nodes-base.function"
+        }
+      ]
+    },
+    {
+      "id": "wf-03-blackbox-observability",
+      "name": "Black-Box Intelligence Baseline & Drift Watch",
+      "active": false,
+      "activationPolicy": "Enable only after provider credentials, neutral prompt cohort, competitor set, persistent baseline store and entitlement are configured.",
+      "nodes": [
+        {
+          "name": "Scheduled Trigger",
+          "type": "n8n-nodes-base.cron",
+          "parameters": {
+            "triggerTimes": {
+              "item": [
+                {
+                  "hour": 6,
+                  "minute": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Configuration Gate",
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "purpose": "Fail closed unless providers, neutral prompts, competitors and baseline storage are configured."
+          }
+        },
+        {
+          "name": "Run Website Intelligence",
+          "type": "n8n-nodes-base.httpRequest",
+          "parameters": {
+            "url": "https://htmlandhtml.com/api/intelligence",
+            "method": "POST"
+          }
+        },
+        {
+          "name": "Run Neutral AI Observations",
+          "type": "n8n-nodes-base.httpRequest",
+          "parameters": {
+            "url": "https://htmlandhtml.com/api/mentions",
+            "method": "POST"
+          }
+        },
+        {
+          "name": "Compute Six-Domain Delta",
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "metrics": [
+              "groundingRate",
+              "citationConcentrationHHI",
+              "brandAnswerShare",
+              "entityResolutionDelta",
+              "temporalVisibilityDelta",
+              "agentInteractionFrictionDelta"
+            ]
+          }
+        },
+        {
+          "name": "Material Drift Gate",
+          "type": "n8n-nodes-base.if",
+          "parameters": {
+            "policy": "Alert only on threshold breach against like-for-like baseline; never compare different prompt/provider cohorts."
+          }
+        },
+        {
+          "name": "Persist Versioned Baseline",
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "policy": "Store timestamp, prompt cohort hash, provider/model surface, domain, metrics and evidence refs."
+          }
+        },
+        {
+          "name": "Dead Letter Queue",
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "policy": "Provider/API failures become NOT_MEASURED and must never overwrite the last valid baseline."
+          }
         }
       ]
     }
