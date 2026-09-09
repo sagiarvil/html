@@ -23,15 +23,16 @@ EXACT = {
     '15 PROMPTS × 3 RUNS': 'REPEATABLE OBSERVATIONS',
 }
 
-# Catch remaining capitalization, punctuation and compound-copy variants without
-# touching legitimate counts such as "15 findings" or "15 remediation roadmaps".
+# These expressions deliberately mirror every branch of the final release gate's
+# fixed-prompt prohibition. Legitimate counts such as 15 findings/roadmaps remain untouched.
 REGEX = [
-    (re.compile(r'\b15\s+Alıcı\s+Sorusu\b', re.I), 'Yapılandırılmış Alıcı Soruları'),
-    (re.compile(r'\b15\s+alıcı\s+sorusu\b', re.I), 'yapılandırılmış alıcı soruları'),
-    (re.compile(r'\b15\s+Buyer\s+Questions?\b', re.I), 'Structured Buyer Questions'),
-    (re.compile(r'\b15[- ]?prompts?\b', re.I), 'structured prompts'),
-    (re.compile(r'\b15\s+neutral\s+prompts?\b', re.I), 'structured neutral prompts'),
+    (re.compile(r'\b15[- ]prompts?\b', re.I), 'structured prompts'),
     (re.compile(r'\b15\s+nötr\s+prompt\b', re.I), 'yapılandırılmış nötr sorgular'),
+    (re.compile(r'\b15\s+neutral\s+prompts?\b', re.I), 'structured neutral prompts'),
+    (re.compile(r'\b15\s+buyer\s+(?:intent\s+)?prompts?\b', re.I), 'structured buyer-intent prompts'),
+    (re.compile(r'\b15\s+buyer\s+questions?\b', re.I), 'structured buyer questions'),
+    (re.compile(r'\b15\s+alıcı\s+sorusu\b', re.I), 'yapılandırılmış alıcı soruları'),
+    (re.compile(r'\b15\s+alıcı\s+prompts?\b', re.I), 'yapılandırılmış alıcı sorguları'),
 ]
 
 changed_files = 0
