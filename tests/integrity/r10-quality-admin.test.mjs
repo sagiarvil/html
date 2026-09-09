@@ -18,7 +18,9 @@ assert.doesNotMatch(telemetry,/Deneme1974/);
 assert.doesNotMatch(telemetry,/req\.ip|x-forwarded-for|user-agent/i);
 assert.match(admin,/noindex,nofollow,noarchive,nosnippet/);
 assert.match(admin,/type="password"/);
-assert.doesNotMatch(admin,/localStorage|sessionStorage/);
+// Theme persistence may legitimately use localStorage. The admin password itself must never be persisted.
+assert.doesNotMatch(admin,/(?:localStorage|sessionStorage)\.(?:setItem|getItem)\([^\n)]*(?:password|adminPassword)|(?:password|adminPassword)[^\n;]{0,80}(?:localStorage|sessionStorage)/i);
+assert.doesNotMatch(admin,/setItem\([^\n)]*Deneme1974/i);
 assert.match(cache,/quality=003/);
 assert.match(cache,/r10-quality-hotfix/);
 console.log('R10_QUALITY_ADMIN_GUARD_PASS');
