@@ -25,15 +25,25 @@ text=re.sub(r'(?i)Wikidata[^\n<]{0,80}(?:SPARQL|query|sorgu)','public entity evi
 text=re.sub(r'(?i)(?:SPARQL|query|sorgu)[^\n<]{0,80}Wikidata','public entity evidence',text)
 APP.write_text(text,encoding='utf-8')
 
-# Generated sample-report HTML can re-materialize fixed prompt counts after earlier
-# source cleanup. Normalize those exact public prose fragments before the final gate.
+# Generated sample-report HTML is public evidence copy, not executable source.
+# Normalize unsupported fixed-window and fixed-prompt cardinality claims every build.
 REPORTS=(ROOT/'enterprise-analyzer/htmlandhtml-ai-report.html',ROOT/'enterprise-analyzer/htmlandhtml-ai-report-LIGHT.html')
 for path in REPORTS:
     if not path.exists():continue
     s=path.read_text(encoding='utf-8')
-    s=re.sub(r'(?i)\b15[- ]prompt\b','provider-backed query',s)
-    s=re.sub(r'(?i)15\s+nötr\s+prompt','en fazla 3 nötr sorgu',s)
-    s=re.sub(r'(?i)15\s+neutral\s+prompt','up to 3 neutral queries',s)
+    # Plain replacements first cover generated prose and code-label variants.
+    for old,new in (
+        ('15-prompt','provider-backed query'),('15 prompt','provider-backed query'),
+        ('15 nötr prompt','en fazla 3 nötr sorgu'),('15 neutral prompt','up to 3 neutral queries'),
+        ('14KB','measured HTML payload'),('14kb','measured HTML payload'),
+        ('14,336','measured HTML payload'),('14336','measured HTML payload')):
+        s=s.replace(old,new)
+    # Unicode dash/space variants and remaining case variants.
+    s=re.sub(r'(?i)15[\s\-\u2010\u2011\u2012\u2013\u2014\u00a0]+prompt','provider-backed query',s)
+    s=re.sub(r'(?i)15[\s\u00a0]+nötr[\s\u00a0]+prompt','en fazla 3 nötr sorgu',s)
+    s=re.sub(r'(?i)15[\s\u00a0]+neutral[\s\u00a0]+prompt','up to 3 neutral queries',s)
+    s=re.sub(r'(?i)14[\s\u00a0]*kb','measured HTML payload',s)
+    s=re.sub(r'(?i)14[,.]?336(?:[\s\u00a0]*(?:bytes?|bayt))?','measured HTML payload',s)
     path.write_text(s,encoding='utf-8')
 
 errors=[]
