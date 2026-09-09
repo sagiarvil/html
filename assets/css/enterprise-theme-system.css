@@ -1,5 +1,5 @@
 /* ============================================================
-   HTML&HTML.COM — ENTERPRISE THEME SYSTEM v2.0.0
+   HTML&HTML.COM — ENTERPRISE THEME SYSTEM v2.1.0
    Principal Architect | Zero-Defect | Formal Verification
 
    STANDARDS:
@@ -10,8 +10,9 @@
    - prefers-reduced-motion (W3C Media Queries Level 5)
    - prefers-contrast: high (W3C Media Queries Level 5)
 
-   ENGINE VERSION: 2.0.0
-   LAST AUDIT: 2026-09-07
+   ENGINE VERSION: 2.1.0
+   LAST AUDIT: 2026-09-09
+   LIGHT CONTRACT: ZERO DARK SURFACE LEAKAGE
    ============================================================ */
 
 /* --------------------------------------------------
@@ -48,11 +49,9 @@
    -------------------------------------------------- */
 @layer tokens {
   :root {
-    /* Tipografi Tokenlari */
     --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-    /* Olcek Tokenlari */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -64,7 +63,6 @@
     --space-12: 3rem;
     --space-16: 4rem;
 
-    /* Kenarlik Yaricaplari */
     --radius-sm: 0.375rem;
     --radius-md: 0.5rem;
     --radius-lg: 0.75rem;
@@ -72,31 +70,27 @@
     --radius-2xl: 1.5rem;
     --radius-full: 9999px;
 
-    /* Z-Index Olcegi */
     --z-base: 0;
     --z-fixed: 30;
     --z-modal: 50;
     --z-toast: 80;
 
-    /* Gecis Egrileri & Sureleri */
     --duration-fast: 150ms;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
 
-    /* ==========================================
-       RENK TOKENLARI — LIGHT MODE (Default)
-       ========================================== */
-    --color-bg: #F3F4F6;
+    /* LIGHT MODE (default) */
+    --color-bg: #F8FAFC;
     --color-bg-elevated: #FFFFFF;
     --color-surface: #FFFFFF;
-    --color-surface-hover: #F9FAFB;
-    --color-surface-active: #F3F4F6;
-    --color-border: #E5E7EB;
-    --color-border-strong: #D1D5DB;
+    --color-surface-hover: #F8FAFC;
+    --color-surface-active: #F1F5F9;
+    --color-border: #E2E8F0;
+    --color-border-strong: #CBD5E1;
 
-    --color-text: #111827;
-    --color-text-secondary: #4B5563;
-    --color-text-tertiary: #6B7280;
-    --color-text-muted: #9CA3AF;
+    --color-text: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-tertiary: #64748B;
+    --color-text-muted: #94A3B8;
     --color-text-link: #2563EB;
     --color-text-link-hover: #1D4ED8;
 
@@ -120,9 +114,10 @@
     --color-info-soft: #CFFAFE;
     --color-info-bg: #ECFEFF;
 
-    --color-code-bg: #1F2937;
-    --color-code-text: #E5E7EB;
-    --color-code-border: #374151;
+    /* Light theme code surfaces must also be light. */
+    --color-code-bg: #F8FAFC;
+    --color-code-text: #0F172A;
+    --color-code-border: #E2E8F0;
 
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
@@ -130,10 +125,8 @@
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   }
 
-  /* ==========================================
-     DARK MODE — Modern Charcoal Black (WCAG AAA)
-     ========================================== */
-  .dark {
+  .dark,
+  html[data-theme="dark"] {
     --color-bg: #14151a;
     --color-bg-elevated: #1e2028;
     --color-surface: #1e2028;
@@ -199,16 +192,16 @@
 }
 
 /* --------------------------------------------------
-   TRANSITION GUARD: Metin rengine transition YASAK
+   TRANSITION GUARD: no text-color animation
    -------------------------------------------------- */
-body, p, h1, h2, h3, h4, h5, h6, 
-span, a, li, label, input, button, 
+body, p, h1, h2, h3, h4, h5, h6,
+span, a, li, label, input, button,
 strong, em, small {
   transition-property: background-color, border-color, box-shadow, transform, opacity;
 }
 
 /* --------------------------------------------------
-   LAYER 3: BILESENLER (Components)
+   LAYER 3: COMPONENTS
    -------------------------------------------------- */
 @layer components {
   .theme-toggle {
@@ -261,4 +254,137 @@ strong, em, small {
   .skip-link:focus {
     top: var(--space-4);
   }
+}
+
+/* ============================================================
+   LIGHT MODE HARD GUARANTEE
+   Purpose: loaded theme layers in legacy/premium CSS may still carry dark
+   root fallbacks. Explicit light selection is authoritative and must never
+   inherit a dark surface. High-specificity !important declarations are
+   intentional at this boundary because later legacy styles also use
+   !important and hard-coded dark fallbacks.
+   ============================================================ */
+html[data-theme="light"],
+html.light {
+  color-scheme: light !important;
+
+  /* Legacy theme.css SSOT bridge */
+  --bg: #f8fafc !important;
+  --bg-soft: #f1f5f9 !important;
+  --bg-card: #ffffff !important;
+  --fg: #0f172a !important;
+  --fg-soft: #334155 !important;
+  --fg-dim: #64748b !important;
+  --line: #e2e8f0 !important;
+  --line-strong: #cbd5e1 !important;
+  --paper: #f8fafc !important;
+  --card: #ffffff !important;
+  --ink: #0f172a !important;
+  --soft: #f1f5f9 !important;
+
+  /* Premium/enterprise legacy bridges */
+  --hh-paper: #f8fafc !important;
+  --hh-panel: #ffffff !important;
+  --hh-card: #ffffff !important;
+  --hh-ink: #0f172a !important;
+  --hh-muted: #64748b !important;
+  --hh-line: #e2e8f0 !important;
+  --hh-soft: #f1f5f9 !important;
+
+  --px-paper: #f8fafc !important;
+  --px-card: #ffffff !important;
+  --px-ink: #0f172a !important;
+  --px-muted: #64748b !important;
+  --px-line: #e2e8f0 !important;
+  --px-blue-soft: #eff6ff !important;
+
+  --theme-bg: #f8fafc !important;
+  --theme-bg-surface: #ffffff !important;
+  --theme-bg-elevated: #f8fafc !important;
+  --theme-border: #e2e8f0 !important;
+  --theme-text-strong: #0f172a !important;
+  --theme-text-primary: #0f172a !important;
+  --theme-text-secondary: #475569 !important;
+  --theme-text-muted: #64748b !important;
+
+  /* Enterprise Analyzer report tokens */
+  --ea-bg: #f8fafc !important;
+  --ea-bg-card: #ffffff !important;
+  --ea-bg-hover: #f1f5f9 !important;
+  --ea-bg-elevated: #f1f5f9 !important;
+  --ea-border: #e2e8f0 !important;
+  --ea-code-bg: #f8fafc !important;
+  --ea-code-border: #e2e8f0 !important;
+  --ea-text-primary: #0f172a !important;
+  --ea-text-secondary: #334155 !important;
+  --ea-text-muted: #64748b !important;
+  --ea-modal-bg: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  --ea-modal-card-bg: #ffffff !important;
+  --ea-action-bar-bg: linear-gradient(135deg, rgba(255,255,255,.98), rgba(248,250,252,.98)) !important;
+  --ea-recipe-overlay-bg: linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.96) 55%, #ffffff 100%) !important;
+}
+
+/* theme.css contains a later :root .topbar dark hard-code; this selector is
+   deliberately more specific and important so explicit LIGHT always wins. */
+html[data-theme="light"] body .topbar,
+html.light body .topbar {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-bottom-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] body,
+html.light body {
+  background: #f8fafc !important;
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* No dark code/terminal surfaces in light mode. */
+html[data-theme="light"] body pre,
+html[data-theme="light"] body code,
+html[data-theme="light"] body .evidence-box,
+html[data-theme="light"] body .recipe-code,
+html[data-theme="light"] body .ea-diff-code,
+html[data-theme="light"] body .ea-file-viewer,
+html[data-theme="light"] body .ea-viewer-body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Remove residual near-black chips/surfaces from the Enterprise report. */
+html[data-theme="light"] body .ea-url-chip,
+html[data-theme="light"] body .ea-file-item:hover,
+html[data-theme="light"] body .ea-file-badge {
+  background: #f8fafc !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Premium CSS historically used --px-ink as both text and a dark surface.
+   In light mode these highlighted containers remain light by contract. */
+html[data-theme="light"] body .px-flow-card .node,
+html[data-theme="light"] body .px-three-step .num,
+html[data-theme="light"] body .px-three-step.paid,
+html[data-theme="light"] body .px-report-split .paid,
+html[data-theme="light"] body .px-price-card.featured,
+html[data-theme="light"] body .ai-decision-lock {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] body .px-three-step.paid p,
+html[data-theme="light"] body .px-three-step.paid a,
+html[data-theme="light"] body .px-report-split .paid p,
+html[data-theme="light"] body .px-report-split .paid ul,
+html[data-theme="light"] body .px-price-card.featured p,
+html[data-theme="light"] body .px-price-card.featured li {
+  color: #334155 !important;
+}
+
+/* Light modal backdrop: preserve focus separation without a black veil. */
+html[data-theme="light"] body .modal-overlay {
+  background: rgba(241, 245, 249, 0.92) !important;
 }
