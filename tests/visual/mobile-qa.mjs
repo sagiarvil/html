@@ -45,7 +45,17 @@ try{
         const h1=document.querySelector('h1');const meta=document.querySelector('meta[name="viewport"]');
         return {scrollWidth:document.documentElement.scrollWidth,innerWidth:window.innerWidth,h1Visible:Boolean(h1&&h1.getBoundingClientRect().width>0&&h1.getBoundingClientRect().height>0),h1Size:h1?parseFloat(getComputedStyle(h1).fontSize):0,viewportMeta:meta?.getAttribute('content')||''};
       });
-      if(state.scrollWidth>state.innerWidth+1)errors.push(`${vp.width}px ${route}: horizontal overflow ${state.scrollWidth}>${state.innerWidth}`);
+      if(state.scrollWidth>state.innerWidth+1){
+        const offenders=await page.evaluate(()=>{
+          const vw=window.innerWidth;
+          return [...document.querySelectorAll('body *')].map((el)=>{
+            const r=el.getBoundingClientRect();
+            const cs=getComputedStyle(el);
+            return {tag:el.tagName,cls:String(el.className||'').slice(0,120),id:el.id||'',left:Math.round(r.left*10)/10,right:Math.round(r.right*10)/10,width:Math.round(r.width*10)/10,position:cs.position,display:cs.display,overflowX:cs.overflowX};
+          }).filter(x=>x.display!=='none'&&(x.right>vw+1||x.left<-1)).sort((a,b)=>(Math.max(b.right-vw,-b.left)-Math.max(a.right-vw,-a.left))).slice(0,12);
+        });
+        errors.push(`${vp.width}px ${route}: horizontal overflow ${state.scrollWidth}>${state.innerWidth}; offenders=${JSON.stringify(offenders)}`);
+      }
       if(!state.h1Visible)errors.push(`${vp.width}px ${route}: H1 not visibly rendered`);
       if(state.h1Size>92)errors.push(`${vp.width}px ${route}: giant H1 ${state.h1Size}px`);
       if(!/width=device-width/i.test(state.viewportMeta))errors.push(`${vp.width}px ${route}: viewport meta missing`);
