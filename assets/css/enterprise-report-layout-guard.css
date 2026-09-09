@@ -20,10 +20,12 @@
   box-sizing: border-box !important;
 }
 
-/* At the tested tablet/desktop boundary the text label alone pushed the sticky
-   header ~2px past the viewport. The icon remains visible and the button keeps
-   its accessible aria-label, so no control or information is lost. */
+/* The legacy specimen uses class="theme-toggle" while another Analyzer surface
+   uses theme-toggle-btn. Both controls have an accessible aria-label; their text
+   label is redundant at tablet/desktop widths and was the element extending the
+   document by ~2px. */
 @media (max-width: 1320px) {
+  .topbar .theme-toggle .theme-label,
   .topbar .theme-toggle-btn .theme-label {
     display: none !important;
   }
