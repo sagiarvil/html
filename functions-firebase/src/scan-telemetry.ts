@@ -15,6 +15,7 @@ let adminLockUntil=0;
 
 export type ScanTelemetryInput={success:boolean;domain?:string;durationMs:number;pagesScanned?:number;linksProbed?:number;findingCount?:number;overall?:number;errorClass?:'invalid_request'|'blocked_target'|'dns'|'timeout'|'scan_error'};
 function firestore(){if(!getApps().length)initializeApp();return getFirestore()}
+export async function scanTelemetryStorageReady(){try{await firestore().collection(SUMMARY_COLLECTION).limit(1).get();return true}catch{return false}}
 function safeInt(value:unknown){const n=Number(value);return Number.isFinite(n)&&n>0?Math.round(n):0}
 function cleanDomain(value:string|undefined){if(!value)return '';const host=value.trim().toLowerCase().replace(/^https?:\/\//,'').split('/')[0].split('?')[0].split('#')[0];return /^[a-z0-9.-]+$/.test(host)&&host.length<=253?host:''}
 function domainDocId(domain:string){return createHash('sha256').update(domain).digest('hex')}
