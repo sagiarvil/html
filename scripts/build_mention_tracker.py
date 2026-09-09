@@ -85,6 +85,10 @@ def build_mention_tracker():
         <input id="mentionDomain" autocomplete="url" placeholder="example.com">
       </div>
       <div class="wide">
+        <label for="mentionCompetitors">Competitors (optional, comma-separated, max 5)</label>
+        <input id="mentionCompetitors" autocomplete="off" placeholder="e.g. Competitor A, Competitor B">
+      </div>
+      <div class="wide">
         <label for="mentionAccess">Paid access key</label>
         <input id="mentionAccess" type="password" autocomplete="off" placeholder="Access key" required>
       </div>
@@ -113,7 +117,7 @@ def build_mention_tracker():
   <header>
     <span class="eyebrow">MEASUREMENT CONTRACT</span>
     <h2>We do not put the brand in the prompt and call that a mention.</h2>
-    <p>The core rule is prompt neutrality. If the target brand or domain appears in a measurement prompt, the request is rejected. The resulting signal therefore measures organic retrieval/generation visibility rather than self-triggered mention.</p>
+    <p>The core rule is prompt neutrality. If the target brand or domain appears in a measurement prompt, the request is rejected. Optional competitors are evaluated only in the returned answer. The report separates mention rate, domain citation rate, grounding rate, citation-source concentration and observed Brand Answer Share.</p>
   </header>
   <div class="authority-grid">
     <article class="authority-card">
@@ -230,6 +234,10 @@ def build_mention_tracker():
         <input id="mentionDomain" autocomplete="url" placeholder="ornek.com">
       </div>
       <div class="wide">
+        <label for="mentionCompetitors">Rakipler (isteğe bağlı, virgülle ayırın, en fazla 5)</label>
+        <input id="mentionCompetitors" autocomplete="off" placeholder="Örn. Rakip A, Rakip B">
+      </div>
+      <div class="wide">
         <label for="mentionAccess">Ücretli erişim anahtarı</label>
         <input id="mentionAccess" type="password" autocomplete="off" placeholder="Erişim anahtarı" required>
       </div>
@@ -258,7 +266,7 @@ def build_mention_tracker():
   <header>
     <span class="eyebrow">ÖLÇÜM SÖZLEŞMESİ</span>
     <h2>Markayı sorguya koyup buna atıf demeyiz.</h2>
-    <p>Temel kural sorgu tarafsızlığıdır. Hedef marka veya alan adı ölçüm sorgusunda geçerse istek reddedilir. Bu sayede üretilen sinyal yapay tetiklemeyi değil, organik geri çağırma ve üretim görünürlüğünü ölçer.</p>
+    <p>Temel kural sorgu tarafsızlığıdır. Hedef marka veya alan adı ölçüm sorgusunda geçerse istek reddedilir. İsteğe bağlı rakipler yalnız dönen yanıtta değerlendirilir. Rapor mention oranı, alan adı alıntısı, grounding oranı, alıntı-kaynak yoğunlaşması ve gözlenen Marka Cevap Payını ayrı gösterir.</p>
   </header>
   <div class="authority-grid">
     <article class="authority-card">
