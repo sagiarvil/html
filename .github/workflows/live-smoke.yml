@@ -45,6 +45,34 @@ jobs:
           grep -Fq '/assets/css/premium-experience.css' <<<"$body"
           grep -Fq '/assets/js/theme.js' <<<"$body"
 
+      - name: Verify Enterprise Analyzer locale purity and parity
+        shell: bash
+        run: |
+          set -euo pipefail
+          en_url='https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report'
+          tr_url='https://htmlandhtml.com/tr/enterprise-analyzer/htmlandhtml-ai-report'
+          curl -fLsS --connect-timeout 8 --max-time 30 "$en_url" -o /tmp/ea-en.html
+          curl -fLsS --connect-timeout 8 --max-time 30 "$tr_url" -o /tmp/ea-tr.html
+          grep -Fq '<html lang="en"' /tmp/ea-en.html
+          grep -Fq '<html lang="tr"' /tmp/ea-tr.html
+          grep -Fq 'Live Sample AI Visibility Report' /tmp/ea-en.html
+          grep -Fq 'Canlı Örnek Yapay Zeka Görünürlük Raporu' /tmp/ea-tr.html
+          grep -Fq 'EA_LOCALE_CONTRACT:en:URL_SSOT' /tmp/ea-en.html
+          grep -Fq 'EA_LOCALE_CONTRACT:tr:URL_SSOT' /tmp/ea-tr.html
+          grep -Fq 'hreflang="en" href="https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report"' /tmp/ea-en.html
+          grep -Fq 'hreflang="tr" href="https://htmlandhtml.com/tr/enterprise-analyzer/htmlandhtml-ai-report"' /tmp/ea-en.html
+          ! grep -Eq 'Ücretsiz|Çözümler|Haberler|Sözlük|Onarım|Hedef:|Ağırlık:|Tamamlandı' /tmp/ea-en.html
+          EN_FILE=/tmp/ea-en.html TR_FILE=/tmp/ea-tr.html node - <<'NODE'
+          const fs=require('fs');
+          const en=fs.readFileSync(process.env.EN_FILE,'utf8'), tr=fs.readFileSync(process.env.TR_FILE,'utf8');
+          const ids=s=>[...s.matchAll(/class="ea-engine-id"[^>]*>\s*(ENG-\d{2})\s*</g)].map(x=>x[1]);
+          const scores=s=>[...s.matchAll(/class="ea-engine-score-val"[^>]*>\s*(\d+)%\s*</g)].map(x=>Number(x[1]));
+          const findings=s=>(s.match(/class="[^"]*finding-card\b/g)||[]).length;
+          if(JSON.stringify(ids(en))!==JSON.stringify(ids(tr))) throw new Error('EN/TR engine ID parity');
+          if(JSON.stringify(scores(en))!==JSON.stringify(scores(tr))) throw new Error('EN/TR engine score parity');
+          if(findings(en)!==findings(tr)) throw new Error('EN/TR finding-count parity');
+          NODE
+
       - name: Verify SEO metadata and evidence boundary
         shell: bash
         run: |
