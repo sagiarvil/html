@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Final customer-facing V3 capability + SEO conversion contract.
 
-Runs after the existing commercial/V3 materializers. It does not change scanner,
-payment, entitlement, Firebase or delivery runtime behavior. It only normalizes
-public claims, metadata and the comparison block to verified production facts.
+This is the last public-surface materializer and fail-closed claim gate. The order
+is intentional: every HTML transformation is followed by a second normalization
+pass so a later materializer cannot re-introduce a claim already removed earlier
+in the pipeline.
 """
 
 from pathlib import Path
@@ -64,62 +65,24 @@ EN_BLOCK = '''<section class="v3-capability-contract" aria-labelledby="v3-capabi
 </section>'''
 
 SEO = {
-    'index.html': (
-        'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML',
-        'Web sitenizin ChatGPT, Google Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz analiz edin. 18 deterministik motor, 105 kontrol ve $99 uygulama paketi.'
-    ),
-    'tr/index.html': (
-        'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML',
-        'Web sitenizin ChatGPT, Google Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz analiz edin. 18 deterministik motor, 105 kontrol ve $99 uygulama paketi.'
-    ),
-    'en/index.html': (
-        'AI SEO Audit & ChatGPT Visibility Test | HTML&HTML',
-        'Audit your website for ChatGPT, Google Gemini, Claude and Perplexity visibility. Get evidence from 18 deterministic engines and 105 checks; unlock the $99 implementation pack.'
-    ),
-    'tr/ai-website-readiness/index.html': (
-        'Yapay Zeka SEO Analizi ve AI Web Sitesi Hazırlık Testi | HTML&HTML',
-        'AI web sitesi hazırlığını ücretsiz ölçün: ChatGPT bot erişimi, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG ve E-E-A-T sinyallerini kanıtla görün.'
-    ),
-    'en/ai-website-readiness/index.html': (
-        'AI Website Readiness & AI SEO Audit | HTML&HTML',
-        'Measure AI website readiness across crawler access, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG and E-E-A-T with evidence-backed checks.'
-    ),
-    'tr/ai-crawler-checker/index.html': (
-        'ChatGPT Bot ve AI Crawler Erişim Testi | HTML&HTML',
-        'OAI-SearchBot, GPTBot, Claude ve Perplexity crawler erişimini robots.txt ve canlı HTTP kanıtıyla ücretsiz kontrol edin.'
-    ),
-    'en/ai-crawler-checker/index.html': (
-        'ChatGPT Bot & AI Crawler Access Checker | HTML&HTML',
-        'Check OAI-SearchBot, GPTBot, Claude and Perplexity crawler access using robots.txt and live HTTP evidence.'
-    ),
-    'tr/llms-txt-validator/index.html': (
-        'llms.txt Validator ve Yapay Zeka Site Testi | HTML&HTML',
-        'llms.txt dosyanızı format, link erişimi, discovery ilişkileri ve AI arama hazırlığı açısından ücretsiz doğrulayın.'
-    ),
-    'en/llms-txt-validator/index.html': (
-        'llms.txt Validator & AI Website Test | HTML&HTML',
-        'Validate llms.txt format, link reachability, discovery relations and AI-search readiness for free.'
-    ),
-    'tr/yapay-zeka-arama-gorunurlugu/index.html': (
-        'Yapay Zeka Arama Görünürlüğü: GEO, AEO, LLMO | HTML&HTML',
-        'ChatGPT, Gemini, Claude ve Perplexity için yapay zeka arama görünürlüğü; GEO, AEO, LLMO, llms.txt, entity ve teknik erişim sinyallerini ölçün.'
-    ),
-    'en/ai-search-visibility/index.html': (
-        'AI Search Visibility: GEO, AEO & LLMO | HTML&HTML',
-        'Measure AI search visibility for ChatGPT, Gemini, Claude and Perplexity across GEO, AEO, LLMO, llms.txt, entity and technical access signals.'
-    ),
-    'tr/fiyatlandirma/index.html': (
-        'AI SEO Uygulama Paketi $99 | HTML&HTML',
-        'Ücretsiz AI SEO teşhisinden kanıta bağlı kök neden, exact fix, acceptance test ve rollback içeren $99 tek seferlik uygulama paketine geçin.'
-    ),
-    'en/pricing/index.html': (
-        'AI SEO Implementation Pack $99 | HTML&HTML',
-        'Move from a free AI SEO diagnosis to a one-time $99 evidence-bound implementation pack with root cause, exact fixes, acceptance tests and rollback.'
-    ),
+    'index.html': ('Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML', 'Web sitenizin ChatGPT, Google Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz analiz edin. 18 deterministik motor, 105 kontrol ve $99 uygulama paketi.'),
+    'tr/index.html': ('Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML', 'Web sitenizin ChatGPT, Google Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz analiz edin. 18 deterministik motor, 105 kontrol ve $99 uygulama paketi.'),
+    'en/index.html': ('AI SEO Audit & ChatGPT Visibility Test | HTML&HTML', 'Audit your website for ChatGPT, Google Gemini, Claude and Perplexity visibility. Get evidence from 18 deterministic engines and 105 checks; unlock the $99 implementation pack.'),
+    'tr/ai-website-readiness/index.html': ('Yapay Zeka SEO Analizi ve AI Web Sitesi Hazırlık Testi | HTML&HTML', 'AI web sitesi hazırlığını ücretsiz ölçün: ChatGPT bot erişimi, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG ve E-E-A-T sinyallerini kanıtla görün.'),
+    'en/ai-website-readiness/index.html': ('AI Website Readiness & AI SEO Audit | HTML&HTML', 'Measure AI website readiness across crawler access, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG and E-E-A-T with evidence-backed checks.'),
+    'tr/ai-crawler-checker/index.html': ('ChatGPT Bot ve AI Crawler Erişim Testi | HTML&HTML', 'OAI-SearchBot, GPTBot, Claude ve Perplexity crawler erişimini robots.txt ve canlı HTTP kanıtıyla ücretsiz kontrol edin.'),
+    'en/ai-crawler-checker/index.html': ('ChatGPT Bot & AI Crawler Access Checker | HTML&HTML', 'Check OAI-SearchBot, GPTBot, Claude and Perplexity crawler access using robots.txt and live HTTP evidence.'),
+    'tr/llms-txt-validator/index.html': ('llms.txt Validator ve Yapay Zeka Site Testi | HTML&HTML', 'llms.txt dosyanızı format, link erişimi, discovery ilişkileri ve AI arama hazırlığı açısından ücretsiz doğrulayın.'),
+    'en/llms-txt-validator/index.html': ('llms.txt Validator & AI Website Test | HTML&HTML', 'Validate llms.txt format, link reachability, discovery relations and AI-search readiness for free.'),
+    'tr/yapay-zeka-arama-gorunurlugu/index.html': ('Yapay Zeka Arama Görünürlüğü: GEO, AEO, LLMO | HTML&HTML', 'ChatGPT, Gemini, Claude ve Perplexity için yapay zeka arama görünürlüğü; GEO, AEO, LLMO, llms.txt, entity ve teknik erişim sinyallerini ölçün.'),
+    'en/ai-search-visibility/index.html': ('AI Search Visibility: GEO, AEO & LLMO | HTML&HTML', 'Measure AI search visibility for ChatGPT, Gemini, Claude and Perplexity across GEO, AEO, LLMO, llms.txt, entity and technical access signals.'),
+    'tr/fiyatlandirma/index.html': ('AI SEO Uygulama Paketi $99 | HTML&HTML', 'Ücretsiz AI SEO teşhisinden kanıta bağlı kök neden, exact fix, acceptance test ve rollback içeren $99 tek seferlik uygulama paketine geçin.'),
+    'en/pricing/index.html': ('AI SEO Implementation Pack $99 | HTML&HTML', 'Move from a free AI SEO diagnosis to a one-time $99 evidence-bound implementation pack with root cause, exact fixes, acceptance tests and rollback.'),
 }
 
 PUBLIC_DIRS = {'tr', 'en', 'llms', 'ai-report', 'enterprise-analyzer', 'assets'}
 PUBLIC_ROOTS = {'index.html', 'index.md', 'llms.txt', 'openapi.json', 'audit-profile.json', 'pricing.html', 'methodology.html', 'enterprise-analyzer.html'}
+
 BANNED = {
     'legacy Engine V2 public claim': r'\bEngine V2(?:\.1\.0)?\b',
     'legacy 120-control claim': r'\b120\s+(?:deep\s+)?(?:checks|controls)|\b120\s+(?:derin\s+)?kontrol',
@@ -153,16 +116,25 @@ def set_title_and_description(text: str, title: str, description: str) -> str:
 
 
 def normalize_claims(text: str) -> str:
-    replacements = (
+    direct = (
         ('15 neutral prompts across 5 query families when entitlement and providers are configured', 'up to 3 neutral queries across configured OpenAI, Perplexity and Gemini API/search-grounded surfaces'),
         ('15 nötr prompt ölçümü', 'yapılandırılmış sağlayıcılarda en fazla 3 nötr sorgu ölçümü'),
+        ('identical 15 buyer intent prompts', 'identical configured buyer-intent prompts'),
+        ('15 standard buyer intent prompts', 'configured buyer-intent prompt panel'),
         ('14KB AST budget, and Wikidata query', 'HTTP and bot-policy evidence, crawl boundaries, and machine-surface readiness'),
         ('14KB AST bütçesi ve Wikidata sorgusu', 'HTTP ve bot-politika kanıtı, tarama sınırları ve makine-yüzeyi hazırlığı'),
         ('30+ versioned files · AI coding-agent prompt · WordPress/edge guide · board memo · .ics plan', 'Versioned ZIP · exact fixes · tests · rollback · board summary · machine-surface plan'),
         ('30+ sürümlenmiş dosya · AI coding agent promptu · WordPress/edge rehberi · yönetim notu · .ics planı', 'Sürümlenmiş ZIP · exact fix · test · rollback · yönetim özeti · makine-yüzeyi planı'),
     )
-    for old, new in replacements:
+    for old, new in direct:
         text = text.replace(old, new)
+
+    # Generic forms are normalized here because this script is the final public
+    # materializer. This second-pass rule prevents an earlier generator from
+    # re-introducing the same unsupported cardinality later in the build.
+    text = re.sub(r'(?i)\b15[- ]prompt\b', 'configured prompt', text)
+    text = re.sub(r'(?i)15\s+nötr\s+prompt', 'configured nötr prompt', text)
+    text = re.sub(r'(?i)15\s+neutral\s+prompt', 'configured neutral prompt', text)
     return text
 
 
@@ -175,19 +147,21 @@ def apply_block(path: Path, text: str) -> str:
     return re.sub(r'<section class="v3-capability-contract"[\s\S]*?</section>', block, text, count=1)
 
 
+# Materialize public surfaces. Normalize both before and after HTML transforms.
 for path in ROOT.rglob('*'):
     if not path.is_file() or not is_public(path):
         continue
     rel = path.relative_to(ROOT).as_posix()
-    text = path.read_text(encoding='utf-8', errors='ignore')
-    text = normalize_claims(text)
+    text = normalize_claims(path.read_text(encoding='utf-8', errors='ignore'))
     if path.suffix.lower() == '.html':
         text = apply_block(path, text)
         if rel in SEO:
             text = set_title_and_description(text, *SEO[rel])
+    text = normalize_claims(text)
     path.write_text(text, encoding='utf-8')
 
-# Correct the machine-readable prompt boundary to the implemented paid mention engine.
+# Machine-readable execution boundary: real provider observations require paid
+# entitlement + configured provider surfaces and are distinct from consumer UIs.
 profile_path = ROOT / 'audit-profile.json'
 profile = json.loads(profile_path.read_text(encoding='utf-8'))
 execution = profile.setdefault('executionContract', {})
@@ -208,14 +182,13 @@ profile['publicPositioning'] = {
 }
 profile_path.write_text(json.dumps(profile, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-# Final fail-closed scan over customer-facing materialized surfaces.
+# Final fail-closed scan. Nothing after this point mutates public customer claims.
 errors = []
 for path in ROOT.rglob('*'):
     if not path.is_file() or not is_public(path):
         continue
     rel = path.relative_to(ROOT).as_posix()
     text = path.read_text(encoding='utf-8', errors='ignore')
-    # Internal runtime compatibility files may retain an Engine V2 identifier; customer copy may not.
     skip_engine_v2 = rel in {'assets/js/enterprise-theme-engine.js', 'assets/js/feature-flags.js'}
     for label, pattern in BANNED.items():
         if label == 'legacy Engine V2 public claim' and skip_engine_v2:
