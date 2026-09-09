@@ -1,0 +1,38 @@
+/* Enterprise Analyzer viewport contract.
+   Keep report internals (evidence/code/table) horizontally scrollable inside their
+   own bounded containers while preventing navigation chrome from widening the
+   document itself. Do not mask layout defects with body overflow:hidden. */
+
+.topbar .topbar-shell {
+  width: 100% !important;
+  max-width: min(var(--maxw, 1080px), 100%) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.topbar .nav-actions,
+.topbar .primary-nav,
+.ea-container,
+.ea-data-table-wrapper,
+.evidence-box {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* At the tested tablet/desktop boundary the text label alone pushed the sticky
+   header ~2px past the viewport. The icon remains visible and the button keeps
+   its accessible aria-label, so no control or information is lost. */
+@media (max-width: 1320px) {
+  .topbar .theme-toggle-btn .theme-label {
+    display: none !important;
+  }
+}
+
+/* Long evidence and comparison data remain inspectable via local scrolling;
+   they must never participate in page-level horizontal sizing. */
+.ea-data-table-wrapper,
+.evidence-box {
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+}
