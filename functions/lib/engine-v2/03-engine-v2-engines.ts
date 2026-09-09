@@ -898,9 +898,9 @@ export class EntityGraphEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-09: Cross-Encoder Engine
+// ENG-09: Semantic Coherence Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class CrossEncoderEngine extends EngineTool {
+export class SemanticCoherenceHeuristicsEngine extends EngineTool {
   id = 'ENG-09';
   name = 'Semantic Coherence Heuristics Engine';
   version = '2.2.0';
@@ -970,9 +970,9 @@ export class CrossEncoderEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-10: ColBERT MaxSim Engine
+// ENG-10: Retrieval Chunking Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class ColBERTMaxSimEngine extends EngineTool {
+export class RetrievalChunkingHeuristicsEngine extends EngineTool {
   id = 'ENG-10';
   name = 'Retrieval Chunking Heuristics Engine';
   version = '2.2.0';
@@ -1034,9 +1034,9 @@ export class ColBERTMaxSimEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-11: DPO Alignment Engine (Direct Preference Optimization)
+// ENG-11: Content Quality Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class DPOAlignmentEngine extends EngineTool {
+export class ContentQualityHeuristicsEngine extends EngineTool {
   id = 'ENG-11';
   name = 'Content Quality Heuristics Engine';
   version = '2.2.0';
@@ -1094,9 +1094,9 @@ export class DPOAlignmentEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-12: Synthetic Citation Engine
+// ENG-12: Citation Readiness Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class SyntheticCitationEngine extends EngineTool {
+export class CitationReadinessEngine extends EngineTool {
   id = 'ENG-12';
   name = 'Citation Readiness Engine';
   version = '2.2.0';
@@ -1284,9 +1284,9 @@ export class EEATScoringEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-15: Knowledge Vault Engine
+// ENG-15: Entity Consistency & Structured Knowledge Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class KnowledgeVaultEngine extends EngineTool {
+export class EntityConsistencyStructuredKnowledgeEngine extends EngineTool {
   id = 'ENG-15';
   name = 'Entity Consistency & Structured Knowledge Engine';
   version = '2.2.0';
@@ -1360,9 +1360,9 @@ export class KnowledgeVaultEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-16: Hallucination Interception Engine
+// ENG-16: Claim Consistency Heuristics Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class HallucinationInterceptionEngine extends EngineTool {
+export class ClaimConsistencyHeuristicsEngine extends EngineTool {
   id = 'ENG-16';
   name = 'Claim Consistency Heuristics Engine';
   version = '2.2.0';
@@ -1428,9 +1428,9 @@ export class HallucinationInterceptionEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-17: Dark Pool Remediation Engine
+// ENG-17: Discovery Coverage Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class DarkPoolRemediationEngine extends EngineTool {
+export class DiscoveryCoverageEngine extends EngineTool {
   id = 'ENG-17';
   name = 'Discovery Coverage Engine';
   version = '2.2.0';
@@ -1490,9 +1490,9 @@ export class DarkPoolRemediationEngine extends EngineTool {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ENG-18: Historical Corpus Engine
+// ENG-18: Freshness & Revision Signals Engine
 // ═══════════════════════════════════════════════════════════════════════════════
-export class HistoricalCorpusEngine extends EngineTool {
+export class FreshnessRevisionSignalsEngine extends EngineTool {
   id = 'ENG-18';
   name = 'Freshness & Revision Signals Engine';
   version = '2.2.0';
@@ -1561,15 +1561,15 @@ export function buildEngineV2Registry(): EngineOrchestrator {
   orchestrator.register(new AEOEngine());
   orchestrator.register(new LLMOEngine());
   orchestrator.register(new EntityGraphEngine());
-  orchestrator.register(new CrossEncoderEngine());
-  orchestrator.register(new ColBERTMaxSimEngine());
-  orchestrator.register(new DPOAlignmentEngine());
-  orchestrator.register(new SyntheticCitationEngine());
+  orchestrator.register(new SemanticCoherenceHeuristicsEngine());
+  orchestrator.register(new RetrievalChunkingHeuristicsEngine());
+  orchestrator.register(new ContentQualityHeuristicsEngine());
+  orchestrator.register(new CitationReadinessEngine());
   orchestrator.register(new AAOEngine());
   orchestrator.register(new EEATScoringEngine());
-  orchestrator.register(new KnowledgeVaultEngine());
-  orchestrator.register(new HallucinationInterceptionEngine());
-  orchestrator.register(new DarkPoolRemediationEngine());
-  orchestrator.register(new HistoricalCorpusEngine());
+  orchestrator.register(new EntityConsistencyStructuredKnowledgeEngine());
+  orchestrator.register(new ClaimConsistencyHeuristicsEngine());
+  orchestrator.register(new DiscoveryCoverageEngine());
+  orchestrator.register(new FreshnessRevisionSignalsEngine());
   return orchestrator;
 }
