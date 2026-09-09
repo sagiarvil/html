@@ -5,6 +5,9 @@ const scan=fs.readFileSync('functions/lib/scan-engine.ts','utf8');
 const firebaseScan=fs.readFileSync('functions-firebase/src/scan-engine.ts','utf8');
 const intel=fs.readFileSync('functions/lib/intelligence-engine.ts','utf8');
 const firebaseIntel=fs.readFileSync('functions-firebase/src/intelligence-engine.ts','utf8');
+const rules=fs.readFileSync('src/intelligence/rules-registry.ts','utf8');
+const ui=fs.readFileSync('assets/js/intelligence-root.js','utf8');
+const firebaseIndex=fs.readFileSync('functions-firebase/src/index.ts','utf8');
 const profile=JSON.parse(fs.readFileSync('audit-profile.json','utf8'));
 const sources=JSON.parse(fs.readFileSync('sources.json','utf8'));
 
@@ -42,5 +45,9 @@ assert.equal(profile.advancedBlackBoxRiskLayer?.analysisCount,6);
 assert.deepEqual(profile.advancedBlackBoxRiskLayer?.analyses,risks);
 assert.ok(profile.advancedBlackBoxRiskLayer?.policy?.some(x=>x.includes('not secret platform access')));
 assert.ok(sources.sources.some(x=>x.id==='GOOGLE-GENAI-PERFORMANCE-2026'));
+assert.ok(!rules.includes('15 buyer prompts'),'observed-AI registry must not retain the legacy 15-prompt contract');
+assert.ok(rules.includes('search must not be forced'),'observed-AI registry must preserve unforced-search measurement boundary');
+assert.ok(ui.includes('6 Advanced Black-Box Risk Areas') && ui.includes('6 İleri Black-Box Risk Alanı'),'customer UI must expose the six advanced risk analyses bilingually');
+assert.match(firebaseIndex,/advancedBlackBoxRisks:ADVANCED_BLACKBOX_RISK_COUNT/,'health endpoint must advertise advanced black-box risk count');
 
 console.log('BLACK-BOX RISK LAYER PASS: canonical scanner is measured-only; six advanced non-scoring risk analyses and evidence boundaries are enforced.');
