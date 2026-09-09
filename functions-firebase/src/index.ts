@@ -2,7 +2,7 @@ import {onRequest} from 'firebase-functions/v2/https';
 import {defineSecret} from 'firebase-functions/params';
 import {runFriendlyScan} from './scan-request';
 import {providerAvailability,runMentionScan} from './mention-engine';
-import {generateIntelligenceReport,INTELLIGENCE_ANALYSIS_COUNT,READINESS_LENS_COUNT,INTELLIGENCE_VERSION} from './intelligence-engine';
+import {generateIntelligenceReport,INTELLIGENCE_ANALYSIS_COUNT,READINESS_LENS_COUNT,BLACK_BOX_DOMAIN_COUNT,INTELLIGENCE_VERSION} from './intelligence-engine';
 import {generateFullSiteFixMandate,FULL_SITE_FIX_MANDATE_PRICE_USD,FULL_SITE_FIX_MANDATE_MAX_PAGES} from './remediation-engine-v2';
 import {buildDeliveryPack,DELIVERY_PACK_VERSION} from './delivery-pack';
 import {verifyGuestEntitlement} from './guest-entitlement';
@@ -22,7 +22,7 @@ export const health=onRequest({...common,timeoutSeconds:30,memory:'256MiB'},asyn
   if(req.method!=='GET'){res.status(405).json({error:'GET only'});return}
   res.status(200).json({
     status:'ok',service:'htmlandhtml-validator',version:'2.5.0',remediationMandateVersion:'1.1',intelligenceLayerVersion:INTELLIGENCE_VERSION,deliveryPackVersion:DELIVERY_PACK_VERSION,
-    scanEngines:18,intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT,readinessLenses:READINESS_LENS_COUNT,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,freeDiagnosis:true,
+    scanEngines:18,intelligenceAnalyses:INTELLIGENCE_ANALYSIS_COUNT,readinessLenses:READINESS_LENS_COUNT,blackBoxDomains:BLACK_BOX_DOMAIN_COUNT,maxPages:FULL_SITE_FIX_MANDATE_MAX_PAGES,freeDiagnosis:true,
     fullSiteFixMandatePriceUsd:FULL_SITE_FIX_MANDATE_PRICE_USD,deliveryPack:true,paidMandateConfigured:Boolean(process.env.MANDATE_ACCESS_TOKEN),guestDeliveryConfigured:Boolean(process.env.DELIVERY_SIGNING_SECRET),guestEntitlementBoundary:'domain+order',
     paddleCheckout:true,paddlePriceId:PADDLE_PRICE_ID,paddleWebhook:'/api/paddle/webhook',
     aiMentionTracker:true,aiMentionAccessConfigured:Boolean(process.env.AI_MENTION_ACCESS_TOKEN),timestamp:new Date().toISOString()
