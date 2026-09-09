@@ -240,5 +240,33 @@
     "defaultRuleSourceClass": "INTERNAL_HEURISTIC",
     "vendorClaimsRequireSourceId": true,
     "modelInternalClaimsFromPublicHtml": "FORBIDDEN"
+  },
+  "advancedBlackBoxRiskLayer": {
+    "classification": "NON_SCORING_ADVANCED_BLACKBOX_RISK_LAYER",
+    "analysisCount": 6,
+    "analyses": [
+      "query_fanout_coverage",
+      "citation_volatility",
+      "crawler_policy_divergence",
+      "render_retrieval_gap",
+      "entity_identity_drift",
+      "agent_action_friction"
+    ],
+    "policy": [
+      "No proprietary model weights, embeddings, rerankers, hidden prompts or private search-engine systems are claimed or inferred.",
+      "Black-box risk means externally observable uncertainty or an evidence gap, not secret platform access.",
+      "NOT_MEASURED and REQUIRES_CONTEXT remain excluded from all canonical scores.",
+      "The 18-engine overall score and the 13 canonical Intelligence Audit analyses remain unchanged by this layer."
+    ],
+    "sourceIds": [
+      "GOOGLE-GENAI-PERFORMANCE-2026",
+      "GOOGLE-COMMON-CRAWLERS",
+      "OPENAI-PUBLISHERS",
+      "ANTHROPIC-CRAWLERS",
+      "PERPLEXITY-ROBOTS",
+      "GOOGLE-STRUCTURED-DATA",
+      "WCAG22",
+      "OPENAPI31"
+    ]
   }
 }
