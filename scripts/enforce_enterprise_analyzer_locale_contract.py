@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import html as html_lib
 import re
 import enterprise_analyzer_locale_core as core
 
@@ -18,8 +19,9 @@ def _localize_bilingual_attrs(source: str, locale: str) -> str:
 core.localize_bilingual_attrs = _localize_bilingual_attrs
 
 # Legacy Enterprise Analyzer sections predate the structured data-i18n layer.
-# Keep the migration deterministic: exact visible-copy replacements only, outside
-# script/style blocks, then let the existing exhaustive purity gate verify zero leaks.
+# Exact replacements are deliberately bounded to visible markup. _replace_outside_scripts
+# also replaces HTML-escaped equivalents, because the legacy generator serializes
+# visible ampersands and angle brackets before the locale pass.
 EXTRA_EN = {
     'Örnek Raporu İncele →':'Review Sample Report →',
     'Wikidata: QID Taranıyor':'Wikidata: entity evidence pending',
@@ -100,7 +102,12 @@ def _replace_outside_scripts(source: str, mapping: dict[str, str]) -> str:
     parts = core.SCRIPT_STYLE_RE.split(source)
     for i in range(0, len(parts), 2):
         for old, new in sorted(mapping.items(), key=lambda kv: len(kv[0]), reverse=True):
+            # Legacy markup may contain either literal or HTML-escaped visible text.
+            # Replace both forms, but only outside script/style blocks.
             parts[i] = parts[i].replace(old, new)
+            escaped_old = html_lib.escape(old, quote=False)
+            if escaped_old != old:
+                parts[i] = parts[i].replace(escaped_old, html_lib.escape(new, quote=False))
     return ''.join(parts)
 
 
