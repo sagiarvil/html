@@ -297,9 +297,6 @@ def localize_bilingual_attrs(source: str, locale: str) -> str:
 
 def translate_text_nodes(source: str, locale: str) -> str:
     mapping = PAIR_TR_EN if locale == "en" else PAIR_EN_TR
-    # Long-fragment replacement is intentionally bounded. It catches escaped
-    # comments/code captions and sentences embedded in larger evidence blocks
-    # without turning short UI words into unsafe global substitutions.
     fragments = sorted(
         ((src, dst) for src, dst in mapping.items() if len(src) >= 12),
         key=lambda pair: len(pair[0]),
@@ -317,9 +314,44 @@ def translate_text_nodes(source: str, locale: str) -> str:
                 translated = translated.replace(src, dst)
 
         if locale == "en":
-            translated = re.sub(r'^Hedef:\\s*', 'Target: ', translated)
-            translated = re.sub(r'^Ağırlık:\\s*', 'Weight: ', translated)
-            translated = re.sub(r'^(\\d+)\\s+bulgu
+            translated = re.sub(r'^Hedef:\s*', 'Target: ', translated)
+            translated = re.sub(r'^Ağırlık:\s*', 'Weight: ', translated)
+            translated = re.sub(r'^(\d+)\s+bulgu$', r'\1 findings', translated)
+            translated = re.sub(r'^(\d+)\s+Motor$', r'\1 Engines', translated)
+            translated = re.sub(r'^(\d+)\s+motor$', r'\1 engines', translated)
+            translated = re.sub(r'^(\d+)\s+link probu$', r'\1 link probes', translated)
+        else:
+            translated = re.sub(r'^Target:\s*', 'Hedef: ', translated)
+            translated = re.sub(r'^Weight:\s*', 'Ağırlık: ', translated)
+            translated = re.sub(r'^(\d+)\s+findings$', r'\1 bulgu', translated)
+            translated = re.sub(r'^(\d+)\s+Engines$', r'\1 Motor', translated)
+            translated = re.sub(r'^(\d+)\s+engines$', r'\1 motor', translated)
+            translated = re.sub(r'^(\d+)\s+link probes$', r'\1 link probu', translated)
+        return translated
+
+    def transform(markup: str) -> str:
+        parts = re.split(r'(<[^>]+>)', markup)
+        for i in range(0, len(parts), 2):
+            raw = parts[i]
+            stripped = raw.strip()
+            if not stripped:
+                continue
+            decoded = html.unescape(stripped)
+            replacement = translate_value(decoded)
+            if replacement != decoded:
+                lead = raw[:len(raw) - len(raw.lstrip())]
+                tail = raw[len(raw.rstrip()):]
+                parts[i] = lead + html.escape(replacement, quote=False) + tail
+        return ''.join(parts)
+
+    out = markup_only(source, transform)
+    if locale == "tr":
+        def force(markup: str) -> str:
+            for en, tr in TR_FORCE:
+                markup = markup.replace(en, tr)
+            return markup
+        out = markup_only(out, force)
+    return out
 
 def set_head(source: str, filename: str, locale: str, en_path: str, tr_path: str) -> str:
     title, desc = META[filename][locale]
