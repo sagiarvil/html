@@ -20,20 +20,22 @@ const copy={
     note:'Bu bölüm %100 ÜCRETSİZDİR ($0). Sitenizin arama motorları ve yapay zeka modelleri nezdindeki 13 teknik açığını ve 7 hazırlık boyutunu canlı kanıtlarla şeffafça belgeler. Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır.',
     badgeFree:'🟢 Ücretsiz Kontrol ($0)',
     badge13:'13 Derin Analiz',
-    badge7:'6 Katmanlı Mimari',
+    badge7:'7 Hazırlık Lensi + 6 İleri Risk Alanı',
     badgeRemedy:'🔒 Çözüm: $99 Onarım Seti (sürümlenmiş teslim dosyaları)',
     tierGuideTitle:'Hangi Katman Neyi Kapsar? ($0 Kontrol vs. $99 Onarım Seti)',
     t0Title:'1. Ücretsiz Görünürlük Raporu',
     t0Price:'$0 Ücretsiz (Şu Anki Ekran)',
-    t0Desc:'Ne yanlış? Nerede? 13 derin istihbarat denetimi ve 6 katmanlı derin mimariyle canlı kanıt envanteri anında ve ücretsiz dökümlenir.',
+    t0Desc:'Ne yanlış? Nerede? 13 istihbarat denetimi, 7 hazırlık lensi ve skor dışı 6 ileri black-box risk alanı kanıt sınırlarıyla ücretsiz gösterilir.',
     t0Status:'✓ Aktif / Ücretsiz Canlı İnceleme',
     t99Title:'2. AI Görünürlük Onarım Seti',
     t99Price:'$99 Tek Seferlik',
     t99Desc:'Nasıl düzeltilecek? Sitedeki TÜM sorunların çözümü TEK BİR $99 paketindedir. 5 kritik kontrol noktası onarım seti ile güvence altına alınır.',
     t99Cta:'Onarım Setini İndir — $99 →',
-    lenses:'6 Katmanlı Derin Mimari',
+    lenses:'7 Hazırlık Lensi',
     priorities:'Öncelikli Stratejik Karar Alanları',
     prioritiesSub:'Acil Düzeltme Sırası: Doğrulanmış kanıtlara göre en yüksek etkiyi sağlayan ilk 3 öncelik ($99 Onarım Seti ile koda dönüşür)',
+    advanced:'6 İleri Black-Box Risk Alanı',
+    advancedSub:'Gizli model ağırlığı iddiası yok: yalnız dışarıdan gözlenebilen belirsizlikler, veri boşlukları ve tekrar ölçüm gerektiren alanlar.',
     audits:'13 Bağımsız İstihbarat Denetimi',
     auditsSub:'Detaylı Teknik Kanıtlar: Her denetim sitenizdeki açık durumu gösterir; düzeltme şablonları $99 pakette yer alır',
     all:'Tüm Denetimler',
@@ -56,21 +58,23 @@ const copy={
     note:'This section is 100% FREE ($0). It transparently documents 13 technical vulnerabilities and 7 readiness dimensions of your site across search engines and AI models (ChatGPT, Claude, Perplexity, Gemini) with live evidence. Step-by-step code remediation, priority ordering, and the turnkey engineering package are unlocked in the $99 Roadmap layer.',
     badgeFree:'🟢 $0 Free Diagnostic Layer',
     badge13:'13 Deep Analyses',
-    badge7:'6 conceptual layers',
+    badge7:'7 readiness lenses + 6 advanced risks',
     badgeRemedy:'🔒 Fix: $99 Roadmap Pack',
     tierGuideTitle:'Which Tier Covers What? ($0 Diagnostic vs $99 Execution Pack)',
     t0Title:'1. Open Diagnostic Inventory',
     t0Price:'$0 Free (Current Screen)',
-    t0Desc:'What is wrong? Where? 13 deep intelligence audits and 6 conceptual layers provide a complete verified evidence log for free.',
+    t0Desc:'What is wrong and where? 13 intelligence audits, 7 readiness lenses and 6 non-scoring advanced black-box risk analyses expose the available evidence and the evidence gaps for free.',
     t0Status:'✓ Active / Free Live Inspection',
     t99Title:'2. Implementation Roadmap',
     t99Price:'$99 One-Time',
     t99Desc:'How to fix it? Root cause diagnosis, ready-to-deploy code snippets, P0–P3 execution order, and full remediation engineering package for your developer.',
     t99Cta:'Unlock $99 Roadmap Package →',
-    lenses:'6-Layer Deep Architecture',
+    lenses:'7 Readiness Lenses',
     lensesSub:'Free Diagnostic Dimensions: Real-time scores across 7 primary visibility vectors in the AI ecosystem',
     priorities:'Priority Strategic Decision Areas',
     prioritiesSub:'Action Sequence: Top 3 priorities with highest verified impact-to-effort ratio (converted to code via $99 Roadmap)',
+    advanced:'6 Advanced Black-Box Risk Areas',
+    advancedSub:'No claim of secret model access: only externally observable uncertainty, evidence gaps, and areas requiring repeated measurement.',
     audits:'13 Independent Intelligence Audits',
     auditsSub:'Detailed Technical Evidence: Each audit shows exact verified status; implementation code is in the $99 package',
     all:'All Audits',
@@ -214,7 +218,30 @@ function render(intel){
     `;
   }).join('');
 
-  // 4. Filter Bar & 13 Audits
+  // 4. Six advanced black-box risk analyses (non-scoring)
+  const advanced=(intel.advancedBlackBoxRiskLayer?.analyses||[]);
+  const advancedHtml=advanced.map(a=>{
+    const title=isTr?(a.labelTr||a.key):(a.labelEn||a.key);
+    const boundary=isTr?a.boundaryTr:a.boundaryEn;
+    const statusText=statusMap[l]?.[a.status]||a.status;
+    const scoreVal=typeof a.score==='number'?Math.round(a.score):null;
+    const evidenceSnippet=(a.evidence||[])[0]||(isTr?'Kanıt bekleniyor.':'Evidence unavailable.');
+    return `
+      <article class="intel-item intel-purple" data-status="${esc(a.status)}">
+        <div class="intel-item-header">
+          <div class="intel-item-title-wrap">
+            <span class="intel-cat-pill intel-cat-purple">${isTr?'İLERİ RİSK':'ADVANCED RISK'}</span>
+            <h4>${esc(title)}</h4>
+          </div>
+          <span class="intel-status-pill status-${esc(a.status)}">${esc(statusText)}${scoreVal!==null?` · ${scoreVal}/100`:''}</span>
+        </div>
+        <div class="intel-evidence"><code><span class="ev-label">${esc(t.evidenceLabel)}:</span>${esc(evidenceSnippet)}</code></div>
+        <div class="intel-boundary"><strong>⚖️ ${esc(t.boundaryLabel)}:</strong> ${esc(boundary)}</div>
+      </article>
+    `;
+  }).join('');
+
+  // 5. Filter Bar & 13 Audits
   const counts={all:intel.analyses.length,PASS:0,WARN:0,FAIL:0,CONTEXT:0};
   intel.analyses.forEach(a=>{
     if(a.status==='PASS')counts.PASS++;
@@ -305,6 +332,13 @@ function render(intel){
         <span>${esc(t.prioritiesSub)}</span>
       </div>
       <div class="intel-priorities-deck">${prioCardsHtml}</div>
+    `:''}
+    ${advanced.length?`
+      <div class="intel-section-title">
+        <h4>${esc(t.advanced)}</h4>
+        <span>${esc(t.advancedSub)}</span>
+      </div>
+      <div class="intel-grid">${advancedHtml}</div>
     `:''}
     <div class="intel-section-title">
       <h4>${esc(t.audits)}</h4>
