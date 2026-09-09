@@ -46,6 +46,7 @@ jobs:
           grep -Fq '105' index.html
           grep -Fq '$99' index.html
           grep -Fq 'ai-positioning.js?v=r10-20260910-2000' index.html
+          grep -Fq 'r10-quality-hotfix.js' index.html
           ! grep -Fq '$149' index.html
           ! grep -Eq 'Engine V2|120 (deep )?(checks|controls)|43[- ]page|22[- ]file|15[- ]prompt' index.html
           grep -Fq 'data-premium-infographic="scope-map"' tr/araclar/index.html
@@ -58,6 +59,8 @@ jobs:
           ! grep -Fq 'Google doğruluk sınırı' tr/sozluk/index.html
           ! grep -Fq 'Google accuracy boundary' en/glossary/index.html
           grep -Fq 'premium-experience.css' index.html
+          grep -Fq 'Yönetici İstatistik Paneli' admin/index.html
+          grep -Fq 'noindex,nofollow,noarchive,nosnippet' admin/index.html
       - name: Install Firebase function dependencies
         run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
       - name: Build Firebase function adapter
@@ -74,7 +77,7 @@ jobs:
           umask 077
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
           node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/firebase-service-account.json','utf8')); if(!x.client_email||!x.private_key||!x.project_id) throw new Error('invalid service-account JSON'); if(x.project_id!=='studio-7658156126-ffb8e') throw new Error('service-account project_id must be studio-7658156126-ffb8e, got '+x.project_id);"
-      - name: Deploy Hosting and Functions atomically through Firebase CLI
+      - name: Deploy Hosting and Functions
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
         run: |
@@ -82,7 +85,53 @@ jobs:
           echo "Deploying Firebase Hosting..."
           npx -y firebase-tools@15.28.2 deploy --only hosting --project studio-7658156126-ffb8e --non-interactive
           echo "Deploying Firebase Functions..."
-          npx -y firebase-tools@15.28.2 deploy --only functions --project studio-7658156126-ffb8e --non-interactive || echo "WARN: functions deployment skipped or failed due to secret manager permissions."
+          npx -y firebase-tools@15.28.2 deploy --only functions --project studio-7658156126-ffb8e --non-interactive
+      - name: Verify production scan, admin boundary and telemetry storage
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          health="$(curl -fsS --retry 5 --retry-delay 2 --connect-timeout 8 --max-time 30 https://htmlandhtml.com/api/health)"
+          HEALTH="$health" node - <<'NODE'
+          const x=JSON.parse(process.env.HEALTH);
+          if(x.status!=='ok') throw new Error('health not ok');
+          if(x.version!=='2.5.1') throw new Error('scan API version is not 2.5.1');
+          if(x.scanStatsTelemetry!==true) throw new Error('scan telemetry flag missing');
+          NODE
+
+          admin="$(curl -fsS --retry 5 --retry-delay 2 --connect-timeout 8 --max-time 30 https://htmlandhtml.com/admin/)"
+          grep -Fq 'Yönetici İstatistik Paneli' <<<"$admin"
+          grep -Fq 'noindex,nofollow,noarchive,nosnippet' <<<"$admin"
+
+          status="$(curl -sS -o /tmp/admin-denied.json -w '%{http_code}' --connect-timeout 8 --max-time 30 -H 'content-type: application/json' --data '{"adminStats":true,"password":"invalid-smoke-password"}' https://htmlandhtml.com/api/scan)"
+          test "$status" = "401"
+
+          body="$(curl -fsS --retry 2 --connect-timeout 10 --max-time 240 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
+          BODY="$body" node - <<'NODE'
+          const x=JSON.parse(process.env.BODY);
+          if(!x.scanId) throw new Error('scanId missing');
+          if(typeof x.overall!=='number') throw new Error('overall score missing');
+          if(!Array.isArray(x.findings)) throw new Error('findings missing');
+          if(!x.intelligence) throw new Error('intelligence missing');
+          const g=x.findings.find(f=>f.id==='AI-ROBOTS-GOOGLEBOT');
+          if(g && g.category!=='crawl') throw new Error('Googlebot category not normalized');
+          console.log(`PRODUCTION_SCAN_OK scanId=${x.scanId} overall=${x.overall} findings=${x.findings.length}`);
+          NODE
+
+          (
+            cd functions-firebase
+            node - <<'NODE'
+          const {getApps,initializeApp,applicationDefault}=require('firebase-admin/app');
+          const {getFirestore}=require('firebase-admin/firestore');
+          (async()=>{
+            if(!getApps().length) initializeApp({credential:applicationDefault(),projectId:'studio-7658156126-ffb8e'});
+            const snap=await getFirestore().collection('htmlhtml_scan_stats_shards').limit(1).get();
+            if(snap.empty) throw new Error('scan telemetry storage has no record after production smoke scan');
+            console.log('SCAN_TELEMETRY_STORAGE_OK');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+          )
       - name: Remove deployment credential
         if: always()
-        run: rm -f "$RUNNER_TEMP/firebase-service-account.json"
+        run: rm -f "$RUNNER_TEMP/firebase-service-account.json" /tmp/admin-denied.json
