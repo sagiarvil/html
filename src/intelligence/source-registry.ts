@@ -167,6 +167,16 @@ export const CANONICAL_SOURCES: ExternalSourceRecord[] = [
     lastVerified: '2026-09-08',
     maxAgeDays: 90,
   },
+  {
+    id: 'GOOGLE-GENAI-PERFORMANCE-2026',
+    class: 'OFFICIAL_VENDOR',
+    publisher: 'Google Search Central',
+    title: 'Introducing Search Generative AI performance reports in Search Console',
+    url: 'https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports',
+    appliesTo: ['seo', 'geo', 'ai', 'measurement', 'search-console'],
+    lastVerified: '2026-09-09',
+    maxAgeDays: 45,
+  },
 ];
 
 export function getSourceById(id: string): ExternalSourceRecord | undefined {
