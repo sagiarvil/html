@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr" style="scroll-behavior: smooth;">
 <head>
 <!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
@@ -283,7 +283,7 @@
         </div>
         <h3 class="ea-plane-title">DETERMINISTIC READINESS</h3>
         <p class="ea-plane-desc">
-          18 deterministik kablo seviyesi motor, RFC standartları (HSTS, Canonical, robots.txt) ve 14KB TCP CWND ilk paket mimarisi.
+          18 deterministik kablo seviyesi motor, RFC standartları (HSTS, Canonical, robots.txt) ve measured HTML payload TCP CWND ilk paket mimarisi.
         </p>
       </div>
       <ul class="ea-plane-features">
@@ -306,7 +306,7 @@
         </p>
       </div>
       <ul class="ea-plane-features">
-        <li><span>✓</span> Canlı Wikidata &amp; Common Crawl Probları</li>
+        <li><span>✓</span> public entity and structured-data evidence</li>
         <li><span>✓</span> 3–5 Gerçek Rakip Eşdeğerlik Kıyası</li>
         <li><span>✓</span> Alıntı Kaynak Grafı &amp; P0–P3 Hedefleri</li>
       </ul>
@@ -321,7 +321,7 @@
         </div>
         <h3 class="ea-plane-title">DECISION &amp; REMEDIATION</h3>
         <p class="ea-plane-desc">
-          Varlık çelişki defteri, 24-alanlı açık onarım yol haritasıleri, n8n DAG otomasyonu ve 22/24 dosyalı üretim teslimat paketi.
+          Varlık çelişki defteri, 24-alanlı açık onarım yol haritasıleri, n8n DAG otomasyonu ve 30+ dosyalı üretim teslimat paketi.
         </p>
       </div>
       <ul class="ea-plane-features">
@@ -383,7 +383,7 @@
           <span id="scorePillarLLMO" style="font-size:14px; font-weight:800; color:#f59e0b;">76%</span>
         </div>
         <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">LLMO (Model Optimizasyonu)</h4>
-        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">14KB AST token bütçesi, DPO/RLAIF tarafsız ton ve model halüsinasyon kalkanı.</p>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">measured HTML payload, semantic structure and source-readiness evidence</p>
       </div>
 
       <!-- 5. AAO -->
@@ -413,7 +413,7 @@
           <span id="scorePillarEEAT" style="font-size:14px; font-weight:800; color:var(--ea-success, #10b981);">78%</span>
         </div>
         <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">E-E-A-T (Güven &amp; Varlık)</h4>
-        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">Wikidata QID, Knowledge Vault @graph, RFC 3161 C2PA içerik orijinallik doğrulaması.</p>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">public entity and structured-data evidence</p>
       </div>
     </div>
   </section>
@@ -454,7 +454,7 @@
               <span class="ea-engine-id">ENG-02</span>
               <span class="ea-engine-badge badge-warn">WARN</span>
             </div>
-            <h4 class="ea-engine-name" data-tr="Kenar TTFB &amp; TCP 14KB CWND Ağ Motoru" data-en="Edge TTFB &amp; TCP 14KB CWND Network Engine">Kenar TTFB & TCP 14KB CWND Ağ Motoru</h4>
+            <h4 class="ea-engine-name" data-tr="Kenar TTFB &amp; TCP measured HTML payload CWND Ağ Motoru" data-en="Edge TTFB &amp; TCP measured HTML payload CWND Network Engine">Kenar TTFB & TCP measured HTML payload CWND Ağ Motoru</h4>
             <p class="ea-engine-desc" data-tr="İlk TCP penceresinde (14.600 bayt / CWND 10) RAG gövde teslimi ve kenar sunucu yanıt gecikmesi." data-en="Initial TCP window delivery (14,600 bytes / CWND 10) for RAG chunks and edge latency.">İlk TCP penceresinde (14.600 bayt / CWND 10) RAG gövde teslimi ve kenar sunucu yanıt gecikmesi.</p>
           </div>
           <div class="ea-engine-score-row">
@@ -888,7 +888,7 @@
     <div class="sim-toggle-row">
       <span class="sim-toggle-label">Yapay Zeka Durumu:</span>
       <div class="sim-toggle-switch">
-        <button type="button" class="sim-toggle-opt active opt-raw" id="eaSimRawBtn">🔴 Ham Durum (Engelli / Sıfır Alıntı)</button>
+        <button type="button" class="sim-toggle-opt active opt-raw" id="eaSimRawBtn">🔴 Mevcut site sinyallerine göre risk</button>
         <button type="button" class="sim-toggle-opt" id="eaSimFixedBtn">🟢 Onarım Paketi Sonrası (1. Sıra Doğrulanmış Alıntı)</button>
       </div>
     </div>
@@ -904,7 +904,7 @@
     <!-- Simulation Card Container -->
     <div id="eaSimCardContainer" class="simulation-grid" style="margin-top:14px;"></div>
 
-    <!-- 15-Prompt Canonical Inquiry Panel Breakdown -->
+    <!-- Canonical Inquiry Panel Breakdown -->
     <div class="ea-prompt-panel-wrap" style="margin-top:20px; background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.1)); border-radius:14px; padding:18px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
         <h4 style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin:0;">
@@ -1895,7 +1895,7 @@
       <div class="arr-impact-card">
         <span class="arr-impact-card-label">📉 AYDA KAYBEDİLEN POTANSİYEL LEAD</span>
         <strong class="arr-impact-card-val arr-impact-red" id="eaArrLeads">8 – 15 Müşteri</strong>
-        <small style="font-size:11px; color:var(--ea-text-muted);">Arama botunun 14KB kesilmesine takılması kaynaklı</small>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Arama botunun measured HTML payload kesilmesine takılması kaynaklı</small>
       </div>
       <div class="arr-impact-card">
         <span class="arr-impact-card-label">🚫 ALINTI RED ORANI</span>
@@ -1910,7 +1910,7 @@
     </div>
 
     <p class="arr-metric-context" style="font-size:13px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:16px;">
-      <strong>Sektörel Kayıp Analizi:</strong> Arama motoru robotu sitenizde boğulup fiyat ve hizmet katmanınıza ulaşamadığı için yüksek satın alma niyetli kurumsal ziyaretçiler doğrudan rakiplerinize ve aracı platformlara yönlendirilmektedir. Aşağıdaki sürgülerle şirketinizin aylık hacmine göre risk büyüklüğünü hesaplayın:
+      <strong>Senaryo Analizi — ölçülmüş gelir değildir:</strong> Arama motoru robotu sitenizde boğulup fiyat ve hizmet katmanınıza ulaşamadığı için yüksek satın alma niyetli kurumsal ziyaretçiler doğrudan rakiplerinize ve aracı platformlara yönlendirilmektedir. Aşağıdaki sürgülerle şirketinizin aylık hacmine göre risk büyüklüğünü hesaplayın:
     </p>
 
     <div class="arr-calculator-controls" style="margin-bottom:20px;">
@@ -1927,7 +1927,7 @@
     <!-- CTA & Action Buttons -->
     <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
       <button type="button" class="btn-stop-loss" id="eaBtnOpenFixPack" style="height:48px; padding:0 24px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer;">
-        ⚡ $99 — 22 Dosyalık Onarım Paketini Al &amp; Kaybı Durdur →
+        ⚡ $99 — 30+ Dosyalık V3 Uygulama Paketini Al &amp; Kaybı Durdur →
       </button>
       <button type="button" class="btn-board-memo" id="eaBtnOpenBoardMemo" style="height:48px; padding:0 20px; border-radius:10px; font-weight:700; font-size:13.5px; cursor:pointer; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--ea-text-primary);">
         📄 1-Sayfalık Yönetim Kurulu Notu (Board Memo)
@@ -1945,7 +1945,7 @@
       <span class="badge-count" style="font-size:12px; padding:4px 10px; background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.3);">SIFIR RİSK · ANINDA ÇALIŞIR</span>
     </div>
     <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:18px;">
-      Paketteki 22 dosya, firmanızın kullandığı platforma göre 3 dakikada yüklenebilecek şekilde organize edilmiştir. Veritabanı veya kaynak kod değişikliği gerekmez; sisteminizde bozulma riski sıfırdır.
+      Paketteki sürümlenmiş teslim dosyaları, firmanızın kullandığı platforma göre 3 dakikada yüklenebilecek şekilde organize edilmiştir. Veritabanı veya kaynak kod değişikliği gerekmez; sisteminizde bozulma riski sıfırdır.
     </p>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
@@ -1981,7 +1981,7 @@
         <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
           <li>Paketteki <code>14_CLOUDFLARE_WORKER.js</code> dosyasını Cloudflare Workers'a yapıştırın.</li>
           <li>Route olarak <code>alanadiniz.com/*</code> tanımlayın.</li>
-          <li>AI botlarına 14KB altı mikro-HTML otomatik sunulur. (Toplam: 3 dk)</li>
+          <li>measured HTML payload, semantic structure and source-readiness evidence</li>
         </ol>
       </div>
 
@@ -2015,7 +2015,7 @@
     </div>
   </section>
 
-  <!-- 22-File Engineering Delivery Manifest Section -->
+  <!-- versioned Engineering Delivery Manifest Section -->
   <section class="ea-delivery-section" id="delivery-manifest">
     <div class="ea-delivery-header">
       <span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVANTERİ)</span>
@@ -2038,7 +2038,7 @@
       <article class="px-file-card"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>Açık web veri havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu.</p></article>
       <article class="px-file-card"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">JSON</span></div><p>Reranker sistemleri için alıntı skorlama dikkat matrisi mimarisi.</p></article>
       <article class="px-file-card"><div class="px-file-card-head"><b>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json</b><span class="format-pill">JSON</span></div><p>Wikidata QID ve Knowledge Graph mutabakat üçlüleri (@graph kodu).</p></article>
-      <article class="px-file-card"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js</b><span class="format-pill">JS</span></div><p>AI botlarına 14KB altı mikro-HTML sunan çalışan Cloudflare HTMLRewriter Worker kodu.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_measured HTML payload, semantic structure and source-readiness evidence</b><span class="format-pill">JS</span></div><p>measured HTML payload, semantic structure and source-readiness evidence</p></article>
       <article class="px-file-card"><div class="px-file-card-head"><b>15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md</b><span class="format-pill">MD</span></div><p>Halüsinasyonu engelleyen kanonik endeks ve sentetik atıf mimarisi.</p></article>
       <article class="px-file-card"><div class="px-file-card-head"><b>16_A2A_AGENT_CARD.json</b><span class="format-pill">JSON</span></div><p>Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card.</p></article>
       <article class="px-file-card"><div class="px-file-card-head"><b>17_MCP_SERVER_SPEC.json</b><span class="format-pill">JSON</span></div><p>Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması.</p></article>
@@ -2213,7 +2213,7 @@
     </div>
     
     <div class="board-memo-section-title">1. YÖNETİCİ ÖZETİ VE RİSK TEŞHİSİ</div>
-    <p class="board-memo-p">Şirketimizin ana alan adı (<strong id="memoDomainStrong">htmlandhtml.com</strong>) üzerinde yürütülen yapay zeka arama motorları (Perplexity, SearchGPT, Claude, Gemini) denetiminde; 14KB AST bütçe aşımı ve şema eksikliği nedeniyle aylık nitelikli kurumsal müşteri / B2B satış fırsatlarının doğrudan rakiplere yönlendirildiği tespit edilmiştir.</p>
+    <p class="board-memo-p">Şirketimizin ana alan adı (<strong id="memoDomainStrong">htmlandhtml.com</strong>) üzerinde yürütülen yapay zeka arama motorları (Perplexity, SearchGPT, Claude, Gemini) denetiminde; ölçülen HTML yükü ve semantik yapı sorunları ve şema eksikliği nedeniyle aylık nitelikli kurumsal müşteri / B2B satış fırsatlarının doğrudan rakiplere yönlendirildiği tespit edilmiştir.</p>
     
     <div class="board-memo-highlight">
       ⚖️ <strong>Finansal Etki &amp; Risk:</strong> Mevcut kurumsal sepet hacmimize göre her ay tahmini 8–15 kurumsal müşteri kaybı yaşanmakta ve $40.000 risk altındadır.
@@ -2235,10 +2235,10 @@
       </div>
     </div>
 
-    <div class="board-memo-section-title">3. ÖNERİLEN ÇÖZÜM: 22 DOSYALIK MÜHENDİSLİK ÇÖZÜM yol haritası PAKETİ</div>
+    <div class="board-memo-section-title">3. ÖNERİLEN ÇÖZÜM: sürümlenmiş MÜHENDİSLİK ÇÖZÜM yol haritası PAKETİ</div>
     <p class="board-memo-p">Yazılım ekibimize teslim edilecek üretime hazır kod şablonları, JSON-LD şemaları ve n8n izleme iş akışları ile:</p>
     <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
-      <li><strong>14KB AST Budama Şablonu:</strong> Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.</li>
+      <li><strong>HTML Yük ve Semantik Yapı Optimizasyonu:</strong> Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.</li>
       <li><strong>Knowledge Vault @graph:</strong> Wikidata QID ve Corporation şeması doğrudan &lt;head&gt; içine eklenerek marka teyit edilir.</li>
       <li><strong>llms.txt v2 &amp; Dinamik Markdown:</strong> Otonom yapay zeka satın alma ajanları için temiz makine-okunabilir arayüz.</li>
       <li><strong>Önemli İlke:</strong> Biz analiz eder ve yol haritasını hazırlarız. Düzeltme çalışmasını firmanızın kendi yazılım ekibi uygular. Kaynak koda doğrudan müdahale edilmez.</li>
@@ -2247,7 +2247,7 @@
     <div class="board-memo-actions">
       <div>
         <div style="font-size:11px;color:#64748b;">Lisans Maliyeti: <strong style="font-size:16px;color:#0f172a;">$99</strong> (Tek seferlik sabit · Abonelik yok)</div>
-        <div style="font-size:10.5px;color:#10b981;">✓ 22 Dosyalık Tam Çözüm yol haritasıleri Paketi &amp; Anında ZIP İndirme</div>
+        <div style="font-size:10.5px;color:#10b981;">✓ sürümlenmiş Tam Çözüm yol haritasıleri Paketi &amp; Anında ZIP İndirme</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button type="button" class="btn-board-memo" id="eaBtnPrintMemo" style="padding:10px 16px;font-size:12.5px;">🖨️ Yazdır / PDF Kaydet</button>

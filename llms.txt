@@ -65,7 +65,7 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 - [External evidence source registry](https://htmlandhtml.com/sources.json)
 - [AI Crawler Reference](https://htmlandhtml.com/reference/ai-crawlers/)
 - [OpenAPI contract](https://htmlandhtml.com/openapi.json)
-- [Cloudflare Worker SaaS Edge Architecture](https://htmlandhtml.com/en/platform/): Zero-code reverse proxy intercepting AI crawler traffic at the edge to stream sub-14KB HTML, dynamic JSON-LD graph injections, and spec-v2 llms.txt endpoints.
+- [Cloudflare Worker SaaS Edge Architecture](https://htmlandhtml.com/en/platform/): Zero-code reverse proxy intercepting measured HTML payload, semantic structure and source-readiness evidence
 - [llms.txt Spec-v2 Single-Panel Manager](https://htmlandhtml.com/en/llms-txt-validator/): Centralized orchestration for spec-v2 compliant markdown knowledge surfaces with on-the-fly markdown content negotiation.
 - [Health endpoint](https://htmlandhtml.com/api/health)
 

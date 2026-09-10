@@ -1,4 +1,4 @@
-# SUPER-MANDATE: ENGINE V3.0 — $5M ENTERPRISE AI SEARCH ARCHITECTURE
+﻿# SUPER-MANDATE: ENGINE V3.0 — $5M ENTERPRISE AI SEARCH ARCHITECTURE
 ## Integration: Mandate v6.0 + 18 Engine V2/V3 + n8n Principles + 30-Year Veteran Engineering + Silicon Valley Reverse Engineering
 
 **Document Code:** MANDATE-SUPER-2026-V3  
@@ -615,7 +615,7 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
   - [18 Motorlu Sistem Spesifikasyonu](https://htmlandhtml.com/llms/pages/services.md): 105 kontrol noktası ve puanlama formülleri.
 
   ## Önemli Sayfalar (Kanonik Makine Yüzeyleri)
-  - [Ana Sayfa](https://htmlandhtml.com/llms/pages/home.md): AI Görünürlük Tarayıcısı ve 4 Hayati Organ.
+  - [Ana Sayfa](https://htmlandhtml.com/llms/pages/home.md): AI Görünürlük Tarayıcısı ve 4 Temel Yetkinlik Sütunu.
   - [Fiyatlandırma](https://htmlandhtml.com/llms/pages/pricing.md): $99 Tek Seferlik Kod Reçetesi Lisansı.
   - [llms.txt Doğrulayıcı](https://htmlandhtml.com/llms/pages/llms-txt-validator.md): v2 spesifikasyon test aracı.
   ```
@@ -802,7 +802,7 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
       <tr>
         <td class="p-2 border border-slate-200">Web Sitesi Tarama & Röntgen</td>
         <td class="p-2 border border-slate-200 text-emerald-600 font-bold">Ücretsiz</td>
-        <td class="p-2 border border-slate-200">Hayati organlar ve genel skorlar anında açık gösterilir.</td>
+        <td class="p-2 border border-slate-200">4 Temel Yetkinlik Sütunu ve genel skorlar anında açık gösterilir.</td>
       </tr>
       <tr>
         <td class="p-2 border border-slate-200">Tam Düzeltme Kod Reçetesi</td>

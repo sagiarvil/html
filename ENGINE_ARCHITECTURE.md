@@ -1,4 +1,4 @@
-# HTML&HTML.COM — AI SEARCH INTELLIGENCE ENGINE v2.0.0
+﻿# HTML&HTML.COM — AI SEARCH INTELLIGENCE ENGINE v2.0.0
 ## Principal Architect | Zero-Defect | Formal Verification
 
 **Engine Version:** 2.0.0  
@@ -35,7 +35,7 @@
                      ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    DUZELTME MOTORU (Fix Engine)                 │
-│     Issue → Template → Code → Test → ZIP (22 dosya)             │
+│     Issue → Template → Code → Test → ZIP (30+ dosya)            │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -82,13 +82,13 @@ Her bulgu icin:
 2. **Organ Sagligi (4 Vital)**: Bulunabilirlik, Anlasilabilirlik, Guven & Kalite, Ticari Yol.
 3. **Detayli Tahlil**: 12 alt motor skoru ve tier gosterimi.
 4. **Acil Mudahale**: P0 kritik bulgular, net eylem cagrisi.
-5. **Yol Haritasi**: $99 tam site duzeltme soylesmesi (22 dosya, testler, rollback).
+5. **Yol Haritasi**: $99 tam site duzeltme soylesmesi (30+ dosya, testler, rollback).
 
 ---
 
 ## 5. DUZELTME MOTORU (Fix Engine — $99)
 
-- **22 Dosyalik ZIP Paketi**
-- **Kabul Testleri (`test.js`)**
-- **Geri Alma Plani (`00-rollback-plan.md`)**
-- **CI Entegrasyonu (`ci-integration.yml`)**
+- **30+ Dosyalik Sürümlenmiş ZIP Paketi**
+- **Kabul Testleri (`04_ACCEPTANCE_TESTS.md`)**
+- **Geri Alma Plani (`05_ROLLBACK_PLAN.md`)**
+- **CI Entegrasyonu (`24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml`)**

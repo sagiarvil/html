@@ -5,7 +5,7 @@
 ## 1. 18-Engine Deterministic Architecture
 The 18 engines are organized into 6 operational chains:
 1. **Pre-Training Corpus Chain**:
-   - ENG-01: KV-Cache Optimization (14KB AST micro-streaming, Edge token purge)
+   - ENG-01: KV-Cache Optimization (measured HTML payload, semantic structure and source-readiness evidence
    - ENG-02: Edge TTFB Engine (Sub-40ms cold-start, HTTP/2 priority headers)
    - ENG-03: Provenance Engine (C2PA and RFC 3161 verification)
 2. **Retrieval Chain**:

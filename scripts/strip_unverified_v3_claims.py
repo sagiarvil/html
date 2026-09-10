@@ -30,6 +30,8 @@ def normalize(text: str) -> str:
         ('Sub-14KB AST Purge Template', 'HTML Payload & Semantic Structure Template'),
         ('14.336 baytlık pencere', 'ölçülen HTML ve semantik yapı'),
         ('14,336-byte window', 'measured HTML and semantic structure'),
+        ('15-Prompt Canonical Inquiry Panel Breakdown', 'Canonical Inquiry Panel Breakdown'),
+        ('PARITY LOCKED (15 PROMPTS × 3 RUNS)', 'PARITY LOCKED (EMPIRICAL CROSS-PROBES)'),
     )
     for old, new in direct:
         text = text.replace(old, new)

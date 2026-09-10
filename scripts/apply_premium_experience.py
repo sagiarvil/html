@@ -69,14 +69,14 @@ TR_REPORT='''<section class="px-report-boundary" data-premium-infographic="repor
     <span class="eyebrow">TAM TEKNİK ÇALIŞMA PAKETİ</span>
     <span class="tier-eyebrow">MÜHENDİSLİK YOL HARİTASI · $99</span>
     <h3>Nasıl düzelteceğinizi açın.</h3>
-    <p>Ücretli ürün “daha fazla hata” satmaz; yazılımcının hemen uygulayacağı 50 sayfalık mühendislik yol haritasını ve 22 teslimat dosyasını sunar.</p>
+    <p>Ücretli ürün “daha fazla hata” satmaz; yazılımcının hemen uygulayacağı 50 sayfalık mühendislik yol haritasını ve 30+ teslimat dosyasını sunar.</p>
     <ul>
       <li>✦ Kök neden ve P0–P3 kod uygulama şablonları</li>
       <li>✦ Dosya ve bileşen seviyesi doğrudan hedefleme</li>
       <li>✦ Kabul testleri ve regresyon koruma kontrolleri</li>
       <li>✦ Rollback planı ve durma koşulları güvencesi</li>
       <li>✦ 18 teknik mimari ve makine birlikte çalışabilirlik vektörü</li>
-      <li>✦ İndirilebilir 22 dosyalı ZIP mühendislik paketi</li>
+      <li>✦ İndirilebilir 30+ dosyalı Sürümlenmiş ZIP mühendislik paketi</li>
       <li>✦ 30 gün içinde 1 resmi doğrulama re-scan hakkı</li>
     </ul>
     <div class="tier-footer">
@@ -107,14 +107,14 @@ EN_REPORT='''<section class="px-report-boundary" data-premium-infographic="repor
     <span class="eyebrow">FULL TECHNICAL WORK PACKAGE</span>
     <span class="tier-eyebrow">EXECUTION ROADMAP · $99</span>
     <h3>Unlock how to fix it.</h3>
-    <p>The paid product does not sell “more problems”; it delivers a 50-page engineering roadmap and 22 deliverable files your developer can execute.</p>
+    <p>The paid product does not sell “more problems”; it delivers an engineering roadmap and 30+ versioned deliverable files your developer can execute.</p>
     <ul>
       <li>✦ Root cause and P0–P3 implementation order</li>
       <li>✦ File and component level code targeting</li>
       <li>✦ Acceptance and regression test suites</li>
       <li>✦ Rollback safeguards and stop conditions</li>
       <li>✦ 18 technical architecture and machine interoperability vectors</li>
-      <li>✦ Turnkey 22-file downloadable ZIP package</li>
+      <li>✦ Turnkey 30+ file versioned downloadable ZIP package</li>
       <li>✦ 1 verification re-scan within 30 days</li>
     </ul>
     <div class="tier-footer">

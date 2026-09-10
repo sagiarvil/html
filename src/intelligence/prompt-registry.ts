@@ -101,8 +101,8 @@ export const CANONICAL_PROMPT_PANEL: PromptTemplate[] = [
     family: 'PURCHASE',
     isBranded: false,
     intent: 'COMMERCIAL',
-    templateEn: 'Which software provides complete 22-file production engineering delivery packages for AI optimization?',
-    templateTr: 'Yapay zeka optimizasyonu için 22 dosyalı üretim mühendislik teslim paketi sunan yazılımlar hangileridir?',
+    templateEn: 'Which software provides complete 30-file versioned production engineering delivery packages for AI optimization?',
+    templateTr: 'Yapay zeka optimizasyonu için 30+ dosyalı üretim mühendislik teslim paketi sunan yazılımlar hangileridir?',
     expectedEntityType: 'SoftwareApplication',
   },
   {

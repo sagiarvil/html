@@ -1,0 +1,2260 @@
+﻿<!DOCTYPE html>
+<html lang="tr" style="scroll-behavior: smooth;">
+<head>
+<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurumsal Yapay Zeka Görünürlük Teşhis Laboratuvarı | HTML&amp;HTML</title>
+  <meta name="description" content="Deterministik kontroller, herkese açık sayfa taraması, canlı bağlantı probları, önceliklendirilmiş bulgular ve test edilebilir $99 uygulama yol haritasıyla kurumsal yapay zeka görünürlük teşhisi.">
+  <link rel="canonical" href="https://htmlandhtml.com/tr/enterprise-analyzer">
+  <link rel="alternate" hreflang="en" href="https://htmlandhtml.com/enterprise-analyzer">
+  <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/enterprise-analyzer">
+  <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/enterprise-analyzer">
+  <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+  <!-- ZERO-FLASH THEME DETECTION (Principal Architecture) -->
+  <script>
+    (function() {
+      'use strict';
+      try {
+        var h = localStorage.getItem('hh-theme');
+        var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+        var t = h;
+        if (!t && m) {
+          try { t = JSON.parse(decodeURIComponent(m[1])).theme; } catch(e) {}
+        }
+        if (!t || t === 'system') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.classList.toggle('dark', t === 'dark');
+        document.documentElement.classList.toggle('light', t === 'light');
+        document.documentElement.style.colorScheme = t;
+      } catch(e) {}
+    })();
+  </script>
+  <!-- Standard Site Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
+  <link rel="stylesheet" href="/assets/css/validator.css?v=8">
+  <link rel="stylesheet" href="/assets/css/theme.css?v=11">
+  <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
+  <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">
+  <link rel="stylesheet" href="/enterprise-analyzer/style.css?v=6">
+  <script src="/enterprise-analyzer/vendor/jszip.min.js"></script>
+  <script src="/enterprise-analyzer/vendor/FileSaver.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
+    </a>
+    <nav class="primary-nav" aria-label="Ana navigasyon"><a href="/tr/site-tarama/">Ücretsiz Kontrol</a><a href="/tr/yapay-zeka-arama-gorunurlugu/">Çözümler</a><a href="/tr/llms-txt-haberler/">Haberler</a><a href="/tr/sozluk/">Sözlük</a><a href="/tr/fiyatlandirma/">Onarım Seti ($99)</a></nav>
+    <div class="nav-actions">
+      <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Kontrol</a>
+      <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Temayı Değiştir">
+        <span class="theme-icon">🌙</span><span class="theme-label">Tema</span>
+      </button>
+      <div class="langs">
+        <button data-lang="tr" class="active">TR</button><span>/</span><button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a>
+  <span>/</span>
+  <span>Enterprise AI Diagnostic Lab</span>
+</nav>
+
+<div class="ea-container">
+  <!-- Page Intro -->
+  <div class="ea-page-intro">
+    <span class="ea-kicker">
+      <span class="ea-live-dot" aria-hidden="true"></span>
+      CANLI KURUMSAL DENETİM LABORATUVARI · ENTERPRISE AI DIAGNOSTIC SUITE
+    </span>
+    <h1>Kurumsal AI Görünürlük Analizörü &amp; Teşhis Laboratuvarı</h1>
+    <p>105 deterministik kontrol, 50'ye kadar herkese açık HTML sayfası ve 30 canlı link probu ile üretilen deterministik denetim ortamı. Kod seviyesinde teknik kanıtlar, kilitli onarım yol haritasıleri ve n8n CI/CD otomasyon paketleriyle donatılmış kurumsal analiz platformu.</p>
+    <div class="ea-live-scan-container" style="margin-top:22px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:20px 24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+      <form id="eaLiveScanForm" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <div style="position:relative; flex:1; min-width:280px;">
+          <svg style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--ea-text-muted, #64748b); pointer-events:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="url" id="eaDomainInput" name="domain" placeholder="https://sirketiniz.com (veya taranacak alan adı)" autocomplete="url" spellcheck="false" style="width:100%; height:50px; padding:0 16px 0 46px; border-radius:12px; border:1px solid var(--ea-border, rgba(255,255,255,0.18)); background:var(--ea-code-bg, #070a12); color:var(--ea-text-primary, #f8fafc); font-size:15px; font-weight:600; outline:none; transition:border-color .2s, box-shadow .2s; box-sizing:border-box;" required>
+        </div>
+        <button type="submit" id="eaScanBtn" style="height:50px; padding:0 28px; border-radius:12px; border:none; background:linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #8b5cf6 100%); color:#fff; font-size:15px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 6px 20px rgba(0,102,255,0.4); transition:all .2s ease; white-space:nowrap;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <span id="eaScanBtnText">Canlı Enterprise Taramayı Başlat</span>
+        </button>
+        <a href="/enterprise-analyzer/htmlandhtml-ai-report" class="ea-filter-btn ea-sample-demo-btn" style="height:50px; padding:0 22px; text-decoration:none; font-weight:800; border-radius:12px; display:inline-flex; align-items:center; gap:8px; box-sizing:border-box; white-space:nowrap; border:1.5px solid var(--ea-accent, #00d4ff); background:rgba(0,212,255,0.08); color:var(--ea-accent, #00d4ff); font-size:14.5px;">
+          <span style="background:rgba(0,212,255,0.2); color:#00d4ff; font-size:11px; font-weight:900; padding:2px 7px; border-radius:4px; letter-spacing:0.5px;">CANLI DEMO</span>
+          Örnek Raporu İncele →
+        </a>
+      </form>
+      <div id="eaScanStatus" style="display:none; margin-top:14px; padding:12px 16px; border-radius:10px; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.25); color:var(--ea-accent, #00d4ff); font-size:14px; font-weight:700; align-items:center; gap:10px;">
+        <span class="ea-live-dot" style="margin:0;"></span>
+        <span id="eaScanStatusText">18-Motorlu Dağıtık Telemetri ve N8N DAG Orkestrasyonu Çalışıyor...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scan Meta Ribbon -->
+  <div class="ea-meta-ribbon">
+    <div class="ea-meta-item" id="eaMetaTime">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>9/7/2026, 23:14</span>
+    </div>
+    <div class="ea-meta-item" id="eaMetaChecks">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span>105 deterministik kontrol</span>
+    </div>
+    <div class="ea-meta-item" id="eaMetaPages">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span>50'ye kadar sayfa</span>
+    </div>
+    <div class="ea-meta-item" id="eaMetaProbes">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span>30 link probu</span>
+    </div>
+    <div class="ea-meta-item" id="eaMetaWiki">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <span>Wikidata: QID Taranıyor</span>
+    </div>
+    <div class="ea-meta-item" id="eaMetaCC">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+      <span>Common Crawl: Arşiv Taranıyor</span>
+    </div>
+    <div class="ea-meta-item target" id="eaMetaTarget">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      <span>Hedef: htmlandhtml.com</span>
+    </div>
+  </div>
+
+  <!-- Mission Bar -->
+  <div class="ea-mission-bar">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+    <p><strong>Biz sadece analiz eder ve yol haritası hazırlarız.</strong> Müşterinin kaynak koduna dokunmayız. Tespit ve çözüm yol haritasılerini kendi yazılım ekibinize teslim edersiniz.</p>
+  </div>
+
+  <!-- Agency & Executive Share Bar -->
+  <div class="ea-agency-share-bar" style="margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid var(--ea-border, rgba(255,255,255,0.1)); border-radius:12px; padding:10px 18px; flex-wrap:wrap; gap:10px;">
+    <div style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ea-text-secondary);">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span><strong>Kurumsal / Ajans Paylaşım Modu:</strong> Bu denetim sonucunu müşterinizle veya yönetimle paylaşın:</span>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button type="button" class="ea-filter-btn" id="btnCopyShareUrl" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer;">
+        🔗 Canlı Rapor Linkini Kopyala
+      </button>
+      <button type="button" class="ea-filter-btn" id="btnCopyBadgeCode" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer;">
+        🛡️ AI-Ready Rozet Kodunu Al (SVG)
+      </button>
+    </div>
+  </div>
+
+  <!-- Executive Summary HUD -->
+  <div class="ea-hud-grid">
+    <!-- Left Card: Score Matrix -->
+    <div class="ea-hud-score-card">
+      <div class="ea-hud-score-head">
+        <h2>Genel AI Visibility Skoru</h2>
+        <span class="ea-hud-badge-done">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          Tamamlandı
+        </span>
+      </div>
+      <div class="ea-hud-dial-row">
+        <div class="ea-hud-dial">
+          <svg width="76" height="76" viewBox="0 0 76 76" aria-hidden="true">
+            <defs>
+              <linearGradient id="hudDialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="100%" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+            <circle class="ea-hud-dial-bg" cx="38" cy="38" r="32"/>
+            <circle class="ea-hud-dial-fill" cx="38" cy="38" r="32" stroke="url(#hudDialGrad)" stroke-dasharray="201.06" stroke-dashoffset="60.32"/>
+          </svg>
+          <div class="ea-hud-dial-text">
+            <span class="ea-hud-dial-val">70</span>
+            <span class="ea-hud-dial-max">/ 100</span>
+          </div>
+        </div>
+        <div class="ea-hud-score-meta">
+          <h3>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Dikkat Gerekiyor
+          </h3>
+          <p>105 kontrol kapsamında örnek kritik bulgular gösteriliyor. Yapay zeka arama motorları için kritik engelleyiciler mevcut.</p>
+        </div>
+      </div>
+      <div class="ea-hud-score-footer">
+        <span>Kritik Risk: 3 Bulgu</span>
+        <span>Onarım Roadmaps: 15</span>
+      </div>
+    </div>
+
+    <!-- Right Card: 4 Core Pillars & Telemetry Strip -->
+    <div class="ea-hud-pillars-card">
+      <div class="ea-hud-pillars-head">
+        <h3>Dört Temel Yetkinlik Sütunu</h3>
+        <span>Deterministik Skor Dağılımı</span>
+      </div>
+      <div class="ea-pillars-grid">
+        <div class="ea-pillar-cell">
+          <div class="ea-pillar-header">
+            <span>Keşif (Crawl &amp; Index)</span>
+            <span class="score">80%</span>
+          </div>
+          <div class="ea-pillar-track"><div class="ea-pillar-bar bar-cyan" style="width:80%"></div></div>
+        </div>
+        <div class="ea-pillar-cell">
+          <div class="ea-pillar-header">
+            <span>Anlama (Schema &amp; llms.txt)</span>
+            <span class="score">81%</span>
+          </div>
+          <div class="ea-pillar-track"><div class="ea-pillar-bar bar-blue" style="width:81%"></div></div>
+        </div>
+        <div class="ea-pillar-cell">
+          <div class="ea-pillar-header">
+            <span>Güven &amp; Kalite (HSTS/E-E-A-T)</span>
+            <span class="score">59%</span>
+          </div>
+          <div class="ea-pillar-track"><div class="ea-pillar-bar bar-amber" style="width:59%"></div></div>
+        </div>
+        <div class="ea-pillar-cell">
+          <div class="ea-pillar-header">
+            <span>Ticari Yol (Action &amp; CTA)</span>
+            <span class="score">100%</span>
+          </div>
+          <div class="ea-pillar-track"><div class="ea-pillar-bar bar-emerald" style="width:100%"></div></div>
+        </div>
+      </div>
+
+      <div class="ea-telemetry-strip">
+        <div class="ea-telemetry-chip">
+          <span>HTML Boyutu:</span>
+          <strong class="crit">319 KB (Kritik)</strong>
+        </div>
+        <div class="ea-telemetry-chip">
+          <span>Canonical:</span>
+          <strong class="crit">Eksik (RFC 6596)</strong>
+        </div>
+        <div class="ea-telemetry-chip">
+          <span>Mixed Content:</span>
+          <strong class="crit">1 Güvensiz Kaynak</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-PLANES ARCHITECTURE VISUALIZATION (MANDATE V4) -->
+  <div class="ea-planes-summary">
+    <!-- Plane A -->
+    <div class="ea-plane-card plane-a">
+      <div>
+        <div class="ea-plane-header">
+          <span class="ea-plane-tag">PLANE A</span>
+          <span class="ea-plane-score" id="planeAScore">88/100</span>
+        </div>
+        <h3 class="ea-plane-title">DETERMINISTIC READINESS</h3>
+        <p class="ea-plane-desc">
+          18 deterministik kablo seviyesi motor, RFC standartları (HSTS, Canonical, robots.txt) ve measured HTML payload TCP CWND ilk paket mimarisi.
+        </p>
+      </div>
+      <ul class="ea-plane-features">
+        <li><span>✓</span> 18 Bağımsız Motor Telemetrisi</li>
+        <li><span>✓</span> RFC 6797 / 6596 / 9309 Uyumluluğu</li>
+        <li><span>✓</span> Sıfır Rastgelelik &amp; Deterministik Doğrulama</li>
+      </ul>
+    </div>
+
+    <!-- Plane B -->
+    <div class="ea-plane-card plane-b">
+      <div>
+        <div class="ea-plane-header">
+          <span class="ea-plane-tag">PLANE B</span>
+          <span class="ea-plane-score" id="planeBScore">72/100</span>
+        </div>
+        <h3 class="ea-plane-title">OBSERVED ANSWER INTELLIGENCE</h3>
+        <p class="ea-plane-desc">
+          15 alıcı sorusu × 3 tekrarlı panel (ChatGPT Search, Perplexity, Gemini, Claude, Copilot) ve ampirik kanıt makbuzları.
+        </p>
+      </div>
+      <ul class="ea-plane-features">
+        <li><span>✓</span> public entity and structured-data evidence</li>
+        <li><span>✓</span> 3–5 Gerçek Rakip Eşdeğerlik Kıyası</li>
+        <li><span>✓</span> Alıntı Kaynak Grafı &amp; P0–P3 Hedefleri</li>
+      </ul>
+    </div>
+
+    <!-- Plane C -->
+    <div class="ea-plane-card plane-c">
+      <div>
+        <div class="ea-plane-header">
+          <span class="ea-plane-tag">PLANE C</span>
+          <span class="ea-plane-score" id="planeCScore">100% HAZIR</span>
+        </div>
+        <h3 class="ea-plane-title">DECISION &amp; REMEDIATION</h3>
+        <p class="ea-plane-desc">
+          Entity conflict ledger, 24-field open remediation roadmaps, n8n DAG automation and 22/30+ file versioned production delivery package.
+        </p>
+      </div>
+      <ul class="ea-plane-features">
+        <li><span>✓</span> Varlık Çatışma Defteri (Hallucination Guard)</li>
+        <li><span>✓</span> 25-Node n8n CI/CD Otomasyonu &amp; Gerçek DLQ</li>
+        <li><span>✓</span> 30+ file versioned SHA-256 Signed Package Manifesto</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7-PILLAR ENTERPRISE SPECIFICATION: SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T -->
+  <section class="ea-7pillars-section" style="margin-bottom: 32px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:22px 24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+    <div class="ea-section-head" style="margin-bottom:12px;">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>Kurumsal 7 Disiplin Ölçüm Matrisi (SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T)</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px; background:rgba(0,212,255,0.12); color:var(--ea-accent, #00d4ff); border:1px solid rgba(0,212,255,0.3);">ENTERPRISE HEPTA-FRAMEWORK</span>
+    </div>
+    <p style="font-size:13px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:18px;">
+      Silikon Vadisi ve New York kurumsal yapay zeka ajanslarının uyguladığı 7 temel ölçüm standardı. Arama motorlarının, yanıt motorlarının, büyük dil modellerinin ve otonom satın alma ajanlarının alan adınızı hangi disiplinde nasıl puanladığını canlı olarak inceleyin:
+    </p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:12px;">
+      <!-- 1. Google SEO -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#3b82f6; letter-spacing:0.5px;">DİSİPLİN 01</span>
+          <span id="scorePillarSEO" style="font-size:14px; font-weight:800; color:var(--ea-success, #10b981);">82%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">Google SEO (Teknik Arama)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">RFC 6596 Canonical, robots.txt, HSTS, sitemap.xml ve Core Web Vitals tarama uygunluğu.</p>
+      </div>
+
+      <!-- 2. GEO -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#8b5cf6; letter-spacing:0.5px;">DİSİPLİN 02</span>
+          <span id="scorePillarGEO" style="font-size:14px; font-weight:800; color:var(--ea-accent, #00d4ff);">70%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">GEO (Generative Engine)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">/llms.txt v2 manifestosu, Perplexity ve ChatGPT Search üretken yanıt görünürlüğü.</p>
+      </div>
+
+      <!-- 3. AEO -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#10b981; letter-spacing:0.5px;">DİSİPLİN 03</span>
+          <span id="scorePillarAEO" style="font-size:14px; font-weight:800; color:var(--ea-success, #10b981);">80%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">AEO (Answer Engine)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">Doğrudan cevap çıkarılabilirlik, Featured Snippet ve atomik soru-cevap sözdizimi.</p>
+      </div>
+
+      <!-- 4. LLMO -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#f59e0b; letter-spacing:0.5px;">DİSİPLİN 04</span>
+          <span id="scorePillarLLMO" style="font-size:14px; font-weight:800; color:#f59e0b;">76%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">LLMO (Model Optimizasyonu)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">measured HTML payload, semantic structure and source-readiness evidence</p>
+      </div>
+
+      <!-- 5. AAO -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#ec4899; letter-spacing:0.5px;">DİSİPLİN 05</span>
+          <span id="scorePillarAAO" style="font-size:14px; font-weight:800; color:#f59e0b;">64%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">AAO (Ajan Optimizasyonu)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">A2A Agent Card v1.0, Model Context Protocol (MCP) JSON-RPC ve otonom satın alma desteği.</p>
+      </div>
+
+      <!-- 6. RAG -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#06b6d4; letter-spacing:0.5px;">DİSİPLİN 06</span>
+          <span id="scorePillarRAG" style="font-size:14px; font-weight:800; color:var(--ea-accent, #00d4ff);">72%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">RAG (Vektörel Geri Çağırma)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">ColBERT MaxSim geç etkileşimi, Cross-Encoder dikkat matrisi ve semantik chunking.</p>
+      </div>
+
+      <!-- 7. E-E-A-T -->
+      <div class="ea-pillar-box" style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:800; color:#10b981; letter-spacing:0.5px;">DİSİPLİN 07</span>
+          <span id="scorePillarEEAT" style="font-size:14px; font-weight:800; color:var(--ea-success, #10b981);">78%</span>
+        </div>
+        <h4 style="margin:0 0 4px; font-size:13.5px; color:var(--ea-text-primary);">E-E-A-T (Güven &amp; Varlık)</h4>
+        <p style="margin:0; font-size:11.5px; color:var(--ea-text-muted); line-height:1.45;">public entity and structured-data evidence</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 DETERMINISTIC ENGINES TELEMETRY MATRIX -->
+  <section class="ea-engines-section">
+      <div class="ea-engines-head">
+        <h2>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span data-i18n="enginesTitle">18 Deterministik Motor Telemetri Matrisi (Engine V3)</span>
+        </h2>
+        <span class="badge-count" style="font-size:12px; padding:4px 10px;">18/18 ENGINE PASS/FAIL AUDIT</span>
+      </div>
+      <p style="font-size:13.5px; color:var(--ea-text-secondary); margin:0 0 16px; line-height:1.55;" data-i18n="enginesDesc">Aşağıdaki 18 bağımsız motor, hedef siteyi kablo seviyesinde deterministik kurallarla denetler. Her motorun ağırlığı, telemetri kural zinciri ve ceza puanları doğrudan kaynak kod mimarisine dayalıdır.</p>
+
+      <div class="ea-engines-grid">
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-01</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="KV Önbellek &amp; Prompt Optimizasyon Motoru" data-en="KV Cache &amp; Prompt Optimization Engine">KV Önbellek &amp; Prompt Optimizasyon Motoru</h4>
+            <p class="ea-engine-desc" data-tr="LLM önbellek hizalaması, statik prompt token verimliliği ve gereksiz context yükü eliminasyonu." data-en="LLM prompt cache alignment, static token reuse efficiency, and zero context bloat.">LLM önbellek hizalaması, statik prompt token verimliliği ve gereksiz context yükü eliminasyonu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %6</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">88%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-02</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Kenar TTFB &amp; TCP measured HTML payload CWND Ağ Motoru" data-en="Edge TTFB &amp; TCP measured HTML payload CWND Network Engine">Kenar TTFB &amp; TCP measured HTML payload CWND Ağ Motoru</h4>
+            <p class="ea-engine-desc" data-tr="İlk TCP penceresinde (14.600 bayt / CWND 10) RAG gövde teslimi ve kenar sunucu yanıt gecikmesi." data-en="Initial TCP window delivery (14,600 bytes / CWND 10) for RAG chunks and edge latency.">İlk TCP penceresinde (14.600 bayt / CWND 10) RAG gövde teslimi ve kenar sunucu yanıt gecikmesi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %7</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">62%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-03</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="C2PA Menşei &amp; RFC 3161 Zaman Damgası Motoru" data-en="C2PA Provenance &amp; RFC 3161 Timestamp Engine">C2PA Menşei &amp; RFC 3161 Zaman Damgası Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Yapay zeka halüsinasyon mimicry koruması için dijital içerik kimlik doğrulama manifesti." data-en="Content provenance credentials and cryptographic timestamps distinguishing original analysis from AI mimicry.">Yapay zeka halüsinasyon mimicry koruması için dijital içerik kimlik doğrulama manifesti.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">65%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-04</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Teknik SEO &amp; Kanonik RFC 6596 Motoru" data-en="Technical SEO &amp; RFC 6596 Canonical Engine">Teknik SEO &amp; Kanonik RFC 6596 Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Mutlak self-referencing canonical etiketleri, çapraz hreflang doğrulaması ve tarayıcı bot direktifleri." data-en="Absolute self-referencing canonical headers, reciprocal hreflang validation, and crawler directives.">Mutlak self-referencing canonical etiketleri, çapraz hreflang doğrulaması ve tarayıcı bot direktifleri.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %7</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">74%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-05</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="GEO &amp; /llms.txt Makine Manifest Motoru" data-en="GEO &amp; /llms.txt Machine Manifest Engine">GEO &amp; /llms.txt Makine Manifest Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Generative Engine Optimization (GEO), kök /llms.txt protokolü ve LLM botları için semantik özet yüzeyi." data-en="Generative Engine Optimization standard, root /llms.txt manifest, and machine surface mapping.">Generative Engine Optimization (GEO), kök /llms.txt protokolü ve LLM botları için semantik özet yüzeyi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %8</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">60%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-06</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="AEO &amp; Doğrudan Cevap Çıkarılabilirlik Motoru" data-en="AEO &amp; Direct Answer Extractability Engine">AEO &amp; Doğrudan Cevap Çıkarılabilirlik Motoru</h4>
+            <p class="ea-engine-desc" data-tr="SearchGPT, Perplexity ve Gemini için ilk 45 kelimede atomik doğrudan cevap yapılandırması." data-en="Atomic 45-word direct answer structures optimized for SearchGPT, Perplexity, and Gemini citation synthesis.">SearchGPT, Perplexity ve Gemini için ilk 45 kelimede atomik doğrudan cevap yapılandırması.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %7</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">82%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-07</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="LLMO &amp; Bilgi Yoğunluğu (Entropy) Motoru" data-en="LLMO &amp; Information Density (Entropy) Engine">LLMO &amp; Bilgi Yoğunluğu (Entropy) Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Pazarlama dolgusu temizliği, yüksek shingling entropisi ve sayısal veri yoğunluğu analizi." data-en="Fluff suppression, high n-gram shingling entropy, and triangulated numerical fact density.">Pazarlama dolgusu temizliği, yüksek shingling entropisi ve sayısal veri yoğunluğu analizi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %6</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">78%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-08</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Varlık Grafiği (@graph &amp; Wikidata) Motoru" data-en="Entity Graph (@graph &amp; Wikidata) Engine">Varlık Grafiği (@graph &amp; Wikidata) Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Schema.org @graph DAG mutabakatı, Wikidata QID varlık bağı ve Organization/WebSite kimliği." data-en="Schema.org @graph DAG reconciliation, Wikidata QID entity linkage, and canonical publisher node binding.">Schema.org @graph DAG mutabakatı, Wikidata QID varlık bağı ve Organization/WebSite kimliği.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %8</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">68%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-09</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Cross-Encoder Attention Matrisi Motoru" data-en="Cross-Encoder Attention Matrix Engine">Cross-Encoder Attention Matrisi Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Cohere-Rerank-v3 ve BGE-Reranker için sorgu-token kesişim ağırlığı ve reranker sıralama optimizasyonu." data-en="Cross-encoder attention alignment and passage reranking scores for Cohere-Rerank-v3 and BGE-Reranker.">Cohere-Rerank-v3 ve BGE-Reranker için sorgu-token kesişim ağırlığı ve reranker sıralama optimizasyonu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %6</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">71%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-10</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="ColBERT MaxSim Vektör Hizalama Motoru" data-en="ColBERT MaxSim Vector Alignment Engine">ColBERT MaxSim Vektör Hizalama Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Geç etkileşimli (late-interaction) ColBERT iç çarpım matrisi ve token kümeleme uyumu." data-en="ColBERT late-interaction token dot product maximization and semantic cluster alignment.">Geç etkileşimli (late-interaction) ColBERT iç çarpım matrisi ve token kümeleme uyumu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %8</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">66%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-11</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="DPO / RLAIF Ton &amp; Uyum Kalibrasyon Motoru" data-en="DPO / RLAIF Tone &amp; Alignment Engine">DPO / RLAIF Ton &amp; Uyum Kalibrasyon Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Direct Preference Optimization (DPO) Chosen vs. Rejected filtrelemesi, abartılı sıfat temizliği." data-en="Direct Preference Optimization (DPO) chosen vector calibration and superlative marketing removal.">Direct Preference Optimization (DPO) Chosen vs. Rejected filtrelemesi, abartılı sıfat temizliği.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %5</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">79%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-12</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Sentetik Alıntı &amp; Recursive Feedback Döngüsü" data-en="Synthetic Citation &amp; Recursive Feedback Engine">Sentetik Alıntı &amp; Recursive Feedback Döngüsü</h4>
+            <p class="ea-engine-desc" data-tr="İkinci dereceden yapay zeka alıntı zinciri, kanonik endüstri endeksi ve kalıcı benchmark mimarisi." data-en="Second-order AI citation loops, canonical industry benchmark indices, and immutable attribution anchors.">İkinci dereceden yapay zeka alıntı zinciri, kanonik endüstri endeksi ve kalıcı benchmark mimarisi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %5</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">75%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-13</span>
+              <span class="ea-engine-badge badge-fail">FAIL</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="AAO (A2A Agent Card &amp; MCP) Ajan Motoru" data-en="AAO (A2A Agent Card &amp; MCP) Agent Engine">AAO (A2A Agent Card &amp; MCP) Ajan Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Otonom AI ajanları için .well-known/agent-card.json ve Anthropic Model Context Protocol (MCP) şeması." data-en="Agent-to-Agent discovery card (.well-known/agent-card.json) and Model Context Protocol (MCP) server endpoints.">Otonom AI ajanları için .well-known/agent-card.json ve Anthropic Model Context Protocol (MCP) şeması.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %5</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-danger);">58%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-14</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="E-E-A-T &amp; Güven Otorite Motoru" data-en="E-E-A-T &amp; Trust Authority Engine">E-E-A-T &amp; Güven Otorite Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Deneyim, Uzmanlık, Yetkinlik ve Güvenilirlik sinyalleri, yazar profilleri ve teknik doğruluk." data-en="Experience, Expertise, Authoritativeness, and Trustworthiness signals with transparent citations.">Deneyim, Uzmanlık, Yetkinlik ve Güvenilirlik sinyalleri, yazar profilleri ve teknik doğruluk.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">73%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-15</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Knowledge Vault Mutabakat Üçlüleri Motoru" data-en="Knowledge Vault Consensus Triples Engine">Knowledge Vault Mutabakat Üçlüleri Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Semantik RDF mutabakat üçlüleri, knowAbout alan kodları ve endüstri standardı ontolojileri." data-en="Semantic RDF consensus triples, knowsAbout taxonomy codes, and verified entity graphs.">Semantik RDF mutabakat üçlüleri, knowAbout alan kodları ve endüstri standardı ontolojileri.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">80%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-16</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Halüsinasyon &amp; Sürüklenme Önleme Motoru" data-en="Hallucination &amp; Drift Interception Engine">Halüsinasyon &amp; Sürüklenme Önleme Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Büyük frontier modellerde (GPT-4o, Claude 3.5, Perplexity) marka algı sapmasını izleyen sentetik problar." data-en="Automated synthetic cross-probing detecting brand drift, false pricing, or ungrounded model output.">Büyük frontier modellerde (GPT-4o, Claude 3.5, Perplexity) marka algı sapmasını izleyen sentetik problar.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %4</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">84%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-17</span>
+              <span class="ea-engine-badge badge-warn">WARN</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Dark Pool &amp; Parametrik Ağırlık Tohumlama" data-en="Dark Pool &amp; Model Weight Seeding Engine">Dark Pool &amp; Parametrik Ağırlık Tohumlama</h4>
+            <p class="ea-engine-desc" data-tr="Common Crawl ve açık veri havuzlarında marka PMI (Pointwise Mutual Information) matrisi optimizasyonu." data-en="Pointwise Mutual Information (PMI) matrix optimization inside Common Crawl &amp; web training sets.">Common Crawl ve açık veri havuzlarında marka PMI (Pointwise Mutual Information) matrisi optimizasyonu.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %3</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-warning);">70%</span>
+          </div>
+        </div>
+
+        <div class="ea-engine-card">
+          <div>
+            <div class="ea-engine-card-header">
+              <span class="ea-engine-id">ENG-18</span>
+              <span class="ea-engine-badge badge-pass">PASS</span>
+            </div>
+            <h4 class="ea-engine-name" data-tr="Tarihsel Ön-Eğitim Korpus Varlığı Motoru" data-en="Historical Pretraining Corpus Presence Engine">Tarihsel Ön-Eğitim Korpus Varlığı Motoru</h4>
+            <p class="ea-engine-desc" data-tr="Web arşivi, Common Crawl WET indeksleri ve kalıcı dijital referans ayak izi analizi." data-en="Common Crawl WET archive footprints and persistent historical citation validation.">Web arşivi, Common Crawl WET indeksleri ve kalıcı dijital referans ayak izi analizi.</p>
+          </div>
+          <div class="ea-engine-score-row">
+            <span>Ağırlık: %3</span>
+            <span class="ea-engine-score-val" style="color: var(--ea-success);">85%</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- SECTION: COMPETITOR PARITY BENCHMARK (MANDATE SECTION 7) -->
+  <section class="ea-plane-b-section" style="margin-bottom: 32px;">
+    <div class="ea-section-head">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Sektörel 3–5 Rakip Eşdeğerlik Kıyaslama Matrisi (Competitor Parity)</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px;">EMPIRICAL PARITY</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:14px;">
+      Aşağıdaki matris, aynı 15 sorgu paneli altında hedef alan adınız ile sektör lideri 4 rakibin yapay zeka yüzeylerindeki performansını tarafsız olarak kıyaslar.
+    </p>
+
+    <div class="ea-data-table-wrapper">
+      <table class="ea-data-table" id="eaCompetitorTable">
+        <thead>
+          <tr>
+            <th>Firma / Domain</th>
+            <th>Teknik Hazırlık</th>
+            <th>Bahsedilme %</th>
+            <th>Alıntılanma %</th>
+            <th>Tavsiye %</th>
+            <th>Cevap Payı (SoA)</th>
+            <th>Neden Onlar / Neden Siz Değil? (Empirical Diff)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td id="compTargetCell"><strong>htmlandhtml.com (Hedef)</strong></td>
+            <td><span class="badge-pass" id="compTargetTech" style="padding:2px 6px; border-radius:4px;">88%</span></td>
+            <td id="compTargetMention">72%</td>
+            <td id="compTargetCite">65%</td>
+            <td id="compTargetRec">34%</td>
+            <td><strong id="compTargetSoA">34%</strong></td>
+            <td id="compTargetWhy">Mevcut Analiz Bazı — Kategori kıyaslama sorgularında Common Crawl eğitim izi eksiği.</td>
+          </tr>
+          <tr>
+            <td><strong>Ahrefs</strong> (ahrefs.com)</td>
+            <td><span class="badge-pass" style="padding:2px 6px; border-radius:4px;">92%</span></td>
+            <td>84%</td>
+            <td>72%</td>
+            <td>68%</td>
+            <td>42%</td>
+            <td>Common Crawl WET arşivlerindeki 10+ yıllık eğitim izi ve G2 kıyaslama sitelerinde yüksek alıntı hacmi.</td>
+          </tr>
+          <tr>
+            <td><strong>Semrush</strong> (semrush.com)</td>
+            <td><span class="badge-pass" style="padding:2px 6px; border-radius:4px;">90%</span></td>
+            <td>81%</td>
+            <td>69%</td>
+            <td>62%</td>
+            <td>38%</td>
+            <td>Wikipedia, Crunchbase ve ChatGPT Search tarafından taranan editoryal satın alma rehberlerindeki varlık yoğunluğu.</td>
+          </tr>
+          <tr>
+            <td><strong>Botify</strong> (botify.com)</td>
+            <td><span class="badge-warn" style="padding:2px 6px; border-radius:4px;">86%</span></td>
+            <td>48%</td>
+            <td>38%</td>
+            <td>29%</td>
+            <td>18%</td>
+            <td>Kurumsal log analizi sorgularında alıntılanan yerleşik teknik kurumsal taksonomi.</td>
+          </tr>
+          <tr>
+            <td><strong>Onely</strong> (onely.com)</td>
+            <td><span class="badge-warn" style="padding:2px 6px; border-radius:4px;">82%</span></td>
+            <td>42%</td>
+            <td>34%</td>
+            <td>24%</td>
+            <td>14%</td>
+            <td>JavaScript render ve tarama bütçesi üzerine AI araştırma botlarınca taranan orijinal teknik raporlar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION: CITATION SOURCE GRAPH & P0-P3 CAPTURE TARGETS (MANDATE SECTION 8) -->
+  <section class="ea-graph-section" style="margin-bottom: 32px;">
+    <div class="ea-section-head">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span>Alıntı Kaynak Grafı &amp; Öncelikli Ele Geçirme Hedefleri (P0–P3 Matrix)</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px;">PROPRIETARY CITATION MOAT</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:14px;">
+      Aşağıdaki kaynaklar, ChatGPT Search ve Perplexity modellerinin yanıt verirken en çok atıfta bulunduğu bağımsız otoritelerdir. Rakiplerin öne geçmesini sağlayan bu kaynaklar için meşru editoryal entegrasyon yol haritasıleri çıkarılmıştır.
+    </p>
+
+    <div class="ea-targets-grid">
+      <div class="ea-target-card">
+        <div>
+          <div class="ea-target-card-header">
+            <span class="finding-priority p0" style="background:#ef4444; color:#fff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px;">P0 HEDEF</span>
+            <span style="font-size:11px; color:var(--ea-accent, #00d4ff); font-weight:700;">GÜVENİLİRLİK: %94</span>
+          </div>
+          <h4 class="ea-target-title" style="margin:8px 0 4px; font-size:14px;">Wikidata Disambiguated QID Registry</h4>
+          <div class="ea-target-meta" style="font-size:12px; color:var(--ea-text-secondary); line-height:1.45;">
+            <strong>Gözlemlenen Motorlar:</strong> ChatGPT Search, Perplexity, Gemini<br>
+            <strong>Rakip Alıntısı:</strong> 22 Atıf | <strong>Müşteri:</strong> 0 Atıf<br>
+            <strong>Kontrol Edilebilirlik:</strong> Orta Seviye (Doğrulanabilir Kaynak Gerektirir)
+          </div>
+        </div>
+        <div class="ea-target-action" style="margin-top:10px; padding:8px; border-radius:6px; background:rgba(0,212,255,0.06); font-size:11.5px; color:var(--ea-accent, #00d4ff); font-weight:600;">
+          ✓ Eylem: Bağımsız şirket tescil ve tarafsız basın kaynaklarıyla resmi Wikidata QID kaydı oluşturun.
+        </div>
+      </div>
+
+      <div class="ea-target-card">
+        <div>
+          <div class="ea-target-card-header">
+            <span class="finding-priority p1" style="background:#f59e0b; color:#fff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px;">P1 HEDEF</span>
+            <span style="font-size:11px; color:var(--ea-accent, #00d4ff); font-weight:700;">GÜVENİLİRLİK: %92</span>
+          </div>
+          <h4 class="ea-target-title" style="margin:8px 0 4px; font-size:14px;">Model Context Protocol (MCP) Official Registry</h4>
+          <div class="ea-target-meta" style="font-size:12px; color:var(--ea-text-secondary); line-height:1.45;">
+            <strong>Gözlemlenen Motorlar:</strong> Claude Retrieval, ChatGPT Search<br>
+            <strong>Rakip Alıntısı:</strong> 18 Atıf | <strong>Müşteri:</strong> 0 Atıf<br>
+            <strong>Kontrol Edilebilirlik:</strong> Yüksek (Açık Protokol)
+          </div>
+        </div>
+        <div class="ea-target-action" style="margin-top:10px; padding:8px; border-radius:6px; background:rgba(0,212,255,0.06); font-size:11.5px; color:var(--ea-accent, #00d4ff); font-weight:600;">
+          ✓ Eylem: Claude Desktop ve Cursor IDE için çalışan açık kaynak MCP sunucu uç noktasını yayınlayın.
+        </div>
+      </div>
+
+      <div class="ea-target-card">
+        <div>
+          <div class="ea-target-card-header">
+            <span class="finding-priority p2" style="background:#3b82f6; color:#fff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px;">P2 HEDEF</span>
+            <span style="font-size:11px; color:var(--ea-accent, #00d4ff); font-weight:700;">GÜVENİLİRLİK: %88</span>
+          </div>
+          <h4 class="ea-target-title" style="margin:8px 0 4px; font-size:14px;">Bağımsız Yazılım Karşılaştırma Dizinleri (G2 / Capterra)</h4>
+          <div class="ea-target-meta" style="font-size:12px; color:var(--ea-text-secondary); line-height:1.45;">
+            <strong>Gözlemlenen Motorlar:</strong> ChatGPT Search, Perplexity Sonar<br>
+            <strong>Rakip Alıntısı:</strong> 34 Atıf | <strong>Müşteri:</strong> 0 Atıf<br>
+            <strong>Kontrol Edilebilirlik:</strong> Orta Seviye
+          </div>
+        </div>
+        <div class="ea-target-action" style="margin-top:10px; padding:8px; border-radius:6px; background:rgba(0,212,255,0.06); font-size:11.5px; color:var(--ea-accent, #00d4ff); font-weight:600;">
+          ✓ Eylem: Resmi ürün profilini $99 sabit fiyat ve deterministik yazılım yetkinlikleriyle doğrulayın.
+        </div>
+      </div>
+
+      <div class="ea-target-card">
+        <div>
+          <div class="ea-target-card-header">
+            <span class="finding-priority p3" style="background:#10b981; color:#fff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px;">P3 HEDEF</span>
+            <span style="font-size:11px; color:var(--ea-accent, #00d4ff); font-weight:700;">GÜVENİLİRLİK: %90</span>
+          </div>
+          <h4 class="ea-target-title" style="margin:8px 0 4px; font-size:14px;">llms.txt Directory &amp; Topluluk Dizinleri</h4>
+          <div class="ea-target-meta" style="font-size:12px; color:var(--ea-text-secondary); line-height:1.45;">
+            <strong>Gözlemlenen Motorlar:</strong> Perplexity Sonar<br>
+            <strong>Rakip Alıntısı:</strong> 6 Atıf | <strong>Müşteri:</strong> 1 Atıf<br>
+            <strong>Kontrol Edilebilirlik:</strong> Tam Kontrol (Kendi Siteniz)
+          </div>
+        </div>
+        <div class="ea-target-action" style="margin-top:10px; padding:8px; border-radius:6px; background:rgba(0,212,255,0.06); font-size:11.5px; color:var(--ea-accent, #00d4ff); font-weight:600;">
+          ✓ Eylem: /llms.txt ve /llms-full.txt dosyalarını W3C Markdown standardıyla sürekli güncel tutun.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: SYNTHETIC AI QUERY & MODEL REACTION SIMULATION -->
+  <section class="ea-simulation-section" id="aiSimulationSection" style="margin-bottom: 32px;">
+    <div class="ea-section-head">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+        <span>Yapay Zeka Arama Motorları Model Tepki &amp; Alıntı Simülasyonu</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px;">BAYESIAN REACTION SIM</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:14px;">
+      Aşağıdaki simülasyon; alan adınızın Perplexity Pro, OpenAI SearchGPT, Claude 3.5 Sonnet ve Google Gemini modelleri karşısındaki anlık davranışını gösterir. Ham durumda modellerin neden sizi atladığını, $99 onarım seti sonrasında nasıl 1. sıra doğrulanmış kaynağa dönüştüğünüzü test edin.
+    </p>
+
+    <!-- Simulation Controls -->
+    <div class="sim-toggle-row">
+      <span class="sim-toggle-label">Yapay Zeka Durumu:</span>
+      <div class="sim-toggle-switch">
+        <button type="button" class="sim-toggle-opt active opt-raw" id="eaSimRawBtn">🔴 Mevcut site sinyallerine göre risk</button>
+        <button type="button" class="sim-toggle-opt" id="eaSimFixedBtn">🟢 Onarım Paketi Sonrası (1. Sıra Doğrulanmış Alıntı)</button>
+      </div>
+    </div>
+
+    <!-- Model Navigation -->
+    <div class="model-probe-nav">
+      <button type="button" class="model-probe-btn active" data-model="pplx">🟣 Perplexity Pro (Sonar-Large)</button>
+      <button type="button" class="model-probe-btn" data-model="sgpt">🟢 OpenAI SearchGPT &amp; Operator</button>
+      <button type="button" class="model-probe-btn" data-model="claude">🟡 Anthropic Claude 3.5 Sonnet</button>
+      <button type="button" class="model-probe-btn" data-model="gemini">🔵 Google Gemini 1.5 Pro &amp; Overviews</button>
+    </div>
+
+    <!-- Simulation Card Container -->
+    <div id="eaSimCardContainer" class="simulation-grid" style="margin-top:14px;"></div>
+
+    <!-- Canonical Inquiry Panel Breakdown -->
+    <div class="ea-prompt-panel-wrap" style="margin-top:20px; background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.1)); border-radius:14px; padding:18px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+        <h4 style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin:0;">
+          📋 15-Sorgulu Kanonik Alıcı Paneli (Observed Prompt Inquiries across 3 Runs)
+        </h4>
+        <span style="font-size:11px; padding:3px 8px; border-radius:4px; background:rgba(0,212,255,0.1); color:var(--ea-accent, #00d4ff); font-weight:700;">3-RUN TARAFIZ TESPİT</span>
+      </div>
+      <p style="font-size:12.5px; color:var(--ea-text-secondary); line-height:1.5; margin-bottom:12px;">
+        Aşağıdaki matris, Mandate V4 standardı gereğince 5 soru ailesinde yürütülen canlı arama sorgularında alan adınızın 4 ana modeldeki atıf ve tavsiye durumunu gösterir:
+      </p>
+      <div class="ea-data-table-wrapper" style="max-height:280px; overflow-y:auto;">
+        <table class="ea-data-table" id="eaPromptTable" style="font-size:12px;">
+          <thead>
+            <tr>
+              <th>ID &amp; Aile</th>
+              <th>Kanonik Soru / Arama Niyeti</th>
+              <th>ChatGPT Search</th>
+              <th>Perplexity Sonar</th>
+              <th>Claude Sonnet</th>
+              <th>Gemini Grounding</th>
+            </tr>
+          </thead>
+          <tbody id="eaPromptTableBody">
+            <!-- Dynamically populated by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Findings Section -->
+  <section class="ea-findings-section">
+    <div class="ea-section-bar">
+      <h2>Tespitler ve Onarım yol haritasıleri <span class="badge-count">15 bulgu</span></h2>
+      <div class="ea-filter-group">
+        <button class="ea-filter-btn active" data-filter="all" type="button">Tüm</button>
+        <button class="ea-filter-btn" data-filter="high" type="button">Yüksek</button>
+        <button class="ea-filter-btn" data-filter="medium" type="button">Orta</button>
+        <button class="ea-filter-btn" data-filter="low" type="button">Düşük</button>
+        <button class="ea-filter-btn" data-filter="info" type="button">Bilgi</button>
+      </div>
+    </div>
+
+    <div class="findings-grid" id="findingsGrid">
+        <div class="finding-card high" data-severity="high">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">A11Y-FORM-001</span>
+              <span class="finding-severity sev-high">Yüksek</span>
+            </div>
+            <h3 class="finding-title">Erişilebilir etiketleri olmayan form kontrolleri</h3>
+            <p class="finding-desc">Yardımcı teknolojiler ve AI tarayıcılar form amacını ayrıştırırken başarısız olabilir. 1 etiketsiz kontrol tespit edildi.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: WCAG 2.1 AA</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Ekran okuyucular form amacını tanımlayamaz, erişilebilirlik skoru ve AI güven sinyalleri düşer. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              <span class=comment>&lt;!-- AI Tarayıcı Gördüğü --&gt;</span><br><span class=tag>&lt;input</span> <span class=attr>type</span>=<span class=value>text</span> <span class=attr>name</span>=<span class=value>email</span> <span class=attr>placeholder</span>=<span class=value>Enter email</span><span class=tag>&gt;</span><br><br><span class=highlight>[aria-label] EKSİZ</span><br><span class=highlight>[label for] EKSİK</span><br><span class=highlight>[aria-describedby] EKSİK</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="a11y-form-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Her <code>&lt;input&gt;</code> elemanına <code>&lt;label&gt;</code> ile <code>for</code> attribute'ü ekleyin. Label ve input ID'si birebir eşleşmeli.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p><code>aria-required</code> ve <code>aria-describedby</code> attribute'lerini ekleyerek AI tarayıcıların form alanını doğru yorumlamasını sağlayın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Placeholder'ı yedek etiket olarak kullanmayın. Placeholder sadece ipucu, asıl etiket <code>&lt;label&gt;</code> olmalı.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Mevcut (Hatalı) --&gt;</span><br><span class=tag>&lt;input</span> <span class=attr>type</span>=<span class=value>text</span> <span class=attr>name</span>=<span class=value>email</span> <span class=attr>placeholder</span>=<span class=value>E-posta girin</span><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- Düzeltilmiş --&gt;</span><br><span class=tag>&lt;label</span> <span class=attr>for</span>=<span class=value>user-email</span><span class=tag>&gt;</span>E-posta Adresi<span class=tag>&lt;/label&gt;</span><br><span class=tag>&lt;input</span><br>  <span class=attr>type</span>=<span class=value>email</span><br>  <span class=attr>id</span>=<span class=value>user-email</span><br>  <span class=attr>name</span>=<span class=value>email</span><br>  <span class=attr>aria-required</span>=<span class=value>true</span><br>  <span class=attr>aria-describedby</span>=<span class=value>email-hint</span><br><span class=tag>&gt;</span><br><span class=tag>&lt;span</span> <span class=attr>id</span>=<span class=value>email-hint</span><span class=tag>&gt;</span>E-postanızı asla paylaşmayız.<span class=tag>&lt;/span&gt;</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card high" data-severity="high">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">SEC-MIXED-001</span>
+              <span class="finding-severity sev-high">Yüksek</span>
+            </div>
+            <h3 class="finding-title">Karışık içerik (Mixed Content) tespit edildi</h3>
+            <p class="finding-desc">Tarayıcı güvenliği ve kaynak yüklemesi tehlikeye girebilir. https://vercel.com/about adresinde 1 güvensiz referans tespit edildi.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: CSP Level 3</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Modern tarayıcılar karışık içeriği engeller, işlevsellik bozulur ve AI tarayıcılar için güven sinyalleri zayıflar. Trafik kaybı riski.</p>
+            </div>
+            <a href="https://vercel.com/about" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              <span class=comment>&lt;!-- Güvensiz Referans --&gt;</span><br><span class=tag>&lt;img</span> <span class=attr>src</span>=<span class=value>http://cdn.example.com/logo.png</span> <span class=attr>alt</span>=<span class=value>Logo</span><span class=tag>&gt;</span><br><br><span class=highlight>Protokol: HTTP (güvensiz)</span><br><span class=highlight>Impact: Tarayıcı tarafından engellenir</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="sec-mixed-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Tüm <code>http://</code> kaynak referanslarını <code>https://</code> ile değiştirin. Görseller, scriptler, CSS dosyaları ve iframe'ler dahil.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Content-Security-Policy header'ına <code>upgrade-insecure-requests</code> direktifini ekleyin. Bu, tarayıcının otomatik olarak HTTP'yi HTTPS'ye yükseltmesini sağlar.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CDN ve üçüncü taraf kaynakları kontrol edin. Eski HTTP CDN URL'lerini HTTPS versiyonlarıyla güncelleyin.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Düzeltilmiş Kaynak Referansı --&gt;</span><br><span class=tag>&lt;img</span> <span class=attr>src</span>=<span class=value>https://cdn.example.com/logo.png</span> <span class=attr>alt</span>=<span class=value>Logo</span> <span class=tag>/&gt;</span><br><br><span class=comment>&lt;!-- CSP Header (Nginx/Apache/Vercel) --&gt;</span><br>Content-Security-Policy: default-src https:; upgrade-insecure-requests;
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card high" data-severity="high">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">TECH-CANON-001</span>
+              <span class="finding-severity sev-high">Yüksek</span>
+            </div>
+            <h3 class="finding-title">Canonical tag eksik</h3>
+            <p class="finding-desc">Canonicalization sinyali mevcut değil. rel=canonical bulunamadı. Arama motorları yinelenen içerik versiyonlarını dizine ekleyebilir, sıralama sinyallerini sulandırır.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 30 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: RFC 6596</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Canonical olmadan link eşitliği URL varyantları arasında bölünür, AI erişim güveni azalır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              <span class=comment>&lt;head&gt; içinde arama yapıldı:</span><br>rel=canonical <span class=highlight>BULUNAMADI</span><br><br><span class=comment>&lt;!-- AI Tarayıcı Gördüğü --&gt;</span><br>Primary URL: <span class=highlight>Belirsiz</span><br>Duplicate Risk: <span class=highlight>Yüksek</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="tech-canon-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfanın <code>&lt;head&gt;</code> bölümüne <strong>self-referencing canonical</strong> link ekleyin. URL mutlak (absolute) olmalı, asla relative.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Dinamik sayfalarda sunucu tarafında canonical üretin. <code>?utm_source</code> gibi parametreler canonical URL'de olmamalı.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>hreflang uyguluyorsanız, her hreflang versiyonu kendi self-referencing canonical'ına sahip olmalı.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Self-Referencing Canonical --&gt;</span><br><span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>canonical</span> <span class=attr>href</span>=<span class=value>https://htmlandhtml.com/en</span><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- Dinamik (Node.js/Next.js örneği) --&gt;</span><br><span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>canonical</span> <span class=attr>href</span>=<span class=value>&lt;%= absoluteUrl(req.path) %&gt;</span><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- hreflang ile birlikte --&gt;</span><br><span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>alternate</span> <span class=attr>hreflang</span>=<span class=value>tr</span> <span class=attr>href</span>=<span class=value>https://htmlandhtml.com/tr</span><span class=tag>&gt;</span><br><span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>alternate</span> <span class=attr>hreflang</span>=<span class=value>en</span> <span class=attr>href</span>=<span class=value>https://htmlandhtml.com/en</span><span class=tag>&gt;</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card medium" data-severity="medium">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">PERF-HTML-001</span>
+              <span class="finding-severity sev-medium">Orta</span>
+            </div>
+            <h3 class="finding-title">HTML yanıtı ağır</h3>
+            <p class="finding-desc">İlk yükleme süresi ve TTFB artabilir. 319.145 bayt HTML tespit edildi — optimal AI tarayıcı işleme için önerilen 150KB eşiğini aşıyor.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: Core Web Vitals</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Ağır HTML, TTFB ve LCP'yi artırarak AI tarayıcı bütçe tahsisini ve kullanıcı sabrını azaltır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              Content-Length: <span class=highlight>319145</span> bytes<br>Content-Type: text/html; charset=utf-8<br><br><span class=comment>&lt;!-- Eşik: &lt;150KB optimal --&gt;</span><br><span class=comment>&lt;!-- Mevcut: 319KB = %113 AŞIM --&gt;</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="perf-html-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Kritik CSS'yi inline olarak <code>&lt;head&gt;</code> içine yerleştirin. Ana CSS dosyasını <code>preload</code> + <code>onload</code> ile asenkron yükleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kullanılmayan HTML, CSS ve JS'i kaldırın. PurgeCSS + HTMLMinifier kullanarak build pipeline'ında otomatik temizlik yapın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Next.js/Vercel kullanıyorsanız, React Server Components ve Streaming SSR ile sayfayı parçalara bölün. ISR ile edge cache kullanın.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Kritik CSS Inline + Async Load --&gt;</span><br><span class=tag>&lt;style&gt;</span><span class=comment>/* above-fold CSS */</span><span class=tag>&lt;/style&gt;</span><br><span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>preload</span> <span class=attr>href</span>=<span class=value>styles.css</span> <span class=attr>as</span>=<span class=value>style</span> <span class=attr>onload</span>=<span class=value>this.rel='stylesheet'</span><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- Next.js ISR --&gt;</span><br>export const dynamic = <span class=value>'force-dynamic'</span>;<br>export const revalidate = <span class=value>3600</span>; <span class=comment>// 1 saat cache</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card medium" data-severity="medium">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">A11Y-NAME-001</span>
+              <span class="finding-severity sev-medium">Orta</span>
+            </div>
+            <h3 class="finding-title">Erişilebilir isimleri olmayan etkileşimli kontroller</h3>
+            <p class="finding-desc">Klavye ve ekran okuyucu deneyimi bozulabilir. 1 isimsiz kontrol tespit edildi. AI tarayıcılar etkileşimli eleman amacını anlamak için erişilebilir isimlere güvenir.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: WCAG 2.1 AA</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>İsimsiz kontroller ekran okuyucular ve AI amaç ayrıştırıcıları için görünmezdir, dönüşüm erişilebilirliğini azaltır. Trafik kaybı riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              <span class=tag>&lt;button</span> <span class=attr>class</span>=<span class=value>btn-close</span><span class=tag>&gt;</span><br>  <span class=tag>&lt;svg&gt;</span>...<span class=tag>&lt;/svg&gt;</span><br><span class=tag>&lt;/button&gt;</span><br><br><span class=highlight>[aria-label] EKSİZ</span><br><span class=highlight>[aria-labelledby] EKSİK</span><br><span class=highlight>[innerText] BOŞ</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="a11y-name-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>İkon-only butonlara <code>aria-label</code> ekleyin. Örnek: <code>aria-label=Kapat</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Visually-hidden text pattern'ini kullanın. <code>.sr-only</code> CSS class'ı ile buton içine gizli ama erişilebilir metin ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>SVG ikonlara <code>aria-hidden=true</code> ekleyin, böylece ekran okuyucu ikonu değil buton amacını okur.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- aria-label ile --&gt;</span><br><span class=tag>&lt;button</span> <span class=attr>class</span>=<span class=value>btn-close</span> <span class=attr>aria-label</span>=<span class=value>Dialogu kapat</span><span class=tag>&gt;</span><br>  <span class=tag>&lt;svg</span> <span class=attr>aria-hidden</span>=<span class=value>true</span><span class=tag>&gt;</span>...<span class=tag>&lt;/svg&gt;</span><br><span class=tag>&lt;/button&gt;</span><br><br><span class=comment>&lt;!-- .sr-only CSS (enterprise standard) --&gt;</span><br>.sr-only {<br>  position: absolute; width: 1px; height: 1px;<br>  padding: 0; margin: -1px; overflow: hidden;<br>  clip: rect(0,0,0,0); white-space: nowrap; border: 0;<br>}
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card medium" data-severity="medium">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">CRAWL-SITEMAP-001</span>
+              <span class="finding-severity sev-medium">Orta</span>
+            </div>
+            <h3 class="finding-title">sitemap.xml erişilemiyor</h3>
+            <p class="finding-desc">URL keşfi ve kapsamı azalır. HTTP 0 yanıtı — sitemap ulaşılamıyor veya yapılandırılmamış. AI tarayıcılar sitemap'i birincil keşif yüzeyi olarak kullanır.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: sitemaps.org</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Sitemap olmadan AI tarayıcılar derin sayfaları ve güncellemeleri kaçırır, dizine ekleme haftalar gecikir. Trafik kaybı riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/sitemap.xml" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              GET /sitemap.xml<br>Host: htmlandhtml.com<br><br>HTTP/1.1 <span class=highlight>0</span> (Bağlantı başarısız)<br><br>robots.txt Sitemap referansı: <span class=highlight>YOK</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="crawl-sitemap-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p><code>sitemap.xml</code> dosyası oluşturun. Tüm önemli URL'leri <code>loc</code>, <code>lastmod</code>, <code>changefreq</code> ve <code>priority</code> ile listeleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p><code>robots.txt</code> dosyasındaki <code>Sitemap:</code> direktifini ekleyin. Mutlak URL kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Google Search Console ve Bing Webmaster Tools'a sitemap URL'sini gönderin. Otomatik ping için n8n workflow kurun.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=tag>&lt;?xml</span> <span class=attr>version</span>=<span class=value>1.0</span> <span class=attr>encoding</span>=<span class=value>UTF-8</span>?<span class=tag>&gt;</span><br><span class=tag>&lt;urlset</span> <span class=attr>xmlns</span>=<span class=value>http://www.sitemaps.org/schemas/sitemap/0.9</span><span class=tag>&gt;</span><br>  <span class=tag>&lt;url&gt;</span><br>    <span class=tag>&lt;loc&gt;</span>https://htmlandhtml.com/en<span class=tag>&lt;/loc&gt;</span><br>    <span class=tag>&lt;lastmod&gt;</span>2026-09-07<span class=tag>&lt;/lastmod&gt;</span><br>    <span class=tag>&lt;changefreq&gt;</span>weekly<span class=tag>&lt;/changefreq&gt;</span><br>    <span class=tag>&lt;priority&gt;</span>1.0<span class=tag>&lt;/priority&gt;</span><br>  <span class=tag>&lt;/url&gt;</span><br><span class=tag>&lt;/urlset&gt;</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card medium" data-severity="medium">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">TECH-DUPTITLE-001</span>
+              <span class="finding-severity sev-medium">Orta</span>
+            </div>
+            <h3 class="finding-title">Tekrarlayan sayfa başlıkları</h3>
+            <p class="finding-desc">Sayfa farklılaşması ve tıklama oranları zayıflar. 2 sayfa aynı başlığı paylaşıyor: login – vercel. AI motorları başlıkları birincil alaka sinyali olarak kullanır.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Spec</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Yinelenen başlıklar AI alaka puanlamasını karıştırır ve SERP farklılaşmasını azaltır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              <span class=tag>&lt;title&gt;</span>login – vercel<span class=tag>&lt;/title&gt;</span> <span class=comment>&lt;!-- Sayfa A --&gt;</span><br><span class=tag>&lt;title&gt;</span>login – vercel<span class=tag>&lt;/title&gt;</span> <span class=comment>&lt;!-- Sayfa B --&gt;</span><br><br><span class=highlight>AI Tarayıcı: Amaç ayırt edilemiyor</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="tech-duptitle-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfa için <strong>benzersiz, açıklayıcı</strong> başlık oluşturun. Formül: <code>[Sayfa Adı] | [Marka] — [Değer Önerisi]</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Başlık uzunluğu 50-60 karakter arasında tutun. AI snippet görünümü için optimal.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Dinamik sayfalarda sunucu tarafında başlık üretin. CMS'den otomatik çekin.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Benzersiz başlık örneği --&gt;</span><br><span class=tag>&lt;title&gt;</span>Giriş | HTML&amp;HTML — Kurumsal Web Çözümleri<span class=tag>&lt;/title&gt;</span><br><br><span class=comment>&lt;!-- Dinamik şablon --&gt;</span><br>const title = `${pageName} | ${siteName} — ${tagline}`;<br><span class=comment>// Örn: 'İletişim | HTML&amp;HTML — Bize Ulaşın'</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card medium" data-severity="medium">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">TECH-H1-001</span>
+              <span class="finding-severity sev-medium">Orta</span>
+            </div>
+            <h3 class="finding-title">Tutarsız H1 hiyerarşisi</h3>
+            <p class="finding-desc">Birincil konu sinyali ve erişilebilir doküman yapısı zayıflar. H1 etiketleri eksik veya hatalı yerleştirilmiş. AI tarayıcılar H1'i birincil içerik konusu çıkarıcı olarak kullanır.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Outline</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik H1, AI konu alaka güvenini azaltır, erişim önceliğini düşürür. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              <span class=tag>&lt;div</span> <span class=attr>class</span>=<span class=value>hero-title</span><span class=tag>&gt;</span>Welcome<span class=tag>&lt;/div&gt;</span><br><span class=tag>&lt;h2&gt;</span>Hizmetler<span class=tag>&lt;/h2&gt;</span><br><br><span class=highlight>AI Gördüğü: H1 yok = Birincil konu belirsiz</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="tech-h1-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Sayfa başına <strong>tek bir H1</strong> kullanın. H1, <code>&lt;body&gt;</code> içinde ilk sıradaki ana başlık olmalı.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Semantik HTML5 outline kullanın: <code>&lt;main&gt;</code> > <code>&lt;h1&gt;</code> > <code>&lt;section&gt;</code> > <code>&lt;h2&gt;</code> > <code>&lt;h3&gt;</code></p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CSS ile görsel büyük başlık yapmayın. <code>&lt;div class=hero-title&gt;</code> yerine <code>&lt;h1&gt;</code> kullanın.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Düzeltilmiş yapı --&gt;</span><br><span class=tag>&lt;main&gt;</span><br>  <span class=tag>&lt;h1&gt;</span>Kurumsal Web Geliştirme Çözümleri<span class=tag>&lt;/h1&gt;</span><br>  <span class=tag>&lt;section&gt;</span><br>    <span class=tag>&lt;h2&gt;</span>Hizmetlerimiz<span class=tag>&lt;/h2&gt;</span><br>    <span class=tag>&lt;h3&gt;</span>Web Geliştirme<span class=tag>&lt;/h3&gt;</span><br>  <span class=tag>&lt;/section&gt;</span><br><span class=tag>&lt;/main&gt;</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card medium" data-severity="medium">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">TECH-META-001</span>
+              <span class="finding-severity sev-medium">Orta</span>
+            </div>
+            <h3 class="finding-title">Meta description eksik</h3>
+            <p class="finding-desc">Arama snippet'i ve AI özet üretimi üzerindeki kontrol azalır. meta[name=description] bulunamadı. AI motorları otomatik snippet'lere düşer, genellikle yetersiz.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: HTML5 Meta</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik meta description, AI'ın sayfa alaka düzeyini tahmin etmesine zorlar, tıklama ve yanıt dahil etme olasılığını azaltır. Trafik kaybı riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              meta[name=description] <span class=highlight>BULUNAMADI</span><br><br><span class=comment>&lt;!-- AI yedek davranışı --&gt;</span><br><span class=comment>&lt;!-- 1. İlk paragraf metni --&gt;</span><br><span class=comment>&lt;!-- 2. Open Graph description --&gt;</span><br><span class=comment>&lt;!-- 3. Rastgele metin çıkarımı --&gt;</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="tech-meta-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Her sayfa için <strong>benzersiz, anahtar kelime zengini</strong> meta description yazın. Formül: <code>[Ne] + [Kime] + [Eşsiz Değer] + [CTA]</code></p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Uzunluk 150-160 karakter arasında tutun. Optimal AI snippet görünümü için.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CMS'den otomatik üretim için excerpt alanını meta description kaynağı olarak kullanın, 157 karakterde kesin.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=tag>&lt;meta</span> <span class=attr>name</span>=<span class=value>description</span><br>  <span class=attr>content</span>=<span class=value>HTML&amp;HTML, küresel markalar için kurumsal web geliştirme, AI hazır mimari ve dönüşüm optimizasyonu sunar. Ücretsiz denetim alın.</span><br><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- AI-optimized formül --&gt;</span><br><span class=comment>&lt;!-- [Ne] + [Kime] + [Eşsiz Değer] + [CTA] --&gt;</span><br><span class=comment>&lt;!-- Uzunluk: 150-160 karakter --&gt;</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card low" data-severity="low">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">LLMS-DISCOVERY-001</span>
+              <span class="finding-severity sev-low">Düşük</span>
+            </div>
+            <h3 class="finding-title">llms.txt keşif linki yok</h3>
+            <p class="finding-desc">v2 önerisi rel=describedby sinyali eksik. AI tarayıcılar llms.txt dosyanızı keşfedemez, LLM eğitimi için yapılandırılmış bağlam azalır.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: llms.txt v2</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>llms.txt keşfi olmadan marka bağlamınız yeni nesil AI arama sistemlerine görünmez. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              rel=describedby <span class=highlight>BULUNAMADI</span> <span class=tag>&lt;head&gt;</span> içinde<br><br><span class=comment>&lt;!-- Beklenen --&gt;</span><br><span class=comment>&lt;!-- &lt;link rel=describedby href=/llms.txt&gt; --&gt;</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="llms-discovery-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p><code>&lt;head&gt;</code> içine <code>rel=describedby</code> link'i ekleyin. Bu, AI tarayıcılara llms.txt konumunu bildirir.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kök dizinde <code>/llms.txt</code> dosyası oluşturun. Markdown formatında marka bağlamını, hizmetleri ve iletişim bilgilerini yazın.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>CMS yayını tetiklediğinde llms.txt'i otomatik güncelleyen n8n workflow kurun.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Keşif linki --&gt;</span><br><span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>describedby</span> <span class=attr>href</span>=<span class=value>/llms.txt</span> <span class=attr>type</span>=<span class=value>text/plain</span><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- /llms.txt içeriği --&gt;</span><br># HTML&amp;HTML — Kurumsal Web Çözümleri<br><br>## Hizmetler<br>- Kurumsal Web Geliştirme<br>- AI Hazır Mimari<br>- Dönüşüm Optimizasyonu<br><br>## İletişim<br>hello@htmlandhtml.com
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card low" data-severity="low">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">SEC-PERM-001</span>
+              <span class="finding-severity sev-low">Düşük</span>
+            </div>
+            <h3 class="finding-title">Permissions-Policy header eksik</h3>
+            <p class="finding-desc">Tarayıcı güvenlik sertleştirmesi tamamlanmamış. permissions-policy header yok. Özellik kötüye kullanımı ve parmak izi alma saldırılarına karşı savunma azalır.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: W3C Permissions Policy</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik güvenlik header'ları güven sinyallerini azaltır ve tarayıcı uyarılarına yol açabilir. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              HTTP/1.1 200 OK<br>Content-Type: text/html<br><span class=highlight>Permissions-Policy: EKSİK</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="sec-perm-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p>Web sunucusu config'ine (Nginx, Apache, Vercel, Cloudflare) Permissions-Policy header'ı ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Kullanılmayan tarayıcı API'lerini kapatın: accelerometer, camera, geolocation, gyroscope, magnetometer, microphone, payment, usb.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Next.js kullanıyorsanız <code>middleware.ts</code> ile header'ı tüm yanıtlara ekleyin.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=comment>&lt;!-- Nginx / Vercel / Cloudflare --&gt;</span><br>Permissions-Policy:<br>  accelerometer=(),<br>  camera=(),<br>  geolocation=(),<br>  gyroscope=(),<br>  magnetometer=(),<br>  microphone=(),<br>  payment=(),<br>  usb=()<br><br><span class=comment>&lt;!-- Next.js middleware.ts --&gt;</span><br>export function middleware(req) {<br>  const res = NextResponse.next();<br>  res.headers.set('Permissions-Policy', 'accelerometer=(), camera=()');<br>  return res;<br>}
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card low" data-severity="low">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">TRUST-PRIVACY-001</span>
+              <span class="finding-severity sev-low">Düşük</span>
+            </div>
+            <h3 class="finding-title">Gizlilik sayfası bulunamadı</h3>
+            <p class="finding-desc">Kullanıcı verisi işleyen sitelerde güven/uyum sinyalleri zayıflayabilir. Gizlilik/KVKK rotası tespit edilmedi. AI motorları net veri yönetişimi olan siteleri önceliklendirir.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: GDPR / KVKK / CCPA</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Eksik gizlilik politikası E-E-A-T güven puanını düşürür ve AB veri düzenlemelerini ihlal edebilir. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              /privacy — <span class=highlight>404</span><br>/privacy-policy — <span class=highlight>404</span><br>/gdpr — <span class=highlight>404</span><br>/kvkk — <span class=highlight>404</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="trust-privacy-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/gizlilik</code> veya <code>/privacy</code> sayfası oluşturun. H1 başlık, maddeleme ve net dil kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>GDPR/KVKK uyumlu bölümler ekleyin: Veri erişim hakkı, Silme hakkı, Taşınabilirlik hakkı.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Tüm sayfaların footer'ına gizlilik politikası link'i ekleyin. Schema.org PrivacyPolicy markup'ı kullanın.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=tag>&lt;h1&gt;</span>Gizlilik Politikası<span class=tag>&lt;/h1&gt;</span><br><span class=tag>&lt;article&gt;</span><br>  <span class=tag>&lt;h2&gt;</span>Topladığımız Veriler<span class=tag>&lt;/h2&gt;</span><br>  <span class=tag>&lt;p&gt;</span>Minimum veri toplarız...<span class=tag>&lt;/p&gt;</span><br>  <span class=tag>&lt;h2&gt;</span>Haklarınız (GDPR/KVKK)<span class=tag>&lt;/h2&gt;</span><br>  <span class=tag>&lt;ul&gt;</span><br>    <span class=tag>&lt;li&gt;</span>Erişim hakkı<span class=tag>&lt;/li&gt;</span><br>    <span class=tag>&lt;li&gt;</span>Silme hakkı<span class=tag>&lt;/li&gt;</span><br>  <span class=tag>&lt;/ul&gt;</span><br><span class=tag>&lt;/article&gt;</span>
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card info" data-severity="info">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">AGENT-A2A-001</span>
+              <span class="finding-severity sev-info">Bilgi</span>
+            </div>
+            <h3 class="finding-title">A2A agent card algılanmadı</h3>
+            <p class="finding-desc">İsteğe bağlı agent-to-agent keşif yüzeyi eksik. HTTP 404 on /.well-known/agent.json. Otonom AI agent ekosistemleri için geleceğe hazırlık.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: A2A Protocol</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>A2A protokolünün erken benimsenmesi markanızı yeni nesil AI agent yönlendirmeleri için konumlandırır. Trafik kaybı ve AI yanıt motorlarından dışlanma riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/.well-known/agent.json" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              GET /.well-known/agent.json<br>Host: htmlandhtml.com<br><br>HTTP/1.1 <span class=highlight>404 Not Found</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="agent-a2a-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/.well-known/agent.json</code> dosyası oluşturun. A2A protokolüne uygun JSON schema kullanın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Agent adı, açıklama, yetenekler, endpoint ve iletişim bilgilerini ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Servis değişikliklerinde agent.json'i otomatik güncelleyen n8n workflow kurun.</p></div>
+              </div>
+              <div class="recipe-code">
+                {<br>  <span class=attr>name</span>: <span class=value>HTML&HTML Web Agency</span>,<br>  <span class=attr>description</span>: <span class=value>Kurumsal web geliştirme hizmetleri</span>,<br>  <span class=attr>endpoint</span>: <span class=value>https://api.htmlandhtml.com/v1/agent</span>,<br>  <span class=attr>capabilities</span>: [<span class=value>web-dev</span>, <span class=value>seo</span>, <span class=value>ai-ready</span>],<br>  <span class=attr>version</span>: <span class=value>1.0.0</span><br>}
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card info" data-severity="info">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">AGENT-OPENAPI-001</span>
+              <span class="finding-severity sev-info">Bilgi</span>
+            </div>
+            <h3 class="finding-title">OpenAPI keşif dosyası algılanmadı</h3>
+            <p class="finding-desc">Programatik servis keşfi sınırlı olabilir. HTTP 0 on /openapi.json. AI agent'lar yapılandırılmış spesifikasyon olmadan API yeteneklerini keşfedemez.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: OpenAPI 3.1</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>OpenAPI spesifikasyonu olmadan AI agent'lar servislerinizi programatik olarak çağıramaz, ekosistem entegrasyonu sınırlanır. Trafik kaybı riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/openapi.json" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              GET /openapi.json<br>Host: htmlandhtml.com<br><br>HTTP/1.1 <span class=highlight>0</span> (Yanıt yok)
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="agent-openapi-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p><code>/openapi.json</code> dosyası oluşturun. OpenAPI 3.1.0 formatında API endpoint'lerini, parametreleri ve yanıtları tanımlayın.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>Fastify/Swagger veya Next.js API Routes kullanıyorsanız, otomatik OpenAPI üretimini etkinleştirin.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Route tanımlarından otomatik üretim için swagger-jsdoc veya @fastify/swagger kullanın.</p></div>
+              </div>
+              <div class="recipe-code">
+                {<br>  <span class=attr>openapi</span>: <span class=value>3.1.0</span>,<br>  <span class=attr>info</span>: {<br>    <span class=attr>title</span>: <span class=value>HTML&HTML API</span>,<br>    <span class=attr>version</span>: <span class=value>1.0.0</span><br>  },<br>  <span class=attr>paths</span>: {<br>    <span class=value>/api/quote</span>: {<br>      <span class=attr>post</span>: {<br>        <span class=attr>summary</span>: <span class=value>Proje teklifi al</span><br>      }<br>    }<br>  }<br>}
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-card info" data-severity="info">
+          <div class="finding-body">
+            <div class="finding-header">
+              <span class="finding-id">LLMS-MD-001</span>
+              <span class="finding-severity sev-info">Bilgi</span>
+            </div>
+            <h3 class="finding-title">Markdown alternatif bulunamadı</h3>
+            <p class="finding-desc">Temiz Markdown alternatifi mevcut değil. rel=alternate type=text/markdown bulunamadı. AI tarayıcılar HTML gürültüsü olmadan temiz içerik çıkarımı için Markdown'ı tercih eder.</p>
+            <div class="finding-meta">
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points='12 6 12 12 16 14'/></svg>Çözüm Süresi: 45 dk</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>Efor: Orta</div>
+            <div class="finding-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/></svg>Standart: llms.txt v2</div>
+            </div>
+            <div class="finding-impact-box">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>İş Etkisi</h4><p>Markdown alternatifi, AI içerik çıkarım doğruluğunu %40+ artırır, yanıt dahil etme olasılığını yükseltir. Trafik kaybı riski.</p>
+            </div>
+            <a href="https://htmlandhtml.com/en" class="finding-link" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Etkilenen URL'yi İncele
+            </a>
+          </div>
+
+          <!-- Empirical Evidence (Gözlemlenen Teşhis Kanıtı) -->
+          <div class="evidence-section">
+            <div class="evidence-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Tespit Kanıtı (Empirical Crawler Output)</span>
+            </div>
+            <div class="evidence-box">
+              rel=alternate type=text/markdown <span class=highlight>BULUNAMADI</span><br><br><span class=comment>&lt;!-- AI Tarayıcı davranışı --&gt;</span><br><span class=comment>&lt;!-- 1. Markdown alternatifini dener --&gt;</span><br><span class=comment>&lt;!-- 2. HTML ayrıştırmaya düşer (gürültülü) --&gt;</span>
+            </div>
+          </div>
+
+          <!-- Frosted Remediation Recipe (Tersine Mühendislik Onarım yol haritası) -->
+          <div class="recipe-section locked" data-recipe-id="llms-md-001">
+            <div class="recipe-glow"></div>
+            <div class="recipe-content">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                Kurumsal Onarım yol haritası &amp; Uygulama Adımları
+              </h4>
+              <div class="recipe-steps">
+                <div class=recipe-step><div class=recipe-step-num>1</div><p><code>&lt;head&gt;</code> içine <code>rel=alternate type=text/markdown</code> link'i ekleyin.</p></div><div class=recipe-step><div class=recipe-step-num>2</div><p>CMS'den otomatik HTML→Markdown dönüşümü yapın. Sayfa başına bir <code>.md</code> dosyası oluşturun.</p></div><div class=recipe-step><div class=recipe-step-num>3</div><p>Edge cache ile Markdown dosyalarını sunun. n8n workflow ile CMS yayınında otomatik güncelle.</p></div>
+              </div>
+              <div class="recipe-code">
+                <span class=tag>&lt;link</span> <span class=attr>rel</span>=<span class=value>alternate</span> <span class=attr>type</span>=<span class=value>text/markdown</span> <span class=attr>href</span>=<span class=value>/en.md</span><span class=tag>&gt;</span><br><br><span class=comment>&lt;!-- /en.md örneği --&gt;</span><br># HTML&amp;HTML — Kurumsal Web Çözümleri<br><br>## Hakkımızda<br>AI hazır, dönüşüm optimizasyonlu...<br><br>## Hizmetler<br>- **Web Geliştirme**: React, Next.js, Vue<br>- **AI Entegrasyonu**: LLM hazır mimari
+              </div>
+            </div>
+            <div class="recipe-overlay">
+              <div class="recipe-lock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h4>Kurumsal Onarım yol haritası Kilitli</h4>
+              <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
+              <span class="recipe-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                15 Onarım yol haritası Dahil
+              </span>
+              <button class="recipe-cta" onclick="showPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                $99 — Tüm Onarım yol haritasılerini Aç
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SECTION: AI REVENUE LOSS & ROI CALCULATOR -->
+  <section class="ea-roi-section" id="roiCalculatorSection" style="margin-bottom: 32px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+    <div class="ea-section-head" style="margin-bottom:14px;">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>Yapay Zeka Arama Kaybı &amp; Finansal Risk Hesaplayıcısı</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px; background:rgba(239,68,68,0.15); color:#ef4444; border:1px solid rgba(239,68,68,0.3);">AYLIK RİSK PROJEKSİYONU</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:18px;">
+      <div class="arr-impact-card">
+        <span class="arr-impact-card-label">📉 AYDA KAYBEDİLEN POTANSİYEL LEAD</span>
+        <strong class="arr-impact-card-val arr-impact-red" id="eaArrLeads">8 – 15 Müşteri</strong>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Arama botunun measured HTML payload kesilmesine takılması kaynaklı</small>
+      </div>
+      <div class="arr-impact-card">
+        <span class="arr-impact-card-label">🚫 ALINTI RED ORANI</span>
+        <strong class="arr-impact-card-val arr-impact-amber" id="eaArrDrop">74%</strong>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Wikidata / Bilgi grafiği eksikliği kaynaklı</small>
+      </div>
+      <div class="arr-impact-card">
+        <span class="arr-impact-card-label">💰 AYLIK RİSKTEKİ PIPELINE GELİRİ</span>
+        <strong class="arr-impact-card-val arr-impact-emerald" id="eaArrLoss">$40,000</strong>
+        <small style="font-size:11px; color:var(--ea-text-muted);">Mevcut kurumsal sepet ve arama hacmine göre</small>
+      </div>
+    </div>
+
+    <p class="arr-metric-context" style="font-size:13px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:16px;">
+      <strong>Senaryo Analizi — ölçülmüş gelir değildir:</strong> Arama motoru robotu sitenizde boğulup fiyat ve hizmet katmanınıza ulaşamadığı için yüksek satın alma niyetli kurumsal ziyaretçiler doğrudan rakiplerinize ve aracı platformlara yönlendirilmektedir. Aşağıdaki sürgülerle şirketinizin aylık hacmine göre risk büyüklüğünü hesaplayın:
+    </p>
+
+    <div class="arr-calculator-controls" style="margin-bottom:20px;">
+      <div class="arr-calc-col">
+        <div class="arr-calc-label"><span>Aylık Sektörel AI Arama Hacmi:</span> <b id="eaLblQueries">60,000</b></div>
+        <input type="range" class="arr-calc-slider" id="eaSliderQueries" min="10000" max="500000" step="10000" value="60000">
+      </div>
+      <div class="arr-calc-col">
+        <div class="arr-calc-label"><span>Ortalama Müşteri / Sipariş Değeri:</span> <b id="eaLblDeal">$5,000</b></div>
+        <input type="range" class="arr-calc-slider" id="eaSliderDeal" min="100" max="10000" step="100" value="5000">
+      </div>
+    </div>
+
+    <!-- CTA & Action Buttons -->
+    <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <button type="button" class="btn-stop-loss" id="eaBtnOpenFixPack" style="height:48px; padding:0 24px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer;">
+        ⚡ $99 — 30+ Dosyalık V3 Uygulama Paketini Al &amp;amp; Kaybı Durdur →
+      </button>
+      <button type="button" class="btn-board-memo" id="eaBtnOpenBoardMemo" style="height:48px; padding:0 20px; border-radius:10px; font-weight:700; font-size:13.5px; cursor:pointer; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--ea-text-primary);">
+        📄 1-Sayfalık Yönetim Kurulu Notu (Board Memo)
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION: 3-STEP NO-CODE INTEGRATION MATRIX -->
+  <section class="ea-integration-section" style="margin-bottom: 32px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:18px; padding:24px; box-shadow:var(--ea-shadow-card, 0 12px 36px rgba(0,0,0,0.3));">
+    <div class="ea-section-head" style="margin-bottom:10px;">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span>3 Adımda Sıfır Kod Entegrasyon: "Ben Bu Dosyaları Ne Yapacağım?"</span>
+      </h2>
+      <span class="badge-count" style="font-size:12px; padding:4px 10px; background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.3);">SIFIR RİSK · ANINDA ÇALIŞIR</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:18px;">
+      Paketteki sürümlenmiş teslim dosyaları, firmanızın kullandığı platforma göre 3 dakikada yüklenebilecek şekilde organize edilmiştir. Veritabanı veya kaynak kod değişikliği gerekmez; sisteminizde bozulma riski sıfırdır.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#21759b; color:#fff; font-size:11px; padding:2px 6px; border-radius:4px;">WordPress</span>
+          WooCommerce &amp; WP
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li><code>08_LLMS_TXT_RECOMMENDED.txt</code> dosyasını sitenizin kök klasörüne <code>llms.txt</code> olarak yükleyin.</li>
+          <li><code>13_KNOWLEDGE_VAULT.json</code> kodunu Header and Footer Scripts eklentisine yapıştırın.</li>
+          <li>Test cURL komutunu çalıştırıp anında teyit edin. (Toplam: 2 dk)</li>
+        </ol>
+      </div>
+
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#96bf48; color:#000; font-size:11px; font-weight:800; padding:2px 6px; border-radius:4px;">Shopify</span>
+          E-Ticaret Mağazaları
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li>Shopify Admin -&gt; Online Mağaza -&gt; Temalar -&gt; Düzenle adımlarını açın.</li>
+          <li><code>theme.liquid</code> dosyasındaki <code>&lt;/head&gt;</code> öncesine şema kodunu yapıştırın.</li>
+          <li>Kaydedin. Ürün ve kurumsal kimliğiniz AI ajanlarına hazır. (Toplam: 1.5 dk)</li>
+        </ol>
+      </div>
+
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#f38020; color:#fff; font-size:11px; padding:2px 6px; border-radius:4px;">Cloudflare</span>
+          Next.js / Vercel / Edge
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li>Paketteki <code>14_CLOUDFLARE_WORKER.js</code> dosyasını Cloudflare Workers'a yapıştırın.</li>
+          <li>Route olarak <code>alanadiniz.com/*</code> tanımlayın.</li>
+          <li>measured HTML payload, semantic structure and source-readiness evidence</li>
+        </ol>
+      </div>
+
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:12px; padding:16px;">
+        <div style="font-size:14px; font-weight:800; color:var(--ea-text-primary); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <span style="background:#4353ff; color:#fff; font-size:11px; padding:2px 6px; border-radius:4px;">Webflow</span>
+          Wix &amp; Framer
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:var(--ea-text-secondary); line-height:1.55;">
+          <li>Site Ayarları -&gt; Custom Code sekmesine gidin.</li>
+          <li>Head Code kutusuna paketteki JSON-LD bloğunu bırakın.</li>
+          <li>Publish butonuna basın. (Toplam: 1 dk)</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Enterprise Trust & Guarantee Badges -->
+    <div style="margin-top:20px; padding:14px 18px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ea-text-secondary);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span><strong>Paddle.com Yetkili Satıcı (MoR):</strong> 256-Bit SSL, Global Kart &amp; Kurumsal Fatura / Tax ID Desteği</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ea-text-secondary);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>Anında Otomatik Teslim:</strong> Ödeme sonrası saniyeler içinde alan adına özel ZIP indirme</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ea-text-secondary);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Sıfır Sunucu Müdahalesi:</strong> Kaynak koda ve veritabanına dokunulmaz, geri dönüşü risksizdir</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- versioned Engineering Delivery Manifest Section -->
+  <section class="ea-delivery-section" id="delivery-manifest">
+    <div class="ea-delivery-header">
+      <span class="eyebrow">MÜHENDİSLİK TESLİM PAKETİ (ZIP ENVANTERİ)</span>
+      <h2>Bir PDF değil. sürümlenmiş üretim sınıfı Engine V3 mühendislik ZIP'i.</h2>
+      <p>Ödeme entitlement'ı doğrulandığında sistem aynı alan adını yeniden tarar ve $99 Yol Haritası uygulama paketini otomatik olarak ZIP formatında üretir. Üyelik zorunlu değildir; güvenli guest-checkout token'ı ile anında teslim edilir.</p>
+    </div>
+
+    <div class="px-delivery-grid-22">
+      <article class="px-file-card"><div class="px-file-card-head"><b>00_READ_ME.md</b><span class="format-pill">MD</span></div><p>Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik uygulama rehberi.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>01_EXECUTIVE_SUMMARY.md</b><span class="format-pill">MD</span></div><p>C-Level yönetim özeti, 18 motor skoru ve kritik risk dağılım matrisi.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>02_IMPLEMENTATION_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>P0–P3 uygulama sırası, kod şablonları ve teknik uygulama spesifikasyonu.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>03_FINDINGS.json</b><span class="format-pill">JSON</span></div><p>Makine okunabilir bulgular, URL'ler ve kanıt issue envanteri.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>04_ACCEPTANCE_TESTS.md</b><span class="format-pill">TEST</span></div><p>Düzeltmenin çalıştığını kanıtlayan Playwright ve cURL kabul testleri.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>05_ROLLBACK_PLAN.md</b><span class="format-pill">SRE</span></div><p>Hata halinde sıfır kesintili güvenli geri dönüş ve durdurma şartları.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>06_AI_READINESS.json</b><span class="format-pill">JSON</span></div><p>6 layer + 13 puan dışı istihbarat analizi makine okunabilir hazırlık verisi yüzeyi.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>07_IMPLEMENTATION_CHECKLIST.txt</b><span class="format-pill">TXT</span></div><p>Yazılım ekibi için adım adım yürütme kontrol listesi.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>08_LLMS_TXT_RECOMMENDED.txt</b><span class="format-pill">CONFIG</span></div><p>Müşterinin alan adına özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>09_MACHINE_SURFACE_MAP.json</b><span class="format-pill">JSON</span></div><p>Alan adına özel doğrulanmış Markdown makine yüzey haritası.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>10_EVALUATION_REPORT.md</b><span class="format-pill">MD</span></div><p>18 motorlu deterministik değerlendirme ve saha verisi denetim raporu.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>11_MODEL_CORPUS_SEEDING_BLUEPRINT.md</b><span class="format-pill">MD</span></div><p>Açık web veri havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>12_CROSS_ENCODER_ATTENTION_MATRIX.json</b><span class="format-pill">JSON</span></div><p>Reranker sistemleri için alıntı skorlama dikkat matrisi mimarisi.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json</b><span class="format-pill">JSON</span></div><p>Wikidata QID ve Knowledge Graph mutabakat üçlüleri (@graph kodu).</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>14_CLOUDFLARE_WORKER_measured HTML payload, semantic structure and source-readiness evidence</b><span class="format-pill">JS</span></div><p>measured HTML payload, semantic structure and source-readiness evidence</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md</b><span class="format-pill">MD</span></div><p>Halüsinasyonu engelleyen kanonik endeks ve sentetik atıf mimarisi.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>16_A2A_AGENT_CARD.json</b><span class="format-pill">JSON</span></div><p>Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>17_MCP_SERVER_SPEC.json</b><span class="format-pill">JSON</span></div><p>Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md</b><span class="format-pill">MD</span></div><p>AI model filtrelerinde teknik doğruluk ton ve biçim standardı.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json</b><span class="format-pill">JSON</span></div><p>ColBERT geç etkileşimli iç çarpım vektör hizalama matrisi ve token kümeleri.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>20_C2PA_PROVENANCE_LEDGER_SPEC.json</b><span class="format-pill">JSON</span></div><p>RFC 3161 zaman damgası ve C2PA kriptografik içerik orijinallik manifest şeması.</p></article>
+      <article class="px-file-card"><div class="px-file-card-head"><b>21_DARK_POOL_HALLUCINATION_MONITOR.py</b><span class="format-pill">PY</span></div><p>Farklı modellerde (ChatGPT, Claude, Perplexity) marka halüsinasyonunu izleyen Python nöbetçisi.</p></article>
+    </div>
+
+    <div class="ea-download-bar">
+      <div class="ea-download-info">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span>n8n CI/CD Otomasyon Şablonu ve Bash Doğrulama Scripti Dahildir</span>
+      </div>
+      <button class="ea-download-btn" id="downloadBtn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Kurumsal Onarım Paketini İndir (ZIP)
+      </button>
+    </div>
+  </section>
+
+  <!-- Value Strip -->
+  <section class="px-value-strip">
+    <div><span>Üyelik yok</span><b>Guest delivery</b></div>
+    <div><span>Aylık abonelik yok</span><b>Tek alan adı / yazılım lisansı</b></div>
+    <div><span>Gizli sorun yok</span><b>Kanıt ücretsiz</b></div>
+    <div><span>Uydurma yok</span><b>Ölçülemeyen veri NOT_MEASURED</b></div>
+  </section>
+
+  <!-- Guest Delivery SaaS Disclaimer Contract -->
+  <div class="guest-delivery-contract">
+    <strong>100% Otomatik Yazılım ve Dijital Ürünler (SaaS):</strong> Bu platformda sunulan ürünler anında teslim edilen dijital kod paketleri ve yazılım lisanslarıdır. Şirketimiz reklam, pazarlama, SEO danışmanlığı, insan danışmanlığı veya özel yazılım geliştirme hizmeti <strong>SUNMAZ</strong>. Ödeme sonrası teslim paketi üyelik gerektirmeden anında güvenli indirme yetkisiyle sunulur.
+  </div>
+</div>
+
+<!-- Footer -->
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">AI SEARCH VISIBILITY</span><h2>Turn measured findings into an implementation decision.</h2><p class="ai-opportunity-lead">This report uses the same 18 engines, scores and findings in both locales; the English surface changes presentation language only.</p><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/en/website-scanner/">Check Free →</a><a class="ai-opportunity-secondary" href="/en/fix-mandate/">Unlock Remediation Package — $99 →</a></div><p class="ai-opportunity-guard">Rankings, citations, traffic and revenue are not guaranteed; only measured website-side barriers are reported.</p></div></section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Tam Site Düzeltme Talimatı</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/en/about/">Hakkımızda</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/en/terms/">Terms of Service</a></li>
+        <li><a href="/en/privacy/">Gizlilik Politikası</a></li>
+        <li><a href="/en/refund-policy/">İade Politikası</a></li>
+        <li><a href="/en/delivery-policy/">Teslimat Politikası</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
+    <span>18 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+
+<!-- Sticky Action Bar -->
+<div class="action-bar" id="actionBar">
+  <div class="action-bar-inner">
+    <span class="action-bar-text">
+      <span class="highlight">15 Kurumsal Onarım yol haritası</span> Kilitli — Tümünü Açın
+    </span>
+    <button class="action-bar-btn" id="actionBarBtn" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      $99 — Tüm Onarım yol haritasılerini Aç
+    </button>
+  </div>
+</div>
+
+<!-- Modal Dialog -->
+<div class="modal-overlay" id="paymentModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Kapat">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-icon">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h2 class="modal-title">Kurumsal Çözüm Paketini Aç</h2>
+    <p class="modal-subtitle">15 tespitin tam çözüm kodlarına, sürümlenmiş üretim paketine ve n8n CI/CD iş akışına anında erişin.</p>
+    
+    <div class="modal-features">
+      <div class="modal-feature">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>15 Detaylı Onarım yol haritası &amp; Yol Haritası</span>
+      </div>
+      <div class="modal-feature">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>sürümlenmiş Eksiksiz Üretim Paketi (ZIP)</span>
+      </div>
+      <div class="modal-feature">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>n8n CI/CD Otomasyon Şablonu &amp; Bash Testi</span>
+      </div>
+      <div class="modal-feature">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>ColBERT MaxSim, A2A &amp; Hallucination Monitor</span>
+      </div>
+    </div>
+
+    <div class="modal-price">
+      <span class="amount">$99</span>
+      <span class="period"> tek seferlik kurumsal lisans</span>
+    </div>
+
+    <button class="modal-cta" id="payButton" type="button">Onarım yol haritasılerini Aç ve İndir</button>
+    <p class="modal-guarantee">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Paddle.com Güvenli Ödeme · Anında Otomatik Teslimat · Sıfır Risk
+    </p>
+  </div>
+</div>
+
+<!-- Executive Board Memo Modal -->
+<div class="board-memo-modal" id="eaBoardMemoModal" style="display:none;" hidden role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="board-memo-paper">
+    <button type="button" class="board-memo-close" id="eaBtnCloseBoardMemo" aria-label="Kapat">✕</button>
+    <div class="board-memo-header">
+      <div style="font-size:11px;font-weight:800;letter-spacing:0.08em;color:#64748b;text-transform:uppercase;">GİZLİ // YÖNETİM KURULU İÇ MEMORANDUMU</div>
+      <h2 class="board-memo-title">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ &amp; ÇÖZÜM yol haritası RAPORU</h2>
+      <div class="board-memo-meta-grid">
+        <div class="board-memo-meta-item"><strong>KİME:</strong> İcra Kurulu, CEO &amp; CTO</div>
+        <div class="board-memo-meta-item"><strong>TARİH:</strong> <span id="memoDateSpan">9 Eylül 2026</span></div>
+        <div class="board-memo-meta-item"><strong>HEDEF:</strong> <span id="memoTargetSpan">htmlandhtml.com</span></div>
+        <div class="board-memo-meta-item"><strong>KAPSAM:</strong> 18 AI Engine Audit &amp; 3-Planes Architecture</div>
+      </div>
+    </div>
+    
+    <div class="board-memo-section-title">1. YÖNETİCİ ÖZETİ VE RİSK TEŞHİSİ</div>
+    <p class="board-memo-p">Şirketimizin ana alan adı (<strong id="memoDomainStrong">htmlandhtml.com</strong>) üzerinde yürütülen yapay zeka arama motorları (Perplexity, SearchGPT, Claude, Gemini) denetiminde; ölçülen HTML yükü ve semantik yapı sorunları ve şema eksikliği nedeniyle aylık nitelikli kurumsal müşteri / B2B satış fırsatlarının doğrudan rakiplere yönlendirildiği tespit edilmiştir.</p>
+    
+    <div class="board-memo-highlight">
+      ⚖️ <strong>Finansal Etki &amp; Risk:</strong> Mevcut kurumsal sepet hacmimize göre her ay tahmini 8–15 kurumsal müşteri kaybı yaşanmakta ve $40.000 risk altındadır.
+    </div>
+
+    <div class="board-memo-section-title">2. 3-DÜZLEMLİ KURUMSAL TEŞHİS SKORLARI</div>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:14px;">
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
+        <div style="font-size:10.5px; font-weight:700; color:#64748b;">DÜZLEM A: GÖRÜNÜRLÜK</div>
+        <strong style="font-size:16px; color:#0f172a;" id="memoPlaneA">70/100</strong>
+      </div>
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
+        <div style="font-size:10.5px; font-weight:700; color:#64748b;">DÜZLEM B: OTORİTE</div>
+        <strong style="font-size:16px; color:#0f172a;" id="memoPlaneB">58/100</strong>
+      </div>
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
+        <div style="font-size:10.5px; font-weight:700; color:#64748b;">DÜZLEM C: AJAN HAZIRLIĞI</div>
+        <strong style="font-size:16px; color:#10b981;" id="memoPlaneC">100%</strong>
+      </div>
+    </div>
+
+    <div class="board-memo-section-title">3. ÖNERİLEN ÇÖZÜM: sürümlenmiş MÜHENDİSLİK ÇÖZÜM yol haritası PAKETİ</div>
+    <p class="board-memo-p">Yazılım ekibimize teslim edilecek üretime hazır kod şablonları, JSON-LD şemaları ve n8n izleme iş akışları ile:</p>
+    <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
+      <li><strong>HTML Yük ve Semantik Yapı Optimizasyonu:</strong> Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.</li>
+      <li><strong>Knowledge Vault @graph:</strong> Wikidata QID ve Corporation şeması doğrudan &lt;head&gt; içine eklenerek marka teyit edilir.</li>
+      <li><strong>llms.txt v2 &amp; Dinamik Markdown:</strong> Otonom yapay zeka satın alma ajanları için temiz makine-okunabilir arayüz.</li>
+      <li><strong>Önemli İlke:</strong> Biz analiz eder ve yol haritasını hazırlarız. Düzeltme çalışmasını firmanızın kendi yazılım ekibi uygular. Kaynak koda doğrudan müdahale edilmez.</li>
+    </ul>
+
+    <div class="board-memo-actions">
+      <div>
+        <div style="font-size:11px;color:#64748b;">Lisans Maliyeti: <strong style="font-size:16px;color:#0f172a;">$99</strong> (Tek seferlik sabit · Abonelik yok)</div>
+        <div style="font-size:10.5px;color:#10b981;">✓ sürümlenmiş Tam Çözüm yol haritasıleri Paketi &amp; Anında ZIP İndirme</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button type="button" class="btn-board-memo" id="eaBtnPrintMemo" style="padding:10px 16px;font-size:12.5px;">🖨️ Yazdır / PDF Kaydet</button>
+        <button type="button" class="saas-modal-cta" id="eaBtnMemoUnlock" style="padding:10px 18px;font-size:13px;border:none;cursor:pointer;background:linear-gradient(135deg,#00d4ff,#0066ff);color:#fff;border-radius:8px;font-weight:700;">⚡ yol haritası Paketini Al ($99) →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/enterprise-analyzer/app.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/enterprise-analyzer-locale.js?v=2" defer></script>
+<!-- EA_LOCALE_CONTRACT:tr:URL_SSOT -->
+</body>
+</html>

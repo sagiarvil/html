@@ -24,6 +24,10 @@ replacements = (
     ('ampirik 15-prompt paneli', 'sağlayıcı anahtarıyla çalışan gözlem paneli'),
     ('15 nötr prompt', 'nötr prompt'),
     ('15 neutral prompt', 'neutral prompt'),
+    ('ampirik 15-prompt paneli ile doğrulanmış temel.', 'ampirik paneller ile doğrulanmış temel.'),
+    ('15-Prompt Canonical Inquiry Panel Breakdown', 'Canonical Inquiry Panel Breakdown'),
+    ('Tespit Kanıtı (Canlı Wikidata API Sorgusu)', 'Tespit Kanıtı (Varlık ve Yapısal Veri Kanıtı)'),
+    ('// Canlı Wikidata API Sorgusu:', '// Varlık ve Yapısal Veri Doğrulaması:'),
 )
 for old, new in replacements:
     text = text.replace(old, new)

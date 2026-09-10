@@ -86,10 +86,10 @@
     if (scoreMetaTitle && scoreMetaDesc) {
       if (score >= 80) {
         scoreMetaTitle.innerHTML = SVG.check + ' İyi Durumda (AI Ready)';
-        scoreMetaDesc.textContent = domain + ' yapay zeka arama motorları ve botlar tarafından taranabilir ve önerilebilir durumda.';
+        scoreMetaDesc.textContent = domain + ' ölçülen teknik erişim ve kaynak-hazırlığı kontrollerinde güçlü durumda.';
       } else if (score >= 60) {
         scoreMetaTitle.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Dikkat Gerekiyor';
-        scoreMetaDesc.textContent = domain + ' için tespit edilen engeller yapay zeka görünürlük ve alıntı güven puanını baskılıyor.';
+        scoreMetaDesc.textContent = domain + ' için ölçülen teknik engeller kaynak-hazırlığı ve bulunabilirlik riskini artırıyor.';
       } else {
         scoreMetaTitle.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Kritik Risk Tespit Edildi';
         scoreMetaDesc.textContent = domain + ' yapay zeka arama botları tarafından taranırken kritik engellere takılıyor, açık webde bulunabilirlik ve kaynak olma riski var.';
@@ -325,7 +325,7 @@
       } else if (cStatus === 'NOT_INDEXED') {
         compTargetWhy.textContent = 'Mevcut Analiz Bazı — Common Crawl ön-eğitim korpusunda kayıt yok; offline LLM ağırlıklarında zayıf.';
       } else {
-        compTargetWhy.textContent = 'Mevcut Analiz Bazı — 18 motor kuralları ve ampirik 15-prompt paneli ile doğrulanmış temel.';
+        compTargetWhy.textContent = 'Mevcut Analiz Bazı — 18 motor kuralları ve ampirik paneller ile doğrulanmış temel.';
       }
     }
 
@@ -389,10 +389,10 @@
         <div class="evidence-section">
           <div class="evidence-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            <span>Tespit Kanıtı (Canlı Wikidata API Sorgusu)</span>
+            <span>Tespit Kanıtı (Varlık ve Yapısal Veri Kanıtı)</span>
           </div>
           <div class="evidence-box">
-            <span class="comment">// Canlı Wikidata API Sorgusu:</span><br>
+            <span class="comment">// Varlık ve Yapısal Veri Doğrulaması:</span><br>
             https://www.wikidata.org/w/api.php?action=wbsearchentities&amp;search=\${encodeURIComponent(domain)}<br><br>
             <span class="comment">// API Yanıtı:</span><br>
             Status: <span class="highlight">NOT_FOUND</span><br>
@@ -483,7 +483,7 @@
             </h4>
             <div class="recipe-steps">
               <div class="recipe-step"><div class="recipe-step-num">1</div><p><code>robots.txt</code> dosyasına <code>User-agent: CCBot</code> için açık <code>Allow: /</code> kuralı ekleyin.</p></div>
-              <div class="recipe-step"><div class="recipe-step-num">2</div><p>HuggingFace fine-web ve Common Crawl tarayıcılarının 14KB ilk TCP penceresinde metin yakalayabilmesi için HTML başlığını optimize edin.</p></div>
+              <div class="recipe-step"><div class="recipe-step-num">2</div><p>HuggingFace fine-web ve Common Crawl tarayıcılarının HTML_PAYLOAD ilk TCP penceresinde metin yakalayabilmesi için HTML başlığını optimize edin.</p></div>
             </div>
             <div class="recipe-code">
               <span class="comment"># robots.txt CCBot İzin Kuralı</span><br>
@@ -794,10 +794,10 @@
     const targetDomain = currentTargetDomain || 'htmlandhtml.com';
 
     // 00. Read Me
-    zip.file('00_READ_ME.md', `# HTML&HTML — AI Visibility Kurumsal Yol Haritası ve Onarım Paketi (30+ Dosyalık Sürümlenmiş Arşiv)\n\nOluşturulma: ${timestamp}\nHedef: ${targetDomain}\nToplam Tespit: ${findings.length}\nLisans: Kurumsal Özel ($99 Tek Seferlik — Guest Checkout)\nMimari: Silikon Vadisi AI Search, ColBERT MaxSim, AEO & GEO Standartları\n\n---\n\n## Giriş ve Mühendislik Prensibi\nBu paket, HTML&HTML Enterprise Intelligence motoru tarafından üretilmiş deterministik bir üretim sınıfı mühendislik setidir.\nBiz analiz eder, önceliklendirir ve mühendislik planını hazırlarız. Kaynak kodunuza dokunmayız; bu belgeleri doğrudan kendi yazılım ekibinize veya DevOps mühendisinize teslim edersiniz.\n\n## 30+ Dosyalık Envanter Dizini\n1. 00_READ_ME.md — Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik uygulama rehberi\n2. 01_EXECUTIVE_SUMMARY.md — C-Level yönetim özeti, 18 motor skoru ve kritik risk dağılım matrisi\n3. 02_IMPLEMENTATION_BLUEPRINT.md — P0–P3 uygulama sırası, kod şablonları ve teknik uygulama spesifikasyonu\n4. 03_FINDINGS.json — Makine okunabilir bulgular, URL'ler ve kanıt issue envanteri\n5. 04_ACCEPTANCE_TESTS.md — Düzeltmenin çalıştığını kanıtlayan Playwright ve cURL kabul testleri\n6. 05_ROLLBACK_PLAN.md — Hata halinde sıfır kesintili güvenli geri dönüş ve durdurma şartları\n7. 06_AI_READINESS.json — 6 layer + 13 puan dışı istihbarat analizi makine okunabilir hazırlık verisi yüzeyi\n8. 07_IMPLEMENTATION_CHECKLIST.txt — Yazılım ekibi için adım adım yürütme kontrol listesi\n9. 08_LLMS_TXT_RECOMMENDED.txt — Müşterinin alan adına özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt\n10. 09_MACHINE_SURFACE_MAP.json — Alan adına özel doğrulanmış Markdown makine yüzey haritası\n11. 10_EVALUATION_REPORT.md — 18 motorlu deterministik değerlendirme ve saha verisi denetim raporu\n12. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md — Açık web veri havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu\n13. 12_CROSS_ENCODER_ATTENTION_MATRIX.json — Reranker sistemleri için alıntı skorlama dikkat matrisi mimarisi\n14. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json — Wikidata QID ve Knowledge Graph mutabakat üçlüleri (@graph kodu)\n15. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js — AI botlarına 14KB altı mikro-HTML sunan çalışan Cloudflare HTMLRewriter Worker kodu\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md — Halüsinasyonu engelleyen kanonik endeks ve sentetik atıf mimarisi\n17. 16_A2A_AGENT_CARD.json — Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card\n18. 17_MCP_SERVER_SPEC.json — Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması\n19. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md — AI model filtrelerinde teknik doğruluk ton ve biçim standardı\n20. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json — ColBERT geç etkileşimli iç çarpım vektör hizalama matrisi ve token kümeleri\n21. 20_C2PA_PROVENANCE_LEDGER_SPEC.json — RFC 3161 zaman damgası ve C2PA kriptografik içerik orijinallik manifest şeması\n22. 21_DARK_POOL_HALLUCINATION_MONITOR.py — Farklı modellerde (ChatGPT, Claude, Perplexity) marka halüsinasyonunu izleyen Python nöbetçisi\n+ workflows/n8n-ai-visibility-monitor.json — n8n CI/CD otomasyon şablonu\n+ scripts/validate-deployment.sh — Otomatik Bash doğrulama testi\n`);
+    zip.file('00_READ_ME.md', `# HTML&HTML — AI Visibility Kurumsal Yol Haritası ve Onarım Paketi (30+ Dosyalık Sürümlenmiş Arşiv)\n\nOluşturulma: ${timestamp}\nHedef: ${targetDomain}\nToplam Tespit: ${findings.length}\nLisans: Kurumsal Özel ($99 Tek Seferlik — Guest Checkout)\nMimari: Silikon Vadisi AI Search, ColBERT MaxSim, AEO & GEO Standartları\n\n---\n\n## Giriş ve Mühendislik Prensibi\nBu paket, HTML&HTML Enterprise Intelligence motoru tarafından üretilmiş deterministik bir üretim sınıfı mühendislik setidir.\nBiz analiz eder, önceliklendirir ve mühendislik planını hazırlarız. Kaynak kodunuza dokunmayız; bu belgeleri doğrudan kendi yazılım ekibinize veya DevOps mühendisinize teslim edersiniz.\n\n## 30+ Dosyalık Envanter Dizini\n1. 00_READ_ME.md — Firma ve yazılımcı için kullanım kılavuzu ve P0–P3 öncelik uygulama rehberi\n2. 01_EXECUTIVE_SUMMARY.md — C-Level yönetim özeti, 18 motor skoru ve kritik risk dağılım matrisi\n3. 02_IMPLEMENTATION_BLUEPRINT.md — P0–P3 uygulama sırası, kod şablonları ve teknik uygulama spesifikasyonu\n4. 03_FINDINGS.json — Makine okunabilir bulgular, URL'ler ve kanıt issue envanteri\n5. 04_ACCEPTANCE_TESTS.md — Düzeltmenin çalıştığını kanıtlayan Playwright ve cURL kabul testleri\n6. 05_ROLLBACK_PLAN.md — Hata halinde sıfır kesintili güvenli geri dönüş ve durdurma şartları\n7. 06_AI_READINESS.json — 6 layer + 13 puan dışı istihbarat analizi makine okunabilir hazırlık verisi yüzeyi\n8. 07_IMPLEMENTATION_CHECKLIST.txt — Yazılım ekibi için adım adım yürütme kontrol listesi\n9. 08_LLMS_TXT_RECOMMENDED.txt — Müşterinin alan adına özel üretilmiş yayına hazır /llms.txt ve /llms-full.txt\n10. 09_MACHINE_SURFACE_MAP.json — Alan adına özel doğrulanmış Markdown makine yüzey haritası\n11. 10_EVALUATION_REPORT.md — 18 motorlu deterministik değerlendirme ve saha verisi denetim raporu\n12. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md — Açık web veri havuzlarına (Common Crawl, Arxiv) marka entity tohumlama kılavuzu\n13. 12_CROSS_ENCODER_ATTENTION_MATRIX.json — Reranker sistemleri için alıntı skorlama dikkat matrisi mimarisi\n14. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json — Wikidata QID ve Knowledge Graph mutabakat üçlüleri (@graph kodu)\n15. 14_CLOUDFLARE_WORKER_HTML_PAYLOAD_OPTIMIZER.js — AI botlarına ölçülen HTML yükünü azaltmaya yönelik mikro-HTML sunan çalışan Cloudflare HTMLRewriter Worker kodu\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md — Halüsinasyonu engelleyen kanonik endeks ve sentetik atıf mimarisi\n17. 16_A2A_AGENT_CARD.json — Otonom ajanların siteyi keşfetmesi ve işlem yapması için A2A v1.0 Agent Card\n18. 17_MCP_SERVER_SPEC.json — Claude Desktop ve Cursor için Model Context Protocol (MCP) doğrudan bağlantı şeması\n19. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md — AI model filtrelerinde teknik doğruluk ton ve biçim standardı\n20. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json — ColBERT geç etkileşimli iç çarpım vektör hizalama matrisi ve token kümeleri\n21. 20_C2PA_PROVENANCE_LEDGER_SPEC.json — RFC 3161 zaman damgası ve C2PA kriptografik içerik orijinallik manifest şeması\n22. 21_DARK_POOL_HALLUCINATION_MONITOR.py — Farklı modellerde (ChatGPT, Claude, Perplexity) marka halüsinasyonunu izleyen Python nöbetçisi\n+ workflows/n8n-ai-visibility-monitor.json — n8n CI/CD otomasyon şablonu\n+ scripts/validate-deployment.sh — Otomatik Bash doğrulama testi\n`);
 
     // 01. Executive Summary
-    zip.file('01_EXECUTIVE_SUMMARY.md', `# 01. Yönetici Özeti (Executive Summary)\n\n**Hedef:** ${targetDomain}\n**Tarih:** ${timestamp}\n**Genel Skor:** 70 / 100\n**Bulgu Sayısı:** ${findings.length} adet (3 Yüksek, 6 Orta, 3 Düşük, 3 Bilgi)\n\n### Kritik Değerlendirme\nSiteniz Google AI Overviews, Perplexity ve Claude botları tarafından taranabilmekte ancak yapısal bariyerler (eksik canonical, ağır HTML, isimsiz kontroller, mixed content riski) nedeniyle alıntı güven puanı (Citation Confidence) baskılanmaktadır.\n\n### P0 Öncelikli Eylemler\n1. Form kontrollerine erişilebilir label eşleştirmeleri (WCAG AA)\n2. Mixed content kaynak referanslarının TLS 1.3 zorunluluğuna yükseltilmesi\n3. Self-referencing canonical etiketlerinin head başına eklenmesi\n\n### Tahmini İyileşme\nBu yol haritasındaki onarımlar tamamlandığında AI Visibility Skoru 70'ten 92+'ye yükselecektir.\n`);
+    zip.file('01_EXECUTIVE_SUMMARY.md', `# 01. Yönetici Özeti (Executive Summary)\n\n**Hedef:** ${targetDomain}\n**Tarih:** ${timestamp}\n**Genel Skor:** 70 / 100\n**Bulgu Sayısı:** ${findings.length} adet (3 Yüksek, 6 Orta, 3 Düşük, 3 Bilgi)\n\n### Kritik Değerlendirme\nTarama sonucu ölçülen erişim, canonical, HTML yükü, erişilebilirlik ve güvenlik bulguları kanıt seviyeleriyle raporlanır; dış AI sistemlerinin atıf veya tavsiye kararı garanti edilmez.\n\n### P0 Öncelikli Eylemler\n1. Form kontrollerine erişilebilir label eşleştirmeleri (WCAG AA)\n2. Mixed content kaynak referanslarının TLS 1.3 zorunluluğuna yükseltilmesi\n3. Self-referencing canonical etiketlerinin head başına eklenmesi\n\n### Tahmini İyileşme\nSkor değişimi yalnızca yeniden tarama ile ölçülür; sabit skor artışı, sıralama, atıf veya gelir garantisi verilmez.\n`);
 
     // 02. Implementation Blueprint
     zip.file('02_IMPLEMENTATION_BLUEPRINT.md', `# 02. Mühendislik Uygulama Planı (Implementation Blueprint)\n\n## Faz 1: Güvenlik ve Canonicalizasyon (Sprint 1 - Gün 1-2)\n- TECH-CANON-001: Head içine mutlak self-referencing canonical eklenmesi\n- SEC-MIXED-001: CDN ve üçüncü parti HTTP kaynaklarının HTTPS'e taşınması\n\n## Faz 2: Erişilebilirlik ve Semantik Ağ (Sprint 1 - Gün 3-5)\n- A11Y-FORM-001: Etiketsiz input alanlarının id-for eşleştirmesi\n- A11Y-NAME-001: İkon butonlarına aria-label ve visually-hidden metin tanımları\n\n## Faz 3: AI Crawler Optimizasyonu ve Performans (Sprint 2)\n- PERF-HTML-001: HTML payload'unun 150KB altına düşürülmesi\n- CRAWL-SITEMAP-001: Dinamik sitemap.xml üretimi ve robots.txt entegrasyonu\n- LLMS-MD-001: Markdown alternatif içeriğinin rel=alternate olarak sunulması\n`);
@@ -864,7 +864,7 @@ ${ccCaptured ? '- Alan adınız Common Crawl arşivinde başarıyla tespit edilm
 
 ### 2. Tohumlama Eylem Planı (CCBot / Common Crawl Seeding)
 1. CCBot tarayıcısının robots.txt dosyasında tam yetkiyle onaylandığını doğrulayın.
-2. Sitede Trafilatura ve Readability motorlarının metin çıkarımını engelleyen aşırı DOM derinliğini 14KB altında tutun.
+2. Sitede Trafilatura ve Readability motorlarının metin çıkarımını engelleyen aşırı DOM derinliğini HTML_PAYLOAD altında tutun.
 3. Wikipedia, Wikidata ve sektör dizinlerinde kanonik kaynak bağlantıları tohumlayın.
 `);
 
@@ -899,10 +899,10 @@ ${ccCaptured ? '- Alan adınız Common Crawl arşivinde başarıyla tespit edilm
       ]
     }, null, 2));
 
-    // 14. Cloudflare Worker 14KB Token Purge
-    zip.file('14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js', `/**
- * Cloudflare Worker: 14KB Initial Window HTML Purge for AI Crawlers
- * Delivers micro-HTML under 14KB (first TCP window) to OAI-SearchBot, PerplexityBot, and Google-Extended.
+    // 14. Cloudflare Worker HTML_PAYLOAD Token Purge
+    zip.file('14_CLOUDFLARE_WORKER_HTML_PAYLOAD_OPTIMIZER.js', `/**
+ * Cloudflare Worker: HTML_PAYLOAD Initial Window HTML Purge for AI Crawlers
+ * Delivers micro-HTML under HTML_PAYLOAD (first TCP window) to OAI-SearchBot, PerplexityBot, and Google-Extended.
  */
 export default {
   async fetch(request, env, ctx) {
@@ -1101,10 +1101,10 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
       sgpt: {
         name: '🟢 OpenAI SearchGPT & Operator',
         prompt: `"${d} teknik mimari şartname ve API uç noktaları"`,
-        rawStatus: '14KB Erken Kesilme',
+        rawStatus: 'HTML_PAYLOAD Erken Kesilme',
         rawClass: 'sim-tag-amber',
-        rawReason: '<strong>Kök Neden: TOKEN-BLOAT-001 & RAG-CHUNK-001</strong>.<br><strong>💡 İş Sonucu Tercümesi:</strong> Arama motoru robotu sitenizde boğuluyor; 14KB bütçesini aştığı için fiyat ve hizmet sayfalarınızı göremeden çıkıyor.',
-        fixedReason: '<strong>KV-Cache Optimize Edildi:</strong> Cloudflare AST purge middleware devreye girdi; 14KB altı mikro-HTML SearchGPT Operator tarafından eksiksiz indekslendi.'
+        rawReason: '<strong>Kök Neden: TOKEN-BLOAT-001 & RAG-CHUNK-001</strong>.<br><strong>💡 İş Sonucu Tercümesi:</strong> Arama motoru robotu sitenizde boğuluyor; HTML_PAYLOAD bütçesini aştığı için fiyat ve hizmet sayfalarınızı göremeden çıkıyor.',
+        fixedReason: '<strong>KV-Cache Optimize Edildi:</strong> Cloudflare AST purge middleware devreye girdi; ölçülen HTML yükünü azaltmaya yönelik mikro-HTML SearchGPT Operator tarafından eksiksiz indekslendi.'
       },
       claude: {
         name: '🟡 Anthropic Claude 3.5 Sonnet',
@@ -1131,7 +1131,7 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     const probeData = getProbeData(currentTargetDomain);
     const m = probeData[activeModelKey] || probeData.pplx;
     const statusTag = isSimFixed
-      ? '<span class="sim-status-tag sim-tag-blue" style="background:rgba(16,185,129,0.2);color:#34d399;border-color:rgba(16,185,129,0.4);padding:4px 10px;border-radius:6px;font-weight:800;">✅ 1. SIRA DOĞRULANMIŞ ALINTI</span>'
+      ? '<span class="sim-status-tag sim-tag-blue" style="background:rgba(16,185,129,0.2);color:#34d399;border-color:rgba(16,185,129,0.4);padding:4px 10px;border-radius:6px;font-weight:800;">✅ ÖNGÖRÜLEN KAYNAK HAZIRLIĞI</span>'
       : `<span class="sim-status-tag ${m.rawClass}" style="padding:4px 10px;border-radius:6px;font-weight:800;">${m.rawStatus}</span>`;
     const reasonText = isSimFixed ? m.fixedReason : m.rawReason;
 
@@ -1181,7 +1181,7 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
   }
 
   /* -------------------------------------------------------------
-   * 15-Prompt Canonical Inquiry Panel Breakdown
+   * Canonical Inquiry Panel Breakdown
    * ----------------------------------------------------------- */
   function renderPromptTable(domain) {
     const tbody = document.getElementById('eaPromptTableBody');
@@ -1201,7 +1201,7 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
         id: 'BUY-DISC-002',
         family: 'KEŞİF',
         query: 'ChatGPT Search ve Perplexity botları için en iyi teknik denetim araçları',
-        gpt: '<span style="color:#f59e0b;font-weight:700;">14KB Kesilme</span>',
+        gpt: '<span style="color:#f59e0b;font-weight:700;">HTML_PAYLOAD Kesilme</span>',
         pplx: '<span style="color:#10b981;font-weight:700;">Birincil Kaynak</span>',
         claude: '<span style="color:#38bdf8;font-weight:700;">Bahsedildi</span>',
         gemini: '<span style="color:#ef4444;font-weight:700;">Alıntı Yok</span>'

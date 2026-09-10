@@ -268,5 +268,23 @@
       "WCAG22",
       "OPENAPI31"
     ]
+  },
+  "publicPositioning": {
+    "category": "AI SEO / AI Search Visibility / Website Readiness",
+    "primarySearchIntentsTR": [
+      "yapay zeka seo analizi",
+      "chatgpt görünürlük",
+      "yapay zeka arama görünürlüğü",
+      "llms.txt validator",
+      "ai crawler checker"
+    ],
+    "primarySearchIntentsEN": [
+      "AI SEO audit",
+      "ChatGPT visibility",
+      "AI search visibility",
+      "llms.txt validator",
+      "AI crawler checker"
+    ],
+    "guaranteeBoundary": "No ranking, citation, recommendation, traffic or revenue guarantee."
   }
 }

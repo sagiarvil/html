@@ -12,7 +12,7 @@ htmlandhtml.com evaluates website visibility across ChatGPT, Claude, Perplexity,
 | **Scan Engines** | 18 deterministic | 3-5 heuristic | Rule-based, zero-random |
 | **Control Points** | 105 | 15-30 | N8N composable node architecture |
 | **Delivery Time** | 3-8 seconds | 24-72 hours | Serverless Edge Infrastructure |
-| **Token Budget** | 14KB optimized | 2MB+ bloat | AST micro-streaming |
+| **Token Budget** | measured HTML payload, semantic structure and source-readiness evidence
 | **Re-scan Guarantee**| 30 days | None | Deterministic checksum |
 
 ## 3. Semantic Triples (RDF)
