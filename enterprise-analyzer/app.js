@@ -55,6 +55,7 @@
   function applyLiveScanResults(domain, data, isV2) {
     currentTargetDomain = domain;
     try { window.__lastScanData = data; } catch(e) {}
+    try { updateEmailDevHandover(); } catch(e) {}
 
     // 1. Overall Score
     let score = 70;
@@ -1418,10 +1419,33 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
         });
       }
     }
+
+    function updateEmailDevHandover() {
+      const btnEmail = document.getElementById('btnEmailDevHandover');
+      if (!btnEmail) return;
+      const isTr = document.documentElement.lang === 'tr';
+      const target = currentTargetDomain || 'domain.com';
+      const reportUrl = window.location.origin + (isTr ? '/tr/enterprise-analyzer/?domain=' : '/enterprise-analyzer/?domain=') + encodeURIComponent(target);
+      const subject = isTr
+        ? `[ACİL/ÖNCELİKLİ] ${target} Web Sitemizin Yapay Zeka Arama (GEO/AEO) ve Teknik Altyapı Düzeltme Paketi`
+        : `[ACTION REQUIRED] ${target} AI Search Visibility (GEO/AEO) & Technical Fix Package`;
+      const body = isTr
+        ? `Merhaba,\n\n${target} sitemizin teknik ve yapay zeka arama (ChatGPT, Perplexity, Gemini) görünürlük denetimini tamamladım.\n\nÖzet Durum:\nSitemiz standart arama botlarınca taranıyor ancak modellerin ürün/hizmet ve fiyat bilgilerimizi doğrudan çekmesini engelleyen 3 kritik altyapı engeli (HSTS, canonical başlıkları, /llms.txt) tespit edildi.\n\nYazılım Ekibi İçin Uygulama Adımları:\n1. Sitemiz için üretilen 30+ dosyalık onarım paketindeki 00_READ_ME.md ve 02_IMPLEMENTATION_BLUEPRINT.md belgelerini inceleyin.\n2. P0 öncelikli 3 kritik dosyayı (güvenlik başlığı, canonical etiketi ve /llms.txt) sunucumuza ekleyip yayına alın.\n3. İşlem sonrası aynı rapordan ücretsiz yeniden tarama yaparak doğrulamayı teyit edeceğiz.\n\nDetaylı Canlı Rapor: ${reportUrl}\n`
+        : `Hi team,\n\nI have completed the enterprise AI search (ChatGPT, Perplexity, Gemini) and technical readiness audit for ${target} on htmlandhtml.com.\n\nExecutive Finding:\nOur domain is crawlable, but contains key technical blockers (missing HSTS headers, canonical gaps, and no /llms.txt manifest) preventing generative AI engines from directly citing our products and pricing.\n\nEngineering Handover Steps:\n1. Review 00_READ_ME.md and 02_IMPLEMENTATION_BLUEPRINT.md from the 30+ file delivery bundle.\n2. Deploy the 3 P0 priority items (edge security headers, RFC canonical head tags, and /llms.txt) to our origin.\n3. Re-run the automated verification scan on the live report to confirm all checks pass.\n\nLive Report URL: ${reportUrl}\n`;
+
+      btnEmail.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
     const btnDevHandover = document.getElementById('btnCopyDevHandover');
     if (btnDevHandover) btnDevHandover.addEventListener('click', copyDeveloperHandoverNote);
     const btnExecHandover = document.getElementById('btnExecutiveHandoverTop');
     if (btnExecHandover) btnExecHandover.addEventListener('click', copyDeveloperHandoverNote);
+    const btnEmailDev = document.getElementById('btnEmailDevHandover');
+    if (btnEmailDev) {
+      btnEmailDev.addEventListener('click', updateEmailDevHandover);
+      btnEmailDev.addEventListener('mouseenter', updateEmailDevHandover);
+      try { updateEmailDevHandover(); } catch(e) {}
+    }
 
     // ARR Calculator Sliders
     const sQueries = document.getElementById('eaSliderQueries');
