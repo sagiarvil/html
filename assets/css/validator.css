@@ -602,6 +602,9 @@ html[data-theme="light"] .authority-hero .kicker b {
   background: rgba(56, 189, 248, 0.12);
   border-color: rgba(56, 189, 248, 0.3);
 }
+.print-pane-section-header {
+  display: none;
+}
 .console-pane {
   display: none;
 }
@@ -1237,9 +1240,22 @@ html[data-theme="light"] .console-tab-btn.active {
     max-height: none !important;
     overflow: visible !important;
   }
-  .locked-fix-overlay {
-    display: none !important;
-  }
+  .locked-fix-overlay,
+  .dash-view-nav-wrapper,
+  .dash-view-tabs,
+  .master-single-license-banner,
+  #masterSingleLicenseBanner,
+  .closing-intervention-deck,
+  #closingInterventionDeck,
+  .saas-banner-bar,
+  .btn-board-memo,
+  .btn-edge-term-run,
+  .btn-stop-loss,
+  .recipe-glow,
+  .recipe-overlay,
+  .recipe-section.locked .recipe-overlay,
+  .saas-interactive-toggle,
+  .btn-copy-darkpool,
   .n8n-dag-actions,
   .btn-run-dag,
   .btn-download-blob,
@@ -1252,12 +1268,76 @@ html[data-theme="light"] .console-tab-btn.active {
   .multicloud-selector {
     display: none !important;
   }
+  .recipe-section.locked .recipe-content {
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    user-select: text !important;
+    pointer-events: auto !important;
+  }
+  .dash-panes-container {
+    display: block !important;
+    width: 100% !important;
+  }
+  .dash-pane,
+  #paneFindings,
+  #paneSimulation,
+  #paneVector,
+  #paneN8n {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-bottom: 24pt !important;
+    page-break-inside: auto !important;
+  }
+  #paneFindings,
+  #paneSimulation,
+  #paneVector {
+    page-break-after: always !important;
+  }
+  #paneN8n {
+    page-break-after: auto !important;
+  }
+  .print-pane-section-header {
+    display: block !important;
+    background: #0f172a !important;
+    color: #ffffff !important;
+    padding: 10pt 14pt !important;
+    border-radius: 4pt !important;
+    margin: 16pt 0 12pt 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  #paneFindings .print-pane-section-header {
+    page-break-before: avoid !important;
+  }
+  .print-pane-section-header h2 {
+    font-size: 13pt !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    margin: 0 0 4pt 0 !important;
+    line-height: 1.2 !important;
+  }
+  .print-pane-section-header p {
+    font-size: 8.5pt !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+    line-height: 1.35 !important;
+  }
   .console-pane,
   .vector-pane {
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    margin-bottom: 8pt !important;
+    margin-bottom: 12pt !important;
   }
   .colbert-matrix-wrapper,
   .cross-encoder-grid,

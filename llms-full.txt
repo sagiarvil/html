@@ -67,6 +67,7 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 - [OpenAPI contract](https://htmlandhtml.com/openapi.json)
 - [Cloudflare Worker SaaS Edge Architecture](https://htmlandhtml.com/en/platform/): Zero-code reverse proxy intercepting measured HTML payload, semantic structure and source-readiness evidence
 - [llms.txt Spec-v2 Single-Panel Manager](https://htmlandhtml.com/en/llms-txt-validator/): Centralized orchestration for spec-v2 compliant markdown knowledge surfaces with on-the-fly markdown content negotiation.
+- [Universal Enterprise AI Search Architecture Mandate](https://htmlandhtml.com/SUPER-MANDATE-UNIVERSAL-V3.md): 360° integrated architecture covering SEO, GEO, AEO, LLMO, AAO-Pro, RAG, and E-E-A-T across 18 deterministic engines, 105 controls, and zero-defect remediation blueprint.
 - [Health endpoint](https://htmlandhtml.com/api/health)
 
 ## Specialized Diagnostic Tools
