@@ -160,6 +160,9 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [FS-THEME-001 Mandate](FS-THEME-001-MANDATE.md): Theme System Mandate
 - [FS-THEME-001 Widget](FS-THEME-001-Widget.html): Theme System Widget Demo
 
+## Black-box observation methodology
+- [https://htmlandhtml.com/blackbox-observation-contract.json](https://htmlandhtml.com/blackbox-observation-contract.json) — six non-scoring observation contracts for query fan-out, citation volatility, crawler-policy divergence, render parity, entity drift and agent-action friction. This is an evidence protocol, not secret model access.
+
 <!-- LLMS_NEWS_START -->
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
@@ -185,6 +188,3 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Inside Googlebot: demystifying crawling, fetching, and the bytes we process: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d/)
 - [New Location for the Google Crawlers' IP Range Files: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200/)
 <!-- LLMS_NEWS_END -->
-
-## Black-box observation methodology
-- [https://htmlandhtml.com/blackbox-observation-contract.json](https://htmlandhtml.com/blackbox-observation-contract.json) — six non-scoring observation contracts for query fan-out, citation volatility, crawler-policy divergence, render parity, entity drift and agent-action friction. This is an evidence protocol, not secret model access.

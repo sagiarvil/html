@@ -92,12 +92,12 @@ Evidence and diagnosis are public. Implementation precision is the paid product.
 
 The product sells measurable readiness and recommendation opportunity, not false certainty. Ranking, recommendation, traffic, customer, revenue, featured-snippet, or AI-citation outcomes are never guaranteed.
 
+## Black-box observation methodology
+- [https://htmlandhtml.com/blackbox-observation-contract.json](https://htmlandhtml.com/blackbox-observation-contract.json) — six non-scoring observation contracts for query fan-out, citation volatility, crawler-policy divergence, render parity, entity drift and agent-action friction. This is an evidence protocol, not secret model access.
+
 <!-- LLMS_NEWS_START -->
 ## LLMS.TXT News
 
 - [TR news hub](https://htmlandhtml.com/tr/llms-txt-haberler/)
 - [EN news hub](https://htmlandhtml.com/en/llms-txt-news/)
 <!-- LLMS_NEWS_END -->
-
-## Black-box observation methodology
-- [https://htmlandhtml.com/blackbox-observation-contract.json](https://htmlandhtml.com/blackbox-observation-contract.json) — six non-scoring observation contracts for query fan-out, citation volatility, crawler-policy divergence, render parity, entity drift and agent-action friction. This is an evidence protocol, not secret model access.

@@ -160,15 +160,74 @@
   <div class="ea-agency-share-bar" style="margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid var(--ea-border, rgba(255,255,255,0.1)); border-radius:12px; padding:10px 18px; flex-wrap:wrap; gap:10px;">
     <div style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ea-text-secondary);">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span><strong>Enterprise / Agency Sharing Mode:</strong> Share this audit result with your client or executive board:</span>
+      <span data-en="<strong>Enterprise / Agency Sharing Mode:</strong> Share this audit result with your client or executive board:" data-tr="<strong>Enterprise / Agency Sharing Mode:</strong> Share this audit result with your client or executive board:"&gt;<strong><strong>Enterprise / Agency Sharing Mode:</strong> Share this audit result with your client or executive board:</span>
     </div>
-    <div style="display:flex; gap:8px; align-items:center;">
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
       <button type="button" class="ea-filter-btn" id="btnCopyShareUrl" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer;">
-        🔗 Copy Live Report Link
+        <span data-en="🔗 Copy Live Report Link" data-tr="🔗 Copy Live Report Link">🔗 Copy Live Report Link</span>
       </button>
       <button type="button" class="ea-filter-btn" id="btnCopyBadgeCode" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer;">
-        🛡️ AI-Ready Rozet Kodunu Al (SVG)
+        <span data-en="🛡️ Get AI-Ready Badge (SVG)" data-tr="🛡️ AI-Ready Rozet Kodunu Al (SVG)">🛡️ Get AI-Ready Badge (SVG)</span>
       </button>
+      <button type="button" class="ea-filter-btn" id="btnCopyDevHandover" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.3); color:var(--ea-accent);">
+        <span data-en="📋 Copy Handover Note for Developer" data-tr="📋 Yazılımcıya İletilecek Notu Kopyala">📋 Copy Handover Note for Developer</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Executive Plain-Language Clarity & Decision Hub -->
+  <div class="ea-executive-clarity-card" style="margin-bottom:20px; background:var(--ea-bg-card, #121827); border:1px solid var(--ea-border, rgba(255,255,255,0.12)); border-radius:16px; padding:20px 22px; box-shadow:var(--ea-shadow-card, 0 8px 32px rgba(0,0,0,0.25));">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, #00d4ff, #8b5cf6); color:#fff; font-size:14px;">💡</span>
+        <div>
+          <h3 style="font-size:14px; font-weight:800; color:var(--ea-text-primary, #f8fafc); margin:0;" data-en="Executive Clarity: What This Audit Means in Plain English" data-tr="Yönetici Özeti: Bu Denetim Sade Dille Ne Anlama Geliyor?">Executive Clarity: What This Audit Means in Plain English</h3>
+          <p style="font-size:12px; color:var(--ea-text-secondary, #94a3b8); margin:2px 0 0 0;" data-en="Zero-jargon briefing for C-Level executives, business owners, and non-technical decision makers." data-tr="C-Level yöneticiler, şirket sahipleri ve teknik olmayan karar vericiler için terimsiz 30 saniyelik brifing.">Zero-jargon briefing for C-Level executives, business owners, and non-technical decision makers.</p>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="badge-count" style="font-size:11.5px; padding:4px 10px; background:rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.3);" data-en="30-SECOND C-LEVEL SUMMARY" data-tr="30 SANİYELİK YÖNETİCİ BRİFİNGİ">30-SECOND C-LEVEL SUMMARY</span>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:14px;">
+      <!-- Card 1: What We Found -->
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:10px; padding:14px;">
+        <div style="font-size:12px; font-weight:800; color:#38bdf8; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+          <span>🔍</span> <span data-en="1. What Did We Find?" data-tr="1. Ne Bulduk?">1. What Did We Find?</span>
+        </div>
+        <p style="font-size:12.5px; color:var(--ea-text-secondary, #cbd5e1); line-height:1.55; margin:0;" data-en="Your domain is active and indexed by Google. However, key technical blockers (missing HSTS security, canonical gaps, and no /llms.txt manifest) prevent generative AI models (ChatGPT, Perplexity) from cleanly extracting your products and pricing." data-tr="Siteniz yayında ve Google tarafından dizine ekleniyor. Ancak güvenlik başlıkları, canonical eksikliği ve /llms.txt protokolünün olmaması nedeniyle ChatGPT ve Perplexity gibi yapay zeka sistemleri ürün ve fiyatlarınızı doğrudan okuyamıyor.">Your domain is active and indexed by Google. However, key technical blockers (missing HSTS security, canonical gaps, and no /llms.txt manifest) prevent generative AI models (ChatGPT, Perplexity) from cleanly extracting your products and pricing.</p>
+      </div>
+
+      <!-- Card 2: Business Risk -->
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:10px; padding:14px;">
+        <div style="font-size:12px; font-weight:800; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+          <span>📉</span> <span data-en="2. The Business Impact" data-tr="2. İşletmeniz İçin Anlamı">2. The Business Impact</span>
+        </div>
+        <p style="font-size:12.5px; color:var(--ea-text-secondary, #cbd5e1); line-height:1.55; margin:0;" data-en="When potential enterprise clients ask AI search engines for recommendations in your industry, models default to competitors whose structured data and entity footprints are fully machine-readable." data-tr="Potansiyel müşterileriniz yapay zeka asistanlarına sektörünüzle ilgili soru sorduğunda, modeller sitenizdeki engeller yüzünden sizi atlayıp altyapısı hazır olan rakiplerinizi öneriyor ve kaynak gösteriyor.">When potential enterprise clients ask AI search engines for recommendations in your industry, models default to competitors whose structured data and entity footprints are fully machine-readable.</p>
+      </div>
+
+      <!-- Card 3: The Fix & $99 Value -->
+      <div style="background:var(--ea-code-bg, #070a12); border:1px solid var(--ea-border, rgba(255,255,255,0.08)); border-radius:10px; padding:14px;">
+        <div style="font-size:12px; font-weight:800; color:#10b981; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+          <span>🚀</span> <span data-en="3. How It Gets Solved ($99 Fixed)" data-tr="3. Nasıl Çözülür? ($99 Sabit)">3. How It Gets Solved ($99 Fixed)</span>
+        </div>
+        <p style="font-size:12.5px; color:var(--ea-text-secondary, #cbd5e1); line-height:1.55; margin:0;" data-en="No agency retainers or $150/hr consulting fees. The $99 package delivers 30+ versioned configuration files, ready-to-paste code patches, and an ICS calendar roadmap that your developer can deploy in under 2 hours." data-tr="Aylık ajans sözleşmesi veya saati 150$'lık danışmanlık ücreti yok. 99$'lık paket; yazılımcınızın sunucunuza 2 saatte kopyalayıp kurabileceği 30+ sürümlenmiş kod dosyasını, hazır şemaları ve takvim yol haritasını teslim eder.">No agency retainers or $150/hr consulting fees. The $99 package delivers 30+ versioned configuration files, ready-to-paste code patches, and an ICS calendar roadmap that your developer can deploy in under 2 hours.</p>
+      </div>
+    </div>
+
+    <!-- Director Action Bar: Why $0 vs $99 & Handover Button -->
+    <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.02); border:1px solid var(--ea-border, rgba(255,255,255,0.06)); border-radius:10px; padding:10px 14px; flex-wrap:wrap; gap:10px;">
+      <div style="font-size:12px; color:var(--ea-text-secondary, #94a3b8); display:flex; align-items:center; gap:6px;">
+        <span style="color:#10b981;">✓</span>
+        <strong data-en="Transparent Software Contract:" data-tr="Şeffaf Yazılım İlkemiz:">Transparent Software Contract:</strong>
+        <span data-en="$0 Free Diagnostic (unbiased transparency) · $99 One-Time Engineering License (no recurring fees, zero human agency overhead)." data-tr="$0 Ücretsiz Teşhis (şeffaf durum tespiti) · $99 Tek Seferlik Mühendislik Lisansı (abonelik yok, ajans masrafı yok).">$0 Free Diagnostic (unbiased transparency) · $99 One-Time Engineering License (no recurring fees, zero human agency overhead).</span>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button type="button" class="ea-filter-btn" id="btnExecutiveHandoverTop" style="font-size:12px; padding:6px 14px; border-radius:8px; cursor:pointer; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.3); color:var(--ea-accent, #00d4ff); font-weight:700;">
+          <span data-en="📋 Copy Handover Note for Your Developer" data-tr="📋 Yazılımcınız İçin Hazır Görev Notunu Kopyala">📋 Copy Handover Note for Your Developer</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -209,7 +268,7 @@
         </div>
       </div>
       <div class="ea-hud-score-footer">
-        <span>Kritik Risk: 3 Bulgu</span>
+        <span data-en="Critical Risk: 3 Findings" data-tr="Kritik Risk: 3 Bulgu">Critical Risk: 3 Findings</span>
         <span>Remediation Roadmaps: 15</span>
       </div>
     </div>
@@ -230,7 +289,7 @@
         </div>
         <div class="ea-pillar-cell">
           <div class="ea-pillar-header">
-            <span>Anlama (Schema &amp; llms.txt)</span>
+            <span data-en="Understanding (Schema &amp; llms.txt)" data-tr="Anlama (Schema &amp; llms.txt)">Understanding (Schema &amp; llms.txt)</span>
             <span class="score">81%</span>
           </div>
           <div class="ea-pillar-track"><div class="ea-pillar-bar bar-blue" style="width:81%"></div></div>
@@ -313,11 +372,11 @@
       <div>
         <div class="ea-plane-header">
           <span class="ea-plane-tag">PLANE C</span>
-          <span class="ea-plane-score" id="planeCScore">100% HAZIR</span>
+          <span class="ea-plane-score" id="planeCScore" data-en="100% READY" data-tr="100% HAZIR">100% READY</span>
         </div>
         <h3 class="ea-plane-title">DECISION &amp; REMEDIATION</h3>
         <p class="ea-plane-desc">
-          Entity conflict ledger, 24-field open remediation roadmaps, n8n DAG automation and 22/30+ file versioned production delivery package.
+          Entity conflict ledger, 24-field open remediation roadmaps, n8n DAG automation and 30+ file versioned production delivery package.
         </p>
       </div>
       <ul class="ea-plane-features">
@@ -2202,8 +2261,8 @@
       <div class="board-memo-meta-grid">
         <div class="board-memo-meta-item"><strong>TO:</strong> Executive Board, CEO &amp; CTO</div>
         <div class="board-memo-meta-item"><strong>DATE:</strong> <span id="memoDateSpan">September 9, 2026</span></div>
-        <div class="board-memo-meta-item"><strong>HEDEF:</strong> <span id="memoTargetSpan">htmlandhtml.com</span></div>
-        <div class="board-memo-meta-item"><strong>KAPSAM:</strong> 18 AI Engine Audit &amp; 3-Planes Architecture</div>
+        <div class="board-memo-meta-item"><strong data-en="TARGET:" data-tr="HEDEF:">TARGET:</strong> <span id="memoTargetSpan">htmlandhtml.com</span></div>
+        <div class="board-memo-meta-item"><strong data-en="SCOPE:" data-tr="KAPSAM:">SCOPE:</strong> 18 AI Engine Audit &amp; 3-Planes Architecture</div>
       </div>
     </div>
     
@@ -2235,13 +2294,13 @@
     <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
       <li><strong>HTML Payload &amp; Semantic Structure Optimization:</strong> HTML optimization ensuring search bots parse full product and pricing tiers before timeout.</li>
       <li><strong>Knowledge Vault @graph:</strong> Wikidata QID and Corporation schema injected into &lt;head&gt; for brand verification.</li>
-      <li><strong>llms.txt v2 &amp; Dinamik Markdown:</strong> Clean machine-readable interface for autonomous AI purchasing agents.</li>
+      <li><strong data-en="llms.txt v2 &amp; Dynamic Markdown:" data-tr="llms.txt v2 &amp; Dinamik Markdown:">llms.txt v2 &amp; Dynamic Markdown:</strong> Clean machine-readable interface for autonomous AI purchasing agents.</li>
       <li><strong>Core Principle:</strong> We diagnose and prepare the roadmap. Your engineering team applies the fixes. No direct modification to client source code.</li>
     </ul>
 
     <div class="board-memo-actions">
       <div>
-        <div style="font-size:11px;color:#64748b;">Lisans Maliyeti: <strong style="font-size:16px;color:#0f172a;">$99</strong> (Tek seferlik sabit · Abonelik yok)</div>
+        <div style="font-size:11px;color:#64748b;" data-en="License Cost: <strong style='font-size:16px;color:#0f172a;'>$99</strong> (One-time fixed · No subscription)" data-tr="Lisans Maliyeti: <strong style='font-size:16px;color:#0f172a;'>$99</strong> (Tek seferlik sabit · Abonelik yok)">License Cost: <strong style='font-size:16px;color:#0f172a;'>$99</strong> (One-time fixed · No subscription)</div>
         <div style="font-size:10.5px;color:#10b981;">✓ Versioned Complete Remediation Roadmap Package &amp; Instant ZIP Download</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">

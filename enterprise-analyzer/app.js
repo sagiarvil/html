@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HTML&HTML — Enterprise AI Visibility Diagnostic Suite
  * Silicon Valley / NYC / London Principal Engineering Architecture
  * Zero external unhandled exceptions, deterministic state, dual-theme sync, n8n automation,
@@ -1362,10 +1362,11 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     const btnShareUrl = document.getElementById('btnCopyShareUrl');
     if (btnShareUrl) {
       btnShareUrl.addEventListener('click', function() {
-        const url = window.location.origin + '/enterprise-analyzer/?domain=' + encodeURIComponent(currentTargetDomain);
+        const isTr = document.documentElement.lang === 'tr';
+        const url = window.location.origin + (isTr ? '/tr/enterprise-analyzer/?domain=' : '/enterprise-analyzer/?domain=') + encodeURIComponent(currentTargetDomain);
         if (navigator.clipboard) {
           navigator.clipboard.writeText(url).then(function() {
-            showToast('Canlı Denetim Rapor Linki Panoya Kopyalandı!', 'check');
+            showToast(isTr ? 'Canlı Denetim Rapor Linki Panoya Kopyalandı!' : 'Live Report Link Copied to Clipboard!', 'check');
           });
         }
       });
@@ -1374,14 +1375,53 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
     const btnBadgeCode = document.getElementById('btnCopyBadgeCode');
     if (btnBadgeCode) {
       btnBadgeCode.addEventListener('click', function() {
-        const snippet = '<a href="https://htmlandhtml.com/enterprise-analyzer/?domain=' + encodeURIComponent(currentTargetDomain) + '" target="_blank" rel="noopener"><img src="https://htmlandhtml.com/assets/badge.svg" alt="HTML&HTML Verified AI Readiness" height="32"></a>';
+        const isTr = document.documentElement.lang === 'tr';
+        const snippet = '<a href="https://htmlandhtml.com/' + (isTr ? 'tr/' : '') + 'enterprise-analyzer/?domain=' + encodeURIComponent(currentTargetDomain) + '" target="_blank" rel="noopener"><img src="https://htmlandhtml.com/assets/badge.svg" alt="HTML&HTML Verified AI Readiness" height="32"></a>';
         if (navigator.clipboard) {
           navigator.clipboard.writeText(snippet).then(function() {
-            showToast('AI-Ready Rozet Kodu Panoya Kopyalandı!', 'check');
+            showToast(isTr ? 'AI-Ready Rozet Kodu Panoya Kopyalandı!' : 'AI-Ready Badge Code Copied to Clipboard!', 'check');
           });
         }
       });
     }
+
+    function copyDeveloperHandoverNote() {
+      const isTr = document.documentElement.lang === 'tr';
+      const target = currentTargetDomain || 'domain.com';
+      const reportUrl = window.location.origin + (isTr ? '/tr/enterprise-analyzer/?domain=' : '/enterprise-analyzer/?domain=') + encodeURIComponent(target);
+      const noteTr = `Konu: [ACİL/ÖNCELİKLİ] ${target} Web Sitemizin Yapay Zeka Arama (GEO/AEO) ve Teknik Altyapı Düzeltme Paketi\n\n` +
+        `Merhaba,\n` +
+        `${target} sitemizin teknik ve yapay zeka arama (ChatGPT, Perplexity, Gemini) görünürlük denetimini tamamladım.\n\n` +
+        `Özet Durum:\n` +
+        `Sitemiz standart arama botlarınca taranıyor ancak modellerin ürün/hizmet ve fiyat bilgilerimizi doğrudan çekmesini engelleyen 3 kritik altyapı engeli (HSTS, canonical başlıkları, /llms.txt) tespit edildi.\n\n` +
+        `Yazılım Ekibi İçin Uygulama Adımları:\n` +
+        `1. Sitemiz için üretilen 30+ dosyalık onarım paketindeki 00_READ_ME.md ve 02_IMPLEMENTATION_BLUEPRINT.md belgelerini inceleyin.\n` +
+        `2. P0 öncelikli 3 kritik dosyayı (güvenlik başlığı, canonical etiketi ve /llms.txt) sunucumuza ekleyip yayına alın.\n` +
+        `3. İşlem sonrası aynı rapordan ücretsiz yeniden tarama yaparak doğrulamayı teyit edeceğiz.\n\n` +
+        `Detaylı Canlı Rapor: ${reportUrl}\n`;
+
+      const noteEn = `Subject: [ACTION REQUIRED] ${target} AI Search Visibility (GEO/AEO) & Technical Fix Package\n\n` +
+        `Hi team,\n` +
+        `I have completed the enterprise AI search (ChatGPT, Perplexity, Gemini) and technical readiness audit for ${target} on htmlandhtml.com.\n\n` +
+        `Executive Finding:\n` +
+        `Our domain is crawlable, but contains key technical blockers (missing HSTS headers, canonical gaps, and no /llms.txt manifest) preventing generative AI engines from directly citing our products and pricing.\n\n` +
+        `Engineering Handover Steps:\n` +
+        `1. Review 00_READ_ME.md and 02_IMPLEMENTATION_BLUEPRINT.md from the 30+ file delivery bundle.\n` +
+        `2. Deploy the 3 P0 priority items (edge security headers, RFC canonical head tags, and /llms.txt) to our origin.\n` +
+        `3. Re-run the automated verification scan on the live report to confirm all checks pass.\n\n` +
+        `Live Report URL: ${reportUrl}\n`;
+
+      const note = isTr ? noteTr : noteEn;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(note).then(function() {
+          showToast(isTr ? 'Yazılımcıya İletilecek Not Panoya Kopyalandı!' : 'Developer Handover Note Copied to Clipboard!', 'check');
+        });
+      }
+    }
+    const btnDevHandover = document.getElementById('btnCopyDevHandover');
+    if (btnDevHandover) btnDevHandover.addEventListener('click', copyDeveloperHandoverNote);
+    const btnExecHandover = document.getElementById('btnExecutiveHandoverTop');
+    if (btnExecHandover) btnExecHandover.addEventListener('click', copyDeveloperHandoverNote);
 
     // ARR Calculator Sliders
     const sQueries = document.getElementById('eaSliderQueries');
