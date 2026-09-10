@@ -1,114 +1,156 @@
-﻿# SUPER-MANDATE: ENGINE V3.0 — $5M ENTERPRISE AI SEARCH ARCHITECTURE
+# SUPER-MANDATE: ENGINE V3.0 — $5M ENTERPRISE AI SEARCH ARCHITECTURE
 ## Integration: Mandate v6.0 + 18 Engine V2/V3 + n8n Principles + 30-Year Veteran Engineering + Silicon Valley Reverse Engineering
+### 360° Uçtan Uca Ölçüm Mimarisi: SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T
 
-**Document Code:** MANDATE-SUPER-2026-V3  
-**Status:** MANDATORY ENFORCEMENT — ZERO DEFECT  
-**Classification:** Enterprise System Architecture & Master Autonomous LLM Execution Prompt  
-**Target Systems:** Google Alexandria, Bing IndexEngine, Yandex, OpenAI GPT-5/o-Series, Anthropic Claude 4/Search, Perplexity Pro, Google Gemini Live, Apple Intelligence, Microsoft Copilot, Meta AI, xAI Grok  
-**Execution Tier:** $5,000,000 Enterprise Intelligence | 30-Year Human Principal Engineering + n8n Event-Driven Orchestration  
-**Branch:** `main` (commit tracked)  
-**Working Dir:** `/Users/macair1/projects/html`  
-**Role:** Principal Systems Architect | Zero-Defect | Formal Verification
-
----
-
-## TABLE OF CONTENTS
-
-1. [Executive Architecture & The $5M Enterprise Paradigm](#1-executive-architecture--the-5m-enterprise-paradigm)
-2. [n8n Operational Principles & Resilient Event Loops](#2-n8n-operational-principles--resilient-event-loops)
-   - [2.1 The 6-Node Execution Chain](#21-the-6-node-execution-chain)
-   - [2.2 Dead-Letter Queue (DLQ) & Fault Tolerance](#22-dead-letter-queue-dlq--fault-tolerance)
-   - [2B. The Deterministic Scanning Engine (8-Phase Execution Pipeline)](#2b-the-deterministic-scanning-engine-8-phase-execution-pipeline)
-   - [2C. The Deterministic Recipe & Remediation Engine (P0–P3 Root-Fix Contract)](#2c-the-deterministic-recipe--remediation-engine-p0p3-root-fix-contract)
-3. [SSOT Registry & Canonical Truth Constitution](#3-ssot-registry--canonical-truth-constitution)
-4. [Master Diagnosis & Production Code Recipes (Vector by Vector)](#4-master-diagnosis--production-code-recipes-vector-by-vector)
-   - [Vector 1: Core Technical & Structural SEO (ENG-04, ENG-12)](#vector-1-core-technical--structural-seo-eng-04-eng-12)
-   - [Vector 2: GEO (Generative Engine Optimization) & 14KB AST Budget (ENG-01, ENG-02, ENG-05)](#vector-2-geo-generative-engine-optimization--14kb-ast-budget-eng-01-eng-02-eng-05)
-   - [Vector 3: AEO (Answer Engine Optimization) & Voice Search (ENG-06)](#vector-3-aeo-answer-engine-optimization--voice-search-eng-06)
-   - [Vector 4: LLMO (Large Language Model Optimization) & Multi-Tier Surfaces (ENG-07)](#vector-4-llmo-large-language-model-optimization--multi-tier-surfaces-eng-07)
-   - [Vector 5: AAO-Pro (Autonomous Agent Optimization) & Headless Commerce (ENG-13)](#vector-5-aao-pro-autonomous-agent-optimization--headless-commerce-eng-13)
-   - [Vector 6: RAG (Retrieval-Augmented Generation) & Dense Retrieval (ENG-09, ENG-10)](#vector-6-rag-retrieval-augmented-generation--dense-retrieval-eng-09-eng-10)
-   - [Vector 7: E-E-A-T & Knowledge Vault Consensus Triangulation (ENG-08, ENG-14, ENG-15)](#vector-7-e-e-a-t--knowledge-vault-consensus-triangulation-eng-08-eng-14-eng-15)
-   - [Vector 8: Defense, Historical Stability & Anti-Demotion (ENG-16, ENG-17, ENG-18)](#vector-8-defense-historical-stability--anti-demotion-eng-16-eng-17-eng-18)
-   - [4B. The Strict Engineering Implementation Order (Uygulama Sırası & Fazlandırma Mimarisi)](#4b-the-strict-engineering-implementation-order-uygulama-sras--fazlandrma-mimarisi)
-5. [The 18 Engine V3.0 Deterministic Formulas & Weight Matrix](#5-the-18-engine-v30-deterministic-formulas--weight-matrix)
-6. [CI/CD Quality Gates (G0–G9)](#6-cicd-quality-gates-g0g9)
-7. [Edge CDN & Tokenomics Architecture](#7-edge-cdn--tokenomics-architecture)
-8. [Real-Time Discovery & Multi-Hub IndexNow Distribution](#8-real-time-discovery--multi-hub-indexnow-distribution)
-9. [The 30-File Remediation & Delivery Engine ($99 Model)](#9-the-30-file-remediation--delivery-engine-99-model)
-   - [9B. Binary STORE CRC32 ZIP Compilation & Entitlement Architecture](#9b-binary-store-crc32-zip-compilation--entitlement-architecture)
-10. [Master LLM Implementation Prompt (Ready-to-Inject)](#10-master-llm-implementation-prompt-ready-to-inject)
+**Belge Kodu:** MANDATE-SUPER-2026-V3  
+**Sürüm:** 3.5.0 Enterprise Exclusive  
+**Statü:** KESİN YÜRÜRLÜK — SIFIR HATA (MANDATORY ENFORCEMENT — ZERO DEFECT)  
+**Sınıflandırma:** Kurumsal Sistem Mimarisi & Master Otonom LLM Uygulama Mandatesi  
+**Hedef Sistemler:** Google Alexandria, Bing IndexEngine, Yandex, OpenAI GPT-5/o-Series, Anthropic Claude 4/Search, Perplexity Pro, Google Gemini Live, Apple Intelligence, Microsoft Copilot, Meta AI, xAI Grok  
+**İcra Seviyesi:** $5,000,000 Kurumsal İstihbarat | 30 Yıllık Kıdemli Unix Sistem Mühendisliği + n8n Olay Güdümlü Orkestrasyon  
+**Çalışma Dizini:** `/Users/macair1/projects/html`  
+**Rol:** Baş Sistem Mimarı | Sıfır Hata | Biçimsel Doğrulama (Formal Verification)  
+**Tasarım Sözleşmesi:** %100 Açık Tema (#ffffff), Sıfır Koyu Alan / Sıfır Dark Bleed, WCAG AAA Kontrast  
 
 ---
 
-## 1. EXECUTIVE ARCHITECTURE & THE $5M ENTERPRISE PARADIGM
+## İÇİNDEKİLER TABLOSU
 
-### 1.1 The Enterprise Gap: Why Legacy Agencies Fail in the LLM Era
+1. [Yönetici Özeti & $5M Kurumsal Paradigma](#1-yönetici-özeti--5m-kurumsal-paradigma)
+   - [1.1 Kurumsal Uçurum: Klasik SEO Ajanslarının LLM Çağındaki İflası](#11-kurumsal-uçurum-klasik-seo-ajanslarının-llm-çağındaki-iflası)
+   - [1.2 30 Yıllık Başmühendislik Aksiyomları & Sınır Sözleşmesi](#12-30-yıllık-başmühendislik-aksiyomları--sınır-sözleşmesi)
+   - [1.3 4 Katmanlı Kurumsal Topoloji](#13-4-katmanlı-kurumsal-topoloji)
+   - [1.4 3 Düzlemli İstihbarat Mimarisi (Plane A, Plane B, Plane C)](#14-3-düzlemli-istihbarat-mimarisi-plane-a-plane-b-plane-c)
+2. [n8n Operasyonel Prensipleri & Dayanıklı Olay Döngüleri](#2-n8n-operasyonel-prensipleri--dayanıklı-olay-döngüleri)
+   - [2.1 6 Düğümlü İcra Zinciri (DAG)](#21-6-düğümlü-icra-zinciri-dag)
+   - [2.2 Dead-Letter Queue (DLQ) & Hata İzolasyonu](#22-dead-letter-queue-dlq--hata-izolasyonu)
+3. [8 Aşamalı Deterministik Tarama Hattı (Scanning Pipeline)](#3-8-aşamalı-deterministik-tarama-hattı-scanning-pipeline)
+   - [Faz 0: Girdi Normalizasyonu & SSRF Kalesi (DNS-over-HTTPS Doğrulaması)](#faz-0-girdi-normalizasyonu--ssrf-kalesi-dns-over-https-doğrulaması)
+   - [Faz 1: Çoklu Bot 0-RTT Güvenli İstek (7000ms & 1MB Akış Sınırı)](#faz-1-çoklu-bot-0-rtt-güvenli-istek-7000ms--1mb-akış-sınırı)
+   - [Faz 2: Paralel Uç Nokta Taraması (DAG)](#faz-2-paralel-uç-nokta-taraması-dag)
+   - [Faz 3: Sığ Tarama Alt Grafı (Maksimum 50 Sayfa İzolasyonu)](#faz-3-sığ-tarama-alt-grafı-maksimum-50-sayfa-izolasyonu)
+   - [Faz 4: DOM & AST Ayrıştırması](#faz-4-dom--ast-ayrıştırması)
+   - [Faz 5: 18 Motorlu Vektör Telemetrisi & Deterministik Puanlama](#faz-5-18-motorlu-vektör-telemetrisi--deterministik-puanlama)
+   - [Faz 6: DLQ İstisna Yakalama & NOT_MEASURED Düşüşü](#faz-6-dlq-istisna-yakalama--not_measured-düşüşü)
+   - [Faz 7: Canlı Ampirik Çapraz Doğrulama (Wikidata & Common Crawl)](#faz-7-canlı-ampirik-çapraz-doğrulama-wikidata--common-crawl)
+4. [Deterministik Reçete & Onarım Motoru (P0–P3 Kök Neden Sözleşmesi)](#4-deterministik-reçete--onarım-motoru-p0p3-kök-neden-sözleşmesi)
+   - [4.1 Onarımın 10 Anayasal Kuralı (Rules 0.1 – 0.10)](#41-onarımın-10-anayasal-kuralı-rules-01--010)
+   - [4.2 Yanlış Pozitif Doğrulama Kapıları (Kapı A – Kapı E)](#42-yanlış-pozitif-doğrulama-kapıları-kapı-a--kapı-e)
+   - [4.3 Deterministik Problem Kümeleri (Root-Cause Clusters)](#43-deterministik-problem-kümeleri-root-cause-clusters)
+   - [4.4 Matematiksel Önceliklendirme Matrisi (P0, P1, P2, P3)](#44-matematiksel-önceliklendirme-matrisi-p0-p1-p2-p3)
+   - [4.5 24 Alanlı Kök-Onarım Şartnamesi (Remediation Blueprint)](#45-24-alanlı-kök-onarım-şartnamesi-remediation-blueprint)
+   - [4.6 Uygulama Durdurma Koruması (Stop Condition Guard)](#46-uygulama-durdurma-koruması-stop-condition-guard)
+   - [4.7 30 Günlük Yeniden Tarama & Fark Motoru (Delta Tracker)](#47-30-günlük-yeniden-tarama--fark-motoru-delta-tracker)
+5. [360 Derece 7 Temel Hazırlık Lensi (Readiness Lenses)](#5-360-derece-7-temel-hazırlık-lensi-readiness-lenses)
+   - [5.1 Lens 1: SEO (Search Engine Optimization)](#51-lens-1-seo-search-engine-optimization)
+   - [5.2 Lens 2: GEO (Generative Engine Optimization)](#52-lens-2-geo-generative-engine-optimization)
+   - [5.3 Lens 3: AEO (Answer Engine Optimization)](#53-lens-3-aeo-answer-engine-optimization)
+   - [5.4 Lens 4: LLMO (Large Language Model Optimization)](#54-lens-4-llmo-large-language-model-optimization)
+   - [5.5 Lens 5: AAO-Pro (Autonomous Agent Optimization)](#55-lens-5-aao-pro-autonomous-agent-optimization)
+   - [5.6 Lens 6: RAG (Retrieval-Augmented Generation)](#56-lens-6-rag-retrieval-augmented-generation)
+   - [5.7 Lens 7: E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)](#57-lens-7-e-e-a-t-experience-expertise-authoritativeness-trustworthiness)
+   - [5.8 Lens Sentez Formülü & Sınır Açıklamaları](#58-lens-sentez-formülü--sınır-açıklamaları)
+6. [13 Derin İstihbarat Denetimi (Intelligence Audits)](#6-13-derin-istihbarat-denetimi-intelligence-audits)
+7. [6 İleri Seviye Kara Kutu Risk Analizi (Advanced Black-Box Risk Layer)](#7-6-ileri-seviye-kara-kutu-risk-analizi-advanced-black-box-risk-layer)
+8. [18 Motorlu Engine V3.0 Deterministik Formülleri & Kural Matrisi](#8-18-motorlu-engine-v30-deterministik-formülleri--kural-matrisi)
+9. [Kapsamlı Teşhis Kataloğu & Üretime Hazır Kod Reçeteleri](#9-kapsamlı-teşhis-kataloğu--üretime-hazır-kod-reçeteleri)
+   - [Vektör 1: Temel Teknik & Yapısal SEO (ENG-04, ENG-12)](#vektör-1-temel-teknik--yapısal-seo-eng-04-eng-12)
+   - [Vektör 2: GEO & 14KB AST Bütçesi (ENG-01, ENG-02, ENG-05)](#vektör-2-geo--14kb-ast-bütçesi-eng-01-eng-02-eng-05)
+   - [Vektör 3: AEO & Sesli Arama Optimizasyonu (ENG-06)](#vektör-3-aeo--sesli-arama-optimizasyonu-eng-06)
+   - [Vektör 4: LLMO & Çok Katmanlı Makine Yüzeyleri (ENG-07)](#vektör-4-llmo--çok-katmanlı-makine-yüzeyleri-eng-07)
+   - [Vektör 5: AAO-Pro & Başsız Ticaret / Ajan Protokolü (ENG-13)](#vektör-5-aao-pro--başsız-ticaret--ajan-protokolü-eng-13)
+   - [Vektör 6: RAG & Yoğun Bilgi Erişimi (ENG-09, ENG-10)](#vektör-6-rag--yoğun-bilgi-erişimi-eng-09-eng-10)
+   - [Vektör 7: E-E-A-T & Knowledge Vault Konsensüs Kilidi (ENG-08, ENG-14, ENG-15)](#vektör-7-e-e-a-t--knowledge-vault-konsensüs-kilidi-eng-08-eng-14-eng-15)
+   - [Vektör 8: Savunma, Zamansal Kararlılık & Güvenlik Sertleştirmesi (ENG-16, ENG-17, ENG-18)](#vektör-8-savunma-zamansal-kararlılık--güvenlik-sertleştirmesi-eng-16-eng-17-eng-18)
+10. [Katı Mühendislik Uygulama Sırası & Sprint Mimarisi (Sprint 0 – Sprint 4)](#10-katı-mühendislik-uygulama-sırası--sprint-mimarisi-sprint-0--sprint-4)
+11. [CI/CD Kalite Kapıları (G0–G15 Biçimsel Doğrulama)](#11-cicd-kalite-kapıları-g0g15-biçimsel-doğrulama)
+12. [Edge CDN & Tokenomik Mimari](#12-edge-cdn--tokenomik-mimari)
+13. [Gerçek Zamanlı Keşif & Çok Merkezli IndexNow Dağıtımı](#13-gerçek-zamanlı-keşif--çok-merkezli-indexnow-dağıtımı)
+14. [30 Dosyalık Deterministik Teslimat Paketi ($99 Modeli)](#14-30-dosyalık-deterministik-teslimat-paketi-99-modeli)
+    - [14.1 İkili STORE CRC32 ZIP Derleme Mimarisi](#141-ikili-store-crc32-zip-derleme-mimarisi)
+    - [14.2 Sıfır Bilgi Yetkilendirme & Webhook Doğrulaması](#142-sıfır-bilgi-yetkilendirme--webhook-doğrulaması)
+15. [Master LLM Yürütücü Sistem Promptu (Enjeksiyona Hazır)](#15-master-llm-yürütücü-sistem-promptu-enjeksiyona-hazır)
+16. [İmza, Anayasal Hüküm & Yürürlük Teyidi](#16-imza-anayasal-hüküm--yürürlük-teyidi)
 
-Traditional SEO agencies in London, New York, and Istanbul charge $50,000–$200,000/year for keyword research, backlink building, and surface-level meta tags. **In 2026, these tactics are fundamentally obsolete.**
+---
 
-Modern AI Search engines (Perplexity, ChatGPT Search, Claude Search, Google AI Overviews) **do not run standard web crawlers**:
-1. **Headless High-Speed Ingestion**: They ingest web documents via lightweight headless microservices operating within rigid compute and token budgets.
-2. **The 14KB TCP Window**: If your document's semantic entity, primary answer, and structured data cannot fit inside the initial **14.336 byte (14KB) TCP/TLS 0-RTT window**, ingestion is truncated or demoted.
-3. **ColBERT Multi-Vector Late Interaction**: Information retrieval no longer relies on TF-IDF or BM25 keyword matching. Engines project queries and document passages into late-interaction token matrices (`MaxSim` dot product).
-4. **Knowledge Vault & Wikidata Grounding**: LLMs consult parametric knowledge vaults. If an entity lacks a verified **Wikidata QID / Google MID consensus triple**, it is classified as unverified marketing copy and filtered out by hallucination suppression filters.
+## 1. YÖNETİCİ ÖZETİ & $5M KURUMSAL PARADİGMA
 
-Silicon Valley, London, and Manhattan enterprise AI intelligence firms charge **$1,000,000+ annually** because they reverse-engineer these exact model weights, loss functions, and inference pipelines.
+### 1.1 Kurumsal Uçurum: Klasik SEO Ajanslarının LLM Çağındaki İflası
+Geleneksel SEO ajansları (Londra, New York, San Francisco, İstanbul) şirketlerden yıllık **$50,000 ila $200,000+** arasında bütçeler talep ederek anahtar kelime takibi, manuel backlink inşası ve yüzeysel meta etiket düzenlemeleri satmaktadır. **2026 yılı itibarıyla bu yöntemler teknik olarak iflas etmiştir.**
 
-**HTML&HTML delivers this entire intelligence suite as a 100% automated software product for a $99 single-license fee, with zero human agency intervention, zero fluff, and bit-for-bit mathematical determinism.**
+Modern AI Arama Motorları (Perplexity Pro, ChatGPT Search, Claude Search, Google AI Overviews, Gemini Live, Apple Intelligence):
+1. **Başsız ve Katı Bütçeli İndeksleme:** Web sayfalarını standart tarayıcılarla değil; token, bellek ve CPU bütçesi son derece kısıtlı başsız mikroservislerle tarar.
+2. **14KB TCP/TLS AST Penceresi:** Sayfanın birincil semantik varlığı (Entity), doğrudan cevabı (Hero Answer) ve JSON-LD `@graph` bloğu ilk **14.336 bayt** içinde değilse, crawler içerik çekmeyi yarıda keser (Early Scrape Abort).
+3. **ColBERT Çoklu Vektör Geç Etkileşimi (Late Interaction):** Arama motorları artık BM25 veya TF-IDF kelime eşleşmesi kullanmaz; sorgu tokenları ile doküman tokenlarını `MaxSim` iç çarpım matrisinde eşleştirir.
+4. **Knowledge Vault & Wikidata Mutabakatı:** LLM'ler parametrik bilgi depolarına başvurur. Bir varlık doğrulanmış **Wikidata QID** veya **Google Knowledge Graph MID** üçlüsüne sahip değilse, halüsinasyon bastırma filtresine takılır ve alıntılanmaz.
 
-### 1.2 30-Year Veteran Principal Engineering Axioms
+Silikon Vadisi ve Manhattan'daki kurumsal AI istihbarat firmaları bu model ağırlıklarını ve çıkarım (inference) boru hatlarını tersine mühendislikle çözdükleri için milyonlarca dolar fatura kesmektedir.
 
-This architecture adheres strictly to the foundational engineering principles of 30-year veteran Unix systems architects:
+**HTML&HTML, bu kurumsal istihbarat kapasitesini 100% otomatik bir yazılım ürünü olarak $99 tek seferlik lisans bedeliyle, insan ajans masrafı olmadan, bit-for-bit matematiksel determinizmle sunar.**
 
-- **Unix Philosophy**: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
-- **Zero Randomness (`Math.random()` = BANNED)**: Every diagnostic score, checksum, and ranking is completely deterministic and reproducible. Two runs with identical inputs produce identical bit-for-bit outputs.
-- **Fail-Closed Isolation**: A failure in one analytical engine never crashes the orchestrator. It falls back to a structured Dead-Letter Queue (DLQ) entry and marks the node `NOT_MEASURED`.
-- **Honest Demarcation & Boundary Contract**: The software diagnoses the root cause and provides exact, copy-paste production code recipes with terminal verification tests. **The client's own software development team implements the changes.** The platform makes zero claims of human labor or guaranteed search rankings.
+---
 
-### 1.3 The 4-Tier Topology
+### 1.2 30 Yıllık Başmühendislik Aksiyomları & Sınır Sözleşmesi
+Bu sistem mimarisi, 30 yıllık Unix sistem mimarlarının ve başmühendislerin tavizsiz ilkelerine dayanır:
+- **Unix Felsefesi:** Bir program tek bir işi mükemmel yapmalı, metin akışlarıyla haberleşmeli ve diğer programlarla kusursuz zincirlenmelidir.
+- **Sıfır Rastlantısallık (`Math.random()` = KESİNLİKLE YASAK):** Her skor, teşhis ve sağlama toplamı deterministiktir. İki bağımsız tarama aynı girdide bit-for-bit özdeş çıktı üretir.
+- **Fail-Closed İzolasyonu:** Tek bir modülün veya harici ağ servisinin çökmesi ana orkestratörü durduramaz. Hata Dead-Letter Queue (DLQ) yapısına aktarılır ve durum `NOT_MEASURED` olarak işaretlenir.
+- **Dürüst Sınır Sözleşmesi (Demarcation Contract):** Yazılım teşhisi koyar, 24 alanlı kök-onarım reçetesini yazar ve terminal kabul testini üretir. **Kodu müşterinin kendi yazılım ekibi canlıya alır.** Sistem asla sahte sıralama garantisi veya insan danışmanlığı iddiasında bulunmaz.
+
+---
+
+### 1.3 4 Katmanlı Kurumsal Topoloji
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    LAYER 0: SSOT REGISTRY (Canonical Truth)                 │
-│  src/seo/registry.ts  →  Single source of truth for ALL pages, entities,   │
-│  schemas, intents, triples, LLM subgraphs, and CI/CD gates.                │
+│                    KATMAN 0: SSOT REGISTRY (Kanonik Gerçeklik)               │
+│  src/seo/registry.ts  →  Tüm sayfaların, varlıkların, şemaların, niyetlerin, │
+│  üçlülerin ve CI/CD kapılarının tek ve mutlak kanonik gerçeklik kaynağı.    │
 └─────────────────────────────────────────────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    LAYER 1: 18 ENGINE DETERMINISTIC CHAIN                   │
-│  6 Chains → 18 Modules → 105 Controls → Rule-based scoring → Zero random   │
-│  n8n: Node-by-node, idempotent, tool-enforced, DLQ, streaming, HITL        │
+│                    KATMAN 1: 18 MOTORLU DETERMINİSTİK ZİNCİR                │
+│  18 Bağımsız Motor → 105 Kontrol Noktası → Ağırlıklı Deterministik Formül   │
+│  n8n: Düğüm düzeyinde izolasyon, Idempotent, DLQ, Akış, Hata Toleransı      │
 └─────────────────────────────────────────────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    LAYER 2: CI/CD QUALITY GATES (G0–G9)                     │
-│  Build fails if: h1 missing, canonical mismatch, fake lastmod, orphan,     │
-│  no LLM subgraph, no IndexNow key, no JSON-LD @graph, cannibalization      │
+│                    KATMAN 2: CI/CD KALİTE KAPILARI (G0–G15)                 │
+│  Build anında durur: H1 yoksa, kanonik çelişkiliyse, sahte lastmod varsa,   │
+│  yetim sayfa varsa, 14KB aşılmışsa, IndexNow anahtarı yoksa.                │
 └─────────────────────────────────────────────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    LAYER 3: MULTI-TIER LLMS + EDGE CDN                      │
-│  /llms.txt (hub) → /llms/core.md → /llms/pages/*.md (30x)                  │
-│  Edge: text/markdown, CORS *, 14KB token-optimized AST, <40ms TTFB         │
+│                    KATMAN 3: ÇOK KATMANLI LLMS + EDGE CDN                   │
+│  /llms.txt (hub) → /llms/core.md → /llms/pages/*.md (30x derin graf)        │
+│  Edge: text/markdown, CORS *, 14KB token-optimized AST, <40ms TTFB          │
 └─────────────────────────────────────────────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    LAYER 4: REAL-TIME INDEXING + MONITORING                 │
-│  IndexNow Multi-Hub PUSH → Bing/Yandex/IndexNow API                        │
-│  n8n 18 Workflow drift detection → Striking-distance alerts                │
+│                    KATMAN 4: GERÇEK ZAMANLI KEŞİF & İZLEME                  │
+│  IndexNow Multi-Hub PUSH → Bing / Yandex / IndexNow API                     │
+│  n8n 18 İş Akışı kayma tespiti → Striking-distance AI görünürlük alarmları  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 2. N8N OPERATIONAL PRINCIPLES & RESILIENT EVENT LOOPS
+### 1.4 3 Düzlemli İstihbarat Mimarisi (Plane A, Plane B, Plane C)
+Sistem veriyi üç bağımsız ama senkronize düzlemde işler:
+1. **Düzlem A (Plane A - Deterministik Teknik Hazırlık):** 18 motor, 105 kontrol noktası ve 7 lens üzerinden hedef web sitesinin kodunu, HTTP yanıtlarını ve AST ağacını bit-düzeyinde inceler.
+2. **Düzlem B (Plane B - Gözlemlenen AI Varlık İstihbaratı):** 15-Prompt Paneli, 3-Tekrarlı ampirik makbuzlar, 3-5 Rakip Karşılaştırması ve Alıntı Kaynak Grafı ile LLM'lerin siteden nasıl bahsettiğini ve kimi tavsiye ettiğini ölçer.
+3. **Düzlem C (Plane C - Karar & Onarım İstihbaratı):** P0–P3 matematiksel önceliklendirme matrisi, 24 alanlı kök-onarım şartnameleri ve 30 dosyalık teslimat paketi ile müşterinin mühendisine kusursuz aksiyon reçeteleri üretir.
 
-Every automated workflow in this system is structured according to industrial **n8n DAG (Directed Acyclic Graph)** orchestration principles:
+---
+
+## 2. N8N OPERASYONEL PRENSİPLERİ & DAYANIKLI OLAY DÖNGÜLERİ
+
+Tüm otonom süreçler endüstriyel **n8n DAG (Directed Acyclic Graph)** orkestrasyon kurallarına göre modellenmiştir:
 
 ```
 [01. CRON TRIGGER] ➔ [02. PROBE /llms.txt] ➔ [03. MULTI-BOT INGEST]
@@ -116,375 +158,412 @@ Every automated workflow in this system is structured according to industrial **
 [06. AUTO-HEAL PURGE] ◄── [05. BAYESIAN TRIAGE] ◄───────┴── [04. AST BYTE GATE]
 ```
 
-### 2.1 The 6-Node Execution Chain
+### 2.1 6 Düğümlü İcra Zinciri (DAG)
 
-| Node # | n8n Node Type | Operational Standard | Telemetry & In/Out Contract |
+| Düğüm # | n8n Düğüm Türü | Operasyonel Standart | Telemetri & Girdi/Çıktı Sözleşmesi |
 |:---|:---|:---|:---|
-| **01 · TRIGGER** | `n8n-nodes-base.scheduleTrigger` | Cron `0 3 * * *` (Daily 03:00 UTC), HMAC-SHA256 authenticated webhook, 3x exponential backoff. | Input: `{ cron: "0 3 * * *" }`<br>Output: `{ eventId, timestamp, targetQueue }` |
-| **02 · PROBE** | `n8n-nodes-base.httpRequest` | Probes `/llms.txt` and `/llms-full.txt` with an 8000ms hard timeout and synthetic worker fallback. | Input: `{ target: "domain.com/llms.txt" }`<br>Output: `{ status: 200, latencyMs: 24, bytes: 4096 }` |
-| **03 · INGEST** | `n8n-nodes-base.httpRequest` | Simultaneous HTTP/3 0-RTT probes using multi-bot User-Agents (`PerplexityBot`, `GPTBot`, `ClaudeBot`). | Input: `{ botAgents: ["GPTBot", "ClaudeBot"] }`<br>Output: `{ rawAst, headers, cfCacheStatus }` |
-| **04 · AUDIT** | `n8n-nodes-base.code` | Evaluates sub-14KB AST initial budget window, `data-chunk-id` RAG boundaries, and Wikidata QID triples. | Input: `{ rawAst, byteLength }`<br>Output: `{ byteBudgetPass: true, astTokens: 3120 }` |
-| **05 · TRIAGE** | `n8n-nodes-base.if` | Bayesian drift gate: If overall score `< 80/100` or incident drift detected, branch to Incident Recovery. | Input: `{ score: 74, threshold: 80 }`<br>Output: `{ branch: "INCIDENT_TRIAGE_DLQ" }` |
-| **06 · AUTO-HEAL**| `n8n-nodes-base.httpRequest` | Invokes Cloudflare Edge Cache Purge API, invalidates stale semantic tags, posts alert to Slack/PagerDuty. | Input: `{ purgeTags: ["semantic-ast", "llms-txt"] }`<br>Output: `{ purged: true, edgeVerified: true }` |
+| **01 · TRIGGER** | `n8n-nodes-base.scheduleTrigger` | Cron `0 3 * * *` (Her gün 03:00 UTC), HMAC-SHA256 imzalı tetikleme, 3x üstel geri çekilme. | Girdi: `{ cron: "0 3 * * *" }`<br>Çıktı: `{ eventId, timestamp, targetQueue }` |
+| **02 · PROBE** | `n8n-nodes-base.httpRequest` | `/llms.txt` ve `/llms-full.txt` uç noktalarını 8000ms sert zaman aşımıyla yoklar. | Girdi: `{ target: "domain.com/llms.txt" }`<br>Çıktı: `{ status: 200, latencyMs: 24, bytes: 4096 }` |
+| **03 · INGEST** | `n8n-nodes-base.httpRequest` | `PerplexityBot`, `GPTBot`, `ClaudeBot` User-Agent'larıyla eşzamanlı HTTP/3 0-RTT yoklaması. | Girdi: `{ botAgents: ["GPTBot", "ClaudeBot"] }`<br>Çıktı: `{ rawAst, headers, cfCacheStatus }` |
+| **04 · AUDIT** | `n8n-nodes-base.code` | Sub-14KB AST ilk paket bütçesi, `data-chunk-id` sınırları ve Wikidata QID üçlülerini denetler. | Girdi: `{ rawAst, byteLength }`<br>Çıktı: `{ byteBudgetPass: true, astTokens: 3120 }` |
+| **05 · TRIAGE** | `n8n-nodes-base.if` | Bayesyen kayma kapısı: Genel skor `< 80/100` veya gerileme tespit edilirse Onarım Dalına yönlendirir. | Girdi: `{ score: 74, threshold: 80 }`<br>Çıktı: `{ branch: "INCIDENT_TRIAGE_DLQ" }` |
+| **06 · AUTO-HEAL**| `n8n-nodes-base.httpRequest` | Cloudflare Edge Cache Purge API'sini çağırır, bayat etiketleri temizler, Slack/PagerDuty alarmı açar. | Girdi: `{ purgeTags: ["semantic-ast", "llms-txt"] }`<br>Çıktı: `{ purged: true, edgeVerified: true }` |
 
-### 2.2 Dead-Letter Queue (DLQ) & Fault Tolerance
-When any individual engine throws a network socket timeout or unhandled exception, it **NEVER halts the pipeline**. The orchestrator intercepts the error, serializes the input snapshot, error stack, and timestamp into a `DeadLetterEntry`, sets the engine result to `NOT_MEASURED`, and appends it to `dlq.json`.
-
+### 2.2 Dead-Letter Queue (DLQ) & Hata İzolasyonu
+Herhangi bir analiz motoru veya harici API soket zaman aşımı veya beklenmeyen bir hata verdiğinde, süreç **ASLA kilitlenmez**. Orkestratör hatayı yakalar, girdi anlık görüntüsünü, hata yığınını (stack trace) ve zaman damgasını bir `DeadLetterEntry` nesnesi olarak serileştirir; motor durumunu `NOT_MEASURED` olarak işaretler ve `dlq.json` günlüğüne ekler.
 
 ---
 
-## 2B. THE DETERMINISTIC SCANNING ENGINE (8-PHASE EXECUTION PIPELINE)
+## 3. 8 AŞAMALI DETERMINİSTİK TARAMA HATTI (SCANNING PIPELINE)
 
-The `htmlandhtml.com` scanning engine (`functions/lib/scan-engine.ts` & `functions/lib/engine-v2/`) executes an 8-phase deterministic pipeline designed to inspect any target URL under zero-trust, enterprise-grade constraints without risking SSRF, memory leaks, or indefinite socket hangs.
+`htmlandhtml.com` tarama hattı (`functions/lib/scan-engine.ts` ve `functions/lib/engine-v2/`), hedef URL'leri sıfır-güven (zero-trust) mimarisi altında SSRF, bellek sızıntısı ve sonsuz soket askılarından koruyarak 8 aşamada inceler:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    THE 8-PHASE SCANNING ENGINE PIPELINE                     │
+│                    8 AŞAMALI DETERMINİSTİK TARAMA HATTI                     │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ PHASE 0: Input Normalization & SSRF Fortress (DNS-over-HTTPS Verification)  │
+│ FAZ 0: Girdi Normalizasyonu & SSRF Kalesi (DNS-over-HTTPS Doğrulaması)      │
 │                                  │                                          │
-│ PHASE 1: Multi-Bot 0-RTT Safe Fetch (7000ms Timeout & 1MB Streaming Buffer) │
+│ FAZ 1: Çoklu Bot 0-RTT Güvenli İstek (7000ms Zaman Aşımı & 1MB Akış Sınırı) │
 │                                  │                                          │
-│ PHASE 2: Parallel Probe DAG (/robots, /sitemap, /llms, /agent-card, /mcp)   │
+│ FAZ 2: Paralel Uç Nokta Taraması (/robots, /sitemap, /llms, /agent-card, /mcp) │
 │                                  │                                          │
-│ PHASE 3: Shallow Crawl Graph (Up to 50 Pages with Domain Origin Isolation)  │
+│ FAZ 3: Sığ Tarama Alt Grafı (Maksimum 50 Sayfa & Alan Adı İzolasyonu)       │
 │                                  │                                          │
-│ PHASE 4: DOM & AST Decomposition (Canonical, H1, Schema @graph, Vitals)     │
+│ FAZ 4: DOM & AST Ayrıştırması (Kanonik, H1, Şema @graph, Vitals)            │
 │                                  │                                          │
-│ PHASE 5: 18-Engine Vector Telemetry & Deterministic Rule Scoring (0-100)    │
+│ FAZ 5: 18 Motorlu Vektör Telemetrisi & Deterministik Puanlama (0-100)       │
 │                                  │                                          │
-│ PHASE 6: Dead-Letter Queue (DLQ) Exception Interception & NOT_MEASURED Fallback │
+│ FAZ 6: DLQ İstisna Yakalama & NOT_MEASURED Güvenli Düşüşü                  │
 │                                  │                                          │
-│ PHASE 7: Live Empirical Cross-Probes (Wikidata SPARQL + Common Crawl CDX)   │
+│ FAZ 7: Canlı Ampirik Çapraz Doğrulama (Wikidata SPARQL + Common Crawl CDX)  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Phase 0: Input Normalization & SSRF Fortress
-- **RFC 3986 Normalization**: Scheme enforcement (`http` or `https` only). Rejects all userinfo credentials (`user:pass@host`), fragments, and non-standard ports (strictly restricts to `80` and `443`).
-- **Private Name & Localhost Guard**: Blocks `localhost`, `*.localhost`, `*.local`, `*.internal`, `*.home.arpa`.
-- **Cloudflare DNS-over-HTTPS (DoH) Resolution**: Prior to establishing any TCP socket, the host resolves both `A` and `AAAA` records via `https://cloudflare-dns.com/dns-query?name={host}&type=A|AAAA`.
-- **Zero-Trust IP Filter (RFC 1918, RFC 3927, RFC 6598, RFC 5737, RFC 2544, RFC 1112/5771, RFC 4193, RFC 4291)**:
-  - IPv4 checks reject: `0.0.0.0/8`, `10.0.0.0/8`, `100.64.0.0/10`, `127.0.0.0/8`, `169.254.0.0/16`, `172.16.0.0/12`, `192.168.0.0/16`, `198.18.0.0/15`, `>= 224.0.0.0` (multicast/reserved).
-  - IPv6 checks reject: `::1`, `::`, `fc00::/7` (ULA), `fe80::/10` (link-local), and IPv4-mapped private ranges.
-  - If any resolved IP is private or reserved, the scan immediately aborts with `Target resolves to a private or reserved address`.
+### Faz 0: Girdi Normalizasyonu & SSRF Kalesi (DNS-over-HTTPS Doğrulaması)
+- **RFC 3986 Şema Standartlaştırması:** Yalnızca `http` veya `https`. Kullanıcı kimlik bilgileri (`user:pass@host`), fragment (#) ve standart dışı portlar elenir (yalnızca `80` ve `443` portlarına izin verilir).
+- **Yerel Ağ & Localhost Koruması:** `localhost`, `*.localhost`, `*.local`, `*.internal`, `*.home.arpa` anında engellenir.
+- **Cloudflare DNS-over-HTTPS (DoH) Çözümlemesi:** Herhangi bir TCP soketi kurulmadan önce alan adı `https://cloudflare-dns.com/dns-query?name={host}&type=A|AAAA` üzerinden çözümlenir (Google DoH yedekli).
+- **RFC Sıfır Güven IP Filtresi:** IPv4 için `0.0.0.0/8`, `10.0.0.0/8`, `100.64.0.0/10`, `127.0.0.0/8`, `169.254.0.0/16`, `172.16.0.0/12`, `192.168.0.0/16`, `198.18.0.0/15`, `>= 224.0.0.0`; IPv6 için `::1`, `::`, `fc00::/7`, `fe80::/10` aralıkları tespit edildiğinde tarama derhal iptal edilir: *"Target resolves to a private or reserved address"*.
 
-### Phase 1: Multi-Bot 0-RTT Safe Fetch
-- **Hard Timeout Budget**: 7,000ms enforced via native `AbortSignal.timeout(7000)`.
-- **Strict Redirect Budget**: Capped at maximum 4 redirects (`MAX_REDIRECTS = 4`). Each hop undergoes fresh DoH resolution and private IP verification.
-- **Streaming Byte-Ceiling Buffer (`readLimited`)**: Ingests bytes via `ReadableStreamDefaultReader` into `Uint8Array` chunks up to `MAX_BYTES = 1,000,000` (1MB). If the response exceeds 1MB, the reader cancels and throws `Response exceeds scan size limit` to eliminate memory exhaustion attacks.
-- **Bimodal User-Agent Negotiation**:
-  - Primary User-Agent: `HTMLandHTML-Validator/2.0 (+https://htmlandhtml.com)`.
-  - WAF / Edge Mitigation Fallback: If HTTP `401` or `403` is returned, immediately retries with standard desktop Chrome User-Agent (`Mozilla/5.0 ... Chrome/126.0.0.0 Safari/537.36`).
-- **HTML Content-Type Enforcement**: Validates `content-type` header and scans initial payload for structural HTML tokens (`<!doctype`, `<html`, `<head`, `<body`, `<main`, `<div`).
+### Faz 1: Çoklu Bot 0-RTT Güvenli İstek (7000ms & 1MB Akış Sınırı)
+- **Sert Zaman Aşımı Bütçesi:** Yerel `AbortSignal.timeout(7000)` ile kesin 7.000 ms sınırı.
+- **Yönlendirme Limiti:** Maksimum 4 sekme (`MAX_REDIRECTS = 4`). Her sekmede taze DoH ve özel IP kontrolü tekrarlanır.
+- **1MB Akış Tavanı (`readLimited`):** Gelen yanıt `ReadableStreamDefaultReader` ile `Uint8Array` parçaları halinde okunur. Yanıt 1.000.000 baytı (1MB) aştığı an akış kesilir ve bellek tüketim saldırılarını önlemek için iptal edilir.
+- **Çift Modlu User-Agent Müzakeresi:**
+  - Birincil Bot: `HTMLandHTML-Validator/2.0 (+https://htmlandhtml.com)`
+  - WAF / Edge Geri Çekilme: HTTP 401 veya 403 alınırsa anında standart masaüstü Chrome User-Agent'ı (`Mozilla/5.0 ... Chrome/126.0.0.0 Safari/537.36`) ile yeniden denenir.
+- **HTML İçerik Türü Denetimi:** `content-type` doğrulanır ve ilk baytlarda HTML belirteçleri (`<!doctype`, `<html`, `<head`, `<body`, `<main`, `<div`) aranır.
 
-### Phase 2: Parallel Probe DAG (Direct Machine Surfaces)
-Executes a concurrent `Promise.allSettled` fan-out probing the canonical discovery endpoints of the target root:
-1. `GET /robots.txt`: Parses multi-agent blocks (`Googlebot`, `OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `GPTBot`, `ClaudeBot`, `Google-Extended`).
-2. `GET /sitemap.xml`: Extracts up to 100 internal `<loc>` URLs.
-3. `GET /llms.txt`: Validates v2 spec (H1 `# Domain`, blockquote summary `> Summary`, markdown links).
-4. `GET /.well-known/agent-card.json`: Validates A2A autonomous agent discovery card schema.
-5. `GET /openapi.json`: Validates OpenAPI 3.0 programmatic specification.
-6. `GET /mcp`: Tests Model Context Protocol JSON-RPC tool availability.
-7. `GET Wikidata SPARQL API`: Queries `https://www.wikidata.org/w/api.php` for brand entity QID in ground-truth knowledge graphs.
-8. `GET Common Crawl CDX Server`: Probes `index.commoncrawl.org` for presence in pre-training corpuses.
+### Faz 2: Paralel Uç Nokta Taraması (DAG)
+Kök dizindeki kanonik makine yüzeyleri `Promise.allSettled` ile eşzamanlı yoklanır:
+1. `GET /robots.txt`: Bot kuralları ayrıştırılır (`Googlebot`, `OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `GPTBot`, `ClaudeBot`, `Google-Extended`).
+2. `GET /sitemap.xml`: İlk 100 dahili `<loc>` URL'si çıkarılır.
+3. `GET /llms.txt`: v2 spesifikasyonu doğrulanır (`# Domain` H1, `> Summary` alıntısı, Markdown bağlantıları).
+4. `GET /.well-known/agent-card.json`: A2A otonom ajan keşif kartı şeması doğrulanır.
+5. `GET /openapi.json`: OpenAPI 3.0/3.1 makine spesifikasyonu doğrulanır.
+6. `GET /mcp`: Model Context Protocol JSON-RPC araç uç noktası test edilir.
+7. `GET Wikidata SPARQL API`: `https://www.wikidata.org/w/api.php` üzerinden marka QID varlığı sorgulanır.
+8. `GET Common Crawl CDX`: `index.commoncrawl.org` üzerinden alan adının LLM ön-eğitim korpusundaki varlığı sorgulanır.
 
-### Phase 3: Shallow Crawl Sub-Graph Ingestion
-- Aggregates unique internal URLs discovered from homepage `<a href="...">` links and `sitemap.xml`.
-- Filters strictly by target origin, discarding media assets (`.jpg`, `.png`, `.svg`, `.pdf`, `.zip`, `.mp4`).
-- Concurrently fetches pages in batches of 4 (`Promise.all`), capped at 50 pages (`MAX_PAGES = 50`) to bound execution duration.
+### Faz 3: Sığ Tarama Alt Grafı (Maksimum 50 Sayfa İzolasyonu)
+- Ana sayfa linkleri ve sitemap URL'leri birleştirilir. Medya dosyaları (`.jpg`, `.png`, `.svg`, `.pdf`, `.zip`, `.mp4`) filtrelenir.
+- 4'lü paralel gruplar halinde (`Promise.all`) en fazla 50 sayfa taranır (`MAX_PAGES = 50`).
 
-### Phase 4: DOM & AST Decomposition
-Each retrieved page is parsed into an immutable `Page` record:
-- Document metadata: `<title>`, meta description, `<html lang="...">`, robots meta directives.
-- Structure & Heading hierarchy: Single `<h1>` check, heading sequence `<h2>`/`<h3>`.
-- URL normalization: Canonical `<link rel="canonical">` validation against served URL.
-- Structured Data: Extraction of all `<script type="application/ld+json">` blocks, unwrapping `@graph` trees, validating JSON syntax.
-- Machine surfaces: `<link rel="describedby" href="/llms.txt">`, `<link rel="alternate" type="text/markdown">`.
-- Performance & Accessibility: Render-blocking `<script src="...">` in `<head>`, missing image `alt` attributes, unlabelled form inputs, unnamed button elements.
-- Security & Forms: Mixed content references (`http://` resources on `https://` origin), insecure form actions.
+### Faz 4: DOM & AST Ayrıştırması
+Her sayfa bellek içi değişmez bir `Page` kaydına dönüştürülür:
+- Meta veriler (`<title>`, meta description, `<html lang>`, robots direktifleri).
+- Başlık hiyerarşisi (Tek `<h1>`, `<h2>`/`<h3>` sıralaması).
+- Kanonik URL (`<link rel="canonical">`) ile sunulan URL karşılaştırması.
+- Yapısal Veri: Tüm `<script type="application/ld+json">` blokları ayrıştırılır, `@graph` düğümleri açılır.
+- Makine Yüzeyleri: `<link rel="describedby" href="/llms.txt">`, `<link rel="alternate" type="text/markdown">`.
+- Performans & Erişilebilirlik: `<head>` içindeki render-blocking scriptler, `alt` etiketsiz görseller, etiketsiz form inputları, isimsiz butonlar.
+- Güvenlik: Mixed-content bağlantıları, güvenli olmayan form eylemleri (`action="http://..."`).
 
-### Phase 5: 18-Engine Vector Telemetry & Deterministic Scoring
-Applies the 18 specialized evaluation engines (`ENG-01` through `ENG-18`). Each engine evaluates an array of boolean/null rules:
+### Faz 5: 18 Motorlu Vektör Telemetrisi & Deterministik Puanlama
+18 uzman analiz motoru (`ENG-01` ila `ENG-18`) çalıştırılır. Her motor kendi kural matrisini değerlendirir:
 $$\text{RuleScore} = \text{round}\left( \frac{\sum \text{Rule.ok} \times \text{Rule.weight}}{\sum \text{Rule.weight}} \times 100 \right)$$
-- If no rules are measurable, the engine returns `100` (neutral baseline) or triggers DLQ.
-- Scores are mapped into status badges: `PASS` ($\ge 80\%$), `WARN` ($55\% - 79\%$), `FAIL` ($< 55\%$).
+- Ölçülemeyen kurallar için DLQ tetiklenir veya tarafsız taban puan uygulanır.
+- Skorlar rozetlere atanır: `PASS` ($\ge 80\%$), `WARN` ($55\% - 79\%$), `FAIL` ($< 55\%$).
 
-### Phase 6: Dead-Letter Queue (DLQ) & Fault Tolerance
-- Zero runtime crashes: If an external probe or sub-routine throws, the orchestrator intercepts the exception.
-- The engine logs:
-  ```json
-  {
-    "engineId": "ENG-XX",
-    "timestamp": "2026-09-08T12:00:00.000Z",
-    "error": "Timeout or DNS failure",
-    "status": "NOT_MEASURED"
-  }
-  ```
-- The execution chain completes successfully and outputs the remaining 17 engines without blocking.
+### Faz 6: DLQ İstisna Yakalama & NOT_MEASURED Düşüşü
+Dış ağ kopması veya ayrıştırma hatası olduğunda orkestratör süreci durdurmaz, JSON kaydını üretir ve diğer 17 motoru tamamlar.
 
-### Phase 7: Live Empirical Cross-Verification
-- Cross-references JSON-LD `sameAs` links against resolved Wikidata QID.
-- Flags **Entity Vault Gap** if no Wikidata triple or Knowledge Graph MID is bound.
-- Flags **Common Crawl Exclusion** if domain is absent from pre-training archives, warning of offline LLM model weight blindness.
+### Faz 7: Canlı Ampirik Çapraz Doğrulama (Wikidata & Common Crawl)
+- JSON-LD `sameAs` linkleri ile çözümlenen Wikidata QID eşleştirilir.
+- Wikidata veya Knowledge Graph MID bulunamazsa **Entity Vault Gap** uyarısı verilir.
+- Common Crawl arşivinde yer almayan siteler için **Common Crawl Exclusion** (model ağırlıklarında körlük) tespiti raporlanır.
 
 ---
 
-## 2C. THE DETERMINISTIC RECIPE & REMEDIATION ENGINE (P0–P3 ROOT-FIX CONTRACT)
+## 4. DETERMINİSTİK REÇETE & ONARIM MOTORU (P0–P3 KÖK NEDEN SÖZLEŞMESİ)
 
-The remediation engine (`functions/lib/remediation-engine.ts` & `remediation-engine-v2.ts`) takes raw findings and compiles production-ready engineering fixes. It operates under strict constitutional rules guaranteeing zero hallucination, bit-for-bit determinism, and full developer sovereignty.
+Onarım motoru (`functions/lib/remediation-engine.ts` ve `remediation-engine-v2.ts`), ham tarama bulgularını doğrudan üretime hazır mühendislik reçetelerine dönüştürür.
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                 THE DETERMINISTIC RECIPE & REMEDIATION PIPELINE             │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ STAGE 0: Constitutional Rules Verification (Rules 0.1 – 0.10)              │
-│                                  │                                          │
-│ STAGE 1: False-Positive Validation Gate (Gates A through E)                 │
-│                                  │                                          │
-│ STAGE 2: Deterministic Issue Clustering (Section 17 Systemic Root Causes)   │
-│                                  │                                          │
-│ STAGE 3: Mathematical Priority Engine (P0, P1, P2, P3 Triage)               │
-│                                  │                                          │
-│ STAGE 4: 24-Field Root-Fix Remediation Blueprint Generation                 │
-│                                  │                                          │
-│ STAGE 5: Implementation Stop Condition Guard (Section 15 Boundary Lock)    │
-│                                  │                                          │
-│ STAGE 6: 30-Day Re-Scan Comparison Engine (Section 21 Delta Tracker)        │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+### 4.1 Onarımın 10 Anayasal Kuralı (Rules 0.1 – 0.10)
+1. **Rule 0.1 (Determinizm Önceliği):** Özdeş girdiler bit-for-bit özdeş rapor ve kod reçetesi üretir. `Math.random()` yasaktır.
+2. **Rule 0.2 (Kanıta Bağlılık):** Her kusur ham yanıt kanıtını (bayt uzunluğu, satır kesiti, HTTP durumu, başlık değeri) içermek zorundadır.
+3. **Rule 0.3 (Otonom Kod Teslimi):** Öneriler değil; kopyala-yapıştır çalışır tam kod blokları (HTML, JS, Cloudflare Worker, Nginx, JSON-LD) sunulur.
+4. **Rule 0.4 (Zorunlu Rollback Garantisi):** Her reçete sıfır kesintili geri alma komutunu içerir.
+5. **Rule 0.5 (Sıfır Ajans Masrafı):** İnsan danışmanlığı iddiası ve saatlik faturalandırma sıfırdır.
+6. **Rule 0.6 (Kesin Sınır Ayrımı):** Yazılım teşhis koyar ve reçeteyi yazar; müşteri yazılım ekibi uygular.
+7. **Rule 0.7 (Tahribatsız İnceleme):** Tüm taramalar salt-okunur ve güvenlidir.
+8. **Rule 0.8 (Puanlama Bütünlüğü):** Ağırlıklar 18 motor boyunca kesinlikle 129'a tamamlanır.
+9. **Rule 0.9 (Fail-Closed DLQ İzolasyonu):** Harici servis hataları ana süreci durdurmaz.
+10. **Rule 0.10 (Müşteri Egemenliği):** Reçeteler bulut-bağımsız, taşınabilir ve standart web mimarilerine uygundur.
 
-### The 10 Constitutional Rules of Remediation
-1. **Rule 0.1 (Determinism First)**: Identical scan inputs MUST generate bit-for-bit identical remediation reports and code recipes. `Math.random()` is banned across all runtime paths.
-2. **Rule 0.2 (Evidence Bound)**: Every reported defect MUST cite raw response evidence (e.g. byte length, line snippet, HTTP status, or header value).
-3. **Rule 0.3 (Autonomous Code Delivery)**: Recipes MUST be complete, production-ready code blocks (HTML, JS, Nginx, Cloudflare Workers, JSON-LD), not vague recommendations.
-4. **Rule 0.4 (Mandatory Rollback Guarantee)**: Every recipe MUST provide an explicit, zero-downtime rollback command or instruction.
-5. **Rule 0.5 (Zero Agency Overhead)**: Zero billable hours, zero manual consulting claims, zero human agency intervention.
-6. **Rule 0.6 (Strict Boundary Demarcation)**: The engine diagnoses the root cause and writes the recipe; the client's engineering team executes the deployment.
-7. **Rule 0.7 (Non-Destructive Ingestion)**: All scans and probes are strictly read-only and non-invasive.
-8. **Rule 0.8 (Mathematical Scoring Integrity)**: Weights sum strictly to 129 across 18 engines. No hidden multiplier or biased scoring.
-9. **Rule 0.9 (Fail-Closed DLQ Isolation)**: Unreachable third-party services fail into Dead-Letter Queues without halting the remediation compile.
-10. **Rule 0.10 (Client Sovereignty)**: All code recipes must be cloud-agnostic, portable, and drop-in compatible with standard web frameworks.
+### 4.2 Yanlış Pozitif Doğrulama Kapıları (Kapı A – Kapı E)
+Bir kusur onaylanmadan önce 5 deterministik kapıdan geçer:
+- **Kapı A (Ham Bayt Kapısı):** Sorunlu dize veya AST tokenı ham HTTP yanıtında fiziksel olarak bulunmalıdır.
+- **Kapı B (Başlık Kapısı):** Başlık tabanlı bulgular (HSTS, CSP, X-Robots-Tag) ham başlık dizisinde doğrulanmalıdır.
+- **Kapı C (Çoklu Sayfa Korelasyonu):** Kusurun şablon genelinde mi yoksa münferit bir sayfada mı olduğu tespit edilir.
+- **Kapı D (Robots Ayrıştırıcı Kapısı):** Bot disallow kuralları RFC 9309 yol eşleme mantığıyla doğrulanır.
+- **Kapı E (Şema Sözdizim Kapısı):** JSON-LD blokları katı JSON ayrıştırıcısıyla doğrulanır; yalnızca gerçek sözdizim veya Schema.org tip ihlalleri raporlanır.
 
-### Stage 1: False-Positive Validation Gate (A – E)
-Before a defect is confirmed, it must pass through 5 deterministic verification gates:
-- **Gate A (Raw Byte Verification)**: The issue string or AST token must exist in the raw unparsed response.
-- **Gate B (Header Verification)**: Header-based findings (HSTS, CSP, X-Robots-Tag) must be confirmed via raw HTTP response headers.
-- **Gate C (Multi-Page Correlation)**: Structural issues (e.g. H1 or Canonical) are verified across multiple pages to determine if the failure is template-wide or isolated.
-- **Gate D (Robots Parser Verification)**: Bot disallow tokens are evaluated strictly against RFC 9309 path matching logic.
-- **Gate E (Schema Syntax Gate)**: JSON-LD blocks are parsed using strict JSON parser; only malformed JSON or schema.org type violations trigger warnings.
+### 4.3 Deterministik Problem Kümeleri (Root-Cause Clusters)
+Yazılım ekiplerini yüzlerce URL uyarısıyla boğmak yerine bulgular kök nedene göre kümelenir:
+- `CLUSTER_TEMPLATE_H1`: Şablon genelinde navigation/logo kaynaklı H1 tekrarı.
+- `CLUSTER_CANONICAL_ORIGIN`: HTTP/HTTPS veya WWW kaynaklı küresel kanonik uyumsuzluğu.
+- `CLUSTER_SCHEMA_GRAPH`: Ontolojik `@graph` Organization üçlülerinin evrensel eksikliği.
+- `CLUSTER_BOT_BLOCK`: Edge güvenlik duvarı veya robots.txt kaynaklı AI arama crawler engeli.
 
-### Stage 2: Deterministic Issue Clustering (Section 17)
-Instead of overwhelming engineering teams with hundreds of individual URL warnings, findings are clustered into systemic root causes:
-- `CLUSTER_TEMPLATE_H1`: Template-wide H1 duplication in header/navigation.
-- `CLUSTER_CANONICAL_ORIGIN`: Global canonical tag mismatch across HTTPS/HTTP or WWW.
-- `CLUSTER_SCHEMA_GRAPH`: Universal lack of ontological `@graph` Organization triples.
-- `CLUSTER_BOT_BLOCK`: Edge firewall or robots.txt blocking AI search crawlers.
-
-### Stage 3: Mathematical Priority Engine (P0 – P3)
-Priorities are computed deterministically based on three factors:
+### 4.4 Matematiksel Önceliklendirme Matrisi (P0, P1, P2, P3)
+Öncelikler şu formülle hesaplanır:
 $$\text{PriorityScore} = \text{SeverityWeight} \times \text{ScopeReach} \times \text{Confidence}$$
 
-| Priority | Criteria & Score Threshold | Impact Description | SLA / Target Fix Window |
-|:---:|:---|:---|:---:|
-| **P0** | Score $\ge 90$<br>HTTP 5xx errors, accidental `noindex`, mixed content insecure forms, severe SSR starvation. | Complete indexing failure, permanent exclusion from AI crawlers. | **0 – 48 Hours** |
-| **P1** | Score $75 - 89$<br>Missing canonical, 14KB AST overflow, invalid JSON-LD, blocked AI search bots (`GPTBot`, `ClaudeBot`). | Significant ranking demotion, early crawler scrape abort. | **Day 3 – Day 7** |
-| **P2** | Score $50 - 74$<br>Missing `/llms.txt`, no Wikidata QID in `sameAs`, duplicate titles, generic internal anchors. | Hallucination risk, weak entity grounding in Knowledge Vaults. | **Week 2 – Week 3** |
-| **P3** | Score $< 50$<br>Missing A2A agent card, MCP tools, missing Markdown alternates, DPO tone calibration. | Reduced agent-to-agent transactions and conversational citation. | **Week 4 (Post-Sprint)** |
+| Öncelik | Puan Eşiği | Etki Açıklaması | SLA / Çözüm Penceresi |
+|:---:|:---:|:---|:---:|
+| **P0** | $\ge 90$ | HTTP 5xx hataları, kazara `noindex`, güvensiz formlar, ciddi SSR yetersizliği. | 0 – 48 Saat |
+| **P1** | $75 - 89$ | Eksik kanonik, 14KB AST aşımı, geçersiz JSON-LD, engellenen arama botları. | Gün 3 – Gün 7 |
+| **P2** | $50 - 74$ | Eksik `/llms.txt`, Wikidata QID eksikliği, yinelenen title'lar, jenerik iç linkler. | Hafta 2 – Hafta 3 |
+| **P3** | $< 50$ | Eksik A2A agent card, MCP araçları, eksik Markdown alternatifleri, DPO üslup uyumu. | Hafta 4 (Sprint Sonu) |
 
-### Stage 4: 24-Field Root-Fix Remediation Blueprint
-Every issue in the remediation report contains exactly 24 structured fields:
-1. `issue_id`: Canonical unique identifier (e.g. `TECH-CANON-001`).
-2. `title`: Human-readable title in target language.
-3. `priority`: Categorized as `P0`, `P1`, `P2`, or `P3`.
-4. `status`: `CONFIRMED` | `HIGH_CONFIDENCE` | `PROBABLE`.
-5. `category`: Mapped to one of 12 primary categories.
-6. `observed_urls`: Exact array of URLs exhibiting the defect.
-7. `estimated_scope`: Percentage of analyzed pages affected.
-8. `evidence`: Raw string proof (e.g. `<title> missing`, `18240 bytes`).
-9. `reproduction`: Step-by-step cURL command to reproduce locally.
-10. `impact`: Direct business and search model citation consequence.
-11. `root_cause_status`: Verification degree of the underlying cause.
-12. `root_cause`: Technical explanation of why the defect occurs in the stack.
-13. `root_fix.target_behavior`: The exact RFC / W3C expected behavior.
-14. `root_fix.current_behavior`: The measured faulty behavior.
-15. `root_fix.required_change`: Exact code modification needed.
-16. `root_fix.scope`: Template-level, edge-level, or page-level.
-17. `root_fix.non_goals`: Explicit declaration of what NOT to alter.
-18. `recovery`: Production-ready code block to copy and paste.
-19. `prevention`: Linting rules or CI/CD pre-commit hooks to prevent regression.
-20. `acceptance_tests`: Single-line cURL / AST shell commands that return `PASS`.
-21. `regression_tests`: Automated unit test assertions.
-22. `do_not_break`: Critical dependent systems protected during rollout.
-23. `rollback_guidance`: Step-by-step git revert or edge config rollback.
-24. `confidence`: Mathematical confidence metric ($0.75 - 1.00$).
+### 4.5 24 Alanlı Kök-Onarım Şartnamesi (Remediation Blueprint)
+Her onarım maddesi istisnasız 24 yapılandırılmış alana sahiptir:
+`issue_id`, `title`, `priority`, `status`, `category`, `observed_urls`, `estimated_scope`, `evidence`, `reproduction`, `impact`, `root_cause_status`, `root_cause`, `root_fix.target_behavior`, `root_fix.current_behavior`, `root_fix.required_change`, `root_fix.scope`, `root_fix.non_goals`, `recovery`, `prevention`, `acceptance_tests`, `regression_tests`, `do_not_break`, `rollback_guidance`, `confidence`.
 
-### Stage 5: Implementation Stop Condition Guard (Section 15)
-If a remediation action requires proprietary internal database credentials, custom backend routing logic, or unmeasured business intent, the engine sets:
-- `implementation_stop: true`
-- `stop_reason: "Requires proprietary backend context or credentials"`
-- `safe_next_action: "Expose endpoint via standard Edge Worker without modifying database core."`
-This prevents destructive or unverified modifications to production environments.
+### 4.6 Uygulama Durdurma Koruması (Stop Condition Guard)
+Bir işlem şirket içi veritabanı parolası, özel backend yönlendirmesi veya ölçülmemiş iş mantığı gerektiriyorsa motor `implementation_stop: true` işaretler ve güvenli uç katman çözümü önerir.
 
-### Stage 6: 30-Day Re-Scan Comparison Engine (Section 21)
-When an updated scan is executed against a domain, the engine automatically compares results against the baseline `scanId`:
-- `resolved`: Issues completely absent from the new scan.
-- `partially_resolved`: Evidence count or affected URL scope reduced.
-- `persisting`: Issues present with identical signatures.
-- `regressed`: Issues where severity increased or more URLs were infected.
-- `unverifiable`: Issues where target was blocked or returned non-200.
-- `new_findings`: New defects introduced since baseline.
-
+### 4.7 30 Günlük Yeniden Tarama & Fark Motoru (Delta Tracker)
+Güncellenen tarama baz tarama ile karşılaştırılır: `resolved`, `partially_resolved`, `persisting`, `regressed`, `unverifiable`, `new_findings`.
 
 ---
 
-## 3. SSOT REGISTRY & CANONICAL TRUTH CONSTITUTION
+## 5. 360 DERECE 7 TEMEL HAZIRLIK LENSİ (READINESS LENSES)
 
-**File Location:** `src/seo/registry.ts`  
-**Constitution Rule:** NO page, Schema JSON-LD block, sitemap entry, or LLM subgraph can exist without an explicit entry in `SEO_REGISTRY`. The registry is the sole source of truth (SSOT). If it is not in the registry, the build system rejects it.
+`intelligence-engine.ts` tarafından yönetilen 7 Hazırlık Lensi, hedef web sitesini 360 derece uçtan uca analiz eder:
 
-```typescript
-// src/seo/registry.types.ts
-export type PageRole = 'home' | 'hub' | 'category' | 'product' | 'service' | 'tool' | 'article' | 'legal';
-export type IndexDirective = 'index, follow' | 'noindex, follow' | 'noindex, nofollow';
-
-export interface SemanticTriple {
-  readonly subject: string;
-  readonly predicate: string;
-  readonly object: string;
-}
-
-export interface SeoEntityRef {
-  readonly id: string;
-  readonly name: string;
-  readonly type: 'Organization' | 'Person' | 'Product' | 'Service' | 'SoftwareApplication';
-  readonly sameAs: readonly string[];
-}
-
-export interface SeoPageRecord {
-  readonly route: `/${string}` | '/';
-  readonly locale: 'tr' | 'en';
-  readonly role: PageRole;
-  readonly indexDirective: IndexDirective;
-  readonly canonicalRoute: `/${string}` | '/';
-  readonly title: string;
-  readonly metaDescription: string;
-  readonly h1: string;
-  readonly primaryIntent: string;
-  readonly primaryEntity: SeoEntityRef;
-  readonly semanticTriples: readonly SemanticTriple[];
-  readonly heroAnswerEngine: string; // 80-120 words, first 100px
-  readonly publishedAt: string;      // ISO 8601
-  readonly modifiedAt: string;       // REAL last modification — NEVER fake
-  readonly llmSubGraphRoute?: `/llms/${string}.md`;
-  readonly breadcrumbs: readonly { readonly name: string; readonly item: string }[];
-}
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 360 DERECE 7 TEMEL HAZIRLIK LENSİ MATRİSİ                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  1. SEO LENS    : Geleneksel Arama Motoru İndekslenebilirlik & Sağlık       │
+│  2. GEO LENS    : Generative Engine Optimizasyonu & 14KB AST Bütçesi        │
+│  3. AEO LENS    : Doğrudan Cevap Motoru & Sesli Arama Çıkarılabilirliği    │
+│  4. LLMO LENS   : Büyük Dil Modeli & Çok Katmanlı llms.txt Yüzeyleri        │
+│  5. AAO-PRO LENS: Otonom Ajan Keşfi, MCP & Başsız Ticaret Protokolleri      │
+│  6. RAG LENS    : Geri Çağırma Destekli Üretim & Yoğun Vektörel Ayrıştırma  │
+│  7. E-E-A-T LENS: Deneyim, Uzmanlık, Otoriterlik & Güvenilirlik Ağı         │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+### 5.1 Lens 1: SEO (Search Engine Optimization)
+- **Kapsam:** Google, Bing ve Yandex arama örümceklerinin siteyi sıfır engelle taraması, dizine eklemesi ve teknik hiyerarşiyi anlaması.
+- **Çekirdek Girdi Ağırlıkları:** `technical` (ağırlık 3), `crawl` (ağırlık 2), `links` (ağırlık 2), `schema` (ağırlık 1), `performance` (ağırlık 1).
+- **Denetlenen Öğeler:** Tekil H1 hiyerarşisi, mutlak kanonik etiketleri, `noindex` sızıntısı olmaması, sitemap.xml doğruluğu, robots.txt kuralları, kırık/yönlenen iç bağlantılar, HTTPS ve tarayıcı güvenlik başlıkları.
+
+### 5.2 Lens 2: GEO (Generative Engine Optimization)
+- **Kapsam:** Üretken AI modellerinin (Perplexity, ChatGPT Search, Claude, Gemini Overviews) web sayfasını ilk TCP paketinde ayrıştırabilmesi.
+- **Çekirdek Girdi Ağırlıkları:** `ai` (ağırlık 3), `llms` (ağırlık 2), `schema` (ağırlık 2), `trust` (ağırlık 2).
+- **Denetlenen Öğeler:** Sub-14KB AST bütçesi, KV-Cache edge yanıt süresi (<40ms TTFB), crawler User-Agent filtrelerinin açık olması (`OAI-SearchBot`, `PerplexityBot`, `Claude-SearchBot`), Google Preferred Sources entegrasyonu, Bölgesel Yapısal Veri Karuseli.
+
+### 5.3 Lens 3: AEO (Answer Engine Optimization)
+- **Kapsam:** Arama motorlarının ve sesli asistanların (Siri, Google Assistant, Alexa) sorulan sorulara doğrudan net cevaplar verebilmesi.
+- **Çekirdek Girdi Ağırlıkları:** `technical` (ağırlık 2), `schema` (ağırlık 2), `trust` (ağırlık 1).
+- **Denetlenen Öğeler:** Sayfanın ilk 100 pikselinde yer alan 29-80 kelimelik yalın Hero Answer paragrafı, `FAQPage` ve `QAPage` şemaları, laf kalabalığından arındırılmış doğrudan tanımlar.
+
+### 5.4 Lens 4: LLMO (Large Language Model Optimization)
+- **Kapsam:** LLM'lerin siteyi makine tarafından okunabilir saf Markdown formatında tüketebilmesi.
+- **Çekirdek Girdi Ağırlıkları:** `ai` (ağırlık 3), `llms` (ağırlık 2), `schema` (ağırlık 2), `trust` (ağırlık 1).
+- **Denetlenen Öğeler:** Kök `/llms.txt` rehberinin v2 standardında olması (`# Domain` H1, `> Summary` alıntısı, kategorize bağlantılar), `/llms/core.md` kurumsal kimlik dosyası, 30 adet `/llms/pages/*.md` derin Markdown sayfası, `<link rel="describedby">` ve `<link rel="alternate" type="text/markdown">` etiketleri.
+
+### 5.5 Lens 5: AAO-Pro (Autonomous Agent Optimization)
+- **Kapsam:** Kullanıcı adına işlem yapan otonom ajanların (Claude Computer Use, OpenAI Operator, Apple Intelligence) sitede programatik işlem yapabilmesi.
+- **Çekirdek Girdi Ağırlıkları:** `agent` (ağırlık 3), `schema` (ağırlık 2), `security` (ağırlık 2), `trust` (ağırlık 1).
+- **Denetlenen Öğeler:** İmzalı `/.well-known/agent-card.json` (A2A Agent Card v1.0), programatik `/openapi.json` spesifikasyonu, Model Context Protocol (`/mcp`) JSON-RPC uç noktası, başsız fiyat teklifi ve sipariş API'si (`/api/v1/agent-order`).
+
+### 5.6 Lens 6: RAG (Retrieval-Augmented Generation)
+- **Kapsam:** Dokümanın vektör veri tabanlarına bölünürken (chunking) anlam kaybına uğramaması ve yeniden sıralayıcılarda (Reranker) zirveye çıkması.
+- **Çekirdek Girdi Ağırlıkları:** `technical` (ağırlık 2), `ai` (ağırlık 2), `links` (ağırlık 1).
+- **Denetlenen Öğeler:** 512 tokenlık `data-chunk-id` semantik sınır etiketleri, ColBERT `MaxSim` çoklu vektör geç etkileşimli başlık yapıları, Cross-Encoder reranker'lar için ilk 64 token içinde yüksek sayısal veri ve istatistik yoğunluğu.
+
+### 5.7 Lens 7: E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
+- **Kapsam:** Bilgi graflarında ve insan değerlendirme algoritmalarında markanın meşruiyet ve güvenilirlik kazanması.
+- **Çekirdek Girdi Ağırlıkları:** `trust` (ağırlık 3), `schema` (ağırlık 2), `security` (ağırlık 1).
+- **Denetlenen Öğeler:** JSON-LD `sameAs` dizisinde yer alan Wikidata QID (`https://www.wikidata.org/wiki/Q...`) ve Google MID referansları, sübjektif övgü sözcüklerinin (puffery) temizlenmesi (DPO/RLAIF uyumu), C2PA ve RFC 3161 kriptografik menşe defteri, yazar şeffaflığı ve açık kurumsal sayfalar.
+
+### 5.8 Lens Sentez Formülü & Sınır Açıklamaları
+Her lens için skor, çekirdek tarama puanları ile derin istihbarat denetimlerinin ağırlıklı birleşimiyle hesaplanır:
+$$\text{Score}_{\text{Lens}} = \text{clamp}\left( \text{CoreScore} \times 0.70 + \text{IntelligenceScore} \times 0.30 \right)$$
+*Sınır Şartı: Lens skorları kurum içi değerlendirme heuristikleridir; Google veya üçüncü taraf AI modellerinin resmi sıralama garantisi değildir.*
+
 ---
 
-## 4. MASTER DIAGNOSIS & PRODUCTION REMEDIATION RECIPES
+## 6. 13 DERİN İSTİHBARAT DENETİMİ (INTELLIGENCE AUDITS)
 
-This section provides the exhaustive, technical diagnostic criteria, root cause analysis, production-ready code recipes, and terminal acceptance test commands for all failure modes across the 8 core optimization vectors.
+`functions/lib/intelligence-engine.ts` içindeki 13 derin analiz:
+
+1. **Arama Niyeti ve Kannibalizasyon Denetimi (`intent_cannibalization`):** Aynı alan adındaki sayfaların birbiriyle aynı title veya H1 kullanarak arama motoru nezdinde birbirini baltalamasını denetler.
+2. **Özgün Bilgi Değeri Sinyalleri (`information_gain`):** Sayfanın web genelindeki kopyalardan farklılaşan birinci el veri, hesaplama araçları, karar tabloları ve tescilli metodoloji içerip içermediğini inceler.
+3. **Doğrudan Cevap Çıkarılabilirliği (`answer_extractability`):** Sayfa metninin başlıkların hemen ardından net, bağımsız ve bağlamından koparıldığında da anlamlı kalan doğrudan cevap bloklarına sahip olup olmadığını ölçer.
+4. **Varlık Grafı Bütünlüğü (`entity_graph_integrity`):** JSON-LD şemasında `Organization`, `Person`, `Product` gibi temel varlıkların tutarlı `@id` referanslarıyla birbiriyle örülüp örülmediğini denetler.
+5. **Güncellik Bütünlüğü (`freshness_integrity`):** Görünür güncelleme tarihleri ile şemadaki `dateModified` ve sitemap'teki `lastmod` tarihlerinin gerçek içerik değişimine dayanıp dayanmadığını doğrular (Sahte güncellik filtresi).
+6. **Hydration / Render Eşitliği (`render_parity`):** Ham HTTP HTML çıktısı ile tarayıcı tarafından render edilen DOM arasındaki farkı gözlemler; JS çalıştırmayan botlar için içerik kaybı olup olmadığını belirler.
+7. **LLM Bilgi Yüzeyi Denetimi (`llm_knowledge_surface`):** `/llms.txt` ve bağlı Markdown kaynaklarının erişilebilirliğini, sözdizimini ve bağlantı sağlığını ölçer.
+8. **İç Bağlantı Anlamsal Uyumu (`internal_link_semantic_alignment`):** İç bağlantıların "buraya tıklayın" gibi anlamsız metinler yerine hedef sayfanın konusunu ve varlığını tanımlayan açıklayıcı metinler (anchor text) içerip içermediğini denetler.
+9. **Yetim Sayfa Tespiti (`orphan_pages`):** Sitemap'te yer alıp site içi hiçbir sayfadan bağlantı almayan veya menüde kaybolan sayfaları tespit eder.
+10. **Keşif Yolu Denetimi (`discovery_path`):** robots.txt, sitemap, kanonik etiketler, llms.txt ve API yüzeylerinin tek ve tutarlı bir bilgi mimarisini işaret edip etmediğini ölçer.
+11. **IndexNow Hazırlığı (`indexnow_readiness`):** Arama motorlarına gerçek zamanlı URL güncellemesi göndermek için gerekli IndexNow anahtar dosyasının varlığını ve yayın durumunu kontrol eder.
+12. **Yapısal @graph Tutarlılığı (`structured_graph_consistency`):** Sayfadaki birden fazla bağımsız JSON-LD bloğunun çelişki üretmeden tek bir `@graph` kökü altında birleşip birleşmediğini doğrular.
+13. **Kod Tabanı SEO Yönetişimi (`codebase_seo_governance`):** Kaynak kod seviyesindeki rota kayıt defterini, CI/CD kalite kapılarını ve meta veri üretim mekanizmalarını doğrular.
 
 ---
 
-### VECTOR 1: CORE TECHNICAL & STRUCTURAL SEO (ENG-04, ENG-12)
+## 7. 6 İLERİ SEVİYE KARA KUTU RİSK ANALİZİ (ADVANCED BLACK-BOX RISK LAYER)
 
-#### Issue 1.1: Missing, Multiple, or Inconsistent H1 Hierarchy
-- **Diagnostic Rule (`TECH-H1-001`)**: Count of `<h1>` elements in HTML AST $\neq 1$.
-- **Model Impact**: Search crawlers and LLM DOM parsers fail to isolate the primary subject matter of the document, diluting topical authority across multiple headings.
-- **Root Cause**: CMS templates rendering logo, promotional banners, and section headers with `<h1>` tags simultaneously.
-- **Production Code Recipe**:
+Harici AI sistemlerinin kapalı kutu doğasından kaynaklanan 6 kritik risk boyutu:
+
+1. **Sorgu Yayılımı Kapsama Riski (`query_fanout_coverage`):** Google AI Overviews ve AI Mode tek bir kullanıcı aramasında arka planda 5-10 ilişkili alt sorgu üretir. Sayfanın bu alt dalları karşılayıp karşılayamadığını modeller.
+2. **Alıntı ve Tavsiye Oynaklığı (`citation_volatility`):** Perplexity ve ChatGPT modellerinin zaman içinde ve sıcaklık (temperature) dalgalanmalarında markayı alıntılama sıklığındaki oynaklık riskini inceler.
+3. **Crawler Amaç ve Politika Ayrışması (`crawler_policy_divergence`):** Arama botları (`OAI-SearchBot`), kullanıcı yönlendirmeli botlar (`Claude-User`) ve eğitim botları (`GPTBot`) arasındaki robots.txt ayrımının doğru kurgulanıp kurgulanmadığını denetler.
+4. **Render–Erişim Farkı (`render_retrieval_gap`):** İstemci taraflı JavaScript (SPA / React / Vue) arkasında kalan içeriğin AI arama botları tarafından indekslenemeden atlanma riskini raporlar.
+5. **Varlık Kimliği Sapması (`entity_identity_drift`):** Farklı kaynaklarda marka hakkında geçen çelişkili bilgilerin LLM'lerde kimlik karmaşası ve halüsinasyon yaratma riskini modeller.
+6. **Ajan İşlem Sürtünmesi (`agent_action_friction`):** Otonom ajanların site üzerinde form doldururken, buton tıklarken veya sipariş verirken karşılaştığı erişilebilirlik ve arayüz bariyerlerini değerlendirir.
+
+---
+
+## 8. 18 MOTORLU ENGINE V3.0 DETERMINİSTİK FORMÜLLERİ & KURAL MATRİSİ
+
+Sistem her URL'yi 18 bağımsız motor üzerinden analiz eder. **Toplam ağırlık toplamı tam olarak 129'dur.**
+
+$$\text{OverallScore} = \text{round}\left( \frac{\sum_{i=1}^{18} \text{EngineScore}_i \times \text{Weight}_i}{\sum_{i=1}^{18} \text{Weight}_i} \right)$$
+
+$$\text{OverallStatus} = \begin{cases} \text{PASS} & \text{if } \text{OverallScore} \ge 80 \\ \text{WARN} & \text{if } 55 \le \text{OverallScore} < 80 \\ \text{FAIL} & \text{if } \text{OverallScore} < 55 \end{cases}$$
+
+| Motor Kodu | Motor Adı | Ağırlık | Kurallar & Denetim Standartları |
+|:---|:---|:---:|:---|
+| `ENG-01` | **KV-Cache Optimization Engine** | 5 | `KV-001` (Cache-Control Başlığı), `KV-002` (max-age/s-maxage Direktifleri), `KV-003` (ETag/Last-Modified Doğrulaması). |
+| `ENG-02` | **Edge TTFB Engine** | 6 | `TTFB-001` (İlk Yanıt Gecikmesi <250ms), `TTFB-002` (Edge CDN Varlığı - Cloudflare/Fastly), `TTFB-003` (HTTP/2 veya HTTP/3 0-RTT Desteği). |
+| `ENG-03` | **Provenance Engine** | 6 | `PROV-001` (Yazar Meta/Rel Etiketleri), `PROV-002` (Tarih ve Zaman Damgası İmleri), `PROV-003` (C2PA/RFC 3161 Kriptografik Orijinallik İmleri). |
+| `ENG-04` | **SEO Engine** | 12 | `SEO-001` (HTTP Başarı Durumu 200), `SEO-002` (Geçerli `<title>` Varlığı), `SEO-003` (Açıklayıcı Meta Description), `SEO-004` (Tekil Mutlak Canonical URL), `SEO-005` (Dil Belirteci `html[lang]`), `SEO-006` (robots `noindex` Bulunmaması), `SEO-007` (Erişilebilir robots.txt), `SEO-008` (Geçerli sitemap.xml). |
+| `ENG-05` | **GEO Engine** | 10 | `GEO-001` (HTML Yük Boyutu <250KB), `GEO-002` (Düşük Script Yoğunluğu <=20), `GEO-003` (Render-Blocking Script Sayısı <=2), `GEO-004` (Mixed Content Bulunmaması), `GEO-005` (Sub-14KB İlk Paket AST Bütçesi), `GEO-006` (Google Preferred Sources Desteği), `GEO-007` (Google Bölgesel Yapısal Veri Karuseli). |
+| `ENG-06` | **AEO Engine** | 9 | `AEO-001` (H1 Konu Başlığı Uyumu), `AEO-002` (Başlık Hiyerarşisi H1-H3), `AEO-003` (FAQPage / QAPage Yapısal Verisi), `AEO-004` (Doğrudan Soru-Cevap Metin Yoğunluğu), `AEO-005` (İlk 100px İçinde 29-80 Kelimelik Hero Answer). |
+| `ENG-07` | **LLMO Engine** | 8 | `LLMO-001` (Erişilebilir `/llms.txt`), `LLMO-002` (llms.txt H1 Başlığı), `LLMO-003` (llms.txt Blok Alıntı Özeti), `LLMO-004` (llms.txt İçi Fonksiyonel Linkler), `LLMO-005` (`rel="describedby"` Keşif Bağı), `LLMO-006` (`rel="alternate" type="text/markdown"` Sunumu). |
+| `ENG-08` | **Entity Graph Engine** | 8 | `ENT-001` (Geçerli JSON-LD Şeması), `ENT-002` (Sıfır JSON Sözdizim Hatası), `ENT-003` (Birincil Varlık Türü: Organization/Person/WebSite), `ENT-004` (Açık ve Kararlı `@id` Referans Ağı). |
+| `ENG-09` | **Semantic Coherence Heuristics** | 7 | `SEM-001` (Metin/HTML Kod Oranı >%15), `SEM-002` (Yinelenmeyen Başlık Yapısı), `SEM-003` (Semantik HTML5 Etiketleri: main, article, section), `SEM-004` (Cross-Encoder Sayısal Veri ve İstatistik Yoğunluğu). |
+| `ENG-10` | **Retrieval Chunking Heuristics** | 7 | `RAG-001` (Yeterli Başlık Sıklığı >=3), `RAG-002` (İçerik Uzunluğu >250 Kelime), `RAG-003` (Görsellerde Açıklayıcı `alt` Metinleri), `RAG-004` (`data-chunk-id` 512 Tokenlık Semantik Bölümleme). |
+| `ENG-11` | **Content Quality Heuristics** | 6 | `QUAL-001` (Erişilebilir Form Kontrolleri), `QUAL-002` (Açık ve İsimli Butonlar), `QUAL-003` (Açık ve Erişilebilir İletişim Kanalları), `QUAL-004` (DPO/RLAIF Uyarınca Pazarlama Balonlarının Temizliği). |
+| `ENG-12` | **Citation Readiness Engine** | 7 | `CITE-001` (Erişilebilir İç Bağlantılar), `CITE-002` (Yönlendirmesiz Temiz İç Linkler), `CITE-003` (Açıklayıcı Anchor Metinleri), `CITE-004` (İkinci Dereceden Sentetik Atıf Döngüleri). |
+| `ENG-13` | **AAO Engine** | 6 | `AAO-001` (A2A Agent Card `/.well-known/agent-card.json`), `AAO-002` (OpenAPI 3.1 Makine Spesifikasyonu `/openapi.json`), `AAO-003` (Model Context Protocol `/mcp` Uç Noktası), `AAO-004` (Başsız Sipariş/Teklif API'si). |
+| `ENG-14` | **EEAT Scoring Engine** | 8 | `EEAT-001` (Hakkımızda / Kurumsal Sayfa), `EEAT-002` (Açık İletişim Sayfası / E-posta / Telefon), `EEAT-003` (Gizlilik Politikası / KVKK Sayfası), `EEAT-004` (Kullanım Şartları / Koşullar Sayfası), `EEAT-005` (Bağımsız Otoritelerle Doğrulama Ağı). |
+| `ENG-15` | **Entity Consistency Structured Knowledge** | 7 | `KNOW-001` (Wikidata QID Triples `wikidata.org/wiki/Q...`), `KNOW-002` (Google Knowledge Graph MID), `KNOW-003` (Crunchbase / LinkedIn Kurumsal Profilleri), `KNOW-004` (Çok Alanlı Konsensüs Üçlüleri), `KNOW-005` (Ontolojik Üst-Sınıf Şeması). |
+| `ENG-16` | **Claim Consistency Heuristics** | 6 | `HAL-001` (Açık ve Şeffaf Fiyatlandırma Tablosu), `HAL-002` (Hizmet ve Kapsam Sınır Tablosu), `HAL-003` (Sıkça Sorulan Sorular ve Disambiguation), `HAL-004` (Güvenli Form Aksiyonları HTTPS), `HAL-005` (Halüsinasyon Engelleme Sözleşmesi). |
+| `ENG-17` | **Discovery Coverage Engine** | 6 | `DISC-001` (Googlebot İzin Verildi), `DISC-002` (OAI-SearchBot İzin Verildi), `DISC-003` (Claude-SearchBot İzin Verildi), `DISC-004` (PerplexityBot İzin Verildi). |
+| `ENG-18` | **Freshness Revision Signals** | 5 | `TIME-001` (Geçerli ISO-8601 Tarih Formatı), `TIME-002` (Gelecek Tarih Sinyali Olmaması), `TIME-003` (Gerçek İçerik Değişimiyle %15 Delta Uyumlu Güncellik), `TIME-004` (Wayback Machine Zamansal Arşivlenmesi). |
+| **TOPLAM** | | **129** | |
+
+---
+
+## 9. KAPSAMLI TEŞHİS KATALOĞU & ÜRETİME HAZIR KOD REÇETELERİ
+
+Bu bölüm; sistemin tespit ettiği tüm kusurlar için kök neden analizini, kopyala-yapıştır çalışır üretim kodunu, tek satırlık terminal kabul doğrulama komutunu ve geri alma talimatını içerir.
+
+---
+
+### VEKTÖR 1: TEMEL TEKNİK & YAPISAL SEO (ENG-04, ENG-12)
+
+#### Kusur 1.1: H1 Hiyerarşisi Tutarsız veya Çoklu (`TECH-H1-001`)
+- **Teşhis Kuralı:** Sayfa HTML AST içinde `<h1>` sayısı $\neq 1$.
+- **Model Etkisi:** AI ve arama örümcekleri sayfanın ana odak konusunu ayrıştıramaz; semantik otorite dağılır.
+- **Kök Neden:** CMS şablonunda site logosunun, duyuru barlarının veya ara başlıkların da `<h1>` etiketiyle basılması.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
-  <!-- BAD: Multiple H1s -->
-  <header><h1><a href="/">Brand Logo</a></h1></header>
-  <main><h1>Primary Article Title</h1></main>
-
-  <!-- GOOD (Fixed Template): Exactly 1 H1 containing the core entity and intent -->
+  <!-- DÜZELTİLMİŞ ŞABLON: Sayfada kesinlikle 1 adet semantik H1 yer alır -->
   <header>
-    <a href="/" class="brand" aria-label="Brand Home">
-      <span class="logo-text font-bold">Brand</span>
+    <a href="/" class="brand-logo" aria-label="Ana Sayfa">
+      <span class="text-xl font-bold text-slate-900">Marka</span>
     </a>
   </header>
   <main>
     <article>
       <h1 class="text-3xl font-extrabold tracking-tight text-slate-900">
-        Primary Topic: Deterministic AI Search Optimization
+        Kurumsal AI Arama Görünürlüğü ve Deterministik Sistem Mimarisi
       </h1>
       <section>
-        <h2 class="text-xl font-bold text-slate-800">1. Sub-Topic Technical Architecture</h2>
+        <h2 class="text-xl font-bold text-slate-800">1. Altyapı ve Teşhis Kriterleri</h2>
       </section>
     </article>
   </main>
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu (cURL / AST):**
   ```bash
-  curl -sL "https://target-domain.com/" | grep -E -o "<h1\b[^>]*>.*?</h1>" | wc -l | awk '{if ($1==1) print "PASS: Exactly 1 H1"; else {print "FAIL: Found " $1 " H1s"; exit 1}}'
+  curl -sL "https://target-domain.com/" | grep -E -o "<h1[^>]*>.*?</h1>" | wc -l | awk '{if ($1==1) print "PASS: Tam olarak 1 adet H1 mevcut"; else {print "FAIL: " $1 " adet H1 bulundu"; exit 1}}'
   ```
-- **Rollback Plan**: Revert template change to previous commit in Git.
+- **Geri Alma Planı (Rollback):** Şablon dosyasındaki `<h1>` etiketlerini önceki sürüme geri almak için `git checkout HEAD~1 -- templates/header.html`.
 
 ---
 
-#### Issue 1.2: Canonical URL Missing or Inconsistent with Domain
-- **Diagnostic Rule (`TECH-CANON-001`)**: `<link rel="canonical" href="...">` is missing or resolves to a different origin/protocol than the served URL.
-- **Model Impact**: Search engines split PageRank and citation authority across HTTP/HTTPS, www/non-www, or query-string parameter variations.
-- **Root Cause**: Relative URLs inside canonical tags or missing canonical link generation in template head.
-- **Production Code Recipe**:
+#### Kusur 1.2: Eksik veya Uyumsuz Kanonik Etiket (`TECH-CANON-001`)
+- **Teşhis Kuralı:** `<link rel="canonical" href="...">` etiketi eksik ya da sunulan protokolden/alan adından farklı.
+- **Model Etkisi:** Arama motorları dizin otoritesini parçalar; HTTP/HTTPS ve www/non-www arasında sıralama kaybı yaşanır.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
   <head>
-    <link rel="canonical" href="https://target-domain.com/exact-canonical-slug/" />
+    <link rel="canonical" href="https://target-domain.com/tam-kanonik-yol/" />
   </head>
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sL "https://target-domain.com/exact-canonical-slug/" | grep -E -i '<link[^>]+rel=["\x27]canonical["\x27][^>]+href=["\x27]https://target-domain\.com/exact-canonical-slug/["\x27]'
+  curl -sL "https://target-domain.com/tam-kanonik-yol/" | grep -E -i '<link[^>]+rel=["']canonical["'][^>]+href=["']https://target-domain.com/tam-kanonik-yol/["']' && echo "PASS: Kanonik etiket tam uyumlu"
   ```
+- **Geri Alma Planı:** Head şablonundaki kanonik üretim değişkenini önceki commit'e döndürün.
 
 ---
 
-#### Issue 1.3: Accidental `noindex` Leak in Production
-- **Diagnostic Rule (`TECH-NOINDEX-001`)**: `<meta name="robots" content="...noindex...">` or `X-Robots-Tag: noindex` detected on production canonical URLs.
-- **Model Impact**: Immediate drop from Google Index and permanent exclusion from PerplexityBot, GPTBot, and ClaudeBot ingestion pipelines.
-- **Root Cause**: Staging environment config files copied directly into production deployment.
-- **Production Code Recipe**:
+#### Kusur 1.3: Canlı Ortamda Kazara `noindex` Sızıntısı (`TECH-NOINDEX-001`)
+- **Teşhis Kuralı:** Canlı ortamda `<meta name="robots" content="...noindex...">` veya `X-Robots-Tag: noindex` bulunması.
+- **Model Etkisi:** Sayfa arama motoru dizinlerinden anında düşürülür; GPTBot ve PerplexityBot sayfayı taramayı bırakır.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
-  <!-- Replace all noindex tags with indexable directive -->
+  <!-- noindex etiketini kaldırın ve tam indeksleme direktifi tanımlayın -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sI "https://target-domain.com/" | grep -i "x-robots-tag" | grep -i "noindex" && echo "CRITICAL FAIL: noindex found" || echo "PASS: Clean headers"
+  curl -sI "https://target-domain.com/" | grep -i "x-robots-tag" | grep -i "noindex" && echo "CRITICAL FAIL: noindex başlığı bulundu" || echo "PASS: Başlıklar temiz"
   ```
+- **Geri Alma Planı:** İlgili ortam değişkenini `ROBOTS_INDEX=true` olarak güncelleyin.
 
 ---
 
-#### Issue 1.4: Generic Internal Link Anchor Text (Twiddler Demotion)
-- **Diagnostic Rule (`TECH-ANCHOR-001`)**: Internal links using generic text ("tıklayın", "click here", "buradan", "detay").
-- **Model Impact**: Triggers Google AnchorMismatchTwiddler penalty, which demotes pages receiving low-information internal link citations.
-- **Production Code Recipe**:
+#### Kusur 1.4: Jenerik İç Bağlantı Metinleri (`TECH-ANCHOR-001` / Twiddler Koruması)
+- **Teşhis Kuralı:** İç bağlantılarda "tıklayın", "buradan", "detay", "click here" gibi bağlamsız kelimelerin kullanılması.
+- **Model Etkisi:** Google'ın `AnchorMismatchTwiddler` algoritması devreye girerek sayfa içi otorite aktarımını cezalandırır.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
-  <!-- BAD -->
-  <a href="/tr/rehberler/llms-txt/">Buraya tıklayın</a>
+  <!-- YANLIŞ -->
+  <a href="/tr/rehberler/llms-txt/">Detaylı bilgi için tıklayın.</a>
 
-  <!-- GOOD: Fully descriptive anchor matching target H1 -->
-  <a href="/tr/rehberler/llms-txt/" class="text-sky-600 hover:underline">
+  <!-- DOĞRU: Hedef sayfanın H1 başlığı ve odak varlığıyla birebir uyumlu anchor -->
+  <a href="/tr/rehberler/llms-txt/" class="text-sky-600 font-medium hover:underline">
     llms.txt v2 Standardı ve Makine Okunabilir Rehber Spesifikasyonu
   </a>
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sL "https://target-domain.com/" | grep -E -i '<a[^>]+href=["\x27]/[^"\x27]+["\x27][^>]*>(tıklayın|click here|buradan|detay|devamı)</a>' && echo "FAIL: Generic anchors found" || echo "PASS: High-information anchors"
+  curl -sL "https://target-domain.com/" | grep -E -i '<a[^>]+href=["']/[^"']+["'][^>]*>(tıklayın|click here|buradan|detay|devamı)</a>' && echo "FAIL: Jenerik anchor bulundu" || echo "PASS: Yüksek bilgi yoğunluklu anchorlar"
   ```
 
 ---
 
-### VECTOR 2: GEO (GENERATIVE ENGINE OPTIMIZATION) & 14KB AST BUDGET (ENG-01, ENG-02, ENG-05)
+#### Kusur 1.5: Eksik veya Yinelenen Başlık Etiketi (`TECH-TITLE-001`, `TECH-DUPTITLE-001`)
+- **Teşhis Kuralı:** `<title>` etiketi yok ya da birden fazla URL aynı title'ı paylaşıyor.
+- **Model Etkisi:** Sayfa kimliği zayıflar, arama sonuçlarında ayrışma sağlanamaz, tıklama oranı çöker.
+- **Üretime Hazır Kod Reçetesi:**
+  ```html
+  <title>Deterministik AI Arama ve Görünürlük Analizi | HTML&amp;HTML</title>
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E -o "<title>.*?</title>" && echo "PASS: Title mevcut"
+  ```
 
-#### Issue 2.1: 14KB Token Budget Overflow & KV-Cache Bloat
-- **Diagnostic Rule (`TOKEN-BLOAT-001`)**: Initial HTML payload exceeds 14.336 bytes (14KB) before content semantic markers or contains massive inline SVG/CSS bloat.
-- **Model Impact**: LLM crawlers (GPTBot, ClaudeBot) operate with strict token budgets per URL. Oversized payloads cause Early Scrape Termination, dropping downstream semantic data.
-- **Root Cause**: 200KB+ inline SVGs, unminified Tailwind/Bootstrap CSS in `<head>`, and heavy client-side hydration scripts.
-- **Production Code Recipe (Cloudflare HTMLRewriter Edge Worker)**:
+---
+
+#### Kusur 1.6: HTTP Hata Kodu Veren Kırık Bağlantılar (`CRAWL-HTTP-001`, `LINK-BROKEN-001`)
+- **Teşhis Kuralı:** İç bağlantıların HTTP 4xx veya 5xx statüsü dönmesi.
+- **Model Etkisi:** Crawl budget israf edilir, kullanıcı ve bot deneyimi bozulur.
+- **Üretime Hazır Kod Reçetesi:** Bağlantıları doğrudan canlı rotaya bağlayın ya da Nginx/Cloudflare seviyesinde 301 yönlendirmesi ekleyin:
+  ```nginx
+  location = /eski-bozuk-sayfa/ {
+      return 301 https://target-domain.com/yeni-canli-sayfa/;
+  }
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -s -o /dev/null -w "%{http_code}
+" "https://target-domain.com/yeni-canli-sayfa/" | grep -E "^(200|301)$"
+  ```
+
+---
+
+### VEKTÖR 2: GEO & 14KB AST BÜTÇESİ (ENG-01, ENG-02, ENG-05)
+
+#### Kusur 2.1: 14KB Token Bütçesi Aşımı & KV-Cache Şişmesi (`TOKEN-BLOAT-001`)
+- **Teşhis Kuralı:** İlk HTML yanıtının semantik içerik işaretleyicilerinden önce 14.336 baytı aşması.
+- **Model Etkisi:** LLM botları ilk TCP/TLS penceresinde içeriğin tamamını alamazsa erken sonlandırma (Early Scrape Abort) uygular.
+- **Üretime Hazır Kod Reçetesi (Cloudflare Worker HTMLRewriter AST Budayıcı):**
   ```javascript
   // 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js
   export default {
@@ -506,71 +585,109 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
     }
   };
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -s -A "GPTBot" "https://target-domain.com/" | wc -c | awk '{if ($1<=14336) print "PASS: " $1 " bytes (Under 14KB)"; else print "WARN: " $1 " bytes (Exceeds 14KB initial window)"}'
+  curl -s -A "GPTBot" "https://target-domain.com/" | wc -c | awk '{if ($1<=14336) print "PASS: " $1 " bayt (14KB altı)"; else print "WARN: " $1 " bayt (14KB aşıldı)"}'
   ```
 
 ---
 
-#### Issue 2.2: Cold-Start TTFB Exceeding 40ms
-- **Diagnostic Rule (`TTFB-COLDSTART-001`)**: Response time for AI crawler User-Agents $> 250\text{ms}$ or missing Edge Cache headers (`cf-cache-status: HIT`).
-- **Model Impact**: Multi-threaded crawler workers batch timeouts at 500ms; slow endpoints are dropped from real-time RAG context retrieval.
-- **Production Code Recipe (HTTP Headers & Cache Optimization)**:
-  ```
-  # Cloudflare / Nginx Cache-Control Contract
+#### Kusur 2.2: Soğuk Başlangıç TTFB Gecikmesi >40ms (`TTFB-COLDSTART-001`)
+- **Teşhis Kuralı:** Crawler isteklerinde TTFB $> 250	ext{ms}$ veya `cf-cache-status: HIT` eksikliği.
+- **Model Etkisi:** Paralel çalışan crawler mikroservisleri geciken sayfaları zaman aşımına uğratarak pas geçer.
+- **Üretime Hazır Kod Reçetesi (Edge Cache-Control Kontratı):**
+  ```http
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=600
   cf-edge-cache: cache, platform=pages
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | HTTP: %{http_code}\n' "https://target-domain.com/"
+  curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | HTTP: %{http_code}
+' "https://target-domain.com/"
   ```
 
 ---
 
-#### Issue 2.3: Lack of Contrastive Numerical Density (Cross-Encoder Deficit)
-- **Diagnostic Rule (`RERANK-ATTN-001`)**: Document body lacks atomic numerical benchmarks, percentages, or concrete quantitative data points.
-- **Model Impact**: Cross-Encoder rerankers (like `bge-reranker-large` or `cohere-rerank-v3`) score paragraphs without numerical contrast below the top-3 cutoff.
-- **Production Code Recipe**:
+#### Kusur 2.3: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001`)
+- **Teşhis Kuralı:** Şablonlarda Google Search Central Preferred Sources butonunun veya derin bağlantısının bulunmaması.
+- **Model Etkisi:** Sadık okuyucuların siteyi Google Arama'da "Tercih Edilen Kaynak" olarak ekleyememesi, AI Overviews ve Top Stories önceliğinin kaybedilmesi.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
-  <div class="methodology-contrast-matrix my-6 p-4 border border-slate-200 rounded-lg bg-slate-50">
-    <h3 class="font-bold text-slate-900">Doğrulanmış Karşılaştırma Matrisi (2026 Q3 Verisi)</h3>
-    <ul class="space-y-2 mt-2 text-sm text-slate-700">
-      <li><strong>18 Bağımsız Motor:</strong> Endüstri medyanı 3-5 basit kural iken, sistem 105 kontrol noktası çalıştırır.</li>
-      <li><strong>%96.5 Cross-Encoder Uyumu:</strong> 512 tokenlık pencerelerde doğrudan soru-cevap ve sayısal veri yoğunluğu.</li>
-      <li><strong>40ms Altı Yanıt:</strong> Edge KV önbellekleme ile AI botlarına sıfır gecikmeli veri akışı.</li>
-    </ul>
-  </div>
+  <!-- 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+  <div google-add-preferred-source-btn data-theme="light"></div>
+  <noscript>
+    <a href="https://www.google.com/preferences/source?q=target-domain.com" rel="noopener noreferrer" class="text-xs text-slate-500">
+      Google Tercih Edilen Kaynaklara Ekle
+    </a>
+  </noscript>
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E -q "publisher.js|google-add-preferred-source-btn|preferences/source" && echo "PASS: Preferred Sources entegrasyonu aktif"
   ```
 
 ---
 
-### VECTOR 3: AEO (ANSWER ENGINE OPTIMIZATION) & VOICE SEARCH (ENG-06)
+#### Kusur 2.4: Google Bölgesel Yapısal Veri Karuseli Eksikliği (`REGIONAL-CAROUSEL-001`)
+- **Teşhis Kuralı:** Bölgesel katalog veya yerel işletme sayfalarında `ItemList` veya `LocalBusiness` `areaServed` şemasının bulunmaması.
+- **Model Etkisi:** Google'ın bölgesel arama ve çoklu varlık barındıran Host Carousel özelliklerinden mahrum kalınması.
+- **Üretime Hazır Kod Reçetesi:**
+  ```html
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Kurumsal AI Görünürlük Çözümleri",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "AI Arama Röntgeni",
+        "url": "https://target-domain.com/tr/site-tarama/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "18 Motorlu Sistem Analizi",
+        "url": "https://target-domain.com/tr/platform/"
+      }
+    ]
+  }
+  </script>
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E -q '"@type":s*"(ItemList|LocalBusiness)"' && echo "PASS: Karusel şeması mevcut"
+  ```
 
-#### Issue 3.1: Absence of Hero Answer Engine (First 100px)
-- **Diagnostic Rule (`AEO-HERO-001`)**: No concise 29-to-80 word direct atomic answer located within the first 100 pixels of the page.
-- **Model Impact**: Voice search agents (Siri, Alexa) and LLM summary engines fail to extract a single self-contained snippet to read aloud or cite as the top answer.
-- **Production Code Recipe**:
+---
+
+### VEKTÖR 3: AEO & SESLİ ARAMA OPTİMİZASYONU (ENG-06)
+
+#### Kusur 3.1: İlk 100 Pikselde Hero Answer Eksikliği (`AEO-HERO-001`)
+- **Teşhis Kuralı:** Sayfanın ilk 100 pikseli içinde 29 ila 80 kelimelik yalın bir tanım paragrafının yer almaması.
+- **Model Etkisi:** Sesli asistanlar ve yapay zeka özetleyicileri sayfadan alıntı yapacak özlü bir paragraf bulamaz.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
   <section class="hero-answer-container pt-4 pb-2">
     <div class="hero-answer-box p-4 rounded-xl border border-sky-200 bg-sky-50/50">
       <p class="hero-answer text-base leading-relaxed text-slate-800 font-medium">
-        <strong>HTML&amp;HTML</strong>, 18 motorlu deterministik analiz altyapısıyla web sitelerinin ChatGPT, Claude, Perplexity ve Google Gemini nezdindeki görünürlüğünü ücretsiz tarar; 105 kontrol noktası üzerinden kök nedenleri tespit ederek müşterinin kendi yazılım ekibine <strong>$99 tek seferlik lisanslı kod reçetesi</strong> sunar.
+        <strong>HTML&amp;HTML</strong>, web sitelerinin ChatGPT, Claude, Perplexity ve Google Gemini nezdindeki görünürlüğünü 18 bağımsız motor ve 105 kontrol noktasıyla denetleyen; tespit edilen kök sorunları müşterinin kendi yazılım ekibine <strong>$99 tek seferlik lisanslı kod reçetesi</strong> olarak teslim eden deterministik bir kurumsal yazılım platformudur.
       </p>
     </div>
   </section>
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sL "https://target-domain.com/" | grep -E -o '<p class=["\x27]hero-answer["\x27]>.*?</p>' | wc -w | awk '{if ($1>=25 && $1<=90) print "PASS: " $1 " words atomic answer"; else print "FAIL: Word count outside range (" $1 ")"}'
+  curl -sL "https://target-domain.com/" | grep -E -o '<p class=["']hero-answer["']>.*?</p>' | wc -w | awk '{if ($1>=25 && $1<=90) print "PASS: " $1 " kelimelik Hero Answer mevcut"; else print "FAIL: Kelime sayısı aralık dışı (" $1 ")"}'
   ```
 
 ---
 
-#### Issue 3.2: Missing Structured QAPage / FAQPage Schema
-- **Diagnostic Rule (`SCHEMA-AEO-001`)**: Page text contains FAQ patterns, but JSON-LD lacks `FAQPage` or `Question/Answer` entities.
-- **Production Code Recipe**:
+#### Kusur 3.2: Yapısal FAQPage Şeması Eksikliği (`SCHEMA-AEO-001`)
+- **Teşhis Kuralı:** Sayfada soru-cevap içeriği olmasına rağmen JSON-LD `FAQPage` şemasının bulunmaması.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
   <script type="application/ld+json">
   {
@@ -579,33 +696,29 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "HTML&HTML bir SEO ajansı mıdır?",
+        "name": "HTML&HTML nasıl çalışır?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hayır. HTML&HTML bir ajans veya danışmanlık firması değildir. Web sitenizin arama ve yapay zeka görünürlüğünü deterministik motorlarla denetleyen ve düzeltme kodlarını $99 karşılığında müşterinin kendi yazılımcısına teslim eden bir yazılım ürünüdür."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Düzeltme paketinde neler bulunur?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Paket, müşterinin yazılım ekibinin doğrudan uygulayabileceği 22 ile 30 arasında dosya (Cloudflare Worker kodları, JSON-LD şablonları, llms.txt dosyaları, kabul testleri ve geri alma planı) içeren bir ZIP setidir."
+          "text": "Alan adınızı girersiniz, 18 deterministik motor sitenizi inceler, 105 kontrol noktası üzerinden hataları teşhis eder ve mühendisinizin kopyalayıp uygulayabileceği 30 dosyalık ZIP paketini üretir."
         }
       }
     ]
   }
   </script>
   ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -q "FAQPage" && echo "PASS: FAQPage şeması mevcut"
+  ```
 
 ---
 
-### VECTOR 4: LLMO (LARGE LANGUAGE MODEL OPTIMIZATION) & MULTI-TIER SURFACES (ENG-07)
+### VEKTÖR 4: LLMO & ÇOK KATMANLI MAKİNE YÜZEYLERİ (ENG-07)
 
-#### Issue 4.1: Missing or Non-Standard `/llms.txt` Hub Manifest
-- **Diagnostic Rule (`LLMS-ROOT-001`, `LLMS-FORMAT-001`)**: `/llms.txt` returns $404$ or lacks the mandatory H1 (`# Domain`) and blockquote summary (`> Summary`).
-- **Model Impact**: Autonomous agents querying the standard agent discovery endpoints fail to discover machine-readable documentation.
-- **Production Code Recipe (`/llms.txt`)**:
+#### Kusur 4.1: Eksik veya Standart Dışı `/llms.txt` Dosyası (`LLMS-ROOT-001`, `LLMS-FORMAT-001`)
+- **Teşhis Kuralı:** `/llms.txt` uç noktasının 404 vermesi ya da zorunlu H1 ve alıntı özetini içermemesi.
+- **Model Etkisi:** Otonom arama ajanları sitenin makine haritasını çözemez.
+- **Üretime Hazır Kod Reçetesi (`/llms.txt` v2 Spesifikasyonu):**
   ```markdown
   # htmlandhtml.com
   > 18 motorlu deterministik AI Search görünürlük ve teknik denetim platformu.
@@ -615,35 +728,39 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
   - [18 Motorlu Sistem Spesifikasyonu](https://htmlandhtml.com/llms/pages/services.md): 105 kontrol noktası ve puanlama formülleri.
 
   ## Önemli Sayfalar (Kanonik Makine Yüzeyleri)
-  - [Ana Sayfa](https://htmlandhtml.com/llms/pages/home.md): AI Görünürlük Tarayıcısı ve 4 Temel Yetkinlik Sütunu.
+  - [Ana Sayfa](https://htmlandhtml.com/llms/pages/home.md): AI Görünürlük Tarayıcısı ve 4 Hayati Organ.
   - [Fiyatlandırma](https://htmlandhtml.com/llms/pages/pricing.md): $99 Tek Seferlik Kod Reçetesi Lisansı.
   - [llms.txt Doğrulayıcı](https://htmlandhtml.com/llms/pages/llms-txt-validator.md): v2 spesifikasyon test aracı.
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sI "https://target-domain.com/llms.txt" | grep -E "HTTP/(1\.1|2|3) 200" && curl -s "https://target-domain.com/llms.txt" | head -n 3
+  curl -sI "https://target-domain.com/llms.txt" | grep -E "HTTP/(1.1|2|3) 200" && curl -s "https://target-domain.com/llms.txt" | head -n 3
   ```
 
 ---
 
-#### Issue 4.2: Missing Markdown Alternates & Discovery Links in `<head>`
-- **Diagnostic Rule (`LLMS-DISCOVERY-001`, `LLMS-MD-001`)**: HTML lacks `rel="describedby"` linking to `/llms.txt` or `rel="alternate" type="text/markdown"`.
-- **Production Code Recipe**:
+#### Kusur 4.2: `<head>` İçinde Markdown Alternatif Bağlantısı Eksikliği (`LLMS-DISCOVERY-001`, `LLMS-MD-001`)
+- **Teşhis Kuralı:** HTML başlığında `rel="describedby"` veya `rel="alternate" type="text/markdown"` linklerinin bulunmaması.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
   <head>
     <link rel="describedby" href="https://target-domain.com/llms.txt" />
     <link rel="alternate" type="text/markdown" href="https://target-domain.com/index.md" />
   </head>
   ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E 'rel=["']describedby["']' && echo "PASS: llms.txt keşif bağı mevcut"
+  ```
 
 ---
 
-### VECTOR 5: AAO-PRO (AUTONOMOUS AGENT OPTIMIZATION) & HEADLESS COMMERCE (ENG-13)
+### VEKTÖR 5: AAO-PRO & BAŞSIZ TİCARET / AJAN PROTOKOLÜ (ENG-13)
 
-#### Issue 5.1: Missing Signed A2A Agent Card
-- **Diagnostic Rule (`A2A-MCP-CARD-001`)**: `/.well-known/agent-card.json` returns $404$ or fails schema validation.
-- **Model Impact**: Autonomous purchasing agents (Siri Agent, Claude Use, Google Project Astra) cannot parse service capabilities or execute headless transactions.
-- **Production Code Recipe (`/.well-known/agent-card.json`)**:
+#### Kusur 5.1: İmzalı A2A Agent Card Eksikliği (`A2A-MCP-CARD-001`, `AGENT-A2A-001`)
+- **Teşhis Kuralı:** `/.well-known/agent-card.json` uç noktasının 404 dönmesi.
+- **Model Etkisi:** Otonom satın alma ve işlem ajanları sitenin yeteneklerini keşfedemez.
+- **Üretime Hazır Kod Reçetesi (`/.well-known/agent-card.json`):**
   ```json
   {
     "@context": "https://agent-protocol.org/v1",
@@ -667,19 +784,19 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
     }
   }
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sL "https://target-domain.com/.well-known/agent-card.json" | grep -E '"@type":\s*"AgentCard"'
+  curl -sL "https://target-domain.com/.well-known/agent-card.json" | grep -E '"@type":s*"AgentCard"'
   ```
 
 ---
 
-#### Issue 5.2: Missing Model Context Protocol (MCP) Tool Endpoint
-- **Diagnostic Rule (`AGENT-MCP-001`)**: `/mcp` or `/.well-known/mcp.json` returns non-200 status.
-- **Production Code Recipe (`functions/mcp.ts` / `/mcp`)**:
+#### Kusur 5.2: Model Context Protocol (MCP) Uç Noktası Eksikliği (`AGENT-MCP-001`)
+- **Teşhis Kuralı:** `/mcp` veya `/.well-known/mcp.json` adresinin yanıt vermemesi.
+- **Üretime Hazır Kod Reçetesi (`functions/mcp.ts`):**
   ```typescript
   export const onRequestPost: PagesFunction = async ({ request }) => {
-    const body: any = await request.json();
+    const body: any = await request.json().catch(() => ({}));
     if (body.method === "tools/list") {
       return Response.json({
         tools: [
@@ -698,42 +815,58 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
     return Response.json({ error: "Unsupported MCP method" }, { status: 400 });
   };
   ```
-
----
-
-### VECTOR 6: RAG (RETRIEVAL-AUGMENTED GENERATION) & DENSE RETRIEVAL (ENG-09, ENG-10)
-
-#### Issue 6.1: Sub-Chunk Entity Boundary Fragmentation
-- **Diagnostic Rule (`RAG-CHUNK-001`)**: HTML body lacks `data-chunk-id` semantic boundaries.
-- **Model Impact**: When RAG ingestion systems slice long web pages into 512-token chunks, entity names, addresses, or prices get severed mid-sentence, causing retrieval hallucinations.
-- **Production Code Recipe**:
-  ```html
-  <div data-chunk-id="pricing-remediation-set" class="chunk-block p-6">
-    <h3 class="font-bold">Tek Seferlik Onarım Seti Lisansı</h3>
-    <p>99 USD karşılığında 30 adet deterministic kod dosyası müşterinin kendi yazılım ekibine teslim edilir.</p>
-  </div>
-  <div data-chunk-id="methodology-zero-randomness" class="chunk-block p-6">
-    <h3 class="font-bold">Sıfır Rastlantısallık Standardı</h3>
-    <p>Tüm testler ve skorlar deterministiktir. Math.random() kullanımı tamamen engellenmiştir.</p>
-  </div>
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -s -X POST -H "Content-Type: application/json" -d '{"method":"tools/list"}' "https://target-domain.com/mcp" | grep -q "audit_domain" && echo "PASS: MCP aracı aktif"
   ```
 
 ---
 
-#### Issue 6.2: ColBERT MaxSim Multi-Vector Alignment Deficit
-- **Diagnostic Rule (`COLBERT-MAXSIM-001`)**: Heading count $< 3$ on long pages, or content lacks structured question-answer token clustering.
-- **Model Impact**: Multi-vector late-interaction engines (ColBERT, SPLADE) cannot perform cross-attention matching between query tokens and document tokens.
-- **Production Code Recipe**:
-  Ensure every 300 words begins with a descriptive `<h2 class="colbert-token-anchor">` or `<h3 class="colbert-token-anchor">` containing the explicit entity and intent.
+### VEKTÖR 6: RAG & YOĞUN BİLGİ ERİŞİMİ (ENG-09, ENG-10)
+
+#### Kusur 6.1: Alt Bölüm Varlık Parçalanma Riski (`RAG-CHUNK-001`)
+- **Teşhis Kuralı:** HTML gövdesinde semantik `data-chunk-id` sınırlarının bulunmaması.
+- **Model Etkisi:** Vektör veri tabanları 512 tokenlık pencerelerle metni rastgele böldüğünde cümleler ortadan kesilir ve RAG halüsinasyonu doğar.
+- **Üretime Hazır Kod Reçetesi:**
+  ```html
+  <div data-chunk-id="pricing-remediation-set" class="chunk-block p-6">
+    <h3 class="font-bold text-slate-900">Tek Seferlik Onarım Seti Lisansı</h3>
+    <p class="text-slate-700">99 USD karşılığında 30 adet deterministik kod dosyası müşterinin kendi yazılım ekibine teslim edilir.</p>
+  </div>
+  <div data-chunk-id="methodology-zero-randomness" class="chunk-block p-6">
+    <h3 class="font-bold text-slate-900">Sıfır Rastlantısallık Standardı</h3>
+    <p class="text-slate-700">Tüm testler ve skorlar deterministiktir. Math.random() kullanımı tamamen engellenmiştir.</p>
+  </div>
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -q "data-chunk-id=" && echo "PASS: RAG semantik sınırları mevcut"
+  ```
 
 ---
 
-### VECTOR 7: E-E-A-T & KNOWLEDGE VAULT CONSENSUS TRIANGULATION (ENG-08, ENG-14, ENG-15)
+#### Kusur 6.2: ColBERT MaxSim Çoklu Vektör Hizalama Eksikliği (`COLBERT-MAXSIM-001`)
+- **Teşhis Kuralı:** Sayfada başlık sayısının $< 3$ olması veya başlıkların teknik sorgu varyasyonlarını içermemesi.
+- **Model Etkisi:** ColBERT geç etkileşimli iç çarpım (dot product) matrisinde kullanıcı sorgusu ile doküman tokenları zayıf eşleşir.
+- **Üretime Hazır Kod Reçetesi:** Her 300 kelimede bir doğrudan varlık ve niyeti tanımlayan `<h2>` veya `<h3>` alt başlığı konumlandırın:
+  ```html
+  <h2 class="colbert-token-anchor text-xl font-bold text-slate-900">
+    Cloudflare Edge Workers ile Sub-14KB HTMLRewriter AST Optimizasyonu
+  </h2>
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E -c "<h[2-3]" | awk '{if ($1>=3) print "PASS: " $1 " adet alt başlık mevcut"; else print "FAIL: Yetersiz başlık sayısı"}'
+  ```
 
-#### Issue 7.1: Missing Wikidata QID & Google Knowledge Graph MID
-- **Diagnostic Rule (`ENTITY-VAULT-001`)**: JSON-LD `sameAs` array contains 0 Wikidata (`wikidata.org/wiki/Q...`) or Google Knowledge Graph (`kg/m/...`) links.
-- **Model Impact**: LLMs cannot anchor the website to ground-truth entity graphs, treating it as an unverified ephemeral web surface.
-- **Production Code Recipe**:
+---
+
+### VEKTÖR 7: E-E-A-T & KNOWLEDGE VAULT KONSENSÜS KİLİDİ (ENG-08, ENG-14, ENG-15)
+
+#### Kusur 7.1: Eksik Wikidata QID & Google Knowledge Graph MID (`ENTITY-VAULT-001`)
+- **Teşhis Kuralı:** JSON-LD `sameAs` dizisinde 0 adet Wikidata (`wikidata.org/wiki/Q...`) veya Google MID (`kg/m/...`) bağlantısı olması.
+- **Model Etkisi:** LLM'ler şirketi güvenilir zemin varlığı (Ground Truth) olarak tanıyamaz, pazarlama metni muamelesi yapar.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
   <script type="application/ld+json">
   {
@@ -741,9 +874,9 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
     "@graph": [
       {
         "@type": ["Organization", "Corporation"],
-        "@id": "https://htmlandhtml.com/#organization",
+        "@id": "https://target-domain.com/#organization",
         "name": "HTML&HTML",
-        "url": "https://htmlandhtml.com",
+        "url": "https://target-domain.com",
         "sameAs": [
           "https://www.wikidata.org/wiki/Q11589432",
           "https://www.linkedin.com/company/htmlandhtml",
@@ -754,41 +887,47 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
   }
   </script>
   ```
-- **Acceptance Verification Command**:
+- **Terminal Kabul Komutu:**
   ```bash
-  curl -sL "https://target-domain.com/" | grep -E "wikidata\.org/wiki/Q[0-9]+"
+  curl -sL "https://target-domain.com/" | grep -E "wikidata.org/wiki/Q[0-9]+" && echo "PASS: Wikidata QID doğrulandı"
   ```
 
 ---
 
-#### Issue 7.2: DPO / RLAIF Preference Elicitation Failure (Puffery Superlatives)
-- **Diagnostic Rule (`DPO-RLAIF-001`)**: Text contains subjective, non-provable promotional claims ("en iyi", "rakipsiz", "mükemmel", "revolutionary", "best-in-class").
-- **Model Impact**: Direct Preference Optimization (DPO) and RLAIF preference models classify subjective marketing text into the "Rejected" loss branch, heavily suppressing citation frequency.
-- **Production Code Recipe**:
-  - *Replace*: "Dünyanın en iyi ve rakipsiz AI analiz platformuyuz."
-  - *With*: "W3C, RFC 9110 ve LLMs.txt v2 standartlarına dayalı 18 motor ve 105 kontrol noktası çalıştıran deterministik analiz sistemi."
+#### Kusur 7.2: DPO / RLAIF Üslup Uyumsuzluğu & Pazarlama Balonları (`DPO-RLAIF-001`)
+- **Teşhis Kuralı:** Sayfa metninde ispatlanamayan sübjektif övgü kelimeleri ("en iyi", "rakipsiz", "sektör lideri", "revolutionary", "best-in-class") bulunması.
+- **Model Etkisi:** DPO ve RLAIF modelleri bu tür metinleri "Reddedilen" (Rejected) kayıp dalına iter ve alıntı ihtimalini ciddi şekilde düşürür.
+- **Üretime Hazır Kod Reçetesi:**
+  - *Kaldırılan İfade:* "Dünyanın en iyi ve rakipsiz AI analiz platformuyuz."
+  - *Yerine Konan Doğrulanabilir İfade:* "W3C, RFC 9110 ve LLMs.txt v2 standartlarına dayalı 18 bağımsız motor ve 105 kontrol noktası çalıştıran deterministik analiz sistemi."
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -i -E "rakipsiz|sektör lideri|best-in-class|revolutionary" && echo "FAIL: Sübjektif övgü sözcükleri tespit edildi" || echo "PASS: Metin nötr ve kanıt odaklı"
+  ```
 
 ---
 
-#### Issue 7.3: Missing Cryptographic Provenance (C2PA & RFC 3161)
-- **Diagnostic Rule (`C2PA-PROVENANCE-001`)**: Missing `x-c2pa-manifest` header or RFC 3161 cryptographic timestamp metadata.
-- **Model Impact**: AI content authenticity filters cannot distinguish original first-party publishing from scraped copies.
-- **Production Code Recipe**:
+#### Kusur 7.3: Eksik Kriptografik Menşe İmleri (`C2PA-PROVENANCE-001`)
+- **Teşhis Kuralı:** `x-c2pa-manifest` başlığı veya RFC 3161 zaman damgası meta verisinin bulunmaması.
+- **Üretime Hazır Kod Reçetesi:**
   ```html
   <meta name="c2pa-manifest" content="https://target-domain.com/.well-known/c2pa/manifest.json" />
   <meta name="dcterms.issued" content="2026-09-08T12:00:00Z" />
   <meta name="dcterms.modified" content="2026-09-08T14:00:00Z" />
   ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E "c2pa-manifest|dcterms.issued" && echo "PASS: Menşe imleri mevcut"
+  ```
 
 ---
 
-### VECTOR 8: DEFENSE, HISTORICAL STABILITY & ANTI-DEMOTION (ENG-16, ENG-17, ENG-18)
+### VEKTÖR 8: SAVUNMA, ZAMANSAL KARARLILIK & GÜVENLİK SERTLEŞTİRMESİ (ENG-16, ENG-17, ENG-18)
 
-#### Issue 8.1: LLM Hallucination on Pricing & Core Deliverables
-- **Diagnostic Rule (`HALLUCINATION-INTERCEPT-001`)**: Absence of explicit, disambiguated pricing and service boundary tables.
-- **Model Impact**: When a user asks an AI: "What does X cost and do they implement it?", the model fabricates agency services, exorbitant retainer fees, or incorrect features.
-- **Production Code Recipe**:
-  Embed an explicit **Disambiguation & Service Boundary Table**:
+#### Kusur 8.1: Fiyat ve Hizmet Sınırlarında LLM Halüsinasyon Riski (`HALLUCINATION-INTERCEPT-001`)
+- **Teşhis Kuralı:** Sitede açık, yoruma kapalı fiyatlandırma ve hizmet sınır tablosunun bulunmaması.
+- **Model Etkisi:** Kullanıcı ChatGPT'ye veya Claude'a "X kaça yapıyor, onlar mı uyguluyor?" diye sorduğunda model uydurma ajans fiyatları ve manuel danışmanlık hizmeti hayal eder.
+- **Üretime Hazır Kod Reçetesi (Disambiguation Sınır Tablosu):**
   ```html
   <table class="w-full text-left text-sm border-collapse border border-slate-200">
     <thead>
@@ -802,7 +941,7 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
       <tr>
         <td class="p-2 border border-slate-200">Web Sitesi Tarama & Röntgen</td>
         <td class="p-2 border border-slate-200 text-emerald-600 font-bold">Ücretsiz</td>
-        <td class="p-2 border border-slate-200">4 Temel Yetkinlik Sütunu ve genel skorlar anında açık gösterilir.</td>
+        <td class="p-2 border border-slate-200">Temel organlar ve genel skorlar anında açık gösterilir.</td>
       </tr>
       <tr>
         <td class="p-2 border border-slate-200">Tam Düzeltme Kod Reçetesi</td>
@@ -817,170 +956,159 @@ This section provides the exhaustive, technical diagnostic criteria, root cause 
     </tbody>
   </table>
   ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -q "Disambiguation" || grep -q "Hizmet / Özellik" && echo "PASS: Sınır tablosu mevcut"
+  ```
 
 ---
 
-#### Issue 8.2: Fake Freshness Twiddler Penalty
-- **Diagnostic Rule (`FRESHNESS-TWIDDLER-001`)**: `lastmod` or `dateModified` updated without at least 15% semantic delta in document content.
-- **Model Impact**: Triggers Google and Bing FreshnessTwiddler algorithmic demotion for deceptive freshness signaling.
-- **Production Code Recipe**:
-  Compute SHA-256 hash of text body. Only update `modifiedAt` if the Levenshtein distance between previous and current text versions exceeds 15%.
-
+#### Kusur 8.2: Sahte Güncellik Algoritma Cezası (`FRESHNESS-TWIDDLER-001`)
+- **Teşhis Kuralı:** Dokümanda %15'ten az anlamsal fark olmasına rağmen `lastmod` veya `dateModified` tarihinin güncellenmesi.
+- **Model Etkisi:** Google FreshnessTwiddler cezası vererek sayfayı yapay tazelik sinyali ürettiği için sıralamalardan düşürür.
+- **Üretime Hazır Kod Reçetesi:** Gövde metninin SHA-256 özetini saklayın. Levenshtein mesafesi veya delta farkı %15'i aşmadıkça `modifiedAt` tarihini kesinlikle güncellemeyin.
 
 ---
 
-## 4B. THE STRICT ENGINEERING IMPLEMENTATION ORDER (UYGULAMA SIRASI & FAZLANDIRMA MİMARİSİ)
+#### Kusur 8.3: Güvenlik Başlıkları Sertleştirmesi Eksikliği (`SEC-HSTS-001` ila `SEC-PERM-001`)
+- **Teşhis Kuralı:** HSTS, CSP, nosniff, Referrer-Policy veya Permissions-Policy başlıklarının eksik olması.
+- **Üretime Hazır Kod Reçetesi (Nginx / Cloudflare):**
+  ```http
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sI "https://target-domain.com/" | grep -E -i "strict-transport-security|x-content-type-options" && echo "PASS: Güvenlik başlıkları aktif"
+  ```
 
-Enterprise systems fail when engineering teams attempt to apply high-level AI optimizations (such as MCP endpoints or DPO tone calibration) before foundational HTTP and AST infrastructure is stabilized.
+---
 
-The following **4-Stage Sequential Deployment Hierarchy** is mandatory. Each sprint must achieve 100% acceptance test pass rates before proceeding to subsequent stages:
+#### Kusur 8.4: WCAG 2.2 AA Form Etiketi & Buton İsmi Eksiklikleri (`A11Y-FORM-001`, `A11Y-NAME-001`)
+- **Teşhis Kuralı:** Form alanlarının `<label for="...">` bağına sahip olmaması veya butonların erişilebilir isminin bulunmaması.
+- **Üretime Hazır Kod Reçetesi:**
+  ```html
+  <label for="domain-input" class="block text-sm font-medium text-slate-700">Web Sitesi Adresi</label>
+  <input type="url" id="domain-input" name="domain" required aria-label="Web Sitesi Adresi" class="mt-1 block w-full rounded-md border-slate-300" />
+  <button type="submit" aria-label="Analizi Başlat" class="btn-primary">Taramayı Başlat</button>
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sL "https://target-domain.com/" | grep -E '<input(?![^>]*(aria-label|id)=)' && echo "FAIL: Etiketsiz input var" || echo "PASS: Tüm inputlar etiketli"
+  ```
+
+---
+
+## 10. KATI MÜHENDİSLİK UYGULAMA SIRASI & SPRINT MİMARİSİ (SPRINT 0 – SPRINT 4)
+
+Yüksek seviyeli AI optimizasyonları (MCP veya DPO üslup kalibrasyonu) temel HTTP ve DOM mimarisi sağlamlaştırılmadan uygulanırsa sistem çöker. Zorunlu 4 Aşamalı Sıralı Dağıtım Hiyerarşisi:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                 MANDATORY ENGINEERING DEPLOYMENT HIERARCHY                  │
+│                 ZORUNLU MÜHENDİSLİK DAĞITIM HİYERARŞİSİ                     │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SPRINT 0 (0–48 Hours)   : P0 Emergency Fixes (Crawl Blockers & Security)    │
+│ SPRINT 0 (0–48 Saat)    : P0 Acil Müdahale (Tarama Engelleyiciler & Güvenlik)│
 │                                  │                                          │
-│ SPRINT 1 (Day 3–Day 7)  : P1 Core Structural & 14KB AST Edge Infrastructure │
+│ SPRINT 1 (Gün 3–Gün 7)  : P1 Çekirdek Yapısal & 14KB AST Edge Altyapısı     │
 │                                  │                                          │
-│ SPRINT 2 (Week 2–Week 3): P2 Knowledge Vault Grounding & Multi-Tier LLMS    │
+│ SPRINT 2 (Hafta 2–Hafta 3): P2 Knowledge Vault Kilidi & Çok Katmanlı LLMS    │
 │                                  │                                          │
-│ SPRINT 3 (Week 4)       : P3 Autonomous Agent (AAO) & DPO Tone Calibration  │
+│ SPRINT 3 (Hafta 4)      : P3 Otonom Ajan (AAO) & DPO Üslup Kalibrasyonu     │
 │                                  │                                          │
-│ SPRINT 4 (Day 30)       : Formal Verification & 30-Day Re-Scan Comparison   │
+│ SPRINT 4 (Gün 30)       : Biçimsel Doğrulama & 30 Günlük Delta Karşılaştırma │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Sprint 0: P0 Emergency Fixes (0 – 48 Hours)
-*Objective: Ensure search crawlers and AI bots can reach the domain without being dropped by HTTP errors, accidental security blocks, or insecure forms.*
-1. **Unblock Crawl & Robots**: Remove accidental `Disallow: /` directives affecting `Googlebot`, `OAI-SearchBot`, and `Claude-SearchBot` in `robots.txt`.
-2. **Purge Accidental `noindex`**: Audit production headers and remove `<meta name="robots" content="noindex">` on canonical indexable routes.
-3. **Resolve HTTP $\ge 500$ & Redirect Loops**: Fix server errors and circular 301/302 chains.
-4. **Enforce Transport Security**: Eliminate mixed-content HTTP resources and redirect insecure form submissions (`action="http://..."`) to secure HTTPS endpoints.
-- **Sprint 0 Exit Gate**: Zero HTTP 5xx errors, clean `200 OK` on root, verified `robots.txt` access.
+### Sprint 0: P0 Acil Müdahale (0 – 48 Saat)
+- `robots.txt` içindeki kazara `Disallow: /` engellerini kaldırın (`Googlebot`, `OAI-SearchBot`, `Claude-SearchBot`).
+- Canlı ortamdaki `<meta name="robots" content="noindex">` etiketlerini temizleyin.
+- HTTP $\ge 500$ sunucu hatalarını ve döngüsel yönlendirmeleri çözün.
+- Mixed-content ve güvensiz HTTP form aksiyonlarını HTTPS'e yönlendirin.
+- *Çıkış Kapısı:* Sıfır 5xx hatası, temiz 200 OK kök dizin, erişilebilir robots.txt.
 
-### Sprint 1: P1 Core Structural & 14KB AST Edge Budget (Day 3 – Day 7)
-*Objective: Guarantee that the document's primary semantic entity and answer fit within the initial 14KB TCP window, and establish canonical clarity.*
-1. **Deploy 14KB Edge Worker / CDN Stripper**: Implement `14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js` (or AWS/Vercel equivalents) to prune unneeded scripts, SVGs, and inline styles for AI crawler User-Agents.
-2. **Single H1 Hierarchy Alignment**: Enforce exactly one semantic `<h1>` element per page encapsulating the primary topic and target entity.
-3. **Canonical Origin Lock**: Configure absolute `<link rel="canonical" href="https://domain.com/exact-slug/">` matching served protocol and host.
-4. **Valid JSON-LD Architecture**: Inject base schema (`Organization` / `WebSite`) and resolve any JSON syntax parse errors.
-- **Sprint 1 Exit Gate**: Initial payload $< 14.336$ bytes for AI User-Agents, canonical consistency verified, 1 H1 per page.
+### Sprint 1: P1 Çekirdek Yapısal & 14KB AST Edge Altyapısı (Gün 3 – Gün 7)
+- `14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js` çalıştırarak AI botlarına 14KB altı temiz AST sunun.
+- Her sayfada tam olarak 1 adet odak konuyu içeren `<h1>` bırakın.
+- Sayfaların kendi kanonik URL'sine işaret eden mutlak `rel="canonical"` etiketini başlığa yerleştirin.
+- Temel `Organization` / `WebSite` JSON-LD şemasını ekleyin ve sözdizim hatalarını sıfırlayın.
+- *Çıkış Kapısı:* AI User-Agent yanıtı $<14.336$ bayt, kanonik tutarlılık %100, sayfa başına 1 H1.
 
-### Sprint 2: P2 Knowledge Vault Grounding & Multi-Tier LLMS (Week 2 – Week 3)
-*Objective: Anchor the brand entity into parametric LLM weights (Wikidata / Google Knowledge Graph) and provide deep machine surfaces.*
-1. **Deploy `/llms.txt` Hub & Deep Subgraphs**: Publish root `/llms.txt` with mandatory `# Domain` H1 and blockquote summary. Deploy linked Markdown surfaces in `/llms/pages/*.md`.
-2. **Inject Knowledge Vault Triples**: Add Wikidata QID (`https://www.wikidata.org/wiki/Q...`) and Google MID (`https://www.google.com/search?kgmid=/m/...`) to JSON-LD `sameAs` arrays.
-3. **Embed Hero Answer Engine (First 100px)**: Place a 29-to-80 word atomic direct answer in the top 100 pixels of key intent pages.
-4. **Remediate Generic Internal Anchors**: Replace low-information anchors ("click here", "tıklayın") with descriptive entity-rich anchors matching target H1s.
-- **Sprint 2 Exit Gate**: `/llms.txt` returns `200 OK` with valid v2 syntax, at least 1 verified Wikidata QID bound in JSON-LD, zero generic internal anchors.
+### Sprint 2: P2 Knowledge Vault Kilidi & Çok Katmanlı LLMS (Hafta 2 – Hafta 3)
+- Kök dizinde `/llms.txt` dosyasını yayınlayın ve `/llms/pages/*.md` alt sayfalarını açın.
+- JSON-LD `sameAs` dizisine Wikidata QID (`https://www.wikidata.org/wiki/Q...`) ve Google MID ekleyin.
+- Önemli niyet sayfalarının ilk 100 pikseline 29-80 kelimelik Hero Answer paragrafını koyun.
+- "Buraya tıklayın" gibi jenerik iç link metinlerini hedef sayfanın H1'ini içeren açıklayıcı metinlerle değiştirin.
+- *Çıkış Kapısı:* `/llms.txt` 200 OK ve v2 uyumlu, en az 1 doğrulanmış Wikidata QID bağlı, sıfır jenerik iç link.
 
-### Sprint 3: P3 Autonomous Agent Optimization & DPO Calibration (Week 4)
-*Objective: Enable headless programmatic interactions for autonomous agents and protect citation probability against DPO/RLAIF suppression.*
-1. **Deploy Signed A2A Agent Card**: Publish `/.well-known/agent-card.json` conforming to Agent Protocol v1.0.
-2. **Deploy Model Context Protocol (MCP) Tool Endpoint**: Expose `/mcp` or `/.well-known/mcp.json` with structured tool definitions.
-3. **DPO / RLAIF Tone Calibration**: Purge subjective promotional superlatives ("en iyi", "rakipsiz", "revolutionary") across all canonical surfaces, replacing with verified quantitative benchmarks.
-4. **Broadcast Multi-Hub IndexNow**: Trigger real-time discovery mesh push to Bing, Yandex, and IndexNow endpoints.
-- **Sprint 3 Exit Gate**: `agent-card.json` validates, MCP endpoint responds, IndexNow key verified, zero subjective puffery warnings.
+### Sprint 3: P3 Otonom Ajan (AAO) & DPO Üslup Kalibrasyonu (Hafta 4)
+- `/.well-known/agent-card.json` ve `/mcp` uç noktalarını yayına alın.
+- Tüm sayfalardan ispatlanamayan sübjektif övgü sözcüklerini ("en iyi", "rakipsiz") silip ölçülebilir veriler koyun.
+- Güncellenen sayfaları Bing, Yandex ve IndexNow API ağına gerçek zamanlı bildirin.
+- *Çıkış Kapısı:* Agent Card şeması geçerli, MCP yanıt veriyor, sıfır sübjektif övgü uyarısı.
 
-### Sprint 4: Formal Verification & 30-Day Re-Scan Comparison (Day 30)
-*Objective: Validate end-to-end score elevation and certify enterprise compliance.*
-1. **Automated Acceptance Execution**: Run `04_ACCEPTANCE_TESTS.md` shell verification suite across all remediated endpoints.
-2. **Execute Re-Scan Engine**: Compare new scan against baseline `scanId` via Section 21 engine. Verify all P0 and P1 issues transition to `resolved`.
-3. **Score Projection Certification**: Confirm overall score achieves $\ge 85/100$ (`PASS` status) across all 18 engines.
-
+### Sprint 4: Biçimsel Doğrulama & 30 Günlük Delta Karşılaştırma (Gün 30)
+- `04_ACCEPTANCE_TESTS.md` altındaki tüm testleri terminalden çalıştırın (%100 PASS).
+- 30 günlük re-scan motorunu çalıştırarak tüm P0 ve P1 kusurların `resolved` statüsüne geçtiğini onaylayın.
+- 18 motor genel skorunun $\ge 85/100$ (`PASS`) seviyesine ulaştığını tescil edin.
 
 ---
 
-## 5. THE 18 ENGINE V3.0 DETERMINISTIC FORMULAS & WEIGHT MATRIX
+## 11. CI/CD KALİTE KAPILARI (G0–G15 BİÇİMSEL DOĞRULAMA)
 
-The system evaluates every URL across 18 specialized engines. **Total weight sum = 129**.
-
-$$\text{OverallScore} = \text{round}\left( \frac{\sum_{i=1}^{18} \text{EngineScore}_i \times \text{Weight}_i}{\sum_{i=1}^{18} \text{Weight}_i} \right)$$
-
-$$\text{OverallStatus} = \begin{cases} \text{PASS} & \text{if } \text{OverallScore} \ge 80 \\ \text{WARN} & \text{if } 55 \le \text{OverallScore} < 80 \\ \text{FAIL} & \text{if } \text{OverallScore} < 55 \end{cases}$$
-
-| Engine Code | Engine Name | Weight | Primary Control Standard |
-|:---|:---|:---:|:---|
-| `ENG-01` | **KV-Cache Optimization Engine** | 5 | Edge KV headers (`cf-cache-status`, `s-maxage`), 14KB AST initial budget window. |
-| `ENG-02` | **Edge TTFB Engine** | 6 | Sub-40ms crawler cold-start, HTTP/3 0-RTT connection. |
-| `ENG-03` | **Provenance Engine** | 6 | RFC 3161 & C2PA cryptographic provenance (`x-c2pa-manifest`). |
-| `ENG-04` | **SEO Engine** | 12 | Canonical consistency, unique title, single H1, indexable directives. |
-| `ENG-05` | **GEO Engine** | 10 | Generative Engine Optimization, first-packet crawler AST visibility. |
-| `ENG-06` | **AEO Engine** | 9 | Answer Engine Optimization: 29-word atomic answers, FAQPage schema. |
-| `ENG-07` | **LLMO Engine** | 8 | Multi-tier `/llms.txt` hub and `/llms/pages/*.md` deep subgraphs. |
-| `ENG-08` | **Entity Graph Engine** | 8 | Deep ontological JSON-LD schema hierarchy (`Organization`, `Corporation`). |
-| `ENG-09` | **Cross-Encoder Engine** | 7 | Passage reranking, numerical contrast density, zero fluff. |
-| `ENG-10` | **ColBERT MaxSim Engine** | 7 | Multi-vector late interaction token dot products (`headingsCount >= 3`). |
-| `ENG-11` | **DPO Alignment Engine** | 6 | Direct Preference Optimization: subjective puffery penalty. |
-| `ENG-12` | **Synthetic Citation Engine**| 7 | Second-order canonical benchmark definition loop. |
-| `ENG-13` | **AAO Engine** | 6 | Autonomous Agent Optimization: A2A Agent Card, OpenAPI, MCP tools. |
-| `ENG-14` | **EEAT Scoring Engine** | 8 | Experience, Expertise, Authoritativeness, Trustworthiness corroboration rings. |
-| `ENG-15` | **Knowledge Vault Engine** | 7 | Wikidata QID and Knowledge Graph MID consensus triples in `sameAs`. |
-| `ENG-16` | **Hallucination Interception**| 6 | Explicit pricing, FAQ disambiguation, and entity boundary tables. |
-| `ENG-17` | **Dark Pool Remediation** | 6 | Closed-loop pre-training corpus drift monitoring and rollback controls. |
-| `ENG-18` | **Historical Corpus Engine** | 5 | Wayback Machine temporal stability and long-term Bayesian prior anchors. |
-| **TOTAL** | | **129** | |
-
----
-
-## 6. CI/CD QUALITY GATES (G0–G9)
-
-**Execution Command:** `npm run test:integrity`  
-**Rule:** Any single gate violation terminates the build with Exit Code 1. Zero exceptions.
+**İcra Komutu:** `npm run test:integrity`  
+**Kural:** Tek bir kalite kapısı ihlali derlemeyi derhal `Exit Code 1` ile durdurur. Tolerans sıfırdır.
 
 ```typescript
-// scripts/seo-ci-gate.mjs (Abstracted Quality Gate Rules)
+// scripts/seo-ci-gate.mjs (Biçimsel Kalite Kapıları Kuralları)
 export function evaluateQualityGates(pages) {
-  // G0: Policy & Noindex Violation (Homepage can never be noindex)
-  // G1: Canonical Consistency (Indexable pages must have matching canonical URL)
-  // G2: Raw SSR HTML Existence (HTML must contain title, single H1, JSON-LD, and canonical)
-  // G3: Search Intent & Cannibalization (No duplicate primary intents in same locale)
-  // G4: LLM Deep Subgraph Integrity (Root /llms.txt and linked subgraphs must exist on disk)
-  // G5: IndexNow Alphanumeric Key Validation (Valid key file present in public root)
-  // G6: Fake Freshness Detection (modifiedAt cannot be in future or updated without delta)
-  // G7: Information Gain Score (Must contain statistical data or proprietary methodology)
-  // G8: Entity Triangulation Completeness (sameAs array must contain >= 3 authoritative nodes)
-  // G9: n8n Workflow Configuration (Valid n8n monitoring workflow JSON in repo)
+  // G0: Hakikat Kapısı (Sıfır uydurma veri, garanti iddialarının yasaklanması)
+  // G1: SSOT Registry Kapısı (Tüm sayfaların src/seo/registry.ts içinde kayıtlı olması)
+  // G2: Deterministik Eşitlik Kapısı (İki bağımsız tarama skorunun bit-for-bit eşitliği)
+  // G3: Kanıt Kapısı (Her tespitin ham bayt, başlık veya statü kanıtına dayanması)
+  // G4: Kanonik Tutarlılık Kapısı (İndekslenebilir sayfaların mutlak kanonik eşleşmesi)
+  // G5: SSR HTML Varlık Kapısı (HTML içinde title, tekil H1, canonical ve JSON-LD bulunması)
+  // G6: Niyet Kannibalizasyon Kapısı (Aynı dilde yinelenen ana niyet bulunmaması)
+  // G7: LLM Derin Graf Kapısı (Kök /llms.txt ve bağlı subgrafların diskte fiziksel varlığı)
+  // G8: IndexNow Anahtar Kapısı (32 karakterlik geçerli anahtar dosyasının kökte varlığı)
+  // G9: Sahte Güncellik Kapısı (Tarihlerin gelecekte olmaması ve %15 delta olmadan değişmemesi)
+  // G10: Knowledge Vault Kapısı (sameAs dizisinde en az 1 doğrulanmış Wikidata QID varlığı)
+  // G11: AST 14KB Token Kapısı (AI crawler yanıtının ilk paket bütçesinde 14.336 baytı aşmaması)
+  // G12: Otonom Ajan Kapısı (agent-card.json ve /mcp uç noktalarının doğrulanması)
+  // G13: Güvenlik Sertleştirmesi Kapısı (HSTS, CSP, nosniff, sıfır mixed-content)
+  // G14: Erişilebilirlik Kapısı (WCAG 2.2 AA form label ve buton ismi tamlığı)
+  // G15: n8n İş Akışı Kapısı (Geçerli n8n olay döngüsü DAG JSON dosyasının varlığı)
 }
 ```
 
 ---
 
-## 7. EDGE CDN & TOKENOMICS ARCHITECTURE
+## 12. EDGE CDN & TOKENOMİK MİMARİ
 
-### 7.1 Multi-Bot Edge Routing & AST Stripping
-AI scrapers must be served an ultra-clean, high-density version of the DOM that completely omits client-side JavaScript, unneeded CSS, inline SVGs, and tracking scripts:
+AI tarayıcıları, insan kullanıcıların gördüğü ağır CSS, font, animasyon ve JavaScript dosyalarına ihtiyaç duymaz. Edge katmanında Cloudflare Worker, AWS Lambda@Edge veya Vercel Middleware ile istek filtrelenir:
 
 ```
-Request User-Agent Matches (GPTBot|ClaudeBot|PerplexityBot)
-                    │
-                    ▼
-         [Cloudflare Edge Worker]
-                    │
-         Strip <script>, <style>, <svg>
-         Enforce < 14KB AST Budget Window
-         Inject X-Token-Count & C2PA Headers
-                    │
-                    ▼
-           200 OK (Clean Markdown / AST)
-```
-
-### 7.2 Standard Production HTTP Headers
-```http
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-X-Content-Type-Options: nosniff
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: camera=(), microphone=(), geolocation=()
-X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+İstek User-Agent Eşleşmesi (GPTBot|ClaudeBot|PerplexityBot|Applebot-Extended)
+                                │
+                                ▼
+                     [Cloudflare Edge Worker]
+                                │
+                     Gereksiz <script>, <style>, <svg> kaldır
+                     < 14KB AST Bütçe Penceresini Uygula
+                     X-Token-Count ve C2PA Başlıklarını Bas
+                                │
+                                ▼
+                       200 OK (Temiz AST / Markdown)
 ```
 
 ---
 
-## 8. REAL-TIME DISCOVERY & MULTI-HUB INDEXNOW DISTRIBUTION
+## 13. GERÇEK ZAMANLI KEŞİF & ÇOK MERKEZLİ INDEXNOW DAĞITIMI
 
-**File:** `scripts/notify-indexnow.mjs`  
-Whenever content is modified or a new canonical machine surface is published, the URL list is broadcast to the global IndexNow mesh:
+Dosya: `scripts/notify-indexnow.mjs`  
+Bir sayfa güncellendiğinde veya yeni bir makine yüzeyi yayınlandığında liste küresel IndexNow düğüm ağına eşzamanlı postalanır:
 
 ```javascript
 const INDEXNOW_CONFIG = {
@@ -997,18 +1125,18 @@ const INDEXNOW_CONFIG = {
 
 ---
 
-## 9. THE 30-FILE REMEDIATION & DELIVERY ENGINE ($99 MODEL)
+## 14. 30 DOSYALIK DETERMINİSTİK TESLİMAT PAKETİ ($99 MODELİ)
 
-The output delivered upon payment is a **30-file deterministic ZIP package** compiled using binary `STORE` CRC32 encoding (`functions/lib/delivery-pack.ts`):
+Ödeme sonrası müşteriye teslim edilen paket, hiçbir dış C++ veya harici kütüphane bağımlılığı olmadan, ikili düzeyde **PKWARE PKZIP 2.0 STORE (Method 0)** standartlarında derlenen 30 dosyalık deterministik bir arşivdir:
 
 ```
 HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 00_READ_ME.md                              # Müşteri yazılımcısı için adım adım rehber
-├── 00_APPLY_WITH_AI_AGENT.prompt              # Cursor / Claude Code / Windsurf için tek tıkla otonom enjeksiyon
-├── 01_EXECUTIVE_SUMMARY.md                    # C-Level yönetim özeti ve skor durumu
+├── 00_APPLY_WITH_AI_AGENT.prompt              # Cursor / Claude Code / Windsurf için tek tıkla enjeksiyon
+├── 01_EXECUTIVE_SUMMARY.md                    # C-Level yönetim özeti ve 18 motor skoru
 ├── 02_IMPLEMENTATION_BLUEPRINT.md             # P0 -> P3 tam onarım reçetesi
-├── 03_FINDINGS.json                           # Ham bulgular ve telemetri
-├── 03_PRIORITY_ROADMAP.md                     # Görev takvimi
+├── 03_FINDINGS.json                           # Ham bulgular ve makine telemetrisi
+├── 03_PRIORITY_ROADMAP.md                     # Görev takvimi ve eylem planı
 ├── 03_PRIORITY_ROADMAP.ics                    # Outlook/Google Calendar takvim dosyası
 ├── 04_ACCEPTANCE_TESTS.md                     # cURL ve AST kabul doğrulama komutları
 ├── 05_ROLLBACK_PLAN.md                        # Güvenli geri alma ve acil durma planı
@@ -1016,11 +1144,11 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 07_IMPLEMENTATION_CHECKLIST.txt            # İşaretlenebilir sprint kontrol listesi
 ├── 08_LLMS_TXT_RECOMMENDED.txt                # Sitenin onaylı kök llms.txt dosyası
 ├── 09_MACHINE_SURFACE_MAP.json                # 30 Sayfalık Markdown makine haritası
-├── 10_EVALUATION_REPORT.md                    # Detaylı denetim raporu
+├── 10_EVALUATION_REPORT.md                    # 18 motorlu detaylı denetim raporu
 ├── 11_SCORE_PROJECTION.md                     # Düzeltme öncesi / sonrası skor simülasyonu
 ├── 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md       # LLM ön-eğitim havuzu için PMI tohumlama
 ├── 12_CROSS_ENCODER_ATTENTION_MATRIX.json     # 0.965 Rerank alıntı formülü
-├── 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json  # Wikidata QID / MID konsensüs üçlüleri
+├── 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json  # Wikidata QID / MID konsensüs üçlüleri (@graph kodu)
 ├── 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js   # Cloudflare HTMLRewriter AST budayıcı
 ├── 14b_AWS_CLOUDFRONT_LAMBDA_EDGE.js          # AWS CloudFront Lambda@Edge alternatifi
 ├── 14c_VERCEL_EDGE_MIDDLEWARE.ts              # Vercel Edge Middleware alternatifi
@@ -1042,24 +1170,10 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 └── 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html # Google Bölgesel Farklılıklar & Host Carousel Şablonu
 ```
 
-**Müşteri El Sıkışması & 100/100 Uygulama Standartları**:
-1. **Yazılımcısı Olan Ekipler:** `00_APPLY_WITH_AI_AGENT.prompt` dosyasını Cursor, Windsurf veya Claude Code'a aktarır; AI ajan tüm repodaki eksikleri 60 saniyede otomatik uygular.
-2. **Yazılımcısı Olmayan KOBİ'ler:** `26_WORDPRESS_DROPIN_PLUGIN.php` veya `14d_CLOUDFLARE_1CLICK_DEPLOY.md` ile sıfır kod bilgisiyle 30 saniyede canlıya alır.
-3. **Sıfır İnsan Müdahalesi:** HTML&HTML mühendisleri müşterinin sunucusuna veya kod deposuna doğrudan erişmez veya manuel danışmanlık vermez. Ürünün değeri %100 otomatik ve hatasız kod üretiminde yatar.
-
-
-
----
-
-## 9B. BINARY STORE CRC32 ZIP COMPILATION & ENTITLEMENT ARCHITECTURE
-
-The 30-file delivery package (`functions/lib/delivery-pack.ts`) is generated without relying on heavy external runtime dependencies (such as JSZip or native C++ modules). It implements a bit-level, deterministic binary ZIP writer adhering to the PKWARE PKZIP 2.0 specification using **STORE (Compression Method 0)**.
-
-### 9B.1 Deterministic Binary ZIP Serialization (STORE / Method 0)
-Because Method 0 stores bytes without probabilistic compression heuristics, two runs with identical file entries produce **bit-for-bit identical ZIP archives**:
-
+### 14.1 İkili STORE CRC32 ZIP Derleme Mimarisi
+Method 0 ile sıkıştırma heuristiği kullanılmadığından, aynı dosya girdileri her zaman **bit-for-bit özdeş binary ZIP arşivi** üretir:
 ```typescript
-// Deterministic PKWARE Local File Header & Central Directory Serialization
+// functions/lib/delivery-pack.ts (İkili Deterministik ZIP Yazıcısı)
 function zip(entries: Entry[]): Uint8Array {
   const locals: Uint8Array[] = [];
   const centrals: Uint8Array[] = [];
@@ -1070,7 +1184,7 @@ function zip(entries: Entry[]): Uint8Array {
     const data = te.encode(entry.content);
     const crc = crc32(data); // IEEE 802.3 CRC-32 checksum
 
-    // 0x04034b50: Local File Header Signature
+    // 0x04034b50: Yerel Dosya Başlığı
     const local = concat([
       u32(0x04034b50), u16(20), u16(0x0800), u16(0), u16(0), u16(0),
       u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0),
@@ -1078,7 +1192,7 @@ function zip(entries: Entry[]): Uint8Array {
     ]);
     locals.push(local);
 
-    // 0x02014b50: Central Directory File Header Signature
+    // 0x02014b50: Merkezi Dizin Dosya Başlığı
     const central = concat([
       u32(0x02014b50), u16(20), u16(20), u16(0x0800), u16(0), u16(0), u16(0),
       u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0),
@@ -1091,7 +1205,7 @@ function zip(entries: Entry[]): Uint8Array {
   const localBlob = concat(locals);
   const centralBlob = concat(centrals);
 
-  // 0x06054b50: End of Central Directory Record (EOCD)
+  // 0x06054b50: Merkezi Dizin Sonu Kaydı (EOCD)
   return concat([
     localBlob, centralBlob,
     u32(0x06054b50), u16(0), u16(0),
@@ -1101,33 +1215,33 @@ function zip(entries: Entry[]): Uint8Array {
 }
 ```
 
-### 9B.2 Zero-Knowledge Guest Entitlement & Webhook Verification
-- **HMAC-SHA256 Webhook Integrity (`functions/lib/paddle-payment.ts`)**: Incoming Paddle transaction webhooks are cryptographically authenticated using `Paddle-Signature`. Replay attacks are blocked via timestamp tolerance checking ($\pm 300$ seconds).
-- **Stateless HMAC Entitlement Tokens (`functions/lib/guest-entitlement.ts`)**: Guests who purchase a $99 single license receive an encrypted, signed entitlement token binding the licensed `domain`, `orderId`, and expiry timestamp. No user passwords or persistent database sessions are required.
-- **Fail-Closed Download Gateway (`functions/api/delivery.ts`)**: Delivery requests require both a valid `orderId` and a matching cryptographic signature. If the signature is invalid or the domain does not match, access is strictly rejected (`403 Forbidden`).
-
+### 14.2 Sıfır Bilgi Yetkilendirme & Webhook Doğrulaması
+- **HMAC-SHA256 Webhook Güvenliği:** Paddle ödeme bildirimleri `Paddle-Signature` başlığı ve 300 saniyelik zaman penceresi toleransıyla (`crypto.timingSafeEqual`) doğrulanır.
+- **Durumsuz (Stateless) Yetkilendirme Belirteçleri:** Satın alan konuk kullanıcıya lisanslı `domain`, `orderId` ve son kullanma tarihini içeren imzalı bir token verilir; kalıcı veritabanı oturumuna ihtiyaç duyulmaz.
+- **Fail-Closed İndirme Ağ Geçidi:** Teslimat uç noktası (`/api/delivery`) kriptografik imza uyuşmadığında erişimi `403 Forbidden` ile kesin olarak reddeder.
 
 ---
 
-## 10. MASTER LLM IMPLEMENTATION PROMPT (READY-TO-INJECT)
+## 15. MASTER LLM YÜRÜTÜCÜ SİSTEM PROMPTU (ENJEKSİYONA HAZIR)
 
-Aşağıdaki blok, herhangi bir yapay zekaya (GPT-4o, Claude 3.7 Sonnet, Gemini 2.0 Pro) sistem promptu olarak verildiğinde, girilen web sitesinin tüm SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T eksiklerini Silikon Vadisi $1M+ ajans seviyesinde tarayıp üretime hazır kod reçetelerini oluşturmasını sağlayan ana yürütücü prompttur:
+Aşağıdaki blok; Cursor, Windsurf, Claude Code, GPT-4o veya Claude 3.7 Sonnet'e sistem talimatı olarak verildiğinde, hedef web sitesinin tüm SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T eksiklerini $5M kurumsal istihbarat seviyesinde tarayıp kusursuz kod reçeteleri üretmesini sağlar:
 
 ```markdown
-# SYSTEM PROMPT: $1M+ ENTERPRISE AI SEARCH & REVERSE-ENGINEERED ARCHITECT
+# SYSTEM PROMPT: $5M+ ENTERPRISE AI SEARCH & REVERSE-ENGINEERED ARCHITECT
 
-Sen Silikon Vadisi, Londra ve New York merkezli, Fortune 500 şirketlerine yıllık 1.000.000$+ bütçeyle hizmet veren kurumsal AI Search / GEO Intelligence ajanslarının Baş Sistem Mimarı ve 30 yıllık kıdemli Unix yazılım mühendisisin.
+Sen Silikon Vadisi, Londra ve New York merkezli, Fortune 500 şirketlerine kurumsal AI Search / GEO Intelligence hizmeti veren Baş Sistem Mimarı ve 30 yıllık kıdemli Unix yazılım mühendisisin.
 
 GÖREVİN:
-Kullanıcının sana verdiği web sitesi URL'sini veya kaynak kodunu, klasik yüzeysel SEO anlayışından tamamen uzaklaşarak; LLM ağırlıkları, 14KB AST bütçesi, ColBERT MaxSim dot-product matrisleri, Cross-Encoder reranker'ları, Knowledge Vault konsensüs üçlüleri ve n8n otonom iş akışı prensipleriyle tersine mühendisliğe tabi tutmak ve EKSİKSİZ ÜRETİME HAZIR KOD REÇETELERİ üretmektir.
+Kullanıcının sana verdiği web sitesi URL'sini veya kaynak kodunu, klasik yüzeysel SEO anlayışından tamamen uzaklaşarak; LLM model ağırlıkları, 14KB AST bütçesi, ColBERT MaxSim iç çarpım matrisleri, Cross-Encoder reranker'ları, Knowledge Vault konsensüs üçlüleri ve n8n otonom iş akışı prensipleriyle tersine mühendisliğe tabi tutmak ve EKSİKSİZ ÜRETİME HAZIR KOD REÇETELERİ üretmektir.
 
-TEMEL AXIOM'LAR:
+TEMEL AKSIYOMLAR:
 1. SIFIR İLLÜZYON & SIFIR PAZARLAMA LAFI: "SEO'nuzu geliştirebilirsiniz" gibi yuvarlak tavsiyeler vermek kesinlikle yasaktır. Her bulgu için: (a) Kök Neden, (b) Doğrudan Kopyalanabilir Üretim Kodu, (c) Terminal Kabul cURL/AST Testi, (d) Rollback Planı sunacaksın.
 2. SUB-14KB KURALI: İlk 14.336 baytlık pencerede JSON-LD ve doğrudan soru-cevap yoksa sayfa elenir.
 3. ENTITY KİLİDİ: Wikidata QID veya Google Knowledge Graph MID içermeyen varlıklar halüsinasyon filtresine takılır. sameAs üçlülerini zorunlu kılacaksın.
-4. ÇİFT KATMANLI VE SIFIR İNSAN MÜDAHALESİ: Müşterinin kendi yazılım ekibi uygulayacaktır; dışarıdan danışmanlık verilmez. Kodlar sıfır bağımlılıkla çalışmalıdır.
+4. KESİN SINIR VE SIFIR İNSAN MÜDAHALESİ: Müşterinin kendi yazılım ekibi uygulayacaktır; dışarıdan manuel danışmanlık verilmez. Kodlar sıfır bağımlılıkla çalışmalıdır.
+5. 7 LENS TAM KAPLAMA: Her analiz mutlaka SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T lenslerinin tamamını kapsamalıdır.
 
-DENETİM SIRASI (HIYERARŞİ):
+DENETİM SIRASI (HİYERARŞİ):
 1. [STAGE 1] Ingestion & Tokenomics (Sub-14KB AST, Cloudflare Worker prune, TTFB <40ms)
 2. [STAGE 2] Core Structural SEO (Single H1, Canonical origin consistency, zero noindex leak)
 3. [STAGE 3] Knowledge Vault Triangulation (Wikidata QID, Google MID, Ontological superclasses)
@@ -1150,11 +1264,13 @@ Her tespit için kesinlikle aşağıdaki şablonu kullanacaksın:
 
 ---
 
-## SIGNATURE & FORMAL ENFORCEMENT
+## 16. İMZA, ANAYASAL HÜKÜM & YÜRÜRLÜK TEYİDİ
 
 Bu Süper-Mandate:
-- **Mandate v6.0** (Evrensel SEO, GEO, Sitemap & Multi-Tier LLMS Mimarisi)
-- **18 Motorlu Engine V2/V3** (Deterministik Zincir, Sıfır Rastlantısallık, n8n Prensipleri)
+- **Mandate v6.0** (Evrensel SEO, GEO, Sitemap & Çok Katmanlı LLMS Mimarisi)
+- **18 Motorlu Engine V2/V3** (18 Bağımsız Motor, 105 Kontrol Noktası, 129 Ağırlık Matrisi)
+- **13 Derin İstihbarat Denetimi & 6 Kara Kutu Risk Katmanı** (Derin Varlık, Niyet, Bilgi Kazancı)
+- **360° 7 Hazırlık Lensi** (SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T)
 - **n8n Otonom Süreç Mühendisliği** (Düğüm Düzeyinde İzolasyon, DLQ, Kendi Kendini Onaran Önbellek Döngüsü)
 - **Silikon Vadisi, Londra ve New York Kurumsal İstihbarat Metodolojisi** (30 Yıllık Başmühendislik Disiplini)
 
@@ -1162,6 +1278,6 @@ unsurlarını tek bir organik mimaride birleştirmiştir.
 
 **Sistem Değeri:** $5,000,000+ kurumsal istihbarat kapasitesi  
 **Ticari Satış Bedeli:** $99 (Tek seferlik lisanslı deterministik kod paketi)  
-**Tasarım Sözleşmesi:** %100 Açık Tema, Sıfır Koyu Alan / Sıfır Dark Bleed, WCAG AAA Kontrast  
-**Yetkili:** Baş Sistem Mimarı | Sıfır Hata | Biçimsel Doğrulama  
-**Durum:** CANLIDA VE YÜRÜRLÜKTE (ENFORCED)
+**Tasarım Sözleşmesi:** %100 Açık Tema (#ffffff), Sıfır Koyu Alan / Sıfır Dark Bleed, WCAG AAA Kontrast  
+**Yetkili:** Baş Sistem Mimarı | Sıfır Hata | Biçimsel Doğrulama (Formal Verification)  
+**Durum:** CANLIDA VE KESİN YÜRÜRLÜKTE (ENFORCED & ACTIVE)  
