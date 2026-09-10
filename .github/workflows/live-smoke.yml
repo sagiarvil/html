@@ -85,8 +85,8 @@ jobs:
           grep -Fq 'AI SEO Audit &amp; ChatGPT Visibility Test' <<<"$en_home"
           grep -Fq 'Ücretsiz Kontrol Et' <<<"$tr_home"
           grep -Fq 'Check Free' <<<"$en_home"
-          grep -Fq 'Sıralama, atıf, trafik veya gelir garantisi vermez' <<<"$tr_home"
-          grep -Fq 'does not guarantee rankings, citations, traffic or revenue' <<<"$en_home"
+          grep -Fq 'Ranking, trafik veya AI citation garantisi değildir' <<<"$tr_home"
+          grep -Fq 'It is not a ranking, traffic or AI citation guarantee' <<<"$en_home"
           ! grep -Fq 'Google doğruluk sınırı' <<<"$tr_glossary"
           ! grep -Fq 'Google accuracy boundary' <<<"$en_glossary"
 
