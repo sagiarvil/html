@@ -2,8 +2,8 @@ from pathlib import Path
 import re
 
 TARGETS=[Path('index.html'),Path('tr/index.html'),Path('en/index.html')]
-AI='r10-20260910-2000&amp;quality=004'
-HOTFIX='/assets/js/r10-quality-hotfix.js?v=20260910-004'
+AI='r10-20260910-2355&amp;quality=005'
+HOTFIX='/assets/js/r10-quality-hotfix.js?v=20260910-005'
 STYLE='/assets/css/r10-report-ux.css?v=20260910-001'
 for path in TARGETS:
     text=path.read_text(encoding='utf-8')
@@ -18,4 +18,4 @@ for path in TARGETS:
         raise SystemExit(f'R10 report UX patch requires </head> in {path}')
     updated=updated.replace('</head>',f'<link rel="stylesheet" href="{STYLE}">\n</head>',1)
     path.write_text(updated,encoding='utf-8')
-print('R10 quality hotfix, light report UX and cache keys applied to root/TR/EN homepages.')
+print('R10 quality hotfix, 23:55 campaign window, light report UX and cache keys applied to root/TR/EN homepages.')
