@@ -65,6 +65,19 @@ jobs:
         run: npm --prefix functions-firebase install --ignore-scripts --no-audit --no-fund
       - name: Build Firebase function adapter
         run: npm --prefix functions-firebase run build
+      - name: Verify isolated secret-free core entrypoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f functions-firebase/dist/core-release.js
+          ! grep -Eq 'defineSecret|PADDLE_CLIENT_TOKEN|PADDLE_API_KEY|PADDLE_WEBHOOK_SECRET|DELIVERY_SIGNING_SECRET' functions-firebase/src/core-release.ts
+          node - <<'NODE'
+          const api=require('./functions-firebase/dist/core-release.js');
+          const actual=Object.keys(api).sort();
+          const expected=['health','intelligence','scan'];
+          if(JSON.stringify(actual)!==JSON.stringify(expected)) throw new Error(`core release exports drifted: ${actual.join(',')}`);
+          console.log(`CORE_RELEASE_ENTRYPOINT_OK exports=${actual.join(',')}`);
+          NODE
       - name: Validate Firebase deployment credential
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STUDIO_7658156126_FFB8E || secrets.FIREBASE_SERVICE_ACCOUNT }}
@@ -77,15 +90,57 @@ jobs:
           umask 077
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
           node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/firebase-service-account.json','utf8')); if(!x.client_email||!x.private_key||!x.project_id) throw new Error('invalid service-account JSON'); if(x.project_id!=='studio-7658156126-ffb8e') throw new Error('service-account project_id must be studio-7658156126-ffb8e, got '+x.project_id);"
-      - name: Deploy Hosting and changed non-secret Functions
+      - name: Deploy Hosting
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
         run: |
           set -euo pipefail
-          echo "Deploying Firebase Hosting..."
           npx -y firebase-tools@15.28.2 deploy --only hosting --project studio-7658156126-ffb8e --non-interactive
-          echo "Deploying only the functions changed by this release. Secret-bound Paddle/delivery functions are intentionally left on their existing production revisions because this deploy identity has no Secret Manager metadata-read permission and those functions are outside this release scope."
-          npx -y firebase-tools@15.28.2 deploy --only "functions:validator:health,functions:validator:scan,functions:validator:intelligence" --project studio-7658156126-ffb8e --non-interactive
+      - name: Prepare isolated Firebase core release source
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf functions-firebase-core-release firebase.core-release.runtime.json
+          mkdir -p functions-firebase-core-release
+          cp -R functions-firebase/dist functions-firebase-core-release/dist
+          cp functions-firebase/package.json functions-firebase/package-lock.json functions-firebase-core-release/
+          node - <<'NODE'
+          const fs=require('fs');
+          const p='functions-firebase-core-release/package.json';
+          const pkg=JSON.parse(fs.readFileSync(p,'utf8'));
+          pkg.name='htmlandhtml-firebase-core-release';
+          pkg.private=true;
+          pkg.main='dist/core-release.js';
+          pkg.scripts={};
+          delete pkg.devDependencies;
+          fs.writeFileSync(p,JSON.stringify(pkg,null,2)+'\n');
+          NODE
+          npm --prefix functions-firebase-core-release install --omit=dev --ignore-scripts --no-audit --no-fund
+          cat > firebase.core-release.runtime.json <<'JSON'
+          {
+            "functions": [
+              {
+                "source": "functions-firebase-core-release",
+                "codebase": "validator",
+                "runtime": "nodejs22"
+              }
+            ]
+          }
+          JSON
+          node - <<'NODE'
+          const api=require('./functions-firebase-core-release/dist/core-release.js');
+          const actual=Object.keys(api).sort();
+          const expected=['health','intelligence','scan'];
+          if(JSON.stringify(actual)!==JSON.stringify(expected)) throw new Error(`isolated core manifest drifted: ${actual.join(',')}`);
+          console.log(`ISOLATED_CORE_SOURCE_OK exports=${actual.join(',')}`);
+          NODE
+      - name: Deploy changed non-secret Functions from isolated manifest
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
+        run: |
+          set -euo pipefail
+          echo "Deploying health/scan/intelligence from a secret-free source manifest. Existing Paddle, delivery, mandate, mentions, agentCard and mcp revisions are not selected and must remain untouched."
+          npx -y firebase-tools@15.28.2 deploy --config firebase.core-release.runtime.json --only "functions:validator:health,functions:validator:scan,functions:validator:intelligence" --project studio-7658156126-ffb8e --non-interactive
       - name: Verify production scan, admin boundary and telemetry storage
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
@@ -132,6 +187,6 @@ jobs:
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
           )
-      - name: Remove deployment credential
+      - name: Remove deployment credential and isolated release source
         if: always()
-        run: rm -f "$RUNNER_TEMP/firebase-service-account.json" /tmp/admin-denied.json
+        run: rm -rf "$RUNNER_TEMP/firebase-service-account.json" /tmp/admin-denied.json functions-firebase-core-release firebase.core-release.runtime.json
