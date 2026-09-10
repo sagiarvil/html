@@ -1535,7 +1535,7 @@ Bu paket, ${dom} web sitesinin yapay zeka arama motorları (ChatGPT, Gemini, Cla
       positive_roi_projection: 'İlk Pakette %100 Semantik İndeksleme: HTML payload AST içinde tam anlamsal zırh; TTFB süresinde sub-25ms erişim; AI crawler işlemci maliyetini sıfırlayarak anında tam metin alıntı performansı.',
       production_remediation_recipe: `// Cloudflare Worker: HTML payload TCP AST Pre-Hydration Gate\nexport default {\n  async fetch(request, env) {\n    const userAgent = (request.headers.get("user-agent") || "").toLowerCase();\n    const isAiBot = /gptbot|chatgpt|perplexity|oai-search|anthropic|claudebot/.test(userAgent);\n    const response = await fetch(request);\n    if (!isAiBot) return response;\n    return new HTMLRewriter().on("body", {\n      element(el) {\n        el.prepend(\`<div id="ai-aeo-summary" style="display:block;opacity:0.99;"><p><strong>${cleanDom}</strong>: https://${cleanDom}/ adresinde çalışan kurumsal, deterministik AI Search optimizasyon ve varlık doğrulama altyapısıdır.</p></div>\`, { html: true });\n      }\n    }).transform(response);\n  }\n};`,
       n8n_self_healing_dag_node: 'Headless Chromium vs Raw cURL HTTP DOM Diff Karşılaştırıcı -> Token Delta Hesaplama (Eşik: >%15) -> Farkta Edge Pre-Render Enjeksiyonu -> Cloudflare Anında Önbellek Yenileme.',
-      acceptance_test_command: `curl -sL "https://${cleanDom}/" | head -c measured HTML payload | grep -o -i "${cleanDom.replace(/\\.[a-z]+$/i, '')}" | wc -l`
+      acceptance_test_command: `curl -sL "https://${cleanDom}/" | head -c 16384 | grep -o -i "${cleanDom.replace(/\\.[a-z]+$/i, '')}" | wc -l`
     },
     {
       key: 'entity_identity_drift',
@@ -1570,6 +1570,22 @@ Bu paket, ${dom} web sitesinin yapay zeka arama motorları (ChatGPT, Gemini, Cla
     { rule: 'STRICT_DETERMINISTIC_SCORING', status: 'ENFORCED', description: 'Zero stochastic random numbers. Pure AST & network physics.' },
     { rule: 'FAIL_CLOSED_ISOLATION', status: 'ENFORCED', description: 'External crawler or API failures route to DLQ with zero core disruption.' }
   ];
+  darkPoolAnalyses.forEach(dp => {
+    entries.push({
+      name: `recipes/DARK_POOL_${dp.dimension_number}_${dp.key.toUpperCase()}.md`,
+      content: `# [KARA KUTU / DARK POOL #${dp.dimension_number}] ${dp.label_tr}\n\n` +
+        `- Rozet / Badge: ${dp.badge}\n` +
+        `- Önem Derecesi / Severity: ${dp.severity}\n` +
+        `- Kaynak Sınıfı / Source Class: ${dp.source_class}\n` +
+        `- Hedef Alan Adı / Target Domain: ${dom}\n\n` +
+        `## 1. Transformer Tersine Mühendislik Analizi (Reverse Engineering)\n${dp.transformer_reverse_engineering_mechanism}\n\n` +
+        `## 2. Pozitif Finansal ROI Projeksiyonu\n${dp.positive_roi_projection}\n\n` +
+        `## 3. Üretime Hazır Mühendislik Çözüm Kodu\n\`\`\`typescript\n${dp.production_remediation_recipe}\n\`\`\`\n\n` +
+        `## 4. Otonom Kendi Kendini Onaran n8n DAG Düğümü\n${dp.n8n_self_healing_dag_node}\n\n` +
+        `## 5. Terminal Doğrulama & Kabul Testi\n\`\`\`bash\n${dp.acceptance_test_command}\n\`\`\`\n`
+    });
+  });
+
   entries.push({
     name: '29_DARK_POOL_SIX_DIMENSIONS_RISK_AUDIT.json',
     content: JSON.stringify({
@@ -1630,7 +1646,7 @@ Bu paket, ${dom} web sitesinin yapay zeka arama motorları (ChatGPT, Gemini, Cla
         { "parameters": { "rule": { "interval": [{ "field": "cronExpression", "expression": "0 3 * * *" }] } }, "name": "Schedule Trigger", "type": "n8n-nodes-base.scheduleTrigger" },
         { "parameters": { "url": `https://${cleanDom}/llms.txt`, "method": "GET" }, "name": "Probe llms.txt", "type": "n8n-nodes-base.httpRequest" },
         { "parameters": { "url": `https://${cleanDom}/`, "method": "GET", "headers": { "User-Agent": "PerplexityBot/1.0" } }, "name": "Multi-Bot Ingest", "type": "n8n-nodes-base.httpRequest" },
-        { "parameters": { "jsCode": "const len = $input.item.json.body ? $input.item.json.body.length : 0;\nreturn { json: { passedAstGate: len <= measured HTML payload, measuredBytes: len } };" }, "name": "AST Byte Gate", "type": "n8n-nodes-base.code" },
+        { "parameters": { "jsCode": "const len = $input.item.json.body ? $input.item.json.body.length : 0;\nreturn { json: { passedAstGate: len <= 16384, measuredBytes: len } };" }, "name": "AST Byte Gate", "type": "n8n-nodes-base.code" },
         { "parameters": { "conditions": { "boolean": [{ "value1": "={{ $json.passedAstGate }}", "value2": true }] } }, "name": "Bayesian Triage", "type": "n8n-nodes-base.if" },
         { "parameters": { "url": "https://api.cloudflare.com/client/v4/zones/ZONE_ID/purge_cache", "method": "POST" }, "name": "Auto-Heal Purge", "type": "n8n-nodes-base.httpRequest" }
       ]
@@ -1676,7 +1692,7 @@ Bu paket, ${dom} web sitesinin yapay zeka arama motorları (ChatGPT, Gemini, Cla
       "rfc3161_tsa_digest": { "algorithm": "SHA-256", "timestamp": new Date().toISOString() },
       "assertions": [{ "label": "c2pa.actions", "data": { "actions": [{ "action": "c2pa.created", "when": new Date().toISOString() }] } }]
     }, null, 2) },
-    { name: 'recipes/24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml', content: `name: AI Search Quality Gate\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  audit:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: AST Budget Check (<HTML payload)\n        run: |\n          BYTES=$(curl -sL https://${cleanDom}/ | wc -c)\n          echo "Bytes: $BYTES"\n          test "$BYTES" -le measured HTML payload || echo "Warning: Over HTML payload initial window"\n` },
+    { name: 'recipes/24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml', content: `name: AI Search Quality Gate\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  audit:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: AST Budget Check (<HTML payload)\n        run: |\n          BYTES=$(curl -sL https://${cleanDom}/ | wc -c)\n          echo "Bytes: $BYTES"\n          test "$BYTES" -le 16384 || echo "Warning: Over HTML payload initial window"\n` },
     { name: 'recipes/25_AGENTIC_COMMERCE_CARD.json', content: JSON.stringify({
       "schema_version": "1.0.0",
       "name": `${cleanDom} Autonomous Agent Card`,
@@ -2290,7 +2306,7 @@ export default {
 };`,
       n8nNodeTr: 'Düğüm 1: Headless Chromium vs Raw cURL HTTP DOM Diff Karşılaştırıcı -> Düğüm 2: Token Delta Hesaplama (Eşik: >%15 kayıp var mı?) -> Düğüm 3: Fark saptanırsa Edge Pre-Render Enjeksiyonu Tetikleme -> Düğüm 4: Cloudflare CDN Anında Önbellek Yenileme.',
       n8nNodeEn: 'Node 1: Headless DOM vs Raw cURL Byte Comparator -> Node 2: Token Delta Gate (Threshold: >15% divergence) -> Node 3: On Delta, Trigger Edge Pre-Render Injection -> Node 4: Cloudflare Instant Cache Invalidation.',
-      testCmd: `curl -sL "https://${cleanDomainSafe}/" | head -c measured HTML payload | grep -o -i "${brandNameSafe.toLowerCase()}" | wc -l`
+      testCmd: `curl -sL "https://${cleanDomainSafe}/" | head -c 16384 | grep -o -i "${brandNameSafe.toLowerCase()}" | wc -l`
     },
     {
       key: 'entity_identity_drift',
@@ -2599,10 +2615,10 @@ jobs:
 
       - name: G0: AST Byte Gate (Sub-HTML payload TCP Initial Window)
         run: |
-          echo "Verifying raw HTML payload budget < measured HTML payload..."
+          echo "Verifying raw HTML payload budget < 16384 bytes..."
           RAW_BYTES=$(curl -sL "https://${cleanDomainSafe}/" | wc -c)
           echo "Measured Raw Bytes: $RAW_BYTES"
-          if [ "$RAW_BYTES" -gt measured HTML payload ]; then
+          if [ "$RAW_BYTES" -gt 16384 ]; then
             echo "::warning file=index.html::Raw HTML payload ($RAW_BYTES bytes) exceeds HTML payload initial window. Ensure Cloudflare HTMLRewriter AST purge is active."
           else
             echo "✓ AST payload within HTML payload TCP initial congestion window."
@@ -2656,7 +2672,7 @@ jobs:
         run: |
           RAW_BYTES=$(curl -sL "https://${cleanDomainSafe}/" | wc -c)
           echo "Measured Raw Bytes: $RAW_BYTES"
-          test "$RAW_BYTES" -le measured HTML payload || echo "Warning: HTML payload > HTML payload"
+          test "$RAW_BYTES" -le 16384 || echo "Warning: HTML payload > HTML payload"
 
       - name: G1: /llms.txt v2 Discovery Probe
         run: |
@@ -3205,9 +3221,9 @@ const DAG_STEPS=[
     nodeType: 'n8n-nodes-base.code',
     badge: 'AUDIT',
     desc: isTr?'JavaScript Code Node: HTML boyutunu (<HTML payload AST), data-chunk-id varlığını ve Wikidata QID bağlantısını değerlendirir.':'Evaluates HTML payload (<HTML payload AST), semantic chunk-id presence, and Wikidata QID knowledge graph links.',
-    config: `// Deterministic AST Evaluation\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nreturn [{ json: { isBloated: bytes > measured HTML payload, bytes, astBudget: measured HTML payload } }];`,
+    config: `// Deterministic AST Evaluation\nconst html = $input.first().json.data || '';\nconst bytes = Buffer.byteLength(html, 'utf8');\nreturn [{ json: { isBloated: bytes > 16384, bytes, astBudget: 16384 } }];`,
     inputSchema: `{\n  "rawDomBytes": 412850,\n  "tokenCount": 104200,\n  "hasDataChunkId": false\n}`,
-    outputSchema: `{\n  "astBudgetCap": measured HTML payload,\n  "actualPrunedBytes": 11840,\n  "wikidataTriples": 14,\n  "status": "PASSED"\n}`,
+    outputSchema: `{\n  "astBudgetCap": 16384,\n  "actualPrunedBytes": 11840,\n  "wikidataTriples": 14,\n  "status": "PASSED"\n}`,
     dlqPolicy: isTr?'Boyut HTML payload aşarsa: Edge HTMLRewriter otomatik devreye alınır, DOM script ve SVG gürültüsü budanır.':'On Overflow: HTMLRewriter stream prunes scripts and SVGs to preserve HTML payload budget.'
   },
   {
