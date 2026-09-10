@@ -91,8 +91,8 @@ def build_homepages():
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
-<title>Yapay Zeka SEO Analizi ve AI Görünürlük Testi | HTML&amp;HTML</title>
-<meta name="description" content="Web sitenizin ChatGPT, Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz ölçün. 18 motor, 105 kontrol ve $99 uygulama paketi.">
+<title>Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&amp;HTML</title>
+<meta name="description" content="Web sitenizin ChatGPT, Google Gemini, Claude ve Perplexity aramalarındaki görünürlük sorunlarını ücretsiz analiz edin. 18 deterministik motor, 105 kontrol, anında açık reçeteler, tam PDF rapor ve 30+ dosyalık ZIP çözüm paketi ($99 kurumsal lisans).">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -436,19 +436,19 @@ def build_homepages():
             <div class="ea-evidence-body">&lt;head&gt; içinde arama: rel=canonical BULUNAMADI&lt;br&gt;AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek</div>
           </div>
 
-          <div class="ea-code-sandbox">
-            <pre class="ea-code-underlay"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu --&gt;
+          <div class="ea-code-sandbox" style="position:relative;">
+            <pre class="ea-code-underlay" style="filter:none;opacity:1;pointer-events:auto;user-select:text;"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu (100% Açık Reçete) --&gt;
 &lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
 &lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
 &lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-            <div class="ea-frosted-cover">
-              <span class="ea-lock-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Kilitli Çözüm Yol Haritası — $99 ile Aç
+            <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
+              <span style="color:#10b981;font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                ✓ Tüm Çözüm Reçeteleri ve Kod Şablonları Açık ($99 Değerinde Kurumsal Paket)
               </span>
-              <p>15 bulgunun tamamı için kök neden çözümleri, production-ready kodlar ve n8n CI/CD otomasyon şablonu.</p>
+              <span style="color:#0284c7;font-size:11px;font-weight:600;">Tek tıkla PDF Rapor &amp; 30+ Dosyalık ZIP Seti</span>
             </div>
           </div>
         </div>
@@ -610,7 +610,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <span class="eyebrow">SSS</span>
     <h2 data-i18n="faqTitle">Sık sorulan sorular</h2>
   </header>
-  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır?</summary><p data-i18n="a1">Problem saklanmaz. URL, severity, confidence, evidence ve kategori görünür. $99 yazılım paketi; kod şablonlarını, test komutlarını ve geri alma planlarını otomatik üretir.</p></details>
+  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır? Reçeteler açık mı?</summary><p data-i18n="a1">Problem veya reçeteler saklanmaz. URL, severity, confidence, evidence ve kategori ile birlikte tüm çözüm kodları %100 açık sunulur. Ayrıca tam rapor PDF çıktısı ve 30+ dosyalık ZIP çözüm paketi tek tıkla indirilebilir ($99 kurumsal lisans paketi dahil).</p></details>
   <details><summary data-i18n="q2">100/100 Google veya AI citation garantisi mi?</summary><p data-i18n="a2">Hayır. Skor yalnızca ölçülen kontrollerin durumudur. Ranking, trafik veya AI citation garantisi değildir.</p></details>
   <details><summary data-i18n="q3">llms.txt zorunlu mu?</summary><p data-i18n="a3">Hayır. llms.txt bir web standardı değil, gelişmekte olan bir öneridir. Bu nedenle ayrı PROPOSAL etiketi ve düşük ağırlıkla değerlendirilir.</p></details>
   <details><summary data-i18n="q4">Core Web Vitals ölçülüyor mu?</summary><p data-i18n="a4">Bu sürüm HTML/HTTP performans hijyenini ölçer. Güvenilir LCP/INP/CLS için CrUX/PageSpeed verisi gerekir; yoksa NOT_MEASURED döner, değer uydurulmaz.</p></details>
@@ -1075,19 +1075,19 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
             <div class="ea-evidence-body">Search in &lt;head&gt;: rel=canonical NOT FOUND&lt;br&gt;AI Crawler State: Primary URL Unresolved | Duplicate Risk: High</div>
           </div>
 
-          <div class="ea-code-sandbox">
-            <pre class="ea-code-underlay"><code>&lt;!-- Remediation Roadmap &amp; Code Template --&gt;
+          <div class="ea-code-sandbox" style="position:relative;">
+            <pre class="ea-code-underlay" style="filter:none;opacity:1;pointer-events:auto;user-select:text;"><code>&lt;!-- Remediation Roadmap &amp; Code Template (100% Unlocked) --&gt;
 &lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
 &lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
 &lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-            <div class="ea-frosted-cover">
-              <span class="ea-lock-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Locked Remediation Roadmap — Unlock for $99
+            <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
+              <span style="color:#10b981;font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                ✓ All Resolution Recipes &amp; Code Templates Unlocked ($99 Enterprise Value)
               </span>
-              <p>Step-by-step root-cause fixes, code samples, and n8n CI/CD automation templates for all 15 findings.</p>
+              <span style="color:#0284c7;font-size:11px;font-weight:600;">1-Click PDF Report &amp; 30+ File ZIP Pack</span>
             </div>
           </div>
         </div>
@@ -1249,7 +1249,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <span class="eyebrow">FAQ</span>
     <h2 data-i18n="faqTitle">Frequently asked questions</h2>
   </header>
-  <details><summary data-i18n="q1">What is hidden in the free scan?</summary><p data-i18n="a1">The problem is not hidden. URL, severity, confidence, evidence and category are visible. The paid layer unlocks automated code templates, test suites and rollback plans.</p></details>
+  <details><summary data-i18n="q1">What is hidden in the audit? Are recipes unlocked?</summary><p data-i18n="a1">Nothing is hidden. URL, severity, confidence, evidence, and all production code recipes are 100% unlocked. You can export the full report to PDF and download the 30+ file resolution package as a ZIP (included with the $99 enterprise software package).</p></details>
   <details><summary data-i18n="q2">Does 100/100 guarantee Google or AI citations?</summary><p data-i18n="a2">No. The score only represents measured checks. It is not a ranking, traffic or AI citation guarantee.</p></details>
   <details><summary data-i18n="q3">Is llms.txt mandatory?</summary><p data-i18n="a3">No. llms.txt is an evolving proposal, not a web standard. It is therefore labeled PROPOSAL and given limited weight.</p></details>
   <details><summary data-i18n="q4">Are Core Web Vitals measured?</summary><p data-i18n="a4">This version measures HTML/HTTP performance hygiene. Reliable LCP/INP/CLS needs CrUX/PageSpeed data; without it the result is NOT_MEASURED.</p></details>

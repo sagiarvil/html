@@ -74,6 +74,7 @@
       {"source":"/mcp","function":{"functionId":"mcp","region":"us-central1"}},
       {"source":"/api/health","function":{"functionId":"health","region":"us-central1"}},
       {"source":"/api/scan","function":{"functionId":"scan","region":"us-central1"}},
+      {"source":"/api/scan-v2","function":{"functionId":"scan","region":"us-central1"}},
       {"source":"/api/intelligence","function":{"functionId":"intelligence","region":"us-central1"}},
       {"source":"/api/mandate","function":{"functionId":"mandate","region":"us-central1"}},
       {"source":"/api/delivery","function":{"functionId":"delivery","region":"us-central1"}},

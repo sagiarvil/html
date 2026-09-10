@@ -8,7 +8,7 @@
   'use strict';
 
   const PREMIUM_KEY = 'hhtml_premium_unlocked_v2';
-  const UNLOCKED = localStorage.getItem(PREMIUM_KEY) === 'true';
+  const UNLOCKED = true; // 100% Unlocked - All engineering recipes fully open
 
   const SVG = {
     check: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>',
@@ -400,27 +400,25 @@
             Entities: <span class="highlight">0 Eşleşme (Varlık Kaydı Eksik)</span>
           </div>
         </div>
-        <div class="recipe-section \${UNLOCKED ? '' : 'locked'}" data-recipe-id="eai-wiki-001">
+        <div class="recipe-section unlocked" data-recipe-id="eai-wiki-001">
           <div class="recipe-glow"></div>
           <div class="recipe-content">
             <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-              Kurumsal Onarım Reçetesi &amp; Uygulama Adımları
+              ✓ Kurumsal Onarım Reçetesi &amp; Uygulama Adımları (Açık)
             </h4>
             <div class="recipe-steps">
-              <div class="recipe-step"><div class="recipe-step-num">1</div><p>Resmi şirket tescili ve tarafsız basın bülteni kaynaklarıyla Wikidata üzerinden yeni bir QID varlık öğesi oluşturun.</p></div>
-              <div class="recipe-step"><div class="recipe-step-num">2</div><p>Web sitenizin <code>&lt;head&gt;</code> bölümündeki Organization JSON-LD şemasına <code>sameAs</code> dizisi ekleyin.</p></div>
+              <div class="recipe-step"><div class="recipe-step-num">1</div><p>Wikidata üzerinde şirketiniz için bir QID (Entity ID) oluşturun veya var olan kaydı doğrulayın.</p></div>
+              <div class="recipe-step"><div class="recipe-step-num">2</div><p>Sitenizin <code>&lt;head&gt;</code> bölümündeki JSON-LD <code>sameAs</code> dizisine Wikidata URL'sini ekleyin.</p></div>
             </div>
             <div class="recipe-code">
-              <span class="comment">&lt;!-- Unified Diff: JSON-LD @graph Entity Triples --&gt;</span><br>
               <span class="tag">&lt;script</span> <span class="attr">type</span>=<span class="value">"application/ld+json"</span><span class="tag">&gt;</span><br>
               {<br>
               &nbsp;&nbsp;<span class="attr">"@context"</span>: <span class="value">"https://schema.org"</span>,<br>
               &nbsp;&nbsp;<span class="attr">"@type"</span>: <span class="value">"Organization"</span>,<br>
-              &nbsp;&nbsp;<span class="attr">"@id"</span>: <span class="value">"https://\${domain}/#organization"</span>,<br>
-              &nbsp;&nbsp;<span class="attr">"name"</span>: <span class="value">"\${domain.split('.')[0].toUpperCase()}"</span>,<br>
-              &nbsp;&nbsp;<span class="attr">"url"</span>: <span class="value">"https://\${domain}/"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"name"</span>: <span class="value">"\${domain}"</span>,<br>
+              &nbsp;&nbsp;<span class="attr">"url"</span>: <span class="value">"https://\${domain}"</span>,<br>
               &nbsp;&nbsp;<span class="attr">"sameAs"</span>: [<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"https://wikidata.org/wiki/Special:Search?search=\${encodeURIComponent(domain)}"</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"https://www.wikidata.org/wiki/Q..."</span><br>
               &nbsp;&nbsp;]<br>
               }<br>
               <span class="tag">&lt;/script&gt;</span>
@@ -428,13 +426,6 @@
             <div style="display:flex; gap:10px; margin-top:14px;">
               <button class="ea-filter-btn btn-copy-code" data-code="curl -s 'https://www.wikidata.org/w/api.php?action=wbsearchentities&search=\${domain}&language=en&format=json' | jq ." style="font-size:12.5px; padding:6px 14px;">CLI Testini Kopyala</button>
             </div>
-          </div>
-          <div class="recipe-overlay">
-            <div class="recipe-lock-icon">\${SVG.lock}</div>
-            <h4>Kurumsal Onarım Reçetesi Kilitli</h4>
-            <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
-            <span class="recipe-badge">\${SVG.lock} 15 Onarım Reçetesi Dahil</span>
-            <button class="recipe-cta" onclick="showPaymentModal()">\${SVG.lock} $99 — Tüm Onarım Reçetelerini Aç</button>
           </div>
         </div>
       `;
@@ -476,11 +467,11 @@
             Status: <span class="highlight">404 NOT_FOUND (Arşivde Kayıt Yok)</span>
           </div>
         </div>
-        <div class="recipe-section \${UNLOCKED ? '' : 'locked'}" data-recipe-id="eai-cc-001">
+        <div class="recipe-section unlocked" data-recipe-id="eai-cc-001">
           <div class="recipe-glow"></div>
           <div class="recipe-content">
             <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-              Kurumsal Onarım Reçetesi &amp; Uygulama Adımları
+              ✓ Kurumsal Onarım Reçetesi &amp; Uygulama Adımları (Açık)
             </h4>
             <div class="recipe-steps">
               <div class="recipe-step"><div class="recipe-step-num">1</div><p><code>robots.txt</code> dosyasına <code>User-agent: CCBot</code> için açık <code>Allow: /</code> kuralı ekleyin.</p></div>
@@ -498,13 +489,6 @@
             <div style="display:flex; gap:10px; margin-top:14px;">
               <button class="ea-filter-btn btn-copy-code" data-code="curl -s 'https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=\${domain}&output=json' | jq ." style="font-size:12.5px; padding:6px 14px;">CLI Testini Kopyala</button>
             </div>
-          </div>
-          <div class="recipe-overlay">
-            <div class="recipe-lock-icon">\${SVG.lock}</div>
-            <h4>Kurumsal Onarım Reçetesi Kilitli</h4>
-            <p>Bu tespitin adım adım onarım kodu, n8n otomasyon şablonu ve uygulama kılavuzu Enterprise pakettedir.</p>
-            <span class="recipe-badge">\${SVG.lock} 15 Onarım Reçetesi Dahil</span>
-            <button class="recipe-cta" onclick="showPaymentModal()">\${SVG.lock} $99 — Tüm Onarım Reçetelerini Aç</button>
           </div>
         </div>
       `;
@@ -703,17 +687,31 @@
       section.classList.add('unlocked');
     });
 
+    document.querySelectorAll('.recipe-overlay').forEach(function(overlay) {
+      overlay.style.display = 'none';
+    });
+
     document.querySelectorAll('.recipe-cta').forEach(function(btn) {
-      btn.innerHTML = SVG.check + ' Reçete Açıldı';
+      btn.innerHTML = SVG.check + ' Reçete Açık';
       btn.disabled = true;
-      btn.style.opacity = '0.6';
+      btn.style.opacity = '0.7';
       btn.style.cursor = 'default';
     });
 
     const ab = document.getElementById('actionBar');
-    if (ab) ab.style.display = 'none';
-
-    showToast('Premium Çözüm Reçeteleri ve Yol Haritası Açıldı!', 'check');
+    if (ab) {
+      ab.style.display = 'block';
+      const textSpan = ab.querySelector('.action-bar-text');
+      if (textSpan) {
+        textSpan.innerHTML = '<span style="color:#10b981;font-weight:700;">✓ 15 Mühendislik Reçetesi Açık</span> — Anında Uygulanabilir Kod Paketi';
+      }
+      const btn = ab.querySelector('#actionBarBtn');
+      if (btn) {
+        btn.innerHTML = '📦 30+ Dosyalık ZIP İndir';
+        btn.style.background = '#10b981';
+        btn.onclick = generateEnterpriseZip;
+      }
+    }
   }
 
   function showPaymentModal() {
