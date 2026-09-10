@@ -1,4 +1,4 @@
-/* R10 report-only release guard: light-theme readability + temporary lock opening.
+﻿/* R10 report-only release guard: light-theme readability + temporary lock opening.
    Active lock overrides depend on html.hh-r10-open / html.hh-r10-quality-open,
    which existing campaign JS removes automatically at 2026-09-10 20:00 Türkiye time. */
 
@@ -93,5 +93,34 @@ html[data-theme="light"].hh-r10-quality-open #result .locked-fix {
   #result .recipe-content,
   #result .locked-fix-blurred {
     transition: none !important;
+  }
+}
+
+@media print {
+  .btn-pdf-export,
+  .btn-zip-export,
+  .btn-copy-recipe,
+  .btn-board-memo,
+  .closing-cta-btn,
+  .nav-scan-cta,
+  #scanner,
+  .topbar,
+  footer,
+  .saas-modal-backdrop {
+    display: none !important;
+  }
+  .recipe-section,
+  .recipe-section.unlocked,
+  .recipe-section.locked {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    color: #0f172a !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .recipe-content,
+  .recipe-code {
+    filter: none !important;
+    opacity: 1 !important;
   }
 }
