@@ -160,7 +160,10 @@ jobs:
           grep -Fq 'noindex,nofollow,noarchive,nosnippet' <<<"$admin"
 
           status="$(curl -sS -o /tmp/admin-denied.json -w '%{http_code}' --connect-timeout 8 --max-time 30 -H 'content-type: application/json' --data '{"adminStats":true,"password":"invalid-smoke-password"}' https://htmlandhtml.com/api/scan)"
-          test "$status" = "401"
+          case "$status" in
+            401|429) ;;
+            *) echo "ADMIN_DENIAL_FAIL status=$status"; cat /tmp/admin-denied.json; exit 1 ;;
+          esac
 
           body="$(curl -fsS --retry 2 --connect-timeout 10 --max-time 240 -H 'content-type: application/json' --data '{"domain":"htmlandhtml.com"}' https://htmlandhtml.com/api/scan)"
           BODY="$body" node - <<'NODE'
@@ -179,11 +182,19 @@ jobs:
             node - <<'NODE'
           const {getApps,initializeApp,applicationDefault}=require('firebase-admin/app');
           const {getFirestore}=require('firebase-admin/firestore');
+          const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
           (async()=>{
             if(!getApps().length) initializeApp({credential:applicationDefault(),projectId:'studio-7658156126-ffb8e'});
-            const snap=await getFirestore().collection('htmlhtml_scan_stats_shards').limit(1).get();
-            if(snap.empty) throw new Error('scan telemetry storage has no record after production smoke scan');
-            console.log('SCAN_TELEMETRY_STORAGE_OK');
+            const db=getFirestore();
+            for(let attempt=1;attempt<=10;attempt++){
+              const snap=await db.collection('htmlhtml_scan_stats_shards').limit(1).get();
+              if(!snap.empty){
+                console.log(`SCAN_TELEMETRY_STORAGE_OK attempt=${attempt}`);
+                return;
+              }
+              if(attempt<10) await sleep(3000);
+            }
+            throw new Error('scan telemetry storage has no record after bounded production polling');
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
           )

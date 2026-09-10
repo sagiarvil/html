@@ -68,7 +68,7 @@ async function safeTelemetry(input:ScanTelemetryInput){
   try{
     await Promise.race([
       recordScanTelemetry(input),
-      new Promise((_,reject)=>setTimeout(()=>reject(new Error('telemetry_timeout')),1800))
+      new Promise((_,reject)=>setTimeout(()=>reject(new Error('telemetry_timeout')),8000))
     ]);
   }catch(e:any){
     console.warn('scan_telemetry_unavailable',String(e?.code||e?.message||'unknown').slice(0,80));
