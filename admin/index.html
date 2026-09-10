@@ -2,21 +2,15 @@
 <html lang="tr">
 <head>
 <link rel="stylesheet" href="/assets/css/theme.css?v=11">
-<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<!-- ZERO-FLASH SCRIPT — Enforce pure light theme -->
 <script>
   (function() {
     'use strict';
     try {
-      var h = localStorage.getItem('hh-theme');
-      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
-      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
-      if (!t || t === 'system') {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      document.documentElement.classList.toggle('light', t === 'light');
-      document.documentElement.style.colorScheme = t;
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      document.documentElement.style.colorScheme = 'light';
     } catch(e) {}
   })();
 </script>
@@ -25,64 +19,200 @@
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <title>HTML&amp;HTML — Yönetici Tarama &amp; Analiz İzleme Paneli</title>
 <style>
-:root{color-scheme:dark;--bg:#0b0e14;--panel:#111722;--card:#151d2c;--line:#263043;--text:#eef3fb;--muted:#94a3b8;--ok:#22c55e;--bad:#ef4444;--warn:#f59e0b;--accent:#38bdf8;--accent-subtle:rgba(56,189,248,0.12)}
+:root{
+  color-scheme: light;
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --card: #f8fafc;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --text: #0f172a;
+  --text-bold: #020617;
+  --muted: #475569;
+  --ok: #15803d;
+  --bad: #b91c1c;
+  --warn: #b45309;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --accent-subtle: rgba(2,132,199,0.06);
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+body{
+  margin:0;
+  background:#ffffff;
+  color:#0f172a;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
 .wrap{max-width:1240px;margin:auto;padding:24px 20px 80px}
-.panel,.stat,.quick-box{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.panel,.stat,.quick-box{
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.04);
+}
 .panel{padding:22px}
-.login{max-width:440px;margin:12vh auto;padding:28px 24px}
-.brand{font-weight:900;font-size:18px;letter-spacing:-0.02em}
-.brand small{display:block;margin-top:4px;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:normal}
-.muted{color:var(--muted)}
+.login{
+  max-width:440px;
+  margin:12vh auto;
+  padding:32px 28px;
+  box-shadow:0 10px 25px -5px rgba(0,0,0,0.06),0 8px 10px -6px rgba(0,0,0,0.04);
+}
+.brand{font-weight:900;font-size:18px;letter-spacing:-0.02em;color:#0f172a}
+.brand small{display:block;margin-top:4px;font-size:12px;font-weight:600;color:#64748b;letter-spacing:normal}
+.muted{color:#64748b}
 .row{display:flex;gap:10px}
-.row input,.toolbar input,.quick-row input{background:#090d13;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:14px;outline:none;transition:border-color .15s}
-.row input:focus,.toolbar input:focus,.quick-row input:focus{border-color:var(--accent)}
+.row input,.toolbar input,.quick-row input{
+  background:#ffffff;
+  color:#0f172a;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  padding:11px 14px;
+  font-size:14px;
+  outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+.row input:focus,.toolbar input:focus,.quick-row input:focus{
+  border-color:#0284c7;
+  box-shadow:0 0 0 3px rgba(2,132,199,0.12);
+}
 .row input{flex:1}
-.btn{border:0;border-radius:10px;background:var(--accent);color:#06111f;font-weight:800;padding:11px 18px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:all .15s;text-decoration:none}
-.btn:hover{opacity:.92;transform:translateY(-1px)}
+.btn{
+  border:0;
+  border-radius:10px;
+  background:#0284c7;
+  color:#ffffff;
+  font-weight:700;
+  padding:11px 18px;
+  cursor:pointer;
+  font-size:13px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:all .15s;
+  text-decoration:none;
+}
+.btn:hover{background:#0369a1;transform:translateY(-1px)}
 .btn:active{transform:translateY(0)}
 .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.btn-secondary{background:transparent;border:1px solid var(--line);color:var(--text)}
-.btn-secondary:hover{background:var(--card);border-color:var(--muted)}
+.btn-secondary{
+  background:#ffffff;
+  border:1px solid #cbd5e1;
+  color:#1e293b;
+}
+.btn-secondary:hover{background:#f1f5f9;border-color:#94a3b8}
 .btn-sm{padding:6px 12px;font-size:12px;border-radius:8px}
-.btn-danger{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
-.btn-danger:hover{background:rgba(239,68,68,0.25)}
-.error{color:#fca5a5;margin-top:12px;min-height:20px;font-size:13px}
+.btn-danger{
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  color:#b91c1c;
+}
+.btn-danger:hover{background:#fee2e2}
+.error{color:#b91c1c;margin-top:12px;min-height:20px;font-size:13px;font-weight:600}
 .dash{display:none}
-.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+  padding-bottom:18px;
+  border-bottom:1px solid #e2e8f0;
+  flex-wrap:wrap;
+}
 .top-actions{display:flex;align-items:center;gap:10px}
-.live-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;background:rgba(34,197,94,0.12);color:var(--ok);border:1px solid rgba(34,197,94,0.3)}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+.live-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  font-weight:700;
+  padding:4px 10px;
+  border-radius:20px;
+  background:#f0fdf4;
+  color:#15803d;
+  border:1px solid #bbf7d0;
+}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#16a34a;animation:pulse 2s infinite}
 @keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}100%{opacity:1;transform:scale(1)}}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}
-.stat{padding:16px;background:var(--panel)}
-.stat span{display:block;color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
-.stat strong{display:block;font-size:26px;font-weight:800;margin-top:6px;letter-spacing:-0.02em}
-.ok{color:#4ade80}
-.bad{color:#f87171}
-.warn{color:#fbbf24}
-.section-title{font-size:15px;font-weight:800;letter-spacing:-0.01em;display:flex;align-items:center;gap:8px}
-.quick-box{padding:18px;margin-bottom:20px;border-left:4px solid var(--accent)}
+.stat{padding:16px;background:#ffffff;border:1px solid #e2e8f0}
+.stat span{display:block;color:#64748b;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em}
+.stat strong{display:block;font-size:26px;font-weight:800;margin-top:6px;letter-spacing:-0.02em;color:#0f172a}
+.ok{color:#15803d !important}
+.bad{color:#b91c1c !important}
+.warn{color:#b45309 !important}
+.section-title{font-size:15px;font-weight:800;letter-spacing:-0.01em;display:flex;align-items:center;gap:8px;color:#0f172a}
+.quick-box{
+  padding:18px;
+  margin-bottom:20px;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-left:4px solid #0284c7;
+}
 .quick-row{display:flex;gap:10px;margin-top:12px}
 .quick-row input{flex:1}
-.quick-result{margin-top:14px;padding:14px;background:#090d13;border:1px solid var(--line);border-radius:10px;display:none;font-size:13px}
-.fail-box{padding:14px 18px;margin-bottom:20px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:12px;display:none}
+.quick-result{
+  margin-top:14px;
+  padding:14px;
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  display:none;
+  font-size:13px;
+  color:#0f172a;
+}
+.fail-box{
+  padding:14px 18px;
+  margin-bottom:20px;
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  border-radius:12px;
+  display:none;
+}
 .fail-chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-.fail-chip{font-size:12px;padding:4px 10px;background:rgba(239,68,68,0.12);border-radius:8px;color:#fca5a5}
+.fail-chip{
+  font-size:12px;
+  padding:4px 10px;
+  background:#fee2e2;
+  border:1px solid #fca5a5;
+  border-radius:8px;
+  color:#991b1b;
+  font-weight:600;
+}
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0;flex-wrap:wrap}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+.table-wrap{
+  overflow:auto;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  background:#ffffff;
+}
 table{width:100%;border-collapse:collapse;min-width:920px}
-th,td{padding:12px 14px;border-bottom:1px solid #1c2434;text-align:left;font-size:13px}
-th{background:#131a26;color:#cbd5e1;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em}
-tbody tr:hover{background:rgba(255,255,255,0.02)}
-.domain{font-weight:800;color:var(--text)}
-.score-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-weight:800;font-size:12px}
-.score-high{background:rgba(34,197,94,0.15);color:#4ade80}
-.score-mid{background:rgba(245,158,11,0.15);color:#fbbf24}
-.score-low{background:rgba(239,68,68,0.15);color:#f87171}
+th,td{padding:12px 14px;border-bottom:1px solid #f1f5f9;text-align:left;font-size:13px;color:#0f172a}
+th{
+  background:#f8fafc;
+  color:#475569;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  border-bottom:1px solid #e2e8f0;
+}
+tbody tr:hover{background:#f8fafc}
+.domain{font-weight:800;color:#0f172a}
+.score-badge{display:inline-block;padding:3px 8px;border-radius:6px;font-weight:800;font-size:12px}
+.score-high{background:#dcfce7;color:#166534;border:1px solid #bbf7d0}
+.score-mid{background:#fef3c7;color:#92400e;border:1px solid #fde68a}
+.score-low{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
 .actions-cell{display:flex;gap:6px;align-items:center}
-.footer-note{margin-top:16px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.footer-note{
+  margin-top:16px;
+  font-size:12px;
+  color:#64748b;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 @media(max-width:960px){.stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.stats{grid-template-columns:1fr}.quick-row{flex-direction:column}.top{flex-direction:column;align-items:stretch}}
 </style>
@@ -184,5 +314,5 @@ tbody tr:hover{background:rgba(255,255,255,0.02)}
     </div>
   </section>
 </main></div>
-<script>(()=>{'use strict';const $=id=>document.getElementById(id);let adminPassword='',rows=[],autoTimer=null;const fmt=n=>new Intl.NumberFormat('tr-TR').format(Number(n||0));const date=v=>v?new Date(v).toLocaleString('tr-TR'):'—';function set(id,v){const el=$(id);if(el)el.textContent=String(v)}function render(){const q=($('filter').value||'').trim().toLowerCase(),body=$('domainRows');body.textContent='';const filtered=rows.filter(x=>!q||String(x.domain||'').toLowerCase().includes(q));set('rowCount',fmt(filtered.length)+' domain listeleniyor');for(const r of filtered){const tr=document.createElement('tr');const tdDom=document.createElement('td');tdDom.className='domain';tdDom.textContent=String(r.domain||'—');tr.appendChild(tdDom);const tdScans=document.createElement('td');tdScans.textContent=fmt(r.scans);tr.appendChild(tdScans);const tdScore=document.createElement('td');if(r.lastOverall!=null){const sc=Number(r.lastOverall);const span=document.createElement('span');span.className='score-badge '+(sc>=80?'score-high':sc>=50?'score-mid':'score-low');span.textContent=sc+'/100';tdScore.appendChild(span)}else{tdScore.textContent='—';tdScore.className='muted'}tr.appendChild(tdScore);const tdFind=document.createElement('td');tdFind.textContent=fmt(r.lastFindingCount);tr.appendChild(tdFind);const tdPages=document.createElement('td');tdPages.textContent=fmt(r.totalPagesScanned);tr.appendChild(tdPages);const tdProbes=document.createElement('td');tdProbes.textContent=fmt(r.totalLinksProbed);tr.appendChild(tdProbes);const tdDur=document.createElement('td');tdDur.textContent=(Number(r.avgDurationMs||0)/1000).toFixed(1)+' sn';tr.appendChild(tdDur);const tdDate=document.createElement('td');tdDate.textContent=date(r.lastScannedAt);tr.appendChild(tdDate);const tdAct=document.createElement('td');tdAct.className='actions-cell';const linkReport=document.createElement('a');linkReport.className='btn btn-secondary btn-sm';linkReport.href='/tr/?url='+encodeURIComponent('https://'+r.domain)+'#scanner';linkReport.target='_blank';linkReport.rel='noopener';linkReport.textContent='↗ Rapor';tdAct.appendChild(linkReport);const btnScanNow=document.createElement('button');btnScanNow.className='btn btn-sm';btnScanNow.type='button';btnScanNow.textContent='🔍 Tara';btnScanNow.onclick=()=>{if($('quickDomain')){$('quickDomain').value=r.domain;$('quickScanForm').dispatchEvent(new Event('submit',{cancelable:true}))}};tdAct.appendChild(btnScanNow);tr.appendChild(tdAct);body.appendChild(tr)}if(!body.children.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=9;td.textContent='Henüz taranmış kayıt veya eşleşen alan adı bulunamadı.';td.className='muted';td.style.padding='20px 14px';tr.appendChild(td);body.appendChild(tr)}}async function load(){const r=await fetch('/api/scan',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({adminStats:true,password:adminPassword}),cache:'no-store'});const data=await r.json().catch(()=>({}));if(!r.ok||!data.ok)throw new Error(data.error||'İstatistikler alınamadı.');const s=data.summary||{};set('totalRequests',fmt(s.totalRequests));set('successfulScans',fmt(s.successfulScans));set('failedScans',fmt(s.failedScans));const failedNum=Number(s.failedScans||0);const failBox=$('failureBreakdown');if(failedNum>0){if(failBox)failBox.style.display='block';set('failDns',fmt(s.failure_dns));set('failTimeout',fmt(s.failure_timeout));set('failBlocked',fmt(s.failure_blocked_target));set('failInvalid',fmt(s.failure_invalid_request));set('failScanError',fmt(s.failure_scan_error));const fEl=$('failedScans');if(fEl)fEl.className='bad'}else{if(failBox)failBox.style.display='none';const fEl=$('failedScans');if(fEl)fEl.className='ok'}set('uniqueDomains',fmt(s.uniqueDomains));set('successRate',(Number(s.successRatePct||0)).toFixed(1)+'%');set('pages',fmt(s.totalPagesScanned));set('links',fmt(s.totalLinksProbed));set('avgDuration',(Number(s.avgDurationMs||0)/1000).toFixed(1)+' sn');set('generatedAt','Son Güncelleme: '+date(data.generatedAt));set('historyBoundary',data.historyBoundary||'');rows=Array.isArray(data.domains)?data.domains:[];render()}$('loginForm').addEventListener('submit',async e=>{e.preventDefault();const btn=$('loginBtn');$('loginError').textContent='';adminPassword=$('password').value;btn.disabled=true;try{await load();$('password').value='';$('loginPanel').style.display='none';$('dashboard').style.display='block'}catch(err){adminPassword='';$('loginError').textContent=err?.message||'Giriş başarısız. Lütfen şifrenizi kontrol edin.'}finally{btn.disabled=false}});$('refreshBtn').addEventListener('click',async()=>{const btn=$('refreshBtn');btn.disabled=true;try{await load()}finally{btn.disabled=false}});$('autoRefreshBtn').addEventListener('click',()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null;$('autoRefreshBtn').textContent='⏱ Otomatik (10s): Kapalı';$('autoRefreshBtn').classList.remove('btn-danger')}else{autoTimer=setInterval(async()=>{try{await load()}catch(e){}},10000);$('autoRefreshBtn').textContent='⏱ Otomatik (10s): Açık';$('autoRefreshBtn').classList.add('btn-danger')}});$('logoutBtn').addEventListener('click',()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null}adminPassword='';rows=[];$('dashboard').style.display='none';$('loginPanel').style.display='block';$('password').value=''});$('quickScanForm').addEventListener('submit',async e=>{e.preventDefault();const input=$('quickDomain'),btn=$('quickScanBtn'),res=$('quickResult');let target=input.value.trim();if(!target)return;if(!/^https?:\/\//i.test(target))target='https://'+target;btn.disabled=true;btn.textContent='⏳ Taranıyor (18 Motor)...';res.style.display='block';res.innerHTML='<div style="color:var(--accent)">🚀 <strong>'+target+'</strong> taranıyor, lütfen bekleyin...</div>';try{const response=await fetch('/api/scan',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({url:target})});const data=await response.json();if(!response.ok||!data.ok){throw new Error(data.error||'Tarama başarısız oldu.')}const score=data.overallScore??data.score??'—';const findings=(data.findings||[]).length;const pages=data.scannedPagesCount||data.pagesScanned||'—';res.innerHTML='<div style="color:var(--ok);font-weight:700">✅ Tarama Başarıyla Tamamlandı!</div><div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap;align-items:center"><span>Alan Adı: <strong>'+(data.domain||target)+'</strong></span><span>Genel Skor: <strong style="color:'+(score>=80?'#4ade80':score>=50?'#fbbf24':'#f87171')+'">'+score+'/100</strong></span><span>Bulgu: <strong>'+findings+'</strong></span><span>Sayfa: <strong>'+pages+'</strong></span><a class="btn btn-sm" href="/tr/?url='+encodeURIComponent(target)+'#scanner" target="_blank" rel="noopener">📄 Raporu Aç (Yeni Sekme)</a></div>';await load()}catch(err){res.innerHTML='<div style="color:var(--bad)">❌ <strong>Tarama Hatası:</strong> '+(err?.message||'Bilinmeyen bir hata oluştu.')+'</div>'}finally{btn.disabled=false;btn.textContent='⚡ Canlı Tara & İncele'}});$('filter').addEventListener('input',render)})();</script>
+<script>(()=>{'use strict';const $=id=>document.getElementById(id);let adminPassword='',rows=[],autoTimer=null;const fmt=n=>new Intl.NumberFormat('tr-TR').format(Number(n||0));const date=v=>v?new Date(v).toLocaleString('tr-TR'):'—';function set(id,v){const el=$(id);if(el)el.textContent=String(v)}function render(){const q=($('filter').value||'').trim().toLowerCase(),body=$('domainRows');body.textContent='';const filtered=rows.filter(x=>!q||String(x.domain||'').toLowerCase().includes(q));set('rowCount',fmt(filtered.length)+' domain listeleniyor');for(const r of filtered){const tr=document.createElement('tr');const tdDom=document.createElement('td');tdDom.className='domain';tdDom.textContent=String(r.domain||'—');tr.appendChild(tdDom);const tdScans=document.createElement('td');tdScans.textContent=fmt(r.scans);tr.appendChild(tdScans);const tdScore=document.createElement('td');if(r.lastOverall!=null){const sc=Number(r.lastOverall);const span=document.createElement('span');span.className='score-badge '+(sc>=80?'score-high':sc>=50?'score-mid':'score-low');span.textContent=sc+'/100';tdScore.appendChild(span)}else{tdScore.textContent='—';tdScore.className='muted'}tr.appendChild(tdScore);const tdFind=document.createElement('td');tdFind.textContent=fmt(r.lastFindingCount);tr.appendChild(tdFind);const tdPages=document.createElement('td');tdPages.textContent=fmt(r.totalPagesScanned);tr.appendChild(tdPages);const tdProbes=document.createElement('td');tdProbes.textContent=fmt(r.totalLinksProbed);tr.appendChild(tdProbes);const tdDur=document.createElement('td');tdDur.textContent=(Number(r.avgDurationMs||0)/1000).toFixed(1)+' sn';tr.appendChild(tdDur);const tdDate=document.createElement('td');tdDate.textContent=date(r.lastScannedAt);tr.appendChild(tdDate);const tdAct=document.createElement('td');tdAct.className='actions-cell';const linkReport=document.createElement('a');linkReport.className='btn btn-secondary btn-sm';linkReport.href='/tr/?url='+encodeURIComponent('https://'+r.domain)+'#scanner';linkReport.target='_blank';linkReport.rel='noopener';linkReport.textContent='↗ Rapor';tdAct.appendChild(linkReport);const btnScanNow=document.createElement('button');btnScanNow.className='btn btn-sm';btnScanNow.type='button';btnScanNow.textContent='🔍 Tara';btnScanNow.onclick=()=>{if($('quickDomain')){$('quickDomain').value=r.domain;$('quickScanForm').dispatchEvent(new Event('submit',{cancelable:true}))}};tdAct.appendChild(btnScanNow);tr.appendChild(tdAct);body.appendChild(tr)}if(!body.children.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=9;td.textContent='Henüz taranmış kayıt veya eşleşen alan adı bulunamadı.';td.className='muted';td.style.padding='20px 14px';tr.appendChild(td);body.appendChild(tr)}}async function load(){const r=await fetch('/api/scan',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({adminStats:true,password:adminPassword}),cache:'no-store'});const data=await r.json().catch(()=>({}));if(!r.ok||!data.ok)throw new Error(data.error||'İstatistikler alınamadı.');const s=data.summary||{};set('totalRequests',fmt(s.totalRequests));set('successfulScans',fmt(s.successfulScans));set('failedScans',fmt(s.failedScans));const failedNum=Number(s.failedScans||0);const failBox=$('failureBreakdown');if(failedNum>0){if(failBox)failBox.style.display='block';set('failDns',fmt(s.failure_dns));set('failTimeout',fmt(s.failure_timeout));set('failBlocked',fmt(s.failure_blocked_target));set('failInvalid',fmt(s.failure_invalid_request));set('failScanError',fmt(s.failure_scan_error));const fEl=$('failedScans');if(fEl)fEl.className='bad'}else{if(failBox)failBox.style.display='none';const fEl=$('failedScans');if(fEl)fEl.className='ok'}set('uniqueDomains',fmt(s.uniqueDomains));set('successRate',(Number(s.successRatePct||0)).toFixed(1)+'%');set('pages',fmt(s.totalPagesScanned));set('links',fmt(s.totalLinksProbed));set('avgDuration',(Number(s.avgDurationMs||0)/1000).toFixed(1)+' sn');set('generatedAt','Son Güncelleme: '+date(data.generatedAt));set('historyBoundary',data.historyBoundary||'');rows=Array.isArray(data.domains)?data.domains:[];render()}$('loginForm').addEventListener('submit',async e=>{e.preventDefault();const btn=$('loginBtn');$('loginError').textContent='';adminPassword=$('password').value;btn.disabled=true;try{await load();$('password').value='';$('loginPanel').style.display='none';$('dashboard').style.display='block'}catch(err){adminPassword='';$('loginError').textContent=err?.message||'Giriş başarısız. Lütfen şifrenizi kontrol edin.'}finally{btn.disabled=false}});$('refreshBtn').addEventListener('click',async()=>{const btn=$('refreshBtn');btn.disabled=true;try{await load()}finally{btn.disabled=false}});$('autoRefreshBtn').addEventListener('click',()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null;$('autoRefreshBtn').textContent='⏱ Otomatik (10s): Kapalı';$('autoRefreshBtn').classList.remove('btn-danger')}else{autoTimer=setInterval(async()=>{try{await load()}catch(e){}},10000);$('autoRefreshBtn').textContent='⏱ Otomatik (10s): Açık';$('autoRefreshBtn').classList.add('btn-danger')}});$('logoutBtn').addEventListener('click',()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null}adminPassword='';rows=[];$('dashboard').style.display='none';$('loginPanel').style.display='block';$('password').value=''});$('quickScanForm').addEventListener('submit',async e=>{e.preventDefault();const input=$('quickDomain'),btn=$('quickScanBtn'),res=$('quickResult');let target=input.value.trim();if(!target)return;if(!/^https?:\/\//i.test(target))target='https://'+target;btn.disabled=true;btn.textContent='⏳ Taranıyor (18 Motor)...';res.style.display='block';res.innerHTML='<div style="color:#0284c7;font-weight:600">🚀 <strong>'+target+'</strong> taranıyor, lütfen bekleyin...</div>';try{const response=await fetch('/api/scan',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({url:target})});const data=await response.json();if(!response.ok||!data.ok){throw new Error(data.error||'Tarama başarısız oldu.')}const score=data.overallScore??data.score??'—';const findings=(data.findings||[]).length;const pages=data.scannedPagesCount||data.pagesScanned||'—';res.innerHTML='<div style="color:#15803d;font-weight:700">✅ Tarama Başarıyla Tamamlandı!</div><div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap;align-items:center"><span>Alan Adı: <strong>'+(data.domain||target)+'</strong></span><span>Genel Skor: <strong style="color:'+(score>=80?'#15803d':score>=50?'#b45309':'#b91c1c')+'">'+score+'/100</strong></span><span>Bulgu: <strong>'+findings+'</strong></span><span>Sayfa: <strong>'+pages+'</strong></span><a class="btn btn-sm" href="/tr/?url='+encodeURIComponent(target)+'#scanner" target="_blank" rel="noopener">📄 Raporu Aç (Yeni Sekme)</a></div>';await load()}catch(err){res.innerHTML='<div style="color:#b91c1c;font-weight:600">❌ <strong>Tarama Hatası:</strong> '+(err?.message||'Bilinmeyen bir hata oluştu.')+'</div>'}finally{btn.disabled=false;btn.textContent='⚡ Canlı Tara & İncele'}});$('filter').addEventListener('input',render)})();</script>
 </body></html>
