@@ -98,3 +98,6 @@ The product sells measurable readiness and recommendation opportunity, not false
 - [TR news hub](https://htmlandhtml.com/tr/llms-txt-haberler/)
 - [EN news hub](https://htmlandhtml.com/en/llms-txt-news/)
 <!-- LLMS_NEWS_END -->
+
+## Black-box observation methodology
+- [https://htmlandhtml.com/blackbox-observation-contract.json](https://htmlandhtml.com/blackbox-observation-contract.json) — six non-scoring observation contracts for query fan-out, citation volatility, crawler-policy divergence, render parity, entity drift and agent-action friction. This is an evidence protocol, not secret model access.

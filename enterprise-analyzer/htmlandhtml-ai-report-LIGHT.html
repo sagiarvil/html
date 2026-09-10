@@ -53,6 +53,7 @@
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=3">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">
   <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2">
+<link rel="stylesheet" href="/assets/css/enterprise-report-layout-guard.css?v=1" data-enterprise-layout-guard>
 </head>
 <body class="enterprise-ui ea-specimen-page">
 
@@ -213,7 +214,7 @@
             </div>
             <div class="ea-hud-dual-meta">
               <h4 data-i18n="dial2Title">PLANE B: OBSERVED AI PRESENCE (EXECUTIVE AI DECISION INDEX)</h4>
-              <p data-i18n="dial2Sub">15 Buyer Prompts · 3-Run Parity</p>
+              <p data-i18n="dial2Sub">structured buyer-intent prompts · 3-Run Parity</p>
             </div>
           </div>
         </div>
@@ -628,7 +629,7 @@
         </h2>
         <span class="ea-engine-badge badge-pass" style="font-size:12px; padding:4px 10px;">PARITY LOCKED (EMPIRICAL CROSS-PROBES)</span>
       </div>
-      <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:14px;" data-i18n="compBenchmarkDesc">Competitors were audited with bit-for-bit parity: identical 15 buyer intent prompts, identical 3-run observation windows, and identical scoring rules. Grounded in wire telemetry rather than speculative SEO guesswork.</p>
+      <p style="font-size:13.5px; color:var(--ea-text-secondary); line-height:1.55; margin-bottom:14px;" data-i18n="compBenchmarkDesc">Competitors were audited with bit-for-bit parity: identical configured buyer-intent prompts, identical 3-run observation windows, and identical scoring rules. Grounded in wire telemetry rather than speculative SEO guesswork.</p>
       
       <div class="ea-data-table-wrapper">
         <table class="ea-data-table">
@@ -2557,7 +2558,7 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
       </div>
     </section>
 
-    <!-- SECTION: INTERACTIVE FILE VIEWER & DELIVERY PACKAGES (22 / 24 FILES) -->
+    <!-- SECTION: INTERACTIVE FILE VIEWER & DELIVERY PACKAGES (30+ FILES) -->
     <section class="ea-explorer-section">
       <div class="ea-explorer-head">
         <div>
@@ -2757,7 +2758,7 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
   "21_DARK_POOL_HALLUCINATION_MONITOR.py": "#!/usr/bin/env python3\n\"\"\"\nDARK POOL HALLUCINATION & DRIFT MONITOR (ENTERPRISE AUDITING HARNESS)\nTarget Domain: htmlandhtml.com\nExecutes synthetic cross-prompting across major frontier models (GPT-4o, Claude 3.5, Perplexity Sonar)\nto detect ungrounded brand drift, pricing hallucinations, and citation drops.\n\"\"\"\nimport sys\nfrom datetime import datetime\n\nTARGET_DOMAIN = \"htmlandhtml.com\"\nPROBES = [\n    {\"intent\": \"Pricing Ground Truth\", \"prompt\": f\"What is the official benchmark and pricing of {TARGET_DOMAIN}?\", \"expected_tokens\": [\"99\", \"USD\"]},\n    {\"intent\": \"Competitive Moat\", \"prompt\": f\"Compare {TARGET_DOMAIN} to competing alternatives.\", \"expected_tokens\": [\"deterministic\", \"verification\"]},\n    {\"intent\": \"AI Readiness\", \"prompt\": f\"Is {TARGET_DOMAIN} compliant with 2026 AI search visibility standards?\", \"expected_tokens\": [\"llms.txt\", \"schema\"]}\n]\n\nprint(f\"[*] Starting Enterprise AI Search Hallucination Audit for: {TARGET_DOMAIN}\")\nprint(f\"[*] Standard: ISO/IEC 42001 AI Risk Management | Timestamp: {datetime.utcnow().isoformat()}Z\")\n\nfor i, p in enumerate(PROBES, 1):\n    print(f\"  [{i}/{len(PROBES)}] Probing Intent: '{p['intent']}' -> Alignment: 0.968 | Drift: False | Latency: 142ms\")\n\nprint(\"[+] Enterprise Audit Complete: 0 negative hallucination vectors detected.\")\nprint(f\"[+] Output Digest: SHA-256 Certified ground truth for {TARGET_DOMAIN}\")\n"
 };
     const RAW_FILES_999 = {
-  "30_EXECUTIVE_DECISION_MEMO.md": "# EXECUTIVE DECISION MEMORANDUM\nTarget Domain: htmlandhtml.com\nBrand Identity: HTML&HTML\nMandate Reference: HTMLHTML-EAI-2026-V4\nClassification: STRICT COMMERCIAL CONFIDENTIAL / PADDLE ENTITLED ($999)\n\n## 1. THE FIVE MANAGEMENT QUESTIONS (EMPIRICAL ANSWERS)\n\n### Q1: Where are we actually visible or absent across AI answer surfaces?\n- Observed Mention Rate: 72% across 15 standard buyer intent prompts over 3 independent runs.\n- Observed Citation Rate: 65% of AI responses included direct wire-level citations to htmlandhtml.com.\n- Primary Gaps: High absence in non-branded Category Comparison queries (\"Comparison of enterprise AI visibility platforms\").\n\n### Q2: Which named competitors are being recommended instead of us?\n- Top Competitor Capture: Ahrefs (42% Share of Answer) and Semrush (38% Share of Answer).\n- Displacement Factor: When buyers query general tools, AI engines default to established Common Crawl training corpus anchors.\n\n### Q3: Which sources are causing those competitors to win?\n- Primary Moat Sources: Independent comparison matrices on G2, technical research citations in GitHub repositories, and verified Wikidata QID entities.\n\n### Q4: Which minimum interventions have the highest expected impact?\n1. P0 (HSTS & Canonical): Complete transport and indexing compliance to eliminate crawl discard.\n2. P0 (measured HTML payload, semantic structure and source-readiness evidence#software).\n4. P1 (Source Capture): Wikidata QID submission and official MCP Server repository registration.\n\n### Q5: Did the intervention measurably change the outcome under the same observation protocol?\n- Baseline State: Recorded in 50_BASELINE_MEASUREMENT.json (Mention: 72%, Citation: 65%, Share of Answer: 34%).\n- Verification Protocol: Protocol locked in 43_BEFORE_AFTER_PROTOCOL.md. Day-30 re-scan will execute bit-for-bit identical prompts and surfaces.\n",
+  "30_EXECUTIVE_DECISION_MEMO.md": "# EXECUTIVE DECISION MEMORANDUM\nTarget Domain: htmlandhtml.com\nBrand Identity: HTML&HTML\nMandate Reference: HTMLHTML-EAI-2026-V4\nClassification: STRICT COMMERCIAL CONFIDENTIAL / PADDLE ENTITLED ($999)\n\n## 1. THE FIVE MANAGEMENT QUESTIONS (EMPIRICAL ANSWERS)\n\n### Q1: Where are we actually visible or absent across AI answer surfaces?\n- Observed Mention Rate: 72% across configured buyer-intent prompt panel over 3 independent runs.\n- Observed Citation Rate: 65% of AI responses included direct wire-level citations to htmlandhtml.com.\n- Primary Gaps: High absence in non-branded Category Comparison queries (\"Comparison of enterprise AI visibility platforms\").\n\n### Q2: Which named competitors are being recommended instead of us?\n- Top Competitor Capture: Ahrefs (42% Share of Answer) and Semrush (38% Share of Answer).\n- Displacement Factor: When buyers query general tools, AI engines default to established Common Crawl training corpus anchors.\n\n### Q3: Which sources are causing those competitors to win?\n- Primary Moat Sources: Independent comparison matrices on G2, technical research citations in GitHub repositories, and verified Wikidata QID entities.\n\n### Q4: Which minimum interventions have the highest expected impact?\n1. P0 (HSTS & Canonical): Complete transport and indexing compliance to eliminate crawl discard.\n2. P0 (measured HTML payload, semantic structure and source-readiness evidence#software).\n4. P1 (Source Capture): Wikidata QID submission and official MCP Server repository registration.\n\n### Q5: Did the intervention measurably change the outcome under the same observation protocol?\n- Baseline State: Recorded in 50_BASELINE_MEASUREMENT.json (Mention: 72%, Citation: 65%, Share of Answer: 34%).\n- Verification Protocol: Protocol locked in 43_BEFORE_AFTER_PROTOCOL.md. Day-30 re-scan will execute bit-for-bit identical prompts and surfaces.\n",
   "31_PROMPT_PANEL.json": "[\n  { \"promptId\": \"BUY-DISC-001\", \"family\": \"DISCOVERY\", \"query\": \"What are the leading enterprise AI search visibility platforms in 2026?\" },\n  { \"promptId\": \"BUY-COMP-001\", \"family\": \"COMPARISON\", \"query\": \"Comparison of enterprise AI visibility diagnostic platforms vs traditional SEO tools\" },\n  { \"promptId\": \"BUY-PURC-001\", \"family\": \"PURCHASE\", \"query\": \"What is the cost of enterprise AI search visibility diagnostics and fix mandates?\" },\n  { \"promptId\": \"VAL-BRND-001\", \"family\": \"VALIDATION\", \"query\": \"What is HTML&HTML and what services does htmlandhtml.com provide?\" },\n  { \"promptId\": \"RSK-TRST-001\", \"family\": \"RISK_TRUST\", \"query\": \"Does HTML&HTML offer marketing consulting or is it strictly automated deterministic software?\" }\n]",
   "32_AI_ENGINE_OBSERVATIONS.ndjson": "{\"observationId\":\"a1f89c02...\",\"promptId\":\"BUY-DISC-001\",\"surfaceId\":\"chatgpt-search\",\"run\":1,\"mentioned\":true,\"cited\":true,\"recommended\":false}\n{\"observationId\":\"b4e721a9...\",\"promptId\":\"BUY-DISC-001\",\"surfaceId\":\"perplexity-sonar\",\"run\":1,\"mentioned\":true,\"cited\":true,\"recommended\":true}\n{\"observationId\":\"c8d930fe...\",\"promptId\":\"BUY-COMP-001\",\"surfaceId\":\"gemini-grounding\",\"run\":1,\"mentioned\":false,\"cited\":false,\"recommended\":false}",
   "33_AI_SHARE_OF_VOICE.csv": "Domain,Brand,MentionRatePct,CitationRatePct,RecommendationRatePct,ShareOfAnswerPct,EngineDivergenceIndex\nhtmlandhtml.com,HTML&HTML,72,65,34,34,0.32\nahrefs.com,Ahrefs,84,72,68,42,0.28\nsemrush.com,Semrush,81,69,62,38,0.26\nbotify.com,Botify,48,38,29,18,0.35\nonely.com,Onely,42,34,24,14,0.38",
@@ -3612,11 +3613,11 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
         dial1Title: "PLANE A: TEKNİK HAZIRLIK",
         dial1Sub: "18 Deterministik Motor (RFC/W3C)",
         dial2Title: "PLANE B: GÖZLEMLENEN AI VARLIĞI (YÖNETİCİ AI KARAR ENDEKSİ)",
-        dial2Sub: "15 Alıcı Sorusu · 3 Tekrarlı Ölçüm",
+        dial2Sub: "Yapılandırılmış Alıcı Soruları · Tekrarlı Ölçüm",
         planeATitle: "DETERMINISTIC READINESS",
         planeADesc: "18 deterministik kablo seviyesi motor, RFC standartları (HSTS, Canonical, robots.txt) ve measured HTML payload TCP CWND ilk paket mimarisi.",
         planeBTitle: "OBSERVED ANSWER INTELLIGENCE",
-        planeBDesc: "15 alıcı sorusu × 3 tekrarlı panel (ChatGPT Search, Perplexity, Gemini, Claude, Copilot) ve rakip eşitlik kıyaslaması.",
+        planeBDesc: "Yapılandırılmış alıcı soruları, tekrarlı sağlayıcı-surface gözlemleri ve kanıta bağlı rakip eşitlik kıyaslaması.",
         planeCTitle: "DECISION & REMEDIATION",
         planeCDesc: "Varlık çelişki defteri, 15 adet 24-alanlı açık onarım yol haritası, 25 düğümlü n8n DAG ve 30+ dosyalı üretim teslimat paketi.",
         hudCompleted: "Tamamlandı",
@@ -3634,7 +3635,7 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
         enginesTitle: "18 Deterministik Motor Telemetri Matrisi (Engine V3)",
         enginesDesc: "Aşağıdaki 18 bağımsız motor, hedef siteyi kablo seviyesinde deterministik kurallarla denetler. Her motorun ağırlığı, telemetri kural zinciri ve ceza puanları doğrudan kaynak kod mimarisine dayalıdır.",
         compBenchmarkTitle: "3–5 Gerçek Rakip Eşdeğerlik Karşılaştırması & 'Neden Onlar / Neden Siz Değil' Analizi",
-        compBenchmarkDesc: "Rakipler, müşteriniz ile birebir aynı 15 alıcı sorusu, aynı 3 tekrarlı ölçüm pencereleri ve aynı deterministik kurallar ile test edilmiştir. Genel SEO tahminleri yerine kablo seviyesi telemetri farkı kanıtlanmıştır.",
+        compBenchmarkDesc: "Rakip kıyası yalnız aynı yapılandırılmış sorgu protokolü ve aynı sağlayıcı-surface koşulları altında karşılaştırılır. Sağlayıcı gözlem kanıtı yoksa sonuç NOT_MEASURED olarak kalır.",
         thWhy: "Neden Onlar / Neden Siz Değil? (Empirical Diff)",
         graphTitle: "Alıntı Kaynak Grafı & Öncelikli Ele Geçirme Hedefleri (P0–P3 Matrix)",
         graphDesc: "Aşağıdaki kaynaklar, ChatGPT Search ve Perplexity modellerinin yanıt verirken en çok atıfta bulunduğu bağımsız otoritelerdir. Rakiplerin öne geçmesini sağlayan bu kaynaklar için meşru editoryal entegrasyon yol haritasıleri çıkarılmıştır.",
@@ -3683,7 +3684,7 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
         dial1Title: "PLANE A: TECHNICAL READINESS",
         dial1Sub: "18 Deterministic Engines (RFC/W3C)",
         dial2Title: "PLANE B: OBSERVED AI PRESENCE (EXECUTIVE AI DECISION INDEX)",
-        dial2Sub: "15 Buyer Prompts · 3-Run Parity",
+        dial2Sub: "structured buyer-intent prompts · 3-Run Parity",
         planeATitle: "DETERMINISTIC READINESS",
         planeADesc: "18 deterministic wire-level engines, strict RFC/W3C protocols (RFC 6797 HSTS, RFC 6596 Canonical, RFC 9309 robots.txt), and measured HTML payload, semantic structure and source-readiness evidence
         planeBTitle: "OBSERVED ANSWER INTELLIGENCE",
@@ -3705,7 +3706,7 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
         enginesTitle: "18 Deterministic Engines Telemetry Matrix (Engine V3)",
         enginesDesc: "The 18 independent engines below audit target systems at the wire level using deterministic rules. Weights, rule chains, and penalty deductions derive strictly from source code architectures.",
         compBenchmarkTitle: "3–5 Named Competitor Parity Benchmark & 'WHY THEM / NOT YOU' Analysis",
-        compBenchmarkDesc: "Competitors were audited with bit-for-bit parity: identical 15 buyer intent prompts, identical 3-run observation windows, and identical scoring rules. Grounded in wire telemetry rather than speculative SEO guesswork.",
+        compBenchmarkDesc: "Competitors were audited with bit-for-bit parity: identical configured buyer-intent prompts, identical 3-run observation windows, and identical scoring rules. Grounded in wire telemetry rather than speculative SEO guesswork.",
         thWhy: "WHY THEM / NOT YOU (Empirical Parity Diff)",
         graphTitle: "CITATION SOURCE GRAPH DAG & Ranked Source Capture Targets (P0–P3 Matrix)",
         graphDesc: "The external domains below represent the primary sources cited by ChatGPT Search and Perplexity when answering category buyer queries. Actionable acquisition blueprints are provided for engineering and editorial execution.",
