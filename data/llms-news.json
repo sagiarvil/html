@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-09T02:32:06Z",
+  "lastUpdated": "2026-09-10T02:33:52Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -19095,6 +19095,104 @@
       "id": "2026-09-09-chatgpt-for-research-62379661ee74",
       "sourceUrl": "https://openai.com/academy/research",
       "publishedAt": "2026-09-09"
+    },
+    {
+      "topic": "CONVERSATIONAL_AI_AGENTS",
+      "keywords": [
+        "voice agents",
+        "chat automation",
+        "agentic workflows",
+        "lead recovery",
+        "conversational interfaces"
+      ],
+      "title": {
+        "tr": "Cars24 Milyonluk Konuşma Trafiğini Yapay Zeka Ajanlarıyla Ölçeklendiriyor",
+        "en": "Cars24 Scales Million-Minute Conversation Traffic with AI Agents"
+      },
+      "dek": {
+        "tr": "Şirket içi operasyonlarda sesli ve metin tabanlı yapay zeka ajanlarının entegrasyonu.",
+        "en": "Integration of voice and text-based AI agents across internal operational workflows."
+      },
+      "summary": {
+        "tr": "Cars24 platformu, aylık bir milyon dakikayı aşan konuşma hacmini yönetmek üzere yapay zeka destekli ses ve sohbet ajanlarını devreye aldı. Bu mimari değişim, kayıp potansiyel müşterilerin yüzde on ikisinin yeniden kazanılmasını sağlarken, organizasyon genelinde agentic (özerk ajan tabanlı) iş akışlarının yaygınlaştırılmasına zemin hazırladı. Otomasyon katmanı, müşteri etkileşimlerini hızlandırarak operasyonel verimliliği artırıyor.",
+        "en": "The Cars24 platform has deployed AI-powered voice and chat agents to manage conversational volume exceeding one million minutes monthly. This architectural shift recovered twelve percent of lost potential leads while establishing the groundwork for deploying agentic workflows across the organization. The automation layer accelerates customer interactions and improves operational efficiency."
+      },
+      "whyItMatters": {
+        "tr": "Konuşma tabanlı yapay zeka ajanları, müşteri ilişkileri yönetiminde dinamik ve kesintisiz etkileşim katmanları oluşturur. Bu ölçekteki otomasyon, geleneksel çağrı merkezi darboğazlarını aşarak lead (müşteri adayı) kaybını doğrudan azaltır ve dijital platformların yanıt verme hızını kökten değiştirir.",
+        "en": "Conversational AI agents create dynamic, uninterrupted interaction layers in customer relationship management. Automation at this scale bypasses traditional call center bottlenecks, directly mitigates lead attrition, and fundamentally transforms digital platforms' response velocity."
+      },
+      "technicalImpact": {
+        "tr": "Sesli ve metin tabanlı API entegrasyonları, gerçek zamanlı veri işleme kapasitesi gerektirir. Çok kanallı agentic sistemlerin devreye alınması, arka uç mimarilerinde gecikme sürelerinin minimize edilmesini, konuşma durum yönetimi için sağlam state machine (durum makinesi) yapılarını ve metin ile ses işleme pipeline'larının senkronize çalışmasını zorunlu kılar.",
+        "en": "Voice and text-based API integrations demand real-time data processing capabilities. Deploying multi-channel agentic systems requires minimizing latency in backend architectures, establishing robust state machine structures for conversation management, and synchronizing text and audio processing pipelines."
+      },
+      "actions": {
+        "tr": [
+          "Sesli ve metin tabanlı ajan API gecikme sürelerini uçtan uca test edin.",
+          "Kayıp lead kurtarma oranlarını ve otomasyon dönüşüm metriklerini izleyin.",
+          "Agentic iş akışlarının arka uç sistemleriyle veri tutarlılığını doğrulayın."
+        ],
+        "en": [
+          "Test end-to-end latency for voice and text-based agent APIs.",
+          "Monitor lost lead recovery rates and automation conversion metrics.",
+          "Verify data consistency between agentic workflows and backend systems."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, bildirilen metriklerin harici sistem entegrasyonlarında uzun vadeli istikrarını veya maliyet verimliliğini doğrulamamaktadır.",
+        "en": "This analysis does not validate the long-term stability or cost efficiency of reported metrics across third-party system integrations."
+      },
+      "id": "2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67",
+      "sourceUrl": "https://openai.com/index/cars24",
+      "publishedAt": "2026-09-10"
+    },
+    {
+      "topic": "ENTERPRISE_AGENTIC_SYSTEMS_SCALING",
+      "keywords": [
+        "agentic systems",
+        "enterprise AI",
+        "concurrency",
+        "governance",
+        "multi-step reasoning"
+      ],
+      "title": {
+        "tr": "Kurumsal Yapay Zeka Ajan Sistemlerinin Ölçeklendirilmesi",
+        "en": "Scaling Enterprise Agentic AI Systems"
+      },
+      "dek": {
+        "tr": "Üretim ortamlarında çok adımlı akıl yürütme, eşzamanlılık ve yönetişim mekanizmalarının entegrasyonuna teknik bir bakış.",
+        "en": "A technical look at integrating multi-step reasoning, concurrency, and governance mechanisms in production environments."
+      },
+      "summary": {
+        "tr": "Büyük dil modellerinin kurumsal düzeyde üretim iş akışlarına entegre edilmesi, eşzamanlılık, sıkı yönetişim ve güvenilir çok adımlı akıl yürütme mimarilerini zorunlu kılar. Bu güncelleme, ajan tabanlı sistemlerin kurumsal ölçekte karşılaştığı mimari zorlukları ve bu sistemlerin kararlılığını artırmak için kullanılan pratik yaklaşımları incelemektedir. Sistem güvenilirliği, sistemlerin yüksek hacimli sorguları paralel işleme yeteneği ve çıktıların denetlenebilirliği üzerinden şekillenmektedir.",
+        "en": "Integrating large language models into enterprise-grade production workflows necessitates architectures focused on concurrency, strict governance, and reliable multi-step reasoning. This update examines the architectural challenges faced by agent-based systems at enterprise scale and practical approaches used to enhance system stability. System reliability is shaped through the ability to process high-volume queries in parallel and ensure the auditability of outputs."
+      },
+      "whyItMatters": {
+        "tr": "Kurumsal arama ve yapay zeka sistemleri, basit soru-cevap döngülerinden karmaşık, çok adımlı görev otomasyonuna evrilmektedir. Bu geçiş, güvenlik, hata toleransı ve ölçeklenebilirlik açısından yeni mühendislik standartları gerektirir.",
+        "en": "Enterprise search and AI systems are evolving from simple query-response loops into complex, multi-step task automation. This transition demands new engineering standards regarding security, fault tolerance, and scalability."
+      },
+      "technicalImpact": {
+        "tr": "Eşzamanlı istek yönetimi ve çok adımlı akıl yürütme zincirleri, arka uç API yüklerini doğrudan etkiler. Yönetişim katmanlarının eklenmesi, yanıt gecikmesini artırabilir ancak sistem güvenliğini ve determinizmini korumak için kritik bir denge unsuru oluşturur.",
+        "en": "Concurrent request management and multi-step reasoning chains directly impact backend API loads. The inclusion of governance layers may increase response latency but forms a critical balance for preserving system safety and determinism."
+      },
+      "actions": {
+        "tr": [
+          "Eşzamanlı ajan yürütme testlerinde hata toleransı metriklerini inceleyin.",
+          "Çok adımlı akıl yürütme döngülerinde token maliyeti ve gecikme eşiklerini denetleyin.",
+          "Kurumsal yönetişim ve erişim denetimi katmanlarının uçtan uca çalıştığını doğrulayın."
+        ],
+        "en": [
+          "Review fault tolerance metrics during concurrent agent execution tests.",
+          "Audit token cost and latency thresholds across multi-step reasoning loops.",
+          "Verify that enterprise governance and access control layers function end-to-end."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, yalnızca sağlanan meta verilerdeki mimari odak alanlarıyla sınırlıdır ve belirli model sürümlerinin özel performans kıyaslamalarını içermez.",
+        "en": "This analysis is strictly bounded by the architectural focus areas in the provided metadata and does not include proprietary performance benchmarks of specific model versions."
+      },
+      "id": "2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18",
+      "sourceUrl": "https://openai.com/index/netomi",
+      "publishedAt": "2026-09-10"
     }
   ]
 }

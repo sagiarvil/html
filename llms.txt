@@ -164,6 +164,8 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [Cars24 Scales Million-Minute Conversation Traffic with AI Agents](https://htmlandhtml.com/en/llms-txt-news/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67/)
+- [Scaling Enterprise Agentic AI Systems](https://htmlandhtml.com/en/llms-txt-news/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18/)
 - [Five Million Dollar Research Grant Initiative for AI and Teen Development](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb/)
 - [Frontier Enterprise AI Integration Trends and Workflow Scaling](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055/)
 - [Structured Data Analysis and Source Management in Research Workflows via ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-chatgpt-for-research-62379661ee74/)
@@ -182,6 +184,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Search Central Live is Coming to Shanghai in 2026!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba/)
 - [Inside Googlebot: demystifying crawling, fetching, and the bytes we process: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d/)
 - [New Location for the Google Crawlers' IP Range Files: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200/)
-- [Search Central Live is coming to Canada: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-is-coming-to-canada-3c25683619/)
-- [Search Central Live Asia Pacific 2026: Get Ready for Sydney and more!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522/)
 <!-- LLMS_NEWS_END -->
