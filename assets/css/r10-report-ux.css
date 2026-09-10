@@ -1,0 +1,97 @@
+/* R10 report-only release guard: light-theme readability + temporary lock opening.
+   Active lock overrides depend on html.hh-r10-open / html.hh-r10-quality-open,
+   which existing campaign JS removes automatically at 2026-09-10 20:00 Türkiye time. */
+
+/* Light theme: report evidence/action surfaces must never inherit dark translucent fills. */
+html[data-theme="light"] #result .hh-evidence-block,
+html[data-theme="light"] #result .hh-first-action,
+html[data-theme="light"] #result .recipe-section,
+html[data-theme="light"] #result .locked-fix {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-color: #d7dee8 !important;
+  box-shadow: none !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] #result .hh-evidence-block strong,
+html[data-theme="light"] #result .hh-first-action strong,
+html[data-theme="light"] #result .hh-tech-details > summary,
+html[data-theme="light"] #result .hh-recipe-details > summary,
+html[data-theme="light"] #result .hh-tech-grid dt {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] #result .hh-evidence-block code,
+html[data-theme="light"] #result .recipe-code,
+html[data-theme="light"] #result .recipe-code code,
+html[data-theme="light"] #result .locked-fix-blurred,
+html[data-theme="light"] #result .locked-fix-blurred pre,
+html[data-theme="light"] #result .code-snippet-pre {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="light"] #result .hh-tech-grid dd,
+html[data-theme="light"] #result .recipe-content,
+html[data-theme="light"] #result .recipe-content p,
+html[data-theme="light"] #result .recipe-content li {
+  color: #0f172a !important;
+}
+
+/* R10 temporary opening: every known report paywall surface is visually and interactively open. */
+html.hh-r10-open #result .locked-fix,
+html.hh-r10-quality-open #result .locked-fix {
+  overflow: visible !important;
+}
+
+html.hh-r10-open #result .locked-fix-blurred,
+html.hh-r10-quality-open #result .locked-fix-blurred,
+html.hh-r10-open #result .recipe-section.locked .recipe-content,
+html.hh-r10-quality-open #result .recipe-section.locked .recipe-content {
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+  user-select: text !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+html.hh-r10-open #result .locked-fix-overlay,
+html.hh-r10-quality-open #result .locked-fix-overlay,
+html.hh-r10-open #result .recipe-section.locked .recipe-overlay,
+html.hh-r10-quality-open #result .recipe-section.locked .recipe-overlay,
+html.hh-r10-open #result .recipe-lock-icon,
+html.hh-r10-quality-open #result .recipe-lock-icon,
+html.hh-r10-open #result .recipe-badge-single-license,
+html.hh-r10-quality-open #result .recipe-badge-single-license,
+html.hh-r10-open #result .recipe-cta-unlock,
+html.hh-r10-quality-open #result .recipe-cta-unlock,
+html.hh-r10-open #result .locked-fix-btn,
+html.hh-r10-quality-open #result .locked-fix-btn,
+html.hh-r10-open #masterSingleLicenseBanner,
+html.hh-r10-quality-open #masterSingleLicenseBanner,
+html.hh-r10-open #closingInterventionDeck,
+html.hh-r10-quality-open #closingInterventionDeck {
+  display: none !important;
+}
+
+/* Keep the opened recipe itself clean in light mode during R10. */
+html[data-theme="light"].hh-r10-open #result .recipe-section.locked,
+html[data-theme="light"].hh-r10-quality-open #result .recipe-section.locked,
+html[data-theme="light"].hh-r10-open #result .locked-fix,
+html[data-theme="light"].hh-r10-quality-open #result .locked-fix {
+  background: #ffffff !important;
+  border-color: #d7dee8 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #result .recipe-content,
+  #result .locked-fix-blurred {
+    transition: none !important;
+  }
+}
