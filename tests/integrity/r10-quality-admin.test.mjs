@@ -30,5 +30,5 @@ assert.match(admin,/noindex,nofollow,noarchive,nosnippet/);
 assert.match(admin,/type="password"/);
 assert.doesNotMatch(adminApp,/localStorage|sessionStorage/);
 assert.match(cache,/quality=003/);
-assert.match(cache,/r10-quality-hotfix/);
+assert.match(cache,/r10-quality-hotfix\.js\?v=20260910-003/);
 console.log('R10_QUALITY_ADMIN_GUARD_PASS');
