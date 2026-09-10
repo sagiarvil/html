@@ -1,0 +1,8 @@
+{
+  "domain": "htmlandhtml.com",
+  "eligible": false,
+  "lastVerified": "2026-09-10",
+  "verificationMethod": "Google Preferred Sources interactive control",
+  "observedState": "Google reports the domain is currently not eligible as a Preferred Source",
+  "reenableRule": "Set eligible=true only after htmlandhtml.com is selectable in Google's Source preferences tool."
+}
