@@ -14,6 +14,16 @@ const PADDLE_API_KEY=defineSecret('PADDLE_API_KEY');
 const PADDLE_WEBHOOK_SECRET=defineSecret('PADDLE_WEBHOOK_SECRET');
 const DELIVERY_SIGNING_SECRET=defineSecret('DELIVERY_SIGNING_SECRET');
 
+const useSecretBindings=process.env.ENABLE_FIREBASE_SECRETS==='true';
+const resolveSecret=(secretParam:any,envKey:string)=>{
+  if(process.env[envKey])return String(process.env[envKey]);
+  try{
+    const v=secretParam?.value();
+    if(typeof v==='string'&&v.length>0)return v;
+  }catch{}
+  return '';
+};
+
 const common={region:'us-central1' as const,timeoutSeconds:120,memory:'256MiB' as const,cors:false,invoker:'public' as const,maxInstances:2};
 function harden(res:any){res.set('Cache-Control','no-store');res.set('X-Content-Type-Options','nosniff')}
 const mentionCfg=()=>({openaiApiKey:process.env.OPENAI_API_KEY,perplexityApiKey:process.env.PERPLEXITY_API_KEY,geminiApiKey:process.env.GEMINI_API_KEY});
@@ -139,12 +149,12 @@ export const mandate=onRequest({...common,timeoutSeconds:120,memory:'512MiB'},as
   }catch(e:any){const message=e?.message||'AI Search Visibility Roadmap generation failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
 });
 
-export const delivery=onRequest({...common,timeoutSeconds:120,memory:'512MiB',secrets:[DELIVERY_SIGNING_SECRET]},async(req,res)=>{
+export const delivery=onRequest({...common,timeoutSeconds:120,memory:'512MiB',...(useSecretBindings?{secrets:[DELIVERY_SIGNING_SECRET]}:{})},async(req,res)=>{
   harden(res);if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
   try{
     const body=req.body;const target=body?.target_url||body?.url||body?.domain;if(!target||typeof target!=='string'||!target.trim()){res.status(400).json({error:'target_url or domain required'});return}
     const orderId=typeof body?.order_id==='string'?body.order_id.trim():typeof body?.orderId==='string'?body.orderId.trim():'';
-    const adminSecret=process.env.MANDATE_ACCESS_TOKEN||'',guestSecret=DELIVERY_SIGNING_SECRET.value()||'';
+    const adminSecret=process.env.MANDATE_ACCESS_TOKEN||'',guestSecret=resolveSecret(DELIVERY_SIGNING_SECRET,'DELIVERY_SIGNING_SECRET');
     if(!adminSecret&&!guestSecret){res.status(503).json({error:'Paid delivery service is not activated: entitlement secrets are missing.'});return}
     const adminToken=String(req.get('authorization')||'').replace(/^Bearer\s+/i,'');const adminOk=Boolean(adminSecret)&&adminToken===adminSecret;
     const guestToken=String(req.get('x-htmlhtml-entitlement')||'');const guestClaims=!adminOk&&guestSecret&&orderId?await verifyGuestEntitlement(guestToken,guestSecret,target.trim(),orderId):null;
@@ -154,30 +164,33 @@ export const delivery=onRequest({...common,timeoutSeconds:120,memory:'512MiB',se
   }catch(e:any){const message=e?.message||'Delivery pack generation failed';res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message})}
 });
 
-export const paddleConfig=onRequest({...common,timeoutSeconds:30,memory:'256MiB',secrets:[PADDLE_CLIENT_TOKEN]},async(req,res)=>{
+export const paddleConfig=onRequest({...common,timeoutSeconds:30,memory:'256MiB',...(useSecretBindings?{secrets:[PADDLE_CLIENT_TOKEN]}:{})},async(req,res)=>{
   harden(res);if(req.method!=='GET'){res.status(405).json({error:'GET only'});return}
-  const token=PADDLE_CLIENT_TOKEN.value().trim();
+  const token=resolveSecret(PADDLE_CLIENT_TOKEN,'PADDLE_CLIENT_TOKEN').trim();
   const environment=token.startsWith('test_')?'sandbox':token.startsWith('live_')?'production':'unknown';
   if(environment==='unknown'){res.status(503).json({error:'Paddle checkout is not configured.'});return}
   res.status(200).json({priceId:PADDLE_PRICE_ID,productKey:PADDLE_PRODUCT_KEY,priceIdEnterprise:PADDLE_PRICE_ID_ENTERPRISE,productKeyEnterprise:PADDLE_PRODUCT_KEY_ENTERPRISE,clientToken:token,environment});
 });
 
-export const paddleEntitlement=onRequest({...common,timeoutSeconds:30,memory:'256MiB',secrets:[PADDLE_API_KEY,DELIVERY_SIGNING_SECRET]},async(req,res)=>{
+export const paddleEntitlement=onRequest({...common,timeoutSeconds:30,memory:'256MiB',...(useSecretBindings?{secrets:[PADDLE_API_KEY,DELIVERY_SIGNING_SECRET]}:{})},async(req,res)=>{
   harden(res);if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
   try{
     const body=req.body||{};const transactionId=String(body.transaction_id||body.transactionId||'').trim();const domain=String(body.domain||body.target_domain||'').trim();
     if(!transactionId||!domain){res.status(400).json({error:'transaction_id and domain required'});return}
-    const result=await issueRoadmapEntitlement(transactionId,domain,PADDLE_API_KEY.value(),DELIVERY_SIGNING_SECRET.value());
+    const apiKey=resolveSecret(PADDLE_API_KEY,'PADDLE_API_KEY');
+    const signingSecret=resolveSecret(DELIVERY_SIGNING_SECRET,'DELIVERY_SIGNING_SECRET');
+    const result=await issueRoadmapEntitlement(transactionId,domain,apiKey,signingSecret);
     if(!result.ok){res.status(result.status).json({error:'Payment is not eligible for this domain.',reason:result.reason});return}
     res.status(200).json({entitlement:result.token,order_id:result.orderId,domain:result.domain,expires_in:result.expiresIn});
   }catch(e:any){res.status(400).json({error:String(e?.message||'Paddle entitlement verification failed')})}
 });
 
-export const paddleWebhook=onRequest({...common,timeoutSeconds:30,memory:'256MiB',secrets:[PADDLE_WEBHOOK_SECRET]},async(req:any,res)=>{
+export const paddleWebhook=onRequest({...common,timeoutSeconds:30,memory:'256MiB',...(useSecretBindings?{secrets:[PADDLE_WEBHOOK_SECRET]}:{})},async(req:any,res)=>{
   harden(res);if(req.method!=='POST'){res.status(405).json({error:'POST only'});return}
   const raw=req.rawBody;if(!Buffer.isBuffer(raw)){res.status(400).json({error:'Raw webhook body required'});return}
   const rawBody=raw.toString('utf8');const signature=String(req.get('paddle-signature')||'');
-  if(!await verifyPaddleSignature(rawBody,signature,PADDLE_WEBHOOK_SECRET.value())){res.status(401).json({error:'Invalid Paddle signature'});return}
+  const webhookSecret=resolveSecret(PADDLE_WEBHOOK_SECRET,'PADDLE_WEBHOOK_SECRET');
+  if(!await verifyPaddleSignature(rawBody,signature,webhookSecret)){res.status(401).json({error:'Invalid Paddle signature'});return}
   let event:any;try{event=JSON.parse(rawBody)}catch{res.status(400).json({error:'Invalid JSON'});return}
   const eventType=String(event?.event_type||event?.eventType||'');const data=event?.data||{};
   const relevant=eventType==='transaction.completed'&&Array.isArray(data?.items)&&data.items.some((x:any)=>x?.price?.id===PADDLE_PRICE_ID || x?.price?.id===PADDLE_PRICE_ID_ENTERPRISE);
