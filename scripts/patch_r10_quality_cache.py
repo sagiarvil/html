@@ -3,7 +3,7 @@ import re
 
 TARGETS=[Path('index.html'),Path('tr/index.html'),Path('en/index.html')]
 AI='r10-20260910-2000&amp;quality=003'
-HOTFIX='/assets/js/r10-quality-hotfix.js?v=20260910-002'
+HOTFIX='/assets/js/r10-quality-hotfix.js?v=20260910-003'
 for path in TARGETS:
     text=path.read_text(encoding='utf-8')
     text=re.sub(r'\n?<script src="/assets/js/r10-quality-hotfix\.js\?v=[^"]+" defer></script>','',text)
