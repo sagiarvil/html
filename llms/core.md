@@ -1,4 +1,4 @@
-# htmlandhtml.com — Corporate Identity, E-E-A-T & Authority Specification
+﻿# htmlandhtml.com — Corporate Identity, E-E-A-T & Authority Specification
 > Standard: LLMs.txt v1.1 RFC | Canonical: https://htmlandhtml.com/llms/core.md
 > Last Semantic Validation: 2026-09-07T22:00:00+03:00
 > Information Gain: Registered Enterprise Entity & Sovereign Verification Matrix
@@ -27,7 +27,7 @@ Thing
 
 ## 4. Operational & Pricing Boundary
 - **Free Diagnostic Layer**: $0 Free diagnosis measuring 18 engines, 105 controls, and 13 non-scoring intelligence analyses without credit card or registration.
-- **Fix Mandate / Repair Kit**: $99 one-time purchase delivering 22 production-grade files including 30 custom per-page LLMS.TXT surfaces, Priority Roadmap (.md + .ics), Acceptance Tests, Rollback Plans, and deterministic score projections.
+- **Fix Mandate / Repair Kit**: $99 one-time purchase delivering 30+ versioned production-grade files including 30 custom per-page machine-surface files, Priority Roadmap (.md + .ics), Acceptance Tests, Rollback Plans, and deterministic score projections.
 - **No Agency Contracts**: htmlandhtml does not offer custom software development or marketing consulting services. All deliveries are deterministic digital toolkits.
 
 ## 5. Contact & Support

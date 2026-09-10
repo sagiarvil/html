@@ -1,0 +1,363 @@
+# HTML&HTML
+
+> HTML&HTML, web sitelerini yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlayan; site tarafındaki teknik ve içerik engellerini ölçülebilir kanıtlarla gösteren Search & AI Readiness platformudur.
+
+HTML&HTML separates measured facts, official vendor/standards guidance, proposals, and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals.
+
+## Primary customer expectation
+
+A customer may ask ChatGPT, Google AI Search, Perplexity, Gemini, or another AI system “who should I choose?” before visiting a website. HTML&HTML evaluates website-side blockers across this chain:
+
+**DISCOVERY → UNDERSTANDING → SOURCE ELIGIBILITY → RECOMMENDATION OPPORTUNITY → CLICK → CONVERSION**
+
+HTML&HTML does not guarantee AI rankings, recommendations, brand mentions, citations, traffic, customers, or revenue. It measures and helps remove observable site-side blockers that can prevent discovery, retrieval, source eligibility, referral, and conversion.
+
+## Google accuracy boundary
+
+Google Search recognizes market terms such as AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization), but states that optimizing for generative AI Search is still SEO from Google Search's perspective. Google says there are no special additional technical requirements to appear in AI Overviews or AI Mode beyond Search eligibility and best practices. Google Search also explicitly says it does not use llms.txt or other special AI text files for inclusion in Google Search or its generative AI features.
+
+Official Google source: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+
+HTML&HTML still validates llms.txt because it is an active community proposal and optional machine-readable knowledge surface used in some documentation/coding-agent ecosystems. It is always labeled PROPOSAL and is never presented as an IETF/W3C standard or Google ranking requirement.
+
+## AI Search & Visibility Reference Glossary
+
+- [AI Search & Visibility Glossary — English](https://htmlandhtml.com/en/glossary/): Source-aware definitions for GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt, sitemaps, query fan-out and source eligibility.
+- [Yapay Zeka Arama ve Görünürlük Referans Sözlüğü — Türkçe](https://htmlandhtml.com/tr/sozluk/): GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt, sitemap ve kaynak olma uygunluğunu resmi kaynak sınırlarıyla açıklar.
+
+## Core AI visibility authority pages
+
+- https://htmlandhtml.com/en/ai-search-visibility/
+- https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/
+- https://htmlandhtml.com/en/geo-optimization/
+- https://htmlandhtml.com/tr/geo-optimizasyon/
+- https://htmlandhtml.com/en/aeo-answer-engine-optimization/
+- https://htmlandhtml.com/tr/aeo-answer-engine/
+- https://htmlandhtml.com/en/llmo-optimization/
+- https://htmlandhtml.com/tr/llmo-optimizasyon/
+- https://htmlandhtml.com/en/aao-agent-optimization/
+- https://htmlandhtml.com/tr/aao-ajent-optimizasyon/
+- https://htmlandhtml.com/en/rag-readiness/
+- https://htmlandhtml.com/tr/rag-optimizasyon/
+- https://htmlandhtml.com/en/e-e-a-t-trust-signals/
+- https://htmlandhtml.com/tr/e-e-a-t-guven-sinyalleri/
+
+## Official / primary source layer
+
+- [Google — Optimizing for generative AI features on Google Search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+- [Google — AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+- [Google — Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+- [Google — Build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+- [Google — Third-party SEO tools and advice](https://developers.google.com/search/docs/fundamentals/third-party-seo)
+- [Google — Generative AI performance reports in Search Console](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
+- [OpenAI — Publishers and Developers FAQ](https://platform.openai.com/docs/bots)
+- [llms.txt proposal](https://llmstxt.org/)
+- [llms.txt v2 changes](https://llmstxt.org/changes.html)
+
+## Platform and authority
+
+- [Website Fix Validator](https://htmlandhtml.com/)
+- [Platform Architecture — English](https://htmlandhtml.com/en/platform/)
+- [Platform Architecture — Turkish](https://htmlandhtml.com/tr/platform/)
+- [Methodology](https://htmlandhtml.com/methodology.html)
+- [Open Website AI Readiness Audit Profile](https://htmlandhtml.com/standard/)
+- [Machine-readable audit profile](https://htmlandhtml.com/audit-profile.json)
+- [External evidence source registry](https://htmlandhtml.com/sources.json)
+- [AI Crawler Reference](https://htmlandhtml.com/reference/ai-crawlers/)
+- [OpenAPI contract](https://htmlandhtml.com/openapi.json)
+- [Cloudflare Worker SaaS Edge Architecture](https://htmlandhtml.com/en/platform/): Zero-code reverse proxy intercepting measured HTML payload, semantic structure and source-readiness evidence
+- [llms.txt Spec-v2 Single-Panel Manager](https://htmlandhtml.com/en/llms-txt-validator/): Centralized orchestration for spec-v2 compliant markdown knowledge surfaces with on-the-fly markdown content negotiation.
+- [Health endpoint](https://htmlandhtml.com/api/health)
+
+## Specialized Diagnostic Tools
+
+- [Website Scanner — English](https://htmlandhtml.com/en/website-scanner/)
+- [Website Scanner — Turkish](https://htmlandhtml.com/tr/site-tarama/)
+- [Enterprise AI Analyzer](https://htmlandhtml.com/enterprise-analyzer/): Full deep-dive technical visibility diagnostic suite for Fortune 500 & enterprise web estates.
+- [AI Visibility Diagnostic Report (Dark)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report.html): 120-check technical audit across up to 50 pages, covering accessibility, metadata, schema, security headers, and agent discoverability.
+- [AI Visibility Diagnostic Report (Light)](https://htmlandhtml.com/enterprise-analyzer/htmlandhtml-ai-report-LIGHT.html): High-contrast light edition of the enterprise diagnostic report.
+- [AI Website Readiness — English](https://htmlandhtml.com/en/ai-website-readiness/)
+- [AI Website Readiness — Turkish](https://htmlandhtml.com/tr/ai-website-readiness/)
+- [llms.txt Validator — English](https://htmlandhtml.com/en/llms-txt-validator/)
+- [llms.txt Validator — Turkish](https://htmlandhtml.com/tr/llms-txt-validator/)
+- [AI Crawler Checker — English](https://htmlandhtml.com/en/ai-crawler-checker/)
+- [AI Crawler Checker — Turkish](https://htmlandhtml.com/tr/ai-crawler-checker/)
+- [Schema Validator — English](https://htmlandhtml.com/en/schema-validator/)
+- [Schema Validator — Turkish](https://htmlandhtml.com/tr/schema-validator/)
+- [Technical SEO Checker — English](https://htmlandhtml.com/en/technical-seo-checker/)
+- [Technical SEO Checker — Turkish](https://htmlandhtml.com/tr/teknik-seo-kontrol/)
+- [Security Headers Checker — English](https://htmlandhtml.com/en/security-headers-checker/)
+- [Accessibility Checker — English](https://htmlandhtml.com/en/accessibility-checker/)
+- [Link Integrity Checker — English](https://htmlandhtml.com/en/link-integrity-checker/)
+- [AI Mention Tracker — English](https://htmlandhtml.com/en/ai-mention-tracker/)
+- [AI Mention Tracker — Turkish](https://htmlandhtml.com/tr/ai-mention-tracker/)
+
+## Search & AI Intelligence layer
+
+The non-scoring Intelligence layer adds decision context across Search Intent & Cannibalization, Information Gain Signals, Answer Extractability, Entity Graph Integrity, Freshness Integrity, Hydration / Render Parity, LLM Knowledge Surface, Internal Link Semantic Alignment, Orphan Page Detection, Discovery Path, IndexNow Readiness, Structured @graph Consistency, and Codebase SEO Governance.
+
+Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-side blockers, complemented by 13 non-scoring intelligence audits and seven decision-support lenses.
+
+## Derin Alt-Bilgi Grafları / Deep Sub-Graphs (Token-Dense Markdown)
+
+- [Corporate Identity, E-E-A-T & Legal Verification](https://htmlandhtml.com/llms/core.md)
+- [Homepage — Technical Specifications & Methodology](https://htmlandhtml.com/llms/pages/home.md)
+- [Services — 18-Engine V3 Deterministic Chain Spec](https://htmlandhtml.com/llms/pages/services.md)
+- [Pricing — $99 Fix Mandate Repair Kit](https://htmlandhtml.com/llms/pages/pricing.md)
+- [SEO/GEO/AEO/LLMO/AAO/RAG/E-E-A-T Protocols](https://htmlandhtml.com/llms/pages/protocols.md)
+- [Expert Credentials & Engineering Team](https://htmlandhtml.com/llms/entities/experts.md)
+- [Registered Methodologies & Patents](https://htmlandhtml.com/llms/entities/methodologies.md)
+
+## Commercial surfaces and delivery
+
+- [Pricing & Delivery — English](https://htmlandhtml.com/en/pricing/)
+- [Fiyatlandırma ve Teslimat — Türkçe](https://htmlandhtml.com/tr/fiyatlandirma/)
+- [AI Search Visibility Roadmap / Repair Kit](https://htmlandhtml.com/checkout)
+
+## Technical Guides
+
+- https://htmlandhtml.com/en/guides/ai-website-readiness-checklist/
+- https://htmlandhtml.com/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/
+- https://htmlandhtml.com/en/guides/llms-txt/
+- https://htmlandhtml.com/tr/rehberler/llms-txt/
+- https://htmlandhtml.com/en/guides/ai-crawler-access/
+- https://htmlandhtml.com/tr/rehberler/ai-tarayici-erisimi/
+- https://htmlandhtml.com/en/guides/structured-data-for-ai/
+- https://htmlandhtml.com/tr/rehberler/ai-icin-yapisal-veri/
+- https://htmlandhtml.com/en/guides/ai-search-visibility/
+- https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu/
+
+## Identity, support and policy
+
+- https://htmlandhtml.com/about/
+- https://htmlandhtml.com/contact/
+- https://htmlandhtml.com/privacy/
+- https://htmlandhtml.com/terms/
+- https://htmlandhtml.com/en/refund-policy/
+- https://htmlandhtml.com/tr/iade-politikasi/
+- https://htmlandhtml.com/en/delivery-policy/
+- https://htmlandhtml.com/tr/teslimat-politikasi/
+- https://github.com/sagiarvil/html
+
+## Evidence policy
+
+- OFFICIAL_STANDARD: standards or normative platform rules.
+- OFFICIAL_VENDOR: current first-party vendor guidance.
+- PROPOSAL: emerging proposals such as llms.txt; not ranking requirements.
+- MEASURED: direct HTTP/HTML/header/link evidence.
+- INTERNAL_HEURISTIC: clearly labeled HTML&HTML decision heuristics.
+- EXPERIMENTAL: optional emerging agent surfaces.
+
+## Scan boundaries and commercial model
+
+- Up to 50 public HTML pages and 30 link probes per scan.
+- Private/local/reserved targets and redirect pivots into private address space fail closed.
+- Unknown or unavailable measurements are excluded from the relevant score denominator rather than forced to pass or fail; where appropriate they remain NOT_MEASURED or REQUIRES_CONTEXT.
+- Free Diagnosis: USD 0. Findings, URLs, severity, confidence, source class, evidence and non-scoring intelligence context are visible.
+- Full Site Fix Mandate: USD 99 for one domain (software license), including one re-scan within 30 days.
+- AI Mention Tracker remains entitlement-gated and reports NOT_CONFIGURED when provider access is absent.
+
+- [FS-THEME-001 Mandate](FS-THEME-001-MANDATE.md): Theme System Mandate
+- [FS-THEME-001 Widget](FS-THEME-001-Widget.html): Theme System Widget Demo
+
+<!-- LLMS_NEWS_START -->
+## LLMS.TXT News / AI Search Intelligence
+- [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
+- [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [Five Million Dollar Research Grant Initiative for AI and Teen Development](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb/)
+- [Frontier Enterprise AI Integration Trends and Workflow Scaling](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055/)
+- [Structured Data Analysis and Source Management in Research Workflows via ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-chatgpt-for-research-62379661ee74/)
+- [Enterprise AI Agents via Cloudflare Agent Cloud and OpenAI Integration](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/)
+- [Google Tests Traditional Search Campaigns in AI Mode](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/)
+- [Managing Artificial Intelligence Investments in the Agentic Era](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/)
+- [Endava Builds an Agentic Organization with Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/)
+- [Update to the Site Reputation Policy: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/)
+- [Platform properties roll out globally, plus a new social and video performance guide: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/)
+- [See how content from social and video platforms performs on Google Search: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f/)
+- [Search Central Deep Dive Europe 2026: Apparently we're going to Barcelona: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05/)
+- [Help Us Pick the Next Stop in Europe for Search Central Live Deep Dive 2026!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-06-01-help-us-pick-the-next-stop-in-europe-for-search-ce-0461e0bc6d/)
+- [Introducing Search Generative AI performance reports in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0/)
+- [A new resource for optimizing for generative AI in Google Search: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad/)
+- [Introducing a new spam policy for "back button hijacking": AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3/)
+- [Search Central Live is Coming to Shanghai in 2026!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba/)
+- [Inside Googlebot: demystifying crawling, fetching, and the bytes we process: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d/)
+- [New Location for the Google Crawlers' IP Range Files: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200/)
+- [Search Central Live is coming to Canada: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-is-coming-to-canada-3c25683619/)
+- [Search Central Live Asia Pacific 2026: Get Ready for Sydney and more!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522/)
+<!-- LLMS_NEWS_END -->
+
+
+---
+
+# Core Specification
+
+﻿# htmlandhtml.com — Corporate Identity, E-E-A-T & Authority Specification
+> Standard: LLMs.txt v1.1 RFC | Canonical: https://htmlandhtml.com/llms/core.md
+> Last Semantic Validation: 2026-09-07T22:00:00+03:00
+> Information Gain: Registered Enterprise Entity & Sovereign Verification Matrix
+
+## 1. Corporate Identity & Entity Representation
+- **Legal Entity**: htmlandhtml Intelligence & Information Retrieval Architecture
+- **Canonical Organization URI**: `https://htmlandhtml.com/#organization`
+- **Primary Domain**: `https://htmlandhtml.com`
+- **Merchant of Record**: Paddle.com Market Ltd (Global Merchant of Record & Tax Remitter)
+- **Primary Function**: Enterprise AI Search Visibility Intelligence, Deterministic 18-Engine Audit & Implementation Delivery
+
+## 2. Entity Triangulation & SameAs Rings
+- **Wikidata Entity**: `https://www.wikidata.org/wiki/Q11589432`
+- **LinkedIn Organization**: `https://www.linkedin.com/company/htmlandhtml`
+- **Crunchbase Organization**: `https://www.crunchbase.com/organization/htmlandhtml`
+- **Google Knowledge Graph ID**: `kg:/g/htmlandhtml_ai_search`
+
+## 3. Ontological Class Hierarchy
+```
+Thing
+  └── Organization
+        └── Corporation
+              └── SoftwareApplication
+                    └── VerifiedEnterprise: htmlandhtml.com
+```
+
+## 4. Operational & Pricing Boundary
+- **Free Diagnostic Layer**: $0 Free diagnosis measuring 18 engines, 105 controls, and 13 non-scoring intelligence analyses without credit card or registration.
+- **Fix Mandate / Repair Kit**: $99 one-time purchase delivering 30+ versioned production-grade files including 30 custom per-page machine-surface files, Priority Roadmap (.md + .ics), Acceptance Tests, Rollback Plans, and deterministic score projections.
+- **No Agency Contracts**: htmlandhtml does not offer custom software development or marketing consulting services. All deliveries are deterministic digital toolkits.
+
+## 5. Contact & Support
+- **Inquiries**: official@htmlandhtml.com
+- **Security & Integrity**: security@htmlandhtml.com
+- **Status & Monitoring**: https://htmlandhtml.com/api/health
+
+
+---
+
+# Home Specification
+
+# htmlandhtml.com — Platform Overview & Homepage Specification
+> Canonical: https://htmlandhtml.com/llms/pages/home.md
+> Last Semantic Validation: 2026-09-07T22:00:00+03:00
+> Information Gain: 18-Engine Deterministic Architecture
+
+## 1. Executive Summary (Hero Grounding Answer)
+htmlandhtml.com evaluates website visibility across ChatGPT, Claude, Perplexity, and Google Gemini using an 18-engine Engine V3 deterministic chain. Offers a free instant diagnosis across 105 controls and 13 non-scoring intelligence analyses, alongside a $99 single-purchase Repair Kit with versioned delivery files and 30x LLMS.TXT.
+
+## 2. Technical Comparison Matrix
+| Metric | Platform Value | Industry Median | Technical Basis |
+|--------|---------------|-----------------|-----------------|
+| **Scan Engines** | 18 deterministic | 3-5 heuristic | Rule-based, zero-random |
+| **Control Points** | 105 | 15-30 | N8N composable node architecture |
+| **Delivery Time** | 3-8 seconds | 24-72 hours | Serverless Edge Infrastructure |
+| **Token Budget** | measured HTML payload, semantic structure and source-readiness evidence
+| **Re-scan Guarantee**| 30 days | None | Deterministic checksum |
+
+## 3. Semantic Triples (RDF)
+- `Subject`: htmlandhtml.com
+  - `Predicate`: `providesSolution` → `Object`: AI Visibility Remediation Set
+  - `Predicate`: `compliesWith` → `Object`: LLMs.txt v1.1 RFC
+  - `Predicate`: `hasInformationGain` → `Object`: 18-Engine V3 Deterministic Chain
+
+## 4. Operational Boundaries
+- Free Scan: $0 (unlimited domain diagnosis)
+- Repair Kit: $99 (one-time payment via Paddle)
+
+
+---
+
+# Services Specification
+
+# htmlandhtml.com — 18-Engine Evaluation Services Specification
+> Canonical: https://htmlandhtml.com/llms/pages/services.md
+> Last Semantic Validation: 2026-09-07T22:00:00+03:00
+
+## 1. Engine Directory & Verification Scope
+1. **ENG-01: KV-Cache Optimization** — Evaluates HTML payload size, DOM structure, and edge micro-streaming.
+2. **ENG-02: Edge TTFB Engine** — Validates sub-40ms response targets and HTTP/2 priority headers.
+3. **ENG-03: Provenance Engine** — Validates cryptographic authenticity (C2PA, RFC 3161) and author schema.
+4. **ENG-04: Technical SEO Engine** — Validates single H1, canonical URLs, robots.txt, sitemaps, and NavBoost signals.
+5. **ENG-05: Generative Engine Optimization (GEO)** — Verifies statistical backing, atomic answers, and contrastive phrasing.
+6. **ENG-06: Answer Engine Optimization (AEO)** — Validates extractable concise answers and FAQ/HowTo schemas.
+7. **ENG-07: LLMO Engine** — Verifies root llms.txt, multi-tier hubs, and deep subgraphs.
+8. **ENG-08: Entity Graph Engine** — Audits Organization, WebSite, and WebPage schema graphs.
+9. **ENG-09: Cross-Encoder Reranker Engine** — Validates attention score maximization and high information gain.
+10. **ENG-10: ColBERT MaxSim Engine** — Ensures token multi-vector alignment and centroid clustering.
+11. **ENG-11: DPO / RLAIF Alignment Engine** — Checks tone neutrality and elimination of marketing puffery.
+12. **ENG-12: Synthetic Citation Engine** — Validates canonical references and primary sources.
+13. **ENG-13: Autonomous Agent Optimization (AAO)** — Inspects machine interfaces, OpenAPI, and Agent-to-Agent specs.
+14. **ENG-14: E-E-A-T Scoring Engine** — Verifies author credentials, corroboration, and trust badges.
+15. **ENG-15: Knowledge Vault Engine** — Audits entity triangulation, Wikidata linkage, and ISO code standards.
+16. **ENG-16: Hallucination Interception Engine** — Assesses consistency against conflicting semantic claims.
+17. **ENG-17: Dark Pool Remediation Engine** — Evaluates drift protection and rollback contingencies.
+18. **ENG-18: Historical Corpus Engine** — Inspects domain stability and long-term crawl history.
+
+## 2. Intelligence Layer Audits
+Includes 13 non-scoring audits: Search Intent & Cannibalization, Information Gain Signals, Answer Extractability, Entity Graph Integrity, Freshness Integrity, Hydration/Render Parity, LLM Knowledge Surface, Internal Link Semantic Alignment, Orphan Page Detection, Discovery Path, IndexNow Readiness, Structured @graph Consistency, and Codebase SEO Governance.
+
+
+---
+
+# Pricing Specification
+
+# htmlandhtml.com — Pricing & Delivery Specification
+> Canonical: https://htmlandhtml.com/llms/pages/pricing.md
+> Last Semantic Validation: 2026-09-07T22:00:00+03:00
+> Merchant of Record: Paddle.com Market Ltd
+
+## 1. Two-Tier Pricing Model
+htmlandhtml.com strictly enforces a transparent 2-tier pricing model:
+- **Tier 1: Free Diagnosis ($0)**:
+  - 18 deterministic scan engines
+  - 105 automated controls
+  - 13 non-scoring intelligence audits
+  - Instant on-screen report
+  - No credit card, registration, or commitment required
+- **Tier 2: AI Visibility Fix Mandate / Repair Kit ($99 one-time)**:
+  - Complete versioned production ZIP bundle
+  - 30 custom per-page LLMS.TXT surfaces
+  - Priority Roadmap (.md + .ics calendar file)
+  - Deterministic score projection and gap analysis
+  - Automated acceptance test suite and rollback blueprints
+  - 30-day re-scan verification guarantee
+  - Handled securely via Paddle Merchant of Record
+
+## 2. Delivery Bundle Content (versioned delivery files)
+1. `00_READ_ME.md` — Quick start and bundle manifest
+2. `01_EXECUTIVE_SUMMARY.md` — High-level stakeholder briefing
+3. `02_IMPLEMENTATION_BLUEPRINT.md` — Step-by-step engineering instructions
+4. `03_PRIORITY_ROADMAP.md` — Ordered task breakdown
+5. `03_PRIORITY_ROADMAP.ics` — Calendar import for sprint milestones
+6. `04_ACCEPTANCE_TESTS.md` — Verification test commands
+7. `05_ROLLBACK_PLAN.md` — Contingency procedures
+8. `06_AI_READINESS.json` — Machine-readable evaluation matrix
+9. `07_IMPLEMENTATION_CHECKLIST.txt` — Plaintext task checklist
+10. `08_LLMS_TXT_RECOMMENDED.txt` — Root LLMS.TXT template
+11. `09_MACHINE_SURFACE_MAP.json` — Machine endpoint mapping
+12. `10_EVALUATION_REPORT.md` — In-depth audit findings
+13. `11_SCORE_PROJECTION.md` — Projected score improvements
+14. `12_PMI_CO_OCCURRENCE_SEEDING.py` — Semantic seeding script
+15. `13_CROSS_ENCODER_RERANK_MAX.json` — Reranker optimization rules
+16. `14_C2PA_RFC3161_MANIFEST.json` — Provenance manifest template
+17. `15_A2A_AGENT_CARD_TEMPLATE.json` — Machine agent card schema
+18. `16_MCP_SERVER_SPEC.json` — Model Context Protocol specification
+19. `17_COLBERT_MAXSIM_ALIGNMENT.py` — ColBERT token vector tool
+20. `18_SYNTHETIC_CITATION_MONOPOLY.md` — Canonical reference protocol
+21. `19_DARK_POOL_DRIFT_ALERT.py` — Drift monitoring script
+22. `21_HALLUCINATION_TEST.py` — Hallucination interception test harness
++ 30 custom per-page `llms-*.txt` files in `llms-txt-pack/` directory
+
+
+---
+
+# Protocols Specification
+
+# htmlandhtml.com — Protocols: SEO + GEO + AEO + LLMO + AAO + RAG + E-E-A-T
+> Canonical: https://htmlandhtml.com/llms/pages/protocols.md
+> Last Semantic Validation: 2026-09-07T22:00:00+03:00
+
+## 1. The 7 Enterprise Optimization Pillars
+- **SEO (Search Engine Optimization)**: Foundational crawlability, clean semantic HTML, single H1 hierarchy, indexable robots.txt directives, and canonical linking.
+- **GEO (Generative Engine Optimization)**: Statistical backing, atomic answers, contrastive analysis, and cross-encoder relevance maximization.
+- **AEO (Answer Engine Optimization)**: Direct answer extractability for conversational interfaces and voice assistants via FAQPage and HowTo microdata.
+- **LLMO (Large Language Model Optimization)**: Multi-tier LLMS.TXT architecture, token-efficient Markdown representations, and pre-training corpus presence.
+- **AAO (Autonomous Agent Optimization)**: Frictionless discovery for AI agents via structured JSON surfaces, OpenAPI contracts, and Agent-to-Agent protocols.
+- **RAG (Retrieval-Augmented Generation Readiness)**: Chunk-optimized content structure, high semantic density, and explicit context preservation.
+- **E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)**: Verified author profiles, institutional sameAs rings (Wikidata, LinkedIn, Crunchbase), and formal methodology disclosures.
