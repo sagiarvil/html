@@ -155,7 +155,7 @@ jobs:
           if(x.scanStatsTelemetry!==true) throw new Error('scan telemetry flag missing');
           NODE
 
-          admin="$(curl -fsS --retry 5 --retry-delay 2 --connect-timeout 8 --max-time 30 https://htmlandhtml.com/admin/)"
+          admin="$(curl -fsSL --retry 5 --retry-delay 2 --connect-timeout 8 --max-time 30 https://htmlandhtml.com/admin)"
           grep -Fq 'Yönetici İstatistik Paneli' <<<"$admin"
           grep -Fq 'noindex,nofollow,noarchive,nosnippet' <<<"$admin"
 
