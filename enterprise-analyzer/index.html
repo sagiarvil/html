@@ -1973,15 +1973,19 @@
 </footer>
 
 <!-- Sticky Action Bar -->
-<div class="action-bar" id="actionBar">
-  <div class="action-bar-inner">
-    <span class="action-bar-text">
-      <span class="highlight">15 Enterprise Remediation Roadmaps</span> Locked — Unlock All
+<div class="action-bar" id="actionBar" style="background:#0f172a;">
+  <div class="action-bar-inner" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <span class="action-bar-text" style="color:#f8fafc;font-size:13px;font-weight:600;">
+      <span style="color:#10b981;font-weight:700;">✓ 15 Enterprise Remediation Recipes Unlocked</span> — Instant Code &amp; ZIP Pack
     </span>
-    <button class="action-bar-btn" id="actionBarBtn" type="button">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      $99 — Unlock All Remediation Roadmaps
-    </button>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="action-bar-btn" type="button" onclick="window.print()" style="background:#0284c7;color:#fff;border:none;padding:8px 14px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+        📄 Full PDF Report
+      </button>
+      <button class="action-bar-btn" id="actionBarBtn" type="button" onclick="generateEnterpriseZip()" style="background:#10b981;color:#fff;border:none;padding:8px 16px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+        📦 Download 30+ File ZIP ($99 Value)
+      </button>
+    </div>
   </div>
 </div>
 
