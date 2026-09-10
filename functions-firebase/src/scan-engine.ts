@@ -18,7 +18,72 @@ function ipv4Parts(ip:string){const p=ip.split('.');if(p.length!==4||p.some(x=>!
 function privateIPv4(ip:string){const p=ipv4Parts(ip);if(!p)return false;return p[0]===10||p[0]===127||p[0]===0||(p[0]===169&&p[1]===254)||(p[0]===172&&p[1]>=16&&p[1]<=31)||(p[0]===192&&p[1]===168)||(p[0]===100&&p[1]>=64&&p[1]<=127)||(p[0]===198&&(p[1]===18||p[1]===19))||p[0]>=224}
 function privateIPv6(ip:string){const v=ip.toLowerCase();return v==='::1'||v==='::'||v.startsWith('fc')||v.startsWith('fd')||v.startsWith('fe8')||v.startsWith('fe9')||v.startsWith('fea')||v.startsWith('feb')||v.startsWith('::ffff:127.')||v.startsWith('::ffff:10.')||v.startsWith('::ffff:192.168.')}
 function normalize(input:string){let s=input.trim();if(!/^https?:\/\//i.test(s))s='https://'+s;const u=new URL(s);if(!['https:','http:'].includes(u.protocol))throw new Error('Only HTTP/HTTPS supported');if(u.username||u.password)throw new Error('Credentials in URL are not allowed');if(u.port&&!['80','443'].includes(u.port))throw new Error('Non-standard ports are not allowed');const h=u.hostname.toLowerCase().replace(/^\[|\]$/g,'');if(privateName(h)||privateIPv4(h)||privateIPv6(h)||h.includes(':'))throw new Error('Private or local targets are not allowed');u.hash='';return u}
-async function resolvePublic(host:string){const cleanHost=host.toLowerCase().replace(/\.+$/,'');if(privateName(cleanHost)||privateIPv4(cleanHost)||privateIPv6(cleanHost)||cleanHost.includes(':'))throw new Error('Private or local targets are not allowed');if(ipv4Parts(cleanHost))return;const headers={accept:'application/dns-json'};const qs=encodeURIComponent(cleanHost);let answers:string[]=[];const [a,aaaa]=await Promise.allSettled([fetch(`https://cloudflare-dns.com/dns-query?name=${qs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)}),fetch(`https://cloudflare-dns.com/dns-query?name=${qs}&type=AAAA&cd=1`,{headers,signal:AbortSignal.timeout(3500)})]);for(const item of [a,aaaa]){if(item.status!=='fulfilled'||!item.value.ok)continue;try{const j:any=await item.value.json();answers.push(...(j.Answer||[]).map((x:any)=>String(x.data||'').trim()).filter(Boolean))}catch{}}if(!answers.length){const [ga,gaaaa]=await Promise.allSettled([fetch(`https://dns.google/resolve?name=${qs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)}),fetch(`https://dns.google/resolve?name=${qs}&type=AAAA&cd=1`,{headers,signal:AbortSignal.timeout(3500)})]);for(const item of [ga,gaaaa]){if(item.status!=='fulfilled'||!item.value.ok)continue;try{const j:any=await item.value.json();answers.push(...(j.Answer||[]).map((x:any)=>String(x.data||'').trim()).filter(Boolean))}catch{}}}const hasIp=answers.some(x=>Boolean(ipv4Parts(x))||x.includes(':'));if(!hasIp&&answers.length){const cnameTarget=answers[0].replace(/\.+$/,'');if(cnameTarget&&cnameTarget!==cleanHost&&!privateName(cnameTarget)){const cnameQs=encodeURIComponent(cnameTarget);const [ca,caaaa]=await Promise.allSettled([fetch(`https://cloudflare-dns.com/dns-query?name=${cnameQs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)}),fetch(`https://dns.google/resolve?name=${cnameQs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)})]);for(const item of [ca,caaaa]){if(item.status!=='fulfilled'||!item.value.ok)continue;try{const j:any=await item.value.json();answers.push(...(j.Answer||[]).map((x:any)=>String(x.data||'').trim()).filter(Boolean))}catch{}}}}if(!answers.length)throw new Error('DNS resolution failed');for(const ip of answers){if(privateIPv4(ip)||privateIPv6(ip))throw new Error('Target resolves to a private or reserved address')}
+async function resolvePublic(host:string){
+  const cleanHost=host.toLowerCase().replace(/\.+$/,'');
+  if(privateName(cleanHost)||privateIPv4(cleanHost)||privateIPv6(cleanHost)||cleanHost.includes(':'))throw new Error('Private or local targets are not allowed');
+  if(ipv4Parts(cleanHost))return;
+  let asciiHost=cleanHost;
+  try{asciiHost=new URL(`https://${cleanHost}`).hostname}catch{}
+  const headers={accept:'application/dns-json'};
+  const qs=encodeURIComponent(asciiHost);
+  let answers:string[]=[];
+  const [a,aaaa]=await Promise.allSettled([
+    fetch(`https://cloudflare-dns.com/dns-query?name=${qs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)}),
+    fetch(`https://cloudflare-dns.com/dns-query?name=${qs}&type=AAAA&cd=1`,{headers,signal:AbortSignal.timeout(3500)})
+  ]);
+  for(const item of [a,aaaa]){
+    if(item.status!=='fulfilled'||!item.value.ok)continue;
+    try{
+      const j:any=await item.value.json();
+      answers.push(...(j.Answer||[]).map((x:any)=>String(x.data||'').trim()).filter(Boolean))
+    }catch{}
+  }
+  if(!answers.length){
+    const [ga,gaaaa]=await Promise.allSettled([
+      fetch(`https://dns.google/resolve?name=${qs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)}),
+      fetch(`https://dns.google/resolve?name=${qs}&type=AAAA&cd=1`,{headers,signal:AbortSignal.timeout(3500)})
+    ]);
+    for(const item of [ga,gaaaa]){
+      if(item.status!=='fulfilled'||!item.value.ok)continue;
+      try{
+        const j:any=await item.value.json();
+        answers.push(...(j.Answer||[]).map((x:any)=>String(x.data||'').trim()).filter(Boolean))
+      }catch{}
+    }
+  }
+  const hasIp=answers.some(x=>Boolean(ipv4Parts(x))||x.includes(':'));
+  if(!hasIp&&answers.length){
+    const cnameTarget=answers[0].replace(/\.+$/,'');
+    if(cnameTarget&&cnameTarget!==cleanHost&&cnameTarget!==asciiHost&&!privateName(cnameTarget)){
+      let cnameAscii=cnameTarget;
+      try{cnameAscii=new URL(`https://${cnameTarget}`).hostname}catch{}
+      const cnameQs=encodeURIComponent(cnameAscii);
+      const [ca,caaaa]=await Promise.allSettled([
+        fetch(`https://cloudflare-dns.com/dns-query?name=${cnameQs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)}),
+        fetch(`https://dns.google/resolve?name=${cnameQs}&type=A&cd=1`,{headers,signal:AbortSignal.timeout(3500)})
+      ]);
+      for(const item of [ca,caaaa]){
+        if(item.status!=='fulfilled'||!item.value.ok)continue;
+        try{
+          const j:any=await item.value.json();
+          answers.push(...(j.Answer||[]).map((x:any)=>String(x.data||'').trim()).filter(Boolean))
+        }catch{}
+      }
+    }
+  }
+  if(!answers.length){
+    try{
+      if(typeof process!=='undefined'&&process.versions?.node){
+        const dns=await import('node:dns/promises');
+        const records=await dns.lookup(asciiHost,{all:true});
+        for(const r of records){if(r.address)answers.push(r.address)}
+      }
+    }catch{}
+  }
+  if(!answers.length)throw new Error('DNS resolution failed');
+  for(const ip of answers){
+    if(privateIPv4(ip)||privateIPv6(ip))throw new Error('Target resolves to a private or reserved address')
+  }
 }
 async function readLimited(r:Response){const len=Number(r.headers.get('content-length')||0);if(len>MAX_BYTES)throw new Error('Response exceeds scan size limit');if(!r.body)return '';const reader=r.body.getReader();const chunks:Uint8Array[]=[];let total=0;while(true){const {done,value}=await reader.read();if(done)break;if(value){total+=value.byteLength;if(total>MAX_BYTES){reader.cancel();throw new Error('Response exceeds scan size limit')}chunks.push(value)}}const out=new Uint8Array(total);let pos=0;for(const c of chunks){out.set(c,pos);pos+=c.byteLength}return new TextDecoder().decode(out)}
 async function safeFetch(input:URL,method:'GET'|'HEAD'='GET'):Promise<FetchResult>{let u=normalize(input.toString());let redirects=0;while(true){await resolvePublic(u.hostname);let r=await fetch(u,{method,redirect:'manual',headers:{'user-agent':UA,'accept':'text/html,application/xhtml+xml,text/plain,application/xml,application/json,*/*'},signal:AbortSignal.timeout(TIMEOUT_MS)});if((r.status===403||r.status===401)&&method==='GET'){try{r=await fetch(u,{method,redirect:'manual',headers:{'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36','accept':'text/html,application/xhtml+xml,text/plain,application/xml,application/json,*/*'},signal:AbortSignal.timeout(TIMEOUT_MS)})}catch{}}if(REDIRECTS.has(r.status)){if(++redirects>MAX_REDIRECTS)throw new Error('Too many redirects');const loc=r.headers.get('location');if(!loc)throw new Error('Redirect without location');u=normalize(new URL(loc,u).toString());continue}const text=method==='HEAD'?'':await readLimited(r.clone());return {response:r,text,url:u,redirects,bytes:new TextEncoder().encode(text).byteLength}}
