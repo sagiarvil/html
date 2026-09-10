@@ -1,1 +1,0 @@
-Scan freeze regression invariant: report post-processing must be idempotent under MutationObserver, and telemetry must not hold the public scan response path beyond the bounded sub-second budget.
