@@ -31,7 +31,7 @@ jobs:
         run: |
           set -euo pipefail
           for f in index.html tr/index.html en/index.html; do
-            sed -i 's#ai-positioning\.js?v=1#ai-positioning.js?v=r10-20260910-2000#g' "$f"
+            sed -i 's#ai-positioning\.js?v=1#ai-positioning.js?v=r10-20260910-2355#g' "$f"
           done
       - name: Verify V3 customer artifact before deploy
         shell: bash
@@ -46,7 +46,7 @@ jobs:
           grep -Fq '18 Engine V3' index.html
           grep -Fq '105' index.html
           grep -Fq '$99' index.html
-          grep -Fq 'ai-positioning.js?v=r10-20260910-2000' index.html
+          grep -Fq 'ai-positioning.js?v=r10-20260910-2355' index.html
           grep -Fq 'r10-quality-hotfix.js' index.html
           ! grep -Fq '$149' index.html
           ! grep -Eq 'Engine V2|120 (deep )?(checks|controls)|43[- ]page|22[- ]file|15[- ]prompt' index.html
