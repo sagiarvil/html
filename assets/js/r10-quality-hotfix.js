@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const R10_END=Date.parse('2026-09-10T17:00:00Z');
+const R10_END=Date.parse('2026-09-10T20:55:00Z');
 const isTr=()=>((document.documentElement.lang||'tr').toLowerCase().startsWith('tr'));
 const campaignActive=()=>Number.isFinite(R10_END)&&Date.now()<R10_END;
 function setText(el,text){if(el&&el.textContent!==text)el.textContent=text}
