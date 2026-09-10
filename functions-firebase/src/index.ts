@@ -1,5 +1,5 @@
 import {onRequest} from 'firebase-functions/v2/https';
-import {defineSecret} from 'firebase-functions/params';
+import {defineSecret as fbDefineSecret} from 'firebase-functions/params';
 import {runFriendlyScan} from './scan-request';
 import {providerAvailability,runMentionScan} from './mention-engine';
 import {generateIntelligenceReport,INTELLIGENCE_ANALYSIS_COUNT,READINESS_LENS_COUNT,ADVANCED_BLACKBOX_RISK_COUNT,INTELLIGENCE_VERSION} from './intelligence-engine';
@@ -9,12 +9,19 @@ import {verifyGuestEntitlement} from './guest-entitlement';
 import {issueRoadmapEntitlement,verifyPaddleSignature,PADDLE_PRICE_ID,PADDLE_PRODUCT_KEY,PADDLE_PRICE_ID_ENTERPRISE,PADDLE_PRODUCT_KEY_ENTERPRISE} from './paddle-payment';
 import {classifyScanError,readAdminStats,recordScanTelemetry,ScanTelemetryInput} from './scan-telemetry';
 
+const useSecretBindings=process.env.ENABLE_FIREBASE_SECRETS==='true';
+const defineSecret=(name:string):any=>{
+  if(useSecretBindings){
+    return fbDefineSecret(name);
+  }
+  return {value:()=>process.env[name]||''};
+};
+
 const PADDLE_CLIENT_TOKEN=defineSecret('PADDLE_CLIENT_TOKEN');
 const PADDLE_API_KEY=defineSecret('PADDLE_API_KEY');
 const PADDLE_WEBHOOK_SECRET=defineSecret('PADDLE_WEBHOOK_SECRET');
 const DELIVERY_SIGNING_SECRET=defineSecret('DELIVERY_SIGNING_SECRET');
 
-const useSecretBindings=process.env.ENABLE_FIREBASE_SECRETS==='true';
 const resolveSecret=(secretParam:any,envKey:string)=>{
   if(process.env[envKey])return String(process.env[envKey]);
   try{
