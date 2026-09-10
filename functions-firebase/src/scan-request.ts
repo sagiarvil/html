@@ -13,6 +13,7 @@ function cleanRaw(input:string){
   if(value.startsWith('//'))value='https:'+value;
   if(!/^https?:\/\//i.test(value))value=value.replace(/^\/+/, '');
   value=value.replace(/:443(?=\/|$)/, '').replace(/:80(?=\/|$)/, '');
+  value=value.replace(/İ/g, 'i');
   if(!value)throw new Error('Domain required');
   return value;
 }
@@ -36,6 +37,10 @@ export function buildScanCandidates(input:string){
   const raw=cleanRaw(input);
   const explicit=/^https?:\/\//i.test(raw);
   const primary=parseCandidate(raw);
+  const bareHost=primary.hostname.replace(/^www\./i,'');
+  if(!bareHost.includes('.')&&!IPV4.test(bareHost)){
+    primary.hostname=`${primary.hostname}.com`;
+  }
   const candidates:URL[]=[];
   const add=(u:URL)=>{if(!candidates.some(x=>x.toString()===u.toString()))candidates.push(u)};
   add(primary);

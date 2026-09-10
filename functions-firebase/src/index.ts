@@ -119,6 +119,7 @@ export const scan=onRequest({...common,timeoutSeconds:240,memory:'1GiB'},async(r
     await safeTelemetry({success:false,durationMs:Date.now()-started,errorClass:'invalid_request'});
     res.status(400).json({error:'Domain required'});return;
   }
+  console.log('[SCAN_REQUEST]', body.domain);
   try{
     const result=normalizePublicScanResult(await runFriendlyScan(body.domain));
     const intelligence=generateIntelligenceReport(result);
@@ -126,6 +127,7 @@ export const scan=onRequest({...common,timeoutSeconds:240,memory:'1GiB'},async(r
     res.status(200).json({...result,intelligence,v2Available:true});
   }catch(e:any){
     const message=e?.message||'Scan failed';
+    console.warn('[SCAN_ERROR]', body?.domain, message);
     await safeTelemetry({success:false,durationMs:Date.now()-started,errorClass:classifyScanError(message)});
     res.status(/not allowed|private|reserved|credentials|port/i.test(message)?403:400).json({error:message});
   }
