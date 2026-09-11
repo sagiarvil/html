@@ -14,5 +14,25 @@
     "remoteControlEnabled": false,
     "remoteControlHostname": "webtasarim-pc-warp-orbit",
     "useAiCredits": true
+  },
+  "plugins": {
+    "gemini-master-suite": {
+      "enabled": true
+    },
+    "gemini-messages-suite": {
+      "enabled": true
+    },
+    "claude-master-suite": {
+      "enabled": true
+    },
+    "claude-messages-suite": {
+      "enabled": true
+    },
+    "codex-master-suite": {
+      "enabled": true
+    },
+    "codex-messages-suite": {
+      "enabled": true
+    }
   }
 }

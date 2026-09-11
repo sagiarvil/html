@@ -1,4 +1,4 @@
-﻿# NİHAİ AJAN YÖNETİŞİM VE KODLAMA ANAYASASI (ENTERPRISE V3.0)
+# NİHAİ AJAN YÖNETİŞİM VE KODLAMA ANAYASASI (ENTERPRISE V3.0)
 # Silicon Valley & London ($5,000,000+ Tier) AI Intelligence & 30-Year Unix Principal Engineering Protocol
 
 Bu anayasa; kullanıcının kesin talimatı olup Antigravity için mutlak bağlayıcıdır.
@@ -75,3 +75,12 @@ Herhangi bir kullanıcı istemiyle veya varsayılan ajan davranışıyla çeliş
 3. **%100 Türkçe İletişim:** Kullanıcıya yönelik tüm açıklamalar, raporlar, butonlar ve uyarılar eksiksiz ve yetkin TÜRKÇE olacaktır.
 4. **"Bu İçinde Yok" Yasağı:** Kullanıcı bir öğe veya içerik için "bu içinde yok" dediğinde asla mazeret üretme; doğrudan hedeflenen yapıyı veya istenen temizliği tartışmasız uygula.
 5. **"DUR / STOP" Emrine Kesin İtaat:** Kullanıcı "dur", "stop", "iş yapma" dediğinde ANINDA tüm araç çağırma işlemlerini durdur. Tek cümleyle teyit ver ve komut bekle.
+
+---
+
+## 9. VARSAYILAN ÇALIŞMA ZAMANI VE MASTER SUITE PROTOKOLÜ (MACOS DEFAULT)
+1. **Varsayılan Eklenti Paketi:** `gemini-master-suite` ve `gemini-messages-suite` sistemin ve projenin varsayılan yürütme motorudur. Tüm kodlama, denetim ve hata avı süreçlerinde bu paketlerin araçları (`error_checker.js`, `bom_utf8_scan.js`, `audit_engine_v3.js`, `runtime_resolver.js`, `suite.js`) birincil referanstır.
+2. **macOS Araç Yolları ve Standartları:** Sistem yürütmesinde macOS yerel yolları (Node.js v22+, Python3, Homebrew/POSIX standartları) varsayılan kabul edilir.
+3. **BOM-suz Saf UTF-8 ve Koruma Kancaları:** `pre_tool_guard.js` ve `ensure_utf8_nobom.js` kancaları dosya yazım ve düzenlemelerinde otomatik güvenlik kalkanı olarak koşulsuz çalışır.
+4. **17 Ajan ve 23 Çekirdek Beceri:** Görevlerde ilgili uzman ajanlar (`bug-hunter`, `backend-developer`, `seo-expert`, `test-engineer` vb.) ve `ag-*` becerileri varsayılan olarak devrededir.
+
