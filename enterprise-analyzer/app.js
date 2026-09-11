@@ -232,10 +232,15 @@
     });
 
     // 8. Update Demo Report Button Link with Scanned Domain
+    try {
+      sessionStorage.setItem('ea_scan_' + domain, JSON.stringify(data));
+      sessionStorage.setItem('ea_scan_latest', JSON.stringify(data));
+    } catch(e) {}
     const demoBtn = document.querySelector('.ea-sample-demo-btn');
     if (demoBtn) {
-      demoBtn.href = '/enterprise-analyzer/htmlandhtml-ai-report?domain=' + encodeURIComponent(domain);
-      demoBtn.innerHTML = '<span style="background:rgba(0,212,255,0.2); color:#00d4ff; font-size:11px; font-weight:900; padding:2px 7px; border-radius:4px; letter-spacing:0.5px;">CANLI DEMO</span> ' + domain + ' AI Raporunu Aç →';
+      const isTr = document.documentElement.lang === 'tr' || window.location.pathname.startsWith('/tr/');
+      demoBtn.href = (isTr ? '/tr/enterprise-analyzer/htmlandhtml-ai-report?domain=' : '/enterprise-analyzer/htmlandhtml-ai-report?domain=') + encodeURIComponent(domain);
+      demoBtn.innerHTML = '<span style="background:rgba(0,212,255,0.2); color:#00d4ff; font-size:11px; font-weight:900; padding:2px 7px; border-radius:4px; letter-spacing:0.5px;">' + (isTr ? 'RAPOR HAZIR' : 'REPORT READY') + '</span> ' + domain + (isTr ? ' Kurumsal Raporunu Aç →' : ' Open Executive Report →');
     }
 
     // 8b. Update 3-Planes Architecture Scores
@@ -602,6 +607,10 @@
     if (btnText) btnText.textContent = 'Canlı Enterprise Taramayı Yenile';
 
     applyLiveScanResults(domain, scanResult, isV2);
+    try {
+      sessionStorage.setItem('ea_scan_' + domain, JSON.stringify(scanResult));
+      sessionStorage.setItem('ea_scan_latest', JSON.stringify(scanResult));
+    } catch(e) {}
     showToast(domain + ' için 18 motorlu kurumsal analiz başarıyla tamamlandı!', 'check');
   }
 

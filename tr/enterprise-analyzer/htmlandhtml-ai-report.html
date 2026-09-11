@@ -4153,6 +4153,8 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
     const zipPackDescText = document.getElementById('zipPackDescText');
 
     let currentFiles = RAW_FILES_99;
+    window.RAW_FILES_99 = RAW_FILES_99;
+    window.RAW_FILES_999 = RAW_FILES_999;
     let currentFileName = '00_READ_ME.md';
 
     function renderFileList() {
@@ -4330,6 +4332,7 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
   </script>
 <script src="/assets/js/theme.js" defer></script>
 <script src="/assets/js/enterprise-analyzer-locale.js?v=2" defer></script>
+<script src="/enterprise-analyzer/report-runtime.js" defer></script>
 <!-- EA_LOCALE_CONTRACT:tr:URL_SSOT -->
 </body>
 </html>
