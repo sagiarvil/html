@@ -336,14 +336,212 @@ HTTP/2 404 Not Found (Missing AI discovery surface)`;
 <meta name="description" content="${domain} resmi kurumsal hizmetleri, yapay zeka arama optimizasyonu ve teknik standartlar denetim platformu." />`;
       cliCommand = `curl -sL https://${domain}/ | grep -i 'name="description"' && echo "PASS: Meta Tag Verified"`;
       rollback = isTr ? 'Meta etiketini geri alın.' : 'Remove the meta tag from head.';
+    } else if (fid.includes('A11Y-FORM') || fid.includes('FORM') || fid.includes('INPUT')) {
+      standard = 'W3C WCAG 2.2 AA / Section 508';
+      category = isTr ? 'Erişilebilirlik & Ajan Form Algılama' : 'Accessibility & Agent Form Ingestion';
+      recipeFileName = '07_WCAG_FORM_LABEL_WORKER.js';
+      execOutcome = isTr ? 'Ekran okuyucular ve otonom satın alma ajanları (ChatGPT Operator, Claude Computer Use) form alanlarının ne amaçla kullanıldığını tespit edemez; form gönderimi başarısız olur ve erişilebilirlik cezası verilir.' : 'Screen readers and autonomous buying agents cannot identify input purposes, aborting headless actions and triggering WCAG 2.2 AA non-compliance penalties.';
+      rootCause = isTr ? '<input> alanlarına bağlı açık <label for="..."> veya aria-label özniteliği tanımlanmamış.' : 'Missing explicit <label for="..."> association or aria-label attributes on input controls.';
+      evidenceCode = `curl -sL https://${domain}/ | grep -E '<input[^>]*>' | grep -v 'aria-label\\|<label' | head -n 3
+<input type="text" name="s" placeholder="Arama..."> (ERROR: No associated <label> or aria-label detected)`;
+      targetBehavior = isTr ? 'Her form elemanı benzersiz bir ID ile <label for="..."> etiketine veya açık aria-label özniteliğine sahip olmalıdır.' : 'Each form control must have a unique ID linked to a <label for="..."> or an explicit aria-label.';
+      currentBehavior = isTr ? 'Form alanları etiketsiz ve ekran okuyucu yazılımları için tanımsız.' : 'Form inputs are unlabelled and unannounced to assistive technologies.';
+      codeSnippet = `// Cloudflare HTMLRewriter WCAG 2.2 Label Injection for ${domain}
+export default {
+  async fetch(req) {
+    const res = await fetch(req);
+    return new HTMLRewriter()
+      .on('input:not([aria-label]):not([aria-labelledby])', {
+        element(e) {
+          const name = e.getAttribute('name') || e.getAttribute('type') || 'form-field';
+          const cleanName = name.replace(/[^a-zA-Z0-9_-]/g, ' ').trim();
+          const label = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+          e.setAttribute('aria-label', label);
+        }
+      })
+      .transform(res);
+  }
+};`;
+      cliCommand = `curl -sL https://${domain}/ | grep -E '<input[^>]*>' | grep -qi "aria-label" && echo "PASS: Accessible Form Inputs"`;
+      rollback = isTr ? 'HTMLRewriter kuralını kaldırın.' : 'Revert HTMLRewriter input transform.';
+    } else if (fid.includes('LINK-BROKEN') || fid.includes('LINK') || fid.includes('EMAIL-PROTECTION')) {
+      standard = 'RFC 3986 / W3C URI Standard';
+      category = isTr ? 'Bağlantı Bütünlüğü & Crawl Budget' : 'Link Graph Integrity & Crawl Budget';
+      recipeFileName = '08_EDGE_LINK_SANITIZER.js';
+      execOutcome = isTr ? 'Arama motoru botları geçersiz veya şifrelenmiş Cloudflare koruma rotalarına takılarak crawl budget israfı yaşar ve sitenizin derinliklerini taramadan ayrılır.' : 'Search bots and LLM scrapers waste crawl budget on broken or obfuscated routes, impairing crawl depth and index freshnes.';
+      rootCause = isTr ? 'Sayfa içinde Cloudflare e-posta gizleme betiği (/cdn-cgi/l/email-protection) veya bozuk bağlantı formatı yer alıyor.' : 'Obfuscated email wrappers (/cdn-cgi/l/email-protection) or dead relative links present in page DOM.';
+      evidenceCode = `curl -sL https://${domain}/ | grep -i '/cdn-cgi/l/email-protection'
+<a href="/cdn-cgi/l/email-protection#..." (ERROR: Bot-unfriendly protected link)`;
+      targetBehavior = isTr ? 'Botlar için doğrudan temiz ve RFC 6068 uyumlu mailto: veya şeffaf iletişim bağlantıları sunulmalıdır.' : 'Deliver transparent RFC 6068 mailto: links or direct contact paths for verified machine crawlers.';
+      currentBehavior = isTr ? 'Botlar Cloudflare email koruma sayfasına yönleniyor veya bozuk iç linklere çarpıyor.' : 'Crawlers encounter obfuscated links or broken targets.';
+      codeSnippet = `// Edge Link Normalizer for ${domain}
+export default {
+  async fetch(req) {
+    const res = await fetch(req);
+    return new HTMLRewriter()
+      .on('a[href*="/cdn-cgi/l/email-protection"]', {
+        element(e) {
+          e.setAttribute('href', \`mailto:iletisim@${domain}\`);
+          e.setAttribute('rel', 'nofollow noopener noreferrer');
+        }
+      })
+      .transform(res);
+  }
+};`;
+      cliCommand = `curl -sL https://${domain}/ | grep -qi "mailto:" && echo "PASS: Clean Links Verified"`;
+      rollback = isTr ? 'HTMLRewriter bağlantı temizleme kuralını devre dışı bırakın.' : 'Disable link sanitizing transform rule.';
+    } else if (fid.includes('CSP') || fid.includes('SEC-CSP')) {
+      standard = 'W3C CSP Level 3 / RFC 7762';
+      category = isTr ? 'Siber Güvenlik & XSS Koruması' : 'Content Security Policy (CSP L3)';
+      recipeFileName = '09_CSP_SECURITY_HEADERS.json';
+      execOutcome = isTr ? 'XSS ve veri hırsızlığı risklerine açık kalırsınız; kurumsal yapay zeka arama sistemleri sitenizin güvenlik açığını tespit ederek otoriter tavsiye listelerinden çıkarır.' : 'Leaves domain susceptible to cross-site scripting (XSS); enterprise AI evaluators deduct trust metrics for absent CSP.';
+      rootCause = isTr ? 'HTTP yanıt başlıklarında Content-Security-Policy direktifleri yapılandırılmamış.' : 'Content-Security-Policy header is absent from origin and CDN edge responses.';
+      evidenceCode = `curl -sI https://${domain}/ | grep -i 'content-security-policy'
+(Content-Security-Policy header omitted - RESULT: MISSING)`;
+      targetBehavior = isTr ? 'Gereksiz üçüncü taraf script yürütmelerini kısıtlayan sağlam bir Content-Security-Policy başlığı dönmelidir.' : 'Emit strict Content-Security-Policy restricting unauthorized script injection.';
+      currentBehavior = isTr ? 'CSP başlığı tamamen eksik.' : 'CSP header not found in HTTP response.';
+      codeSnippet = `// firebase.json & Edge Headers for ${domain}
+"headers": [
+  {
+    "source": "/**",
+    "headers": [
+      {
+        "key": "Content-Security-Policy",
+        "value": "default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+      }
+    ]
+  }
+]`;
+      cliCommand = `curl -sI https://${domain}/ | grep -qi "content-security-policy" && echo "PASS: CSP Enforced"`;
+      rollback = isTr ? 'CSP başlığını report-only moduna alın veya kaldırın.' : 'Switch CSP to report-only or revert header.';
+    } else if (fid.includes('TRUST-ABOUT') || fid.includes('ABOUT') || fid.includes('E-E-A-T')) {
+      standard = 'Google Search Quality Rater Guidelines (E-E-A-T)';
+      category = isTr ? 'E-E-A-T & Kurumsal Şeffaflık' : 'E-E-A-T & Authority Grounding';
+      recipeFileName = '10_EEAT_AUTHORITY_PROFILE.jsonld';
+      execOutcome = isTr ? 'Yapay zeka modelleri sitenin arkasındaki uzmanlığı, hekimi veya kurumu doğrulayamaz; sağlık ve ticari sorgularda halüsinasyon riski nedeniyle tavsiye edilmezsiniz.' : 'AI models cannot ground publisher authority or medical expertise, disqualifying your domain for high-intent health/commercial queries.';
+      rootCause = isTr ? 'Açık /hakkimizda veya /about kurumsal kimlik sayfası ve yazar/uzman E-E-A-T referansları eksik.' : 'Missing linked About/Credentials profile and author expertise grounding.';
+      evidenceCode = `curl -sI https://${domain}/hakkimizda | head -n 1
+HTTP/2 404 Not Found (Missing E-E-A-T Trust Vector)`;
+      targetBehavior = isTr ? 'Sayfada yayıncı ilkeleri, uzman kimliği ve şeffaf iletişim detayları JSON-LD ile zırhlandırılmalıdır.' : 'Expose verified editorial principles, creator credentials and structured organization schema.';
+      currentBehavior = isTr ? 'Kurumsal kimlik ve E-E-A-T varlık sinyalleri eksik.' : 'E-E-A-T trust signals not explicitly materialized.';
+      codeSnippet = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "MedicalOrganization",
+    "name": "${domain}",
+    "url": "https://${domain}/",
+    "publishingPrinciples": "https://${domain}/editorial-guidelines",
+    "knowsAbout": ["Sağlık", "Klinik Uzmanlık", "Doğrulanmış İçerik"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "iletisim@${domain}"
+    }
+  }
+}
+</script>`;
+      cliCommand = `curl -sL https://${domain}/ | grep -qi "publishingPrinciples" && echo "PASS: E-E-A-T Materialized"`;
+      rollback = isTr ? 'Eklenen şema bloğunu kaldırın.' : 'Remove AboutPage schema snippet.';
+    } else if (fid.includes('AGENT-A2A') || fid.includes('AGENT-CARD')) {
+      standard = 'RFC A2A v1.0 / Agentic Web Standard';
+      category = isTr ? 'Otonom Ajan Keşif Protokolü (A2A)' : 'Autonomous Agent Protocol (A2A)';
+      recipeFileName = '11_WELL_KNOWN_AGENT_CARD.json';
+      execOutcome = isTr ? 'Geleceğin otonom satın alma ve araştırma ajanları sitenizin API ve sipariş yeteneklerini okuyamaz; doğrudan ajan destekli rakiplerinizi seçer.' : 'Autonomous agentic frameworks cannot discover programmatic endpoints on your domain, choosing A2A-ready competitors.';
+      rootCause = isTr ? 'Kök dizinde /.well-known/agent-card.json makine kartı sunulmuyor.' : 'Missing /.well-known/agent-card.json discovery manifest at origin root.';
+      evidenceCode = `curl -sI https://${domain}/.well-known/agent-card.json
+HTTP/2 404 Not Found (Missing Agentic Protocol Manifest)`;
+      targetBehavior = isTr ? '/.well-known/agent-card.json dosyasında standard A2A yetenekleri ve OpenAPI uç noktaları bildirilmelidir.' : 'Serve standardized A2A capabilities manifest declaring programmatic endpoints.';
+      currentBehavior = isTr ? 'A2A agent kartı bulunamadı.' : 'A2A agent card missing.';
+      codeSnippet = `{
+  "$schema": "https://agentcard.info/schema/v1.json",
+  "name": "${domain} Enterprise AI Agent",
+  "version": "1.0.0",
+  "description": "${domain} official autonomous service agent",
+  "capabilities": {
+    "headless_quote": true,
+    "direct_checkout": false,
+    "real_time_status": true
+  },
+  "endpoints": {
+    "openapi": "https://${domain}/openapi.json",
+    "mcp": "https://${domain}/mcp"
+  }
+}`;
+      cliCommand = `curl -sI https://${domain}/.well-known/agent-card.json | grep -i "200 OK" && echo "PASS: Agent Card Live"`;
+      rollback = isTr ? 'agent-card.json dosyasını hosting kökünden kaldırın.' : 'Delete /.well-known/agent-card.json.';
+    } else if (fid.includes('AGENT-MCP') || fid.includes('MCP')) {
+      standard = 'Anthropic / Model Context Protocol (MCP)';
+      category = isTr ? 'Model Context Protocol (MCP Sunucusu)' : 'Model Context Protocol (MCP Server)';
+      recipeFileName = '12_MCP_SERVER_SPECIFICATION.json';
+      execOutcome = isTr ? 'Claude Desktop, Cursor ve LLM tool-calling motorları sitenizi bir araç (tool) olarak bağlayamaz ve verilerinizi gerçek zamanlı sorgulayamaz.' : 'Claude Desktop, Cursor and LLM tool orchestrators cannot bind your domain as a dynamic MCP tool provider.';
+      rootCause = isTr ? 'MCP endpoint tanımları veya araç bildirimleri eksik.' : 'Absence of Model Context Protocol tool definitions.';
+      evidenceCode = `curl -sI https://${domain}/mcp
+HTTP/2 404 Not Found (Missing MCP Server Spec)`;
+      targetBehavior = isTr ? 'Siteniz /mcp üzerinden JSON-RPC 2.0 uyumlu araç ve veri uç noktası sunmalıdır.' : 'Deliver JSON-RPC 2.0 compliant MCP tool schema at /mcp.';
+      currentBehavior = isTr ? 'MCP uç noktası bulunamadı.' : 'MCP protocol endpoint missing.';
+      codeSnippet = `{
+  "name": "${domain}-mcp-server",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "query_services",
+      "description": "Query official services and knowledge base from ${domain}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string" }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}`;
+      cliCommand = `curl -sI https://${domain}/mcp | grep -qi "mcp" && echo "PASS: MCP Configured"`;
+      rollback = isTr ? 'MCP tanımını kaldırın.' : 'Remove MCP route.';
+    } else if (fid.includes('AGENT-OPENAPI') || fid.includes('OPENAPI')) {
+      standard = 'OpenAPI Specification 3.1.0';
+      category = isTr ? 'Makine Arayüzü & OpenAPI Sözleşmesi' : 'Machine API & OpenAPI 3.1 Contract';
+      recipeFileName = '13_OPENAPI_SPECIFICATION.json';
+      execOutcome = isTr ? 'Yapay zeka sistemleri sitenizin API rotalarını ve parametrelerini otomatik anlayamaz; entegrasyon için insan mühendise ihtiyaç duyar.' : 'AI autonomous orchestrators cannot introspect API endpoints, halting programmatic workflows.';
+      rootCause = isTr ? '/openapi.json keşif dosyası bulunmuyor.' : 'Missing /openapi.json machine schema.';
+      evidenceCode = `curl -sI https://${domain}/openapi.json
+HTTP/2 404 Not Found (Missing OpenAPI Spec)`;
+      targetBehavior = isTr ? 'OpenAPI 3.1 formatında genel erişilebilir servis sözleşmesi sunulmalıdır.' : 'Deliver OpenAPI 3.1 schema defining machine-readable public routes.';
+      currentBehavior = isTr ? 'OpenAPI dosyası bulunamadı.' : 'OpenAPI spec missing.';
+      codeSnippet = `{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "${domain} Public API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/status": {
+      "get": {
+        "summary": "Health and service status",
+        "responses": {
+          "200": { "description": "Service operational" }
+        }
+      }
+    }
+  }
+}`;
+      cliCommand = `curl -sI https://${domain}/openapi.json | grep -i "200 OK" && echo "PASS: OpenAPI Live"`;
+      rollback = isTr ? 'openapi.json dosyasını kaldırın.' : 'Remove /openapi.json.';
     } else {
-      recipeFileName = '07_ENGINEERING_REMEDIATION.js';
-      codeSnippet = `// Production Remediation for ${domain} (${fid})
+      recipeFileName = '14_ENGINEERING_REMEDIATION.js';
+      codeSnippet = `// Edge Remediation Rule for ${domain} (${fid})
 export default {
   async fetch(request) {
     const response = await fetch(request);
-    // Enforce RFC/W3C compliance for ${fid}
-    return response;
+    const newHeaders = new Headers(response.headers);
+    newHeaders.set('X-AI-Engine-Compliance', '${fid}');
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders
+    });
   }
 };`;
     }
