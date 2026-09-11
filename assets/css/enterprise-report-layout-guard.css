@@ -1,22 +1,42 @@
-/* Enterprise Analyzer viewport contract.
+﻿/* Enterprise Analyzer viewport contract.
    Keep report internals (evidence/code/table) horizontally scrollable inside their
    own bounded containers while preventing navigation chrome from widening the
    document itself. Do not mask layout defects with body overflow:hidden. */
 
 .topbar .topbar-shell {
   width: 100% !important;
-  max-width: min(var(--maxw, 1080px), 100%) !important;
+  max-width: min(var(--maxw, 980px), 100%) !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
 }
 
 .topbar .nav-actions,
 .topbar .primary-nav,
-.ea-container,
 .ea-data-table-wrapper,
 .evidence-box {
   min-width: 0 !important;
   max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Premium Narrowed Executive Dossier Layout — 980px Strict Max-Width */
+.ea-container {
+  width: 100% !important;
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.ai-opportunity-shell,
+footer .footer-shell,
+footer .footer-grid {
+  width: 100% !important;
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   box-sizing: border-box !important;
 }
 

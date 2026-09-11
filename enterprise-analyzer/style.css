@@ -140,12 +140,47 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Compact Container — Strict 1080px Site DNA */
+/* Compact Container — Strict 980px Site DNA */
 .ea-container {
-  max-width: 1080px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 16px 20px 60px;
   box-sizing: border-box;
+}
+
+/* Specimen Hero Typography & Styling */
+.ea-specimen-hero {
+  margin-bottom: 24px;
+}
+.ea-specimen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+}
+.ea-specimen-title {
+  font-size: 26px;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: var(--ea-text-primary);
+  margin: 0 0 10px;
+}
+.ea-specimen-subtitle {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ea-text-secondary);
+  max-width: 820px;
+  margin: 0 0 20px;
 }
 
 /* Page Intro & Eyebrow */
