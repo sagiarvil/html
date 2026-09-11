@@ -214,7 +214,13 @@ function renderDecisionMap(data){
    </div>`;
  }).join('');
 
-   root.innerHTML=`<div style="background:rgba(255, 69, 58, 0.1); border:1px solid #ff453a; color:#ff453a; padding:12px; margin-bottom:20px; border-radius:8px; text-align:center;">${warningText}</div><div class="ai-decision-map-head"><div><small>${safe(c.decisionEyebrow)}</small><h3>${safe(c.decisionTitle)}</h3></div><p>${safe(c.decisionCopy)}</p></div><div class="ai-lens-grid">${lensHtml}</div>${rows?`<div class="ai-intelligence-top">${rows}</div>`:''}<div class="ai-decision-lock"><p>${safe(c.paidText)}</p><a href="${checkoutHref}">${safe(c.paidCta)}</a></div>`;
+  const warningText = l === 'tr'
+    ? '<strong>UYARI:</strong> Bu kritik açıklar arama motorlarının sitenizi atlamasına yol açıyor. Düzeltilmediği her gün = daha fazla görünürlük kaybı.'
+    : '<strong>WARNING:</strong> These critical issues prevent AI search engines from indexing and recommending your site. Every day unfixed = compound visibility loss.';
+  const scanIdVal = data?.scanId || '';
+  const checkoutHref = `/checkout?plan=pro${domainVal ? `&domain=${encodeURIComponent(domainVal)}` : ''}${scanIdVal ? `&scan=${encodeURIComponent(scanIdVal)}` : ''}`;
+
+  root.innerHTML=`<div style="background:rgba(255, 69, 58, 0.1); border:1px solid #ff453a; color:#ff453a; padding:12px; margin-bottom:20px; border-radius:8px; text-align:center;">${warningText}</div><div class="ai-decision-map-head"><div><small>${safe(c.decisionEyebrow)}</small><h3>${safe(c.decisionTitle)}</h3></div><p>${safe(c.decisionCopy)}</p></div><div class="ai-lens-grid">${lensHtml}</div>${rows?`<div class="ai-intelligence-top">${rows}</div>`:''}<div class="ai-decision-lock"><p>${safe(c.paidText)}</p><a href="${checkoutHref}">${safe(c.paidCta)}</a></div>`;
   // Wire up interactive accordion for ai-intelligence-row
   root.querySelectorAll('.ai-intelligence-row').forEach(row => {
     row.addEventListener('click', e => {
