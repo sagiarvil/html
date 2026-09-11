@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-10T02:33:52Z",
+  "lastUpdated": "2026-09-11T02:27:36Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -19193,6 +19193,153 @@
       "id": "2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18",
       "sourceUrl": "https://openai.com/index/netomi",
       "publishedAt": "2026-09-10"
+    },
+    {
+      "topic": "SCIENTIFIC_COMPUTING_AGENTIC_AI",
+      "keywords": [
+        "agentic AI",
+        "scientific computing",
+        "genomics",
+        "software modernization",
+        "AI coding agents"
+      ],
+      "title": {
+        "tr": "Bilimsel Hesaplamada Yapay Zeka Ajanlarının Yükselişi",
+        "en": "The Rise of Agentic AI in Scientific Computing"
+      },
+      "dek": {
+        "tr": "Bilimsel yazılım modernizasyonu ve genomik araştırmalarında ajan tabanlı kodlama sistemlerinin rolünü inceleyen teknik değerlendirme.",
+        "en": "A technical assessment examining the role of agentic coding systems in scientific software modernization and genomics research."
+      },
+      "summary": {
+        "tr": "Güncel bir saha raporu, bilim insanlarının eski yazılım altyapılarını modernize etmek ve keşif süreçlerini hızlandırmak için ajan tabanlı yapay zeka sistemlerini nasıl entegre ettiğini ortaya koymaktadır. Genomik ve diğer veri yoğun disiplinlerde, bu araçlar karmaşık kod tabanlarının yeniden yapılandırılmasına, hata ayıklama döngülerinin otomasyonuna ve hesaplamalı iş akışlarının hızlandırılmasına öncülük etmektedir. Bu gelişme, araştırma ekiplerinin manuel kod yazma maliyetini düşürürken, algoritmik doğruluğu ve yürütme verimliliğini artırmasını sağlamaktadır. Teknik ekipler, ajanların karar alma mekanizmalarını denetleyerek üretilen kodun güvenilirliğini ve tekrarlanabilirliğini güvence altına almalıdır.",
+        "en": "A recent field report reveals how scientists integrate agentic AI systems to modernize legacy software infrastructure and accelerate discovery workflows. Across genomics and other data-intensive disciplines, these tools pioneer the restructuring of complex codebases, automation of debugging cycles, and optimization of computational pipelines. This shift enables research teams to reduce manual coding overhead while improving algorithmic correctness and execution efficiency. Technical teams must audit agent decision-making mechanisms to guarantee the reliability and reproducibility of the generated software."
+      },
+      "whyItMatters": {
+        "tr": "Bilimsel hesaplamalardaki en büyük darboğaz, karmaşık ve eski kod tabanlarının bakımıdır. Ajan tabanlı sistemler, bu süreçleri otomatize ederek araştırmacıların kod yazmaktan ziyade hipotez test etmeye odaklanmasını sağlar ve keşif döngülerini kayda değer ölçüde kısaltır.",
+        "en": "The primary bottleneck in scientific computing is the maintenance of complex, legacy codebases. Agentic systems automate these processes, allowing researchers to focus on hypothesis testing rather than coding overhead, thereby significantly shortening discovery cycles."
+      },
+      "technicalImpact": {
+        "tr": "Ajan tabanlı yazılım araçları, genomik analiz boru hatlarında yürütme sürelerini optimize eder ve refaktörleme maliyetlerini düşürür. Kod üretimi ve otomatik test döngüleri sayesinde, bilimsel yazılımların sürdürülebilirliği artarken hata oranları en aza indirilir. Ancak, bu ajanların deterministik olmayan yapıları, karmaşık sayısal hesaplamalarda titiz doğrulama protokollerini zorunlu kılar.",
+        "en": "Agentic software tools optimize execution times in genomics analysis pipelines and reduce refactoring costs. Through code generation and automated testing loops, the maintainability of scientific software improves while error rates are minimized. However, the non-deterministic nature of these agents mandates rigorous validation protocols for complex numerical computations."
+      },
+      "actions": {
+        "tr": [
+          "Eski kod tabanlarının ajan tabanlı refaktörleme süreçleri için uygunluğunu denetleyin.",
+          "Üretilen kodlar için otomatik doğrulama ve birim test matrisleri kurun.",
+          "Ajan kararlarının izlenebilirliği için günlük kayıt mekanizmalarını güçlendirin."
+        ],
+        "en": [
+          "Audit legacy codebases for compatibility with agent-driven refactoring workflows.",
+          "Establish automated verification and unit testing matrices for generated code.",
+          "Strengthen logging mechanisms for traceability of agent decisions."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu değerlendirme, raporda sunulan vaka örnekleriyle sınırlıdır ve ajan tabanlı sistemlerin tüm bilimsel alanlardaki uzun vadeli kararlılığını garanti etmez.",
+        "en": "This assessment is bounded by the case examples presented in the report and does not guarantee the long-term determinism of agentic systems across all scientific domains."
+      },
+      "id": "2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e",
+      "sourceUrl": "https://openai.com/index/scientific-computing-agentic-ai",
+      "publishedAt": "2026-09-11"
+    },
+    {
+      "topic": "WEBSOCKET_AGENTIC_WORKFLOWS",
+      "keywords": [
+        "WebSockets",
+        "Responses API",
+        "agent loops",
+        "connection-scoped caching",
+        "latency optimization"
+      ],
+      "title": {
+        "tr": "Responses API İçin WebSocket Entegrasyonu ve Bağlantı Tabanlı Önbellekleme",
+        "en": "WebSocket Integration and Connection-Scoped Caching for the Responses API"
+      },
+      "dek": {
+        "tr": "Bağlantı tabanlı önbellekleme ve WebSocket protokolü, ajan tabanlı iş akışlarındaki ağ yükünü ve gecikmeleri azaltıyor.",
+        "en": "Connection-scoped caching and the WebSocket protocol reduce network overhead and latency in agentic workflows."
+      },
+      "summary": {
+        "tr": "Yapay zeka arama sistemleri ve otonom ajan döngüleri, yüksek frekanslı istekler nedeniyle ciddi ağ maliyetleriyle karşılaşır. Yeni yapılan geliştirmeler, standart HTTP istekleri yerine WebSocket protokolünün kullanılmasını ve bağlantı odaklı önbellekleme mekanizmalarının devreye alınmasını kapsar. Bu mimari değişiklik, tekrar eden veri transferlerini en aza indirerek model yanıt süresini iyileştirir ve çok adımlı ajan iş akışlarının genel verimliliğini artırır.",
+        "en": "AI search systems and autonomous agent loops frequently encounter high network overhead due to high-frequency requests. Recent updates introduce WebSocket protocol adoption instead of traditional HTTP requests, combined with connection-scoped caching mechanisms. This architectural shift minimizes redundant data transfers, improves model latency, and enhances overall efficiency in multi-step agent workflows."
+      },
+      "whyItMatters": {
+        "tr": "Otonom ajanlar ve yapay zeka arama sistemleri, milisaniyelerin kritik olduğu çoklu sorgu döngülerine dayanır. Ağ gecikmelerinin azalması, karmaşık veri toplama süreçlerinin daha hızlı tamamlanmasını sağlar ve sistem kaynaklarının daha verimli kullanılmasının önünü açar.",
+        "en": "Autonomous agents and AI search systems rely on multi-query loops where milliseconds matter. Reducing network latency ensures faster completion of complex data retrieval processes and enables more efficient utilization of system resources."
+      },
+      "technicalImpact": {
+        "tr": "HTTP tabanlı bağlantı maliyetlerinin ortadan kalkması, sürekli veri akışı gerektiren ajan tabanlı mimarilerde TCP el sıkışma yükünü azaltır. Bağlantı düzeyi önbellekleme, oturum süresince bağlam verilerinin yeniden iletilmesini engeller, böylece bant genişliği tüketimi düşer ve yanıt süreleri öngörülebilir hale gelir.",
+        "en": "Eliminating HTTP-based connection costs reduces TCP handshake overhead in agent architectures requiring continuous data streams. Connection-level caching prevents the re-transmission of context data throughout the session, lowering bandwidth consumption and stabilizing response latencies."
+      },
+      "actions": {
+        "tr": [
+          "Mevcut ajan mimarilerinde sürekli bağlantı (persistent connection) altyapısının WebSocket protokolü ile uyumluluğunu test edin.",
+          "Bağlantı odaklı önbellekleme mekanizmalarının oturum durumunu ve bellek tüketimini izleyin.",
+          "Çok adımlı sorgu döngülerinde ağ gecikme metriklerini ve TCP yükünü karşılaştırın."
+        ],
+        "en": [
+          "Test the compatibility of persistent connection infrastructure with the WebSocket protocol in existing agent architectures.",
+          "Monitor session state and memory consumption of connection-scoped caching mechanisms.",
+          "Compare network latency metrics and TCP overhead across multi-step query loops."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, WebSocket entegrasyonunun ve bağlantı tabanlı önbelleklemenin tüm farklı üretim ortamlarındaki ölçeklenebilirlik sınırlarını tam olarak kapsamamaktadır.",
+        "en": "This analysis does not fully encompass the scalability limits of WebSocket integration and connection-scoped caching across all distinct production environments."
+      },
+      "id": "2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1",
+      "sourceUrl": "https://openai.com/index/speeding-up-agentic-workflows-with-websockets",
+      "publishedAt": "2026-09-11"
+    },
+    {
+      "topic": "ADVANCED_FRONTIER_MODEL_UPDATE",
+      "keywords": [
+        "GPT-5.2",
+        "frontier model",
+        "agentic workflows",
+        "long-context understanding",
+        "API integration"
+      ],
+      "title": {
+        "tr": "GPT-5.2 ile Gelişmiş Profesyonel İş Akışları ve Uzun Bağlam Yetenekleri",
+        "en": "Advanced Professional Workflows and Long-Context Capabilities with GPT-5.2"
+      },
+      "dek": {
+        "tr": "Yeni nesil frontier model, profesyonel kullanım alanlarında gelişmiş akıl yürütme ve kodlama performansı sunuyor.",
+        "en": "The new-generation frontier model delivers enhanced reasoning and coding performance for professional use cases."
+      },
+      "summary": {
+        "tr": "OpenAI, günlük profesyonel işler ve otonom süreçler için tasarlanmış yeni nesil yapay zeka modelini duyurdu. Bu güncelleme, gelişmiş akıl yürütme, genişletilmiş uzun bağlam anlama kapasitesi, gelişmiş kodlama ve vizyon yeteneklerini bir araya getiriyor. ChatGPT ve API erişimi üzerinden sunulan bu altyapı, daha hızlı ve güvenilir yapay zeka destekli süreçlerin kurulmasını hedefliyor. Geliştiriciler ve kurumlar, bu sürümü karmaşık görev otomasyonlarında ve büyük veri analizlerinde kullanarak sistem verimliliğini artırma potansiyeline sahip.",
+        "en": "OpenAI has announced its newest advanced model tailored for everyday professional tasks and automated workflows. The update integrates enhanced reasoning, expanded long-context comprehension, advanced coding, and vision capabilities. Available via ChatGPT and API access, the infrastructure aims to power faster and more reliable agentic processes. Developers and enterprises can leverage this release for complex task automation and large-scale data analysis to improve system efficiency."
+      },
+      "whyItMatters": {
+        "tr": "Modelin gelişmiş uzun bağlam işleme ve akıl yürütme yetenekleri, yapay zeka tabanlı sistemlerin karmaşık kurumsal görevleri daha az hatayla yerine getirmesini sağlar. Bu durum, otomasyon projelerinde güvenilirliği artırır ve API entegrasyonlarında verimlilik sınırlarını yeniden tanımlar.",
+        "en": "The model's advanced long-context processing and reasoning capabilities enable AI systems to execute complex enterprise tasks with fewer errors. This improves reliability in automation projects and redefines efficiency boundaries in API integrations."
+      },
+      "technicalImpact": {
+        "tr": "Genişletilmiş bağlam pencereleri, büyük veri setlerinin ve uzun kod tabanlarının tek bir istekte işlenmesine olanak tanır. Vizyon ve kodlama iyileştirmeleri, çok modüllü uygulamaların hata ayıklama ve doğrulama süreçlerini hızlandırırken, ajan tabanlı iş akışlarının deterministik çıktı kalitesini optimize eder.",
+        "en": "Expanded context windows allow large datasets and extensive codebases to be processed within a single request. Vision and coding improvements accelerate debugging and validation workflows for multimodal applications while optimizing the deterministic output quality of agentic pipelines."
+      },
+      "actions": {
+        "tr": [
+          "API isteklerindeki bağlam uzunluğu sınırlarını yeni model parametrelerine göre test edin.",
+          "Kodlama ve vizyon görevlerinde hata oranlarını önceki sürümlerle karşılaştırın.",
+          "Otonom ajan iş akışlarındaki yanıt sürelerini ve maliyet metriklerini izleyin."
+        ],
+        "en": [
+          "Test context length limits in API requests against the new model parameters.",
+          "Benchmark error rates in coding and vision tasks against previous versions.",
+          "Monitor latency and cost metrics across autonomous agent workflows."
+        ]
+      },
+      "boundary": {
+        "tr": "Modelin gerçek dünya üretim ortamlarındaki deterministik başarı oranı ve ölçeklenebilirlik maliyetleri, geniş çaplı kullanım verileri toplanana kadar kesin olarak bilinmemektedir.",
+        "en": "The deterministic success rate and scaling costs of the model in real-world production environments remain unquantified until broader deployment telemetry becomes available."
+      },
+      "id": "2026-09-11-introducing-gpt-5-2-10ab1c39be14",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-2",
+      "publishedAt": "2026-09-11"
     }
   ]
 }

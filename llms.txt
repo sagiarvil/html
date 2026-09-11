@@ -168,6 +168,9 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [The Rise of Agentic AI in Scientific Computing](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e/)
+- [WebSocket Integration and Connection-Scoped Caching for the Responses API](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1/)
+- [Advanced Professional Workflows and Long-Context Capabilities with GPT-5.2](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-introducing-gpt-5-2-10ab1c39be14/)
 - [Cars24 Scales Million-Minute Conversation Traffic with AI Agents](https://htmlandhtml.com/en/llms-txt-news/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67/)
 - [Scaling Enterprise Agentic AI Systems](https://htmlandhtml.com/en/llms-txt-news/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18/)
 - [Five Million Dollar Research Grant Initiative for AI and Teen Development](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb/)
@@ -185,7 +188,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Introducing Search Generative AI performance reports in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0/)
 - [A new resource for optimizing for generative AI in Google Search: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad/)
 - [Introducing a new spam policy for "back button hijacking": AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3/)
-- [Search Central Live is Coming to Shanghai in 2026!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba/)
-- [Inside Googlebot: demystifying crawling, fetching, and the bytes we process: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d/)
-- [New Location for the Google Crawlers' IP Range Files: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200/)
 <!-- LLMS_NEWS_END -->
