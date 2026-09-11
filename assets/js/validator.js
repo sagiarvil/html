@@ -1736,7 +1736,7 @@ window.renderScanResult=render;
 function render(data){
   currentScanResult=data;
   document.getElementById('resultDomain').textContent=data.domain;
-  const overall=Math.round(data.overall);
+  let overall=Math.round(data.overall);
   document.getElementById('overallScore').textContent=overall;
   const isTr=lang==='tr';
 
@@ -1842,7 +1842,18 @@ function render(data){
     ? `<div class="health-entity-tag health-crux-tag" style="display:inline-flex;align-items:center;gap:6px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">⚡ CrUX Origin: <strong>${safe(cruxData.status)}</strong> (${safe(cruxData.estimatedLcpRange)}) · CLS Risk: <strong>${safe(cruxData.clsRisk)}</strong></div>`
     : '';
   const badgesRow=`<div class="health-trust-badges-row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 16px;">${qidBadge}${cruxBadge}</div>`;
-  healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p>${badgesRow}<div class="health-counts-grid"><div class="health-count-card health-count-critical"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;
+  healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p>${badgesRow}<div class="health-counts-grid"><div class="health-count-card health-count-critical" data-filter-target="critical" style="cursor:pointer;" title="${isTr?'Kritik bulgulara git':'Filter critical findings'}"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high" data-filter-target="high" style="cursor:pointer;" title="${isTr?'Yüksek önem dereceli bulgulara git':'Filter high findings'}"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium" data-filter-target="medium" style="cursor:pointer;" title="${isTr?'Orta önem dereceli bulgulara git':'Filter medium findings'}"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low" data-filter-target="low" style="cursor:pointer;" title="${isTr?'Bilgi bulgularına git':'Filter info findings'}"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>`;
+  healthDeck.querySelectorAll('.health-count-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const fTarget = card.getAttribute('data-filter-target');
+      const fBtn = document.querySelector(`#findingsFilterBar .filter-btn[data-filter="${fTarget}"]`);
+      const dashPaneBtn = document.querySelector('.dash-view-btn[data-pane="paneFindings"]');
+      if (dashPaneBtn && !dashPaneBtn.classList.contains('active')) dashPaneBtn.click();
+      if (fBtn) fBtn.click();
+      const targetScroll = document.getElementById('findingsFilterBar') || document.getElementById('findingsList');
+      if (targetScroll) targetScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
   // Navigation Tabs & Panes Architecture
   let dashTabsWrap = document.getElementById('dashViewNavWrapper');
   if (!dashTabsWrap) {
