@@ -38,6 +38,9 @@ export function buildScanCandidates(input:string){
   const explicit=/^https?:\/\//i.test(raw);
   const primary=parseCandidate(raw);
   const bareHost=primary.hostname.replace(/^www\./i,'');
+  if(bareHost==='localhost'||bareHost.endsWith('.localhost')||bareHost.endsWith('.local')||bareHost.endsWith('.internal')||bareHost.endsWith('.home.arpa')){
+    throw new Error('Private or local targets are not allowed');
+  }
   if(!bareHost.includes('.')&&!IPV4.test(bareHost)){
     primary.hostname=`${primary.hostname}.com`;
   }
