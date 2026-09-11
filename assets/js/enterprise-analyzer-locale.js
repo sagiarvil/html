@@ -186,7 +186,11 @@
   function normalizeSubtree(root) {
     if (!root) return;
     if (root.nodeType === Node.TEXT_NODE) {
-      if (!shouldSkip(root)) root.nodeValue = translateText(root.nodeValue || '');
+      if (!shouldSkip(root)) {
+        const currentVal = root.nodeValue || '';
+        const translated = translateText(currentVal);
+        if (currentVal !== translated) root.nodeValue = translated;
+      }
       return;
     }
     if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE && root.nodeType !== Node.DOCUMENT_NODE) return;
@@ -194,7 +198,13 @@
     const nodes = [];
     let node;
     while ((node = walker.nextNode())) nodes.push(node);
-    for (const textNode of nodes) if (!shouldSkip(textNode)) textNode.nodeValue = translateText(textNode.nodeValue || '');
+    for (const textNode of nodes) {
+      if (!shouldSkip(textNode)) {
+        const currentVal = textNode.nodeValue || '';
+        const translated = translateText(currentVal);
+        if (currentVal !== translated) textNode.nodeValue = translated;
+      }
+    }
   }
 
   function normalizeAttributes() {
@@ -243,14 +253,35 @@
     enforce();
   }
 
-  let queued = false;
-  const observer = new MutationObserver(() => {
-    if (queued) return;
-    queued = true;
-    queueMicrotask(() => {
-      queued = false;
-      enforce();
-    });
+  let isEnforcing = false;
+  let timerId = null;
+  const observer = new MutationObserver((mutations) => {
+    if (isEnforcing) return;
+    let hasRelevantNodes = false;
+    for (const m of mutations) {
+      if (m.type === 'childList' && m.addedNodes && m.addedNodes.length > 0) {
+        for (const n of m.addedNodes) {
+          if (n.nodeType === Node.ELEMENT_NODE) {
+            hasRelevantNodes = true;
+            break;
+          }
+        }
+      }
+      if (hasRelevantNodes) break;
+    }
+    if (!hasRelevantNodes) return;
+
+    if (timerId) clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      timerId = null;
+      if (isEnforcing) return;
+      isEnforcing = true;
+      try {
+        enforce();
+      } finally {
+        isEnforcing = false;
+      }
+    }, 120);
   });
-  observer.observe(document.documentElement, { subtree: true, childList: true, characterData: true });
+  observer.observe(document.documentElement, { subtree: true, childList: true });
 })();

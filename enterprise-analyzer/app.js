@@ -1320,8 +1320,10 @@ echo "✅ Doğrulama Başarılı! Dağıtıma Hazır."
         const clean = cleanDomainInput(paramDomain);
         if (clean) {
           const input = document.getElementById('eaDomainInput');
-          if (input) input.value = clean;
-          runEnterpriseScan(clean);
+          if (input) {
+            input.value = clean;
+            runEnterpriseScan(clean);
+          }
         }
       }
     } catch(e) {}

@@ -902,8 +902,8 @@ export default {
     }
   }
 
-  // Auto-run on DOMContentLoaded
-  document.addEventListener('DOMContentLoaded', async function() {
+  // Robust lifecycle initialization
+  async function initReportRuntime() {
     const domain = getQueryDomain();
     if (!domain || domain === 'htmlandhtml.com') {
       // Keep canonical specimen mode
@@ -932,5 +932,11 @@ export default {
         hydrateReport(domain, scanData);
       }
     }
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReportRuntime, { once: true });
+  } else {
+    initReportRuntime();
+  }
 })();
