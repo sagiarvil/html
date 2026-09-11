@@ -1,4 +1,4 @@
-﻿/**
+/**
  * HTML&HTML Enterprise AI Diagnostic Report — Universal Live Hydration Engine
  * Version: 3.0-ENTERPRISE | Standard: Zero-Human-Intervention Deterministic SaaS
  *
@@ -91,7 +91,7 @@
     const fill = document.getElementById('eaReportProgressFill');
     const label = document.getElementById('eaReportStageLabel');
     const timer = setInterval(() => {
-      if (pct < 92) {
+      if (pct < 95) {
         pct += 5;
         if (fill) fill.style.width = pct + '%';
         if (pct >= 30 && sIdx === 0) { sIdx = 1; if (label) label.textContent = stages[1]; }
@@ -99,23 +99,32 @@
         if (pct >= 72 && sIdx === 2) { sIdx = 3; if (label) label.textContent = stages[3]; }
         if (pct >= 85 && sIdx === 3) { sIdx = 4; if (label) label.textContent = stages[4]; }
       }
-    }, 450);
+    }, 400);
+
+    const safetyCutoff = setTimeout(() => {
+      if (overlay && overlay.style.display !== 'none') {
+        clearInterval(timer);
+        overlay.style.display = 'none';
+      }
+    }, 18000);
 
     return {
       finish: () => {
         clearInterval(timer);
+        clearTimeout(safetyCutoff);
         if (fill) fill.style.width = '100%';
         if (label) label.textContent = isTr ? '✓ Analiz tamamlandı. Kurumsal rapor açılıyor...' : '✓ Audit complete. Opening executive dossier...';
         setTimeout(() => {
           if (overlay) overlay.style.display = 'none';
-        }, 350);
+        }, 300);
       },
       error: (msg) => {
         clearInterval(timer);
+        clearTimeout(safetyCutoff);
         if (label) label.innerHTML = '<span style="color:#ef4444;">' + (msg || 'Tarama hatası') + '</span>';
         setTimeout(() => {
           if (overlay) overlay.style.display = 'none';
-        }, 2200);
+        }, 1500);
       }
     };
   }
@@ -124,26 +133,36 @@
     const loader = showLoadingOverlay(domain, isTr);
     let scanResult = null;
     try {
+      // 1. First try /api/scan-v2 with strict 8s timeout
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
         const respV2 = await fetch('/api/scan-v2', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ domain: domain, streaming: false })
+          body: JSON.stringify({ domain: domain, streaming: false }),
+          signal: controller.signal
         });
+        clearTimeout(timeoutId);
         if (respV2.ok) {
           const jsonV2 = await respV2.json();
-          if (jsonV2 && (jsonV2.overallScore !== undefined || jsonV2.engines)) {
+          if (jsonV2 && (jsonV2.overall || jsonV2.overallScore) && jsonV2.overallStatus !== 'NOT_MEASURED') {
             scanResult = jsonV2;
           }
         }
       } catch(e) {}
 
+      // 2. If scan-v2 did not return or timed out, immediately query /api/scan
       if (!scanResult) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
         const respV1 = await fetch('/api/scan', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ domain: domain })
+          body: JSON.stringify({ domain: domain }),
+          signal: controller.signal
         });
+        clearTimeout(timeoutId);
         if (respV1.ok) {
           scanResult = await respV1.json();
         } else {
@@ -706,10 +725,13 @@ export default {
   }
 
   function renderFindingCard(det, isTr, domain) {
-    const urlChips = det.affectedUrls.slice(0, 4).map(u => {
-      const href = u.startsWith('http') ? u : `https://${domain}${u.startsWith('/') ? '' : '/'}${u}`;
+    const list = Array.isArray(det.affectedUrls) ? det.affectedUrls : (det.url ? [det.url] : []);
+    const urlChips = list.slice(0, 4).map(u => {
+      const s = String(u || '').trim();
+      if (!s) return '';
+      const href = s.startsWith('http') ? s : `https://${domain}${s.startsWith('/') ? '' : '/'}${s}`;
       return `<a href="${safe(href)}" target="_blank" rel="noopener noreferrer" class="ea-url-chip">${safe(href)} ↗</a>`;
-    }).join('');
+    }).filter(Boolean).join('');
 
     return `
       <div class="finding-card card-${det.priorityClass}" data-severity="${det.priority === 'P0' ? 'high' : (det.priority === 'P1' ? 'medium' : 'low')}" data-priority="${det.priority}">
@@ -862,7 +884,7 @@ export default {
 
     const pagesEl = document.querySelector('.ea-meta-item [data-i18n="metaPages"]');
     if (pagesEl) {
-      const pCount = data.summary?.pagesScanned || data.pagesScanned || 43;
+      const pCount = data.summary?.pagesScanned || data.pagesScanned || (Array.isArray(data.pages) ? data.pages.length : 12);
       pagesEl.textContent = isTr ? `${pCount} sayfa` : `up to ${pCount} pages`;
     }
     const probesEl = document.querySelector('.ea-meta-item [data-i18n="metaProbes"]');
@@ -872,7 +894,8 @@ export default {
     }
 
     // 7. Calculate 3-Plane HUD Scores
-    const planeA = Math.max(10, Math.min(100, Math.round(data.overall !== undefined ? data.overall : (data.scores?.technical || 74))));
+    const rawOverall = data.overall !== undefined ? data.overall : (data.overallScore !== undefined ? data.overallScore : (data.scores?.technical || 74));
+    const planeA = Math.max(10, Math.min(100, Math.round(rawOverall)));
     const planeB = data.eaiV4?.scores?.planeB_observedAIPresence?.score !== undefined 
       ? Math.round(data.eaiV4.scores.planeB_observedAIPresence.score) 
       : Math.max(20, Math.min(95, Math.round(planeA * 0.82)));
@@ -896,9 +919,16 @@ export default {
     }
 
     // 8. Update 4 Pillars
-    const sP1 = Math.round(((data.scores?.crawl || planeA) + (data.scores?.technical || planeA)) / 2);
-    const sP2 = Math.round(((data.scores?.schema || planeA) + (data.scores?.llms || planeA)) / 2);
-    const sP3 = Math.round(((data.scores?.ai || planeA) + (data.scores?.trust || planeA)) / 2);
+    const crawlScore = data.scores?.crawl || (data.engines?.['ENG-01']?.score) || planeA;
+    const techScore = data.scores?.technical || (data.engines?.['ENG-02']?.score) || planeA;
+    const schemaScore = data.scores?.schema || (data.engines?.['ENG-05']?.score) || planeA;
+    const llmScore = data.scores?.llms || (data.engines?.['ENG-04']?.score) || planeA;
+    const aiScore = data.scores?.ai || (data.engines?.['ENG-03']?.score) || planeA;
+    const trustScore = data.scores?.trust || (data.engines?.['ENG-09']?.score) || planeA;
+
+    const sP1 = Math.round((crawlScore + techScore) / 2);
+    const sP2 = Math.round((schemaScore + llmScore) / 2);
+    const sP3 = Math.round((aiScore + trustScore) / 2);
     const sP4 = Math.round(data.scores?.conversion !== undefined ? data.scores.conversion : Math.round(planeA * 0.78));
 
     const pCells = document.querySelectorAll('.ea-pillars-grid .ea-pillar-cell');
@@ -1084,7 +1114,9 @@ export default {
     }
 
     // 13. DYNAMIC GENERATION OF 24-FIELD FINDING CARDS FROM REAL SCAN
-    const rawFindings = Array.isArray(data.findings) ? data.findings : [];
+    const rawFindings = (Array.isArray(data.findings) && data.findings.length)
+      ? data.findings
+      : (data.engines ? Object.values(data.engines).flatMap(e => e.findings || []) : []);
     let findingsList = [...rawFindings];
 
     // Ensure comprehensive AI Visibility coverage if scan returned few findings

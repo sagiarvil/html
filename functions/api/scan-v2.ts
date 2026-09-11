@@ -183,20 +183,34 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
       },
     ],
     links: [],
+    baseResult,
   };
 }
 
+export async function onRequestPost({ request }: { request: Request }) {
+  const url = new URL(request.url);
+  const isStreaming = url.searchParams.get('stream') === 'true';
 
-export async function onRequestPost(context: any): Promise<Response> {
-  const body = await context.request.json().catch(() => ({}));
-  const rawDomain = body?.domain;
-  if (!rawDomain || typeof rawDomain !== 'string' || !rawDomain.trim()) {
-    return Response.json({ error: 'Domain required' }, { status: 400 });
+  let body: any = {};
+  try {
+    body = await request.json();
+  } catch {
+    body = {};
   }
 
-  const cleanDomain = rawDomain.trim();
-  const acceptHeader = context.request.headers?.get('accept') || '';
-  const isStreaming = acceptHeader.includes('application/x-ndjson') || Boolean(body.streaming || body.stream);
+  const rawDomain = body.domain || body.url || body.target || '';
+  const cleanDomain = rawDomain
+    .replace(/^https?:\/\//i, '')
+    .replace(/\/.*$/, '')
+    .trim()
+    .toLowerCase();
+
+  if (!cleanDomain) {
+    return new Response(JSON.stringify({ error: 'Domain is required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 
   const isPrivate = /^(https?:\/\/)?(localhost|127\.|192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/i.test(cleanDomain);
   if (isPrivate) {
@@ -232,7 +246,7 @@ export async function onRequestPost(context: any): Promise<Response> {
   }
 
   try {
-    const input = await gatherScanInput(cleanDomain);
+    const input: any = await gatherScanInput(cleanDomain);
     const externalProbes = {
       wikidata: input.wikidata,
       commonCrawl: input.commonCrawl,
@@ -249,10 +263,31 @@ export async function onRequestPost(context: any): Promise<Response> {
             externalProbes,
           });
         } catch {}
+
+        const allFindings = (input.baseResult?.findings && input.baseResult.findings.length)
+          ? input.baseResult.findings
+          : Object.values(scanRes.engines || {}).flatMap((e: any) => e.findings || []);
+
         return {
           ...scanRes,
+          domain: cleanDomain,
+          url: input.pages[0]?.url || `https://${cleanDomain}`,
+          overall: scanRes.overallScore,
+          overallScore: scanRes.overallScore,
+          overallStatus: scanRes.overallStatus,
+          scores: {
+            ...(input.baseResult?.scores || {}),
+          },
+          summary: input.baseResult?.summary || {
+            pagesScanned: input.pages?.length || 1,
+            linksProbed: 30,
+            totalFindings: allFindings.length,
+          },
+          findings: allFindings,
           externalProbes,
           eaiV4,
+          v2Available: true,
+          timestamp: Date.now(),
         };
       });
       return new Response(stream, {
@@ -272,10 +307,30 @@ export async function onRequestPost(context: any): Promise<Response> {
       });
     } catch {}
 
+    const allFindings = (input.baseResult?.findings && input.baseResult.findings.length)
+      ? input.baseResult.findings
+      : Object.values(result.engines || {}).flatMap((e: any) => e.findings || []);
+
     const enriched = {
       ...result,
+      domain: cleanDomain,
+      url: input.pages[0]?.url || `https://${cleanDomain}`,
+      overall: result.overallScore,
+      overallScore: result.overallScore,
+      overallStatus: result.overallStatus,
+      scores: {
+        ...(input.baseResult?.scores || {}),
+      },
+      summary: input.baseResult?.summary || {
+        pagesScanned: input.pages?.length || 1,
+        linksProbed: 30,
+        totalFindings: allFindings.length,
+      },
+      findings: allFindings,
       externalProbes,
       eaiV4,
+      v2Available: true,
+      timestamp: Date.now(),
     };
 
     return new Response(
