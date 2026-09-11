@@ -1822,6 +1822,13 @@ function render(data){
   else if (counts.medium > 0 && overall > 96) overall = Math.min(overall, 96);
   data.overall = overall;
   document.getElementById('overallScore').textContent = overall;
+  if (ts) {
+    const col = overall >= 80 ? '#10b981' : overall >= 65 ? '#eab308' : overall >= 45 ? '#f97316' : '#ef4444';
+    ts.style.setProperty('border-color', col, 'important');
+    ts.style.setProperty('box-shadow', `0 0 28px -2px ${col}66`, 'important');
+    const ovEl = document.getElementById('overallScore');
+    if (ovEl) ovEl.style.setProperty('color', col, 'important');
+  }
   let healthDeck=document.getElementById('healthExecutiveDeck');
   if(!healthDeck){
     healthDeck=document.createElement('div');
@@ -1846,12 +1853,24 @@ function render(data){
   healthDeck.querySelectorAll('.health-count-card').forEach(card => {
     card.addEventListener('click', () => {
       const fTarget = card.getAttribute('data-filter-target');
-      const fBtn = document.querySelector(`#findingsFilterBar .filter-btn[data-filter="${fTarget}"]`);
+      const dashTabs = document.getElementById('dashViewNavWrapper');
+      const dashPanes = document.getElementById('dashPanesContainer');
       const dashPaneBtn = document.querySelector('.dash-view-btn[data-pane="paneFindings"]');
-      if (dashPaneBtn && !dashPaneBtn.classList.contains('active')) dashPaneBtn.click();
+      if (dashPaneBtn && !dashPaneBtn.classList.contains('active')) {
+        if (dashTabs) dashTabs.querySelectorAll('.dash-view-btn').forEach(b => b.classList.remove('active'));
+        dashPaneBtn.classList.add('active');
+        if (dashPanes) dashPanes.querySelectorAll('.dash-pane').forEach(p => p.classList.remove('active'));
+        const pFindings = document.getElementById('paneFindings');
+        if (pFindings) pFindings.classList.add('active');
+      }
+      const fBtn = document.querySelector(`#findingsFilterBar .filter-btn[data-filter="${fTarget}"]`);
       if (fBtn) fBtn.click();
-      const targetScroll = document.getElementById('findingsFilterBar') || document.getElementById('findingsList');
-      if (targetScroll) targetScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const targetScroll = document.getElementById('findingsFilterBar') || document.querySelector('.result-title') || document.getElementById('findingsList');
+      if (targetScroll) {
+        const yOffset = -70;
+        const y = targetScroll.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
     });
   });
   // Navigation Tabs & Panes Architecture
@@ -2625,7 +2644,8 @@ export default {
   paneFindings.appendChild(document.getElementById('scanDisclosure'));
   const rCols = document.querySelector('.result-columns');
   if (rCols) paneFindings.appendChild(rCols);
-  const disclosure=document.getElementById('scanDisclosure');const cwv=data.fieldData?.coreWebVitals||'NOT_MEASURED';disclosure.innerHTML=`<b>${safe(D[lang].cwv)}:</b> ${safe(cwv==='NOT_MEASURED'?D[lang].notMeasured:cwv)} <span>·</span> <b>${safe(D[lang].scanId)}:</b> ${safe(data.scanId)} <span>·</span> <b>${safe(D[lang].pagesLabel)}:</b> ${safe(sm.pagesScanned||0)}/${safe(sm.pagesDiscovered||0)}`;const pSummary=document.getElementById('prioritySummary');if(pSummary){const sevRank={critical:4,high:3,medium:2,low:1,info:0};const sorted=[...(data.findings||[])].sort((a,b)=>(sevRank[b.severity]||0)-(sevRank[a.severity]||0));const top5=sorted.slice(0,5);if(top5.length){pSummary.hidden=false;const topSev=top5[0].severity||'info';const headBadge=pSummary.querySelector('h3 .severity');if(headBadge){headBadge.className='severity '+safe(topSev);headBadge.textContent=(sev[topSev]||sev.info)[lang];}const pList=document.getElementById('priorityList');if(pList){pList.innerHTML=top5.map(f=>{const t=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr);return '<div class="priority-item"><span class="severity '+safe(f.severity)+'"><i class="sev-dot"></i>'+safe((sev[f.severity]||sev.info)[lang])+'</span><span><b>'+safe(f.id)+'</b>: '+safe(t)+'</span></div>'}).join('')}}else{pSummary.hidden=true}}let remConsole=document.getElementById('remediationConsoleDeck');if(!remConsole){remConsole=document.createElement('div');remConsole.id='remediationConsoleDeck';remConsole.className='remediation-console-deck';paneN8n.appendChild(remConsole)}else{paneN8n.appendChild(remConsole)}
+  const disclosure=document.getElementById('scanDisclosure');const cwv=data.fieldData?.coreWebVitals||'NOT_MEASURED';disclosure.innerHTML=`<b>${safe(D[lang].cwv)}:</b> ${safe(cwv==='NOT_MEASURED'?D[lang].notMeasured:cwv)} <span>·</span> <b>${safe(D[lang].scanId)}:</b> ${safe(data.scanId)} <span>·</span> <b>${safe(D[lang].pagesLabel)}:</b> ${safe(sm.pagesScanned||0)}/${safe(sm.pagesDiscovered||0)}`;
+  const pSummary=document.getElementById('prioritySummary');if(pSummary){const sevRank={critical:4,high:3,medium:2,low:1,info:0};const sorted=[...(data.findings||[])].sort((a,b)=>(sevRank[b.severity]||0)-(sevRank[a.severity]||0));const top5=sorted.slice(0,5);if(top5.length){pSummary.hidden=false;const topSev=top5[0].severity||'info';const headBadge=pSummary.querySelector('h3 .severity');if(headBadge){headBadge.className='severity '+safe(topSev);headBadge.textContent=(sev[topSev]||sev.info)[lang];}const pList=document.getElementById('priorityList');if(pList){pList.innerHTML=top5.map(f=>{const t=lang==='tr'?(f.titleTr||f.titleEn):(f.titleEn||f.titleTr);return `<div class="priority-item" data-finding-id="${safe(f.id)}" style="cursor:pointer;" title="${isTr?'Bulguya git':'Go to finding'}"><span class="severity ${safe(f.severity)}"><i class="sev-dot"></i>${safe((sev[f.severity]||sev.info)[lang])}</span><span><b>${safe(f.id)}</b>: ${safe(t)}</span></div>`}).join('');pList.querySelectorAll('.priority-item').forEach(pItem=>{pItem.addEventListener('click',()=>{const fid=pItem.getAttribute('data-finding-id');const allBtn=document.querySelector('#findingsFilterBar .filter-btn[data-filter="all"]');if(allBtn)allBtn.click();const targetCard=Array.from(document.querySelectorAll('#findingsList .finding')).find(c=>{const tag=c.querySelector('.tag-id');return tag&&tag.textContent.trim()===fid});if(targetCard){const yOffset=-80;const y=targetCard.getBoundingClientRect().top+window.pageYOffset+yOffset;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});targetCard.style.transition='box-shadow 0.3s ease';targetCard.style.boxShadow='0 0 0 3px #0284c7';setTimeout(()=>{targetCard.style.boxShadow='';},2000)}})})}}else{pSummary.hidden=true}}let remConsole=document.getElementById('remediationConsoleDeck');if(!remConsole){remConsole=document.createElement('div');remConsole.id='remediationConsoleDeck';remConsole.className='remediation-console-deck';paneN8n.appendChild(remConsole)}else{paneN8n.appendChild(remConsole)}
 
 // ColBERT MaxSim Deterministic Calculation
 const calcDetSim=(qTok,dTok,domainStr)=>{
@@ -3588,6 +3608,15 @@ filterBar.querySelectorAll('.filter-btn').forEach(btn=>{
       }else{
         const rawLabel=btn.textContent.replace(/\s*\(\d+\)/,'').trim();
         countEl.textContent=`${visibleCount} ${D[lang].issues} (${rawLabel})`;
+      }
+    }
+    const fBar = document.getElementById('findingsFilterBar') || document.querySelector('.result-title') || document.getElementById('findingsList');
+    if (fBar) {
+      const rect = fBar.getBoundingClientRect();
+      if (rect.top < 50 || rect.bottom > window.innerHeight) {
+        const yOffset = -70;
+        const y = rect.top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
       }
     }
   });
