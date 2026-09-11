@@ -10,3 +10,6 @@
 - **AAO (Autonomous Agent Optimization)**: Frictionless discovery for AI agents via structured JSON surfaces, OpenAPI contracts, and Agent-to-Agent protocols.
 - **RAG (Retrieval-Augmented Generation Readiness)**: Chunk-optimized content structure, high semantic density, and explicit context preservation.
 - **E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)**: Verified author profiles, institutional sameAs rings (Wikidata, LinkedIn, Crunchbase), and formal methodology disclosures.
+
+## 2. Universal Master Mandate Reference
+- [Universal Enterprise AI Search Architecture Master Mandate](https://htmlandhtml.com/SUPER-MANDATE-UNIVERSAL-V3.md): 360° integrated architecture covering SEO, GEO, AEO, LLMO, AAO-Pro, RAG, and E-E-A-T across 18 deterministic engines, 105 controls, and zero-defect remediation blueprint.
