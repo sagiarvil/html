@@ -78,12 +78,24 @@ def normalize(text: str) -> str:
     )
     return text
 
+
+def normalize_markup(text: str) -> str:
+    pattern = re.compile(r'(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)', re.DOTALL | re.IGNORECASE)
+    parts = pattern.split(text)
+    for i in range(0, len(parts), 2):
+        parts[i] = normalize(parts[i])
+    return ''.join(parts)
+
+
 changed = 0
 for path in ROOT.rglob('*'):
     if not path.is_file() or not is_public_text(path):
         continue
     old = path.read_text(encoding='utf-8', errors='ignore')
-    new = normalize(old)
+    if path.suffix.lower() == '.html':
+        new = normalize_markup(old)
+    else:
+        new = normalize(old)
     if new != old:
         path.write_text(new, encoding='utf-8')
         changed += 1
