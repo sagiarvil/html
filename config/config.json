@@ -13,7 +13,9 @@
     "queuedMessageDeliveryStrategy": "MESSAGE_DELIVERY_STRATEGY_WHEN_IDLE",
     "remoteControlEnabled": false,
     "remoteControlHostname": "webtasarim-pc-warp-orbit",
-    "useAiCredits": true
+    "useAiCredits": true,
+    "defaultAgent": "project-manager",
+    "orchestrator": "project-manager"
   },
   "plugins": {
     "gemini-master-suite": {
