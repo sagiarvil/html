@@ -177,6 +177,16 @@ export const CANONICAL_SOURCES: ExternalSourceRecord[] = [
     lastVerified: '2026-09-09',
     maxAgeDays: 45,
   },
+  {
+    id: 'MS-CLARITY-AI-VISIBILITY-2026',
+    class: 'OFFICIAL_VENDOR',
+    publisher: 'Microsoft Clarity',
+    title: 'Microsoft Clarity AI Visibility and Citations Overview (Page citations, Share of authority, AI referral traffic, Grounding queries)',
+    url: 'https://learn.microsoft.com/en-us/clarity/ai-visibility/citations-overview',
+    appliesTo: ['ai', 'citations', 'telemetry', 'grounding-queries', 'share-of-authority', 'clarity'],
+    lastVerified: '2026-09-08',
+    maxAgeDays: 45,
+  },
 ];
 
 export function getSourceById(id: string): ExternalSourceRecord | undefined {

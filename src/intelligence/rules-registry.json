@@ -17,7 +17,7 @@
     { "ruleId": "RULE-C2PA-PROV-011", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["C2PA-SPEC"], "maxSourceAgeDays": 90 },
     { "ruleId": "RULE-GOV-TDM-012", "plane": "TECHNICAL", "evidenceClass": "OFFICIAL_STANDARD", "sourceIds": ["EU-TDM-DIR2019-790"], "maxSourceAgeDays": 180 },
     { "ruleId": "RULE-OBS-MENTION-020", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS"], "maxSourceAgeDays": 30 },
-    { "ruleId": "RULE-OBS-CITATION-021", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS"], "maxSourceAgeDays": 30 },
+    { "ruleId": "RULE-OBS-CITATION-021", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS", "MS-CLARITY-AI-VISIBILITY-2026"], "maxSourceAgeDays": 30 },
     { "ruleId": "RULE-OBS-RECOMMEND-022", "plane": "OBSERVATION", "evidenceClass": "OBSERVED", "sourceIds": ["OPENAI-PUBLISHERS", "PERPLEXITY-ROBOTS"], "maxSourceAgeDays": 30 },
     { "ruleId": "RULE-DEC-ROOT-030", "plane": "DECISION", "evidenceClass": "INTERNAL_HEURISTIC", "sourceIds": [], "maxSourceAgeDays": 45 },
     { "ruleId": "RULE-DEC-PRIORITY-031", "plane": "DECISION", "evidenceClass": "INTERNAL_HEURISTIC", "sourceIds": [], "maxSourceAgeDays": 45 }

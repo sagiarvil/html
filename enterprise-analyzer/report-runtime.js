@@ -956,6 +956,53 @@ export default {
       }
     });
 
+    // 9.5. Update Dual Citation Intelligence Panel (Synthetic vs Observed Telemetry)
+    const telPanel = document.querySelector('.ea-citation-telemetry-panel');
+    if (telPanel) {
+      const synVal = telPanel.querySelector('.synthetic-citation-val');
+      if (synVal) {
+        const eng12Score = (data.engines && data.engines['ENG-12'] && data.engines['ENG-12'].score !== undefined)
+          ? data.engines['ENG-12'].score
+          : (data.engineScores && data.engineScores['ENG-12'] !== undefined ? (typeof data.engineScores['ENG-12'] === 'number' ? data.engineScores['ENG-12'] : (data.engineScores['ENG-12'].score ?? 65)) : 65);
+        synVal.textContent = Math.round(eng12Score) + '%';
+      }
+      const telemetry = data.aiCitationTelemetry || (data.intelligence && data.intelligence.aiCitationTelemetry) || null;
+      const isObserved = Boolean(telemetry && telemetry.mode === 'OBSERVED_TELEMETRY');
+      const cCitations = telPanel.querySelector('.clarity-metric-citations');
+      const cSoa = telPanel.querySelector('.clarity-metric-soa');
+      const cRef = telPanel.querySelector('.clarity-metric-referral');
+      const cQueries = telPanel.querySelector('.clarity-metric-queries');
+      const scopeBadge = telPanel.querySelector('.telemetry-scope-badge');
+      const synStatus = telPanel.querySelector('.synthetic-status-tag');
+
+      if (isObserved) {
+        if (cCitations) cCitations.textContent = String(telemetry.observed_ai_citations ?? '—');
+        if (cSoa) cSoa.textContent = (telemetry.share_of_authority !== null && telemetry.share_of_authority !== undefined ? telemetry.share_of_authority + '%' : '—');
+        if (cRef) cRef.textContent = (telemetry.ai_referral_rate !== null && telemetry.ai_referral_rate !== undefined ? telemetry.ai_referral_rate + '%' : '—');
+        if (cQueries) cQueries.textContent = Array.isArray(telemetry.grounding_queries) ? String(telemetry.grounding_queries.length) : '—';
+        if (scopeBadge) {
+          scopeBadge.textContent = isTr ? 'BAĞLI (SAĞLAYICIYA ÖZGÜ TELEMETRİ)' : 'CONNECTED (PROVIDER-SCOPED)';
+          scopeBadge.style.background = '#f0fdf4';
+          scopeBadge.style.color = '#15803d';
+          scopeBadge.style.borderColor = '#bbf7d0';
+        }
+      } else {
+        if (cCitations) cCitations.textContent = '—';
+        if (cSoa) cSoa.textContent = '—';
+        if (cRef) cRef.textContent = '—';
+        if (cQueries) cQueries.textContent = '—';
+        if (scopeBadge) {
+          scopeBadge.textContent = isTr ? 'OPSİYONEL TELEMETRİ BAĞLI DEĞİL' : 'OPTIONAL TELEMETRY NOT CONNECTED';
+          scopeBadge.style.background = '#f1f5f9';
+          scopeBadge.style.color = '#64748b';
+          scopeBadge.style.borderColor = '#cbd5e1';
+        }
+        if (synStatus) {
+          synStatus.textContent = isTr ? 'Aktif Fallback (Puan Kesintisi Yok)' : 'Active Fallback (Zero Penalty)';
+        }
+      }
+    }
+
     // 10. Update AI Model Simulation Deck (SearchGPT, Perplexity, Claude, Gemini)
     const simDeck = document.querySelector('.executive-simulation-deck');
     if (simDeck) {

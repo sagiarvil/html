@@ -8,6 +8,12 @@ import type { ScanInput } from '../lib/engine-v2/02-engine-v2-core.ts';
 import { runFriendlyScan } from '../lib/scan-request.ts';
 import { createNDJSONStream, executeV2Scan } from '../lib/engine-v2/04-engine-v2-api.ts';
 import { runEnterpriseIntelligenceAudit } from '../lib/enterprise-intelligence-v4.ts';
+import {
+  MultiTierEntityCache,
+  HydrationDeltaEngine,
+  PerformanceHybridLabEngine,
+} from '../lib/engine-v2/05-engine-v2-perfect-layer.ts';
+import { EnterpriseCacheManager } from '../lib/engine-v2/06-engine-v2-cache-manager.ts';
 
 export async function probeWikidataEntity(domain: string): Promise<{
   qid: string | null;
@@ -78,6 +84,12 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
     status: 'NOT_MEASURED',
   };
 
+  const [cachedRobots, cachedSitemap, cachedLlms] = await Promise.all([
+    EnterpriseCacheManager.get<string>('robots', baseResult.domain),
+    EnterpriseCacheManager.get<string>('ast', `sm:${baseResult.domain}`),
+    EnterpriseCacheManager.get<string>('telemetry', `llms:${baseResult.domain}`),
+  ]);
+
   const [targetRes, robRes, smRes, llRes, wikiRes, ccRes] = await Promise.allSettled([
     fetch(baseResult.url, {
       headers: { 'user-agent': 'HTMLandHTML-Validator/2.0' },
@@ -90,15 +102,33 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
       });
       return { html: text, headers: hdrs };
     }),
-    fetch(new URL('/robots.txt', baseResult.url).href, {
-      signal: AbortSignal.timeout(3000),
-    }).then((r) => (r.ok ? r.text() : '')),
-    fetch(new URL('/sitemap.xml', baseResult.url).href, {
-      signal: AbortSignal.timeout(3000),
-    }).then((r) => (r.ok ? r.text() : '')),
-    fetch(new URL('/llms.txt', baseResult.url).href, {
-      signal: AbortSignal.timeout(3000),
-    }).then((r) => (r.ok ? r.text() : '')),
+    cachedRobots.data !== null
+      ? Promise.resolve(cachedRobots.data)
+      : fetch(new URL('/robots.txt', baseResult.url).href, {
+          signal: AbortSignal.timeout(3000),
+        }).then(async (r) => {
+          const t = r.ok ? await r.text() : '';
+          if (t) await EnterpriseCacheManager.set('robots', baseResult.domain, t);
+          return t;
+        }),
+    cachedSitemap.data !== null
+      ? Promise.resolve(cachedSitemap.data)
+      : fetch(new URL('/sitemap.xml', baseResult.url).href, {
+          signal: AbortSignal.timeout(3000),
+        }).then(async (r) => {
+          const t = r.ok ? await r.text() : '';
+          if (t) await EnterpriseCacheManager.set('ast', `sm:${baseResult.domain}`, t);
+          return t;
+        }),
+    cachedLlms.data !== null
+      ? Promise.resolve(cachedLlms.data)
+      : fetch(new URL('/llms.txt', baseResult.url).href, {
+          signal: AbortSignal.timeout(3000),
+        }).then(async (r) => {
+          const t = r.ok ? await r.text() : '';
+          if (t) await EnterpriseCacheManager.set('telemetry', `llms:${baseResult.domain}`, t);
+          return t;
+        }),
     probeWikidataEntity(baseResult.domain),
     probeCommonCrawlCorpus(baseResult.domain),
   ]);
@@ -126,6 +156,9 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
     homeHtml.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi) || []
   ).map((s) => s.replace(/<[^>]+>/g, '').trim());
 
+  const hydrationDelta = HydrationDeltaEngine.analyzeHydrationDelta(homeHtml);
+  const hybridPerformance = await PerformanceHybridLabEngine.evaluatePerformance(baseResult.url, homeHtml);
+
   return {
     domain: baseResult.domain,
     html: homeHtml,
@@ -135,6 +168,8 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
     llmsTxt,
     wikidata: wikidataProbe,
     commonCrawl: commonCrawlProbe,
+    hydrationDelta,
+    hybridPerformance,
     pages: [
       {
         url: baseResult.url,
@@ -201,6 +236,8 @@ export async function onRequestPost(context: any): Promise<Response> {
     const externalProbes = {
       wikidata: input.wikidata,
       commonCrawl: input.commonCrawl,
+      hydrationDelta: input.hydrationDelta,
+      hybridPerformance: input.hybridPerformance,
     };
 
     if (isStreaming) {

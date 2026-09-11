@@ -30,6 +30,8 @@ export interface ScanInput {
   links: string[];
   wikidata?: { qid: string | null; label: string | null; status: string };
   commonCrawl?: { captured: boolean; recordsCount: number; status: string };
+  hydrationDelta?: any;
+  hybridPerformance?: any;
 }
 
 export interface ExecutionConfig {

@@ -20,4 +20,5 @@ paddle-keys.txt
 *.env
 *.secret
 *.local
+plugins/
 

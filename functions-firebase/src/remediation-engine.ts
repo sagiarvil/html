@@ -342,6 +342,27 @@ function generateBlueprint(f: Finding, observedUrls: string[], totalPages: numbe
     };
   }
 
+  if (pId === 'PERF-CACHE-001' || pId.startsWith('PERF-CACHE')) {
+    return {
+      title: 'Missing Edge & AI Crawler Cache-Control Policy',
+      impact: 'Without deterministic cache headers, AI search crawlers and edge CDN nodes must re-fetch full payloads on every hit, degrading TTFB and crawl efficiency.',
+      root_cause: 'Web server or edge proxy response configuration does not emit Cache-Control with s-maxage, stale-while-revalidate, or ETag re-validation headers.',
+      root_fix: {
+        target_behavior: 'Edge server emits Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800 and strong ETag for static/canonical content.',
+        current_behavior: 'Cache-Control header is missing or defaults to private / no-store on canonical landing pages.',
+        required_change: 'Configure edge server (Cloudflare, Nginx, or application middleware) to emit public caching directives with SWR and ETag generation.',
+        scope: urlScope,
+        non_goals: ['Do not cache authenticated user pages or dynamic shopping cart checkout state']
+      },
+      recovery: ['Deploy cache headers on edge proxy for static and public informational routes'],
+      prevention: ['Run HTTP header verification asserting public Cache-Control on canonical routes in CI'],
+      acceptance_tests: ['curl -sI [URL] | grep -iE "cache-control|etag" shows public s-maxage and ETag headers'],
+      regression_tests: ['Confirm private, user account, and checkout routes continue to emit Cache-Control: no-store, private'],
+      do_not_break: ['Do not apply public caching to authenticated or dynamic personal sessions'],
+      rollback_guidance: ['Revert proxy cache-control directive if stale dynamic content is served to authenticated users']
+    };
+  }
+
   if (pId === 'TOKEN-BLOAT-001') {
     return {
       title: '14KB Sub-chunk Token Budget Overflow & KV-Cache Bloat',

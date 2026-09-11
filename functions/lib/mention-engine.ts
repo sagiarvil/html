@@ -1,8 +1,59 @@
 export type MentionProvider='openai'|'perplexity'|'gemini';
-export type MentionInput={brand:string;domain?:string;queries:string[];providers?:MentionProvider[]};
+export type MentionInput={
+  brand:string;
+  domain?:string;
+  queries:string[];
+  providers?:MentionProvider[];
+  clarityTelemetry?:{
+    pageCitations?:number;
+    shareOfAuthority?:number;
+    groundingQueries?:string[];
+    aiReferralRate?:number;
+  };
+};
 export type MentionProviderConfig={openaiApiKey?:string;perplexityApiKey?:string;geminiApiKey?:string};
-export type MentionObservation={provider:MentionProvider;surface:string;model:string;query:string;status:'ok'|'not_configured'|'error';mentioned:boolean|null;brandMentions:number;domainMentions:number;citationMatches:number;citations:string[];excerpt:string;error?:string};
-export type MentionResult={runId:string;brand:string;domain:string|null;checkedAt:string;queries:string[];providers:MentionProvider[];summary:{observations:number;successful:number;mentions:number;citationMatches:number;mentionRate:number|null;citationRate:number|null};observations:MentionObservation[];disclosure:string};
+export type MentionObservation={
+  provider:MentionProvider;
+  surface:string;
+  model:string;
+  query:string;
+  status:'ok'|'not_configured'|'error';
+  mentioned:boolean|null;
+  brandMentions:number;
+  domainMentions:number;
+  citationMatches:number;
+  citations:string[];
+  excerpt:string;
+  citationType?:'simulated'|'observed';
+  telemetryScope?:string;
+  error?:string;
+};
+export type MentionResult={
+  runId:string;
+  brand:string;
+  domain:string|null;
+  checkedAt:string;
+  queries:string[];
+  providers:MentionProvider[];
+  telemetryScope?:string;
+  summary:{
+    observations:number;
+    successful:number;
+    mentions:number;
+    citationMatches:number;
+    mentionRate:number|null;
+    citationRate:number|null;
+    simulatedCitationRate?:number|null;
+    observedCitationData?:{
+      pageCitations?:number;
+      shareOfAuthority?:number;
+      groundingQueries?:string[];
+      aiReferralRate?:number;
+    }|null;
+  };
+  observations:MentionObservation[];
+  disclosure:string;
+};
 
 const PROVIDERS:MentionProvider[]=['openai','perplexity','gemini'];
 const TIMEOUT_MS=30000;
@@ -37,7 +88,7 @@ async function fetchJson(url:string,init:RequestInit){const r=await fetch(url,{.
 function assess(provider:MentionProvider,surface:string,model:string,query:string,text:string,citations:string[],brand:string,domain:string):MentionObservation{
   const clean=uniq(citations.filter(x=>/^https?:\/\//i.test(x)));
   const brandMentions=count(text,brand),domainMentions=domain?count(text,domain):0,citationMatches=clean.filter(x=>citationMatch(x,domain)).length;
-  return {provider,surface,model,query,status:'ok',mentioned:(brandMentions+domainMentions+citationMatches)>0,brandMentions,domainMentions,citationMatches,citations:clean,excerpt:excerpt(text)};
+  return {provider,surface,model,query,status:'ok',mentioned:(brandMentions+domainMentions+citationMatches)>0,brandMentions,domainMentions,citationMatches,citations:clean,excerpt:excerpt(text),citationType:'simulated',telemetryScope:'provider_api_heuristic'};
 }
 function urlsDeep(value:any,out:string[]=[]):string[]{if(!value)return out;if(typeof value==='string'){if(/^https?:\/\//i.test(value))out.push(value);return out}if(Array.isArray(value)){for(const x of value)urlsDeep(x,out);return out}if(typeof value==='object'){for(const [k,v] of Object.entries(value)){if((k==='url'||k==='uri')&&typeof v==='string'&&/^https?:\/\//i.test(v))out.push(v);else urlsDeep(v,out)}}return out}
 async function openai(query:string,key:string,brand:string,domain:string){
@@ -63,9 +114,9 @@ async function observe(provider:MentionProvider,query:string,cfg:MentionProvider
   const key=provider==='openai'?cfg.openaiApiKey:provider==='perplexity'?cfg.perplexityApiKey:cfg.geminiApiKey;
   const surface=provider==='openai'?'OpenAI Responses API + web search':provider==='perplexity'?'Perplexity Sonar API web-search surface':'Gemini API + Google Search grounding';
   const model=provider==='openai'?'gpt-5.6-luna':provider==='perplexity'?'sonar-pro':'gemini-3.8-flash';
-  if(!trimText(key))return {provider,surface,model,query,status:'not_configured',mentioned:null,brandMentions:0,domainMentions:0,citationMatches:0,citations:[],excerpt:''};
+  if(!trimText(key))return {provider,surface,model,query,status:'not_configured',mentioned:null,brandMentions:0,domainMentions:0,citationMatches:0,citations:[],excerpt:'',citationType:'simulated',telemetryScope:'provider_api_heuristic'};
   try{return provider==='openai'?await openai(query,key!,brand,domain):provider==='perplexity'?await perplexity(query,key!,brand,domain):await gemini(query,key!,brand,domain)}
-  catch(e:any){return {provider,surface,model,query,status:'error',mentioned:null,brandMentions:0,domainMentions:0,citationMatches:0,citations:[],excerpt:'',error:String(e?.message||'Provider request failed').slice(0,260)}}
+  catch(e:any){return {provider,surface,model,query,status:'error',mentioned:null,brandMentions:0,domainMentions:0,citationMatches:0,citations:[],excerpt:'',citationType:'simulated',telemetryScope:'provider_api_heuristic',error:String(e?.message||'Provider request failed').slice(0,260)}}
 }
 export function providerAvailability(cfg:MentionProviderConfig){return {openai:Boolean(trimText(cfg.openaiApiKey)),perplexity:Boolean(trimText(cfg.perplexityApiKey)),gemini:Boolean(trimText(cfg.geminiApiKey))}}
 export async function runMentionScan(input:MentionInput,cfg:MentionProviderConfig):Promise<MentionResult>{
@@ -73,5 +124,31 @@ export async function runMentionScan(input:MentionInput,cfg:MentionProviderConfi
   await Promise.all(v.providers.map(async p=>{for(const q of v.queries)observations.push(await observe(p,q,cfg,v.brand,v.domain))}));
   observations.sort((a,b)=>PROVIDERS.indexOf(a.provider)-PROVIDERS.indexOf(b.provider)||v.queries.indexOf(a.query)-v.queries.indexOf(b.query));
   const ok=observations.filter(x=>x.status==='ok');const mentions=ok.filter(x=>x.mentioned).length;const citationMatches=ok.reduce((s,x)=>s+x.citationMatches,0);const cited=ok.filter(x=>x.citationMatches>0).length;
-  return {runId:runId(),brand:v.brand,domain:v.domain||null,checkedAt:new Date().toISOString(),queries:v.queries,providers:v.providers,summary:{observations:observations.length,successful:ok.length,mentions,citationMatches,mentionRate:ok.length?Math.round(mentions/ok.length*100):null,citationRate:ok.length?Math.round(cited/ok.length*100):null},observations,disclosure:'Measures provider API/search-grounded surfaces, not the exact consumer ChatGPT, Perplexity or Gemini UI. Results can vary by model, locale, time, personalization and provider retrieval behavior.'};
+  const telemetryScope=input.clarityTelemetry?'provider_scoped:microsoft_clarity':'provider_api_synthetic_fallback';
+  return {
+    runId:runId(),
+    brand:v.brand,
+    domain:v.domain||null,
+    checkedAt:new Date().toISOString(),
+    queries:v.queries,
+    providers:v.providers,
+    telemetryScope,
+    summary:{
+      observations:observations.length,
+      successful:ok.length,
+      mentions,
+      citationMatches,
+      mentionRate:ok.length?Math.round(mentions/ok.length*100):null,
+      citationRate:ok.length?Math.round(cited/ok.length*100):null,
+      simulatedCitationRate:ok.length?Math.round(cited/ok.length*100):null,
+      observedCitationData:input.clarityTelemetry?{
+        pageCitations:input.clarityTelemetry.pageCitations,
+        shareOfAuthority:input.clarityTelemetry.shareOfAuthority,
+        groundingQueries:input.clarityTelemetry.groundingQueries,
+        aiReferralRate:input.clarityTelemetry.aiReferralRate
+      }:null
+    },
+    observations,
+    disclosure:'Measures provider API/search-grounded surfaces, not the exact consumer ChatGPT, Perplexity or Gemini UI. Results can vary by model, locale, time, personalization and provider retrieval behavior. Wire telemetry from Microsoft Clarity is provider-scoped and segregated from simulated prompt measurements.'
+  };
 }

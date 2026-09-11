@@ -1745,29 +1745,81 @@ export function generateLLMSBundle(domain: string, pages: any[], lang: 'tr' | 'e
   return generator.generateAll(domain, pages, lang);
 }
 
+function generateHydrationDeltaSpaRemediation(domain: string, locale: DeliveryLocale): string {
+  const tr = locale === 'tr';
+  if (tr) {
+    return `# HYDRATION DELTA & SPA CRAWLABILITY REMEDIATION PROTOCOL\n\n` +
+      `- Hedef Alan Adı: ${domain}\n` +
+      `- Seviye: Tier-1 Enterprise AI Search Architecture\n\n` +
+      `## 1. Problem Tanımı ve AI Crawler Davranışı\n` +
+      `Modern JavaScript Single Page Application (React, Vue, Angular, Next.js CSR) yapılarında içerik istemci tarafında hidrasyon (client-side hydration) ile yüklenir. Ancak ChatGPT Search (OAI-SearchBot), Claude (ClaudeBot/Claude-SearchBot) ve PerplexityBot kural olarak JavaScript çalıştırmayan veya kısıtlı render bütçesine sahip motorlardır. Ham HTML boş kaldığında yapay zeka arama motorları içeriği indeksleyemez.\n\n` +
+      `## 2. Çözüm Yolu (Cloudflare HTMLRewriter Dynamic Rendering)\n` +
+      `Aşağıdaki Cloudflare Edge Worker kodu, AI botlarını tespit ettiğinde sunucu tarafında oluşturulmuş statik HTML özetini 14KB TCP bütçesi içinde doğrudan enjekte eder:\n\n` +
+      `\`\`\`javascript\n` +
+      `export default {\n` +
+      `  async fetch(request, env) {\n` +
+      `    const userAgent = request.headers.get('User-Agent') || '';\n` +
+      `    const isAIBot = /(OAI-SearchBot|Claude-SearchBot|PerplexityBot|Applebot-Extended|Googlebot)/i.test(userAgent);\n\n` +
+      `    const response = await fetch(request);\n` +
+      `    if (!isAIBot || !response.headers.get('content-type')?.includes('text/html')) {\n` +
+      `      return response;\n` +
+      `    }\n\n` +
+      `    return new HTMLRewriter()\n` +
+      `      .on('div#root, div#app, main#__next', {\n` +
+      `        element(el) {\n` +
+      `          el.setInnerContent(\`\n` +
+      `            <article class="ai-bot-fallback">\n` +
+      `              <h1>\${env.SITE_NAME || '${domain}'}</h1>\n` +
+      `              <p>\${env.SITE_DESCRIPTION || 'Doğrulanmış kurumsal bilgi grafiği ve teknik servis rehberi.'}</p>\n` +
+      `            </article>\n` +
+      `          \`, { html: true });\n` +
+      `        }\n` +
+      `      })\n` +
+      `      .transform(response);\n` +
+      `  }\n` +
+      `};\n` +
+      `\`\`\`\n\n` +
+      `## 3. Doğrulama ve Kabul Testi\n` +
+      `\`\`\`bash\n` +
+      `curl -s -A "OAI-SearchBot/1.0" https://${domain}/ | grep -E "(ai-bot-fallback|h1)"\n` +
+      `\`\`\`\n`;
+  }
+  return `# HYDRATION DELTA & SPA CRAWLABILITY REMEDIATION PROTOCOL\n\n` +
+    `- Target Domain: ${domain}\n` +
+    `- Tier: Tier-1 Enterprise AI Search Architecture\n\n` +
+    `## 1. Problem Statement & AI Crawler Behavior\n` +
+    `Modern JavaScript Single Page Applications (React, Vue, Angular, Next.js CSR) hydrate content client-side. AI search crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) typically do not execute JavaScript or operate under aggressive rendering timeouts. If raw HTML is thin, AI search models miss critical entity facts.\n\n` +
+    `## 2. Cloudflare Edge HTMLRewriter Dynamic Remediation\n` +
+    `Deploy the following snippet to inject pre-rendered semantic HTML blocks for AI search user agents within the 14KB initial TCP AST window:\n\n` +
+    `\`\`\`javascript\n` +
+    `export default {\n` +
+    `  async fetch(request, env) {\n` +
+    `    const userAgent = request.headers.get('User-Agent') || '';\n` +
+    `    const isAIBot = /(OAI-SearchBot|Claude-SearchBot|PerplexityBot|Applebot-Extended|Googlebot)/i.test(userAgent);\n\n` +
+    `    const response = await fetch(request);\n` +
+    `    if (!isAIBot || !response.headers.get('content-type')?.includes('text/html')) {\n` +
+    `      return response;\n` +
+    `    }\n\n` +
+    `    return new HTMLRewriter()\n` +
+    `      .on('div#root, div#app, main#__next', {\n` +
+    `        element(el) {\n` +
+    `          el.setInnerContent(\`\n` +
+    `            <article class="ai-bot-fallback">\n` +
+    `              <h1>\${env.SITE_NAME || '${domain}'}</h1>\n` +
+    `              <p>\${env.SITE_DESCRIPTION || 'Verified canonical entity graph and technical service documentation.'}</p>\n` +
+    `            </article>\n` +
+    `          \`, { html: true });\n` +
+    `        }\n` +
+    `      })\n` +
+    `      .transform(response);\n` +
+    `  }\n` +
+    `};\n` +
+    `\`\`\`\n`;
+}
+
 export function buildDeliveryPack(scan:ScanResult,report:FullSiteFixMandateReport,locale:DeliveryLocale='en'):DeliveryPack{
   const tr=locale==='tr',surfaces=machineSurfaces(scan);
-  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 28)
-11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)
-12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)
-13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)
-14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)
-15. 14e_NGINX_APACHE_EDGE_HEADERS.conf (Nginx & Apache .htaccess edge headers)
-16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)
-16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)
-17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)
-18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)
-19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)
-20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA imza)
-21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM halüsinasyon denetimi)
-22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Otomasyon & Kendi Kendini Onaran DAG)
-23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Yönetim Kurulu İstihbarat Dosyası)
-24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Otomatik AI Kalite Kapısı)
-25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Teknik Entegrasyon & publisher.js)
-26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress tek tıkla eklenti)
-27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow enjektörü)
-28. 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html (Google Regional Differences & Host Carousel 2026 Şablonu)
-
+  const readme=tr?`# HTML&HTML — AI Görünürlük Onarım Seti\n\nAlan adı: ${scan.domain}\nTarama kimliği: ${scan.scanId}\nÜretim zamanı: ${report.generated_at}\nPaket sürümü: ${DELIVERY_PACK_VERSION}\n\nBu ZIP genel öneri listesi değildir. Ölçülen bulguları firma, yazılım ekibi veya coding agent tarafından uygulanabilir ve test edilebilir iş paketine dönüştürür.\n\n## Hızlı Kurulum Seçenekleri (100/100 Sıfır Efor)\n- 🤖 **Cursor / Claude Code / Windsurf Kullanıyorsanız:** \`00_APPLY_WITH_AI_AGENT.prompt\` dosyasını doğrudan AI aracınıza sürükleyin. Projenize tüm kodları 60 saniyede otomatik uygular.\n- ⚡ **Cloudflare Kullanıyorsanız:** \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` dosyasındaki tek satırlık komut veya 1-Click linkiyle edge katmanını 30 saniyede aktif edin.\n- 🌐 **WordPress Kullanıyorsanız:** \`26_WORDPRESS_DROPIN_PLUGIN.php\` eklentisini sitenize yükleyin; tüm llms.txt ve schema yapıları kod yazmadan açılır.\n- 🛍️ **Shopify / Webflow Kullanıyorsanız:** \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` içindeki hazır head kodunu yapıştırın.\n\n## Klasik Kullanım Sırası\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (.ics takvim dosyasını takviminize aktarın)\n3. 11_SCORE_PROJECTION.md — Before / After projeksiyonu\n4. 02_IMPLEMENTATION_BLUEPRINT.md — P0 → P3 sırasını koruyun.\n5. 04_ACCEPTANCE_TESTS.md ve 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* sayfası)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Yayın sonrası RESCAN talimatını uygulayın.\n\n## Enterprise Dark Pool İstihbarat Dosyaları (11 - 29)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI tohumlama)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank alıntı formülü)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 14e_NGINX_APACHE_EDGE_HEADERS.conf (Nginx & Apache .htaccess edge headers)\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Kanonik endeks)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filtre)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA imza)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM halüsinasyon denetimi)\n22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Otomasyon & Kendi Kendini Onaran DAG)\n23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Yönetim Kurulu İstihbarat Dosyası)\n24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Otomatik AI Kalite Kapısı)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Teknik Entegrasyon & publisher.js)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress tek tıkla eklenti)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow enjektörü)\n28. 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html (Google Regional Differences & Host Carousel 2026 Şablonu)\n29. 29_HYDRATION_DELTA_SPA_REMEDIATION.md (Pre-JS vs Post-JS Hidrasyon & AI Crawler Onarımı)\n
 NOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi” sayılmaz. Page-specific machine surfaces root llms.txt değildir; root için tek önerilen yüzey 08_LLMS_TXT_RECOMMENDED.txt dosyasıdır.
 `:`# HTML&HTML — AI Search Visibility Roadmap\n\nDomain: ${scan.domain}\nScan ID: ${scan.scanId}\nGenerated: ${report.generated_at}\nPackage version: ${DELIVERY_PACK_VERSION}\n\nThis ZIP is not a generic recommendation list. It converts measured findings into a testable engineering work package for a business, developer or coding agent.\n\n## Quick Deployment Options (100/100 Zero Effort)\n- 🤖 **If using Cursor / Claude Code / Windsurf:** Paste \`00_APPLY_WITH_AI_AGENT.prompt\` directly into your AI coding tool. It automatically locates files and applies fixes in 60 seconds.\n- ⚡ **If using Cloudflare:** Follow \`14d_CLOUDFLARE_1CLICK_DEPLOY.md\` for instant edge activation.\n- 🌐 **If using WordPress:** Upload \`26_WORDPRESS_DROPIN_PLUGIN.php\` directly to activate machine surfaces without touching code.\n- 🛍️ **If using Shopify / Webflow:** Paste snippets from \`27_SHOPIFY_WEBFLOW_INJECTORS.html\` into your site head.\n\n## Execution Order\n1. 00_READ_ME.md & 01_EXECUTIVE_SUMMARY.md\n2. 03_PRIORITY_ROADMAP.md (import .ics calendar file)\n3. 11_SCORE_PROJECTION.md — Before / After simulation\n4. 02_IMPLEMENTATION_BLUEPRINT.md — preserve P0 → P3 order.\n5. 04_ACCEPTANCE_TESTS.md and 05_ROLLBACK_PLAN.md\n6. 08_LLMS_TXT_RECOMMENDED.txt + llms-index.txt (30x llms-* files)\n7. 09_MACHINE_SURFACE_MAP.json\n8. Re-scan after production deployment.\n\n## Enterprise Dark Pool Intelligence Files (11 - 28)\n11. 11_MODEL_CORPUS_SEEDING_BLUEPRINT.md (PMI seeding)\n12. 12_CROSS_ENCODER_ATTENTION_MATRIX.json (0.965 rerank attention)\n13. 13_KNOWLEDGE_VAULT_CONSENSUS_TRIPLES.json (Wikidata/MID consensus)\n14. 14_CLOUDFLARE_WORKER_14KB_TOKEN_PURGE.js (Edge AST Worker)\n15. 14e_NGINX_APACHE_EDGE_HEADERS.conf (Nginx & Apache .htaccess edge headers)\n16. 15_SECOND_ORDER_SYNTHETIC_CITATION_LOOP.md (Canonical index)\n16. 16_A2A_AGENT_CARD.json (A2A v1.0 Agent Card)\n17. 17_MCP_SERVER_SPEC.json (Model Context Protocol)\n18. 18_DPO_RLAIF_TONE_CALIBRATION_GUIDE.md (DPO Chosen filter)\n19. 19_COLBERT_MAXSIM_TOKEN_CLUSTERS.json (ColBERT dot product)\n20. 20_C2PA_PROVENANCE_LEDGER_SPEC.json (RFC 3161 C2PA signature)\n21. 21_DARK_POOL_HALLUCINATION_MONITOR.py (15-LLM hallucination monitor)\n22. 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json (n8n Automation & Self-Healing DAG)\n23. 23_EXECUTIVE_BOARD_DOSSIER.md (C-Level Executive Board Dossier)\n24. 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml (CI/CD Automated AI Quality Gate)\n25. 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html (Google Preferred Sources 2026 Technical Integration & publisher.js)\n26. 26_WORDPRESS_DROPIN_PLUGIN.php (WordPress drop-in plugin)\n27. 27_SHOPIFY_WEBFLOW_INJECTORS.html (Shopify & Webflow injectors)\n28. 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html (Google Regional Differences & Host Carousel 2026 Template)\n\nNOT_MEASURED and REQUIRES_CONTEXT items are never treated as fixed without evidence. Page-specific machine surfaces are not separate root llms.txt files; the single proposed root surface is 08_LLMS_TXT_RECOMMENDED.txt.\n`;
   const exec=tr?`# Yönetim Özeti\n\n- Alan adı: ${scan.domain}\n- Ana teknik skor: ${Math.round(scan.overall)}/100\n- Analiz edilen sayfa: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Toplam issue: ${report.health_summary.total_issues}\n- Öncelik dağılımı: ${prioritySummary(report)}\n- Intelligence analizleri: ${report.intelligence.analyses.length}\n- Readiness lensleri: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Ürün sınırı\nBu paket yapay zeka tavsiyesi, Google sıralaması, citation, trafik, müşteri veya gelir garantisi vermez. Ölçülen site kaynaklı engelleri uygulanabilir teknik değişikliklere ve doğrulama testlerine dönüştürür.\n`:`# Executive Summary\n\n- Domain: ${scan.domain}\n- Core technical score: ${Math.round(scan.overall)}/100\n- Pages analyzed: ${report.coverage.analyzed_urls}/${report.coverage.max_deep_analyzed_pages}\n- Total issues: ${report.health_summary.total_issues}\n- Priority distribution: ${prioritySummary(report)}\n- Intelligence analyses: ${report.intelligence.analyses.length}\n- Readiness lenses: ${Object.keys(report.intelligence.readinessLenses).length}\n\n## Product boundary\nThis package does not guarantee AI recommendations, Google rankings, citations, traffic, customers or revenue. It converts measured website-side blockers into executable technical changes and verification tests.\n`;
@@ -1828,7 +1880,8 @@ NOT_MEASURED ve REQUIRES_CONTEXT alanları kanıt elde edilmeden “düzeltildi�
     {name:'25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html',content:generateGooglePreferredSourcesIntegration(scan.domain,locale)},
     {name:'26_WORDPRESS_DROPIN_PLUGIN.php',content:generateWordPressDropinPlugin(scan.domain)},
     {name:'27_SHOPIFY_WEBFLOW_INJECTORS.html',content:generateShopifyWebflowInjectors(scan.domain)},
-    {name:'28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html',content:generateGoogleRegionalCarouselStructuredData(scan.domain,locale)}];
+    {name:'28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html',content:generateGoogleRegionalCarouselStructuredData(scan.domain,locale)},
+    {name:'29_HYDRATION_DELTA_SPA_REMEDIATION.md',content:generateHydrationDeltaSpaRemediation(scan.domain,locale)}];
   const filename=`HTMLHTML_AI_Search_Visibility_Roadmap_${cleanName(scan.domain)}_${scan.scanId}.zip`;
   return {version:DELIVERY_PACK_VERSION,filename,mime:'application/zip',bytes:zip(entries),files:entries.map(x=>x.name)};
 }

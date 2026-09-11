@@ -97,6 +97,33 @@ export interface IntelligencePriority {
   reasonTr:string;
 }
 
+export interface ProviderScopedTelemetry {
+  provider:'microsoft_clarity'|'google_search_console'|'bing_webmaster_tools'|'fallback_synthetic';
+  scopeLabelEn:string;
+  scopeLabelTr:string;
+  observedAt:string|null;
+  status:'CONNECTED'|'FALLBACK_SYNTHETIC'|'NOT_CONNECTED';
+}
+
+export interface ObservedAICitationTelemetry {
+  observed_ai_citations:number|null;
+  share_of_authority:number|null;
+  grounding_queries:string[]|null;
+  ai_referral_rate:number|null;
+  telemetryScope:ProviderScopedTelemetry;
+  mode:'OBSERVED_TELEMETRY'|'FALLBACK_SYNTHETIC';
+  verificationSource?:'CLARITY_CODE'|'GSC'|'BWT'|null;
+}
+
+export interface ClarityEnrichmentInput {
+  observed_ai_citations?:number|null;
+  share_of_authority?:number|null;
+  grounding_queries?:string[]|null;
+  ai_referral_rate?:number|null;
+  verificationSource?:'CLARITY_CODE'|'GSC'|'BWT';
+  observedAt?:string;
+}
+
 export interface IntelligenceReport {
   version:typeof INTELLIGENCE_VERSION;
   classification:'NON_SCORING_INTELLIGENCE_LAYER';
@@ -114,6 +141,11 @@ export interface IntelligenceReport {
   notMeasured:number;
   requiresContext:number;
   boundaries:string[];
+  observed_ai_citations:number|null;
+  share_of_authority:number|null;
+  grounding_queries:string[]|null;
+  ai_referral_rate:number|null;
+  aiCitationTelemetry:ObservedAICitationTelemetry;
 }
 
 const clamp=(n:number)=>Math.max(0,Math.min(100,Math.round(n)));
@@ -225,8 +257,32 @@ function queryFanoutRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
   return advancedRisk({key:'query_fanout_coverage',labelEn:'Query Fan-Out Coverage',labelTr:'Sorgu Yayılımı Kapsama Riski',status:'NOT_MEASURED',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'OFFICIAL_VENDOR',sourceIds:['GOOGLE-GENAI-PERFORMANCE-2026'],impact:'HIGH',effort:'MEDIUM',lenses:['SEO','GEO','AEO','RAG'],evidence:['Public HTTP scanning does not expose Google Search Console generative-AI query fan-out, impressions, countries, devices, or provider-side query decomposition.'],affectedUrls:[],boundaryEn:'Requires connected Search Console generative-AI performance data or an authorized query-observation dataset. Google states AI Mode and AI Overviews may fan out into multiple related searches; this scanner does not infer those hidden query branches.',boundaryTr:'Bağlı Search Console üretken AI performans verisi veya yetkili sorgu gözlem veri seti gerekir. Google AI Mode ve AI Overviews birden fazla ilişkili sorguya yayılabilir; bu tarayıcı gizli sorgu dallarını tahmin etmez.'});
 }
 
-function citationVolatilityRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
-  return advancedRisk({key:'citation_volatility',labelEn:'Citation & Recommendation Volatility',labelTr:'Alıntı ve Öneri Volatilitesi',status:'NOT_MEASURED',mode:'REQUIRES_CONTEXT',score:null,confidence:1,sourceClass:'INTERNAL_HEURISTIC',sourceIds:[],impact:'HIGH',effort:'MEDIUM',lenses:['GEO','AEO','LLMO','E-E-A-T'],evidence:['One website crawl cannot establish how often external AI providers cite, omit, or recommend a brand across repeated prompts and time windows.'],affectedUrls:[],boundaryEn:'Requires repeated provider observations with fixed prompts, locale, timestamp and citation extraction. Consumer UI behavior must not be inferred from a single API response.',boundaryTr:'Sabit prompt, dil, zaman damgası ve alıntı çıkarımıyla tekrarlı sağlayıcı gözlemleri gerekir. Tek bir API yanıtından tüketici arayüzü davranışı çıkarılamaz.'});
+function citationVolatilityRisk(scan:ScanResult, enrichment?:ClarityEnrichmentInput):AdvancedBlackBoxRiskAnalysis{
+  const hasClarity = Boolean(enrichment && (typeof enrichment.observed_ai_citations === 'number' || typeof enrichment.share_of_authority === 'number'));
+  return advancedRisk({
+    key:'citation_volatility',
+    labelEn:'Citation & Recommendation Volatility',
+    labelTr:'Alıntı ve Öneri Volatilitesi',
+    status: hasClarity ? 'WARN' : 'NOT_MEASURED',
+    mode: hasClarity ? 'MEASURED' : 'REQUIRES_CONTEXT',
+    score: hasClarity ? clamp(Number(enrichment?.share_of_authority ?? 60)) : null,
+    confidence: hasClarity ? 0.95 : 1,
+    sourceClass: hasClarity ? 'OFFICIAL_VENDOR' : 'INTERNAL_HEURISTIC',
+    sourceIds: hasClarity ? ['MS-CLARITY-AI-VISIBILITY-2026'] : [],
+    impact:'HIGH',
+    effort:'MEDIUM',
+    lenses:['GEO','AEO','LLMO','E-E-A-T'],
+    evidence: hasClarity
+      ? [`Provider-scoped wire telemetry (Microsoft Clarity AI Visibility): ${enrichment?.observed_ai_citations ?? 0} page citations observed; Share of Authority at ${enrichment?.share_of_authority ?? 0}%.`]
+      : ['One website crawl cannot establish how often external AI providers cite, omit, or recommend a brand across repeated prompts and time windows.'],
+    affectedUrls:[],
+    boundaryEn: hasClarity
+      ? 'Microsoft Clarity provides wire-level observations for Microsoft/Bing AI surfaces; it does not represent the entirety of all multimodal AI engines.'
+      : 'Requires repeated provider observations with fixed prompts, locale, timestamp and citation extraction. Consumer UI behavior must not be inferred from a single API response.',
+    boundaryTr: hasClarity
+      ? 'Microsoft Clarity, Microsoft/Bing AI yüzeyleri için kablo seviyesinde gözlem sağlar; tüm multimodal AI motorlarının tamamını temsil etmez.'
+      : 'Sabit prompt, dil, zaman damgası ve alıntı çıkarımıyla tekrarlı sağlayıcı gözlemleri gerekir. Tek bir API yanıtından tüketici arayüzü davranışı çıkarılamaz.'
+  });
 }
 
 function crawlerPolicyDivergenceRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
@@ -258,8 +314,8 @@ function agentActionFrictionRisk(scan:ScanResult):AdvancedBlackBoxRiskAnalysis{
   return advancedRisk({key:'agent_action_friction',labelEn:'Agent Action Friction',labelTr:'Ajan İşlem Sürtünmesi',status:statusFor(score),mode:'EVALUATED',score,confidence:0.84,sourceClass:'INTERNAL_HEURISTIC',sourceIds:['OPENAI-PUBLISHERS','WCAG22','OPENAPI31'],impact:'HIGH',effort:'MEDIUM',lenses:['AAO','AEO','E-E-A-T'],evidence:related.length?evidence(related):['No current accessibility, agent-discovery or conversion finding was emitted inside the bounded public scan.'],affectedUrls:urls(related),boundaryEn:'Measures website-side accessibility, machine-discovery and action-surface friction. It does not guarantee autonomous purchase completion in any external agent.',boundaryTr:'Site tarafındaki erişilebilirlik, makine keşfi ve işlem yüzeyi sürtünmesini değerlendirir. Herhangi bir dış ajanda otonom satın alma tamamlanacağını garanti etmez.'});
 }
 
-function advancedBlackBoxRiskLayer(scan:ScanResult):AdvancedBlackBoxRiskLayer{
-  const analyses=[queryFanoutRisk(scan),citationVolatilityRisk(scan),crawlerPolicyDivergenceRisk(scan),renderRetrievalGapRisk(scan),entityIdentityDriftRisk(scan),agentActionFrictionRisk(scan)];
+function advancedBlackBoxRiskLayer(scan:ScanResult, enrichment?:ClarityEnrichmentInput):AdvancedBlackBoxRiskLayer{
+  const analyses=[queryFanoutRisk(scan),citationVolatilityRisk(scan,enrichment),crawlerPolicyDivergenceRisk(scan),renderRetrievalGapRisk(scan),entityIdentityDriftRisk(scan),agentActionFrictionRisk(scan)];
   if(analyses.length!==ADVANCED_BLACKBOX_RISK_COUNT)throw new Error('Advanced black-box risk registry drift');
   return {classification:'NON_SCORING_ADVANCED_BLACKBOX_RISK_LAYER',count:ADVANCED_BLACKBOX_RISK_COUNT,analyses,boundaries:[
     'This layer does not claim access to proprietary model weights, embeddings, rerankers, hidden prompts or private search-engine systems.',
@@ -286,7 +342,7 @@ function priorities(analyses:IntelligenceAnalysis[]):IntelligencePriority[]{
   }).sort((a,b)=>b.priorityScore-a.priorityScore).slice(0,5).map((x,i)=>({...x,rank:i+1}));
 }
 
-export function generateIntelligenceReport(scan:ScanResult):IntelligenceReport{
+export function generateIntelligenceReport(scan:ScanResult, enrichment?:ClarityEnrichmentInput):IntelligenceReport{
   const analyses=[intentAudit(scan),informationGainAudit(scan),answerAudit(scan),entityAudit(scan),freshnessAudit(scan),renderParityAudit(scan),llmSurfaceAudit(scan),internalLinkAudit(scan),orphanAudit(scan),discoveryAudit(scan),indexNowAudit(scan),graphAudit(scan),codebaseAudit(scan)];
   if(analyses.length!==INTELLIGENCE_ANALYSIS_COUNT)throw new Error('Intelligence analysis registry drift');
   const readinessLenses:Record<ReadinessLens,ReadinessLensResult>={
@@ -298,5 +354,78 @@ export function generateIntelligenceReport(scan:ScanResult):IntelligenceReport{
     RAG:lens(scan,analyses,'RAG',[['technical',2],['ai',2],['links',1]]),
     'E-E-A-T':lens(scan,analyses,'E-E-A-T',[['trust',3],['schema',2],['security',1]])
   };
-  return {version:INTELLIGENCE_VERSION,classification:'NON_SCORING_INTELLIGENCE_LAYER',generatedAt:new Date().toISOString(),scanId:scan.scanId,domain:scan.domain,coreOverall:scan.overall,coreScoreUnchanged:true,analyses,advancedBlackBoxRiskLayer:advancedBlackBoxRiskLayer(scan),readinessLenses,topPriorities:priorities(analyses),measured:analyses.filter(a=>a.mode==='MEASURED').length,evaluated:analyses.filter(a=>a.mode==='EVALUATED').length,notMeasured:analyses.filter(a=>a.status==='NOT_MEASURED').length,requiresContext:analyses.filter(a=>a.status==='REQUIRES_CONTEXT').length,boundaries:['The 12 canonical engine scores and overall score are not modified by this intelligence layer.','Evaluated signals are internal heuristics, not official search-engine scores.','NOT_MEASURED and REQUIRES_CONTEXT are preserved rather than converted into artificial pass/fail values.','Information Gain means public within-site differentiation signals; it is not a reproduction of any Google ranking system.']};
+
+  const hasObservedData = Boolean(
+    enrichment && (
+      (typeof enrichment.observed_ai_citations === 'number') ||
+      (typeof enrichment.share_of_authority === 'number') ||
+      (Array.isArray(enrichment.grounding_queries) && enrichment.grounding_queries.length > 0) ||
+      (typeof enrichment.ai_referral_rate === 'number')
+    )
+  );
+
+  const observed_ai_citations = hasObservedData ? (enrichment?.observed_ai_citations ?? null) : null;
+  const share_of_authority = hasObservedData ? (enrichment?.share_of_authority ?? null) : null;
+  const grounding_queries = hasObservedData ? (enrichment?.grounding_queries ?? null) : null;
+  const ai_referral_rate = hasObservedData ? (enrichment?.ai_referral_rate ?? null) : null;
+
+  const aiCitationTelemetry: ObservedAICitationTelemetry = hasObservedData ? {
+    observed_ai_citations,
+    share_of_authority,
+    grounding_queries,
+    ai_referral_rate,
+    telemetryScope: {
+      provider: 'microsoft_clarity',
+      scopeLabelEn: 'Microsoft Clarity AI Visibility (Provider-Scoped Telemetry)',
+      scopeLabelTr: 'Microsoft Clarity AI Görünürlüğü (Sağlayıcıya Özgü Telemetri)',
+      observedAt: enrichment?.observedAt || new Date().toISOString(),
+      status: 'CONNECTED'
+    },
+    mode: 'OBSERVED_TELEMETRY',
+    verificationSource: enrichment?.verificationSource || 'CLARITY_CODE'
+  } : {
+    observed_ai_citations: null,
+    share_of_authority: null,
+    grounding_queries: null,
+    ai_referral_rate: null,
+    telemetryScope: {
+      provider: 'fallback_synthetic',
+      scopeLabelEn: 'Simulated Citation Model (Fallback — No Connected Telemetry)',
+      scopeLabelTr: 'Simüle Edilmiş Alıntı Modeli (Fallback — Bağlı Telemetri Yok)',
+      observedAt: null,
+      status: 'NOT_CONNECTED'
+    },
+    mode: 'FALLBACK_SYNTHETIC',
+    verificationSource: null
+  };
+
+  return {
+    version:INTELLIGENCE_VERSION,
+    classification:'NON_SCORING_INTELLIGENCE_LAYER',
+    generatedAt:new Date().toISOString(),
+    scanId:scan.scanId,
+    domain:scan.domain,
+    coreOverall:scan.overall,
+    coreScoreUnchanged:true,
+    analyses,
+    advancedBlackBoxRiskLayer:advancedBlackBoxRiskLayer(scan, enrichment),
+    readinessLenses,
+    topPriorities:priorities(analyses),
+    measured:analyses.filter(a=>a.mode==='MEASURED').length,
+    evaluated:analyses.filter(a=>a.mode==='EVALUATED').length,
+    notMeasured:analyses.filter(a=>a.status==='NOT_MEASURED').length,
+    requiresContext:analyses.filter(a=>a.status==='REQUIRES_CONTEXT').length,
+    boundaries:[
+      'The 12 canonical engine scores and overall score are not modified by this intelligence layer.',
+      'Evaluated signals are internal heuristics, not official search-engine scores.',
+      'NOT_MEASURED and REQUIRES_CONTEXT are preserved rather than converted into artificial pass/fail values.',
+      'Information Gain means public within-site differentiation signals; it is not a reproduction of any Google ranking system.',
+      'Microsoft Clarity AI Visibility metrics (Page citations, Share of authority, Grounding queries, AI referral traffic) represent provider-scoped wire telemetry, not universal AI consensus; absence of telemetry operates the deterministic simulation model as fallback without score penalty (null != 0).'
+    ],
+    observed_ai_citations,
+    share_of_authority,
+    grounding_queries,
+    ai_referral_rate,
+    aiCitationTelemetry
+  };
 }
