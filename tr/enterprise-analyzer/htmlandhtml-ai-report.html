@@ -2974,10 +2974,16 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           <span id="zipPackDescText" data-i18n="zipNotice">Aktif Paket: sürümlenmiş Tam Mühendislik Paketi (n8n DAG, Edge Worker, Python Monitörü)</span>
         </div>
-        <button class="ea-zip-download-btn" id="btnDownloadZip">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span id="btnDownloadZipText" data-i18n="zipBtn">Örnek Paketi İndir (ZIP)</span>
-        </button>
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <button class="ea-zip-download-btn" id="btnExportPdf" type="button" style="background:#0284c7;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span id="btnExportPdfText">📄 Export PDF</span>
+          </button>
+          <button class="ea-zip-download-btn" id="btnDownloadZip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span id="btnDownloadZipText" data-i18n="zipBtn">Örnek Paketi İndir (ZIP)</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -4234,6 +4240,18 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
       });
     }
 
+    // PDF Export Button
+    const btnExportPdf = document.getElementById('btnExportPdf');
+    if (btnExportPdf) {
+      btnExportPdf.addEventListener('click', function() {
+        if (typeof window.exportReportPdf === 'function') {
+          window.exportReportPdf();
+        } else {
+          window.print();
+        }
+      });
+    }
+
     // ZIP Download Button
     const btnDownloadZip = document.getElementById('btnDownloadZip');
     if (btnDownloadZip) {
@@ -4248,6 +4266,48 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
         for (const [fname, content] of Object.entries(currentFiles)) {
           zipFolder.file(fname, content);
         }
+
+        // Dynamic extraction of on-page unlocked remediation recipes
+        const recipesFolder = zipFolder.folder('remediation_code_recipes');
+        const extractedFindings = [];
+        document.querySelectorAll('.finding-card').forEach(c => {
+          const fid = c.querySelector('.finding-id')?.innerText?.trim() || '';
+          const fTitle = c.querySelector('.finding-title')?.innerText?.trim() || '';
+          const recipeFileName = c.querySelector('.ea-diff-header span:last-child')?.innerText?.trim() || '';
+          const codeSnippet = c.querySelector('.ea-diff-code code')?.innerText?.trim() || '';
+          const cliTest = c.querySelector('code:not(.evidence-code):not(.ea-diff-code code)')?.innerText?.trim() || '';
+          const rollback = c.querySelector('.rollback-text')?.innerText?.trim() || '';
+          const outcome = c.querySelector('.finding-impact-text')?.innerText?.trim() || '';
+
+          let cleanFileName = recipeFileName;
+          if (!cleanFileName || !cleanFileName.includes('.')) {
+            cleanFileName = `${fid || 'REMEDIATION'}_RULE.js`;
+          }
+
+          if (codeSnippet) {
+            recipesFolder.file(cleanFileName, codeSnippet);
+          }
+          if (fid) {
+            extractedFindings.push({
+              id: fid,
+              title: fTitle,
+              recipeFile: 'remediation_code_recipes/' + cleanFileName,
+              businessOutcome: outcome,
+              acceptanceTest: cliTest,
+              rollbackGuidance: rollback
+            });
+          }
+        });
+
+        if (extractedFindings.length > 0) {
+          zipFolder.file('03_FINDINGS.json', JSON.stringify({
+            targetDomain: targetDomain || 'htmlandhtml.com',
+            generatedAt: new Date().toISOString(),
+            findingsCount: extractedFindings.length,
+            findings: extractedFindings
+          }, null, 2));
+        }
+
         zip.generateAsync({ type: 'blob' }).then(blob => {
           const zipName = activePackageTier === '99' ? `htmlandhtml-fix-mandate-${targetDomain || 'specimen'}.zip` : `htmlandhtml-enterprise-ai-intelligence-${targetDomain || 'specimen'}.zip`;
           saveAs(blob, zipName);
