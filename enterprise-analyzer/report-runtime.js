@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HTML&HTML Enterprise AI Diagnostic Report — Universal Live Hydration Engine
  * Version: 3.0-ENTERPRISE | Standard: Zero-Human-Intervention Deterministic SaaS
  *
@@ -829,7 +829,8 @@ export default {
 
     // 17. Dynamic ZIP Package Customization
     const btnDownloadZip = document.getElementById('btnDownloadZip');
-    if (btnDownloadZip) {
+    if (btnDownloadZip && !btnDownloadZip.hasAttribute('data-zip-bound')) {
+      btnDownloadZip.setAttribute('data-zip-bound', 'true');
       btnDownloadZip.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();

@@ -4151,6 +4151,18 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
     const tabPkg999 = document.getElementById('tabPkg999');
     const zipPackDescText = document.getElementById('zipPackDescText');
 
+    const reportUrlParams = new URLSearchParams(window.location.search);
+    const targetDomain = (reportUrlParams.get('domain') || 'htmlandhtml.com').trim().toLowerCase().replace(/^https?:\/\//, '').split('/')[0];
+    if (targetDomain && targetDomain !== 'htmlandhtml.com') {
+      const todayIso = new Date().toISOString().slice(0, 10);
+      for (const k of Object.keys(RAW_FILES_99)) {
+        RAW_FILES_99[k] = String(RAW_FILES_99[k]).split('htmlandhtml.com').join(targetDomain).split('2026-09-08').join(todayIso);
+      }
+      for (const k of Object.keys(RAW_FILES_999)) {
+        RAW_FILES_999[k] = String(RAW_FILES_999[k]).split('htmlandhtml.com').join(targetDomain).split('2026-09-08').join(todayIso);
+      }
+    }
+
     let currentFiles = RAW_FILES_99;
     window.RAW_FILES_99 = RAW_FILES_99;
     window.RAW_FILES_999 = RAW_FILES_999;
@@ -4224,18 +4236,19 @@ Query-Passage Alignment Score: 0.732 [WARN: Below 0.920 target threshold]</code>
     // ZIP Download Button
     const btnDownloadZip = document.getElementById('btnDownloadZip');
     if (btnDownloadZip) {
+      btnDownloadZip.setAttribute('data-zip-bound', 'true');
       btnDownloadZip.addEventListener('click', function() {
         if (typeof JSZip === 'undefined' || typeof saveAs === 'undefined') {
           alert('JSZip library loading, please try again in a second.');
           return;
         }
         const zip = new JSZip();
-        const zipFolder = zip.folder(activePackageTier === '99' ? 'htmlandhtml-fix-mandate-99' : 'htmlandhtml-enterprise-intelligence-999');
+        const zipFolder = zip.folder(activePackageTier === '99' ? `htmlandhtml-fix-mandate-${targetDomain || '99'}` : `htmlandhtml-enterprise-intelligence-${targetDomain || '999'}`);
         for (const [fname, content] of Object.entries(currentFiles)) {
           zipFolder.file(fname, content);
         }
         zip.generateAsync({ type: 'blob' }).then(blob => {
-          const zipName = activePackageTier === '99' ? 'htmlandhtml-fix-mandate-specimen.zip' : 'htmlandhtml-enterprise-ai-intelligence-specimen.zip';
+          const zipName = activePackageTier === '99' ? `htmlandhtml-fix-mandate-${targetDomain || 'specimen'}.zip` : `htmlandhtml-enterprise-ai-intelligence-${targetDomain || 'specimen'}.zip`;
           saveAs(blob, zipName);
         });
       });
