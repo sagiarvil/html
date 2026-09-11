@@ -38,12 +38,12 @@ def normalize(text: str) -> str:
 
     # Generated prose only; executable JavaScript never enters this function.
     text = re.sub(
-        r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,160}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,160}',
+        r'(?i)(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<">]{0,160}(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<">]{0,160}',
         'measured HTML payload, semantic structure and source-readiness evidence',
         text,
     )
     text = re.sub(
-        r'(?i)(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<]{0,160}(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<]{0,160}',
+        r'(?i)(?:AST|window|pencere|budget|bütçe|token|AI|yapay zeka)[^\n<">]{0,160}(?:14\s*KB|14,?336\s*(?:bytes?|bayt))[^\n<">]{0,160}',
         'measured HTML payload, semantic structure and source-readiness evidence',
         text,
     )
