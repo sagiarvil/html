@@ -1,0 +1,36 @@
+---
+description: Master Suite otonom geliştirme, çift dilli token tasarrufu, güvenli PHP dosya yazımı, manifest kullanımı ve minimalist telemetri kuralları
+alwaysApply: true
+---
+
+## 10. Otonom Dil Sentezleme, Kendi Kendini Geliştirme ve Çift Dilli Az Token Mimarisi
+
+- **Canlı Eklenti Geliştirme:** Ajan veya geliştirici proje yürütürken eksik bir araç, kural veya dil desteği fark ettiğinde eklenti kaynaklarına doğrudan müdahale edip geliştirir.
+- **Tek Komutla Dil Sentezleme:** `node scripts/language_synthesizer.js <dil_adi>`
+- **Çoklu AI Desteği (OpenAI Codex, Gemini, Claude):** Eklenti sistemi `gemini/`, `claude/` ve `codex/` (OpenAI Codex CLI, AGENTS.md, config.toml) ekosistemlerinin tamamıyla %100 uyumlu ve senkronizedir.
+- **Çift Dilli Token Tasarrufu Prensibi:** Kullanıcı Türkçe talimat verse dahi, ajanın dahili sistem promptları yüksek yoğunluklu İngilizce (High-Density English) ile kurgulanır. Kullanıcıya sunulan tüm sohbet çıktıları, raporlar ve araç başlıkları İSTİSNASIZ %100 TÜRKÇE olacaktır.
+
+## 11. PHP Projeleri İçin Dosya Yazma Kuralı
+
+1. **Python scripti:** `encoding='utf-8'` ZORUNLU — BOM üretmez, Türkçe karakter güvenlidir.
+2. **Cerrahi satır bazlı düzenlemeler.**
+3. **KESİNLİKLE YASAK:** Node.js inline, PowerShell 5.1 `Out-File` / `Set-Content`.
+
+## 12. Skills Manifest ve Tek Seferlik Tanıtım Standardı
+
+- Ajan, `master-suite` içerisindeki tüm beceri ve ajan dosyalarını tek tek okuyup bağlamı ASLA şişirmez. `skills_manifest.md` üzerinden belleğe alır.
+- Yalnızca içeriği değişen tekil dosya anlık olarak modele iletilir.
+
+## 13. Çıkış Tokeni Tasarruf Protokolü ve Minimalist Telemetri (Zero-Slop Output Rule)
+
+- **Ultra-Minimalist Token Tasarrufu:** Sohbette gereksiz selamlama, özet tabloları ve tekrar açıklamalar KESİNLİKLE YASAKTIR.
+- **Sohbete Kod Dökmek Kesinlikle Yasaktır:** Tüm kod işlemleri doğrudan hedef proje dosyasında bitirilir.
+- **Kısa Telemetri ve Durum Bildirimi:**
+  - `⏳ [dosya_veya_modül] Analiz ediliyor...`
+  - `⚠️ [dosya_veya_modül] Hata bulundu: <1 cümlelik kısa özet>`
+  - `✅ [dosya_veya_modül] Düzeltildi / oluşturuldu ve doğrulandı.`
+- **Token Bekçisi ve Yeni Sekme Uyarısı:** Oturum derinliği 15–20 adımı aştığında yanıtın altına şu standart satır eklenir:
+  > 💡 *"Token Tasarrufu için projeye yeni sekmede devam ediniz."*
+- **Görev Sonu Maliyet Raporu Zorunluluğu:**
+  > 📊 **Görev:** ~X Tok | $Y (~₺Z) | 💬 Mesaj Alanı: %DOLULUK (~K Tok / 1M)  
+  > ⏳ **Kalan Limitler:** Saatlik: ~SK | Günlük: ~GK | Oturum: ~OK (%OP)
