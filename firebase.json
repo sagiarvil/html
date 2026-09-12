@@ -24,7 +24,7 @@
       "tests/**"
     ],
     "cleanUrls": true,
-    "trailingSlash": false,
+    "trailingSlash": true,
     "headers": [
       {
         "source": "**",
@@ -42,11 +42,11 @@
           {"key":"ETag","value":"W/\"htmlandhtml-v4-20260908-typography-upgrade\""}
         ]
       },
-      {"source":"**/*.@(html|htm)","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
-      {"source":"/","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
-      {"source":"/tr","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
-      {"source":"/en","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
-      {"source":"/{tr,en}/**","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"**/*.@(html|htm)","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
+      {"source":"/","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
+      {"source":"/tr*","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
+      {"source":"/en*","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
+      {"source":"/{tr,en}/**","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
       {"source":"/favicon.*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/apple-touch-icon.png","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/assets/favicon-*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
