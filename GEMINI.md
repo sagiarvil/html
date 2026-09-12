@@ -129,4 +129,12 @@ Bu anayasa; kullanıcının sahip olduğu 5 platformun tamamını kapsayan mutla
 6. **Ortak Lüks Tasarım & Gelir Çekirdeği:**
    - 5 platformun tamamı `elite-design-engineer` (Linear/Apple UI/UX, Bento Grid, Floating Glass Dock) ve `portfolio-monetization-director` (Paddle v2, B2B lead gen) güvencesi altındadır.
 
+---
+
+## 14. SIFIR ARAÇ ÇAĞRISI SIZINTISI STANDARDI (NATIVE-ONLY TOOL INVOCATION)
+1. **Dahili Sözdizim Sızıntısı Kesinlikle Yasaktır:** `call:default_api:<araç_adı>{...}`, `declaration:default_api:...` veya ham JSON/RPC biçimindeki iç araç çağrı kalıpları KESİNLİKLE sohbet metni (chat content) olarak ekrana basılamaz.
+2. **Yalnızca Doğal (Native) Araç Yürütme:** Herhangi bir araç (`run_command`, `invoke_subagent`, `manage_subagents`, `replace_file_content`, `view_file` vb.) çalıştırılacağı zaman MUTLAKA ve SADECE sistemin doğal yapısal fonksiyon çağırma (structured tool call) mekanizması kullanılır.
+3. **Geçmiş Döngüsü Kırıcı (Loop Breaker):** Konuşma geçmişinde yanlışlıkla bir `call:default_api:...` metni bulunsa dahi, model bunu asla taklit edemez; zincir derhal kırılarak doğal araç çağrısına geçilir veya temiz Türkçe durum bildirilir.
+
+
 
