@@ -179,6 +179,17 @@ export interface EnterpriseIntelligenceAuditResult {
     files: Array<{ path: string; sha256: string; bytes: number }>;
   };
   externalProbes?: ExternalProbeResults;
+  googlePreferredSourceReadiness?: {
+    signal: 'google_preferred_source_readiness';
+    status: 'READY' | 'ELIGIBILITY_REQUIRED';
+    eligibility: 'eligible' | 'ineligible' | 'unknown';
+    surfaceType: string;
+    priority: 'P2';
+    updatedAt: string;
+    rankingFactor: boolean;
+    scoreWeight: number;
+    evidence: string;
+  };
 }
 
 function sha256(text: string): string {
@@ -1091,5 +1102,16 @@ TDM-Reservation: 1; https://${normDomain}/terms/tdm
     deliverables,
     packageManifest,
     externalProbes: options?.externalProbes,
+    googlePreferredSourceReadiness: {
+      signal: 'google_preferred_source_readiness',
+      status: 'ELIGIBILITY_REQUIRED',
+      eligibility: 'unknown',
+      surfaceType: 'user-selected AI/Search visibility surface',
+      priority: 'P2',
+      updatedAt: '2026-09-10',
+      rankingFactor: false,
+      scoreWeight: 0,
+      evidence: 'External publication eligibility check in Google Source preferences tool required prior to publisher button deployment.',
+    },
   };
 }

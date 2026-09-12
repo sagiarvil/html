@@ -659,9 +659,9 @@ Bu bölüm; sistemin tespit ettiği tüm kusurlar için kök neden analizini, ko
 
 ---
 
-#### Kusur 2.3: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001`)
-- **Teşhis Kuralı:** Şablonlarda Google Search Central Preferred Sources butonunun veya derin bağlantısının bulunmaması.
-- **Model Etkisi:** Sadık okuyucuların siteyi Google Arama'da "Tercih Edilen Kaynak" olarak ekleyememesi, AI Overviews ve Top Stories önceliğinin kaybedilmesi.
+#### Kusur 2.3: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001` - P2)
+- **Teşhis Kuralı:** Şablonlarda Google Search Central Preferred Sources butonunun veya derin bağlantısının bulunmaması (Yayıncı uygunluk durumuna bağlıdır).
+- **Model Etkisi:** Uygun yayıncılar için kullanıcı tercihine dayalı olarak AI Mode ve AI Overviews'da "preferred" etiketiyle öne çıkarılma fırsatı (kullanıcı tercihli görünürlük yüzeyi; sıralama faktörü değildir).
 - **Üretime Hazır Kod Reçetesi:**
   ```html
   <!-- 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html -->

@@ -123,7 +123,7 @@ function evaluateRules(
       findings.push({
         id: rule.id,
         category: engineId,
-        severity: rule.penaltyOnFail >= 20 ? 'high' : rule.penaltyOnFail >= 12 ? 'medium' : 'low',
+        severity: rule.penaltyOnFail >= 20 ? 'high' : rule.penaltyOnFail >= 12 ? 'medium' : rule.penaltyOnFail > 0 ? 'low' : 'info',
         status: 'confirmed',
         standard: source.sourceClass,
         sourceClass: source.sourceClass,
@@ -620,6 +620,28 @@ export class GEOEngine extends EngineTool {
 
   async execute(input: ScanInput, context: ExecutionContext): Promise<EngineResult> {
     const text = cleanText(input.html);
+    const hasPreferredSource = input.html.includes('google-add-preferred-source-btn') || 
+      input.html.includes('news.google.com/swg/js/v1/publisher.js') || 
+      input.html.includes('data-preferred-source') ||
+      input.html.includes('google.com/preferences/source');
+
+    const google_preferred_source_readiness = {
+      signal: 'google_preferred_source_readiness',
+      status: hasPreferredSource ? 'READY' : 'ELIGIBILITY_REQUIRED',
+      eligibility: hasPreferredSource ? 'eligible' : 'unknown',
+      surfaceType: 'user-selected AI/Search visibility surface',
+      priority: 'P2',
+      updatedAt: '2026-09-10',
+      rankingFactor: false,
+      scoreWeight: 0,
+      evidence: hasPreferredSource 
+        ? 'Google Preferred Sources interactive button or publisher.js detected' 
+        : 'No Preferred Sources integration detected; publication eligibility check required in Google Source preferences tool',
+    };
+    if (context?.sharedState) {
+      context.sharedState.set('google_preferred_source_readiness', google_preferred_source_readiness);
+    }
+
     const rules: Rule[] = [
       {
         id: 'GEO-001',
@@ -663,14 +685,17 @@ export class GEOEngine extends EngineTool {
       },
       {
         id: 'GEO-006',
-        name: 'Google Preferred Sources Integration (AI Overviews & AI Mode)',
-        weight: 15,
+        name: 'Google Preferred Sources Readiness (google_preferred_source_readiness - Informational P2)',
+        weight: 0,
         check: (inp) => inp.html.includes('google-add-preferred-source-btn') || 
                         inp.html.includes('news.google.com/swg/js/v1/publisher.js') || 
                         inp.html.includes('data-preferred-source') ||
                         inp.html.includes('google.com/preferences/source'),
-        penaltyOnFail: 10,
-        evidence: (inp) => `Google Preferred Sources marker detected: ${inp.html.includes('google-add-preferred-source-btn') || inp.html.includes('news.google.com/swg/js/v1/publisher.js') || inp.html.includes('data-preferred-source') || inp.html.includes('google.com/preferences/source')}`,
+        penaltyOnFail: 0,
+        evidence: (inp) => {
+          const detected = inp.html.includes('google-add-preferred-source-btn') || inp.html.includes('news.google.com/swg/js/v1/publisher.js') || inp.html.includes('data-preferred-source') || inp.html.includes('google.com/preferences/source');
+          return `google_preferred_source_readiness: ${detected ? 'READY (eligible surface)' : 'ELIGIBILITY_REQUIRED (user-selected AI/Search visibility surface, P2 informational)'}`;
+        },
       },
       {
         id: 'GEO-007',
@@ -702,6 +727,23 @@ export class AEOEngine extends EngineTool {
 
   async execute(input: ScanInput, context: ExecutionContext): Promise<EngineResult> {
     const text = cleanText(input.html);
+    if (context?.sharedState && !context.sharedState.has('google_preferred_source_readiness')) {
+      const hasPreferred = input.html.includes('google-add-preferred-source-btn') || 
+        input.html.includes('news.google.com/swg/js/v1/publisher.js') || 
+        input.html.includes('data-preferred-source') ||
+        input.html.includes('google.com/preferences/source');
+      context.sharedState.set('google_preferred_source_readiness', {
+        signal: 'google_preferred_source_readiness',
+        status: hasPreferred ? 'READY' : 'ELIGIBILITY_REQUIRED',
+        eligibility: hasPreferred ? 'eligible' : 'unknown',
+        surfaceType: 'user-selected AI/Search visibility surface',
+        priority: 'P2',
+        updatedAt: '2026-09-10',
+        rankingFactor: false,
+        scoreWeight: 0,
+        evidence: hasPreferred ? 'Preferred Source marker detected' : 'Eligibility check required',
+      });
+    }
     const rules: Rule[] = [
       {
         id: 'AEO-001',

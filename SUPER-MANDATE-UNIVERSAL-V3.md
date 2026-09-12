@@ -461,7 +461,8 @@ export default {
 curl -s -A "GPTBot" "https://[HEDEF_DOMAIN]/" | wc -c | awk '{if ($1<=14336) print "PASS: " $1 " bayt (14KB altı)"; else print "WARN: " $1 " bayt (14KB aşıldı)"}'
 ```
 
-#### Kusur 2.2: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001`)
+#### Kusur 2.2: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001` - P2 Uygunluk Kontrollü)
+- **Model Etkisi:** Uygun yayıncılar için kullanıcı tercihine dayalı olarak AI Mode ve AI Overviews'da "preferred" etiketiyle öne çıkarılma fırsatı (kullanıcı tercihli görünürlük yüzeyi; sıralama faktörü değildir).
 - **Üretime Hazır Kod Reçetesi:**
 ```html
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>

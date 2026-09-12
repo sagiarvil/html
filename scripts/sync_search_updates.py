@@ -65,8 +65,8 @@ def node_validate_engines():
     delivery_pack_path = os.path.join(ROOT_DIR, "functions", "lib", "delivery-pack.ts")
 
     files_to_check = {
-        "Engine V2 Core": (engine_v2_path, ["GEO-006", "publisher.js", "GEO-007", "Regional Search", "cleanText"]),
-        "Scan Engine V1": (scan_engine_path, ["AI-PREFERRED-SOURCES-001", "REGIONAL-CAROUSEL-001", "hasRegionalCarousel", "publisher.js"]),
+        "Engine V2 Core": (engine_v2_path, ["GEO-006", "publisher.js", "google_preferred_source_readiness", "GEO-007", "Regional Search", "cleanText"]),
+        "Scan Engine V1": (scan_engine_path, ["hasRegionalCarousel", "hasPreferredSource", "safeFetch"]),
         "Remediation Engine": (remediation_path, ["AI-PREFERRED-SOURCES-001", "REGIONAL-CAROUSEL-001", "25_GOOGLE_PREFERRED_SOURCES", "28_GOOGLE_REGIONAL_CAROUSEL"]),
         "Delivery Pack": (delivery_pack_path, ["25_GOOGLE_PREFERRED_SOURCES_INTEGRATION", "28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA", "http-preferred-sources-probe"])
     }
@@ -90,6 +90,15 @@ def node_validate_engines():
 
 def node_audit_canonical_surfaces():
     log("Node 03: Auditing canonical HTML surfaces for Google Preferred Sources & Regional Carousel standards...", "NODE")
+    pref_config_path = os.path.join(ROOT_DIR, "config", "google-preferred-source.json")
+    is_eligible = False
+    if os.path.exists(pref_config_path):
+        with open(pref_config_path, "r", encoding="utf-8") as f:
+            try:
+                is_eligible = json.load(f).get("eligible", False)
+            except Exception:
+                pass
+
     surfaces = [
         ("index.html", os.path.join(ROOT_DIR, "index.html")),
         ("tr/index.html", os.path.join(ROOT_DIR, "tr", "index.html")),
@@ -114,10 +123,12 @@ def node_audit_canonical_surfaces():
         has_carousel = 'ItemList' in html
         has_area_served = 'areaServed' in html
 
-        passed = has_sdk and has_btn and has_author and has_wikidata and has_schema and has_carousel and has_area_served
+        pref_ok = (has_sdk and has_btn) if is_eligible else True
+        passed = pref_ok and has_author and has_wikidata and has_schema and has_carousel and has_area_served
         results[name] = {
             "has_sdk": has_sdk,
             "has_btn": has_btn,
+            "preferred_sources_eligible": is_eligible,
             "has_author": has_author,
             "has_wikidata": has_wikidata,
             "has_schema": has_schema,
@@ -126,7 +137,8 @@ def node_audit_canonical_surfaces():
             "status": "PASSED" if passed else "FAILED"
         }
         if passed:
-            log(f"Surface '{name}' verified: Preferred SDK + Button + Author + Wikidata QID + Carousel + areaServed present.", "SUCCESS")
+            pref_msg = "Preferred SDK+Btn active" if is_eligible else "Preferred Sources gated (ineligible/unknown)"
+            log(f"Surface '{name}' verified: {pref_msg} + Author + Wikidata QID + Carousel + areaServed present.", "SUCCESS")
         else:
             log(f"Surface '{name}' failed audit check: {results[name]}", "ERROR")
             all_passed = False

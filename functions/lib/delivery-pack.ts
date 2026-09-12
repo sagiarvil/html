@@ -447,15 +447,20 @@ function generateGooglePreferredSourcesIntegration(domain: string, locale: Deliv
 </head>
 <body>
 <h1>${isTr ? 'Google Preferred Sources Entegrasyon Kılavuzu & Kod Şablonları' : 'Google Preferred Sources Integration Guide & Templates'}</h1>
-<p><strong>${isTr ? 'Hedef Alan Adı' : 'Target Domain'}:</strong> ${domain} | <strong>${isTr ? 'Resmî Standart Tarihi' : 'Official Standard Release'}:</strong> 2026-08-20 (Google Search Central)</p>
+<p><strong>${isTr ? 'Hedef Alan Adı' : 'Target Domain'}:</strong> ${domain} | <strong>${isTr ? 'Resmî Teknik Standart Güncellemesi' : 'Official Technical Standard Update'}:</strong> 2026-09-10 (Google Search Central Preferred Sources)</p>
 
 <div class="alert">
-  <strong>${isTr ? 'Önemli Mimari Not' : 'Architectural Notice'}:</strong>
-  ${isTr ? 'Bu entegrasyon kullanıcıların arama ve AI deneyimini kişiselleştirmesini sağlar. Google sitenizi onaylamış sayılmaz; kullanıcı tercihine dayalı olarak Top Stories, AI Overviews ve AI Mode içinde "Preferred" etiketiyle dağıtım önceliği kazandırır.' : 'This integration enables users to personalize their search and AI experience. It is not an algorithmic certification by Google; it provides distribution priority under the "Preferred" badge in Top Stories, AI Overviews, and AI Mode based on explicit user preference.'}
+  <strong>${isTr ? 'Önemli Mimari & Sıralama Notu' : 'Architectural & Ranking Notice'}:</strong>
+  ${isTr ? 'Google, 10 Eylül 2026 tarihinde Preferred Sources dokümantasyonunu güncelleyerek bu yüzeyi Top Stories yanında AI Mode ve AI Overviews içerisine de taşımıştır. Bu entegrasyon yeni bir Google sıralama faktörü (ranking algorithm factor) DEĞİLDİR; kullanıcı tercihine dayalı harici bir AI ve Arama görünürlük yüzeyidir (user-selected AI/Search visibility surface). Yalnızca domain ve subdomain düzeyi uygundur; alt dizinler (/blog vb.) tek başına eklenemez.' : 'Google updated Preferred Sources on September 10, 2026 to expand preferred labeling into AI Mode and AI Overviews alongside Top Stories. This integration is NOT an organic ranking algorithm factor; it is a user-selected AI/Search visibility surface. Only domain and subdomain levels are eligible; subdirectories cannot be added alone.'}
 </div>
 
 <div class="card">
-  <h2>${isTr ? '1. Standart JavaScript Entegrasyonu (Önerilen)' : '1. Standard JavaScript Integration (Recommended)'}</h2>
+  <h2>${isTr ? '0. Yayıncı Uygunluk Doğrulaması (Zorunlu Ön Adım)' : '0. Publisher Eligibility Verification (Mandatory Prerequisite)'}</h2>
+  <p>${isTr ? 'Google publisher.js scripti veya butonu uygunluk doğrulanmadan siteye eklenmemelidir. Önce Google Source Preferences aracında domainin seçilebilir yayıncı/kaynak olduğunu doğrulayın (Sonuç: eligible / ineligible / unknown). Uygun değilse şablonlara kod eklemeyin.' : 'Do not deploy publisher.js or button markup without prior verification. Confirm that the domain is listed as an eligible publication in Google Source Preferences tool (Result: eligible / ineligible / unknown). If ineligible, do not deploy code.'}</p>
+</div>
+
+<div class="card">
+  <h2>${isTr ? '1. Standart JavaScript Entegrasyonu (Yalnızca Uygun Yayıncılar İçin)' : '1. Standard JavaScript Integration (Eligible Publishers Only)'}</h2>
   <p>${isTr ? 'HTML şablonunuza sadece iki satır ekleyerek otomatik yerelleştirilmiş butonu render edebilirsiniz:' : 'Add two simple lines to your HTML template to render the automatically localized Google button:'}</p>
   <pre><code>&lt;!-- 1. &lt;head&gt; içine ekleyin --&gt;
 &lt;script async src="https://news.google.com/swg/js/v1/publisher.js"&gt;&lt;/script&gt;

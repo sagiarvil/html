@@ -117,16 +117,16 @@ function calculatePriority(findingId: string, sev: Severity, reachRatio: number)
   if (findingId === 'A11Y-FORM-001' && reachRatio >= 0.3) return 'P1';
   if (findingId === 'LINK-BROKEN-001' && reachRatio >= 0.2) return 'P1';
   if (findingId.startsWith('AI-ROBOTS-GOOGLEBOT') || findingId.startsWith('AI-ROBOTS-OAI')) return 'P1';
-  if (findingId === 'TOKEN-BLOAT-001' || findingId === 'ENTITY-VAULT-001' || findingId === 'RAG-CHUNK-001' || findingId === 'RERANK-ATTN-001' || findingId === 'A2A-MCP-CARD-001' || findingId === 'AGENTIC-COMMERCE-001' || findingId === 'AI-CORPUS-PMI-001' || findingId === 'AI-PREFERRED-SOURCES-001') return 'P1';
+  if (findingId === 'TOKEN-BLOAT-001' || findingId === 'ENTITY-VAULT-001' || findingId === 'RAG-CHUNK-001' || findingId === 'RERANK-ATTN-001' || findingId === 'A2A-MCP-CARD-001' || findingId === 'AGENTIC-COMMERCE-001' || findingId === 'AI-CORPUS-PMI-001') return 'P1';
   if (sev === 'critical') return 'P1';
 
-  // P2: measurable performance degradation, repeated metadata/schema defects, broken internal links
+  // P2: measurable performance degradation, repeated metadata/schema defects, broken internal links, user-selected AI surfaces
   if (findingId.startsWith('PERF-') && sev === 'high') return 'P2';
   if (findingId.startsWith('SCHEMA-JSON')) return 'P2';
   if (findingId.startsWith('SEC-') && sev === 'high') return 'P2';
   if (findingId === 'TECH-TITLE-001') return 'P2';
   if (findingId === 'A11Y-NAME-001') return 'P2';
-  if (findingId.startsWith('COLBERT-') || findingId.startsWith('TOPICAL-') || findingId.startsWith('DPO-') || findingId.startsWith('ONTOLOGY-') || findingId.startsWith('TTFB-') || findingId.startsWith('HALLUCINATION-') || findingId.startsWith('SYNTHETIC-') || findingId === 'REGIONAL-CAROUSEL-001') return 'P2';
+  if (findingId.startsWith('COLBERT-') || findingId.startsWith('TOPICAL-') || findingId.startsWith('DPO-') || findingId.startsWith('ONTOLOGY-') || findingId.startsWith('TTFB-') || findingId.startsWith('HALLUCINATION-') || findingId.startsWith('SYNTHETIC-') || findingId === 'REGIONAL-CAROUSEL-001' || findingId === 'AI-PREFERRED-SOURCES-001') return 'P2';
   if (sev === 'high') return 'P2';
   if (sev === 'medium') return 'P2';
 
@@ -752,25 +752,28 @@ function generateBlueprint(f: Finding, observedUrls: string[], totalPages: numbe
 
   if (pId === 'AI-PREFERRED-SOURCES-001') {
     return {
-      title: 'Missing Google Preferred Sources Integration (Google Search Central P1 Standard)',
-      impact: 'Loyal visitors and search users cannot add your publication as a Preferred Source in Google Search, forfeiting the "Preferred" badge and citation priority in Top Stories, AI Overviews, and AI Mode.',
+      title: 'Missing Google Preferred Sources Integration (Google Search Central P2 Standard)',
+      impact: 'For verified eligible publication domains, users can select the publication as a Preferred Source, highlighting content in Top Stories, AI Mode, and AI Overviews with the "preferred" label. This represents a user-selected AI/Search visibility surface, not an algorithmic ranking factor.',
       root_cause: 'Publication and content templates lack Google Search Central\'s 2-line Preferred Sources JavaScript integration (<div google-add-preferred-source-btn>) or fallback deeplink.',
       root_fix: {
-        target_behavior: 'Eligible article, guide, and footer surfaces feature a non-intrusive Preferred Sources interactive button or deeplink directing users to google.com/preferences/source?q=[domain].',
+        target_behavior: 'Eligible publication domain features an official Google Preferred Sources integration after verifying eligibility in Google Source preferences tool.',
         current_behavior: 'No google-add-preferred-source-btn attribute, publisher.js script, or source preference deeplink detected on public pages.',
-        required_change: 'Embed the 2-line Google Preferred Sources standard JS button or deeplink into publication footers and high-traffic content templates without disrupting primary commercial CTAs.',
+        required_change: 'Verify domain eligibility in Google Source preferences tool. If eligible (domain or subdomain level), embed the 2-line Google Preferred Sources standard JS button (<script async src="https://news.google.com/swg/js/v1/publisher.js"></script> and <div google-add-preferred-source-btn></div>) or deeplink into publication footers without disrupting primary commercial CTAs.',
         scope: urlScope,
         non_goals: [
           'Do not make the Preferred Sources button the primary commercial CTA',
-          'Do not represent Preferred Sources as Google endorsement or algorithmic ranking certification'
+          'Do not treat Preferred Sources as an algorithmic ranking factor or generic SEO endorsement; it is an external user-selected visibility surface',
+          'Do not automatically inject publisher.js or button elements on ineligible or unverified domains'
         ]
       },
       recovery: [
-        'Deploy 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html: <script async src="https://news.google.com/swg/js/v1/publisher.js"></script> and <div google-add-preferred-source-btn data-theme="dark"></div>',
+        'Perform external eligibility check in Google Source preferences tool (result: eligible / ineligible / unknown)',
+        'If eligible: Deploy 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html: <script async src="https://news.google.com/swg/js/v1/publisher.js"></script> and <div google-add-preferred-source-btn data-theme="dark"></div>',
+        'If ineligible or unknown: Do not deploy button or script; maintain clean templates without broken external flows',
         'Add https://news.google.com and https://*.google.com to Content-Security-Policy header'
       ],
       prevention: [
-        'Add CI gate verifying presence of google-add-preferred-source-btn or publisher.js on article templates'
+        'Gate Preferred Source integration behind verified domain eligibility; do not fail CI when Preferred Source is not present on ineligible sites'
       ],
       acceptance_tests: [
         `curl -sL ${observedUrls[0] || '[URL]'} | grep -E -q "publisher\\.js|google-add-preferred-source-btn|preferences/source" && echo "PASS"`

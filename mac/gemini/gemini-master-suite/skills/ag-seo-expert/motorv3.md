@@ -743,9 +743,9 @@ curl -o /dev/null -s -w 'TTFB: %{time_starttransfer}s | HTTP: %{http_code}
 
 
 ---
-#### Kusur 2.3: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001`)
-- **Teşhis Kuralı:** Şablonlarda Google Search Central Preferred Sources butonunun veya derin bağlantısının bulunmaması.
-- **Model Etkisi:** Sadık okuyucuların siteyi Google Arama'da "Tercih Edilen Kaynak" olarak ekleyememesi, AI Overviews ve Top Stories önceliğinin kaybedilmesi.
+#### Kusur 2.3: Google Preferred Sources Entegrasyon Eksikliği (`AI-PREFERRED-SOURCES-001` - P2)
+- **Teşhis Kuralı:** Şablonlarda Google Search Central Preferred Sources butonunun veya derin bağlantısının bulunmaması (Yayıncı uygunluk durumuna bağlıdır).
+- **Model Etkisi:** Uygun yayıncılar için kullanıcı tercihine dayalı olarak AI Mode ve AI Overviews'da "preferred" etiketiyle öne çıkarılma fırsatı (kullanıcı tercihli görünürlük yüzeyi; sıralama faktörü değildir).
 - **Üretime Hazır Kod Reçetesi:**
 ```html
 <!-- 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html -->
@@ -1229,7 +1229,7 @@ HTMLHTML_AI_Search_Visibility_Roadmap_[domain]_[scanId].zip
 ├── 22_N8N_AI_SEARCH_MONITORING_WORKFLOW.json  # Hazır n8n içe aktarma iş akışı (DAG)
 ├── 23_EXECUTIVE_BOARD_DOSSIER.md              # Yönetim Kurulu brifing dosyası
 ├── 24_GITHUB_ACTIONS_AI_SEARCH_GATE.yml       # CI/CD dağıtım öncesi doğrulama kapısı
-├── 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html # Google Preferred Sources 2026 P1 entegrasyonu
+├── 25_GOOGLE_PREFERRED_SOURCES_INTEGRATION.html # Google Preferred Sources 2026 P2 entegrasyonu
 ├── 26_WORDPRESS_DROPIN_PLUGIN.php             # WordPress tek tıkla drop-in eklentisi (Sıfır Kod)
 ├── 27_SHOPIFY_WEBFLOW_INJECTORS.html          # Shopify & Webflow kopyala-yapıştır enjektörleri
 └── 28_GOOGLE_REGIONAL_CAROUSEL_STRUCTURED_DATA.html # Google Bölgesel Farklılıklar & Host Carousel Şablonu
