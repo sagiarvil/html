@@ -1,15 +1,16 @@
 {
   "pipeline": "HTML&HTML Automated Search & AI Updates DAG",
   "standard": "Silicon Valley / London / NYC Enterprise AI Search Standard",
-  "timestamp": "2026-09-08T12:58:11.138518+00:00",
-  "registry_version": "1.2.0",
-  "official_vendors_verified": 27,
+  "timestamp": "2026-09-12T11:20:38.038202+00:00",
+  "registry_version": "1.3.0",
+  "official_vendors_verified": 31,
   "google_preferred_sources_status": "ACTIVE_ENFORCED",
   "google_regional_search_status": "ACTIVE_ENFORCED",
   "surface_audit": {
     "index.html": {
-      "has_sdk": true,
-      "has_btn": true,
+      "has_sdk": false,
+      "has_btn": false,
+      "preferred_sources_eligible": false,
       "has_author": true,
       "has_wikidata": true,
       "has_schema": true,
@@ -18,8 +19,9 @@
       "status": "PASSED"
     },
     "tr/index.html": {
-      "has_sdk": true,
-      "has_btn": true,
+      "has_sdk": false,
+      "has_btn": false,
+      "preferred_sources_eligible": false,
       "has_author": true,
       "has_wikidata": true,
       "has_schema": true,
@@ -28,8 +30,9 @@
       "status": "PASSED"
     },
     "en/index.html": {
-      "has_sdk": true,
-      "has_btn": true,
+      "has_sdk": false,
+      "has_btn": false,
+      "preferred_sources_eligible": false,
       "has_author": true,
       "has_wikidata": true,
       "has_schema": true,
