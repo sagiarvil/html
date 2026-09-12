@@ -1742,40 +1742,212 @@ html[data-theme="light"] .console-tab-btn.active {
   box-shadow: none !important;
 }
 
-/* 3. Profesyonel Web Teşhis ve Rapor Kutuları */
-.health-vip-report-box {
-  background: var(--theme-bg-surface, #1e222d) !important;
-  border: 1px solid #3b82f6 !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+/* 4. Yeni Nesil Üst Seviye Tasarım: Dark Pool Kartları & Kurumsal Callout & Footer */
+#dark-pool-intelligence {
+  background: var(--theme-bg-surface, #ffffff);
+  border-radius: 20px;
+  padding: 48px 36px !important;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--theme-border, #e2e8f0);
 }
 
-.health-count-card {
-  border-radius: 10px !important;
-  border: 1px solid var(--theme-border, #334155) !important;
-  transition: border-color 0.15s ease !important;
+#dark-pool-intelligence .px-section-head h2 {
+  font-size: 26px !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 800 !important;
+  color: var(--theme-text-strong, #0f172a) !important;
 }
 
-.health-count-card:hover {
-  border-color: #64748b !important;
-  transform: none !important;
-  box-shadow: none !important;
+#dark-pool-intelligence .px-section-head p {
+  font-size: 14.5px !important;
+  color: var(--theme-text-secondary, #64748b) !important;
+  max-width: 780px;
+  line-height: 1.6 !important;
 }
 
-.btn-send-dev {
-  background: #059669 !important;
-  border: 1px solid #047857 !important;
+/* 6 Kart: Yeni Nesil Mühendislik Bento-Grid Kartları */
+.px-file-card {
+  background: var(--theme-bg-surface, #ffffff) !important;
+  border: 1px solid var(--theme-border, #e2e8f0) !important;
+  border-radius: 14px !important;
+  padding: 22px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.px-file-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08) !important;
+  border-color: #94a3b8 !important;
+}
+
+.px-file-card-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 12px !important;
+  gap: 8px !important;
+}
+
+.px-file-card-head b {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--theme-text-strong, #0f172a) !important;
+  line-height: 1.35 !important;
+}
+
+.format-pill {
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 3px 8px !important;
   border-radius: 6px !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-  font-weight: 600 !important;
-  transition: background 0.15s ease !important;
+  flex-shrink: 0 !important;
 }
 
-.btn-send-dev:hover {
-  background: #047857 !important;
-  transform: none !important;
-  box-shadow: none !important;
+.px-file-card p {
+  font-size: 13px !important;
+  color: var(--theme-text-secondary, #475569) !important;
+  line-height: 1.6 !important;
+  margin: 0 0 14px !important;
+  flex-grow: 1 !important;
 }
+
+.px-file-card div[style*="monospace"] {
+  font-size: 11.5px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid #e0f2fe !important;
+  background: #f0f9ff !important;
+  color: #0369a1 !important;
+  line-height: 1.45 !important;
+}
+
+/* Ticari Değer Kutusu (Aylık 5.000$ Ajans Masrafı) - Üst Düzey Kurumsal Dönüşüm Alanı */
+.dark-pool-commercial-callout {
+  margin-top: 36px !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 16px !important;
+  padding: 32px 36px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.04) !important;
+}
+
+.dark-pool-commercial-callout span[style*="uppercase"] {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  letter-spacing: 0.08em !important;
+  display: inline-block !important;
+  margin-bottom: 4px !important;
+}
+
+.dark-pool-commercial-callout h3 {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 6px 0 10px !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.3 !important;
+}
+
+.dark-pool-commercial-callout p {
+  font-size: 13.5px !important;
+  color: #475569 !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+  max-width: 640px !important;
+}
+
+.dark-pool-commercial-callout .btn-scan-trigger {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  padding: 13px 26px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25) !important;
+  transition: all 0.15s ease !important;
+}
+
+.dark-pool-commercial-callout .btn-scan-trigger:hover {
+  background: #1d4ed8 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* 5. Minimalist ve Üst Düzey Global Footer Mimarisi */
+footer {
+  border-top: 1px solid var(--theme-border, #e2e8f0) !important;
+  background: var(--theme-bg-surface, #ffffff) !important;
+  padding: 56px 28px 48px !important;
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr !important;
+  gap: 40px !important;
+  margin-bottom: 36px !important;
+}
+
+.footer-brand p {
+  font-size: 13.5px !important;
+  color: #64748b !important;
+  line-height: 1.6 !important;
+  margin-top: 12px !important;
+}
+
+.footer-col h4 {
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #0f172a !important;
+  margin-bottom: 14px !important;
+}
+
+.footer-col ul {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 9px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.footer-col a {
+  font-size: 13.5px !important;
+  color: #64748b !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.footer-col a:hover {
+  color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--theme-border, #e2e8f0) !important;
+  padding-top: 24px !important;
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+  line-height: 1.6 !important;
+}
+
 
 

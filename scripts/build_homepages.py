@@ -549,66 +549,66 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <h2>Geleneksel SEO Araçlarının Göremediği 6 Yapay Zeka Kara Kutusu</h2>
     <p>Ahrefs, Semrush veya klasik araçlar yalnızca anahtar kelime ve meta etiket sayar. ChatGPT, Perplexity ve Google Gemini gibi nöral modeller ise sitenizi aşağıdaki 6 gizli transformer katmanında değerlendirip tavsiye kümesine alır veya eler.</p>
   </div>
-  <div class="px-delivery-grid-22" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px;">
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">01 · 14KB AST Token Bloat (Payload Bütçesi)</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 KRİTİK</span>
+  <div class="px-delivery-grid-22" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:24px;">
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>01 · 14KB AST Token Bloat (Payload Bütçesi)</b>
+        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 KRİTİK</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">GPTBot ve Perplexity crawler worker'ları ilk 14KB AST bütçesini aşan şişkin HTML'lerde erken kesme (early truncation) uygular; alttaki ürün ve fiyat sayfalarınız taranamadan bot siteden ayrılır.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Çözüm: Cloudflare Worker HTMLRewriter AST budama ve sub-40ms TTFB</div>
+      <p>GPTBot ve Perplexity crawler worker'ları ilk 14KB AST bütçesini aşan şişkin HTML'lerde erken kesme (early truncation) uygular; alttaki ürün ve fiyat sayfalarınız taranamadan bot siteden ayrılır.</p>
+      <div>⚡ Çözüm: Cloudflare Worker HTMLRewriter AST budama ve sub-40ms TTFB</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">02 · Entity Vault &amp; Wikidata Triples Konsensüsü</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 KRİTİK</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>02 · Entity Vault &amp; Wikidata Triples Konsensüsü</b>
+        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 KRİTİK</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Modeller markanızı doğrulanmış bir kurumsal varlık (Knowledge Graph Ground Truth) olarak teyit edemezse, sektör sorularında sizi atlayıp doğrudan rakiplerinizi tavsiye eder.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Çözüm: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID ve MID konsensüsü</div>
+      <p>Modeller markanızı doğrulanmış bir kurumsal varlık (Knowledge Graph Ground Truth) olarak teyit edemezse, sektör sorularında sizi atlayıp doğrudan rakiplerinizi tavsiye eder.</p>
+      <div>⚡ Çözüm: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID ve MID konsensüsü</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">03 · 512-Token RAG Semantik Parçalanma Koruması</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 YÜKSEK</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>03 · 512-Token RAG Semantik Parçalanma Koruması</b>
+        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 YÜKSEK</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Vektör veritabanlarında standart 512 tokenlık RAG bölünmelerinde marka adı ile anahtar ürün önermesi kopar; semantik sorgu yanıtlarında alıntılanma ihtimali sıfırlanır.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Çözüm: data-chunk-id semantik bölümlendirme öznitelikleri ve bağlam koruma</div>
+      <p>Vektör veritabanlarında standart 512 tokenlık RAG bölünmelerinde marka adı ile anahtar ürün önermesi kopar; semantik sorgu yanıtlarında alıntılanma ihtimali sıfırlanır.</p>
+      <div>⚡ Çözüm: data-chunk-id semantik bölümlendirme öznitelikleri ve bağlam koruma</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">04 · Cross-Encoder Attention &amp; Sayısal Kanıt Yoğunluğu</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 YÜKSEK</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>04 · Cross-Encoder Attention &amp; Sayısal Kanıt Yoğunluğu</b>
+        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 YÜKSEK</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Nöral yeniden sıralama modelleri (Cohere, bge-reranker) somut sayısal kanıt içermeyen sübjektif pazarlama laflarını filtreleyerek tavsiye kümesinden doğrudan eler.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Çözüm: H2 altı ilk 45 kelimede doğrudan yanıt ve sayısal veri yoğunluğu şablonu</div>
+      <p>Nöral yeniden sıralama modelleri (Cohere, bge-reranker) somut sayısal kanıt içermeyen sübjektif pazarlama laflarını filtreleyerek tavsiye kümesinden doğrudan eler.</p>
+      <div>⚡ Çözüm: H2 altı ilk 45 kelimede doğrudan yanıt ve sayısal veri yoğunluğu şablonu</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">05 · AI Corpus PMI (Model Ön-Eğitim Havuzunda Varlık)</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 ORTA</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>05 · AI Corpus PMI (Model Ön-Eğitim Havuzunda Varlık)</b>
+        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 ORTA</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Common Crawl ve temel model eğitim havuzlarında markanız sektörel standart terimlerle birlikte anılmazsa, kullanıcılar sizi doğrudan sormadıkça tavsiye edilmezsiniz.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Çözüm: Endüstriyel benchmark ve sektörel kanonik eş-oluşum (PMI) mimarisi</div>
+      <p>Common Crawl ve temel model eğitim havuzlarında markanız sektörel standart terimlerle birlikte anılmazsa, kullanıcılar sizi doğrudan sormadıkça tavsiye edilmezsiniz.</p>
+      <div>⚡ Çözüm: Endüstriyel benchmark ve sektörel kanonik eş-oluşum (PMI) mimarisi</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">06 · ColBERT MaxSim Çoklu-Vektör Eşleşmesi</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 ORTA</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>06 · ColBERT MaxSim Çoklu-Vektör Eşleşmesi</b>
+        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 ORTA</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">ColBERT ve SPLADE nöral modelleri kullanıcı soru tokenları ile başlık tokenlarınızı tam eşleştiremezse, modern vektör aramalarında siteniz arka sayfalara ötelenir.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Çözüm: Token zenginleştirilmiş H2/H3 başlık hiyerarşisi ve late-interaction optimizasyonu</div>
+      <p>ColBERT ve SPLADE nöral modelleri kullanıcı soru tokenları ile başlık tokenlarınızı tam eşleştiremezse, modern vektör aramalarında siteniz arka sayfalara ötelenir.</p>
+      <div>⚡ Çözüm: Token zenginleştirilmiş H2/H3 başlık hiyerarşisi ve late-interaction optimizasyonu</div>
     </article>
   </div>
   
   <!-- Commercial B2B Value Proposition Box -->
-  <div class="dark-pool-commercial-callout" style="margin-top:24px;background:#f8fafc;border:1.5px solid #cbd5e1;border-radius:14px;padding:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;">
-    <div style="max-width:620px;">
-      <span style="font-size:11px;font-weight:800;color:#0284c7;text-transform:uppercase;letter-spacing:0.06em;">SIFIR DANIŞMANLIK MASRAFI · KENDİ YAZILIMCINIZA TESLİM EDİN</span>
-      <h3 style="font-size:17px;font-weight:800;color:#0f172a;margin:6px 0 8px;">Aylık 5.000$ Ajans Masrafı Ödemeyin. Teşhisi Görün, Kod Paketini Yazılımcınıza Verin.</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">HTML&amp;HTML bir danışmanlık veya pazarlama ajansı değildir; deterministik yazılım platformudur. Taramayı başlatarak tüm sorunları ücretsiz görün. $99 Onarım Seti ile 30+ dosyalık hazır kodları indirin ve kendi ekibinizle 1 günde uygulayın.</p>
+  <div class="dark-pool-commercial-callout">
+    <div>
+      <span>SIFIR DANIŞMANLIK MASRAFI · KENDİ YAZILIMCINIZA TESLİM EDİN</span>
+      <h3>Aylık 5.000$ Ajans Masrafı Ödemeyin. Teşhisi Görün, Kod Paketini Yazılımcınıza Verin.</h3>
+      <p>HTML&amp;HTML bir danışmanlık veya pazarlama ajansı değildir; deterministik yazılım platformudur. Taramayı başlatarak tüm sorunları ücretsiz görün. $99 Onarım Seti ile 30+ dosyalık hazır kodları indirin ve kendi ekibinizle 1 günde uygulayın.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
-      <a href="#scanner" class="btn-scan-trigger" style="background:#0066ff;color:#ffffff;padding:12px 24px;border-radius:10px;font-size:13.5px;font-weight:800;text-decoration:none;display:inline-block;box-shadow:0 4px 14px rgba(0,102,255,0.25);">Ücretsiz AI Denetimi Başlat →</a>
+      <a href="#scanner" class="btn-scan-trigger">Ücretsiz AI Denetimi Başlat →</a>
       <span style="font-size:11.5px;color:#64748b;">Kayıt gerekmez · 10 saniyede canlı sonuç</span>
     </div>
   </div>
@@ -1261,66 +1261,66 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <h2>6 AI Search Black Boxes That Traditional SEO Ignores</h2>
     <p>Ahrefs, Semrush, and legacy tools only count keywords and meta tags. Foundation neural models like ChatGPT, Perplexity, and Google Gemini evaluate your domain across these 6 hidden transformer layers before citing or discarding your content.</p>
   </div>
-  <div class="px-delivery-grid-22" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px;">
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">01 · 14KB AST Token Bloat (Payload Budget)</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 CRITICAL</span>
+  <div class="px-delivery-grid-22" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:24px;">
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>01 · 14KB AST Token Bloat (Payload Budget)</b>
+        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 CRITICAL</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">GPTBot and Perplexity crawlers enforce early ingestion truncation on bloated HTML exceeding the 14KB AST budget; crawlers exhaust token capacity before reaching lower pricing and product offerings.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Fix: Cloudflare Worker HTMLRewriter AST trimming and sub-40ms edge TTFB</div>
+      <p>GPTBot and Perplexity crawlers enforce early ingestion truncation on bloated HTML exceeding the 14KB AST budget; crawlers exhaust token capacity before reaching lower pricing and product offerings.</p>
+      <div>⚡ Fix: Cloudflare Worker HTMLRewriter AST trimming and sub-40ms edge TTFB</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">02 · Entity Vault &amp; Wikidata Triples Consensus</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 CRITICAL</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>02 · Entity Vault &amp; Wikidata Triples Consensus</b>
+        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 CRITICAL</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Without explicit triangulation in global Knowledge Graphs, neural models cannot verify your brand as an authoritative entity, systematically omitting your company in favor of competitors.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Fix: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID and Google MID consensus</div>
+      <p>Without explicit triangulation in global Knowledge Graphs, neural models cannot verify your brand as an authoritative entity, systematically omitting your company in favor of competitors.</p>
+      <div>⚡ Fix: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID and Google MID consensus</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">03 · 512-Token RAG Semantic Fragmentation Defense</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 HIGH</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>03 · 512-Token RAG Semantic Fragmentation Defense</b>
+        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 HIGH</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Standard 512-token vector chunking fractures entity definitions and value propositions; search engines fail to retrieve key context during semantic generation.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Fix: data-chunk-id semantic boundary markup and contextual preservation</div>
+      <p>Standard 512-token vector chunking fractures entity definitions and value propositions; search engines fail to retrieve key context during semantic generation.</p>
+      <div>⚡ Fix: data-chunk-id semantic boundary markup and contextual preservation</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">04 · Cross-Encoder Attention &amp; Numerical Evidence Density</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 HIGH</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>04 · Cross-Encoder Attention &amp; Numerical Evidence Density</b>
+        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 HIGH</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Cross-encoder neural rerankers (Cohere, bge-reranker) discard promotional puffery; passages lacking hard numerical metrics and verified facts are filtered out of answer sets.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Fix: Opening 45-word numerical fact density template under H2 headings</div>
+      <p>Cross-encoder neural rerankers (Cohere, bge-reranker) discard promotional puffery; passages lacking hard numerical metrics and verified facts are filtered out of answer sets.</p>
+      <div>⚡ Fix: Opening 45-word numerical fact density template under H2 headings</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">05 · AI Corpus PMI (Foundational Model Co-Occurrence)</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 MEDIUM</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>05 · AI Corpus PMI (Foundational Model Co-Occurrence)</b>
+        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 MEDIUM</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">If your brand lacks co-occurrence alongside industry benchmarks in foundational training corpuses (Common Crawl), models never recommend you spontaneously in zero-shot queries.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Fix: Canonical benchmark definitions and sectoral PMI co-occurrence anchors</div>
+      <p>If your brand lacks co-occurrence alongside industry benchmarks in foundational training corpuses (Common Crawl), models never recommend you spontaneously in zero-shot queries.</p>
+      <div>⚡ Fix: Canonical benchmark definitions and sectoral PMI co-occurrence anchors</div>
     </article>
-    <article class="px-file-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
-      <div class="px-file-card-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <b style="font-size:13.5px;color:#0f172a;">06 · ColBERT MaxSim Multi-Vector Late-Interaction</b>
-        <span class="format-pill" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 MEDIUM</span>
+    <article class="px-file-card">
+      <div class="px-file-card-head">
+        <b>06 · ColBERT MaxSim Multi-Vector Late-Interaction</b>
+        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 MEDIUM</span>
       </div>
-      <p style="font-size:12.5px;color:#475569;line-height:1.6;margin:0 0 10px;">Multi-vector retrieval engines fail to achieve maximum late-interaction dot-product scores when heading tokens fail to align with natural-language user queries.</p>
-      <div style="font-size:11.5px;font-family:monospace;color:#0284c7;background:#f8fafc;padding:6px 10px;border-radius:6px;border:1px solid #e2e8f0;">⚡ Fix: Multi-vector query token enrichment across H2/H3 semantic heading hierarchy</div>
+      <p>Multi-vector retrieval engines fail to achieve maximum late-interaction dot-product scores when heading tokens fail to align with natural-language user queries.</p>
+      <div>⚡ Fix: Multi-vector query token enrichment across H2/H3 semantic heading hierarchy</div>
     </article>
   </div>
   
   <!-- Commercial B2B Value Proposition Box -->
-  <div class="dark-pool-commercial-callout" style="margin-top:24px;background:#f8fafc;border:1.5px solid #cbd5e1;border-radius:14px;padding:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;">
-    <div style="max-width:620px;">
-      <span style="font-size:11px;font-weight:800;color:#0284c7;text-transform:uppercase;letter-spacing:0.06em;">ZERO CONSULTING OVERHEAD · HANDOVER TO IN-HOUSE DEVELOPERS</span>
-      <h3 style="font-size:17px;font-weight:800;color:#0f172a;margin:6px 0 8px;">Don't Pay $5,000/mo in Agency Retainers. Audit Free, Hand the Code Pack to Your Devs.</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">HTML&amp;HTML is not an agency or marketing consultancy; it is an automated deterministic engineering platform. Audit your site for free to see all technical defects. Unlock the 30+ file implementation pack for $99 and have your developers execute all fixes in hours.</p>
+  <div class="dark-pool-commercial-callout">
+    <div>
+      <span>ZERO CONSULTING OVERHEAD · HANDOVER TO IN-HOUSE DEVELOPERS</span>
+      <h3>Don't Pay $5,000/mo in Agency Retainers. Audit Free, Hand the Code Pack to Your Devs.</h3>
+      <p>HTML&amp;HTML is not an agency or marketing consultancy; it is an automated deterministic engineering platform. Audit your site for free to see all technical defects. Unlock the 30+ file implementation pack for $99 and have your developers execute all fixes in hours.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
-      <a href="#scanner" class="btn-scan-trigger" style="background:#0066ff;color:#ffffff;padding:12px 24px;border-radius:10px;font-size:13.5px;font-weight:800;text-decoration:none;display:inline-block;box-shadow:0 4px 14px rgba(0,102,255,0.25);">Start Free AI Audit →</a>
+      <a href="#scanner" class="btn-scan-trigger">Start Free AI Audit →</a>
       <span style="font-size:11.5px;color:#64748b;">No account required · Live results in 10 seconds</span>
     </div>
   </div>
