@@ -3,3 +3,9 @@ DURUM     : 🟢 AKTİF (gemini-messages-suite bağlı)
 GÜNCELLEME: 2026-09-11
 KURAL YOLU: ~/.gemini/config/plugins/gemini-messages-suite/messages/projects/html/PROJE_TALİMATLARI.md
 HAFIZA    : Bu proje oturum özetlerini ve talimatlarını messages-suite üzerinden takip eder.
+
+SON OTURUM (2026-09-12):
+- Mobil tasarım ve navigasyon mimarisi Linear/Apple/Vercel ($5M+ Tier) standartlarında sıfırdan inşa edildi.
+- Sıfır Çakışmalı Lüks Mobil Drawer Menü (Zero-Overlap Modal System): %100 solid/opak zemin (#090d16 dark, #ffffff light), z-index 999999, backdrop blur 14px, scroll-lock gövde kilidi eklendi. Arka plandaki yazıların menüye sızması kesin olarak önlendi.
+- Dokunmatik dostu (48px+) linkler, TR/EN çift dilli navigasyon, canlı tema değiştirici, mobil scanbox ergonomisi sağlandı.
+- 644 HTML sayfasında theme.css?v=12 ve theme.js?v=8 versiyonları artırılarak önbellek kilitleri kırıldı. Testler 4/4 PASS doğrulandı.

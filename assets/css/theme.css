@@ -5518,3 +5518,439 @@ html[data-theme="dark"] .footer-fine {
     grid-column: span 1 !important;
   }
 }
+
+/* ==========================================================================
+   ENTERPRISE V3.0 — MOBILE EXPERIENCE & ZERO-OVERLAP NAVIGATION DRAWER
+   Silicon Valley & London ($5M+ Tier) Linear/Apple Standards
+   ========================================================================== */
+
+/* 1. Hamburger Toggle Button */
+.hh-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+}
+
+html[data-theme="light"] .hh-mobile-toggle {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.hh-mobile-toggle:hover,
+.hh-mobile-toggle:focus-visible {
+  border-color: #0066ff;
+  background: rgba(0, 102, 255, 0.1);
+  outline: none;
+}
+
+.hh-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--theme-text-primary, #ffffff);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+html[data-theme="light"] .hh-toggle-bar {
+  background-color: #0f172a;
+}
+
+.hh-mobile-toggle.is-active .hh-bar-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hh-mobile-toggle.is-active .hh-bar-2 {
+  opacity: 0;
+}
+
+.hh-mobile-toggle.is-active .hh-bar-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 2. Zero-Overlap Drawer Container */
+.hh-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 999999 !important;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+}
+
+.hh-mobile-drawer.is-open {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 3. Solid Backdrop & Frosted Glass */
+.hh-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* 4. SOLID OPAQUE DRAWER PANEL (Never allows background bleeding) */
+.hh-drawer-panel {
+  position: relative;
+  width: min(88vw, 380px);
+  height: 100dvh;
+  background: #090d16 !important;
+  color: #f1f5f9 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: -16px 0 50px rgba(0, 0, 0, 0.65) !important;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+html[data-theme="light"] .hh-drawer-panel {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-left: 1px solid #e2e8f0 !important;
+  box-shadow: -16px 0 50px rgba(15, 23, 42, 0.18) !important;
+}
+
+.hh-mobile-drawer.is-open .hh-drawer-panel {
+  transform: translateX(0);
+}
+
+/* 5. Drawer Header */
+.hh-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+html[data-theme="light"] .hh-drawer-header {
+  border-bottom-color: #f1f5f9;
+}
+
+.hh-drawer-brand img {
+  display: block;
+  height: 24px;
+  width: auto;
+}
+
+.hh-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text-primary, #ffffff);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+html[data-theme="light"] .hh-drawer-close {
+  border-color: #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.hh-drawer-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme="light"] .hh-drawer-close:hover {
+  background: #e2e8f0;
+}
+
+/* 6. Drawer Hero Action */
+.hh-drawer-hero-cta {
+  padding: 16px 20px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="light"] .hh-drawer-hero-cta {
+  border-bottom-color: #f1f5f9;
+}
+
+.hh-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hh-cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* 7. Drawer Scrollable Navigation */
+.hh-drawer-scroll {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 14px;
+}
+
+.hh-drawer-section-title {
+  padding: 0 8px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.hh-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hh-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #cbd5e1 !important;
+  font-size: 14.5px;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.18s ease;
+  touch-action: manipulation;
+}
+
+html[data-theme="light"] .hh-drawer-link {
+  color: #334155 !important;
+}
+
+.hh-drawer-link:hover,
+.hh-drawer-link.active {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .hh-drawer-link:hover,
+html[data-theme="light"] .hh-drawer-link.active {
+  background: #f1f5f9;
+  color: #0066ff !important;
+}
+
+.hh-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.hh-link-text {
+  flex: 1;
+}
+
+.hh-link-arrow {
+  color: #475569;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.hh-drawer-link:hover .hh-link-arrow {
+  transform: translateX(3px);
+  color: #0066ff;
+}
+
+.hh-link-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 102, 255, 0.18);
+  color: #38bdf8;
+  border: 1px solid rgba(0, 102, 255, 0.3);
+}
+
+html[data-theme="light"] .hh-link-badge {
+  background: #eff6ff;
+  color: #0066ff;
+  border-color: #bfdbfe;
+}
+
+/* 8. Drawer Footer & Language/Theme controls */
+.hh-drawer-footer {
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+html[data-theme="light"] .hh-drawer-footer {
+  border-top-color: #f1f5f9;
+  background: #f8fafc;
+}
+
+.hh-drawer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hh-drawer-lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hh-footer-label {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.hh-lang-btn {
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.hh-lang-btn.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="light"] .hh-lang-btn.active {
+  color: #0066ff;
+  background: #e2e8f0;
+}
+
+.hh-lang-sep {
+  color: #475569;
+}
+
+/* 9. Scroll Lock on Body */
+body.hh-menu-locked {
+  overflow: hidden !important;
+  touch-action: none !important;
+  height: 100vh !important;
+}
+
+/* 10. Responsive Breakpoints & Mobile Optimization */
+@media (max-width: 980px) {
+  .hh-mobile-toggle {
+    display: flex !important;
+  }
+  .topbar-shell {
+    padding: 10px 16px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Hero & Readability */
+  .hero {
+    padding: 36px 16px 28px !important;
+  }
+  .hero h1 {
+    font-size: clamp(23px, 6.2vw, 32px) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .hero-answer {
+    font-size: 15px !important;
+    line-height: 1.62 !important;
+  }
+  
+  /* Scanbox Ergonomics */
+  .scanbox form .field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .scanbox form input {
+    height: 50px !important;
+    min-height: 50px !important;
+    font-size: 15px !important;
+    padding: 0 16px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: var(--bg-card, #131722) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  html[data-theme="light"] .scanbox form input {
+    border-color: #cbd5e1 !important;
+    background: #ffffff !important;
+  }
+  .scanbox form button[type="submit"] {
+    height: 50px !important;
+    min-height: 50px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0 20px !important;
+  }
+  
+  /* Signals bar overflow prevention */
+  .signals {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    padding: 10px 4px !important;
+    justify-content: flex-start !important;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+
+  /* Safe margins & No horizontal scrolling */
+  body, html {
+    max-width: 100vw !important;
+    overflow-x: clip !important;
+  }
+}
