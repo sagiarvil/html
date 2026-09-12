@@ -168,6 +168,8 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [OpenAI Japan Unveils Teen Safety Blueprint](https://htmlandhtml.com/en/llms-txt-news/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737/)
+- [Enterprise-Scale Agentic AI Integration and Infrastructure Implications](https://htmlandhtml.com/en/llms-txt-news/2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858/)
 - [The Rise of Agentic AI in Scientific Computing](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e/)
 - [WebSocket Integration and Connection-Scoped Caching for the Responses API](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1/)
 - [Advanced Professional Workflows and Long-Context Capabilities with GPT-5.2](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-introducing-gpt-5-2-10ab1c39be14/)
@@ -186,6 +188,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Search Central Deep Dive Europe 2026: Apparently we're going to Barcelona: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05/)
 - [Help Us Pick the Next Stop in Europe for Search Central Live Deep Dive 2026!: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-06-01-help-us-pick-the-next-stop-in-europe-for-search-ce-0461e0bc6d/)
 - [Introducing Search Generative AI performance reports in Search Console: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0/)
-- [A new resource for optimizing for generative AI in Google Search: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad/)
-- [Introducing a new spam policy for "back button hijacking": AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3/)
 <!-- LLMS_NEWS_END -->
