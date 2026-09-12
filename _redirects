@@ -1,5 +1,8 @@
 /index.html    /                  301
 /home          /                  301
+/tr            /                  301
+/tr/           /                  301
+/tr/index.html /                  301
 /products      /en/pricing/       301
 /products.html /en/pricing/       301
 /pricing       /en/pricing/       301
