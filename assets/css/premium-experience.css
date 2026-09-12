@@ -6679,3 +6679,154 @@ html[data-theme="dark"] .hh-dock-divider {
     transform: translateY(-2px) scale(1.04) !important;
   }
 }
+
+/* 7. ULTRA-PREMIUM ENTERPRISE FOOTER OVERRIDE */
+body footer,
+html body footer,
+.site-footer {
+  position: relative !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  padding: 72px 24px 110px !important;
+  margin-top: 56px !important;
+  overflow: hidden !important;
+}
+
+body footer::before,
+html body footer::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.45), transparent) !important;
+}
+
+html[data-theme="dark"] body footer {
+  background: linear-gradient(180deg, #090d16 0%, #030712 100%) !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body footer .footer-grid {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr 1.1fr !important;
+  gap: 48px !important;
+}
+
+body footer .brand-logo {
+  height: 26px !important;
+  width: auto !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04)) !important;
+}
+
+body footer p,
+body footer .footer-brand p {
+  font-size: 13.5px !important;
+  line-height: 1.68 !important;
+  color: #64748b !important;
+  margin-top: 14px !important;
+  max-width: 360px !important;
+}
+
+html[data-theme="dark"] body footer p,
+html[data-theme="dark"] body footer .footer-brand p {
+  color: #94a3b8 !important;
+}
+
+body footer h4,
+body footer .footer-col h4 {
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #0284c7 !important;
+  margin: 0 0 18px !important;
+}
+
+html[data-theme="dark"] body footer h4,
+html[data-theme="dark"] body footer .footer-col h4 {
+  color: #38bdf8 !important;
+}
+
+body footer ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 11px !important;
+}
+
+body footer a,
+body footer .footer-col a {
+  color: #475569 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+html[data-theme="dark"] body footer a,
+html[data-theme="dark"] body footer .footer-col a {
+  color: #94a3b8 !important;
+}
+
+body footer a:hover,
+body footer .footer-col a:hover {
+  color: #2563eb !important;
+  transform: translateX(4px) !important;
+}
+
+html[data-theme="dark"] body footer a:hover,
+html[data-theme="dark"] body footer .footer-col a:hover {
+  color: #60a5fa !important;
+}
+
+body footer .footer-bottom {
+  max-width: 1240px !important;
+  margin: 48px auto 0 !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.8) !important;
+  padding-top: 28px !important;
+  font-size: 12.5px !important;
+  color: #64748b !important;
+  line-height: 1.65 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+
+html[data-theme="dark"] body footer .footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+
+@media (max-width: 960px) {
+  body footer .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 36px !important;
+  }
+  body footer .footer-brand {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body footer {
+    padding: 48px 16px 100px !important;
+  }
+  body footer .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  body footer .footer-brand {
+    grid-column: span 1 !important;
+  }
+}

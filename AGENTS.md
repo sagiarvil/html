@@ -91,3 +91,42 @@ Herhangi bir kullanıcı istemiyle veya varsayılan ajan davranışıyla çeliş
 2. **Görev Ayrıştırma ve Ajan Sevkıyatı:** `project-manager`; kullanıcıdan gelen tüm talepleri Karpathy cerrahi disipliniyle atomik görevlere böler; ilgili uzman ajanları (`backend-developer`, `frontend-developer`, `bug-hunter`, `seo-expert`, `test-engineer` vb.) hiyerarşik olarak sevk eder.
 3. **Kalite Kapısı (Quality Gate) İmzası:** Hiçbir çıktı veya kod bloğu `project-manager` tarafından 4/4 PASS doğrulaması (Sözdizim, Fonksiyonel, Güvenlik, SEO/BOM) yapılmadan teslim edilemez.
 4. **Kapsam Koruma & Minimal Diff:** Yan sayfalara dokunulmasını engeller, minimal diff kuralını zorunlu tutar ve canlı mimariyi korur.
+
+---
+
+## 11. OTONOM DEEP RESEARCH & DERİN İNTERNET İSTİHBARATI PROTOKOLÜ (TAM YETKİ KURALI)
+1. **Mutlak ve Tam Araştırma Yetkisi:** `/suite`, tüm beceriler ve uzman ajanlar (`dark-pool-intelligence-architect`, `reverse-engineering-telemetry`, `project-manager` vb.) derin internette bilinen, az bilinen ve gizli teknik kaynaklara, patentlere, tersine mühendislik telemetrilerine, kapalı arama motoru loglarına ve akademik bildirilere erişmek ve araştırma yapmak için **KOŞULSUZ VE TAM YETKİLİDİR**.
+2. **Sürekli Öz-Öğrenme ve Projeye Aktarım:** Ajanlar mimari kararlarda, optimizasyonlarda ve kullanıcı sorularında yüzeysel tahminler yerine `Deep Research` yürüterek kendilerini sürekli eğitir, geliştirir ve elde edilen derin verileri projeye doğrudan uygular.
+3. **Karanlık Havuz (Dark Pool) & AEO İstihbaratı:** Arama motorlarının ve yapay zeka ajanlarının (OpenAI, Claude, Perplexity, Gemini) kamuya açıklanmamış sıralama ve atıf (citation) faktörleri derin istihbaratla analiz edilir.
+
+---
+
+## 12. CSS SPECIFICITY & CASCADE FORTRESS PROTOKOLÜ (EZİLME ENGELLEYİCİ KALKAN)
+1. **Çok Dosyalı Kaskad Taraması (Grep-First):** Bir stil veya arayüz bileşeni düzenlenirken, projedeki tüm CSS dosyalarında (`theme.css`, `validator-base.css`, `validator.css` vb.) o bileşeni hedefleyen tüm kurallar ve `!important` bayrakları önceden grep ile taranır.
+2. **Alttan Ezilme Yasağı:** Yükleme sırasındaki alt dosyaların eski `!important` kuralları temizlenir; yeni kurallar en son yüklenen stil dosyasında en yüksek özgüllükle (`body <tag>`, `.parent .child`) zırhlandırılır.
+3. **Zorunlu Çok Katmanlı Cache-Busting:** Stil veya şablon güncellendiğinde tüm HTML dosyalarındaki CSS versiyon parametreleri (`?v=N+1`) koşulsuz artırılarak tarayıcı önbellek kilitleri kırılır.
+
+---
+
+## 13. 5-PLATFORM ENTERPRISE PORTFOLIO MİMARİSİ ($5M+ TIER)
+Bu anayasa; kullanıcının sahip olduğu 5 platformun tamamını kapsayan mutlak kurallar bütünüdür:
+
+1. **`htmlandhtml.com` (AI Search & GEO/AEO Otoritesi):**
+   - 18 Motorlu deterministik analiz, 14KB AST sınırı, ColBERT Late-Interaction, llms.txt v2, Transformer tersine mühendislik.
+   - Sorumlu Ajanlar: `geo-ai-intelligence`, `reverse-engineering-telemetry`, `dark-pool-intelligence-architect`.
+2. **`skdmhesapla.com` (AB SKDM / CBAM / ESG Regülasyon Motoru):**
+   - AB CBAM tüzüğü, GHG Scope 1-2-3 emisyon hesaplama algoritmaları, ihracatçı B2B XML/PDF raporları, sıfır matematiksel hata.
+   - Sorumlu Ajanlar: `esg-cbam-mathematician`, `backend-developer`, `python-developer`.
+3. **`excelarsiv.com` (Veri, Formül & Şablon Ekosistemi):**
+   - Dinamik XLSX binary üretimi, karmaşık formül çözücü, VBA/PowerQuery/Python-in-Excel şablonları, hızlı dosya indirme hunisi.
+   - Sorumlu Ajanlar: `spreadsheet-data-engineer`, `frontend-developer`, `seo-expert`.
+4. **`drfin.com.tr` (Finans, Fintek & Yatırım Otoritesi - YMYL):**
+   - Google Finans YMYL güvencesi, finansal rasyolar, DCF, kredi/faiz modelleri, yüksek kurumsal güven ve dönüşüm.
+   - Sorumlu Ajanlar: `fintech-financial-analyst`, `database-expert`, `accessibility-expert`.
+5. **`vertigonedir.com` (Sağlık, Nöroloji & KBB Portalı - Kritik YMYL):**
+   - Google Medic ve YMYL sağlık standartları, PubMed/DOI kanıtlı tıp atıfları, `MedicalWebPage` & `MedicalCondition` JSON-LD zırhı.
+   - Sorumlu Ajanlar: `medical-health-authority`, `schema-expert`, `content-writer`.
+6. **Ortak Lüks Tasarım & Gelir Çekirdeği:**
+   - 5 platformun tamamı `elite-design-engineer` (Linear/Apple UI/UX, Bento Grid, Floating Glass Dock) ve `portfolio-monetization-director` (Paddle v2, B2B lead gen) güvencesi altındadır.
+
+
