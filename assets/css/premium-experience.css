@@ -6570,93 +6570,112 @@ html[data-theme="light"] .ea-footnote {
   margin: 0 !important;
 }
 
-/* 6. macOS FLOATING GLASS DOCK — Alt Navigasyon Doku */
+/* 6. macOS FLOATING GLASS DOCK — Ultra-Lüks Apple Navigasyon Doku */
 .hh-floating-dock {
   position: fixed !important;
   bottom: 24px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  padding: 6px 10px !important;
-  background: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  gap: 8px !important;
+  padding: 8px 14px !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(32px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
   border-radius: 999px !important;
-  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.16), 0 4px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 html[data-theme="dark"] .hh-floating-dock {
-  background: rgba(15, 23, 42, 0.8) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
 }
 
 .hh-floating-dock:hover {
-  transform: translateX(-50%) translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 20px 44px -8px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.2) !important;
+  box-shadow: 0 28px 60px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(37, 99, 235, 0.25) !important;
 }
 
 .hh-dock-item {
+  position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  padding: 8px 14px !important;
+  gap: 7px !important;
+  padding: 8px 16px !important;
   border-radius: 999px !important;
   font-size: 13px !important;
   font-weight: 700 !important;
-  color: var(--theme-text-secondary, #475569) !important;
+  letter-spacing: -0.01em !important;
+  color: #475569 !important;
   text-decoration: none !important;
-  transition: all 0.2s ease !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   white-space: nowrap !important;
   cursor: pointer !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 .hh-dock-item:hover {
-  color: var(--theme-text-strong, #0f172a) !important;
+  color: #0f172a !important;
   background: rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-4px) scale(1.08) !important;
+}
+
+.hh-dock-item:active {
+  transform: translateY(-1px) scale(0.96) !important;
+}
+
+html[data-theme="dark"] .hh-dock-item {
+  color: #cbd5e1 !important;
 }
 
 html[data-theme="dark"] .hh-dock-item:hover {
   color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
 }
 
 .hh-dock-item.primary {
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
 }
 
 .hh-dock-item.primary:hover {
   background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.35) inset !important;
+  transform: translateY(-5px) scale(1.1) !important;
 }
 
 .hh-dock-divider {
   width: 1px !important;
-  height: 20px !important;
-  background: rgba(226, 232, 240, 0.8) !important;
+  height: 22px !important;
+  background: rgba(203, 213, 225, 0.8) !important;
   margin: 0 2px !important;
 }
 
 html[data-theme="dark"] .hh-dock-divider {
-  background: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
 }
 
 @media (max-width: 640px) {
   .hh-floating-dock {
     bottom: 16px !important;
-    padding: 5px 8px !important;
+    padding: 6px 10px !important;
     gap: 4px !important;
+    width: calc(100% - 32px) !important;
+    max-width: 400px !important;
+    justify-content: space-around !important;
   }
   .hh-dock-item {
-    padding: 7px 10px !important;
+    padding: 6px 10px !important;
     font-size: 12px !important;
+  }
+  .hh-dock-item:hover {
+    transform: translateY(-2px) scale(1.04) !important;
   }
 }
