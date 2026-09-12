@@ -1787,6 +1787,25 @@ function render(data){
   const reportUrl=(isTr?'/tr/enterprise-analyzer/htmlandhtml-ai-report?domain=':'/enterprise-analyzer/htmlandhtml-ai-report?domain=')+encodeURIComponent(data.domain);
   entReportBtn.href=reportUrl;
   entReportBtn.innerHTML=`<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>${isTr?'📊 18 Motorlu Kurumsal Raporu Aç →':'📊 Open 18-Engine Executive Report →'}</span>`;
+
+  let sendDevBtn=document.getElementById('btnSendDevReport');
+  if(!sendDevBtn){
+    sendDevBtn=document.createElement('button');
+    sendDevBtn.id='btnSendDevReport';
+    sendDevBtn.type='button';
+    sendDevBtn.className='btn-pdf-export btn-send-dev';
+    sendDevBtn.style.cssText='background:linear-gradient(135deg,#10b981 0%,#059669 100%);border-color:#10b981;color:#ffffff;display:inline-flex;align-items:center;gap:6px;font-weight:700;cursor:pointer;';
+    const actionsWrap=document.querySelector('.result-head-actions');
+    if(actionsWrap)actionsWrap.appendChild(sendDevBtn);
+  }
+  sendDevBtn.innerHTML=`<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>${isTr?'✉️ Yazılımcıma Gönder':'✉️ Send to Developer'}</span>`;
+  sendDevBtn.onclick=()=>{
+    const shareUrl = window.location.origin + reportUrl;
+    const subject = isTr ? `[Önemli] ${data.domain} İçin Yapay Zeka SEO ve Görünürlük Çözüm Raporu` : `[Action Required] AI Visibility & Remediation Dossier for ${data.domain}`;
+    const body = isTr ? `Merhaba,\n\n${data.domain} sitemiz için yapılan 18 motorlu yapay zeka arama denetimi raporu ve hazır kod çözümleri hazırlanmıştır.\n\nSitemizin ChatGPT, Google Gemini ve Perplexity'de doğru çıkması için gerekli teknik reçeteleri ve analizi bu linkten inceleyip uygulayabilirsiniz:\n${shareUrl}\n\nİyi çalışmalar.` : `Hello,\n\nHere is the official 18-engine AI search visibility and engineering remediation blueprint for ${data.domain}.\n\nYou can review the findings, verified recipes, and production code snippets here:\n${shareUrl}\n\nBest regards.`;
+    const mailto = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  };
   document.getElementById('resultMeta').textContent=`${data.checked} ${D[lang].checked} · ${sm.pagesScanned||0} ${D[lang].pages} · ${sm.linksProbed||0} ${D[lang].probed} · 🔒 RFC 3161 SHA-256: ${safe(data.scanId.slice(0,8).toUpperCase())} · ${new Date(data.scannedAt).toLocaleString(isTr?'tr-TR':'en-US')}`;
   const p1=Math.round(((data.scores?.crawl||0)+(data.scores?.technical||0)+(data.scores?.links||0))/3);
   const p2=Math.round(((data.scores?.ai||0)+(data.scores?.llms||0)+(data.scores?.schema||0)+(data.scores?.agent||0))/4);

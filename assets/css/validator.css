@@ -1,4 +1,4 @@
-﻿@import url('/assets/css/validator-base.css?v=2');
+@import url('/assets/css/validator-base.css?v=2');
 @import url('/assets/css/validator-v2.css?v=2');
 @import url('/assets/css/theme.css?v=2');
 
@@ -1693,3 +1693,89 @@ html[data-theme="light"] .console-tab-btn.active {
     display: none !important;
   }
 }
+
+/* ============================================================
+   CLEAN ENTERPRISE WEB SAAS DESIGN (Zero AI-Gimmicks, Pure Software Architecture)
+   ============================================================ */
+/* 1. Header üstündeki amatör görünen ham metin bloğunu gizle */
+#ai-aeo-summary {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 2. Temiz, Ciddi ve Güvenilir Kurumsal Web Tarayıcı Kutusu (Neon/AI Efektleri Yok) */
+.scanbox .field {
+  background: var(--theme-bg-surface, #1e2028) !important;
+  border: 1px solid var(--theme-border, #334155) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: 6px 6px 6px 16px !important;
+}
+
+.scanbox .field:focus-within {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18) !important;
+}
+
+.scanbox .field button {
+  background: #2563eb !important;
+  border: 1px solid #1d4ed8 !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+  transition: background 0.15s ease !important;
+}
+
+.scanbox .field button:hover {
+  background: #1d4ed8 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 3. Profesyonel Web Teşhis ve Rapor Kutuları */
+.health-vip-report-box {
+  background: var(--theme-bg-surface, #1e222d) !important;
+  border: 1px solid #3b82f6 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+.health-count-card {
+  border-radius: 10px !important;
+  border: 1px solid var(--theme-border, #334155) !important;
+  transition: border-color 0.15s ease !important;
+}
+
+.health-count-card:hover {
+  border-color: #64748b !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-send-dev {
+  background: #059669 !important;
+  border: 1px solid #047857 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  transition: background 0.15s ease !important;
+}
+
+.btn-send-dev:hover {
+  background: #047857 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
