@@ -2150,5 +2150,52 @@ footer {
   line-height: 1.6 !important;
 }
 
+/* EA Executive Summary Card & Grid */
+.ea-executive-summary {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1.5px solid #38bdf8;
+  border-radius: 16px;
+  padding: 24px 28px;
+  color: #ffffff;
+  box-shadow: 0 12px 36px -8px rgba(2, 132, 199, 0.25);
+}
+.ea-executive-summary h2 {
+  color: #f8fafc;
+}
+.ea-executive-summary p {
+  color: #cbd5e1;
+}
+.ea-executive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px;
+}
 
-
+html[data-theme="light"] .ea-executive-summary,
+html.light .ea-executive-summary {
+  background: #ffffff !important;
+  border: 1.5px solid #0284c7 !important;
+  color: #0f172a !important;
+  box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.12) !important;
+}
+html[data-theme="light"] .ea-executive-summary h2,
+html.light .ea-executive-summary h2 {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .ea-executive-summary p,
+html.light .ea-executive-summary p {
+  color: #334155 !important;
+}
+html[data-theme="light"] .ea-executive-grid,
+html.light .ea-executive-grid {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+html[data-theme="light"] .ea-executive-grid div div:first-child,
+html.light .ea-executive-grid div div:first-child {
+  color: #64748b !important;
+}
