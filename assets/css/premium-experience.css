@@ -6481,3 +6481,182 @@ html[data-theme="light"] .ea-footnote {
 #scanButton:active {
   transform: translateY(0) !important;
 }
+
+/* 5. PIPELINE SPOTLIGHT GLASS CARDS — Süreç Akışı Mimarisi */
+#pipeline .px-tool-flow {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  position: relative !important;
+}
+
+#pipeline .px-tool-flow::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 10% !important;
+  right: 10% !important;
+  top: 48px !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.6), rgba(37, 99, 235, 0.1)) !important;
+  z-index: 0 !important;
+}
+
+#pipeline .px-flow-card {
+  position: relative !important;
+  z-index: 1 !important;
+  background: var(--theme-bg-surface, #ffffff) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 20px !important;
+  padding: 32px 26px !important;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  overflow: hidden !important;
+}
+
+#pipeline .px-flow-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #2563eb, #38bdf8) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+#pipeline .px-flow-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+  box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.15) !important;
+}
+
+#pipeline .px-flow-card:hover::before {
+  opacity: 1 !important;
+}
+
+#pipeline .px-flow-card .node {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3), 0 0 0 4px rgba(239, 246, 255, 0.9) !important;
+}
+
+#pipeline .px-flow-card h3 {
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  color: var(--theme-text-strong, #0f172a) !important;
+  margin: 0 0 10px !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.35 !important;
+}
+
+#pipeline .px-flow-card p {
+  font-size: 13.5px !important;
+  color: var(--theme-text-secondary, #475569) !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+/* 6. macOS FLOATING GLASS DOCK — Alt Navigasyon Doku */
+.hh-floating-dock {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 10px !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+html[data-theme="dark"] .hh-floating-dock {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset !important;
+}
+
+.hh-floating-dock:hover {
+  transform: translateX(-50%) translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 20px 44px -8px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.2) !important;
+}
+
+.hh-dock-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--theme-text-secondary, #475569) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.hh-dock-item:hover {
+  color: var(--theme-text-strong, #0f172a) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="dark"] .hh-dock-item:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.hh-dock-item.primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+}
+
+.hh-dock-item.primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+}
+
+.hh-dock-divider {
+  width: 1px !important;
+  height: 20px !important;
+  background: rgba(226, 232, 240, 0.8) !important;
+  margin: 0 2px !important;
+}
+
+html[data-theme="dark"] .hh-dock-divider {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+@media (max-width: 640px) {
+  .hh-floating-dock {
+    bottom: 16px !important;
+    padding: 5px 8px !important;
+    gap: 4px !important;
+  }
+  .hh-dock-item {
+    padding: 7px 10px !important;
+    font-size: 12px !important;
+  }
+}
