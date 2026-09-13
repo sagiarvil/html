@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url><loc>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a/</loc><news:news><news:publication><news:name>HTML&amp;HTML</news:name><news:language>tr</news:language></news:publication><news:publication_date>2026-09-13</news:publication_date><news:title>ChatGPT Üzerinden Ürün Keşfi ve Ajan Tabanlı Ticaret Protokolü</news:title></news:news></url>
