@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://htmlandhtml.com/en/</loc>
+    <lastmod>2026-09-13T01:05:47+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/about/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/hakkimizda/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/contact/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iletisim/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/contact/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/delivery-policy/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/delivery-policy/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teslimat-politikasi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/delivery-policy/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/deterministic-layers/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/deterministic-layers/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/deterministik-katmanlar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/deterministic-layers/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/enterprise-dark-pool/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/enterprise-dark-pool/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/enterprise-dark-pool/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/enterprise-dark-pool/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/evidence-standard/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/evidence-standard/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/kanit-standardi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/evidence-standard/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/fix-mandate/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/fix-mandate/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fix-mandate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/fix-mandate/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/methodology/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/methodology/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/methodology/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/methodology/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/platform/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/platform/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/platform/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/platform/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/pricing/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/pricing/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fiyatlandirma/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/pricing/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/privacy/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/gizlilik/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/privacy/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/rag-readiness/</loc>
+    <lastmod>2026-09-13T01:05:47+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/rag-readiness/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/rag-optimizasyon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/rag-readiness/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/refund-policy/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/refund-policy/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iade-politikasi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/refund-policy/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/sample-report/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/sample-report/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ornek-rapor/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/terms/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/kullanim-kosullari/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/terms/" />
+  </url>
+</urlset>

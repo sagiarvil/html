@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://htmlandhtml.com/tr/ai-crawler-checker/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-crawler-checker/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-crawler-checker/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-crawler-checker/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/ai-mention-tracker/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-mention-tracker/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-mention-tracker/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-mention-tracker/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/ai-website-readiness/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-website-readiness/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-website-readiness/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-website-readiness/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/araclar/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/tools/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/araclar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/tools/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/erisilebilirlik-kontrol/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/accessibility-checker/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/erisilebilirlik-kontrol/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/accessibility-checker/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/security-headers-checker/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/security-headers-checker/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/link-kontrol/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/link-integrity-checker/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/link-kontrol/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/link-integrity-checker/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/llms-txt-validator/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/llms-txt-validator/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/llms-txt-validator/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/llms-txt-validator/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/referans/ai-tarayicilar/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/reference/ai-crawlers/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/referans/ai-tarayicilar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/reference/ai-crawlers/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/schema-validator/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/schema-validator/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/schema-validator/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/schema-validator/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/site-tarama/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/website-scanner/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/site-tarama/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/website-scanner/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/teknik-seo-kontrol/</loc>
+    <lastmod>2026-09-12T21:06:38+03:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/technical-seo-checker/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/teknik-seo-kontrol/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/technical-seo-checker/" />
+  </url>
+</urlset>
