@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-12T02:35:31Z",
+  "lastUpdated": "2026-09-13T02:34:28Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -19438,6 +19438,104 @@
       "id": "2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858",
       "sourceUrl": "https://openai.com/index/accenture-partnership",
       "publishedAt": "2026-09-12"
+    },
+    {
+      "topic": "AGENTIC_COMMERCE_PROTOCOL_DISCOVERY",
+      "keywords": [
+        "Agentic Commerce Protocol",
+        "ChatGPT product discovery",
+        "structured merchant data",
+        "visual search integration",
+        "conversational commerce infrastructure"
+      ],
+      "title": {
+        "tr": "ChatGPT Üzerinden Ürün Keşfi ve Ajan Tabanlı Ticaret Protokolü",
+        "en": "Product Discovery and Agentic Commerce Protocol Integration in ChatGPT"
+      },
+      "dek": {
+        "tr": "ChatGPT, görsel odaklı alışveriş deneyimleri ve satıcı entegrasyonları için yeni bir protokolü hayata geçiriyor.",
+        "en": "ChatGPT introduces immersive visual shopping capabilities and direct merchant integrations via a standardized protocol."
+      },
+      "summary": {
+        "tr": "Yapay zeka tabanlı arama ve sohbet sistemlerinde ürün keşfi, kullanıcıların karmaşık sorgularını doğrudan görsel ve yapılandırılmış envanter verileriyle eşleştiren yeni bir protokolle evriliyor. Bu güncelleme, platformun arayüzünde zenginleştirilmiş görsel sunumlar, yan yana ürün karşılaştırmaları ve satıcı entegrasyonlarına olanak tanıyan altyapı değişikliklerini içeriyor. Arama ve e-ticaret ekipleri için bu durum, geleneksel optimizasyon taktiklerinin ötesine geçerek, doğrudan makine tarafından okunabilir protokol standartlarına uyum sağlamayı zorunlu kılıyor. Sistem, arama niyetini doğrudan yapılandırılmış ticari varlıklara dönüştürmeyi hedefliyor.",
+        "en": "Product discovery within conversational AI search is evolving through a standardized protocol that maps complex user queries directly to visual and structured inventory data. This update integrates richer visual layouts, side-by-side comparisons, and merchant backend integrations directly into the interface. For search and e-commerce engineers, this shift requires moving beyond conventional optimization techniques toward compliance with machine-readable commerce protocols. The architecture aims to translate natural language search intent directly into structured transactional entities."
+      },
+      "whyItMatters": {
+        "tr": "Bu protokol, geleneksel metin tabanlı arama sonuçlarından, doğrudan eylem odaklı ve görsel bileşenler içeren yapay zeka ajan etkileşimlerine geçişte kritik bir eşiktir. Geliştiriciler için, platformların artık basit web sayfalarını indekslemekle kalmayıp dinamik ticari varlıklar tükettiğini gösterir.",
+        "en": "This protocol marks a critical threshold in shifting from traditional text-based search results to action-oriented, visually rich AI agent interactions. For developers, it signals that platforms are consuming dynamic commercial entities rather than simply indexing static web pages."
+      },
+      "technicalImpact": {
+        "tr": "E-ticaret siteleri, ürün envanterlerini ve fiyatlandırma mantığını harici ajanların tüketebileceği standartlaştırılmış protokol formatlarına uyarlamak zorundadır. Görsel varlıkların optimizasyonu, API tabanlı veri aktarımı ve yapılandırılmış şema doğruluğu, platform içi görünürlüğü doğrudan belirleyecektir. Geleneksel HTML tabanlı meta veriler, ajan tabanlı sistemlerin gereksinimlerini karşılamak için zenginleştirilmiş API uç noktalarıyla desteklenmelidir.",
+        "en": "E-commerce sites must adapt inventory and pricing logic to standardized protocol formats consumable by external agents. Visual asset optimization, API-driven data transmission, and structured schema accuracy will directly dictate in-platform visibility. Traditional HTML metadata must be augmented with rich API endpoints to satisfy agentic system requirements."
+      },
+      "actions": {
+        "tr": [
+          "Satıcı veri akışlarının yeni ajan protokolü gereksinimleriyle uyumunu test edin.",
+          "Ürün görsellerinin ve karşılaştırma parametrelerinin yapılandırılmış veri şemalarıyla doğru iletildiğini doğrulayın.",
+          "API uç noktalarının makine okuma hızını ve yanıt tutarlılığını denetleyin."
+        ],
+        "en": [
+          "Test merchant data feeds for compliance with the new agent protocol requirements.",
+          "Verify that product visuals and comparison parameters are accurately mapped via structured data schemas.",
+          "Audit API endpoint response times and consistency for machine consumers."
+        ]
+      },
+      "boundary": {
+        "tr": "Protokolün benimsenme oranı ve platform içi sıralama algoritmalarının ticari verileri nasıl ağırlıklandıracağı henüz tam olarak belirsizdir.",
+        "en": "The exact adoption rate of the protocol and the precise weighting algorithms used by the platform for commercial ranking remain indeterminate."
+      },
+      "id": "2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a",
+      "sourceUrl": "https://openai.com/index/powering-product-discovery-in-chatgpt",
+      "publishedAt": "2026-09-13"
+    },
+    {
+      "topic": "AGENTIC_CODING_MODELS",
+      "keywords": [
+        "GPT-5.1-Codex-Max",
+        "agentic coding",
+        "reasoning efficiency",
+        "long-running workflows",
+        "token optimization"
+      ],
+      "title": {
+        "tr": "GPT-5.1-Codex-Max ile Proje Ölçekli Kodlama Modelleri",
+        "en": "Project-Scale Coding Models with GPT-5.1-Codex-Max"
+      },
+      "dek": {
+        "tr": "Yeni nesil ajan tabanlı kodlama modeli, uzun süreli yazılım görevlerinde muhakeme ve belirteç verimliliğini artırıyor.",
+        "en": "The next-generation agentic coding model enhances reasoning and token efficiency for extended software tasks."
+      },
+      "summary": {
+        "tr": "Yapay zeka odaklı arama ve teknik referans platformları, yazılım geliştirme süreçlerini optimize eden yeni nesil dil modellerinin entegrasyonuyla evriliyor. GPT-5.1-Codex-Max sürümü, özellikle uzun soluklu ve büyük ölçekli projelerde otonom kodlama yeteneklerini geliştirmek üzere tasarlandı. Gelişmiş muhakeme yapıları ve optimize edilmiş belirteç tüketimi sayesinde, bu model karmaşık kod tabanlarında daha kararlı ve tutarlı işlemler gerçekleştirebiliyor. Teknik ekipler, ajan tabanlı iş akışlarını daha güvenilir bir şekilde ölçeklendirebilirken, arama motorları ve kod tabanlı dizin oluşturma sistemleri de bu gelişmiş kodlama yeteneklerinden dolaylı olarak etkilenecek.",
+        "en": "AI-focused search and technical reference platforms are evolving with the integration of next-generation language models that optimize software development workflows. The GPT-5.1-Codex-Max release is designed to improve autonomous coding capabilities, particularly in long-running and large-scale projects. Enhanced reasoning architectures and optimized token consumption enable the model to execute more stable and consistent operations across complex codebases. Technical teams can scale agent-based workflows more reliably, while search engines and code-based indexing systems will also be indirectly impacted by these advanced coding capabilities."
+      },
+      "whyItMatters": {
+        "tr": "Büyük ölçekli yazılım projelerinde otonom ajanların kararlılığı, geliştirme verimliliğini doğrudan etkiler. Gelişmiş muhakeme ve daha düşük belirteç maliyeti, yapay zeka destekli kod analiz araçlarının daha derin ve kapsamlı taramalar yapmasına olanak tanır.",
+        "en": "The stability of autonomous agents in large-scale software projects directly impacts development efficiency. Advanced reasoning and lower token costs enable AI-powered code analysis tools to perform deeper and more comprehensive scans."
+      },
+      "technicalImpact": {
+        "tr": "Modelin artırılmış token verimliliği ve uzun süreli bağlam yönetimi, kod tabanlı arama sistemlerinin ve dokümantasyon tarayıcılarının işleme kapasitesini doğrudan etkiler. Karmaşık bağımlılıkların çözümlenmesi ve otonom hata ayıklama süreçleri daha az kaynak tüketimiyle tamamlanabilir.",
+        "en": "The model's increased token efficiency and extended context management directly impact the processing capacity of code-based search systems and documentation crawlers. Resolving complex dependencies and autonomous debugging processes can be completed with lower resource consumption."
+      },
+      "actions": {
+        "tr": [
+          "Ajan tabanlı iş akışlarının uzun süreli bağlam yönetimindeki kararlılığını test edin.",
+          "Token tüketim metriklerini büyük ölçekli kod tabanlarında izleyin.",
+          "Otonom hata ayıklama süreçlerinin doğruluk oranlarını manuel olarak denetleyin."
+        ],
+        "en": [
+          "Test the stability of agent-based workflows in long-term context management.",
+          "Monitor token consumption metrics across large-scale codebases.",
+          "Manually audit the accuracy rates of autonomous debugging processes."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu değerlendirme, modelin yayınlanan meta verilerine dayanmakta olup, gerçek dünya performans metrikleri ve özel kurumsal entegrasyon sonuçları değişiklik gösterebilir.",
+        "en": "This assessment is based on the published metadata, and real-world performance metrics as well as specific enterprise integration outcomes may vary."
+      },
+      "id": "2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32",
+      "sourceUrl": "https://openai.com/index/gpt-5-1-codex-max",
+      "publishedAt": "2026-09-13"
     }
   ]
 }
