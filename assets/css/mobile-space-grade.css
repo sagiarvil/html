@@ -820,4 +820,669 @@
     height: 18px !important;
     background: rgba(255, 255, 255, 0.15) !important;
   }
+
+  /* ==========================================================================
+     🏆 F) ENTERPRISE RESULTS DASHBOARD (APPLE / LINEAR / SPACEX TIER)
+     ========================================================================== */
+  #result.results,
+  .results {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-top: 24px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .result-head {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    background: rgba(13, 18, 34, 0.92) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    border-radius: 20px !important;
+    padding: 18px 16px !important;
+    border: 1.5px solid rgba(0, 212, 255, 0.25) !important;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  html[data-theme="light"] .result-head {
+    background: #ffffff !important;
+    border-color: rgba(2, 132, 199, 0.22) !important;
+    box-shadow: 0 6px 24px rgba(2, 132, 199, 0.08) !important;
+  }
+
+  .result-head .eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+    padding: 3px 8px !important;
+    border-radius: 999px !important;
+    background: rgba(0, 212, 255, 0.1) !important;
+    border: 1px solid rgba(0, 212, 255, 0.25) !important;
+    color: #00d4ff !important;
+    display: inline-block !important;
+    margin-bottom: 6px !important;
+  }
+
+  .result-head h2 {
+    font-size: clamp(20px, 6.2vw, 25px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.03em !important;
+    word-break: break-word !important;
+    margin: 4px 0 !important;
+  }
+
+  .result-head p {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+  }
+
+  .result-head-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .btn-pdf-export,
+  .btn-zip-export {
+    width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    font-weight: 750 !important;
+    padding: 0 8px !important;
+    border-radius: 12px !important;
+    gap: 6px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .total-score {
+    grid-column: span 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px !important;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(99, 102, 241, 0.08)) !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(0, 212, 255, 0.25) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .total-score strong {
+    font-size: 40px !important;
+    line-height: 1 !important;
+    color: #00d4ff !important;
+    text-shadow: 0 0 16px rgba(0, 212, 255, 0.4) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  }
+
+  .total-score span {
+    font-size: 15px !important;
+    color: #94a3b8 !important;
+    font-weight: 700 !important;
+  }
+
+  /* 4 Temel Sütun (Result Pillars) - Mobil 2x2 Bento */
+  .result-pillars-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin: 16px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .result-pillars-grid > div,
+  .pillar-card {
+    padding: 12px 10px !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    min-height: auto !important;
+  }
+
+  html[data-theme="light"] .result-pillars-grid > div,
+  html[data-theme="light"] .pillar-card {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  /* 18 Motor Puan Izgarası */
+  .score-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin: 16px 0 !important;
+  }
+
+  .score-item {
+    padding: 12px 14px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: auto !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  }
+
+  .score-item span {
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
+    max-width: 75% !important;
+  }
+
+  .score-item strong {
+    font-size: 22px !important;
+    margin: 0 !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  }
+
+  /* Öncelik Özeti (Priority Summary) */
+  .priority-summary {
+    border-radius: 16px !important;
+    padding: 14px !important;
+    margin: 16px 0 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+  }
+
+  .priority-summary h3 {
+    font-size: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .priority-item {
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+    margin-bottom: 6px !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+  }
+
+  /* Mobil Filtre Çubuğu (Findings Filter Bar) - Momentum Dokunmatik Kaydırma */
+  .findings-filter-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 6px !important;
+    padding: 8px 0 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 14px 0 8px !important;
+  }
+
+  .findings-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #94a3b8 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .filter-btn.active {
+    background: #00d4ff !important;
+    color: #040914 !important;
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.4) !important;
+  }
+
+  /* Bulgular ve Kalite Kartları */
+  .result-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .finding,
+  .hh-quality-card {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+    margin-bottom: 12px !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  html[data-theme="light"] .finding,
+  html[data-theme="light"] .hh-quality-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .finding h4 {
+    font-size: 14.5px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .finding p {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    color: #cbd5e1 !important;
+  }
+
+  html[data-theme="light"] .finding p {
+    color: #334155 !important;
+  }
+
+  /* Yatay Taşma Korumalı Kod Blokları */
+  .finding code,
+  .finding pre,
+  .hh-evidence-block code,
+  .recipe-section code,
+  .locked-fix {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  html[data-theme="light"] .finding code,
+  html[data-theme="light"] .finding pre,
+  html[data-theme="light"] .hh-evidence-block code,
+  html[data-theme="light"] .recipe-section code,
+  html[data-theme="light"] .locked-fix {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+
+  /* Akordeon ve Detay Genişletici */
+  .hh-tech-details summary,
+  .hh-recipe-details summary {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    cursor: pointer !important;
+    margin: 8px 0 !important;
+  }
+
+  /*  Onarım Seti Kartı - Yüksek Dönüşümlü Mobil Zırh */
+  .mandate-card {
+    position: static !important;
+    margin-top: 24px !important;
+    border-radius: 20px !important;
+    padding: 20px 16px !important;
+    background: linear-gradient(135deg, #091512 0%, #06100d 100%) !important;
+    border: 2px solid #22c55e !important;
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.2) !important;
+  }
+
+  html[data-theme="light"] .mandate-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%) !important;
+    border-color: #16a34a !important;
+    box-shadow: 0 12px 36px rgba(22, 163, 74, 0.14) !important;
+  }
+
+  .mandate-card h3 {
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+    margin: 8px 0 !important;
+  }
+
+  .mandate-card p {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .mandate-card ul {
+    margin: 12px 0 !important;
+    padding-left: 18px !important;
+  }
+
+  .mandate-card li {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    padding: 4px 0 !important;
+  }
+
+  .mandate-card .price {
+    margin: 16px 0 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .mandate-card .price strong {
+    font-size: 36px !important;
+    color: #22c55e !important;
+    font-weight: 850 !important;
+  }
+
+  .mandate-card .cta,
+  #mandateLink {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 24px rgba(34, 197, 94, 0.45) !important;
+    transition: transform 0.15s ease !important;
+  }
+
+  .mandate-card .cta:active,
+  #mandateLink:active {
+    transform: scale(0.97) !important;
+  }
+
+  /* ==========================================================================
+     📋 G) SMART CLIPBOARD & SEARCH EXPERIENCE
+     ========================================================================== */
+  .hh-input-paste-btn {
+    position: absolute !important;
+    right: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    height: 32px !important;
+    padding: 0 10px !important;
+    border-radius: 8px !important;
+    font-size: 11px !important;
+    font-weight: 750 !important;
+    border: 1px solid rgba(0, 212, 255, 0.35) !important;
+    background: rgba(0, 212, 255, 0.14) !important;
+    color: #00d4ff !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .hh-input-paste-btn:active {
+    transform: scale(0.94) !important;
+    background: rgba(0, 212, 255, 0.25) !important;
+  }
+
+  /* Panodan Yapıştır / Temizle Buton Senkronizasyonu */
+  .scanbox .field input:not(:placeholder-shown) ~ .hh-input-paste-btn {
+    display: none !important;
+  }
+
+  /* ==========================================================================
+     🛡️ H) ZERO HORIZONTAL SCROLL FORTRESS
+     ========================================================================== */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Dock üzerinde canlı skor rozeti */
+  .hh-dock-score-badge {
+    background: #00d4ff !important;
+    color: #040914 !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    padding: 1px 5px !important;
+    border-radius: 999px !important;
+    margin-left: 2px !important;
+  }
+}
+
+
+  /* ==========================================================================
+     💎 ULTRA-PRO TIER: APPLE DYNAMIC ISLAND & LIVE HUD (SILICON VALLEY V5)
+     ========================================================================== */
+  .hh-dynamic-island {
+    position: fixed !important;
+    top: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-60px) scale(0.9) !important;
+    z-index: 10001 !important;
+    height: 38px !important;
+    padding: 0 16px !important;
+    border-radius: 999px !important;
+    background: rgba(8, 12, 22, 0.94) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
+    backdrop-filter: blur(25px) saturate(200%) !important;
+    border: 1px solid rgba(0, 212, 255, 0.35) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.25) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    font-size: 12px !important;
+    font-weight: 750 !important;
+    color: #ffffff !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+  }
+
+  html[data-theme="light"] .hh-dynamic-island {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border-color: rgba(2, 132, 199, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15) !important;
+    color: #0f172a !important;
+  }
+
+  .hh-dynamic-island.is-active {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+
+  .hh-dynamic-island:active {
+    transform: translateX(-50%) scale(0.96) !important;
+  }
+
+  .hh-island-pulse-dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 50% !important;
+    background: #00d4ff !important;
+    box-shadow: 0 0 10px #00d4ff !important;
+    animation: hhSpacePulse 1.4s infinite !important;
+  }
+
+  /* ==========================================================================
+     📱 NATIVE DRAGGABLE BOTTOM SHEET ARCHITECTURE
+     ========================================================================== */
+  .hh-bottom-sheet-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
+    z-index: 10002 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.25s ease !important;
+  }
+
+  .hh-bottom-sheet-backdrop.is-open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .hh-bottom-sheet {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-height: 86vh !important;
+    max-height: 86dvh !important;
+    background: #0c101d !important;
+    border-top: 1px solid rgba(0, 212, 255, 0.25) !important;
+    border-radius: 24px 24px 0 0 !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7) !important;
+    z-index: 10003 !important;
+    transform: translateY(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
+    box-sizing: border-box !important;
+  }
+
+  html[data-theme="light"] .hh-bottom-sheet {
+    background: #ffffff !important;
+    border-top-color: rgba(2, 132, 199, 0.2) !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .hh-bottom-sheet.is-open {
+    transform: translateY(0) !important;
+  }
+
+  .hh-sheet-handle-bar {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 12px 0 8px !important;
+    cursor: grab !important;
+    touch-action: none !important;
+  }
+
+  .hh-sheet-handle {
+    width: 44px !important;
+    height: 5px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  html[data-theme="light"] .hh-sheet-handle {
+    background: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .hh-sheet-content {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 10px 20px 24px !important;
+  }
+
+  /* ==========================================================================
+     📊 RADIAL PROGRESS RING & SCORE GLOW
+     ========================================================================== */
+  .total-score {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .total-score::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 65%) !important;
+    pointer-events: none !important;
+  }
+
+  /* ==========================================================================
+     📲 NATIVE SHARE & QUICK ACTIONS
+     ========================================================================== */
+  .btn-share-report {
+    width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #38bdf8 !important;
+    font-size: 12.5px !important;
+    font-weight: 750 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+    margin-top: 8px !important;
+    grid-column: span 2 !important;
+  }
+
+  .btn-share-report:active {
+    transform: scale(0.97) !important;
+    background: rgba(0, 212, 255, 0.15) !important;
+  }
+
+  /* ==========================================================================
+     ⚡ 60-120 FPS HARDWARE ACCELERATION & ZERO JANK
+     ========================================================================== */
+  .topbar, 
+  .hh-floating-dock, 
+  .hh-dynamic-island, 
+  .hh-cyber-drawer, 
+  .hh-bottom-sheet {
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    transform: translateZ(0) !important;
+  }
+
 }

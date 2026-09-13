@@ -72,8 +72,8 @@
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-<link rel="stylesheet" href="/assets/css/validator.css?v=13">
-<link rel="stylesheet" href="/assets/css/theme.css?v=13">
+<link rel="stylesheet" href="/assets/css/validator.css?v=14">
+<link rel="stylesheet" href="/assets/css/theme.css?v=14">
 <link rel="stylesheet" href="/assets/css/premium-experience.css?v=11">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
@@ -154,7 +154,7 @@
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
-<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001">
+<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=hh3">
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
@@ -162,6 +162,7 @@
   <div class="topbar-shell">
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
+      <span class="hh-space-telemetry-led">● ONLINE</span>
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
@@ -175,9 +176,54 @@
       <div class="langs">
         <button data-lang="tr" class="active">TR</button><span>/</span><button data-lang="en">EN</button>
       </div>
+      <button type="button" class="hh-mobile-menu-btn" id="hhMobileMenuBtn" aria-label="Menüyü Aç">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Mobil Cyber Drawer Navigasyon -->
+<div id="hhCyberDrawer" class="hh-cyber-drawer" aria-hidden="true">
+  <div class="hh-drawer-head">
+    <div class="brand">
+      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="124" height="22">
+      <span class="hh-space-telemetry-led">● RADAR V4.1</span>
+    </div>
+    <button type="button" class="hh-drawer-close" id="hhDrawerClose" aria-label="Menüyü Kapat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="hh-drawer-links">
+    <a href="#scanner" class="hh-drawer-link highlight">
+      <span>⚡ Ücretsiz AI Taraması</span>
+      <span class="link-tag">Hemen Tara</span>
+    </a>
+    <a href="/tr/site-tarama/" class="hh-drawer-link">
+      <span>🔍 Site Tarama &amp; Teşhis</span>
+      <span class="link-tag">Ücretsiz</span>
+    </a>
+    <a href="/tr/yapay-zeka-arama-gorunurlugu/" class="hh-drawer-link">
+      <span>🌐 Yapay Zeka Görünürlüğü (GEO)</span>
+    </a>
+    <a href="/tr/llms-txt-validator/" class="hh-drawer-link">
+      <span>📑 llms.txt Test Aracı</span>
+    </a>
+    <a href="/tr/llms-txt-haberler/" class="hh-drawer-link">
+      <span>📰 Haberler &amp; Gelişmeler</span>
+    </a>
+    <a href="/tr/sozluk/" class="hh-drawer-link">
+      <span>📖 AI SEO Sözlüğü</span>
+    </a>
+    <a href="/tr/fiyatlandirma/" class="hh-drawer-link highlight">
+      <span>💎 Onarım Seti ($99)</span>
+      <span class="link-tag" style="background:#22c55e;color:#04130a;">Tam Çözüm</span>
+    </a>
+    <a href="/openapi.json" class="hh-drawer-link">
+      <span>⚙️ OpenAPI &amp; API Belgeleri</span>
+    </a>
+  </div>
+</div>
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
@@ -190,8 +236,20 @@
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
       <div class="field">
-        <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
-        <input id="domainInput" aria-label="Taranacak web sitesi veya alan adı" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://sirketiniz.com/" required>
+        <div class="hh-input-wrapper">
+          <span class="hh-input-radar-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="3" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="21"></line><line x1="3" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="21" y2="12"></line></svg>
+          </span>
+          <label for="domainInput" class="sr-only">Taranacak web sitesi adresi</label>
+          <input id="domainInput" aria-label="Taranacak web sitesi veya alan adı" autocomplete="off" autocorrect="off" autocapitalize="off" inputmode="url" spellcheck="false" placeholder="https://sirketiniz.com/" required>
+          <button type="button" class="hh-input-clear-btn" id="hhInputClearBtn" aria-label="Temizle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+          <button type="button" class="hh-input-paste-btn" id="hhInputPasteBtn" aria-label="Panodan Yapıştır">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+            <span>Yapıştır</span>
+          </button>
+        </div>
         <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Ücretsiz Kontrol Et</span></button>
       </div>
       <div class="scan-chips">
@@ -737,19 +795,26 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 
 <!-- macOS Floating Glass Dock -->
 <nav class="hh-floating-dock" aria-label="Hızlı Erişim Menüsü">
-  <a href="#analyzer" class="hh-dock-item primary">
+  <a href="#scanner" class="hh-dock-item primary">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-    <span>Hemen Tara</span>
+    <span>Tara</span>
   </a>
   <span class="hh-dock-divider"></span>
-  <a href="#dark-pool-intelligence" class="hh-dock-item">Katmanlar</a>
+  <a href="#result" id="hhDockReportLink" class="hh-dock-item">
+    <span>📊 Rapor</span>
+    <span id="dockScoreBadge" class="hh-dock-score-badge" style="display:none;"></span>
+  </a>
   <a href="#pipeline" class="hh-dock-item">Süreç</a>
-  <a href="#faq" class="hh-dock-item">SSS</a>
+  <button type="button" id="hhDockMenuBtn" class="hh-dock-item" aria-label="Menüyü Aç">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>Menü</span>
+  </button>
   <span class="hh-dock-divider"></span>
   <button type="button" class="hh-dock-item" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Yukarı Çık">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
   </button>
 </nav>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 </body>
 </html>
