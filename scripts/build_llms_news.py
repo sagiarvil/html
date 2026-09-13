@@ -287,25 +287,12 @@ def patch_machine_surfaces(records):
     s = sitemap.read_text(encoding='utf-8')
     s = re.sub(r'\n?\s*<!-- LLMS_SUBGRAPHS_START -->[\s\S]*?<!-- LLMS_SUBGRAPHS_END -->\s*', '\n', s)
     s = re.sub(r'\n?\s*<!-- LLMS_NEWS_START -->[\s\S]*?<!-- LLMS_NEWS_END -->\s*', '\n', s)
-    subgraph_urls = [
-        'https://htmlandhtml.com/llms.txt',
-        'https://htmlandhtml.com/llms/core.md',
-        'https://htmlandhtml.com/llms/entities/experts.md',
-        'https://htmlandhtml.com/llms/entities/methodologies.md',
-        'https://htmlandhtml.com/llms/pages/home.md',
-        'https://htmlandhtml.com/llms/pages/services.md',
-        'https://htmlandhtml.com/llms/pages/pricing.md',
-        'https://htmlandhtml.com/llms/pages/protocols.md'
-    ]
-    blocks = ['  <!-- LLMS_SUBGRAPHS_START -->']
-    for sg in subgraph_urls:
-        blocks.append(f'  <url><loc>{sg}</loc><lastmod>{TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>')
-    blocks.append('  <!-- LLMS_SUBGRAPHS_END -->')
-    blocks.append('  <!-- LLMS_NEWS_START -->')
+    blocks = ['  <!-- LLMS_NEWS_START -->']
     for loc, alt, date in [('https://htmlandhtml.com/tr/llms-txt-haberler/', 'https://htmlandhtml.com/en/llms-txt-news/', TODAY), ('https://htmlandhtml.com/en/llms-txt-news/', 'https://htmlandhtml.com/tr/llms-txt-haberler/', TODAY)] + urls:
         hreflang_alt = 'en' if '/tr/' in loc else 'tr'
         self_lang = 'tr' if '/tr/' in loc else 'en'
-        blocks.append(f'''  <url><loc>{loc}</loc><lastmod>{date}</lastmod><changefreq>daily</changefreq><priority>{'0.9' if loc.endswith(('haberler/', 'news/')) else '0.75'}</priority><xhtml:link rel="alternate" hreflang="{self_lang}" href="{loc}"/><xhtml:link rel="alternate" hreflang="{hreflang_alt}" href="{alt}"/></url>''')
+        x_default = loc if '/en/' in loc else alt
+        blocks.append(f'''  <url><loc>{loc}</loc><lastmod>{date}</lastmod><changefreq>daily</changefreq><priority>{'0.9' if loc.endswith(('haberler/', 'news/')) else '0.75'}</priority><xhtml:link rel="alternate" hreflang="{self_lang}" href="{loc}"/><xhtml:link rel="alternate" hreflang="{hreflang_alt}" href="{alt}"/><xhtml:link rel="alternate" hreflang="x-default" href="{x_default}"/></url>''')
     blocks.append('  <!-- LLMS_NEWS_END -->')
     s = s.replace('</urlset>', '\n'.join(blocks) + '\n</urlset>')
     sitemap.write_text(s, encoding='utf-8')

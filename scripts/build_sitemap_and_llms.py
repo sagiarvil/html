@@ -54,7 +54,7 @@ routes = [
     {"loc": "https://htmlandhtml.com/tr/rehberler/ai-arama-gorunurlugu/", "changefreq": "monthly", "priority": "0.8", "alt_en": "https://htmlandhtml.com/en/guides/ai-search-visibility/"},
 
     # Authority & Reference
-    {"loc": "https://htmlandhtml.com/methodology.html", "changefreq": "monthly", "priority": "0.9"},
+    {"loc": "https://htmlandhtml.com/methodology/", "changefreq": "monthly", "priority": "0.9"},
     {"loc": "https://htmlandhtml.com/en/methodology/", "changefreq": "monthly", "priority": "0.9", "alt_tr": "https://htmlandhtml.com/tr/methodology/"},
     {"loc": "https://htmlandhtml.com/tr/methodology/", "changefreq": "monthly", "priority": "0.9", "alt_en": "https://htmlandhtml.com/en/methodology/"},
     {"loc": "https://htmlandhtml.com/standard/", "changefreq": "monthly", "priority": "0.95"},
@@ -88,19 +88,29 @@ routes = [
 ]
 
 # Generate sitemap.xml
+import datetime
+TODAY = datetime.date.today().isoformat()
+
 xml_items = []
 for r in routes:
-    item = f"  <url>\n    <loc>{r['loc']}</loc>\n    <lastmod>2026-09-08</lastmod>\n    <changefreq>{r['changefreq']}</changefreq>\n    <priority>{r['priority']}</priority>"
-    if "alt_tr" in r:
+    item = f"  <url>\n    <loc>{r['loc']}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{r['changefreq']}</changefreq>\n    <priority>{r['priority']}</priority>"
+    if r["loc"] == "https://htmlandhtml.com/":
+        item += f'\n    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/"/>'
+        item += f'\n    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/"/>'
+        item += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/"/>'
+    elif "alt_tr" in r:
         item += f'\n    <xhtml:link rel="alternate" hreflang="tr" href="{r["alt_tr"]}"/>'
         item += f'\n    <xhtml:link rel="alternate" hreflang="en" href="{r["loc"]}"/>'
+        item += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{r["loc"]}"/>'
     elif "alt_en" in r:
         item += f'\n    <xhtml:link rel="alternate" hreflang="en" href="{r["alt_en"]}"/>'
         item += f'\n    <xhtml:link rel="alternate" hreflang="tr" href="{r["loc"]}"/>'
+        item += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{r["alt_en"]}"/>'
     item += "\n  </url>"
     xml_items.append(item)
 
 sitemap_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {chr(10).join(xml_items)}
 </urlset>'''
