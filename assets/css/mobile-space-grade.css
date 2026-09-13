@@ -1,0 +1,823 @@
+/* ==========================================================================
+   🚀 HTML&HTML SPACE-GRADE MOBILE INTERFACE ARCHITECTURE (V4.1)
+   Silicon Valley & Space Mission Control (NASA / SpaceX / Linear / Apple Tier)
+   100% Isolated to Mobile Viewports (max-width: 768px & max-width: 640px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- 1. KOKPİT SEVİYESİ SÜPER-KOMPAKT HEADER --- */
+  .topbar {
+    height: 56px !important;
+    min-height: 56px !important;
+    padding: 0 16px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(10, 14, 26, 0.88) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+    backdrop-filter: blur(20px) saturate(190%) !important;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.15) !important;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  html[data-theme="light"] .topbar {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .topbar-shell {
+    height: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+  }
+
+  .brand-logo {
+    max-width: 124px !important;
+    height: auto !important;
+  }
+
+  /* Canlı Telemetri LED Rozeti */
+  .hh-space-telemetry-led {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 2px 7px !important;
+    border-radius: 999px !important;
+    font-size: 10px !important;
+    font-weight: 750 !important;
+    letter-spacing: 0.05em !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+    background: rgba(0, 212, 255, 0.1) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    color: #00d4ff !important;
+  }
+
+  .hh-space-telemetry-led::before {
+    content: '' !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #00d4ff !important;
+    box-shadow: 0 0 8px #00d4ff, 0 0 14px #00d4ff !important;
+    animation: hhSpacePulse 1.8s infinite !important;
+  }
+
+  @keyframes hhSpacePulse {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.8; }
+  }
+
+  /* Desktop Nav ve Hantal Butonları Mobilde Sakla */
+  .primary-nav,
+  .topbar nav,
+  .nav-scan-cta {
+    display: none !important;
+  }
+
+  .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+
+  /* Kompakt Dil Anahtarı */
+  .langs {
+    display: flex !important;
+    align-items: center !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 999px !important;
+    padding: 2px !important;
+  }
+
+  html[data-theme="light"] .langs {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .langs button {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 4px 8px !important;
+    min-height: 28px !important;
+    min-width: 30px !important;
+    border-radius: 999px !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    background: transparent !important;
+  }
+
+  .langs button.active {
+    background: #00d4ff !important;
+    color: #040914 !important;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4) !important;
+  }
+
+  /* Hamburger Menü Butonu (Space Cyber Trigger) */
+  .hh-mobile-menu-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 10px !important;
+    background: rgba(0, 212, 255, 0.08) !important;
+    border: 1px solid rgba(0, 212, 255, 0.25) !important;
+    color: #00d4ff !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .hh-mobile-menu-btn:active {
+    transform: scale(0.92) !important;
+    background: rgba(0, 212, 255, 0.18) !important;
+  }
+
+  /* --- 2. TAM EKRAN CYBER DRAWER NAVİGASYON --- */
+  .hh-cyber-drawer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    z-index: 9999 !important;
+    background: rgba(6, 9, 18, 0.94) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    padding: 20px 20px calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-y: auto !important;
+  }
+
+  .hh-cyber-drawer.is-open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .hh-drawer-head {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-bottom: 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .hh-drawer-close {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+  }
+
+  .hh-drawer-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+  }
+
+  .hh-drawer-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    color: #f1f5f9 !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: 650 !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .hh-drawer-link:active {
+    background: rgba(0, 212, 255, 0.12) !important;
+    border-color: rgba(0, 212, 255, 0.3) !important;
+    transform: scale(0.98) !important;
+  }
+
+  .hh-drawer-link .link-tag {
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+    border-radius: 999px !important;
+    background: rgba(0, 212, 255, 0.15) !important;
+    color: #00d4ff !important;
+    font-weight: 700 !important;
+  }
+
+  .hh-drawer-link.highlight {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(139, 92, 246, 0.15)) !important;
+    border-color: rgba(0, 212, 255, 0.4) !important;
+  }
+
+  /* --- 3. ARAMA KUTUSU VE ÇERÇEVESİ (SPACEX / LINEAR HUD) --- */
+  .hero {
+    padding-top: 28px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .hero .kicker {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 5px 12px !important;
+    border-radius: 999px !important;
+    background: rgba(0, 212, 255, 0.08) !important;
+    border: 1px solid rgba(0, 212, 255, 0.25) !important;
+    font-size: 11px !important;
+    letter-spacing: 0.06em !important;
+    color: #38bdf8 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(23px, 6.8vw, 30px) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.035em !important;
+    text-wrap: balance !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero .hero-answer {
+    font-size: 13.5px !important;
+    line-height: 1.52 !important;
+    color: #94a3b8 !important;
+    margin: 0 auto 20px !important;
+    max-width: 94% !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Uzay Kapsülü Arama Çerçevesi */
+  .scanbox {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .scanbox .field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    border-radius: 20px !important;
+    background: #0d1222 !important;
+    position: relative !important;
+    border: 1.5px solid rgba(0, 212, 255, 0.35) !important;
+    box-shadow: 0 0 28px -4px rgba(0, 212, 255, 0.22), 0 12px 36px rgba(0, 0, 0, 0.4) !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+  }
+
+  html[data-theme="light"] .scanbox .field {
+    background: #ffffff !important;
+    border-color: rgba(2, 132, 199, 0.3) !important;
+    box-shadow: 0 8px 30px -4px rgba(2, 132, 199, 0.15), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .scanbox .field:focus-within {
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 36px rgba(0, 212, 255, 0.35), 0 0 0 2px rgba(0, 212, 255, 0.2) !important;
+  }
+
+  .hh-input-wrapper {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .hh-input-radar-icon {
+    position: absolute !important;
+    left: 14px !important;
+    color: #00d4ff !important;
+    pointer-events: none !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .scanbox .field input {
+    width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 0 42px 0 44px !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    font-size: 16px !important; /* iOS zoom prevention */
+    font-weight: 550 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  html[data-theme="light"] .scanbox .field input {
+    background: rgba(241, 245, 249, 0.8) !important;
+    border-color: rgba(203, 213, 225, 0.8) !important;
+    color: #0f172a !important;
+  }
+
+  .scanbox .field input::placeholder {
+    color: #64748b !important;
+    font-size: 14.5px !important;
+  }
+
+  /* Temizle / Yapıştır İkonu */
+  .hh-input-clear-btn {
+    position: absolute !important;
+    right: 12px !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+  }
+
+  .scanbox .field input:not(:placeholder-shown) ~ .hh-input-clear-btn {
+    display: flex !important;
+  }
+
+  /* SpaceX Fırlatma Butonu */
+  .scanbox .field button,
+  #scanButton {
+    width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, #00d4ff 0%, #0284c7 50%, #6366f1 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 15.5px !important;
+    font-weight: 750 !important;
+    letter-spacing: -0.01em !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4) !important;
+    cursor: pointer !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  }
+
+  .scanbox .field button:active,
+  #scanButton:active {
+    transform: scale(0.97) !important;
+    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.25) !important;
+  }
+
+  /* Hızlı Deneme Hapları (Space Chips Stream) */
+  .scan-chips {
+    display: flex !important;
+    align-items: center !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 6px !important;
+    padding: 8px 0 2px !important;
+    margin-top: 4px !important;
+  }
+
+  .scan-chips::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .scan-chips span {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    margin-right: 2px !important;
+  }
+
+  .scan-chips .chip-btn,
+  .scan-chips .chip {
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 6px 12px !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    font-weight: 650 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .scan-chips .chip-btn:active,
+  .scan-chips .chip:active {
+    background: rgba(0, 212, 255, 0.2) !important;
+    border-color: #00d4ff !important;
+    color: #ffffff !important;
+    transform: scale(0.95) !important;
+  }
+
+  .scanbox small {
+    display: block !important;
+    font-size: 11.5px !important;
+    color: #64748b !important;
+    margin-top: 8px !important;
+    text-align: center !important;
+  }
+
+  /* Canlı Sinyal Barı */
+  .signals {
+    display: flex !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 8px !important;
+    padding: 10px 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .signals::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .signals span {
+    flex: 0 0 auto !important;
+    font-size: 10.5px !important;
+    font-weight: 750 !important;
+    letter-spacing: 0.04em !important;
+    padding: 4px 10px !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* --- 4. ALT KISIMLARDA METİN ÇÖPLÜĞÜNÜN TEMİZLENMESİ --- */
+
+  /* A) Canlı Laboratuvar Bölümü */
+  .ea-showcase-section {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .ea-header h2 {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .ea-header p {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    color: #94a3b8 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* 5 Ribbon Kartı: Mobilde 2 Kolon Kompakt Bento Izgarası */
+  .ea-ribbon {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin: 16px 0 !important;
+  }
+
+  .ea-ribbon-item {
+    padding: 10px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .ea-ribbon-item:last-child {
+    grid-column: span 2 !important;
+  }
+
+  .ea-ribbon-item strong {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  .ea-ribbon-item span {
+    font-size: 10px !important;
+    color: #64748b !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Konsol Izgarası: Mobil Akıllı Segment Tabs */
+  .hh-ea-mobile-switcher {
+    display: flex !important;
+    gap: 6px !important;
+    margin: 16px 0 12px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 4px !important;
+  }
+
+  .hh-ea-switch-btn {
+    flex: 1 !important;
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: none !important;
+    background: transparent !important;
+    color: #94a3b8 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .hh-ea-switch-btn.active {
+    background: #00d4ff !important;
+    color: #050a14 !important;
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3) !important;
+  }
+
+  .ea-console-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  /* Varsayılan mobil görünümde terminal ve telemetri segmentine göre gösterim */
+  .ea-console-grid.show-telemetry .ea-terminal-card {
+    display: none !important;
+  }
+
+  .ea-console-grid.show-terminal .ea-telemetry-card {
+    display: none !important;
+  }
+
+  .ea-telemetry-card,
+  .ea-terminal-card {
+    border-radius: 16px !important;
+    padding: 16px !important;
+  }
+
+  .ea-score-box {
+    gap: 14px !important;
+  }
+
+  .ea-score-meta h4 {
+    font-size: 14px !important;
+  }
+
+  .ea-score-meta p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  .ea-actions-bar {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+  }
+
+  .ea-btn-primary,
+  .ea-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  /* B) V3 Capability Contract - Masaüstü Tablo Yığılmasını Temizle */
+  .v3-capability-contract {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+    margin: 32px auto !important;
+  }
+
+  .v3-contract-head h2 {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+  }
+
+  .v3-contract-head p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Mobildeki devasa tabloyu şık mobil paket kartı ile destekle */
+  .v3-compare {
+    border-radius: 12px !important;
+    max-height: 320px !important;
+    overflow-y: auto !important;
+  }
+
+  .v3-compare table {
+    min-width: 600px !important;
+    font-size: 12px !important;
+  }
+
+  .v3-compare th, .v3-compare td {
+    padding: 10px 12px !important;
+  }
+
+  /* C) 4 Adımlı Pipeline */
+  #pipeline {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .px-pipeline-flow {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    position: relative !important;
+  }
+
+  .pipeline-flow-arrow {
+    display: none !important;
+  }
+
+  .px-pipeline-card {
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .px-pipeline-card h3 {
+    font-size: 15px !important;
+    margin: 6px 0 !important;
+  }
+
+  .px-pipeline-card p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    color: #94a3b8 !important;
+  }
+
+  .pipeline-micro-stream {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    margin-top: 8px !important;
+  }
+
+  .pipeline-micro-stream span {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    background: rgba(0, 212, 255, 0.08) !important;
+    color: #7dd3fc !important;
+  }
+
+  .px-lenses {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .px-lens {
+    padding: 10px !important;
+    border-radius: 10px !important;
+  }
+
+  .px-lens b {
+    font-size: 11px !important;
+  }
+
+  .px-lens span {
+    font-size: 10px !important;
+  }
+
+  /* D) 6 Kara Kutu (Dark Pool Intelligence) */
+  #dark-pool-intelligence {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .px-delivery-grid-22 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .px-file-card {
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .px-file-card p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin: 6px 0 !important;
+  }
+
+  .px-file-card div:last-child {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
+    background: rgba(0, 212, 255, 0.06) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    color: #38bdf8 !important;
+    font-weight: 600 !important;
+  }
+
+  .dark-pool-commercial-callout {
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+    margin-top: 20px !important;
+  }
+
+  .dark-pool-commercial-callout h3 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+
+  .dark-pool-commercial-callout p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* E) macOS Floating Glass Dock */
+  .hh-floating-dock {
+    position: fixed !important;
+    bottom: max(14px, env(safe-area-inset-bottom, 14px)) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 9990 !important;
+    width: calc(100% - 24px) !important;
+    max-width: 360px !important;
+    height: 48px !important;
+    padding: 4px 8px !important;
+    border-radius: 999px !important;
+    background: rgba(10, 14, 26, 0.92) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 212, 255, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+  }
+
+  .hh-dock-item {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    border-radius: 999px !important;
+    min-height: 36px !important;
+    min-width: 36px !important;
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .hh-dock-item.primary {
+    background: linear-gradient(135deg, #00d4ff, #0284c7) !important;
+    color: #040914 !important;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.5) !important;
+  }
+
+  .hh-dock-divider {
+    width: 1px !important;
+    height: 18px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+}
