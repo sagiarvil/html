@@ -308,7 +308,7 @@ def main():
     # Extra: Google News sitemap if exists
     extra_sitemaps = []
     news_sitemap = ROOT / "sitemap-news.xml"
-    if news_sitemap.is_file():
+    if news_sitemap and news_sitemap.is_file():
         news_lm = get_file_lastmod(news_sitemap)
         extra_sitemaps.append({
             "loc": f"{ORIGIN}/sitemap-news.xml",

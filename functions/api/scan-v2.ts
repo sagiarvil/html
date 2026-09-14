@@ -159,6 +159,45 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
   const hydrationDelta = HydrationDeltaEngine.analyzeHydrationDelta(homeHtml);
   const hybridPerformance = await PerformanceHybridLabEngine.evaluatePerformance(baseResult.url, homeHtml);
 
+  const internalLinks: string[] = [];
+  const linkMatches = homeHtml.matchAll(/<a\b[^>]*href=["']([^"'#]+)["'][^>]*>/gi);
+  for (const lm of linkMatches) {
+    try {
+      const lu = new URL(lm[1], baseResult.url);
+      if (lu.origin === new URL(baseResult.url).origin && !internalLinks.includes(lu.href)) {
+        internalLinks.push(lu.href);
+      }
+    } catch {}
+  }
+
+  const pagesList: any[] = [
+    {
+      url: baseResult.url,
+      title: titleMatch ? titleMatch[1].trim() : baseResult.domain,
+      metaDescription: metaDesc,
+      h1: h1s,
+      h2: h2s,
+      html: homeHtml,
+      schema: schemas,
+      canonical: baseResult.url,
+    },
+  ];
+
+  for (const lnk of internalLinks.slice(0, 15)) {
+    if (!pagesList.some((p) => p.url === lnk)) {
+      pagesList.push({
+        url: lnk,
+        title: '',
+        metaDescription: '',
+        h1: [],
+        h2: [],
+        html: '',
+        schema: [],
+        canonical: lnk,
+      });
+    }
+  }
+
   return {
     domain: baseResult.domain,
     html: homeHtml,
@@ -170,19 +209,8 @@ export async function gatherScanInput(domain: string): Promise<ScanInput> {
     commonCrawl: commonCrawlProbe,
     hydrationDelta,
     hybridPerformance,
-    pages: [
-      {
-        url: baseResult.url,
-        title: titleMatch ? titleMatch[1].trim() : baseResult.domain,
-        metaDescription: metaDesc,
-        h1: h1s,
-        h2: h2s,
-        html: homeHtml,
-        schema: schemas,
-        canonical: baseResult.url,
-      },
-    ],
-    links: [],
+    pages: pagesList,
+    links: internalLinks,
     baseResult,
   };
 }

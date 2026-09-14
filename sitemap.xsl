@@ -10,7 +10,7 @@
   <xsl:template match="/">
     <html lang="tr">
       <head>
-        <title>XML Sitemap | HTML&HTML</title>
+        <title>XML Sitemap | HTML&amp;HTML</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
           :root {
@@ -68,7 +68,7 @@
       <body>
         <div class="container">
           <div class="header">
-            <div class="brand">◆ HTML&HTML AI SEARCH VISIBILITY</div>
+            <div class="brand">◆ HTML&amp;HTML AI SEARCH VISIBILITY</div>
             <xsl:choose>
               <xsl:when test="sitemap:sitemapindex">
                 <h1>XML Site Haritası İndeksi</h1>
@@ -218,7 +218,7 @@
           </div>
 
           <div class="footer">
-            <p>© 2026 HTML&HTML. Tüm Hakları Saklıdır.</p>
+            <p>© 2026 HTML&amp;HTML. Tüm Hakları Saklıdır.</p>
           </div>
         </div>
       </body>

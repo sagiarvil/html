@@ -187,6 +187,16 @@ export const CANONICAL_SOURCES: ExternalSourceRecord[] = [
     lastVerified: '2026-09-08',
     maxAgeDays: 45,
   },
+  {
+    id: 'GOOGLE-VIDEO-STRUCTURED-DATA',
+    class: 'OFFICIAL_VENDOR',
+    publisher: 'Google Search Central',
+    title: 'Video Structured Data (ineligibleRegion Property Specification)',
+    url: 'https://developers.google.com/search/docs/appearance/structured-data/video',
+    appliesTo: ['schema', 'seo', 'crawl-eligibility'],
+    lastVerified: '2026-09-13',
+    maxAgeDays: 60,
+  },
 ];
 
 export function getSourceById(id: string): ExternalSourceRecord | undefined {

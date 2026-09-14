@@ -37,6 +37,7 @@ const REQUIRED = {
   ImageObject: { must: ['url'], should: ['width', 'height'] },
   AggregateRating: { must: ['ratingValue', 'ratingCount'], should: ['bestRating'] },
   Review: { must: ['reviewRating', 'author'], should: [] },
+  VideoObject: { must: ['name', 'description', 'thumbnailUrl', 'uploadDate'], should: ['contentUrl', 'embedUrl', 'duration', 'ineligibleRegion', 'hasPart'] },
 };
 const PLACEHOLDER_RX = /(example\.com|yourdomain|placeholder|xxx+|lorem|test\.test|\{\{)/i;
 

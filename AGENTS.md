@@ -130,3 +130,5 @@ Bu anayasa; kullanıcının sahip olduğu 5 platformun tamamını kapsayan mutla
    - 5 platformun tamamı `elite-design-engineer` (Linear/Apple UI/UX, Bento Grid, Floating Glass Dock) ve `portfolio-monetization-director` (Paddle v2, B2B lead gen) güvencesi altındadır.
 
 
+
+| **/guard**,  |  | Çoklu Chat & Ajan Eşzamanlılığı, Sıfır Ezilme (Zero-Overwrite) & Güvenli Canlı Dağıtım Kalkanı |  |

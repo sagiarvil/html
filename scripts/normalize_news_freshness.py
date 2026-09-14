@@ -8,9 +8,22 @@ last=str(data.get('lastUpdated') or '').strip()[:10]
 if not re.fullmatch(r'\d{4}-\d{2}-\d{2}',last):
     raise SystemExit('Invalid data/llms-news.json lastUpdated; refusing to fabricate sitemap freshness')
 p=ROOT/'sitemap.xml';text=p.read_text(encoding='utf-8')
-for loc in ['https://htmlandhtml.com/tr/llms-txt-haberler/','https://htmlandhtml.com/en/llms-txt-news/']:
-    pattern=rf'(<url><loc>{re.escape(loc)}</loc><lastmod>)\d{{4}}-\d{{2}}-\d{{2}}(</lastmod>)'
-    text,n=re.subn(pattern,rf'\g<1>{last}\2',text,count=1)
-    if n!=1:raise SystemExit(f'News hub sitemap entry missing for freshness normalization: {loc}')
-p.write_text(text,encoding='utf-8')
-print(f'LLMS NEWS FRESHNESS PASS: hub lastmod={last} reflects editorial data, not build time.')
+if '<sitemapindex' in text:
+    for part_file, loc in [
+        (ROOT/'sitemaps/articles-tr.xml', 'https://htmlandhtml.com/tr/llms-txt-haberler/'),
+        (ROOT/'sitemaps/articles-en.xml', 'https://htmlandhtml.com/en/llms-txt-news/')
+    ]:
+        if part_file.is_file():
+            part_text = part_file.read_text(encoding='utf-8')
+            pattern = rf'(<loc>{re.escape(loc)}</loc>\s*<lastmod>)[^<]+(</lastmod>)'
+            part_text, n = re.subn(pattern, rf'\g<1>{last}\2', part_text, count=1)
+            if n == 1:
+                part_file.write_text(part_text, encoding='utf-8')
+    print(f'LLMS NEWS FRESHNESS PASS: partitioned articles sitemaps lastmod={last} reflects editorial data.')
+else:
+    for loc in ['https://htmlandhtml.com/tr/llms-txt-haberler/','https://htmlandhtml.com/en/llms-txt-news/']:
+        pattern=rf'(<url><loc>{re.escape(loc)}</loc><lastmod>)\d{{4}}-\d{{2}}-\d{{2}}(</lastmod>)'
+        text,n=re.subn(pattern,rf'\g<1>{last}\2',text,count=1)
+        if n!=1:raise SystemExit(f'News hub sitemap entry missing for freshness normalization: {loc}')
+    p.write_text(text,encoding='utf-8')
+    print(f'LLMS NEWS FRESHNESS PASS: hub lastmod={last} reflects editorial data, not build time.')

@@ -175,7 +175,7 @@ for(const rel of ['tr/llms-txt-haberler/index.html','en/llms-txt-news/index.html
   expect(x.includes('/assets/news/'),`${rel}: original news covers missing`);
 }
 
-const sitemap=read('sitemap.xml');
+const sitemap=(()=>{let s=read('sitemap.xml');const d=path.join(root,'sitemaps');if(fs.existsSync(d)){for(const f of fs.readdirSync(d))if(f.endsWith('.xml'))s+='\n'+read(path.join('sitemaps',f))}return s})();
 const llms=read('llms.txt');
 expect(sitemap.includes('https://htmlandhtml.com/tr/llms-txt-haberler/'),'TR news hub missing from sitemap');
 expect(sitemap.includes('https://htmlandhtml.com/en/llms-txt-news/'),'EN news hub missing from sitemap');

@@ -12,13 +12,8 @@ A customer may ask ChatGPT, Google AI Search, Perplexity, Gemini, or another AI 
 
 HTML&HTML does not guarantee AI rankings, recommendations, brand mentions, citations, traffic, customers, or revenue. It measures and helps remove observable site-side blockers that can prevent discovery, retrieval, source eligibility, referral, and conversion.
 
-## Google accuracy boundary
-
-Google Search recognizes market terms such as AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization), but states that optimizing for generative AI Search is still SEO from Google Search's perspective. Google says there are no special additional technical requirements to appear in AI Overviews or AI Mode beyond Search eligibility and best practices. Google Search also explicitly says it does not use llms.txt or other special AI text files for inclusion in Google Search or its generative AI features.
-
-Official Google source: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
-
-HTML&HTML still validates llms.txt because it is an active community proposal and optional machine-readable knowledge surface used in some documentation/coding-agent ecosystems. It is always labeled PROPOSAL and is never presented as an IETF/W3C standard or Google ranking requirement.
+## Google Accuracy Boundary
+> Google treats generative AI optimization as SEO best practices and evaluates standard Search eligibility; Google Search explicitly states it does not use llms.txt for ranking or indexing. See [Guidance](/llms/guides.md).
 
 ## AI Search & Visibility Reference Glossary
 
@@ -26,34 +21,10 @@ HTML&HTML still validates llms.txt because it is an active community proposal an
 - [Yapay Zeka Arama ve Görünürlük Referans Sözlüğü — Türkçe](https://htmlandhtml.com/tr/sozluk/): GEO, AEO, LLMO, AAO, RAG, E-E-A-T, llms.txt, sitemap ve kaynak olma uygunluğunu resmi kaynak sınırlarıyla açıklar.
 
 ## Core AI visibility authority pages
-
-- https://htmlandhtml.com/en/ai-search-visibility/
-- https://htmlandhtml.com/tr/yapay-zeka-arama-gorunurlugu/
-- https://htmlandhtml.com/en/geo-optimization/
-- https://htmlandhtml.com/tr/geo-optimizasyon/
-- https://htmlandhtml.com/en/aeo-answer-engine-optimization/
-- https://htmlandhtml.com/tr/aeo-answer-engine/
-- https://htmlandhtml.com/en/llmo-optimization/
-- https://htmlandhtml.com/tr/llmo-optimizasyon/
-- https://htmlandhtml.com/en/aao-agent-optimization/
-- https://htmlandhtml.com/tr/aao-ajent-optimizasyon/
-- https://htmlandhtml.com/en/rag-readiness/
-- https://htmlandhtml.com/tr/rag-optimizasyon/
-- https://htmlandhtml.com/en/e-e-a-t-trust-signals/
-- https://htmlandhtml.com/tr/e-e-a-t-guven-sinyalleri/
+- [AI Visibility Authority Pages](/llms/core.md): GEO, AEO, LLMO, AAO, RAG, and E-E-A-T bilingual core pages.
 
 ## Official / primary source layer
-
-- [Google — Optimizing for generative AI features on Google Search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
-- [Google — AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
-- [Google — Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
-- [Google — Build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
-- [Google — Third-party SEO tools and advice](https://developers.google.com/search/docs/fundamentals/third-party-seo)
-- [Google — Generative AI performance reports in Search Console](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
-- [OpenAI — Publishers and Developers FAQ](https://platform.openai.com/docs/bots)
-- [llms.txt proposal](https://llmstxt.org/)
-- [llms.txt v2 changes](https://llmstxt.org/changes.html)
-
+- [Official Standards & AI Guidance](/llms/guides.md): Google Search Central, OpenAI FAQ, and W3C/IETF specifications.
 ## Platform and authority
 
 - [Website Fix Validator](https://htmlandhtml.com/)

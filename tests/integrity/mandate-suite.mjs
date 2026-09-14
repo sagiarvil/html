@@ -82,7 +82,16 @@ for (const rel of requiredRoutes) {
 
 // 2. Scan every HTML file for invariants
 const titles = new Map();
-const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+const sitemap = (() => {
+  let s = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+  const d = path.join(root, 'sitemaps');
+  if (fs.existsSync(d)) {
+    for (const f of fs.readdirSync(d)) {
+      if (f.endsWith('.xml')) s += '\n' + fs.readFileSync(path.join(d, f), 'utf8');
+    }
+  }
+  return s;
+})();
 const llms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
 
 const englishUiInTr = [

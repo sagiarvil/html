@@ -1,9 +1,9 @@
 {
   "pipeline": "HTML&HTML Automated Search & AI Updates DAG",
   "standard": "Silicon Valley / London / NYC Enterprise AI Search Standard",
-  "timestamp": "2026-09-12T11:20:38.038202+00:00",
-  "registry_version": "1.3.0",
-  "official_vendors_verified": 31,
+  "timestamp": "2026-09-13T16:46:00+03:00",
+  "registry_version": "1.4.0",
+  "official_vendors_verified": 32,
   "google_preferred_sources_status": "ACTIVE_ENFORCED",
   "google_regional_search_status": "ACTIVE_ENFORCED",
   "surface_audit": {
@@ -42,5 +42,14 @@
     }
   },
   "dogfooding_score_target": "100/100",
-  "status": "HEALTHY_AND_SYNCHRONIZED"
+  "status": "HEALTHY_AND_SYNCHRONIZED",
+  "google_video_ineligible_region_status": "ACTIVE_P2_SUPPORTED",
+  "latest_update_p2": {
+    "date": "2026-09-10",
+    "source": "Google Search Central",
+    "title": "Video structured data - ineligibleRegion property support",
+    "priority": "P2",
+    "status": "MITIGATED_AND_VERIFIED",
+    "details": "ineligibleRegion added as valid Google-supported property on VideoObject. Unknown property penalties eliminated. Remediation blueprint registered."
+  }
 }

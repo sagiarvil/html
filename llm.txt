@@ -1,0 +1,9 @@
+# HTML & HTML — Compact AI Brief
+
+> HTML & HTML (https://htmlandhtml.com), modern semantik web mimarisi, CSS/JS optimizasyonu, WCAG 2.2 AA erişilebilirlik ve Core Web Vitals mühendisliği araçları sunan otoriter teknik platformdur.
+
+Full AI authority map: https://htmlandhtml.com/llms.txt
+Extended catalog: https://htmlandhtml.com/llms-full.txt
+Core platform graph: https://htmlandhtml.com/llms/core.md
+Sitemap Index: https://htmlandhtml.com/sitemap.xml
+IndexNow Key: https://htmlandhtml.com/html916428c306504a5bbcae9bb5dd7bcfe9.txt

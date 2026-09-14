@@ -50,7 +50,7 @@ for(const marker of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt','/asset
 if(!/Yapay Zeka Arama Görünürlüğü/i.test(home))errors.push('homepage missing Yapay Zeka Arama Görünürlüğü title/meta');
 if(!validatorTr.includes('Sitemap'))errors.push('validator page missing Sitemap term');
 if(/Ahmet Y\.|120\.000\+ site|%300 Artırdı|sınırsız sayfa/i.test(home+trGloss+enGloss))errors.push('unverified mandate marketing claim leaked into public authority content');
-const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
+const sitemap=(()=>{let s=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');const d=path.join(root,'sitemaps');if(fs.existsSync(d)){for(const f of fs.readdirSync(d))if(f.endsWith('.xml'))s+='\n'+fs.readFileSync(path.join(d,f),'utf8')}return s})();
 for(const [en,tr] of pairs){for(const rel of [en,tr]){const url='https://htmlandhtml.com/'+rel.replace(/index\.html$/,'');if(!sitemap.includes(url))errors.push(`sitemap missing ${url}`)}}
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
 if(!/AI Search.*Glossary|Yapay Zeka.*Sözlük/i.test(llms))errors.push('llms.txt missing glossary authority route');

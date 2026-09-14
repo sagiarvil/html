@@ -773,7 +773,14 @@ export class AEOEngine extends EngineTool {
           });
         },
         penaltyOnFail: 10,
-        evidence: () => `Has concise answering paragraph: true`,
+        evidence: () => {
+          const paragraphs = input.html.match(/<p\b[^>]*>([\s\S]*?)<\/p>/gi) || [];
+          const ok = paragraphs.some((p) => {
+            const clean = cleanText(p);
+            return clean.length >= 40 && clean.length <= 350;
+          });
+          return `Has concise answering paragraph: ${ok}`;
+        },
       },
       {
         id: 'AEO-004',
@@ -967,7 +974,13 @@ export class SemanticCoherenceHeuristicsEngine extends EngineTool {
           return words.some((w) => first800.includes(w));
         },
         penaltyOnFail: 15,
-        evidence: () => `Lead alignment with title '${title}': true`,
+        evidence: () => {
+          const effectiveTitle = title || input.html.match(/<title\b[^>]*>(.*?)<\/title>/i)?.[1] || '';
+          const words = effectiveTitle.toLowerCase().split(/\s+/).map(w => w.replace(/[^\p{L}\p{N}]/gu, '')).filter((w) => w.length > 3);
+          const first800 = text.slice(0, 800).toLowerCase();
+          const ok = Boolean(words.length && words.some((w) => first800.includes(w)));
+          return `Lead alignment with title '${effectiveTitle}': ${ok}`;
+        },
       },
       {
         id: 'CE-002',
@@ -1096,7 +1109,10 @@ export class ContentQualityHeuristicsEngine extends EngineTool {
         weight: 25,
         check: () => !/(?:dünyanın en iyi|100% garanti|kesin zengin|şok şok|magic secret|guaranteed profit)/i.test(text),
         penaltyOnFail: 20,
-        evidence: () => `Clickbait triggers absent: true`,
+        evidence: () => {
+          const hasClickbait = /(?:dünyanın en iyi|100% garanti|kesin zengin|şok şok|magic secret|guaranteed profit)/i.test(text);
+          return `Clickbait triggers absent: ${!hasClickbait}`;
+        },
       },
       {
         id: 'DPO-002',
@@ -1174,7 +1190,11 @@ export class CitationReadinessEngine extends EngineTool {
           return anchors.some((a) => cleanText(a).length > 5 && !/^(click here|tıklayınız|here|link)$/i.test(cleanText(a)));
         },
         penaltyOnFail: 10,
-        evidence: (inp) => `Descriptive anchors present: true`,
+        evidence: (inp) => {
+          const anchors = inp.html.match(/<a\b[^>]*>([\s\S]*?)<\/a>/gi) || [];
+          const ok = anchors.some((a) => cleanText(a).length > 5 && !/^(click here|tıklayınız|here|link)$/i.test(cleanText(a)));
+          return `Descriptive anchors present: ${ok}`;
+        },
       },
       {
         id: 'CITE-004',
@@ -1282,7 +1302,13 @@ export class EEATScoringEngine extends EngineTool {
           /name=["']author["']/i.test(inp.html) || 
           inp.html.includes('"author"'),
         penaltyOnFail: 15,
-        evidence: () => `Author identity cues: true`,
+        evidence: (inp) => {
+          const ok = /(?:author|yazar|written by|mühendis|muhendis|architect|ekip|team)/i.test(text) || 
+            inp.html.includes('rel="author"') || 
+            /name=["']author["']/i.test(inp.html) || 
+            inp.html.includes('"author"');
+          return `Author identity cues: ${ok}`;
+        },
       },
       {
         id: 'EEAT-002',
@@ -1294,7 +1320,14 @@ export class EEATScoringEngine extends EngineTool {
                         text.includes('about us') ||
                         /about/i.test(text),
         penaltyOnFail: 15,
-        evidence: () => `About page detected: true`,
+        evidence: (inp) => {
+          const ok = links.some((l) => /about|hakkimizda|hakkımızda|kimiz/i.test(l)) || 
+            /href=["'][^"']*(?:about|hakkimizda|hakkımızda|kimiz)/i.test(inp.html) ||
+            text.includes('hakkımızda') || 
+            text.includes('about us') ||
+            /about/i.test(text);
+          return `About page detected: ${ok}`;
+        },
       },
       {
         id: 'EEAT-003',
@@ -1318,7 +1351,10 @@ export class EEATScoringEngine extends EngineTool {
         weight: 15,
         check: () => text.includes('©') || text.includes('copyright') || text.includes('tüm hakları') || text.includes('guarantee'),
         penaltyOnFail: 8,
-        evidence: () => `Trust signals present: true`,
+        evidence: () => {
+          const ok = text.includes('©') || text.includes('copyright') || text.includes('tüm hakları') || text.includes('guarantee');
+          return `Trust signals present: ${ok}`;
+        },
       },
     ];
     return evaluateRules(this.id, this.name, this.version, this.weight, this.impact, this.effort, rules, input, context);

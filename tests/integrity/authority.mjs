@@ -33,7 +33,7 @@ for(const rel of [...trustPages,...authorityReferencePages]){const text=fs.readF
 const methodology=fs.readFileSync(path.join(root,'methodology.html'),'utf8');
 const sourceClasses=['OFFICIAL_STANDARD','OFFICIAL_VENDOR','PROPOSAL','MEASURED','INTERNAL_HEURISTIC','EXPERIMENTAL'];
 for(const token of [...sourceClasses,'NOT_MEASURED','SSRF'])if(!methodology.includes(token))errors.push(`methodology missing governance token: ${token}`);
-const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
+const sitemap=(()=>{let s=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');const d=path.join(root,'sitemaps');if(fs.existsSync(d)){for(const f of fs.readdirSync(d))if(f.endsWith('.xml'))s+='\n'+fs.readFileSync(path.join(d,f),'utf8')}return s})();
 const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
 const homepage=fs.readFileSync(path.join(root,'index.html'),'utf8');
 for(const [, ,canonical] of pages){const absolute=`https://htmlandhtml.com${canonical}`;if(!sitemap.includes(absolute))errors.push(`sitemap missing ${absolute}`);if(!llms.includes(absolute))errors.push(`llms.txt missing ${absolute}`)}

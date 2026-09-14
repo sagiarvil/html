@@ -108,13 +108,14 @@ export interface DeadLetterEntry {
 }
 
 export interface StreamEvent {
-  type: 'engine.start' | 'engine.progress' | 'engine.complete' | 'aggregate.complete' | 'error';
+  type: 'engine.start' | 'engine.progress' | 'engine.complete' | 'aggregate.complete' | 'error' | 'scan_complete';
   scanId?: string;
   engineId?: string;
   percent?: number;
   score?: number;
   status?: EngineStatus;
   overallScore?: number;
+  payload?: any;
   timestamp: number;
 }
 

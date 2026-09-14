@@ -122,7 +122,7 @@ function calculatePriority(findingId: string, sev: Severity, reachRatio: number)
 
   // P2: measurable performance degradation, repeated metadata/schema defects, broken internal links, user-selected AI surfaces
   if (findingId.startsWith('PERF-') && sev === 'high') return 'P2';
-  if (findingId.startsWith('SCHEMA-JSON')) return 'P2';
+  if (findingId.startsWith('SCHEMA-JSON') || findingId.startsWith('SCHEMA-VIDEO')) return 'P2';
   if (findingId.startsWith('SEC-') && sev === 'high') return 'P2';
   if (findingId === 'TECH-TITLE-001') return 'P2';
   if (findingId === 'A11Y-NAME-001') return 'P2';
@@ -827,6 +827,44 @@ function generateBlueprint(f: Finding, observedUrls: string[], totalPages: numbe
       ],
       rollback_guidance: [
         'Remove or revert the ItemList / LocalBusiness JSON-LD script block'
+      ]
+    };
+  }
+
+  if (pId === 'SCHEMA-VIDEO-REGION-001') {
+    return {
+      title: 'Video Structured Data Regional Restriction Ineligibility (Google Sept 10, 2026 P2 Standard)',
+      impact: 'Search engines index video results in regions where playback restrictions exist, degrading cross-border search appearance and user experience.',
+      root_cause: 'VideoObject schema lacks Google Search Central Sept 10, 2026 ineligibleRegion property declaration to formally communicate territorial exclusion.',
+      root_fix: {
+        target_behavior: 'VideoObject schema emits explicit ineligibleRegion property with ISO 3166-1 alpha-2 country codes where regional playback restrictions apply.',
+        current_behavior: 'Video is regionally restricted on the host, but VideoObject structured data lacks the ineligibleRegion property.',
+        required_change: 'Inject ineligibleRegion: ["TR", "US", ...] on VideoObject JSON-LD blocks where geographic broadcast restrictions are in effect.',
+        scope: urlScope,
+        non_goals: [
+          'Do not declare ineligibleRegion on globally available videos without geo-fencing (remains N/A)',
+          'Do not treat ineligibleRegion as a mandatory property for all VideoObject instances'
+        ]
+      },
+      recovery: [
+        'Update video structured data templates to emit ineligibleRegion array for regionally restricted videos',
+        'Verify JSON-LD passes Google Rich Results Test without invalid property warnings'
+      ],
+      prevention: [
+        'Ensure CMS video distribution metadata maps geo-restriction rules directly to VideoObject.ineligibleRegion'
+      ],
+      acceptance_tests: [
+        `curl -sL ${observedUrls[0] || '[URL]'} | grep -E -q '"ineligibleRegion"' && echo "PASS"`
+      ],
+      regression_tests: [
+        'Confirm mandatory VideoObject properties (name, description, thumbnailUrl, uploadDate) remain present',
+        'Verify ISO 3166-1 alpha-2 country codes are valid uppercase two-letter strings'
+      ],
+      do_not_break: [
+        'Do not remove existing contentUrl or embedUrl parameters'
+      ],
+      rollback_guidance: [
+        'Revert JSON-LD VideoObject template changes to previous release'
       ]
     };
   }
