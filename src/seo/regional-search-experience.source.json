@@ -1,0 +1,18 @@
+{
+  "id": "GOOGLE-REGIONAL-SEARCH-EXPERIENCE-2026",
+  "class": "OFFICIAL_VENDOR",
+  "publisher": "Google Search Central",
+  "title": "Regional differences in Search experience",
+  "changeDate": "2026-09-08",
+  "lastVerified": "2026-09-14",
+  "primaryUrl": "https://developers.google.com/search/docs/appearance/aggregator-features",
+  "updateLogUrl": "https://developers.google.com/search/updates",
+  "appliesTo": [
+    "seo",
+    "crawl-index-eligibility",
+    "structured-data",
+    "regional-search",
+    "search-appearance"
+  ],
+  "policy": "Treat as provider-scoped eligibility guidance. Never represent regional feature availability as a ranking factor, ranking boost, traffic guarantee, or proof of inclusion."
+}
