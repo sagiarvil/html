@@ -1,0 +1,4 @@
+SON OTURUM:
+- Masaüstü görünümde bozulan arama çubuğu ve menü tasarımı düzeltildi.
+- mobile-space-grade.css ve yeni eklenen mobil UX bileşenlerinin masaüstünde çalışmasını sağlayacak CSS (premium-experience.css) kalkanı eklendi.
+- scripts/build_homepages.py dosyası yeni mobil bileşenleri (hhCyberDrawer, hh-input-wrapper) içerecek şekilde güncellendi ve statik dosyalar yeniden derlendi.

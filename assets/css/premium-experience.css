@@ -7350,3 +7350,18 @@ html[data-theme="dark"] .langs button.active {
     bottom: max(16px, env(safe-area-inset-bottom, 16px)) !important;
   }
 }
+@media (min-width: 769px) {
+  .hh-mobile-menu-btn,
+  .hh-cyber-drawer,
+  .hh-input-radar-icon,
+  .hh-input-clear-btn,
+  .hh-input-paste-btn,
+  .hh-ea-mobile-switcher,
+  .hh-floating-dock {
+    display: none !important;
+  }
+  .hh-input-wrapper {
+    display: block;
+    width: 100%;
+  }
+}
