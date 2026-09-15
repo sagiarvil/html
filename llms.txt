@@ -139,6 +139,8 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [Enterprise AI Agent Platform: Introducing OpenAI Presence](https://htmlandhtml.com/en/llms-txt-news/2026-09-15-introducing-openai-presence-839f7a51d7b5/)
+- [Agentic Coding and Reasoning Integration in GPT-5.3-Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4/)
 - [Product Discovery and Agentic Commerce Protocol Integration in ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a/)
 - [Project-Scale Coding Models with GPT-5.1-Codex-Max](https://htmlandhtml.com/en/llms-txt-news/2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32/)
 - [OpenAI Japan Unveils Teen Safety Blueprint](https://htmlandhtml.com/en/llms-txt-news/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737/)
@@ -157,6 +159,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Endava Builds an Agentic Organization with Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/)
 - [Update to the Site Reputation Policy: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/)
 - [Platform properties roll out globally, plus a new social and video performance guide: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/)
-- [See how content from social and video platforms performs on Google Search: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f/)
-- [Search Central Deep Dive Europe 2026: Apparently we're going to Barcelona: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05/)
 <!-- LLMS_NEWS_END -->
