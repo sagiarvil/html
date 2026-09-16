@@ -139,6 +139,9 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [GPT-5.6 Update: Fusing Frontier Intelligence and Efficiency](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c/)
+- [Inside Mirakl's Agentic Commerce Architecture](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869/)
+- [New Evaluation Cycle in the Enterprise Generative AI Provider Market](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359/)
 - [Enterprise AI Agent Platform: Introducing OpenAI Presence](https://htmlandhtml.com/en/llms-txt-news/2026-09-15-introducing-openai-presence-839f7a51d7b5/)
 - [Agentic Coding and Reasoning Integration in GPT-5.3-Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4/)
 - [Product Discovery and Agentic Commerce Protocol Integration in ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a/)
@@ -156,7 +159,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Enterprise AI Agents via Cloudflare Agent Cloud and OpenAI Integration](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/)
 - [Google Tests Traditional Search Campaigns in AI Mode](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/)
 - [Managing Artificial Intelligence Investments in the Agentic Era](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/)
-- [Endava Builds an Agentic Organization with Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e/)
-- [Update to the Site Reputation Policy: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c/)
-- [Platform properties roll out globally, plus a new social and video performance guide: AI Search and Technical Web Architecture Analysis](https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825/)
 <!-- LLMS_NEWS_END -->
