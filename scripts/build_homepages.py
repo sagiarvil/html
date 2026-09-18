@@ -190,7 +190,7 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=15" defer></script>
+<script src="/assets/js/validator.js?v=16" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
@@ -1011,7 +1011,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=15" defer></script>
+<script src="/assets/js/validator.js?v=16" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>

@@ -52,7 +52,7 @@ for p in ROOT.rglob('*.html'):
     p.write_text(text,encoding='utf-8')
 
 # Runtime locale dictionaries are build artifacts too. Never let a language switch resurrect old price/copy.
-validator=ROOT/'assets/js/validator.js?v=4'
+validator=ROOT/'assets/js/validator.js?v=16'
 if validator.exists():
     js=validator.read_text(encoding='utf-8')
     js=js.replace('$149','$99')
