@@ -202,7 +202,6 @@ def build_homepages():
   <div class="topbar-shell">
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
-      <span class="hh-space-telemetry-led">● ONLINE</span>
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
@@ -1015,7 +1014,6 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
   <div class="topbar-shell">
     <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
-      <span class="hh-space-telemetry-led">● ONLINE</span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="/en/ai-search-visibility/">AI Visibility</a>
