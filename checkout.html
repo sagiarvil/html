@@ -70,6 +70,7 @@ html[data-theme="dark"] .checkout-disabled{background:#2563eb;color:#ffffff;box-
 html[data-theme="dark"] .checkout-disabled:hover:not([disabled]){background:#1d4ed8}
 @media(max-width:700px){.checkout{padding:14px 12px 40px}.checkout-top{padding-bottom:18px}.checkout-card{border-radius:22px}.checkout-hero{grid-template-columns:1fr;padding:26px 20px}.checkout-price{text-align:left}.checkout-price strong{font-size:58px}.checkout-domain{margin:20px 20px 0}.checkout-grid{grid-template-columns:1fr}.checkout-panel{padding:25px 20px}.checkout-flow{grid-template-columns:1fr;padding:24px 20px}.checkout-security{margin:10px 20px 22px}.checkout-notice{margin:0 20px 22px}.checkout-actions{padding:0 20px 24px;display:grid}.checkout-disabled{width:100%;order:-1}}
 </style><script src="/assets/js/theme.js?v=8"></script>
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20">
 </head>
 <body>
 <main class="checkout"><div class="checkout-shell">
@@ -109,4 +110,6 @@ html[data-theme="dark"] .checkout-disabled:hover:not([disabled]){background:#1d4
  function apply(l){document.documentElement.lang=l;localStorage.setItem('hh-lang',l);document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.querySelectorAll('[data-k]').forEach(el=>{const v=T[l][el.dataset.k];if(v!=null)el.textContent=v});if(!dIn?.value&&!domain)if(dBox)dBox.textContent=T[l].defaultDomain;document.title=l==='tr'?'AI Görünürlük Yol Haritası — $99 | HTML&HTML':'AI Search Visibility Roadmap — $99 | HTML&HTML';window.dispatchEvent(new CustomEvent('hh-language-changed',{detail:{lang:l}}))}document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>apply(b.dataset.lang));let l=localStorage.getItem('hh-lang')||((navigator.language||'tr').toLowerCase().startsWith('tr')?'tr':'en');if(!T[l])l='en';apply(l);
  window.dispatchEvent(new CustomEvent('hh-plan-changed', { detail: { plan: 'pro', price: 99 } }));
  </script>
- </body></html>
+ <script src="/assets/js/enterprise-runtime.js?v=4"></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+</body></html>
