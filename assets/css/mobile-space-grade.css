@@ -371,7 +371,7 @@
   }
 
   /* SpaceX Fırlatma Butonu */
-  .scanbox .field button,
+  .scanbox .field button[type="submit"],
   #scanButton {
     width: 100% !important;
     height: 50px !important;
@@ -392,7 +392,7 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease !important;
   }
 
-  .scanbox .field button:active,
+  .scanbox .field button[type="submit"]:active,
   #scanButton:active {
     transform: scale(0.97) !important;
     box-shadow: 0 2px 10px rgba(0, 212, 255, 0.25) !important;

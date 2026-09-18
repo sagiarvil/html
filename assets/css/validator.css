@@ -159,7 +159,7 @@ html[data-theme="light"] .authority-hero .kicker b {
   font-size: 14.5px !important;
 }
 
-.scanbox .field button {
+.scanbox .field button[type="submit"] {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -176,16 +176,16 @@ html[data-theme="light"] .authority-hero .kicker b {
   flex-shrink: 0 !important;
 }
 
-.scanbox .field button:hover {
+.scanbox .field button[type="submit"]:hover {
   background: #1d4ed8 !important;
 }
 
-.scanbox .field button b {
+.scanbox .field button[type="submit"] b {
   font-weight: 600 !important;
   font-size: 14px !important;
 }
 
-.scanbox .field button i {
+.scanbox .field button[type="submit"] i {
   font-style: normal !important;
   font-size: 15px !important;
 }
@@ -1745,7 +1745,7 @@ html[data-theme="light"] .scanbox .field input::placeholder {
   color: #94a3b8 !important;
 }
 
-.scanbox .field button {
+.scanbox .field button[type="submit"] {
   background: #2563eb !important;
   border: 1px solid #1d4ed8 !important;
   border-radius: 8px !important;
@@ -1755,18 +1755,18 @@ html[data-theme="light"] .scanbox .field input::placeholder {
   transition: background 0.15s ease !important;
 }
 
-.scanbox .field button:hover {
+.scanbox .field button[type="submit"]:hover {
   background: #1d4ed8 !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
-html[data-theme="light"] .scanbox .field button {
+html[data-theme="light"] .scanbox .field button[type="submit"] {
   background: #0284c7 !important;
   border: 1px solid #0284c7 !important;
 }
 
-html[data-theme="light"] .scanbox .field button:hover {
+html[data-theme="light"] .scanbox .field button[type="submit"]:hover {
   background: #0369a1 !important;
 }
 

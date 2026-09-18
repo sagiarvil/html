@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 JS = """<script src="/assets/js/enterprise-runtime.js?v=4"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>"""
 
-CSS = '<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20">'
+CSS = '<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=21">'
 
 count = 0
 for p in ROOT.rglob('*.html'):

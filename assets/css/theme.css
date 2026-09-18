@@ -496,7 +496,7 @@ html[data-theme="dark"] .scanbox .field input {
 }
 
 /* Compact, unclipped high-contrast button */
-.scanbox .field button,
+.scanbox .field button[type="submit"],
 #scanButton {
   flex: 0 0 auto !important;
   min-width: max-content !important;
@@ -520,7 +520,7 @@ html[data-theme="dark"] .scanbox .field input {
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35) !important;
   transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease !important;
 }
-.scanbox .field button:hover,
+.scanbox .field button[type="submit"]:hover,
 #scanButton:hover {
   filter: brightness(1.08) !important;
   transform: translateY(-1px) !important;
@@ -1728,7 +1728,7 @@ html[data-theme="dark"] .finding.finding-tier-info {
     border-radius: 16px !important;
     padding: 10px !important;
   }
-  .scanbox .field button,
+  .scanbox .field button[type="submit"],
   #scanButton {
     width: 100% !important;
     max-width: none !important;

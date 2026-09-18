@@ -114,7 +114,7 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=19">
 <link rel="stylesheet" href="/assets/css/theme.css?v=19">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=19">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -194,7 +194,7 @@ def build_homepages():
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
-<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=19">
+<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=21">
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
@@ -935,7 +935,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=19">
 <link rel="stylesheet" href="/assets/css/theme.css?v=19">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=19">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -1015,7 +1015,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=19">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=21">
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
