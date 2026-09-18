@@ -96,7 +96,7 @@ jobs:
           set -euo pipefail
           curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/llms.txt -o /tmp/htmlandhtml-llms.txt
           curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/index.md -o /tmp/htmlandhtml-index.md
-          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemap.xml -o /tmp/htmlandhtml-sitemap.xml
+          curl -fsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/sitemaps/tools-tr.xml -o /tmp/htmlandhtml-sitemap.xml
           grep -Fq 'AI Mention Tracker' /tmp/htmlandhtml-llms.txt
           grep -Fq 'AI Mention Tracker' /tmp/htmlandhtml-index.md
           grep -Fq '/tr/ai-mention-tracker/' /tmp/htmlandhtml-sitemap.xml
