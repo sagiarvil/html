@@ -297,7 +297,7 @@ def build_pricing_hub():
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/{'tr/hakkimizda/' if lang == 'tr' else 'en/about/'}">
-<link rel="stylesheet" href="/assets/css/validator.css?v=18">
+<link rel="stylesheet" href="/assets/css/validator.css?v=19">
 <style>.pricing-grid.pricing-two .featured{{padding-top:72px}}.pricing-grid.pricing-two .featured .popular{{top:20px;left:24px;right:auto;max-width:calc(100% - 48px);white-space:nowrap}}.pricing-grid.pricing-two .featured .pricehead{{gap:24px}}@media(max-width:600px){{.pricing-grid.pricing-two .featured{{padding-top:68px}}.pricing-grid.pricing-two .featured .popular{{left:20px;max-width:calc(100% - 40px)}}}}</style>
 <script type="application/ld+json">
 {{
