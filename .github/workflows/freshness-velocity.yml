@@ -2,7 +2,6 @@ name: Freshness Velocity Engine (Otonom Icerik Motoru)
 
 on:
   schedule:
-    # Run every 6 hours to ensure high crawl frequency
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
@@ -40,7 +39,6 @@ jobs:
           NEWS_EDITORIAL_OPENAI_KEY: ${{ secrets.NEWS_EDITORIAL_OPENAI_KEY }}
           NEWS_EDITORIAL_MODEL: gemini-3.5-flash-lite
         run: |
-          # Patch sed for linux (GitHub Actions is Ubuntu)
           sed -i 's/sed -i '\'''\''/sed -i/g' scripts/freshness_velocity_engine.py
           python3 scripts/freshness_velocity_engine.py
 
@@ -59,8 +57,12 @@ jobs:
       - name: Deploy to Firebase Hosting
         if: steps.materialized.outputs.changed == 'true'
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: npx firebase-tools deploy --only hosting --token "$FIREBASE_TOKEN"
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STUDIO_7658156126_FFB8E }}
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          chmod 600 "$GOOGLE_APPLICATION_CREDENTIALS"
+          npx firebase-tools deploy --only hosting --non-interactive --project studio-7658156126-ffb8e
 
       - name: Commit Validated Update
         if: steps.materialized.outputs.changed == 'true'
