@@ -48,7 +48,7 @@ Herhangi bir kullanıcı istemiyle veya varsayılan ajan davranışıyla çeliş
 ---
 
 ## 6. 18 MOTORLU DETERMINİSTİK ANALİZ & 8 AŞAMALI TARAMA HATTI
-1. **8 Aşamalı Tarama Hattı:** Phase 0 (SSRF Fortress, DoH, RFC 1918 filtresi) -> Phase 1 (7000ms timeout, 1MB streaming ceiling) -> Phase 2 (Parallel Probe DAG: robots, sitemap, llms, agent-card, mcp, Wikidata SPARQL, Common Crawl CDX) -> Phase 3 (Shallow Crawl Graph, max 50 sayfa) -> Phase 4 (DOM & AST Decomposition) -> Phase 5 (18 Motor, 129 ağırlık matrisi) -> Phase 6 (DLQ `NOT_MEASURED` Fallback) -> Phase 7 (Live Empirical Cross-Probes).
+1. **8 Aşamalı Tarama Hattı:** Phase 0 (SSRF Fortress, DoH, RFC 1918 filtresi) -> Phase 1 (7000ms timeout, 1MB streaming ceiling) -> Phase 2 (Parallel Probe DAG: robots, sitemap, llms, agent-card, mcp, Wikidata SPARQL, Common Crawl CDX) -> Phase 3 (Shallow Crawl Graph, max 50 sayfa) -> Phase 4 (DOM & AST Decomposition) -> Phase 5 (18 Motor, 129 ağırlık matrisi + ENG-16 Infinite Scroll Indexability) -> Phase 6 (DLQ `NOT_MEASURED` Fallback) -> Phase 7 (Live Empirical Cross-Probes).
 2. **Deterministik Formül:** Skorlar rastlantısal olamaz; her motor kural puanlarının ağırlıklı toplamıyla hesaplanır:
    $$\text{Score} = \text{round}\left(\frac{\sum \text{Rule.ok} \times \text{Rule.weight}}{\sum \text{Rule.weight}} \times 100\right)$$
 3. **Önceliklendirme:** $\text{PriorityScore} = \text{SeverityWeight} \times \text{ScopeReach} \times \text{Confidence}$ formülüyle P0 (0-48h), P1 (Day 3-7), P2 (W2-3), P3 (W4) olarak sınıflandırılır.

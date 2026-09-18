@@ -436,6 +436,19 @@ export default {
   }
 };
 // Terminal Kabul Testi: ${acceptanceCommand}`;
+  } else if (fid.includes('INFINITE-SCROLL') || fid.includes('INFINITE_SCROLL')) {
+    recipeFileName = '11_INFINITE_SCROLL_PAGINATION.js';
+    recipeCode = isTr 
+      ? 'Kök Neden: Sitenizde infinite scroll (sonsuz kaydırma) UI kullanılıyor, ancak ayrıştırılmış URL\'ler (?page=2 veya rel="next") yok. AI arama botları sadece ilk yüklenen kısmı görüp sayfayı terk eder.' 
+      : 'Root Cause & Architecture: Infinite scroll UI without paginated canonical URLs prevents crawlers from discovering deeply loaded items.';
+    codeSnippet = `// 11_INFINITE_SCROLL_PAGINATION.js
+// 1. Her scroll adımında History API (pushState) ile URL\'yi (?page=X) güncelleyin.
+// 2. <head> içine <link rel="next" href="?page=X"> ekleyin.
+// 3. Crawler\'lar JS çalıştırmadığında ulaşabilsin diye statik "Sonraki Sayfa" <a> linklerini barındırın (progressive enhancement).
+// Referans: Google Search Central - Sept 2026 Update`;
+    desc = isTr
+      ? 'Search Central kurallarına göre Infinite Scroll UI kullanımında History API + rel="next" entegrasyonu.'
+      : 'Implement History API + rel="next" for infinite scroll compliance according to Search Central guidelines.';
   } else if (fid.includes('CRAWL-HTTP')) {
     recipeFileName = '10_CRAWL_HTTP_ERROR_RESILIENCE.js';
     step1 = isTr
@@ -2221,7 +2234,7 @@ let benchDeck=document.getElementById('competitiveBenchmarkDeck');if(!benchDeck)
     { id: 'ENG-13', weight: 6, tr: 'AAO (Otonom Ajan Ticareti ve MCP)', en: 'AAO Engine (Agent Commerce & MCP)', cat: 'agent' },
     { id: 'ENG-14', weight: 8, tr: 'E-E-A-T ve Kurumsal Güvenilirlik', en: 'EEAT Scoring Engine', cat: 'trust' },
     { id: 'ENG-15', weight: 7, tr: 'Yapısal Veri ve Wikidata Tutarlılığı', en: 'Entity Consistency & Structured Data', cat: 'schema' },
-    { id: 'ENG-16', weight: 6, tr: 'İddia Doğrulanabilirliği ve DPO Filtresi', en: 'Claim Consistency Heuristics', cat: 'trust' },
+    { id: 'ENG-16', weight: 6, tr: 'Infinite Scroll Indexability (Search Central)', en: 'Infinite Scroll Indexability', cat: 'crawl' },
     { id: 'ENG-17', weight: 6, tr: 'Tarama ve Keşif Kapsama Bütünlüğü', en: 'Discovery Coverage Engine', cat: 'crawl' },
     { id: 'ENG-18', weight: 5, tr: 'Tazelik, Güncellik ve Revizyon Sinyalleri', en: 'Freshness & Revision Signals Engine', cat: 'technical' }
   ];

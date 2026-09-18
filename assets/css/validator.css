@@ -2298,3 +2298,6 @@ html[data-theme="light"] .ea-executive-grid div div:first-child,
 html.light .ea-executive-grid div div:first-child {
   color: #64748b !important;
 }
+
+.skip { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.skip:focus { left: 16px; top: 16px; width: auto; height: auto; z-index: 9999; background: #000; color: #fff; padding: 12px; border-radius: 6px; }

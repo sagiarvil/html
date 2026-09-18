@@ -289,6 +289,23 @@ registerCheck(
   'Canonical URL tanımlayarak IndexNow API (Bing/Yandex) otomatik kuyruğunu tetiklenebilir kılın.'
 );
 
+// 12. ENG-16: Infinite Scroll Indexability & Search Central Compliance
+const hasInfiniteScroll = /infinite[-_]?scroll|IntersectionObserver|addEventListener\(['"]scroll['"]/i.test(html);
+const hasPaginationLinks = /<a[^>]*href=["'][^"']*[\?&]page=\d+["']/i.test(html) || /<link[^>]*rel=["']next["']/i.test(html);
+const isInfiniteScrollSafe = !hasInfiniteScroll || hasPaginationLinks;
+
+registerCheck(
+  'ENG-16',
+  'Infinite Scroll Indexability (Google Search Central Update Sept 17, 2026)',
+  'JAVASCRIPT SEO & CRAWL',
+  isInfiniteScrollSafe,
+  17,
+  hasInfiniteScroll 
+    ? (hasPaginationLinks ? 'Infinite scroll UI tespit edildi ve tarama için sayfalanmış linkler (paginated URLs) mevcut.' : 'Infinite scroll UI tespit edildi ancak Googlebot keşfi için ayrıştırılmış sayfalama (rel="next" veya ?page=X) bulunamadı.') 
+    : 'Sayfada infinite scroll UI tespit edilmedi.',
+  'Search Central dokümantasyonuna göre infinite scroll UI kullanıldığında, her scroll parçasının Googlebot tarafından ayrı ayrı taranabilmesi için sayfalanmış (<a href="?page=2">) ve benzersiz canonical URL/link state barındırması gerekmektedir.'
+);
+
 // 12. ENG-14: Deterministik Skor Hesaplama
 const totalWeight = auditResults.reduce((sum, r) => sum + r.weight, 0);
 const earnedScore = auditResults.reduce((sum, r) => sum + r.score, 0);

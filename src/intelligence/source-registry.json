@@ -270,6 +270,28 @@
       ],
       "lastVerified": "2026-09-13",
       "maxAgeDays": 60
+    },
+    {
+      "id": "GOOGLE-USER-TRIGGERED-FETCHERS",
+      "class": "OFFICIAL_VENDOR",
+      "publisher": "Google Search Central",
+      "title": "Google User-Triggered Fetchers (GoogleProducer)",
+      "url": "https://developers.google.com/search/updates",
+      "appliesTo": [
+        "crawl",
+        "infrastructure",
+        "agent-readiness",
+        "googleproducer"
+      ],
+      "lastVerified": "2026-09-16",
+      "maxAgeDays": 45,
+      "botClassification": {
+        "provider": "GOOGLE",
+        "token": "GoogleProducer",
+        "class": "USER_TRIGGERED_FETCHER",
+        "match": "TOKEN_BASED",
+        "full_user_agent_match": "FORBIDDEN"
+      }
     }
   ]
 }

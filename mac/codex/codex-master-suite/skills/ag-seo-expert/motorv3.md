@@ -1467,3 +1467,9 @@ Herhangi bir yeni veya mevcut projeye başlandığında AI ajan / yazılım müh
 │    - Canlı sunucuda DOM & UTF-8 tam doğrulaması çalıştırılır               │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
+
+
+### ENG-16: Infinite Scroll Indexability (Google Search Central Update)
+- **Kural:** Infinite scroll (sonsuz kaydırma) kullanılan sayfalarda `hasPaginationLinks` (örn. `<link rel="next">` veya `<a href="?page=">`) aranır.
+- **Risk:** Crawler ayrıştırılmış pagination bulamazsa içerik discovery edilemez, tarama iptal edilir.
+- **DPO Filter:** Sadece infinite scroll kullanılması hata değildir; sayfalama yollarının (rel="next") yokluğu hatadır.

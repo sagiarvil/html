@@ -137,6 +137,8 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 
 <!-- LLMS_NEWS_START -->
 ## LLMS.TXT News / AI Search Intelligence
+- [Google Search Central: GoogleProducer User-Agent and Fetcher Architecture Update](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-googleproducer-user-agent-update/)
+- [Google Search Central: Infinite Scroll Indexability and Pagination Guidelines](https://htmlandhtml.com/en/llms-txt-news/2026-09-17-google-infinite-scroll-pagination-guidelines/)
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
 - [New AI Safety Bug Bounty Program Introduced by OpenAI](https://htmlandhtml.com/en/llms-txt-news/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a/)

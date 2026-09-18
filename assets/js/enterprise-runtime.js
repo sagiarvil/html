@@ -64,7 +64,7 @@ function renderDecisionMap(data){
    'ENG-07: LLMO Engine', 'ENG-08: Entity Graph Engine', 'ENG-09: Cross-Encoder Engine',
    'ENG-10: ColBERT MaxSim Engine', 'ENG-11: DPO Alignment Engine', 'ENG-12: Synthetic Citation Engine',
    'ENG-13: AAO Engine', 'ENG-14: E-E-A-T Scoring Engine', 'ENG-15: Knowledge Vault Engine',
-   'ENG-16: Hallucination Interception', 'ENG-17: Dark Pool Remediation', 'ENG-18: Historical Corpus Engine'
+   'ENG-16: Infinite Scroll Indexability', 'ENG-17: Dark Pool Remediation', 'ENG-18: Historical Corpus Engine'
  ];
  const catMap = {
    'ENG-01': 'performance', 'ENG-02': 'performance', 'ENG-03': 'trust',
