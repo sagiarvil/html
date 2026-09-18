@@ -1,0 +1,74 @@
+name: Freshness Velocity Engine (Otonom Icerik Motoru)
+
+on:
+  schedule:
+    # Run every 6 hours to ensure high crawl frequency
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: htmlandhtml-fv-engine
+  cancel-in-progress: false
+
+jobs:
+  fv-engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 1
+          
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Execute Freshness Velocity Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NEWS_EDITORIAL_OPENAI_KEY: ${{ secrets.NEWS_EDITORIAL_OPENAI_KEY }}
+          NEWS_EDITORIAL_MODEL: gemini-3.5-flash-lite
+        run: |
+          # Patch sed for linux (GitHub Actions is Ubuntu)
+          sed -i 's/sed -i '\'''\''/sed -i/g' scripts/freshness_velocity_engine.py
+          python3 scripts/freshness_velocity_engine.py
+
+      - name: Detect Changes
+        id: materialized
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -z "$(git status --porcelain)"; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'NO_MATERIALIZED_CHANGE'
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy to Firebase Hosting
+        if: steps.materialized.outputs.changed == 'true'
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: npx firebase-tools deploy --only hosting --token "$FIREBASE_TOKEN"
+
+      - name: Commit Validated Update
+        if: steps.materialized.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'htmlandhtml-fv-bot'
+          git config user.email 'fv-bot@htmlandhtml.com'
+          git add .
+          git commit -m 'chore(fv): autonomous freshness velocity cycle executed'
+          git push origin HEAD:main
