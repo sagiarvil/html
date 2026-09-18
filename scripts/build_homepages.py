@@ -1015,6 +1015,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=19">
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
@@ -1657,6 +1658,8 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
   </button>
 </nav>
+<script src="/assets/js/enterprise-runtime.js?v=3"></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 </body>
 </html>'''
 
