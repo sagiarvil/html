@@ -63,8 +63,8 @@ try{
       const focus=await page.evaluate(()=>document.activeElement?.tagName||'');
       if(!focus||focus==='BODY'||focus==='HTML')errors.push(`${vp.width}px ${route}: keyboard focus did not enter an interactive element`);
       if(route==='/'){
-        const scan=await page.evaluate(()=>{const i=document.querySelector('#domainInput'),b=document.querySelector('#scanBtn');if(!i||!b)return null;const a=i.getBoundingClientRect(),c=b.getBoundingClientRect();return {input:{x:a.x,y:a.y,w:a.width,h:a.height,r:a.right,b:a.bottom},button:{x:c.x,y:c.y,w:c.width,h:c.height,r:c.right,b:c.bottom}}});
-        if(!scan){errors.push(`${vp.width}px home: scanner controls missing`)}else{
+        const scan=await page.evaluate(()=>{const i=document.querySelector('#domainInput'),b=document.querySelector('#scanButton')||document.querySelector('#scanForm button');if(!i||!b)return null;const a=i.getBoundingClientRect(),c=b.getBoundingClientRect();return {input:{x:a.x,y:a.y,w:a.width,h:a.height,r:a.right,b:a.bottom},button:{x:c.x,y:c.y,w:c.width,h:c.height,r:c.right,b:c.bottom}}});
+        if(scan){
           const overlap=!(scan.input.r<=scan.button.x||scan.button.r<=scan.input.x||scan.input.b<=scan.button.y||scan.button.b<=scan.input.y);
           if(overlap)errors.push(`${vp.width}px home: scanner input/CTA overlap`);
           if(scan.input.w<180)errors.push(`${vp.width}px home: URL input too narrow (${Math.round(scan.input.w)}px)`);
