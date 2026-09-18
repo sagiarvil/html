@@ -92,7 +92,7 @@ function renderDecisionMap(data){
    score = Math.max(0, Math.min(100, Math.round(score)));
    const tier = score >= 80 ? 'green' : score >= 65 ? 'yellow' : score >= 45 ? 'orange' : 'red';
    const tierLabel = l === 'tr' ? (score >= 80 ? 'İYİ' : score >= 65 ? 'ORTA' : score >= 45 ? 'DÜŞÜK' : 'KRİTİK') : (score >= 80 ? 'GOOD' : score >= 65 ? 'FAIR' : score >= 45 ? 'LOW' : 'POOR');
-   return `<div class="ai-lens ai-lens-tier-${tier}"><div class="ai-lens-head"><span style="font-size:10px;line-height:1.2;">${safe(name)}</span><span class="lens-status-tag tag-${tier}">${tierLabel}</span></div><strong class="score-${tier}">${score}/100</strong><div class="ai-lens-meter"><i class="bar-${tier}" style="width:${score}%;"></i></div></div>`;
+   return `<div class="ai-lens ai-lens-tier-${tier}"><div class="ai-lens-head"><span style="font-size: 15px;line-height:1.2;">${safe(name)}</span><span class="lens-status-tag tag-${tier}">${tierLabel}</span></div><strong class="score-${tier}">${score}/100</strong><div class="ai-lens-meter"><i class="bar-${tier}" style="width:${score}%;"></i></div></div>`;
  }).join('');
 
  const byKey=new Map(intel.analyses.map(a=>[a.key,a]));
@@ -190,7 +190,7 @@ function renderDecisionMap(data){
        </div>
        <div class="ai-row-drawer-section">
          <div class="ai-row-drawer-label">📋 ${l === 'tr' ? 'Ölçülen Kanıt Kaydı' : 'Measured Evidence'}:</div>
-         <p class="ai-row-drawer-text" style="font-family:monospace;font-size:11.5px;color:#0369a1;">${safe(spec.evidence)}</p>
+         <p class="ai-row-drawer-text" style="font-family:monospace;font-size: 15px;color:#0369a1;">${safe(spec.evidence)}</p>
        </div>
        <div class="ai-row-drawer-section">
          <div class="ai-row-drawer-label" style="justify-content:space-between;">
@@ -208,7 +208,7 @@ function renderDecisionMap(data){
        </div>
        <div class="ai-row-drawer-section">
          <div class="ai-row-drawer-label">⚡ ${l === 'tr' ? 'Otonom n8n Kendi Kendini Onaran Düğüm' : 'Autonomous n8n Self-Healing Node'}:</div>
-         <p class="ai-row-drawer-text" style="font-family:monospace;font-size:11.5px;color:#6b21a8;">${safe(spec.n8n)}</p>
+         <p class="ai-row-drawer-text" style="font-family:monospace;font-size: 15px;color:#6b21a8;">${safe(spec.n8n)}</p>
        </div>
      </div>
    </div>`;

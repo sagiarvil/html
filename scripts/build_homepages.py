@@ -112,9 +112,9 @@ def build_homepages():
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-<link rel="stylesheet" href="/assets/css/validator.css?v=19">
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
+<link rel="stylesheet" href="/assets/css/validator.css?v=22">
+<link rel="stylesheet" href="/assets/css/theme.css?v=9">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=22">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -190,11 +190,11 @@ def build_homepages():
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=16" defer></script>
+<script src="/assets/js/validator.js?v=17" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
-<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=21">
+<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
@@ -513,11 +513,11 @@ def build_homepages():
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Cloudflare edge cache</code></pre>
             <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
-              <span style="color:#10b981;font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+              <span style="color:#10b981;font-weight:700;font-size: 14px;display:inline-flex;align-items:center;gap:6px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 ✓ Tüm Çözüm yol haritasıleri ve Kod Şablonları Açık ($99 Değerinde Kurumsal Paket)
               </span>
-              <span style="color:#0284c7;font-size:11px;font-weight:600;">Tek tıkla PDF Rapor &amp; 30+ Dosyalık ZIP Seti</span>
+              <span style="color:#0284c7;font-size: 15px;font-weight:600;">Tek tıkla PDF Rapor &amp; 30+ Dosyalık ZIP Seti</span>
             </div>
           </div>
         </div>
@@ -698,7 +698,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
       <a href="#scanner" class="btn-scan-trigger">Ücretsiz AI Denetimi Başlat →</a>
-      <span style="font-size:11.5px;color:#64748b;">Kayıt gerekmez · 10 saniyede canlı sonuç</span>
+      <span style="font-size: 15px;color:#64748b;">Kayıt gerekmez · 10 saniyede canlı sonuç</span>
     </div>
   </div>
 </section>
@@ -933,9 +933,9 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-<link rel="stylesheet" href="/assets/css/validator.css?v=19">
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
+<link rel="stylesheet" href="/assets/css/validator.css?v=22">
+<link rel="stylesheet" href="/assets/css/theme.css?v=9">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=22">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -1011,11 +1011,11 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
   ]
 }
 </script>
-<script src="/assets/js/validator.js?v=16" defer></script>
+<script src="/assets/js/validator.js?v=17" defer></script>
 <script src="/assets/js/theme.js?v=7"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=21">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
@@ -1333,11 +1333,11 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Cloudflare edge cache</code></pre>
             <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
-              <span style="color:#10b981;font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+              <span style="color:#10b981;font-weight:700;font-size: 14px;display:inline-flex;align-items:center;gap:6px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 ✓ All Resolution Recipes &amp; Code Templates Unlocked ($99 Enterprise Value)
               </span>
-              <span style="color:#0284c7;font-size:11px;font-weight:600;">1-Click PDF Report &amp; 30+ File ZIP Pack</span>
+              <span style="color:#0284c7;font-size: 15px;font-weight:600;">1-Click PDF Report &amp; 30+ File ZIP Pack</span>
             </div>
           </div>
         </div>
@@ -1498,7 +1498,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
       <a href="#scanner" class="btn-scan-trigger">Start Free AI Audit →</a>
-      <span style="font-size:11.5px;color:#64748b;">No account required · Live results in 10 seconds</span>
+      <span style="font-size: 15px;color:#64748b;">No account required · Live results in 10 seconds</span>
     </div>
   </div>
 </section>

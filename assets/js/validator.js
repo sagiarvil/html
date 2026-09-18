@@ -188,7 +188,7 @@ function openBoardMemoModal(data){
     <div class="board-memo-paper">
       <button type="button" class="board-memo-close" id="btnCloseBoardMemo" aria-label="Close">✕</button>
       <div class="board-memo-header">
-        <div style="font-size:11px;font-weight:800;letter-spacing:0.08em;color:#64748b;text-transform:uppercase;">${isTr?'GİZLİ // YÖNETİM KURULU İÇ MEMORANDUMU':'CONFIDENTIAL // BOARD OF DIRECTORS MEMO'}</div>
+        <div style="font-size: 15px;font-weight:800;letter-spacing:0.08em;color:#64748b;text-transform:uppercase;">${isTr?'GİZLİ // YÖNETİM KURULU İÇ MEMORANDUMU':'CONFIDENTIAL // BOARD OF DIRECTORS MEMO'}</div>
         <h2 class="board-memo-title">${isTr?'YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ & ÇÖZÜM REÇETESİ RAPORU':'AI SEARCH VISIBILITY & RESOLUTION RECIPES REPORT'}</h2>
         <div class="board-memo-meta-grid">
           <div class="board-memo-meta-item"><strong>${isTr?'KİME:':'TO:'}</strong> ${isTr?'İcra Kurulu, CEO & CTO':'Board of Directors, CEO & CTO'}</div>
@@ -206,7 +206,7 @@ function openBoardMemoModal(data){
 
       <div class="board-memo-section-title">${isTr?'2. ÖNERİLEN ÇÖZÜM: 30+ DOSYALIK MÜHENDİSLİK ÇÖZÜM REÇETESİ PAKETİ':'2. RECOMMENDED ACTION: 30+ FILE ENGINEERING RESOLUTION RECIPE PACK'}</div>
       <p class="board-memo-p">${isTr?'Yazılım ekibinize teslim edilecek üretime hazır kod şablonları, JSON-LD şemaları ve n8n izleme iş akışları ile:':'Deliverable production code templates, JSON-LD schemas, and n8n monitoring workflows for your internal engineering team:'}</p>
-      <ul style="font-size:12.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
+      <ul style="font-size: 14.5px;line-height:1.6;color:#334155;padding-left:18px;margin:0 0 14px;">
         <li><strong>${isTr?'HTML Yük ve Semantik Yapı Optimizasyonu:':'HTML Payload & Semantic Structure Template:'}</strong> ${isTr?'Arama botlarının sayfayı terk etmeden tüm ürün ve fiyat katmanını belleğe alması için HTML kod optimizasyonu.':'Code optimization ensuring search crawlers ingest full pricing and service boundaries.'}</li>
         <li><strong>${isTr?'Knowledge Vault @graph:':'Knowledge Vault @graph:'}</strong> ${isTr?'Doğrulanmış sameAs ve Organization/Corporation schema alanlarıyla açık varlık kimliği güçlendirilir.':'Verified sameAs and Organization/Corporation schema strengthen explicit entity identity signals.'}</li>
         <li><strong>${isTr?'llms.txt v2 &amp; Dinamik Markdown:':'llms.txt v2 &amp; Dynamic Markdown:'}</strong> ${isTr?'Otonom yapay zeka satın alma ajanları için temiz makine-okunabilir arayüz.':'Machine-readable representation for autonomous AI purchasing agents.'}</li>
@@ -215,12 +215,12 @@ function openBoardMemoModal(data){
 
       <div class="board-memo-actions">
         <div>
-          <div style="font-size:11px;color:#64748b;">${isTr?'Lisans Maliyeti:':'License Investment:'} <strong style="font-size:16px;color:#0f172a;">$99</strong> ${isTr?'(Tek seferlik sabit · Abonelik yok)':'(Single one-time · Zero subscription)'}</div>
-          <div style="font-size:10.5px;color:#10b981;">✓ ${isTr?'30+ Dosyalık Tam Çözüm Reçeteleri Paketi &amp; Anında ZIP İndirme':'30+ File Resolution Recipe Pack &amp; Instant ZIP Delivery'}</div>
+          <div style="font-size: 15px;color:#64748b;">${isTr?'Lisans Maliyeti:':'License Investment:'} <strong style="font-size:16px;color:#0f172a;">$99</strong> ${isTr?'(Tek seferlik sabit · Abonelik yok)':'(Single one-time · Zero subscription)'}</div>
+          <div style="font-size: 15px;color:#10b981;">✓ ${isTr?'30+ Dosyalık Tam Çözüm Reçeteleri Paketi &amp; Anında ZIP İndirme':'30+ File Resolution Recipe Pack &amp; Instant ZIP Delivery'}</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center;">
-          <button type="button" class="btn-board-memo" id="btnPrintBoardMemo" style="padding:10px 16px;font-size:12.5px;">🖨️ ${isTr?'Yazdır / PDF Kaydet':'Print / Save PDF'}</button>
-          <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cDomain)}&amp;scan=${encodeURIComponent(scanId)}" class="saas-modal-cta" style="padding:10px 18px;font-size:13px;text-decoration:none;">⚡ ${isTr?'Reçete Paketini Al ($99) →':'Get Recipe Pack ($99) →'}</a>
+          <button type="button" class="btn-board-memo" id="btnPrintBoardMemo" style="padding:10px 16px;font-size: 14.5px;">🖨️ ${isTr?'Yazdır / PDF Kaydet':'Print / Save PDF'}</button>
+          <a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cDomain)}&amp;scan=${encodeURIComponent(scanId)}" class="saas-modal-cta" style="padding:10px 18px;font-size: 15px;text-decoration:none;">⚡ ${isTr?'Reçete Paketini Al ($99) →':'Get Recipe Pack ($99) →'}</a>
         </div>
       </div>
     </div>
@@ -961,8 +961,8 @@ export default {
     codeSnippet = `<!-- 21_CONVERSION_CTA_INJECTOR.html -->
 <div class="conversion-cta-block" style="margin:24px 0;padding:20px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;text-align:center;">
   <h3 style="margin:0 0 8px;font-size:16px;color:#0f172a;">${cleanDom} Kurumsal Hizmetleriyle Tanışın</h3>
-  <p style="margin:0 0 14px;font-size:13px;color:#475569;">Doğrulanmış kurumsal çözümlerimiz için hemen bizimle iletişime geçin.</p>
-  <a href="/contact" class="btn-conversion-primary" style="display:inline-block;background:#0284c7;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;">Hemen İletişime Geçin →</a>
+  <p style="margin:0 0 14px;font-size: 15px;color:#475569;">Doğrulanmış kurumsal çözümlerimiz için hemen bizimle iletişime geçin.</p>
+  <a href="/contact" class="btn-conversion-primary" style="display:inline-block;background:#0284c7;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size: 15px;">Hemen İletişime Geçin →</a>
 </div>
 <!-- Terminal Kabul Testi: ${acceptanceCommand} -->`;
   } else if (fid.includes('LINK-REDIR')) {
@@ -1874,14 +1874,14 @@ function render(data){
   healthDeck.className='health-executive-summary';
   const qid=sm.wikidataQid;
   const qidBadge=qid
-    ? `<div class="health-entity-tag health-entity-verified" style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">🎯 ${isTr?'Doğrulanmış Wikidata Varlığı:':'Verified Wikidata Entity:'} <a href="https://www.wikidata.org/wiki/${safe(qid)}" target="_blank" rel="noopener" style="color:#15803d;text-decoration:underline;">${safe(qid)}</a></div>`
-    : `<div class="health-entity-tag health-entity-unlinked" style="display:inline-flex;align-items:center;gap:6px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">⚠️ ${isTr?'Wikidata Varlık Bağlantısı Eksik — 13_KNOWLEDGE_VAULT Reçetesi Gereklidir':'Wikidata Entity Unlinked — 13_KNOWLEDGE_VAULT Recipe Required'}</div>`;
+    ? `<div class="health-entity-tag health-entity-verified" style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;padding:5px 12px;border-radius:6px;font-size: 14px;font-weight:700;">🎯 ${isTr?'Doğrulanmış Wikidata Varlığı:':'Verified Wikidata Entity:'} <a href="https://www.wikidata.org/wiki/${safe(qid)}" target="_blank" rel="noopener" style="color:#15803d;text-decoration:underline;">${safe(qid)}</a></div>`
+    : `<div class="health-entity-tag health-entity-unlinked" style="display:inline-flex;align-items:center;gap:6px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;padding:5px 12px;border-radius:6px;font-size: 14px;font-weight:700;">⚠️ ${isTr?'Wikidata Varlık Bağlantısı Eksik — 13_KNOWLEDGE_VAULT Reçetesi Gereklidir':'Wikidata Entity Unlinked — 13_KNOWLEDGE_VAULT Recipe Required'}</div>`;
   const cruxData=data.fieldData?.cruxOriginReadiness;
   const cruxBadge=cruxData
-    ? `<div class="health-entity-tag health-crux-tag" style="display:inline-flex;align-items:center;gap:6px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;">⚡ CrUX Origin: <strong>${safe(cruxData.status)}</strong> (${safe(cruxData.estimatedLcpRange)}) · CLS Risk: <strong>${safe(cruxData.clsRisk)}</strong></div>`
+    ? `<div class="health-entity-tag health-crux-tag" style="display:inline-flex;align-items:center;gap:6px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;padding:5px 12px;border-radius:6px;font-size: 14px;font-weight:700;">⚡ CrUX Origin: <strong>${safe(cruxData.status)}</strong> (${safe(cruxData.estimatedLcpRange)}) · CLS Risk: <strong>${safe(cruxData.clsRisk)}</strong></div>`
     : '';
   const badgesRow=`<div class="health-trust-badges-row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 16px;">${qidBadge}${cruxBadge}</div>`;
-  const vipReportBox=`<div class="health-vip-report-box" style="margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,#0a1020 0%,#15203b 100%);border:1.5px solid #0066ff;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 8px 24px rgba(0,102,255,0.2);"><div style="flex:1;min-width:260px;"><div style="display:inline-flex;align-items:center;gap:6px;color:#38bdf8;font-size:11px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px;">🏆 ${isTr?'$1,000 DEĞERİNDE RESMİ YÖNETİCİ DOSYASI':'$1,000 EXECUTIVE REPORT READY'}</div><div style="font-size:14px;font-weight:800;color:#ffffff;">${isTr?`${data.domain} İçin 18 Motorlu Kurumsal Yönetici Raporunu Aç`:`Open 18-Engine Executive Dossier for ${data.domain}`}</div><div style="font-size:12px;color:#94a3b8;margin-top:2px;">${isTr?'3-Plane HUD kadranları, 4 AI model simülasyonu, ColBERT vektör lab ve tüm açık kod reçeteleri tek ekranda.':'3-Plane HUD dials, 4 AI model simulations, ColBERT vector lab and unlocked recipes.'}</div></div><a href="${reportUrl}" target="_blank" style="padding:10px 20px;background:linear-gradient(135deg,#0066ff 0%,#0284c7 100%);color:#ffffff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:800;white-space:nowrap;box-shadow:0 4px 14px rgba(0,102,255,0.4);display:inline-flex;align-items:center;gap:6px;"><span>${isTr?'📊 Kurumsal Raporu Aç →':'📊 Open Executive Dossier →'}</span></a></div>`;
+  const vipReportBox=`<div class="health-vip-report-box" style="margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,#0a1020 0%,#15203b 100%);border:1.5px solid #0066ff;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 8px 24px rgba(0,102,255,0.2);"><div style="flex:1;min-width:260px;"><div style="display:inline-flex;align-items:center;gap:6px;color:#38bdf8;font-size: 15px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px;">🏆 ${isTr?'$1,000 DEĞERİNDE RESMİ YÖNETİCİ DOSYASI':'$1,000 EXECUTIVE REPORT READY'}</div><div style="font-size:14px;font-weight:800;color:#ffffff;">${isTr?`${data.domain} İçin 18 Motorlu Kurumsal Yönetici Raporunu Aç`:`Open 18-Engine Executive Dossier for ${data.domain}`}</div><div style="font-size: 14px;color:#94a3b8;margin-top:2px;">${isTr?'3-Plane HUD kadranları, 4 AI model simülasyonu, ColBERT vektör lab ve tüm açık kod reçeteleri tek ekranda.':'3-Plane HUD dials, 4 AI model simulations, ColBERT vector lab and unlocked recipes.'}</div></div><a href="${reportUrl}" target="_blank" style="padding:10px 20px;background:linear-gradient(135deg,#0066ff 0%,#0284c7 100%);color:#ffffff;border-radius:8px;text-decoration:none;font-size: 15px;font-weight:800;white-space:nowrap;box-shadow:0 4px 14px rgba(0,102,255,0.4);display:inline-flex;align-items:center;gap:6px;"><span>${isTr?'📊 Kurumsal Raporu Aç →':'📊 Open Executive Dossier →'}</span></a></div>`;
   healthDeck.innerHTML=`<div class="health-executive-badge ${statusBadgeClass}">${statusBadgeLabel}</div><h3 class="health-headline">${healthHeadlineText}</h3><p class="health-subtext">${healthSubText}</p>${badgesRow}<div class="health-counts-grid"><div class="health-count-card health-count-critical" data-filter-target="critical" style="cursor:pointer;" title="${isTr?'Kritik bulgulara git':'Filter critical findings'}"><strong>${counts.critical}</strong><span>${isTr?'Kritik':'Critical'}</span></div><div class="health-count-card health-count-high" data-filter-target="high" style="cursor:pointer;" title="${isTr?'Yüksek önem dereceli bulgulara git':'Filter high findings'}"><strong>${counts.high}</strong><span>${isTr?'Yüksek':'High'}</span></div><div class="health-count-card health-count-medium" data-filter-target="medium" style="cursor:pointer;" title="${isTr?'Orta önem dereceli bulgulara git':'Filter medium findings'}"><strong>${counts.medium}</strong><span>${isTr?'Orta':'Medium'}</span></div><div class="health-count-card health-count-low" data-filter-target="low" style="cursor:pointer;" title="${isTr?'Bilgi bulgularına git':'Filter info findings'}"><strong>${counts.low}</strong><span>${isTr?'Bilgi':'Info'}</span></div></div>${vipReportBox}`;
   healthDeck.querySelectorAll('.health-count-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -2115,17 +2115,17 @@ function render(data){
     <div class="arr-impact-card">
       <span class="arr-impact-card-label">🔻 ${isTr?'AI BOT TERK ORANI':'AI BOT DROP-OFF'}</span>
       <strong class="arr-impact-card-val ${isHealthyScan ? 'arr-impact-emerald' : 'arr-impact-red'}" id="arrDropVal">${initialLoss.dropOffPct}%</strong>
-      <small style="font-size:10px;color:#94a3b8;">${isHealthyScan ? (isTr?'Güçlü HTML yanıt bütçesi':'Optimized HTML payload budget') : (isTr?'>HTML payload boyuttan ötürü erken çıkış':'Exceeds measured HTML payload budget')}</small>
+      <small style="font-size: 15px;color:#94a3b8;">${isHealthyScan ? (isTr?'Güçlü HTML yanıt bütçesi':'Optimized HTML payload budget') : (isTr?'>HTML payload boyuttan ötürü erken çıkış':'Exceeds measured HTML payload budget')}</small>
     </div>
     <div class="arr-impact-card">
       <span class="arr-impact-card-label">🚫 ${isTr?'TAVSİYE BASKILAMA':'CITATION SUPPRESSION'}</span>
       <strong class="arr-impact-card-val ${isHealthyScan ? 'arr-impact-emerald' : 'arr-impact-amber'}" id="arrDemoteVal">${initialLoss.demotePct}%</strong>
-      <small style="font-size:10px;color:#94a3b8;">${isHealthyScan ? (isTr?'Kanonik varlık yapısı aktif':'Active canonical entity anchor') : (isTr?'Wikidata/şema eksikliği kaynaklı':'Missing verified knowledge vault')}</small>
+      <small style="font-size: 15px;color:#94a3b8;">${isHealthyScan ? (isTr?'Kanonik varlık yapısı aktif':'Active canonical entity anchor') : (isTr?'Wikidata/şema eksikliği kaynaklı':'Missing verified knowledge vault')}</small>
     </div>
     <div class="arr-impact-card">
       <span class="arr-impact-card-label">💰 ${isTr?'AYLIK RİSKTEKİ GELİR':'MONTHLY PIPELINE AT RISK'}</span>
       <strong class="arr-impact-card-val arr-impact-emerald" id="arrTrioLoss">$${initialLoss.minLoss.toLocaleString('en-US')}</strong>
-      <small style="font-size:10px;color:#94a3b8;">${isTr?'Girdiğiniz varsayımlara göre':'Based on your assumptions'}</small>
+      <small style="font-size: 15px;color:#94a3b8;">${isTr?'Girdiğiniz varsayımlara göre':'Based on your assumptions'}</small>
     </div>
   </div>
   <p class="arr-metric-context">${contextDesc}</p>
@@ -2272,7 +2272,7 @@ let benchDeck=document.getElementById('competitiveBenchmarkDeck');if(!benchDeck)
     const num = String(idx + 1).padStart(2, '0');
     const tier = v >= 80 ? 'green' : v >= 65 ? 'yellow' : v >= 45 ? 'orange' : 'red';
     const label = isTr ? eng.tr : eng.en;
-    grid.insertAdjacentHTML('beforeend', `<div class="score-item tier-${tier}"><div class="score-item-top"><span class="engine-num">${num}</span><span><strong>${eng.id}</strong> · ${safe(label)} <small style="font-size:10px;opacity:0.75;">(${isTr ? 'Ağırlık' : 'Weight'}: ${eng.weight})</small></span></div><strong>${v}</strong><div class="meter"><i class="bar-${tier}" style="width:${v}%"></i></div></div>`);
+    grid.insertAdjacentHTML('beforeend', `<div class="score-item tier-${tier}"><div class="score-item-top"><span class="engine-num">${num}</span><span><strong>${eng.id}</strong> · ${safe(label)} <small style="font-size: 15px;opacity:0.75;">(${isTr ? 'Ağırlık' : 'Weight'}: ${eng.weight})</small></span></div><strong>${v}</strong><div class="meter"><i class="bar-${tier}" style="width:${v}%"></i></div></div>`);
   });
 
   const cleanDomainSafe = safe(data.domain);
@@ -3091,7 +3091,7 @@ vary: Accept-Encoding, User-Agent
 
 &lt;!-- Edge Worker pruned 401,010 bytes of script/SVG noise in 4.2ms. Stream delivery started. --&gt;</pre>
 </div>
-<div class="saas-banner-bar saas-banner-blue"><div class="saas-banner-text">🔒 <strong>${isTr?'Mühendislik Kod Şablonu:':'Engineering Code Template:'}</strong> ${isTr?'Yazılımcınıza teslim edebileceğiniz 30+ dosyalı hazır mühendislik çözüm paketi.':'30+ file ready-to-deploy code and recipe package for your in-house engineering team.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="padding:10px 20px;font-size:13px;">${isTr?'30+ Dosyalık Çözüm Paketini İndir — $99 →':'Download 30+ File Resolution Pack — $99 →'}</a></div></div>`;
+<div class="saas-banner-bar saas-banner-blue"><div class="saas-banner-text">🔒 <strong>${isTr?'Mühendislik Kod Şablonu:':'Engineering Code Template:'}</strong> ${isTr?'Yazılımcınıza teslim edebileceğiniz 30+ dosyalı hazır mühendislik çözüm paketi.':'30+ file ready-to-deploy code and recipe package for your in-house engineering team.'}</div><a href="/checkout?plan=pro&amp;domain=${encodeURIComponent(cleanDomainSafe)}&amp;scan=${encodeURIComponent(data.scanId)}" class="btn-stop-loss" style="padding:10px 20px;font-size: 15px;">${isTr?'30+ Dosyalık Çözüm Paketini İndir — $99 →':'Download 30+ File Resolution Pack — $99 →'}</a></div></div>`;
 
 const measuredBytes = (data?.summary?.averageHtmlBytes && data.summary.averageHtmlBytes > 0) ? data.summary.averageHtmlBytes : 14350;
 const approxTokens = Math.round(measuredBytes / 4);
@@ -3106,7 +3106,7 @@ const tabDiffHtml=`<div class="ast-diff-container">
       <p class="ast-diff-desc">${isTr?`Ölçülen web sayfası yanıt boyutu (${measuredBytes.toLocaleString('en-US')} B) ile Cloudflare Worker Edge katmanında optimize edilmiş temiz AST yapısının karşılaştırması:`:`Side-by-side comparison of measured origin payload (${measuredBytes.toLocaleString('en-US')} B) vs Cloudflare Edge semantic AST:`}</p>
     </div>
     <div style="display:flex;gap:8px;align-items:center;">
-      <span style="font-size:11px;font-weight:700;color:#10b981;background:rgba(16,185,129,0.15);padding:4px 10px;border-radius:999px;border:1px solid rgba(16,185,129,0.3);">${reductionBadge}</span>
+      <span style="font-size: 15px;font-weight:700;color:#10b981;background:rgba(16,185,129,0.15);padding:4px 10px;border-radius:999px;border:1px solid rgba(16,185,129,0.3);">${reductionBadge}</span>
     </div>
   </div>
   <div class="ast-diff-grid">
@@ -3419,11 +3419,11 @@ function renderDagInspector(idx, subTab){
   const s=DAG_STEPS[idx];
   let bodyHtml='';
   if(currentDagTab==='logic'){
-    bodyHtml=`<p style="margin:0 0 10px;font-size:13px;line-height:1.6;"><strong>${isTr?'Görev & İş Mantığı:':'Mission & Logic:'}</strong> ${safe(s.desc)}</p><div style="display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#94a3b8;"><span style="color:#10b981;">✓ <strong>${isTr?'Standardı:':'Standard:'}</strong> Deterministik n8n DAG</span><span>⏱️ <strong>${isTr?'Zaman Aşımı:':'Timeout:'}</strong> 8000ms</span><span>🛡️ <strong>${isTr?'İzolasyon:':'Isolation:'}</strong> Fail-Closed</span></div>`;
+    bodyHtml=`<p style="margin:0 0 10px;font-size: 15px;line-height:1.6;"><strong>${isTr?'Görev & İş Mantığı:':'Mission & Logic:'}</strong> ${safe(s.desc)}</p><div style="display:flex;gap:12px;flex-wrap:wrap;font-size: 15px;color:#94a3b8;"><span style="color:#10b981;">✓ <strong>${isTr?'Standardı:':'Standard:'}</strong> Deterministik n8n DAG</span><span>⏱️ <strong>${isTr?'Zaman Aşımı:':'Timeout:'}</strong> 8000ms</span><span>🛡️ <strong>${isTr?'İzolasyon:':'Isolation:'}</strong> Fail-Closed</span></div>`;
   } else if(currentDagTab==='config'){
     bodyHtml=`<pre class="dag-json-box"><code>${safe(s.config)}</code></pre>`;
   } else if(currentDagTab==='io'){
-    bodyHtml=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:10.5px;font-weight:750;color:#94a3b8;">${isTr?'GİRDİ (INPUT PAYLOAD JSON):':'INPUT PAYLOAD JSON:'}</span><pre class="dag-json-box"><code>${safe(s.inputSchema)}</code></pre></div><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:10.5px;font-weight:750;color:#10b981;">${isTr?'ÇIKTI (OUTPUT PAYLOAD JSON):':'OUTPUT PAYLOAD JSON:'}</span><pre class="dag-json-box"><code>${safe(s.outputSchema)}</code></pre></div></div>`;
+    bodyHtml=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size: 15px;font-weight:750;color:#94a3b8;">${isTr?'GİRDİ (INPUT PAYLOAD JSON):':'INPUT PAYLOAD JSON:'}</span><pre class="dag-json-box"><code>${safe(s.inputSchema)}</code></pre></div><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size: 15px;font-weight:750;color:#10b981;">${isTr?'ÇIKTI (OUTPUT PAYLOAD JSON):':'OUTPUT PAYLOAD JSON:'}</span><pre class="dag-json-box"><code>${safe(s.outputSchema)}</code></pre></div></div>`;
   } else if(currentDagTab==='dlq'){
     bodyHtml=`<div class="dag-dlq-box"><strong>🛡️ ${isTr?'Ölü Mektup Kuyruğu (DLQ) İlkesi:':'Dead-Letter Queue (DLQ) Policy:'}</strong><p style="margin:4px 0 0;">${safe(s.dlqPolicy)}</p></div>`;
   }
@@ -3494,7 +3494,7 @@ if(btnRunDag){
     renderDagInspector(DAG_STEPS.length - 1, 'logic');
     const inspector=document.getElementById('dagNodeInspector');
     if(inspector){
-      inspector.insertAdjacentHTML('afterbegin',`<div style="margin-bottom:10px;padding:8px 12px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:8px;font-size:12px;color:#10b981;"><strong>[03:00:07 UTC ✅ SELF-HEALING SUCCESS]</strong> ${cleanDomainSafe}: ${isTr?'18 motor kontrol noktaları doğrulandı. Edge önbellek senkronize edildi.':'All 18-engine checkpoints verified. Edge cache synchronized.'}</div>`);
+      inspector.insertAdjacentHTML('afterbegin',`<div style="margin-bottom:10px;padding:8px 12px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:8px;font-size: 14px;color:#10b981;"><strong>[03:00:07 UTC ✅ SELF-HEALING SUCCESS]</strong> ${cleanDomainSafe}: ${isTr?'18 motor kontrol noktaları doğrulandı. Edge önbellek senkronize edildi.':'All 18-engine checkpoints verified. Edge cache synchronized.'}</div>`);
     }
     btnRunDag.innerHTML='✅ '+ (isTr?'Akış Tamamlandı':'Pipeline Done');
     setTimeout(()=>{btnRunDag.disabled=false;btnRunDag.innerHTML=origText;},2500);
@@ -3540,7 +3540,7 @@ remConsole.querySelectorAll('.btn-copy-code').forEach(btn=>{
     }
   });
 });
-document.getElementById('findingCount').textContent=`${data.findings.length} ${D[lang].issues}${counts.rawTotal>data.findings.length?` (${counts.rawTotal} ${isTr?'sayfa örneği':'page instances'})`:''}`;const list=document.getElementById('findingsList');list.innerHTML='';let filterBar=document.getElementById('findingsFilterBar');if(!filterBar){filterBar=document.createElement('div');filterBar.id='findingsFilterBar';filterBar.className='findings-filter-bar';list.parentNode.insertBefore(filterBar,list)}filterBar.innerHTML=`<button type="button" class="filter-btn active" data-filter="all">${isTr?'Tüm Bulgular':'All Findings'} (${counts.all})</button><button type="button" class="filter-btn filter-red" data-filter="critical">${isTr?'🔴 Kritik':'🔴 Critical'} (${counts.critical})</button><button type="button" class="filter-btn filter-amber" data-filter="high">${isTr?'🟠 Yüksek':'🟠 High'} (${counts.high})</button><button type="button" class="filter-btn filter-blue" data-filter="medium">${isTr?'🔵 Orta':'🔵 Medium'} (${counts.medium})</button><button type="button" class="filter-btn filter-green" data-filter="low">${isTr?'🟢 Bilgi':'🟢 Info'} (${counts.low})</button>${counts.rawTotal>counts.all?`<span class="filter-raw-instances-tag" style="display:inline-flex;align-items:center;padding:6px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;font-size:12px;font-weight:700;color:#475569;">📍 ${isTr?`${counts.rawTotal} Sayfa İhlali Talandı`:`${counts.rawTotal} Total URL Instances`}</span>`:''}`;
+document.getElementById('findingCount').textContent=`${data.findings.length} ${D[lang].issues}${counts.rawTotal>data.findings.length?` (${counts.rawTotal} ${isTr?'sayfa örneği':'page instances'})`:''}`;const list=document.getElementById('findingsList');list.innerHTML='';let filterBar=document.getElementById('findingsFilterBar');if(!filterBar){filterBar=document.createElement('div');filterBar.id='findingsFilterBar';filterBar.className='findings-filter-bar';list.parentNode.insertBefore(filterBar,list)}filterBar.innerHTML=`<button type="button" class="filter-btn active" data-filter="all">${isTr?'Tüm Bulgular':'All Findings'} (${counts.all})</button><button type="button" class="filter-btn filter-red" data-filter="critical">${isTr?'🔴 Kritik':'🔴 Critical'} (${counts.critical})</button><button type="button" class="filter-btn filter-amber" data-filter="high">${isTr?'🟠 Yüksek':'🟠 High'} (${counts.high})</button><button type="button" class="filter-btn filter-blue" data-filter="medium">${isTr?'🔵 Orta':'🔵 Medium'} (${counts.medium})</button><button type="button" class="filter-btn filter-green" data-filter="low">${isTr?'🟢 Bilgi':'🟢 Info'} (${counts.low})</button>${counts.rawTotal>counts.all?`<span class="filter-raw-instances-tag" style="display:inline-flex;align-items:center;padding:6px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;font-size: 14px;font-weight:700;color:#475569;">📍 ${isTr?`${counts.rawTotal} Sayfa İhlali Talandı`:`${counts.rawTotal} Total URL Instances`}</span>`:''}`;
 
 function generateFindingRecipe(f, domain, scanId, isTr) {
   const cleanDom = (domain || 'example.com').replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
@@ -3549,8 +3549,8 @@ function generateFindingRecipe(f, domain, scanId, isTr) {
     <div class="recipe-glow"></div>
     <div class="recipe-content">
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-        <h4 style="margin:0;">🛠️ ${isTr ? 'Mühendislik Çözüm Reçetesi (Yazılımcınıza Teslim Edin)' : 'Engineering Resolution Recipe (For Your In-House Developers)'} — <span style="font-family:monospace;font-size:11px;color:#0284c7;">${safe(rec.recipeFileName)}</span></h4>
-        <button type="button" class="btn-copy-recipe" onclick="navigator.clipboard.writeText(this.closest('.recipe-content').querySelector('.recipe-code code').textContent).then(()=>{this.textContent='✓ ${isTr ? 'Kopyalandı' : 'Copied'}';setTimeout(()=>this.textContent='📋 ${isTr ? 'Kodu Kopyala' : 'Copy Code'}',1500)})" style="background:#0284c7;color:#fff;border:none;padding:5px 12px;border-radius:6px;font-size:11px;cursor:pointer;font-weight:700;">📋 ${isTr ? 'Kodu Kopyala' : 'Copy Code'}</button>
+        <h4 style="margin:0;">🛠️ ${isTr ? 'Mühendislik Çözüm Reçetesi (Yazılımcınıza Teslim Edin)' : 'Engineering Resolution Recipe (For Your In-House Developers)'} — <span style="font-family:monospace;font-size: 15px;color:#0284c7;">${safe(rec.recipeFileName)}</span></h4>
+        <button type="button" class="btn-copy-recipe" onclick="navigator.clipboard.writeText(this.closest('.recipe-content').querySelector('.recipe-code code').textContent).then(()=>{this.textContent='✓ ${isTr ? 'Kopyalandı' : 'Copied'}';setTimeout(()=>this.textContent='📋 ${isTr ? 'Kodu Kopyala' : 'Copy Code'}',1500)})" style="background:#0284c7;color:#fff;border:none;padding:5px 12px;border-radius:6px;font-size: 15px;cursor:pointer;font-weight:700;">📋 ${isTr ? 'Kodu Kopyala' : 'Copy Code'}</button>
       </div>
       <div class="recipe-steps">
         <div class="recipe-step">
@@ -3584,7 +3584,7 @@ data.findings.forEach(f=>{const title=lang==='tr'?(f.titleTr||f.titleEn):(f.titl
       const recipeHtml = generateFindingRecipe(f, data.domain, data.scanId, isTr);
       const rawSev = String(f.severity || '').toLowerCase().trim();
       const cardSev = (rawSev === 'critical' || rawSev === 'crit' || rawSev === 'danger' || rawSev === 'error') ? 'critical' : ((rawSev === 'high' || rawSev === 'p0' || rawSev === 'warn-high') ? 'high' : ((rawSev === 'medium' || rawSev === 'med' || rawSev === 'warning' || rawSev === 'warn' || rawSev === 'p1' || rawSev === 'p2') ? 'medium' : 'low'));
-      const urlsBlock = (f.affectedUrls && f.affectedUrls.length > 1) ? `<div class="finding-affected-urls-box" style="margin:8px 0 12px;padding:8px 12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;"><div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="const el=this.nextElementSibling;el.style.display=el.style.display==='none'?'block':'none';"><span style="font-weight:700;color:#0f172a;">📍 ${isTr ? `Bu bulgu ${f.affectedUrls.length} farklı sayfada tespit edildi` : `Detected across ${f.affectedUrls.length} distinct pages`}</span><span style="color:#0066ff;font-size:11px;font-weight:700;">${isTr ? '▼ URL Listesini Gör' : '▼ Toggle URLs'}</span></div><div class="affected-urls-list" style="display:none;margin-top:8px;max-height:140px;overflow-y:auto;border-top:1px solid #e2e8f0;padding-top:6px;">${f.affectedUrls.map(u => `<div style="padding:2px 0;font-family:monospace;font-size:11px;color:#334155;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">🔗 <a href="${safe(u)}" target="_blank" rel="noopener" style="color:#0284c7;text-decoration:underline;">${safe(u)}</a></div>`).join('')}</div></div>` : (f.url ? `<small class="finding-url">🔗 ${safe(f.url)}</small>` : '');
+      const urlsBlock = (f.affectedUrls && f.affectedUrls.length > 1) ? `<div class="finding-affected-urls-box" style="margin:8px 0 12px;padding:8px 12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;font-size: 14px;"><div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="const el=this.nextElementSibling;el.style.display=el.style.display==='none'?'block':'none';"><span style="font-weight:700;color:#0f172a;">📍 ${isTr ? `Bu bulgu ${f.affectedUrls.length} farklı sayfada tespit edildi` : `Detected across ${f.affectedUrls.length} distinct pages`}</span><span style="color:#0066ff;font-size: 15px;font-weight:700;">${isTr ? '▼ URL Listesini Gör' : '▼ Toggle URLs'}</span></div><div class="affected-urls-list" style="display:none;margin-top:8px;max-height:140px;overflow-y:auto;border-top:1px solid #e2e8f0;padding-top:6px;">${f.affectedUrls.map(u => `<div style="padding:2px 0;font-family:monospace;font-size: 15px;color:#334155;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">🔗 <a href="${safe(u)}" target="_blank" rel="noopener" style="color:#0284c7;text-decoration:underline;">${safe(u)}</a></div>`).join('')}</div></div>` : (f.url ? `<small class="finding-url">🔗 ${safe(f.url)}</small>` : '');
       list.insertAdjacentHTML('beforeend',`<article class="finding finding-tier-${cardSev}" data-severity="${cardSev}"><div class="finding-tags"><span class="severity ${cardSev}"><i class="sev-dot"></i>${safe((sev[cardSev]||sev.info)[lang])}</span><span class="tag-id">${safe(f.id)}</span><span class="tag-conf">${safe(c)}</span><span class="tag-source">${safe(sourceLabel(f.sourceClass))}</span></div><div class="finding-content"><h4>${safe(title)}</h4><p>${safe(impact)}</p>${telemetryStripHtml}${urlsBlock}${f.evidence?`<code>${safe(f.evidence)}</code>`:''}${healthDossierHtml}${recipeHtml}</div></article>`);
 });
 
@@ -3627,7 +3627,7 @@ filterBar.querySelectorAll('.filter-btn').forEach(btn=>{
       }
       emptyState.style.display='block';
       const rawLabel=btn.textContent.replace(/\s*\(\d+\)/,'').trim();
-      emptyState.innerHTML=`<div class="empty-state-card" style="text-align:center;padding:36px 20px;background:#ffffff;border:1.5px dashed #cbd5e1;border-radius:14px;margin:20px 0;"><div style="font-size:32px;margin-bottom:10px;">✅</div><h4 style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px;">${isTr?`${rawLabel} Seviyesinde Bulgu Bulunmamaktadır`:`No ${rawLabel} Findings Detected`}</h4><p style="font-size:13px;color:#64748b;max-width:480px;margin:0 auto 16px;line-height:1.6;">${isTr?'Taranan sayfalarda bu önem derecesine ait herhangi bir teknik hata veya engel tespit edilmemiştir. Siteniz bu kontrolleri başarıyla geçmiştir.':'No technical defects or blockers of this severity were detected on the scanned surfaces. All corresponding checks passed.'}</p><button type="button" class="btn-reset-filter" style="background:#0066ff;color:#ffffff;border:none;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;">${isTr?`Tüm Bulguları Göster (${counts.all})`:`Show All Findings (${counts.all})`}</button></div>`;
+      emptyState.innerHTML=`<div class="empty-state-card" style="text-align:center;padding:36px 20px;background:#ffffff;border:1.5px dashed #cbd5e1;border-radius:14px;margin:20px 0;"><div style="font-size:32px;margin-bottom:10px;">✅</div><h4 style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px;">${isTr?`${rawLabel} Seviyesinde Bulgu Bulunmamaktadır`:`No ${rawLabel} Findings Detected`}</h4><p style="font-size: 15px;color:#64748b;max-width:480px;margin:0 auto 16px;line-height:1.6;">${isTr?'Taranan sayfalarda bu önem derecesine ait herhangi bir teknik hata veya engel tespit edilmemiştir. Siteniz bu kontrolleri başarıyla geçmiştir.':'No technical defects or blockers of this severity were detected on the scanned surfaces. All corresponding checks passed.'}</p><button type="button" class="btn-reset-filter" style="background:#0066ff;color:#ffffff;border:none;padding:8px 18px;border-radius:8px;font-size: 14px;font-weight:700;cursor:pointer;">${isTr?`Tüm Bulguları Göster (${counts.all})`:`Show All Findings (${counts.all})`}</button></div>`;
       emptyState.querySelector('.btn-reset-filter')?.addEventListener('click',()=>{
         filterBar.querySelector('[data-filter="all"]')?.click();
       });

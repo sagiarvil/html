@@ -634,7 +634,7 @@ for g in guides_data:
   <div class="kicker"><span></span><b>{c['kicker']}</b></div>
   <h1 style="margin: 20px 0 16px; font-size: clamp(38px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -.045em;">{c['h1']}</h1>
   <p style="font-size: 19px; line-height: 1.7; color: var(--fg-soft, #cbd5e1); margin-bottom: 24px; max-width: 860px;">{c['sub']}</p>
-  <div style="font-size: 13.5px; font-weight: 750; color: var(--fg-dim, #94a3b8); margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.1));">
+  <div style="font-size: 15px; font-weight: 750; color: var(--fg-dim, #94a3b8); margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.1));">
     {c['read_time']}
   </div>
 

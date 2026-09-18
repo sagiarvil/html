@@ -67,16 +67,16 @@
   }
   function render(d){
     const scopeBadge=d.telemetryScope?.includes('clarity')
-      ? `<span class="mention-telemetry-badge" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:700;">[${copy.providerScoped}: Microsoft Clarity]</span>`
-      : `<span class="mention-telemetry-badge" style="background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:700;">[${copy.simulatedCitation}]</span>`;
+      ? `<span class="mention-telemetry-badge" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; padding:2px 6px; border-radius:4px; font-size: 15px; font-weight:700;">[${copy.providerScoped}: Microsoft Clarity]</span>`
+      : `<span class="mention-telemetry-badge" style="background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; padding:2px 6px; border-radius:4px; font-size: 15px; font-weight:700;">[${copy.simulatedCitation}]</span>`;
     summary.innerHTML=`<strong>${d.summary?.mentionRate??'—'}%</strong> ${copy.rate} · <strong>${d.summary?.citationRate??'—'}%</strong> ${copy.citation} · ${scopeBadge} · ${copy.run} ${esc(d.runId)}`;
     rows.innerHTML=(d.observations||[]).map(o=>{
       const cls=o.status!=='ok'?'na':o.mentioned?'yes':'no';
       const label=o.status!=='ok'?copy.na:o.mentioned?copy.mention:copy.no;
       const isObserved=o.citationType==='observed';
       const typeBadge=isObserved
-        ? `<span class="citation-type-badge observed" style="font-size:10px; padding:1px 5px; background:#dcfce7; color:#15803d; border-radius:3px; font-weight:700; margin-left:6px;">${copy.observedCitation}</span>`
-        : `<span class="citation-type-badge simulated" style="font-size:10px; padding:1px 5px; background:#e0f2fe; color:#0369a1; border-radius:3px; font-weight:700; margin-left:6px;">${copy.simulatedCitation}</span>`;
+        ? `<span class="citation-type-badge observed" style="font-size: 15px; padding:1px 5px; background:#dcfce7; color:#15803d; border-radius:3px; font-weight:700; margin-left:6px;">${copy.observedCitation}</span>`
+        : `<span class="citation-type-badge simulated" style="font-size: 15px; padding:1px 5px; background:#e0f2fe; color:#0369a1; border-radius:3px; font-weight:700; margin-left:6px;">${copy.simulatedCitation}</span>`;
       const cites=(o.citations||[]).slice(0,6).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(u)}</a>`).join('<br>');
       return `<article class="mention-row"><header><div><b>${esc(o.provider.toUpperCase())}</b>${typeBadge}<small style="display:block;">${esc(o.model)} · ${esc(o.surface)}</small></div><span class="mention-badge ${cls}">${label}</span></header><p><b>${copy.prompt}:</b> ${esc(o.query)}</p>${o.excerpt?`<p>${esc(o.excerpt)}</p>`:''}<small>${copy.brand}: ${o.brandMentions||0} · ${copy.domain}: ${o.domainMentions||0} · ${copy.citationCount}: ${o.citationMatches||0}</small>${cites?`<p>${cites}</p>`:''}${o.error?`<p>${esc(o.error)}</p>`:''}</article>`;
     }).join('');

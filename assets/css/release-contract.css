@@ -31,7 +31,7 @@
 }
 .pricing-delivery-manifest .section-head > span {
   display: inline-block;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: .12em;
   color: #38bdf8 !important;
@@ -221,7 +221,7 @@ html[data-theme="light"] .guest-delivery-contract strong {
   .delivery-file-grid code {
     min-height: 48px;
     padding: 0 14px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .guest-delivery-contract {
     width: min(100% - 28px, 1120px);

@@ -46,7 +46,7 @@
   border-radius: 999px;
   padding: 8px 14px;
   background: var(--card);
-  font-size: 12.5px;
+  font-size: 14.5px;
   font-weight: 750;
   letter-spacing: .02em;
 }
@@ -82,7 +82,7 @@
   color: var(--fg-soft, #cbd5e1);
   margin: 0 0 24px;
   max-width: 60ch;
-  font-size: .95rem;
+  font-size: 1.05rem;
   line-height: 1.55;
 }
 .tool-form {
@@ -129,7 +129,7 @@
   display: block;
   margin-top: 14px;
   color: var(--fg-dim, #94a3b8);
-  font-size: 13.5px;
+  font-size: 15px;
   line-height: 1.55;
 }
 .tool-status, #toolStatus, #mentionStatus {
@@ -203,7 +203,7 @@
   color: var(--theme-text-strong, #fff);
 }
 .tool-finding small {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 850;
   letter-spacing: .06em;
   color: #9d9f95;
@@ -216,7 +216,7 @@
   background: #14151c;
   border-radius: 8px;
   color: #d8d9d0;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   white-space: normal;
   word-break: break-word;
@@ -244,7 +244,7 @@
   box-shadow: var(--shadow);
 }
 .authority-card b {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 750;
   letter-spacing: .08em;
   color: var(--muted);
@@ -297,7 +297,7 @@
   line-height: 1.5;
 }
 .comparison-table th {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 850;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -364,7 +364,7 @@
   border-bottom: 1px solid var(--line);
 }
 .method-item b {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: .08em;
   color: var(--muted);
@@ -387,7 +387,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 6px 12px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: .06em;
 }
@@ -424,19 +424,19 @@
 }
 .mention-row header small {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   margin-top: 4px;
   color: #9d9f95;
 }
 .mention-row p{font-size:14px;line-height:1.7;color:#b7b8b0}
 .mention-row > small {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   color: #888980;
 }
 .mention-badge {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 850;
   letter-spacing: .06em;
   padding: 6px 10px;
@@ -451,7 +451,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 650;
   color: var(--muted);
 }
@@ -723,7 +723,7 @@
   font-size: 14px;
 }
 .exec-brand-sub {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -765,7 +765,7 @@
   border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.15));
   background: transparent;
   color: var(--theme-text-strong, #ffffff);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -777,7 +777,7 @@
   border-radius: 8px;
   background: #0066ff;
   color: var(--theme-text-strong, #ffffff);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -804,7 +804,7 @@
     overflow-x: auto;
   }
   .exec-nav-links a {
-    font-size: 13px;
+    font-size: 15px;
     white-space: nowrap;
   }
 }
