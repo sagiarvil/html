@@ -6,7 +6,7 @@ from build_full_site import get_header, get_footer
 def build_mention_tracker():
     # EN
     en_html = f'''<!doctype html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

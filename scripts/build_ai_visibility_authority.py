@@ -243,7 +243,7 @@ def head(lang,title,desc,canonical,alternate):
 
 def page_shell(lang, title, desc, canonical, alternate, body, schema):
     lang_switch = f'<a href="{alternate}">{"EN" if lang=="tr" else "TR"}</a>'
-    return f'<!doctype html><html lang="{lang}">{head(lang,title,desc,canonical,alternate)}<body><header class="topbar"><div class="topbar-shell"><a class="brand" href="/{lang}/"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a>{nav(lang)}<div class="nav-actions"><div class="langs">{lang_switch}</div></div></div></header><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><main>{body}</main>{footer(lang)}</body></html>'
+    return f'<!doctype html><html lang="{lang}"{' translate="no"' if lang=='en' else ''}>{head(lang,title,desc,canonical,alternate)}<body><header class="topbar"><div class="topbar-shell"><a class="brand" href="/{lang}/"><img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22"></a>{nav(lang)}<div class="nav-actions"><div class="langs">{lang_switch}</div></div></div></header><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><main>{body}</main>{footer(lang)}</body></html>'
 
 def glossary_page(lang):
     tr = lang=="tr"
