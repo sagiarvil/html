@@ -2301,3 +2301,11 @@ html.light .ea-executive-grid div div:first-child {
 
 .skip { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .skip:focus { left: 16px; top: 16px; width: auto; height: auto; z-index: 9999; background: #000; color: #fff; padding: 12px; border-radius: 6px; }
+
+@media (min-width: 769px) {
+  #hhCyberDrawer, .hh-cyber-drawer {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
