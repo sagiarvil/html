@@ -7709,3 +7709,199 @@ html[data-theme="dark"] .langs button.active {
   #pipeline { padding: 48px 24px; border-radius: 0; border-left: none; border-right: none; margin: 0; }
   .pl-step { min-width: 100%; }
 }
+
+
+/* ==========================================================================
+   RADICAL MATRIX REDESIGN (AWE-INSPIRING COMPARISON)
+   ========================================================================== */
+.v3-capability-contract {
+  position: relative;
+  z-index: 10;
+  margin: 80px auto;
+  max-width: 1200px;
+}
+
+.v3-contract-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.v3-contract-head span {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #3b82f6;
+  text-transform: uppercase;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.v3-contract-head h2 {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  max-width: 900px;
+  margin: 0 auto 24px;
+  letter-spacing: -0.02em;
+}
+.v3-contract-head p {
+  font-size: 18px;
+  color: #475569;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.v3-decision-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(248,250,252,1) 100%);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 12px 24px;
+  border-radius: 99px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+}
+.v3-decision-line b {
+  color: #059669;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.v3-decision-line b::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #10b981;
+}
+.v3-decision-line span {
+  font-size: 14.5px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Radical Matrix Grid */
+.v3-radical-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.v3-rm-head {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr;
+  gap: 16px;
+  padding: 0 24px 16px;
+  align-items: end;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  margin-bottom: 8px;
+}
+.v3-rm-head > div {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+.v3-rm-head .v3-rm-paid {
+  color: #4f46e5;
+  position: relative;
+  text-align: center;
+}
+
+/* Rows */
+.v3-rm-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px -4px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.v3-rm-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.08);
+}
+
+.v3-rm-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.v3-rm-feature .rm-icon {
+  font-size: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+.v3-rm-feature h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.v3-rm-free {
+  font-size: 14.5px;
+  color: #64748b;
+  line-height: 1.5;
+  padding-right: 24px;
+}
+
+/* Paid Column Highlight Overlay */
+.v3-rm-paid {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1e1b4b;
+  background: linear-gradient(90deg, rgba(238, 242, 255, 0.5) 0%, rgba(224, 231, 255, 0.8) 100%);
+  padding: 16px 20px;
+  border-radius: 12px;
+  position: relative;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  height: 100%;
+}
+.v3-rm-paid .arr {
+  color: #6366f1;
+  margin: 0 6px;
+  font-family: monospace;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .v3-rm-head { display: none; }
+  .v3-rm-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px;
+  }
+  .v3-rm-feature { margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+  .v3-rm-free { padding-right: 0; }
+  .v3-rm-paid { margin-top: 8px; }
+  .v3-decision-line { flex-direction: column; text-align: center; }
+}
+
+.v3-boundary {
+  margin-top: 48px;
+  font-size: 13.5px;
+  color: #64748b;
+  text-align: center;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+}
