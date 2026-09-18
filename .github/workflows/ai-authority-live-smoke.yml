@@ -44,19 +44,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/sitemap.xml -o /tmp/sitemap.xml
+          curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/sitemaps/pages-tr.xml -o /tmp/pages-tr.xml
           curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/sitemap-news.xml -o /tmp/sitemap-news.xml
           curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/robots.txt -o /tmp/robots.txt
           curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/llms.txt -o /tmp/llms.txt
-          grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/sitemap.xml
-          grep -Fq 'https://htmlandhtml.com/en/glossary/' /tmp/sitemap.xml
-          grep -Fq 'https://htmlandhtml.com/tr/geo-optimizasyon/' /tmp/sitemap.xml
+          grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/pages-tr.xml
+          grep -Fq 'https://htmlandhtml.com/en/glossary/' /tmp/pages-tr.xml
+          grep -Fq 'https://htmlandhtml.com/tr/geo-optimizasyon/' /tmp/pages-tr.xml
           grep -Fq 'https://htmlandhtml.com/tr/sozluk/' /tmp/llms.txt
           grep -Fq 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/sitemap-news.xml
           grep -Fq 'Sitemap: https://htmlandhtml.com/sitemap-news.xml' /tmp/robots.txt
 
           # sed consumes the complete grep stream; unlike `head -n 1` it cannot SIGPIPE grep under pipefail.
-          article_url="$(grep -oE 'https://htmlandhtml\.com/tr/llms-txt-haberler/[a-z0-9-]+/' /tmp/sitemap.xml | sed -n '1p')"
+          curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/sitemaps/articles-tr.xml -o /tmp/articles-tr.xml
+          article_url="$(grep -oE 'https://htmlandhtml\\.com/tr/llms-txt-haberler/[a-z0-9-]+/' /tmp/articles-tr.xml | sed -n '1p')"
           test -n "$article_url"
           curl -fLsS --connect-timeout 8 --max-time 25 "$article_url" -o /tmp/news-article.html
           grep -Fq '"@type":"NewsArticle"' /tmp/news-article.html
