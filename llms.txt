@@ -139,6 +139,8 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
+- [New AI Safety Bug Bounty Program Introduced by OpenAI](https://htmlandhtml.com/en/llms-txt-news/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a/)
+- [OpenAI and Japan Digital Agency Establish Generative AI Partnership](https://htmlandhtml.com/en/llms-txt-news/2026-09-18-openai-announces-strategic-collaboration-with-ja-15f17b33ed3a/)
 - [GPT-5.6 Update: Fusing Frontier Intelligence and Efficiency](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c/)
 - [Inside Mirakl's Agentic Commerce Architecture](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869/)
 - [New Evaluation Cycle in the Enterprise Generative AI Provider Market](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359/)
@@ -157,6 +159,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [Frontier Enterprise AI Integration Trends and Workflow Scaling](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055/)
 - [Structured Data Analysis and Source Management in Research Workflows via ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-chatgpt-for-research-62379661ee74/)
 - [Enterprise AI Agents via Cloudflare Agent Cloud and OpenAI Integration](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/)
-- [Google Tests Traditional Search Campaigns in AI Mode](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai-4dd5c8407264/)
-- [Managing Artificial Intelligence Investments in the Agentic Era](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523/)
 <!-- LLMS_NEWS_END -->
