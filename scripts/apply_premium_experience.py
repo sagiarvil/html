@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
-CSS='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=22">'
+CSS='<link rel="stylesheet" href="/assets/css/premium-experience.css?v=23">'
 
 TR_TOOL='''<!-- 04 TOOL DIRECTORY -->
 <section class="px-section" id="tools" data-premium-infographic="tools">

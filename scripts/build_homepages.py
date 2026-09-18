@@ -114,7 +114,7 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=22">
 <link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=22">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=23">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -634,71 +634,64 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <!-- 02.6 6 KARA KUTU / DARK POOL VE TRANSFORMER TERSİNE MÜHENDİSLİK SHOWCASE -->
 <section class="section px-section" id="dark-pool-intelligence">
   <div class="px-section-head">
-    <span class="eyebrow">SİLİKON VADİSİ &amp; LONDRA ($5M+) KURUMSAL İSTİHBARAT</span>
+    <span class="eyebrow">SILICON VALLEY &amp; LONDON ($5M+) ENTERPRISE INTELLIGENCE</span>
     <h2>Geleneksel SEO Araçlarının Göremediği 6 Yapay Zeka Kara Kutusu</h2>
-    <p>Ahrefs, Semrush veya klasik araçlar yalnızca anahtar kelime ve meta etiket sayar. ChatGPT, Perplexity ve Google Gemini gibi nöral modeller ise sitenizi aşağıdaki 6 gizli transformer katmanında değerlendirip tavsiye kümesine alır veya eler.</p>
+    <p>Ahrefs, Semrush ve eski nesil araçlar yalnızca anahtar kelime ve meta etiket sayarlar. ChatGPT, Perplexity ve Google Gemini gibi temel nöral modeller, içeriğinizi önermek veya reddetmek için bu 6 gizli transformer katmanından geçirir.</p>
   </div>
-  <div class="px-delivery-grid-22" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:24px;">
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>01 · measured HTML payload, semantic structure and source-readiness evidence</b>
-        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 KRİTİK</span>
-      </div>
-      <p>GPTBot ve Perplexity crawler worker'ları ilk measured HTML payload, semantic structure and source-readiness evidence</p>
-      <div>⚡ Çözüm: Cloudflare Worker HTMLRewriter AST budama ve sub-40ms TTFB</div>
+  <div class="dp-grid">
+    <article class="dp-card dp-p0">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">01</span><span class="dp-badge">P0 CRITICAL</span></div>
+      <h3 class="dp-title">14KB AST Token Yükü (Payload Budget)</h3>
+      <p class="dp-desc">GPTBot ve Perplexity tarayıcıları, 14KB AST bütçesini aşan şişirilmiş HTML'leri okumayı erken keser (truncation). Tarayıcılar fiyatlandırma ve ürün bloklarınıza ulaşamadan token kapasitelerini tüketir.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Cloudflare Worker HTMLRewriter AST temizliği ve 40ms altı sınır hızı (TTFB)</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>02 · Entity Vault &amp; Wikidata Triples Konsensüsü</b>
-        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 KRİTİK</span>
-      </div>
-      <p>Modeller markanızı doğrulanmış bir kurumsal varlık (Knowledge Graph Ground Truth) olarak teyit edemezse, sektör sorularında sizi atlayıp doğrudan rakiplerinizi tavsiye eder.</p>
-      <div>⚡ Çözüm: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID ve MID konsensüsü</div>
+    <article class="dp-card dp-p0">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">02</span><span class="dp-badge">P0 CRITICAL</span></div>
+      <h3 class="dp-title">Entity Vault ve Wikidata Konsensüsü</h3>
+      <p class="dp-desc">Küresel Bilgi Graflarında (Knowledge Graph) kesin koordinatlarınız olmadan, nöral modeller markanızı otoriteli bir varlık (Entity) olarak doğrulayamaz ve yanıtlarında sizi rakipleriniz lehine sistematik olarak atlar.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID ve Google MID konsensüsü</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>03 · 512-Token RAG Semantik Parçalanma Koruması</b>
-        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 YÜKSEK</span>
-      </div>
-      <p>Vektör veritabanlarında standart 512 tokenlık RAG bölünmelerinde marka adı ile anahtar ürün önermesi kopar; semantik sorgu yanıtlarında alıntılanma ihtimali sıfırlanır.</p>
-      <div>⚡ Çözüm: data-chunk-id semantik bölümlendirme öznitelikleri ve bağlam koruma</div>
+    <article class="dp-card dp-p1">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">03</span><span class="dp-badge">P1 HIGH</span></div>
+      <h3 class="dp-title">512-Token RAG Semantik Bütünlük Koruması</h3>
+      <p class="dp-desc">Standart 512 tokenlık vektör parçalama (chunking) işlemi, değer önerilerinizi ortadan böler. Arama motorları semantik üretim esnasında cümlenin kilit bağlamını eşleştiremez.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: data-chunk-id semantik sınır işaretlemesi ve bağlam koruması</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>04 · Cross-Encoder Attention &amp; Sayısal Kanıt Yoğunluğu</b>
-        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 YÜKSEK</span>
-      </div>
-      <p>Nöral yeniden sıralama modelleri (Cohere, bge-reranker) somut sayısal kanıt içermeyen sübjektif pazarlama laflarını filtreleyerek tavsiye kümesinden doğrudan eler.</p>
-      <div>⚡ Çözüm: H2 altı ilk 45 kelimede doğrudan yanıt ve sayısal veri yoğunluğu şablonu</div>
+    <article class="dp-card dp-p1">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">04</span><span class="dp-badge">P1 HIGH</span></div>
+      <h3 class="dp-title">Cross-Encoder Filtresi ve Rakam Yoğunluğu</h3>
+      <p class="dp-desc">Çapraz kodlayıcı (Cross-encoder) algoritmaları tanıtım dolu "pazarlama" cümlelerini doğrudan çöpe atar. Doğrulanmış metrikler ve rakamlar içermeyen paragraflar doğrudan filtrelenir.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: H2 başlıkları altında 45-kelimelik matematiksel veri yoğunluğu matrisi</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>05 · AI Corpus PMI (Model Ön-Eğitim Havuzunda Varlık)</b>
-        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 ORTA</span>
-      </div>
-      <p>Common Crawl ve temel model eğitim havuzlarında markanız sektörel standart terimlerle birlikte anılmazsa, kullanıcılar sizi doğrudan sormadıkça tavsiye edilmezsiniz.</p>
-      <div>⚡ Çözüm: Endüstriyel benchmark ve sektörel kanonik eş-oluşum (PMI) mimarisi</div>
+    <article class="dp-card dp-p2">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">05</span><span class="dp-badge">P2 MEDIUM</span></div>
+      <h3 class="dp-title">Yapay Zeka Eğitim Verisi (Corpus PMI)</h3>
+      <p class="dp-desc">Eğer markanız, modellerin eğitildiği okyanus verilerinde (örn: Common Crawl) sektör benchmark'ları ile yan yana (co-occurrence) geçmiyorsa, doğrudan sorulmadıkça asla spontane olarak önerilmezsiniz.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Kanonik sektör tanımlamaları ve PMI (Pointwise Mutual Information) çapaları</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>06 · ColBERT MaxSim Çoklu-Vektör Eşleşmesi</b>
-        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 ORTA</span>
-      </div>
-      <p>ColBERT ve SPLADE nöral modelleri kullanıcı soru tokenları ile başlık tokenlarınızı tam eşleştiremezse, modern vektör aramalarında siteniz arka sayfalara ötelenir.</p>
-      <div>⚡ Çözüm: Token zenginleştirilmiş H2/H3 başlık hiyerarşisi ve late-interaction optimizasyonu</div>
+    <article class="dp-card dp-p2">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">06</span><span class="dp-badge">P2 MEDIUM</span></div>
+      <h3 class="dp-title">ColBERT MaxSim Gecikmeli Eşleşmesi</h3>
+      <p class="dp-desc">ColBERT ve SPLADE nöral modelleri kullanıcı soru tokenları ile başlık tokenlarınızı tam eşleştiremezse (late-interaction), modern vektör aramalarında siteniz arka sayfalara ötelenir.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Token zenginleştirilmiş H2/H3 başlık hiyerarşisi ve MaxSim eşleşme mimarisi</span></div>
     </article>
   </div>
   
-  <!-- Commercial B2B Value Proposition Box -->
-  <div class="dark-pool-commercial-callout">
-    <div>
-      <span>SIFIR DANIŞMANLIK MASRAFI · KENDİ YAZILIMCINIZA TESLİM EDİN</span>
-      <h3>Aylık 5.000$ Ajans Masrafı Ödemeyin. Teşhisi Görün, Kod Paketini Yazılımcınıza Verin.</h3>
-      <p>HTML&amp;HTML bir danışmanlık veya pazarlama ajansı değildir; deterministik yazılım platformudur. Taramayı başlatarak tüm sorunları ücretsiz görün. $99 Onarım Seti ile 30+ dosyalık hazır kodları indirin ve kendi ekibinizle 1 günde uygulayın.</p>
+  <div class="dp-callout">
+    <div class="dp-callout-text">
+      <span>SIFIR DANIŞMANLIK MASRAFI · YAZILIMCINIZA TESLİM EDİN</span>
+      <h3>Aylık 5.000$ Ajans Masrafı Ödemeyin. Teşhisi Görün, Kodu Kendi Ekibinize Verin.</h3>
+      <p>HTML&amp;HTML bir danışmanlık veya pazarlama ajansı değildir; deterministik bir mühendislik platformudur. Ücretsiz AI denetimi ile sorunları görün. 30+ dosyalık kod paketini $99 karşılığında indirin ve 1 günde canlıya alın.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+    <div class="dp-callout-action">
       <a href="#scanner" class="btn-scan-trigger">Ücretsiz AI Denetimi Başlat →</a>
-      <span style="font-size: 15px;color:#64748b;">Kayıt gerekmez · 10 saniyede canlı sonuç</span>
+      <span>Kayıt gerekmez · 10 saniyede canlı sonuç</span>
     </div>
   </div>
 </section>
@@ -935,7 +928,7 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=22">
 <link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=22">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=23">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -1438,67 +1431,60 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
     <h2>6 AI Search Black Boxes That Traditional SEO Ignores</h2>
     <p>Ahrefs, Semrush, and legacy tools only count keywords and meta tags. Foundation neural models like ChatGPT, Perplexity, and Google Gemini evaluate your domain across these 6 hidden transformer layers before citing or discarding your content.</p>
   </div>
-  <div class="px-delivery-grid-22" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:24px;">
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>01 · 14KB AST Token Bloat (Payload Budget)</b>
-        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 CRITICAL</span>
-      </div>
-      <p>GPTBot and Perplexity crawlers enforce early ingestion truncation on bloated HTML exceeding the 14KB AST budget; crawlers exhaust token capacity before reaching lower pricing and product offerings.</p>
-      <div>⚡ Fix: Cloudflare Worker HTMLRewriter AST trimming and sub-40ms edge TTFB</div>
+  <div class="dp-grid">
+    <article class="dp-card dp-p0">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">01</span><span class="dp-badge">P0 CRITICAL</span></div>
+      <h3 class="dp-title">14KB AST Token Bloat (Payload Budget)</h3>
+      <p class="dp-desc">GPTBot and Perplexity crawlers enforce early ingestion truncation on bloated HTML exceeding the 14KB AST budget; crawlers exhaust token capacity before reaching lower pricing and product offerings.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Cloudflare Worker HTMLRewriter AST trimming and sub-40ms edge TTFB</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>02 · Entity Vault &amp; Wikidata Triples Consensus</b>
-        <span class="format-pill" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">P0 CRITICAL</span>
-      </div>
-      <p>Without explicit triangulation in global Knowledge Graphs, neural models cannot verify your brand as an authoritative entity, systematically omitting your company in favor of competitors.</p>
-      <div>⚡ Fix: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID and Google MID consensus</div>
+    <article class="dp-card dp-p0">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">02</span><span class="dp-badge">P0 CRITICAL</span></div>
+      <h3 class="dp-title">Entity Vault &amp; Wikidata Consensus</h3>
+      <p class="dp-desc">Without explicit triangulation in global Knowledge Graphs, neural models cannot verify your brand as an authoritative entity, systematically omitting your company in favor of competitors.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID and Google MID consensus</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>03 · 512-Token RAG Semantic Fragmentation Defense</b>
-        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 HIGH</span>
-      </div>
-      <p>Standard 512-token vector chunking fractures entity definitions and value propositions; search engines fail to retrieve key context during semantic generation.</p>
-      <div>⚡ Fix: data-chunk-id semantic boundary markup and contextual preservation</div>
+    <article class="dp-card dp-p1">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">03</span><span class="dp-badge">P1 HIGH</span></div>
+      <h3 class="dp-title">512-Token RAG Semantic Fragmentation</h3>
+      <p class="dp-desc">Standard 512-token vector chunking fractures entity definitions and value propositions; search engines fail to retrieve key context during semantic generation.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: data-chunk-id semantic boundary markup and contextual preservation</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>04 · Cross-Encoder Attention &amp; Numerical Evidence Density</b>
-        <span class="format-pill" style="background:#fff7ed;color:#ea580c;border:1px solid #ffedd5;">P1 HIGH</span>
-      </div>
-      <p>Cross-encoder neural rerankers (Cohere, bge-reranker) discard promotional puffery; passages lacking hard numerical metrics and verified facts are filtered out of answer sets.</p>
-      <div>⚡ Fix: Opening 45-word numerical fact density template under H2 headings</div>
+    <article class="dp-card dp-p1">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">04</span><span class="dp-badge">P1 HIGH</span></div>
+      <h3 class="dp-title">Cross-Encoder &amp; Numerical Density</h3>
+      <p class="dp-desc">Cross-encoder neural rerankers (Cohere, bge-reranker) discard promotional puffery; passages lacking hard numerical metrics and verified facts are filtered out of answer sets.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Opening 45-word numerical fact density template under H2 headings</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>05 · AI Corpus PMI (Foundational Model Co-Occurrence)</b>
-        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 MEDIUM</span>
-      </div>
-      <p>If your brand lacks co-occurrence alongside industry benchmarks in foundational training corpuses (Common Crawl), models never recommend you spontaneously in zero-shot queries.</p>
-      <div>⚡ Fix: Canonical benchmark definitions and sectoral PMI co-occurrence anchors</div>
+    <article class="dp-card dp-p2">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">05</span><span class="dp-badge">P2 MEDIUM</span></div>
+      <h3 class="dp-title">AI Corpus PMI (Model Co-Occurrence)</h3>
+      <p class="dp-desc">If your brand lacks co-occurrence alongside industry benchmarks in foundational training corpuses (Common Crawl), models never recommend you spontaneously in zero-shot queries.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Canonical benchmark definitions and sectoral PMI co-occurrence anchors</span></div>
     </article>
-    <article class="px-file-card">
-      <div class="px-file-card-head">
-        <b>06 · ColBERT MaxSim Multi-Vector Late-Interaction</b>
-        <span class="format-pill" style="background:#eff6ff;color:#2563eb;border:1px solid #dbeafe;">P2 MEDIUM</span>
-      </div>
-      <p>Multi-vector retrieval engines fail to achieve maximum late-interaction dot-product scores when heading tokens fail to align with natural-language user queries.</p>
-      <div>⚡ Fix: Multi-vector query token enrichment across H2/H3 semantic heading hierarchy</div>
+    <article class="dp-card dp-p2">
+      <div class="dp-glow"></div>
+      <div class="dp-header"><span class="dp-num">06</span><span class="dp-badge">P2 MEDIUM</span></div>
+      <h3 class="dp-title">ColBERT MaxSim Late-Interaction</h3>
+      <p class="dp-desc">Multi-vector retrieval engines fail to achieve maximum late-interaction dot-product scores when heading tokens fail to align with natural-language user queries.</p>
+      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Multi-vector query token enrichment across H2/H3 semantic heading hierarchy</span></div>
     </article>
   </div>
   
-  <!-- Commercial B2B Value Proposition Box -->
-  <div class="dark-pool-commercial-callout">
-    <div>
-      <span>ZERO CONSULTING OVERHEAD · HANDOVER TO IN-HOUSE DEVELOPERS</span>
-      <h3>Don't Pay $5,000/mo in Agency Retainers. Audit Free, Hand the Code Pack to Your Devs.</h3>
-      <p>HTML&amp;HTML is not an agency or marketing consultancy; it is an automated deterministic engineering platform. Audit your site for free to see all technical defects. Unlock the 30+ file implementation pack for $99 and have your developers execute all fixes in hours.</p>
+  <div class="dp-callout">
+    <div class="dp-callout-text">
+      <span>ZERO CONSULTING OVERHEAD · IN-HOUSE HANDOVER</span>
+      <h3>Don't Pay $5,000/mo in Agency Retainers. Audit Free, Hand Code to Your Devs.</h3>
+      <p>HTML&amp;HTML is not an agency or marketing consultancy; it is an automated deterministic engineering platform. Audit your site for free. Unlock the 30+ file implementation pack for $99 and have your developers execute fixes in hours.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+    <div class="dp-callout-action">
       <a href="#scanner" class="btn-scan-trigger">Start Free AI Audit →</a>
-      <span style="font-size: 15px;color:#64748b;">No account required · Live results in 10 seconds</span>
+      <span>No account required · Live results in 10s</span>
     </div>
   </div>
 </section>
