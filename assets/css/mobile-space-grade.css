@@ -351,7 +351,7 @@
   }
 
   /* Temizle / Yapıştır İkonu */
-  .hh-input-clear-btn {
+  .scanbox .field button.hh-input-clear-btn {
     position: absolute !important;
     right: 12px !important;
     width: 28px !important;
@@ -366,7 +366,7 @@
     cursor: pointer !important;
   }
 
-  .scanbox .field input:not(:placeholder-shown) ~ .hh-input-clear-btn {
+  .scanbox .field input:not(:placeholder-shown) ~ button.hh-input-clear-btn {
     display: flex !important;
   }
 
@@ -1229,7 +1229,7 @@
   /* ==========================================================================
      📋 G) SMART CLIPBOARD & SEARCH EXPERIENCE
      ========================================================================== */
-  .hh-input-paste-btn {
+  .scanbox .field button.hh-input-paste-btn {
     position: absolute !important;
     right: 12px !important;
     display: inline-flex !important;
@@ -1248,13 +1248,13 @@
     transition: all 0.15s ease !important;
   }
 
-  .hh-input-paste-btn:active {
+  .scanbox .field button.hh-input-paste-btn:active {
     transform: scale(0.94) !important;
     background: rgba(0, 212, 255, 0.25) !important;
   }
 
   /* Panodan Yapıştır / Temizle Buton Senkronizasyonu */
-  .scanbox .field input:not(:placeholder-shown) ~ .hh-input-paste-btn {
+  .scanbox .field input:not(:placeholder-shown) ~ button.hh-input-paste-btn {
     display: none !important;
   }
 

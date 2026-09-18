@@ -4,7 +4,7 @@ const COPY={
  tr:{
   hero:'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?',
   lead:'ChatGPT, Claude ve Perplexity için 18 motorlu otonom denetim ve dağıtım paketi. Tek tıkla 8 fazlı taramayı başlatın; bulunabilirlik, kaynak hazırlığı ve RAG mimarisi engellerini kanıtıyla görün.',
-  scan:'Derin AI Denetimi Başlat →',
+  scan:'Derin AI Denetimi Başlat',
   mandateTitle:'Kontrol ücretsiz.<br>AI Görünürlük Onarım Seti $99.',
   mandateCopy:'Bu sorun arama motorlarının sitenizi atlamasına yol açıyor. Kilidi açanlar kalıcı çözüm + rollback güvencesi alır. 5 kritik kontrol noktası onarım seti ile güvence altına alınır.',
   getMandate:'Onarım Setini İndir — $99 →',
