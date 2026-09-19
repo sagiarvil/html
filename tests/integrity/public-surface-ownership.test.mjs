@@ -31,7 +31,7 @@ for (const rel of mustUseSharedContract) {
 
 for (const home of contracts.homePages) {
   const html = fs.readFileSync(path.join(root, home), 'utf8');
-  if (!html.includes('PDF-INSPIRED CUSTOMER STORY V1')) failures.push(`${home}: customer-first PDF story missing`);
+  if (!html.includes('CUSTOMER DECISION HOMEPAGE V2')) failures.push(`${home}: customer decision homepage missing`);
   if (html.includes('v3-capability-contract')) failures.push(`${home}: dense V3 matrix leaked into homepage`);
 }
 

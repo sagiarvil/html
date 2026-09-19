@@ -9,11 +9,10 @@ const failures = [];
 
 for (const rel of homePages) {
   const text = fs.readFileSync(path.join(root, rel), 'utf8');
-  for (const token of ['18', '105']) {
-    if (!text.includes(token)) failures.push(`${rel}: missing concise V3 fact ${token}`);
-  }
   if (text.includes('v3-capability-contract')) failures.push(`${rel}: dense V3 capability matrix must not appear on customer-first homepage`);
-  if (!text.includes('PDF-INSPIRED CUSTOMER STORY V1')) failures.push(`${rel}: PDF-inspired customer story missing`);
+  if (!text.includes('CUSTOMER DECISION HOMEPAGE V2')) failures.push(`${rel}: customer decision homepage missing`);
+  if (!text.includes('$99')) failures.push(`${rel}: paid Fix Pack boundary missing`);
+  if (!(text.includes('KANIT') || /EVIDENCE/i.test(text))) failures.push(`${rel}: evidence-first buyer contract missing`);
 }
 
 for (const rel of detailPages) {

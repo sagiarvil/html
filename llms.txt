@@ -1,6 +1,6 @@
 # HTML&HTML
 
-> HTML&HTML, web sitelerini yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlayan; site tarafındaki teknik ve içerik engellerini ölçülebilir kanıtlarla gösteren Search & AI Readiness platformudur.
+> HTML&HTML bir AI Arama Teknik Teşhis Platformudur. Web sitesi tarafında bulunabilirlik, anlaşılabilirlik, kaynak hazırlığı ve dönüşüm yolunu etkileyebilecek ölçülebilir engelleri kanıtlar; ücretsiz teşhisten sonra gerekirse USD 99 Fix Pack ile uygulanabilir düzeltme, test, rollback ve yeniden tarama planı üretir.
 
 HTML&HTML separates measured facts, official vendor/standards guidance, proposals, and internal heuristics. Public scanning never invents source-file paths and never fabricates field Core Web Vitals.
 
@@ -14,15 +14,15 @@ HTML&HTML does not guarantee AI rankings, recommendations, brand mentions, citat
 
 ## Customer-first decision architecture
 
-The public product journey is intentionally organized around five customer questions instead of exposing internal engine complexity first:
+The public product journey is intentionally organized around five commercial decision questions instead of exposing internal engine complexity first:
 
-1. **Customer:** What problem does my site have, where is it, and what should I do next?
+1. **Customer:** Can a buyer understand the offer and the next step within seconds?
 2. **Trust:** What measured evidence supports the finding, and what remains NOT_MEASURED or REQUIRES_CONTEXT?
-3. **Distribution:** Which website, structured-data, crawler, llms.txt, and machine-readable surfaces are affected?
-4. **Reference:** Can I inspect a sample report, sample finding, methodology, and delivery format before buying?
-5. **Sales channel:** Free diagnosis shows findings and evidence; the USD 99 Implementation Pack opens fix, acceptance, rollback, and one re-scan within 30 days.
+3. **Distribution:** Can search and AI systems access, understand and evaluate the website's public surfaces?
+4. **Reference:** Can a buyer inspect a real sample report, methodology and delivery format before buying?
+5. **Sales channel:** Free diagnosis shows the problem and evidence; the USD 99 Fix Pack opens root cause, implementation, acceptance/regression tests, rollback and one re-scan within 30 days.
 
-The homepage uses a concise PDF-inspired customer narrative. Dense Engine V3 capability matrices are reserved for platform, methodology, pricing, and implementation-detail surfaces.
+The homepage uses a concise customer-decision narrative inspired by presentation-style information architecture: problem → evidence → impact → priority → fix. Dense Engine V3 capability matrices are reserved for platform, methodology, pricing, and implementation-detail surfaces.
 
 ## Google Accuracy Boundary
 > Google treats generative AI optimization as SEO best practices and evaluates standard Search eligibility; Google Search explicitly states it does not use llms.txt for ranking or indexing. See [Guidance](/llms/guides.md).

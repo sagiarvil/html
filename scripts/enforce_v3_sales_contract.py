@@ -7,6 +7,8 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+SURFACE_CONTRACT = json.loads((ROOT/'config/public-surface-contracts.json').read_text(encoding='utf-8'))
+HOME_PAGES = set(SURFACE_CONTRACT['homePages'])
 
 TR_BLOCK = """<section class="v3-capability-contract" aria-labelledby="v3-capabilities-tr">
   <div class="v3-contract-head">
@@ -119,9 +121,9 @@ EN_BLOCK = """<section class="v3-capability-contract" aria-labelledby="v3-capabi
 </section>"""
 
 SEO = {
- 'index.html': ('Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML','Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.'),
- 'tr/index.html': ('Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML','Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.'),
- 'en/index.html': ('AI SEO Audit & ChatGPT Visibility Test | HTML&HTML','Audit your website for ChatGPT, Google Gemini, Claude and Perplexity visibility. Get evidence from 18 deterministic engines and 105 checks; unlock the $99 implementation pack.'),
+ 'index.html': ('AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&HTML','Web sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün. Bulguyu kanıtlayın; gerekiyorsa $99 Fix Pack ile uygulanabilir düzeltme, test ve rollback planını alın.'),
+ 'tr/index.html': ('AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&HTML','Web sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün. Bulguyu kanıtlayın; gerekiyorsa $99 Fix Pack ile uygulanabilir düzeltme, test ve rollback planını alın.'),
+ 'en/index.html': ('AI Search Technical Diagnostic & Fix Platform | HTML&HTML','See why your website may be weak in AI search. Get evidence-backed diagnosis free; use the $99 Fix Pack when you need implementation, tests and rollback.'),
  'tr/ai-website-readiness/index.html': ('Yapay Zeka SEO Analizi ve AI Web Sitesi Hazırlık Testi | HTML&HTML','AI web sitesi hazırlığını ücretsiz ölçün: ChatGPT bot erişimi, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG ve E-E-A-T sinyallerini kanıtla görün.'),
  'en/ai-website-readiness/index.html': ('AI Website Readiness & AI SEO Audit | HTML&HTML','Measure AI website readiness across crawler access, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG and E-E-A-T with evidence-backed checks.'),
  'tr/ai-crawler-checker/index.html': ('ChatGPT Bot ve AI Crawler Erişim Testi | HTML&HTML','OAI-SearchBot, GPTBot, Claude ve Perplexity crawler erişimini robots.txt ve canlı HTTP kanıtıyla ücretsiz kontrol edin.'),
@@ -197,7 +199,7 @@ execution.update({
  'arrRiskClassification':'SCENARIO_ESTIMATE_NOT_MEASURED_REVENUE',
  'implementationPackage':'VERSIONED ZIP; EXACT FILE COUNT VARIES WITH EVIDENCED FINDINGS AND UP TO 30 PAGE-LEVEL MACHINE-SURFACE MANIFESTS'})
 execution.pop('neutralPromptFamilies',None);execution.pop('neutralPromptMaximum',None)
-profile['publicPositioning']={'category':'AI SEO / AI Search Visibility / Website Readiness','primarySearchIntentsTR':['yapay zeka seo analizi','chatgpt görünürlük','yapay zeka arama görünürlüğü','llms.txt validator','ai crawler checker'],'primarySearchIntentsEN':['AI SEO audit','ChatGPT visibility','AI search visibility','llms.txt validator','AI crawler checker'],'guaranteeBoundary':'No ranking, citation, recommendation, traffic or revenue guarantee.'}
+profile['publicPositioning']={'category':'AI Search Technical Diagnostic Platform','primarySearchIntentsTR':['yapay zeka seo analizi','chatgpt görünürlük','yapay zeka arama görünürlüğü','llms.txt validator','ai crawler checker'],'primarySearchIntentsEN':['AI SEO audit','ChatGPT visibility','AI search visibility','llms.txt validator','AI crawler checker'],'guaranteeBoundary':'No ranking, citation, recommendation, traffic or revenue guarantee.'}
 profile_path.write_text(json.dumps(profile,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
 # Last-mile sanitizer uses the exact same pattern as the gate. This handles
@@ -224,7 +226,12 @@ for rel,(title,desc) in SEO.items():
  text=(ROOT/rel).read_text(encoding='utf-8')
  if html.escape(title,quote=False) not in text:errors.append(f'SEO title missing: {rel}')
  if html.escape(desc,quote=True) not in text:errors.append(f'SEO description missing: {rel}')
-for rel in ('index.html','tr/index.html','en/index.html','tr/fiyatlandirma/index.html','en/pricing/index.html'):
+for rel in HOME_PAGES:
+ text=(ROOT/rel).read_text(encoding='utf-8')
+ if '$99' not in text:errors.append(f'commercial price boundary missing: {rel}')
+ if 'CUSTOMER DECISION HOMEPAGE V2' not in text:errors.append(f'customer decision homepage missing: {rel}')
+ if 'v3-capability-contract' in text:errors.append(f'dense V3 capability matrix leaked into homepage: {rel}')
+for rel in ('tr/fiyatlandirma/index.html','en/pricing/index.html'):
  text=(ROOT/rel).read_text(encoding='utf-8')
  for marker in ('18','105','$99'):
   if marker not in text:errors.append(f'V3 commercial marker {marker} missing: {rel}')

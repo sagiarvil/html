@@ -17,9 +17,9 @@ const sources=read('sources.json');
 const runtimeCopy=read('assets/js/validator.js');
 
 for(const [rel,marker] of [
-  ['index.html','Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'],
-  ['tr/index.html','Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'],
-  ['en/index.html','Can ChatGPT, Gemini and Perplexity Find Your Website?'],
+  ['index.html','Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?'],
+  ['tr/index.html','Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?'],
+  ['en/index.html','Why Is Your Website Missing From AI Search?'],
   ['tr/ai-website-readiness/index.html','GEO + AEO + LLMO + AAO + RAG + E-E-A-T + llms.txt + sitemap'],
   ['tr/llms-txt-validator/index.html','llms.txt Dosyanız Yapay Zeka İçin Gerçekten Kullanılabilir mi?'],
   ['tr/ai-crawler-checker/index.html','ChatGPT ve Diğer Yapay Zeka Tarayıcıları'],
@@ -49,8 +49,8 @@ for(const term of ['GEO','AEO','LLMO','AAO','RAG','E-E-A-T','llms.txt']){
 expect(validatorTr.includes('Sitemap'),'TR validator missing term: Sitemap');
 expect(validatorEn.includes('Sitemap'),'EN validator missing term: Sitemap');
 
-expect(/Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own transactional AI SEO + ChatGPT visibility intent');
-expect(/AI SEO Audit &(?:amp;)? ChatGPT Visibility Test \| HTML(?:&|&amp;)HTML/.test(enHome),'EN homepage title must own AI SEO + ChatGPT visibility intent');
+expect(/AI Arama Teknik Teşhis ve Düzeltme Platformu \| HTML(?:&|&amp;)HTML/.test(rootHome),'homepage title must own the AI Search Technical Diagnostic product category');
+expect(/AI Search Technical Diagnostic &(?:amp;)? Fix Platform \| HTML(?:&|&amp;)HTML/.test(enHome),'EN homepage title must own the AI Search Technical Diagnostic product category');
 expect(rootHome.includes('$99'),'homepage must expose $99 implementation product');
 expect(!rootHome.includes('$149'),'homepage must not retain old $149 price');
 const trTools = read('tr/araclar/index.html');
@@ -85,4 +85,4 @@ expect(/source consideration/i.test(runtimeCopy),'EN homepage runtime must expla
 expect(validatorEn.includes('not guaranteed') || validatorEn.includes('cannot be guaranteed'),'EN validator must retain no-guarantee boundary');
 
 if(errors.length){console.error('CUSTOMER POSITIONING FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('CUSTOMER POSITIONING PASS: AI SEO/ChatGPT transactional title, $99 execution boundary, premium infographics and source guardrails verified.');
+console.log('CUSTOMER POSITIONING PASS: decision-first AI Search Technical Diagnostic positioning, $99 execution boundary, premium infographics and source guardrails verified.');
