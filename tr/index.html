@@ -10,7 +10,7 @@
     var COOKIE_NAME = 'htmlandhtml-theme';
     function getCookie(name) {
       var match = document.cookie.match(new RegExp('(?:^|; )' + 
-        name.replace(/([.$?*|{}()[\]\/+^])/g, '\$1') + '=([^;]*)'));
+        name.replace(/([.$?*|{}()[\]\\/+^])/g, '\$1') + '=([^;]*)'));
       return match ? decodeURIComponent(match[1]) : null;
     }
     function getInitialTheme() {
@@ -74,7 +74,7 @@
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=23">
 <link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026091910">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026091915">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -274,453 +274,153 @@
   </div>
 </section>
 
-<!-- 02.4 ENTERPRISE ANALYZER SUITE & DIAGNOSTIC LAB -->
-<section class="section px-section ea-showcase-section" id="enterprise-analyzer" data-component="enterprise-analyzer-suite">
-  <div class="ea-container">
-    <div class="ea-header">
-      <span class="ea-eyebrow">
-        <span class="ea-live-dot" aria-hidden="true"></span>
-        CANLI KURUMSAL DENETİM LABORATUVARI · ENTERPRISE AI DIAGNOSTIC SUITE
-      </span>
-      <h2>Sorunu Bulun. Geliştiricinize Net Düzeltme Listesi Verin.</h2>
-      <p>Ücretsiz tarama hangi teknik engellerin görünürlüğünüzü sınırladığını gösterir. $99 uygulama paketi bulguları önceliklendirir ve geliştiricinize uygulanabilir düzeltme, test ve geri alma adımlarını verir.</p>
+<!-- PDF-INSPIRED CUSTOMER STORY V1 -->
+<section class="story-shell" id="customer-story" aria-label="HTML&HTML nasıl çalışır">
+  <section class="story-section story-intro">
+    <div class="story-index">01</div>
+    <div class="story-grid story-grid--intro">
+      <div>
+        <span class="story-kicker">NE ALIRSINIZ?</span>
+        <h2>Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.</h2>
+        <div class="story-copy-stack">
+          <p>HTML&amp;HTML, sitenizin herkese açık yüzeylerini tarar ve görünürlüğü sınırlayan teknik engelleri kanıtıyla gösterir.</p>
+          <p>Ücretsiz sonuçta <strong>ne yanlış, nerede ve neden önemli</strong> sorularını cevaplarız.</p>
+          <p>$99 Uygulama Paketi ise aynı bulguyu <strong>düzeltme, kabul testi, rollback ve re-scan</strong> adımlarına çevirir.</p>
+        </div>
+      </div>
+      <aside class="story-blue-panel">
+        <span class="story-panel-label">KARARINIZ 30 SANİYEDE NETLEŞSİN</span>
+        <h3>Önce teşhis. Sonra yalnız gereken düzeltme.</h3>
+        <p>Abonelik yok. Ajans zorunluluğu yok. Kaynak kodunuza müdahale yok. Çıktıyı mevcut geliştiricinize teslim edin.</p>
+        <div class="story-proof-row">
+          <span>Kayıt gerektirmez</span><span>Kanıta dayalı</span><span>Tek seferlik $99</span>
+        </div>
+      </aside>
     </div>
+  </section>
 
-    <!-- Metric Ribbon -->
-    <div class="ea-ribbon">
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        </div>
-        <div>
-          <strong>105 Deterministik Kontrol</strong>
-          <span>WCAG 2.1 AA · RFC 6596 · OpenAPI 3.1</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-        </div>
-        <div>
-          <strong>50'ye Kadar Sayfa · 30 Prob</strong>
-          <span>Kablo seviyesinde kanıt tespiti</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-        </div>
-        <div>
-          <strong>15 Teknik Kanıtlı Bulgu</strong>
-          <span>Kök neden tespiti ve iş etkisi</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-        </div>
-        <div>
-          <strong>G0–G9 Yayın Kapıları</strong>
-          <span>Geri alma güvenceli kod blokları</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-        </div>
-        <div>
-          <strong>n8n CI/CD &amp; Bash Paketi</strong>
-          <span>Otomatik doğrulama ve izleme</span>
-        </div>
-      </div>
+  <section class="story-section story-needs" id="what-you-get">
+    <div class="story-index">02</div>
+    <div class="story-head">
+      <span class="story-kicker">TÜM İHTİYACINIZ TEK AKIŞTA</span>
+      <h2>Tarama sonucunda elinize tam olarak ne geçer?</h2>
     </div>
+    <div class="story-numbered-grid">
+      <article><b>01</b><span>Teknik bulgu</span><p>Hangi URL'de hangi engelin bulunduğunu görün.</p></article>
+      <article><b>02</b><span>Kanıt</span><p>Bulgunun dayandığı HTTP, DOM veya yapılandırma kanıtını görün.</p></article>
+      <article><b>03</b><span>İş etkisi</span><p>Görünürlük, taranabilirlik veya kaynak hazırlığı etkisini ayırın.</p></article>
+      <article><b>04</b><span>Öncelik</span><p>Önce hangi sorunun ele alınması gerektiğini görün.</p></article>
+      <article><b>05</b><span>Düzeltme planı</span><p>$99 pakette geliştiricinin uygulayacağı net adımları alın.</p></article>
+      <article><b>06</b><span>Doğrulama</span><p>Acceptance, rollback ve re-scan ile sonucu kapatın.</p></article>
+    </div>
+  </section>
 
-    <!-- Console Grid -->
-    <div class="ea-console-grid">
-      <!-- Left Card: Telemetry & Score Matrix -->
-      <div class="ea-telemetry-card">
-        <div class="ea-card-head">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            Canlı Telemetri &amp; Skor Matrisi
-          </h3>
-          <span class="ea-badge-status">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Tarama Tamamlandı
-          </span>
+  <section class="story-section story-output" id="sample-output">
+    <div class="story-index">03</div>
+    <div class="story-grid story-grid--demo">
+      <div>
+        <span class="story-kicker">ÖRNEK ÇIKTI</span>
+        <h2>Raporu açtığınızda ne göreceğinizi önceden bilin.</h2>
+        <p class="story-lead">Karmaşık skorlar yerine geliştiricinin doğrudan çalışabileceği bir karar formatı kullanıyoruz.</p>
+        <div class="story-checks">
+          <div><i>✓</i><span><strong>Bulgu:</strong> Sorun ne?</span></div>
+          <div><i>✓</i><span><strong>Konum:</strong> Hangi URL / yüzey?</span></div>
+          <div><i>✓</i><span><strong>Etki:</strong> Neyi sınırlıyor?</span></div>
+          <div><i>✓</i><span><strong>Düzeltme:</strong> Ne yapılmalı?</span></div>
+          <div><i>✓</i><span><strong>Doğrulama:</strong> Başarılı olduğu nasıl anlaşılır?</span></div>
         </div>
-
-        <div class="ea-score-box">
-          <div class="ea-dial-wrap">
-            <svg viewBox="0 0 92 92" aria-hidden="true">
-              <defs>
-                <linearGradient id="eaDialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00d4ff"></stop>
-                  <stop offset="100%" stop-color="#8b5cf6"></stop>
-                </linearGradient>
-              </defs>
-              <circle class="ea-dial-bg" cx="46" cy="46" r="38"></circle>
-              <circle class="ea-dial-bar" cx="46" cy="46" r="38"></circle>
-            </svg>
-            <div class="ea-dial-value">
-              <span class="ea-dial-num">70</span>
-              <span class="ea-dial-max">/ 100</span>
-            </div>
-          </div>
-          <div class="ea-score-meta">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-              Dikkat Gerekiyor — Acil Eylem
-            </h4>
-            <p>105 kontrol kapsamında örnek kritik bulgular gösteriliyor. Yapay zeka arama motorları için kritik engelleyiciler mevcut.</p>
-          </div>
-        </div>
-
-        <div class="ea-pillars-grid">
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Keşif (Crawl &amp; Index)</span>
-              <span class="num">80%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" data-target-width="80%" style="width: 80%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Anlama (Schema &amp; llms.txt)</span>
-              <span class="num">81%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" data-target-width="81%" style="width: 81%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Güven &amp; Kalite (HSTS/E-E-A-T)</span>
-              <span class="num">59%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" data-target-width="59%" style="width: 59%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Ticari Yol (Action &amp; CTA)</span>
-              <span class="num">100%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" data-target-width="100%" style="width: 100%;"></div></div>
-          </div>
-        </div>
-
-        <div class="ea-telemetry-strip">
-          <div class="ea-telemetry-item">
-            <span>HTML Boyutu:</span>
-            <strong>319 KB (Kritik)</strong>
-          </div>
-          <div class="ea-telemetry-item">
-            <span>Canonical:</span>
-            <strong>Eksik (RFC 6596)</strong>
-          </div>
-          <div class="ea-telemetry-item">
-            <span>Mixed Content:</span>
-            <strong>1 Güvensiz Kaynak</strong>
-          </div>
+        <div class="story-actions">
+          <a class="story-btn story-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">Canlı örnek raporu incele →</a>
+          <a class="story-btn" href="#scanner">Kendi siteni ücretsiz tara</a>
         </div>
       </div>
-
-      <!-- Right Card: Interactive Terminal & Frosted Recipe -->
-      <div class="ea-terminal-card">
-        <div class="ea-terminal-topbar">
-          <div class="ea-mac-dots" aria-hidden="true">
-            <span class="ea-dot-red"></span>
-            <span class="ea-dot-yellow"></span>
-            <span class="ea-dot-green"></span>
-          </div>
-          <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
-        </div>
-
-        <div class="ea-tab-bar" role="tablist" aria-label="Bulgu seçici">
-          <button type="button" class="ea-tab active" role="tab" id="ea-tab-canon" aria-controls="eaFindingPanel" aria-selected="true" tabindex="0" data-finding-tab="canon">TECH-CANON-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-a11y" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="a11y">A11Y-FORM-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-mixed" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="mixed">SEC-MIXED-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-perf" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="perf">PERF-HTML-001 (Orta)</button>
-        </div>
-
-        <div class="ea-finding-content ea-tab-content-anim" id="eaFindingPanel" role="tabpanel" aria-labelledby="ea-tab-canon">
-          <div class="ea-finding-meta-row">
-            <span class="ea-finding-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-              TECH-CANON-001 · YÜKSEK
-            </span>
-            <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
-          </div>
-
-          <div class="ea-finding-summary">
-            Canonical tag tanımlı değil. Yinelenen içerik versiyonları yapay zeka alaka sinyallerini böler.
-          </div>
-
-          <div class="ea-evidence-block">
-            <div class="ea-evidence-head">
-              <span>Kablo Seviyesi Telemetri Kanıtı</span>
-              <button type="button" class="ea-copy-btn" data-copy-target="evidence" aria-label="Kanıtı kopyala">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span class="ea-copy-label">Kopyala</span>
-              </button>
-            </div>
-            <div class="ea-evidence-body">&lt;head&gt; içinde arama: rel=canonical BULUNAMADI&lt;br&gt;AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek</div>
-          </div>
-
-          <div class="ea-code-sandbox" style="position:relative;">
-            <pre class="ea-code-underlay" style="filter:none;opacity:1;pointer-events:auto;user-select:text;"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu (100% Açık yol haritası) --&gt;
-&lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
-&lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
-&lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
-export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-            <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
-              <span style="color:#10b981;font-weight:700;font-size: 14px;display:inline-flex;align-items:center;gap:6px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                ✓ Tüm Çözüm yol haritasıleri ve Kod Şablonları Açık ($99 Değerinde Kurumsal Paket)
-              </span>
-              <span style="color:#0284c7;font-size: 15px;font-weight:600;">Tek tıkla PDF Rapor &amp; 30+ Dosyalık ZIP Seti</span>
-            </div>
-          </div>
+      <div class="story-report-preview" aria-label="Örnek teknik rapor görünümü">
+        <div class="story-browser-bar"><span></span><span></span><span></span><em>CANLI RAPOR ÖNİZLEMESİ</em></div>
+        <div class="story-report-body">
+          <div class="story-report-tag">TECH-CANON-001 · YÜKSEK</div>
+          <h3>Canonical etiketi eksik</h3>
+          <p>Birincil URL belirsizliği yinelenen içerik sinyallerini bölebilir.</p>
+          <div class="story-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
+          <div class="story-fix"><b>$99 PAKETTE</b><span>Kök neden → düzeltme → test → rollback</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Action Launch Bar -->
-    <div class="ea-actions-bar">
-      <a href="/enterprise-analyzer/" id="eaLaunchLink" class="ea-btn-primary" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-        Canlı Enterprise Analizörü Başlat ↗
-      </a>
-      <a href="/enterprise-analyzer/htmlandhtml-ai-report" class="ea-btn-secondary" target="_blank" rel="noopener">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-        Örnek Raporu İncele (Canlı Demo) →
-      </a>
+  <section class="story-section story-process" id="how-it-works" data-premium-infographic="scope-map">
+    <div class="story-index">04</div>
+    <div class="story-grid">
+      <div>
+        <span class="story-kicker">NASIL ÇALIŞIR?</span>
+        <h2>Dört adım. Tek karar akışı.</h2>
+        <p class="story-lead">Teknik motorlar arka planda kalır; müşterinin gördüğü süreç basit ve doğrulanabilirdir.</p>
+      </div>
+      <div class="story-step-list">
+        <article><b>1</b><div><h3>URL'yi girin</h3><p>Herkese açık web yüzeyi güvenli biçimde taramaya alınır.</p></div></article>
+        <article><b>2</b><div><h3>Kanıtlı sorunları görün</h3><p>Tarama, yapı, erişim ve AI kaynak hazırlığı bulguları ayrıştırılır.</p></div></article>
+        <article><b>3</b><div><h3>Ne yapacağınızı seçin</h3><p>Ücretsiz katman sorunu ve etkisini gösterir; yalnız gereken işi görürsünüz.</p></div></article>
+        <article><b>4</b><div><h3>Uygulayın ve doğrulayın</h3><p>$99 paket düzeltme, acceptance, rollback ve re-scan adımlarını açar.</p></div></article>
+      </div>
     </div>
+  </section>
 
-    <div class="ea-footnote">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-      <span><strong>Müdahalesiz Denetim Güvencesi:</strong> Müşterinin kaynak koduna doğrudan dokunulmaz. Teşhis ve çözüm yol haritaları kendi yazılım ekibinize teslim edilmek üzere üretilir.</span>
+  <section class="story-section story-trust" id="trust">
+    <div class="story-index">05</div>
+    <div class="story-head">
+      <span class="story-kicker">KANIT VE GÜVENLİK</span>
+      <h2>Sonuç yalnız ölçebildiğimiz veriye dayanır.</h2>
+      <p>Ölçemediğimiz sinyali başarılı varsaymayız. Teknik sınırları açıkça gösteririz.</p>
     </div>
-  </div>
+    <div class="story-trust-panel">
+      <article><span>01</span><h3>Kanıt standardı</h3><p>Her bulgu ölçülebilir bir teknik işarete bağlanır.</p></article>
+      <article><span>02</span><h3>Fail-closed yaklaşım</h3><p>Belirsiz sonuç PASS olarak işaretlenmez.</p></article>
+      <article><span>03</span><h3>Kaynak güvenliği</h3><p>Yalnız herkese açık URL ve HTTP yüzeyleri değerlendirilir.</p></article>
+      <article><span>04</span><h3>Değişiklik güvenliği</h3><p>Acceptance ve rollback adımları teslimatın parçasıdır.</p></article>
+      <article><span>05</span><h3>Şeffaf sınırlar</h3><p>Sıralama, trafik veya dış model tavsiyesi garanti edilmez.</p></article>
+      <article><span>06</span><h3>Re-scan</h3><p>Uygulama sonrası aynı alan adı yeniden doğrulanabilir.</p></article>
+    </div>
+  </section>
+
+  <section class="story-section story-why" id="why-htmlandhtml">
+    <div class="story-index">06</div>
+    <div class="story-grid story-grid--why">
+      <div class="story-why-visual">
+        <span>HTML&amp;HTML</span>
+        <strong>Teşhis → Uygulama → Doğrulama</strong>
+        <p>Tek bir karar hattı.</p>
+      </div>
+      <div>
+        <span class="story-kicker">NEDEN HTML&amp;HTML?</span>
+        <h2>Teknik karmaşıklığı müşteriye değil, sisteme yükler.</h2>
+        <div class="story-reasons">
+          <p><b>1</b> Ücretsiz teşhis ile satın almadan önce ne alacağınızı görürsünüz.</p>
+          <p><b>2</b> Teknik bulgular kanıt ve etkiyle birlikte sunulur.</p>
+          <p><b>3</b> Ücretli katman yalnız uygulama gerektiğinde devreye girer.</p>
+          <p><b>4</b> Çıktı mevcut geliştirici veya ajansınıza devredilebilir.</p>
+          <p><b>5</b> Tek seferlik $99 lisans; zorunlu abonelik yoktur.</p>
+          <p><b>6</b> Acceptance, rollback ve re-scan ile kapanış kriteri bellidir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section story-close" id="final-cta">
+    <div class="story-index">07</div>
+    <div class="story-close-copy">
+      <span class="story-kicker">TEK ÇATI ALTINDA</span>
+      <h2>Sorunu kanıtıyla görün. Çözümü ekibinize teslim edin.</h2>
+      <p>Önce ücretsiz tarayın. Çıktı yeterliyse hiçbir şey satın almayın. Uygulama planına ihtiyacınız varsa $99 paketle devam edin.</p>
+      <div class="story-actions">
+        <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Ücretsiz kontrolü başlat →</a>
+        <a class="story-btn story-btn--ghost" href="/tr/fiyatlandirma/">$99 uygulama paketini gör</a>
+      </div>
+    </div>
+    <div class="story-close-orbit" aria-hidden="true">
+      <span>Bulgu</span><span>Kanıt</span><span>Etki</span><span>Düzeltme</span><span>Test</span>
+    </div>
+  </section>
 </section>
 
-<section class="v3-capability-contract" aria-labelledby="v3-capabilities-tr">
-  <div class="v3-contract-head">
-    <span>AI SEO · CHATGPT GÖRÜNÜRLÜK · ENGINE V3</span>
-    <h2 id="v3-capabilities-tr">Önce hangi teknik engelin görünürlüğünüzü sınırladığını görün; sonra yalnız gereken düzeltmeyi yapın.</h2>
-    <p>HTML&amp;HTML herkese açık web yüzeylerini tarar, bulguyu kanıtla gösterir ve teknik ekibinizin uygulayabileceği düzeltme yolunu önceliklendirir.</p>
-    <div class="v3-decision-line"><b>Teşhis ücretsiz.</b><span>Uygulanabilir düzeltme, kabul testi ve geri alma adımları $99 tek seferlik paketle açılır.</span></div>
-  </div>
-  
-  <div class="v3-radical-matrix" role="region" aria-label="HTML&HTML V3 karşılaştırma matrisi" tabindex="0">
-    <div class="v3-rm-head">
-      <div class="v3-rm-feature-col">Karar Alanı</div>
-      <div class="v3-rm-free-col">ÜCRETSİZ AI SEO ANALİZİ</div>
-      <div class="v3-rm-paid-col">$99 UYGULAMA PAKETİ</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🎯</span><h4>Deterministik denetim</h4></div>
-      <div class="v3-rm-free">18 Engine V3 modülü · 105 kontrol · rastgele skor yok</div>
-      <div class="v3-rm-paid">Bulgu <span class="arr">→</span> kök neden <span class="arr">→</span> düzeltme <span class="arr">→</span> test <span class="arr">→</span> rollback</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🛡️</span><h4>Tarama ve güvenlik</h4></div>
-      <div class="v3-rm-free">50'ye kadar herkese açık HTML sayfası · 30 canlı link probu · SSRF fail-closed</div>
-      <div class="v3-rm-paid">Kanıta bağlı uygulama planı</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🌐</span><h4>AI arama disiplinleri</h4></div>
-      <div class="v3-rm-free">SEO · GEO · AEO · LLMO · AAO · RAG · E-E-A-T</div>
-      <div class="v3-rm-paid">Kanıta bağlı kod ve konfigürasyon</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🧠</span><h4>Karar istihbaratı</h4></div>
-      <div class="v3-rm-free">13 puan dışı analiz · 7 hazırlık lensi · NOT_MEASURED / REQUIRES_CONTEXT</div>
-      <div class="v3-rm-paid">P0–P3 öncelik, bağımlılık, kabul ve regresyon</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">👁️</span><h4>AI görünürlük gözlemi</h4></div>
-      <div class="v3-rm-free">Bot erişimi, kaynak hazırlığı, entity/schema, cevap çıkarılabilirliği</div>
-      <div class="v3-rm-paid">Sağlayıcı anahtarları yapılandırıldığında en fazla 3 nötr sorgu ile API/search-grounded gözlem</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🚀</span><h4>Yayın güvenliği</h4></div>
-      <div class="v3-rm-free">Kanıt ve confidence sınıfları görünür</div>
-      <div class="v3-rm-paid">G0–G9 · acceptance · regression · rollback</div>
-    </div>
-  </div>
-  <p class="v3-boundary"><b>Kanıt sınırı:</b> Dış model tavsiyesi, sıralama, atıf, trafik veya gelir garanti edilmez. Ölçülemeyen sinyal <b>NOT_MEASURED</b>; kod bağlamı gerektiren sinyal <b>REQUIRES_CONTEXT</b> kalır.</p>
-<p class="v3-delivery-boundary"><b>Ücretli teslim sınırı:</b> Kanıtlanan URL’lere bağlı 30'a kadar sayfa bazlı Markdown makine yüzeyi ve sürümlenmiş ZIP teslim paketi.</p></section>
-
-<!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
-<section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
-  <div class="px-section-head">
-    <span class="eyebrow">END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>Yapay Zeka Sizi Nasıl Tavsiye Eder ve Görünürlük Nedir?</h2>
-    <p>Yapay zeka görünürlüğü (GEO/AEO) nedir? GEO, arama ve yapay zeka modellerinin sitenizi doğrudan referans almasıdır. HTML&amp;HTML, 18 motor (18 engines) ve %100 deterministik kanıt standardıyla çalışır.</p>
-  </div>
-  <ol class="pl-flow">
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">ADIM 01</span></div>
-        <h3>Canlı URL Girişi</h3>
-        <p>DoH (DNS-over-HTTPS) ve RFC 1918 SSRF izolasyonu ile hedef host güvenlik çemberine alınır.</p>
-        <div class="pl-micro">
-          <span>🛡️ DoH DNS Koruması</span>
-          <span>⚡ HTTP/2 Handshake</span>
-          <span>🔒 Fail-Closed Gate</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">ADIM 02</span></div>
-        <h3>18 Motorlu Paralel Tarama</h3>
-        <p>cl100k AST token ayrıştırma, payload ölçümleri, semantic structure ve source-readiness taraması.</p>
-        <div class="pl-micro">
-          <span>🎯 ColBERT MaxSim</span>
-          <span>🧠 Knowledge Vault QID</span>
-          <span>📦 measured HTML payload, semantic structure and source-readiness evidence</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">ADIM 03</span></div>
-        <h3>Deterministik Kanıt Kilidi</h3>
-        <p>UNKNOWN ≠ PASS kuralı. Varsayımsız, kablo seviyesi HTTP/DOM ispatı ve P0–P3 etki matrisi.</p>
-        <div class="pl-micro">
-          <span>⚖️ P0–P3 Etki Matrisi</span>
-          <span>📋 24 Alanlı Bulgu Şeması</span>
-          <span>🛑 Stop-Gate Denetimi</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card highlight">
-        <div><span class="pl-badge">ADIM 04</span></div>
-        <h3>30+ Dosyalık V3 Uygulama Paketi</h3>
-        <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
-        <div class="pl-micro">
-          <span>⚙️ test.js Scriptleri</span>
-          <span>🔄 Geri Alma Güvencesi</span>
-          <span>🤖 A2A Agent Card &amp; MCP</span>
-        </div>
-      </article>
-    </li>
-  </ol>
-  <div class="px-section-head" style="margin-top:48px;text-align:center;">
-    <span class="eyebrow">5 TEMEL KURUMSAL MİMARİ KATMANI</span>
-    <h2>Müşteri, Güven, Dağıtım, Referans ve Satış Kanalı Mimarisi</h2>
-    <p>HTML&amp;HTML platformunun operasyonel ve ticari omurgası: teşhis anından ödeme sonrası doğrulamaya kadar 5 entegre katman.</p>
-  </div>
-  <div class="five-pillars-grid">
-    <article class="five-pillar-card">
-      <span class="pillar-badge">01 · MÜŞTERİ</span>
-      <h3>Müşteri &amp; Ajan Akışı</h3>
-      <p>Önceden kayıt gerekmez; tek URL ile anında canlı teşhis. Web sitesi sahipleri ve yapay zeka ajanları engelleri anında görür.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">02 · GÜVEN</span>
-      <h3>E-E-A-T &amp; Sıfır Uydurma</h3>
-      <p>IETF RFC 9309, W3C ve resmi vendor dokümanlarına dayalı kanıt standardı. Ölçülemeyen sinyal kesinlikle NOT_MEASURED kalır.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">03 · DAĞITIM</span>
-      <h3>Çok Kanallı Dağıtım</h3>
-      <p>llms.txt, llms-full.txt, OpenAPI 3.1 spesifikasyonu, MCP sunucusu ve 273 ikidilli teknoloji brifingi ile otonom erişim.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">04 · REFERANS</span>
-      <h3>Otorite &amp; Standart</h3>
-      <p>18 Motorlu Engine V3.0 endüstri standardı, çift dilli yapay zeka sözlüğü ve kamuya açık örnek analiz kütüphanesi.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">05 · SATIŞ KANALI</span>
-      <h3>$99 Uygulama Paketi</h3>
-      <p>Paddle Billing güvencesiyle tek seferlik lisans: kök neden, P0–P3 öncelik, 30+ dosyalık ZIP teslimatı ve 30 gün re-scan.</p>
-    </article>
-  </div>
-</section>
-
-<!-- 02.6 6 KARA KUTU / DARK POOL VE TRANSFORMER TERSİNE MÜHENDİSLİK SHOWCASE -->
-<section class="section px-section" id="dark-pool-intelligence">
-  <div class="px-section-head">
-    <span class="eyebrow">SILICON VALLEY &amp; LONDON ($5M+) ENTERPRISE INTELLIGENCE</span>
-    <h2>Geleneksel SEO Araçlarının Göremediği 6 Yapay Zeka Kara Kutusu</h2>
-    <p>Ahrefs, Semrush ve eski nesil araçlar yalnızca anahtar kelime ve meta etiket sayarlar. ChatGPT, Perplexity ve Google Gemini gibi temel nöral modeller, içeriğinizi önermek veya reddetmek için bu 6 gizli transformer katmanından geçirir.</p>
-  </div>
-  <div class="dp-grid">
-    <article class="dp-card dp-p0">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">01</span><span class="dp-badge">P0 CRITICAL</span></div>
-      <h3 class="dp-title">measured HTML payload, semantic structure and source-readiness evidence</h3>
-      <p class="dp-desc">GPTBot ve Perplexity tarayıcıları, measured HTML payload, semantic structure and source-readiness evidence</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Cloudflare Worker HTMLRewriter AST temizliği ve 40ms altı sınır hızı (TTFB)</span></div>
-    </article>
-    <article class="dp-card dp-p0">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">02</span><span class="dp-badge">P0 CRITICAL</span></div>
-      <h3 class="dp-title">Entity Vault ve Wikidata Konsensüsü</h3>
-      <p class="dp-desc">Küresel Bilgi Graflarında (Knowledge Graph) kesin koordinatlarınız olmadan, nöral modeller markanızı otoriteli bir varlık (Entity) olarak doğrulayamaz ve yanıtlarında sizi rakipleriniz lehine sistematik olarak atlar.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID ve Google MID konsensüsü</span></div>
-    </article>
-    <article class="dp-card dp-p1">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">03</span><span class="dp-badge">P1 HIGH</span></div>
-      <h3 class="dp-title">512-Token RAG Semantik Bütünlük Koruması</h3>
-      <p class="dp-desc">Standart 512 tokenlık vektör parçalama (chunking) işlemi, değer önerilerinizi ortadan böler. Arama motorları semantik üretim esnasında cümlenin kilit bağlamını eşleştiremez.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: data-chunk-id semantik sınır işaretlemesi ve bağlam koruması</span></div>
-    </article>
-    <article class="dp-card dp-p1">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">04</span><span class="dp-badge">P1 HIGH</span></div>
-      <h3 class="dp-title">Cross-Encoder Filtresi ve Rakam Yoğunluğu</h3>
-      <p class="dp-desc">Çapraz kodlayıcı (Cross-encoder) algoritmaları tanıtım dolu "pazarlama" cümlelerini doğrudan çöpe atar. Doğrulanmış metrikler ve rakamlar içermeyen paragraflar doğrudan filtrelenir.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: H2 başlıkları altında 45-kelimelik matematiksel veri yoğunluğu matrisi</span></div>
-    </article>
-    <article class="dp-card dp-p2">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">05</span><span class="dp-badge">P2 MEDIUM</span></div>
-      <h3 class="dp-title">Yapay Zeka Eğitim Verisi (Corpus PMI)</h3>
-      <p class="dp-desc">Eğer markanız, modellerin eğitildiği okyanus verilerinde (örn: Common Crawl) sektör benchmark'ları ile yan yana (co-occurrence) geçmiyorsa, doğrudan sorulmadıkça asla spontane olarak önerilmezsiniz.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Kanonik sektör tanımlamaları ve PMI (Pointwise Mutual Information) çapaları</span></div>
-    </article>
-    <article class="dp-card dp-p2">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">06</span><span class="dp-badge">P2 MEDIUM</span></div>
-      <h3 class="dp-title">ColBERT MaxSim Gecikmeli Eşleşmesi</h3>
-      <p class="dp-desc">ColBERT ve SPLADE nöral modelleri kullanıcı soru tokenları ile başlık tokenlarınızı tam eşleştiremezse (late-interaction), modern vektör aramalarında siteniz arka sayfalara ötelenir.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Token zenginleştirilmiş H2/H3 başlık hiyerarşisi ve MaxSim eşleşme mimarisi</span></div>
-    </article>
-  </div>
-  
-  <div class="dp-callout">
-    <div class="dp-callout-text">
-      <span>SIFIR DANIŞMANLIK MASRAFI · YAZILIMCINIZA TESLİM EDİN</span>
-      <h3>Aylık 5.000$ Ajans Masrafı Ödemeyin. Teşhisi Görün, Kodu Kendi Ekibinize Verin.</h3>
-      <p>HTML&amp;HTML bir danışmanlık veya pazarlama ajansı değildir; deterministik bir mühendislik platformudur. Ücretsiz AI denetimi ile sorunları görün. 30+ dosyalık kod paketini $99 karşılığında indirin ve 1 günde canlıya alın.</p>
-    </div>
-    <div class="dp-callout-action">
-      <a href="#scanner" class="btn-scan-trigger">Ücretsiz AI Denetimi Başlat →</a>
-      <span>Kayıt gerekmez · 10 saniyede canlı sonuç</span>
-    </div>
-  </div>
-</section>
-
-
-<section class="px-section result-decision-guide" aria-label="Sonuçtan aksiyona">
-  <div class="px-section-head"><span class="eyebrow">SONUCU NASIL KULLANACAKSINIZ?</span><h2>Skor değil; hangi sorunu önce düzelteceğinizi görün.</h2><p>Tarama sonucu üç soruyu cevaplamalı: sorun nerede, iş etkisi ne, geliştirici hangi düzeltmeyle başlamalı. $99 paket yalnız uygulama ve doğrulama katmanını açar.</p></div>
-  <div class="px-delivery-grid-22"><article class="px-file-card"><b>1 · BULGU</b><p>Kanıtı ve etkilenen URL'yi görün.</p></article><article class="px-file-card"><b>2 · ETKİ</b><p>Görünürlük veya teknik akış üzerindeki etkisini ayırın.</p></article><article class="px-file-card"><b>3 · DÜZELTME</b><p>Teknik ekibin uygulayacağı net adımı alın.</p></article><article class="px-file-card"><b>4 · DOĞRULA</b><p>Acceptance ve regresyon kontrolüyle sonucu test edin.</p></article></div>
-</section>
 <!-- RESULTS -->
 <section id="result" class="results" hidden>
   <div class="result-head">

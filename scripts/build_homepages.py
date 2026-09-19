@@ -114,7 +114,7 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=23">
 <link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026091911">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026091915">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -691,7 +691,7 @@ def build_homepages():
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
 <link rel="stylesheet" href="/assets/css/validator.css?v=23">
 <link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026091911">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026091915">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
 <meta name="author" content="HTML&amp;HTML">
@@ -1017,7 +1017,7 @@ def build_homepages():
     <div class="story-close-copy">
       <span class="story-kicker">ONE SYSTEM</span>
       <h2>See the problem with evidence. Hand the solution to your team.</h2>
-      <p>Scan free first. If the diagnosis is enough, buy nothing. If you need the implementation plan, continue with the $99 pack.</p>
+      <p>Measure My Risk — Free first. If the diagnosis is enough, buy nothing. If you need the implementation plan, continue with the $99 pack.</p>
       <div class="story-actions">
         <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Start the free scan →</a>
         <a class="story-btn story-btn--ghost" href="/en/pricing/">View the $99 implementation pack</a>
