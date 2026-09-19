@@ -1486,3 +1486,49 @@
   }
 
 }
+
+
+/* PREMIUM MOBILE SAFETY OVERRIDES V2 */
+@media(max-width:640px){
+  html,body{max-width:100%!important;overflow-x:clip!important}
+  .topbar-shell{width:100%!important;max-width:100%!important;padding:8px 14px!important;gap:8px!important}
+  .topbar .nav-actions,.topbar .langs,.topbar .theme-switch{display:none!important}
+  .topbar .brand{min-width:0!important;min-height:44px!important;display:flex!important;align-items:center!important}
+  .topbar .brand-logo{max-width:118px!important;height:auto!important}
+  .hh-mobile-menu-btn,.hh-mobile-toggle{
+    flex:0 0 44px!important;
+    width:44px!important;
+    height:44px!important;
+    min-width:44px!important;
+    min-height:44px!important;
+    margin-left:auto!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+  }
+  .hh-floating-dock{
+    width:calc(100% - 20px)!important;
+    max-width:410px!important;
+    height:58px!important;
+    padding:6px 8px!important;
+    gap:4px!important;
+    justify-content:space-between!important;
+    overflow:hidden!important;
+  }
+  .hh-floating-dock .hh-dock-divider{display:none!important}
+  .hh-floating-dock .hh-dock-item[href="#pipeline"]{display:none!important}
+  .hh-dock-item{
+    flex:0 1 auto!important;
+    min-width:44px!important;
+    min-height:44px!important;
+    height:44px!important;
+    padding:7px 10px!important;
+    justify-content:center!important;
+    white-space:nowrap!important;
+  }
+}
+@media(max-width:380px){
+  .hh-dock-item{font-size:13px!important;padding-inline:8px!important}
+  .hh-dock-item svg{width:13px!important;height:13px!important}
+}
+
