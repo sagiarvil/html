@@ -18,6 +18,11 @@ for (const [name, text] of [['firebase-production',production],['live-smoke',smo
 }
 if (!production.includes('npm run seo:sitemap')) failures.push('firebase-production: sitemap regeneration missing');
 if (!quality.includes('npm run seo:sitemap')) failures.push('quality: sitemap validation missing');
+for (const rel of ['scripts/seo/generate_enterprise_sitemap.py','scripts/seo/test_sitemap_control_plane.py']) {
+  const text = fs.readFileSync(rel,'utf8');
+  if (text.includes('/Users/macair1/projects/html')) failures.push(`${rel}: hard-coded developer workstation path leaked into CI`);
+  if (!text.includes('Path(__file__).resolve().parents[2]')) failures.push(`${rel}: repository root is not derived from the executing file`);
+}
 
 if (failures.length) {
   console.error('DEPLOYMENT SURFACE CONTRACT FAIL');
