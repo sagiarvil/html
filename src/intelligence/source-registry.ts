@@ -197,6 +197,16 @@ export const CANONICAL_SOURCES: ExternalSourceRecord[] = [
     lastVerified: '2026-09-13',
     maxAgeDays: 60,
   },
+  {
+    id: 'OPENAI-ADVERTISER-CRAWLERS',
+    class: 'OFFICIAL_VENDOR',
+    publisher: 'OpenAI',
+    title: 'Advertiser Guidance for Allowing OpenAI Web Crawlers (Product Feed & Image Host OAI-SearchBot)',
+    url: 'https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers',
+    appliesTo: ['ai', 'crawl', 'product-feed', 'oai-searchbot', 'image-host', 'cdn'],
+    lastVerified: '2026-09-19',
+    maxAgeDays: 45,
+  },
 ];
 
 export function getSourceById(id: string): ExternalSourceRecord | undefined {

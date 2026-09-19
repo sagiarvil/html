@@ -2,7 +2,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-JS = """<script src="/assets/js/enterprise-runtime.js?v=2"></script>
+JS = """<script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>"""
 
 CSS = '<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">'

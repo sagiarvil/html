@@ -480,7 +480,7 @@ $$\text{OverallStatus} = \begin{cases} \text{PASS} & \text{if } \text{OverallSco
 | `ENG-14` | **EEAT Scoring Engine** | 8 | `EEAT-001` (Hakkımızda / Kurumsal Sayfa), `EEAT-002` (Açık İletişim Sayfası / E-posta / Telefon), `EEAT-003` (Gizlilik Politikası / KVKK Sayfası), `EEAT-004` (Kullanım Şartları / Koşullar Sayfası), `EEAT-005` (Bağımsız Otoritelerle Doğrulama Ağı). |
 | `ENG-15` | **Entity Consistency Structured Knowledge** | 7 | `KNOW-001` (Wikidata QID Triples `wikidata.org/wiki/Q...`), `KNOW-002` (Google Knowledge Graph MID), `KNOW-003` (Crunchbase / LinkedIn Kurumsal Profilleri), `KNOW-004` (Çok Alanlı Konsensüs Üçlüleri), `KNOW-005` (Ontolojik Üst-Sınıf Şeması). |
 | `ENG-16` | **Claim Consistency Heuristics** | 6 | `HAL-001` (Açık ve Şeffaf Fiyatlandırma Tablosu), `HAL-002` (Hizmet ve Kapsam Sınır Tablosu), `HAL-003` (Sıkça Sorulan Sorular ve Disambiguation), `HAL-004` (Güvenli Form Aksiyonları HTTPS), `HAL-005` (Halüsinasyon Engelleme Sözleşmesi). |
-| `ENG-17` | **Discovery Coverage Engine** | 6 | `DISC-001` (Googlebot İzin Verildi), `DISC-002` (OAI-SearchBot İzin Verildi), `DISC-003` (Claude-SearchBot İzin Verildi), `DISC-004` (PerplexityBot İzin Verildi). |
+| `ENG-17` | **Discovery Coverage Engine** | 6 | `DISC-001` (Googlebot İzin Verildi), `DISC-002` (OAI-SearchBot İzin Verildi), `DISC-003` (Claude-SearchBot İzin Verildi), `DISC-004` (PerplexityBot İzin Verildi), `DISC-005` (OAI-SearchBot Ürün Görseli & Harici CDN Host Erişimi - HTTP 403 / WAF Paritesi). |
 | `ENG-18` | **Freshness Revision Signals** | 5 | `TIME-001` (Geçerli ISO-8601 Tarih Formatı), `TIME-002` (Gelecek Tarih Sinyali Olmaması), `TIME-003` (Gerçek İçerik Değişimiyle %15 Delta Uyumlu Güncellik), `TIME-004` (Wayback Machine Zamansal Arşivlenmesi). |
 | **TOPLAM** | | **129** | |
 
@@ -710,6 +710,34 @@ Bu bölüm; sistemin tespit ettiği tüm kusurlar için kök neden analizini, ko
 - **Terminal Kabul Komutu:**
   ```bash
   curl -sL "https://target-domain.com/" | grep -E -q '"@type":s*"(ItemList|LocalBusiness)"' && echo "PASS: Karusel şeması mevcut"
+  ```
+
+#### Kusur 2.5: OpenAI Ürün Feed & Görsel Host (OAI-SearchBot) Parite Engeli (`OAI-PRODUCT-FEED-IMG-001` - P2)
+- **Teşhis Kuralı:** Ürün landing page'i 200 OK olsa bile; harici CDN veya görsel barındırma hostunda (`images.cdn.com`, `cdn.shopify.com` vb.) `OAI-SearchBot` crawler'ına HTTP 403/429/WAF engeli dönmesi veya görsel hostunun `robots.txt` dosyasında `OAI-SearchBot`'un engellenmiş olması (`OAI_SEARCHBOT_PRODUCT_IMAGE_ACCESS !== PASS`).
+- **Resmî Standart:** *OpenAI — Advertiser Guidance for Allowing OpenAI Web Crawlers (Eylül 2026).*
+- **Model Etkisi:** OpenAI ürün feed işleme hattı HTTP 403 hatasıyla durur veya görsel çekilemediği için ChatGPT alışveriş zengin kartlarında ürün görselleri gösterilmez; LLM ticaret görünürlüğü kaybedilir.
+- **2 Kritik Hata Modu (Failure Modes) & Önlemi:**
+  1. *Landing Page 200 vs CDN 403:* Açılış sayfası 200 dönse de görsel hostu WAF/bot korumasıyla OAI-SearchBot'a 403 dönerse feed reddedilir. Mitigasyon: feed → image URL → image-host erişim zincirini ayrı doğrulamak.
+  2. *Ana Domain Robots vs Görsel Host Robots:* Ana domain robots.txt izinli olsa dahi görsel hostu farklı bir hostname'de ise host-scoped robots.txt geçerlidir. Mitigasyon: Host-scoped robots ve CDN WAF kurallarını bağımsız değerlendirmek.
+  - *Edge Case (Yönlendirme Zinciri):* Görsel URL yönleniyorsa (301/302), nihai varış (destination) hostu da aynı erişilebilirlik şartına tabidir.
+- **Üretime Hazır Kod Reçetesi (Cloudflare / Nginx / CDN):**
+  ```nginx
+  # 1. Görsel CDN / Sunucu Nginx Yapılandırması:
+  location ~* \.(jpg|jpeg|png|webp|avif|gif)$ {
+      # OAI-SearchBot için özel erişim izni (Hotlink / WAF 403 bypass)
+      if ($http_user_agent ~* "OAI-SearchBot") {
+          add_header Access-Control-Allow-Origin "*";
+          break;
+      }
+  }
+  ```
+  ```yaml
+  # 2. Cloudflare WAF Custom Rule (Expression):
+  # (http.user_agent contains "OAI-SearchBot" and http.request.uri.path contains "/images/") -> Action: Bypass (Bot Management & Rate Limiting)
+  ```
+- **Terminal Kabul Komutu:**
+  ```bash
+  curl -sI -A "OAI-SearchBot" "https://target-domain.com/assets/images/product.jpg" | grep -E "200 OK|304 Not Modified" && echo "PASS: OAI-SearchBot Görsel Erişimi Açık"
   ```
 
 ---

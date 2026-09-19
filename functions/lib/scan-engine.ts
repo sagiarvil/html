@@ -3,7 +3,28 @@ export type Confidence='confirmed'|'strong'|'probable'|'requires-source-verifica
 export type SourceClass='OFFICIAL_STANDARD'|'OFFICIAL_VENDOR'|'PROPOSAL'|'MEASURED'|'INTERNAL_HEURISTIC'|'EXPERIMENTAL';
 export type Category='crawl'|'technical'|'ai'|'llms'|'schema'|'performance'|'accessibility'|'security'|'trust'|'agent'|'conversion'|'links';
 export type Finding={id:string;category:Category;severity:Severity;confidence:Confidence;sourceClass:SourceClass;titleTr:string;titleEn:string;impactTr:string;impactEn:string;evidence:string;url?:string;requiresSource:boolean};
-export type ScanResult={scanId:string;domain:string,url:string,scannedAt:string,checked:number,overall:number,scores:Record<Category,number>,findings:Finding[],summary:any,policies:any,fieldData:any};
+
+export type OaiSearchBotImageAccessStatus = 'PASS' | 'BLOCKED_ROBOTS' | 'BLOCKED_403' | 'RATE_LIMITED_429' | 'AUTH_REQUIRED' | 'UNKNOWN';
+
+export type OpenAiProductFeedReadiness = {
+  feedUrlReachable: boolean | null;
+  productLandingUrlReachable: boolean;
+  productImageUrlExtracted: boolean;
+  productImageUrl?: string;
+  imageHost?: string;
+  isCrossHost: boolean;
+  imageHostRobotsPolicy: 'ALLOW' | 'DISALLOW' | 'UNKNOWN';
+  imageHostHttpStatus: number;
+  cdnBotProtectionDetected: boolean;
+  crossHostAccessParity: boolean;
+  imageAccessStatus: OaiSearchBotImageAccessStatus;
+  findingCode: 'OAI_SEARCHBOT_PRODUCT_IMAGE_ACCESS';
+  priority: 'P2';
+  rankingFactor: false;
+  evidence: string;
+};
+
+export type ScanResult={scanId:string;domain:string,url:string,scannedAt:string,checked:number,overall:number,scores:Record<Category,number>,findings:Finding[],summary:any,policies:any,fieldData:any,openaiProductFeedReadiness?:OpenAiProductFeedReadiness};
 
 type FetchResult={response:Response;text:string;url:URL;redirects:number;bytes:number};
 type Page={url:URL,status:number,html:string,bytes:number,headers:Headers,title:string,description:string,h1:number,canonical:string,lang:string,robotsMeta:string,schemaBlocks:string[],text:string,links:string[],images:number,imagesMissingAlt:number,inputs:number,unlabelledInputs:number,buttonsWithoutName:number,scripts:number,styles:number,blockingHeadScripts:number,mixedContent:number,forms:number,insecureForms:number,ctaCount:number,hasAuthor:boolean,hasDate:boolean};
@@ -166,5 +187,156 @@ const hasRegionalCarousel=schema.types.some(t=>/ItemList/i.test(t))||schema.pars
 const avgBytes=Math.round(pages.reduce((a,p)=>a+p.bytes,0)/pages.length),avgScripts=Math.round(pages.reduce((a,p)=>a+p.scripts,0)/pages.length);const fieldData={coreWebVitals:'NOT_MEASURED',lcp:'NOT_MEASURED',inp:'NOT_MEASURED',cls:'NOT_MEASURED',reason:'Public HTML fetch does not provide reliable field or lab Core Web Vitals. Connect verified CrUX, PageSpeed, or Search Console data before scoring LCP, INP, or CLS.'};
 const hasDupTitles = Array.from(titles.values()).some((urls: any) => urls.length > 1);
 const techRules:Rule[]=[{ok:pages.every(p=>p.status<400),weight:18},{ok:pages.every(p=>!!p.title),weight:12},{ok:!hasDupTitles,weight:10},{ok:pages.every(p=>!!p.description),weight:10},{ok:pages.every(p=>!!p.canonical),weight:16},{ok:pages.every(p=>!p.robotsMeta.includes('noindex')),weight:16},{ok:sitemap.ok,weight:10},{ok:robots.ok,weight:8}];const crawlRules:Rule[]=[{ok:first.response.ok,weight:25},{ok:robots.ok,weight:20},{ok:sitemap.ok,weight:20},{ok:pages.length>1||home.links.length===0,weight:15},{ok:pages.every(p=>p.status<400),weight:20}];const aiRules:Rule[]=[{ok:policies.Googlebot?.allowed!==false,weight:25},{ok:policies['OAI-SearchBot']?.allowed!==false,weight:30},{ok:policies['Claude-SearchBot']?.allowed!==false,weight:20},{ok:policies.PerplexityBot?.allowed!==false,weight:20},{ok:!home.robotsMeta.includes('noindex'),weight:5}];const llmsRules:Rule[]=[{ok:llms.ok,weight:35},{ok:llms.ok?lv.h1:null,weight:20},{ok:llms.ok?lv.summary:null,weight:10},{ok:llms.ok?lv.links.length>0:null,weight:15},{ok:!!described,weight:10},{ok:!!mdAlt,weight:10}];const schemaRules:Rule[]=[{ok:schema.parsed.length>0,weight:45},{ok:schema.invalid===0,weight:25},{ok:entityTypes.length>0,weight:30}];const perfRules:Rule[]=[{ok:avgBytes<250000,weight:35},{ok:avgScripts<=20,weight:25},{ok:pages.every(p=>p.blockingHeadScripts<=2),weight:25},{ok:pages.every(p=>p.mixedContent===0),weight:15}];const a11yRules:Rule[]=[{ok:pages.every(p=>!!p.lang),weight:20},{ok:pages.every(p=>p.imagesMissingAlt===0),weight:25},{ok:pages.every(p=>p.unlabelledInputs===0),weight:30},{ok:pages.every(p=>p.buttonsWithoutName===0),weight:25}];const secRules:Rule[]=[{ok:base.protocol==='https:',weight:20},{ok:!!hdr.get('strict-transport-security'),weight:20},{ok:!!hdr.get('content-security-policy'),weight:20},{ok:(hdr.get('x-content-type-options')||'').toLowerCase()==='nosniff',weight:15},{ok:!!hdr.get('referrer-policy'),weight:10},{ok:!!hdr.get('permissions-policy'),weight:10},{ok:pages.every(p=>p.mixedContent===0&&p.insecureForms===0),weight:5}];const trustRules:Rule[]=[{ok:hasAbout,weight:25},{ok:hasContact,weight:25},{ok:hasPrivacy,weight:20},{ok:hasTerms,weight:15},{ok:entityTypes.length>0,weight:15}];const agentRules:Rule[]=[{ok:llms.ok,weight:25},{ok:!!mdAlt,weight:15},{ok:agentCard.ok,weight:20},{ok:openapi.ok,weight:20},{ok:mcp.ok,weight:20}];const convRules:Rule[]=[{ok:totalCta>0,weight:45},{ok:hasContact,weight:35},{ok:pages.every(p=>p.insecureForms===0),weight:20}];const linkRules:Rule[]=[{ok:probeSet.length?goodLinks===probeSet.length:null,weight:80},{ok:redirectLinks===0,weight:20}];const scores:Record<Category,number>={crawl:score(crawlRules),technical:score(techRules),ai:score(aiRules),llms:score(llmsRules),schema:score(schemaRules),performance:score(perfRules),accessibility:score(a11yRules),security:score(secRules),trust:score(trustRules),agent:score(agentRules),conversion:score(convRules),links:score(linkRules)};
+let extractedImgUrl: string | null = null;
+for(const item of schema.parsed){
+  const typeStr = JSON.stringify(item['@type'] || '');
+  if(/Product/i.test(typeStr) && item.image){
+    extractedImgUrl = Array.isArray(item.image) ? item.image[0] : (typeof item.image === 'string' ? item.image : item.image.url || null);
+    if(extractedImgUrl) break;
+  }
+}
+if(!extractedImgUrl){
+  extractedImgUrl = meta(home.html, 'og:image') || null;
+}
+if(!extractedImgUrl){
+  const imgMatches = home.html.match(/<img\b[^>]+src=["']([^"']+)["']/ig) || [];
+  for(const m of imgMatches){
+    const src = m.match(/src=["']([^"']+)["']/i)?.[1];
+    if(src && !src.startsWith('data:') && !/\.(svg|ico)($|\?)/i.test(src)){
+      extractedImgUrl = src;
+      break;
+    }
+  }
+}
+
+let feedReadiness: OpenAiProductFeedReadiness = {
+  feedUrlReachable: null,
+  productLandingUrlReachable: first.response.ok,
+  productImageUrlExtracted: false,
+  isCrossHost: false,
+  imageHostRobotsPolicy: 'UNKNOWN',
+  imageHostHttpStatus: 0,
+  cdnBotProtectionDetected: false,
+  crossHostAccessParity: true,
+  imageAccessStatus: 'UNKNOWN',
+  findingCode: 'OAI_SEARCHBOT_PRODUCT_IMAGE_ACCESS',
+  priority: 'P2',
+  rankingFactor: false,
+  evidence: 'No product image candidate identified on target landing page.'
+};
+
+if(extractedImgUrl){
+  try {
+    let resolvedImgUrl = new URL(extractedImgUrl, base);
+    let imgHost = resolvedImgUrl.hostname.toLowerCase();
+    let isCrossHost = imgHost !== base.hostname.toLowerCase();
+    let destUrl = resolvedImgUrl;
+    let imgStatus = 0;
+    let cdnProtected = false;
+
+    try {
+      const imgFetch = await safeFetch(resolvedImgUrl, 'HEAD');
+      destUrl = imgFetch.url;
+      imgHost = destUrl.hostname.toLowerCase();
+      isCrossHost = imgHost !== base.hostname.toLowerCase();
+      imgStatus = imgFetch.response.status;
+    } catch {
+      imgStatus = 0;
+    }
+
+    let effectiveRobotsText = robots.text;
+    if(isCrossHost){
+      try {
+        const crossRobots = await root(destUrl, '/robots.txt');
+        if(crossRobots.ok) effectiveRobotsText = crossRobots.text;
+        else effectiveRobotsText = '';
+      } catch {
+        effectiveRobotsText = '';
+      }
+    }
+
+    const oaiAllowed = robotAllowed(effectiveRobotsText, 'OAI-SearchBot', destUrl.pathname);
+    const robotsPolicy = oaiAllowed === true ? 'ALLOW' : (oaiAllowed === false ? 'DISALLOW' : 'UNKNOWN');
+
+    try {
+      const oaiProbe = await fetch(destUrl.toString(), {
+        method: 'GET',
+        headers: { 'user-agent': 'OAI-SearchBot', 'accept': 'image/*,*/*' },
+        signal: AbortSignal.timeout(3500)
+      });
+      imgStatus = oaiProbe.status;
+      const serverHdr = (oaiProbe.headers.get('server') || '').toLowerCase();
+      const cfRay = oaiProbe.headers.get('cf-ray');
+      if(cfRay || serverHdr.includes('cloudflare') || serverHdr.includes('cloudfront') || serverHdr.includes('akamai')) {
+        cdnProtected = true;
+      }
+    } catch {}
+
+    let accessStatus: OaiSearchBotImageAccessStatus = 'UNKNOWN';
+    if(robotsPolicy === 'DISALLOW') {
+      accessStatus = 'BLOCKED_ROBOTS';
+    } else if(imgStatus === 403) {
+      accessStatus = 'BLOCKED_403';
+    } else if(imgStatus === 429) {
+      accessStatus = 'RATE_LIMITED_429';
+    } else if(imgStatus === 401) {
+      accessStatus = 'AUTH_REQUIRED';
+    } else if(imgStatus >= 200 && imgStatus < 300) {
+      accessStatus = 'PASS';
+    }
+
+    const crossHostParity = !isCrossHost || (accessStatus === 'PASS' && policies['OAI-SearchBot']?.allowed !== false);
+
+    feedReadiness = {
+      feedUrlReachable: null,
+      productLandingUrlReachable: first.response.ok,
+      productImageUrlExtracted: true,
+      productImageUrl: destUrl.href,
+      imageHost: imgHost,
+      isCrossHost,
+      imageHostRobotsPolicy: robotsPolicy,
+      imageHostHttpStatus: imgStatus,
+      cdnBotProtectionDetected: cdnProtected,
+      crossHostAccessParity: crossHostParity,
+      imageAccessStatus: accessStatus,
+      findingCode: 'OAI_SEARCHBOT_PRODUCT_IMAGE_ACCESS',
+      priority: 'P2',
+      rankingFactor: false,
+      evidence: `Destination: ${destUrl.href} (Host: ${imgHost}, CrossHost: ${isCrossHost}) | Status: ${imgStatus} | OAI-SearchBot Robots: ${robotsPolicy} | Result: ${accessStatus}`
+    };
+
+    if(accessStatus !== 'PASS') {
+      let titleTr = 'OAI-SearchBot Ürün Görseli / CDN Erişim Engeli';
+      let titleEn = 'OAI-SearchBot Product Image / CDN Access Blocked';
+      let impactTr = 'OpenAI ürün feed işleme zincirinde ürün görselleri OAI-SearchBot tarafından çekilemez; ChatGPT zengin kartlarında ürün görselleri gösterilemez ve HTTP 403 feed processing sürecini kesintiye uğratır.';
+      let impactEn = 'OAI-SearchBot cannot crawl product images across the CDN host, causing OpenAI feed processing failures and preventing rich visual product snippets in ChatGPT.';
+      if(accessStatus === 'BLOCKED_403') {
+        titleTr = 'OAI-SearchBot Görsel CDN HTTP 403 Engeli';
+        titleEn = 'OAI-SearchBot Image CDN HTTP 403 Forbidden';
+        impactTr = 'Görsel CDN/WAF katmanı OAI-SearchBot crawlerına HTTP 403 dönüyor. OpenAI ürün feed processing süreci durdurulur.';
+      } else if(accessStatus === 'BLOCKED_ROBOTS') {
+        titleTr = 'OAI-SearchBot Görsel Host robots.txt Tarafından Engellenmiş';
+        titleEn = 'OAI-SearchBot Disallowed by Image Host robots.txt';
+      }
+      add(findings, finding(
+        'OAI-PRODUCT-FEED-IMG-001',
+        'crawl',
+        'medium',
+        'confirmed',
+        'OFFICIAL_VENDOR',
+        titleTr,
+        titleEn,
+        impactTr,
+        impactEn,
+        feedReadiness.evidence,
+        destUrl.href,
+        true
+      ));
+    }
+  } catch(err: any) {
+    feedReadiness.evidence = `Error evaluating product image host: ${err?.message || 'unknown'}`;
+  }
+}
+
 const overallWeights:Record<Category,number>={crawl:12,technical:14,ai:12,llms:6,schema:8,performance:10,accessibility:9,security:10,trust:7,agent:3,conversion:4,links:5};
-let overall=Math.round(CATEGORIES.reduce((a,c)=>a+scores[c]*overallWeights[c],0)/CATEGORIES.reduce((a,c)=>a+overallWeights[c],0));if(findings.some(f=>f.severity==='critical')&&overall>75)overall=Math.min(overall,75);else if(findings.some(f=>f.severity==='high')&&overall>88)overall=Math.min(overall,88);else if(findings.some(f=>f.severity==='medium')&&overall>96)overall=Math.min(overall,96);const rank:any={critical:0,high:1,medium:2,low:3,info:4};findings.sort((a,b)=>rank[a.severity]-rank[b.severity]||a.id.localeCompare(b.id));return {scanId:crypto.randomUUID(),domain:base.hostname,url:base.href,scannedAt:new Date().toISOString(),checked,overall,scores,findings,summary:{pagesDiscovered:unique.length,pagesScanned:pages.length,linksProbed:probeSet.length,averageHtmlBytes:avgBytes,averageScripts:avgScripts,schemaTypes:schema.types,llmsLinks:lv.links.length,wikidataQid:resolvedWikidataQid},policies,fieldData}}
+let overall=Math.round(CATEGORIES.reduce((a,c)=>a+scores[c]*overallWeights[c],0)/CATEGORIES.reduce((a,c)=>a+overallWeights[c],0));if(findings.some(f=>f.severity==='critical')&&overall>75)overall=Math.min(overall,75);else if(findings.some(f=>f.severity==='high')&&overall>88)overall=Math.min(overall,88);else if(findings.some(f=>f.severity==='medium')&&overall>96)overall=Math.min(overall,96);const rank:any={critical:0,high:1,medium:2,low:3,info:4};findings.sort((a,b)=>rank[a.severity]-rank[b.severity]||a.id.localeCompare(b.id));return {scanId:crypto.randomUUID(),domain:base.hostname,url:base.href,scannedAt:new Date().toISOString(),checked,overall,scores,findings,summary:{pagesDiscovered:unique.length,pagesScanned:pages.length,linksProbed:probeSet.length,averageHtmlBytes:avgBytes,averageScripts:avgScripts,schemaTypes:schema.types,llmsLinks:lv.links.length,wikidataQid:resolvedWikidataQid},policies,fieldData,openaiProductFeedReadiness:feedReadiness}}

@@ -5,3 +5,77 @@ html[data-theme="light"] .ai-opportunity-lead,html[data-theme="light"] .ai-oppor
 html[data-theme="light"] .ai-value-chain article,html[data-theme="light"] .ai-market-evidence article,html[data-theme="light"] .ai-commercial-thesis,html[data-theme="light"] .ai-term-strip a{background:#ffffff!important;border-color:#e2e8f0!important;color:#0f172a!important;box-shadow:0 2px 8px rgba(0,0,0,0.03)!important}
 html[data-theme="light"] .ai-value-chain h3,html[data-theme="light"] .ai-market-evidence article>b,html[data-theme="light"] .ai-market-evidence a{color:#0f172a!important}
 @media(max-width:900px){.ai-opportunity{padding:58px 20px}.ai-value-chain{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-market-evidence>div{grid-template-columns:1fr}}@media(max-width:600px){.ai-opportunity{padding:46px 16px}.ai-opportunity h2{font-size:34px}.ai-opportunity-lead{font-size:17px}.ai-value-chain{grid-template-columns:1fr}.ai-value-chain article{min-height:0}.ai-opportunity-actions{align-items:stretch}.ai-opportunity-actions a{width:100%}.ai-commercial-thesis{font-size:15px!important;padding:12px 14px}}
+/* --------------------------------------------------------------------------
+   DARK POOL INTELLIGENCE - ULTIMATE TEXT READABILITY & CONTRAST SHIELD
+   -------------------------------------------------------------------------- */
+#dark-pool-intelligence,
+html body #dark-pool-intelligence,
+html[data-theme="light"] body #dark-pool-intelligence,
+html[data-theme="dark"] body #dark-pool-intelligence {
+  background: #030712 !important;
+  color: #f8fafc !important;
+}
+
+#dark-pool-intelligence .dp-title,
+#dark-pool-intelligence h3.dp-title,
+#dark-pool-intelligence article h3,
+html body #dark-pool-intelligence h3,
+html[data-theme="light"] body #dark-pool-intelligence h3,
+html[data-theme="dark"] body #dark-pool-intelligence h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#dark-pool-intelligence .dp-desc,
+#dark-pool-intelligence p.dp-desc,
+#dark-pool-intelligence article p,
+html body #dark-pool-intelligence p.dp-desc,
+html[data-theme="light"] body #dark-pool-intelligence p.dp-desc,
+html[data-theme="dark"] body #dark-pool-intelligence p.dp-desc {
+  color: #cbd5e1 !important;
+  -webkit-text-fill-color: #cbd5e1 !important;
+}
+
+#dark-pool-intelligence .dp-num,
+html body #dark-pool-intelligence .dp-num,
+html[data-theme="light"] body #dark-pool-intelligence .dp-num {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+}
+
+#dark-pool-intelligence .dp-fix span,
+html body #dark-pool-intelligence .dp-fix span,
+html[data-theme="light"] body #dark-pool-intelligence .dp-fix span {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+}
+
+#dark-pool-intelligence .dp-callout-text h3,
+html body #dark-pool-intelligence .dp-callout-text h3,
+html[data-theme="light"] body #dark-pool-intelligence .dp-callout-text h3,
+html[data-theme="dark"] body #dark-pool-intelligence .dp-callout-text h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#dark-pool-intelligence .dp-callout-text p,
+html body #dark-pool-intelligence .dp-callout-text p,
+html[data-theme="light"] body #dark-pool-intelligence .dp-callout-text p,
+html[data-theme="dark"] body #dark-pool-intelligence .dp-callout-text p {
+  color: #cbd5e1 !important;
+  -webkit-text-fill-color: #cbd5e1 !important;
+}
+
+#dark-pool-intelligence .dp-callout-text span,
+html body #dark-pool-intelligence .dp-callout-text span,
+html[data-theme="light"] body #dark-pool-intelligence .dp-callout-text span {
+  color: #38bdf8 !important;
+  -webkit-text-fill-color: #38bdf8 !important;
+}
+
+#dark-pool-intelligence .dp-callout-action span,
+html body #dark-pool-intelligence .dp-callout-action span,
+html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+}

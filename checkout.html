@@ -110,6 +110,6 @@ html[data-theme="dark"] .checkout-disabled:hover:not([disabled]){background:#1d4
  function apply(l){document.documentElement.lang=l;localStorage.setItem('hh-lang',l);document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.querySelectorAll('[data-k]').forEach(el=>{const v=T[l][el.dataset.k];if(v!=null)el.textContent=v});if(!dIn?.value&&!domain)if(dBox)dBox.textContent=T[l].defaultDomain;document.title=l==='tr'?'AI Görünürlük Yol Haritası — $99 | HTML&HTML':'AI Search Visibility Roadmap — $99 | HTML&HTML';window.dispatchEvent(new CustomEvent('hh-language-changed',{detail:{lang:l}}))}document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>apply(b.dataset.lang));let l=localStorage.getItem('hh-lang')||((navigator.language||'tr').toLowerCase().startsWith('tr')?'tr':'en');if(!T[l])l='en';apply(l);
  window.dispatchEvent(new CustomEvent('hh-plan-changed', { detail: { plan: 'pro', price: 99 } }));
  </script>
- <script src="/assets/js/enterprise-runtime.js?v=2"></script>
+ <script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 </body></html>

@@ -286,6 +286,29 @@ Allow: /
 Sitemap: https://${domain}/sitemap.xml`;
       cliCommand = `curl -sL https://${domain}/robots.txt | grep -i "GPTBot" && echo "PASS: Robots Configured"`;
       rollback = isTr ? 'Önceki robots.txt yedeğini geri yükleyin.' : 'Restore previous robots.txt file.';
+    } else if (fid.includes('OAI-PRODUCT') || fid.includes('PRODUCT-IMAGE') || fid.includes('OAI_SEARCHBOT')) {
+      standard = 'OpenAI Advertiser Guidance (Sept 2026)';
+      category = isTr ? 'OpenAI Ürün Feed & Görsel CDN Erişilebilirliği' : 'OpenAI Product Feed & Image CDN Accessibility';
+      recipeFileName = '15_OAI_PRODUCT_IMAGE_CDN_BYPASS.txt';
+      execOutcome = isTr ? 'OAI-SearchBot harici CDN veya görsel barındırma hostunda 403 engeline takıldığı için OpenAI ürün feed processing süreci durur veya ChatGPT zengin ürün kartlarında görseller gösterilemez.' : 'OAI-SearchBot hits 403 or WAF blocking on your cross-host image CDN, terminating OpenAI product feed ingestion and suppressing visual ChatGPT shopping cards.';
+      rootCause = isTr ? 'Görsel CDN / WAF bot yönetim kurallarında OAI-SearchBot user-agent bypass tanımlanmamış veya CDN robots.txt engeli bulunuyor.' : 'Cross-host image CDN WAF lacks explicit OAI-SearchBot bypass rules or contains blocking robots.txt directives.';
+      evidenceCode = `curl -sI -A "OAI-SearchBot" https://${domain}/assets/images/product.jpg
+HTTP/2 403 Forbidden (OAI-SearchBot blocked by CDN WAF / bot-protection)`;
+      targetBehavior = isTr ? 'OAI-SearchBot ana sayfadan bağımsız olarak tüm görsel hostlarına ve CDN endpointlerine HTTP 200/304 ile erişebilmelidir.' : 'OAI-SearchBot must have unrestricted HTTP 200/304 access across all product image CDN endpoints regardless of landing host status.';
+      currentBehavior = isTr ? 'Görsel CDN OAI-SearchBot crawlerına HTTP 403/429 dönüyor veya robots engeli bulunuyor.' : 'Image CDN returns HTTP 403/429 or blocks OAI-SearchBot via robots.txt.';
+      codeSnippet = `# Cloudflare WAF Bypass Rule for OAI-SearchBot:
+# Expression: (http.user_agent contains "OAI-SearchBot" and http.request.uri.path contains "/images/")
+# Action: Bypass (Bot Management, WAF Managed Rules, Rate Limiting)
+
+# Nginx Image Host Configuration:
+location ~* \.(jpg|jpeg|png|webp|avif|gif)$ {
+    if ($http_user_agent ~* "OAI-SearchBot") {
+        add_header Access-Control-Allow-Origin "*";
+        break;
+    }
+}`;
+      cliCommand = `curl -sI -A "OAI-SearchBot" "https://${domain}/assets/images/product.jpg" | grep -E "200 OK|304 Not Modified" && echo "PASS: OAI-SearchBot Image Access Granted"`;
+      rollback = isTr ? 'CDN WAF özel kuralını veya Nginx user-agent bypass bloğunu geri alın.' : 'Revert CDN WAF custom rule or Nginx user-agent bypass block.';
     } else if (fid.includes('LLMS') || fid.includes('GEO-') || fid.includes('MANIFEST')) {
       standard = 'LLMS-TXT-V2';
       category = isTr ? 'GEO & /llms.txt Makine Manifesti' : 'GEO & /llms.txt Machine Manifest';

@@ -1,9 +1,10 @@
-# Public search/retrieval policy
+# Public search/retrieval policy (OpenAI Search & Product Feed Image Readiness compliant)
 User-agent: Googlebot
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
+Allow: /assets/
 
 User-agent: Claude-SearchBot
 Allow: /
