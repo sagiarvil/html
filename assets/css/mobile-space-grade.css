@@ -94,6 +94,12 @@
     align-items: center !important;
     gap: 8px !important;
     margin-left: auto !important;
+    min-width: 0 !important;
+  }
+  .topbar .nav-actions > .action-link,
+  .topbar .nav-actions > .theme-toggle,
+  .topbar .nav-actions > .lang-switch-box {
+    display: none !important;
   }
 
   /* Kompakt Dil Anahtarı */
