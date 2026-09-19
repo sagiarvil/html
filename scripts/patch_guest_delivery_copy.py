@@ -3,8 +3,8 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 PAGES={
- 'tr/fiyatlandirma/index.html':'<div class="guest-delivery-contract"><strong>100% Otomatik Yazılım ve Dijital Ürünler (SaaS):</strong> Bu platformda sunulan ürünler anında teslim edilen dijital kod paketleri ve yazılım lisanslarıdır. Şirketimiz reklam, pazarlama, SEO danışmanlığı, insan danışmanlığı veya özel yazılım geliştirme hizmeti <strong>SUNMAZ</strong>. Ödeme sonrası teslim paketi üyelik gerektirmeden anında güvenli indirme yetkisiyle sunulur.</div>',
- 'en/pricing/index.html':'<div class="guest-delivery-contract"><strong>100% Automated Software & Digital Goods (SaaS):</strong> All products offered on this platform are instant digital code artifacts and software licenses. HTML&HTML <strong>DOES NOT</strong> provide advertising, marketing campaigns, SEO consulting, human advisory, or bespoke IT/software development services. Delivery is 100% electronic and instantaneous with no membership required.</div>'
+ 'tr/fiyatlandirma/index.html':'<div class="guest-delivery-contract"><strong>100% Otomatik Yazılım ve Dijital Ürünler (SaaS):</strong> Bu platformda sunulan ürünler anında teslim edilen dijital kod paketleri ve yazılım lisanslarıdır. Şirketimiz reklam, pazarlama, SEO danışmanlığı, insan danışmanlığı veya özel yazılım geliştirme hizmeti <strong>SUNMAZ</strong>. Üyelik zorunlu değildir. Ödeme sonrası teslim paketi üyelik gerektirmeden anında güvenli indirme yetkisiyle sunulur.</div>',
+ 'en/pricing/index.html':'<div class="guest-delivery-contract"><strong>100% Automated Software & Digital Goods (SaaS):</strong> All products offered on this platform are instant digital code artifacts and software licenses. HTML&HTML <strong>DOES NOT</strong> provide advertising, marketing campaigns, SEO consulting, human advisory, or bespoke IT/software development services. No membership is required. Delivery is 100% electronic and instantaneous.</div>'
 }
 for rel,block in PAGES.items():
  p=ROOT/rel;text=p.read_text(encoding='utf-8')
