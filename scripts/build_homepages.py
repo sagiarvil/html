@@ -205,10 +205,9 @@ def build_homepages():
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Çözümler</a>
-  <a href="/tr/llms-txt-haberler/">Haberler</a>
-  <a href="/tr/sozluk/">Sözlük</a>
-  <a href="/tr/fiyatlandirma/">Onarım Seti ($99)</a>
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
+  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
+  <a href="/tr/referans/">Bir Ekibe Öner</a>
 </nav>
     <div class="nav-actions">
       <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Kontrol</a>
@@ -1021,11 +1020,10 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="/en/ai-search-visibility/">AI Visibility</a>
-      <a href="/en/llms-txt-validator/">llms.txt</a>
-      <a href="/en/llms-txt-news/">News</a>
-      <a href="/en/glossary/">Glossary</a>
-      <a href="/en/pricing/" data-i18n="navPrice">Pricing</a>
+      <a href="/en/website-scanner/">Free Audit</a>
+      <a href="/en/ai-search-visibility/">How It Works</a>
+      <a href="/en/pricing/" data-i18n="navPrice">Implementation Pack ($99)</a>
+      <a href="/en/referral/">Refer a Team</a>
     </nav>
     <div class="nav-actions">
       <a class="nav-scan-cta" href="/en/#scanner">Scan Free</a>
