@@ -77,7 +77,7 @@ EN_PRICING='''<main>
  <p class="release-contract-line"><strong>Free diagnosis:</strong> where is the issue and what does it affect? <strong>$99 implementation pack:</strong> what should be fixed first, how should it be implemented, and how will it be verified?</p>
  <div class="hero-actions"><a class="primary" href="/en/#scanner">Start Free Diagnostic →</a><a href="#compare">Compare the two tiers</a></div>
 </section>
-<section class="px-section px-pricing-stage" id="compare">
+<section class="px-section px-pricing-stage" id="compare" data-premium-infographic="report-boundary">
  <div class="px-report-boundary">
   <article class="px-report-free"><span class="eyebrow">$0 · FINDING + EVIDENCE</span><h2>What is wrong? Where? What does it affect?</h2><p>The free scan shows the finding, affected URL and evidence.</p><ul><li>Technical findings and affected URLs</li><li>Severity and confidence</li><li>Impact × Effort priority view</li><li>Implementation code and instructions: <b>NONE</b></li></ul><a class="px-outline" href="/en/#scanner">Scan Free →</a></article>
   <article class="px-report-paid"><span class="eyebrow">$99 · IMPLEMENT + VERIFY</span><h2>What should be fixed first? How? How will it be verified?</h2><p>Turns measured findings into an execution order your technical team can implement.</p><ul><li>Root cause and P0–P3 priority</li><li>Actionable code / configuration guidance</li><li>Acceptance and regression checks</li><li>Rollback and stop conditions</li><li>1 verification re-scan within 30 days</li></ul><a class="primary" href="/checkout?plan=pro">Unlock Implementation Pack — $99 →</a></article>
