@@ -239,8 +239,11 @@ def add_block(path: Path, content: str) -> str:
     return content.replace('</main>', block + '\n</main>', 1)
 
 
-KEY_PAGES = {
+HOME_PAGES = {
     ROOT / 'index.html', ROOT / 'tr/index.html', ROOT / 'en/index.html',
+}
+
+KEY_PAGES = {
     ROOT / 'tr/platform/index.html', ROOT / 'en/platform/index.html',
     ROOT / 'tr/methodology/index.html', ROOT / 'en/methodology/index.html',
     ROOT / 'tr/fiyatlandirma/index.html', ROOT / 'en/pricing/index.html',
@@ -251,7 +254,9 @@ for path in ROOT.rglob('*'):
     if not path.is_file() or not is_public(path):
         continue
     content = normalize(path.read_text(encoding='utf-8'))
-    if path in KEY_PAGES:
+    if path in HOME_PAGES:
+        content = re.sub(r'<section class="v3-capability-contract"[\s\S]*?</section>', '', content, count=1)
+    elif path in KEY_PAGES:
         content = add_block(path, add_css(content))
     write_if_changed(path, content)
 
