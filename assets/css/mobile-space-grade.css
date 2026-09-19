@@ -9,7 +9,7 @@
   .topbar {
     height: 56px !important;
     min-height: 56px !important;
-    padding: 0 16px !important;
+    padding: 0 !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 1000 !important;
@@ -28,7 +28,10 @@
 
   .topbar-shell {
     height: 100% !important;
-    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 14px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -95,7 +98,7 @@
 
   /* Kompakt Dil Anahtarı */
   .langs {
-    display: flex !important;
+    display: none !important;
     align-items: center !important;
     background: rgba(255, 255, 255, 0.06) !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -112,8 +115,8 @@
     font-size: 15px !important;
     font-weight: 700 !important;
     padding: 4px 8px !important;
-    min-height: 28px !important;
-    min-width: 30px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
     border-radius: 999px !important;
     border: none !important;
     color: #94a3b8 !important;
