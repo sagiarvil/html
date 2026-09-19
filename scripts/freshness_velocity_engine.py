@@ -32,7 +32,7 @@ def main():
     # 3. Cache Busting (Force client refresh)
     # Get current timestamp for cache versioning
     v = datetime.now().strftime("%Y%m%d%H")
-    run_step("3. Edge Cache Busting", f"sed -i '' 's/premium-experience.css?v=[0-9]*/premium-experience.css?v={v}/g' scripts/build_homepages.py")
+    run_step("3. Edge Cache Busting", f"sed -i 's/premium-experience.css?v=[0-9]*/premium-experience.css?v={v}/g' scripts/build_homepages.py")
     run_step("3. Rebuild with Cache Bust", "npm run build:commercial")
     
     # 4. Instant Search Engine Ping (IndexNow)
