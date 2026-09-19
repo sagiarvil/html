@@ -18,6 +18,8 @@ jobs:
           node-version: '22'
       - run: npm install --ignore-scripts --no-audit --no-fund
       - run: npm test
+      - name: Regenerate and validate sitemap control plane
+        run: npm run seo:sitemap
       - name: Install Chromium for mobile visual QA
         run: npx playwright install --with-deps chromium
       - name: Render mobile product QA at 360/390/430/768

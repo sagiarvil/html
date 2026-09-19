@@ -26,6 +26,8 @@ jobs:
           node-version: '22'
       - name: Materialize AI authority, customer positioning and verified V3 sales contract
         run: npm run build:commercial
+      - name: Regenerate sitemap control plane
+        run: npm run seo:sitemap
       - name: Preserve R10 campaign cache bust
         shell: bash
         run: |
@@ -42,9 +44,13 @@ jobs:
           grep -Fq 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?' tr/index.html
           grep -Fq 'AI SEO Audit &amp; ChatGPT Visibility Test' en/index.html
           grep -Fq 'Ücretsiz Kontrol Et' index.html
-          grep -Fq 'v3-capability-contract' index.html
-          grep -Fq '18 Engine V3' index.html
-          grep -Fq '105' index.html
+          grep -Fq 'PDF-INSPIRED CUSTOMER STORY V1' index.html
+          grep -Fq 'Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.' index.html
+          ! grep -Fq 'v3-capability-contract' index.html
+          grep -Fq 'v3-capability-contract' tr/platform/index.html
+          grep -Fq '18' tr/platform/index.html
+          grep -Fq '105' tr/platform/index.html
+          grep -Fq 'G0–G9' tr/platform/index.html
           grep -Fq '$99' index.html
           grep -Fq 'ai-positioning.js?v=r10-20260910-2355' index.html
           grep -Fq 'r10-quality-hotfix.js' index.html

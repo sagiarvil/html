@@ -21,7 +21,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 
-ROOT = Path("/Users/macair1/projects/html")
+ROOT = Path(__file__).resolve().parents[2]
 ORIGIN = "https://htmlandhtml.com"
 SITEMAPS_DIR = ROOT / "sitemaps"
 SITEMAPS_DIR.mkdir(parents=True, exist_ok=True)
