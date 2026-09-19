@@ -260,6 +260,10 @@ def build_homepages():
     <a href="/openapi.json" class="hh-drawer-link">
       <span>⚙️ OpenAPI &amp; API Belgeleri</span>
     </a>
+    <a href="/en/" class="hh-drawer-link">
+      <span>🌍 English</span>
+      <span class="link-tag">EN</span>
+    </a>
   </div>
 </div>
 
@@ -808,6 +812,10 @@ def build_homepages():
     </a>
     <a href="/openapi.json" class="hh-drawer-link">
       <span>⚙️ OpenAPI &amp; API Docs</span>
+    </a>
+    <a href="/tr/" class="hh-drawer-link">
+      <span>🌍 Türkçe</span>
+      <span class="link-tag">TR</span>
     </a>
   </div>
 </div>
