@@ -15,6 +15,9 @@ expect(home.includes('story-report-preview')&&home.includes('Canlı örnek rapor
 expect(home.includes('story-step-list')&&home.includes('Dört adım. Tek karar akışı.'),'homepage must preserve the four-step customer decision flow');
 expect(home.includes('story-trust-panel')&&home.includes('Sonuç yalnız ölçebildiğimiz veriye dayanır.'),'homepage must preserve evidence and safety explanation');
 expect(home.includes('story-close')&&home.includes('Sorunu kanıtıyla görün. Çözümü ekibinize teslim edin.'),'homepage must end with one clear commercial close');
+expect(!home.includes('dark-pool-intelligence'),'homepage must not restore the dense six-card dark-pool block');
+expect(!home.includes('ea-showcase-section'),'homepage must not restore the oversized enterprise dashboard before scan results');
+expect(!home.includes('v3-capability-contract'),'homepage must not restore the dense capability matrix before scan results');
 expect(tools.includes('data-premium-infographic="scope-map"'),'tools infographic scope map missing');
 expect(pricing.includes('data-premium-infographic="report-boundary"'),'pricing report boundary infographic missing');
 for(const marker of ['Keşfedilebilirlik','Anlamlandırma','Kaynak Uygunluğu','Kullanıcı & Ajan Yolu'])expect(tools.includes(marker),`tools customer journey missing ${marker}`);
