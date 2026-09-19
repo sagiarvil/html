@@ -3,7 +3,8 @@ import path from 'node:path';
 
 const root = process.cwd();
 const config = JSON.parse(fs.readFileSync(path.join(root, 'config/google-preferred-source.json'), 'utf8'));
-const pages = ['index.html', 'tr/index.html', 'en/index.html'];
+const surfaceContracts = JSON.parse(fs.readFileSync(path.join(root, 'config/public-surface-contracts.json'), 'utf8'));
+const pages = surfaceContracts.preferredSourcePages;
 
 if (config.domain !== 'htmlandhtml.com') {
   throw new Error(`Preferred Sources config domain drifted: ${config.domain}`);
