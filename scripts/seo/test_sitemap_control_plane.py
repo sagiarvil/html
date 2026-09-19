@@ -19,7 +19,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 
-ROOT = Path("/Users/macair1/projects/html")
+ROOT = Path(__file__).resolve().parents[2]
 ORIGIN = "https://htmlandhtml.com"
 
 PASSED = 0
