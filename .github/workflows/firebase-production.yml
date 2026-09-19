@@ -40,12 +40,12 @@ jobs:
         run: |
           set -euo pipefail
           grep -Fq 'data-commercial-intent="static"' index.html
-          grep -Fq 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi' index.html
-          grep -Fq 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?' tr/index.html
-          grep -Fq 'AI SEO Audit &amp; ChatGPT Visibility Test' en/index.html
-          grep -Fq 'Ücretsiz Kontrol Et' index.html
-          grep -Fq 'PDF-INSPIRED CUSTOMER STORY V1' index.html
-          grep -Fq 'Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.' index.html
+          grep -Fq 'AI Arama Teknik Teşhis ve Düzeltme Platformu' index.html
+          grep -Fq 'Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?' tr/index.html
+          grep -Fq 'AI Search Technical Diagnostic &amp; Fix Platform' en/index.html
+          grep -Fq 'Sitemi Ücretsiz Tara' index.html
+          grep -Fq 'CUSTOMER DECISION HOMEPAGE V2' index.html
+          grep -Fq 'Müşteri' index.html && grep -Fq 'Güven' index.html && grep -Fq 'Dağıtım' index.html && grep -Fq 'Referans' index.html && grep -Fq 'Satış kanalı' index.html
           ! grep -Fq 'v3-capability-contract' index.html
           grep -Fq 'v3-capability-contract' tr/platform/index.html
           grep -Fq '18' tr/platform/index.html
@@ -127,11 +127,11 @@ jobs:
             sed -n '1,20p' "$tmp" || true
             exit 1
           }
-          check_route 'https://htmlandhtml.com/' 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi'
-          check_route 'https://htmlandhtml.com/tr' 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'
-          check_route 'https://htmlandhtml.com/tr/' 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'
-          check_route 'https://htmlandhtml.com/en' 'AI SEO Audit &amp; ChatGPT Visibility Test'
-          check_route 'https://studio-7658156126-ffb8e.web.app/tr' 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'
+          check_route 'https://htmlandhtml.com/' 'AI Arama Teknik Teşhis ve Düzeltme Platformu'
+          check_route 'https://htmlandhtml.com/tr' 'Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?'
+          check_route 'https://htmlandhtml.com/tr/' 'Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?'
+          check_route 'https://htmlandhtml.com/en' 'AI Search Technical Diagnostic &amp; Fix Platform'
+          check_route 'https://studio-7658156126-ffb8e.web.app/tr' 'Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?'
       - name: Prepare isolated Firebase core release source
         shell: bash
         run: |
