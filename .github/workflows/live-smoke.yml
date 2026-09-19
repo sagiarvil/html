@@ -20,9 +20,9 @@ jobs:
         run: |
           set -euo pipefail
           check(){ url="$1"; marker="$2"; body="$(curl -fLsS --connect-timeout 8 --max-time 25 "$url")"; if ! grep -Fqi "$marker" <<<"$body"; then echo "SMOKE_MARKER_MISSING: $marker @ $url"; exit 1; fi; echo "SMOKE_OK: $url"; }
-          check 'https://htmlandhtml.com/' 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi'
-          check 'https://htmlandhtml.com/tr/' 'Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'
-          check 'https://htmlandhtml.com/en/' 'AI SEO Audit &amp; ChatGPT Visibility Test'
+          check 'https://htmlandhtml.com/' 'AI Arama Teknik Teşhis ve Düzeltme Platformu'
+          check 'https://htmlandhtml.com/tr/' 'Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?'
+          check 'https://htmlandhtml.com/en/' 'AI Search Technical Diagnostic &amp; Fix Platform'
           check 'https://htmlandhtml.com/tr/araclar/' 'data-premium-infographic="scope-map"'
           check 'https://htmlandhtml.com/tr/fiyatlandirma/' 'AI SEO Uygulama Paketi $99'
           check 'https://htmlandhtml.com/en/pricing/' 'AI SEO Implementation Pack $99'
@@ -39,7 +39,7 @@ jobs:
           ! grep -Eq '\$49|\$149' <<<"$body"
           ! grep -Eq 'Engine V2|120 (deep )?(checks|controls)|43[- ]page|22[- ]file|15[- ]prompt' <<<"$body"
           grep -Fq '$99' <<<"$body"
-          grep -Fq 'Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.' <<<"$body"
+          grep -Fq 'CUSTOMER DECISION HOMEPAGE V2' <<<"$body"
           ! grep -Fq 'v3-capability-contract' <<<"$body"
           platform="$(curl -fLsS --connect-timeout 8 --max-time 20 https://htmlandhtml.com/tr/platform/)"
           grep -Fq 'v3-capability-contract' <<<"$platform"
@@ -84,10 +84,10 @@ jobs:
           en_home="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/)"
           tr_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/tr/sozluk/)"
           en_glossary="$(curl -fLsS --connect-timeout 8 --max-time 25 https://htmlandhtml.com/en/glossary/)"
-          grep -Fq 'Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi' <<<"$tr_home"
-          grep -Fq 'AI SEO Audit &amp; ChatGPT Visibility Test' <<<"$en_home"
-          grep -Fq 'Ücretsiz Kontrol Et' <<<"$tr_home"
-          grep -Fq 'Check Free' <<<"$en_home"
+          grep -Fq 'AI Arama Teknik Teşhis ve Düzeltme Platformu' <<<"$tr_home"
+          grep -Fq 'AI Search Technical Diagnostic &amp; Fix Platform' <<<"$en_home"
+          grep -Fq 'Sitemi Ücretsiz Tara' <<<"$tr_home"
+          grep -Fq 'Scan My Site Free' <<<"$en_home"
           grep -Fq 'Ranking, trafik veya AI citation garantisi değildir' <<<"$tr_home"
           grep -Fq 'It is not a ranking, traffic or AI citation guarantee' <<<"$en_home"
           ! grep -Fq 'Google doğruluk sınırı' <<<"$tr_glossary"
