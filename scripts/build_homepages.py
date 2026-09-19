@@ -50,7 +50,7 @@ def build_homepages():
     var COOKIE_NAME = 'htmlandhtml-theme';
     function getCookie(name) {
       var match = document.cookie.match(new RegExp('(?:^|; )' + 
-        name.replace(/([.$?*|{}()[\]\/+^])/g, '\$1') + '=([^;]*)'));
+        name.replace(/([.$?*|{}()[\\]\\\\/+^])/g, '\\$1') + '=([^;]*)'));
       return match ? decodeURIComponent(match[1]) : null;
     }
     function getInitialTheme() {
