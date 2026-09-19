@@ -270,9 +270,9 @@ def build_homepages():
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero decision-hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">AI ARAMA TEKNİK TEŞHİS PLATFORMU</b></div>
+  <div class="kicker"><span></span><b data-i18n="kicker">YAPAY ZEKA ARAMA KARAR VE CİRO KORUMA SİSTEMİ</b></div>
   <h1 data-i18n="heroTitle">Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?</h1>
-  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. HTML&amp;HTML sitenizin bulunmasını, anlaşılmasını ve kaynak olarak değerlendirilmesini engelleyebilecek web sitesi sorunlarını kanıtıyla gösterir.</p>
+  <p class="hero-answer" data-i18n="heroCopy">Müşterileriniz ChatGPT, Perplexity ve Siri'ye firmanızı sorduğunda yapay zeka neden rakibinizi öneriyor? 90 saniyede sitenizin önüne çekilen güven, dağıtım ve kod engellerini çıkarıyor; kaçan cironuzu durduracak hazır mühendislik kitini veriyoruz.</p>
 
   <div class="decision-hero-proof" aria-label="Ücretsiz tarama sınırları">
     <span>Ücretsiz teşhis</span><span>Gerçek URL / HTTP / HTML kanıtı</span><span>Kaynak kod erişimi yok</span>
@@ -330,16 +330,16 @@ def build_homepages():
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
     <div class="decision-section-no">01</div>
     <div class="decision-heading">
-      <span class="decision-kicker">SATMIYORSA ÖNCE NEDENİNİ BUL</span>
+      <span class="decision-kicker">SATMIYORSA ÖNCE NEDENİNİ BUL: 5 TEMEL KARAR BASAMAĞI</span>
       <h2>Sorun trafik olmayabilir. Kırılan karar basamağını bulun.</h2>
-      <p>HTML&amp;HTML teknik gösteri yapmaz; müşterinin neden anlamadığını, güvenmediğini, sizi bulamadığını veya aksiyona geçmediğini ölçülebilir web sinyalleriyle ayırır.</p>
+      <p>Kredi komitesindeki bir bankacı şirketinize nasıl bakarsa, yapay zeka arama motorları da sitenize öyle bakar: Tutarsızlık var mı? Kanıt sağlam mı? Veri eksik mi? HTML&amp;HTML teknik gösteri yapmaz; müşterinin ve yapay zekanın hangi basamakta takıldığını ölçülebilir web kanıtlarıyla ayırır.</p>
     </div>
     <div class="decision-question-grid">
-      <article><b>01</b><h3>Müşteri</h3><p>5 saniyede ne sattığınız anlaşılıyor mu?</p><span>Teklif belirsizse ziyaretçi karar veremez.</span></article>
-      <article><b>02</b><h3>Güven</h3><p>İddianızı destekleyen kanıt görünür mü?</p><span>Kanıt yoksa satın alma ertelenir.</span></article>
-      <article><b>03</b><h3>Dağıtım</h3><p>Google ve AI sistemleri sizi okuyabiliyor mu?</p><span>Bulunamayan ürün değerlendirme fırsatını kaybeder.</span></article>
-      <article><b>04</b><h3>Referans</h3><p>Kararı destekleyen örnek çıktı var mı?</p><span>Söz değil, görülebilir örnek güven üretir.</span></article>
-      <article><b>05</b><h3>Satış kanalı</h3><p>Teklif ve CTA doğru sırada mı?</p><span>Trafik, net bir sonraki adıma bağlanmalıdır.</span></article>
+      <article><b>01</b><h3>Müşteri</h3><p>5 saniyede ne sattığınız anlaşılıyor mu?</p><span>Teklif karmaşıksa müşteri karar veremez; yapay zeka sitenizi özetleyemez ve rakibe geçer.</span></article>
+      <article><b>02</b><h3>Güven</h3><p>İddianızı destekleyen kanıt görünür mü?</p><span>W3C ve RFC standartlarında somut kanıt yoksa satın alma ertelenir, AI sizi kaynak gösteremez.</span></article>
+      <article><b>03</b><h3>Dağıtım</h3><p>Google ve AI sistemleri sizi okuyabiliyor mu?</p><span>robots.txt ve llms.txt doğru değilse yapay zeka sitenizi tarayamaz; pazarın %40'ına yoksunuzdur.</span></article>
+      <article><b>04</b><h3>Referans</h3><p>Kararı destekleyen örnek çıktı var mı?</p><span>Soyut vaatler değil; doğrulanabilir Schema.org ve Wikidata konsensüsü kurumsal güven üretir.</span></article>
+      <article><b>05</b><h3>Satış kanalı</h3><p>Teklif ve CTA doğru sırada mı?</p><span>Trafik boşluğa düşmemeli; 15 dakikada devreye alınacak net bir uygulama paketine bağlanmalıdır.</span></article>
     </div>
   </section>
 
@@ -475,18 +475,18 @@ def build_homepages():
     <div class="pdf-why-split">
       <div class="pdf-why-focal">
         <span class="pdf-why-badge-pill">FARKIMIZ NETTİR</span>
-        <h3>Rapor Satmıyoruz,<br>Çözüm Teslim Ediyoruz.</h3>
-        <p>Klasik danışmanlık firmaları saatliği 200$'dan başlayan soyut tavsiyeler verir. Biz ise çalışan üretim kodunu tek seferlik sabit fiyatla teslim ederiz.</p>
-        <a class="decision-btn decision-btn--light" href="#scanner">Hemen Ücretsiz Dene →</a>
+        <h3>Rapor Satmıyoruz,<br>Ticari Karar ve Ciro Güvencesi Teslim Ediyoruz.</h3>
+        <p>Geleneksel danışmanlar saatliği yüzlerce dolara soyut sunumlar yapar ve çözümü sizin üzerinize yıkar. Biz ise dağınık teknik kusurları karar sistemine dönüştürür; yazılımcınızın hemen kuracağı hazır kodu tek seferlik sabit fiyatla veririz.</p>
+        <a class="decision-btn decision-btn--light" href="#scanner">Hemen Ücretsiz Teşhis Et →</a>
       </div>
       <div class="pdf-why-list">
-        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5 Saniyede Anlaşılır Teşhis:</b> Karmaşık teknik jargonu ticari karar berraklığına dönüştürür.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Sıfır Tahmin, %100 Kanıt:</b> Her tespit doğrudan URL, satır ve bayt seviyesinde belgelenir.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Hazır Üretim Kodları:</b> Kopyala-yapıştır çalışır Nginx, JSON-LD ve robots.txt konfigürasyonları.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Geri Alma (Rollback) Güvencesi:</b> Yapılan her değişikliğin sıfır riskli geri dönüş planı dahildir.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Tek Seferlik Sabit Fiyat:</b> Aylık abonelik veya sürpriz danışmanlık faturaları yoktur.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30 Gün Yeniden Tarama:</b> Düzeltmelerinizi yaptıktan sonra sisteminizi ücretsiz yeniden doğrulayın.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Kaynak Kod Erişimi Gerekmez:</b> Sunucu şifrenizi veya kod deponuzu kimseyle paylaşmanız gerekmez.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5 Saniyede Ticari Karar:</b> Bankacı netliğiyle teknik jargonu 'hangi engel ciromu düşürüyor?' kararına çevirir.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Kaçan Müşteriyi Kurtarma:</b> Yapay zekanın sizi es geçip rakibe yönlendirdiği kritik temas noktalarını kapatır.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Hazır Üretim Kodları:</b> Yazılımcınıza 'bunu araştır' demez; kopyala-yapıştır Nginx, JSON-LD ve robots.txt konfigürasyonu verir.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Güvencesi:</b> Her reçete sıfır kesintili geri alma planı içerir; sisteminiz asla kilitlenmez.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Sabit  Fiyat:</b> Danışmanlık faturası veya bitmeyen aylık abonelik yok. Çözüm tek seferlik satın alınır.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30 Gün Ücretsiz Re-Scan:</b> Düzeltmeler uygulandıktan sonra canlı yüzeyde tekrar taranarak kanıtlanır.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Sıfır Kod/Şifre Riski:</b> Kod deponuza veya sunucunuza erişim gerekmez; sadece herkese açık web taranır.</span></div>
       </div>
     </div>
   </section>
@@ -990,9 +990,9 @@ def build_homepages():
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
 <section class="hero decision-hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">AI SEARCH TECHNICAL DIAGNOSTIC PLATFORM</b></div>
+  <div class="kicker"><span></span><b data-i18n="kicker">AI SEARCH DECISION &amp; REVENUE PROTECTION SYSTEM</b></div>
   <h1 data-i18n="heroTitle">Why Is Your Website Missing From AI Search?</h1>
-  <p class="hero-answer" data-i18n="heroCopy">Enter your URL. HTML&amp;HTML shows evidence-backed website issues that can prevent discovery, understanding and source consideration across AI search systems.</p>
+  <p class="hero-answer" data-i18n="heroCopy">When buyers ask ChatGPT, Perplexity or Siri for trusted vendors in your industry, why does AI recommend your competitor? In 90 seconds, we pinpoint the exact trust and distribution barriers that choke your pipeline—and deliver the drop-in engineering kit to recover lost revenue.</p>
 
   <div class="decision-hero-proof" aria-label="Free scan boundaries">
     <span>Free diagnosis</span><span>Real URL / HTTP / HTML evidence</span><span>No source-code access</span>
@@ -1047,16 +1047,16 @@ def build_homepages():
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
     <div class="decision-section-no">01</div>
     <div class="decision-heading">
-      <span class="decision-kicker">IF IT DOESN'T SELL, FIND THE BROKEN STEP</span>
+      <span class="decision-kicker">IF IT DOESN'T SELL, FIND THE BROKEN STEP: 5 CORE DECISION PILLARS</span>
       <h2>Traffic may not be the problem. Find where the decision breaks.</h2>
-      <p>HTML&amp;HTML separates whether visitors fail to understand, trust, discover or act on your website using measurable site-side evidence.</p>
+      <p>Just as a credit committee underwrites corporate risk, AI engines evaluate your website: Are claims consistent? Is evidence verifiable? Is machine-data missing? HTML&amp;HTML does not produce vanity reports; we isolate which step breaks customer and AI decisions using hard web proof.</p>
     </div>
     <div class="decision-question-grid">
-      <article><b>01</b><h3>Customer</h3><p>Can people understand the offer in 5 seconds?</p><span>Unclear offers delay decisions.</span></article>
-      <article><b>02</b><h3>Trust</h3><p>Is visible evidence supporting your claims?</p><span>Unproven claims weaken purchase confidence.</span></article>
-      <article><b>03</b><h3>Distribution</h3><p>Can Google and AI systems read the site?</p><span>Unfindable products lose evaluation opportunities.</span></article>
-      <article><b>04</b><h3>Reference</h3><p>Can buyers inspect a real example output?</p><span>Visible proof beats promises.</span></article>
-      <article><b>05</b><h3>Sales channel</h3><p>Does the offer lead to one clear next action?</p><span>Traffic needs a conversion path.</span></article>
+      <article><b>01</b><h3>Customer</h3><p>Can buyers understand the offer in 5 seconds?</p><span>If value is ambiguous, buyers leave and LLMs fail to synthesize your solution, passing leads to rivals.</span></article>
+      <article><b>02</b><h3>Trust</h3><p>Is visible evidence supporting your claims?</p><span>Without verifiable W3C and RFC compliance, commercial decisions stall and AI models refuse citation.</span></article>
+      <article><b>03</b><h3>Distribution</h3><p>Can Google and AI systems read the site?</p><span>If robots.txt and llms.txt are broken, AI crawlers bypass your domain—rendering you invisible to 40% of the market.</span></article>
+      <article><b>04</b><h3>Reference</h3><p>Can buyers inspect a real example output?</p><span>Definitive Schema.org graphs and Wikidata consensus build institutional trust far beyond marketing promises.</span></article>
+      <article><b>05</b><h3>Sales channel</h3><p>Does the offer lead to one clear next action?</p><span>Traffic must convert directly into an automated, drop-in engineering package deployable in 15 minutes.</span></article>
     </div>
   </section>
 
@@ -1192,18 +1192,18 @@ def build_homepages():
     <div class="pdf-why-split">
       <div class="pdf-why-focal">
         <span class="pdf-why-badge-pill">OUR PROMISE</span>
-        <h3>We Don't Sell Audits,<br>We Deliver Solutions.</h3>
-        <p>Traditional consultants charge /hr for vague PowerPoint advice. We deliver tested, working production code for a single flat fee.</p>
-        <a class="decision-btn decision-btn--light" href="#scanner">Try Free Diagnostic →</a>
+        <h3>We Don't Sell Audits,<br>We Deliver Executive Decisions and Revenue Security.</h3>
+        <p>Traditional agencies bill thousands for abstract PowerPoint decks and leave implementation to you. We transform technical chaos into decisive business clarity, delivering drop-in code your engineers deploy immediately for a single fixed fee.</p>
+        <a class="decision-btn decision-btn--light" href="#scanner">Diagnose My Risk Free →</a>
       </div>
       <div class="pdf-why-list">
-        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5-Second Clarity:</b> Translates confusing jargon into decisive business intelligence.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Zero Guesswork, 100% Proof:</b> Every defect is documented with URL, line, and byte evidence.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Drop-in Production Code:</b> Ready-to-paste Nginx, JSON-LD, and robots.txt configurations.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Guarantee:</b> Every recipe includes a zero-risk rollback plan.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Single Fixed Price:</b> No recurring retainers, hidden fees or surprise invoices.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30-Day Free Re-Scan:</b> Verify your fixes on the live surface after implementation.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Zero Source-Code Access:</b> No need to grant repository access or server credentials.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5-Second Decision Clarity:</b> Underwriter precision that answers: 'which barrier is lowering my revenue?'</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Plug Lost Revenue:</b> Seals touchpoints where AI models disqualify your brand in favor of competitors.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Drop-in Production Code:</b> We don't say 'investigate this'—we provide exact Nginx, JSON-LD and robots.txt code.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Guarantee:</b> Every fix includes automated zero-downtime rollback scripts. Zero system lockup risk.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Fixed  Price:</b> No recurring retainers, agency contracts, or hidden surprise invoices.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30-Day Free Re-Scan:</b> Re-scan your live domain after deployment to formally prove compliance.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Zero Security Footprint:</b> No repository access or server credentials required. Public surface only.</span></div>
       </div>
     </div>
   </section>
