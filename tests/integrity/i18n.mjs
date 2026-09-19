@@ -8,10 +8,10 @@ if(!trPricing.includes('data-premium-infographic="report-boundary"'))errors.push
 for(const token of ["domainPlaceholder:'ornek.com'","urlPlaceholder:'https://ornek.com/sayfa'","domainPlaceholder:'example.com'","urlPlaceholder:'https://example.com/page'",'sourceLabel(f.sourceClass)','D[lang].scanId','D[lang].implementationLocked'])if(!js.includes(token))errors.push(`validator locale contract missing ${token}`);
 if(!theme.includes('hh-language-changed'))errors.push('theme switch does not relabel on language change');
 for(const token of ['.finding p{font-size:15px!important','.finding code{font-size:13px!important','.scan-disclosure{font-size:14px!important','.tool-finding p{font-size:14px','.mention-row p{font-size:14px'])if(!(css+auth).includes(token))errors.push(`readability contract missing ${token}`);
-if(!/Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu\?/.test(trHome))errors.push('TR home AI SEO intent hero missing');
-if(!/Can ChatGPT, Gemini and Perplexity Find Your Website\?/.test(enHome))errors.push('EN home AI SEO intent hero missing');
-if(!/Ücretsiz Kontrol Et/.test(trHome))errors.push('TR scanner CTA missing');
-if(!/Check Free/.test(enHome))errors.push('EN scanner CTA missing');
+if(!/Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor\?/.test(trHome))errors.push('TR home AI SEO intent hero missing');
+if(!/Why Is Your Website Missing From AI Search\?/.test(enHome))errors.push('EN home AI SEO intent hero missing');
+if(!/Sitemi Ücretsiz Tara/.test(trHome))errors.push('TR scanner CTA missing');
+if(!/Scan My Site Free/.test(enHome))errors.push('EN scanner CTA missing');
 const trFiles=['tr/llms-txt-validator/index.html','tr/ai-crawler-checker/index.html','tr/ai-website-readiness/index.html','tr/ai-mention-tracker/index.html'];
 const bannedTr=['>Validator<','>Checker<','>Tracker<','>AI Readiness<','>Methodology<','>Neutral prompt guard<','>Brand mention<','>Domain citation<','>Provider-by-provider evidence<','Evidence is free. Implementation precision is the product.'];
 for(const p of trFiles){const s=read(p);for(const x of bannedTr)if(s.includes(x))errors.push(`${p}: English UI leak ${x}`);if(!s.includes('href="/tr/methodology/"'))errors.push(`${p}: Turkish methodology route missing`)}
