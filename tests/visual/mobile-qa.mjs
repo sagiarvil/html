@@ -25,7 +25,7 @@ const port=server.address().port;
 const base=`http://127.0.0.1:${port}`;
 const viewports=[{width:360,height:800},{width:390,height:844},{width:430,height:932},{width:768,height:1024},{width:1280,height:900}];
 const reportRoute='/enterprise-analyzer/htmlandhtml-ai-report';
-const routes=['/','/tr/fiyatlandirma/','/tr/araclar/',reportRoute];
+const routes=['/','/tr/fiyatlandirma/','/tr/araclar/','/tr/yapay-zeka-arama-gorunurlugu/','/tr/referans/',reportRoute];
 const errors=[];
 const browser=await chromium.launch({headless:true});
 try{
@@ -59,6 +59,20 @@ try{
       if(!state.h1Visible)errors.push(`${vp.width}px ${route}: H1 not visibly rendered`);
       if(state.h1Size>92)errors.push(`${vp.width}px ${route}: giant H1 ${state.h1Size}px`);
       if(!/width=device-width/i.test(state.viewportMeta))errors.push(`${vp.width}px ${route}: viewport meta missing`);
+      if(vp.width<=430){
+        const mobileAudit=await page.evaluate(()=>{
+          const vw=window.innerWidth;
+          const visible=[...document.querySelectorAll('a,button,input,textarea,select,h1,h2,h3,p')].filter(el=>{
+            const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+            return cs.display!=='none'&&cs.visibility!=='hidden'&&r.width>0&&r.height>0&&r.bottom>0&&r.top<window.innerHeight*3;
+          });
+          const clipped=visible.filter(el=>{const r=el.getBoundingClientRect();return r.right>vw+1||r.left<-1;}).slice(0,10).map(el=>({tag:el.tagName,cls:String(el.className||'').slice(0,80),text:(el.textContent||'').trim().slice(0,80)}));
+          const tinyTap=visible.filter(el=>['A','BUTTON'].includes(el.tagName)).filter(el=>{const r=el.getBoundingClientRect();return r.width<40||r.height<40;}).slice(0,10).map(el=>({tag:el.tagName,cls:String(el.className||'').slice(0,80),w:Math.round(el.getBoundingClientRect().width),h:Math.round(el.getBoundingClientRect().height),text:(el.textContent||'').trim().slice(0,80)}));
+          return {clipped,tinyTap};
+        });
+        if(mobileAudit.clipped.length)errors.push(`${vp.width}px ${route}: visible content clipped/offscreen ${JSON.stringify(mobileAudit.clipped)}`);
+        if(['/','/tr/referans/'].includes(route)&&mobileAudit.tinyTap.length)errors.push(`${vp.width}px ${route}: undersized tap targets ${JSON.stringify(mobileAudit.tinyTap)}`);
+      }
       await page.keyboard.press('Tab');
       const focus=await page.evaluate(()=>document.activeElement?.tagName||'');
       if(!focus||focus==='BODY'||focus==='HTML')errors.push(`${vp.width}px ${route}: keyboard focus did not enter an interactive element`);
