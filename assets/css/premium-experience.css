@@ -9563,9 +9563,13 @@ html[data-theme="dark"] .decision-close span,
   .ai-opportunity{padding:48px var(--mobile-gutter)!important}
   .ai-opportunity h2{font-size:clamp(30px,9vw,42px)!important;line-height:1.05!important}
   .ai-opportunity-lead{font-size:16px!important;line-height:1.58!important}
-  .ai-term-strip{overflow-x:auto!important;flex-wrap:nowrap!important;padding-bottom:6px!important;scrollbar-width:none}
-  .ai-term-strip::-webkit-scrollbar{display:none}
-  .ai-term-strip a{flex:0 0 auto!important;white-space:nowrap!important}
+  .ai-term-strip{overflow:visible!important;flex-wrap:wrap!important;padding-bottom:0!important;scrollbar-width:auto}
+  .ai-term-strip a{flex:0 1 auto!important;white-space:normal!important;min-height:44px!important}
+  .brand{min-height:44px!important;padding-block:10px!important}
+  .langs a,.langs button,.hh-mobile-menu-btn,.hh-mobile-toggle,.hh-dock-item{min-width:44px!important;min-height:44px!important}
+  .hh-mobile-menu-btn,.hh-mobile-toggle{width:44px!important;height:44px!important}
+  .hh-dock-item{padding:8px 12px!important}
+  .hh-mobile-toggle{right:max(10px,env(safe-area-inset-right))!important;left:auto!important;transform:none!important}
   .ai-value-chain,.ai-market-evidence>div{grid-template-columns:1fr!important}
   .ai-value-chain article,.ai-market-evidence article{min-height:0!important;padding:20px!important;border-radius:20px!important}
   .ai-opportunity-actions{display:grid!important;grid-template-columns:1fr!important}
