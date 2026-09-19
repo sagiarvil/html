@@ -10,14 +10,12 @@ customer story replaces the dense V3 capability matrix there.
 """
 
 from pathlib import Path
+import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-KEY_PAGES = [
-    'tr/platform/index.html','en/platform/index.html',
-    'tr/methodology/index.html','en/methodology/index.html','tr/fiyatlandirma/index.html',
-    'en/pricing/index.html','tr/fix-mandate/index.html','en/fix-mandate/index.html',
-]
+SURFACE_CONTRACTS = json.loads((ROOT / 'config' / 'public-surface-contracts.json').read_text(encoding='utf-8'))
+KEY_PAGES = SURFACE_CONTRACTS['v3DetailPages']
 
 TR_NOTE = '''<p class="v3-delivery-boundary"><b>Makine yüzeyi ve teslim sınırı:</b> Tek kök llms.txt önerisi ve kanıt bulunan sayfalar için <b>30'a kadar sayfa bazlı Markdown manifesti</b> üretilebilir. Ücretli teslim, bulgulara göre içeriği değişen <b>sürümlenmiş ZIP</b> paketidir; sabit dosya sayısı taahhüt edilmez.</p>'''
 EN_NOTE = '''<p class="v3-delivery-boundary"><b>Machine-surface and delivery boundary:</b> One proposed root llms.txt plus <b>up to 30 page-level Markdown manifests</b> may be produced for evidenced pages. Paid delivery is a <b>versioned ZIP</b> whose contents vary with evidenced findings; no fixed file count is promised.</p>'''
