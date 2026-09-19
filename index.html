@@ -51,8 +51,8 @@
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
-<title>Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&amp;HTML</title>
-<meta name="description" content="Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.">
+<title>AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&amp;HTML</title>
+<meta name="description" content="Web sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün. Bulguyu kanıtlayın; gerekiyorsa $99 Fix Pack ile uygulanabilir düzeltme, test ve rollback planını alın.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -62,8 +62,8 @@
 <link rel="alternate" type="text/markdown" href="https://htmlandhtml.com/index.md">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/">
-<meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
-<meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
+<meta property="og:title" content="HTML&amp;HTML — AI Arama Teknik Teşhis Platformu">
+<meta property="og:description" content="AI arama görünürlüğünü engelleyebilecek site tarafı sorunlarını kanıtlayan ve uygulanabilir düzeltme paketi üreten karar sistemi.">
 <meta name="theme-color" content="#14151a">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh5">
@@ -221,16 +221,30 @@
     <a href="/openapi.json" class="hh-drawer-link">
       <span>⚙️ OpenAPI &amp; API Belgeleri</span>
     </a>
+    <a href="/en/" class="hh-drawer-link">
+      <span>🌍 English</span>
+      <span class="link-tag">EN</span>
+    </a>
   </div>
 </div>
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
-<section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">ÜCRETSİZ WEB SİTESİ GÖRÜNÜRLÜK KONTROLÜ</b></div>
-  <h1 data-i18n="heroTitle">Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?</h1>
-  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. 18 motor, 105 kontrol, 13 puan dışı istihbarat analizi. Sonuçlar tarama sırasında akışla gösterilir. Bir alan adı girin. Biz onu resmi spesifikasyona göre kontrol ediyoruz, her bağlantının gerçekten çalıştığını test ediyoruz ve düzeltmeniz gerekenleri saniyeler içinde size söylüyoruz.</p>
-  
+<section class="hero decision-hero" id="scanner">
+  <div class="kicker"><span></span><b data-i18n="kicker">AI ARAMA TEKNİK TEŞHİS PLATFORMU</b></div>
+  <h1 data-i18n="heroTitle">Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?</h1>
+  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. Sitenizin bulunmasını, anlaşılmasını ve kaynak olarak değerlendirilmesini engelleyebilecek ölçülebilir web sitesi sorunlarını kanıtıyla görün.</p>
+
+  <div class="decision-hero-proof" aria-label="Ücretsiz tarama sınırları">
+    <span>Ücretsiz teşhis</span><span>Gerçek URL / HTTP / HTML kanıtı</span><span>Kaynak kod erişimi yok</span>
+  </div>
+
+  <div class="pdf-hero-badges" aria-label="Temel Değer Önerileri">
+    <div class="pdf-hero-badge"><i>⚡</i><span>5 Saniyede Anlaşılır Karar</span></div>
+    <div class="pdf-hero-badge"><i>🛡️</i><span>W3C &amp; RFC 9309 Doğrulanmış Kanıt</span></div>
+    <div class="pdf-hero-badge"><i>📦</i><span> Fix Pack: Yazılımcınız İçin Hazır Kod</span></div>
+  </div>
+
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
@@ -249,7 +263,7 @@
             <span>Yapıştır</span>
           </button>
         </div>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Ücretsiz Kontrol Et</span></button>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Sitemi Ücretsiz Tara</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Sitemi Ücretsiz Tara</span></button>
       </div>
       <div class="scan-chips">
         <span>Örnekler:</span>
@@ -257,166 +271,296 @@
         <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
         <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
       </div>
-      <small data-i18n="scanHint">Kayıt yok. Secret alınmaz. Yalnızca herkese açık URL ve HTTP yüzeyleri ölçülür.</small>
+      <small data-i18n="scanHint">Kayıt yok · Şifre yok · Kaynak kod erişimi yok · Yalnızca herkese açık web yüzeyi taranır.</small>
     </form>
     <div id="scanStatus" class="status" hidden></div>
   </div>
-  <p class="agency-note">Ajans veya geliştirici misiniz? Müşteri sitenizi ücretsiz tarayın; sorunları kanıtla görün ve uygulama planını mevcut ekibinize devredin.</p>
 
-  <div class="signals">
-    <span data-i18n="sigCrawl">TARAMA</span><i></i>
-    <span>SEO</span><i></i>
-    <span>AI / GEO</span><i></i>
-    <span>LLMS V2</span><i></i>
-    <span data-i18n="sigSchema">YAPISAL VERİ</span><i></i>
-    <span data-i18n="sigA11y">ERİŞİLEBİLİRLİK</span><i></i>
-    <span data-i18n="sigSecurity">GÜVENLİK</span>
+  <div class="signals decision-signals">
+    <span>BULUNABİLİRLİK</span><i></i>
+    <span>ANLAŞILABİLİRLİK</span><i></i>
+    <span>KAYNAK OLABİLİRLİK</span><i></i>
+    <span>DÖNÜŞÜM YOLU</span>
   </div>
 </section>
 
-<!-- PDF-INSPIRED CUSTOMER STORY V1 -->
-<section class="story-shell" id="customer-story" aria-label="HTML&HTML nasıl çalışır">
-  <section class="story-section story-intro">
-    <div class="story-index">01</div>
-    <div class="story-grid story-grid--intro">
-      <div>
-        <span class="story-kicker">NE ALIRSINIZ?</span>
-        <h2>Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.</h2>
-        <div class="story-copy-stack">
-          <p>HTML&amp;HTML, sitenizin herkese açık yüzeylerini tarar ve görünürlüğü sınırlayan teknik engelleri kanıtıyla gösterir.</p>
-          <p>Ücretsiz sonuçta <strong>ne yanlış, nerede ve neden önemli</strong> sorularını cevaplarız.</p>
-          <p>$99 Uygulama Paketi ise aynı bulguyu <strong>düzeltme, kabul testi, rollback ve re-scan</strong> adımlarına çevirir.</p>
-        </div>
-      </div>
-      <aside class="story-blue-panel">
-        <span class="story-panel-label">KARARINIZ 30 SANİYEDE NETLEŞSİN</span>
-        <h3>Önce teşhis. Sonra yalnız gereken düzeltme.</h3>
-        <p>Abonelik yok. Ajans zorunluluğu yok. Kaynak kodunuza müdahale yok. Çıktıyı mevcut geliştiricinize teslim edin.</p>
-        <div class="story-proof-row">
-          <span>Kayıt gerektirmez</span><span>Kanıta dayalı</span><span>Tek seferlik $99</span>
-        </div>
-      </aside>
+<!-- CUSTOMER DECISION HOMEPAGE V2 -->
+<section class="decision-shell" id="customer-story" aria-label="HTML&HTML müşteri karar sistemi">
+
+  <!-- 01 KARAR VE DIAGNOZ (5 Saniyede Anlaşılma & 5 Temel Karar Sorusu) -->
+  <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
+    <div class="decision-section-no">01</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">SATMIYORSA ÖNCE NEDENİNİ BUL</span>
+      <h2>Sorun trafik olmayabilir. Kırılan karar basamağını bulun.</h2>
+      <p>HTML&amp;HTML teknik gösteri yapmaz; müşterinin neden anlamadığını, güvenmediğini, sizi bulamadığını veya aksiyona geçmediğini ölçülebilir web sinyalleriyle ayırır.</p>
+    </div>
+    <div class="decision-question-grid">
+      <article><b>01</b><h3>Müşteri</h3><p>5 saniyede ne sattığınız anlaşılıyor mu?</p><span>Teklif belirsizse ziyaretçi karar veremez.</span></article>
+      <article><b>02</b><h3>Güven</h3><p>İddianızı destekleyen kanıt görünür mü?</p><span>Kanıt yoksa satın alma ertelenir.</span></article>
+      <article><b>03</b><h3>Dağıtım</h3><p>Google ve AI sistemleri sizi okuyabiliyor mu?</p><span>Bulunamayan ürün değerlendirme fırsatını kaybeder.</span></article>
+      <article><b>04</b><h3>Referans</h3><p>Kararı destekleyen örnek çıktı var mı?</p><span>Söz değil, görülebilir örnek güven üretir.</span></article>
+      <article><b>05</b><h3>Satış kanalı</h3><p>Teklif ve CTA doğru sırada mı?</p><span>Trafik, net bir sonraki adıma bağlanmalıdır.</span></article>
     </div>
   </section>
 
-  <section class="story-section story-needs" id="what-you-get">
-    <div class="story-index">02</div>
-    <div class="story-head">
-      <span class="story-kicker">TÜM İHTİYACINIZ TEK AKIŞTA</span>
-      <h2>Tarama sonucunda elinize tam olarak ne geçer?</h2>
+  <!-- 02 BİZ KİMİZ & MİMARİ KARAR SİSTEMİ (PDF Sayfa 4-5) -->
+  <section class="decision-section decision-about" id="about-architecture">
+    <div class="decision-section-no">02</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">BİZ KİMİZ &amp; HANGİ PROBLEMİ ÇÖZÜYORUZ?</span>
+      <h2>Rapor değil; doğrudan uygulanabilir Karar ve Mühendislik Sistemidir.</h2>
+      <p>Klasik SEO ajansları size yüzlerce sayfalık karmaşık PDF raporları satar ve çözümü size bırakır. HTML&amp;HTML ise karmaşık web problemlerini 5 saniyede anlaşılır karar ağaçlarına ve yazılımcınızın 15 dakikada uygulayacağı hazır üretim kodlarına dönüştürür.</p>
     </div>
-    <div class="story-numbered-grid">
-      <article><b>01</b><span>Teknik bulgu</span><p>Hangi URL'de hangi engelin bulunduğunu görün.</p></article>
-      <article><b>02</b><span>Kanıt</span><p>Bulgunun dayandığı HTTP, DOM veya yapılandırma kanıtını görün.</p></article>
-      <article><b>03</b><span>İş etkisi</span><p>Görünürlük, taranabilirlik veya kaynak hazırlığı etkisini ayırın.</p></article>
-      <article><b>04</b><span>Öncelik</span><p>Önce hangi sorunun ele alınması gerektiğini görün.</p></article>
-      <article><b>05</b><span>Düzeltme planı</span><p>$99 pakette geliştiricinin uygulayacağı net adımları alın.</p></article>
-      <article><b>06</b><span>Doğrulama</span><p>Acceptance, rollback ve re-scan ile sonucu kapatın.</p></article>
+    <div class="pdf-about-grid">
+      <div class="pdf-about-cards">
+        <div class="pdf-card-capsule">
+          <h3>⚡ Karar Odaklı Yaklaşım</h3>
+          <p>Yapay zeka modellerinin (ChatGPT, Gemini, Claude, Perplexity) sitenizi neden tavsiye etmediğini 'iyi/kötü' puanlarıyla değil; 'Ne bozuk, Kanıtı ne, Ciroya etkisi ne, Nasıl düzeltilir?' zinciriyle çözüme kavuşturur.</p>
+        </div>
+        <div class="pdf-card-capsule">
+          <h3>🛡️ %100 Deterministik Kanıt</h3>
+          <p>Hiçbir veri tahmine dayanmaz. URL, HTTP durum kodu, HTML DOM kesiti ve measured HTML payload, semantic structure and source-readiness evidence</p>
+        </div>
+        <div class="pdf-card-capsule">
+          <h3>📦 Doğrudan Uygulanabilir Kod Paketi</h3>
+          <p>Öneri ve danışmanlık değil; yazılımcınızın doğrudan sunucunuza yükleyeceği Nginx/Apache kuralları, Schema.org JSON-LD grafikleri, llms.txt v2 dosyaları ve test scriptleri verilir.</p>
+        </div>
+      </div>
+      <div class="pdf-ecosystem-box">
+        <div>
+          <div class="pdf-ecosystem-title">Yapay Zeka Keşif Ekosistemi</div>
+          <div class="pdf-ecosystem-desc">Arama alışkanlıkları değişti. Müşterileriniz artık Google yerine ChatGPT, Perplexity ve Siri'ye doğrudan soru soruyor. Sitenizin bu ekosistemde kaynak gösterilmesini sağlıyoruz.</div>
+        </div>
+        <div class="pdf-ecosystem-logos">
+          <div class="pdf-eco-logo">OpenAI<span>ChatGPT</span></div>
+          <div class="pdf-eco-logo">Google<span>Gemini / AIO</span></div>
+          <div class="pdf-eco-logo">Anthropic<span>Claude</span></div>
+          <div class="pdf-eco-logo">Perplexity<span>Pro Search</span></div>
+          <div class="pdf-eco-logo">Microsoft<span>Copilot</span></div>
+          <div class="pdf-eco-logo">Apple<span>Intelligence</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="story-section story-output" id="sample-output">
-    <div class="story-index">03</div>
-    <div class="story-grid story-grid--demo">
+  <!-- 03 15 YETKİNLİK MODÜLÜ (PDF Yetkinlik Kataloğu) -->
+  <section class="decision-section decision-capabilities" id="capabilities-catalog">
+    <div class="decision-section-no">03</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">15 KRİTİK DENETİM VE GÖRÜNÜRLÜK MODÜLÜ</span>
+      <h2>Web sitenizin yapay zeka arama motorlarındaki tüm temas noktaları.</h2>
+      <p>Sitenizin arama botları ve LLM ajanları tarafından indekslenmesini sağlayan 15 temel mühendislik bileşeni.</p>
+    </div>
+    <div class="pdf-caps-grid">
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">01</span><div><span class="pdf-cap-text">robots.txt &amp; RFC 9309</span><span class="pdf-cap-desc">AI bot izinleri ve tarama bütçesi denetimi</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">02</span><div><span class="pdf-cap-text">llms.txt v2 Protokolü</span><span class="pdf-cap-desc">AI modelleri için optimize edilmiş içerik manifestosu</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">03</span><div><span class="pdf-cap-text">Schema.org JSON-LD @graph</span><span class="pdf-cap-desc">Wikidata ve Google Knowledge Graph varlık kilidi</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">measured HTML payload, semantic structure and source-readiness evidence</span><span class="pdf-cap-desc">İlk ağ paketinde semantik varlık yükleme hızı</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">05</span><div><span class="pdf-cap-text">512-Token RAG Paragrafları</span><span class="pdf-cap-desc">LLM chunking ve ColBERT MaxSim uygunluğu</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">06</span><div><span class="pdf-cap-text">Tekil H1 ve Semantik DOM</span><span class="pdf-cap-desc">Doğru başlık hiyerarşisi ve landmark etiketleri</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">07</span><div><span class="pdf-cap-text">Canonical &amp; URL Hijyeni</span><span class="pdf-cap-desc">Çift indeksleme ve kopya içerik engelleme</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">08</span><div><span class="pdf-cap-text">Security Headers (HSTS/CSP)</span><span class="pdf-cap-desc">Sunucu güvenlik başlıkları ve clickjacking kalkanı</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">09</span><div><span class="pdf-cap-text">SSRF ve Özel IP İzolasyonu</span><span class="pdf-cap-desc">Güvenli public tarama ve altyapı koruması</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">10</span><div><span class="pdf-cap-text">WCAG 2.2 AA Erişilebilirlik</span><span class="pdf-cap-desc">ARIA landmarkları ve kontrast standartları</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">11</span><div><span class="pdf-cap-text">Link Bütünlüğü &amp; HTTP 200</span><span class="pdf-cap-desc">404 çıkmaz yolları ve zincirleme yönlendirmeler</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">12</span><div><span class="pdf-cap-text">AI Marka Atıf Takibi</span><span class="pdf-cap-desc">Perplexity ve ChatGPT aramalarında marka görünürlüğü</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">13</span><div><span class="pdf-cap-text">E-E-A-T Otorite Doğrulaması</span><span class="pdf-cap-desc">Yazar profilleri, kaynak atıfları ve yayıncı kimliği</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">14</span><div><span class="pdf-cap-text">IndexNow Çok Merkezli Dağıtım</span><span class="pdf-cap-desc">Bing, Yandex ve Naver anlık indeksleme tetikleyicisi</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">15</span><div><span class="pdf-cap-text">Rollback ve Geri Alma Güvencesi</span><span class="pdf-cap-desc">Sıfır kesinti ve anında geri alma komutları</span></div></div>
+    </div>
+  </section>
+
+  <!-- 04 YAPAY ZEKA ARAMA AĞI UYUMLULUĞU (PDF Sayfa 10-12) -->
+  <section class="decision-section decision-ai-network" id="ai-network">
+    <div class="decision-section-no">04</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">TÜM YAPAY ZEKA ARAMA BOTLARIYLA %100 UYUMLU</span>
+      <h2>Müşteriniz nereden ararsa arasın; sisteminiz cevabı hazır tutar.</h2>
+      <p>Dünyanın en büyük yapay zeka arama motorları için özel olarak test edilmiş tarayıcı kuralları.</p>
+    </div>
+    <div class="pdf-net-grid">
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">OAI-SearchBot</span><span class="pdf-net-badge">OpenAI</span></div><div class="pdf-net-desc">ChatGPT Search için doğrudan kaynak toplama botu. Sitenizin anlık arama sonuçlarında gösterilmesini sağlar.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Google-Extended</span><span class="pdf-net-badge">Google AI</span></div><div class="pdf-net-desc">Gemini ve Google AI Overviews eğitim ve bilgi çekme protokolü. Doğru varlık tanımlarıyla otorite inşa eder.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">ClaudeBot</span><span class="pdf-net-badge">Anthropic</span></div><div class="pdf-net-desc">Claude 3.5 Sonnet ve kurumsal LLM ajanları için temiz veri akışı sağlayan akıllı tarayıcı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">PerplexityBot</span><span class="pdf-net-badge">Perplexity</span></div><div class="pdf-net-desc">Akademik ve kurumsal araştırmalarda doğrudan dipnot ve web referansı oluşturan bilgi tarayıcısı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Applebot-Extended</span><span class="pdf-net-badge">Apple</span></div><div class="pdf-net-desc">Apple Intelligence ve Siri üzerinden gelen sesli ve yazılı aramalarda yerel yanıt kaynağı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Bingbot / Copilot</span><span class="pdf-net-badge">Microsoft</span></div><div class="pdf-net-desc">Microsoft Copilot ve Bing AI arama entegrasyonu için anlık IndexNow protokol desteği.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Meta-ExternalAgent</span><span class="pdf-net-badge">Meta AI</span></div><div class="pdf-net-desc">WhatsApp, Instagram ve Meta AI asistanlarında web içeriğinizin tavsiye edilmesini sağlar.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Amazonbot</span><span class="pdf-net-badge">Amazon</span></div><div class="pdf-net-desc">Alexa ve kurumsal AWS AI sistemleri için ürün ve servis veri modelleme tarayıcısı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Cohere-ai</span><span class="pdf-net-badge">Enterprise</span></div><div class="pdf-net-desc">Kurumsal RAG ve B2B karar destek modelleri için yüksek doğruluklu bağlam okuyucu.</div></div>
+    </div>
+  </section>
+
+  <!-- 05 6 ALTYAPI VE GÜVENLİK SÜTUNU (PDF Sayfa 14-16) -->
+  <section class="decision-section decision-security-pillars" id="security-pillars">
+    <div class="decision-section-no">05</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">KURUMSAL GÜVENLİK VE MÜHENDİSLİK STANDARTLARI</span>
+      <h2>6 Temel Altyapı ve Güvenlik Sütunu Üzerine İnşa Edildi.</h2>
+      <p>HTML&amp;HTML, banka ve kurumsal yazılım seviyesinde sıfır hata toleransıyla çalışır.</p>
+    </div>
+    <div class="pdf-security-grid">
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🛡️</div><div class="pdf-sec-title">SSRF Koruması</div><div class="pdf-sec-desc">Fail-closed IP filtresiyle kurumsal ağ güvenliği</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">📜</div><div class="pdf-sec-title">RFC 9309 Uyum</div><div class="pdf-sec-desc">IETF resmi standartlarında robots.txt yönetişimi</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">measured HTML payload, semantic structure and source-readiness evidence</div><div class="pdf-sec-desc">İlk TCP paketinde en yüksek semantik varlık yoğunluğu</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">📐</div><div class="pdf-sec-title">ColBERT MaxSim</div><div class="pdf-sec-desc">Late-interaction vektör eşleşmesine uygun içerik</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🔄</div><div class="pdf-sec-title">Rollback Garantisi</div><div class="pdf-sec-desc">Tüm kod paketlerinde sıfır kesintili anında geri alma</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🔒</div><div class="pdf-sec-title">SHA-256 İmzası</div><div class="pdf-sec-desc">Kriptografik bütünlük ve değişmezlik doğrulaması</div></div>
+    </div>
+  </section>
+
+  <!-- 06 NASIL ÇALIŞIR? 4 BASİT ADIM (PDF Sayfa 18-19) -->
+  <section class="decision-section decision-workflow" id="workflow-steps">
+    <div class="decision-section-no">06</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">NASIL ÇALIŞIR? SADECE 4 BASİT ADIM</span>
+      <h2>Karmaşık teknik süreçleri dakikalar içinde çözüme kavuşturun.</h2>
+      <p>Yazılım uzmanı olmanıza gerek yok. Sistemimiz teşhisi koyar, çözümü paketler, ekibinize uygulatır.</p>
+    </div>
+    <div class="pdf-steps-grid">
+      <div class="pdf-step-card"><span class="pdf-step-num">1</span><h3>1. Ücretsiz Tara</h3><p>Web sitenizin adresini girin. 18 bağımsız motor, sitenizin herkese açık web yüzeyini saniyeler içinde analiz etsin.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">2</span><h3>2. Engelleri Gör</h3><p>Yapay zeka modellerinin sitenizi neden okuyamadığını gerçek HTML ve HTTP kanıtlarıyla şeffafça görün.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">3</span><h3>3. Kararını Al</h3><p>Sorun kritikse  Fix Pack paketini edinin. 30+ dosyadan oluşan mühendislik çözüm setini anında indirin.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">4</span><h3>4. Yazılımcına Ver</h3><p>Hazır kodları, test senaryolarını ve Nginx/Apache ayarlarını yazılımcınıza teslim edin; 15 dakikada yayına alsın.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 NEDEN HTML&HTML? (PDF Sayfa 20-21) -->
+  <section class="decision-section decision-why-us" id="why-html">
+    <div class="decision-section-no">07</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">NEDEN BİZİMLE ÇALIŞMALISINIZ?</span>
+      <h2>Geleneksel ajans masraflarına ve aylarca süren belirsizliklere son verin.</h2>
+    </div>
+    <div class="pdf-why-split">
+      <div class="pdf-why-focal">
+        <span class="pdf-why-badge-pill">FARKIMIZ NETTİR</span>
+        <h3>Rapor Satmıyoruz,<br>Çözüm Teslim Ediyoruz.</h3>
+        <p>Klasik danışmanlık firmaları saatliği 200$'dan başlayan soyut tavsiyeler verir. Biz ise çalışan üretim kodunu tek seferlik sabit fiyatla teslim ederiz.</p>
+        <a class="decision-btn decision-btn--light" href="#scanner">Hemen Ücretsiz Dene →</a>
+      </div>
+      <div class="pdf-why-list">
+        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5 Saniyede Anlaşılır Teşhis:</b> Karmaşık teknik jargonu ticari karar berraklığına dönüştürür.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Sıfır Tahmin, %100 Kanıt:</b> Her tespit doğrudan URL, satır ve bayt seviyesinde belgelenir.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Hazır Üretim Kodları:</b> Kopyala-yapıştır çalışır Nginx, JSON-LD ve robots.txt konfigürasyonları.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Geri Alma (Rollback) Güvencesi:</b> Yapılan her değişikliğin sıfır riskli geri dönüş planı dahildir.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Tek Seferlik Sabit Fiyat:</b> Aylık abonelik veya sürpriz danışmanlık faturaları yoktur.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30 Gün Yeniden Tarama:</b> Düzeltmelerinizi yaptıktan sonra sisteminizi ücretsiz yeniden doğrulayın.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Kaynak Kod Erişimi Gerekmez:</b> Sunucu şifrenizi veya kod deponuzu kimseyle paylaşmanız gerekmez.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 DOĞRULANMIŞ STANDARTLAR VE REFERANSLAR (PDF Sayfa 22-23) -->
+  <section class="decision-section decision-references" id="industry-standards">
+    <div class="decision-section-no">08</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">KÜRESEL OTORİTELER VE STANDARTLAR</span>
+      <h2>Kararlarımız ve Algoritmalarımız Resmi Web Standartlarına Dayanır.</h2>
+      <p>Ölçümlerimiz uluslararası standart belirleyicilerin yayınladığı resmi şartnamelerle %100 uyumludur.</p>
+    </div>
+    <div class="pdf-refs-grid">
+      <div class="pdf-ref-card"><b>W3C</b><span>World Wide Web Consortium</span></div>
+      <div class="pdf-ref-card"><b>IETF</b><span>RFC 9309 Standartları</span></div>
+      <div class="pdf-ref-card"><b>Schema.org</b><span>Yapısal Veri Konsorsiyumu</span></div>
+      <div class="pdf-ref-card"><b>OpenAI</b><span>SearchBot Spesifikasyonu</span></div>
+      <div class="pdf-ref-card"><b>Google Search</b><span>AI Overviews &amp; E-E-A-T</span></div>
+      <div class="pdf-ref-card"><b>Wikidata</b><span>Knowledge Graph MID</span></div>
+      <div class="pdf-ref-card"><b>Cloudflare</b><span>Edge ve DNS Güvenliği</span></div>
+      <div class="pdf-ref-card"><b>NIST</b><span>Altyapı Güvenlik Çerçevesi</span></div>
+      <div class="pdf-ref-card"><b>IndexNow</b><span>Anlık Arama İndeksleme</span></div>
+      <div class="pdf-ref-card"><b>Paddle</b><span>Global Satıcı Güvencesi</span></div>
+    </div>
+  </section>
+
+  <!-- 09 GERÇEK ÖRNEK RAPOR (PDF Çıktı Kanıtı) -->
+  <section class="decision-section decision-output" id="sample-output">
+    <div class="decision-section-no">09</div>
+    <div class="decision-output-grid">
       <div>
-        <span class="story-kicker">ÖRNEK ÇIKTI</span>
-        <h2>Raporu açtığınızda ne göreceğinizi önceden bilin.</h2>
-        <p class="story-lead">Karmaşık skorlar yerine geliştiricinin doğrudan çalışabileceği bir karar formatı kullanıyoruz.</p>
-        <div class="story-checks">
-          <div><i>✓</i><span><strong>Bulgu:</strong> Sorun ne?</span></div>
-          <div><i>✓</i><span><strong>Konum:</strong> Hangi URL / yüzey?</span></div>
-          <div><i>✓</i><span><strong>Etki:</strong> Neyi sınırlıyor?</span></div>
-          <div><i>✓</i><span><strong>Düzeltme:</strong> Ne yapılmalı?</span></div>
-          <div><i>✓</i><span><strong>Doğrulama:</strong> Başarılı olduğu nasıl anlaşılır?</span></div>
+        <span class="decision-kicker">SATIN ALMADAN ÖNCE ÇIKTIYI GÖR</span>
+        <h2>Rapor, “iyi/kötü” demez. Karar verir.</h2>
+        <div class="decision-checks">
+          <p><b>Bulgu</b><span>Sorun ne?</span></p>
+          <p><b>Konum</b><span>Hangi URL / yüzey?</span></p>
+          <p><b>Kanıt</b><span>Neye dayanıyor?</span></p>
+          <p><b>Etki</b><span>Neyi sınırlıyor?</span></p>
+          <p><b>Öncelik</b><span>Önce ne ele alınmalı?</span></p>
         </div>
-        <div class="story-actions">
-          <a class="story-btn story-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">Canlı örnek raporu incele →</a>
-          <a class="story-btn" href="#scanner">Kendi siteni ücretsiz tara</a>
+        <div class="decision-actions">
+          <a class="decision-btn decision-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">Gerçek örnek raporu gör →</a>
+          <a class="decision-btn" href="#scanner">Kendi sitemi tara</a>
         </div>
       </div>
-      <div class="story-report-preview" aria-label="Örnek teknik rapor görünümü">
-        <div class="story-browser-bar"><span></span><span></span><span></span><em>CANLI RAPOR ÖNİZLEMESİ</em></div>
-        <div class="story-report-body">
-          <div class="story-report-tag">TECH-CANON-001 · YÜKSEK</div>
+      <div class="decision-report-card" aria-label="Örnek bulgu">
+        <div class="decision-report-top"><span></span><span></span><span></span><em>ÖRNEK BULGU</em></div>
+        <div class="decision-report-body">
+          <div class="decision-severity">TECH-CANON-001 · YÜKSEK</div>
           <h3>Canonical etiketi eksik</h3>
-          <p>Birincil URL belirsizliği yinelenen içerik sinyallerini bölebilir.</p>
-          <div class="story-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
-          <div class="story-fix"><b>$99 PAKETTE</b><span>Kök neden → düzeltme → test → rollback</span></div>
+          <p>Arama sistemleri hangi URL'nin ana sürüm olduğunu daha belirsiz okuyabilir.</p>
+          <div class="decision-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
+          <div class="decision-paid"><b> FIX PACK</b><span>Kök neden → exact fix → test → rollback → re-scan</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="story-section story-process" id="how-it-works" data-premium-infographic="scope-map">
-    <div class="story-index">04</div>
-    <div class="story-grid">
-      <div>
-        <span class="story-kicker">NASIL ÇALIŞIR?</span>
-        <h2>Dört adım. Tek karar akışı.</h2>
-        <p class="story-lead">Teknik motorlar arka planda kalır; müşterinin gördüğü süreç basit ve doğrulanabilirdir.</p>
+  <!-- 10 TEKLİF & FİYATLANDIRMA (Ücretsiz Teşhis vs  Uygulama) -->
+  <section class="decision-section decision-offer" id="offer">
+    <div class="decision-section-no">10</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">ÜCRETSİZ TEŞHİS → ÜCRETLİ UYGULAMA</span>
+      <h2>Analiz için değil; uygulanabilir çözüm paketi için ödeme.</h2>
+    </div>
+    <div class="decision-offer-grid">
+      <article class="decision-offer-card">
+        <span>ÜCRETSİZ</span>
+        <h3>Sorunun ne olduğunu görün.</h3>
+        <ul><li>Bulgu</li><li>URL / konum</li><li>Kanıt</li><li>Öncelik</li><li>Genel çözüm yönü</li></ul>
+        <a href="#scanner">Ücretsiz tara →</a>
+      </article>
+      <article class="decision-offer-card decision-offer-card--paid">
+        <span> · TEK SEFERLİK</span>
+        <h3>Nasıl düzeltileceğini ekibinize verin.</h3>
+        <ul><li>Kök neden</li><li>Exact fix / konfigürasyon</li><li>Uygulama sırası</li><li>Acceptance + regression test</li><li>Rollback + 30 gün içinde 1 re-scan</li></ul>
+        <a href="/tr/fiyatlandirma/">Fix Pack'i incele →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- 11 GÜVEN VE ETİK KANIT KATMANI -->
+  <section class="decision-section decision-trust" id="trust">
+    <div class="decision-section-no">11</div>
+    <div class="decision-trust-grid">
+      <div class="decision-trust-copy">
+        <span class="decision-kicker">GÜVEN SÖYLEM DEĞİL, KANIT KATMANIDIR</span>
+        <h2>Ne ölçtüğümüzü, neyi ölçemediğimizi ve neyi garanti etmediğimizi açıkça gösteririz.</h2>
+        <p>AI sıralaması, citation, trafik veya gelir garantisi verilmez. Üçüncü taraf model davranışı kontrol edilemez. Public crawl ile ölçülemeyen codebase kusuru uydurulmaz.</p>
       </div>
-      <div class="story-step-list">
-        <article><b>1</b><div><h3>URL'yi girin</h3><p>Herkese açık web yüzeyi güvenli biçimde taramaya alınır.</p></div></article>
-        <article><b>2</b><div><h3>Kanıtlı sorunları görün</h3><p>Tarama, yapı, erişim ve AI kaynak hazırlığı bulguları ayrıştırılır.</p></div></article>
-        <article><b>3</b><div><h3>Ne yapacağınızı seçin</h3><p>Ücretsiz katman sorunu ve etkisini gösterir; yalnız gereken işi görürsünüz.</p></div></article>
-        <article><b>4</b><div><h3>Uygulayın ve doğrulayın</h3><p>$99 paket düzeltme, acceptance, rollback ve re-scan adımlarını açar.</p></div></article>
+      <div class="decision-trust-points">
+        <article><b>01</b><span>Gerçek URL / HTTP / HTML kanıtı</span></article>
+        <article><b>02</b><span>NOT_MEASURED ve REQUIRES_CONTEXT görünür</span></article>
+        <article><b>03</b><span>Kaynak koduna müdahale yok</span></article>
+        <article><b>04</b><span>Methodology + sample report açık</span></article>
       </div>
     </div>
   </section>
 
-  <section class="story-section story-trust" id="trust">
-    <div class="story-index">05</div>
-    <div class="story-head">
-      <span class="story-kicker">KANIT VE GÜVENLİK</span>
-      <h2>Sonuç yalnız ölçebildiğimiz veriye dayanır.</h2>
-      <p>Ölçemediğimiz sinyali başarılı varsaymayız. Teknik sınırları açıkça gösteririz.</p>
-    </div>
-    <div class="story-trust-panel">
-      <article><span>01</span><h3>Kanıt standardı</h3><p>Her bulgu ölçülebilir bir teknik işarete bağlanır.</p></article>
-      <article><span>02</span><h3>Fail-closed yaklaşım</h3><p>Belirsiz sonuç PASS olarak işaretlenmez.</p></article>
-      <article><span>03</span><h3>Kaynak güvenliği</h3><p>Yalnız herkese açık URL ve HTTP yüzeyleri değerlendirilir.</p></article>
-      <article><span>04</span><h3>Değişiklik güvenliği</h3><p>Acceptance ve rollback adımları teslimatın parçasıdır.</p></article>
-      <article><span>05</span><h3>Şeffaf sınırlar</h3><p>Sıralama, trafik veya dış model tavsiyesi garanti edilmez.</p></article>
-      <article><span>06</span><h3>Re-scan</h3><p>Uygulama sonrası aynı alan adı yeniden doğrulanabilir.</p></article>
-    </div>
-  </section>
-
-  <section class="story-section story-why" id="why-htmlandhtml">
-    <div class="story-index">06</div>
-    <div class="story-grid story-grid--why">
-      <div class="story-why-visual">
-        <span>HTML&amp;HTML</span>
-        <strong>Teşhis → Uygulama → Doğrulama</strong>
-        <p>Tek bir karar hattı.</p>
-      </div>
-      <div>
-        <span class="story-kicker">NEDEN HTML&amp;HTML?</span>
-        <h2>Teknik karmaşıklığı müşteriye değil, sisteme yükler.</h2>
-        <div class="story-reasons">
-          <p><b>1</b> Ücretsiz teşhis ile satın almadan önce ne alacağınızı görürsünüz.</p>
-          <p><b>2</b> Teknik bulgular kanıt ve etkiyle birlikte sunulur.</p>
-          <p><b>3</b> Ücretli katman yalnız uygulama gerektiğinde devreye girer.</p>
-          <p><b>4</b> Çıktı mevcut geliştirici veya ajansınıza devredilebilir.</p>
-          <p><b>5</b> Tek seferlik $99 lisans; zorunlu abonelik yoktur.</p>
-          <p><b>6</b> Acceptance, rollback ve re-scan ile kapanış kriteri bellidir.</p>
-        </div>
+  <!-- 12 NİHAİ DÖNÜŞÜM ÇAĞRISI (CTA) -->
+  <section class="decision-section decision-close" id="final-cta">
+    <div class="decision-section-no">12</div>
+    <div>
+      <span class="decision-kicker">İLK KARAR 5 SANİYEDE NET OLSUN</span>
+      <h2>Sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün.</h2>
+      <p>Sorun gerçekse 'a yazılımcınızın uygulayacağı düzeltme paketini alın.</p>
+      <div class="decision-actions">
+        <a class="decision-btn decision-btn--light" href="#scanner">Sitemi ücretsiz tara →</a>
+        <a class="decision-btn decision-btn--ghost" href="/tr/fiyatlandirma/"> Fix Pack</a>
       </div>
     </div>
-  </section>
-
-  <section class="story-section story-close" id="final-cta">
-    <div class="story-index">07</div>
-    <div class="story-close-copy">
-      <span class="story-kicker">TEK ÇATI ALTINDA</span>
-      <h2>Sorunu kanıtıyla görün. Çözümü ekibinize teslim edin.</h2>
-      <p>Önce ücretsiz tarayın. Çıktı yeterliyse hiçbir şey satın almayın. Uygulama planına ihtiyacınız varsa $99 paketle devam edin.</p>
-      <div class="story-actions">
-        <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Ücretsiz kontrolü başlat →</a>
-        <a class="story-btn story-btn--ghost" href="/tr/fiyatlandirma/">$99 uygulama paketini gör</a>
-      </div>
-    </div>
-    <div class="story-close-orbit" aria-hidden="true">
-      <span>Bulgu</span><span>Kanıt</span><span>Etki</span><span>Düzeltme</span><span>Test</span>
+    <div class="decision-orbits" aria-hidden="true">
+      <span>Müşteri</span><span>Güven</span><span>Dağıtım</span><span>Referans</span><span>Satış</span>
     </div>
   </section>
 </section>

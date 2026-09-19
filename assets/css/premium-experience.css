@@ -9257,6 +9257,110 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 .decision-orbits span:nth-child(4){right:7%;bottom:8%}
 .decision-orbits span:nth-child(5){left:5%;bottom:6%}
 
+/* --------------------------------------------------------------------------
+   PAY'NKOLAY PDF INSPIRED CORPORATE PRESENTATION & DECISION SYSTEM
+   -------------------------------------------------------------------------- */
+.pdf-hero-badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:24px auto 0;max-width:860px}
+.pdf-hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.9);border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.05);font-size:13px;font-weight:700;color:#1e293b}
+html[data-theme="dark"] .pdf-hero-badge{background:rgba(30,33,42,0.9);border-color:rgba(255,255,255,0.12);color:#f3f4f6}
+.pdf-hero-badge i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#0284c7;color:#fff;font-size:12px;font-style:normal;font-weight:900}
+
+/* Block 2: About & Ecosystem Split */
+.pdf-about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;align-items:stretch}
+.pdf-about-cards{display:grid;gap:14px}
+.pdf-card-capsule{padding:22px 26px;border-radius:20px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04)}
+html[data-theme="dark"] .pdf-card-capsule{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-card-capsule h3{margin:0 0 6px;font-size:18px;font-weight:800;color:#0f172a;display:flex;align-items:center;gap:10px}
+html[data-theme="dark"] .pdf-card-capsule h3{color:#f8fafc}
+.pdf-card-capsule p{margin:0;font-size:14px;line-height:1.55;color:#475569}
+html[data-theme="dark"] .pdf-card-capsule p{color:#94a3b8}
+
+.pdf-ecosystem-box{padding:30px 28px;border-radius:24px;background:linear-gradient(145deg, #0b1528 0%, #060b16 100%);color:#ffffff;border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 48px rgba(0,0,0,.25);display:flex;flex-direction:column;justify-content:space-between}
+.pdf-ecosystem-title{font-size:19px;font-weight:800;letter-spacing:-0.01em;margin-bottom:12px;color:#ffffff}
+.pdf-ecosystem-desc{font-size:13.5px;line-height:1.55;color:#94a3b8;margin-bottom:24px}
+.pdf-ecosystem-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pdf-eco-logo{padding:14px 10px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);text-align:center;font-size:13px;font-weight:700;color:#e2e8f0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pdf-eco-logo span{font-size:10.5px;color:#38bdf8;font-weight:600}
+
+/* Block 3: 15 Capabilities Menu */
+.pdf-caps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.pdf-cap-pill{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.03);transition:all .18s ease}
+html[data-theme="dark"] .pdf-cap-pill{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-cap-pill:hover{transform:translateY(-2px);border-color:#0284c7;box-shadow:0 8px 24px rgba(2,132,199,.12)}
+.pdf-cap-num{min-width:32px;height:32px;border-radius:10px;background:#e0f2fe;color:#0284c7;font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px;font-weight:900;display:grid;place-items:center}
+html[data-theme="dark"] .pdf-cap-num{background:#0369a1;color:#ffffff}
+.pdf-cap-text{font-size:13.5px;font-weight:750;color:#0f172a;line-height:1.35}
+html[data-theme="dark"] .pdf-cap-text{color:#f1f5f9}
+.pdf-cap-desc{display:block;font-size:11.5px;font-weight:500;color:#64748b;margin-top:2px}
+html[data-theme="dark"] .pdf-cap-desc{color:#94a3b8}
+
+/* Block 4: 3x3 Bot Compatibility Network */
+.pdf-net-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+.pdf-net-card{padding:20px;border-radius:20px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04);display:flex;flex-direction:column;gap:8px}
+html[data-theme="dark"] .pdf-net-card{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-net-header{display:flex;justify-content:space-between;align-items:center}
+.pdf-net-name{font-size:16px;font-weight:800;color:#0f172a}
+html[data-theme="dark"] .pdf-net-name{color:#f8fafc}
+.pdf-net-badge{font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
+.pdf-net-desc{font-size:13px;line-height:1.5;color:#64748b}
+
+/* Block 5: 6 Infrastructure & Security Pillars */
+.pdf-security-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:28px}
+.pdf-sec-card{padding:22px 16px;border-radius:18px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04);display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+html[data-theme="dark"] .pdf-sec-card{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-sec-icon{width:44px;height:44px;border-radius:12px;background:#f0f7ff;color:#0284c7;display:grid;place-items:center;font-size:20px}
+html[data-theme="dark"] .pdf-sec-icon{background:#0c4a6e;color:#38bdf8}
+.pdf-sec-title{font-size:14px;font-weight:800;color:#0f172a}
+html[data-theme="dark"] .pdf-sec-title{color:#f8fafc}
+.pdf-sec-desc{font-size:12px;line-height:1.45;color:#64748b}
+html[data-theme="dark"] .pdf-sec-desc{color:#94a3b8}
+
+/* Block 6: 4 Steps Flow */
+.pdf-steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.pdf-step-card{padding:26px 22px;border-radius:22px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 8px 24px rgba(18,35,65,.04);display:flex;flex-direction:column}
+html[data-theme="dark"] .pdf-step-card{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-step-num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#0284c7;color:#ffffff;font-size:15px;font-weight:900;margin-bottom:16px}
+.pdf-step-card h3{margin:0 0 8px;font-size:17px;font-weight:800;color:#0f172a}
+html[data-theme="dark"] .pdf-step-card h3{color:#f8fafc}
+.pdf-step-card p{margin:0;font-size:13.5px;line-height:1.55;color:#64748b}
+html[data-theme="dark"] .pdf-step-card p{color:#94a3b8}
+
+/* Block 7: Why Us Split Layout */
+.pdf-why-split{display:grid;grid-template-columns:0.85fr 1.15fr;gap:28px;align-items:center;margin-top:24px}
+.pdf-why-focal{padding:38px 30px;border-radius:28px;background:linear-gradient(135deg, #0284c7 0%, #0052cc 60%, #003399 100%);color:#ffffff;text-align:center;box-shadow:0 24px 60px rgba(0,82,204,.25)}
+.pdf-why-focal h3{font-size:28px;font-weight:900;line-height:1.2;margin:12px 0}
+.pdf-why-focal p{font-size:15px;line-height:1.6;color:#e0f2fe;margin:0 0 20px}
+.pdf-why-badge-pill{display:inline-block;padding:8px 18px;border-radius:999px;background:#ffffff;color:#0052cc;font-weight:800;font-size:13px}
+.pdf-why-list{display:grid;gap:10px}
+.pdf-why-item{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;border-radius:16px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.03)}
+html[data-theme="dark"] .pdf-why-item{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-why-num{min-width:28px;height:28px;border-radius:50%;background:#0284c7;color:#ffffff;font-size:13px;font-weight:900;display:grid;place-items:center}
+.pdf-why-item span{font-size:13.5px;font-weight:650;color:#1e293b;line-height:1.45}
+html[data-theme="dark"] .pdf-why-item span{color:#e2e8f0}
+
+/* Block 8: Trust & Reference Logos */
+.pdf-refs-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px}
+.pdf-ref-card{padding:16px 12px;border-radius:14px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 4px 12px rgba(18,35,65,.03);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+html[data-theme="dark"] .pdf-ref-card{background:#181a22;border-color:rgba(255,255,255,.08)}
+.pdf-ref-card b{font-size:13.5px;font-weight:800;color:#0f172a}
+html[data-theme="dark"] .pdf-ref-card b{color:#f8fafc}
+.pdf-ref-card span{font-size:11px;color:#64748b}
+html[data-theme="dark"] .pdf-ref-card span{color:#94a3b8}
+
+@media(max-width:1024px){
+  .pdf-caps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pdf-security-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pdf-net-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pdf-steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pdf-why-split{grid-template-columns:1fr}
+  .pdf-refs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pdf-about-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .pdf-caps-grid,.pdf-security-grid,.pdf-net-grid,.pdf-steps-grid,.pdf-refs-grid{grid-template-columns:1fr}
+  .pdf-hero-badges{flex-direction:column;align-items:stretch}
+}
+
 @media(max-width:1180px){
   .decision-question-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .decision-question-grid article:last-child{grid-column:1/-1;min-height:180px}

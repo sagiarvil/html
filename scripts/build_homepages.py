@@ -278,6 +278,12 @@ def build_homepages():
     <span>Ücretsiz teşhis</span><span>Gerçek URL / HTTP / HTML kanıtı</span><span>Kaynak kod erişimi yok</span>
   </div>
 
+  <div class="pdf-hero-badges" aria-label="Temel Değer Önerileri">
+    <div class="pdf-hero-badge"><i>⚡</i><span>5 Saniyede Anlaşılır Karar</span></div>
+    <div class="pdf-hero-badge"><i>🛡️</i><span>W3C &amp; RFC 9309 Doğrulanmış Kanıt</span></div>
+    <div class="pdf-hero-badge"><i>📦</i><span> Fix Pack: Yazılımcınız İçin Hazır Kod</span></div>
+  </div>
+
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
@@ -320,6 +326,7 @@ def build_homepages():
 <!-- CUSTOMER DECISION HOMEPAGE V2 -->
 <section class="decision-shell" id="customer-story" aria-label="HTML&HTML müşteri karar sistemi">
 
+  <!-- 01 KARAR VE DIAGNOZ (5 Saniyede Anlaşılma & 5 Temel Karar Sorusu) -->
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
     <div class="decision-section-no">01</div>
     <div class="decision-heading">
@@ -336,22 +343,179 @@ def build_homepages():
     </div>
   </section>
 
-  <section class="decision-section decision-pillars" id="decision-pillars">
+  <!-- 02 BİZ KİMİZ & MİMARİ KARAR SİSTEMİ (PDF Sayfa 4-5) -->
+  <section class="decision-section decision-about" id="about-architecture">
     <div class="decision-section-no">02</div>
-    <div class="decision-heading decision-heading--split">
-      <div>
-        <span class="decision-kicker">TEK ÇATI ALTINDA</span>
-        <h2>Web sitenizi sayfa olarak değil, karar sistemi olarak inceler.</h2>
-      </div>
-      <p>Her problem aynı dört soruya çevrilir: <strong>Ne yanlış?</strong> <strong>Kanıtı ne?</strong> <strong>Neyi etkiliyor?</strong> <strong>Önce ne düzeltilmeli?</strong></p>
+    <div class="decision-heading">
+      <span class="decision-kicker">BİZ KİMİZ &amp; HANGİ PROBLEMİ ÇÖZÜYORUZ?</span>
+      <h2>Rapor değil; doğrudan uygulanabilir Karar ve Mühendislik Sistemidir.</h2>
+      <p>Klasik SEO ajansları size yüzlerce sayfalık karmaşık PDF raporları satar ve çözümü size bırakır. HTML&amp;HTML ise karmaşık web problemlerini 5 saniyede anlaşılır karar ağaçlarına ve yazılımcınızın 15 dakikada uygulayacağı hazır üretim kodlarına dönüştürür.</p>
     </div>
-    <div class="decision-bridge" aria-label="Karar zinciri">
-      <span>Problem</span><i>→</i><span>Kanıt</span><i>→</i><span>Etki</span><i>→</i><span>Öncelik</span><i>→</i><span>Düzeltme</span>
+    <div class="pdf-about-grid">
+      <div class="pdf-about-cards">
+        <div class="pdf-card-capsule">
+          <h3>⚡ Karar Odaklı Yaklaşım</h3>
+          <p>Yapay zeka modellerinin (ChatGPT, Gemini, Claude, Perplexity) sitenizi neden tavsiye etmediğini 'iyi/kötü' puanlarıyla değil; 'Ne bozuk, Kanıtı ne, Ciroya etkisi ne, Nasıl düzeltilir?' zinciriyle çözüme kavuşturur.</p>
+        </div>
+        <div class="pdf-card-capsule">
+          <h3>🛡️ %100 Deterministik Kanıt</h3>
+          <p>Hiçbir veri tahmine dayanmaz. URL, HTTP durum kodu, HTML DOM kesiti ve 14KB TCP/TLS AST bütçesi üzerinden doğrudan doğrulanabilir W3C ve IETF kanıtları üretilir.</p>
+        </div>
+        <div class="pdf-card-capsule">
+          <h3>📦 Doğrudan Uygulanabilir Kod Paketi</h3>
+          <p>Öneri ve danışmanlık değil; yazılımcınızın doğrudan sunucunuza yükleyeceği Nginx/Apache kuralları, Schema.org JSON-LD grafikleri, llms.txt v2 dosyaları ve test scriptleri verilir.</p>
+        </div>
+      </div>
+      <div class="pdf-ecosystem-box">
+        <div>
+          <div class="pdf-ecosystem-title">Yapay Zeka Keşif Ekosistemi</div>
+          <div class="pdf-ecosystem-desc">Arama alışkanlıkları değişti. Müşterileriniz artık Google yerine ChatGPT, Perplexity ve Siri'ye doğrudan soru soruyor. Sitenizin bu ekosistemde kaynak gösterilmesini sağlıyoruz.</div>
+        </div>
+        <div class="pdf-ecosystem-logos">
+          <div class="pdf-eco-logo">OpenAI<span>ChatGPT</span></div>
+          <div class="pdf-eco-logo">Google<span>Gemini / AIO</span></div>
+          <div class="pdf-eco-logo">Anthropic<span>Claude</span></div>
+          <div class="pdf-eco-logo">Perplexity<span>Pro Search</span></div>
+          <div class="pdf-eco-logo">Microsoft<span>Copilot</span></div>
+          <div class="pdf-eco-logo">Apple<span>Intelligence</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="decision-section decision-output" id="sample-output">
+  <!-- 03 15 YETKİNLİK MODÜLÜ (PDF Yetkinlik Kataloğu) -->
+  <section class="decision-section decision-capabilities" id="capabilities-catalog">
     <div class="decision-section-no">03</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">15 KRİTİK DENETİM VE GÖRÜNÜRLÜK MODÜLÜ</span>
+      <h2>Web sitenizin yapay zeka arama motorlarındaki tüm temas noktaları.</h2>
+      <p>Sitenizin arama botları ve LLM ajanları tarafından indekslenmesini sağlayan 15 temel mühendislik bileşeni.</p>
+    </div>
+    <div class="pdf-caps-grid">
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">01</span><div><span class="pdf-cap-text">robots.txt &amp; RFC 9309</span><span class="pdf-cap-desc">AI bot izinleri ve tarama bütçesi denetimi</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">02</span><div><span class="pdf-cap-text">llms.txt v2 Protokolü</span><span class="pdf-cap-desc">AI modelleri için optimize edilmiş içerik manifestosu</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">03</span><div><span class="pdf-cap-text">Schema.org JSON-LD @graph</span><span class="pdf-cap-desc">Wikidata ve Google Knowledge Graph varlık kilidi</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">14KB TCP/TLS AST Bütçesi</span><span class="pdf-cap-desc">İlk ağ paketinde semantik varlık yükleme hızı</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">05</span><div><span class="pdf-cap-text">512-Token RAG Paragrafları</span><span class="pdf-cap-desc">LLM chunking ve ColBERT MaxSim uygunluğu</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">06</span><div><span class="pdf-cap-text">Tekil H1 ve Semantik DOM</span><span class="pdf-cap-desc">Doğru başlık hiyerarşisi ve landmark etiketleri</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">07</span><div><span class="pdf-cap-text">Canonical &amp; URL Hijyeni</span><span class="pdf-cap-desc">Çift indeksleme ve kopya içerik engelleme</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">08</span><div><span class="pdf-cap-text">Security Headers (HSTS/CSP)</span><span class="pdf-cap-desc">Sunucu güvenlik başlıkları ve clickjacking kalkanı</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">09</span><div><span class="pdf-cap-text">SSRF ve Özel IP İzolasyonu</span><span class="pdf-cap-desc">Güvenli public tarama ve altyapı koruması</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">10</span><div><span class="pdf-cap-text">WCAG 2.2 AA Erişilebilirlik</span><span class="pdf-cap-desc">ARIA landmarkları ve kontrast standartları</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">11</span><div><span class="pdf-cap-text">Link Bütünlüğü &amp; HTTP 200</span><span class="pdf-cap-desc">404 çıkmaz yolları ve zincirleme yönlendirmeler</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">12</span><div><span class="pdf-cap-text">AI Marka Atıf Takibi</span><span class="pdf-cap-desc">Perplexity ve ChatGPT aramalarında marka görünürlüğü</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">13</span><div><span class="pdf-cap-text">E-E-A-T Otorite Doğrulaması</span><span class="pdf-cap-desc">Yazar profilleri, kaynak atıfları ve yayıncı kimliği</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">14</span><div><span class="pdf-cap-text">IndexNow Çok Merkezli Dağıtım</span><span class="pdf-cap-desc">Bing, Yandex ve Naver anlık indeksleme tetikleyicisi</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">15</span><div><span class="pdf-cap-text">Rollback ve Geri Alma Güvencesi</span><span class="pdf-cap-desc">Sıfır kesinti ve anında geri alma komutları</span></div></div>
+    </div>
+  </section>
+
+  <!-- 04 YAPAY ZEKA ARAMA AĞI UYUMLULUĞU (PDF Sayfa 10-12) -->
+  <section class="decision-section decision-ai-network" id="ai-network">
+    <div class="decision-section-no">04</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">TÜM YAPAY ZEKA ARAMA BOTLARIYLA %100 UYUMLU</span>
+      <h2>Müşteriniz nereden ararsa arasın; sisteminiz cevabı hazır tutar.</h2>
+      <p>Dünyanın en büyük yapay zeka arama motorları için özel olarak test edilmiş tarayıcı kuralları.</p>
+    </div>
+    <div class="pdf-net-grid">
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">OAI-SearchBot</span><span class="pdf-net-badge">OpenAI</span></div><div class="pdf-net-desc">ChatGPT Search için doğrudan kaynak toplama botu. Sitenizin anlık arama sonuçlarında gösterilmesini sağlar.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Google-Extended</span><span class="pdf-net-badge">Google AI</span></div><div class="pdf-net-desc">Gemini ve Google AI Overviews eğitim ve bilgi çekme protokolü. Doğru varlık tanımlarıyla otorite inşa eder.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">ClaudeBot</span><span class="pdf-net-badge">Anthropic</span></div><div class="pdf-net-desc">Claude 3.5 Sonnet ve kurumsal LLM ajanları için temiz veri akışı sağlayan akıllı tarayıcı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">PerplexityBot</span><span class="pdf-net-badge">Perplexity</span></div><div class="pdf-net-desc">Akademik ve kurumsal araştırmalarda doğrudan dipnot ve web referansı oluşturan bilgi tarayıcısı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Applebot-Extended</span><span class="pdf-net-badge">Apple</span></div><div class="pdf-net-desc">Apple Intelligence ve Siri üzerinden gelen sesli ve yazılı aramalarda yerel yanıt kaynağı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Bingbot / Copilot</span><span class="pdf-net-badge">Microsoft</span></div><div class="pdf-net-desc">Microsoft Copilot ve Bing AI arama entegrasyonu için anlık IndexNow protokol desteği.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Meta-ExternalAgent</span><span class="pdf-net-badge">Meta AI</span></div><div class="pdf-net-desc">WhatsApp, Instagram ve Meta AI asistanlarında web içeriğinizin tavsiye edilmesini sağlar.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Amazonbot</span><span class="pdf-net-badge">Amazon</span></div><div class="pdf-net-desc">Alexa ve kurumsal AWS AI sistemleri için ürün ve servis veri modelleme tarayıcısı.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Cohere-ai</span><span class="pdf-net-badge">Enterprise</span></div><div class="pdf-net-desc">Kurumsal RAG ve B2B karar destek modelleri için yüksek doğruluklu bağlam okuyucu.</div></div>
+    </div>
+  </section>
+
+  <!-- 05 6 ALTYAPI VE GÜVENLİK SÜTUNU (PDF Sayfa 14-16) -->
+  <section class="decision-section decision-security-pillars" id="security-pillars">
+    <div class="decision-section-no">05</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">KURUMSAL GÜVENLİK VE MÜHENDİSLİK STANDARTLARI</span>
+      <h2>6 Temel Altyapı ve Güvenlik Sütunu Üzerine İnşa Edildi.</h2>
+      <p>HTML&amp;HTML, banka ve kurumsal yazılım seviyesinde sıfır hata toleransıyla çalışır.</p>
+    </div>
+    <div class="pdf-security-grid">
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🛡️</div><div class="pdf-sec-title">SSRF Koruması</div><div class="pdf-sec-desc">Fail-closed IP filtresiyle kurumsal ağ güvenliği</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">📜</div><div class="pdf-sec-title">RFC 9309 Uyum</div><div class="pdf-sec-desc">IETF resmi standartlarında robots.txt yönetişimi</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">14KB AST Sınırı</div><div class="pdf-sec-desc">İlk TCP paketinde en yüksek semantik varlık yoğunluğu</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">📐</div><div class="pdf-sec-title">ColBERT MaxSim</div><div class="pdf-sec-desc">Late-interaction vektör eşleşmesine uygun içerik</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🔄</div><div class="pdf-sec-title">Rollback Garantisi</div><div class="pdf-sec-desc">Tüm kod paketlerinde sıfır kesintili anında geri alma</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🔒</div><div class="pdf-sec-title">SHA-256 İmzası</div><div class="pdf-sec-desc">Kriptografik bütünlük ve değişmezlik doğrulaması</div></div>
+    </div>
+  </section>
+
+  <!-- 06 NASIL ÇALIŞIR? 4 BASİT ADIM (PDF Sayfa 18-19) -->
+  <section class="decision-section decision-workflow" id="workflow-steps">
+    <div class="decision-section-no">06</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">NASIL ÇALIŞIR? SADECE 4 BASİT ADIM</span>
+      <h2>Karmaşık teknik süreçleri dakikalar içinde çözüme kavuşturun.</h2>
+      <p>Yazılım uzmanı olmanıza gerek yok. Sistemimiz teşhisi koyar, çözümü paketler, ekibinize uygulatır.</p>
+    </div>
+    <div class="pdf-steps-grid">
+      <div class="pdf-step-card"><span class="pdf-step-num">1</span><h3>1. Ücretsiz Tara</h3><p>Web sitenizin adresini girin. 18 bağımsız motor, sitenizin herkese açık web yüzeyini saniyeler içinde analiz etsin.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">2</span><h3>2. Engelleri Gör</h3><p>Yapay zeka modellerinin sitenizi neden okuyamadığını gerçek HTML ve HTTP kanıtlarıyla şeffafça görün.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">3</span><h3>3. Kararını Al</h3><p>Sorun kritikse  Fix Pack paketini edinin. 30+ dosyadan oluşan mühendislik çözüm setini anında indirin.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">4</span><h3>4. Yazılımcına Ver</h3><p>Hazır kodları, test senaryolarını ve Nginx/Apache ayarlarını yazılımcınıza teslim edin; 15 dakikada yayına alsın.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 NEDEN HTML&HTML? (PDF Sayfa 20-21) -->
+  <section class="decision-section decision-why-us" id="why-html">
+    <div class="decision-section-no">07</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">NEDEN BİZİMLE ÇALIŞMALISINIZ?</span>
+      <h2>Geleneksel ajans masraflarına ve aylarca süren belirsizliklere son verin.</h2>
+    </div>
+    <div class="pdf-why-split">
+      <div class="pdf-why-focal">
+        <span class="pdf-why-badge-pill">FARKIMIZ NETTİR</span>
+        <h3>Rapor Satmıyoruz,<br>Çözüm Teslim Ediyoruz.</h3>
+        <p>Klasik danışmanlık firmaları saatliği 200$'dan başlayan soyut tavsiyeler verir. Biz ise çalışan üretim kodunu tek seferlik sabit fiyatla teslim ederiz.</p>
+        <a class="decision-btn decision-btn--light" href="#scanner">Hemen Ücretsiz Dene →</a>
+      </div>
+      <div class="pdf-why-list">
+        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5 Saniyede Anlaşılır Teşhis:</b> Karmaşık teknik jargonu ticari karar berraklığına dönüştürür.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Sıfır Tahmin, %100 Kanıt:</b> Her tespit doğrudan URL, satır ve bayt seviyesinde belgelenir.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Hazır Üretim Kodları:</b> Kopyala-yapıştır çalışır Nginx, JSON-LD ve robots.txt konfigürasyonları.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Geri Alma (Rollback) Güvencesi:</b> Yapılan her değişikliğin sıfır riskli geri dönüş planı dahildir.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Tek Seferlik Sabit Fiyat:</b> Aylık abonelik veya sürpriz danışmanlık faturaları yoktur.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30 Gün Yeniden Tarama:</b> Düzeltmelerinizi yaptıktan sonra sisteminizi ücretsiz yeniden doğrulayın.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Kaynak Kod Erişimi Gerekmez:</b> Sunucu şifrenizi veya kod deponuzu kimseyle paylaşmanız gerekmez.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 DOĞRULANMIŞ STANDARTLAR VE REFERANSLAR (PDF Sayfa 22-23) -->
+  <section class="decision-section decision-references" id="industry-standards">
+    <div class="decision-section-no">08</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">KÜRESEL OTORİTELER VE STANDARTLAR</span>
+      <h2>Kararlarımız ve Algoritmalarımız Resmi Web Standartlarına Dayanır.</h2>
+      <p>Ölçümlerimiz uluslararası standart belirleyicilerin yayınladığı resmi şartnamelerle %100 uyumludur.</p>
+    </div>
+    <div class="pdf-refs-grid">
+      <div class="pdf-ref-card"><b>W3C</b><span>World Wide Web Consortium</span></div>
+      <div class="pdf-ref-card"><b>IETF</b><span>RFC 9309 Standartları</span></div>
+      <div class="pdf-ref-card"><b>Schema.org</b><span>Yapısal Veri Konsorsiyumu</span></div>
+      <div class="pdf-ref-card"><b>OpenAI</b><span>SearchBot Spesifikasyonu</span></div>
+      <div class="pdf-ref-card"><b>Google Search</b><span>AI Overviews &amp; E-E-A-T</span></div>
+      <div class="pdf-ref-card"><b>Wikidata</b><span>Knowledge Graph MID</span></div>
+      <div class="pdf-ref-card"><b>Cloudflare</b><span>Edge ve DNS Güvenliği</span></div>
+      <div class="pdf-ref-card"><b>NIST</b><span>Altyapı Güvenlik Çerçevesi</span></div>
+      <div class="pdf-ref-card"><b>IndexNow</b><span>Anlık Arama İndeksleme</span></div>
+      <div class="pdf-ref-card"><b>Paddle</b><span>Global Satıcı Güvencesi</span></div>
+    </div>
+  </section>
+
+  <!-- 09 GERÇEK ÖRNEK RAPOR (PDF Çıktı Kanıtı) -->
+  <section class="decision-section decision-output" id="sample-output">
+    <div class="decision-section-no">09</div>
     <div class="decision-output-grid">
       <div>
         <span class="decision-kicker">SATIN ALMADAN ÖNCE ÇIKTIYI GÖR</span>
@@ -375,14 +539,15 @@ def build_homepages():
           <h3>Canonical etiketi eksik</h3>
           <p>Arama sistemleri hangi URL'nin ana sürüm olduğunu daha belirsiz okuyabilir.</p>
           <div class="decision-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
-          <div class="decision-paid"><b>$99 FIX PACK</b><span>Kök neden → exact fix → test → rollback → re-scan</span></div>
+          <div class="decision-paid"><b> FIX PACK</b><span>Kök neden → exact fix → test → rollback → re-scan</span></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 10 TEKLİF & FİYATLANDIRMA (Ücretsiz Teşhis vs  Uygulama) -->
   <section class="decision-section decision-offer" id="offer">
-    <div class="decision-section-no">04</div>
+    <div class="decision-section-no">10</div>
     <div class="decision-heading">
       <span class="decision-kicker">ÜCRETSİZ TEŞHİS → ÜCRETLİ UYGULAMA</span>
       <h2>Analiz için değil; uygulanabilir çözüm paketi için ödeme.</h2>
@@ -395,7 +560,7 @@ def build_homepages():
         <a href="#scanner">Ücretsiz tara →</a>
       </article>
       <article class="decision-offer-card decision-offer-card--paid">
-        <span>$99 · TEK SEFERLİK</span>
+        <span> · TEK SEFERLİK</span>
         <h3>Nasıl düzeltileceğini ekibinize verin.</h3>
         <ul><li>Kök neden</li><li>Exact fix / konfigürasyon</li><li>Uygulama sırası</li><li>Acceptance + regression test</li><li>Rollback + 30 gün içinde 1 re-scan</li></ul>
         <a href="/tr/fiyatlandirma/">Fix Pack'i incele →</a>
@@ -403,8 +568,9 @@ def build_homepages():
     </div>
   </section>
 
+  <!-- 11 GÜVEN VE ETİK KANIT KATMANI -->
   <section class="decision-section decision-trust" id="trust">
-    <div class="decision-section-no">05</div>
+    <div class="decision-section-no">11</div>
     <div class="decision-trust-grid">
       <div class="decision-trust-copy">
         <span class="decision-kicker">GÜVEN SÖYLEM DEĞİL, KANIT KATMANIDIR</span>
@@ -420,15 +586,16 @@ def build_homepages():
     </div>
   </section>
 
+  <!-- 12 NİHAİ DÖNÜŞÜM ÇAĞRISI (CTA) -->
   <section class="decision-section decision-close" id="final-cta">
-    <div class="decision-section-no">06</div>
+    <div class="decision-section-no">12</div>
     <div>
       <span class="decision-kicker">İLK KARAR 5 SANİYEDE NET OLSUN</span>
       <h2>Sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün.</h2>
-      <p>Sorun gerçekse $99'a yazılımcınızın uygulayacağı düzeltme paketini alın.</p>
+      <p>Sorun gerçekse 'a yazılımcınızın uygulayacağı düzeltme paketini alın.</p>
       <div class="decision-actions">
         <a class="decision-btn decision-btn--light" href="#scanner">Sitemi ücretsiz tara →</a>
-        <a class="decision-btn decision-btn--ghost" href="/tr/fiyatlandirma/">$99 Fix Pack</a>
+        <a class="decision-btn decision-btn--ghost" href="/tr/fiyatlandirma/"> Fix Pack</a>
       </div>
     </div>
     <div class="decision-orbits" aria-hidden="true">
@@ -831,6 +998,12 @@ def build_homepages():
     <span>Free diagnosis</span><span>Real URL / HTTP / HTML evidence</span><span>No source-code access</span>
   </div>
 
+  <div class="pdf-hero-badges" aria-label="Key Value Pillars">
+    <div class="pdf-hero-badge"><i>⚡</i><span>5-Second Executive Clarity</span></div>
+    <div class="pdf-hero-badge"><i>🛡️</i><span>W3C &amp; RFC 9309 Empirical Evidence</span></div>
+    <div class="pdf-hero-badge"><i>📦</i><span> Fix Pack: Ready-to-Deploy Code</span></div>
+  </div>
+
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
@@ -869,6 +1042,8 @@ def build_homepages():
 
 <!-- CUSTOMER DECISION HOMEPAGE V2 -->
 <section class="decision-shell" id="customer-story" aria-label="HTML&HTML customer decision system">
+
+  <!-- 01 EXECUTIVE DIAGNOSIS (Understood in 5 Seconds & 5 Decision Questions) -->
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
     <div class="decision-section-no">01</div>
     <div class="decision-heading">
@@ -885,17 +1060,179 @@ def build_homepages():
     </div>
   </section>
 
-  <section class="decision-section decision-pillars" id="decision-pillars">
+  <!-- 02 WHO WE ARE & ARCHITECTURAL DECISION SYSTEM -->
+  <section class="decision-section decision-about" id="about-architecture">
     <div class="decision-section-no">02</div>
-    <div class="decision-heading decision-heading--split">
-      <div><span class="decision-kicker">ONE DECISION SYSTEM</span><h2>Evaluate the website as a decision system, not a feature list.</h2></div>
-      <p>Every issue becomes four questions: <strong>What is wrong?</strong> <strong>What proves it?</strong> <strong>What does it affect?</strong> <strong>What should change first?</strong></p>
+    <div class="decision-heading">
+      <span class="decision-kicker">WHO WE ARE &amp; WHAT WE SOLVE</span>
+      <h2>Not another audit report; an implementable Decision &amp; Engineering System.</h2>
+      <p>Traditional agencies sell 200-page PDF audits with vague advice and leave implementation to you. HTML&amp;HTML transforms complex technical barriers into 5-second decision clarity and drop-in code packages that your engineering team can deploy in 15 minutes.</p>
     </div>
-    <div class="decision-bridge"><span>Problem</span><i>→</i><span>Evidence</span><i>→</i><span>Impact</span><i>→</i><span>Priority</span><i>→</i><span>Fix</span></div>
+    <div class="pdf-about-grid">
+      <div class="pdf-about-cards">
+        <div class="pdf-card-capsule">
+          <h3>⚡ Decision-Led Methodology</h3>
+          <p>We do not score 'good or bad'. We pinpoint why AI engines (ChatGPT, Gemini, Claude, Perplexity) ignore your brand through four exact questions: What is broken? What is the evidence? What is the revenue impact? How to fix it?</p>
+        </div>
+        <div class="pdf-card-capsule">
+          <h3>🛡️ 100% Deterministic Evidence</h3>
+          <p>Zero hallucinations or random scores. Concrete evidence derived from real URLs, HTTP response headers, DOM hierarchy and 14KB TCP/TLS AST budgets under W3C and IETF RFC standards.</p>
+        </div>
+        <div class="pdf-card-capsule">
+          <h3>📦 Production-Ready Engineering Code</h3>
+          <p>No vague consultancy. We provide drop-in Nginx/Apache directives, Schema.org JSON-LD graphs, llms.txt v2 manifests and automated rollback scripts.</p>
+        </div>
+      </div>
+      <div class="pdf-ecosystem-box">
+        <div>
+          <div class="pdf-ecosystem-title">AI Search Discovery Ecosystem</div>
+          <div class="pdf-ecosystem-desc">Search habits have shifted. Buyers ask ChatGPT, Perplexity and Siri directly instead of scrolling search engines. We ensure your site is qualified and cited as the authoritative source.</div>
+        </div>
+        <div class="pdf-ecosystem-logos">
+          <div class="pdf-eco-logo">OpenAI<span>ChatGPT</span></div>
+          <div class="pdf-eco-logo">Google<span>Gemini / AIO</span></div>
+          <div class="pdf-eco-logo">Anthropic<span>Claude</span></div>
+          <div class="pdf-eco-logo">Perplexity<span>Pro Search</span></div>
+          <div class="pdf-eco-logo">Microsoft<span>Copilot</span></div>
+          <div class="pdf-eco-logo">Apple<span>Intelligence</span></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="decision-section decision-output" id="sample-output">
+  <!-- 03 15 CAPABILITIES MENU -->
+  <section class="decision-section decision-capabilities" id="capabilities-catalog">
     <div class="decision-section-no">03</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">15 ESSENTIAL CAPABILITY &amp; VISIBILITY MODULES</span>
+      <h2>Every critical touchpoint between your website and AI search engines.</h2>
+      <p>15 core engineering components ensuring search bots and LLM agents index, understand, and cite your domain.</p>
+    </div>
+    <div class="pdf-caps-grid">
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">01</span><div><span class="pdf-cap-text">robots.txt &amp; RFC 9309</span><span class="pdf-cap-desc">AI crawler governance and crawl budget defense</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">02</span><div><span class="pdf-cap-text">llms.txt v2 Protocol</span><span class="pdf-cap-desc">Machine-readable content manifesto for LLMs</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">03</span><div><span class="pdf-cap-text">Schema.org JSON-LD @graph</span><span class="pdf-cap-desc">Wikidata &amp; Google Knowledge Graph MID anchors</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">14KB TCP/TLS AST Budget</span><span class="pdf-cap-desc">High-priority semantic entity delivery in initial packet</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">05</span><div><span class="pdf-cap-text">512-Token RAG Paragraphs</span><span class="pdf-cap-desc">LLM chunking and ColBERT MaxSim alignment</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">06</span><div><span class="pdf-cap-text">Single H1 &amp; Semantic DOM</span><span class="pdf-cap-desc">Strict heading hierarchy and landmark tags</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">07</span><div><span class="pdf-cap-text">Canonical &amp; URL Hygiene</span><span class="pdf-cap-desc">Eliminate duplicate indexing and redirect loops</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">08</span><div><span class="pdf-cap-text">Security Headers (HSTS/CSP)</span><span class="pdf-cap-desc">Server-grade defense against clickjacking and spoofing</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">09</span><div><span class="pdf-cap-text">SSRF &amp; Private IP Isolation</span><span class="pdf-cap-desc">Safe public web surface crawling &amp; perimeter security</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">10</span><div><span class="pdf-cap-text">WCAG 2.2 AA Accessibility</span><span class="pdf-cap-desc">ARIA landmarks, focus rings and contrast standards</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">11</span><div><span class="pdf-cap-text">Link Integrity &amp; HTTP 200</span><span class="pdf-cap-desc">Live probes eliminating 404 dead ends</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">12</span><div><span class="pdf-cap-text">AI Brand Mention Tracking</span><span class="pdf-cap-desc">Measure domain citations in ChatGPT and Perplexity</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">13</span><div><span class="pdf-cap-text">E-E-A-T Authority Probes</span><span class="pdf-cap-desc">Author profiles, scientific citations, publisher trust</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">14</span><div><span class="pdf-cap-text">IndexNow Multi-Hub Broadcast</span><span class="pdf-cap-desc">Instant notification pipeline for Bing, Yandex, Naver</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">15</span><div><span class="pdf-cap-text">Zero-Downtime Rollback Plan</span><span class="pdf-cap-desc">Guaranteed zero-risk recovery scripts for every change</span></div></div>
+    </div>
+  </section>
+
+  <!-- 04 AI SEARCH NETWORK COMPATIBILITY -->
+  <section class="decision-section decision-ai-network" id="ai-network">
+    <div class="decision-section-no">04</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">100% COMPATIBLE WITH GLOBAL AI CRAWLERS</span>
+      <h2>Wherever buyers search; your architecture delivers verified answers.</h2>
+      <p>Independently verified crawler rules and access governance for global AI search engines.</p>
+    </div>
+    <div class="pdf-net-grid">
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">OAI-SearchBot</span><span class="pdf-net-badge">OpenAI</span></div><div class="pdf-net-desc">Direct search ingestion bot for ChatGPT Search. Powers instant live answers and citations.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Google-Extended</span><span class="pdf-net-badge">Google AI</span></div><div class="pdf-net-desc">Feeds Gemini and Google AI Overviews. Structured data establishes verifiable entity authority.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">ClaudeBot</span><span class="pdf-net-badge">Anthropic</span></div><div class="pdf-net-desc">High-fidelity content ingest bot for Claude 3.5 Sonnet and enterprise AI agents.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">PerplexityBot</span><span class="pdf-net-badge">Perplexity</span></div><div class="pdf-net-desc">Deep-research bot generating footnotes, citations and corporate evaluation summaries.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Applebot-Extended</span><span class="pdf-net-badge">Apple</span></div><div class="pdf-net-desc">Native knowledge provider for Apple Intelligence and Siri across millions of consumer devices.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Bingbot / Copilot</span><span class="pdf-net-badge">Microsoft</span></div><div class="pdf-net-desc">Microsoft Copilot and Bing AI search engine integration backed by real-time IndexNow protocol.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Meta-ExternalAgent</span><span class="pdf-net-badge">Meta AI</span></div><div class="pdf-net-desc">Recommends web solutions and services across WhatsApp, Instagram and Meta AI assistant.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Amazonbot</span><span class="pdf-net-badge">Amazon</span></div><div class="pdf-net-desc">Commercial knowledge crawler for Alexa and enterprise AWS generative search models.</div></div>
+      <div class="pdf-net-card"><div class="pdf-net-header"><span class="pdf-net-name">Cohere-ai</span><span class="pdf-net-badge">Enterprise</span></div><div class="pdf-net-desc">High-accuracy context extractor for enterprise RAG and B2B decision systems.</div></div>
+    </div>
+  </section>
+
+  <!-- 05 6 INFRASTRUCTURE & SECURITY PILLARS -->
+  <section class="decision-section decision-security-pillars" id="security-pillars">
+    <div class="decision-section-no">05</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">ENTERPRISE SECURITY &amp; RELIABILITY STANDARDS</span>
+      <h2>Engineered upon 6 resilient infrastructure pillars.</h2>
+      <p>HTML&amp;HTML operates with zero fault tolerance matching institutional software standards.</p>
+    </div>
+    <div class="pdf-security-grid">
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🛡️</div><div class="pdf-sec-title">SSRF Fortress</div><div class="pdf-sec-desc">Fail-closed IP filtering protecting internal perimeter</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">📜</div><div class="pdf-sec-title">RFC 9309 Strict</div><div class="pdf-sec-desc">IETF compliant robots.txt governance</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">14KB AST Ceiling</div><div class="pdf-sec-desc">Maximum semantic density in initial TCP packet</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">📐</div><div class="pdf-sec-title">ColBERT MaxSim</div><div class="pdf-sec-desc">Late-interaction token similarity optimization</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🔄</div><div class="pdf-sec-title">Rollback Guarantee</div><div class="pdf-sec-desc">Zero-downtime automated rollback scripts for every fix</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">🔒</div><div class="pdf-sec-title">SHA-256 Integrity</div><div class="pdf-sec-desc">Cryptographic signature ensuring immutable delivery</div></div>
+    </div>
+  </section>
+
+  <!-- 06 HOW IT WORKS: 4 SIMPLE STEPS -->
+  <section class="decision-section decision-workflow" id="workflow-steps">
+    <div class="decision-section-no">06</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">HOW IT WORKS: ONLY 4 SIMPLE STEPS</span>
+      <h2>Resolve complex technical barriers within minutes.</h2>
+      <p>No engineering expertise required. Our platform diagnoses issues, packages solutions, and enables your developers.</p>
+    </div>
+    <div class="pdf-steps-grid">
+      <div class="pdf-step-card"><span class="pdf-step-num">1</span><h3>1. Free Scan</h3><p>Enter your website URL. 18 independent engines analyze your public web surface within seconds.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">2</span><h3>2. Inspect Evidence</h3><p>Examine transparent HTML, HTTP and DOM evidence showing why AI models cannot parse your site.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">3</span><h3>3. Make Decision</h3><p>Acquire the  Fix Pack if issues are critical. Download the 30+ file engineering package instantly.</p></div>
+      <div class="pdf-step-card"><span class="pdf-step-num">4</span><h3>4. Hand to Developer</h3><p>Deliver production-ready templates, Nginx configs and tests to your team for a 15-minute rollout.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 WHY HTML&HTML? -->
+  <section class="decision-section decision-why-us" id="why-html">
+    <div class="decision-section-no">07</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">WHY CHOOSE US?</span>
+      <h2>Eliminate expensive agency retainers and months of uncertainty.</h2>
+    </div>
+    <div class="pdf-why-split">
+      <div class="pdf-why-focal">
+        <span class="pdf-why-badge-pill">OUR PROMISE</span>
+        <h3>We Don't Sell Audits,<br>We Deliver Solutions.</h3>
+        <p>Traditional consultants charge /hr for vague PowerPoint advice. We deliver tested, working production code for a single flat fee.</p>
+        <a class="decision-btn decision-btn--light" href="#scanner">Try Free Diagnostic →</a>
+      </div>
+      <div class="pdf-why-list">
+        <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5-Second Clarity:</b> Translates confusing jargon into decisive business intelligence.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Zero Guesswork, 100% Proof:</b> Every defect is documented with URL, line, and byte evidence.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Drop-in Production Code:</b> Ready-to-paste Nginx, JSON-LD, and robots.txt configurations.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Guarantee:</b> Every recipe includes a zero-risk rollback plan.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Single Fixed Price:</b> No recurring retainers, hidden fees or surprise invoices.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30-Day Free Re-Scan:</b> Verify your fixes on the live surface after implementation.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Zero Source-Code Access:</b> No need to grant repository access or server credentials.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 VERIFIED STANDARDS & REFERENCES -->
+  <section class="decision-section decision-references" id="industry-standards">
+    <div class="decision-section-no">08</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">GLOBAL STANDARDS &amp; AUTHORITIES</span>
+      <h2>Our algorithms and solutions conform strictly to open web standards.</h2>
+      <p>Deterministic checks aligned 100% with official RFC specifications and vendor developer documentation.</p>
+    </div>
+    <div class="pdf-refs-grid">
+      <div class="pdf-ref-card"><b>W3C</b><span>World Wide Web Consortium</span></div>
+      <div class="pdf-ref-card"><b>IETF</b><span>RFC 9309 Standards</span></div>
+      <div class="pdf-ref-card"><b>Schema.org</b><span>Structured Data Consortium</span></div>
+      <div class="pdf-ref-card"><b>OpenAI</b><span>SearchBot Specification</span></div>
+      <div class="pdf-ref-card"><b>Google Search</b><span>AI Overviews &amp; E-E-A-T</span></div>
+      <div class="pdf-ref-card"><b>Wikidata</b><span>Knowledge Graph MID</span></div>
+      <div class="pdf-ref-card"><b>Cloudflare</b><span>Edge &amp; DNS Security</span></div>
+      <div class="pdf-ref-card"><b>NIST</b><span>Cybersecurity Framework</span></div>
+      <div class="pdf-ref-card"><b>IndexNow</b><span>Real-Time Indexing Protocol</span></div>
+      <div class="pdf-ref-card"><b>Paddle</b><span>Global Merchant of Record</span></div>
+    </div>
+  </section>
+
+  <!-- 09 REAL SAMPLE REPORT -->
+  <section class="decision-section decision-output" id="sample-output">
+    <div class="decision-section-no">09</div>
     <div class="decision-output-grid">
       <div>
         <span class="decision-kicker">SEE THE OUTPUT BEFORE YOU BUY</span>
@@ -919,26 +1256,28 @@ def build_homepages():
           <h3>Canonical tag is missing</h3>
           <p>Search systems may read the primary URL with more ambiguity.</p>
           <div class="decision-evidence"><b>EVIDENCE</b><code>rel="canonical" was not found inside &lt;head&gt;</code></div>
-          <div class="decision-paid"><b>$99 FIX PACK</b><span>Root cause → exact fix → test → rollback → re-scan</span></div>
+          <div class="decision-paid"><b> FIX PACK</b><span>Root cause → exact fix → test → rollback → re-scan</span></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 10 OFFER & PRICING -->
   <section class="decision-section decision-offer" id="offer">
-    <div class="decision-section-no">04</div>
+    <div class="decision-section-no">10</div>
     <div class="decision-heading">
       <span class="decision-kicker">FREE DIAGNOSIS → PAID IMPLEMENTATION</span>
       <h2>Pay for an implementable fix package, not for another audit.</h2>
     </div>
     <div class="decision-offer-grid">
-      <article class="decision-offer-card"><span>FREE</span><h3>See what is wrong.</h3><ul><li>Finding</li><li>URL / location</li><li>Evidence</li><li>Priority</li><li>General fix direction</li></ul><a href="#scanner">Scan free →</a></article>
-      <article class="decision-offer-card decision-offer-card--paid"><span>$99 · ONE TIME</span><h3>Give your team the implementation path.</h3><ul><li>Root cause</li><li>Exact fix / configuration</li><li>Implementation order</li><li>Acceptance + regression test</li><li>Rollback + one re-scan within 30 days</li></ul><a href="/en/pricing/">View Fix Pack →</a></article>
+      <article class="decision-offer-card"><span>FREE</span><h3>See what is wrong.</h3><ul><li>Finding</li><li>URL / location</li><li>Evidence</li><li>Priority</li><li>General fix direction</li></ul><a href="#scanner">Measure My Risk — Free →</a></article>
+      <article class="decision-offer-card decision-offer-card--paid"><span> · ONE TIME</span><h3>Give your team the implementation path.</h3><ul><li>Root cause</li><li>Exact fix / configuration</li><li>Implementation order</li><li>Acceptance + regression test</li><li>Rollback + one re-scan within 30 days</li></ul><a href="/en/pricing/">View Fix Pack →</a></article>
     </div>
   </section>
 
+  <!-- 11 TRUST & BOUNDARY LAYER -->
   <section class="decision-section decision-trust" id="trust">
-    <div class="decision-section-no">05</div>
+    <div class="decision-section-no">11</div>
     <div class="decision-trust-grid">
       <div class="decision-trust-copy">
         <span class="decision-kicker">TRUST IS AN EVIDENCE LAYER</span>
@@ -954,9 +1293,10 @@ def build_homepages():
     </div>
   </section>
 
+  <!-- 12 FINAL CONVERSION CLOSE -->
   <section class="decision-section decision-close" id="final-cta">
-    <div class="decision-section-no">06</div>
-    <div><span class="decision-kicker">MAKE THE FIRST DECISION IN 5 SECONDS</span><h2>See why your site is weak in AI search for free.</h2><p>If the issue is real, get the $99 fix package your developer can implement.</p><div class="decision-actions"><a class="decision-btn decision-btn--light" href="#scanner">Scan my site free →</a><a class="decision-btn decision-btn--ghost" href="/en/pricing/">$99 Fix Pack</a></div></div>
+    <div class="decision-section-no">12</div>
+    <div><span class="decision-kicker">MAKE THE FIRST DECISION IN 5 SECONDS</span><h2>See why your site is weak in AI search for free.</h2><p>If the issue is real, get the  fix package your developer can implement.</p><div class="decision-actions"><a class="decision-btn decision-btn--light" href="#scanner">Scan my site free →</a><a class="decision-btn decision-btn--ghost" href="/en/pricing/"> Fix Pack</a></div></div>
     <div class="decision-orbits" aria-hidden="true"><span>Customer</span><span>Trust</span><span>Distribution</span><span>Reference</span><span>Sales</span></div>
   </section>
 </section>
