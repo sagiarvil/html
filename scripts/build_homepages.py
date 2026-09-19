@@ -91,7 +91,7 @@ def build_homepages():
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
-<title>Web Siteniz AI Aramalarına Hazır mı? Ücretsiz Kontrol | HTML&amp;HTML</title>
+<title>Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&amp;HTML</title>
 <meta name="description" content="Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; geliştiricinize uygulanabilir düzeltme planı verin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
