@@ -139,24 +139,4 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
-- [New AI Safety Bug Bounty Program Introduced by OpenAI](https://htmlandhtml.com/en/llms-txt-news/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a/)
-- [OpenAI and Japan Digital Agency Establish Generative AI Partnership](https://htmlandhtml.com/en/llms-txt-news/2026-09-18-openai-announces-strategic-collaboration-with-ja-15f17b33ed3a/)
-- [GPT-5.6 Update: Fusing Frontier Intelligence and Efficiency](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c/)
-- [Inside Mirakl's Agentic Commerce Architecture](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869/)
-- [New Evaluation Cycle in the Enterprise Generative AI Provider Market](https://htmlandhtml.com/en/llms-txt-news/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359/)
-- [Enterprise AI Agent Platform: Introducing OpenAI Presence](https://htmlandhtml.com/en/llms-txt-news/2026-09-15-introducing-openai-presence-839f7a51d7b5/)
-- [Agentic Coding and Reasoning Integration in GPT-5.3-Codex](https://htmlandhtml.com/en/llms-txt-news/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4/)
-- [Product Discovery and Agentic Commerce Protocol Integration in ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a/)
-- [Project-Scale Coding Models with GPT-5.1-Codex-Max](https://htmlandhtml.com/en/llms-txt-news/2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32/)
-- [OpenAI Japan Unveils Teen Safety Blueprint](https://htmlandhtml.com/en/llms-txt-news/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737/)
-- [Enterprise-Scale Agentic AI Integration and Infrastructure Implications](https://htmlandhtml.com/en/llms-txt-news/2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858/)
-- [The Rise of Agentic AI in Scientific Computing](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e/)
-- [WebSocket Integration and Connection-Scoped Caching for the Responses API](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1/)
-- [Advanced Professional Workflows and Long-Context Capabilities with GPT-5.2](https://htmlandhtml.com/en/llms-txt-news/2026-09-11-introducing-gpt-5-2-10ab1c39be14/)
-- [Cars24 Scales Million-Minute Conversation Traffic with AI Agents](https://htmlandhtml.com/en/llms-txt-news/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67/)
-- [Scaling Enterprise Agentic AI Systems](https://htmlandhtml.com/en/llms-txt-news/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18/)
-- [Five Million Dollar Research Grant Initiative for AI and Teen Development](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb/)
-- [Frontier Enterprise AI Integration Trends and Workflow Scaling](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055/)
-- [Structured Data Analysis and Source Management in Research Workflows via ChatGPT](https://htmlandhtml.com/en/llms-txt-news/2026-09-09-chatgpt-for-research-62379661ee74/)
-- [Enterprise AI Agents via Cloudflare Agent Cloud and OpenAI Integration](https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35/)
 <!-- LLMS_NEWS_END -->
