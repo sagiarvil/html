@@ -9696,3 +9696,67 @@ html[data-theme="dark"] .decision-close span,
   .reference-premium h2{font-size:30px!important}
 }
 
+
+/* --------------------------------------------------------------------------
+   PAY'NKOLAY CORPORATE FINTECH DESIGN IDENTITY (BLUE / WHITE / PILL / LUXURY)
+   -------------------------------------------------------------------------- */
+.decision-shell {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+html[data-theme="dark"] .decision-shell {
+  background: #090d16 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.pdf-card-capsule {
+  border-left: 5px solid #0052cc !important;
+  background: #ffffff !important;
+}
+html[data-theme="dark"] .pdf-card-capsule {
+  border-left: 5px solid #0284c7 !important;
+  background: #111827 !important;
+}
+.pdf-cap-pill {
+  border-radius: 999px !important;
+  padding: 12px 20px !important;
+  background: #ffffff !important;
+  border: 1px solid #dce4f2 !important;
+}
+html[data-theme="dark"] .pdf-cap-pill {
+  background: #111827 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.pdf-cap-num {
+  border-radius: 50% !important;
+  background: #0052cc !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+.pdf-sec-card {
+  border-top: 4px solid #0052cc !important;
+  border-radius: 20px !important;
+}
+.pdf-sec-icon {
+  background: #eff6ff !important;
+  color: #0052cc !important;
+}
+.pdf-step-card {
+  border-top: 4px solid #0052cc !important;
+  border-radius: 22px !important;
+}
+.pdf-step-num {
+  background: #0052cc !important;
+}
+.pdf-why-focal {
+  background: linear-gradient(135deg, #003399 0%, #0052cc 60%, #0284c7 100%) !important;
+  box-shadow: 0 20px 50px rgba(0, 82, 204, 0.3) !important;
+}
+.decision-question-grid article {
+  border-radius: 20px !important;
+  border: 1px solid #dce4f2 !important;
+  border-left: 4px solid #0052cc !important;
+}
+html[data-theme="dark"] .decision-question-grid article {
+  border-left: 4px solid #0284c7 !important;
+  background: #111827 !important;
+}
