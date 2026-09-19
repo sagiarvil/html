@@ -301,6 +301,7 @@ def build_homepages():
     </form>
     <div id="scanStatus" class="status" hidden></div>
   </div>
+  <p class="agency-note">Ajans veya geliştirici misiniz? Müşteri sitenizi ücretsiz tarayın; sorunları kanıtla görün ve uygulama planını mevcut ekibinize devredin.</p>
 
   <div class="signals">
     <span data-i18n="sigCrawl">TARAMA</span><i></i>
