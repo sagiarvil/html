@@ -119,8 +119,8 @@ EN_BLOCK = """<section class="v3-capability-contract" aria-labelledby="v3-capabi
 </section>"""
 
 SEO = {
- 'index.html': ('Web Siteniz AI Aramalarına Hazır mı? Ücretsiz Kontrol | HTML&HTML','Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.'),
- 'tr/index.html': ('Web Siteniz AI Aramalarına Hazır mı? Ücretsiz Kontrol | HTML&HTML','Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.'),
+ 'index.html': ('Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML','Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.'),
+ 'tr/index.html': ('Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&HTML','Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; uygulanabilir düzeltme planını alın.'),
  'en/index.html': ('AI SEO Audit & ChatGPT Visibility Test | HTML&HTML','Audit your website for ChatGPT, Google Gemini, Claude and Perplexity visibility. Get evidence from 18 deterministic engines and 105 checks; unlock the $99 implementation pack.'),
  'tr/ai-website-readiness/index.html': ('Yapay Zeka SEO Analizi ve AI Web Sitesi Hazırlık Testi | HTML&HTML','AI web sitesi hazırlığını ücretsiz ölçün: ChatGPT bot erişimi, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG ve E-E-A-T sinyallerini kanıtla görün.'),
  'en/ai-website-readiness/index.html': ('AI Website Readiness & AI SEO Audit | HTML&HTML','Measure AI website readiness across crawler access, llms.txt, schema, GEO, AEO, LLMO, AAO, RAG and E-E-A-T with evidence-backed checks.'),
