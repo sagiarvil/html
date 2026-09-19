@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-19T15:35:26Z",
+  "lastUpdated": "2026-09-19T20:14:31Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20172,6 +20172,55 @@
       },
       "id": "2026-09-19-achieving-10x-growth-with-agentic-sales-prospect-726c6df64865",
       "sourceUrl": "https://openai.com/index/clay",
+      "publishedAt": "2026-09-19"
+    },
+    {
+      "topic": "AI_SEARCH_PROTOTYPE_DEPLOYMENT",
+      "keywords": [
+        "SearchGPT",
+        "AI search",
+        "web retrieval",
+        "prototype",
+        "index integration"
+      ],
+      "title": {
+        "tr": "Yapay Zeka Destekli Arama Prototipinin Teknik Analizi ve Etkileri",
+        "en": "Technical Analysis and Implications of the New AI-Driven Search Prototype"
+      },
+      "dek": {
+        "tr": "Gelişmiş yapay zeka modellerini güncel web kaynakları ve doğrudan yanıt mekanizmalarıyla birleştiren yeni arama prototipinin teknik incelemesi.",
+        "en": "A technical examination of the new search prototype combining advanced AI models with timely web sources and direct answer mechanisms."
+      },
+      "summary": {
+        "tr": "Yapay zeka tabanlı arama sistemlerinin evriminde yeni bir aşama olan bu prototip, kullanıcı sorgularını doğrudan web üzerindeki güncel verilerle harmanlayarak hızlı yanıtlar üretmeyi hedefler. Geleneksel anahtar kelime eşleşmelerinden ziyade, doğal dil işleme yeteneklerini ve kaynak atıf mekanizmalarını ön plana çıkaran bu yaklaşım, web sitelerinin arama motorlarıyla etkileşim biçimini dönüştürmektedir. Teknik altyapı, büyük dil modellerinin anlık bilgi çekme kapasitesini optimize ederken, içerik üreticileri için yeni erişilebilirlik ve indeksleme gereksinimlerini beraberinde getirmektedir.",
+        "en": "Representing a new phase in the evolution of AI-driven search systems, this prototype aims to generate rapid answers by blending user queries directly with up-to-date web data. Prioritizing natural language processing capabilities and source attribution mechanisms over traditional keyword matching, this approach transforms how websites interact with search engines. The technical infrastructure optimizes the real-time retrieval capacity of large language models while introducing new accessibility and indexing requirements for content creators."
+      },
+      "whyItMatters": {
+        "tr": "Bu gelişme, kullanıcıların bilgiye erişim alışkanlıklarını doğrudan etkileyerek geleneksel arama motoru sonuç sayfalarının (SERP) yapısını değiştirir. Doğrudan yanıt odaklı arayüzler, içeriklerin yapay zeka modelleri tarafından nasıl işlendiğini ve atıf verildiğini kritik hale getirir.",
+        "en": "This development directly impacts user information-seeking habits, altering the structure of traditional search engine results pages (SERPs). Direct answer-focused interfaces make how content is processed and cited by AI models critically important."
+      },
+      "technicalImpact": {
+        "tr": "Arama sistemlerinin web sitelerini tarama, anlama ve içerik sunma yöntemlerinde köklü bir değişim yaşanmaktadır. Modellerin güncel verilere güvenli ve hızlı erişebilmesi için sitelerin teknik altyapılarının (robot.txt yönergeleri, içerik yapısı ve API erişilebilirlikleri) optimize edilmesi gereklidir. Bu durum, bot trafiği yönetimi ve sunucu kaynaklarının planlanmasında yeni mühendislik öncelikleri yaratır.",
+        "en": "A fundamental shift is occurring in how search systems crawl, understand, and present website content. Optimizing site technical infrastructures (robots.txt directives, content structure, and API accessibilities) is necessary for models to securely and quickly access current data. This creates new engineering priorities in bot traffic management and server resource planning."
+      },
+      "actions": {
+        "tr": [
+          "Sunucu günlüklerinde (server logs) yeni yapay zeka tarayıcı botlarının isteklerini ve tarama sıklığını inceleyin.",
+          "İçeriklerin metin tabanlı erişilebilirliğini ve anlamsal (semantic) yapılandırmasını kontrol edin.",
+          "Kaynak atıf mekanizmalarının ve doğrudan yanıt pencerelerinin sitenizin trafiğine olan yansımalarını izleyin."
+        ],
+        "en": [
+          "Inspect server logs for requests and crawl frequencies from new AI crawler bots.",
+          "Verify the text-based accessibility and semantic structuring of your content.",
+          "Monitor the reflections of source attribution mechanisms and direct answer windows on your site traffic."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu değerlendirme, yalnızca erken aşama bir arama prototipinin duyurusuna dayanmakta olup, gelecekteki nihai ürün mimarisinin veya resmi endüstri standartlarının kesin özelliklerini yansıtmamaktadır.",
+        "en": "This assessment is based solely on the announcement of an early-stage search prototype and does not reflect the exact specifications of future final product architectures or official industry standards."
+      },
+      "id": "2026-09-19-searchgpt-is-a-prototype-of-new-ai-search-featur-6cafd8cf5668",
+      "sourceUrl": "https://openai.com/index/searchgpt-prototype",
       "publishedAt": "2026-09-19"
     }
   ]
