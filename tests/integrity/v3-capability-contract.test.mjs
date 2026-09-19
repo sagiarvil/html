@@ -2,12 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const homePages = ['index.html','tr/index.html','en/index.html'];
-const detailPages = [
-  'tr/platform/index.html','en/platform/index.html',
-  'tr/methodology/index.html','en/methodology/index.html','tr/fiyatlandirma/index.html',
-  'en/pricing/index.html','tr/fix-mandate/index.html','en/fix-mandate/index.html',
-];
+const surfaceContracts = JSON.parse(fs.readFileSync(path.join(root, 'config/public-surface-contracts.json'), 'utf8'));
+const homePages = surfaceContracts.homePages;
+const detailPages = surfaceContracts.v3DetailPages;
 const failures = [];
 
 for (const rel of homePages) {
