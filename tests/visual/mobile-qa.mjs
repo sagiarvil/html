@@ -66,8 +66,16 @@ try{
             const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
             return cs.display!=='none'&&cs.visibility!=='hidden'&&r.width>0&&r.height>0&&r.bottom>0&&r.top<window.innerHeight*3;
           });
-          const clipped=visible.filter(el=>{const r=el.getBoundingClientRect();return r.right>vw+1||r.left<-1;}).slice(0,10).map(el=>({tag:el.tagName,cls:String(el.className||'').slice(0,80),text:(el.textContent||'').trim().slice(0,80)}));
-          const tinyTap=visible.filter(el=>['A','BUTTON'].includes(el.tagName)).filter(el=>{const r=el.getBoundingClientRect();return r.width<40||r.height<40;}).slice(0,10).map(el=>({tag:el.tagName,cls:String(el.className||'').slice(0,80),w:Math.round(el.getBoundingClientRect().width),h:Math.round(el.getBoundingClientRect().height),text:(el.textContent||'').trim().slice(0,80)}));
+          const clipped=visible.filter(el=>{
+            const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+            const cls=String(el.className||'');
+            if(['fixed','absolute'].includes(cs.position))return false;
+            if(cls.includes('sr-only')||cls.includes('skip'))return false;
+            return r.right>vw+1||r.left<-1;
+          }).slice(0,10).map(el=>({tag:el.tagName,cls:String(el.className||'').slice(0,80),text:(el.textContent||'').trim().slice(0,80)}));
+          const touchSelectors=['#scanButton','.decision-btn','.hero-actions a','.ai-opportunity-actions a','.reference-premium__actions a','.hh-mobile-menu-btn','.hh-mobile-toggle','.hh-dock-item','.langs a','.langs button'];
+          const touch=[...document.querySelectorAll(touchSelectors.join(','))].filter(el=>{const r=el.getBoundingClientRect(),cs=getComputedStyle(el);return cs.display!=='none'&&cs.visibility!=='hidden'&&r.width>0&&r.height>0;});
+          const tinyTap=touch.filter(el=>{const r=el.getBoundingClientRect();return r.width<40||r.height<40;}).slice(0,10).map(el=>({tag:el.tagName,cls:String(el.className||'').slice(0,80),w:Math.round(el.getBoundingClientRect().width),h:Math.round(el.getBoundingClientRect().height),text:(el.textContent||'').trim().slice(0,80)}));
           return {clipped,tinyTap};
         });
         if(mobileAudit.clipped.length)errors.push(`${vp.width}px ${route}: visible content clipped/offscreen ${JSON.stringify(mobileAudit.clipped)}`);
