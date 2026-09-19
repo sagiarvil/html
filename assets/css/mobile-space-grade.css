@@ -1550,3 +1550,323 @@
   .hh-dock-item svg{width:13px!important;height:13px!important}
 }
 
+
+
+/* PREMIUM MOBILE HARDENING V5 */
+@media (max-width: 768px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  main,
+  main > section,
+  .hero,
+  .authority-hero,
+  .decision-shell,
+  .decision-section,
+  .reference-premium,
+  .reference-premium__intro,
+  .reference-premium__who,
+  .reference-premium__card,
+  .concept-body,
+  .term-blocks,
+  .term-sources {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  h1, h2, h3, p, li, a, button, span, code, pre {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  pre, code {
+    max-width: 100% !important;
+    white-space: pre-wrap !important;
+  }
+
+  img, svg, video, canvas, iframe {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .decision-shell,
+  .reference-premium {
+    width: calc(100% - 24px) !important;
+    margin-inline: auto !important;
+  }
+
+  .decision-section {
+    margin-bottom: 14px !important;
+    padding: 42px 16px 22px !important;
+    border-radius: 22px !important;
+  }
+
+  .decision-section-no {
+    top: 16px !important;
+    right: 18px !important;
+  }
+
+  .decision-kicker {
+    max-width: 100% !important;
+    min-height: 28px !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+  }
+
+  .decision-section h2,
+  .decision-close h2 {
+    font-size: clamp(28px, 8.5vw, 40px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.04em !important;
+    text-wrap: balance !important;
+  }
+
+  .decision-question-grid,
+  .decision-output-grid,
+  .decision-offer-grid,
+  .decision-trust-grid,
+  .decision-trust-points,
+  .decision-heading--split {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .decision-question-grid > *,
+  .decision-output-grid > *,
+  .decision-offer-grid > *,
+  .decision-trust-grid > *,
+  .decision-trust-points > * {
+    min-width: 0 !important;
+  }
+
+  .decision-question-grid article,
+  .decision-offer-card,
+  .decision-trust-points article {
+    min-height: 0 !important;
+    width: 100% !important;
+  }
+
+  .decision-bridge {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    padding: 14px !important;
+  }
+
+  .decision-bridge span {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    white-space: normal !important;
+  }
+
+  .decision-bridge i {
+    transform: rotate(90deg) !important;
+    align-self: center !important;
+  }
+
+  .decision-report-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-radius: 22px !important;
+  }
+
+  .decision-report-body {
+    padding: 20px 16px !important;
+  }
+
+  .decision-report-body h3 {
+    font-size: clamp(23px, 7vw, 30px) !important;
+  }
+
+  .decision-evidence,
+  .decision-paid {
+    min-width: 0 !important;
+    padding: 16px !important;
+  }
+
+  .decision-evidence code {
+    display: block !important;
+    width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .decision-actions,
+  .reference-premium__actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .decision-btn,
+  .reference-premium__actions a {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 12px 14px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .decision-offer-card--paid,
+  .decision-close,
+  .reference-premium__card--blue {
+    color: #fff !important;
+  }
+
+  .decision-offer-card--paid h2,
+  .decision-offer-card--paid h3,
+  .decision-offer-card--paid p,
+  .decision-offer-card--paid li,
+  .decision-offer-card--paid span,
+  .decision-close h1,
+  .decision-close h2,
+  .decision-close h3,
+  .decision-close p,
+  .decision-close span,
+  .reference-premium__card--blue h1,
+  .reference-premium__card--blue h2,
+  .reference-premium__card--blue h3,
+  .reference-premium__card--blue p,
+  .reference-premium__card--blue span,
+  .reference-premium__card--blue strong {
+    color: #fff !important;
+    -webkit-text-fill-color: currentColor !important;
+  }
+
+  .reference-premium {
+    gap: 12px !important;
+    margin-bottom: 48px !important;
+  }
+
+  .reference-premium__intro,
+  .reference-premium__who,
+  .reference-premium__flow {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .reference-premium__card,
+  .reference-premium__who article {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 20px 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .reference-premium h2 {
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.06 !important;
+    text-wrap: balance !important;
+  }
+
+  .reference-premium h3 {
+    font-size: 20px !important;
+  }
+
+  .reference-premium p {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  .reference-premium__flow span {
+    min-height: 50px !important;
+    width: 100% !important;
+    padding: 12px !important;
+  }
+
+  .reference-premium__note {
+    padding: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .concept-body .term-blocks {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .concept-body .term-blocks section,
+  .term-sources {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 18px 16px !important;
+  }
+
+  .term-sources ul {
+    min-width: 0 !important;
+    padding-left: 18px !important;
+  }
+
+  .term-sources a {
+    display: block !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  .hh-floating-dock {
+    width: calc(100% - 20px) !important;
+    max-width: 390px !important;
+    min-width: 0 !important;
+  }
+
+  body:has(.hh-floating-dock) {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .decision-shell,
+  .reference-premium {
+    width: calc(100% - 20px) !important;
+  }
+
+  .decision-section,
+  .reference-premium__card,
+  .reference-premium__who article {
+    border-radius: 20px !important;
+  }
+
+  .decision-section h2,
+  .reference-premium h2 {
+    font-size: clamp(27px, 8.2vw, 36px) !important;
+  }
+
+  .decision-question-grid h3,
+  .decision-offer-card h3 {
+    font-size: 22px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .topbar-shell {
+    padding-inline: 10px !important;
+  }
+
+  .brand-logo {
+    max-width: 108px !important;
+  }
+
+  .decision-shell,
+  .reference-premium {
+    width: calc(100% - 16px) !important;
+  }
+
+  .decision-section {
+    padding-inline: 14px !important;
+  }
+
+  .decision-section h2,
+  .reference-premium h2 {
+    font-size: 28px !important;
+  }
+}
