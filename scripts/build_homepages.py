@@ -313,443 +313,153 @@ def build_homepages():
   </div>
 </section>
 
-<!-- 02.4 ENTERPRISE ANALYZER SUITE & DIAGNOSTIC LAB -->
-<section class="section px-section ea-showcase-section" id="enterprise-analyzer" data-component="enterprise-analyzer-suite">
-  <div class="ea-container">
-    <div class="ea-header">
-      <span class="ea-eyebrow">
-        <span class="ea-live-dot" aria-hidden="true"></span>
-        CANLI KURUMSAL DENETİM LABORATUVARI · ENTERPRISE AI DIAGNOSTIC SUITE
-      </span>
-      <h2>Sorunu Bulun. Geliştiricinize Net Düzeltme Listesi Verin.</h2>
-      <p>Ücretsiz tarama hangi teknik engellerin görünürlüğünüzü sınırladığını gösterir. $99 uygulama paketi bulguları önceliklendirir ve geliştiricinize uygulanabilir düzeltme, test ve geri alma adımlarını verir.</p>
+<!-- PDF-INSPIRED CUSTOMER STORY V1 -->
+<section class="story-shell" id="customer-story" aria-label="HTML&HTML nasıl çalışır">
+  <section class="story-section story-intro">
+    <div class="story-index">01</div>
+    <div class="story-grid story-grid--intro">
+      <div>
+        <span class="story-kicker">NE ALIRSINIZ?</span>
+        <h2>Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.</h2>
+        <div class="story-copy-stack">
+          <p>HTML&amp;HTML, sitenizin herkese açık yüzeylerini tarar ve görünürlüğü sınırlayan teknik engelleri kanıtıyla gösterir.</p>
+          <p>Ücretsiz sonuçta <strong>ne yanlış, nerede ve neden önemli</strong> sorularını cevaplarız.</p>
+          <p>$99 Uygulama Paketi ise aynı bulguyu <strong>düzeltme, kabul testi, rollback ve re-scan</strong> adımlarına çevirir.</p>
+        </div>
+      </div>
+      <aside class="story-blue-panel">
+        <span class="story-panel-label">KARARINIZ 30 SANİYEDE NETLEŞSİN</span>
+        <h3>Önce teşhis. Sonra yalnız gereken düzeltme.</h3>
+        <p>Abonelik yok. Ajans zorunluluğu yok. Kaynak kodunuza müdahale yok. Çıktıyı mevcut geliştiricinize teslim edin.</p>
+        <div class="story-proof-row">
+          <span>Kayıt gerektirmez</span><span>Kanıta dayalı</span><span>Tek seferlik $99</span>
+        </div>
+      </aside>
     </div>
+  </section>
 
-    <!-- Metric Ribbon -->
-    <div class="ea-ribbon">
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        </div>
-        <div>
-          <strong>105 Deterministik Kontrol</strong>
-          <span>WCAG 2.1 AA · RFC 6596 · OpenAPI 3.1</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-        </div>
-        <div>
-          <strong>50'ye Kadar Sayfa · 30 Prob</strong>
-          <span>Kablo seviyesinde kanıt tespiti</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-        </div>
-        <div>
-          <strong>15 Teknik Kanıtlı Bulgu</strong>
-          <span>Kök neden tespiti ve iş etkisi</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-        </div>
-        <div>
-          <strong>G0–G9 Yayın Kapıları</strong>
-          <span>Geri alma güvenceli kod blokları</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-        </div>
-        <div>
-          <strong>n8n CI/CD &amp; Bash Paketi</strong>
-          <span>Otomatik doğrulama ve izleme</span>
-        </div>
-      </div>
+  <section class="story-section story-needs" id="what-you-get">
+    <div class="story-index">02</div>
+    <div class="story-head">
+      <span class="story-kicker">TÜM İHTİYACINIZ TEK AKIŞTA</span>
+      <h2>Tarama sonucunda elinize tam olarak ne geçer?</h2>
     </div>
+    <div class="story-numbered-grid">
+      <article><b>01</b><span>Teknik bulgu</span><p>Hangi URL'de hangi engelin bulunduğunu görün.</p></article>
+      <article><b>02</b><span>Kanıt</span><p>Bulgunun dayandığı HTTP, DOM veya yapılandırma kanıtını görün.</p></article>
+      <article><b>03</b><span>İş etkisi</span><p>Görünürlük, taranabilirlik veya kaynak hazırlığı etkisini ayırın.</p></article>
+      <article><b>04</b><span>Öncelik</span><p>Önce hangi sorunun ele alınması gerektiğini görün.</p></article>
+      <article><b>05</b><span>Düzeltme planı</span><p>$99 pakette geliştiricinin uygulayacağı net adımları alın.</p></article>
+      <article><b>06</b><span>Doğrulama</span><p>Acceptance, rollback ve re-scan ile sonucu kapatın.</p></article>
+    </div>
+  </section>
 
-    <!-- Console Grid -->
-    <div class="ea-console-grid">
-      <!-- Left Card: Telemetry & Score Matrix -->
-      <div class="ea-telemetry-card">
-        <div class="ea-card-head">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            Canlı Telemetri &amp; Skor Matrisi
-          </h3>
-          <span class="ea-badge-status">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Tarama Tamamlandı
-          </span>
+  <section class="story-section story-output" id="sample-output">
+    <div class="story-index">03</div>
+    <div class="story-grid story-grid--demo">
+      <div>
+        <span class="story-kicker">ÖRNEK ÇIKTI</span>
+        <h2>Raporu açtığınızda ne göreceğinizi önceden bilin.</h2>
+        <p class="story-lead">Karmaşık skorlar yerine geliştiricinin doğrudan çalışabileceği bir karar formatı kullanıyoruz.</p>
+        <div class="story-checks">
+          <div><i>✓</i><span><strong>Bulgu:</strong> Sorun ne?</span></div>
+          <div><i>✓</i><span><strong>Konum:</strong> Hangi URL / yüzey?</span></div>
+          <div><i>✓</i><span><strong>Etki:</strong> Neyi sınırlıyor?</span></div>
+          <div><i>✓</i><span><strong>Düzeltme:</strong> Ne yapılmalı?</span></div>
+          <div><i>✓</i><span><strong>Doğrulama:</strong> Başarılı olduğu nasıl anlaşılır?</span></div>
         </div>
-
-        <div class="ea-score-box">
-          <div class="ea-dial-wrap">
-            <svg viewBox="0 0 92 92" aria-hidden="true">
-              <defs>
-                <linearGradient id="eaDialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00d4ff"></stop>
-                  <stop offset="100%" stop-color="#8b5cf6"></stop>
-                </linearGradient>
-              </defs>
-              <circle class="ea-dial-bg" cx="46" cy="46" r="38"></circle>
-              <circle class="ea-dial-bar" cx="46" cy="46" r="38"></circle>
-            </svg>
-            <div class="ea-dial-value">
-              <span class="ea-dial-num">70</span>
-              <span class="ea-dial-max">/ 100</span>
-            </div>
-          </div>
-          <div class="ea-score-meta">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-              Dikkat Gerekiyor — Acil Eylem
-            </h4>
-            <p>105 kontrol kapsamında örnek kritik bulgular gösteriliyor. Yapay zeka arama motorları için kritik engelleyiciler mevcut.</p>
-          </div>
-        </div>
-
-        <div class="ea-pillars-grid">
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Keşif (Crawl &amp; Index)</span>
-              <span class="num">80%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" data-target-width="80%" style="width: 80%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Anlama (Schema &amp; llms.txt)</span>
-              <span class="num">81%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" data-target-width="81%" style="width: 81%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Güven &amp; Kalite (HSTS/E-E-A-T)</span>
-              <span class="num">59%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" data-target-width="59%" style="width: 59%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Ticari Yol (Action &amp; CTA)</span>
-              <span class="num">100%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" data-target-width="100%" style="width: 100%;"></div></div>
-          </div>
-        </div>
-
-        <div class="ea-telemetry-strip">
-          <div class="ea-telemetry-item">
-            <span>HTML Boyutu:</span>
-            <strong>319 KB (Kritik)</strong>
-          </div>
-          <div class="ea-telemetry-item">
-            <span>Canonical:</span>
-            <strong>Eksik (RFC 6596)</strong>
-          </div>
-          <div class="ea-telemetry-item">
-            <span>Mixed Content:</span>
-            <strong>1 Güvensiz Kaynak</strong>
-          </div>
+        <div class="story-actions">
+          <a class="story-btn story-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">Canlı örnek raporu incele →</a>
+          <a class="story-btn" href="#scanner">Kendi siteni ücretsiz tara</a>
         </div>
       </div>
-
-      <!-- Right Card: Interactive Terminal & Frosted Recipe -->
-      <div class="ea-terminal-card">
-        <div class="ea-terminal-topbar">
-          <div class="ea-mac-dots" aria-hidden="true">
-            <span class="ea-dot-red"></span>
-            <span class="ea-dot-yellow"></span>
-            <span class="ea-dot-green"></span>
-          </div>
-          <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
-        </div>
-
-        <div class="ea-tab-bar" role="tablist" aria-label="Bulgu seçici">
-          <button type="button" class="ea-tab active" role="tab" id="ea-tab-canon" aria-controls="eaFindingPanel" aria-selected="true" tabindex="0" data-finding-tab="canon">TECH-CANON-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-a11y" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="a11y">A11Y-FORM-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-mixed" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="mixed">SEC-MIXED-001 (Yüksek)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-perf" aria-controls="eaFindingPanel" aria-selected="false" tabindex="-1" data-finding-tab="perf">PERF-HTML-001 (Orta)</button>
-        </div>
-
-        <div class="ea-finding-content ea-tab-content-anim" id="eaFindingPanel" role="tabpanel" aria-labelledby="ea-tab-canon">
-          <div class="ea-finding-meta-row">
-            <span class="ea-finding-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-              TECH-CANON-001 · YÜKSEK
-            </span>
-            <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
-          </div>
-
-          <div class="ea-finding-summary">
-            Canonical tag tanımlı değil. Yinelenen içerik versiyonları yapay zeka alaka sinyallerini böler.
-          </div>
-
-          <div class="ea-evidence-block">
-            <div class="ea-evidence-head">
-              <span>Kablo Seviyesi Telemetri Kanıtı</span>
-              <button type="button" class="ea-copy-btn" data-copy-target="evidence" aria-label="Kanıtı kopyala">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span class="ea-copy-label">Kopyala</span>
-              </button>
-            </div>
-            <div class="ea-evidence-body">&lt;head&gt; içinde arama: rel=canonical BULUNAMADI&lt;br&gt;AI Tarayıcı Durumu: Primary URL Belirsiz | Duplicate Riski: Yüksek</div>
-          </div>
-
-          <div class="ea-code-sandbox" style="position:relative;">
-            <pre class="ea-code-underlay" style="filter:none;opacity:1;pointer-events:auto;user-select:text;"><code>&lt;!-- Çözüm Yol Haritası &amp; Kod Şablonu (100% Açık yol haritası) --&gt;
-&lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
-&lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
-&lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
-export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-            <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
-              <span style="color:#10b981;font-weight:700;font-size: 14px;display:inline-flex;align-items:center;gap:6px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                ✓ Tüm Çözüm yol haritasıleri ve Kod Şablonları Açık ($99 Değerinde Kurumsal Paket)
-              </span>
-              <span style="color:#0284c7;font-size: 15px;font-weight:600;">Tek tıkla PDF Rapor &amp; 30+ Dosyalık ZIP Seti</span>
-            </div>
-          </div>
+      <div class="story-report-preview" aria-label="Örnek teknik rapor görünümü">
+        <div class="story-browser-bar"><span></span><span></span><span></span><em>CANLI RAPOR ÖNİZLEMESİ</em></div>
+        <div class="story-report-body">
+          <div class="story-report-tag">TECH-CANON-001 · YÜKSEK</div>
+          <h3>Canonical etiketi eksik</h3>
+          <p>Birincil URL belirsizliği yinelenen içerik sinyallerini bölebilir.</p>
+          <div class="story-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
+          <div class="story-fix"><b>$99 PAKETTE</b><span>Kök neden → düzeltme → test → rollback</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Action Launch Bar -->
-    <div class="ea-actions-bar">
-      <a href="/enterprise-analyzer/" id="eaLaunchLink" class="ea-btn-primary" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-        Canlı Enterprise Analizörü Başlat ↗
-      </a>
-      <a href="/enterprise-analyzer/htmlandhtml-ai-report" class="ea-btn-secondary" target="_blank" rel="noopener">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-        Örnek Raporu İncele (Canlı Demo) →
-      </a>
+  <section class="story-section story-process" id="how-it-works" data-premium-infographic="scope-map">
+    <div class="story-index">04</div>
+    <div class="story-grid">
+      <div>
+        <span class="story-kicker">NASIL ÇALIŞIR?</span>
+        <h2>Dört adım. Tek karar akışı.</h2>
+        <p class="story-lead">Teknik motorlar arka planda kalır; müşterinin gördüğü süreç basit ve doğrulanabilirdir.</p>
+      </div>
+      <div class="story-step-list">
+        <article><b>1</b><div><h3>URL'yi girin</h3><p>Herkese açık web yüzeyi güvenli biçimde taramaya alınır.</p></div></article>
+        <article><b>2</b><div><h3>Kanıtlı sorunları görün</h3><p>Tarama, yapı, erişim ve AI kaynak hazırlığı bulguları ayrıştırılır.</p></div></article>
+        <article><b>3</b><div><h3>Ne yapacağınızı seçin</h3><p>Ücretsiz katman sorunu ve etkisini gösterir; yalnız gereken işi görürsünüz.</p></div></article>
+        <article><b>4</b><div><h3>Uygulayın ve doğrulayın</h3><p>$99 paket düzeltme, acceptance, rollback ve re-scan adımlarını açar.</p></div></article>
+      </div>
     </div>
+  </section>
 
-    <div class="ea-footnote">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-      <span><strong>Müdahalesiz Denetim Güvencesi:</strong> Müşterinin kaynak koduna doğrudan dokunulmaz. Teşhis ve çözüm yol haritaları kendi yazılım ekibinize teslim edilmek üzere üretilir.</span>
+  <section class="story-section story-trust" id="trust">
+    <div class="story-index">05</div>
+    <div class="story-head">
+      <span class="story-kicker">KANIT VE GÜVENLİK</span>
+      <h2>Sonuç yalnız ölçebildiğimiz veriye dayanır.</h2>
+      <p>Ölçemediğimiz sinyali başarılı varsaymayız. Teknik sınırları açıkça gösteririz.</p>
     </div>
-  </div>
+    <div class="story-trust-panel">
+      <article><span>01</span><h3>Kanıt standardı</h3><p>Her bulgu ölçülebilir bir teknik işarete bağlanır.</p></article>
+      <article><span>02</span><h3>Fail-closed yaklaşım</h3><p>Belirsiz sonuç PASS olarak işaretlenmez.</p></article>
+      <article><span>03</span><h3>Kaynak güvenliği</h3><p>Yalnız herkese açık URL ve HTTP yüzeyleri değerlendirilir.</p></article>
+      <article><span>04</span><h3>Değişiklik güvenliği</h3><p>Acceptance ve rollback adımları teslimatın parçasıdır.</p></article>
+      <article><span>05</span><h3>Şeffaf sınırlar</h3><p>Sıralama, trafik veya dış model tavsiyesi garanti edilmez.</p></article>
+      <article><span>06</span><h3>Re-scan</h3><p>Uygulama sonrası aynı alan adı yeniden doğrulanabilir.</p></article>
+    </div>
+  </section>
+
+  <section class="story-section story-why" id="why-htmlandhtml">
+    <div class="story-index">06</div>
+    <div class="story-grid story-grid--why">
+      <div class="story-why-visual">
+        <span>HTML&amp;HTML</span>
+        <strong>Teşhis → Uygulama → Doğrulama</strong>
+        <p>Tek bir karar hattı.</p>
+      </div>
+      <div>
+        <span class="story-kicker">NEDEN HTML&amp;HTML?</span>
+        <h2>Teknik karmaşıklığı müşteriye değil, sisteme yükler.</h2>
+        <div class="story-reasons">
+          <p><b>1</b> Ücretsiz teşhis ile satın almadan önce ne alacağınızı görürsünüz.</p>
+          <p><b>2</b> Teknik bulgular kanıt ve etkiyle birlikte sunulur.</p>
+          <p><b>3</b> Ücretli katman yalnız uygulama gerektiğinde devreye girer.</p>
+          <p><b>4</b> Çıktı mevcut geliştirici veya ajansınıza devredilebilir.</p>
+          <p><b>5</b> Tek seferlik $99 lisans; zorunlu abonelik yoktur.</p>
+          <p><b>6</b> Acceptance, rollback ve re-scan ile kapanış kriteri bellidir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section story-close" id="final-cta">
+    <div class="story-index">07</div>
+    <div class="story-close-copy">
+      <span class="story-kicker">TEK ÇATI ALTINDA</span>
+      <h2>Sorunu kanıtıyla görün. Çözümü ekibinize teslim edin.</h2>
+      <p>Önce ücretsiz tarayın. Çıktı yeterliyse hiçbir şey satın almayın. Uygulama planına ihtiyacınız varsa $99 paketle devam edin.</p>
+      <div class="story-actions">
+        <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Ücretsiz kontrolü başlat →</a>
+        <a class="story-btn story-btn--ghost" href="/tr/fiyatlandirma/">$99 uygulama paketini gör</a>
+      </div>
+    </div>
+    <div class="story-close-orbit" aria-hidden="true">
+      <span>Bulgu</span><span>Kanıt</span><span>Etki</span><span>Düzeltme</span><span>Test</span>
+    </div>
+  </section>
 </section>
 
-<section class="v3-capability-contract" aria-labelledby="v3-capabilities-tr">
-  <div class="v3-contract-head">
-    <span>AI SEO · CHATGPT GÖRÜNÜRLÜK · ENGINE V3</span>
-    <h2 id="v3-capabilities-tr">Google sırası tek başına yetmiyor. Siteniz yapay zeka aramalarında bulunmalı, anlaşılmalı ve kaynak olmaya hazır olmalı.</h2>
-    <p>HTML&amp;HTML, web sitenizdeki AI arama görünürlüğü engellerini kanıtla ölçer. 18 deterministik Engine V3 modülü, 105 kontrol, 13 puan dışı istihbarat analizi ve 7 hazırlık lensi aynı kanıt zincirinde çalışır.</p>
-    <div class="v3-decision-line"><b>Teşhis ücretsiz.</b><span>Kök neden, uygulama kodu, kabul testi ve rollback paketi $99 tek seferlik lisansla açılır.</span></div>
-  </div>
-  <div class="v3-compare" role="region" aria-label="HTML&HTML V3 karşılaştırma tablosu" tabindex="0">
-    <table><thead><tr><th>Karar başlığı</th><th>Ücretsiz AI SEO analizi</th><th class="v3-paid">$99 uygulama paketi</th></tr></thead><tbody>
-      <tr><th>Deterministik denetim</th><td>18 Engine V3 modülü · 105 kontrol · rastgele skor yok</td><td class="v3-paid">Bulgu → kök neden → düzeltme → test → rollback</td></tr>
-      <tr><th>Tarama ve güvenlik</th><td>50'ye kadar herkese açık HTML sayfası · 30 canlı link probu · SSRF fail-closed</td><td class="v3-paid">Kanıta bağlı uygulama planı</td></tr>
-      <tr><th>AI arama disiplinleri</th><td>SEO · GEO · AEO · LLMO · AAO · RAG · E-E-A-T</td><td class="v3-paid">Kanıta bağlı kod ve konfigürasyon</td></tr>
-      <tr><th>Karar istihbaratı</th><td>13 puan dışı analiz · 7 hazırlık lensi · NOT_MEASURED / REQUIRES_CONTEXT</td><td class="v3-paid">P0–P3 öncelik, bağımlılık, kabul ve regresyon</td></tr>
-      <tr><th>AI görünürlük gözlemi</th><td>Bot erişimi, kaynak hazırlığı, entity/schema, cevap çıkarılabilirliği</td><td class="v3-paid">Sağlayıcı anahtarları yapılandırıldığında en fazla 3 nötr sorgu ile API/search-grounded gözlem</td></tr>
-      <tr><th>Yayın güvenliği</th><td>Kanıt ve confidence sınıfları görünür</td><td class="v3-paid">G0–G9 · acceptance · regression · rollback</td></tr>
-    </tbody></table>
-  </div>
-  <p class="v3-boundary"><b>Kanıt sınırı:</b> Dış model tavsiyesi, sıralama, atıf, trafik veya gelir garanti edilmez. Ölçülemeyen sinyal <b>NOT_MEASURED</b>; kod bağlamı gerektiren sinyal <b>REQUIRES_CONTEXT</b> kalır.</p>
-<p class="v3-delivery-boundary"><b>Ücretli teslim sınırı:</b> Kanıtlanan URL’lere bağlı 30'a kadar sayfa bazlı Markdown makine yüzeyi ve sürümlenmiş ZIP teslim paketi.</p></section>
-
-<!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
-<section class="section px-section px-pipeline-premium" id="pipeline" data-premium-infographic="scope-map">
-  <div class="px-section-head px-section-head--center">
-    <span class="eyebrow">END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>Yapay Zeka Sizi Nasıl Tavsiye Eder ve Görünürlük Nedir?</h2>
-    <p>Yapay zeka görünürlüğünü tek bir skora indirmek yerine; erişim, kaynak hazırlığı, kanıt ve uygulanabilir düzeltme zinciri üzerinden görün.</p>
-  </div>
-
-  <ol class="pl-flow pl-flow--premium">
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">ADIM 01</span></div>
-        <h3>Canlı URL Girişi</h3>
-        <p>DoH ve fail-closed güvenlik kapılarıyla hedef yüzey güvenli biçimde taramaya alınır.</p>
-        <div class="pl-micro">
-          <span>DoH DNS koruması</span>
-          <span>HTTPS / HTTP doğrulaması</span>
-          <span>Fail-closed gate</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">ADIM 02</span></div>
-        <h3>18 Motorlu Paralel Tarama</h3>
-        <p>Teknik erişim, semantic structure ve source-readiness kontrolleri aynı kanıt zincirinde çalışır.</p>
-        <div class="pl-micro">
-          <span>18 deterministik motor</span>
-          <span>Measured evidence</span>
-          <span>Source-readiness</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">ADIM 03</span></div>
-        <h3>Deterministik Kanıt Kilidi</h3>
-        <p>UNKNOWN ≠ PASS. Her bulgu kanıt, etki ve öncelik alanlarıyla sınıflandırılır.</p>
-        <div class="pl-micro">
-          <span>P0–P3 etki matrisi</span>
-          <span>Kanıt alanları</span>
-          <span>Stop-gate denetimi</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card highlight">
-        <div><span class="pl-badge">ADIM 04</span></div>
-        <h3>30+ Dosyalık V3 Uygulama Paketi</h3>
-        <p>Kök neden, uygulama adımları, kabul testleri, rollback ve makine yüzeyleri tek teslimatta toplanır.</p>
-        <div class="pl-micro">
-          <span>Acceptance testleri</span>
-          <span>Rollback planı</span>
-          <span>Agent Card &amp; MCP</span>
-        </div>
-      </article>
-    </li>
-  </ol>
-
-  <div class="pipeline-outcome-strip" aria-label="Tarama ve uygulama sonucu">
-    <div><span>ÜCRETSİZ</span><strong>Bulgu + kanıt + etki</strong></div>
-    <div><span>$99 PAKET</span><strong>Düzeltme + test + rollback</strong></div>
-    <div><span>KAPANIŞ</span><strong>Re-scan ile doğrulama</strong></div>
-  </div>
-
-  <div class="px-section-head px-section-head--center pillar-heading">
-    <span class="eyebrow">5 TEMEL KURUMSAL MİMARİ KATMANI</span>
-    <h2>Müşteri, Güven, Dağıtım, Referans ve Satış Kanalı Mimarisi</h2>
-    <p>Teşhis anından ödeme sonrası doğrulamaya kadar aynı ürün akışını taşıyan beş entegre katman.</p>
-  </div>
-
-  <div class="five-pillars-grid five-pillars-grid--premium">
-    <article class="five-pillar-card">
-      <span class="pillar-badge">01 · MÜŞTERİ</span>
-      <h3>Müşteri &amp; Ajan Akışı</h3>
-      <p>Tek URL ile kayıt gerektirmeden teşhis akışına girin; kullanıcı ve ajan yüzeyleri aynı sistemden beslenir.</p>
-      <div class="pillar-proof"><span>Tek giriş noktası</span><span>Kayıtsız başlangıç</span></div>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">02 · GÜVEN</span>
-      <h3>E-E-A-T &amp; Sıfır Uydurma</h3>
-      <p>Ölçülemeyen sinyal NOT_MEASURED kalır; kanıt sınırı ve resmi kaynak disiplini korunur.</p>
-      <div class="pillar-proof"><span>Kanıt standardı</span><span>Fail-closed mantık</span></div>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">03 · DAĞITIM</span>
-      <h3>Çok Kanallı Dağıtım</h3>
-      <p>llms.txt, OpenAPI, MCP ve çift dilli makine yüzeyleriyle dağıtım tek mimariden yönetilir.</p>
-      <div class="pillar-proof"><span>OpenAPI + MCP</span><span>TR / EN yüzeyler</span></div>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">04 · REFERANS</span>
-      <h3>Otorite &amp; Standart</h3>
-      <p>Metodoloji, sözlük, kanıt standardı ve örnek raporlar referans katmanını görünür kılar.</p>
-      <div class="pillar-proof"><span>Metodoloji</span><span>Örnek rapor</span></div>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">05 · SATIŞ KANALI</span>
-      <h3>$99 Uygulama Paketi</h3>
-      <p>Ücretsiz teşhisi uygulanabilir düzeltme, acceptance, rollback ve re-scan teslimatına çevirir.</p>
-      <div class="pillar-proof"><span>Tek seferlik lisans</span><span>30 gün re-scan</span></div>
-    </article>
-  </div>
-</section>
-
-<!-- 02.6 6 KARA KUTU / DARK POOL VE TRANSFORMER TERSİNE MÜHENDİSLİK SHOWCASE -->
-<section class="section px-section" id="dark-pool-intelligence">
-  <div class="px-section-head">
-    <span class="eyebrow">SILICON VALLEY &amp; LONDON ($5M+) ENTERPRISE INTELLIGENCE</span>
-    <h2>Geleneksel SEO Araçlarının Göremediği 6 Yapay Zeka Kara Kutusu</h2>
-    <p>Ahrefs, Semrush ve eski nesil araçlar yalnızca anahtar kelime ve meta etiket sayarlar. ChatGPT, Perplexity ve Google Gemini gibi temel nöral modeller, içeriğinizi önermek veya reddetmek için bu 6 gizli transformer katmanından geçirir.</p>
-  </div>
-  <div class="dp-grid">
-    <article class="dp-card dp-p0">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">01</span><span class="dp-badge">P0 CRITICAL</span></div>
-      <h3 class="dp-title">14KB AST Token Yükü (Payload Budget)</h3>
-      <p class="dp-desc">GPTBot ve Perplexity tarayıcıları, 14KB AST bütçesini aşan şişirilmiş HTML'leri okumayı erken keser (truncation). Tarayıcılar fiyatlandırma ve ürün bloklarınıza ulaşamadan token kapasitelerini tüketir.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Cloudflare Worker HTMLRewriter AST temizliği ve 40ms altı sınır hızı (TTFB)</span></div>
-    </article>
-    <article class="dp-card dp-p0">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">02</span><span class="dp-badge">P0 CRITICAL</span></div>
-      <h3 class="dp-title">Entity Vault ve Wikidata Konsensüsü</h3>
-      <p class="dp-desc">Küresel Bilgi Graflarında (Knowledge Graph) kesin koordinatlarınız olmadan, nöral modeller markanızı otoriteli bir varlık (Entity) olarak doğrulayamaz ve yanıtlarında sizi rakipleriniz lehine sistematik olarak atlar.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID ve Google MID konsensüsü</span></div>
-    </article>
-    <article class="dp-card dp-p1">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">03</span><span class="dp-badge">P1 HIGH</span></div>
-      <h3 class="dp-title">512-Token RAG Semantik Bütünlük Koruması</h3>
-      <p class="dp-desc">Standart 512 tokenlık vektör parçalama (chunking) işlemi, değer önerilerinizi ortadan böler. Arama motorları semantik üretim esnasında cümlenin kilit bağlamını eşleştiremez.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: data-chunk-id semantik sınır işaretlemesi ve bağlam koruması</span></div>
-    </article>
-    <article class="dp-card dp-p1">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">04</span><span class="dp-badge">P1 HIGH</span></div>
-      <h3 class="dp-title">Cross-Encoder Filtresi ve Rakam Yoğunluğu</h3>
-      <p class="dp-desc">Çapraz kodlayıcı (Cross-encoder) algoritmaları tanıtım dolu "pazarlama" cümlelerini doğrudan çöpe atar. Doğrulanmış metrikler ve rakamlar içermeyen paragraflar doğrudan filtrelenir.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: H2 başlıkları altında 45-kelimelik matematiksel veri yoğunluğu matrisi</span></div>
-    </article>
-    <article class="dp-card dp-p2">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">05</span><span class="dp-badge">P2 MEDIUM</span></div>
-      <h3 class="dp-title">Yapay Zeka Eğitim Verisi (Corpus PMI)</h3>
-      <p class="dp-desc">Eğer markanız, modellerin eğitildiği okyanus verilerinde (örn: Common Crawl) sektör benchmark'ları ile yan yana (co-occurrence) geçmiyorsa, doğrudan sorulmadıkça asla spontane olarak önerilmezsiniz.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Kanonik sektör tanımlamaları ve PMI (Pointwise Mutual Information) çapaları</span></div>
-    </article>
-    <article class="dp-card dp-p2">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">06</span><span class="dp-badge">P2 MEDIUM</span></div>
-      <h3 class="dp-title">ColBERT MaxSim Gecikmeli Eşleşmesi</h3>
-      <p class="dp-desc">ColBERT ve SPLADE nöral modelleri kullanıcı soru tokenları ile başlık tokenlarınızı tam eşleştiremezse (late-interaction), modern vektör aramalarında siteniz arka sayfalara ötelenir.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Çözüm: Token zenginleştirilmiş H2/H3 başlık hiyerarşisi ve MaxSim eşleşme mimarisi</span></div>
-    </article>
-  </div>
-  
-  <div class="dp-callout">
-    <div class="dp-callout-text">
-      <span>SIFIR DANIŞMANLIK MASRAFI · YAZILIMCINIZA TESLİM EDİN</span>
-      <h3>Aylık 5.000$ Ajans Masrafı Ödemeyin. Teşhisi Görün, Kodu Kendi Ekibinize Verin.</h3>
-      <p>HTML&amp;HTML bir danışmanlık veya pazarlama ajansı değildir; deterministik bir mühendislik platformudur. Ücretsiz AI denetimi ile sorunları görün. 30+ dosyalık kod paketini $99 karşılığında indirin ve 1 günde canlıya alın.</p>
-    </div>
-    <div class="dp-callout-action">
-      <a href="#scanner" class="btn-scan-trigger">Ücretsiz AI Denetimi Başlat →</a>
-      <span>Kayıt gerekmez · 10 saniyede canlı sonuç</span>
-    </div>
-  </div>
-</section>
-
-
-<section class="px-section result-decision-guide result-decision-guide--premium" aria-label="Sonuçtan aksiyona">
-  <div class="px-section-head px-section-head--center">
-    <span class="eyebrow">SONUCU NASIL KULLANACAKSINIZ?</span>
-    <h2>Skor değil; hangi sorunu önce düzelteceğinizi görün.</h2>
-    <p>Tarama sonucu üç soruyu cevaplamalı: sorun nerede, iş etkisi ne, geliştirici hangi düzeltmeyle başlamalı. $99 paket yalnız uygulama ve doğrulama katmanını açar.</p>
-  </div>
-  <div class="result-action-grid">
-    <article class="result-action-card"><span>01</span><b>BULGU</b><h3>Kanıtı görün</h3><p>Etkilenen URL’yi, bulguyu ve dayandığı kanıtı görün.</p><div class="result-action-meta"><em>URL</em><em>Kanıt</em><em>Bulgu</em></div></article>
-    <article class="result-action-card"><span>02</span><b>ETKİ</b><h3>İş etkisini ayırın</h3><p>Görünürlük veya teknik akış üzerindeki etkisini ve önceliğini ayırın.</p><div class="result-action-meta"><em>Etki</em><em>Öncelik</em><em>Confidence</em></div></article>
-    <article class="result-action-card"><span>03</span><b>DÜZELTME</b><h3>Net aksiyon alın</h3><p>Teknik ekibin uygulayacağı değişikliği, sırasını ve bağımlılığını görün.</p><div class="result-action-meta"><em>Fix</em><em>Sıra</em><em>Bağımlılık</em></div></article>
-    <article class="result-action-card"><span>04</span><b>DOĞRULA</b><h3>Regresyonu kapatın</h3><p>Acceptance ve regresyon kontrolüyle düzeltmenin sonucunu doğrulayın.</p><div class="result-action-meta"><em>Test</em><em>Re-scan</em><em>Kapanış</em></div></article>
-  </div>
-  <div class="result-action-footer"><a href="/tr/fiyatlandirma/">$99 uygulama paketini incele →</a><a href="/tr/sss/">SSS →</a></div>
-</section>
 <!-- RESULTS -->
 <section id="result" class="results" hidden>
   <div class="result-head">
@@ -1178,399 +888,147 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
   </div>
 </section>
 
-<!-- 02.4 ENTERPRISE ANALYZER SUITE & DIAGNOSTIC LAB -->
-<section class="section px-section ea-showcase-section" id="enterprise-analyzer" data-component="enterprise-analyzer-suite">
-  <div class="ea-container">
-    <div class="ea-header">
-      <span class="ea-eyebrow">
-        <span class="ea-live-dot" aria-hidden="true"></span>
-        LIVE ENTERPRISE AUDIT LAB · ENTERPRISE AI DIAGNOSTIC SUITE
-      </span>
-      <h2>Enterprise AI Visibility Analyzer &amp; Solution Lab</h2>
-      <p>Deterministic diagnostic environment operating across 105 deterministic controls, up to 50 public HTML pages, and 30 live link probes. Explore wire-level technical evidence, locked remediation roadmaps, and n8n CI/CD automation packages.</p>
+<!-- PDF-INSPIRED CUSTOMER STORY V1 -->
+<section class="story-shell" id="customer-story" aria-label="How HTML&HTML works">
+  <section class="story-section story-intro">
+    <div class="story-index">01</div>
+    <div class="story-grid story-grid--intro">
+      <div>
+        <span class="story-kicker">WHAT DO YOU GET?</span>
+        <h2>Enter one URL. See the problem, its impact and the next action clearly.</h2>
+        <div class="story-copy-stack">
+          <p>HTML&amp;HTML scans your public website surfaces and shows the technical blockers that can limit discoverability.</p>
+          <p>The free result answers <strong>what is wrong, where it is and why it matters</strong>.</p>
+          <p>The $99 Implementation Pack turns the same evidence into <strong>fix, acceptance test, rollback and re-scan</strong> steps.</p>
+        </div>
+      </div>
+      <aside class="story-blue-panel">
+        <span class="story-panel-label">MAKE THE DECISION IN 30 SECONDS</span>
+        <h3>Diagnose first. Fix only what is necessary.</h3>
+        <p>No subscription. No agency requirement. No direct changes to your source code. Hand the output to your existing developer.</p>
+        <div class="story-proof-row"><span>No signup</span><span>Evidence-based</span><span>One-time $99</span></div>
+      </aside>
     </div>
+  </section>
 
-    <!-- Metric Ribbon -->
-    <div class="ea-ribbon">
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        </div>
-        <div>
-          <strong>120 Control Checks</strong>
-          <span>WCAG 2.1 AA · RFC 6596 · OpenAPI 3.1</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-        </div>
-        <div>
-          <strong>Up to 50 Pages · 30 Probes</strong>
-          <span>Wire-level evidence assertion</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-        </div>
-        <div>
-          <strong>15 Evidence Findings</strong>
-          <span>Root-cause identification &amp; impact</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-        </div>
-        <div>
-          <strong>G0–G9 Release Gates</strong>
-          <span>Rollback-guaranteed code templates</span>
-        </div>
-      </div>
-      <div class="ea-ribbon-item">
-        <div class="ea-ribbon-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-        </div>
-        <div>
-          <strong>n8n CI/CD &amp; Bash Kit</strong>
-          <span>Automated validation &amp; monitoring</span>
-        </div>
-      </div>
+  <section class="story-section story-needs" id="what-you-get">
+    <div class="story-index">02</div>
+    <div class="story-head">
+      <span class="story-kicker">EVERYTHING IN ONE FLOW</span>
+      <h2>What exactly do you receive after the scan?</h2>
     </div>
+    <div class="story-numbered-grid">
+      <article><b>01</b><span>Technical finding</span><p>See which blocker exists on which URL.</p></article>
+      <article><b>02</b><span>Evidence</span><p>See the HTTP, DOM or configuration evidence behind the finding.</p></article>
+      <article><b>03</b><span>Business impact</span><p>Separate discoverability, crawl and source-readiness impact.</p></article>
+      <article><b>04</b><span>Priority</span><p>See which issue should be handled first.</p></article>
+      <article><b>05</b><span>Implementation plan</span><p>The $99 pack opens clear developer actions.</p></article>
+      <article><b>06</b><span>Verification</span><p>Close the loop with acceptance, rollback and re-scan.</p></article>
+    </div>
+  </section>
 
-    <!-- Console Grid -->
-    <div class="ea-console-grid">
-      <!-- Left Card: Telemetry & Score Matrix -->
-      <div class="ea-telemetry-card">
-        <div class="ea-card-head">
-          <h3>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            Live Telemetry &amp; Score Matrix
-          </h3>
-          <span class="ea-badge-status">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Scan Complete
-          </span>
+  <section class="story-section story-output" id="sample-output">
+    <div class="story-index">03</div>
+    <div class="story-grid story-grid--demo">
+      <div>
+        <span class="story-kicker">SAMPLE OUTPUT</span>
+        <h2>Know what the report looks like before you buy anything.</h2>
+        <p class="story-lead">Instead of a wall of scores, the report uses a decision format your developer can act on.</p>
+        <div class="story-checks">
+          <div><i>✓</i><span><strong>Finding:</strong> What is wrong?</span></div>
+          <div><i>✓</i><span><strong>Location:</strong> Which URL / surface?</span></div>
+          <div><i>✓</i><span><strong>Impact:</strong> What does it limit?</span></div>
+          <div><i>✓</i><span><strong>Fix:</strong> What should change?</span></div>
+          <div><i>✓</i><span><strong>Verification:</strong> How do we know it worked?</span></div>
         </div>
-
-        <div class="ea-score-box">
-          <div class="ea-dial-wrap">
-            <svg viewBox="0 0 92 92" aria-hidden="true">
-              <defs>
-                <linearGradient id="eaDialGradEn" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00d4ff"></stop>
-                  <stop offset="100%" stop-color="#8b5cf6"></stop>
-                </linearGradient>
-              </defs>
-              <circle class="ea-dial-bg" cx="46" cy="46" r="38"></circle>
-              <circle class="ea-dial-bar" style="stroke: url(#eaDialGradEn);" cx="46" cy="46" r="38"></circle>
-            </svg>
-            <div class="ea-dial-value">
-              <span class="ea-dial-num">70</span>
-              <span class="ea-dial-max">/ 100</span>
-            </div>
-          </div>
-          <div class="ea-score-meta">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-              Attention Required — Urgent Action
-            </h4>
-            <p>108 findings detected across 105 controls. Critical blockers exist for AI search engines.</p>
-          </div>
-        </div>
-
-        <div class="ea-pillars-grid">
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Discovery (Crawl &amp; Index)</span>
-              <span class="num">80%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-cyan" data-target-width="80%" style="width: 80%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Understanding (Schema &amp; Graph)</span>
-              <span class="num">81%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-blue" data-target-width="81%" style="width: 81%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Trust &amp; Quality (HSTS/E-E-A-T)</span>
-              <span class="num">59%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-amber" data-target-width="59%" style="width: 59%;"></div></div>
-          </div>
-          <div class="ea-pillar-cell">
-            <div class="ea-pillar-label">
-              <span>Action Path (Forms &amp; CTA)</span>
-              <span class="num">100%</span>
-            </div>
-            <div class="ea-meter-track"><div class="ea-meter-fill ea-fill-emerald" data-target-width="100%" style="width: 100%;"></div></div>
-          </div>
-        </div>
-
-        <div class="ea-telemetry-strip">
-          <div class="ea-telemetry-item">
-            <span>HTML Payload:</span>
-            <strong>319 KB (Critical)</strong>
-          </div>
-          <div class="ea-telemetry-item">
-            <span>Canonical:</span>
-            <strong>Missing (RFC 6596)</strong>
-          </div>
-          <div class="ea-telemetry-item">
-            <span>Mixed Content:</span>
-            <strong>1 Insecure Ref</strong>
-          </div>
+        <div class="story-actions">
+          <a class="story-btn story-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">View live sample report →</a>
+          <a class="story-btn" href="#scanner">Scan your site free</a>
         </div>
       </div>
-
-      <!-- Right Card: Interactive Terminal & Frosted Recipe -->
-      <div class="ea-terminal-card">
-        <div class="ea-terminal-topbar">
-          <div class="ea-mac-dots" aria-hidden="true">
-            <span class="ea-dot-red"></span>
-            <span class="ea-dot-yellow"></span>
-            <span class="ea-dot-green"></span>
-          </div>
-          <span class="ea-terminal-title">ENTERPRISE DIAGNOSTIC ENGINE — LIVE REPORT PREVIEW</span>
-        </div>
-
-        <div class="ea-tab-bar" role="tablist" aria-label="Finding switcher">
-          <button type="button" class="ea-tab active" role="tab" id="ea-tab-canon-en" aria-controls="eaFindingPanelEn" aria-selected="true" tabindex="0" data-finding-tab="canon">TECH-CANON-001 (High)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-a11y-en" aria-controls="eaFindingPanelEn" aria-selected="false" tabindex="-1" data-finding-tab="a11y">A11Y-FORM-001 (High)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-mixed-en" aria-controls="eaFindingPanelEn" aria-selected="false" tabindex="-1" data-finding-tab="mixed">SEC-MIXED-001 (High)</button>
-          <button type="button" class="ea-tab" role="tab" id="ea-tab-perf-en" aria-controls="eaFindingPanelEn" aria-selected="false" tabindex="-1" data-finding-tab="perf">PERF-HTML-001 (Medium)</button>
-        </div>
-
-        <div class="ea-finding-content ea-tab-content-anim" id="eaFindingPanelEn" role="tabpanel" aria-labelledby="ea-tab-canon-en">
-          <div class="ea-finding-meta-row">
-            <span class="ea-finding-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-              TECH-CANON-001 · HIGH
-            </span>
-            <span class="ea-standard-tag">RFC 6596 Canonicalization</span>
-          </div>
-
-          <div class="ea-finding-summary">
-            Canonical tag not defined. Duplicate content variants dilute AI relevance signals.
-          </div>
-
-          <div class="ea-evidence-block">
-            <div class="ea-evidence-head">
-              <span>Wire-Level Telemetry Evidence</span>
-              <button type="button" class="ea-copy-btn" data-copy-target="evidence" aria-label="Copy evidence">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span class="ea-copy-label">Copy</span>
-              </button>
-            </div>
-            <div class="ea-evidence-body">Search in &lt;head&gt;: rel=canonical NOT FOUND&lt;br&gt;AI Crawler State: Primary URL Unresolved | Duplicate Risk: High</div>
-          </div>
-
-          <div class="ea-code-sandbox" style="position:relative;">
-            <pre class="ea-code-underlay" style="filter:none;opacity:1;pointer-events:auto;user-select:text;"><code>&lt;!-- Remediation Roadmap &amp; Code Template (100% Unlocked) --&gt;
-&lt;link rel="canonical" href="https://htmlandhtml.com/en"&gt;
-&lt;link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr"&gt;
-&lt;link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en"&gt;
-export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Cloudflare edge cache</code></pre>
-            <div class="ea-unlocked-strip" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:8px;margin-top:8px;">
-              <span style="color:#10b981;font-weight:700;font-size: 14px;display:inline-flex;align-items:center;gap:6px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                ✓ All Resolution Recipes &amp; Code Templates Unlocked ($99 Enterprise Value)
-              </span>
-              <span style="color:#0284c7;font-size: 15px;font-weight:600;">1-Click PDF Report &amp; 30+ File ZIP Pack</span>
-            </div>
-          </div>
+      <div class="story-report-preview" aria-label="Sample technical report preview">
+        <div class="story-browser-bar"><span></span><span></span><span></span><em>LIVE REPORT PREVIEW</em></div>
+        <div class="story-report-body">
+          <div class="story-report-tag">TECH-CANON-001 · HIGH</div>
+          <h3>Canonical tag is missing</h3>
+          <p>Primary URL ambiguity can split duplicate-content signals.</p>
+          <div class="story-evidence"><b>EVIDENCE</b><code>rel="canonical" was not found inside &lt;head&gt;</code></div>
+          <div class="story-fix"><b>IN THE $99 PACK</b><span>Root cause → fix → test → rollback</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Action Launch Bar -->
-    <div class="ea-actions-bar">
-      <a href="/enterprise-analyzer/" id="eaLaunchLink" class="ea-btn-primary" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-        Launch Live Enterprise Analyzer ↗
-      </a>
-      <a href="/enterprise-analyzer/htmlandhtml-ai-report" class="ea-btn-secondary" target="_blank" rel="noopener">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-        View Sample Report (Live Demo) →
-      </a>
+  <section class="story-section story-process" id="how-it-works" data-premium-infographic="scope-map">
+    <div class="story-index">04</div>
+    <div class="story-grid">
+      <div>
+        <span class="story-kicker">HOW DOES IT WORK?</span>
+        <h2>Four steps. One decision flow.</h2>
+        <p class="story-lead">The technical engines stay in the background; the customer sees a simple, verifiable process.</p>
+      </div>
+      <div class="story-step-list">
+        <article><b>1</b><div><h3>Enter the URL</h3><p>The public surface is taken into a safe scan flow.</p></div></article>
+        <article><b>2</b><div><h3>See evidenced issues</h3><p>Crawl, structure, access and AI source-readiness findings are separated.</p></div></article>
+        <article><b>3</b><div><h3>Choose what to do</h3><p>The free layer shows the problem and impact, so you only act where needed.</p></div></article>
+        <article><b>4</b><div><h3>Implement and verify</h3><p>The $99 pack opens fix, acceptance, rollback and re-scan steps.</p></div></article>
+      </div>
     </div>
+  </section>
 
-    <div class="ea-footnote">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-      <span><strong>Zero-Interference Assurance:</strong> Client source code is never touched directly. Diagnostics and remediation roadmaps are generated for handover to your own engineering team.</span>
+  <section class="story-section story-trust" id="trust">
+    <div class="story-index">05</div>
+    <div class="story-head">
+      <span class="story-kicker">EVIDENCE &amp; SAFETY</span>
+      <h2>Results only rely on signals we can actually measure.</h2>
+      <p>We do not treat an unmeasured signal as a pass. Technical boundaries remain visible.</p>
     </div>
-  </div>
+    <div class="story-trust-panel">
+      <article><span>01</span><h3>Evidence standard</h3><p>Each finding is tied to a measurable technical signal.</p></article>
+      <article><span>02</span><h3>Fail-closed logic</h3><p>Ambiguous results are not marked PASS.</p></article>
+      <article><span>03</span><h3>Public-surface safety</h3><p>Only public URLs and HTTP surfaces are evaluated.</p></article>
+      <article><span>04</span><h3>Change safety</h3><p>Acceptance and rollback are part of delivery.</p></article>
+      <article><span>05</span><h3>Clear boundaries</h3><p>No ranking, traffic or external-model recommendation guarantee.</p></article>
+      <article><span>06</span><h3>Re-scan</h3><p>The same domain can be verified again after implementation.</p></article>
+    </div>
+  </section>
+
+  <section class="story-section story-why" id="why-htmlandhtml">
+    <div class="story-index">06</div>
+    <div class="story-grid story-grid--why">
+      <div class="story-why-visual"><span>HTML&amp;HTML</span><strong>Diagnose → Implement → Verify</strong><p>One decision line.</p></div>
+      <div>
+        <span class="story-kicker">WHY HTML&amp;HTML?</span>
+        <h2>Put the technical complexity in the system, not on the customer.</h2>
+        <div class="story-reasons">
+          <p><b>1</b> See the diagnosis before paying for implementation.</p>
+          <p><b>2</b> Findings are shown with evidence and impact.</p>
+          <p><b>3</b> The paid layer only appears when implementation is needed.</p>
+          <p><b>4</b> Hand the output to your existing developer or agency.</p>
+          <p><b>5</b> One-time $99 license; no mandatory subscription.</p>
+          <p><b>6</b> Acceptance, rollback and re-scan define the finish line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section story-close" id="final-cta">
+    <div class="story-index">07</div>
+    <div class="story-close-copy">
+      <span class="story-kicker">ONE SYSTEM</span>
+      <h2>See the problem with evidence. Hand the solution to your team.</h2>
+      <p>Scan free first. If the diagnosis is enough, buy nothing. If you need the implementation plan, continue with the $99 pack.</p>
+      <div class="story-actions">
+        <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Start the free scan →</a>
+        <a class="story-btn story-btn--ghost" href="/en/pricing/">View the $99 implementation pack</a>
+      </div>
+    </div>
+    <div class="story-close-orbit" aria-hidden="true">
+      <span>Finding</span><span>Evidence</span><span>Impact</span><span>Fix</span><span>Test</span>
+    </div>
+  </section>
 </section>
 
-<!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
-<section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
-  <div class="px-section-head">
-    <span class="eyebrow">END-TO-END AUTONOMOUS PIPELINE</span>
-    <h2>How Do AI Models Recommend Your Website and What is GEO?</h2>
-    <p>What is Generative Engine Optimization (GEO)? GEO is the optimization of content for AI engines. HTML&amp;HTML audits websites across 18 engines with 100% deterministic evidence.</p>
-  </div>
-  <ol class="pl-flow">
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">STEP 01</span></div>
-        <h3>Live URL Ingestion</h3>
-        <p>DoH (DNS-over-HTTPS) resolution and RFC 1918 SSRF isolation sandbox the target host safely.</p>
-        <div class="pl-micro">
-          <span>🛡️ DoH DNS Shield</span>
-          <span>⚡ HTTP/2 Handshake</span>
-          <span>🔒 Fail-Closed Gate</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">STEP 02</span></div>
-        <h3>18-Engine Parallel Crawl</h3>
-        <p>cl100k AST token parsing, 14KB budget enforcement, Cross-Encoder attention, and RAG chunk boundary tests.</p>
-        <div class="pl-micro">
-          <span>🎯 ColBERT MaxSim</span>
-          <span>🧠 Knowledge Vault QID</span>
-          <span>📦 14KB AST Token Purge</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card">
-        <div><span class="pl-badge">STEP 03</span></div>
-        <h3>Deterministic Evidence Gate</h3>
-        <p>UNKNOWN ≠ PASS principle. Wire-level HTTP/DOM proof without heuristics, mapped to P0–P3 impact matrix.</p>
-        <div class="pl-micro">
-          <span>⚖️ P0–P3 Impact Matrix</span>
-          <span>📋 24-Field Finding Schema</span>
-          <span>🛑 Stop-Gate Assertion</span>
-        </div>
-      </article>
-    </li>
-    <li class="pl-connector" aria-hidden="true"></li>
-    <li class="pl-step">
-      <article class="pl-card highlight">
-        <div><span class="pl-badge">STEP 04</span></div>
-        <h3>Versioned Engine V3 Implementation ZIP</h3>
-        <p>Root-cause remediation, test.js verification suites, 00_ROLLBACK_PLAN, and 30-page machine surface.</p>
-        <div class="pl-micro">
-          <span>⚙️ test.js Suites</span>
-          <span>🔄 Rollback Guarantees</span>
-          <span>🤖 A2A Agent Card &amp; MCP</span>
-        </div>
-      </article>
-    </li>
-  </ol>
-  <div class="px-section-head" style="margin-top:48px;text-align:center;">
-    <span class="eyebrow">5 CORE ARCHITECTURAL PILLARS</span>
-    <h2>Customer, Trust, Distribution, Reference &amp; Sales Channel Architecture</h2>
-    <p>The operational and commercial backbone of HTML&amp;HTML: five integrated layers connecting diagnosis to post-payment verification.</p>
-  </div>
-  <div class="five-pillars-grid">
-    <article class="five-pillar-card">
-      <span class="pillar-badge">01 · CUSTOMER</span>
-      <h3>Customer &amp; Agent Flow</h3>
-      <p>No prior signup required; instant live diagnosis with a single URL. Website owners and AI agents identify blockers immediately.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">02 · TRUST</span>
-      <h3>E-E-A-T &amp; Zero Fabrication</h3>
-      <p>Evidence standard anchored in IETF RFC 9309, W3C and official vendor docs. Unmeasured signals strictly return NOT_MEASURED.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">03 · DISTRIBUTION</span>
-      <h3>Omnichannel Distribution</h3>
-      <p>Autonomous access across llms.txt, llms-full.txt, OpenAPI 3.1 specification, MCP server, and 273 bilingual tech briefings.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">04 · REFERENCE</span>
-      <h3>Authority &amp; Standards</h3>
-      <p>18-Engine Engine V3.0 industry standard, bilingual AI search glossary, and public empirical audit library.</p>
-    </article>
-    <article class="five-pillar-card">
-      <span class="pillar-badge">05 · SALES CHANNEL</span>
-      <h3>$99 Implementation Pack</h3>
-      <p>Secured via Paddle Billing single-site license: root cause, P0–P3 priorities, 30+ file ZIP delivery, and 30-day re-scan.</p>
-    </article>
-  </div>
-</section>
-
-<!-- 02.6 6 AI SEARCH BLACK BOXES & TRANSFORMER REVERSE ENGINEERING SHOWCASE -->
-<section class="section px-section" id="dark-pool-intelligence">
-  <div class="px-section-head">
-    <span class="eyebrow">SILICON VALLEY &amp; LONDON ($5M+) ENTERPRISE INTELLIGENCE</span>
-    <h2>6 AI Search Black Boxes That Traditional SEO Ignores</h2>
-    <p>Ahrefs, Semrush, and legacy tools only count keywords and meta tags. Foundation neural models like ChatGPT, Perplexity, and Google Gemini evaluate your domain across these 6 hidden transformer layers before citing or discarding your content.</p>
-  </div>
-  <div class="dp-grid">
-    <article class="dp-card dp-p0">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">01</span><span class="dp-badge">P0 CRITICAL</span></div>
-      <h3 class="dp-title">14KB AST Token Bloat (Payload Budget)</h3>
-      <p class="dp-desc">GPTBot and Perplexity crawlers enforce early ingestion truncation on bloated HTML exceeding the 14KB AST budget; crawlers exhaust token capacity before reaching lower pricing and product offerings.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Cloudflare Worker HTMLRewriter AST trimming and sub-40ms edge TTFB</span></div>
-    </article>
-    <article class="dp-card dp-p0">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">02</span><span class="dp-badge">P0 CRITICAL</span></div>
-      <h3 class="dp-title">Entity Vault &amp; Wikidata Consensus</h3>
-      <p class="dp-desc">Without explicit triangulation in global Knowledge Graphs, neural models cannot verify your brand as an authoritative entity, systematically omitting your company in favor of competitors.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: W3C JSON-LD 1.1 @graph, sameAs Wikidata QID and Google MID consensus</span></div>
-    </article>
-    <article class="dp-card dp-p1">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">03</span><span class="dp-badge">P1 HIGH</span></div>
-      <h3 class="dp-title">512-Token RAG Semantic Fragmentation</h3>
-      <p class="dp-desc">Standard 512-token vector chunking fractures entity definitions and value propositions; search engines fail to retrieve key context during semantic generation.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: data-chunk-id semantic boundary markup and contextual preservation</span></div>
-    </article>
-    <article class="dp-card dp-p1">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">04</span><span class="dp-badge">P1 HIGH</span></div>
-      <h3 class="dp-title">Cross-Encoder &amp; Numerical Density</h3>
-      <p class="dp-desc">Cross-encoder neural rerankers (Cohere, bge-reranker) discard promotional puffery; passages lacking hard numerical metrics and verified facts are filtered out of answer sets.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Opening 45-word numerical fact density template under H2 headings</span></div>
-    </article>
-    <article class="dp-card dp-p2">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">05</span><span class="dp-badge">P2 MEDIUM</span></div>
-      <h3 class="dp-title">AI Corpus PMI (Model Co-Occurrence)</h3>
-      <p class="dp-desc">If your brand lacks co-occurrence alongside industry benchmarks in foundational training corpuses (Common Crawl), models never recommend you spontaneously in zero-shot queries.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Canonical benchmark definitions and sectoral PMI co-occurrence anchors</span></div>
-    </article>
-    <article class="dp-card dp-p2">
-      <div class="dp-glow"></div>
-      <div class="dp-header"><span class="dp-num">06</span><span class="dp-badge">P2 MEDIUM</span></div>
-      <h3 class="dp-title">ColBERT MaxSim Late-Interaction</h3>
-      <p class="dp-desc">Multi-vector retrieval engines fail to achieve maximum late-interaction dot-product scores when heading tokens fail to align with natural-language user queries.</p>
-      <div class="dp-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Fix: Multi-vector query token enrichment across H2/H3 semantic heading hierarchy</span></div>
-    </article>
-  </div>
-  
-  <div class="dp-callout">
-    <div class="dp-callout-text">
-      <span>ZERO CONSULTING OVERHEAD · IN-HOUSE HANDOVER</span>
-      <h3>Find the blockers first. Hand your developers a fix plan they can execute.</h3>
-      <p>HTML&amp;HTML is not an agency or marketing consultancy. Audit your public website for free, then unlock the $99 implementation pack when you need prioritized fixes, acceptance checks and rollback guidance.</p>
-    </div>
-    <div class="dp-callout-action">
-      <a href="#scanner" class="btn-scan-trigger">Start Free AI Audit →</a>
-      <span>No account required · Live results in 10s</span>
-    </div>
-  </div>
-</section>
-
-
-<section class="px-section result-decision-guide" aria-label="From result to action">
-  <div class="px-section-head"><span class="eyebrow">HOW TO USE THE RESULT</span><h2>Do not chase a score. See what to fix first.</h2><p>The scan should answer three questions: where the issue is, what it affects, and what your developer should fix first. The $99 pack unlocks implementation and verification.</p></div>
-  <div class="px-delivery-grid-22"><article class="px-file-card"><b>1 · FINDING</b><p>See the evidence and affected URL.</p></article><article class="px-file-card"><b>2 · IMPACT</b><p>Separate discoverability and technical-flow impact.</p></article><article class="px-file-card"><b>3 · FIX</b><p>Give your technical team the exact next step.</p></article><article class="px-file-card"><b>4 · VERIFY</b><p>Use acceptance and regression checks to confirm it worked.</p></article></div>
-</section>
 <!-- RESULTS -->
 <section id="result" class="results" hidden>
   <div class="result-head">
