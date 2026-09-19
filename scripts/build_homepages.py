@@ -91,8 +91,8 @@ def build_homepages():
     document.documentElement.style.colorScheme = theme;
   })();
 </script>
-<title>Yapay Zeka SEO Analizi ve ChatGPT Görünürlük Testi | HTML&amp;HTML</title>
-<meta name="description" content="Web sitenizin Google ve AI aramalarında erişim, tarama, schema ve teknik görünürlük sorunlarını ücretsiz kontrol edin. Sorunu görün; geliştiricinize uygulanabilir düzeltme planı verin.">
+<title>AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&amp;HTML</title>
+<meta name="description" content="Web sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün. Bulguyu kanıtlayın; gerekiyorsa $99 Fix Pack ile geliştiricinize uygulanabilir düzeltme, test ve rollback planı verin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -102,8 +102,8 @@ def build_homepages():
 <link rel="alternate" type="text/markdown" href="https://htmlandhtml.com/index.md">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://htmlandhtml.com/">
-<meta property="og:title" content="HTML&amp;HTML — Web Standards Diagnostic &amp; Automated Config Generator">
-<meta property="og:description" content="18-engine public website diagnosis with automated configuration packages and code templates.">
+<meta property="og:title" content="HTML&amp;HTML — AI Arama Teknik Teşhis Platformu">
+<meta property="og:description" content="AI arama görünürlüğünü engelleyebilecek site tarafı sorunlarını kanıtlayan ve uygulanabilir düzeltme paketi üreten karar sistemi.">
 <meta name="theme-color" content="#14151a">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh5">
@@ -265,11 +265,15 @@ def build_homepages():
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
-<section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">ÜCRETSİZ WEB SİTESİ GÖRÜNÜRLÜK KONTROLÜ</b></div>
-  <h1 data-i18n="heroTitle">Web Siteniz Google ve AI Aramalarında Teknik Olarak Hazır mı?</h1>
-  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. Bot erişimi, taranabilirlik, schema, canonical, teknik SEO ve AI arama hazırlığı sorunlarını ücretsiz görün. Hangi engelin neyi etkilediğini ve geliştiricinizin neyi düzeltmesi gerektiğini tek raporda alın.</p>
-  
+<section class="hero decision-hero" id="scanner">
+  <div class="kicker"><span></span><b data-i18n="kicker">AI ARAMA TEKNİK TEŞHİS PLATFORMU</b></div>
+  <h1 data-i18n="heroTitle">Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?</h1>
+  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. HTML&amp;HTML sitenizin bulunmasını, anlaşılmasını ve kaynak olarak değerlendirilmesini engelleyebilecek web sitesi sorunlarını kanıtıyla gösterir.</p>
+
+  <div class="decision-hero-proof" aria-label="Ücretsiz tarama sınırları">
+    <span>Ücretsiz teşhis</span><span>Gerçek URL / HTTP / HTML kanıtı</span><span>Kaynak kod erişimi yok</span>
+  </div>
+
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
@@ -288,7 +292,7 @@ def build_homepages():
             <span>Yapıştır</span>
           </button>
         </div>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Ücretsiz Kontrol Et</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Ücretsiz Kontrol Et</span></button>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Sitemi Ücretsiz Tara</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Sitemi Ücretsiz Tara</span></button>
       </div>
       <div class="scan-chips">
         <span>Örnekler:</span>
@@ -296,166 +300,135 @@ def build_homepages():
         <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
         <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
       </div>
-      <small data-i18n="scanHint">Kayıt yok. Secret alınmaz. Yalnızca herkese açık URL ve HTTP yüzeyleri ölçülür.</small>
+      <small data-i18n="scanHint">Kayıt yok · Şifre yok · Kaynak kod erişimi yok · Yalnızca herkese açık web yüzeyi taranır.</small>
     </form>
     <div id="scanStatus" class="status" hidden></div>
   </div>
-  <p class="agency-note">Ajans veya geliştirici misiniz? Müşteri sitenizi ücretsiz tarayın; sorunları kanıtla görün ve uygulama planını mevcut ekibinize devredin.</p>
 
-  <div class="signals">
-    <span data-i18n="sigCrawl">TARAMA</span><i></i>
-    <span>SEO</span><i></i>
-    <span>AI / GEO</span><i></i>
-    <span>LLMS V2</span><i></i>
-    <span data-i18n="sigSchema">YAPISAL VERİ</span><i></i>
-    <span data-i18n="sigA11y">ERİŞİLEBİLİRLİK</span><i></i>
-    <span data-i18n="sigSecurity">GÜVENLİK</span>
+  <div class="signals decision-signals">
+    <span>BULUNABİLİRLİK</span><i></i>
+    <span>ANLAŞILABİLİRLİK</span><i></i>
+    <span>KAYNAK OLABİLİRLİK</span><i></i>
+    <span>DÖNÜŞÜM YOLU</span>
   </div>
 </section>
 
-<!-- PDF-INSPIRED CUSTOMER STORY V1 -->
-<section class="story-shell" id="customer-story" aria-label="HTML&HTML nasıl çalışır">
-  <section class="story-section story-intro">
-    <div class="story-index">01</div>
-    <div class="story-grid story-grid--intro">
-      <div>
-        <span class="story-kicker">NE ALIRSINIZ?</span>
-        <h2>Tek URL girin. Sorunu, etkisini ve sonraki adımı net görün.</h2>
-        <div class="story-copy-stack">
-          <p>HTML&amp;HTML, sitenizin herkese açık yüzeylerini tarar ve görünürlüğü sınırlayan teknik engelleri kanıtıyla gösterir.</p>
-          <p>Ücretsiz sonuçta <strong>ne yanlış, nerede ve neden önemli</strong> sorularını cevaplarız.</p>
-          <p>$99 Uygulama Paketi ise aynı bulguyu <strong>düzeltme, kabul testi, rollback ve re-scan</strong> adımlarına çevirir.</p>
-        </div>
-      </div>
-      <aside class="story-blue-panel">
-        <span class="story-panel-label">KARARINIZ 30 SANİYEDE NETLEŞSİN</span>
-        <h3>Önce teşhis. Sonra yalnız gereken düzeltme.</h3>
-        <p>Abonelik yok. Ajans zorunluluğu yok. Kaynak kodunuza müdahale yok. Çıktıyı mevcut geliştiricinize teslim edin.</p>
-        <div class="story-proof-row">
-          <span>Kayıt gerektirmez</span><span>Kanıta dayalı</span><span>Tek seferlik $99</span>
-        </div>
-      </aside>
+<!-- CUSTOMER DECISION HOMEPAGE V2 -->
+<section class="decision-shell" id="customer-story" aria-label="HTML&HTML müşteri karar sistemi">
+
+  <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
+    <div class="decision-section-no">01</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">SATMIYORSA ÖNCE NEDENİNİ BUL</span>
+      <h2>Sorun trafik olmayabilir. Kırılan karar basamağını bulun.</h2>
+      <p>HTML&amp;HTML teknik gösteri yapmaz; müşterinin neden anlamadığını, güvenmediğini, sizi bulamadığını veya aksiyona geçmediğini ölçülebilir web sinyalleriyle ayırır.</p>
+    </div>
+    <div class="decision-question-grid">
+      <article><b>01</b><h3>Müşteri</h3><p>5 saniyede ne sattığınız anlaşılıyor mu?</p><span>Teklif belirsizse ziyaretçi karar veremez.</span></article>
+      <article><b>02</b><h3>Güven</h3><p>İddianızı destekleyen kanıt görünür mü?</p><span>Kanıt yoksa satın alma ertelenir.</span></article>
+      <article><b>03</b><h3>Dağıtım</h3><p>Google ve AI sistemleri sizi okuyabiliyor mu?</p><span>Bulunamayan ürün değerlendirme fırsatını kaybeder.</span></article>
+      <article><b>04</b><h3>Referans</h3><p>Kararı destekleyen örnek çıktı var mı?</p><span>Söz değil, görülebilir örnek güven üretir.</span></article>
+      <article><b>05</b><h3>Satış kanalı</h3><p>Teklif ve CTA doğru sırada mı?</p><span>Trafik, net bir sonraki adıma bağlanmalıdır.</span></article>
     </div>
   </section>
 
-  <section class="story-section story-needs" id="what-you-get">
-    <div class="story-index">02</div>
-    <div class="story-head">
-      <span class="story-kicker">TÜM İHTİYACINIZ TEK AKIŞTA</span>
-      <h2>Tarama sonucunda elinize tam olarak ne geçer?</h2>
+  <section class="decision-section decision-pillars" id="decision-pillars">
+    <div class="decision-section-no">02</div>
+    <div class="decision-heading decision-heading--split">
+      <div>
+        <span class="decision-kicker">TEK ÇATI ALTINDA</span>
+        <h2>Web sitenizi sayfa olarak değil, karar sistemi olarak inceler.</h2>
+      </div>
+      <p>Her problem aynı dört soruya çevrilir: <strong>Ne yanlış?</strong> <strong>Kanıtı ne?</strong> <strong>Neyi etkiliyor?</strong> <strong>Önce ne düzeltilmeli?</strong></p>
     </div>
-    <div class="story-numbered-grid">
-      <article><b>01</b><span>Teknik bulgu</span><p>Hangi URL'de hangi engelin bulunduğunu görün.</p></article>
-      <article><b>02</b><span>Kanıt</span><p>Bulgunun dayandığı HTTP, DOM veya yapılandırma kanıtını görün.</p></article>
-      <article><b>03</b><span>İş etkisi</span><p>Görünürlük, taranabilirlik veya kaynak hazırlığı etkisini ayırın.</p></article>
-      <article><b>04</b><span>Öncelik</span><p>Önce hangi sorunun ele alınması gerektiğini görün.</p></article>
-      <article><b>05</b><span>Düzeltme planı</span><p>$99 pakette geliştiricinin uygulayacağı net adımları alın.</p></article>
-      <article><b>06</b><span>Doğrulama</span><p>Acceptance, rollback ve re-scan ile sonucu kapatın.</p></article>
+    <div class="decision-bridge" aria-label="Karar zinciri">
+      <span>Problem</span><i>→</i><span>Kanıt</span><i>→</i><span>Etki</span><i>→</i><span>Öncelik</span><i>→</i><span>Düzeltme</span>
     </div>
   </section>
 
-  <section class="story-section story-output" id="sample-output">
-    <div class="story-index">03</div>
-    <div class="story-grid story-grid--demo">
+  <section class="decision-section decision-output" id="sample-output">
+    <div class="decision-section-no">03</div>
+    <div class="decision-output-grid">
       <div>
-        <span class="story-kicker">ÖRNEK ÇIKTI</span>
-        <h2>Raporu açtığınızda ne göreceğinizi önceden bilin.</h2>
-        <p class="story-lead">Karmaşık skorlar yerine geliştiricinin doğrudan çalışabileceği bir karar formatı kullanıyoruz.</p>
-        <div class="story-checks">
-          <div><i>✓</i><span><strong>Bulgu:</strong> Sorun ne?</span></div>
-          <div><i>✓</i><span><strong>Konum:</strong> Hangi URL / yüzey?</span></div>
-          <div><i>✓</i><span><strong>Etki:</strong> Neyi sınırlıyor?</span></div>
-          <div><i>✓</i><span><strong>Düzeltme:</strong> Ne yapılmalı?</span></div>
-          <div><i>✓</i><span><strong>Doğrulama:</strong> Başarılı olduğu nasıl anlaşılır?</span></div>
+        <span class="decision-kicker">SATIN ALMADAN ÖNCE ÇIKTIYI GÖR</span>
+        <h2>Rapor, “iyi/kötü” demez. Karar verir.</h2>
+        <div class="decision-checks">
+          <p><b>Bulgu</b><span>Sorun ne?</span></p>
+          <p><b>Konum</b><span>Hangi URL / yüzey?</span></p>
+          <p><b>Kanıt</b><span>Neye dayanıyor?</span></p>
+          <p><b>Etki</b><span>Neyi sınırlıyor?</span></p>
+          <p><b>Öncelik</b><span>Önce ne ele alınmalı?</span></p>
         </div>
-        <div class="story-actions">
-          <a class="story-btn story-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">Canlı örnek raporu incele →</a>
-          <a class="story-btn" href="#scanner">Kendi siteni ücretsiz tara</a>
+        <div class="decision-actions">
+          <a class="decision-btn decision-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">Gerçek örnek raporu gör →</a>
+          <a class="decision-btn" href="#scanner">Kendi sitemi tara</a>
         </div>
       </div>
-      <div class="story-report-preview" aria-label="Örnek teknik rapor görünümü">
-        <div class="story-browser-bar"><span></span><span></span><span></span><em>CANLI RAPOR ÖNİZLEMESİ</em></div>
-        <div class="story-report-body">
-          <div class="story-report-tag">TECH-CANON-001 · YÜKSEK</div>
+      <div class="decision-report-card" aria-label="Örnek bulgu">
+        <div class="decision-report-top"><span></span><span></span><span></span><em>ÖRNEK BULGU</em></div>
+        <div class="decision-report-body">
+          <div class="decision-severity">TECH-CANON-001 · YÜKSEK</div>
           <h3>Canonical etiketi eksik</h3>
-          <p>Birincil URL belirsizliği yinelenen içerik sinyallerini bölebilir.</p>
-          <div class="story-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
-          <div class="story-fix"><b>$99 PAKETTE</b><span>Kök neden → düzeltme → test → rollback</span></div>
+          <p>Arama sistemleri hangi URL'nin ana sürüm olduğunu daha belirsiz okuyabilir.</p>
+          <div class="decision-evidence"><b>KANIT</b><code>&lt;head&gt; içinde rel="canonical" bulunamadı</code></div>
+          <div class="decision-paid"><b>$99 FIX PACK</b><span>Kök neden → exact fix → test → rollback → re-scan</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="story-section story-process" id="how-it-works" data-premium-infographic="scope-map">
-    <div class="story-index">04</div>
-    <div class="story-grid">
-      <div>
-        <span class="story-kicker">NASIL ÇALIŞIR?</span>
-        <h2>Dört adım. Tek karar akışı.</h2>
-        <p class="story-lead">Teknik motorlar arka planda kalır; müşterinin gördüğü süreç basit ve doğrulanabilirdir.</p>
+  <section class="decision-section decision-offer" id="offer">
+    <div class="decision-section-no">04</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">ÜCRETSİZ TEŞHİS → ÜCRETLİ UYGULAMA</span>
+      <h2>Analiz için değil; uygulanabilir çözüm paketi için ödeme.</h2>
+    </div>
+    <div class="decision-offer-grid">
+      <article class="decision-offer-card">
+        <span>ÜCRETSİZ</span>
+        <h3>Sorunun ne olduğunu görün.</h3>
+        <ul><li>Bulgu</li><li>URL / konum</li><li>Kanıt</li><li>Öncelik</li><li>Genel çözüm yönü</li></ul>
+        <a href="#scanner">Ücretsiz tara →</a>
+      </article>
+      <article class="decision-offer-card decision-offer-card--paid">
+        <span>$99 · TEK SEFERLİK</span>
+        <h3>Nasıl düzeltileceğini ekibinize verin.</h3>
+        <ul><li>Kök neden</li><li>Exact fix / konfigürasyon</li><li>Uygulama sırası</li><li>Acceptance + regression test</li><li>Rollback + 30 gün içinde 1 re-scan</li></ul>
+        <a href="/tr/fiyatlandirma/">Fix Pack'i incele →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="decision-section decision-trust" id="trust">
+    <div class="decision-section-no">05</div>
+    <div class="decision-trust-grid">
+      <div class="decision-trust-copy">
+        <span class="decision-kicker">GÜVEN SÖYLEM DEĞİL, KANIT KATMANIDIR</span>
+        <h2>Ne ölçtüğümüzü, neyi ölçemediğimizi ve neyi garanti etmediğimizi açıkça gösteririz.</h2>
+        <p>AI sıralaması, citation, trafik veya gelir garantisi verilmez. Üçüncü taraf model davranışı kontrol edilemez. Public crawl ile ölçülemeyen codebase kusuru uydurulmaz.</p>
       </div>
-      <div class="story-step-list">
-        <article><b>1</b><div><h3>URL'yi girin</h3><p>Herkese açık web yüzeyi güvenli biçimde taramaya alınır.</p></div></article>
-        <article><b>2</b><div><h3>Kanıtlı sorunları görün</h3><p>Tarama, yapı, erişim ve AI kaynak hazırlığı bulguları ayrıştırılır.</p></div></article>
-        <article><b>3</b><div><h3>Ne yapacağınızı seçin</h3><p>Ücretsiz katman sorunu ve etkisini gösterir; yalnız gereken işi görürsünüz.</p></div></article>
-        <article><b>4</b><div><h3>Uygulayın ve doğrulayın</h3><p>$99 paket düzeltme, acceptance, rollback ve re-scan adımlarını açar.</p></div></article>
+      <div class="decision-trust-points">
+        <article><b>01</b><span>Gerçek URL / HTTP / HTML kanıtı</span></article>
+        <article><b>02</b><span>NOT_MEASURED ve REQUIRES_CONTEXT görünür</span></article>
+        <article><b>03</b><span>Kaynak koduna müdahale yok</span></article>
+        <article><b>04</b><span>Methodology + sample report açık</span></article>
       </div>
     </div>
   </section>
 
-  <section class="story-section story-trust" id="trust">
-    <div class="story-index">05</div>
-    <div class="story-head">
-      <span class="story-kicker">KANIT VE GÜVENLİK</span>
-      <h2>Sonuç yalnız ölçebildiğimiz veriye dayanır.</h2>
-      <p>Ölçemediğimiz sinyali başarılı varsaymayız. Teknik sınırları açıkça gösteririz.</p>
-    </div>
-    <div class="story-trust-panel">
-      <article><span>01</span><h3>Kanıt standardı</h3><p>Her bulgu ölçülebilir bir teknik işarete bağlanır.</p></article>
-      <article><span>02</span><h3>Fail-closed yaklaşım</h3><p>Belirsiz sonuç PASS olarak işaretlenmez.</p></article>
-      <article><span>03</span><h3>Kaynak güvenliği</h3><p>Yalnız herkese açık URL ve HTTP yüzeyleri değerlendirilir.</p></article>
-      <article><span>04</span><h3>Değişiklik güvenliği</h3><p>Acceptance ve rollback adımları teslimatın parçasıdır.</p></article>
-      <article><span>05</span><h3>Şeffaf sınırlar</h3><p>Sıralama, trafik veya dış model tavsiyesi garanti edilmez.</p></article>
-      <article><span>06</span><h3>Re-scan</h3><p>Uygulama sonrası aynı alan adı yeniden doğrulanabilir.</p></article>
-    </div>
-  </section>
-
-  <section class="story-section story-why" id="why-htmlandhtml">
-    <div class="story-index">06</div>
-    <div class="story-grid story-grid--why">
-      <div class="story-why-visual">
-        <span>HTML&amp;HTML</span>
-        <strong>Teşhis → Uygulama → Doğrulama</strong>
-        <p>Tek bir karar hattı.</p>
-      </div>
-      <div>
-        <span class="story-kicker">NEDEN HTML&amp;HTML?</span>
-        <h2>Teknik karmaşıklığı müşteriye değil, sisteme yükler.</h2>
-        <div class="story-reasons">
-          <p><b>1</b> Ücretsiz teşhis ile satın almadan önce ne alacağınızı görürsünüz.</p>
-          <p><b>2</b> Teknik bulgular kanıt ve etkiyle birlikte sunulur.</p>
-          <p><b>3</b> Ücretli katman yalnız uygulama gerektiğinde devreye girer.</p>
-          <p><b>4</b> Çıktı mevcut geliştirici veya ajansınıza devredilebilir.</p>
-          <p><b>5</b> Tek seferlik $99 lisans; zorunlu abonelik yoktur.</p>
-          <p><b>6</b> Acceptance, rollback ve re-scan ile kapanış kriteri bellidir.</p>
-        </div>
+  <section class="decision-section decision-close" id="final-cta">
+    <div class="decision-section-no">06</div>
+    <div>
+      <span class="decision-kicker">İLK KARAR 5 SANİYEDE NET OLSUN</span>
+      <h2>Sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün.</h2>
+      <p>Sorun gerçekse $99'a yazılımcınızın uygulayacağı düzeltme paketini alın.</p>
+      <div class="decision-actions">
+        <a class="decision-btn decision-btn--light" href="#scanner">Sitemi ücretsiz tara →</a>
+        <a class="decision-btn decision-btn--ghost" href="/tr/fiyatlandirma/">$99 Fix Pack</a>
       </div>
     </div>
-  </section>
-
-  <section class="story-section story-close" id="final-cta">
-    <div class="story-index">07</div>
-    <div class="story-close-copy">
-      <span class="story-kicker">TEK ÇATI ALTINDA</span>
-      <h2>Sorunu kanıtıyla görün. Çözümü ekibinize teslim edin.</h2>
-      <p>Önce ücretsiz tarayın. Çıktı yeterliyse hiçbir şey satın almayın. Uygulama planına ihtiyacınız varsa $99 paketle devam edin.</p>
-      <div class="story-actions">
-        <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Ücretsiz kontrolü başlat →</a>
-        <a class="story-btn story-btn--ghost" href="/tr/fiyatlandirma/">$99 uygulama paketini gör</a>
-      </div>
-    </div>
-    <div class="story-close-orbit" aria-hidden="true">
-      <span>Bulgu</span><span>Kanıt</span><span>Etki</span><span>Düzeltme</span><span>Test</span>
+    <div class="decision-orbits" aria-hidden="true">
+      <span>Müşteri</span><span>Güven</span><span>Dağıtım</span><span>Referans</span><span>Satış</span>
     </div>
   </section>
 </section>
@@ -841,11 +814,15 @@ def build_homepages():
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
-<section class="hero" id="scanner">
-  <div class="kicker"><span></span><b data-i18n="kicker">ENTERPRISE AI SEARCH INTELLIGENCE / V4.1</b></div>
-  <h1 data-i18n="heroTitle">Can ChatGPT, Gemini and Perplexity Find Your Website?</h1>
-  <p class="hero-answer" data-i18n="heroCopy">Run a free AI SEO audit to see the evidence-backed website issues that block discovery, correct understanding and source consideration across leading AI search systems.</p>
-  
+<section class="hero decision-hero" id="scanner">
+  <div class="kicker"><span></span><b data-i18n="kicker">AI SEARCH TECHNICAL DIAGNOSTIC PLATFORM</b></div>
+  <h1 data-i18n="heroTitle">Why Is Your Website Missing From AI Search?</h1>
+  <p class="hero-answer" data-i18n="heroCopy">Enter your URL. HTML&amp;HTML shows evidence-backed website issues that can prevent discovery, understanding and source consideration across AI search systems.</p>
+
+  <div class="decision-hero-proof" aria-label="Free scan boundaries">
+    <span>Free diagnosis</span><span>Real URL / HTTP / HTML evidence</span><span>No source-code access</span>
+  </div>
+
   <!-- 02 SCANNER -->
   <div class="scanbox">
     <form id="scanForm" onsubmit="event.preventDefault()">
@@ -864,7 +841,7 @@ def build_homepages():
             <span>Paste</span>
           </button>
         </div>
-        <button id="scanButton" type="submit"><b data-i18n="scan">Start Deep AI Audit</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Check Free</span></button>
+        <button id="scanButton" type="submit"><b data-i18n="scan">Scan My Site Free</b><span class="btn-arrow" aria-hidden="true">→</span><span class="sr-only">Scan My Site Free</span></button>
       </div>
       <div class="scan-chips">
         <span>Examples:</span>
@@ -872,160 +849,107 @@ def build_homepages():
         <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
         <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
       </div>
-      <small data-i18n="scanHint">No signup. No secrets. Only public URLs and HTTP surfaces are measured.</small>
+      <small data-i18n="scanHint">No signup · No password · No source-code access · Only public web surfaces are scanned.</small>
     </form>
     <div id="scanStatus" class="status" hidden></div>
   </div>
 
-  <div class="signals">
-    <span data-i18n="sigCrawl">CRAWL</span><i></i>
-    <span>SEO</span><i></i>
-    <span>AI / GEO</span><i></i>
-    <span>LLMS V2</span><i></i>
-    <span data-i18n="sigSchema">STRUCTURED DATA</span><i></i>
-    <span data-i18n="sigA11y">ACCESSIBILITY</span><i></i>
-    <span data-i18n="sigSecurity">SECURITY</span>
+  <div class="signals decision-signals">
+    <span>DISCOVERABILITY</span><i></i><span>UNDERSTANDING</span><i></i><span>SOURCE ELIGIBILITY</span><i></i><span>CONVERSION PATH</span>
   </div>
 </section>
 
-<!-- PDF-INSPIRED CUSTOMER STORY V1 -->
-<section class="story-shell" id="customer-story" aria-label="How HTML&HTML works">
-  <section class="story-section story-intro">
-    <div class="story-index">01</div>
-    <div class="story-grid story-grid--intro">
-      <div>
-        <span class="story-kicker">WHAT DO YOU GET?</span>
-        <h2>Enter one URL. See the problem, its impact and the next action clearly.</h2>
-        <div class="story-copy-stack">
-          <p>HTML&amp;HTML scans your public website surfaces and shows the technical blockers that can limit discoverability.</p>
-          <p>The free result answers <strong>what is wrong, where it is and why it matters</strong>.</p>
-          <p>The $99 Implementation Pack turns the same evidence into <strong>fix, acceptance test, rollback and re-scan</strong> steps.</p>
-        </div>
-      </div>
-      <aside class="story-blue-panel">
-        <span class="story-panel-label">MAKE THE DECISION IN 30 SECONDS</span>
-        <h3>Diagnose first. Fix only what is necessary.</h3>
-        <p>No subscription. No agency requirement. No direct changes to your source code. Hand the output to your existing developer.</p>
-        <div class="story-proof-row"><span>No signup</span><span>Evidence-based</span><span>One-time $99</span></div>
-      </aside>
+<!-- CUSTOMER DECISION HOMEPAGE V2 -->
+<section class="decision-shell" id="customer-story" aria-label="HTML&HTML customer decision system">
+  <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
+    <div class="decision-section-no">01</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">IF IT DOESN'T SELL, FIND THE BROKEN STEP</span>
+      <h2>Traffic may not be the problem. Find where the decision breaks.</h2>
+      <p>HTML&amp;HTML separates whether visitors fail to understand, trust, discover or act on your website using measurable site-side evidence.</p>
+    </div>
+    <div class="decision-question-grid">
+      <article><b>01</b><h3>Customer</h3><p>Can people understand the offer in 5 seconds?</p><span>Unclear offers delay decisions.</span></article>
+      <article><b>02</b><h3>Trust</h3><p>Is visible evidence supporting your claims?</p><span>Unproven claims weaken purchase confidence.</span></article>
+      <article><b>03</b><h3>Distribution</h3><p>Can Google and AI systems read the site?</p><span>Unfindable products lose evaluation opportunities.</span></article>
+      <article><b>04</b><h3>Reference</h3><p>Can buyers inspect a real example output?</p><span>Visible proof beats promises.</span></article>
+      <article><b>05</b><h3>Sales channel</h3><p>Does the offer lead to one clear next action?</p><span>Traffic needs a conversion path.</span></article>
     </div>
   </section>
 
-  <section class="story-section story-needs" id="what-you-get">
-    <div class="story-index">02</div>
-    <div class="story-head">
-      <span class="story-kicker">EVERYTHING IN ONE FLOW</span>
-      <h2>What exactly do you receive after the scan?</h2>
+  <section class="decision-section decision-pillars" id="decision-pillars">
+    <div class="decision-section-no">02</div>
+    <div class="decision-heading decision-heading--split">
+      <div><span class="decision-kicker">ONE DECISION SYSTEM</span><h2>Evaluate the website as a decision system, not a feature list.</h2></div>
+      <p>Every issue becomes four questions: <strong>What is wrong?</strong> <strong>What proves it?</strong> <strong>What does it affect?</strong> <strong>What should change first?</strong></p>
     </div>
-    <div class="story-numbered-grid">
-      <article><b>01</b><span>Technical finding</span><p>See which blocker exists on which URL.</p></article>
-      <article><b>02</b><span>Evidence</span><p>See the HTTP, DOM or configuration evidence behind the finding.</p></article>
-      <article><b>03</b><span>Business impact</span><p>Separate discoverability, crawl and source-readiness impact.</p></article>
-      <article><b>04</b><span>Priority</span><p>See which issue should be handled first.</p></article>
-      <article><b>05</b><span>Implementation plan</span><p>The $99 pack opens clear developer actions.</p></article>
-      <article><b>06</b><span>Verification</span><p>Close the loop with acceptance, rollback and re-scan.</p></article>
-    </div>
+    <div class="decision-bridge"><span>Problem</span><i>→</i><span>Evidence</span><i>→</i><span>Impact</span><i>→</i><span>Priority</span><i>→</i><span>Fix</span></div>
   </section>
 
-  <section class="story-section story-output" id="sample-output">
-    <div class="story-index">03</div>
-    <div class="story-grid story-grid--demo">
+  <section class="decision-section decision-output" id="sample-output">
+    <div class="decision-section-no">03</div>
+    <div class="decision-output-grid">
       <div>
-        <span class="story-kicker">SAMPLE OUTPUT</span>
-        <h2>Know what the report looks like before you buy anything.</h2>
-        <p class="story-lead">Instead of a wall of scores, the report uses a decision format your developer can act on.</p>
-        <div class="story-checks">
-          <div><i>✓</i><span><strong>Finding:</strong> What is wrong?</span></div>
-          <div><i>✓</i><span><strong>Location:</strong> Which URL / surface?</span></div>
-          <div><i>✓</i><span><strong>Impact:</strong> What does it limit?</span></div>
-          <div><i>✓</i><span><strong>Fix:</strong> What should change?</span></div>
-          <div><i>✓</i><span><strong>Verification:</strong> How do we know it worked?</span></div>
+        <span class="decision-kicker">SEE THE OUTPUT BEFORE YOU BUY</span>
+        <h2>The report doesn't say “good/bad”. It supports a decision.</h2>
+        <div class="decision-checks">
+          <p><b>Finding</b><span>What is wrong?</span></p>
+          <p><b>Location</b><span>Which URL / surface?</span></p>
+          <p><b>Evidence</b><span>What proves it?</span></p>
+          <p><b>Impact</b><span>What can it limit?</span></p>
+          <p><b>Priority</b><span>What should be handled first?</span></p>
         </div>
-        <div class="story-actions">
-          <a class="story-btn story-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">View live sample report →</a>
-          <a class="story-btn" href="#scanner">Scan your site free</a>
+        <div class="decision-actions">
+          <a class="decision-btn decision-btn--primary" href="/enterprise-analyzer/htmlandhtml-ai-report" target="_blank" rel="noopener">View real sample report →</a>
+          <a class="decision-btn" href="#scanner">Scan my site</a>
         </div>
       </div>
-      <div class="story-report-preview" aria-label="Sample technical report preview">
-        <div class="story-browser-bar"><span></span><span></span><span></span><em>LIVE REPORT PREVIEW</em></div>
-        <div class="story-report-body">
-          <div class="story-report-tag">TECH-CANON-001 · HIGH</div>
+      <div class="decision-report-card" aria-label="Sample finding">
+        <div class="decision-report-top"><span></span><span></span><span></span><em>SAMPLE FINDING</em></div>
+        <div class="decision-report-body">
+          <div class="decision-severity">TECH-CANON-001 · HIGH</div>
           <h3>Canonical tag is missing</h3>
-          <p>Primary URL ambiguity can split duplicate-content signals.</p>
-          <div class="story-evidence"><b>EVIDENCE</b><code>rel="canonical" was not found inside &lt;head&gt;</code></div>
-          <div class="story-fix"><b>IN THE $99 PACK</b><span>Root cause → fix → test → rollback</span></div>
+          <p>Search systems may read the primary URL with more ambiguity.</p>
+          <div class="decision-evidence"><b>EVIDENCE</b><code>rel="canonical" was not found inside &lt;head&gt;</code></div>
+          <div class="decision-paid"><b>$99 FIX PACK</b><span>Root cause → exact fix → test → rollback → re-scan</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="story-section story-process" id="how-it-works" data-premium-infographic="scope-map">
-    <div class="story-index">04</div>
-    <div class="story-grid">
-      <div>
-        <span class="story-kicker">HOW DOES IT WORK?</span>
-        <h2>Four steps. One decision flow.</h2>
-        <p class="story-lead">The technical engines stay in the background; the customer sees a simple, verifiable process.</p>
+  <section class="decision-section decision-offer" id="offer">
+    <div class="decision-section-no">04</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">FREE DIAGNOSIS → PAID IMPLEMENTATION</span>
+      <h2>Pay for an implementable fix package, not for another audit.</h2>
+    </div>
+    <div class="decision-offer-grid">
+      <article class="decision-offer-card"><span>FREE</span><h3>See what is wrong.</h3><ul><li>Finding</li><li>URL / location</li><li>Evidence</li><li>Priority</li><li>General fix direction</li></ul><a href="#scanner">Scan free →</a></article>
+      <article class="decision-offer-card decision-offer-card--paid"><span>$99 · ONE TIME</span><h3>Give your team the implementation path.</h3><ul><li>Root cause</li><li>Exact fix / configuration</li><li>Implementation order</li><li>Acceptance + regression test</li><li>Rollback + one re-scan within 30 days</li></ul><a href="/en/pricing/">View Fix Pack →</a></article>
+    </div>
+  </section>
+
+  <section class="decision-section decision-trust" id="trust">
+    <div class="decision-section-no">05</div>
+    <div class="decision-trust-grid">
+      <div class="decision-trust-copy">
+        <span class="decision-kicker">TRUST IS AN EVIDENCE LAYER</span>
+        <h2>We show what we measure, what we cannot measure and what we do not guarantee.</h2>
+        <p>No ranking, citation, traffic or revenue guarantee. Third-party model behavior is outside our control. We do not invent codebase defects that public crawling cannot observe.</p>
       </div>
-      <div class="story-step-list">
-        <article><b>1</b><div><h3>Enter the URL</h3><p>The public surface is taken into a safe scan flow.</p></div></article>
-        <article><b>2</b><div><h3>See evidenced issues</h3><p>Crawl, structure, access and AI source-readiness findings are separated.</p></div></article>
-        <article><b>3</b><div><h3>Choose what to do</h3><p>The free layer shows the problem and impact, so you only act where needed.</p></div></article>
-        <article><b>4</b><div><h3>Implement and verify</h3><p>The $99 pack opens fix, acceptance, rollback and re-scan steps.</p></div></article>
+      <div class="decision-trust-points">
+        <article><b>01</b><span>Real URL / HTTP / HTML evidence</span></article>
+        <article><b>02</b><span>NOT_MEASURED and REQUIRES_CONTEXT stay visible</span></article>
+        <article><b>03</b><span>No source-code modification</span></article>
+        <article><b>04</b><span>Open methodology + sample report</span></article>
       </div>
     </div>
   </section>
 
-  <section class="story-section story-trust" id="trust">
-    <div class="story-index">05</div>
-    <div class="story-head">
-      <span class="story-kicker">EVIDENCE &amp; SAFETY</span>
-      <h2>Results only rely on signals we can actually measure.</h2>
-      <p>We do not treat an unmeasured signal as a pass. Technical boundaries remain visible.</p>
-    </div>
-    <div class="story-trust-panel">
-      <article><span>01</span><h3>Evidence standard</h3><p>Each finding is tied to a measurable technical signal.</p></article>
-      <article><span>02</span><h3>Fail-closed logic</h3><p>Ambiguous results are not marked PASS.</p></article>
-      <article><span>03</span><h3>Public-surface safety</h3><p>Only public URLs and HTTP surfaces are evaluated.</p></article>
-      <article><span>04</span><h3>Change safety</h3><p>Acceptance and rollback are part of delivery.</p></article>
-      <article><span>05</span><h3>Clear boundaries</h3><p>No ranking, traffic or external-model recommendation guarantee.</p></article>
-      <article><span>06</span><h3>Re-scan</h3><p>The same domain can be verified again after implementation.</p></article>
-    </div>
-  </section>
-
-  <section class="story-section story-why" id="why-htmlandhtml">
-    <div class="story-index">06</div>
-    <div class="story-grid story-grid--why">
-      <div class="story-why-visual"><span>HTML&amp;HTML</span><strong>Diagnose → Implement → Verify</strong><p>One decision line.</p></div>
-      <div>
-        <span class="story-kicker">WHY HTML&amp;HTML?</span>
-        <h2>Put the technical complexity in the system, not on the customer.</h2>
-        <div class="story-reasons">
-          <p><b>1</b> See the diagnosis before paying for implementation.</p>
-          <p><b>2</b> Findings are shown with evidence and impact.</p>
-          <p><b>3</b> The paid layer only appears when implementation is needed.</p>
-          <p><b>4</b> Hand the output to your existing developer or agency.</p>
-          <p><b>5</b> One-time $99 license; no mandatory subscription.</p>
-          <p><b>6</b> Acceptance, rollback and re-scan define the finish line.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="story-section story-close" id="final-cta">
-    <div class="story-index">07</div>
-    <div class="story-close-copy">
-      <span class="story-kicker">ONE SYSTEM</span>
-      <h2>See the problem with evidence. Hand the solution to your team.</h2>
-      <p>Measure My Risk — Free first. If the diagnosis is enough, buy nothing. If you need the implementation plan, continue with the $99 pack.</p>
-      <div class="story-actions">
-        <a class="story-btn story-btn--primary story-btn--light" href="#scanner">Start the free scan →</a>
-        <a class="story-btn story-btn--ghost" href="/en/pricing/">View the $99 implementation pack</a>
-      </div>
-    </div>
-    <div class="story-close-orbit" aria-hidden="true">
-      <span>Finding</span><span>Evidence</span><span>Impact</span><span>Fix</span><span>Test</span>
-    </div>
+  <section class="decision-section decision-close" id="final-cta">
+    <div class="decision-section-no">06</div>
+    <div><span class="decision-kicker">MAKE THE FIRST DECISION IN 5 SECONDS</span><h2>See why your site is weak in AI search for free.</h2><p>If the issue is real, get the $99 fix package your developer can implement.</p><div class="decision-actions"><a class="decision-btn decision-btn--light" href="#scanner">Scan my site free →</a><a class="decision-btn decision-btn--ghost" href="/en/pricing/">$99 Fix Pack</a></div></div>
+    <div class="decision-orbits" aria-hidden="true"><span>Customer</span><span>Trust</span><span>Distribution</span><span>Reference</span><span>Sales</span></div>
   </section>
 </section>
 
