@@ -15,10 +15,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config" / "google-preferred-source.json"
-PUBLIC_HOME_PAGES = (
-    ROOT / "index.html",
-    ROOT / "tr" / "index.html",
-    ROOT / "en" / "index.html",
+SURFACE_CONTRACTS = ROOT / "config" / "public-surface-contracts.json"
+PUBLIC_HOME_PAGES = tuple(
+    ROOT / rel
+    for rel in json.loads(SURFACE_CONTRACTS.read_text(encoding="utf-8"))["preferredSourcePages"]
 )
 
 PUBLISHER_SCRIPT_RE = re.compile(
