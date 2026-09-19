@@ -563,22 +563,23 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 <p class="v3-delivery-boundary"><b>Ücretli teslim sınırı:</b> Kanıtlanan URL’lere bağlı 30'a kadar sayfa bazlı Markdown makine yüzeyi ve sürümlenmiş ZIP teslim paketi.</p></section>
 
 <!-- 02.5 AUTONOMOUS INTELLIGENCE PIPELINE INFOGRAPHIC -->
-<section class="section px-section" id="pipeline" data-premium-infographic="scope-map">
-  <div class="px-section-head">
+<section class="section px-section px-pipeline-premium" id="pipeline" data-premium-infographic="scope-map">
+  <div class="px-section-head px-section-head--center">
     <span class="eyebrow">END-TO-END AUTONOMOUS PIPELINE</span>
     <h2>Yapay Zeka Sizi Nasıl Tavsiye Eder ve Görünürlük Nedir?</h2>
-    <p>Yapay zeka görünürlüğü (GEO/AEO) nedir? GEO, arama ve yapay zeka modellerinin sitenizi doğrudan referans almasıdır. HTML&amp;HTML, 18 motor (18 engines) ve %100 deterministik kanıt standardıyla çalışır.</p>
+    <p>Yapay zeka görünürlüğünü tek bir skora indirmek yerine; erişim, kaynak hazırlığı, kanıt ve uygulanabilir düzeltme zinciri üzerinden görün.</p>
   </div>
-  <ol class="pl-flow">
+
+  <ol class="pl-flow pl-flow--premium">
     <li class="pl-step">
       <article class="pl-card">
         <div><span class="pl-badge">ADIM 01</span></div>
         <h3>Canlı URL Girişi</h3>
-        <p>DoH (DNS-over-HTTPS) ve RFC 1918 SSRF izolasyonu ile hedef host güvenlik çemberine alınır.</p>
+        <p>DoH ve fail-closed güvenlik kapılarıyla hedef yüzey güvenli biçimde taramaya alınır.</p>
         <div class="pl-micro">
-          <span>🛡️ DoH DNS Koruması</span>
-          <span>⚡ HTTP/2 Handshake</span>
-          <span>🔒 Fail-Closed Gate</span>
+          <span>DoH DNS koruması</span>
+          <span>HTTPS / HTTP doğrulaması</span>
+          <span>Fail-closed gate</span>
         </div>
       </article>
     </li>
@@ -587,11 +588,11 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       <article class="pl-card">
         <div><span class="pl-badge">ADIM 02</span></div>
         <h3>18 Motorlu Paralel Tarama</h3>
-        <p>cl100k AST token ayrıştırma, payload ölçümleri, semantic structure ve source-readiness taraması.</p>
+        <p>Teknik erişim, semantic structure ve source-readiness kontrolleri aynı kanıt zincirinde çalışır.</p>
         <div class="pl-micro">
-          <span>🎯 ColBERT MaxSim</span>
-          <span>🧠 Knowledge Vault QID</span>
-          <span>📦 14KB AST Token Purge</span>
+          <span>18 deterministik motor</span>
+          <span>Measured evidence</span>
+          <span>Source-readiness</span>
         </div>
       </article>
     </li>
@@ -600,11 +601,11 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       <article class="pl-card">
         <div><span class="pl-badge">ADIM 03</span></div>
         <h3>Deterministik Kanıt Kilidi</h3>
-        <p>UNKNOWN ≠ PASS kuralı. Varsayımsız, kablo seviyesi HTTP/DOM ispatı ve P0–P3 etki matrisi.</p>
+        <p>UNKNOWN ≠ PASS. Her bulgu kanıt, etki ve öncelik alanlarıyla sınıflandırılır.</p>
         <div class="pl-micro">
-          <span>⚖️ P0–P3 Etki Matrisi</span>
-          <span>📋 24 Alanlı Bulgu Şeması</span>
-          <span>🛑 Stop-Gate Denetimi</span>
+          <span>P0–P3 etki matrisi</span>
+          <span>Kanıt alanları</span>
+          <span>Stop-gate denetimi</span>
         </div>
       </article>
     </li>
@@ -613,45 +614,58 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       <article class="pl-card highlight">
         <div><span class="pl-badge">ADIM 04</span></div>
         <h3>30+ Dosyalık V3 Uygulama Paketi</h3>
-        <p>Kök neden çözümü, test.js kabul testleri, 00_ROLLBACK_PLAN ve 30 sayfalık makine yüzeyi.</p>
+        <p>Kök neden, uygulama adımları, kabul testleri, rollback ve makine yüzeyleri tek teslimatta toplanır.</p>
         <div class="pl-micro">
-          <span>⚙️ test.js Scriptleri</span>
-          <span>🔄 Geri Alma Güvencesi</span>
-          <span>🤖 A2A Agent Card &amp; MCP</span>
+          <span>Acceptance testleri</span>
+          <span>Rollback planı</span>
+          <span>Agent Card &amp; MCP</span>
         </div>
       </article>
     </li>
   </ol>
-  <div class="px-section-head" style="margin-top:48px;text-align:center;">
+
+  <div class="pipeline-outcome-strip" aria-label="Tarama ve uygulama sonucu">
+    <div><span>ÜCRETSİZ</span><strong>Bulgu + kanıt + etki</strong></div>
+    <div><span>$99 PAKET</span><strong>Düzeltme + test + rollback</strong></div>
+    <div><span>KAPANIŞ</span><strong>Re-scan ile doğrulama</strong></div>
+  </div>
+
+  <div class="px-section-head px-section-head--center pillar-heading">
     <span class="eyebrow">5 TEMEL KURUMSAL MİMARİ KATMANI</span>
     <h2>Müşteri, Güven, Dağıtım, Referans ve Satış Kanalı Mimarisi</h2>
-    <p>HTML&amp;HTML platformunun operasyonel ve ticari omurgası: teşhis anından ödeme sonrası doğrulamaya kadar 5 entegre katman.</p>
+    <p>Teşhis anından ödeme sonrası doğrulamaya kadar aynı ürün akışını taşıyan beş entegre katman.</p>
   </div>
-  <div class="five-pillars-grid">
+
+  <div class="five-pillars-grid five-pillars-grid--premium">
     <article class="five-pillar-card">
       <span class="pillar-badge">01 · MÜŞTERİ</span>
       <h3>Müşteri &amp; Ajan Akışı</h3>
-      <p>Önceden kayıt gerekmez; tek URL ile anında canlı teşhis. Web sitesi sahipleri ve yapay zeka ajanları engelleri anında görür.</p>
+      <p>Tek URL ile kayıt gerektirmeden teşhis akışına girin; kullanıcı ve ajan yüzeyleri aynı sistemden beslenir.</p>
+      <div class="pillar-proof"><span>Tek giriş noktası</span><span>Kayıtsız başlangıç</span></div>
     </article>
     <article class="five-pillar-card">
       <span class="pillar-badge">02 · GÜVEN</span>
       <h3>E-E-A-T &amp; Sıfır Uydurma</h3>
-      <p>IETF RFC 9309, W3C ve resmi vendor dokümanlarına dayalı kanıt standardı. Ölçülemeyen sinyal kesinlikle NOT_MEASURED kalır.</p>
+      <p>Ölçülemeyen sinyal NOT_MEASURED kalır; kanıt sınırı ve resmi kaynak disiplini korunur.</p>
+      <div class="pillar-proof"><span>Kanıt standardı</span><span>Fail-closed mantık</span></div>
     </article>
     <article class="five-pillar-card">
       <span class="pillar-badge">03 · DAĞITIM</span>
       <h3>Çok Kanallı Dağıtım</h3>
-      <p>llms.txt, llms-full.txt, OpenAPI 3.1 spesifikasyonu, MCP sunucusu ve 273 ikidilli teknoloji brifingi ile otonom erişim.</p>
+      <p>llms.txt, OpenAPI, MCP ve çift dilli makine yüzeyleriyle dağıtım tek mimariden yönetilir.</p>
+      <div class="pillar-proof"><span>OpenAPI + MCP</span><span>TR / EN yüzeyler</span></div>
     </article>
     <article class="five-pillar-card">
       <span class="pillar-badge">04 · REFERANS</span>
       <h3>Otorite &amp; Standart</h3>
-      <p>18 Motorlu Engine V3.0 endüstri standardı, çift dilli yapay zeka sözlüğü ve kamuya açık örnek analiz kütüphanesi.</p>
+      <p>Metodoloji, sözlük, kanıt standardı ve örnek raporlar referans katmanını görünür kılar.</p>
+      <div class="pillar-proof"><span>Metodoloji</span><span>Örnek rapor</span></div>
     </article>
     <article class="five-pillar-card">
       <span class="pillar-badge">05 · SATIŞ KANALI</span>
       <h3>$99 Uygulama Paketi</h3>
-      <p>Paddle Billing güvencesiyle tek seferlik lisans: kök neden, P0–P3 öncelik, 30+ dosyalık ZIP teslimatı ve 30 gün re-scan.</p>
+      <p>Ücretsiz teşhisi uygulanabilir düzeltme, acceptance, rollback ve re-scan teslimatına çevirir.</p>
+      <div class="pillar-proof"><span>Tek seferlik lisans</span><span>30 gün re-scan</span></div>
     </article>
   </div>
 </section>
@@ -722,9 +736,19 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
 </section>
 
 
-<section class="px-section result-decision-guide" aria-label="Sonuçtan aksiyona">
-  <div class="px-section-head"><span class="eyebrow">SONUCU NASIL KULLANACAKSINIZ?</span><h2>Skor değil; hangi sorunu önce düzelteceğinizi görün.</h2><p>Tarama sonucu üç soruyu cevaplamalı: sorun nerede, iş etkisi ne, geliştirici hangi düzeltmeyle başlamalı. $99 paket yalnız uygulama ve doğrulama katmanını açar.</p></div>
-  <div class="px-delivery-grid-22"><article class="px-file-card"><b>1 · BULGU</b><p>Kanıtı ve etkilenen URL'yi görün.</p></article><article class="px-file-card"><b>2 · ETKİ</b><p>Görünürlük veya teknik akış üzerindeki etkisini ayırın.</p></article><article class="px-file-card"><b>3 · DÜZELTME</b><p>Teknik ekibin uygulayacağı net adımı alın.</p></article><article class="px-file-card"><b>4 · DOĞRULA</b><p>Acceptance ve regresyon kontrolüyle sonucu test edin.</p></article></div>
+<section class="px-section result-decision-guide result-decision-guide--premium" aria-label="Sonuçtan aksiyona">
+  <div class="px-section-head px-section-head--center">
+    <span class="eyebrow">SONUCU NASIL KULLANACAKSINIZ?</span>
+    <h2>Skor değil; hangi sorunu önce düzelteceğinizi görün.</h2>
+    <p>Tarama sonucu üç soruyu cevaplamalı: sorun nerede, iş etkisi ne, geliştirici hangi düzeltmeyle başlamalı. $99 paket yalnız uygulama ve doğrulama katmanını açar.</p>
+  </div>
+  <div class="result-action-grid">
+    <article class="result-action-card"><span>01</span><b>BULGU</b><h3>Kanıtı görün</h3><p>Etkilenen URL’yi, bulguyu ve dayandığı kanıtı görün.</p><div class="result-action-meta"><em>URL</em><em>Kanıt</em><em>Bulgu</em></div></article>
+    <article class="result-action-card"><span>02</span><b>ETKİ</b><h3>İş etkisini ayırın</h3><p>Görünürlük veya teknik akış üzerindeki etkisini ve önceliğini ayırın.</p><div class="result-action-meta"><em>Etki</em><em>Öncelik</em><em>Confidence</em></div></article>
+    <article class="result-action-card"><span>03</span><b>DÜZELTME</b><h3>Net aksiyon alın</h3><p>Teknik ekibin uygulayacağı değişikliği, sırasını ve bağımlılığını görün.</p><div class="result-action-meta"><em>Fix</em><em>Sıra</em><em>Bağımlılık</em></div></article>
+    <article class="result-action-card"><span>04</span><b>DOĞRULA</b><h3>Regresyonu kapatın</h3><p>Acceptance ve regresyon kontrolüyle düzeltmenin sonucunu doğrulayın.</p><div class="result-action-meta"><em>Test</em><em>Re-scan</em><em>Kapanış</em></div></article>
+  </div>
+  <div class="result-action-footer"><a href="/tr/fiyatlandirma/">$99 uygulama paketini incele →</a><a href="/tr/sss/">SSS →</a></div>
 </section>
 <!-- RESULTS -->
 <section id="result" class="results" hidden>
