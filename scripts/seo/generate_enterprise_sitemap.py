@@ -109,6 +109,17 @@ def discover_all_pages():
         ):
             continue
 
+        # Commercial crawl-budget rule: keep news hubs in sitemap, exclude
+        # individual LLMS news briefs. They remain indexable and internally linked.
+        if (
+            rel_str.startswith("tr/llms-txt-haberler/")
+            and rel_str != "tr/llms-txt-haberler/index.html"
+        ) or (
+            rel_str.startswith("en/llms-txt-news/")
+            and rel_str != "en/llms-txt-news/index.html"
+        ):
+            continue
+
         # Derive URL
         if rel_str == "index.html":
             url = f"{ORIGIN}/"
