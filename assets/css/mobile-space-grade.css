@@ -1552,6 +1552,16 @@
 
 
 
+/* Closed drawer must be removed from mobile hit-testing/layout audits. */
+@media (max-width: 768px) {
+  .hh-cyber-drawer {
+    visibility: hidden !important;
+  }
+  .hh-cyber-drawer.is-open {
+    visibility: visible !important;
+  }
+}
+
 /* PREMIUM MOBILE HARDENING V5 */
 @media (max-width: 768px) {
   html, body {
