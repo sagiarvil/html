@@ -56,7 +56,7 @@ TR_PRICING='''<main>
  <p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> sorun nerede ve neyi etkiliyor? <strong>$99 uygulama paketi:</strong> hangi düzeltme önce yapılacak, nasıl uygulanacak ve nasıl doğrulanacak?</p>
  <div class="hero-actions"><a class="primary" href="/tr/#scanner">Ücretsiz Teşhisi Başlat →</a><a href="#compare">İki katmanı karşılaştır</a></div>
 </section>
-<section class="px-section px-pricing-stage" id="compare">
+<section class="px-section px-pricing-stage" id="compare" data-premium-infographic="report-boundary">
  <div class="px-report-boundary">
   <article class="px-report-free"><span class="eyebrow">$0 · BULGU + KANIT</span><h2>Ne yanlış? Nerede? Neyi etkiliyor?</h2><p>Ücretsiz tarama bulguyu, etkilenen URL'yi ve kanıtı gösterir.</p><ul><li>Teknik bulgular ve etkilenen URL'ler</li><li>Severity ve confidence</li><li>Impact × Effort öncelik görünümü</li><li>Uygulama kodu ve talimatı: <b>YOK</b></li></ul><a class="px-outline" href="/tr/#scanner">Ücretsiz Tara →</a></article>
   <article class="px-report-paid"><span class="eyebrow">$99 · UYGULAMA + DOĞRULAMA</span><h2>Hangi düzeltme önce? Nasıl uygulanacak? Nasıl doğrulanacak?</h2><p>Ölçülen bulguları teknik ekibinizin uygulayabileceği düzeltme sırasına dönüştürür.</p><ul><li>Kök neden ve P0–P3 öncelik</li><li>Uygulanabilir kod / konfigürasyon talimatı</li><li>Kabul ve regresyon testleri</li><li>Rollback ve stop koşulları</li><li>30 gün içinde 1 doğrulama re-scan</li></ul><a class="primary" href="/checkout?plan=pro">Uygulama Paketini Aç — $99 →</a></article>
