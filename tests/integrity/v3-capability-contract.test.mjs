@@ -2,13 +2,24 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const keyPages = [
-  'index.html','tr/index.html','en/index.html','tr/platform/index.html','en/platform/index.html',
+const homePages = ['index.html','tr/index.html','en/index.html'];
+const detailPages = [
+  'tr/platform/index.html','en/platform/index.html',
   'tr/methodology/index.html','en/methodology/index.html','tr/fiyatlandirma/index.html',
   'en/pricing/index.html','tr/fix-mandate/index.html','en/fix-mandate/index.html',
 ];
 const failures = [];
-for (const rel of keyPages) {
+
+for (const rel of homePages) {
+  const text = fs.readFileSync(path.join(root, rel), 'utf8');
+  for (const token of ['18', '105']) {
+    if (!text.includes(token)) failures.push(`${rel}: missing concise V3 fact ${token}`);
+  }
+  if (text.includes('v3-capability-contract')) failures.push(`${rel}: dense V3 capability matrix must not appear on customer-first homepage`);
+  if (!text.includes('PDF-INSPIRED CUSTOMER STORY V1')) failures.push(`${rel}: PDF-inspired customer story missing`);
+}
+
+for (const rel of detailPages) {
   const text = fs.readFileSync(path.join(root, rel), 'utf8');
   for (const token of ['18', '105', 'G0–G9', 'v3-capability-contract']) {
     if (!text.includes(token)) failures.push(`${rel}: missing ${token}`);
