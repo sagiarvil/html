@@ -1,0 +1,22 @@
+{
+  "homePages": [
+    "index.html",
+    "tr/index.html",
+    "en/index.html"
+  ],
+  "v3DetailPages": [
+    "tr/platform/index.html",
+    "en/platform/index.html",
+    "tr/methodology/index.html",
+    "en/methodology/index.html",
+    "tr/fiyatlandirma/index.html",
+    "en/pricing/index.html",
+    "tr/fix-mandate/index.html",
+    "en/fix-mandate/index.html"
+  ],
+  "preferredSourcePages": [
+    "index.html",
+    "tr/index.html",
+    "en/index.html"
+  ]
+}

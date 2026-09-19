@@ -7,14 +7,12 @@ that are already canonical in audit-profile/delivery tests: max 30 page-level ma
 surfaces and versioned ZIP delivery.
 """
 from pathlib import Path
+import json
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=[
- 'index.html','tr/index.html','en/index.html','tr/platform/index.html','en/platform/index.html',
- 'tr/methodology/index.html','en/methodology/index.html','tr/fiyatlandirma/index.html',
- 'en/pricing/index.html','tr/fix-mandate/index.html','en/fix-mandate/index.html',
-]
+SURFACE_CONTRACTS=json.loads((ROOT/'config'/'public-surface-contracts.json').read_text(encoding='utf-8'))
+PAGES=SURFACE_CONTRACTS['v3DetailPages']
 
 def inject(path:Path)->None:
     text=path.read_text(encoding='utf-8')
@@ -35,4 +33,4 @@ for rel in PAGES:
     text=(ROOT/rel).read_text(encoding='utf-8')
     if not (("30'a kadar" in text) or re.search(r'up to 30',text,re.I)) or not re.search(r'ZIP',text,re.I):
         raise SystemExit(f'FINAL DELIVERY BOUNDARY FAIL: boundary missing in {rel}')
-print('FINAL DELIVERY BOUNDARY PASS: up-to-30 machine surfaces + versioned ZIP restored on 11 canonical sales surfaces.')
+print('FINAL DELIVERY BOUNDARY PASS: up-to-30 machine surfaces + versioned ZIP restored on detailed V3 sales surfaces.')
