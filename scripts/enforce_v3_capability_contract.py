@@ -6,6 +6,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+SURFACE_CONTRACTS = json.loads((ROOT / 'config' / 'public-surface-contracts.json').read_text(encoding='utf-8'))
 CSS_LINK = '<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1">'
 
 TR_BLOCK = '''<section class="v3-capability-contract" aria-labelledby="v3-capabilities-tr">
@@ -239,16 +240,8 @@ def add_block(path: Path, content: str) -> str:
     return content.replace('</main>', block + '\n</main>', 1)
 
 
-HOME_PAGES = {
-    ROOT / 'index.html', ROOT / 'tr/index.html', ROOT / 'en/index.html',
-}
-
-KEY_PAGES = {
-    ROOT / 'tr/platform/index.html', ROOT / 'en/platform/index.html',
-    ROOT / 'tr/methodology/index.html', ROOT / 'en/methodology/index.html',
-    ROOT / 'tr/fiyatlandirma/index.html', ROOT / 'en/pricing/index.html',
-    ROOT / 'tr/fix-mandate/index.html', ROOT / 'en/fix-mandate/index.html',
-}
+HOME_PAGES = {ROOT / rel for rel in SURFACE_CONTRACTS['homePages']}
+KEY_PAGES = {ROOT / rel for rel in SURFACE_CONTRACTS['v3DetailPages']}
 
 for path in ROOT.rglob('*'):
     if not path.is_file() or not is_public(path):
