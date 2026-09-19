@@ -9,6 +9,9 @@ const premium=read('assets/css/premium-experience.css'),enterprise=read('assets/
 const runtime=read('assets/js/enterprise-runtime.js'),validator=read('assets/js/validator.js');
 
 expect(home.includes('Web Siteniz ChatGPT ve Yapay Zeka Aramalarında Görünüyor mu?'),'homepage AI SEO search-intent headline missing');
+expect(home.includes('result-action-grid')&&home.includes('result-decision-guide--premium'),'homepage result-to-action section must remain a symmetric premium 2x2 system');
+expect(home.includes('pipeline-outcome-strip')&&home.includes('pl-flow--premium'),'homepage autonomous pipeline must retain equal-height premium process rail');
+expect(home.includes('five-pillars-grid--premium')&&home.includes('pillar-proof'),'homepage five-pillar architecture must retain proof strips and symmetric premium cards');
 expect(tools.includes('data-premium-infographic="scope-map"'),'tools infographic scope map missing');
 expect(pricing.includes('data-premium-infographic="report-boundary"'),'pricing report boundary infographic missing');
 for(const marker of ['Keşfedilebilirlik','Anlamlandırma','Kaynak Uygunluğu','Kullanıcı & Ajan Yolu'])expect(tools.includes(marker),`tools customer journey missing ${marker}`);
@@ -58,6 +61,8 @@ expect(runtime.includes('$99')&&runtime.includes('AI Search Visibility Roadmap')
 expect(!validator.includes('$149'),'language switch runtime must not resurrect $149');
 expect(!/reçete/i.test(home+pricing+runtime),'customer-facing main funnel must not use novice prescription metaphor');
 expect(enterprise.includes('.news-grid')&&enterprise.includes('.ai-decision-map')&&enterprise.includes('.px-report-boundary'),'enterprise CSS must cover news, free results and pricing comparison');
+expect(premium.includes('.result-action-grid')&&premium.includes('grid-template-columns:repeat(2,minmax(0,1fr))'),'premium CSS must lock result cards to a desktop 2x2 grid');
+expect(premium.includes('.five-pillars-grid--premium')&&premium.includes('.pipeline-outcome-strip'),'premium CSS must cover five-pillar and pipeline summary systems');
 
 if(errors.length){console.error('ENTERPRISE FUNNEL FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
 console.log('ENTERPRISE FUNNEL PASS: concise hero, reference-width scanner, unified scan scope, premium infographics, $99 Roadmap boundary, canonical ZIP preview, free decision map and mobile system verified.');
