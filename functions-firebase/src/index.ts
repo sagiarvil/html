@@ -115,13 +115,14 @@ export const scan=onRequest({...common,timeoutSeconds:240,memory:'1GiB'},async(r
     }
     return;
   }
-  if(typeof body.domain!=='string'||!body.domain.trim()){
+  const target = typeof body?.domain === 'string' && body.domain.trim() ? body.domain.trim() : (typeof body?.url === 'string' && body.url.trim() ? body.url.trim() : '');
+  if(!target){
     await safeTelemetry({success:false,durationMs:Date.now()-started,errorClass:'invalid_request'});
     res.status(400).json({error:'Domain required'});return;
   }
-  console.log('[SCAN_REQUEST]', body.domain);
+  console.log('[SCAN_REQUEST]', target);
   try{
-    const result=normalizePublicScanResult(await runFriendlyScan(body.domain));
+    const result=normalizePublicScanResult(await runFriendlyScan(target));
     const intelligence=generateIntelligenceReport(result);
     await safeTelemetry({success:true,domain:result.domain,durationMs:Date.now()-started,pagesScanned:result.summary?.pagesScanned,linksProbed:result.summary?.linksProbed,findingCount:Array.isArray(result.findings)?result.findings.length:0,overall:result.overall});
     res.status(200).json({...result,intelligence,v2Available:true});
