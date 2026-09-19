@@ -9,8 +9,8 @@ for (const [name, text] of [['firebase-production',production],['live-smoke',smo
   if (!text.includes('PDF-INSPIRED CUSTOMER STORY V1') && name === 'firebase-production') {
     failures.push('firebase-production: PDF-first homepage marker is not verified before deploy');
   }
-  if (text.includes("grep -Fq 'v3-capability-contract' index.html")) {
-    failures.push(`${name}: stale dense V3 homepage assertion returned`);
+  if (/^\s*grep -Fq 'v3-capability-contract' index\.html\s*$/m.test(text)) {
+    failures.push(`${name}: stale positive dense V3 homepage assertion returned`);
   }
   if (!text.includes('v3-capability-contract')) {
     failures.push(`${name}: detailed V3 surface is no longer verified anywhere`);
