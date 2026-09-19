@@ -23,7 +23,7 @@ const server=http.createServer((req,res)=>{
 await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve)});
 const port=server.address().port;
 const base=`http://127.0.0.1:${port}`;
-const viewports=[{width:360,height:800},{width:390,height:844},{width:430,height:932},{width:768,height:1024},{width:1280,height:900}];
+const viewports=[{width:320,height:720},{width:360,height:800},{width:390,height:844},{width:430,height:932},{width:768,height:1024},{width:1280,height:900}];
 const reportRoute='/enterprise-analyzer/htmlandhtml-ai-report';
 const routes=['/','/tr/fiyatlandirma/','/tr/araclar/','/tr/yapay-zeka-arama-gorunurlugu/','/tr/referans/',reportRoute];
 const errors=[];
@@ -93,6 +93,36 @@ try{
           if(vp.width<=640&&scan.button.w<Math.min(260,vp.width-48))errors.push(`${vp.width}px home: mobile CTA does not use available width`);
         }
       }
+      if(vp.width<=430 && ['/','/tr/referans/','/tr/yapay-zeka-arama-gorunurlugu/'].includes(route)){
+        const premiumMobile=await page.evaluate(()=>{
+          const selectors=['.decision-shell','.decision-section','.decision-report-card','.decision-offer-card','.decision-trust-points','.reference-premium','.reference-premium__card','.reference-premium__who article','.term-sources'];
+          const vw=window.innerWidth;
+          const boxes=[];
+          for(const selector of selectors){
+            for(const el of document.querySelectorAll(selector)){
+              const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+              if(cs.display==='none'||r.width===0||r.height===0)continue;
+              boxes.push({selector,left:r.left,right:r.right,width:r.width,overflowX:cs.overflowX});
+            }
+          }
+          const bad=boxes.filter(x=>x.left<-1||x.right>vw+1||x.width>vw+1).slice(0,12);
+          const blue=[...document.querySelectorAll('.decision-offer-card--paid,.decision-close,.reference-premium__card--blue')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&r.height>0;});
+          const contrast=[];
+          for(const root of blue){
+            for(const el of root.querySelectorAll('h1,h2,h3,p,span,strong,li')){
+              const cs=getComputedStyle(el);
+              if(cs.display==='none'||cs.visibility==='hidden')continue;
+              const m=cs.color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+              if(!m)continue;
+              const [rr,gg,bb]=m.slice(1).map(Number);
+              if((rr+gg+bb)/3<180)contrast.push({tag:el.tagName,text:(el.textContent||'').trim().slice(0,80),color:cs.color});
+            }
+          }
+          return {bad,contrast:contrast.slice(0,12)};
+        });
+        if(premiumMobile.bad.length)errors.push(`${vp.width}px ${route}: premium mobile box overflow ${JSON.stringify(premiumMobile.bad)}`);
+        if(premiumMobile.contrast.length)errors.push(`${vp.width}px ${route}: dark text leaked onto blue premium surface ${JSON.stringify(premiumMobile.contrast)}`);
+      }
       if(route==='/tr/fiyatlandirma/'){
         const manifest=await page.locator('.pricing-delivery-manifest').count();
         if(!manifest)errors.push(`${vp.width}px pricing: canonical ZIP manifest missing`);
@@ -150,4 +180,4 @@ try{
   }
 } finally {await browser.close();server.close()}
 if(errors.length){console.error('MOBILE/VISUAL THEME QA FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('MOBILE/VISUAL THEME QA PASS: Chromium 360/390/430/768/1280, no overflow/control collision and Enterprise report LIGHT mode has no neutral dark surface leakage.');
+console.log('MOBILE/VISUAL THEME QA PASS: Chromium 320/360/390/430/768/1280, premium mobile sections stay in-viewport, blue surfaces keep readable text, no control collision, and Enterprise report LIGHT mode has no neutral dark surface leakage.');
