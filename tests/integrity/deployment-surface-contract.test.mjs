@@ -8,8 +8,8 @@ const pkg = JSON.parse(fs.readFileSync('package.json','utf8'));
 const buildCommercial = pkg.scripts?.['build:commercial'] || '';
 
 for (const [name, text] of [['firebase-production',production],['live-smoke',smoke]]) {
-  if (!text.includes('PDF-INSPIRED CUSTOMER STORY V1') && name === 'firebase-production') {
-    failures.push('firebase-production: PDF-first homepage marker is not verified before deploy');
+  if (!text.includes('CUSTOMER DECISION HOMEPAGE V2') && name === 'firebase-production') {
+    failures.push('firebase-production: customer-decision homepage marker is not verified before deploy');
   }
   if (/^\s*grep -Fq 'v3-capability-contract' index\.html\s*$/m.test(text)) {
     failures.push(`${name}: stale positive dense V3 homepage assertion returned`);
@@ -36,4 +36,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('DEPLOYMENT SURFACE CONTRACT PASS: PDF-first homepage, detailed V3 surfaces, and sitemap refresh are release-aligned.');
+console.log('DEPLOYMENT SURFACE CONTRACT PASS: customer-decision homepage, detailed V3 surfaces, and sitemap refresh are release-aligned.');
