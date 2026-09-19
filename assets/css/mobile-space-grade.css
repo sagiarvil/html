@@ -131,10 +131,10 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
     border-radius: 10px !important;
     background: rgba(0, 212, 255, 0.08) !important;
     border: 1px solid rgba(0, 212, 255, 0.25) !important;
@@ -797,8 +797,8 @@
     font-weight: 700 !important;
     padding: 6px 12px !important;
     border-radius: 999px !important;
-    min-height: 36px !important;
-    min-width: 36px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
     color: #94a3b8 !important;
     text-decoration: none !important;
     border: none !important;
@@ -1476,14 +1476,17 @@
      ⚡ 60-120 FPS HARDWARE ACCELERATION & ZERO JANK
      ========================================================================== */
   .topbar, 
-  .hh-floating-dock, 
-  .hh-dynamic-island, 
-  .hh-cyber-drawer, 
+  .hh-floating-dock,
+  .hh-dynamic-island,
+  .hh-cyber-drawer,
   .hh-bottom-sheet {
     -webkit-backface-visibility: hidden !important;
     backface-visibility: hidden !important;
-    transform: translateZ(0) !important;
   }
+  .hh-floating-dock { transform: translateX(-50%) translateZ(0) !important; }
+  .hh-dynamic-island { transform: translateX(-50%) translateZ(0) !important; }
+  .hh-cyber-drawer,
+  .hh-bottom-sheet { transform: translateZ(0) !important; }
 
 }
 
