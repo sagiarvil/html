@@ -9,7 +9,7 @@
   .topbar {
     height: 56px !important;
     min-height: 56px !important;
-    padding: 0 16px !important;
+    padding: 0 !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 1000 !important;
@@ -28,7 +28,10 @@
 
   .topbar-shell {
     height: 100% !important;
-    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 14px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -91,11 +94,17 @@
     align-items: center !important;
     gap: 8px !important;
     margin-left: auto !important;
+    min-width: 0 !important;
+  }
+  .topbar .nav-actions > .action-link,
+  .topbar .nav-actions > .theme-toggle,
+  .topbar .nav-actions > .lang-switch-box {
+    display: none !important;
   }
 
   /* Kompakt Dil Anahtarı */
   .langs {
-    display: flex !important;
+    display: none !important;
     align-items: center !important;
     background: rgba(255, 255, 255, 0.06) !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -112,8 +121,8 @@
     font-size: 15px !important;
     font-weight: 700 !important;
     padding: 4px 8px !important;
-    min-height: 28px !important;
-    min-width: 30px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
     border-radius: 999px !important;
     border: none !important;
     color: #94a3b8 !important;
@@ -131,10 +140,10 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
     border-radius: 10px !important;
     background: rgba(0, 212, 255, 0.08) !important;
     border: 1px solid rgba(0, 212, 255, 0.25) !important;
@@ -797,8 +806,8 @@
     font-weight: 700 !important;
     padding: 6px 12px !important;
     border-radius: 999px !important;
-    min-height: 36px !important;
-    min-width: 36px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
     color: #94a3b8 !important;
     text-decoration: none !important;
     border: none !important;
@@ -1476,13 +1485,68 @@
      ⚡ 60-120 FPS HARDWARE ACCELERATION & ZERO JANK
      ========================================================================== */
   .topbar, 
-  .hh-floating-dock, 
-  .hh-dynamic-island, 
-  .hh-cyber-drawer, 
+  .hh-floating-dock,
+  .hh-dynamic-island,
+  .hh-cyber-drawer,
   .hh-bottom-sheet {
     -webkit-backface-visibility: hidden !important;
     backface-visibility: hidden !important;
-    transform: translateZ(0) !important;
   }
+  .hh-floating-dock { transform: translateX(-50%) translateZ(0) !important; }
+  .hh-dynamic-island { transform: translateX(-50%) translateZ(0) !important; }
+  .hh-cyber-drawer,
+  .hh-bottom-sheet { transform: translateZ(0) !important; }
 
 }
+
+
+/* PREMIUM MOBILE SAFETY OVERRIDES V2 */
+@media(max-width:640px){
+  html,body{max-width:100%!important;overflow-x:clip!important}
+  .topbar-shell{width:100%!important;max-width:100%!important;padding:8px 14px!important;gap:8px!important}
+  .topbar .nav-actions,.topbar .langs,.topbar .theme-switch{display:none!important}
+  .topbar .brand{min-width:0!important;min-height:44px!important;display:flex!important;align-items:center!important}
+  .topbar .brand-logo{max-width:118px!important;height:auto!important}
+  .hh-mobile-menu-btn,.hh-mobile-toggle{
+    flex:0 0 44px!important;
+    width:44px!important;
+    height:44px!important;
+    min-width:44px!important;
+    min-height:44px!important;
+    margin-left:auto!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+  }
+  body:has(.hh-mobile-menu-btn) .hh-mobile-toggle{display:none!important}
+  .theme-switch button,.langs a,.langs button,.lang-btn,.hh-lang-btn,.hh-drawer-close{
+    min-width:44px!important;
+    min-height:44px!important;
+  }
+  .hh-floating-dock{
+    width:calc(100% - 20px)!important;
+    max-width:410px!important;
+    height:58px!important;
+    padding:6px 8px!important;
+    gap:4px!important;
+    justify-content:space-between!important;
+    overflow:hidden!important;
+    transform:translateX(-50%) translateZ(0)!important;
+  }
+  .hh-floating-dock .hh-dock-divider{display:none!important}
+  .hh-floating-dock .hh-dock-item[href="#pipeline"]{display:none!important}
+  .hh-dock-item{
+    flex:0 1 auto!important;
+    min-width:44px!important;
+    min-height:44px!important;
+    height:44px!important;
+    padding:7px 10px!important;
+    justify-content:center!important;
+    white-space:nowrap!important;
+  }
+}
+@media(max-width:380px){
+  .hh-dock-item{font-size:13px!important;padding-inline:8px!important}
+  .hh-dock-item svg{width:13px!important;height:13px!important}
+}
+

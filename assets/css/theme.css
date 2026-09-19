@@ -5531,10 +5531,10 @@ html[data-theme="dark"] .footer-fine {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  min-height: 42px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -5663,8 +5663,10 @@ html[data-theme="light"] .hh-drawer-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);

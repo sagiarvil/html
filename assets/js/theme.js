@@ -139,7 +139,7 @@ function mount(){
 }
 
 function mountMobileNav(){
-  if(document.querySelector('.hh-mobile-toggle'))return;
+  if(document.querySelector('.hh-mobile-toggle') || document.querySelector('.hh-mobile-menu-btn'))return;
   const topbarShell=document.querySelector('.topbar-shell')||document.querySelector('.topbar')||document.querySelector('.header-top')||document.querySelector('header');
   if(!topbarShell)return;
 
