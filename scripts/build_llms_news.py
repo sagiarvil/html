@@ -277,12 +277,10 @@ def write_hub(lang, records):
     p.write_text(doc, encoding='utf-8')
 
 def patch_machine_surfaces(records):
+    # Commercial-focus rule: keep the two editorial hubs discoverable, but do not
+    # push every individual news brief into the primary sitemap/LLM discovery graph.
+    # Articles remain reachable from the hubs and retain their canonical URLs.
     urls = []
-    for item, slug, _ in records:
-        urls.extend([
-            ('https://htmlandhtml.com/tr/llms-txt-haberler/' + slug + '/', 'https://htmlandhtml.com/en/llms-txt-news/' + slug + '/', item.get('updatedAt') or item['publishedAt']),
-            ('https://htmlandhtml.com/en/llms-txt-news/' + slug + '/', 'https://htmlandhtml.com/tr/llms-txt-haberler/' + slug + '/', item.get('updatedAt') or item['publishedAt'])
-        ])
     sitemap = ROOT / 'sitemap.xml'
     s = sitemap.read_text(encoding='utf-8')
     s = re.sub(r'\n?\s*<!-- LLMS_SUBGRAPHS_START -->[\s\S]*?<!-- LLMS_SUBGRAPHS_END -->\s*', '\n', s)
@@ -306,8 +304,8 @@ def patch_machine_surfaces(records):
         '- [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.',
         '- [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.'
     ]
-    for item, slug, _ in records[:20]:
-        lines.append(f'- [{item["title"]["en"]}](https://htmlandhtml.com/en/llms-txt-news/{slug}/)')
+    # Individual news URLs are intentionally omitted from llms.txt.
+    # The hub is the discovery surface; product/tool pages remain commercially primary.
     lines.append('<!-- LLMS_NEWS_END -->')
     t = t.rstrip() + '\n\n' + '\n'.join(lines) + '\n'
     llms.write_text(t, encoding='utf-8')
