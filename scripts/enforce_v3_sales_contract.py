@@ -11,9 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 TR_BLOCK = """<section class="v3-capability-contract" aria-labelledby="v3-capabilities-tr">
   <div class="v3-contract-head">
     <span>AI SEO · CHATGPT GÖRÜNÜRLÜK · ENGINE V3</span>
-    <h2 id="v3-capabilities-tr">Google sırası tek başına yetmiyor. Siteniz yapay zeka aramalarında bulunmalı, anlaşılmalı ve kaynak olmaya hazır olmalı.</h2>
-    <p>HTML&amp;HTML, web sitenizdeki AI arama görünürlüğü engellerini kanıtla ölçer. 18 deterministik Engine V3 modülü, 105 kontrol, 13 puan dışı istihbarat analizi ve 7 hazırlık lensi aynı kanıt zincirinde çalışır.</p>
-    <div class="v3-decision-line"><b>Teşhis ücretsiz.</b><span>Kök neden, uygulama kodu, kabul testi ve rollback paketi $99 tek seferlik lisansla açılır.</span></div>
+    <h2 id="v3-capabilities-tr">Önce hangi teknik engelin görünürlüğünüzü sınırladığını görün; sonra yalnız gereken düzeltmeyi yapın.</h2>
+    <p>HTML&amp;HTML herkese açık web yüzeylerini tarar, bulguyu kanıtla gösterir ve teknik ekibinizin uygulayabileceği düzeltme yolunu önceliklendirir.</p>
+    <div class="v3-decision-line"><b>Teşhis ücretsiz.</b><span>Uygulanabilir düzeltme, kabul testi ve geri alma adımları $99 tek seferlik paketle açılır.</span></div>
   </div>
   
   <div class="v3-radical-matrix" role="region" aria-label="HTML&HTML V3 karşılaştırma matrisi" tabindex="0">
@@ -66,9 +66,9 @@ TR_BLOCK = """<section class="v3-capability-contract" aria-labelledby="v3-capabi
 EN_BLOCK = """<section class="v3-capability-contract" aria-labelledby="v3-capabilities-en">
   <div class="v3-contract-head">
     <span>AI SEO · CHATGPT VISIBILITY · ENGINE V3</span>
-    <h2 id="v3-capabilities-en">Google rankings are not the whole decision path. Your site must be discoverable, understandable and source-ready for AI search.</h2>
-    <p>HTML&amp;HTML measures website-side AI-search blockers with evidence. Eighteen deterministic Engine V3 modules, 105 controls, 13 non-scoring intelligence analyses and seven readiness lenses run on one evidence chain.</p>
-    <div class="v3-decision-line"><b>Diagnosis is free.</b><span>Root cause, implementation code, acceptance tests and rollback unlock with the one-time $99 license.</span></div>
+    <h2 id="v3-capabilities-en">See which technical blocker limits discoverability before you spend time fixing the wrong thing.</h2>
+    <p>HTML&amp;HTML audits public website surfaces, shows evidence for each finding, and prioritizes a fix path your technical team can execute.</p>
+    <div class="v3-decision-line"><b>Diagnosis is free.</b><span>Actionable fixes, acceptance checks and rollback guidance unlock with the one-time $99 pack.</span></div>
   </div>
   
   <div class="v3-radical-matrix" role="region" aria-label="HTML&HTML V3 comparison matrix" tabindex="0">
