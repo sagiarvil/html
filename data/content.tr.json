@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "title": "HTML&HTML — AI Arama Karar ve Ciro Koruma Sistemi",
+    "description": "Web sitenizin yapay zeka aramalarındaki engellerini 5 saniyede tespit edin. Uygulanabilir hazır mühendislik paketi ile cironuzu koruyun.",
+    "canonical": "https://htmlandhtml.com/"
+  },
+  "hero": {
+    "h1": "Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?",
+    "tagline": "5 Saniyede Karar, 15 Dakikada Uygulama",
+    "sub": "Sitenizin bulunmasını, anlaşılmasını ve kaynak olarak değerlendirilmesini engelleyen ölçülebilir web sitesi sorunlarını kanıtıyla görün.",
+    "cta": "Sitemi Ücretsiz Tara",
+    "ctaLink": "#scanner",
+    "secondaryCta": "Nasıl Çalışır?",
+    "secondaryLink": "#s4-nasil-calisir",
+    "trust": [
+      {
+        "icon": "shield",
+        "caption": "W3C & RFC 9309 Doğrulanmış Kanıt"
+      },
+      {
+        "icon": "zap",
+        "caption": "5 Saniyede Anlaşılır Karar"
+      },
+      {
+        "icon": "box",
+        "caption": "15 Dakikada Uygulanabilir Kod Paketi"
+      }
+    ]
+  },
+  "pain": {
+    "title": "Sorun Trafik Olmayabilir: Kırılan Karar Basamağını Bulun",
+    "cards": [
+      "Müşteri 5 saniyede ne sattığınızı anlamıyor: Teklif karmaşıksa yapay zeka sitenizi özetleyemez ve rakibe geçer.",
+      "W3C standartlarında somut kanıt görünmüyor: Kanıt yoksa satın alma ertelenir, AI sizi kaynak gösteremez.",
+      "robots.txt ve llms.txt botları engelliyor: Yapay zeka sitenizi tarayamaz; pazarın %40'ında yok sayılırsınız."
+    ],
+    "headline": "Ölçülemeyen ve Kırılan Kararların İşletmenize Maliyeti",
+    "number": "90",
+    "unit": "Saniye İçinde Teşhis",
+    "note": "Herkese açık web yüzeyindeki ölçülebilir parametreler taranır.",
+    "formulaNote": "W3C, IETF RFC 9309 ve Schema.org protokol standartları referans alınmıştır."
+  },
+  "solution": {
+    "title": "Rapor Değil; Doğrudan Uygulanabilir Karar ve Mühendislik Sistemi",
+    "chip1": "Ne teslim ediyorum?",
+    "body": [
+      "Klasik SEO ajansları yüzlerce sayfalık karmaşık PDF raporları satar ve çözümü size bırakır.",
+      "HTML&HTML ise dağınık teknik kusurları 5 saniyede anlaşılır karar ağaçlarına dönüştürür.",
+      "Yazılımcınızın 15 dakikada sunucunuza kuracağı hazır üretim kodları ve test planı verir."
+    ],
+    "chip2": "Nasıl teslim ediyorum?",
+    "body2": "Nginx/Apache konfigürasyonları, Schema.org JSON-LD grafiği ve llms.txt v2 manifestosu tek bir Fix Pack içinde teslim edilir.",
+    "panel": {
+      "title": "Karar Kontrol Paneli",
+      "metrics": [
+        {
+          "label": "AI İndekslenebilirlik",
+          "val": "98%",
+          "status": "green"
+        },
+        {
+          "label": "Semantik AST Bütçesi",
+          "val": "14KB",
+          "status": "green"
+        },
+        {
+          "label": "Kritik Engel Sayısı",
+          "val": "0",
+          "status": "green"
+        }
+      ],
+      "rows": [
+        {
+          "step": "robots.txt & RFC 9309",
+          "engine": "OAI, Claude, Perplexity",
+          "status": "PASS"
+        },
+        {
+          "step": "llms.txt v2 Manifestosu",
+          "engine": "LLM Discovery DAG",
+          "status": "PASS"
+        },
+        {
+          "step": "Schema.org @graph Kilidi",
+          "engine": "Wikidata & Google MID",
+          "status": "PASS"
+        },
+        {
+          "step": "ColBERT MaxSim Uyumu",
+          "engine": "Late-Interaction RAG",
+          "status": "PASS"
+        }
+      ]
+    },
+    "chips": [
+      "Deterministik Kanıt",
+      "Sıfır Kesinti Rollback",
+      "15 Dakikada Dağıtım"
+    ],
+    "ctaBar": {
+      "text": "Sorun kritikse çözüm hazır: Yazılımcınız için hazır Fix Pack edinin.",
+      "btnText": "Fix Pack İncele",
+      "btnLink": "#s10-teklif"
+    }
+  },
+  "how": {
+    "title": "Nasıl Çalışır? Sadece 4 Basit Adım",
+    "intro": "Karmaşık teknik süreçleri dakikalar içinde çözüme kavuşturun. Yazılım uzmanı olmanıza gerek yok.",
+    "steps": [
+      "1. Web sitenizin adresini girin, 18 bağımsız motor web yüzeyinizi saniyeler içinde analiz etsin.",
+      "2. Yapay zeka modellerinin sitenizi neden okuyamadığını gerçek HTML ve HTTP kanıtlarıyla görün.",
+      "3. Sorun kritikse Fix Pack paketini edinin; hazır mühendislik çözüm setini anında indirin.",
+      "4. Hazır kodları yazılımcınıza teslim edin; 15 dakikada yayına alsın, cironuzu koruyun."
+    ],
+    "chat": [
+      {
+        "sender": "user",
+        "text": "Yapay zeka sitemizi neden kaynak göstermiyor?"
+      },
+      {
+        "sender": "bot",
+        "text": "robots.txt dosyanız Claude ve Perplexity botlarını blokluyor; 14KB AST bütçeniz aşılmış."
+      },
+      {
+        "sender": "bot",
+        "text": "Fix Pack ile 15 dakikada düzeltilebilir hazır konfigürasyon sağlandı."
+      }
+    ],
+    "badge": "Karar Hazır"
+  },
+  "map": {
+    "title": "15 Kritik Denetim ve Görünürlük Modülü",
+    "items": [
+      {
+        "no": "01",
+        "label": "robots.txt & RFC 9309",
+        "href": "/tr/ai-crawler-checker/"
+      },
+      {
+        "no": "02",
+        "label": "llms.txt v2 Protokolü",
+        "href": "/tr/llms-txt-validator/"
+      },
+      {
+        "no": "03",
+        "label": "Schema.org JSON-LD @graph",
+        "href": "/tr/schema-validator/"
+      },
+      {
+        "no": "04",
+        "label": "14KB AST Bütçesi & TCP",
+        "href": "/tr/teknik-seo-kontrol/"
+      },
+      {
+        "no": "05",
+        "label": "ColBERT MaxSim RAG",
+        "href": "/tr/yapay-zeka-arama-gorunurlugu/"
+      },
+      {
+        "no": "06",
+        "label": "Tekil H1 & Semantik DOM",
+        "href": "/tr/teknik-seo-kontrol/"
+      },
+      {
+        "no": "07",
+        "label": "Canonical & URL Hijyeni",
+        "href": "/tr/teknik-seo-kontrol/"
+      },
+      {
+        "no": "08",
+        "label": "Security Headers (HSTS/CSP)",
+        "href": "/tr/guvenlik-basliklari-kontrol/"
+      },
+      {
+        "no": "09",
+        "label": "SSRF & Özel IP İzolasyonu",
+        "href": "/tr/guvenlik-basliklari-kontrol/"
+      },
+      {
+        "no": "10",
+        "label": "WCAG 2.2 AA Erişilebilirlik",
+        "href": "/tr/erisilebilirlik-kontrol/"
+      },
+      {
+        "no": "11",
+        "label": "Link Bütünlüğü & HTTP 200",
+        "href": "/tr/link-kontrol/"
+      },
+      {
+        "no": "12",
+        "label": "AI Marka Atıf Takibi",
+        "href": "/tr/ai-mention-tracker/"
+      },
+      {
+        "no": "13",
+        "label": "E-E-A-T Otorite Doğrulaması",
+        "href": "/tr/site-tarama/"
+      },
+      {
+        "no": "14",
+        "label": "IndexNow Çok Merkezli Dağıtım",
+        "href": "/tr/ai-website-readiness/"
+      },
+      {
+        "no": "15",
+        "label": "Rollback & Geri Alma Güvencesi",
+        "href": "/tr/fiyatlandirma/"
+      }
+    ]
+  },
+  "compat": {
+    "blocks": [
+      "Tüm büyük arama motorları ve AI botlarıyla %100 uyumlu mimari altyapı.",
+      "Kurumsal sunucular ve bulut CDN sağlayıcılarında doğrudan çalışan konfigürasyonlar."
+    ],
+    "tiles": [
+      "OpenAI",
+      "Google AI",
+      "Anthropic",
+      "Perplexity",
+      "Microsoft",
+      "Apple",
+      "Meta AI",
+      "Amazon",
+      "Cohere"
+    ]
+  },
+  "trust": {
+    "title": "Kurumsal Güvenlik ve Mühendislik Standartları",
+    "cards": [
+      {
+        "icon": "lock",
+        "title": "Veri Gizliliği (KVKK)",
+        "body": "Kaynak kod erişimi veya veritabanı şifresi istenmez; yalnızca açık web incelenir."
+      },
+      {
+        "icon": "file-text",
+        "title": "Yöntem Şeffaflığı",
+        "body": "Tüm analiz sonuçları W3C ve IETF standartlarında ölçülebilir somut kanıtlarla sunulur."
+      },
+      {
+        "icon": "user-check",
+        "title": "Kim Yapıyor?",
+        "body": "30 yıllık Unix sistem mimarisi ve kurumsal AI mühendisliği disipliniyle üretilmiştir."
+      },
+      {
+        "icon": "shield-alert",
+        "title": "Sorumluluk Sınırı",
+        "body": "Sistemlerinizde kesinti oluşturmayan salt-okunur güvenli tarama yürütülür."
+      },
+      {
+        "icon": "clock",
+        "title": "Süreç ve Süre",
+        "body": "Ücretsiz analiz saniyeler içinde tamamlanır; hazır kodlar anında teslim edilir."
+      },
+      {
+        "icon": "package",
+        "title": "Teslim Formatı",
+        "body": "Yazılımcınız için kopyala-yapıştır konfigürasyonlar, scriptler ve test senaryoları verilir."
+      }
+    ]
+  },
+  "why": {
+    "claim": "Rapor Satmıyoruz; Ticari Karar ve Ciro Güvencesi Veriyoruz.",
+    "sub": "Geleneksel ajans masraflarına ve aylarca süren belirsizliklere son verin.",
+    "items": [
+      "5 Saniyede Ticari Karar: Bankacı netliğiyle 'hangi engel ciromu düşürüyor?' kararına çevirir.",
+      "Kaçan Müşteriyi Kurtarma: Yapay zekanın sizi es geçip rakibe yönlendirdiği noktaları kapatır.",
+      "Hazır Üretim Kodları: Yazılımcınıza araştırma yükü bindirmez; hazır Nginx ve JSON-LD verir.",
+      "Rollback Güvencesi: Her reçete sıfır kesintili geri alma planı içerir; sistem kilitlenmez.",
+      "Sabit Fiyat: Bitmeyen danışmanlık faturaları yok; çözüm tek seferlik sabit ücretle alınır.",
+      "30 Gün Ücretsiz Re-Scan: Düzeltmeler uygulandıktan sonra canlı yüzeyde tekrar taranarak kanıtlanır.",
+      "Sıfır Kod/Şifre Riski: Sunucu veya kod erişimi gerekmez; yalnızca herkese açık web taranır."
+    ]
+  },
+  "proof": {
+    "mode": "samples",
+    "groups": [],
+    "samples": [
+      {
+        "title": "Teknik Teşhis & Kod Çözüm Raporu",
+        "desc": "Örnek tespit edilen robots.txt ve Schema.org engelleri ile hazır çözüm reçetesi."
+      },
+      {
+        "title": "JSON-LD @graph Varlık Haritası",
+        "desc": "Wikidata ve Google Knowledge Graph konsensüs kilidiyle zırhlanmış yapısal veri."
+      },
+      {
+        "title": "llms.txt v2 Manifestosu & AST Doğrulama",
+        "desc": "14KB ilk ağ paketinde tam semantik varlık sunumu ve ColBERT MaxSim uyumu."
+      }
+    ]
+  },
+  "offer": {
+    "anchor": "Acının Bedeli: Kaçan Müşteri ve Kayıp Ciro | Çözümün Bedeli:  Tek Seferlik",
+    "plans": [
+      {
+        "name": "Ücretsiz Teşhis",
+        "price": "$0",
+        "featured": false,
+        "bullets": [
+          "18 analiz motoruyla anlık canlı tarama",
+          "Ölçülebilir HTML, HTTP ve bot engelleri",
+          "Temel karar ve durum skorlaması"
+        ],
+        "cta": "Hemen Ücretsiz Tara",
+        "ctaLink": "#scanner"
+      },
+      {
+        "name": "Fix Pack (Uygulama Paketi)",
+        "price": "$99",
+        "featured": true,
+        "bullets": [
+          "Yazılımcınız için 30+ dosyalık hazır kod paketi",
+          "Nginx / Apache / Cloudflare konfigürasyonları",
+          "Schema.org JSON-LD @graph üretim kodu",
+          "llms.txt v2 manifestosu ve robots.txt kuralları",
+          "Sıfır kesintili Rollback (Geri Alma) güvencesi",
+          "30 gün boyunca ücretsiz yeniden tarama hakkı"
+        ],
+        "cta": "Fix Pack Satın Al ($99)",
+        "ctaLink": "/tr/fiyatlandirma/"
+      }
+    ],
+    "riskChip": "Sıfır Risk: Sonuçları 30 gün içinde doğrulayamazsanız koşulsuz tam iade."
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "Sitemi taratmak için kaynak kodlarıma veya şifrelerime erişim vermem gerekir mi?",
+        "a": "Kesinlikle hayır. HTML&HTML yalnızca sitenizin internete açık olan genel web yüzeyini bir ziyaretçi ve AI tarayıcısı gibi inceler. Hiçbir şifre veya sunucu erişimi gerekmez."
+      },
+      {
+        "q": "Fix Pack aldığımda yazılımcım bunu ne kadar sürede uygulayabilir?",
+        "a": "Fix Pack içindeki tüm kodlar, kurallar ve yönergeler kopyala-yapıştır çalışacak şekilde hazırlanmıştır. Ortalama bir web geliştiricisi paketi 15-20 dakika içinde canlı sunucuya alabilir."
+      },
+      {
+        "q": "Yapay zeka arama motorlarında ne zaman görünmeye başlarım?",
+        "a": "robots.txt ve llms.txt düzeltmeleri sonrasında IndexNow protokolü ile Microsoft Bing ve Yandex anında tetiklenir. OpenAI ve Google AI botları ise genellikle 3 ila 14 gün içinde yeni yapıyı indeksler."
+      },
+      {
+        "q": "Sitemde hata çıkmazsa veya sonuçtan memnun kalmazsam ne olur?",
+        "a": "Ücretsiz taramada hiçbir ücret ödemezsiniz. Fix Pack satın alımında ise 30 gün koşulsuz para iade garantisi mevcuttur."
+      },
+      {
+        "q": "Geleneksel SEO ajanslarından farkınız nedir?",
+        "a": "Ajanslar aylık yüksek danışmanlık ücretleri alır ve yüzlerce sayfalık soyut raporlar sunar. Biz ise tek seferlik sabit fiyatla doğrudan çalışır kod blokları ve mühendislik seti teslim ederiz."
+      },
+      {
+        "q": "Hangi yapay zeka arama motorlarını kapsıyor?",
+        "a": "OpenAI (ChatGPT Search), Google (Gemini & AI Overviews), Anthropic (Claude), Perplexity, Apple Intelligence ve Microsoft Copilot botlarının tamamını kapsar."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Yapay Zeka Aramalarındaki Yerinizi Bugün Alın.",
+    "cta": "Web Sitenizi Şimdi Ücretsiz Tarayın",
+    "ctaLink": "#scanner",
+    "contacts": [
+      {
+        "type": "whatsapp",
+        "label": "WhatsApp Destek Hattı",
+        "href": "https://wa.me/"
+      },
+      {
+        "type": "email",
+        "label": "destek@htmlandhtml.com",
+        "href": "mailto:destek@htmlandhtml.com"
+      },
+      {
+        "type": "linkedin",
+        "label": "HTML&HTML LinkedIn",
+        "href": "https://linkedin.com/"
+      }
+    ]
+  },
+  "legal": {
+    "disclaimer": "Yasal Uyarı: HTML&HTML bağımsız bir teknik analiz ve teşhis platformudur. OpenAI, Google, Anthropic, Perplexity veya Microsoft ile doğrudan organik bir bağı yoktur. Arama motorlarının algoritmik sonuçları garanti edilemez.",
+    "copyright": "© 2026 HTML&HTML. Tüm hakları saklıdır."
+  }
+}

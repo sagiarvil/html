@@ -1,0 +1,53 @@
+/* ==========================================================================
+   DESIGN DNA: TOKENS (tokens.css) — CANONICAL SINGLE SOURCE OF TRUTH
+   ========================================================================== */
+:root {
+  /* Renk */
+  --blue-900: #0A0F8A;   /* cok nadir: koyu vurgu, glass kart zemini karisimi */
+  --blue-700: #0A1FC8;   /* TUM basliklar ve pastel/acik zemin ustundeki metin */
+  --blue-600: #1030E0;   /* dolu kart, birincil buton, onay dairesi */
+  --cyan-400: #19A7E8;   /* SADECE hero isik huzmesi */
+  --lav-300:  #BAC4F4;   /* pastel kart, pill, cip */
+  --lav-200:  #D3D9F8;   /* acik pastel: buyuk daireler, ikincil balon */
+  --lav-500:  #7C8CFA;   /* daire gradient baslangici */
+  --bg-0:     #F7F7F7;
+  --bg-1:     #EBEBEB;
+  --ink-600:  #3A3F63;   /* SADECE 13-14px kucuk not/aciklama metni */
+  --white:    #FFFFFF;
+  --gold-300: #F6D765;
+  --gold-500: #E8B923;
+  --gold-700: #B8860F;   /* SADECE kucuk ikon/rozet/onay */
+  --mint-300: #7FE3BF;   /* SADECE "basarili/onaylandi" rozeti */
+
+  /* Gradient */
+  --grad-hero:   #0A1FD0;
+  --grad-circle: linear-gradient(160deg, #7C8CFA 0%, #C6CCFA 100%);
+  --grad-light:  linear-gradient(135deg, #FFFFFF 0%, #EBEBEB 55%);
+  --grad-gold:   linear-gradient(145deg, #F6D765 0%, #E8B923 55%, #B8860F 100%);
+
+  /* Radius */
+  --r-pill: 999px;
+  --r-xl:   48px;
+  --r-lg:   32px;
+  --r-md:   20px;
+  --r-sm:   12px;
+
+  /* Bosluk (8px taban) */
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-5: 40px;
+  --s-6: 64px;
+  --s-7: 96px;
+  --s-8: 120px;
+
+  /* Golge (sadece iki tane) */
+  --sh-float: 0 20px 60px rgba(16, 48, 224, 0.14);   /* yuzen cip/cihaz */
+  --sh-none:  none;                                  /* diger her sey */
+
+  /* Cam (glass) */
+  --glass-bg:     rgba(255, 255, 255, 0.10);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.28);
+  --glass-blur:   blur(16px);
+}

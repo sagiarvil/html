@@ -1,0 +1,826 @@
+/* ==========================================================================
+   DESIGN DNA: TYPOGRAPHY, GRID & COMPONENT LIBRARY (dna-components.css)
+   STRICT ADHERENCE TO CANONICAL SPECIFICATION (NO EXTRA COLORS, FONTS, RADIUS)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;0,800;1,700;1,800&family=Inter:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Poppins:ital,wght@1,700&display=swap');
+
+/* --- 2. TIPOGRAFI & RESET --- */
+body.dna-body, .dna-root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--blue-700);
+  background-color: var(--bg-0);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* H1 (hero) */
+.dna-h1 {
+  font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--white);
+  margin: 0;
+  max-width: 70ch;
+}
+
+/* Hero slogan (italik satir) */
+.dna-hero-slogan {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 16px 0 24px;
+}
+
+/* H2 (bolum basligi) */
+.dna-h2 {
+  font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--blue-700);
+  margin: 0 0 24px 0;
+  max-width: 68ch;
+}
+.dna-dark .dna-h2, .dna-section-dark .dna-h2 {
+  color: var(--white);
+}
+
+/* H3 (kart basligi) */
+.dna-h3 {
+  font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
+}
+
+/* Vurgu cumlesi (mavi kart ust metin) */
+.dna-lead-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+/* Govde */
+.dna-body-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--blue-700);
+  max-width: 68ch;
+}
+.dna-body-text strong, .dna-body-text b {
+  font-weight: 700;
+  color: inherit;
+}
+.dna-section-dark .dna-body-text {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+/* Pill / cip metni */
+.dna-pill-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--blue-700);
+}
+
+/* Hizmet index pill */
+.dna-index-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--blue-700);
+}
+
+/* Cam kart baslik */
+.dna-glass-title {
+  font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--white);
+}
+
+/* Cam kart govde */
+.dna-glass-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.90);
+}
+
+/* Buyuk rakam (aci/fiyat) */
+.dna-big-number {
+  font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--white);
+}
+
+/* Kucuk not */
+.dna-note {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--ink-600);
+}
+.dna-section-dark .dna-note {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Logo alti odul/guven basligi */
+.dna-trust-caption {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+/* Bolum numarasi (sag ust) */
+.dna-section-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--blue-700);
+}
+.dna-section-dark .dna-section-num {
+  color: var(--white);
+}
+
+/* Rozet (Poppins) */
+.dna-badge-poppins {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* --- 3. IZGARA VE YERLESIM --- */
+.dna-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5.2vw, 75px);
+  padding-right: clamp(20px, 5.2vw, 75px);
+  box-sizing: border-box;
+}
+
+.dna-section {
+  padding-top: var(--s-8);
+  padding-bottom: var(--s-8);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dna-section-alt {
+  background: var(--bg-1);
+}
+
+.dna-section-light {
+  background: var(--grad-light);
+}
+
+.dna-section-dark {
+  background: var(--grad-hero);
+  color: var(--white);
+}
+
+.dna-split {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.dna-col-5 { grid-column: span 5; }
+.dna-col-6 { grid-column: span 6; }
+.dna-col-7 { grid-column: span 7; }
+.dna-col-12 { grid-column: span 12; }
+
+/* Bolum ust cubugu: Baslik sol ust, sag ust logo + 1px dikey cizgi + bolum no */
+.dna-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--s-5);
+  position: relative;
+  z-index: 2;
+}
+
+.dna-section-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dna-section-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--blue-700);
+}
+.dna-section-dark .dna-section-divider {
+  background-color: var(--white);
+}
+
+/* Sticky Header (S0) */
+.dna-sticky-header {
+  position: sticky;
+  top: 0;
+  height: 72px;
+  background: rgba(247, 247, 247, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(10, 31, 200, 0.08);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.dna-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.dna-wordmark {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--blue-700);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.dna-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dna-spy-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--blue-700);
+  letter-spacing: 0.02em;
+}
+
+/* --- 4. BILESEN KUTUPHANESI --- */
+
+/* Button-primary */
+.dna-btn-primary {
+  height: 56px;
+  border-radius: var(--r-pill);
+  padding: 0 32px;
+  background-color: var(--blue-600);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  white-space: nowrap;
+}
+.dna-btn-primary:hover {
+  transform: translateY(-2px);
+}
+.dna-btn-primary-sm {
+  height: 44px;
+  padding: 0 24px;
+  font-size: 16px;
+}
+.dna-btn-primary-light {
+  background-color: var(--white);
+  color: var(--blue-700);
+}
+
+/* Button-link */
+.dna-btn-link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: underline;
+  color: var(--blue-700);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dna-btn-link-white {
+  color: var(--white);
+}
+
+/* Card-pastel */
+.dna-card-pastel {
+  background-color: var(--lav-300);
+  border-radius: 40px;
+  padding: 32px 40px;
+  color: var(--blue-700);
+  box-shadow: var(--sh-none);
+  box-sizing: border-box;
+}
+.dna-card-pastel p + p {
+  margin-top: 24px;
+}
+
+/* Card-blue */
+.dna-card-blue {
+  background-color: var(--blue-600);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  color: var(--white);
+  box-sizing: border-box;
+}
+
+/* Card-glass */
+.dna-card-glass {
+  background-color: var(--glass-bg);
+  border: var(--glass-border);
+  border-radius: 28px;
+  padding: 24px;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  color: var(--white);
+  box-sizing: border-box;
+}
+
+/* Pill / Chip */
+.dna-pill {
+  height: 48px;
+  border-radius: var(--r-pill);
+  background-color: var(--lav-300);
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue-700);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+.dna-chip {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+/* CheckPill */
+.dna-check-pill {
+  height: 48px;
+  border-radius: var(--r-pill);
+  background-color: var(--lav-300);
+  padding: 0 20px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blue-700);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+.dna-check-circle {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background-color: var(--blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+.dna-check-circle svg {
+  stroke-width: 2.5;
+  width: 16px;
+  height: 16px;
+}
+
+/* IndexPill */
+.dna-index-pill {
+  height: 56px;
+  border-radius: var(--r-pill);
+  background-color: var(--lav-300);
+  padding: 0 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blue-700);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 200ms ease;
+  box-sizing: border-box;
+}
+.dna-index-pill:hover {
+  background-color: #A9B6F0;
+}
+.dna-index-num {
+  width: 40px;
+  min-width: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--blue-700);
+}
+
+/* NumberCard */
+.dna-number-card {
+  background-color: var(--lav-300);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--blue-700);
+}
+.dna-number-circle {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 50%;
+  background-color: var(--blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+}
+
+/* Badge-scallop (14 tirtikli SVG rozet) */
+.dna-badge-scallop {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.dna-badge-scallop svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.dna-badge-scallop-text {
+  position: relative;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 8px;
+}
+.dna-badge-mint .dna-badge-scallop-text {
+  color: var(--blue-700);
+}
+
+/* CircleBackdrop */
+.dna-circle-backdrop {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: var(--grad-circle);
+  z-index: 0;
+  pointer-events: none;
+}
+.dna-circle-backdrop-sm {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--lav-200);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* DeviceFrame */
+.dna-device-laptop {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background: #14162B;
+  border-radius: 20px 20px 0 0;
+  padding: 16px 16px 0 16px;
+  box-shadow: var(--sh-float);
+  z-index: 1;
+  box-sizing: border-box;
+}
+.dna-device-laptop-screen {
+  aspect-ratio: 16 / 10;
+  background: var(--bg-0);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.dna-device-laptop-base {
+  width: calc(100% + 40px);
+  height: 14px;
+  margin-left: -20px;
+  background: #252843;
+  border-radius: 0 0 12px 12px;
+}
+
+.dna-device-phone {
+  position: relative;
+  width: 300px;
+  height: 620px;
+  background: #14162B;
+  border-radius: 44px;
+  padding: 12px;
+  box-shadow: var(--sh-float);
+  z-index: 1;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.dna-device-phone-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-0);
+  border-radius: 34px;
+  overflow: hidden;
+  position: relative;
+  padding: 44px 16px 16px;
+  box-sizing: border-box;
+}
+.dna-device-dynamic-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 26px;
+  background: #000000;
+  border-radius: 999px;
+  z-index: 5;
+}
+
+/* FloatingChip */
+.dna-floating-chip {
+  position: absolute;
+  height: 48px;
+  background: rgba(186, 196, 244, 0.92);
+  border-radius: var(--r-pill);
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blue-700);
+  box-shadow: var(--sh-float);
+  z-index: 3;
+}
+
+/* BubbleChat */
+.dna-bubble-chat {
+  border-radius: 24px;
+  padding: 16px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--blue-700);
+  max-width: 320px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+.dna-bubble-user {
+  background: var(--lav-200);
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+}
+.dna-bubble-bot {
+  background: var(--lav-300);
+  border-bottom-left-radius: 6px;
+  margin-right: auto;
+}
+
+/* LogoTile */
+.dna-logo-tile {
+  background: rgba(255, 255, 255, 0.60);
+  border-radius: var(--r-sm);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 56px;
+  box-sizing: border-box;
+}
+.dna-logo-tile img {
+  max-height: 32px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* TrustTile */
+.dna-trust-tile-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 140px;
+}
+.dna-trust-tile {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-md);
+  background: var(--glass-bg);
+  border: var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+/* Accordion */
+.dna-accordion-item {
+  margin-bottom: 16px;
+}
+.dna-accordion-trigger {
+  width: 100%;
+  min-height: 64px;
+  border-radius: var(--r-pill);
+  background: var(--lav-300);
+  padding: 16px 32px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--blue-700);
+  transition: border-radius 200ms ease;
+  box-sizing: border-box;
+}
+.dna-accordion-trigger[aria-expanded="true"] {
+  border-radius: 32px 32px 0 0;
+  background: #A9B6F0;
+}
+.dna-accordion-content {
+  display: none;
+  background: var(--lav-300);
+  border-radius: 0 0 32px 32px;
+  padding: 0 32px 24px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--blue-700);
+}
+.dna-accordion-trigger[aria-expanded="true"] + .dna-accordion-content {
+  display: block;
+}
+
+/* Placeholder photo */
+.dna-photo-placeholder {
+  background: #BAC4F4;
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-700);
+  font-size: 14px;
+  min-height: 200px;
+}
+
+/* Tek Tip Animasyon Kurali: opacity 0->1 + translateY(12px->0), 400ms, bir kez */
+@keyframes dnaFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dna-animate {
+  animation: dnaFadeInUp 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dna-animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* --- RESPONSIVE BREAKPOINTS (1280 / 1024 / 768 / 480 / 390) --- */
+@media (max-width: 1024px) {
+  .dna-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .dna-col-5, .dna-col-6, .dna-col-7 {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 768px) {
+  .dna-section {
+    padding-top: var(--s-7);
+    padding-bottom: var(--s-7);
+  }
+  .dna-h1 { font-size: 52px; }
+  .dna-hero-slogan { font-size: 32px; }
+  .dna-h2 { font-size: 36px; }
+  .dna-h3 { font-size: 21px; }
+  .dna-lead-bold { font-size: 20px; }
+  .dna-body-text { font-size: 17px; }
+  .dna-pill-text { font-size: 17px; }
+  .dna-index-text { font-size: 18px; }
+  .dna-glass-title { font-size: 19px; }
+  .dna-big-number { font-size: 72px; }
+}
+
+@media (max-width: 480px) {
+  .dna-section {
+    padding-top: var(--s-6);
+    padding-bottom: var(--s-6);
+  }
+  .dna-h1 { font-size: 40px; }
+  .dna-hero-slogan { font-size: 26px; }
+  .dna-h2 { font-size: 30px; }
+  .dna-h3 { font-size: 20px; }
+  .dna-lead-bold { font-size: 18px; }
+  .dna-body-text { font-size: 16px; }
+  .dna-pill-text { font-size: 16px; }
+  .dna-index-text { font-size: 17px; }
+  .dna-glass-title { font-size: 18px; }
+  .dna-big-number { font-size: 56px; }
+  .dna-note { font-size: 13px; }
+}
+
+.dna-header-on-hero {
+  background: rgba(10, 31, 208, 0.65) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+.dna-header-on-hero .dna-wordmark {
+  color: var(--white) !important;
+}
+.dna-header-on-hero .dna-spy-num {
+  color: var(--white) !important;
+}
