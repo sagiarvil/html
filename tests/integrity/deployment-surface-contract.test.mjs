@@ -4,6 +4,8 @@ const failures = [];
 const production = fs.readFileSync('.github/workflows/firebase-production.yml','utf8');
 const smoke = fs.readFileSync('.github/workflows/live-smoke.yml','utf8');
 const quality = fs.readFileSync('.github/workflows/quality.yml','utf8');
+const pkg = JSON.parse(fs.readFileSync('package.json','utf8'));
+const buildCommercial = pkg.scripts?.['build:commercial'] || '';
 
 for (const [name, text] of [['firebase-production',production],['live-smoke',smoke]]) {
   if (!text.includes('PDF-INSPIRED CUSTOMER STORY V1') && name === 'firebase-production') {
@@ -18,6 +20,10 @@ for (const [name, text] of [['firebase-production',production],['live-smoke',smo
 }
 if (!production.includes('npm run seo:sitemap')) failures.push('firebase-production: sitemap regeneration missing');
 if (!quality.includes('npm run seo:sitemap')) failures.push('quality: sitemap validation missing');
+const runtimePos = buildCommercial.indexOf('scripts/inject_premium_runtimes_everywhere.py');
+const preferredPos = buildCommercial.indexOf('scripts/enforce_preferred_source_eligibility.py');
+if (runtimePos < 0 || preferredPos < 0) failures.push('build:commercial: final runtime/preferred-source materializers missing');
+if (preferredPos < runtimePos) failures.push('build:commercial: Preferred Sources fail-closed gate must run after all runtime materializers');
 for (const rel of ['scripts/seo/generate_enterprise_sitemap.py','scripts/seo/test_sitemap_control_plane.py']) {
   const text = fs.readFileSync(rel,'utf8');
   if (text.includes('/Users/macair1/projects/html')) failures.push(`${rel}: hard-coded developer workstation path leaked into CI`);
