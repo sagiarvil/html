@@ -2,9 +2,11 @@
 """Close late-build drift between V3 sales copy and the V3 capability contract.
 
 `enforce_v3_sales_contract.py` intentionally simplifies the comparison table late
-in the build, but the product contract still requires two customer-visible
-boundaries: up to 30 evidence-bound page-level machine surfaces and versioned ZIP
-delivery. Re-assert only those two boundaries after the sales materializer.
+in the build, but the detailed product-contract routes still require two
+customer-visible boundaries: up to 30 evidence-bound page-level machine surfaces
+and versioned ZIP delivery. Re-assert only those two boundaries after the sales
+materializer. Homepages are intentionally excluded because the PDF-inspired
+customer story replaces the dense V3 capability matrix there.
 """
 
 from pathlib import Path
@@ -12,7 +14,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 KEY_PAGES = [
-    'index.html','tr/index.html','en/index.html','tr/platform/index.html','en/platform/index.html',
+    'tr/platform/index.html','en/platform/index.html',
     'tr/methodology/index.html','en/methodology/index.html','tr/fiyatlandirma/index.html',
     'en/pricing/index.html','tr/fix-mandate/index.html','en/fix-mandate/index.html',
 ]
