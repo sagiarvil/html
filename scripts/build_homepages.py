@@ -622,11 +622,37 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       </article>
     </li>
   </ol>
-  <div class="px-lenses" style="margin-top:40px;">
-    <div class="px-lens"><b>01 BULUN</b><span>Robots.txt · Sitemap · AI Bot Erişimi</span></div>
-    <div class="px-lens"><b>02 ANLAŞILIN</b><span>Schema Graph · Wikidata QID · llms.txt</span></div>
-    <div class="px-lens"><b>03 KAYNAK OLUN</b><span>Cross-Encoder · RAG 512 · E-E-A-T</span></div>
-    <div class="px-lens"><b>04 DÖNÜŞÜN</b><span>measured HTML payload, semantic structure and source-readiness evidence</span></div>
+  <div class="px-section-head" style="margin-top:48px;text-align:center;">
+    <span class="eyebrow">5 TEMEL KURUMSAL MİMARİ KATMANI</span>
+    <h2>Müşteri, Güven, Dağıtım, Referans ve Satış Kanalı Mimarisi</h2>
+    <p>HTML&amp;HTML platformunun operasyonel ve ticari omurgası: teşhis anından ödeme sonrası doğrulamaya kadar 5 entegre katman.</p>
+  </div>
+  <div class="five-pillars-grid">
+    <article class="five-pillar-card">
+      <span class="pillar-badge">01 · MÜŞTERİ</span>
+      <h3>Müşteri &amp; Ajan Akışı</h3>
+      <p>Önceden kayıt gerekmez; tek URL ile anında canlı teşhis. Web sitesi sahipleri ve yapay zeka ajanları engelleri anında görür.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">02 · GÜVEN</span>
+      <h3>E-E-A-T &amp; Sıfır Uydurma</h3>
+      <p>IETF RFC 9309, W3C ve resmi vendor dokümanlarına dayalı kanıt standardı. Ölçülemeyen sinyal kesinlikle NOT_MEASURED kalır.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">03 · DAĞITIM</span>
+      <h3>Çok Kanallı Dağıtım</h3>
+      <p>llms.txt, llms-full.txt, OpenAPI 3.1 spesifikasyonu, MCP sunucusu ve 273 ikidilli teknoloji brifingi ile otonom erişim.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">04 · REFERANS</span>
+      <h3>Otorite &amp; Standart</h3>
+      <p>18 Motorlu Engine V3.0 endüstri standardı, çift dilli yapay zeka sözlüğü ve kamuya açık örnek analiz kütüphanesi.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">05 · SATIŞ KANALI</span>
+      <h3>$99 Uygulama Paketi</h3>
+      <p>Paddle Billing güvencesiyle tek seferlik lisans: kök neden, P0–P3 öncelik, 30+ dosyalık ZIP teslimatı ve 30 gün re-scan.</p>
+    </article>
   </div>
 </section>
 
@@ -1417,11 +1443,37 @@ export const revalidate = 3600; // Cloudflare edge cache</code></pre>
       </article>
     </li>
   </ol>
-  <div class="px-lenses" style="margin-top:40px;">
-    <div class="px-lens"><b>01 GET DISCOVERED</b><span>Robots.txt · Sitemap · AI Bot Access</span></div>
-    <div class="px-lens"><b>02 BE UNDERSTOOD</b><span>Schema Graph · Wikidata QID · llms.txt</span></div>
-    <div class="px-lens"><b>03 BECOME SOURCE</b><span>Cross-Encoder · RAG 512 · E-E-A-T</span></div>
-    <div class="px-lens"><b>04 CONVERT</b><span>14KB AST Purge · OpenAPI · A2A / MCP</span></div>
+  <div class="px-section-head" style="margin-top:48px;text-align:center;">
+    <span class="eyebrow">5 CORE ARCHITECTURAL PILLARS</span>
+    <h2>Customer, Trust, Distribution, Reference &amp; Sales Channel Architecture</h2>
+    <p>The operational and commercial backbone of HTML&amp;HTML: five integrated layers connecting diagnosis to post-payment verification.</p>
+  </div>
+  <div class="five-pillars-grid">
+    <article class="five-pillar-card">
+      <span class="pillar-badge">01 · CUSTOMER</span>
+      <h3>Customer &amp; Agent Flow</h3>
+      <p>No prior signup required; instant live diagnosis with a single URL. Website owners and AI agents identify blockers immediately.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">02 · TRUST</span>
+      <h3>E-E-A-T &amp; Zero Fabrication</h3>
+      <p>Evidence standard anchored in IETF RFC 9309, W3C and official vendor docs. Unmeasured signals strictly return NOT_MEASURED.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">03 · DISTRIBUTION</span>
+      <h3>Omnichannel Distribution</h3>
+      <p>Autonomous access across llms.txt, llms-full.txt, OpenAPI 3.1 specification, MCP server, and 273 bilingual tech briefings.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">04 · REFERENCE</span>
+      <h3>Authority &amp; Standards</h3>
+      <p>18-Engine Engine V3.0 industry standard, bilingual AI search glossary, and public empirical audit library.</p>
+    </article>
+    <article class="five-pillar-card">
+      <span class="pillar-badge">05 · SALES CHANNEL</span>
+      <h3>$99 Implementation Pack</h3>
+      <p>Secured via Paddle Billing single-site license: root cause, P0–P3 priorities, 30+ file ZIP delivery, and 30-day re-scan.</p>
+    </article>
   </div>
 </section>
 
