@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-20T15:42:29Z",
+  "lastUpdated": "2026-09-20T20:30:37Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20417,6 +20417,55 @@
       },
       "id": "2026-09-20-gsc-s-new-ai-overview-reporting-how-can-we-use-t-249f4723c527",
       "sourceUrl": "https://www.mariehaynes.com/new-aio-and-aimode-info-in-gsc/",
+      "publishedAt": "2026-09-20"
+    },
+    {
+      "topic": "AUTOMATED_ENTITY_DISAMBIGUATION_TYPES",
+      "keywords": [
+        "entity disambiguation",
+        "neural network",
+        "non-exclusive categories",
+        "semantic search",
+        "type discovery"
+      ],
+      "title": {
+        "tr": "Varlık Ayrıştırması için Otomatik Tür Keşif Mimarisi",
+        "en": "Automated Type Discovery Architecture for Entity Disambiguation"
+      },
+      "dek": {
+        "tr": "Nöral ağlar kullanarak kelime anlamı belirsizliğini çözen ve örtüşen kategoriler üreten yeni bir yaklaşım.",
+        "en": "A novel approach resolving word ambiguity and generating overlapping categories via neural networks."
+      },
+      "summary": {
+        "tr": "Arama sistemleri, çok anlamlı kelimelerin hangi gerçek dünya nesnesini işaret ettiğini çözmek için yeni bir mimari geliştirdi. Yaklaşım, kelimelerin yaklaşık yüz adet otomatik keşfedilmiş, birbirini dışlamayan kategoriye ait olup olmadığını değerlendiren bir nöral ağ kullanıyor. Bu yöntem, geleneksel katı sınıflandırma sınırlarını aşarak anlamsal eşleştirmelerin doğruluğunu artırıyor. Web geliştiricileri ve bilgi erişim mühendisleri için bu gelişme, arama motorlarının metin içerisindeki varlıkları daha hassas bir şekilde haritalandırmasına ve bağlamsal sorguları daha iyi anlamasına olanak tanıyor.",
+        "en": "Search systems have developed a new architecture to resolve which real-world object polysemous words denote. The approach employs a neural network evaluating whether words belong to roughly one hundred automatically discovered, non-exclusive categories. This method transcends traditional rigid classification boundaries, enhancing the accuracy of semantic mappings. For web developers and information retrieval engineers, this advancement allows search engines to map entities within text more precisely and comprehend contextual queries with greater fidelity."
+      },
+      "whyItMatters": {
+        "tr": "Geleneksel bilgi tabanları elle oluşturulmuş katı hiyerarşiler kullanır; ancak bu yeni yöntem, kategorilerin dinamik olarak veri odaklı türetilmesini sağlar. Örtüşen sınıflandırma yapısı, karmaşık varlıkların birden fazla niteliği aynı anda barındırmasına imkan tanır.",
+        "en": "Traditional knowledge bases rely on manually built rigid hierarchies; however, this new method enables dynamic, data-driven derivation of categories. The overlapping classification structure allows complex entities to harbor multiple attributes simultaneously."
+      },
+      "technicalImpact": {
+        "tr": "Varlık bağlama süreçlerinde kullanılan vektör uzayı modelleri, çoklu tip atamaları sayesinde daha zengin bağlamsal sinyaller üretir. Arama motoru indeksleme aşamasında, kelime anlamı ayrıştırma (WSD) algoritmaları, metin içi referansları daha düşük hata oranlarıyla çözerek bilgi grafiği doğruluğunu doğrudan yukarı çeker.",
+        "en": "Vector space models used in entity linking generate richer contextual signals through multi-type assignments. During search indexing, word sense disambiguation algorithms resolve intra-text references with lower error rates, directly elevating knowledge graph fidelity."
+      },
+      "actions": {
+        "tr": [
+          "Yapılandırılmış veri işaretlemelerinde (Schema.org) varlık türlerini net bir şekilde tanımlayın.",
+          "Çok anlamlı terimlerin etrafındaki bağlamsal ipuçlarını ve anahtar kelime yoğunluğunu optimize edin.",
+          "İçeriklerin hedef kitleye göre birden fazla anlamsal kategoride yer alabilecek yapıda yazıldığını doğrulayın."
+        ],
+        "en": [
+          "Explicitly define entity types within structured data markup (Schema.org).",
+          "Optimize contextual cues and keyword density surrounding polysemous terms.",
+          "Verify that content is structured to span multiple semantic categories where applicable."
+        ]
+      },
+      "boundary": {
+        "tr": "Yöntemin yaklaşık yüz otomatik kategorisinin ölçeklenebilirliği ve farklı alanlardaki (domain) genel geçerliliği belirsizliğini korumaktadır.",
+        "en": "The scalability of the roughly one hundred automated categories and their cross-domain generalizability remain bounded and unverified."
+      },
+      "id": "2026-09-20-discovering-types-for-entity-disambiguation-7f5353232f4b",
+      "sourceUrl": "https://openai.com/index/discovering-types-for-entity-disambiguation",
       "publishedAt": "2026-09-20"
     }
   ]
