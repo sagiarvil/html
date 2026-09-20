@@ -1787,14 +1787,35 @@ html body footer,
    🛡️ ULTIMATE CASCADE FORTRESS: ZERO-WHITE SCAN REPORT & PRO DISCIPLINE
    ========================================================================== */
 
-/* 1. Share Button Fix: Desktop'ta gizle, mobilde düzgün yatay göster */
-.btn-share-report {
+/* 1. Share Button Eradication: Desktop'ta kesinlikle yok et, mobilde düzgün yatay göster */
+#btnMobileShare,
+.btn-share-report,
+button.btn-share-report {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
 
 @media (max-width: 768px) {
-  .btn-share-report {
+  #btnMobileShare,
+  .btn-share-report,
+  button.btn-share-report {
     display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;
+    clip: auto !important;
     width: 100% !important;
     min-height: 44px !important;
     white-space: nowrap !important;
@@ -1806,7 +1827,55 @@ html body footer,
     color: #38bdf8 !important;
     font-size: 14.5px !important;
     font-weight: 750 !important;
+    grid-column: span 2 !important;
+    margin-top: 8px !important;
   }
+}
+
+/* 1.1 Result Head Layout Fortress */
+html body .result-head,
+body .result-head {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: 100% !important;
+  margin-bottom: 24px !important;
+}
+
+html body .result-head-summary,
+body .result-head-summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+html body .result-head-info,
+body .result-head-info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+html body .result-head-score,
+body .result-head-score {
+  flex-shrink: 0 !important;
+}
+
+html body .result-head-actions,
+body .result-head-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+html body .result-head-actions > *,
+body .result-head-actions > * {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
 }
 
 /* 2. Zero-White Scan Report Tabs & Container */

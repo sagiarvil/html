@@ -79,16 +79,16 @@ def build_homepages():
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_26">
-<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_26">
-<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_26">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026092010_26">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
-<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_27">
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/tr/hakkimizda/">
-<script src="/assets/js/enterprise-theme-engine.js?v=20260920_26" defer></script>
+<script src="/assets/js/enterprise-theme-engine.js?v=20260920_27" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -160,10 +160,10 @@ def build_homepages():
 }
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
-<script src="/assets/js/theme.js?v=20260920_26"></script>
+<script src="/assets/js/theme.js?v=20260920_27"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
-<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_27">
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
@@ -718,10 +718,18 @@ def build_homepages():
 <!-- RESULTS -->
 <section id="result" class="results" hidden>
   <div class="result-head">
-    <div>
-      <span class="eyebrow" data-i18n="result">TARAMA SONUCU</span>
-      <h2 id="resultDomain">—</h2>
-      <p id="resultMeta">—</p>
+    <div class="result-head-summary">
+      <div class="result-head-info">
+        <span class="eyebrow" data-i18n="result">TARAMA SONUCU</span>
+        <h2 id="resultDomain">—</h2>
+        <p id="resultMeta">—</p>
+      </div>
+      <div class="result-head-score">
+        <div class="total-score">
+          <strong id="overallScore">0</strong>
+          <span>/100</span>
+        </div>
+      </div>
     </div>
     <div class="result-head-actions">
       <button type="button" class="btn-pdf-export" id="btnPdfExport" aria-label="Raporu PDF Olarak İndir">
@@ -732,10 +740,6 @@ def build_homepages():
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>
         <span>📦 30+ Dosya ZIP İndir</span>
       </button>
-      <div class="total-score">
-        <strong id="overallScore">0</strong>
-        <span>/100</span>
-      </div>
     </div>
   </div>
   <div id="resultPillars" class="result-pillars-grid"></div>
@@ -866,8 +870,8 @@ def build_homepages():
   </button>
 </nav>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh4" defer></script>
-<script src="/assets/js/profound-canvas.js?v=20260920_26" defer></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh5" defer></script>
+<script src="/assets/js/profound-canvas.js?v=20260920_27" defer></script>
 </body>
 </html>
 '''
@@ -912,16 +916,16 @@ def build_homepages():
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_26">
-<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_26">
-<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_26">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026092010_26">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
-<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_27">
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/en/about/">
-<script src="/assets/js/enterprise-theme-engine.js?v=20260920_26" defer></script>
+<script src="/assets/js/enterprise-theme-engine.js?v=20260920_27" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -993,9 +997,9 @@ def build_homepages():
 }
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
-<script src="/assets/js/theme.js?v=20260920_26"></script>
+<script src="/assets/js/theme.js?v=20260920_27"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_27">
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
@@ -1526,10 +1530,18 @@ def build_homepages():
 <!-- RESULTS -->
 <section id="result" class="results" hidden>
   <div class="result-head">
-    <div>
-      <span class="eyebrow" data-i18n="result">SCAN RESULT</span>
-      <h2 id="resultDomain">—</h2>
-      <p id="resultMeta">—</p>
+    <div class="result-head-summary">
+      <div class="result-head-info">
+        <span class="eyebrow" data-i18n="result">SCAN RESULT</span>
+        <h2 id="resultDomain">—</h2>
+        <p id="resultMeta">—</p>
+      </div>
+      <div class="result-head-score">
+        <div class="total-score">
+          <strong id="overallScore">0</strong>
+          <span>/100</span>
+        </div>
+      </div>
     </div>
     <div class="result-head-actions">
       <button type="button" class="btn-pdf-export" id="btnPdfExport" aria-label="Export Full PDF">
@@ -1540,10 +1552,6 @@ def build_homepages():
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>
         <span>📦 Download 30+ File ZIP</span>
       </button>
-      <div class="total-score">
-        <strong id="overallScore">0</strong>
-        <span>/100</span>
-      </div>
     </div>
   </div>
   <div id="resultPillars" class="result-pillars-grid"></div>
@@ -1674,8 +1682,8 @@ def build_homepages():
   </button>
 </nav>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh4" defer></script>
-<script src="/assets/js/profound-canvas.js?v=20260920_26" defer></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh5" defer></script>
+<script src="/assets/js/profound-canvas.js?v=20260920_27" defer></script>
 </body>
 </html>'''
 

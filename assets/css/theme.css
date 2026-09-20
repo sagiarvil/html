@@ -1741,15 +1741,36 @@ html[data-theme="dark"] .finding.finding-tier-info {
    -------------------------------------------------------------------------- */
 .result-head {
   display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: 100% !important;
+  margin-bottom: 24px !important;
+}
+.result-head-summary {
+  display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 20px !important;
-  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+.result-head-info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+.result-head-score {
+  flex-shrink: 0 !important;
 }
 .result-head-actions {
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center !important;
-  gap: 16px !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+.result-head-actions > * {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
 }
 .btn-pdf-export {
   display: inline-flex !important;

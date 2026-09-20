@@ -297,7 +297,14 @@
     // 7. MOBİL NATIVE WEB SHARE API (RAPORU PAYLAŞ)
     // -------------------------------------------------------------
     function attachMobileShareButton() {
-      if (window.innerWidth > 768) return;
+      // Masaüstünde ASLA buton ekleme. Eğer önceden eklenmişse derhal DOM'dan temizle.
+      if (window.innerWidth > 768) {
+        var existing = document.getElementById('btnMobileShare');
+        if (existing && existing.parentNode) {
+          existing.parentNode.removeChild(existing);
+        }
+        return;
+      }
       var actions = document.querySelector('.result-head-actions');
       if (!actions || document.getElementById('btnMobileShare')) return;
 
@@ -334,6 +341,18 @@
 
       actions.appendChild(shareBtn);
     }
+
+    // Masaüstünde varsa hemen temizle
+    if (window.innerWidth > 768) {
+      var initialCleanup = document.getElementById('btnMobileShare');
+      if (initialCleanup && initialCleanup.parentNode) initialCleanup.parentNode.removeChild(initialCleanup);
+    }
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        var resizeCleanup = document.getElementById('btnMobileShare');
+        if (resizeCleanup && resizeCleanup.parentNode) resizeCleanup.parentNode.removeChild(resizeCleanup);
+      }
+    });
 
     attachMobileCopyButtons();
     attachMobileShareButton();
