@@ -1403,11 +1403,11 @@ html[data-theme="light"] .console-tab-btn.active {
 .dark-pool-risk-deck {
   margin-top: 32px;
   margin-bottom: 32px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   overflow-x: hidden;
 }
 .dark-pool-head {
@@ -1416,7 +1416,7 @@ html[data-theme="light"] .console-tab-btn.active {
   align-items: flex-start;
   margin-bottom: 24px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .dark-pool-badge {
   display: inline-block;
@@ -1426,21 +1426,21 @@ html[data-theme="light"] .console-tab-btn.active {
   letter-spacing: 0.05em;
   padding: 4px 10px;
   border-radius: 6px;
-  background: #f1f5f9;
-  color: #0f172a;
-  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
   margin-bottom: 8px;
 }
 .dark-pool-title {
   font-size: 18px;
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff !important;
   margin: 0 0 6px 0;
   line-height: 1.35;
 }
 .dark-pool-desc {
   font-size: 15px;
-  color: #64748b;
+  color: #a1a1aa !important;
   margin: 0;
   line-height: 1.5;
 }
@@ -1455,19 +1455,19 @@ html[data-theme="light"] .console-tab-btn.active {
   }
 }
 .dark-pool-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
   border-radius: 10px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   transition: border-color 0.15s ease;
   overflow-x: hidden;
 }
 .dark-pool-card:hover {
-  border-color: #cbd5e1;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 .dark-pool-card-header {
   display: flex;
@@ -1486,7 +1486,7 @@ html[data-theme="light"] .console-tab-btn.active {
   justify-content: center;
   width: 26px;
   height: 26px;
-  background: #0f172a;
+  background: #1e293b;
   color: #ffffff;
   font-size: 15px;
   font-weight: 800;
@@ -1504,23 +1504,23 @@ html[data-theme="light"] .console-tab-btn.active {
   font-weight: 750;
   padding: 2px 6px;
   border-radius: 4px;
-  background: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
+  background: rgba(37, 99, 235, 0.18) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
 }
 .dark-pool-source-tag {
   font-size: 15px;
   font-weight: 600;
   padding: 2px 6px;
   border-radius: 4px;
-  background: #f8fafc;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #a1a1aa !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 .dark-pool-card-title {
   font-size: 15px;
   font-weight: 750;
-  color: #0f172a;
+  color: #ffffff !important;
   line-height: 1.35;
   display: block;
 }
@@ -1532,10 +1532,10 @@ html[data-theme="light"] .console-tab-btn.active {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.dark-pool-pass { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
-.dark-pool-evaluated { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
-.dark-pool-warn { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
-.dark-pool-not-measured { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+.dark-pool-pass { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.dark-pool-evaluated { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.dark-pool-warn { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.dark-pool-not-measured { background: rgba(255, 255, 255, 0.06); color: #94a3b8; border: 1px solid rgba(255, 255, 255, 0.1); }
 
 .dark-pool-body {
   display: flex;
@@ -1543,15 +1543,15 @@ html[data-theme="light"] .console-tab-btn.active {
   gap: 10px;
 }
 .dark-pool-section {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: #0d0f14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
   border-radius: 8px;
   padding: 10px 12px;
 }
 .dark-pool-section-label {
   font-size: 15px;
   font-weight: 750;
-  color: #334155;
+  color: #e2e8f0 !important;
   margin-bottom: 5px;
   display: flex;
   align-items: center;
@@ -1563,32 +1563,32 @@ html[data-theme="light"] .console-tab-btn.active {
   align-items: center;
   font-size: 15px;
   font-weight: 750;
-  color: #334155;
+  color: #e2e8f0 !important;
   margin-bottom: 5px;
   gap: 8px;
 }
 .dark-pool-text {
   font-size: 14px;
   line-height: 1.5;
-  color: #475569;
+  color: #a1a1aa !important;
   margin: 0;
 }
 .dark-pool-roi-box {
-  background: #f0fdf4;
-  border-color: #bbf7d0;
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
 }
 .dark-pool-roi-box .dark-pool-section-label {
-  color: #166534;
+  color: #34d399 !important;
 }
 .dark-pool-roi-text {
   font-size: 14px;
   font-weight: 650;
   line-height: 1.5;
-  color: #15803d;
+  color: #a7f3d0 !important;
   margin: 0;
 }
 .dark-pool-code {
-  background: #0f172a;
+  background: #050507 !important;
   color: #f8fafc;
   border-radius: 6px;
   padding: 8px 10px;
@@ -1598,31 +1598,31 @@ html[data-theme="light"] .console-tab-btn.active {
   margin: 0;
   white-space: pre;
   max-height: 180px;
-  border: 1px solid #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 .dark-pool-n8n-box {
-  background: #fdf4ff;
-  border-color: #f5d0fe;
+  background: rgba(168, 85, 247, 0.08) !important;
+  border-color: rgba(168, 85, 247, 0.25) !important;
 }
 .dark-pool-n8n-box .dark-pool-section-label {
-  color: #86198f;
+  color: #c084fc !important;
 }
 .dark-pool-n8n-text {
   font-size: 15px;
   line-height: 1.5;
-  color: #701a75;
+  color: #e9d5ff !important;
   margin: 0;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 .dark-pool-test-box {
-  background: #eff6ff;
-  border-color: #bfdbfe;
+  background: rgba(59, 130, 246, 0.08) !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
 }
 .dark-pool-test-box .dark-pool-section-label-bar {
-  color: #1e40af;
+  color: #60a5fa !important;
 }
 .dark-pool-cmd {
-  background: #1e293b;
+  background: #050507 !important;
   color: #38bdf8;
   border-radius: 6px;
   padding: 6px 10px;
@@ -1631,12 +1631,12 @@ html[data-theme="light"] .console-tab-btn.active {
   overflow-x: auto;
   margin: 0;
   white-space: pre;
-  border: 1px solid #334155;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 .btn-copy-darkpool {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  color: #0f172a;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
   font-size: 15px;
   font-weight: 700;
   padding: 2px 7px;
@@ -1646,8 +1646,8 @@ html[data-theme="light"] .console-tab-btn.active {
   flex-shrink: 0;
 }
 .btn-copy-darkpool:hover {
-  background: #f1f5f9;
-  border-color: #94a3b8;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
 }
 .dark-pool-card-footer {
   display: flex;
@@ -2289,4 +2289,36 @@ html.light .ea-executive-grid div div:first-child {
     opacity: 0 !important;
     visibility: hidden !important;
   }
+}
+
+
+/* === SUPREME LOGO REINFORCEMENT === */
+
+/* ==========================================================================
+   SUPREME LOGO HIGH-CONTRAST INVERSION & VISIBILITY REINFORCEMENT
+   ========================================================================== */
+html body .brand-logo,
+html body .brand img,
+html body header .brand-logo,
+html body footer .brand-logo,
+html body .footer-brand .brand-logo,
+html body #hhCyberDrawer .brand-logo,
+.brand-logo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: 180px !important;
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+html body footer .brand-logo,
+html body .footer-brand .brand-logo {
+  height: 24px !important;
 }

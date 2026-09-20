@@ -1,0 +1,2125 @@
+/* ==========================================================================
+   PROFOUND EXPERIENCE — CASCADE FORTRESS (SSOT)
+   Silicon Valley & London Tier AI Architecture
+   Pure Pitch Black (#000000), Glowing Borders, Clean White Contrast
+   ========================================================================== */
+
+/* 1. ROOT & GLOBAL OVERRIDES (Highest Specificity) */
+html,
+html[data-theme],
+html[data-theme="light"],
+html[data-theme="dark"],
+body,
+html body,
+html[data-theme="light"] body,
+html[data-theme="dark"] body {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  color-scheme: dark !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Hide legacy theme switchers completely — Profound is 100% Dark */
+.theme-switch,
+.hh-theme-toggle,
+[data-theme-switch],
+button[data-theme-choice] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 2. HEADER & NAVIGATION */
+.topbar,
+header,
+html[data-theme] .topbar,
+html[data-theme="light"] .topbar {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.brand,
+.brand-logo,
+.brand-logo span,
+.topbar a,
+html body .brand,
+html body .brand-logo,
+html[data-theme] .brand-logo,
+html[data-theme="dark"] .brand-logo,
+html[data-theme="light"] .brand-logo,
+html[data-theme="light"] .topbar a {
+  color: #ffffff !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.primary-nav a,
+html[data-theme="light"] .primary-nav a {
+  color: #a1a1aa !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: color 0.15s ease !important;
+}
+
+.primary-nav a:hover,
+html[data-theme="light"] .primary-nav a:hover {
+  color: #ffffff !important;
+}
+
+.nav-scan-cta,
+html[data-theme="light"] .nav-scan-cta {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  padding: 8px 18px !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.15) !important;
+  transition: transform 0.15s ease, filter 0.15s ease !important;
+}
+
+.nav-scan-cta:hover {
+  filter: brightness(0.9) !important;
+  transform: translateY(-1px) !important;
+}
+
+.langs button,
+.langs a,
+html[data-theme="light"] .langs button,
+html[data-theme="light"] .langs a {
+  color: #a1a1aa !important;
+}
+
+.langs .active,
+html[data-theme="light"] .langs .active {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* 3. HERO SECTION (Profound High-Impact Stance) */
+.hero,
+.decision-hero,
+html[data-theme="light"] .hero {
+  background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.07) 0%, rgba(0, 0, 0, 0) 70%), #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 70px 20px 60px !important;
+  text-align: center !important;
+}
+
+.kicker,
+.hero .kicker,
+html[data-theme="light"] .hero .kicker,
+html[data-theme="light"] .hero .kicker b {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #e4e4e7 !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 24px !important;
+}
+
+.hero h1,
+html[data-theme="light"] .hero h1 {
+  color: #ffffff !important;
+  font-size: clamp(34px, 5vw, 60px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.12 !important;
+  max-width: 920px !important;
+  margin: 0 auto 20px !important;
+  text-align: center !important;
+}
+
+.hero-answer,
+.hero > p,
+html[data-theme="light"] .hero > p {
+  color: #a1a1aa !important;
+  font-size: clamp(16px, 1.8vw, 19px) !important;
+  line-height: 1.55 !important;
+  max-width: 680px !important;
+  margin: 0 auto 32px !important;
+  text-align: center !important;
+}
+
+.decision-hero-proof,
+.decision-hero-proof span {
+  color: #a1a1aa !important;
+  font-size: 13px !important;
+}
+
+.pdf-hero-badges {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 36px !important;
+}
+
+.pdf-hero-badges .pdf-hero-badge {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #d4d4d8 !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+}
+
+/* 4. SCANNER INPUT BOX (Minimalist Pure Black with White Pill) */
+.scanbox,
+html[data-theme="light"] .scanbox {
+  max-width: 640px !important;
+  margin: 0 auto 20px !important;
+}
+
+.scanbox .field,
+html[data-theme="light"] .scanbox .field {
+  background: #0f1011 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 999px !important;
+  padding: 6px 8px 6px 22px !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06) !important;
+  min-height: 60px !important;
+}
+
+.scanbox .field:focus-within {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2), 0 12px 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+.scanbox input,
+html[data-theme="light"] .scanbox input {
+  color: #ffffff !important;
+  background: transparent !important;
+  font-size: 16px !important;
+}
+
+.scanbox input::placeholder {
+  color: #a1a1aa !important;
+}
+
+.scanbox .field button[type="submit"],
+#scanButton,
+html[data-theme="light"] #scanButton {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border: 0 !important;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2) !important;
+  transition: transform 0.15s ease, filter 0.15s ease !important;
+  padding: 0 24px !important;
+  height: 48px !important;
+}
+
+.scanbox .field button[type="submit"]:hover,
+#scanButton:hover {
+  filter: brightness(0.92) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 5. PROFOUND 3-COLUMN ADAPTATION (Track / Deploy / Measure) */
+.decision-shell {
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 60px 20px !important;
+}
+
+.decision-section-no {
+  color: #a1a1aa !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.decision-kicker {
+  color: #a1a1aa !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.decision-heading h2,
+html[data-theme="light"] .decision-heading h2 {
+  color: #ffffff !important;
+  font-size: clamp(26px, 3.2vw, 38px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+  margin: 12px 0 16px !important;
+}
+
+.decision-heading p,
+html[data-theme="light"] .decision-heading p {
+  color: #a1a1aa !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  max-width: 760px !important;
+}
+
+.decision-question-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  margin-top: 40px !important;
+}
+
+@media (max-width: 860px) {
+  .decision-question-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.decision-question-grid article,
+html[data-theme="light"] .decision-question-grid article {
+  background: #090a0b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 18px !important;
+  padding: 32px 26px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+
+.decision-question-grid article:hover {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(255, 255, 255, 0.04) !important;
+}
+
+.decision-question-grid article b {
+  color: #a1a1aa !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+}
+
+.decision-question-grid article h3 {
+  color: #ffffff !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 10px !important;
+}
+
+.decision-question-grid article p {
+  color: #a1a1aa !important;
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  margin-bottom: 16px !important;
+}
+
+.decision-question-grid article span {
+  color: #a1a1aa !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  display: block !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding-top: 14px !important;
+}
+
+/* 6. 18-ENGINE & DIAGNOSTIC CARDS */
+.mandate-card,
+.pipeline-flow .pipeline-node,
+.score-item,
+.finding,
+.pdf-why-split,
+.pdf-caps-grid article,
+html[data-theme="light"] .mandate-card,
+html[data-theme="light"] .score-item,
+html[data-theme="light"] .finding {
+  background: #090a0b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.finding h4,
+.score-item strong,
+.mandate-card h3 {
+  color: #ffffff !important;
+}
+
+.finding p,
+.score-item span,
+.mandate-card p {
+  color: #a1a1aa !important;
+}
+
+/* 7. FOOTER */
+footer,
+.site-footer,
+html[data-theme="light"] footer {
+  background: #000000 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #a1a1aa !important;
+}
+
+footer a,
+html[data-theme="light"] footer a {
+  color: #a1a1aa !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+}
+
+/* 8. PROFOUND 3-COLUMN ARCHITECTURE (TRACK / DEPLOY / MEASURE) */
+.profound-workbench-section {
+  margin-bottom: 70px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-bottom: 60px !important;
+}
+
+.profound-three-columns {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  margin-top: 36px !important;
+}
+
+@media (max-width: 900px) {
+  .profound-three-columns {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+
+.profound-col {
+  background: #090a0b !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-radius: 16px !important;
+  padding: 32px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.profound-col:hover {
+  border-color: rgba(255, 255, 255, 0.24) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(255, 255, 255, 0.05) !important;
+}
+
+.profound-col .col-num {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  color: #a1a1aa !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px !important;
+}
+
+.profound-col h3 {
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 12px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.profound-col p {
+  color: #a1a1aa !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+
+
+/* 9. CRITICAL LOGO HIGH-CONTRAST AND CRISP VISIBILITY */
+.brand,
+.brand-logo,
+.brand img,
+.topbar .brand-logo,
+footer .brand-logo,
+.hh-drawer-head .brand-logo {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 180px !important;
+  height: auto !important;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9)) drop-shadow(0 2px 8px rgba(255, 255, 255, 0.25)) !important;
+  background: transparent !important;
+}
+
+/* 10. PROFOUND CANVAS MOTION & CONSTELLATION BACKGROUND */
+.profound-constellation-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.profound-constellation-canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  opacity: 0.65 !important;
+}
+
+.profound-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* 11. PROFOUND AGENT WORKBENCH MOCKUP (3-PANE UI) */
+.profound-workbench-mockup {
+  margin: 48px auto 0 !important;
+  max-width: 1100px !important;
+  background: #08090a !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  text-align: left !important;
+}
+
+.workbench-window-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 18px !important;
+  background: #0d0f12 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.window-dots {
+  display: flex !important;
+  gap: 6px !important;
+}
+
+.window-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+}
+
+.dot-red { background: #ff5f56 !important; }
+.dot-yellow { background: #ffbd2e !important; }
+.dot-green { background: #27c93f !important; }
+
+.workbench-title-bar {
+  margin-left: 12px !important;
+  font-size: 12px !important;
+  color: #71717a !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.workbench-title-bar .badge-live {
+  background: rgba(39, 201, 63, 0.15) !important;
+  color: #27c93f !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.workbench-body {
+  display: grid !important;
+  grid-template-columns: 220px 1fr 1fr !important;
+  min-height: 440px !important;
+}
+
+@media (max-width: 900px) {
+  .workbench-body {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.workbench-sidebar {
+  background: #090a0d !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 18px 14px !important;
+  font-size: 13px !important;
+}
+
+.wb-workspace-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 20px !important;
+  padding: 0 4px !important;
+}
+
+.wb-nav-group {
+  margin-bottom: 20px !important;
+}
+
+.wb-nav-title {
+  font-size: 10.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #52525b !important;
+  margin-bottom: 8px !important;
+  padding: 0 6px !important;
+  font-weight: 700 !important;
+}
+
+.wb-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  color: #a1a1aa !important;
+  margin-bottom: 2px !important;
+  font-size: 12.5px !important;
+  cursor: pointer !important;
+}
+
+.wb-nav-item.active {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.workbench-chat {
+  background: #060708 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.wb-chat-user {
+  background: #181a1f !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  font-size: 13.5px !important;
+  line-height: 1.45 !important;
+}
+
+.wb-chat-agent {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 14px 16px !important;
+  border-radius: 12px !important;
+  color: #d4d4d8 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.wb-agent-step {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #27c93f !important;
+  font-size: 11.5px !important;
+  font-family: ui-monospace, SFMono-Regular, monospace !important;
+  margin-bottom: 8px !important;
+}
+
+.workbench-preview {
+  background: #0c0d10 !important;
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.wb-preview-card {
+  background: #12141a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.wb-preview-banner {
+  height: 110px !important;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #94a3b8 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.wb-preview-content {
+  padding: 14px !important;
+}
+
+.wb-preview-content h4 {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  margin: 0 0 6px !important;
+}
+
+.wb-preview-content p {
+  color: #a1a1aa !important;
+  font-size: 12px !important;
+  margin: 0 0 12px !important;
+  line-height: 1.4 !important;
+}
+
+.wb-preview-btn {
+  display: inline-block !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 6px 14px !important;
+  border-radius: 6px !important;
+}
+
+/* 12. PROFOUND VISUAL BENCHMARK & ANALYTICS CARDS */
+.profound-visual-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  margin: 36px 0 60px !important;
+}
+
+@media (max-width: 800px) {
+  .profound-visual-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.profound-visual-card {
+  background: #090a0c !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.25s ease !important;
+}
+
+.profound-visual-card:hover {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.04) !important;
+}
+
+.profound-card-info h3 {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 8px !important;
+}
+
+.profound-card-info p {
+  color: #d4d4d8 !important;
+  font-size: 14.5px !important;
+  line-height: 1.5 !important;
+  margin: 0 0 20px !important;
+}
+
+.profound-card-img-wrap {
+  background: #050607 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  margin-bottom: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.profound-card-img-wrap img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 240px !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+}
+
+.profound-card-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  align-self: flex-start !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.profound-card-cta:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+
+/* === SUPREME LOGO REINFORCEMENT === */
+
+/* ==========================================================================
+   SUPREME LOGO HIGH-CONTRAST INVERSION & VISIBILITY REINFORCEMENT
+   ========================================================================== */
+html body .brand-logo,
+html body .brand img,
+html body header .brand-logo,
+html body footer .brand-logo,
+html body .footer-brand .brand-logo,
+html body #hhCyberDrawer .brand-logo,
+.brand-logo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: 180px !important;
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+html body footer .brand-logo,
+html body .footer-brand .brand-logo {
+  height: 24px !important;
+}
+
+
+/* === PROFOUND PITCH BLACK & APPLE TYPOGRAPHY SYSTEM === */
+
+/* ==========================================================================
+   PROFOUND PITCH BLACK & APPLE TYPOGRAPHY SYSTEM (CASCADE FORTRESS)
+   Silicon Valley & London Tier (M+) Pure Pitch Black (#000000) Theme
+   Eradicates ALL white backgrounds, light cards, and pale elements.
+   Applies Apple.com SF Pro high-contrast large typography.
+   ========================================================================== */
+
+/* 1. Universal Container & Section Pitch Black Backgrounds */
+html,
+html body,
+body,
+.decision-shell,
+.decision-section,
+.decision-about,
+.decision-capabilities,
+.decision-ai-network,
+.decision-security-pillars,
+.decision-workflow,
+.decision-why-us,
+.decision-references,
+.decision-output,
+.decision-offer,
+.decision-trust,
+.decision-diagnosis,
+.profound-workbench-section,
+section.decision-section {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+}
+
+/* 2. Apple.com Typography & Large High-Contrast Headings */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  letter-spacing: -0.022em !important;
+}
+
+.decision-section h2,
+.decision-heading h2,
+.hero h1,
+.authority-hero h1,
+h1, h2 {
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.decision-section-no {
+  color: #71717a !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+}
+
+.decision-kicker {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  text-transform: uppercase !important;
+}
+
+.decision-heading p,
+.decision-section p,
+.hero p,
+.hero-answer,
+p {
+  color: #d4d4d8 !important;
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+}
+
+/* 3. Pure Pitch Black Card Architecture (#090a0d & Glowing Borders) */
+.pdf-cap-pill,
+.pdf-net-card,
+.pdf-sec-card,
+.pdf-step-card,
+.pdf-why-item,
+.pdf-ref-card,
+.pdf-card-capsule,
+.pdf-ecosystem-box,
+.decision-question-grid article,
+.decision-checks p,
+.decision-report-card,
+.decision-offer-card,
+.decision-trust-point,
+.ea-executive-summary,
+.ea-executive-grid,
+.card,
+article {
+  background: #090a0d !important;
+  background-color: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 18px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.pdf-cap-pill:hover,
+.pdf-net-card:hover,
+.pdf-sec-card:hover,
+.pdf-step-card:hover,
+.pdf-why-item:hover,
+.pdf-ref-card:hover,
+.decision-question-grid article:hover,
+.decision-offer-card:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 4. Card Titles, Numbers, and Text Elements */
+.pdf-cap-text,
+.pdf-net-name,
+.pdf-sec-title,
+.pdf-step-card h3,
+.pdf-why-item b,
+.pdf-ref-card b,
+.decision-question-grid h3,
+.decision-checks b,
+.decision-offer-card h3,
+.decision-report-card h3 {
+  color: #ffffff !important;
+  font-size: 16.5px !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.pdf-cap-desc,
+.pdf-net-desc,
+.pdf-sec-desc,
+.pdf-step-card p,
+.pdf-why-item span,
+.pdf-ref-card span,
+.decision-question-grid p,
+.decision-question-grid span,
+.decision-checks span,
+.decision-offer-card li,
+.decision-report-card p {
+  color: #a1a1aa !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Number Badges (Apple Style Glass Circles) */
+.pdf-cap-num,
+.pdf-step-num,
+.pdf-why-num {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  font-weight: 700 !important;
+}
+
+/* 5. Section 07 Focal Block (Dark Electric Blue) */
+.pdf-why-focal {
+  background: linear-gradient(135deg, #091224 0%, #0c1a36 60%, #081020 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(37, 99, 235, 0.15) !important;
+}
+
+.pdf-why-badge-pill {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.pdf-why-focal h3 {
+  color: #ffffff !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+}
+
+.pdf-why-focal p {
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+}
+
+.pdf-why-focal a.decision-btn {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 700 !important;
+}
+
+/* 6. Section 09 & 10 Cards */
+.decision-report-top {
+  background: #0d0f14 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #a1a1aa !important;
+}
+
+.decision-report-body {
+  background: #060709 !important;
+  color: #ffffff !important;
+}
+
+.decision-severity {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+  color: #fbbf24 !important;
+}
+
+.decision-evidence {
+  background: rgba(239, 68, 68, 0.12) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+.decision-evidence b {
+  color: #f87171 !important;
+}
+
+.decision-evidence code {
+  color: #fecaca !important;
+}
+
+.decision-paid {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.decision-paid b,
+.decision-paid span {
+  color: #34d399 !important;
+}
+
+.decision-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+}
+
+.decision-btn:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.decision-btn--primary {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.decision-offer-card--paid {
+  background: linear-gradient(135deg, #0d152a 0%, #111e3d 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
+}
+
+.decision-offer-card--paid a {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 999px !important;
+}
+
+
+/* Workbench Interactive States & Feedback */
+.wb-nav-item {
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.wb-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  transform: translateX(3px) !important;
+}
+
+.wb-nav-item:active {
+  transform: scale(0.97) !important;
+}
+
+.wb-nav-item.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-left: 2px solid #38bdf8 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wb-preview-btn {
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.wb-preview-btn:hover {
+  filter: brightness(0.9) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25) !important;
+}
+
+.wb-preview-btn:active {
+  transform: scale(0.96) !important;
+}
+
+
+/* === PROFOUND & APPLE TIER: 7 READINESS LENSES === */
+
+/* ==========================================================================
+   PROFOUND & APPLE TIER: 7 READINESS LENSES EXECUTIVE CARDS
+   Eliminates narrow 7-column squish, applies spacious modern grid,
+   generous padding, Apple-grade typography and crisp readable layout.
+   ========================================================================== */
+
+.intel-lenses {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 18px !important;
+  margin: 28px 0 44px !important;
+}
+
+.intel-lens {
+  background: #090a0d !important;
+  background-color: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 18px !important;
+  padding: 24px 22px !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.intel-lens:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.05) !important;
+}
+
+.intel-lens-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 16px !important;
+}
+
+.lens-tag {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', ui-monospace, monospace !important;
+}
+
+.lens-tier {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  border: 1px solid currentColor !important;
+}
+
+.lens-tier.tier-green {
+  background: rgba(39, 201, 63, 0.15) !important;
+  color: #27c93f !important;
+}
+
+.lens-tier.tier-yellow,
+.lens-tier.tier-orange {
+  background: rgba(255, 189, 46, 0.15) !important;
+  color: #ffbd2e !important;
+}
+
+.lens-tier.tier-red {
+  background: rgba(255, 95, 86, 0.15) !important;
+  color: #ff5f56 !important;
+}
+
+.intel-lens strong {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 4px !important;
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.04em !important;
+  color: #ffffff !important;
+  margin: 0 0 14px !important;
+  line-height: 1 !important;
+}
+
+.intel-lens strong span {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #71717a !important;
+}
+
+.lens-desc {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: #a1a1aa !important;
+  margin-bottom: 18px !important;
+  min-height: 44px !important;
+}
+
+.lens-meter {
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  overflow: hidden !important;
+}
+
+.lens-meter i {
+  display: block !important;
+  height: 100% !important;
+  border-radius: 999px !important;
+}
+
+.lens-meter i.bar-green { background: #27c93f !important; box-shadow: 0 0 10px rgba(39, 201, 63, 0.5) !important; }
+.lens-meter i.bar-yellow, .lens-meter i.bar-orange { background: #ffbd2e !important; box-shadow: 0 0 10px rgba(255, 189, 46, 0.5) !important; }
+.lens-meter i.bar-red { background: #ff5f56 !important; box-shadow: 0 0 10px rgba(255, 95, 86, 0.5) !important; }
+
+/* Section Heading Improvements */
+.intel-section-title {
+  margin: 36px 0 18px !important;
+}
+
+.intel-section-title h4 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 6px !important;
+}
+
+.intel-section-title span {
+  font-size: 14.5px !important;
+  color: #a1a1aa !important;
+  line-height: 1.5 !important;
+}
+
+
+/* 19. PIPELINE & FOOTER PURE PITCH BLACK HARD GUARANTEE */
+#pipeline,
+#pipeline.px-pipeline-premium,
+.pipeline-step,
+.pipeline-card,
+footer,
+body footer,
+html body footer,
+.site-footer {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+
+/* ==========================================================================
+   PROFOUND & APPLE TIER PURPOSE-DRIVEN COMPACT MOBILE ARCHITECTURE
+   Silicon Valley & London Tier (M+) Ultra-Pro Mobile Optimization
+   Eradicates vertical bloat, prevents horizontal overflow, enforces 100% purpose
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Global Viewport & Container Containment */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    -webkit-text-size-adjust: 100% !important;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Topbar & Header: Pure Obsidian Glass */
+  .topbar {
+    height: 54px !important;
+    background: rgba(0, 0, 0, 0.88) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  .topbar-shell {
+    height: 100% !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    max-width: 100% !important;
+  }
+
+  .brand-logo {
+    height: 22px !important;
+    width: auto !important;
+  }
+
+  /* 3. Hero Section: Direct Value & Conversion Focus */
+  .hero,
+  .authority-hero {
+    padding: 24px 16px 28px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero .kicker,
+  .decision-kicker {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 4px 12px !important;
+    min-height: 26px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: #38bdf8 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero h1,
+  .authority-hero h1 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+    margin: 0 auto 12px !important;
+    text-wrap: balance !important;
+    max-width: 100% !important;
+  }
+
+  .hero p,
+  .hero-answer,
+  .authority-hero p {
+    font-size: 14.5px !important;
+    line-height: 1.5 !important;
+    color: #a1a1aa !important;
+    margin: 0 auto 18px !important;
+    max-width: 95% !important;
+  }
+
+  /* 4. Scanner Shell: Thumb-Optimized SpaceX/Apple Capsule */
+  .scanbox,
+  .scan-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .scanbox .field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 8px !important;
+    border-radius: 18px !important;
+    background: #090a0d !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.12) !important;
+  }
+
+  .scanbox .field input {
+    width: 100% !important;
+    height: 48px !important;
+    padding: 0 14px !important;
+    font-size: 15px !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+  }
+
+  .scanbox .field button[type="submit"],
+  .scan-btn {
+    width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+  }
+
+  .scanbox .field button[type="submit"]:active {
+    transform: scale(0.98) !important;
+    background: #e4e4e7 !important;
+  }
+
+  /* 5. Decision Shell & Sections: Compact Apple Bento Grid (Zero Bloat) */
+  .decision-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px auto 20px !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .decision-section {
+    position: relative !important;
+    margin: 0 0 14px !important;
+    padding: 22px 14px !important;
+    border-radius: 18px !important;
+    background: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decision-section-no {
+    top: 14px !important;
+    right: 14px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+    color: #71717a !important;
+  }
+
+  .decision-heading {
+    max-width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .decision-heading--split {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+
+  .decision-section h2 {
+    font-size: clamp(20px, 6vw, 25px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.025em !important;
+    color: #ffffff !important;
+    margin: 0 0 10px !important;
+    max-width: 100% !important;
+  }
+
+  .decision-heading>p,
+  .decision-heading--split>p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    color: #a1a1aa !important;
+    margin: 0 !important;
+  }
+
+  .decision-heading--split>p {
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    background: #090a0d !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* 6. Decision Question Grid (5 Bento Cards): Compact Mobile Stack */
+  .decision-question-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .decision-question-grid article {
+    min-height: auto !important;
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+    background: #090a0d !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .decision-question-grid b {
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+    color: #38bdf8 !important;
+  }
+
+  .decision-question-grid h3 {
+    margin: 4px 0 6px !important;
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  .decision-question-grid p {
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+    color: #a1a1aa !important;
+    margin: 0 !important;
+  }
+
+  /* 7. Decision Checks & Actions */
+  .decision-checks {
+    display: grid !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+  }
+
+  .decision-checks p {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    padding: 12px 14px !important;
+    border-radius: 12px !important;
+    background: #090a0d !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .decision-checks b {
+    font-size: 13px !important;
+    color: #ffffff !important;
+  }
+
+  .decision-checks span {
+    font-size: 12.5px !important;
+    color: #a1a1aa !important;
+  }
+
+  .decision-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+  }
+
+  .decision-btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    border-radius: 12px !important;
+    padding: 0 16px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* 8. Comparison Cards (Free Scan vs  Pack) */
+  .decision-offer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .decision-offer-card {
+    min-height: auto !important;
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    background: #090a0d !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .decision-offer-card h3 {
+    font-size: 21px !important;
+    line-height: 1.2 !important;
+    margin: 10px 0 14px !important;
+  }
+
+  .decision-offer-card ul {
+    gap: 8px !important;
+    margin: 0 0 18px !important;
+  }
+
+  .decision-offer-card li {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .decision-offer-card>a {
+    width: 100% !important;
+    min-height: 48px !important;
+    border-radius: 12px !important;
+    font-size: 14.5px !important;
+  }
+
+  /* 9. Report Previews & PDF Grids */
+  .decision-report-card {
+    padding: 16px 14px !important;
+    border-radius: 18px !important;
+    margin-top: 14px !important;
+  }
+
+  .decision-report-top {
+    padding: 10px 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .decision-report-body {
+    padding: 0 !important;
+  }
+
+  .pdf-caps-grid,
+  .pdf-security-grid,
+  .pdf-net-grid,
+  .pdf-steps-grid,
+  .pdf-why-split,
+  .pdf-refs-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .pdf-cap-pill {
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    gap: 10px !important;
+  }
+
+  .pdf-sec-card,
+  .pdf-step-card,
+  .pdf-net-card,
+  .pdf-ref-card {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .decision-trust-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+
+  /* 10. Interactive Workbench Section on Mobile */
+  .profound-workbench-section {
+    padding: 22px 14px !important;
+    margin: 16px auto !important;
+    border-radius: 18px !important;
+  }
+
+  .profound-nav-strip {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: flex !important;
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+    scrollbar-width: none !important;
+  }
+
+  .profound-nav-strip::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .profound-tab-btn {
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    min-height: 40px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .workbench-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .workbench-card {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .workbench-terminal {
+    max-height: 220px !important;
+    font-size: 11.5px !important;
+  }
+
+  /* 11. Floating Glass Dock: Sleek Apple Native App Feel */
+  .hh-floating-dock {
+    position: fixed !important;
+    bottom: max(12px, env(safe-area-inset-bottom, 12px)) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateZ(0) !important;
+    z-index: 9995 !important;
+    width: calc(100% - 24px) !important;
+    max-width: 380px !important;
+    height: 52px !important;
+    padding: 4px 6px !important;
+    border-radius: 999px !important;
+    background: rgba(9, 10, 13, 0.88) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(56, 189, 248, 0.15) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .hh-dock-item {
+    min-height: 42px !important;
+    padding: 6px 14px !important;
+    border-radius: 999px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #a1a1aa !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .hh-dock-item.primary {
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.25) !important;
+    font-weight: 800 !important;
+  }
+
+  /* 12. Footer Spacing: Ensure bottom dock doesn't obscure content */
+  .site-footer,
+  body footer {
+    padding: 36px 16px 96px !important;
+    text-align: center !important;
+  }
+
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================================================
+   🛡️ ULTIMATE CASCADE FORTRESS: ZERO-WHITE SCAN REPORT & PRO DISCIPLINE
+   ========================================================================== */
+
+/* 1. Share Button Fix: Desktop'ta gizle, mobilde düzgün yatay göster */
+.btn-share-report {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .btn-share-report {
+    display: inline-flex !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: #38bdf8 !important;
+    font-size: 14.5px !important;
+    font-weight: 750 !important;
+  }
+}
+
+/* 2. Zero-White Scan Report Tabs & Container */
+html body #result,
+body #result {
+  background: transparent !important;
+}
+
+html body .dash-view-tabs,
+body .dash-view-tabs {
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.5) !important;
+}
+
+html body .dash-view-btn,
+body .dash-view-btn {
+  color: #a1a1aa !important;
+  background: transparent !important;
+}
+
+html body .dash-view-btn:hover,
+body .dash-view-btn:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+html body .dash-view-btn.active,
+body .dash-view-btn.active {
+  background: #18181b !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+html body .dash-view-badge,
+body .dash-view-badge {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #a1a1aa !important;
+}
+
+html body .dash-view-btn.active .dash-view-badge,
+body .dash-view-btn.active .dash-view-badge {
+  background: rgba(56, 189, 248, 0.2) !important;
+  color: #38bdf8 !important;
+}
+
+/* 3. Master Single License Banner Koyu Obsidian Tema */
+html body .master-single-license-banner,
+body .master-single-license-banner {
+  background: linear-gradient(135deg, #090a0d 0%, #0c1424 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.7) !important;
+}
+
+html body .master-license-icon,
+body .master-license-icon {
+  background: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+}
+
+html body .master-license-title-wrap h3,
+body .master-license-title-wrap h3 {
+  color: #ffffff !important;
+}
+
+html body .master-license-title-wrap p,
+body .master-license-title-wrap p {
+  color: #a1a1aa !important;
+}
+
+html body .master-license-deliverables-grid,
+body .master-license-deliverables-grid {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html body .master-deliv-item,
+body .master-deliv-item {
+  color: #e2e8f0 !important;
+}
+
+html body .master-license-actions,
+body .master-license-actions {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html body .master-license-guarantee-note,
+body .master-license-guarantee-note {
+  color: #94a3b8 !important;
+}
+
+/* 4. Dark Pool Risk & Remediation Deck Koyu Zırhı */
+html body .dark-pool-risk-deck,
+body .dark-pool-risk-deck {
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+html body .dark-pool-head,
+body .dark-pool-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html body .dark-pool-badge,
+body .dark-pool-badge {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html body .dark-pool-title,
+body .dark-pool-title {
+  color: #ffffff !important;
+}
+
+html body .dark-pool-desc,
+body .dark-pool-desc {
+  color: #a1a1aa !important;
+}
+
+html body .dark-pool-card,
+body .dark-pool-card {
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+html body .dark-pool-card:hover,
+body .dark-pool-card:hover {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+html body .dark-pool-card-title,
+body .dark-pool-card-title {
+  color: #ffffff !important;
+}
+
+html body .dark-pool-badge-tag,
+body .dark-pool-badge-tag {
+  background: rgba(37, 99, 235, 0.18) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
+}
+
+html body .dark-pool-source-tag,
+body .dark-pool-source-tag {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #a1a1aa !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html body .dark-pool-section,
+body .dark-pool-section {
+  background: #0d0f14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+html body .dark-pool-section-label,
+body .dark-pool-section-label,
+html body .dark-pool-section-label-bar,
+body .dark-pool-section-label-bar {
+  color: #e2e8f0 !important;
+}
+
+html body .dark-pool-text,
+body .dark-pool-text {
+  color: #a1a1aa !important;
+}
+
+html body .dark-pool-roi-box,
+body .dark-pool-roi-box {
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+html body .dark-pool-roi-box .dark-pool-section-label,
+body .dark-pool-roi-box .dark-pool-section-label {
+  color: #34d399 !important;
+}
+
+html body .dark-pool-roi-text,
+body .dark-pool-roi-text {
+  color: #a7f3d0 !important;
+}
+
+html body .dark-pool-n8n-box,
+body .dark-pool-n8n-box {
+  background: rgba(168, 85, 247, 0.08) !important;
+  border-color: rgba(168, 85, 247, 0.25) !important;
+}
+
+html body .dark-pool-n8n-box .dark-pool-section-label,
+body .dark-pool-n8n-box .dark-pool-section-label {
+  color: #c084fc !important;
+}
+
+html body .dark-pool-n8n-text,
+body .dark-pool-n8n-text {
+  color: #e9d5ff !important;
+}
+
+html body .dark-pool-test-box,
+body .dark-pool-test-box {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+html body .dark-pool-test-box .dark-pool-section-label-bar,
+body .dark-pool-test-box .dark-pool-section-label-bar {
+  color: #60a5fa !important;
+}
+
+html body .dark-pool-code,
+body .dark-pool-code,
+html body .dark-pool-cmd,
+body .dark-pool-cmd {
+  background: #050507 !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html body .btn-copy-darkpool,
+body .btn-copy-darkpool {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+html body .btn-copy-darkpool:hover,
+body .btn-copy-darkpool:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 5. Kilitli Reçete Koyu Zırhı */
+html body .recipe-section.locked,
+body .recipe-section.locked {
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+html body .recipe-section.locked .recipe-overlay,
+body .recipe-section.locked .recipe-overlay {
+  background: linear-gradient(180deg, rgba(9, 10, 13, 0.75) 0%, rgba(9, 10, 13, 0.92) 50%, #000000 100%) !important;
+}
+
+html body .recipe-overlay-title,
+body .recipe-overlay-title {
+  color: #ffffff !important;
+}
+
+html body .recipe-overlay-sub,
+body .recipe-overlay-sub {
+  color: #a1a1aa !important;
+}
+
+/* 6. Enterprise Simulation, Benchmark & n8n Zero-White Fortress */
+html body .executive-simulation-deck,
+body .executive-simulation-deck,
+html body .competitive-benchmark-deck,
+body .competitive-benchmark-deck,
+html body .remediation-console-deck,
+body .remediation-console-deck,
+html body .n8n-dag-container,
+body .n8n-dag-container,
+html[data-theme="light"] body .executive-simulation-deck,
+html[data-theme="light"] body .competitive-benchmark-deck,
+html[data-theme="light"] body .remediation-console-deck,
+html[data-theme="light"] body .n8n-dag-container {
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+html body .simulation-card,
+body .simulation-card,
+html[data-theme="light"] body .simulation-card {
+  background: #0d0f14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html body .sim-query-box,
+body .sim-query-box,
+html[data-theme="light"] body .sim-query-box {
+  background: #050507 !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  color: #cbd5e1 !important;
+}
+
+html body .dag-node-card,
+body .dag-node-card,
+html[data-theme="light"] body .dag-node-card {
+  background: #0d0f14 !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  color: #ffffff !important;
+}
+
+html body .dag-inspector-panel,
+body .dag-inspector-panel,
+html[data-theme="light"] body .dag-inspector-panel {
+  background: #050507 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+html body .benchmark-track,
+body .benchmark-track,
+html[data-theme="light"] body .benchmark-track {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+

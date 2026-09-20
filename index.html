@@ -7,52 +7,20 @@
 <script>
   (function() {
     'use strict';
-    var COOKIE_NAME = 'htmlandhtml-theme';
-    function getCookie(name) {
-      var match = document.cookie.match(new RegExp('(?:^|; )' + 
-        name.replace(/([.$?*|{}()[\]\\/+^])/g, '\$1') + '=([^;]*)'));
-      return match ? decodeURIComponent(match[1]) : null;
-    }
-    function getInitialTheme() {
-      try {
-        var hh = localStorage.getItem('hh-theme');
-        if (hh === 'light' || hh === 'dark') return hh;
-        if (hh === 'system') return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      } catch (e) {}
-      var cookie = getCookie(COOKIE_NAME);
-      if (cookie) {
-        try {
-          var parsed = JSON.parse(cookie);
-          if (parsed.theme === 'system' || !parsed.theme) {
-            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          return parsed.theme;
-        } catch (e) {
-          if (cookie === 'light' || cookie === 'dark') return cookie;
-        }
-      }
-      try {
-        var ls = localStorage.getItem('htmlandhtml-theme-v2');
-        if (ls) {
-          var p = JSON.parse(ls);
-          if (p.theme === 'system' || !p.theme) {
-            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          return p.theme;
-        }
-      } catch (e) {}
-      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    var theme = getInitialTheme();
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    document.documentElement.classList.toggle('light', theme === 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem('hh-theme', 'dark');
+      localStorage.setItem('htmlandhtml-theme-v2', JSON.stringify({theme: 'dark', effective: 'dark'}));
+      document.cookie = 'htmlandhtml-theme=' + encodeURIComponent(JSON.stringify({theme: 'dark'})) + '; path=/; max-age=31536000; SameSite=Lax; Secure';
+    } catch(e) {}
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.dataset.theme = 'dark';
+    document.documentElement.style.colorScheme = 'dark';
   })();
 </script>
 <title>AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&amp;HTML</title>
-<meta name="description" content="Web sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün. Bulguyu kanıtlayın; gerekiyorsa $99 Fix Pack ile uygulanabilir düzeltme, test ve rollback planını alın.">
+<meta name="description" content="Web sitenizin AI aramalarında neden zayıf kaldığını ücretsiz görün. Bulguyu kanıtlayın; gerekiyorsa $99 Fix Pack ile geliştiricinize uygulanabilir düzeltme, test ve rollback planı verin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/">
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/">
@@ -71,15 +39,16 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-<link rel="stylesheet" href="/assets/css/validator.css?v=23">
-<link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026092004">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20260920_26">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_26">
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/tr/hakkimizda/">
-<script src="/assets/js/enterprise-theme-engine.js?v=2" defer></script>
+<script src="/assets/js/enterprise-theme-engine.js?v=20260920_26" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +66,7 @@
       "@id": "https://htmlandhtml.com/#organization",
       "name": "HTML&HTML",
       "url": "https://htmlandhtml.com/",
-      "logo": "https://htmlandhtml.com/assets/logo.png",
+      "logo": "https://htmlandhtml.com/assets/logo.png?v=hh7",
       "areaServed": ["TR", "US", "GB", "DE", "Global"],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q116503894"
@@ -151,18 +120,17 @@
 }
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
-<script src="/assets/js/theme.js?v=7"></script>
+<script src="/assets/js/theme.js?v=20260920_26"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
-<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001">
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_26">
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
@@ -186,7 +154,7 @@
 <div id="hhCyberDrawer" class="hh-cyber-drawer" aria-hidden="true">
   <div class="hh-drawer-head">
     <div class="brand">
-      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="124" height="22">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="124" height="22">
       <span class="hh-space-telemetry-led">● RADAR V4.1</span>
     </div>
     <button type="button" class="hh-drawer-close" id="hhDrawerClose" aria-label="Menüyü Kapat">
@@ -230,10 +198,12 @@
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
-<section class="hero decision-hero" id="scanner">
+<section class="hero decision-hero profound-constellation-wrap" id="scanner">
+  <canvas id="profoundConstellationCanvas" class="profound-constellation-canvas"></canvas>
+  <div class="profound-hero-content">
   <div class="kicker"><span></span><b data-i18n="kicker">YAPAY ZEKA ARAMA KARAR VE CİRO KORUMA SİSTEMİ</b></div>
   <h1 data-i18n="heroTitle">Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?</h1>
-  <p class="hero-answer" data-i18n="heroCopy">URL'nizi girin. Sitenizin bulunmasını, anlaşılmasını ve kaynak olarak değerlendirilmesini engelleyebilecek ölçülebilir web sitesi sorunlarını kanıtıyla görün.</p>
+  <p class="hero-answer" data-i18n="heroCopy">Müşterileriniz ChatGPT, Perplexity ve Siri'ye firmanızı sorduğunda yapay zeka neden rakibinizi öneriyor? 90 saniyede sitenizin önüne çekilen güven, dağıtım ve kod engellerini çıkarıyor; kaçan cironuzu durduracak hazır mühendislik kitini veriyoruz.</p>
 
   <div class="decision-hero-proof" aria-label="Ücretsiz tarama sınırları">
     <span>Ücretsiz teşhis</span><span>Gerçek URL / HTTP / HTML kanıtı</span><span>Kaynak kod erişimi yok</span>
@@ -282,10 +252,150 @@
     <span>KAYNAK OLABİLİRLİK</span><i></i>
     <span>DÖNÜŞÜM YOLU</span>
   </div>
+  </div>
 </section>
 
 <!-- CUSTOMER DECISION HOMEPAGE V2 -->
 <section class="decision-shell" id="customer-story" aria-label="HTML&HTML müşteri karar sistemi">
+
+  <!-- 00 PROFOUND AGENTIC WORKBENCH & VISUAL SUITE -->
+  <section class="profound-workbench-section" id="profound-architecture">
+    <div class="decision-section-no">00</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">YAPAY ZEKA ÇAĞI İÇİN ÜRETİLDİ · PROFOUND MİMARİSİ</span>
+      <h2>Sitenizin yapay zeka arama motorlarındaki tüm temas noktalarını tek bir platformdan yönetin.</h2>
+      <p>Müşterilerinizin yapay zekaya ne sorduğunu görün, 18 deterministik motorla teknik teşhis ajanlarını konumlandırın ve sonuçları tek ekrandan ölçün.</p>
+    </div>
+
+    <!-- PROFOUND 3-PANE WORKBENCH MOCKUP -->
+    <div class="profound-workbench-mockup" aria-label="Profound Model Agentic Workbench Preview">
+      <div class="workbench-window-bar">
+        <div class="window-dots">
+          <span class="window-dot dot-red"></span>
+          <span class="window-dot dot-yellow"></span>
+          <span class="window-dot dot-green"></span>
+        </div>
+        <div class="workbench-title-bar">
+          <span>HTML&amp;HTML Agentic Workspace</span>
+          <span class="badge-live">● SYSTEM ACTIVE</span>
+        </div>
+      </div>
+      <div class="workbench-body">
+        <!-- Left Sidebar -->
+        <div class="workbench-sidebar">
+          <div class="wb-workspace-header">
+            <span>⚡ HTML&amp;HTML OS</span>
+          </div>
+          <div class="wb-nav-group">
+            <div class="wb-nav-title">Çalışma Alanı</div>
+            <div class="wb-nav-item active">🤖 AI Marketer</div>
+            <div class="wb-nav-item">📊 Agent Analytics</div>
+            <div class="wb-nav-item">🎯 Context Manager</div>
+          </div>
+          <div class="wb-nav-group">
+            <div class="wb-nav-title">Ajanlar &amp; Teşhis</div>
+            <div class="wb-nav-item">⚙️ 18-Engine Suite</div>
+            <div class="wb-nav-item">🔍 FactCheck Engine</div>
+            <div class="wb-nav-item">📈 AI Benchmarking</div>
+          </div>
+        </div>
+
+        <!-- Center Chat Pane -->
+        <div class="workbench-chat">
+          <div class="wb-chat-user">
+            <strong>Müşteri İstemi:</strong><br>
+            "Web sitemiz için yapay zeka arama optimizasyonu (AEO/GEO) iniş sayfasını hazırla ve ChatGPT/Perplexity botlarına hazır hale getir."
+          </div>
+          <div class="wb-chat-agent">
+            <div class="wb-agent-step">✓ 18 Deterministik Motor Doğrulandı (0 Hata)</div>
+            <div class="wb-agent-step">✓ Schema.org @graph ve llms.txt v2 Üretildi</div>
+            <div class="wb-agent-step">✓ ColBERT MaxSim Semantik Skoru: 94/100</div>
+            <strong>Otonom Ajan Çıktısı:</strong> İniş sayfası üretildi, ilk paket AST bütçesine uyarlandı ve canlı önizlemeye aktarıldı.
+          </div>
+        </div>
+
+        <!-- Right Live Preview Pane -->
+        <div class="workbench-preview">
+          <div class="wb-preview-card">
+            <div class="wb-preview-banner">
+              <span>⚡ LIVE AGENT RENDERED PREVIEW</span>
+            </div>
+            <div class="wb-preview-content">
+              <h4>Yapay Zeka Destekli Yeni Nesil Performans</h4>
+              <p>LLM botları (ChatGPT, Claude, Perplexity) tarafından saniyeler içinde taranan ve doğrudan alıntılanan optimize edilmiş içerik.</p>
+              <div class="wb-preview-btn">Ajanı Devreye Al</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFOUND 3-COLUMN ARCHITECTURE -->
+    <div class="profound-three-columns">
+      <div class="profound-col">
+        <div class="col-num">01 / TRACK</div>
+        <h3>Müşterilerinizin AI'a Ne Sorduğunu Görün</h3>
+        <p>Arama motoru ajanlarının (ChatGPT, Claude, Gemini, Perplexity) sitenizi nasıl anladığını ve hangi sorgularda tavsiye ettiğini keşfedin.</p>
+      </div>
+      <div class="profound-col">
+        <div class="col-num">02 / DEPLOY</div>
+        <h3>Buna Göre Ajanlarınızı Konumlandırın</h3>
+        <p>Eksikleri kapatmak için gerekli teknik konfigürasyonları, llms.txt ve Schema.org mimarisini anında devreye alın.</p>
+      </div>
+      <div class="profound-col">
+        <div class="col-num">03 / MEASURE</div>
+        <h3>Sonuçları Tek Ekrandan Ölçün</h3>
+        <p>18 deterministik motor ve  Fix Pack ile tüm görünürlük metriklerini gerçek zamanlı takip edip ciro kaybını engelleyin.</p>
+      </div>
+    </div>
+
+    <!-- PROFOUND VISUAL BENCHMARK & ANALYTICS CARDS (GRAPHICS MATCHING TRYPROFOUND.COM) -->
+    <div class="profound-visual-grid">
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Yapay Zeka Kaynaklı Trafik Etkisini Kanıtlayın</h3>
+          <p>OpenAI ChatGPT, Meta LLaMA, Anthropic Claude ve Perplexity botlarının sitenizi ne sıklıkla ziyaret ettiğini ve arama trafiğini nasıl tetiklediğini çok kanallı zaman serisiyle izleyin.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/agent-analytics.png" alt="Yapay Zeka Bot Trafiği ve Ajan Analitiği" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/site-tarama/" class="profound-card-cta">Ajan Analitiğini İncele →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Sitenizi Rakiplerinizle Kıyaslayın</h3>
+          <p>Yapay zeka arama motorlarındaki performansınızı sektör ortalamasıyla kıyaslayın. 82. yüzdelik dilim hızı ve doğrudan alıntılanma oranlarıyla sektör liderliğini koruyun.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/benchmarking.png" alt="AI Arama Karşılaştırma Göstergesi (82nd Percentile)" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/site-tarama/" class="profound-card-cta">Kıyaslama Raporunu Gör →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Yapay Zeka İddialarının Doğruluğunu Teyit Edin</h3>
+          <p>ChatGPT ve Perplexity'nin markanız hakkında yanlış bilgi vermesini (hallucination) engelleyin. Deterministik FactCheck motoruyla her yapay zeka cevabını doğrulanmış web kanıtına bağlayın.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/factcheck.png" alt="AI İddia Doğrulama ve Halüsinasyon Tespiti (FactCheck)" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/site-tarama/" class="profound-card-cta">FactCheck Denetimini Başlat →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Yapay Zeka Alışveriş &amp; E-Ticaret Görünürlüğü</h3>
+          <p>ChatGPT Shopping ve yapay zeka ürün tavsiye botlarında ürünlerinizin fiyat, stok ve özellik bilgileriyle ilk sırada önerilmesini sağlayın.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/shopping.png" alt="ChatGPT Shopping ve AI E-Ticaret Entegrasyonu" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/fiyatlandirma/" class="profound-card-cta">E-Ticaret Paketini Gör →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- 01 KARAR VE DIAGNOZ (5 Saniyede Anlaşılma & 5 Temel Karar Sorusu) -->
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
@@ -299,7 +409,7 @@
       <article><b>01</b><h3>Müşteri</h3><p>5 saniyede ne sattığınız anlaşılıyor mu?</p><span>Teklif karmaşıksa müşteri karar veremez; yapay zeka sitenizi özetleyemez ve rakibe geçer.</span></article>
       <article><b>02</b><h3>Güven</h3><p>İddianızı destekleyen kanıt görünür mü?</p><span>W3C ve RFC standartlarında somut kanıt yoksa satın alma ertelenir, AI sizi kaynak gösteremez.</span></article>
       <article><b>03</b><h3>Dağıtım</h3><p>Google ve AI sistemleri sizi okuyabiliyor mu?</p><span>robots.txt ve llms.txt doğru değilse yapay zeka sitenizi tarayamaz; pazarın %40'ına yoksunuzdur.</span></article>
-      <article><b>04</b><h3>Referans</h3><p>Kararı destekleyen örnek çıktı var mı?</p><span>Soyut vaatler değil; public entity and structured-data evidence</span></article>
+      <article><b>04</b><h3>Referans</h3><p>Kararı destekleyen örnek çıktı var mı?</p><span>Soyut vaatler değil; doğrulanabilir Schema.org ve Wikidata konsensüsü kurumsal güven üretir.</span></article>
       <article><b>05</b><h3>Satış kanalı</h3><p>Teklif ve CTA doğru sırada mı?</p><span>Trafik boşluğa düşmemeli; 15 dakikada devreye alınacak net bir uygulama paketine bağlanmalıdır.</span></article>
     </div>
   </section>
@@ -320,7 +430,7 @@
         </div>
         <div class="pdf-card-capsule">
           <h3>🛡️ %100 Deterministik Kanıt</h3>
-          <p>Hiçbir veri tahmine dayanmaz. URL, HTTP durum kodu, HTML DOM kesiti ve measured HTML payload, semantic structure and source-readiness evidence</p>
+          <p>Hiçbir veri tahmine dayanmaz. URL, HTTP durum kodu, HTML DOM kesiti ve TCP/TLS AST bütçesi üzerinden doğrudan doğrulanabilir W3C ve IETF kanıtları üretilir.</p>
         </div>
         <div class="pdf-card-capsule">
           <h3>📦 Doğrudan Uygulanabilir Kod Paketi</h3>
@@ -356,7 +466,7 @@
       <div class="pdf-cap-pill"><span class="pdf-cap-num">01</span><div><span class="pdf-cap-text">robots.txt &amp; RFC 9309</span><span class="pdf-cap-desc">AI bot izinleri ve tarama bütçesi denetimi</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">02</span><div><span class="pdf-cap-text">llms.txt v2 Protokolü</span><span class="pdf-cap-desc">AI modelleri için optimize edilmiş içerik manifestosu</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">03</span><div><span class="pdf-cap-text">Schema.org JSON-LD @graph</span><span class="pdf-cap-desc">Wikidata ve Google Knowledge Graph varlık kilidi</span></div></div>
-      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">measured HTML payload, semantic structure and source-readiness evidence</span><span class="pdf-cap-desc">İlk ağ paketinde semantik varlık yükleme hızı</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">İlk Paket AST Bütçesi</span><span class="pdf-cap-desc">İlk ağ paketinde semantik varlık yükleme hızı</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">05</span><div><span class="pdf-cap-text">512-Token RAG Paragrafları</span><span class="pdf-cap-desc">LLM chunking ve ColBERT MaxSim uygunluğu</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">06</span><div><span class="pdf-cap-text">Tekil H1 ve Semantik DOM</span><span class="pdf-cap-desc">Doğru başlık hiyerarşisi ve landmark etiketleri</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">07</span><div><span class="pdf-cap-text">Canonical &amp; URL Hijyeni</span><span class="pdf-cap-desc">Çift indeksleme ve kopya içerik engelleme</span></div></div>
@@ -403,7 +513,7 @@
     <div class="pdf-security-grid">
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🛡️</div><div class="pdf-sec-title">SSRF Koruması</div><div class="pdf-sec-desc">Fail-closed IP filtresiyle kurumsal ağ güvenliği</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">📜</div><div class="pdf-sec-title">RFC 9309 Uyum</div><div class="pdf-sec-desc">IETF resmi standartlarında robots.txt yönetişimi</div></div>
-      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">measured HTML payload, semantic structure and source-readiness evidence</div><div class="pdf-sec-desc">İlk TCP paketinde en yüksek semantik varlık yoğunluğu</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">İlk Paket AST Sınırı</div><div class="pdf-sec-desc">İlk TCP paketinde en yüksek semantik varlık yoğunluğu</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">📐</div><div class="pdf-sec-title">ColBERT MaxSim</div><div class="pdf-sec-desc">Late-interaction vektör eşleşmesine uygun içerik</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🔄</div><div class="pdf-sec-title">Rollback Garantisi</div><div class="pdf-sec-desc">Tüm kod paketlerinde sıfır kesintili anında geri alma</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🔒</div><div class="pdf-sec-title">SHA-256 İmzası</div><div class="pdf-sec-desc">Kriptografik bütünlük ve değişmezlik doğrulaması</div></div>
@@ -444,7 +554,7 @@
         <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5 Saniyede Ticari Karar:</b> Bankacı netliğiyle teknik jargonu 'hangi engel ciromu düşürüyor?' kararına çevirir.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Kaçan Müşteriyi Kurtarma:</b> Yapay zekanın sizi es geçip rakibe yönlendirdiği kritik temas noktalarını kapatır.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Hazır Üretim Kodları:</b> Yazılımcınıza 'bunu araştır' demez; kopyala-yapıştır Nginx, JSON-LD ve robots.txt konfigürasyonu verir.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Güvencesi:</b> Her yol haritası sıfır kesintili geri alma planı içerir; sisteminiz asla kilitlenmez.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Güvencesi:</b> Her çözüm paketi sıfır kesintili geri alma planı içerir; sisteminiz asla kilitlenmez.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Sabit  Fiyat:</b> Danışmanlık faturası veya bitmeyen aylık abonelik yok. Çözüm tek seferlik satın alınır.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30 Gün Ücretsiz Re-Scan:</b> Düzeltmeler uygulandıktan sonra canlı yüzeyde tekrar taranarak kanıtlanır.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Sıfır Kod/Şifre Riski:</b> Kod deponuza veya sunucunuza erişim gerekmez; sadece herkese açık web taranır.</span></div>
@@ -645,7 +755,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="139" height="24">
+        <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="139" height="24">
       </a>
       <p data-i18n="footerTag">Teşhis ücretsizdir. Otomatik kod ve konfigürasyon paketi asıl üründür.</p>
 </div>
@@ -716,6 +826,7 @@
   </button>
 </nav>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh4" defer></script>
+<script src="/assets/js/profound-canvas.js?v=20260920_26" defer></script>
 </body>
 </html>

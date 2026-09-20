@@ -47,48 +47,16 @@ def build_homepages():
 <script>
   (function() {
     'use strict';
-    var COOKIE_NAME = 'htmlandhtml-theme';
-    function getCookie(name) {
-      var match = document.cookie.match(new RegExp('(?:^|; )' + 
-        name.replace(/([.$?*|{}()[\\]\\\\/+^])/g, '\\$1') + '=([^;]*)'));
-      return match ? decodeURIComponent(match[1]) : null;
-    }
-    function getInitialTheme() {
-      try {
-        var hh = localStorage.getItem('hh-theme');
-        if (hh === 'light' || hh === 'dark') return hh;
-        if (hh === 'system') return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      } catch (e) {}
-      var cookie = getCookie(COOKIE_NAME);
-      if (cookie) {
-        try {
-          var parsed = JSON.parse(cookie);
-          if (parsed.theme === 'system' || !parsed.theme) {
-            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          return parsed.theme;
-        } catch (e) {
-          if (cookie === 'light' || cookie === 'dark') return cookie;
-        }
-      }
-      try {
-        var ls = localStorage.getItem('htmlandhtml-theme-v2');
-        if (ls) {
-          var p = JSON.parse(ls);
-          if (p.theme === 'system' || !p.theme) {
-            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          return p.theme;
-        }
-      } catch (e) {}
-      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    var theme = getInitialTheme();
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    document.documentElement.classList.toggle('light', theme === 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem('hh-theme', 'dark');
+      localStorage.setItem('htmlandhtml-theme-v2', JSON.stringify({theme: 'dark', effective: 'dark'}));
+      document.cookie = 'htmlandhtml-theme=' + encodeURIComponent(JSON.stringify({theme: 'dark'})) + '; path=/; max-age=31536000; SameSite=Lax; Secure';
+    } catch(e) {}
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.dataset.theme = 'dark';
+    document.documentElement.style.colorScheme = 'dark';
   })();
 </script>
 <title>AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&amp;HTML</title>
@@ -111,15 +79,16 @@ def build_homepages():
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-<link rel="stylesheet" href="/assets/css/validator.css?v=23">
-<link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026092004">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20260920_26">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_26">
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/tr/hakkimizda/">
-<script src="/assets/js/enterprise-theme-engine.js?v=2" defer></script>
+<script src="/assets/js/enterprise-theme-engine.js?v=20260920_26" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -137,7 +106,7 @@ def build_homepages():
       "@id": "https://htmlandhtml.com/#organization",
       "name": "HTML&HTML",
       "url": "https://htmlandhtml.com/",
-      "logo": "https://htmlandhtml.com/assets/logo.png",
+      "logo": "https://htmlandhtml.com/assets/logo.png?v=hh7",
       "areaServed": ["TR", "US", "GB", "DE", "Global"],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q116503894"
@@ -191,17 +160,17 @@ def build_homepages():
 }
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
-<script src="/assets/js/theme.js?v=7"></script>
+<script src="/assets/js/theme.js?v=20260920_26"></script>
 <script src="/assets/js/ai-positioning.js?v=r10-20260910-2355&amp;quality=005" defer></script>
 <script src="/assets/js/r10-quality-hotfix.js?v=20260910-005" defer></script>
-<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+<link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/r10-report-ux.css?v=20260910-001"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_26">
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
@@ -225,7 +194,7 @@ def build_homepages():
 <div id="hhCyberDrawer" class="hh-cyber-drawer" aria-hidden="true">
   <div class="hh-drawer-head">
     <div class="brand">
-      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="124" height="22">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="124" height="22">
       <span class="hh-space-telemetry-led">● RADAR V4.1</span>
     </div>
     <button type="button" class="hh-drawer-close" id="hhDrawerClose" aria-label="Menüyü Kapat">
@@ -269,7 +238,9 @@ def build_homepages():
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
-<section class="hero decision-hero" id="scanner">
+<section class="hero decision-hero profound-constellation-wrap" id="scanner">
+  <canvas id="profoundConstellationCanvas" class="profound-constellation-canvas"></canvas>
+  <div class="profound-hero-content">
   <div class="kicker"><span></span><b data-i18n="kicker">YAPAY ZEKA ARAMA KARAR VE CİRO KORUMA SİSTEMİ</b></div>
   <h1 data-i18n="heroTitle">Web Siteniz Yapay Zeka Aramalarında Neden Görünmüyor?</h1>
   <p class="hero-answer" data-i18n="heroCopy">Müşterileriniz ChatGPT, Perplexity ve Siri'ye firmanızı sorduğunda yapay zeka neden rakibinizi öneriyor? 90 saniyede sitenizin önüne çekilen güven, dağıtım ve kod engellerini çıkarıyor; kaçan cironuzu durduracak hazır mühendislik kitini veriyoruz.</p>
@@ -321,10 +292,150 @@ def build_homepages():
     <span>KAYNAK OLABİLİRLİK</span><i></i>
     <span>DÖNÜŞÜM YOLU</span>
   </div>
+  </div>
 </section>
 
 <!-- CUSTOMER DECISION HOMEPAGE V2 -->
 <section class="decision-shell" id="customer-story" aria-label="HTML&HTML müşteri karar sistemi">
+
+  <!-- 00 PROFOUND AGENTIC WORKBENCH & VISUAL SUITE -->
+  <section class="profound-workbench-section" id="profound-architecture">
+    <div class="decision-section-no">00</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">YAPAY ZEKA ÇAĞI İÇİN ÜRETİLDİ · PROFOUND MİMARİSİ</span>
+      <h2>Sitenizin yapay zeka arama motorlarındaki tüm temas noktalarını tek bir platformdan yönetin.</h2>
+      <p>Müşterilerinizin yapay zekaya ne sorduğunu görün, 18 deterministik motorla teknik teşhis ajanlarını konumlandırın ve sonuçları tek ekrandan ölçün.</p>
+    </div>
+
+    <!-- PROFOUND 3-PANE WORKBENCH MOCKUP -->
+    <div class="profound-workbench-mockup" aria-label="Profound Model Agentic Workbench Preview">
+      <div class="workbench-window-bar">
+        <div class="window-dots">
+          <span class="window-dot dot-red"></span>
+          <span class="window-dot dot-yellow"></span>
+          <span class="window-dot dot-green"></span>
+        </div>
+        <div class="workbench-title-bar">
+          <span>HTML&amp;HTML Agentic Workspace</span>
+          <span class="badge-live">● SYSTEM ACTIVE</span>
+        </div>
+      </div>
+      <div class="workbench-body">
+        <!-- Left Sidebar -->
+        <div class="workbench-sidebar">
+          <div class="wb-workspace-header">
+            <span>⚡ HTML&amp;HTML OS</span>
+          </div>
+          <div class="wb-nav-group">
+            <div class="wb-nav-title">Çalışma Alanı</div>
+            <div class="wb-nav-item active">🤖 AI Marketer</div>
+            <div class="wb-nav-item">📊 Agent Analytics</div>
+            <div class="wb-nav-item">🎯 Context Manager</div>
+          </div>
+          <div class="wb-nav-group">
+            <div class="wb-nav-title">Ajanlar &amp; Teşhis</div>
+            <div class="wb-nav-item">⚙️ 18-Engine Suite</div>
+            <div class="wb-nav-item">🔍 FactCheck Engine</div>
+            <div class="wb-nav-item">📈 AI Benchmarking</div>
+          </div>
+        </div>
+
+        <!-- Center Chat Pane -->
+        <div class="workbench-chat">
+          <div class="wb-chat-user">
+            <strong>Müşteri İstemi:</strong><br>
+            "Web sitemiz için yapay zeka arama optimizasyonu (AEO/GEO) iniş sayfasını hazırla ve ChatGPT/Perplexity botlarına hazır hale getir."
+          </div>
+          <div class="wb-chat-agent">
+            <div class="wb-agent-step">✓ 18 Deterministik Motor Doğrulandı (0 Hata)</div>
+            <div class="wb-agent-step">✓ Schema.org @graph ve llms.txt v2 Üretildi</div>
+            <div class="wb-agent-step">✓ ColBERT MaxSim Semantik Skoru: 94/100</div>
+            <strong>Otonom Ajan Çıktısı:</strong> İniş sayfası üretildi, ilk paket AST bütçesine uyarlandı ve canlı önizlemeye aktarıldı.
+          </div>
+        </div>
+
+        <!-- Right Live Preview Pane -->
+        <div class="workbench-preview">
+          <div class="wb-preview-card">
+            <div class="wb-preview-banner">
+              <span>⚡ LIVE AGENT RENDERED PREVIEW</span>
+            </div>
+            <div class="wb-preview-content">
+              <h4>Yapay Zeka Destekli Yeni Nesil Performans</h4>
+              <p>LLM botları (ChatGPT, Claude, Perplexity) tarafından saniyeler içinde taranan ve doğrudan alıntılanan optimize edilmiş içerik.</p>
+              <div class="wb-preview-btn">Ajanı Devreye Al</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFOUND 3-COLUMN ARCHITECTURE -->
+    <div class="profound-three-columns">
+      <div class="profound-col">
+        <div class="col-num">01 / TRACK</div>
+        <h3>Müşterilerinizin AI'a Ne Sorduğunu Görün</h3>
+        <p>Arama motoru ajanlarının (ChatGPT, Claude, Gemini, Perplexity) sitenizi nasıl anladığını ve hangi sorgularda tavsiye ettiğini keşfedin.</p>
+      </div>
+      <div class="profound-col">
+        <div class="col-num">02 / DEPLOY</div>
+        <h3>Buna Göre Ajanlarınızı Konumlandırın</h3>
+        <p>Eksikleri kapatmak için gerekli teknik konfigürasyonları, llms.txt ve Schema.org mimarisini anında devreye alın.</p>
+      </div>
+      <div class="profound-col">
+        <div class="col-num">03 / MEASURE</div>
+        <h3>Sonuçları Tek Ekrandan Ölçün</h3>
+        <p>18 deterministik motor ve  Fix Pack ile tüm görünürlük metriklerini gerçek zamanlı takip edip ciro kaybını engelleyin.</p>
+      </div>
+    </div>
+
+    <!-- PROFOUND VISUAL BENCHMARK & ANALYTICS CARDS (GRAPHICS MATCHING TRYPROFOUND.COM) -->
+    <div class="profound-visual-grid">
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Yapay Zeka Kaynaklı Trafik Etkisini Kanıtlayın</h3>
+          <p>OpenAI ChatGPT, Meta LLaMA, Anthropic Claude ve Perplexity botlarının sitenizi ne sıklıkla ziyaret ettiğini ve arama trafiğini nasıl tetiklediğini çok kanallı zaman serisiyle izleyin.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/agent-analytics.png" alt="Yapay Zeka Bot Trafiği ve Ajan Analitiği" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/site-tarama/" class="profound-card-cta">Ajan Analitiğini İncele →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Sitenizi Rakiplerinizle Kıyaslayın</h3>
+          <p>Yapay zeka arama motorlarındaki performansınızı sektör ortalamasıyla kıyaslayın. 82. yüzdelik dilim hızı ve doğrudan alıntılanma oranlarıyla sektör liderliğini koruyun.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/benchmarking.png" alt="AI Arama Karşılaştırma Göstergesi (82nd Percentile)" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/site-tarama/" class="profound-card-cta">Kıyaslama Raporunu Gör →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Yapay Zeka İddialarının Doğruluğunu Teyit Edin</h3>
+          <p>ChatGPT ve Perplexity'nin markanız hakkında yanlış bilgi vermesini (hallucination) engelleyin. Deterministik FactCheck motoruyla her yapay zeka cevabını doğrulanmış web kanıtına bağlayın.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/factcheck.png" alt="AI İddia Doğrulama ve Halüsinasyon Tespiti (FactCheck)" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/site-tarama/" class="profound-card-cta">FactCheck Denetimini Başlat →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Yapay Zeka Alışveriş &amp; E-Ticaret Görünürlüğü</h3>
+          <p>ChatGPT Shopping ve yapay zeka ürün tavsiye botlarında ürünlerinizin fiyat, stok ve özellik bilgileriyle ilk sırada önerilmesini sağlayın.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/shopping.png" alt="ChatGPT Shopping ve AI E-Ticaret Entegrasyonu" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/tr/fiyatlandirma/" class="profound-card-cta">E-Ticaret Paketini Gör →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- 01 KARAR VE DIAGNOZ (5 Saniyede Anlaşılma & 5 Temel Karar Sorusu) -->
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
@@ -359,7 +470,7 @@ def build_homepages():
         </div>
         <div class="pdf-card-capsule">
           <h3>🛡️ %100 Deterministik Kanıt</h3>
-          <p>Hiçbir veri tahmine dayanmaz. URL, HTTP durum kodu, HTML DOM kesiti ve 14KB TCP/TLS AST bütçesi üzerinden doğrudan doğrulanabilir W3C ve IETF kanıtları üretilir.</p>
+          <p>Hiçbir veri tahmine dayanmaz. URL, HTTP durum kodu, HTML DOM kesiti ve TCP/TLS AST bütçesi üzerinden doğrudan doğrulanabilir W3C ve IETF kanıtları üretilir.</p>
         </div>
         <div class="pdf-card-capsule">
           <h3>📦 Doğrudan Uygulanabilir Kod Paketi</h3>
@@ -395,7 +506,7 @@ def build_homepages():
       <div class="pdf-cap-pill"><span class="pdf-cap-num">01</span><div><span class="pdf-cap-text">robots.txt &amp; RFC 9309</span><span class="pdf-cap-desc">AI bot izinleri ve tarama bütçesi denetimi</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">02</span><div><span class="pdf-cap-text">llms.txt v2 Protokolü</span><span class="pdf-cap-desc">AI modelleri için optimize edilmiş içerik manifestosu</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">03</span><div><span class="pdf-cap-text">Schema.org JSON-LD @graph</span><span class="pdf-cap-desc">Wikidata ve Google Knowledge Graph varlık kilidi</span></div></div>
-      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">14KB TCP/TLS AST Bütçesi</span><span class="pdf-cap-desc">İlk ağ paketinde semantik varlık yükleme hızı</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">İlk Paket AST Bütçesi</span><span class="pdf-cap-desc">İlk ağ paketinde semantik varlık yükleme hızı</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">05</span><div><span class="pdf-cap-text">512-Token RAG Paragrafları</span><span class="pdf-cap-desc">LLM chunking ve ColBERT MaxSim uygunluğu</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">06</span><div><span class="pdf-cap-text">Tekil H1 ve Semantik DOM</span><span class="pdf-cap-desc">Doğru başlık hiyerarşisi ve landmark etiketleri</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">07</span><div><span class="pdf-cap-text">Canonical &amp; URL Hijyeni</span><span class="pdf-cap-desc">Çift indeksleme ve kopya içerik engelleme</span></div></div>
@@ -442,7 +553,7 @@ def build_homepages():
     <div class="pdf-security-grid">
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🛡️</div><div class="pdf-sec-title">SSRF Koruması</div><div class="pdf-sec-desc">Fail-closed IP filtresiyle kurumsal ağ güvenliği</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">📜</div><div class="pdf-sec-title">RFC 9309 Uyum</div><div class="pdf-sec-desc">IETF resmi standartlarında robots.txt yönetişimi</div></div>
-      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">14KB AST Sınırı</div><div class="pdf-sec-desc">İlk TCP paketinde en yüksek semantik varlık yoğunluğu</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">İlk Paket AST Sınırı</div><div class="pdf-sec-desc">İlk TCP paketinde en yüksek semantik varlık yoğunluğu</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">📐</div><div class="pdf-sec-title">ColBERT MaxSim</div><div class="pdf-sec-desc">Late-interaction vektör eşleşmesine uygun içerik</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🔄</div><div class="pdf-sec-title">Rollback Garantisi</div><div class="pdf-sec-desc">Tüm kod paketlerinde sıfır kesintili anında geri alma</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🔒</div><div class="pdf-sec-title">SHA-256 İmzası</div><div class="pdf-sec-desc">Kriptografik bütünlük ve değişmezlik doğrulaması</div></div>
@@ -483,7 +594,7 @@ def build_homepages():
         <div class="pdf-why-item"><span class="pdf-why-num">1</span><span><b>5 Saniyede Ticari Karar:</b> Bankacı netliğiyle teknik jargonu 'hangi engel ciromu düşürüyor?' kararına çevirir.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">2</span><span><b>Kaçan Müşteriyi Kurtarma:</b> Yapay zekanın sizi es geçip rakibe yönlendirdiği kritik temas noktalarını kapatır.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">3</span><span><b>Hazır Üretim Kodları:</b> Yazılımcınıza 'bunu araştır' demez; kopyala-yapıştır Nginx, JSON-LD ve robots.txt konfigürasyonu verir.</span></div>
-        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Güvencesi:</b> Her reçete sıfır kesintili geri alma planı içerir; sisteminiz asla kilitlenmez.</span></div>
+        <div class="pdf-why-item"><span class="pdf-why-num">4</span><span><b>Rollback Güvencesi:</b> Her çözüm paketi sıfır kesintili geri alma planı içerir; sisteminiz asla kilitlenmez.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">5</span><span><b>Sabit  Fiyat:</b> Danışmanlık faturası veya bitmeyen aylık abonelik yok. Çözüm tek seferlik satın alınır.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">6</span><span><b>30 Gün Ücretsiz Re-Scan:</b> Düzeltmeler uygulandıktan sonra canlı yüzeyde tekrar taranarak kanıtlanır.</span></div>
         <div class="pdf-why-item"><span class="pdf-why-num">7</span><span><b>Sıfır Kod/Şifre Riski:</b> Kod deponuza veya sunucunuza erişim gerekmez; sadece herkese açık web taranır.</span></div>
@@ -684,7 +795,7 @@ def build_homepages():
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="139" height="24">
+        <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="139" height="24">
       </a>
       <p data-i18n="footerTag">Teşhis ücretsizdir. Otomatik kod ve konfigürasyon paketi asıl üründür.</p>
 </div>
@@ -755,7 +866,8 @@ def build_homepages():
   </button>
 </nav>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh4" defer></script>
+<script src="/assets/js/profound-canvas.js?v=20260920_26" defer></script>
 </body>
 </html>
 '''
@@ -768,51 +880,19 @@ def build_homepages():
 <script>
   (function() {
     'use strict';
-    var COOKIE_NAME = 'htmlandhtml-theme';
-    function getCookie(name) {
-      var match = document.cookie.match(new RegExp('(?:^|; )' + 
-        name.replace(/([.$?*|{}()[\\]\\\\/+^])/g, '\\$1') + '=([^;]*)'));
-      return match ? decodeURIComponent(match[1]) : null;
-    }
-    function getInitialTheme() {
-      try {
-        var hh = localStorage.getItem('hh-theme');
-        if (hh === 'light' || hh === 'dark') return hh;
-        if (hh === 'system') return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      } catch (e) {}
-      var cookie = getCookie(COOKIE_NAME);
-      if (cookie) {
-        try {
-          var parsed = JSON.parse(cookie);
-          if (parsed.theme === 'system' || !parsed.theme) {
-            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          return parsed.theme;
-        } catch (e) {
-          if (cookie === 'light' || cookie === 'dark') return cookie;
-        }
-      }
-      try {
-        var ls = localStorage.getItem('htmlandhtml-theme-v2');
-        if (ls) {
-          var p = JSON.parse(ls);
-          if (p.theme === 'system' || !p.theme) {
-            return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          return p.theme;
-        }
-      } catch (e) {}
-      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    var theme = getInitialTheme();
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    document.documentElement.classList.toggle('light', theme === 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem('hh-theme', 'dark');
+      localStorage.setItem('htmlandhtml-theme-v2', JSON.stringify({theme: 'dark', effective: 'dark'}));
+      document.cookie = 'htmlandhtml-theme=' + encodeURIComponent(JSON.stringify({theme: 'dark'})) + '; path=/; max-age=31536000; SameSite=Lax; Secure';
+    } catch(e) {}
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.dataset.theme = 'dark';
+    document.documentElement.style.colorScheme = 'dark';
   })();
 </script>
-<title>AI SEO Audit &amp; ChatGPT Visibility Test | HTML&amp;HTML</title>
+<title>AI Search Technical Diagnostic &amp; Fix Platform | HTML&amp;HTML</title>
 <meta name="description" content="Audit your website for ChatGPT, Gemini, Claude and Perplexity visibility. Get evidence from 18 engines and 105 checks; unlock the implementation pack for $99.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://htmlandhtml.com/en/">
@@ -832,15 +912,16 @@ def build_homepages():
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-<link rel="stylesheet" href="/assets/css/validator.css?v=23">
-<link rel="stylesheet" href="/assets/css/theme.css?v=9">
-<link rel="stylesheet" href="/assets/css/premium-experience.css?v=2026092004">
+<link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_26">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=20260920_26">
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
 <link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/profound-experience.css?v=20260920_26">
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/en/about/">
-<script src="/assets/js/enterprise-theme-engine.js?v=2" defer></script>
+<script src="/assets/js/enterprise-theme-engine.js?v=20260920_26" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -858,7 +939,7 @@ def build_homepages():
       "@id": "https://htmlandhtml.com/#organization",
       "name": "HTML&HTML",
       "url": "https://htmlandhtml.com/en/",
-      "logo": "https://htmlandhtml.com/assets/logo.png",
+      "logo": "https://htmlandhtml.com/assets/logo.png?v=hh7",
       "areaServed": ["TR", "US", "GB", "DE", "Global"],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q116503894"
@@ -912,16 +993,15 @@ def build_homepages():
 }
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
-<script src="/assets/js/theme.js?v=7"></script>
+<script src="/assets/js/theme.js?v=20260920_26"></script>
 <script src="/assets/js/ai-positioning.js?v=1" defer></script>
-<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=20260920_26">
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="/en/website-scanner/">Free Audit</a>
@@ -945,7 +1025,7 @@ def build_homepages():
 <div id="hhCyberDrawer" class="hh-cyber-drawer" aria-hidden="true">
   <div class="hh-drawer-head">
     <div class="brand">
-      <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="124" height="22">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="124" height="22">
       <span class="hh-space-telemetry-led">● RADAR V4.1</span>
     </div>
     <button type="button" class="hh-drawer-close" id="hhDrawerClose" aria-label="Close Menu">
@@ -989,7 +1069,9 @@ def build_homepages():
 
 <main data-commercial-intent="static">
 <!-- 01 HERO -->
-<section class="hero decision-hero" id="scanner">
+<section class="hero decision-hero profound-constellation-wrap" id="scanner">
+  <canvas id="profoundConstellationCanvas" class="profound-constellation-canvas"></canvas>
+  <div class="profound-hero-content">
   <div class="kicker"><span></span><b data-i18n="kicker">AI SEARCH DECISION &amp; REVENUE PROTECTION SYSTEM</b></div>
   <h1 data-i18n="heroTitle">Why Is Your Website Missing From AI Search?</h1>
   <p class="hero-answer" data-i18n="heroCopy">When buyers ask ChatGPT, Perplexity or Siri for trusted vendors in your industry, why does AI recommend your competitor? In 90 seconds, we pinpoint the exact trust and distribution barriers that choke your pipeline—and deliver the drop-in engineering kit to recover lost revenue.</p>
@@ -1038,10 +1120,150 @@ def build_homepages():
   <div class="signals decision-signals">
     <span>DISCOVERABILITY</span><i></i><span>UNDERSTANDING</span><i></i><span>SOURCE ELIGIBILITY</span><i></i><span>CONVERSION PATH</span>
   </div>
+  </div>
 </section>
 
 <!-- CUSTOMER DECISION HOMEPAGE V2 -->
 <section class="decision-shell" id="customer-story" aria-label="HTML&HTML customer decision system">
+
+  <!-- 00 PROFOUND AGENTIC WORKBENCH & VISUAL SUITE -->
+  <section class="profound-workbench-section" id="profound-architecture">
+    <div class="decision-section-no">00</div>
+    <div class="decision-heading">
+      <span class="decision-kicker">BUILT FOR THE AGENTIC ERA · PROFOUND ARCHITECTURE</span>
+      <h2>Manage every touchpoint where AI answers customers across search platforms.</h2>
+      <p>Know what people ask AI about your category, deploy technical governance agents across 18 deterministic engines, and measure citation impact on one single screen.</p>
+    </div>
+
+    <!-- PROFOUND 3-PANE WORKBENCH MOCKUP -->
+    <div class="profound-workbench-mockup" aria-label="Profound Model Agentic Workbench Preview">
+      <div class="workbench-window-bar">
+        <div class="window-dots">
+          <span class="window-dot dot-red"></span>
+          <span class="window-dot dot-yellow"></span>
+          <span class="window-dot dot-green"></span>
+        </div>
+        <div class="workbench-title-bar">
+          <span>HTML&amp;HTML Agentic Workspace</span>
+          <span class="badge-live">● SYSTEM ACTIVE</span>
+        </div>
+      </div>
+      <div class="workbench-body">
+        <!-- Left Sidebar -->
+        <div class="workbench-sidebar">
+          <div class="wb-workspace-header">
+            <span>⚡ HTML&amp;HTML OS</span>
+          </div>
+          <div class="wb-nav-group">
+            <div class="wb-nav-title">Workspace</div>
+            <div class="wb-nav-item active">🤖 AI Marketer</div>
+            <div class="wb-nav-item">📊 Agent Analytics</div>
+            <div class="wb-nav-item">🎯 Context Manager</div>
+          </div>
+          <div class="wb-nav-group">
+            <div class="wb-nav-title">Agents &amp; Diagnostics</div>
+            <div class="wb-nav-item">⚙️ 18-Engine Suite</div>
+            <div class="wb-nav-item">🔍 FactCheck Engine</div>
+            <div class="wb-nav-item">📈 AI Benchmarking</div>
+          </div>
+        </div>
+
+        <!-- Center Chat Pane -->
+        <div class="workbench-chat">
+          <div class="wb-chat-user">
+            <strong>User Prompt:</strong><br>
+            "Create an AI search landing page for our category and optimize it for ChatGPT, Claude, and Perplexity crawlers."
+          </div>
+          <div class="wb-chat-agent">
+            <div class="wb-agent-step">✓ 18 Deterministic Engines Validated (0 Defect)</div>
+            <div class="wb-agent-step">✓ Schema.org @graph &amp; llms.txt v2 Generated</div>
+            <div class="wb-agent-step">✓ ColBERT MaxSim Semantic Score: 94/100</div>
+            <strong>Autonomous Agent Output:</strong> Landing page synthesized, formatted within initial packet AST budget, and piped to live preview.
+          </div>
+        </div>
+
+        <!-- Right Live Preview Pane -->
+        <div class="workbench-preview">
+          <div class="wb-preview-card">
+            <div class="wb-preview-banner">
+              <span>⚡ LIVE AGENT RENDERED PREVIEW</span>
+            </div>
+            <div class="wb-preview-content">
+              <h4>Next-Gen AI Search Experience</h4>
+              <p>Fully crawlable and directly citeable landing page architecture optimized for ChatGPT, Claude, and Perplexity.</p>
+              <div class="wb-preview-btn">Deploy Agent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFOUND 3-COLUMN ARCHITECTURE -->
+    <div class="profound-three-columns">
+      <div class="profound-col">
+        <div class="col-num">01 / TRACK</div>
+        <h3>Know What People Ask AI</h3>
+        <p>Discover how answer engines (ChatGPT, Claude, Gemini, Perplexity) synthesize your domain and where competitors capture your branded demand.</p>
+      </div>
+      <div class="profound-col">
+        <div class="col-num">02 / DEPLOY</div>
+        <h3>Deploy Your AI Defense Agents</h3>
+        <p>Instantly deploy technical fixes, llms.txt v2 endpoints, and authoritative Schema.org knowledge graphs to win AI citations.</p>
+      </div>
+      <div class="profound-col">
+        <div class="col-num">03 / MEASURE</div>
+        <h3>Measure Results from One Screen</h3>
+        <p>Quantify visibility, resolve crawl errors with our  Fix Pack, and protect your commercial revenue from dark-pool AI erosion.</p>
+      </div>
+    </div>
+
+    <!-- PROFOUND VISUAL BENCHMARK & ANALYTICS CARDS (GRAPHICS MATCHING TRYPROFOUND.COM) -->
+    <div class="profound-visual-grid">
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Prove Impact on AI-Driven Traffic</h3>
+          <p>Track bot visit trends from OpenAI ChatGPT, Meta LLaMA, Anthropic Claude, and Perplexity. Correlate crawler frequency directly with citation growth.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/agent-analytics.png" alt="AI Bot Traffic and Agent Analytics" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/en/website-scanner/" class="profound-card-cta">See Agent Analytics →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Benchmark Your Site Against Peers</h3>
+          <p>Compare answer engine visibility across your industry. Maintain top 82nd percentile performance and win direct brand citations over rivals.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/benchmarking.png" alt="AI Search Benchmarking Gauge (82nd Percentile)" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/en/website-scanner/" class="profound-card-cta">See Benchmarking →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>Verify the Accuracy of AI Claims</h3>
+          <p>Stop AI hallucinations and misstatements about your business. Connect LLM responses directly to verifiable W3C citations with deterministic FactCheck.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/factcheck.png" alt="AI Claim Verification and Hallucination Prevention" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/en/website-scanner/" class="profound-card-cta">See FactCheck →</a>
+      </div>
+
+      <div class="profound-visual-card">
+        <div class="profound-card-info">
+          <h3>AI Shopping &amp; E-Commerce Visibility</h3>
+          <p>Ensure your products rank first in ChatGPT Shopping and conversational shopping agents with rich structured data and direct merchant feeds.</p>
+        </div>
+        <div class="profound-card-img-wrap">
+          <img src="/assets/img/profound/shopping.png" alt="ChatGPT Shopping and AI E-Commerce Visibility" loading="lazy" width="600" height="240">
+        </div>
+        <a href="/en/pricing/" class="profound-card-cta">See E-Commerce Pack →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- 01 EXECUTIVE DIAGNOSIS (Understood in 5 Seconds & 5 Decision Questions) -->
   <section class="decision-section decision-diagnosis" id="commercial-diagnosis">
@@ -1076,7 +1298,7 @@ def build_homepages():
         </div>
         <div class="pdf-card-capsule">
           <h3>🛡️ 100% Deterministic Evidence</h3>
-          <p>Zero hallucinations or random scores. Concrete evidence derived from real URLs, HTTP response headers, DOM hierarchy and 14KB TCP/TLS AST budgets under W3C and IETF RFC standards.</p>
+          <p>Zero hallucinations or random scores. Concrete evidence derived from real URLs, HTTP response headers, DOM hierarchy and TCP/TLS AST budgets under W3C and IETF RFC standards.</p>
         </div>
         <div class="pdf-card-capsule">
           <h3>📦 Production-Ready Engineering Code</h3>
@@ -1112,7 +1334,7 @@ def build_homepages():
       <div class="pdf-cap-pill"><span class="pdf-cap-num">01</span><div><span class="pdf-cap-text">robots.txt &amp; RFC 9309</span><span class="pdf-cap-desc">AI crawler governance and crawl budget defense</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">02</span><div><span class="pdf-cap-text">llms.txt v2 Protocol</span><span class="pdf-cap-desc">Machine-readable content manifesto for LLMs</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">03</span><div><span class="pdf-cap-text">Schema.org JSON-LD @graph</span><span class="pdf-cap-desc">Wikidata &amp; Google Knowledge Graph MID anchors</span></div></div>
-      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">14KB TCP/TLS AST Budget</span><span class="pdf-cap-desc">High-priority semantic entity delivery in initial packet</span></div></div>
+      <div class="pdf-cap-pill"><span class="pdf-cap-num">04</span><div><span class="pdf-cap-text">Initial Packet AST Budget</span><span class="pdf-cap-desc">High-priority semantic entity delivery in initial packet</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">05</span><div><span class="pdf-cap-text">512-Token RAG Paragraphs</span><span class="pdf-cap-desc">LLM chunking and ColBERT MaxSim alignment</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">06</span><div><span class="pdf-cap-text">Single H1 &amp; Semantic DOM</span><span class="pdf-cap-desc">Strict heading hierarchy and landmark tags</span></div></div>
       <div class="pdf-cap-pill"><span class="pdf-cap-num">07</span><div><span class="pdf-cap-text">Canonical &amp; URL Hygiene</span><span class="pdf-cap-desc">Eliminate duplicate indexing and redirect loops</span></div></div>
@@ -1159,7 +1381,7 @@ def build_homepages():
     <div class="pdf-security-grid">
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🛡️</div><div class="pdf-sec-title">SSRF Fortress</div><div class="pdf-sec-desc">Fail-closed IP filtering protecting internal perimeter</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">📜</div><div class="pdf-sec-title">RFC 9309 Strict</div><div class="pdf-sec-desc">IETF compliant robots.txt governance</div></div>
-      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">14KB AST Ceiling</div><div class="pdf-sec-desc">Maximum semantic density in initial TCP packet</div></div>
+      <div class="pdf-sec-card"><div class="pdf-sec-icon">⚡</div><div class="pdf-sec-title">Initial Packet AST Ceiling</div><div class="pdf-sec-desc">Maximum semantic density in initial TCP packet</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">📐</div><div class="pdf-sec-title">ColBERT MaxSim</div><div class="pdf-sec-desc">Late-interaction token similarity optimization</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🔄</div><div class="pdf-sec-title">Rollback Guarantee</div><div class="pdf-sec-desc">Zero-downtime automated rollback scripts for every fix</div></div>
       <div class="pdf-sec-card"><div class="pdf-sec-icon">🔒</div><div class="pdf-sec-title">SHA-256 Integrity</div><div class="pdf-sec-desc">Cryptographic signature ensuring immutable delivery</div></div>
@@ -1381,13 +1603,9 @@ def build_homepages():
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="139" height="24">
+        <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="139" height="24">
       </a>
       <p data-i18n="footerTag">Evidence is free. Automated code generator is the product.</p>
-      <div class="preferred-source-wrap" style="margin-top:0.75rem;">
-        <div google-add-preferred-source-btn data-theme="dark" data-lang="en"></div>
-        <noscript><a href="https://www.google.com/preferences/source?q=htmlandhtml.com" target="_blank" rel="noreferrer" style="font-size:0.75rem;color:var(--text-muted, #94a3b8);">Add as Preferred Source on Google</a></noscript>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Platform</h4>
@@ -1456,7 +1674,8 @@ def build_homepages():
   </button>
 </nav>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh4" defer></script>
+<script src="/assets/js/profound-canvas.js?v=20260920_26" defer></script>
 </body>
 </html>'''
 

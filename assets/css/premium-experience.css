@@ -315,8 +315,8 @@ html[data-theme="dark"] .pillar-amber .pillar-score {
 
 /* Light Mode 4 Pillars */
 html[data-theme="light"] .pillar-card {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: #090a0d !important;
+  background-color: #090a0d !important;
   border: 1px solid #e2e8f0 !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
   color: #0f172a !important;
@@ -500,8 +500,8 @@ html[data-theme="light"] .pillar-amber .pillar-score {
 
 /* Light Mode 18-Engine Score Items */
 html[data-theme="light"] .score-item {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: #090a0d !important;
+  background-color: #090a0d !important;
   border: 1px solid #e2e8f0 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
 }
@@ -654,7 +654,7 @@ html[data-theme="dark"] .px-engine-phase:nth-child(4) .px-engine-outcome {
 
 /* 4 Lenses in Tool Directory */
 html[data-theme="light"] .px-lens {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1px solid #e2e8f0 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
   color: #0f172a !important;
@@ -1003,8 +1003,8 @@ html[data-theme="dark"] .locked-fix {
 
 /* Light Mode Findings, Mandate Card & Filter Controls */
 html[data-theme="light"] .finding {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: #090a0d !important;
+  background-color: #090a0d !important;
   border: 1px solid #e2e8f0 !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
@@ -1028,7 +1028,7 @@ html[data-theme="light"] .finding-url {
   color: #0066ff !important;
 }
 html[data-theme="light"] .mandate-card {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1.5px solid #86efac !important;
   border-top: 3.5px solid #10b981 !important;
   box-shadow: 0 4px 24px rgba(16, 185, 129, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
@@ -1052,7 +1052,7 @@ html[data-theme="light"] .finding-tags .tag-id {
   color: #0f172a !important;
 }
 html[data-theme="light"] .filter-btn {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1px solid #cbd5e1 !important;
   color: #475569 !important;
 }
@@ -1596,8 +1596,8 @@ html[data-theme="light"] .locked-fix {
   html[data-theme="dark"] .health-executive-summary,
   html[data-theme="light"] .health-executive-summary {
     display: block !important;
-    background: #ffffff !important;
-    background-color: #ffffff !important;
+    background: #090a0d !important;
+    background-color: #090a0d !important;
     background-image: none !important;
     border: 1.5pt solid #cbd5e1 !important;
     border-radius: 4pt !important;
@@ -2494,7 +2494,7 @@ html[data-theme="light"] .health-dossier-meta strong {
 }
 
 html[data-theme="light"] .health-executive-summary {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1px solid #e2e8f0 !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }
@@ -2536,7 +2536,7 @@ html[data-theme="light"] .health-count-low strong { color: #16a34a !important; }
 html[data-theme="light"] .health-count-low span { color: #166534 !important; }
 
 html[data-theme="light"] .health-roadmap-deck {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1.5px solid #cbd5e1 !important;
   box-shadow: 0 4px 24px rgba(0, 102, 255, 0.08) !important;
 }
@@ -2670,7 +2670,7 @@ html[data-theme="light"] .health-dossier-meta strong {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 html[data-theme="light"] .px-pipeline-card {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border-color: #e2e8f0 !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }
@@ -2916,7 +2916,7 @@ html[data-theme="light"] .executive-translation-text {
 }
 
 html[data-theme="light"] .closing-intervention-deck {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 2px solid #0284c7 !important;
   box-shadow: 0 12px 32px rgba(2, 132, 199, 0.1) !important;
 }
@@ -4866,7 +4866,7 @@ html[data-theme="light"] .edge-terminal-title {
   font-weight: 700 !important;
 }
 html[data-theme="light"] .edge-terminal-out {
-  background: #ffffff !important;
+  background: #090a0d !important;
   color: #0369a1 !important;
 }
 html[data-theme="light"] .btn-edge-term-run {
@@ -4876,7 +4876,7 @@ html[data-theme="light"] .btn-edge-term-run {
 
 /* Light Mode Board Memo Button Overrides */
 html[data-theme="light"] .btn-board-memo {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1px solid #0284c7 !important;
   color: #0369a1 !important;
   box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08) !important;
@@ -4934,7 +4934,7 @@ html[data-theme="light"] .sim-tag-blue {
   transition: all 0.2s ease;
 }
 html[data-theme="light"] .dag-inspector-panel {
-  background: #ffffff !important;
+  background: #090a0d !important;
   border: 1px solid #cbd5e1 !important;
   color: #0f172a !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
@@ -5103,11 +5103,11 @@ html[data-theme="light"] .finding-telemetry-item strong {
 .dash-view-tabs {
   display: flex;
   gap: 6px;
-  background: #f1f5f9;
+  background: #090a0d !important;
   padding: 5px;
   border-radius: 14px;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.4);
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -5127,20 +5127,20 @@ html[data-theme="light"] .finding-telemetry-item strong {
   border-radius: 10px;
   font-size: 15px;
   font-weight: 700;
-  color: #475569;
+  color: #a1a1aa !important;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 .dash-view-btn:hover {
-  color: #0f172a;
-  background: rgba(255, 255, 255, 0.6);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.06) !important;
 }
 .dash-view-btn.active {
-  background: #ffffff;
-  color: #0284c7;
-  border-color: #cbd5e1;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  background: #18181b !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 .dash-view-badge {
   display: inline-flex;
@@ -5150,22 +5150,22 @@ html[data-theme="light"] .finding-telemetry-item strong {
   border-radius: 100px;
   font-size: 15px;
   font-weight: 800;
-  background: #e2e8f0;
-  color: #334155;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #a1a1aa !important;
 }
 .dash-view-btn.active .dash-view-badge {
-  background: #e0f2fe;
-  color: #0284c7;
+  background: rgba(56, 189, 248, 0.18) !important;
+  color: #38bdf8 !important;
 }
 
 /* Master Single-License Clarity Banner */
 .master-single-license-banner {
   margin: 16px 0 24px;
   padding: 22px 24px;
-  background: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%);
-  border: 2px solid #0284c7;
+  background: linear-gradient(135deg, #090a0d 0%, #0c121e 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
   border-radius: 16px;
-  box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.14);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
 }
@@ -5179,25 +5179,26 @@ html[data-theme="light"] .finding-telemetry-item strong {
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: #0284c7;
-  color: #ffffff;
+  background: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 .master-license-title-wrap h3 {
   font-size: 18px;
   font-weight: 850;
-  color: #0f172a;
+  color: #ffffff !important;
   margin: 0 0 6px;
   letter-spacing: -0.01em;
 }
 .master-license-title-wrap p {
   font-size: 14px;
-  color: #334155;
+  color: #a1a1aa !important;
   margin: 0;
   line-height: 1.55;
 }
@@ -5207,8 +5208,8 @@ html[data-theme="light"] .finding-telemetry-item strong {
   gap: 12px;
   margin: 16px 0;
   padding: 14px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px;
 }
 .master-deliv-item {
@@ -5216,7 +5217,7 @@ html[data-theme="light"] .finding-telemetry-item strong {
   align-items: flex-start;
   gap: 10px;
   font-size: 15px;
-  color: #1e293b;
+  color: #e2e8f0 !important;
   line-height: 1.45;
 }
 .master-deliv-item svg {
@@ -5234,7 +5235,7 @@ html[data-theme="light"] .finding-telemetry-item strong {
   gap: 12px;
   margin-top: 14px;
   padding-top: 14px;
-  border-top: 1px solid rgba(2, 132, 199, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 .master-license-cta-btn {
   display: inline-flex;
@@ -5256,7 +5257,7 @@ html[data-theme="light"] .finding-telemetry-item strong {
 }
 .master-license-guarantee-note {
   font-size: 14.5px;
-  color: #475569;
+  color: #94a3b8 !important;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -5278,16 +5279,16 @@ html[data-theme="light"] .finding-telemetry-item strong {
 /* High-Impact Frosted Glass / Blurred Recipe Area */
 .recipe-section.locked {
   position: relative;
-  background: #f8fafc;
-  border: 1.5px solid #cbd5e1;
+  background: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 .recipe-section.locked .recipe-content {
   filter: blur(3.2px) !important;
   -webkit-filter: blur(3.2px) !important;
-  opacity: 0.82 !important;
+  opacity: 0.7 !important;
   user-select: none;
   pointer-events: none;
   transform: scale(0.998);
@@ -5301,9 +5302,9 @@ html[data-theme="light"] .finding-telemetry-item strong {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(248, 250, 252, 0.96) 100%) !important;
-  backdrop-filter: blur(6px) saturate(160%) !important;
-  -webkit-backdrop-filter: blur(6px) saturate(160%) !important;
+  background: linear-gradient(180deg, rgba(9, 10, 13, 0.75) 0%, rgba(9, 10, 13, 0.92) 50%, #000000 100%) !important;
+  backdrop-filter: blur(8px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(160%) !important;
   padding: 24px 20px;
   text-align: center;
 }
@@ -5322,23 +5323,23 @@ html[data-theme="light"] .finding-telemetry-item strong {
   align-items: center;
   gap: 6px;
   padding: 5px 14px;
-  background: #e0f2fe;
-  border: 1px solid #bae6fd;
+  background: rgba(2, 132, 199, 0.15) !important;
+  border: 1px solid rgba(2, 132, 199, 0.35) !important;
   border-radius: 100px;
   font-size: 15px;
   font-weight: 800;
-  color: #0369a1;
+  color: #38bdf8 !important;
   letter-spacing: 0.02em;
 }
 .recipe-overlay-title {
   font-size: 16px;
   font-weight: 850;
-  color: #0f172a;
+  color: #ffffff !important;
   margin: 0;
 }
 .recipe-overlay-sub {
   font-size: 15px;
-  color: #475569;
+  color: #a1a1aa !important;
   max-width: 460px;
   line-height: 1.5;
   margin: 0;
@@ -5683,7 +5684,7 @@ html[data-theme="light"] .ea-badge-status {
 }
 
 html[data-theme="light"] .ea-score-box {
-  background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(145deg, #0d0f14 0%, #060709 100%);
   border: 1px solid #e2e8f0;
   border-radius: 14px;
 }
@@ -6817,7 +6818,7 @@ html body footer,
 .site-footer {
   position: relative !important;
   border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  background: #000000 !important; background-color: #000000 !important; border-top-color: rgba(255,255,255,0.08) !important;
   padding: 72px 24px 110px !important;
   margin-top: 56px !important;
   overflow: hidden !important;
@@ -7765,7 +7766,7 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   border-radius: 32px;
   margin: 64px auto;
   max-width: 1200px;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #090a0d 0%, #000000 100%);
   border: 1px solid rgba(0,0,0,0.04);
   box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -8206,13 +8207,13 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 
 
 /* PREMIUM HOMEPAGE DECISION / ARCHITECTURE / PIPELINE V2 */
-#pipeline.px-pipeline-premium{
+#pipeline.px-pipeline-premium{background:#000000 !important; border:1px solid rgba(255,255,255,0.08) !important; color:#ffffff !important; box-shadow:none !important; 
   padding:88px 40px;
   border-radius:36px;
   background:
     radial-gradient(circle at 10% 10%,rgba(59,130,246,.08),transparent 34%),
     radial-gradient(circle at 90% 0%,rgba(99,102,241,.09),transparent 32%),
-    linear-gradient(180deg,#f8fbff 0%,#f5f8ff 100%);
+    linear-gradient(180deg,#090a0d 0%,#000000 100%);
   border:1px solid rgba(148,163,184,.16);
   overflow:hidden;
 }
@@ -8265,7 +8266,7 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   padding:24px;
   border:1px solid #dbe4f0;
   border-radius:22px;
-  background:linear-gradient(180deg,#fff 0%,#f9fbfe 100%);
+  background:#090a0d !important; border:1px solid rgba(255,255,255,0.08) !important; color:#ffffff !important;
   box-shadow:0 16px 44px rgba(15,23,42,.055);
 }
 .five-pillars-grid--premium .pillar-badge{
@@ -8307,7 +8308,7 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   padding:24px;
   border:1px solid #dbe4ef;
   border-radius:22px;
-  background:linear-gradient(180deg,#fff 0%,#f9fbff 100%);
+  background:#090a0d !important; border:1px solid rgba(255,255,255,0.08) !important; color:#ffffff !important;
   box-shadow:0 16px 42px rgba(15,23,42,.055);
 }
 .result-action-card>span{
@@ -8357,7 +8358,7 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   .px-pipeline-premium .pl-connector{display:none}
 }
 @media(max-width:760px){
-  #pipeline.px-pipeline-premium{padding:56px 18px;border-radius:24px}
+  #pipeline.px-pipeline-premium{background:#000000 !important; border:1px solid rgba(255,255,255,0.08) !important; color:#ffffff !important; box-shadow:none !important; padding:56px 18px;border-radius:24px}
   .px-pipeline-premium .pl-flow--premium,
   .five-pillars-grid--premium,
   .pipeline-outcome-strip,
@@ -8391,7 +8392,7 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   border-radius:34px;
   background:
     radial-gradient(circle at 92% 8%,rgba(79,70,229,.055),transparent 30%),
-    linear-gradient(180deg,#fff 0%,#fbfcff 100%);
+    linear-gradient(180deg,#090a0d 0%,#000000 100%);
   box-shadow:0 24px 70px rgba(15,23,42,.055);
   overflow:hidden;
 }
@@ -8781,17 +8782,17 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 
 /* CUSTOMER DECISION HOMEPAGE V2 */
 :root{
-  --decision-ink:#0e1a33;
-  --decision-muted:#63738f;
+  --decision-ink:#ffffff;
+  --decision-muted:#d4d4d8;
   --decision-blue:#2048f4;
   --decision-blue-deep:#1433c9;
-  --decision-blue-soft:#edf2ff;
+  --decision-blue-soft:#0d152a;
   --decision-blue-mid:#c9d6ff;
-  --decision-line:#dce4f2;
+  --decision-line:rgba(255,255,255,0.08);
   --decision-green:#118a55;
-  --decision-green-soft:#edf9f3;
+  --decision-green-soft:rgba(16,185,129,0.12);
   --decision-red:#b32645;
-  --decision-red-soft:#fff1f4;
+  --decision-red-soft:rgba(239,68,68,0.12);
 }
 .decision-hero{
   max-width:1320px;
@@ -8824,13 +8825,13 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   min-height:40px;
   align-items:center;
   padding:0 15px;
-  border:1px solid #d6e0f0;
+  border:1px solid rgba(255,255,255,0.12) !important;
   border-radius:999px;
-  background:#fff;
-  color:#354968;
+  background:rgba(255,255,255,0.08) !important;
+  color:#ffffff !important;
   font-size:14px;
-  font-weight:800;
-  box-shadow:0 8px 20px rgba(15,30,60,.04);
+  font-weight:700;
+  box-shadow:none !important;
 }
 .decision-signals{
   max-width:940px;
@@ -8852,12 +8853,12 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   margin:0 0 30px;
   padding:78px 70px;
   overflow:hidden;
-  border:1px solid rgba(148,163,184,.16);
+  border:1px solid rgba(255,255,255,.08) !important;
   border-radius:40px;
-  background:
-    radial-gradient(circle at 94% 6%,rgba(57,94,255,.06),transparent 28%),
-    linear-gradient(180deg,#fff 0%,#fbfcff 100%);
-  box-shadow:0 24px 72px rgba(15,23,42,.055);
+  background:#000000 !important;
+  background-color:#000000 !important;
+  box-shadow:none !important;
+  color:#ffffff !important;
 }
 .decision-section-no{
   position:absolute;
@@ -8885,8 +8886,8 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   padding:0 12px;
   margin-bottom:17px;
   border-radius:9px;
-  background:#edf2ff;
-  color:#2462e8;
+  background:rgba(255,255,255,0.08) !important;
+  color:#ffffff !important; border:1px solid rgba(255,255,255,0.12);
   font:850 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
   letter-spacing:.14em;
 }
@@ -8909,8 +8910,8 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   margin:0 0 4px;
   padding:22px 24px;
   border-radius:24px;
-  background:#eef2ff;
-  color:#31476a;
+  background:#0d0f14 !important;
+  color:#d4d4d8 !important; border:1px solid rgba(255,255,255,0.08);
 }
 .decision-question-grid{
   display:grid;
@@ -8922,14 +8923,15 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   padding:24px 20px 20px;
   display:flex;
   flex-direction:column;
-  border:1px solid #dce4f2;
+  border:1px solid rgba(255,255,255,0.08) !important;
   border-radius:28px;
-  background:#fff;
-  box-shadow:0 10px 28px rgba(18,35,65,.045);
+  background:#090a0d !important;
+  box-shadow:none !important;
+  color:#ffffff !important;
 }
 .decision-question-grid article:nth-child(3){
-  background:#edf2ff;
-  border-color:#cdd9ff;
+  background:#0d0f14 !important;
+  border-color:rgba(59,130,246,0.3) !important;
 }
 .decision-question-grid b{
   color:#2860ed;
@@ -8938,13 +8940,13 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 }
 .decision-question-grid h3{
   margin:20px 0 12px;
-  color:var(--decision-ink);
+  color:#ffffff !important;
   font-size:23px;
   letter-spacing:-.02em;
 }
 .decision-question-grid p{
   margin:0;
-  color:#2f4262;
+  color:#a1a1aa !important;
   font-size:16px;
   line-height:1.5;
   font-weight:800;
@@ -9000,10 +9002,11 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   margin:0;
   padding:13px 15px;
   border-radius:14px;
-  background:#f1f5fc;
+  background:#0d0f14 !important;
+  border:1px solid rgba(255,255,255,0.08) !important;
 }
-.decision-checks b{color:#1f3c6c}
-.decision-checks span{color:#61718b}
+.decision-checks b{color:#ffffff !important}
+.decision-checks span{color:#a1a1aa !important}
 .decision-actions{
   display:flex;
   flex-wrap:wrap;
@@ -9031,18 +9034,19 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 }
 .decision-report-card{
   overflow:hidden;
-  border:1px solid #d6dfed;
+  border:1px solid rgba(255,255,255,0.08) !important;
   border-radius:30px;
-  background:#fff;
-  box-shadow:0 30px 70px rgba(15,23,42,.09);
+  background:#090a0d !important;
+  box-shadow:none !important;
+  color:#ffffff !important;
 }
 .decision-report-top{
   display:flex;
   align-items:center;
   gap:7px;
   padding:16px 20px;
-  border-bottom:1px solid #e3e8f1;
-  background:#f8fafc;
+  border-bottom:1px solid rgba(255,255,255,0.08) !important;
+  background:#0d0f14 !important;
 }
 .decision-report-top span{width:9px;height:9px;border-radius:50%}
 .decision-report-top span:nth-child(1){background:#ff5f57}
@@ -9059,10 +9063,10 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 .decision-severity{
   display:inline-flex;
   padding:8px 11px;
-  border:1px solid #f0cd7c;
+  border:1px solid rgba(245,158,11,0.3) !important;
   border-radius:9px;
-  background:#fff8e8;
-  color:#a86200;
+  background:rgba(245,158,11,0.15) !important;
+  color:#fbbf24 !important;
   font:850 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 .decision-report-body h3{
@@ -9098,7 +9102,7 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 .decision-offer{
   background:
     radial-gradient(circle at 15% 12%,rgba(35,110,255,.09),transparent 25%),
-    linear-gradient(180deg,#f8fbff 0%,#eff5ff 100%);
+    linear-gradient(180deg,#090a0d 0%,#000000 100%);
 }
 .decision-offer-grid{
   display:grid;
@@ -9110,9 +9114,10 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   padding:34px;
   display:flex;
   flex-direction:column;
-  border:1px solid #d8e2f0;
+  border:1px solid rgba(255,255,255,0.08) !important;
   border-radius:32px;
-  background:#fff;
+  background:#090a0d !important;
+  color:#ffffff !important;
 }
 .decision-offer-card>span{
   color:#2b63ea;
@@ -9151,10 +9156,11 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
   min-height:50px;
   align-items:center;
   justify-content:center;
-  border-radius:14px;
-  background:#eef3ff;
-  color:#1847d8;
-  font-weight:850;
+  border-radius:999px;
+  background:rgba(255,255,255,0.08) !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,255,255,0.15) !important;
+  font-weight:700;
   text-decoration:none;
 }
 .decision-offer-card--paid{
@@ -9167,7 +9173,8 @@ html[data-theme="light"] body #dark-pool-intelligence .dp-callout-action span {
 .decision-offer-card--paid li{color:#e7edff}
 .decision-offer-card--paid>a{background:#fff;color:#173fd4}
 .decision-trust{
-  background:#f8fafc;
+  background:#000000 !important;
+  color:#ffffff !important;
 }
 .decision-trust-grid{
   display:grid;
@@ -9268,7 +9275,7 @@ html[data-theme="dark"] .pdf-hero-badge{background:rgba(30,33,42,0.9);border-col
 /* Block 2: About & Ecosystem Split */
 .pdf-about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;align-items:stretch}
 .pdf-about-cards{display:grid;gap:14px}
-.pdf-card-capsule{padding:22px 26px;border-radius:20px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04)}
+.pdf-card-capsule{padding:22px 26px;border-radius:20px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04)}
 html[data-theme="dark"] .pdf-card-capsule{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-card-capsule h3{margin:0 0 6px;font-size:18px;font-weight:800;color:#0f172a;display:flex;align-items:center;gap:10px}
 html[data-theme="dark"] .pdf-card-capsule h3{color:#f8fafc}
@@ -9284,7 +9291,7 @@ html[data-theme="dark"] .pdf-card-capsule p{color:#94a3b8}
 
 /* Block 3: 15 Capabilities Menu */
 .pdf-caps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
-.pdf-cap-pill{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.03);transition:all .18s ease}
+.pdf-cap-pill{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.03);transition:all .18s ease}
 html[data-theme="dark"] .pdf-cap-pill{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-cap-pill:hover{transform:translateY(-2px);border-color:#0284c7;box-shadow:0 8px 24px rgba(2,132,199,.12)}
 .pdf-cap-num{min-width:32px;height:32px;border-radius:10px;background:#e0f2fe;color:#0284c7;font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px;font-weight:900;display:grid;place-items:center}
@@ -9296,7 +9303,7 @@ html[data-theme="dark"] .pdf-cap-desc{color:#94a3b8}
 
 /* Block 4: 3x3 Bot Compatibility Network */
 .pdf-net-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
-.pdf-net-card{padding:20px;border-radius:20px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04);display:flex;flex-direction:column;gap:8px}
+.pdf-net-card{padding:20px;border-radius:20px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04);display:flex;flex-direction:column;gap:8px}
 html[data-theme="dark"] .pdf-net-card{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-net-header{display:flex;justify-content:space-between;align-items:center}
 .pdf-net-name{font-size:16px;font-weight:800;color:#0f172a}
@@ -9306,7 +9313,7 @@ html[data-theme="dark"] .pdf-net-name{color:#f8fafc}
 
 /* Block 5: 6 Infrastructure & Security Pillars */
 .pdf-security-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:28px}
-.pdf-sec-card{padding:22px 16px;border-radius:18px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04);display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.pdf-sec-card{padding:22px 16px;border-radius:18px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 6px 20px rgba(18,35,65,.04);display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
 html[data-theme="dark"] .pdf-sec-card{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-sec-icon{width:44px;height:44px;border-radius:12px;background:#f0f7ff;color:#0284c7;display:grid;place-items:center;font-size:20px}
 html[data-theme="dark"] .pdf-sec-icon{background:#0c4a6e;color:#38bdf8}
@@ -9317,7 +9324,7 @@ html[data-theme="dark"] .pdf-sec-desc{color:#94a3b8}
 
 /* Block 6: 4 Steps Flow */
 .pdf-steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
-.pdf-step-card{padding:26px 22px;border-radius:22px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 8px 24px rgba(18,35,65,.04);display:flex;flex-direction:column}
+.pdf-step-card{padding:26px 22px;border-radius:22px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 8px 24px rgba(18,35,65,.04);display:flex;flex-direction:column}
 html[data-theme="dark"] .pdf-step-card{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-step-num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#0284c7;color:#ffffff;font-size:15px;font-weight:900;margin-bottom:16px}
 .pdf-step-card h3{margin:0 0 8px;font-size:17px;font-weight:800;color:#0f172a}
@@ -9332,7 +9339,7 @@ html[data-theme="dark"] .pdf-step-card p{color:#94a3b8}
 .pdf-why-focal p{font-size:15px;line-height:1.6;color:#e0f2fe;margin:0 0 20px}
 .pdf-why-badge-pill{display:inline-block;padding:8px 18px;border-radius:999px;background:#ffffff;color:#0052cc;font-weight:800;font-size:13px}
 .pdf-why-list{display:grid;gap:10px}
-.pdf-why-item{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;border-radius:16px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.03)}
+.pdf-why-item{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;border-radius:16px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 4px 14px rgba(18,35,65,.03)}
 html[data-theme="dark"] .pdf-why-item{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-why-num{min-width:28px;height:28px;border-radius:50%;background:#0284c7;color:#ffffff;font-size:13px;font-weight:900;display:grid;place-items:center}
 .pdf-why-item span{font-size:13.5px;font-weight:650;color:#1e293b;line-height:1.45}
@@ -9340,7 +9347,7 @@ html[data-theme="dark"] .pdf-why-item span{color:#e2e8f0}
 
 /* Block 8: Trust & Reference Logos */
 .pdf-refs-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px}
-.pdf-ref-card{padding:16px 12px;border-radius:14px;background:#ffffff;border:1px solid #dce4f2;box-shadow:0 4px 12px rgba(18,35,65,.03);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.pdf-ref-card{padding:16px 12px;border-radius:14px;background: #090a0d !important; border: 1px solid rgba(255,255,255,0.08) !important;border:1px solid #dce4f2;box-shadow:0 4px 12px rgba(18,35,65,.03);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
 html[data-theme="dark"] .pdf-ref-card{background:#181a22;border-color:rgba(255,255,255,.08)}
 .pdf-ref-card b{font-size:13.5px;font-weight:800;color:#0f172a}
 html[data-theme="dark"] .pdf-ref-card b{color:#f8fafc}
@@ -9698,65 +9705,367 @@ html[data-theme="dark"] .decision-close span,
 
 
 /* --------------------------------------------------------------------------
-   PAY'NKOLAY CORPORATE FINTECH DESIGN IDENTITY (BLUE / WHITE / PILL / LUXURY)
+   PROFOUND PITCH BLACK & CHARCOAL DESIGN IDENTITY (#000000 / #090a0d)
    -------------------------------------------------------------------------- */
 .decision-shell {
-  background: #f8fafc !important;
-  border: 1px solid #e2e8f0 !important;
-}
-html[data-theme="dark"] .decision-shell {
-  background: #090d16 !important;
-  border-color: rgba(255,255,255,0.08) !important;
+  background: #000000 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
 }
 .pdf-card-capsule {
-  border-left: 5px solid #0052cc !important;
-  background: #ffffff !important;
-}
-html[data-theme="dark"] .pdf-card-capsule {
-  border-left: 5px solid #0284c7 !important;
-  background: #111827 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-left: 4px solid #2563eb !important;
+  background: #090a0d !important;
+  color: #ffffff !important;
 }
 .pdf-cap-pill {
   border-radius: 999px !important;
   padding: 12px 20px !important;
-  background: #ffffff !important;
-  border: 1px solid #dce4f2 !important;
-}
-html[data-theme="dark"] .pdf-cap-pill {
-  background: #111827 !important;
-  border-color: rgba(255,255,255,0.08) !important;
+  background: #090a0d !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
 }
 .pdf-cap-num {
   border-radius: 50% !important;
-  background: #0052cc !important;
+  background: #1d4ed8 !important;
   color: #ffffff !important;
   font-weight: 900 !important;
 }
 .pdf-sec-card {
-  border-top: 4px solid #0052cc !important;
+  border-top: 3px solid #2563eb !important;
   border-radius: 20px !important;
+  background: #090a0d !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
 }
 .pdf-sec-icon {
-  background: #eff6ff !important;
-  color: #0052cc !important;
+  background: rgba(37, 99, 235, 0.15) !important;
+  color: #60a5fa !important;
 }
 .pdf-step-card {
-  border-top: 4px solid #0052cc !important;
+  border-top: 3px solid #2563eb !important;
   border-radius: 22px !important;
+  background: #090a0d !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
 }
 .pdf-step-num {
-  background: #0052cc !important;
+  background: #2563eb !important;
+  color: #ffffff !important;
 }
 .pdf-why-focal {
-  background: linear-gradient(135deg, #003399 0%, #0052cc 60%, #0284c7 100%) !important;
-  box-shadow: 0 20px 50px rgba(0, 82, 204, 0.3) !important;
+  background: linear-gradient(135deg, #090a0d 0%, #0d152a 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
 }
 .decision-question-grid article {
   border-radius: 20px !important;
-  border: 1px solid #dce4f2 !important;
-  border-left: 4px solid #0052cc !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-left: 3px solid #2563eb !important;
+  background: #090a0d !important;
+  color: #ffffff !important;
 }
-html[data-theme="dark"] .decision-question-grid article {
-  border-left: 4px solid #0284c7 !important;
-  background: #111827 !important;
+
+
+/* === SUPREME LOGO REINFORCEMENT === */
+
+/* ==========================================================================
+   SUPREME LOGO HIGH-CONTRAST INVERSION & VISIBILITY REINFORCEMENT
+   ========================================================================== */
+html body .brand-logo,
+html body .brand img,
+html body header .brand-logo,
+html body footer .brand-logo,
+html body .footer-brand .brand-logo,
+html body #hhCyberDrawer .brand-logo,
+.brand-logo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: 180px !important;
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+html body footer .brand-logo,
+html body .footer-brand .brand-logo {
+  height: 24px !important;
+}
+
+
+/* === PROFOUND PITCH BLACK & APPLE TYPOGRAPHY SYSTEM === */
+
+/* ==========================================================================
+   PROFOUND PITCH BLACK & APPLE TYPOGRAPHY SYSTEM (CASCADE FORTRESS)
+   Silicon Valley & London Tier (M+) Pure Pitch Black (#000000) Theme
+   Eradicates ALL white backgrounds, light cards, and pale elements.
+   Applies Apple.com SF Pro high-contrast large typography.
+   ========================================================================== */
+
+/* 1. Universal Container & Section Pitch Black Backgrounds */
+html,
+html body,
+body,
+.decision-shell,
+.decision-section,
+.decision-about,
+.decision-capabilities,
+.decision-ai-network,
+.decision-security-pillars,
+.decision-workflow,
+.decision-why-us,
+.decision-references,
+.decision-output,
+.decision-offer,
+.decision-trust,
+.decision-diagnosis,
+.profound-workbench-section,
+section.decision-section {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+}
+
+/* 2. Apple.com Typography & Large High-Contrast Headings */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  letter-spacing: -0.022em !important;
+}
+
+.decision-section h2,
+.decision-heading h2,
+.hero h1,
+.authority-hero h1,
+h1, h2 {
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.decision-section-no {
+  color: #71717a !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+}
+
+.decision-kicker {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  text-transform: uppercase !important;
+}
+
+.decision-heading p,
+.decision-section p,
+.hero p,
+.hero-answer,
+p {
+  color: #d4d4d8 !important;
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+}
+
+/* 3. Pure Pitch Black Card Architecture (#090a0d & Glowing Borders) */
+.pdf-cap-pill,
+.pdf-net-card,
+.pdf-sec-card,
+.pdf-step-card,
+.pdf-why-item,
+.pdf-ref-card,
+.pdf-card-capsule,
+.pdf-ecosystem-box,
+.decision-question-grid article,
+.decision-checks p,
+.decision-report-card,
+.decision-offer-card,
+.decision-trust-point,
+.ea-executive-summary,
+.ea-executive-grid,
+.card,
+article {
+  background: #090a0d !important;
+  background-color: #090a0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 18px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.pdf-cap-pill:hover,
+.pdf-net-card:hover,
+.pdf-sec-card:hover,
+.pdf-step-card:hover,
+.pdf-why-item:hover,
+.pdf-ref-card:hover,
+.decision-question-grid article:hover,
+.decision-offer-card:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 4. Card Titles, Numbers, and Text Elements */
+.pdf-cap-text,
+.pdf-net-name,
+.pdf-sec-title,
+.pdf-step-card h3,
+.pdf-why-item b,
+.pdf-ref-card b,
+.decision-question-grid h3,
+.decision-checks b,
+.decision-offer-card h3,
+.decision-report-card h3 {
+  color: #ffffff !important;
+  font-size: 16.5px !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.pdf-cap-desc,
+.pdf-net-desc,
+.pdf-sec-desc,
+.pdf-step-card p,
+.pdf-why-item span,
+.pdf-ref-card span,
+.decision-question-grid p,
+.decision-question-grid span,
+.decision-checks span,
+.decision-offer-card li,
+.decision-report-card p {
+  color: #a1a1aa !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Number Badges (Apple Style Glass Circles) */
+.pdf-cap-num,
+.pdf-step-num,
+.pdf-why-num {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  font-weight: 700 !important;
+}
+
+/* 5. Section 07 Focal Block (Dark Electric Blue) */
+.pdf-why-focal {
+  background: linear-gradient(135deg, #091224 0%, #0c1a36 60%, #081020 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(37, 99, 235, 0.15) !important;
+}
+
+.pdf-why-badge-pill {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.pdf-why-focal h3 {
+  color: #ffffff !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+}
+
+.pdf-why-focal p {
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+}
+
+.pdf-why-focal a.decision-btn {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 700 !important;
+}
+
+/* 6. Section 09 & 10 Cards */
+.decision-report-top {
+  background: #0d0f14 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #a1a1aa !important;
+}
+
+.decision-report-body {
+  background: #060709 !important;
+  color: #ffffff !important;
+}
+
+.decision-severity {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+  color: #fbbf24 !important;
+}
+
+.decision-evidence {
+  background: rgba(239, 68, 68, 0.12) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+.decision-evidence b {
+  color: #f87171 !important;
+}
+
+.decision-evidence code {
+  color: #fecaca !important;
+}
+
+.decision-paid {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.decision-paid b,
+.decision-paid span {
+  color: #34d399 !important;
+}
+
+.decision-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+}
+
+.decision-btn:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.decision-btn--primary {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.decision-offer-card--paid {
+  background: linear-gradient(135deg, #0d152a 0%, #111e3d 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
+}
+
+.decision-offer-card--paid a {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 999px !important;
 }

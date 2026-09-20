@@ -297,6 +297,7 @@
     // 7. MOBİL NATIVE WEB SHARE API (RAPORU PAYLAŞ)
     // -------------------------------------------------------------
     function attachMobileShareButton() {
+      if (window.innerWidth > 768) return;
       var actions = document.querySelector('.result-head-actions');
       if (!actions || document.getElementById('btnMobileShare')) return;
 
