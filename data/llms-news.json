@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-20T02:49:58Z",
+  "lastUpdated": "2026-09-20T15:42:29Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20319,6 +20319,104 @@
       },
       "id": "2026-09-20-why-your-pages-are-stuck-in-crawled-currently-no-e9fc8f283994",
       "sourceUrl": "https://www.mariehaynes.com/crawled-currently-not-indexed/",
+      "publishedAt": "2026-09-20"
+    },
+    {
+      "topic": "AGENTIC_SOFTWARE_DEVELOPMENT_CODEX",
+      "keywords": [
+        "Codex",
+        "AI agents",
+        "software development",
+        "engineering efficiency",
+        "enterprise deployment"
+      ],
+      "title": {
+        "tr": "Agent Tabanlı Yazılım Geliştirme ve Codex Entegrasyon Analizi",
+        "en": "Agentic Software Development and Codex Integration Analysis"
+      },
+      "dek": {
+        "tr": "Mühendislik ekiplerinde agentic kodlama altyapılarının benimsenmesine yönelik stratejik bir inceleme.",
+        "en": "A strategic review of adopting agentic coding infrastructures across engineering organizations."
+      },
+      "summary": {
+        "tr": "Büyük ölçekli teknoloji operasyonlarında agent tabanlı yazılım geliştirme araçlarının entegrasyonu, mühendislik süreçlerinde yapısal bir dönüşümü işaret etmektedir. Bu yaklaşım, kod üretiminden test otomasyonuna kadar olan iş akışlarında yapay zeka modellerinin doğrudan konumlandırılmasını hedefler. Asya pazarındaki büyük ölçekli bir teknoloji grubunun mühendislik ekiplerine Codex tabanlı çözümleri yaygınlaştırması, agentic sistemlerin kurumsal düzeyde kabul görmeye başladığını göstermektedir. Bu tür dağıtımlar, kod tabanı karmaşıklığını yönetmek ve geliştirme döngülerini hızlandırmak amacıyla yapay zeka modellerinin programlama yaşam döngüsüne derinlemesine entegre edilmesini gerektirir.",
+        "en": "The integration of agentic software development tools in large-scale technology operations signals a structural transformation in engineering workflows. This approach aims to directly position artificial intelligence models in workflows ranging from code generation to test automation. The deployment of Codex-based solutions across engineering teams by a major technology group in the Asian market demonstrates that agentic systems are gaining enterprise-level acceptance. Such rollouts require deep integration of AI models into the programming lifecycle to manage codebase complexity and accelerate development cycles."
+      },
+      "whyItMatters": {
+        "tr": "Kurumsal yazılım geliştirmede agentic sistemlerin benimsenmesi, kod yazma verimliliğini ve ölçeklenebilirliği doğrudan etkiler. Bu dönüşüm, geleneksel geliştirme metotlarından yapay zeka merkezli otomasyona geçişin endüstri genelindeki hızını gözler önüne serer.",
+        "en": "The adoption of agentic systems in enterprise software development directly impacts coding efficiency and scalability. This transition highlights the industry-wide acceleration of moving from traditional development methods to AI-centric automation."
+      },
+      "technicalImpact": {
+        "tr": "Mühendislik ekiplerinde yapay zeka tabanlı kodlama araçlarının kullanılması, kod tabanı tutarlılığını koruma ve bağlam yönetimi süreçlerinde yeni teknik gereksinimler ortaya çıkarır. API entegrasyonları, büyük bağlam pencerelerinin yönetimi ve güvenlik denetimleri, agentic iş akışlarının başarısını doğrudan belirleyen kritik faktörler arasında yer alır.",
+        "en": "Deploying AI-driven coding tools across engineering teams introduces new technical requirements for maintaining codebase consistency and managing context. API integrations, large context window handling, and security auditing stand out as critical factors determining the success of agentic workflows."
+      },
+      "actions": {
+        "tr": [
+          "Agent tabanlı kodlama araçlarının mevcut CI/CD boru hatlarıyla uyumluluğunu test edin.",
+          "Büyük kod tabanlarında bağlam yönetimi ve token maliyetlerini izleyin.",
+          "Otomatik üretilen kodların güvenlik ve uyumluluk açıklarını denetleyin."
+        ],
+        "en": [
+          "Test the compatibility of agent-based coding tools with existing CI/CD pipelines.",
+          "Monitor context management and token costs across large codebases.",
+          "Audit automatically generated code for security vulnerabilities and compliance issues."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, kurumsal ölçekte duyurulan agentic araç entegrasyonlarının uzun vadeli üretkenlik metrikleri üzerindeki kesin etkisini ölçmek için henüz erken olduğunu varsayar.",
+        "en": "This analysis assumes that it is premature to measure the exact long-term productivity impact of enterprise-scale agentic tool integrations."
+      },
+      "id": "2026-09-20-sea-s-view-on-the-future-of-agentic-software-dev-326607290d21",
+      "sourceUrl": "https://openai.com/index/sea-david-chen",
+      "publishedAt": "2026-09-20"
+    },
+    {
+      "topic": "GOOGLE_SEARCH_CONSOLE_AI_METRICS",
+      "keywords": [
+        "Google Search Console",
+        "AI Overviews",
+        "AI Mode",
+        "Discover AI features",
+        "search analytics"
+      ],
+      "title": {
+        "tr": "Google Search Console Üzerinde Yeni Yapay Zeka Özeti ve AI Mode Veri Raporlaması",
+        "en": "New AI Overview and AI Mode Performance Reporting in Google Search Console"
+      },
+      "dek": {
+        "tr": "Google Search Console, içeriklerin yapay zeka destekli arama ve keşif özelliklerinde nasıl yer aldığını izlemek için yeni metrikler sunuyor.",
+        "en": "Google Search Console introduces fresh telemetry to track how content surfaces across AI Overviews, AI Mode, and Discover AI features."
+      },
+      "summary": {
+        "tr": "Google Search Console platformu, arama motorunun yapay zeka destekli özet kutuları, AI Mode arabirimleri ve Discover içerisindeki yapay zeka bileşenlerinde web sitelerinin nasıl performans gösterdiğini ortaya koyan güncellenmiş raporlama yetenekleri sunmaya başladı. Bu genişletme, içerik sahiplerinin ve teknik SEO profesyonellerinin geleneksel organik sıralama verilerinin ötesine geçerek, yapay zeka odaklı arama deneyimlerindeki varlıklarını doğrudan izleyebilmelerine olanak tanıyor. Yeni telemetri katmanı, yapay zeka arayüzlerinde görüntülenme ve etkileşim eğilimlerini analiz etmek için gereken ham veriyi sağlamayı hedefliyor.",
+        "en": "The Google Search Console platform has rolled out updated reporting capabilities designed to reveal how web assets perform within generative summary boxes, AI Mode interfaces, and AI-driven features inside Discover. This expansion allows site owners and technical SEO specialists to move beyond traditional organic ranking data and directly monitor their presence within generative search experiences. The new telemetry layer aims to supply the raw analytical visibility needed to evaluate impression and interaction trends across evolving automated interfaces."
+      },
+      "whyItMatters": {
+        "tr": "Yapay zeka odaklı arama arayüzlerinin yaygınlaşması, klasik organik trafik metriklerinin güvenilirliğini azaltmıştı. Bu yeni raporlama yeteneği, içeriklerin yapay zeka yanıtlarında ne sıklıkla yer aldığını ölçülebilir kılmakta ve optimize edilmiş içerik stratejilerinin başarısını değerlendirmek için somut bir veri temeli sağlamaktadır.",
+        "en": "The proliferation of generative search interfaces eroded the predictability of classic organic traffic metrics. This reporting update makes visibility within automated answer blocks quantifiable, establishing an empirical baseline for evaluating optimization efforts targeting algorithmic summaries."
+      },
+      "technicalImpact": {
+        "tr": "Platform içi log analizleri ve performans izleme süreçleri, yapay zeka odaklı bu yeni metrikleri hesaba katacak şekilde güncellenmelidir. Geleneksel tıklama ve gösterim oranları ile yapay zeka arayüzlerinden gelen etkileşimler birbirinden ayrılarak, farklı arama niyetlerine göre optimize edilmiş içerik performanslarının detaylı olarak incelenmesi gerekecektir.",
+        "en": "Data pipelines and performance tracking workflows must be adapted to ingest these distinct algorithmic interaction metrics. Analysts will need to decouple standard click-through rates from generative interface impressions to accurately gauge how content satisfies conversational and synthesis-driven queries."
+      },
+      "actions": {
+        "tr": [
+          "Search Console arayüzünde yapay zeka özetleri ve AI Mode performans filtrelerinin aktif olup olmadığını kontrol edin.",
+          "Geleneksel arama metrikleri ile yapay zeka tabanlı gösterimleri ayrı segmentler halinde analiz edin.",
+          "Yapay zeka arayüzlerinde yer alan sayfaların teknik yapılandırmasını ve içerik derinliğini inceleyin."
+        ],
+        "en": [
+          "Verify the availability of new performance filters for generative summaries and AI Mode in your console.",
+          "Segment traditional search metrics separately from automated interface impressions for accurate analysis.",
+          "Audit the technical markup and content depth of pages frequently appearing in algorithmic summaries."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu telemetri güncellemesinin tüm mülkler için tam veri kapsamı ve metriksel kesinlik düzeyi henüz tam olarak belgelenmemiştir.",
+        "en": "The complete query coverage scope and exact metric calculation methodologies for these new features across all properties remain unquantified."
+      },
+      "id": "2026-09-20-gsc-s-new-ai-overview-reporting-how-can-we-use-t-249f4723c527",
+      "sourceUrl": "https://www.mariehaynes.com/new-aio-and-aimode-info-in-gsc/",
       "publishedAt": "2026-09-20"
     }
   ]
