@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-19T20:14:31Z",
+  "lastUpdated": "2026-09-20T02:49:58Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20222,6 +20222,104 @@
       "id": "2026-09-19-searchgpt-is-a-prototype-of-new-ai-search-featur-6cafd8cf5668",
       "sourceUrl": "https://openai.com/index/searchgpt-prototype",
       "publishedAt": "2026-09-19"
+    },
+    {
+      "topic": "AI_SEARCH_CONTENT_PARTNERSHIPS",
+      "keywords": [
+        "generative ai",
+        "content licensing",
+        "news corp",
+        "openai",
+        "search platform indexing"
+      ],
+      "title": {
+        "tr": "News Corp ve OpenAI Arasında Yapay Zeka İçin Küresel Ortaklık",
+        "en": "News Corp and OpenAI Establish Global Content and AI Partnership"
+      },
+      "dek": {
+        "tr": "Yapay zeka arama ürünlerinin entegrasyonu ve telifli içerik erişimi üzerine yeni bir anlaşma yapıldı.",
+        "en": "A new alliance integrates premier journalism into generative search platforms and retrieval systems."
+      },
+      "summary": {
+        "tr": "Yapay zeka sistemlerinin güncel ve yetkili veri kaynaklarına erişimini genişletmek amacıyla önemli bir küresel iş birliği duyuruldu. Bu gelişme, arama ve yanıt motorlarının doğrudan güvenilir medya arşivlerinden beslenmesini sağlayarak veri kalitesini artırmayı hedefliyor. Anlaşma, platformların içerik sağlayıcılarla olan yasal ve teknik entegrasyon modellerinde yeni bir standart oluştururken, telifli verilerin büyük dil modelleri tarafından işlenme biçimini de dönüştürüyor.",
+        "en": "A significant global alliance has been established to expand artificial intelligence systems' access to verified and authoritative data sources. This development aims to elevate data quality by enabling search and answer engines to ingest content directly from trusted media archives. The agreement establishes a new standard for legal and technical integration models between platforms and content providers, transforming how copyrighted data is processed by large language models."
+      },
+      "whyItMatters": {
+        "tr": "Arama motorlarının ve üretken yapay zeka araçlarının güvenilirliği, doğrudan eriştikleri kaynakların kalitesine bağlıdır. Bu tür yapılandırılmış ortaklıklar, sistemlerin hallucination (uydurma) oranını düşürmesini ve kullanıcılara doğruluk payı yüksek, taranabilir yanıtlar sunmasını kolaylaştırır.",
+        "en": "The reliability of search engines and generative AI tools depends directly on the quality of their source material. Structured partnerships like this enable systems to reduce hallucination rates and provide users with high-fidelity, citable answers from verified publishers."
+      },
+      "technicalImpact": {
+        "tr": "Yayıncı verilerinin doğrudan entegrasyonu, indeksleme önceliklerini, içerik besleme (feed) mekanizmalarını ve API tabanlı veri çekme süreçlerini etkiler. Arama motoru algoritmaları, ortaklık kapsamındaki alan adlarından gelen güncellemeleri daha hızlı taramak ve model ağırlıklarına entegre etmek için özel pipeline'lar kurabilir.",
+        "en": "Direct integration of publisher data impacts indexing priorities, content ingestion pipelines, and API-based retrieval processes. Search algorithms may deploy specialized processing pipelines to ingest and weigh updates from partnered domains faster than standard open-web crawling."
+      },
+      "actions": {
+        "tr": [
+          "Yayıncıların yapay zeka botlarına karşı robots.txt kurallarını ve içerik erişim politikalarını denetleyin.",
+          "Özel API entegrasyonları ve doğrudan veri beslemeleri kullanan platformlar için tarama loglarını analiz edin.",
+          "Üretken arama sonuçlarında telifli içeriklerin atıf ve görünürlük metriklerini takip edin."
+        ],
+        "en": [
+          "Audit robots.txt directives and content access policies regarding AI bot crawlers.",
+          "Analyze crawl logs for platforms utilizing proprietary API integrations or direct data feeds.",
+          "Monitor citation frequency and visibility metrics of proprietary content within generative search outputs."
+        ]
+      },
+      "boundary": {
+        "tr": "Anlaşmanın teknik mimarisi, gerçek zamanlı API akışlarının mı yoksa önbelleğe alınmış toplu veri setlerinin mi kullanılacağını tam olarak açıklamıyor.",
+        "en": "The technical architecture of the agreement does not specify whether real-time API streaming or cached batch datasets are utilized for retrieval."
+      },
+      "id": "2026-09-20-a-landmark-multi-year-global-partnership-with-ne-9f40e902d71f",
+      "sourceUrl": "https://openai.com/index/news-corp-and-openai-sign-landmark-multi-year-global-partnership",
+      "publishedAt": "2026-09-20"
+    },
+    {
+      "topic": "INDEXING_QUALITY_THRESHOLDS",
+      "keywords": [
+        "crawled-not-currently-indexed",
+        "google-search-console",
+        "content-quality",
+        "crawl-budget",
+        "indexing-pipeline"
+      ],
+      "title": {
+        "tr": "Taranan Ancak Dizine Eklenmeyen Sayfalar İçin Kalite Eşikleri",
+        "en": "Quality Thresholds for Crawled But Unindexed Pages"
+      },
+      "dek": {
+        "tr": "Google Arama Konsolu raporlarında sıkça karşılaşılan taranıp dizine eklenmeme durumu ve teknik tetkik yöntemleri.",
+        "en": "Addressing the persistent crawl-without-indexing state observed in search platform console reports and technical auditing approaches."
+      },
+      "summary": {
+        "tr": "Google Arama Konsolu'nun sayfa dizini raporlarında 'taranan - şu anda dizine eklenmemiş' durumu, web sitelerinin en sık yaşadığı görünürlük engellerinden biridir. Yapılan son teknik incelemeler, bu durumun temelinde genellikle derinlemesine kalite sorunlarının yattığını göstermektedir. Arama motoru botları sayfaları tarayabilmesine rağmen, içerik kalitesi, özgünlük veya site genelindeki sinyal yetersizlikleri nedeniyle onları ana dizine aktarmaktan vazgeçmektedir. Bu durum, kaynak tahsisi ve tarama bütçesi yönetimi açısından geliştiricilerin içerik mimarisini ve sayfa değerini yeniden gözden geçirmesini zorunlu kılmaktadır.",
+        "en": "The 'crawled - currently not indexed' status in search platform index reports represents a primary visibility hurdle for site operators. Recent technical analyses indicate that these occurrences are predominantly driven by fundamental quality deficiencies. Although automated crawlers successfully fetch the Uniform Resource Identifiers, internal evaluation pipelines withhold them from the main index due to insufficient content value, duplication, or weak signal-to-noise ratios. This dynamic forces engineers and site architects to re-evaluate their content quality parameters and crawl allocation strategies to ensure productive ingestion."
+      },
+      "whyItMatters": {
+        "tr": "Tarama bütçesinin boşa harcanmasına ve değerli içeriklerin arama sonuçlarında görünmemesine neden olur. Site sahiplerinin içerik optimizasyon stratejilerini yalnızca anahtar kelime odaklı değil, kalite ve benzersizlik odaklı olarak yeniden yapılandırmasını gerektirir.",
+        "en": "It leads to wasted crawler resources and prevents valuable assets from appearing in search results. It requires operators to restructure their optimization strategies around structural quality and uniqueness rather than superficial keyword targeting."
+      },
+      "technicalImpact": {
+        "tr": "Dizine ekleme oranının düşmesi, sitenizin genel arama performansını doğrudan sınırlar. Botlar sunucu kaynaklarınızı tüketerek sayfalarınızı ziyaret eder ancak kullanıcı sorgularına yanıt verecek veritabanına bu kayıtları işlemez. Bu uyumsuzluk, içerik güncelleme döngülerinin ve sunucu performansının optimize edilmesini kritik hale getirir.",
+        "en": "Declining indexing ratios directly constrain overall organic reach. Crawlers consume server resources to fetch documents without committing them to the retrieval index. This misalignment makes optimizing content refresh cycles and server response behavior critical for effective technical governance."
+      },
+      "actions": {
+        "tr": [
+          "Google Arama Konsolu'ndaki dizin raporlarını tarayarak etkilenen URL desenlerini belirleyin.",
+          "Dizine eklenmeyen sayfaların içerik kalitesini, benzersizliğini ve kullanıcıya sağladığı değeri denetleyin.",
+          "Düşük kaliteli veya yinelenen sayfalar için robots.txt, noindex etiketleri veya 410 HTTP yanıtları ile tarama verimliliğini artırın."
+        ],
+        "en": [
+          "Audit search console indexing reports to identify specific URL patterns affected by non-indexing.",
+          "Evaluate the content depth, uniqueness, and intrinsic value of pages stranded in the crawl queue.",
+          "Optimize crawl efficiency by applying proper directives, noindex tags, or removing obsolete low-value assets."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, bildirilen sorunların genel olarak kalite eksikliğinden kaynaklandığını belirtir ancak her bir URL için kesin reddedilme algoritmasını veya ağırlık eşiğini garanti etmez.",
+        "en": "This brief correlates observed indexing friction with underlying quality deficits but does not expose the proprietary algorithmic weight thresholds used by search engines for specific domains."
+      },
+      "id": "2026-09-20-why-your-pages-are-stuck-in-crawled-currently-no-e9fc8f283994",
+      "sourceUrl": "https://www.mariehaynes.com/crawled-currently-not-indexed/",
+      "publishedAt": "2026-09-20"
     }
   ]
 }
