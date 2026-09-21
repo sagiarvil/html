@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-20T20:30:37Z",
+  "lastUpdated": "2026-09-21T02:46:54Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20467,6 +20467,55 @@
       "id": "2026-09-20-discovering-types-for-entity-disambiguation-7f5353232f4b",
       "sourceUrl": "https://openai.com/index/discovering-types-for-entity-disambiguation",
       "publishedAt": "2026-09-20"
+    },
+    {
+      "topic": "CHATGPT_SEARCH_WEB_READINESS",
+      "keywords": [
+        "ChatGPT search",
+        "AI search integration",
+        "web scraping",
+        "source attribution",
+        "real-time indexing"
+      ],
+      "title": {
+        "tr": "ChatGPT için Entegre Web Arama Kabiliyeti Duyuruldu",
+        "en": "Integrated Web Search Capability Announced for ChatGPT"
+      },
+      "dek": {
+        "tr": "Doğrudan arama entegrasyonu, yapay zeka platformlarının güncel web verilerini işleme ve sunma mekanizmalarını teknik olarak değiştiriyor.",
+        "en": "Direct search integration technically shifts how artificial intelligence platforms process and present current web data."
+      },
+      "summary": {
+        "tr": "Yapay zeka ekosistemindeki gelişmeler, büyük dil modellerinin statik veri sınırlarını aşarak canlı web kaynaklarına erişmesini sağlıyor. Bu güncelleme ile platform, kullanıcı sorgularına yanıt üretirken güncel web sayfalarını tarama ve ilgili kaynaklara bağlantı verme yeteneği kazandı. Bu mimari değişiklik, geleneksel arama motoru dizinleme mantığı ile üretken yapay zeka sentezini birleştirerek, bilgiye erişim süreçlerinde yeni bir teknik katman oluşturuyor.",
+        "en": "Developments in the AI ecosystem enable large language models to bypass static data limits and access live web sources. With this update, the platform gains the ability to crawl current web pages and link to relevant sources while generating answers to user queries. This architectural shift combines traditional search engine indexing logic with generative AI synthesis, establishing a new technical layer in information retrieval processes."
+      },
+      "whyItMatters": {
+        "tr": "Üretken yapay zeka yanıtlarının gerçek zamanlı web verileriyle desteklenmesi, kullanıcıların güncel bilgilere doğrudan ulaşmasını sağlar. Web yöneticileri ve platform mühendisleri için bu durum, içeriklerin yapay zeka tabanlı sistemler tarafından taranabilir, ayrıştırılabilir ve referans verilebilir olmasını zorunlu kılar.",
+        "en": "Backing generative AI responses with real-time web data ensures users reach current information directly. For web administrators and platform engineers, this makes it essential that content is scannable, parsable, and referenceable by AI-driven systems."
+      },
+      "technicalImpact": {
+        "tr": "Arama yeteneğinin entegrasyonu; tarayıcı tabanlı isteklerin artmasına, sayfa yükleme sürelerinin önem kazanmasına ve içerik yapılandırma gereksinimlerinin değişmesine yol açar. Sunucu altyapıları, bot trafiğindeki artışı yönetmek ve veri çekme işlemlerini optimize etmek için robots.txt kurallarını ve API sınırlarını yeniden yapılandırmak zorundadır.",
+        "en": "The integration of search capability leads to increased crawler-based requests, heightened importance of page load times, and shifting content structuring requirements. Server infrastructures must reconfigure robots.txt rules and API limits to manage rising bot traffic and optimize data extraction."
+      },
+      "actions": {
+        "tr": [
+          "Sunucu loglarında yapay zeka tarayıcılarının istek modellerini analiz edin.",
+          "robots.txt yapılandırmasının güncel tarama politikalarını desteklediğini doğrulayın.",
+          "Sayfa içi yapılandırılmış veri (schema.org) kullanımını gözden geçirin."
+        ],
+        "en": [
+          "Analyze AI crawler request patterns in server access logs.",
+          "Verify that the robots.txt configuration supports current crawling policies.",
+          "Review on-page structured data (schema.org) usage."
+        ]
+      },
+      "boundary": {
+        "tr": "Güncellemenin temel tarama algoritmaları, sıralama sinyalleri ve iş ortaklığı modellerine ilişkin ayrıntılı teknik metrikler henüz tam olarak belgelenmemiştir.",
+        "en": "Detailed technical metrics regarding the update's underlying crawling algorithms, ranking signals, and partnership models remain fully undocumented."
+      },
+      "id": "2026-09-21-introducing-chatgpt-search-bd5105ccfa25",
+      "sourceUrl": "https://openai.com/index/introducing-chatgpt-search",
+      "publishedAt": "2026-09-21"
     }
   ]
 }
