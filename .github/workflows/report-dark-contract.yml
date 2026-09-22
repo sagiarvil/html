@@ -49,8 +49,10 @@ jobs:
           node-version: '22'
       - name: Materialize report dark contract
         run: python3 scripts/enforce_report_dark_contract.py
-      - name: Static dark contract regression
-        run: node tests/integrity/report-dark-contract.test.mjs
+      - name: Static report theme regressions
+        run: |
+          node tests/integrity/report-dark-contract.test.mjs
+          node tests/integrity/light-theme-surface.test.mjs
       - name: Runtime syntax
         run: node --check assets/js/report-dark-contract.js
       - name: Install dependencies
