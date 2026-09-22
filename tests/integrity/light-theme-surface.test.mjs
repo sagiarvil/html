@@ -7,6 +7,7 @@ const enterpriseTheme = fs.readFileSync('assets/css/enterprise-theme-system.css'
 const themeCss = fs.readFileSync('assets/css/theme.css', 'utf8');
 const reportCss = fs.readFileSync('enterprise-analyzer/style.css', 'utf8');
 const reportHtml = fs.readFileSync('enterprise-analyzer/htmlandhtml-ai-report.html', 'utf8');
+const reportDarkCss = fs.readFileSync('assets/css/report-dark-contract.css', 'utf8');
 
 // 1) Explicit light theme must be authoritative over legacy dark :root fallbacks.
 for (const token of [
@@ -50,17 +51,24 @@ for (const selector of [
   expect(enterpriseTheme.includes(selector), `light premium surface override missing: ${selector}`);
 }
 
-// 5) Report must load the guard before legacy CSS and its local report stylesheet last.
+// 5) Global LIGHT support remains valid for non-report product pages, but generated
+// reports must load the final dark-only contract after every legacy/report stylesheet.
 const guardIndex = reportHtml.indexOf('/assets/css/enterprise-theme-system.css');
 const legacyThemeIndex = reportHtml.indexOf('/assets/css/theme.css');
 const reportStyleIndex = reportHtml.indexOf('/enterprise-analyzer/style.css');
+const darkContractIndex = reportHtml.indexOf('/assets/css/report-dark-contract.css');
 expect(guardIndex !== -1, 'report must load enterprise-theme-system.css');
 expect(legacyThemeIndex > guardIndex, 'legacy theme.css load order changed; re-audit cascade');
 expect(reportStyleIndex > legacyThemeIndex, 'report stylesheet must remain after legacy theme.css');
+expect(darkContractIndex > reportStyleIndex, 'dark-only report contract must load after legacy/report styles');
 
-// 6) Guard selectors rely on the runtime theme engine setting both attribute and class.
-expect(reportHtml.includes("classList.toggle('light', t === 'light')"), 'zero-flash light class sync missing');
-expect(reportHtml.includes("setAttribute('data-theme', t)"), 'zero-flash data-theme sync missing');
+// 6) A stored/system LIGHT preference may be read by legacy theme code, but report
+// preflight + scoped CSS + runtime lock are the final authority.
+expect(reportHtml.includes('data-report-dark-preflight'), 'report first-paint dark preflight missing');
+expect(reportHtml.includes('data-report-dark-contract'), 'report dark-only stylesheet marker missing');
+expect(reportHtml.includes('data-report-dark-runtime'), 'report dark-only runtime marker missing');
+expect(reportDarkCss.includes('html[data-report-surface="true"]'), 'report dark CSS must be scope-locked');
+expect(reportDarkCss.includes('[style*="background:#fff" i]'), 'report dark CSS must neutralize inline white backgrounds');
 
 if (errors.length) {
   console.error('LIGHT THEME SURFACE CONTRACT FAIL');
@@ -68,4 +76,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('LIGHT THEME SURFACE CONTRACT PASS: explicit light mode cannot inherit legacy dark report surfaces.');
+console.log('LIGHT THEME SURFACE CONTRACT PASS: LIGHT remains available globally while generated reports are explicitly dark-only.');
