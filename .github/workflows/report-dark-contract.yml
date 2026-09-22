@@ -1,0 +1,57 @@
+name: report-dark-contract
+
+on:
+  pull_request:
+    paths:
+      - 'ai-report/**'
+      - 'enterprise-analyzer/**'
+      - 'tr/enterprise-analyzer/**'
+      - 'en/sample-report/**'
+      - 'tr/ornek-rapor/**'
+      - 'assets/css/report-dark-contract.css'
+      - 'assets/js/report-dark-contract.js'
+      - 'scripts/enforce_report_dark_contract.py'
+      - 'tests/integrity/report-dark-contract.test.mjs'
+      - 'tests/visual/report-dark-only-qa.mjs'
+      - 'package.json'
+      - '.github/workflows/report-dark-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'ai-report/**'
+      - 'enterprise-analyzer/**'
+      - 'tr/enterprise-analyzer/**'
+      - 'en/sample-report/**'
+      - 'tr/ornek-rapor/**'
+      - 'assets/css/report-dark-contract.css'
+      - 'assets/js/report-dark-contract.js'
+      - 'scripts/enforce_report_dark_contract.py'
+      - 'tests/integrity/report-dark-contract.test.mjs'
+      - 'tests/visual/report-dark-only-qa.mjs'
+      - 'package.json'
+      - '.github/workflows/report-dark-contract.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  dark-only-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Materialize report dark contract
+        run: python3 scripts/enforce_report_dark_contract.py
+      - name: Static dark contract regression
+        run: node tests/integrity/report-dark-contract.test.mjs
+      - name: Runtime syntax
+        run: node --check assets/js/report-dark-contract.js
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Browser dark-only QA
+        run: node tests/visual/report-dark-only-qa.mjs
