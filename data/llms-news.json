@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-22T02:47:40Z",
+  "lastUpdated": "2026-09-22T03:55:42Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20564,6 +20564,56 @@
       },
       "id": "2026-09-22-introducing-aardvark-openai-s-agentic-security-r-fed198f10f4d",
       "sourceUrl": "https://openai.com/index/introducing-aardvark",
+      "publishedAt": "2026-09-22"
+    },
+    {
+      "topic": "AI_AGENT_LINK_SAFETY_AND_DATA_EXFILTRATION",
+      "keywords": [
+        "AI agents",
+        "link safety",
+        "data exfiltration",
+        "prompt injection",
+        "URL handling",
+        "web readiness"
+      ],
+      "title": {
+        "tr": "Yapay Zeka Aracı Bağlantı Güvenliği ve Veri Sızıntısı Korumaları",
+        "en": "AI Agent Link Safety and Data Exfiltration Protections"
+      },
+      "dek": {
+        "tr": "Yapay zeka asistanlarının web bağlantılarını ziyaret ederken veri sızıntılarını ve dolaylı komut enjeksiyonlarını önlemeye yönelik teknik inceleme.",
+        "en": "A technical examination of mitigations for data exfiltration and indirect prompt injection when AI assistants visit web links."
+      },
+      "summary": {
+        "tr": "Yapay zeka asistanlarının harici URL'leri tarama yetenekleri geliştikçe, kötü niyetli web sitelerinin veri sızdırma ve dolaylı komut enjeksiyonu vektörleri oluşturma riski artmaktadır. Bu durum, arama ve tarama motorlarının yalnızca ham metin çekmekle kalmayıp, hedef sitelerdeki payload'ların ajan davranışını manipüle etmesini engelleyen yerleşik filtreler ve izolasyon katmanları uygulamalarını zorunlu kılar. Gelişmiş koruma mekanizmaları, isteklerin bağlamını izole ederek hassas oturum verilerinin dışarı sızdırılmasını engellemeyi hedefler.",
+        "en": "As AI assistants evolve the capability to browse external URLs, the risk of malicious websites executing data exfiltration and indirect prompt injection vectors increases. This necessitates search and retrieval systems implementing built-in filters and isolation layers that go beyond mere raw text extraction, preventing payloads on target sites from manipulating agent behavior. Advanced protective mechanisms aim to isolate request contexts and block the unauthorized transmission of sensitive session data."
+      },
+      "whyItMatters": {
+        "tr": "Web siteleri ve AI arama motorları etkileşime girerken güvenlik sınırlarının net olması kritik önem taşır. Harici web içeriğinin güvenilmeyen bir girdi olarak işlenmemesi, ajan tabanlı sistemlerin manipüle edilmesine ve kullanıcı gizliliğinin ihlal edilmesine kapı aralar.",
+        "en": "Clear security boundaries are critical as websites and AI search engines interact. Treating external web content as untrusted input prevents agent-based systems from being manipulated and user privacy from being compromised."
+      },
+      "technicalImpact": {
+        "tr": "Ajan tabanlı URL erişimleri, standart tarayıcı isteklerinden farklı olarak dinamik içerik çalıştırma ve kullanıcı oturum bağlamını taşıma potansiyeline sahiptir. Teknik altyapılar, bu süreçte out-of-band veri sızıntılarını engellemek için yönlendirme (redirect) zincirlerini sıkı denetime tabi tutmalı ve istem dışı parametre aktarımlarını engellemelidir.",
+        "en": "Agent-driven URL access differs from standard crawler requests by potentially executing dynamic content and carrying user session context. Technical infrastructures must strictly audit redirect chains and block unintended parameter transmission to prevent out-of-band data exfiltration."
+      },
+      "actions": {
+        "tr": [
+          "Harici bağlantı çözümleme süreçlerinde yönlendirme zincirlerini ve parametre aktarımlarını denetleyin.",
+          "Web sunucularınızın tarayıcı ajan isteklerini hassas kullanıcı verilerinden izole ettiğinden emin olun.",
+          "Dolaylı komut enjeksiyonu denemelerine karşı içerik filtreleme katmanlarını gözden geçirin."
+        ],
+        "en": [
+          "Audit redirect chains and parameter transfers during external link resolution processes.",
+          "Ensure web servers isolate crawling agent requests from sensitive user data.",
+          "Review content filtering layers against indirect prompt injection attempts."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, yalnızca sağlanan meta verilerdeki üst düzey güvenlik ve veri sızıntısı önleme başlıklarıyla sınırlıdır; kullanılan spesifik şifreleme veya ağ mimarisi detaylarını içermez.",
+        "en": "This analysis is strictly bounded by the high-level security and data exfiltration prevention metadata provided, and does not detail specific cryptographic or network architecture implementations."
+      },
+      "id": "2026-09-22-keeping-your-data-safe-when-an-ai-agent-clicks-a-0d2abbb0fa62",
+      "sourceUrl": "https://openai.com/index/ai-agent-link-safety",
       "publishedAt": "2026-09-22"
     }
   ]
