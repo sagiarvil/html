@@ -163,6 +163,61 @@ html[data-report-surface="true"] [style*="color: #64748b" i] {
   color: #94a3b8 !important;
 }
 
+
+/* Legacy enterprise-report markup contains a light palette beyond pure #fff.
+   These exact generated colors are forbidden on report surfaces and are
+   converted after the cascade, including classless inline fragments. */
+html[data-report-surface="true"] [style*="background:#f8fafc" i],
+html[data-report-surface="true"] [style*="background: #f8fafc" i],
+html[data-report-surface="true"] [style*="background:#f1f5f9" i],
+html[data-report-surface="true"] [style*="background: #f1f5f9" i],
+html[data-report-surface="true"] [style*="background:#eff6ff" i],
+html[data-report-surface="true"] [style*="background: #eff6ff" i],
+html[data-report-surface="true"] [style*="background:#e0f2fe" i],
+html[data-report-surface="true"] [style*="background: #e0f2fe" i],
+html[data-report-surface="true"] [style*="background:#f0fdf4" i],
+html[data-report-surface="true"] [style*="background: #f0fdf4" i],
+html[data-report-surface="true"] [style*="background:#fef2f2" i],
+html[data-report-surface="true"] [style*="background: #fef2f2" i],
+html[data-report-surface="true"] [style*="background:#fffbeb" i],
+html[data-report-surface="true"] [style*="background: #fffbeb" i],
+html[data-report-surface="true"] [style*="background:#fff7ed" i],
+html[data-report-surface="true"] [style*="background: #fff7ed" i],
+html[data-report-surface="true"] [style*="background:#e2e8f0" i],
+html[data-report-surface="true"] [style*="background: #e2e8f0" i] {
+  background: #172033 !important;
+  background-color: #172033 !important;
+  border-color: #334155 !important;
+}
+
+/* Preserve semantic status accents without allowing pale status tiles. */
+html[data-report-surface="true"] .executive-deck-badge,
+html[data-report-surface="true"] .citation-source-pill,
+html[data-report-surface="true"] .citation-mode-badge,
+html[data-report-surface="true"] .vector-deck-badge,
+html[data-report-surface="true"] .dark-pool-badge {
+  background: rgba(56, 189, 248, 0.10) !important;
+  color: #7dd3fc !important;
+  border-color: rgba(56, 189, 248, 0.32) !important;
+}
+
+html[data-report-surface="true"] .simulation-arr-box {
+  background: rgba(245, 158, 11, 0.10) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.34) !important;
+}
+
+html[data-report-surface="true"] .telemetry-scope-badge {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #6ee7b7 !important;
+  border-color: rgba(16, 185, 129, 0.34) !important;
+}
+
+html[data-report-surface="true"] .sim-verdict-tag {
+  background: rgba(148, 163, 184, 0.10) !important;
+  border-color: #475569 !important;
+}
+
 /* Report pages are dark-only; theme switching is intentionally unavailable here. */
 html[data-report-surface="true"] #themeToggle,
 html[data-report-surface="true"] .theme-toggle,
