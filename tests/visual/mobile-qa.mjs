@@ -102,46 +102,52 @@ try{
         if(!scope)errors.push(`${vp.width}px tools: unified scan scope map missing`);
       }
       if(route===reportRoute){
-        const lightAudit=await page.evaluate(()=>{
+        const darkAudit=await page.evaluate(()=>{
           const root=document.documentElement;
           const parseRgb=(value)=>{
             const m=value&&value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/i);
             return m?{r:+m[1],g:+m[2],b:+m[3],a:m[4]===undefined?1:+m[4]}:null;
           };
-          const isNeutralDark=(value)=>{
-            const c=parseRgb(value);if(!c||c.a<0.45)return false;
+          const isNeutralLight=(value)=>{
+            const c=parseRgb(value);if(!c||c.a<0.72)return false;
             const max=Math.max(c.r,c.g,c.b),min=Math.min(c.r,c.g,c.b),mean=(c.r+c.g+c.b)/3;
-            return mean<105&&(max-min)<32;
+            return mean>=225&&(max-min)<=28;
           };
           const samples={};
           for(const selector of ['body','.topbar','.ea-hud-score-card','.ea-hud-pillars-card','.ea-engine-card','.finding-card','.evidence-box','.ea-file-viewer','.action-bar-inner']){
             const el=document.querySelector(selector);
             if(el){const cs=getComputedStyle(el);samples[selector]={backgroundColor:cs.backgroundColor,backgroundImage:cs.backgroundImage,color:cs.color};}
           }
-          const darkNeutral=[];
-          for(const el of document.querySelectorAll('body *')){
+          const lightNeutral=[];
+          for(const el of document.querySelectorAll('body, body *')){
             const rect=el.getBoundingClientRect();
-            if(rect.width<120||rect.height<24||rect.bottom<0||rect.top>document.documentElement.scrollHeight)continue;
+            if(rect.width<8||rect.height<8)continue;
             const cs=getComputedStyle(el);
             if(cs.display==='none'||cs.visibility==='hidden'||Number(cs.opacity)===0)continue;
-            if(isNeutralDark(cs.backgroundColor)){
-              darkNeutral.push({tag:el.tagName,cls:String(el.className||'').slice(0,120),bg:cs.backgroundColor,w:Math.round(rect.width),h:Math.round(rect.height)});
-              if(darkNeutral.length>=20)break;
+            if(isNeutralLight(cs.backgroundColor)){
+              lightNeutral.push({tag:el.tagName,cls:String(el.className||'').slice(0,120),bg:cs.backgroundColor,w:Math.round(rect.width),h:Math.round(rect.height)});
+              if(lightNeutral.length>=20)break;
             }
           }
-          return {theme:root.getAttribute('data-theme'),hasLightClass:root.classList.contains('light'),samples,darkNeutral};
+          return {
+            theme:root.getAttribute('data-theme'),
+            hasDarkClass:root.classList.contains('dark'),
+            hasLightClass:root.classList.contains('light'),
+            samples,
+            lightNeutral
+          };
         });
-        if(lightAudit.theme!=='light'||!lightAudit.hasLightClass)errors.push(`${vp.width}px report: explicit LIGHT theme state not applied`);
-        for(const [selector,sample] of Object.entries(lightAudit.samples)){
+        if(darkAudit.theme!=='dark'||!darkAudit.hasDarkClass||darkAudit.hasLightClass)errors.push(`${vp.width}px report: dark-only theme lock not applied`);
+        for(const [selector,sample] of Object.entries(darkAudit.samples)){
           const m=sample.backgroundColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
           if(!m)continue;
           const [r,g,b]=m.slice(1).map(Number);
           if(selector==='body'||selector==='.topbar'||selector==='.ea-hud-score-card'||selector==='.ea-hud-pillars-card'||selector==='.ea-engine-card'||selector==='.finding-card'||selector==='.evidence-box'||selector==='.ea-file-viewer'){
-            if((r+g+b)/3<210)errors.push(`${vp.width}px report: ${selector} is not a light surface (${sample.backgroundColor})`);
+            if((r+g+b)/3>115)errors.push(`${vp.width}px report: ${selector} is not a dark surface (${sample.backgroundColor})`);
           }
         }
-        if(lightAudit.darkNeutral.length){
-          errors.push(`${vp.width}px report: neutral dark surface leakage in LIGHT: ${JSON.stringify(lightAudit.darkNeutral.slice(0,5))}`);
+        if(darkAudit.lightNeutral.length){
+          errors.push(`${vp.width}px report: white/near-white background leakage: ${JSON.stringify(darkAudit.lightNeutral.slice(0,5))}`);
         }
       }
       await page.screenshot({path:`/tmp/htmlhtml-${vp.width}-${route.replace(/\W+/g,'-')||'home'}.png`,fullPage:true});
@@ -150,4 +156,4 @@ try{
   }
 } finally {await browser.close();server.close()}
 if(errors.length){console.error('MOBILE/VISUAL THEME QA FAIL');for(const e of errors)console.error('- '+e);process.exit(1)}
-console.log('MOBILE/VISUAL THEME QA PASS: Chromium 360/390/430/768/1280, no overflow/control collision and Enterprise report LIGHT mode has no neutral dark surface leakage.');
+console.log('MOBILE/VISUAL THEME QA PASS: Chromium 360/390/430/768/1280, no overflow/control collision and Enterprise report is dark-only with no white/near-white surface leakage.');
