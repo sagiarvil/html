@@ -12,7 +12,9 @@ on:
       - 'assets/js/report-dark-contract.js'
       - 'scripts/enforce_report_dark_contract.py'
       - 'tests/integrity/report-dark-contract.test.mjs'
+      - 'tests/integrity/light-theme-surface.test.mjs'
       - 'tests/visual/report-dark-only-qa.mjs'
+      - 'tests/visual/mobile-qa.mjs'
       - 'package.json'
       - '.github/workflows/report-dark-contract.yml'
   push:
@@ -27,7 +29,9 @@ on:
       - 'assets/js/report-dark-contract.js'
       - 'scripts/enforce_report_dark_contract.py'
       - 'tests/integrity/report-dark-contract.test.mjs'
+      - 'tests/integrity/light-theme-surface.test.mjs'
       - 'tests/visual/report-dark-only-qa.mjs'
+      - 'tests/visual/mobile-qa.mjs'
       - 'package.json'
       - '.github/workflows/report-dark-contract.yml'
 
