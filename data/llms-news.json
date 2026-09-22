@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-22T03:55:42Z",
+  "lastUpdated": "2026-09-22T21:01:04Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20614,6 +20614,105 @@
       },
       "id": "2026-09-22-keeping-your-data-safe-when-an-ai-agent-clicks-a-0d2abbb0fa62",
       "sourceUrl": "https://openai.com/index/ai-agent-link-safety",
+      "publishedAt": "2026-09-22"
+    },
+    {
+      "topic": "BROWSER_ARCHITECTURE_AI_AGENTS",
+      "keywords": [
+        "Chromium decoupling",
+        "OWL architecture",
+        "ChatGPT Atlas",
+        "agentic browsing",
+        "browser automation",
+        "web rendering"
+      ],
+      "title": {
+        "tr": "OWL Mimarisi ve ChatGPT Atlas: Tarayıcı Teknolojisinde Yeni Bir Dönem",
+        "en": "The OWL Architecture and ChatGPT Atlas: A New Era in Browser Engineering"
+      },
+      "dek": {
+        "tr": "Geleneksel tarayıcı motoru bağımlılıklarını kaldıran ve ajan tabanlı web etkileşimini optimize eden yeni mimari altyapı incelemesi.",
+        "en": "An analysis of the new architectural foundation removing traditional browser engine dependencies and optimizing agent-driven web interaction."
+      },
+      "summary": {
+        "tr": "ChatGPT Atlas tarayıcısının arkasındaki OWL adlı yeni mimari, Chromium tabanlı yapıların geleneksel kısıtlamalarını ortadan kaldırmayı hedefliyor. Bu yaklaşım, tarayıcı başlatma sürelerini önemli ölçüde hızlandırırken, kullanıcı arayüzü katmanını ve ajan tabanlı web görevlerini daha verimli bir şekilde entegre ediyor. Web sayfalarının yapay zeka modelleri tarafından okunabilirliği, işlenmesi ve otomatik olarak manipüle edilmesi süreçleri bu yenilikçi tasarım sayesinde daha kararlı hale geliyor.",
+        "en": "The new architecture named OWL, powering the ChatGPT Atlas browser, aims to remove traditional constraints inherent in standard Chromium-based setups. This design significantly accelerates startup times while more efficiently integrating the user interface layer and agent-driven web tasks. The processes of reading, processing, and automatically manipulating web pages by artificial intelligence models become considerably more stable thanks to this innovative engineering approach."
+      },
+      "whyItMatters": {
+        "tr": "Yapay zeka modellerinin web ile etkileşimi geleneksel eklenti veya otomasyon araçlarının ötesine geçiyor. Doğrudan tarayıcı çekirdeğinde yapılan bu tür köklü mimari değişiklikler, ajanların sayfalar arası geçiş yapma, form doldurma ve karmaşık veri toplama görevlerini çok daha düşük gecikmeyle gerçekleştirmesine zemin hazırlıyor.",
+        "en": "Artificial intelligence interaction with the web is moving beyond traditional extension-based or automation tools. Such fundamental architectural shifts directly within the browser core enable agents to execute cross-page navigation, form completion, and complex data harvesting tasks with significantly lower latency."
+      },
+      "technicalImpact": {
+        "tr": "Chromium altyapısının kısmen decoupled edilmesi, arayüz performansını artırırken bellek tüketimini optimize eder. Yapay zekanın DOM manipülasyonu ve render döngülerine daha düşük maliyetle erişmesi, web tabanlı ajan sistemlerinin kararlılığını artırır ve tarayıcı içi otomasyon script'lerinin hata oranını düşürür.",
+        "en": "Partially decoupling the Chromium foundation boosts interface performance while optimizing memory footprint. Enabling artificial intelligence to access DOM manipulation and render loops at a lower cost increases the reliability of web-based agent systems and reduces failure rates in browser-level automation scripts."
+      },
+      "actions": {
+        "tr": [
+          "Tarayıcı tabanlı yapay zeka ajanlarının DOM erişim gecikmelerini ve render performansını test edin.",
+          "Özel tarayıcı mimarilerinin güvenlik politikaları ve CORS kısıtlamalarıyla uyumluluğunu doğrulayın.",
+          "Headless otomasyon süreçlerinin yeni mimari ile uyumlu çalışıp çalışmadığını manuel olarak kontrol edin."
+        ],
+        "en": [
+          "Test DOM access latency and render performance of browser-based AI agents.",
+          "Verify compatibility of custom browser architectures with existing security policies and CORS restrictions.",
+          "Manually check whether headless automation pipelines function correctly under the new architecture."
+        ]
+      },
+      "boundary": {
+        "tr": "Mimarinin tam kaynak kodu ve açık kaynak ekosistemine entegrasyon detayları bu aşamada tamamen belirsizliğini korumaktadır.",
+        "en": "The complete source code availability and the integration specifics with the broader open-source ecosystem remain entirely unverified at this stage."
+      },
+      "id": "2026-09-22-how-we-built-owl-the-new-architecture-behind-our-3556c47e80db",
+      "sourceUrl": "https://openai.com/index/building-chatgpt-atlas",
+      "publishedAt": "2026-09-22"
+    },
+    {
+      "topic": "INDEXING_CAPACITY_AND_AGENT_PREPARATION",
+      "keywords": [
+        "crawled currently not indexed",
+        "Google Search Console",
+        "AI agents",
+        "index allocation",
+        "site architecture"
+      ],
+      "title": {
+        "tr": "İndeksleme Kapasitesi ve Yapay Zeka Ajanları için Web Hazırlığı",
+        "en": "Indexing Capacity Shifts and Web Preparation for AI Agents"
+      },
+      "dek": {
+        "tr": "Google Search Console içindeki taranan fakat dizne eklenmeyen sayfa hacimlerindeki artış ve yapay zeka ajanlarına hazırlık stratejileri inceleniyor.",
+        "en": "Analyzing the recent rise in crawled-yet-unindexed pages within Search Console and emerging preparation frameworks for autonomous web agents."
+      },
+      "summary": {
+        "tr": "Son dönemde arama motoru konsollarında, tarama bütçesi harcanmasına rağmen dizine eklenmeyen sayfa sayılarında belirgin bir artış gözlemlenmektedir. Bu durum, arama sistemlerinin depolama ve kalite eşiklerini daralttığını veya kaynaklarını farklı mimari önceliklere yönlendirdiğini göstermektedir. Aynı süreçte, web sitelerinin yapay zeka ajanları tarafından okunabilir ve işlenebilir hale getirilmesi için altyapı hazırlıkları hız kazanmıştır. Mühendisler, makinelerin veriyi daha az maliyetle tüketebilmesi amacıyla sunucu yanıt sürelerini, yapılandırılmış veri kalitesini ve içerik yoğunluğunu yeniden optimize etmektedir. Bu evrim, geleneksel SEO yaklaşımlarından bağımsız olarak, veri erişilebilirliğinin teknik mimari boyutunu ön plana çıkarmaktadır.",
+        "en": "Recent platform data highlights an observable increase in pages that are successfully crawled but remain excluded from primary indexes. This shift suggests tighter resource allocation thresholds and stricter internal quality filters by major search engines. Concurrently, technical preparations for autonomous AI agents consuming web data are reshaping site optimization priorities. Engineering teams are reassessing server response overheads, structured data fidelity, and raw content density to facilitate programmatic access by external agents. This dual movement underscores a broader transition away from traditional keyword-centric optimization toward strict machine readability, efficient token consumption, and robust underlying infrastructure."
+      },
+      "whyItMatters": {
+        "tr": "Dizine ekleme oranlarındaki daralma, sitelerin büyük kısmının arama motoru görünürlüğünü yitirme riski taşıdığını gösterir. Paralel olarak, yapay zeka ajanlarının web üzerinde veri toplama biçimleri, geleneksel HTML yapılarına olan bağımlılığı azaltmaktadır. Bu teknik değişimler, web sitelerinin hem arama sistemleri hem de yapay zeka istemcileri tarafından doğru işlenebilmesi için mimari bir uyum zorunluluğu doğurur.",
+        "en": "Declining index inclusion rates threaten organic visibility across large site architectures, while the emergence of autonomous agents shifts consumption patterns away from legacy browser rendering. Together, these developments require structural adjustments to ensure machine accessibility and efficient resource parsing across automated clients."
+      },
+      "technicalImpact": {
+        "tr": "Tarama ve dizine ekleme arasındaki makasın açılması, sunucu kaynaklarının boşa harcanmasına neden olur. Düşük kaliteli veya yinelenen içerikler, sınırlı dizin kapasitesi nedeniyle hızla elenir. Yapay zeka ajanlarının entegrasyonu ise API uç noktalarının, temiz belge nesne modellerinin (DOM) ve hafif veri biçimlerinin önemini artırarak sunucu yük dengesini ve yanıt optimizasyonunu doğrudan etkiler.",
+        "en": "The divergence between crawl volume and index allocation leads to wasted server compute during discovery phases. Low-value or redundant URLs face immediate exclusion under stricter storage constraints. Furthermore, agent readiness demands cleaner DOM trees, optimized server-side rendering, and low-latency response times to support programmatic traversal without breaking rate limits."
+      },
+      "actions": {
+        "tr": [
+          "Search Console verilerini inceleyerek taranan fakat dizne eklenmeyen URL'lerin ortak özelliklerini ve şablonlarını tespit edin.",
+          "Sunucu loglarını analiz ederek arama botlarının ve ajanların kaynak tüketim verilerini ve yanıt sürelerini izleyin.",
+          "Yapılandırılmış veri işaretlemelerinin doğruluğunu kontrol edin ve gereksiz parametreli URL'leri canonical etiketleriyle sınırlandırın."
+        ],
+        "en": [
+          "Audit Search Console indexing reports to isolate structural patterns among crawled-yet-unindexed URL clusters.",
+          "Analyze server access logs to evaluate crawler resource consumption, rendering overhead, and response latency.",
+          "Validate structured data implementations and enforce strict canonicalization to mitigate duplicate path traversal."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analiz, mevcut platform gözlemlerine dayanmakta olup, gelecekteki arama motoru algoritma güncellemelerinin veya yapay zeka ajanı protokol standartlarının nihai performans sonuçlarını garanti etmez.",
+        "en": "This assessment reflects observational data from search platform reporting and does not guarantee specific ranking improvements or traffic outcomes from implementing agent-readiness protocols."
+      },
+      "id": "2026-09-22-rise-in-crawled-currently-not-indexed-preparing--ded4ea65792e",
+      "sourceUrl": "https://www.mariehaynes.com/crawled-currently-not-indexed-preparing-websites-for-agents-and-how-im-using-antigravity/",
       "publishedAt": "2026-09-22"
     }
   ]
