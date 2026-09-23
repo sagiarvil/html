@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-22T21:01:04Z",
+  "lastUpdated": "2026-09-23T21:15:40Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20714,6 +20714,55 @@
       "id": "2026-09-22-rise-in-crawled-currently-not-indexed-preparing--ded4ea65792e",
       "sourceUrl": "https://www.mariehaynes.com/crawled-currently-not-indexed-preparing-websites-for-agents-and-how-im-using-antigravity/",
       "publishedAt": "2026-09-22"
+    },
+    {
+      "topic": "AGENTIC_AI_GOVERNANCE_SYSTEMS",
+      "keywords": [
+        "agentic ai",
+        "governance frameworks",
+        "ai search systems",
+        "autonomous agents",
+        "technical compliance"
+      ],
+      "title": {
+        "tr": "Yapay Zeka Ajan Sistemleri İçin Yönetişim Pratikleri",
+        "en": "Practices for Governing Agentic AI Systems"
+      },
+      "dek": {
+        "tr": "Otonom yapay zeka ajanlarının denetimi ve güvenliği üzerine teknik değerlendirme.",
+        "en": "A technical assessment on the supervision and safety of autonomous AI agents."
+      },
+      "summary": {
+        "tr": "Bu güncelleme, otonom yapay zeka ajan sistemlerinin yönetişimine yönelik kritik pratikleri ele almaktadır. Yapay zeka arama ve web tabanlı ekosistemlerin giderek daha fazla özerk ajanlar barındırması, sistem güvenliği, veri bütünlüğü ve denetlenebilirlik konularında yeni teknik gereksinimler doğurmaktadır. Analiz, ajan tabanlı iş akışlarının izlenmesi, hata toleransı ve erişim sınırlarının belirlenmesi üzerine odaklanarak, platform mühendislerinin karşılaştığı operasyonel zorlukları incelemektedir. Bu çerçeve, sistem davranışlarının şeffaf bir şekilde denetlenmesini ve olası güvenlik açıklarının önlenmesini hedeflemektedir.",
+        "en": "This update addresses critical practices for governing autonomous agentic AI systems. As AI search and web-based ecosystems increasingly incorporate autonomous agents, new technical requirements emerge regarding system security, data integrity, and auditability. The analysis focuses on monitoring agent-based workflows, error tolerance, and defining access boundaries, examining the operational challenges faced by platform engineers. This framework aims to transparently audit system behaviors and prevent potential security vulnerabilities."
+      },
+      "whyItMatters": {
+        "tr": "Otonom ajanların web ekosistemindeki rolleri arttıkça, bu sistemlerin denetlenebilir ve güvenli olması zorunludur. Yanlış yapılandırılmış ajanlar, arama dizinlerinde ve web tabanlı API'lerde beklenmeyen yükler veya güvenlik riskleri oluşturabilir.",
+        "en": "As the roles of autonomous agents grow within the web ecosystem, ensuring these systems are auditable and secure is imperative. Misconfigured agents can create unexpected loads or security risks in search indexes and web-based APIs."
+      },
+      "technicalImpact": {
+        "tr": "Ajan sistemlerinin kararları ve web etkileşimleri, geleneksel statik tarayıcılara kıyasla daha karmaşık loglama ve yetkilendirme mekanizmaları gerektirir. API uç noktaları, rate-limiting stratejileri ve yetki sınırları yeniden gözden geçirilmelidir.",
+        "en": "Agent decisions and web interactions require more complex logging and authorization mechanisms compared to traditional static crawlers. API endpoints, rate-limiting strategies, and permission boundaries must be re-evaluated."
+      },
+      "actions": {
+        "tr": [
+          "Otonom ajanlar için API erişim sınırlarını ve kapsamlarını katı bir şekilde tanımlayın.",
+          "Ajan tabanlı istekler için gelişmiş izleme ve loglama mekanizmaları kurun.",
+          "Beklenmeyen durumlarda ajan faaliyetlerini durduracak acil durum devre kesicileri uygulayın."
+        ],
+        "en": [
+          "Strictly define API access boundaries and scopes for autonomous agents.",
+          "Establish advanced monitoring and logging mechanisms for agent-driven requests.",
+          "Implement emergency circuit breakers to halt agent activities during anomalies."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu değerlendirme, yalnızca mevcut idari çerçeve metnine dayanmakta olup, gelecekteki olası protokol değişikliklerini veya standartlaşma süreçlerini içermez.",
+        "en": "This assessment is based solely on the current governance framework text and does not encompass potential future protocol changes or standardization processes."
+      },
+      "id": "2026-09-23-practices-for-governing-agentic-ai-systems-25adcaa1c831",
+      "sourceUrl": "https://openai.com/index/practices-for-governing-agentic-ai-systems",
+      "publishedAt": "2026-09-23"
     }
   ]
 }
