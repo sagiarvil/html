@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HTML&amp;HTML — Yapay Zeka Arama ve Web Mimarisi Beslemesi</title>
+  <subtitle>Google AI, ChatGPT Search, Perplexity ve Claude protokol güncellemeleri ve teknik web analizleri.</subtitle>
+  <link href="https://htmlandhtml.com/atom-tr.xml" rel="self" type="application/atom+xml" />
+  <link href="https://htmlandhtml.com/tr/" rel="alternate" type="text/html" />
+  <id>https://htmlandhtml.com/atom-tr.xml</id>
+  <updated>2026-09-24T20:50:02Z</updated>
+  <author>
+    <name>HTML&amp;HTML Editorial Intelligence</name>
+    <uri>https://htmlandhtml.com</uri>
+  </author>
+  <generator uri="https://htmlandhtml.com" version="1.0">HTMLandHTML Enterprise Atom Engine</generator>
+  <entry>
+    <title>News Corp ve OpenAI Arasında Yapay Zeka İçin Küresel Ortaklık</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-20-a-landmark-multi-year-global-partnership-with-ne-9f40e902d71f" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-20-a-landmark-multi-year-global-partnership-with-ne-9f40e902d71f</id>
+    <published>2026-09-20T00:00:00Z</published>
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yapay zeka arama ürünlerinin entegrasyonu ve telifli içerik erişimi üzerine yeni bir anlaşma yapıldı.]]></summary>
+    <category term="AI_SEARCH_CONTENT_PARTNERSHIPS" />
+    <category term="generative ai" />
+    <category term="content licensing" />
+    <category term="news corp" />
+  </entry>
+  <entry>
+    <title>Taranan Ancak Dizine Eklenmeyen Sayfalar İçin Kalite Eşikleri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-20-why-your-pages-are-stuck-in-crawled-currently-no-e9fc8f283994" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-20-why-your-pages-are-stuck-in-crawled-currently-no-e9fc8f283994</id>
+    <published>2026-09-20T00:00:00Z</published>
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Arama Konsolu raporlarında sıkça karşılaşılan taranıp dizine eklenmeme durumu ve teknik tetkik yöntemleri.]]></summary>
+    <category term="INDEXING_QUALITY_THRESHOLDS" />
+    <category term="crawled-not-currently-indexed" />
+    <category term="google-search-console" />
+    <category term="content-quality" />
+  </entry>
+  <entry>
+    <title>ChatGPT Agent Sistem Kartı: Yapay Zeka Arama Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-chatgpt-agent-system-card-7a7213b68631" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-chatgpt-agent-system-card-7a7213b68631</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[OpenAI'ın yeni nesil ajansal modeli; araştırma, tarayıcı otomasyonu ve kod yürütme araçlarını güvenlik önlemleriyle birleştiriyor.]]></summary>
+    <category term="CHATGPT_AGENT_SYSTEM_CARD" />
+    <category term="agentic models" />
+    <category term="browser automation" />
+    <category term="preparedness framework" />
+  </entry>
+  <entry>
+    <title>Mart 2025 ChatGPT Kurumsal Güncellemeleri ve Teknik Etkileri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-new-in-chatgpt-for-business-march-2025-dc32b9a6e0b3" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-new-in-chatgpt-for-business-march-2025-dc32b9a6e0b3</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Mart 2025 güncellemesiyle ChatGPT kurumsal ortamlarda daha etkileşimli, özelleştirilebilir ve yapay zeka ajanları tabanlı bir yapıya kavuşuyor.]]></summary>
+    <category term="CHATGPT_BUSINESS_MARCH_2025_UPDATES" />
+    <category term="ChatGPT" />
+    <category term="enterprise search" />
+    <category term="agentic workflow" />
+  </entry>
+  <entry>
+    <title>Agentic AI Foundation ve AGENTS.md Standardı Üzerine Teknik Analiz</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-openai-co-founds-agentic-ai-foundation-donates-a-fa276c020c30" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-openai-co-founds-agentic-ai-foundation-donates-a-fa276c020c30</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Linux Vakfı altında kurulan yeni yapı ve AGENTS.md bağışının web tabanlı yapay zeka ajanları ve açık standartlar açısından teknik sonuçları.]]></summary>
+    <category term="AGENTIC_AI_FOUNDATION" />
+    <category term="Agentic AI Foundation" />
+    <category term="AGENTS.md" />
+    <category term="Linux Foundation" />
+  </entry>
+  <entry>
+    <title>ChatGPT Üzerinden Doğrudan Ticaret ve Ajan Tabanlı Ticaret Protokolü</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-buy-it-in-chatgpt-instant-checkout-and-the-agent-33e5e3005ea0" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-buy-it-in-chatgpt-instant-checkout-and-the-agent-33e5e3005ea0</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[ChatGPT ekosisteminde kullanıcıların, yapay zeka ajanlarının ve işletmelerin ortak alışveriş yapmasını sağlayan yeni protokol bileşenleri.]]></summary>
+    <category term="AGENTIC_COMMERCE_PROTOCOL" />
+    <category term="agentic commerce" />
+    <category term="instant checkout" />
+    <category term="conversational shopping" />
+  </entry>
+  <entry>
+    <title>OpenAI Yapısal Değişimi: Kamu Yararı Şirketine Geçiş</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-evolving-openai-s-structure-aaba7ebe3daa" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-evolving-openai-s-structure-aaba7ebe3daa</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Kurumsal mimaride yapılan bu güncelleme, kâr amacı gütmeyen denetim altında etkiyi artırmayı ve uzun vadeli kamu yararı uyumunu hedefliyor.]]></summary>
+    <category term="CORPORATE_STRUCTURE_TRANSITION" />
+    <category term="Public Benefit Corporation" />
+    <category term="nonprofit oversight" />
+    <category term="corporate governance" />
+  </entry>
+  <entry>
+    <title>Yapay Zeka Destekli Satış Arama Süreçleri ve Büyüme Altyapısı</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-achieving-10x-growth-with-agentic-sales-prospect-726c6df64865" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-achieving-10x-growth-with-agentic-sales-prospect-726c6df64865</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Gelişmiş otomasyon araçları ve yapay zeka modelleriyle satış arama operasyonlarının ölçeklenmesi.]]></summary>
+    <category term="AGENTIC_SALES_PROSPECTING_AUTOMATION" />
+    <category term="agentic workflows" />
+    <category term="automated outreach" />
+    <category term="AI sales prospecting" />
+  </entry>
+  <entry>
+    <title>Yapay Zeka Destekli Arama Prototipinin Teknik Analizi ve Etkileri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-searchgpt-is-a-prototype-of-new-ai-search-featur-6cafd8cf5668" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-19-searchgpt-is-a-prototype-of-new-ai-search-featur-6cafd8cf5668</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Gelişmiş yapay zeka modellerini güncel web kaynakları ve doğrudan yanıt mekanizmalarıyla birleştiren yeni arama prototipinin teknik incelemesi.]]></summary>
+    <category term="AI_SEARCH_PROTOTYPE_DEPLOYMENT" />
+    <category term="SearchGPT" />
+    <category term="AI search" />
+    <category term="web retrieval" />
+  </entry>
+  <entry>
+    <title>OpenAI'dan Yapay Zeka Güvenliği İçin Yeni Hata Ödül Programı</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a</id>
+    <published>2026-09-18T00:00:00Z</published>
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yapay zeka sistemlerindeki suiistimal risklerini, ajan açıklarını ve veri sızıntılarını hedefleyen kapsamlı bir hata ödül programı başlatıldı.]]></summary>
+    <category term="AI_SAFETY_BUG_BOUNTY" />
+    <category term="bug bounty" />
+    <category term="prompt injection" />
+    <category term="agentic vulnerabilities" />
+  </entry>
+  <entry>
+    <title>OpenAI ve Japonya Dijital Ajansı Arasında Yapay Zeka İş Birliği</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-18-openai-announces-strategic-collaboration-with-ja-15f17b33ed3a" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-18-openai-announces-strategic-collaboration-with-ja-15f17b33ed3a</id>
+    <published>2026-09-18T00:00:00Z</published>
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Kamu hizmetlerinde yapay zeka entegrasyonu ve uluslararası yönetişim çerçevelerini hedefleyen stratejik iş birliği.]]></summary>
+    <category term="PUBLIC_SECTOR_AI_INTEGRATION" />
+    <category term="generative ai" />
+    <category term="public services" />
+    <category term="ai governance" />
+  </entry>
+  <entry>
+    <title>GPT-5.6 Güncellemesi: Sınır Zekası ve Verimlilik Entegrasyonu</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c</id>
+    <published>2026-09-16T00:00:00Z</published>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yeni model mimarisi, yapay zeka tabanlı arama ve ajan iş akışlarında maliyet ile verimlilik dengesini yeniden tanımlıyor.]]></summary>
+    <category term="GPT_5_6_EFFICIENCY_AND_SEARCH_INTELLIGENCE" />
+    <category term="GPT-5.6" />
+    <category term="AI efficiency" />
+    <category term="agentic workflows" />
+  </entry>
+  <entry>
+    <title>Mirakl'ın Yapay Zeka Odaklı Ticaret Vizyonu</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869</id>
+    <published>2026-09-16T00:00:00Z</published>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Mirakl, yapay zeka ajanları ve kurumsal entegrasyonlar aracılığıyla dokümantasyon hızını ve müşteri desteğini optimize ediyor.]]></summary>
+    <category term="AGENTIC_COMMERCE_INFRASTRUCTURE" />
+    <category term="AI agents" />
+    <category term="ChatGPT Enterprise" />
+    <category term="documentation acceleration" />
+  </entry>
+  <entry>
+    <title>Kurumsal Yapay Zeka Sağlayıcıları Pazarında Yeni Değerlendirme Döngüsü</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359</id>
+    <published>2026-09-16T00:00:00Z</published>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Endüstri analistleri, kurumsal üretken yapay zeka pazarındaki liderlik konumlarını güncelledi ve benimseme ölçeğine dikkat çekti.]]></summary>
+    <category term="GENERATIVE_AI_ENTERPRISE_ADOPTION" />
+    <category term="generative ai" />
+    <category term="enterprise architecture" />
+    <category term="model providers" />
+  </entry>
+  <entry>
+    <title>Kurumsal Yapay Zeka Ajan Platformu: OpenAI Presence Duyuruldu</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-15-introducing-openai-presence-839f7a51d7b5" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-15-introducing-openai-presence-839f7a51d7b5</id>
+    <published>2026-09-15T00:00:00Z</published>
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Kuruluşlar için sesli ve sohbet tabanlı iş akışı ajanlarının dağıtımını sağlayan yeni kurumsal platform duyuruldu.]]></summary>
+    <category term="OPENAI_PRESENCE_ENTERPRISE_AGENTS" />
+    <category term="enterprise AI agent" />
+    <category term="voice and chat agents" />
+    <category term="workflow deployment" />
+  </entry>
+  <entry>
+    <title>GPT-5.3-Codex ile Ajan Tabanlı Kodlama ve Mantık Entegrasyonu</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4</id>
+    <published>2026-09-15T00:00:00Z</published>
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[En yeni kodlama altyapısı, gelişmiş mantık yürütme ile uzmanlık bilgilerini tek bir ajan mimarisinde birleştiriyor.]]></summary>
+    <category term="GPT_5_3_CODEX_AGENTIC_CODE_INTEGRATION" />
+    <category term="agentic coding" />
+    <category term="frontier reasoning" />
+    <category term="technical architecture" />
+  </entry>
+  <entry>
+    <title>ChatGPT Üzerinden Ürün Keşfi ve Ajan Tabanlı Ticaret Protokolü</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a</id>
+    <published>2026-09-13T00:00:00Z</published>
+    <updated>2026-09-13T00:00:00Z</updated>
+    <summary type="html"><![CDATA[ChatGPT, görsel odaklı alışveriş deneyimleri ve satıcı entegrasyonları için yeni bir protokolü hayata geçiriyor.]]></summary>
+    <category term="AGENTIC_COMMERCE_PROTOCOL_DISCOVERY" />
+    <category term="Agentic Commerce Protocol" />
+    <category term="ChatGPT product discovery" />
+    <category term="structured merchant data" />
+  </entry>
+  <entry>
+    <title>GPT-5.1-Codex-Max ile Proje Ölçekli Kodlama Modelleri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32</id>
+    <published>2026-09-13T00:00:00Z</published>
+    <updated>2026-09-13T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yeni nesil ajan tabanlı kodlama modeli, uzun süreli yazılım görevlerinde muhakeme ve belirteç verimliliğini artırıyor.]]></summary>
+    <category term="AGENTIC_CODING_MODELS" />
+    <category term="GPT-5.1-Codex-Max" />
+    <category term="agentic coding" />
+    <category term="reasoning efficiency" />
+  </entry>
+  <entry>
+    <title>OpenAI Japan, Genç Güvenliği Planını Duyurdu</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737</id>
+    <published>2026-09-12T00:00:00Z</published>
+    <updated>2026-09-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Üretken yapay zeka sistemlerinde genç kullanıcı güvenliğini artırmak amacıyla yaş korumaları ve ebeveyn denetimleri tanıtıldı.]]></summary>
+    <category term="TEEN_SAFETY_BLUEPRINT_GENERATIVE_AI" />
+    <category term="Japan Teen Safety Blueprint" />
+    <category term="age verification" />
+    <category term="parental controls" />
+  </entry>
+  <entry>
+    <title>Kurumsal Ölçekte Ajan Tabanlı Yapay Zeka Entegrasyonu ve Altyapı Etkileri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858</id>
+    <published>2026-09-12T00:00:00Z</published>
+    <updated>2026-09-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Entegre iş süreçlerinde ajan tabanlı yapay zeka sistemlerinin konumlandırılması ve teknik mimari yansımaları.]]></summary>
+    <category term="ENTERPRISE_AGENTIC_AI_INTEGRATION" />
+    <category term="enterprise AI" />
+    <category term="agentic systems" />
+    <category term="business integration" />
+  </entry>
+  <entry>
+    <title>Bilimsel Hesaplamada Yapay Zeka Ajanlarının Yükselişi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e</id>
+    <published>2026-09-11T00:00:00Z</published>
+    <updated>2026-09-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Bilimsel yazılım modernizasyonu ve genomik araştırmalarında ajan tabanlı kodlama sistemlerinin rolünü inceleyen teknik değerlendirme.]]></summary>
+    <category term="SCIENTIFIC_COMPUTING_AGENTIC_AI" />
+    <category term="agentic AI" />
+    <category term="scientific computing" />
+    <category term="genomics" />
+  </entry>
+  <entry>
+    <title>Responses API İçin WebSocket Entegrasyonu ve Bağlantı Tabanlı Önbellekleme</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1</id>
+    <published>2026-09-11T00:00:00Z</published>
+    <updated>2026-09-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Bağlantı tabanlı önbellekleme ve WebSocket protokolü, ajan tabanlı iş akışlarındaki ağ yükünü ve gecikmeleri azaltıyor.]]></summary>
+    <category term="WEBSOCKET_AGENTIC_WORKFLOWS" />
+    <category term="WebSockets" />
+    <category term="Responses API" />
+    <category term="agent loops" />
+  </entry>
+  <entry>
+    <title>GPT-5.2 ile Gelişmiş Profesyonel İş Akışları ve Uzun Bağlam Yetenekleri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-11-introducing-gpt-5-2-10ab1c39be14" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-11-introducing-gpt-5-2-10ab1c39be14</id>
+    <published>2026-09-11T00:00:00Z</published>
+    <updated>2026-09-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yeni nesil frontier model, profesyonel kullanım alanlarında gelişmiş akıl yürütme ve kodlama performansı sunuyor.]]></summary>
+    <category term="ADVANCED_FRONTIER_MODEL_UPDATE" />
+    <category term="GPT-5.2" />
+    <category term="frontier model" />
+    <category term="agentic workflows" />
+  </entry>
+  <entry>
+    <title>Cars24 Milyonluk Konuşma Trafiğini Yapay Zeka Ajanlarıyla Ölçeklendiriyor</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67</id>
+    <published>2026-09-10T00:00:00Z</published>
+    <updated>2026-09-10T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Şirket içi operasyonlarda sesli ve metin tabanlı yapay zeka ajanlarının entegrasyonu.]]></summary>
+    <category term="CONVERSATIONAL_AI_AGENTS" />
+    <category term="voice agents" />
+    <category term="chat automation" />
+    <category term="agentic workflows" />
+  </entry>
+  <entry>
+    <title>Kurumsal Yapay Zeka Ajan Sistemlerinin Ölçeklendirilmesi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18</id>
+    <published>2026-09-10T00:00:00Z</published>
+    <updated>2026-09-10T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Üretim ortamlarında çok adımlı akıl yürütme, eşzamanlılık ve yönetişim mekanizmalarının entegrasyonuna teknik bir bakış.]]></summary>
+    <category term="ENTERPRISE_AGENTIC_SYSTEMS_SCALING" />
+    <category term="agentic systems" />
+    <category term="enterprise AI" />
+    <category term="concurrency" />
+  </entry>
+  <entry>
+    <title>Yapay Zeka ve Genç Gelişimi İçin Beş Milyon Dolarlık Araştırma Fonu</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb</id>
+    <published>2026-09-09T00:00:00Z</published>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Bağımsız araştırmacılar, üretken yapay zekanın ergen gelişimi, güvenliği ve refahı üzerindeki etkilerini incelemek üzere finansman desteğine başvurabilir.]]></summary>
+    <category term="AI_TEEN_DEVELOPMENT_RESEARCH_GRANTS" />
+    <category term="generative AI" />
+    <category term="teen development" />
+    <category term="research grants" />
+  </entry>
+  <entry>
+    <title>Öncü Kurumların Yapay Zeka Entegrasyon Eğilimleri ve İş Süreçleri</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055</id>
+    <published>2026-09-09T00:00:00Z</published>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yeni pazar verileri, lider şirketlerin yapay zeka entegrasyonunu ve otomasyon iş akışlarını nasıl derinleştirdiğini inceliyor.]]></summary>
+    <category term="B2B_AI_ADOPTION_SIGNALS" />
+    <category term="enterprise AI adoption" />
+    <category term="agentic workflows" />
+    <category term="Codex integration" />
+  </entry>
+  <entry>
+    <title>ChatGPT ile Araştırma Süreçlerinde Yapılandırılmış Veri Analizi ve Kaynak Yönetimi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-09-chatgpt-for-research-62379661ee74" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-09-chatgpt-for-research-62379661ee74</id>
+    <published>2026-09-09T00:00:00Z</published>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yapay zeka tabanlı araştırma asistanlarının kaynak toplama, veri analizi ve referans destekli içerik üretimi üzerindeki operasyonel etkileri.]]></summary>
+    <category term="AI_RESEARCH_WORKFLOW_INTEGRATION" />
+    <category term="ChatGPT" />
+    <category term="research workflow" />
+    <category term="citation tracking" />
+  </entry>
+  <entry>
+    <title>Cloudflare Agent Cloud ve OpenAI Entegrasyonu ile Kurumsal Yapay Zeka Ajanları</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Cloudflare altyapısında GPT-5.4 ve Codex desteğiyle otonom iş akışları ve ajan ölçeklendirme yetenekleri duyuruldu.]]></summary>
+    <category term="AGENTIC_WORKFLOW_CLOUD_INFRASTRUCTURE" />
+    <category term="Agent Cloud" />
+    <category term="Cloudflare" />
+    <category term="OpenAI" />
+  </entry>
+  <entry>
+    <title>Google, Yapay Zeka Modunda Geleneksel Arama Kampanyalarını Test Ediyor</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-google-tests-traditional-search-campaigns-in-ai--4dd5c8407264" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-google-tests-traditional-search-campaigns-in-ai--4dd5c8407264</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yapay zeka odaklı arama arayüzlerinde kesin ve sıralı eşleme reklam formatlarının değerlendirilmesine yönelik teknik analiz.]]></summary>
+    <category term="AI_SEARCH_AD_TARGETING_INTEGRATION" />
+    <category term="AI mode" />
+    <category term="search ads" />
+    <category term="exact match" />
+  </entry>
+  <entry>
+    <title>Ajan Tabanlı Dönemde Yapay Zeka Yatırımlarının Yönetimi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yapay zeka yatırımlarının maliyet etkinliğini ve birim başına düşen verimliliğini ölçmeye yönelik stratejik dönüşüm analizi.]]></summary>
+    <category term="AGENTIC_AI_INVESTMENT_METRICS" />
+    <category term="agentic era" />
+    <category term="ai investments" />
+    <category term="useful work per dollar" />
+  </entry>
+  <entry>
+    <title>Endava, Codex ile Agentik Bir Organizasyon İnşa Ediyor</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Yazılım teslimat sürelerini kısaltan ve gereksinim analizini haftalardan saatlere indiren otomasyon mimarisi.]]></summary>
+    <category term="AGENTIC_ORGANIZATION_WORKFLOWS" />
+    <category term="Codex" />
+    <category term="Endava" />
+    <category term="agentic systems" />
+  </entry>
+  <entry>
+    <title>Update to the Site Reputation Policy: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c</id>
+    <published>2026-08-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Large Language Model Optimization & Latent Projection sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="LLMO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Platform properties roll out globally, plus a new social and video performance guide: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825</id>
+    <published>2026-07-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Retrieval-Augmented Generation & Vector Manifolds sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="RAG_RETRIEVAL" />
+    <category term="RAG RETRIEVAL" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>See how content from social and video platforms performs on Google Search: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f</id>
+    <published>2026-07-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Generative Engine Optimization & Entity Consensus sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="GEO_OPTIMIZATION" />
+    <category term="GEO OPTIMIZATION" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Deep Dive Europe 2026: Apparently we're going to Barcelona: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05</id>
+    <published>2026-07-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Answer Engine Optimization & Caliper Extraction sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="AEO_ANALYSIS" />
+    <category term="AEO ANALYSIS" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Help Us Pick the Next Stop in Europe for Search Central Live Deep Dive 2026!: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-06-01-help-us-pick-the-next-stop-in-europe-for-search-ce-0461e0bc6d" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-06-01-help-us-pick-the-next-stop-in-europe-for-search-ce-0461e0bc6d</id>
+    <published>2026-06-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Autonomous Agent Optimization & WebMCP Tool Schemas sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="AAO_AGENT" />
+    <category term="AAO AGENT" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing Search Generative AI performance reports in Search Console: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0</id>
+    <published>2026-06-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Crawler Infrastructure, Status Codes & Robots Protocols sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="TECHNICAL_SEO" />
+    <category term="TECHNICAL SEO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>A new resource for optimizing for generative AI in Google Search: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad</id>
+    <published>2026-05-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Hierarchical Discovery Mesh & Crawl Budget Routing sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="SITEMAP_DISCOVERY" />
+    <category term="SITEMAP DISCOVERY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing a new spam policy for "back button hijacking": Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3</id>
+    <published>2026-04-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Linked Data RDF Graph & JSON-LD Entity Networks sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="SCHEMA_ENTITY" />
+    <category term="SCHEMA ENTITY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live is Coming to Shanghai in 2026!: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba</id>
+    <published>2026-04-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Cryptographic Provenance, C2PA & Trust Verification sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="EEAT_CONSENSUS" />
+    <category term="EEAT CONSENSUS" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Inside Googlebot: demystifying crawling, fetching, and the bytes we process: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Neural Model Inference, Attention & Reasoning Cores sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="AI_INFERENCE" />
+    <category term="AI INFERENCE" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>New Location for the Google Crawlers' IP Range Files: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Large Language Model Optimization & Latent Projection sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="LLMO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live is coming to Canada: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-search-central-live-is-coming-to-canada-3c25683619" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-search-central-live-is-coming-to-canada-3c25683619</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Retrieval-Augmented Generation & Vector Manifolds sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="RAG_RETRIEVAL" />
+    <category term="RAG RETRIEVAL" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live Asia Pacific 2026: Get Ready for Sydney and more!: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Generative Engine Optimization & Entity Consensus sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="GEO_OPTIMIZATION" />
+    <category term="GEO OPTIMIZATION" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Google's February 2026 Discover core update: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0</id>
+    <published>2026-02-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Answer Engine Optimization & Caliper Extraction sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="AEO_ANALYSIS" />
+    <category term="AEO ANALYSIS" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live is coming back to South America: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5</id>
+    <published>2026-01-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Autonomous Agent Optimization & WebMCP Tool Schemas sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="AAO_AGENT" />
+    <category term="AAO AGENT" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live APAC 2025 Recap: A Note of Gratitude: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Crawler Infrastructure, Status Codes & Robots Protocols sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="TECHNICAL_SEO" />
+    <category term="TECHNICAL SEO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing weekly and monthly views in Search Console: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Hierarchical Discovery Mesh & Crawl Budget Routing sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="SITEMAP_DISCOVERY" />
+    <category term="SITEMAP DISCOVERY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing social channels in Search Console: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+    <link href="https://htmlandhtml.com/tr/llms-txt-haberler/2025-12-01-introducing-social-channels-in-search-console-62c336c509" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/tr/llms-txt-haberler/2025-12-01-introducing-social-channels-in-search-console-62c336c509</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Linked Data RDF Graph & JSON-LD Entity Networks sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></summary>
+    <category term="SCHEMA_ENTITY" />
+    <category term="SCHEMA ENTITY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+</feed>

@@ -3,3 +3,4 @@ SON OTURUM:
 - mobil bileşenleri gizleyen kalkan eklendi (premium-experience.css).
 - scripts/build_homepages.py güncellendi, build alındı.
 - Düzeltmeler Firebase Hosting üzerine canlıya alındı (deploy edildi) ve Git deposuna pushlandı.
+- W3C RSS 2.0 / Atom feed motoru kuruldu (scripts/build_rss.py), rss.xml, rss-tr.xml, rss-en.xml ve feed.xml üretildi; package.json build zincirine bağlandı.

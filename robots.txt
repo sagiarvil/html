@@ -23,3 +23,8 @@ Disallow: /api/
 
 Sitemap: https://htmlandhtml.com/sitemap.xml
 Sitemap: https://htmlandhtml.com/sitemap-news.xml
+# Syndication Feeds (W3C RSS 2.0 & RFC 4287 Atom 1.0)
+# Feed: https://htmlandhtml.com/rss.xml
+# Feed: https://htmlandhtml.com/rss-tr.xml
+# Feed: https://htmlandhtml.com/atom.xml
+# Feed: https://htmlandhtml.com/atom-tr.xml

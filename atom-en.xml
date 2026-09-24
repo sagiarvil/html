@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HTML&amp;HTML — AI Search &amp; Visibility Engineering Feed</title>
+  <subtitle>Live algorithmic analysis, search engine documentation, and LLM retrieval protocol updates.</subtitle>
+  <link href="https://htmlandhtml.com/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="https://htmlandhtml.com/en/" rel="alternate" type="text/html" />
+  <id>https://htmlandhtml.com/atom.xml</id>
+  <updated>2026-09-24T20:50:02Z</updated>
+  <author>
+    <name>HTML&amp;HTML Editorial Intelligence</name>
+    <uri>https://htmlandhtml.com</uri>
+  </author>
+  <generator uri="https://htmlandhtml.com" version="1.0">HTMLandHTML Enterprise Atom Engine</generator>
+  <entry>
+    <title>News Corp and OpenAI Establish Global Content and AI Partnership</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-20-a-landmark-multi-year-global-partnership-with-ne-9f40e902d71f" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-20-a-landmark-multi-year-global-partnership-with-ne-9f40e902d71f</id>
+    <published>2026-09-20T00:00:00Z</published>
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A new alliance integrates premier journalism into generative search platforms and retrieval systems.]]></summary>
+    <category term="AI_SEARCH_CONTENT_PARTNERSHIPS" />
+    <category term="generative ai" />
+    <category term="content licensing" />
+    <category term="news corp" />
+  </entry>
+  <entry>
+    <title>Quality Thresholds for Crawled But Unindexed Pages</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-20-why-your-pages-are-stuck-in-crawled-currently-no-e9fc8f283994" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-20-why-your-pages-are-stuck-in-crawled-currently-no-e9fc8f283994</id>
+    <published>2026-09-20T00:00:00Z</published>
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Addressing the persistent crawl-without-indexing state observed in search platform console reports and technical auditing approaches.]]></summary>
+    <category term="INDEXING_QUALITY_THRESHOLDS" />
+    <category term="crawled-not-currently-indexed" />
+    <category term="google-search-console" />
+    <category term="content-quality" />
+  </entry>
+  <entry>
+    <title>ChatGPT Agent System Card: AI Search Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-chatgpt-agent-system-card-7a7213b68631" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-chatgpt-agent-system-card-7a7213b68631</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[OpenAI's next-generation agentic model combines research, browser automation, and code execution tools with built-in safety safeguards.]]></summary>
+    <category term="CHATGPT_AGENT_SYSTEM_CARD" />
+    <category term="agentic models" />
+    <category term="browser automation" />
+    <category term="preparedness framework" />
+  </entry>
+  <entry>
+    <title>ChatGPT for Business March 2025 Updates and Technical Implications</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-new-in-chatgpt-for-business-march-2025-dc32b9a6e0b3" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-new-in-chatgpt-for-business-march-2025-dc32b9a6e0b3</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[The March 2025 update brings enhanced interactivity, customization, and agentic capabilities to ChatGPT in enterprise environments.]]></summary>
+    <category term="CHATGPT_BUSINESS_MARCH_2025_UPDATES" />
+    <category term="ChatGPT" />
+    <category term="enterprise search" />
+    <category term="agentic workflow" />
+  </entry>
+  <entry>
+    <title>Technical Analysis on the Agentic AI Foundation and AGENTS.md Standard</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-openai-co-founds-agentic-ai-foundation-donates-a-fa276c020c30" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-openai-co-founds-agentic-ai-foundation-donates-a-fa276c020c30</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Technical implications of the new Linux Foundation entity and AGENTS.md contribution for web-based AI agents and open standards.]]></summary>
+    <category term="AGENTIC_AI_FOUNDATION" />
+    <category term="Agentic AI Foundation" />
+    <category term="AGENTS.md" />
+    <category term="Linux Foundation" />
+  </entry>
+  <entry>
+    <title>Direct In-Chat Purchasing and the Agentic Commerce Protocol</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-buy-it-in-chatgpt-instant-checkout-and-the-agent-33e5e3005ea0" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-buy-it-in-chatgpt-instant-checkout-and-the-agent-33e5e3005ea0</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[New protocol components enabling users, AI agents, and businesses to shop collaboratively within the ChatGPT ecosystem.]]></summary>
+    <category term="AGENTIC_COMMERCE_PROTOCOL" />
+    <category term="agentic commerce" />
+    <category term="instant checkout" />
+    <category term="conversational shopping" />
+  </entry>
+  <entry>
+    <title>OpenAI Structural Evolution: Transition to Public Benefit Corporation</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-evolving-openai-s-structure-aaba7ebe3daa" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-evolving-openai-s-structure-aaba7ebe3daa</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[This corporate architecture update aims to scale impact under nonprofit governance and maintain long-term alignment with the public good.]]></summary>
+    <category term="CORPORATE_STRUCTURE_TRANSITION" />
+    <category term="Public Benefit Corporation" />
+    <category term="nonprofit oversight" />
+    <category term="corporate governance" />
+  </entry>
+  <entry>
+    <title>Agentic AI Integration in Automated Sales Prospecting Workflows</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-achieving-10x-growth-with-agentic-sales-prospect-726c6df64865" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-achieving-10x-growth-with-agentic-sales-prospect-726c6df64865</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Scaling sales prospecting operations through advanced automation tools and generative AI models.]]></summary>
+    <category term="AGENTIC_SALES_PROSPECTING_AUTOMATION" />
+    <category term="agentic workflows" />
+    <category term="automated outreach" />
+    <category term="AI sales prospecting" />
+  </entry>
+  <entry>
+    <title>Technical Analysis and Implications of the New AI-Driven Search Prototype</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-19-searchgpt-is-a-prototype-of-new-ai-search-featur-6cafd8cf5668" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-19-searchgpt-is-a-prototype-of-new-ai-search-featur-6cafd8cf5668</id>
+    <published>2026-09-19T00:00:00Z</published>
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A technical examination of the new search prototype combining advanced AI models with timely web sources and direct answer mechanisms.]]></summary>
+    <category term="AI_SEARCH_PROTOTYPE_DEPLOYMENT" />
+    <category term="SearchGPT" />
+    <category term="AI search" />
+    <category term="web retrieval" />
+  </entry>
+  <entry>
+    <title>New AI Safety Bug Bounty Program Introduced by OpenAI</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-18-introducing-the-openai-safety-bug-bounty-program-fb38dfafd80a</id>
+    <published>2026-09-18T00:00:00Z</published>
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A comprehensive bug bounty program targeting AI system abuse risks, agentic flaws, and data exfiltration has been launched.]]></summary>
+    <category term="AI_SAFETY_BUG_BOUNTY" />
+    <category term="bug bounty" />
+    <category term="prompt injection" />
+    <category term="agentic vulnerabilities" />
+  </entry>
+  <entry>
+    <title>OpenAI and Japan Digital Agency Establish Generative AI Partnership</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-18-openai-announces-strategic-collaboration-with-ja-15f17b33ed3a" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-18-openai-announces-strategic-collaboration-with-ja-15f17b33ed3a</id>
+    <published>2026-09-18T00:00:00Z</published>
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Strategic collaboration targeting generative AI integration in public services and international governance frameworks.]]></summary>
+    <category term="PUBLIC_SECTOR_AI_INTEGRATION" />
+    <category term="generative ai" />
+    <category term="public services" />
+    <category term="ai governance" />
+  </entry>
+  <entry>
+    <title>GPT-5.6 Update: Fusing Frontier Intelligence and Efficiency</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-16-how-gpt-5-6-fuses-frontier-intelligence-with-fro-eb71f165025c</id>
+    <published>2026-09-16T00:00:00Z</published>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[New model architecture redefines the balance between cost and efficiency in AI-driven search and agentic workflows.]]></summary>
+    <category term="GPT_5_6_EFFICIENCY_AND_SEARCH_INTELLIGENCE" />
+    <category term="GPT-5.6" />
+    <category term="AI efficiency" />
+    <category term="agentic workflows" />
+  </entry>
+  <entry>
+    <title>Inside Mirakl's Agentic Commerce Architecture</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-16-inside-mirakl-s-agentic-commerce-vision-946bf5413869</id>
+    <published>2026-09-16T00:00:00Z</published>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Mirakl optimizes documentation speed and customer support operations through AI agents and enterprise integrations.]]></summary>
+    <category term="AGENTIC_COMMERCE_INFRASTRUCTURE" />
+    <category term="AI agents" />
+    <category term="ChatGPT Enterprise" />
+    <category term="documentation acceleration" />
+  </entry>
+  <entry>
+    <title>New Evaluation Cycle in the Enterprise Generative AI Provider Market</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-16-openai-named-emerging-leader-in-generative-ai-ff9c96ec9359</id>
+    <published>2026-09-16T00:00:00Z</published>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Industry analysts have updated leadership positions within the enterprise generative AI market, highlighting deployment scale.]]></summary>
+    <category term="GENERATIVE_AI_ENTERPRISE_ADOPTION" />
+    <category term="generative ai" />
+    <category term="enterprise architecture" />
+    <category term="model providers" />
+  </entry>
+  <entry>
+    <title>Enterprise AI Agent Platform: Introducing OpenAI Presence</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-15-introducing-openai-presence-839f7a51d7b5" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-15-introducing-openai-presence-839f7a51d7b5</id>
+    <published>2026-09-15T00:00:00Z</published>
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A new enterprise platform has been announced to deploy voice and chat-based workflow agents for organizations.]]></summary>
+    <category term="OPENAI_PRESENCE_ENTERPRISE_AGENTS" />
+    <category term="enterprise AI agent" />
+    <category term="voice and chat agents" />
+    <category term="workflow deployment" />
+  </entry>
+  <entry>
+    <title>Agentic Coding and Reasoning Integration in GPT-5.3-Codex</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-15-gpt-5-3-codex-system-card-dd64fe3084a4</id>
+    <published>2026-09-15T00:00:00Z</published>
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[The latest coding framework merges advanced reasoning capabilities with professional knowledge into a unified agent architecture.]]></summary>
+    <category term="GPT_5_3_CODEX_AGENTIC_CODE_INTEGRATION" />
+    <category term="agentic coding" />
+    <category term="frontier reasoning" />
+    <category term="technical architecture" />
+  </entry>
+  <entry>
+    <title>Product Discovery and Agentic Commerce Protocol Integration in ChatGPT</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-13-powering-product-discovery-in-chatgpt-d58daa6d846a</id>
+    <published>2026-09-13T00:00:00Z</published>
+    <updated>2026-09-13T00:00:00Z</updated>
+    <summary type="html"><![CDATA[ChatGPT introduces immersive visual shopping capabilities and direct merchant integrations via a standardized protocol.]]></summary>
+    <category term="AGENTIC_COMMERCE_PROTOCOL_DISCOVERY" />
+    <category term="Agentic Commerce Protocol" />
+    <category term="ChatGPT product discovery" />
+    <category term="structured merchant data" />
+  </entry>
+  <entry>
+    <title>Project-Scale Coding Models with GPT-5.1-Codex-Max</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-13-building-more-with-gpt-5-1-codex-max-55da04f42e32</id>
+    <published>2026-09-13T00:00:00Z</published>
+    <updated>2026-09-13T00:00:00Z</updated>
+    <summary type="html"><![CDATA[The next-generation agentic coding model enhances reasoning and token efficiency for extended software tasks.]]></summary>
+    <category term="AGENTIC_CODING_MODELS" />
+    <category term="GPT-5.1-Codex-Max" />
+    <category term="agentic coding" />
+    <category term="reasoning efficiency" />
+  </entry>
+  <entry>
+    <title>OpenAI Japan Unveils Teen Safety Blueprint</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-12-openai-japan-announces-japan-teen-safety-bluepri-4e32c322a737</id>
+    <published>2026-09-12T00:00:00Z</published>
+    <updated>2026-09-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Enhanced age protections and parental controls introduced to prioritize youth safety in generative AI systems.]]></summary>
+    <category term="TEEN_SAFETY_BLUEPRINT_GENERATIVE_AI" />
+    <category term="Japan Teen Safety Blueprint" />
+    <category term="age verification" />
+    <category term="parental controls" />
+  </entry>
+  <entry>
+    <title>Enterprise-Scale Agentic AI Integration and Infrastructure Implications</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-12-accenture-and-openai-accelerate-enterprise-ai-su-15fd84c7f858</id>
+    <published>2026-09-12T00:00:00Z</published>
+    <updated>2026-09-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Deployment of agentic AI systems within core business workflows and their technical architecture impacts.]]></summary>
+    <category term="ENTERPRISE_AGENTIC_AI_INTEGRATION" />
+    <category term="enterprise AI" />
+    <category term="agentic systems" />
+    <category term="business integration" />
+  </entry>
+  <entry>
+    <title>The Rise of Agentic AI in Scientific Computing</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-11-scientific-computing-in-the-age-of-agentic-ai-824b5ba22f1e</id>
+    <published>2026-09-11T00:00:00Z</published>
+    <updated>2026-09-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A technical assessment examining the role of agentic coding systems in scientific software modernization and genomics research.]]></summary>
+    <category term="SCIENTIFIC_COMPUTING_AGENTIC_AI" />
+    <category term="agentic AI" />
+    <category term="scientific computing" />
+    <category term="genomics" />
+  </entry>
+  <entry>
+    <title>WebSocket Integration and Connection-Scoped Caching for the Responses API</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-11-speeding-up-agentic-workflows-with-websockets-in-8f555fe918e1</id>
+    <published>2026-09-11T00:00:00Z</published>
+    <updated>2026-09-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Connection-scoped caching and the WebSocket protocol reduce network overhead and latency in agentic workflows.]]></summary>
+    <category term="WEBSOCKET_AGENTIC_WORKFLOWS" />
+    <category term="WebSockets" />
+    <category term="Responses API" />
+    <category term="agent loops" />
+  </entry>
+  <entry>
+    <title>Advanced Professional Workflows and Long-Context Capabilities with GPT-5.2</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-11-introducing-gpt-5-2-10ab1c39be14" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-11-introducing-gpt-5-2-10ab1c39be14</id>
+    <published>2026-09-11T00:00:00Z</published>
+    <updated>2026-09-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[The new-generation frontier model delivers enhanced reasoning and coding performance for professional use cases.]]></summary>
+    <category term="ADVANCED_FRONTIER_MODEL_UPDATE" />
+    <category term="GPT-5.2" />
+    <category term="frontier model" />
+    <category term="agentic workflows" />
+  </entry>
+  <entry>
+    <title>Cars24 Scales Million-Minute Conversation Traffic with AI Agents</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-10-how-cars24-scales-conversations-and-builds-faste-f47e8f0dcf67</id>
+    <published>2026-09-10T00:00:00Z</published>
+    <updated>2026-09-10T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Integration of voice and text-based AI agents across internal operational workflows.]]></summary>
+    <category term="CONVERSATIONAL_AI_AGENTS" />
+    <category term="voice agents" />
+    <category term="chat automation" />
+    <category term="agentic workflows" />
+  </entry>
+  <entry>
+    <title>Scaling Enterprise Agentic AI Systems</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-10-netomi-s-lessons-for-scaling-agentic-systems-int-2d9b2aa26e18</id>
+    <published>2026-09-10T00:00:00Z</published>
+    <updated>2026-09-10T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A technical look at integrating multi-step reasoning, concurrency, and governance mechanisms in production environments.]]></summary>
+    <category term="ENTERPRISE_AGENTIC_SYSTEMS_SCALING" />
+    <category term="agentic systems" />
+    <category term="enterprise AI" />
+    <category term="concurrency" />
+  </entry>
+  <entry>
+    <title>Five Million Dollar Research Grant Initiative for AI and Teen Development</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-09-funding-grants-for-new-research-into-ai-and-teen-7948c39493cb</id>
+    <published>2026-09-09T00:00:00Z</published>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Independent researchers can apply for funding to examine the impacts of generative AI on adolescent development, safety, and well-being.]]></summary>
+    <category term="AI_TEEN_DEVELOPMENT_RESEARCH_GRANTS" />
+    <category term="generative AI" />
+    <category term="teen development" />
+    <category term="research grants" />
+  </entry>
+  <entry>
+    <title>Frontier Enterprise AI Integration Trends and Workflow Scaling</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-09-how-frontier-firms-are-pulling-ahead-57a55fcb2055</id>
+    <published>2026-09-09T00:00:00Z</published>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <summary type="html"><![CDATA[New market data examines how leading organizations are deepening AI integration and scaling automated workflows.]]></summary>
+    <category term="B2B_AI_ADOPTION_SIGNALS" />
+    <category term="enterprise AI adoption" />
+    <category term="agentic workflows" />
+    <category term="Codex integration" />
+  </entry>
+  <entry>
+    <title>Structured Data Analysis and Source Management in Research Workflows via ChatGPT</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-09-chatgpt-for-research-62379661ee74" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-09-chatgpt-for-research-62379661ee74</id>
+    <published>2026-09-09T00:00:00Z</published>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <summary type="html"><![CDATA[The operational impacts of AI-powered research assistants on source collection, data analysis, and citation-backed content generation.]]></summary>
+    <category term="AI_RESEARCH_WORKFLOW_INTEGRATION" />
+    <category term="ChatGPT" />
+    <category term="research workflow" />
+    <category term="citation tracking" />
+  </entry>
+  <entry>
+    <title>Enterprise AI Agents via Cloudflare Agent Cloud and OpenAI Integration</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-enterprises-power-agentic-workflows-in-cloudflar-4586c5f3db35</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Autonomous workflows and agent scaling capabilities launched on Cloudflare infrastructure with GPT-5.4 and Codex support.]]></summary>
+    <category term="AGENTIC_WORKFLOW_CLOUD_INFRASTRUCTURE" />
+    <category term="Agent Cloud" />
+    <category term="Cloudflare" />
+    <category term="OpenAI" />
+  </entry>
+  <entry>
+    <title>Google Tests Traditional Search Campaigns in AI Mode</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai--4dd5c8407264" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-google-tests-traditional-search-campaigns-in-ai--4dd5c8407264</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Technical analysis of the evaluation of exact and phrase match ad formats within AI-driven search interfaces.]]></summary>
+    <category term="AI_SEARCH_AD_TARGETING_INTEGRATION" />
+    <category term="AI mode" />
+    <category term="search ads" />
+    <category term="exact match" />
+  </entry>
+  <entry>
+    <title>Managing Artificial Intelligence Investments in the Agentic Era</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-to-manage-ai-investments-in-the-agentic-era-0a5ca4c5b523</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Strategic transformation analysis focused on measuring cost-effectiveness and per-unit efficiency of artificial intelligence investments.]]></summary>
+    <category term="AGENTIC_AI_INVESTMENT_METRICS" />
+    <category term="agentic era" />
+    <category term="ai investments" />
+    <category term="useful work per dollar" />
+  </entry>
+  <entry>
+    <title>Endava Builds an Agentic Organization with Codex</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-09-08-how-endava-builds-an-agentic-organization-with-c-2aa7e747964e</id>
+    <published>2026-09-08T00:00:00Z</published>
+    <updated>2026-09-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[An automation architecture accelerating software delivery and reducing requirements analysis from weeks to hours.]]></summary>
+    <category term="AGENTIC_ORGANIZATION_WORKFLOWS" />
+    <category term="Codex" />
+    <category term="Endava" />
+    <category term="agentic systems" />
+  </entry>
+  <entry>
+    <title>Update to the Site Reputation Policy: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c</id>
+    <published>2026-08-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Large Language Model Optimization & Latent Projection, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="LLMO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Platform properties roll out globally, plus a new social and video performance guide: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-07-01-platform-properties-roll-out-globally-plus-a-new-s-5cc3b7a825</id>
+    <published>2026-07-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Retrieval-Augmented Generation & Vector Manifolds, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="RAG_RETRIEVAL" />
+    <category term="RAG RETRIEVAL" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>See how content from social and video platforms performs on Google Search: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-07-01-see-how-content-from-social-and-video-platforms-pe-9525633b3f</id>
+    <published>2026-07-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Generative Engine Optimization & Entity Consensus, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="GEO_OPTIMIZATION" />
+    <category term="GEO OPTIMIZATION" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Deep Dive Europe 2026: Apparently we're going to Barcelona: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-07-01-search-central-deep-dive-europe-2026-apparently-we-b6a3dadc05</id>
+    <published>2026-07-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Answer Engine Optimization & Caliper Extraction, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="AEO_ANALYSIS" />
+    <category term="AEO ANALYSIS" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Help Us Pick the Next Stop in Europe for Search Central Live Deep Dive 2026!: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-06-01-help-us-pick-the-next-stop-in-europe-for-search-ce-0461e0bc6d" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-06-01-help-us-pick-the-next-stop-in-europe-for-search-ce-0461e0bc6d</id>
+    <published>2026-06-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Autonomous Agent Optimization & WebMCP Tool Schemas, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="AAO_AGENT" />
+    <category term="AAO AGENT" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing Search Generative AI performance reports in Search Console: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-06-01-introducing-search-generative-ai-performance-repor-b71333e9b0</id>
+    <published>2026-06-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Crawler Infrastructure, Status Codes & Robots Protocols, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="TECHNICAL_SEO" />
+    <category term="TECHNICAL SEO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>A new resource for optimizing for generative AI in Google Search: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-05-01-a-new-resource-for-optimizing-for-generative-ai-in-c3b385a4ad</id>
+    <published>2026-05-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Hierarchical Discovery Mesh & Crawl Budget Routing, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="SITEMAP_DISCOVERY" />
+    <category term="SITEMAP DISCOVERY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing a new spam policy for "back button hijacking": AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3</id>
+    <published>2026-04-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Linked Data RDF Graph & JSON-LD Entity Networks, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="SCHEMA_ENTITY" />
+    <category term="SCHEMA ENTITY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live is Coming to Shanghai in 2026!: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba</id>
+    <published>2026-04-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Cryptographic Provenance, C2PA & Trust Verification, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="EEAT_CONSENSUS" />
+    <category term="EEAT CONSENSUS" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Inside Googlebot: demystifying crawling, fetching, and the bytes we process: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Neural Model Inference, Attention & Reasoning Cores, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="AI_INFERENCE" />
+    <category term="AI INFERENCE" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>New Location for the Google Crawlers' IP Range Files: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Large Language Model Optimization & Latent Projection, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="LLMO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live is coming to Canada: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-is-coming-to-canada-3c25683619" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-is-coming-to-canada-3c25683619</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Retrieval-Augmented Generation & Vector Manifolds, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="RAG_RETRIEVAL" />
+    <category term="RAG RETRIEVAL" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live Asia Pacific 2026: Get Ready for Sydney and more!: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522</id>
+    <published>2026-03-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Generative Engine Optimization & Entity Consensus, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="GEO_OPTIMIZATION" />
+    <category term="GEO OPTIMIZATION" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Google's February 2026 Discover core update: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0</id>
+    <published>2026-02-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Answer Engine Optimization & Caliper Extraction, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="AEO_ANALYSIS" />
+    <category term="AEO ANALYSIS" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live is coming back to South America: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5</id>
+    <published>2026-01-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Autonomous Agent Optimization & WebMCP Tool Schemas, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="AAO_AGENT" />
+    <category term="AAO AGENT" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Search Central Live APAC 2025 Recap: A Note of Gratitude: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Crawler Infrastructure, Status Codes & Robots Protocols, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="TECHNICAL_SEO" />
+    <category term="TECHNICAL SEO" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing weekly and monthly views in Search Console: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Hierarchical Discovery Mesh & Crawl Budget Routing, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="SITEMAP_DISCOVERY" />
+    <category term="SITEMAP DISCOVERY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+  <entry>
+    <title>Introducing social channels in Search Console: AI Search and Technical Web Architecture Analysis</title>
+    <link href="https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-social-channels-in-search-console-62c336c509" rel="alternate" type="text/html" />
+    <id>https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-social-channels-in-search-console-62c336c509</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Linked Data RDF Graph & JSON-LD Entity Networks, multi-model retrieval dynamics, and production webmaster action plans.]]></summary>
+    <category term="SCHEMA_ENTITY" />
+    <category term="SCHEMA ENTITY" />
+    <category term="AI Search" />
+    <category term="llms.txt" />
+  </entry>
+</feed>
