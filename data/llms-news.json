@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-23T21:15:40Z",
+  "lastUpdated": "2026-09-24T03:45:26Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20763,6 +20763,55 @@
       "id": "2026-09-23-practices-for-governing-agentic-ai-systems-25adcaa1c831",
       "sourceUrl": "https://openai.com/index/practices-for-governing-agentic-ai-systems",
       "publishedAt": "2026-09-23"
+    },
+    {
+      "topic": "PROMPT_INJECTION_DEFENSE_AUTOMATED_RED_TEAMING",
+      "keywords": [
+        "prompt injection",
+        "automated red teaming",
+        "reinforcement learning",
+        "browser agent",
+        "security hardening"
+      ],
+      "title": {
+        "tr": "ChatGPT Atlas İçin Otomatik Kırmızı Takım Testleri ve Prompt Enjeksiyonu Savunmaları",
+        "en": "Automated Red Teaming and Prompt Injection Defenses for ChatGPT Atlas"
+      },
+      "dek": {
+        "tr": "Otomatik pekiştirmeli öğrenme döngüleri kullanılarak tarayıcı ajanlarının güvenlik açıklarına karşı güçlendirilmesi.",
+        "en": "Strengthening browser agents against adversarial exploits using automated reinforcement learning loops."
+      },
+      "summary": {
+        "tr": "OpenAI, yapay zeka destekli tarayıcı asistanı ChatGPT Atlas'ın prompt enjeksiyonu saldırılarına karşı direncini artırmak amacıyla otomatik kırmızı takım testlerini devreye soktu. Pekiştirmeli öğrenme tabanlı bu keşif ve yama döngüsü, ajan tabanlı sistemlerin web üzerindeki harici verilerle etkileşime girerken maruz kaldığı yeni nesil güvenlik açıklarını erken aşamada tespit edip kapatmayı hedefler. Gelişen otonom yetenekler, web içeriklerindeki gizli talimatların manipülasyon riskini artırdığından, bu tür proaktif mekanizmalar arama ve tarayıcı entegrasyonlarının güvenliği açısından kritik bir katman oluşturur.",
+        "en": "OpenAI has deployed automated red teaming to bolster the resilience of the ChatGPT Atlas browser assistant against prompt injection attacks. This reinforcement learning-driven discovery and patch loop aims to identify and remediate novel vulnerabilities early as agentic systems interact with untrusted web data. Because evolving autonomous capabilities heighten the risk of manipulation via hidden instructions in web content, proactive defense mechanisms of this scale establish a critical security baseline for search and browser integrations."
+      },
+      "whyItMatters": {
+        "tr": "Web tabanlı yapay zeka ajanları, harici sayfalardan gelen gizli yönergeleri yanlışlıkla yürütebilir. Bu savunma güncellemesi, otonom sistemlerin kullanıcı adına web’de gezinirken güvenilir olmayan içerikleri güvenle işleyebilmesi için zorunlu bir güvenlik altyapısı sunar.",
+        "en": "Web-based AI agents can mistakenly execute hidden directives embedded within external web pages. This security update establishes essential infrastructure ensuring autonomous systems can safely process untrusted content while browsing on behalf of users."
+      },
+      "technicalImpact": {
+        "tr": "Otomatik kırmızı takım süreçleri ve pekiştirmeli öğrenme modelleri, enjeksiyon vektörlerinin tespit hızını artırır. Bu durum, LLM tabanlı ajanların web veri ayrıştırma (parsing) ve bağlam işleme katmanlarında daha katı doğrulama kurallarının uygulanmasını gerektirir, böylece sistemin istismara açık uç noktaları daraltılır.",
+        "en": "Automated red teaming and reinforcement learning loops accelerate the detection velocity of injection vectors. This requires LLM-based agents to enforce stricter validation rules across web data parsing and context processing layers, effectively narrowing the attack surface."
+      },
+      "actions": {
+        "tr": [
+          "Harici web sayfalarından alınan verileri doğrudan sistem komutu olarak yorumlayan yapıları izleyin.",
+          "Tarayıcı ajanlarının otonom eylemlerinde kullanıcı onayı gerektiren hassas eşikleri gözden geçirin.",
+          "Otomatik test döngüleri entegre ederek olası enjeksiyon senaryolarını simüle edin."
+        ],
+        "en": [
+          "Monitor architectures that directly interpret external webpage data as system instructions.",
+          "Review sensitive permission thresholds requiring user confirmation for autonomous agent actions.",
+          "Integrate automated test loops to simulate potential prompt injection scenarios."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu güncelleme, sunulan güvenlik döngülerinin tüm olası sıfır gün (zero-day) prompt enjeksiyonu vektörlerini tamamen ortadan kaldırdığına dair kesin bir garanti vermez.",
+        "en": "This update does not guarantee that the deployed security loops eliminate every possible zero-day prompt injection vector."
+      },
+      "id": "2026-09-24-continuously-hardening-chatgpt-atlas-against-pro-0ad9fbef8c87",
+      "sourceUrl": "https://openai.com/index/hardening-atlas-against-prompt-injection",
+      "publishedAt": "2026-09-24"
     }
   ]
 }
