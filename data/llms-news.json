@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "editorialPolicy": "ORIGINAL_ANALYSIS_WITH_PRIMARY_SOURCE_LINK",
-  "lastUpdated": "2026-09-24T03:45:26Z",
+  "lastUpdated": "2026-09-24T16:46:29Z",
   "items": [
     {
       "id": "2026-08-01-update-to-the-site-reputation-policy-ae93fb765c",
@@ -20811,6 +20811,55 @@
       },
       "id": "2026-09-24-continuously-hardening-chatgpt-atlas-against-pro-0ad9fbef8c87",
       "sourceUrl": "https://openai.com/index/hardening-atlas-against-prompt-injection",
+      "publishedAt": "2026-09-24"
+    },
+    {
+      "topic": "WEB_MULTIMODAL_SEARCH_CONSOLE_REPORTING",
+      "keywords": [
+        "multimodal search",
+        "Search Console",
+        "visual discovery",
+        "performance metrics",
+        "web analytics"
+      ],
+      "title": {
+        "tr": "Web Multimodal Arama Performansı Arama Konsolu'na Ekleniyor",
+        "en": "Web Multimodal Search Performance Reporting in Search Console"
+      },
+      "dek": {
+        "tr": "Arama Konsolu, görsel ve çok modlu keşif deneyimlerinden gelen trafik analizleri için yeni raporlama özellikleri sunuyor.",
+        "en": "Search Console introduces dedicated reporting capabilities to analyze performance metrics originating from visual and multimodal discovery experiences."
+      },
+      "summary": {
+        "tr": "Arama motorlarının görsel ve çok modlu arama formatlarına evrilmesiyle birlikte, site sahipleri ve içerik üreticileri için performans verilerini izlemek kritik bir hal almıştır. Bu kapsamda platform, web içeriklerinin görsel ve hibrit arama sorgularındaki görünürlüğünü ve etkileşimini ölçümlemeye olanak tanıyan yeni analitik araçlarını duyurmuştur. Bu geliştirme, yayıncıların kullanıcıların platform üzerindeki görsel keşif alışkanlıklarını daha detaylı incelemesine ve optimizasyon stratejilerini bu yeni arama dinamiklerine göre uyarlamasına zemin hazırlamaktadır.",
+        "en": "As search engines evolve to incorporate more visual and multimodal interfaces, tracking performance data has become essential for publishers and site owners. In response, the platform has announced new analytical capabilities designed to measure how web content performs within visual and hybrid query environments. This update provides creators with deeper visibility into user interaction patterns during visual discovery workflows, enabling engineering and content teams to align their optimization strategies with modern search modalities."
+      },
+      "whyItMatters": {
+        "tr": "Görsel ve çok modlu aramaların artması, geleneksel metin tabanlı ölçümleme modellerinin yetersiz kalmasına neden olmaktadır. Yeni raporlama araçları, bu hibrit trafik kaynaklarının etkisini net bir şekilde görerek stratejik kararlar almayı mümkün kılar.",
+        "en": "The expansion of visual and multimodal search renders traditional text-only metrics insufficient. New reporting tools allow teams to isolate and evaluate the concrete impact of these hybrid traffic channels, replacing guesswork with empirical performance data."
+      },
+      "technicalImpact": {
+        "tr": "Mühendislik ekipleri, görsel varlıkların indekslenme oranlarını ve yapılandırılmış veri entegrasyonlarını yeniden gözden geçirmelidir. Yeni metrikler, görsel optimizasyonların ve medya varlıklarının genel arama performansı üzerindeki doğrudan etkisini izleme olanağı tanır.",
+        "en": "Engineering teams must audit asset indexing signals and structured data implementations to ensure media components are fully parseable. The added metrics bridge the gap between media optimization efforts and verifiable discovery outcomes within console reporting interfaces."
+      },
+      "actions": {
+        "tr": [
+          "Görsel varlıkların alt metinlerini ve teknik optimizasyonlarını gözden geçirin.",
+          "Yapılandırılmış veri etiketlemelerinin güncel standartlara uygunluğunu doğrulayın.",
+          "Çok modlu trafik değişimlerini izlemek için konsol raporlarını yapılandırın."
+        ],
+        "en": [
+          "Audit alt text and technical asset optimizations for media elements.",
+          "Verify structured data markup compliance against current schema standards.",
+          "Configure console reporting views to monitor emerging multimodal traffic shifts."
+        ]
+      },
+      "boundary": {
+        "tr": "Bu analitik güncellemenin tüm hesaplarda tam veri tarihselliğiyle ne zaman tam olarak yayınlanacağı belirsizdir.",
+        "en": "The exact rollout timeline for complete historical data backfill across all enterprise properties remains unspecified."
+      },
+      "id": "2026-09-24-announcing-web-multimodal-search-performance-rep-a88e24112a42",
+      "sourceUrl": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
       "publishedAt": "2026-09-24"
     }
   ]
