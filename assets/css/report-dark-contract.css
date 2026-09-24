@@ -1,0 +1,244 @@
+/* HTML&HTML report dark-only contract.
+   Scope: generated report/output surfaces only.
+   Invariant: no white/light report background is permitted in any theme state. */
+
+html[data-report-surface="true"] {
+  color-scheme: dark !important;
+
+  --bg: #0b0f19 !important;
+  --bg-soft: #121827 !important;
+  --bg-card: #121827 !important;
+  --card: #121827 !important;
+  --paper: #0b0f19 !important;
+  --soft: #172033 !important;
+  --fg: #f8fafc !important;
+  --fg-soft: #cbd5e1 !important;
+  --fg-dim: #94a3b8 !important;
+  --line: #2a2d39 !important;
+  --line-strong: #3b3f50 !important;
+
+  --color-bg: #0b0f19 !important;
+  --color-bg-elevated: #1a2236 !important;
+  --color-surface: #121827 !important;
+  --color-surface-hover: #172033 !important;
+  --color-surface-active: #1a2236 !important;
+  --color-border: #2a2d39 !important;
+  --color-border-strong: #3b3f50 !important;
+  --color-text: #f8fafc !important;
+  --color-text-secondary: #cbd5e1 !important;
+  --color-text-tertiary: #94a3b8 !important;
+  --color-text-muted: #94a3b8 !important;
+  --color-code-bg: #070a12 !important;
+  --color-code-text: #f8fafc !important;
+  --color-code-border: #2a2d39 !important;
+
+  --theme-bg: #0b0f19 !important;
+  --theme-bg-surface: #121827 !important;
+  --theme-bg-elevated: #1a2236 !important;
+  --theme-border: #2a2d39 !important;
+  --theme-text-strong: #f8fafc !important;
+  --theme-text-primary: #f8fafc !important;
+  --theme-text-secondary: #cbd5e1 !important;
+  --theme-text-muted: #94a3b8 !important;
+
+  --hh-paper: #0b0f19 !important;
+  --hh-panel: #121827 !important;
+  --hh-card: #121827 !important;
+  --hh-ink: #f8fafc !important;
+  --hh-muted: #94a3b8 !important;
+  --hh-line: #2a2d39 !important;
+  --hh-soft: #172033 !important;
+
+  --px-paper: #0b0f19 !important;
+  --px-card: #121827 !important;
+  --px-ink: #f8fafc !important;
+  --px-muted: #94a3b8 !important;
+  --px-line: #2a2d39 !important;
+  --px-blue-soft: rgba(56, 189, 248, 0.12) !important;
+
+  --ea-bg: #0b0f19 !important;
+  --ea-bg-card: #121827 !important;
+  --ea-bg-hover: #172033 !important;
+  --ea-bg-elevated: #1a2236 !important;
+  --ea-border: #2a2d39 !important;
+  --ea-code-bg: #070a12 !important;
+  --ea-code-border: #2a2d39 !important;
+  --ea-text-primary: #f8fafc !important;
+  --ea-text-secondary: #cbd5e1 !important;
+  --ea-text-muted: #94a3b8 !important;
+  --ea-modal-bg: linear-gradient(135deg, #121827, #1a2236) !important;
+  --ea-modal-card-bg: #121827 !important;
+  --ea-action-bar-bg: linear-gradient(135deg, rgba(18,24,39,.98), rgba(26,34,54,.98)) !important;
+  --ea-recipe-overlay-bg: linear-gradient(180deg, rgba(11,15,25,.55) 0%, rgba(11,15,25,.94) 55%, #0b0f19 100%) !important;
+}
+
+html[data-report-surface="true"],
+html[data-report-surface="true"] body,
+html[data-report-surface="true"] main,
+html[data-report-surface="true"] .section,
+html[data-report-surface="true"] .ea-container {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+
+html[data-report-surface="true"] body {
+  background-image: none !important;
+}
+
+html[data-report-surface="true"] .topbar,
+html[data-report-surface="true"] .sample-report-deck,
+html[data-report-surface="true"] .sample-report-head,
+html[data-report-surface="true"] .overall-score,
+html[data-report-surface="true"] .score-card,
+html[data-report-surface="true"] .detail-card,
+html[data-report-surface="true"] .finding-card,
+html[data-report-surface="true"] .recipe-content,
+html[data-report-surface="true"] .enterprise-section,
+html[data-report-surface="true"] .modal-content,
+html[data-report-surface="true"] .ea-hud-score-card,
+html[data-report-surface="true"] .ea-hud-pillars-card,
+html[data-report-surface="true"] .ea-plane-card,
+html[data-report-surface="true"] .ea-engines-section,
+html[data-report-surface="true"] .ea-competitor-section,
+html[data-report-surface="true"] .ea-graph-section,
+html[data-report-surface="true"] .ea-conflict-section,
+html[data-report-surface="true"] .ea-plan-comparison-section,
+html[data-report-surface="true"] .ea-n8n-section,
+html[data-report-surface="true"] .ea-explorer-section,
+html[data-report-surface="true"] .ea-target-card,
+html[data-report-surface="true"] .ea-plan-card,
+html[data-report-surface="true"] .executive-simulation-deck,
+html[data-report-surface="true"] .ea-citation-telemetry-panel,
+html[data-report-surface="true"] .sim-query-box,
+html[data-report-surface="true"] .vector-attention-deck,
+html[data-report-surface="true"] .dark-pool-risk-deck,
+html[data-report-surface="true"] .dark-pool-recipe-box {
+  background: #121827 !important;
+  background-color: #121827 !important;
+  color: #f8fafc !important;
+  border-color: #2a2d39 !important;
+}
+
+html[data-report-surface="true"] pre,
+html[data-report-surface="true"] code,
+html[data-report-surface="true"] .sample-code-block,
+html[data-report-surface="true"] .recipe-code,
+html[data-report-surface="true"] .evidence-box,
+html[data-report-surface="true"] .ea-diff-code,
+html[data-report-surface="true"] .ea-file-viewer,
+html[data-report-surface="true"] .ea-viewer-body {
+  background: #070a12 !important;
+  background-color: #070a12 !important;
+  color: #e2e8f0 !important;
+  border-color: #2a2d39 !important;
+}
+
+/* Defeat legacy inline light-mode remnants inside report artifacts. */
+html[data-report-surface="true"] [style*="background:#fff" i],
+html[data-report-surface="true"] [style*="background: #fff" i],
+html[data-report-surface="true"] [style*="background-color:#fff" i],
+html[data-report-surface="true"] [style*="background-color: #fff" i],
+html[data-report-surface="true"] [style*="background:white" i],
+html[data-report-surface="true"] [style*="background: white" i],
+html[data-report-surface="true"] [style*="background-color:white" i],
+html[data-report-surface="true"] [style*="background-color: white" i] {
+  background: #121827 !important;
+  background-color: #121827 !important;
+  color: #f8fafc !important;
+  border-color: #2a2d39 !important;
+}
+
+html[data-report-surface="true"] [style*="color:#0f172a" i],
+html[data-report-surface="true"] [style*="color: #0f172a" i] {
+  color: #f8fafc !important;
+}
+html[data-report-surface="true"] [style*="color:#334155" i],
+html[data-report-surface="true"] [style*="color: #334155" i],
+html[data-report-surface="true"] [style*="color:#475569" i],
+html[data-report-surface="true"] [style*="color: #475569" i] {
+  color: #cbd5e1 !important;
+}
+html[data-report-surface="true"] [style*="color:#64748b" i],
+html[data-report-surface="true"] [style*="color: #64748b" i] {
+  color: #94a3b8 !important;
+}
+
+
+/* Legacy enterprise-report markup contains a light palette beyond pure #fff.
+   These exact generated colors are forbidden on report surfaces and are
+   converted after the cascade, including classless inline fragments. */
+html[data-report-surface="true"] [style*="background:#f8fafc" i],
+html[data-report-surface="true"] [style*="background: #f8fafc" i],
+html[data-report-surface="true"] [style*="background:#f1f5f9" i],
+html[data-report-surface="true"] [style*="background: #f1f5f9" i],
+html[data-report-surface="true"] [style*="background:#eff6ff" i],
+html[data-report-surface="true"] [style*="background: #eff6ff" i],
+html[data-report-surface="true"] [style*="background:#e0f2fe" i],
+html[data-report-surface="true"] [style*="background: #e0f2fe" i],
+html[data-report-surface="true"] [style*="background:#f0fdf4" i],
+html[data-report-surface="true"] [style*="background: #f0fdf4" i],
+html[data-report-surface="true"] [style*="background:#fef2f2" i],
+html[data-report-surface="true"] [style*="background: #fef2f2" i],
+html[data-report-surface="true"] [style*="background:#fffbeb" i],
+html[data-report-surface="true"] [style*="background: #fffbeb" i],
+html[data-report-surface="true"] [style*="background:#fff7ed" i],
+html[data-report-surface="true"] [style*="background: #fff7ed" i],
+html[data-report-surface="true"] [style*="background:#e2e8f0" i],
+html[data-report-surface="true"] [style*="background: #e2e8f0" i] {
+  background: #172033 !important;
+  background-color: #172033 !important;
+  border-color: #334155 !important;
+}
+
+/* Preserve semantic status accents without allowing pale status tiles. */
+html[data-report-surface="true"] .executive-deck-badge,
+html[data-report-surface="true"] .citation-source-pill,
+html[data-report-surface="true"] .citation-mode-badge,
+html[data-report-surface="true"] .vector-deck-badge,
+html[data-report-surface="true"] .dark-pool-badge {
+  background: rgba(56, 189, 248, 0.10) !important;
+  color: #7dd3fc !important;
+  border-color: rgba(56, 189, 248, 0.32) !important;
+}
+
+html[data-report-surface="true"] .simulation-arr-box {
+  background: rgba(245, 158, 11, 0.10) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.34) !important;
+}
+
+html[data-report-surface="true"] .telemetry-scope-badge {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #6ee7b7 !important;
+  border-color: rgba(16, 185, 129, 0.34) !important;
+}
+
+html[data-report-surface="true"] .sim-verdict-tag {
+  background: rgba(148, 163, 184, 0.10) !important;
+  border-color: #475569 !important;
+}
+
+/* Report pages are dark-only; theme switching is intentionally unavailable here. */
+html[data-report-surface="true"] #themeToggle,
+html[data-report-surface="true"] .theme-toggle,
+html[data-report-surface="true"] .theme-toggle-btn,
+html[data-report-surface="true"] [data-theme-toggle] {
+  display: none !important;
+}
+
+@media print {
+  html[data-report-surface="true"],
+  html[data-report-surface="true"] body,
+  html[data-report-surface="true"] main,
+  html[data-report-surface="true"] section,
+  html[data-report-surface="true"] article,
+  html[data-report-surface="true"] div {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html[data-report-surface="true"],
+  html[data-report-surface="true"] body {
+    background: #0b0f19 !important;
+    color: #f8fafc !important;
+  }
+}
