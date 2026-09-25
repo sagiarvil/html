@@ -7,12 +7,16 @@ SKIP={'.git','node_modules','functions','functions-firebase','scripts','tests'}
 
 TR_NAV='''<nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
+  <a href="/editor-photoshop.html">Photoshop Web</a>
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
   <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
   <a href="/tr/referans/">Bir Ekibe Öner</a>
 </nav>'''
 EN_NAV='''<nav class="primary-nav" aria-label="Primary navigation">
   <a href="/en/website-scanner/">Free Audit</a>
+  <a href="/pdf-cevirici.html">Translations &amp; PDF</a>
+  <a href="/editor-photoshop.html">Photoshop Web</a>
   <a href="/en/ai-search-visibility/">How It Works</a>
   <a href="/en/pricing/">Implementation Pack ($99)</a>
   <a href="/en/referral/">Refer a Team</a>

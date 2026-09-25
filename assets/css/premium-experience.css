@@ -9771,6 +9771,10 @@ html[data-theme="dark"] .decision-close span,
 /* ==========================================================================
    SUPREME LOGO HIGH-CONTRAST INVERSION & VISIBILITY REINFORCEMENT
    ========================================================================== */
+html[data-theme="dark"] body .brand-logo,
+html[data-theme="dark"] body .brand img,
+html:not([data-theme="light"]) body .brand-logo,
+html:not([data-theme="light"]) body .brand img,
 html body .brand-logo,
 html body .brand img,
 html body header .brand-logo,
@@ -9781,7 +9785,7 @@ html body #hhCyberDrawer .brand-logo,
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)) !important;
+  filter: invert(1) brightness(2) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) !important;
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
@@ -9790,6 +9794,14 @@ html body #hhCyberDrawer .brand-logo,
   height: 28px !important;
   width: auto !important;
   object-fit: contain !important;
+}
+
+html[data-theme="light"] body .brand-logo,
+html[data-theme="light"] body .brand img,
+html[data-theme="light"] body header .brand-logo,
+html[data-theme="light"] body footer .brand-logo,
+html[data-theme="light"] .brand-logo {
+  filter: none !important;
 }
 
 html body footer .brand-logo,

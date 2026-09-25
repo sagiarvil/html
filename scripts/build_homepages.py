@@ -42,7 +42,11 @@ def build_homepages():
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=yes">
 <!-- 1. ZERO-FLASH SCRIPT — Blocking before CSS -->
 <script>
   (function() {
@@ -78,7 +82,8 @@ def build_homepages():
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh5">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/theme.css?v=20260920_27">
@@ -147,7 +152,8 @@ def build_homepages():
       "name": "HTML&HTML Website Fix Validator",
       "url": "https://htmlandhtml.com/",
       "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
       "datePublished": "2026-01-01T00:00:00Z",
       "dateModified": "2026-09-08T00:00:00Z",
       "publisher": { "@id": "https://htmlandhtml.com/#organization" },
@@ -158,6 +164,7 @@ def build_homepages():
     }
   ]
 }
+
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
 <script src="/assets/js/theme.js?v=20260920_27"></script>
@@ -174,6 +181,8 @@ def build_homepages():
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
+  <a href="/editor-photoshop.html">Photoshop Web</a>
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
   <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
   <a href="/tr/referans/">Bir Ekibe Öner</a>
@@ -872,14 +881,26 @@ def build_homepages():
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh5" defer></script>
 <script src="/assets/js/profound-canvas.js?v=20260920_27" defer></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').catch(function() {});
+    });
+  }
+</script>
 </body>
 </html>
 '''
+
     en_html = '''<!doctype html>
 <html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=yes">
 <!-- 1. ZERO-FLASH SCRIPT — Blocking before CSS -->
 <script>
   (function() {
@@ -915,7 +936,8 @@ def build_homepages():
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh5">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/theme.css?v=20260920_27">
@@ -984,7 +1006,8 @@ def build_homepages():
       "name": "HTML&HTML Website Fix Validator",
       "url": "https://htmlandhtml.com/en/",
       "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
       "datePublished": "2026-01-01T00:00:00Z",
       "dateModified": "2026-09-08T00:00:00Z",
       "publisher": { "@id": "https://htmlandhtml.com/#organization" },
@@ -995,6 +1018,7 @@ def build_homepages():
     }
   ]
 }
+
 </script>
 <script src="/assets/js/validator.js?v=17" defer></script>
 <script src="/assets/js/theme.js?v=20260920_27"></script>
@@ -1684,13 +1708,21 @@ def build_homepages():
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh5" defer></script>
 <script src="/assets/js/profound-canvas.js?v=20260920_27" defer></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').catch(function() {});
+    });
+  }
+</script>
 </body>
 </html>'''
 
+
     write_page("index.html", root_html)
     tr_html = root_html.replace(
-        "<title>Yapay Zeka SEO Analizi ve AI Görünürlük Testi | HTML&amp;HTML</title>",
-        "<title>Yapay Zeka SEO Analizi ve AI Görünürlük Testi | HTML&amp;HTML</title>"
+        "<title>AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&amp;HTML</title>",
+        "<title>AI Arama Teknik Teşhis ve Düzeltme Platformu | HTML&amp;HTML</title>"
     ).replace(
         '<link rel="canonical" href="https://htmlandhtml.com/">',
         '<link rel="canonical" href="https://htmlandhtml.com/tr/">'
