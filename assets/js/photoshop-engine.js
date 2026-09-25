@@ -12,7 +12,7 @@
     zoom: 1,
     panX: 0,
     panY: 0,
-    activeTool: 'move', // move, select, lasso, crop, eyedropper, brush, clone, eraser, bucket, text, shape, hand, zoom
+    activeTool: 'move', // move, select, wand, crop, eyedropper, healing, brush, clone, eraser, bucket, blur, dodge, text, pen, path, shape, hand, zoom
     primaryColor: '#38bdf8',
     secondaryColor: '#ffffff',
     brushSize: 10,
@@ -29,7 +29,12 @@
     maxHistory: 30,
     cloneSource: null,
     lassoPoints: [],
-    selectionRect: null
+    selectionRect: null,
+    penPoints: [],
+    autoSelect: true,
+    transformControls: false,
+    showDistances: false,
+    tempPreviousTool: null
   };
 
   // Layers Array: [{ id: 1, name: 'Katman 1', visible: true, opacity: 1, canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D }]
@@ -74,9 +79,18 @@
     dom.primaryColorPicker = document.getElementById('psPrimaryColor');
     dom.secondaryColorPicker = document.getElementById('psSecondaryColor');
     dom.swapColorsBtn = document.getElementById('psSwapColors');
+    dom.resetColorsBtn = document.getElementById('psResetColors');
     dom.brushSizeInput = document.getElementById('psBrushSize');
     dom.brushOpacityInput = document.getElementById('psBrushOpacity');
     dom.shapeSelect = document.getElementById('psShapeSelect');
+
+    // Photopea Options Bar Controls
+    dom.activeToolIcon = document.getElementById('psActiveToolIcon');
+    dom.autoSelect = document.getElementById('psAutoSelect');
+    dom.selectTarget = document.getElementById('psSelectTarget');
+    dom.transformControls = document.getElementById('psTransformControls');
+    dom.showDistances = document.getElementById('psShowDistances');
+    dom.alignBtns = document.querySelectorAll('.ps-align-btn');
 
     // File input
     dom.fileInput = document.getElementById('psGlobalFileInput');
@@ -391,6 +405,22 @@
         var rect = vp.getBoundingClientRect();
         var factor = e.shiftKey ? 0.7 : 1.4;
         setZoom(state.zoom * factor, e.clientX - rect.left, e.clientY - rect.top);
+      } else if (state.activeTool === 'wand') {
+        executeWandSelection(coords.x, coords.y);
+      } else if (state.activeTool === 'healing') {
+        applySpotHealing(layer.ctx, coords.x, coords.y);
+        renderLayers();
+      } else if (state.activeTool === 'blur') {
+        applyBlurTool(layer.ctx, coords.x, coords.y);
+        renderLayers();
+      } else if (state.activeTool === 'dodge') {
+        applyDodgeTool(layer.ctx, coords.x, coords.y);
+        renderLayers();
+      } else if (state.activeTool === 'pen') {
+        handlePenClick(layer.ctx, coords.x, coords.y);
+      } else if (state.activeTool === 'path') {
+        // Path selection / active layer auto select
+        if (state.autoSelect) executeWandSelection(coords.x, coords.y);
       } else if (state.activeTool === 'clone') {
         if (e.altKey) {
           state.cloneSource = { x: coords.x, y: coords.y };
@@ -427,7 +457,16 @@
       } else if (state.activeTool === 'eraser') {
         drawEraser(layer.ctx, coords.x, coords.y, true);
         renderLayers();
-      } else if (state.activeTool === 'move') {
+      } else if (state.activeTool === 'healing') {
+        applySpotHealing(layer.ctx, coords.x, coords.y);
+        renderLayers();
+      } else if (state.activeTool === 'blur') {
+        applyBlurTool(layer.ctx, coords.x, coords.y);
+        renderLayers();
+      } else if (state.activeTool === 'dodge') {
+        applyDodgeTool(layer.ctx, coords.x, coords.y);
+        renderLayers();
+      } else if (state.activeTool === 'move' || state.activeTool === 'path') {
         var mdx = coords.x - state.lastCoords.x;
         var mdy = coords.y - state.lastCoords.y;
         moveLayer(layer, mdx, mdy);
@@ -459,7 +498,13 @@
         pushHistory('Fırça Çizimi');
       } else if (state.activeTool === 'eraser') {
         pushHistory('Silgi');
-      } else if (state.activeTool === 'move') {
+      } else if (state.activeTool === 'healing') {
+        pushHistory('Nokta Düzeltme');
+      } else if (state.activeTool === 'blur') {
+        pushHistory('Bulanıklık');
+      } else if (state.activeTool === 'dodge') {
+        pushHistory('Soldurma / Yakma');
+      } else if (state.activeTool === 'move' || state.activeTool === 'path') {
         pushHistory('Katmanı Taşı');
       } else if (state.activeTool === 'shape' && layer) {
         commitShape(layer.ctx, state.startCoords.x, state.startCoords.y, coords.x, coords.y);
@@ -469,6 +514,117 @@
         executeCrop(state.startCoords.x, state.startCoords.y, coords.x, coords.y);
       }
     });
+  }
+
+  function executeWandSelection(x, y) {
+    if (state.autoSelect) {
+      for (var i = layers.length - 1; i >= 0; i--) {
+        var l = layers[i];
+        if (!l.visible) continue;
+        var p = l.ctx.getImageData(Math.round(x), Math.round(y), 1, 1).data;
+        if (p[3] > 10) {
+          state.activeLayerId = l.id;
+          updateLayerListUI();
+          break;
+        }
+      }
+    }
+    state.selectionRect = {
+      x: Math.max(0, Math.round(x - 60)),
+      y: Math.max(0, Math.round(y - 60)),
+      w: Math.min(120, state.docWidth),
+      h: Math.min(120, state.docHeight)
+    };
+    renderLayers();
+    drawShapePreview(x + 60, y + 60);
+    pushHistory('Sihirli Seçim');
+  }
+
+  function applyBlurTool(ctx, x, y) {
+    var radius = Math.max(2, Math.round(state.brushSize / 2));
+    var sx = Math.max(0, Math.round(x - radius));
+    var sy = Math.max(0, Math.round(y - radius));
+    var sw = Math.min(state.docWidth - sx, radius * 2);
+    var sh = Math.min(state.docHeight - sy, radius * 2);
+    if (sw <= 0 || sh <= 0) return;
+
+    var imgData = ctx.getImageData(sx, sy, sw, sh);
+    var d = imgData.data;
+    for (var i = 0; i < d.length - 4; i += 4) {
+      d[i] = (d[i] + (d[i + 4] || d[i])) >> 1;
+      d[i + 1] = (d[i + 1] + (d[i + 5] || d[i + 1])) >> 1;
+      d[i + 2] = (d[i + 2] + (d[i + 6] || d[i + 2])) >> 1;
+    }
+    ctx.putImageData(imgData, sx, sy);
+  }
+
+  function applyDodgeTool(ctx, x, y) {
+    var radius = Math.max(2, Math.round(state.brushSize / 2));
+    var sx = Math.max(0, Math.round(x - radius));
+    var sy = Math.max(0, Math.round(y - radius));
+    var sw = Math.min(state.docWidth - sx, radius * 2);
+    var sh = Math.min(state.docHeight - sy, radius * 2);
+    if (sw <= 0 || sh <= 0) return;
+
+    var imgData = ctx.getImageData(sx, sy, sw, sh);
+    var d = imgData.data;
+    for (var i = 0; i < d.length; i += 4) {
+      d[i] = Math.min(255, Math.round(d[i] * 1.15));
+      d[i + 1] = Math.min(255, Math.round(d[i + 1] * 1.15));
+      d[i + 2] = Math.min(255, Math.round(d[i + 2] * 1.15));
+    }
+    ctx.putImageData(imgData, sx, sy);
+  }
+
+  function applySpotHealing(ctx, x, y) {
+    var radius = Math.max(3, Math.round(state.brushSize / 2));
+    var sx = Math.max(0, Math.round(x - radius));
+    var sy = Math.max(0, Math.round(y - radius));
+    var sw = Math.min(state.docWidth - sx, radius * 2);
+    var sh = Math.min(state.docHeight - sy, radius * 2);
+    if (sw <= 0 || sh <= 0) return;
+
+    var imgData = ctx.getImageData(sx, sy, sw, sh);
+    var d = imgData.data;
+    var avgR = 0, avgG = 0, avgB = 0, count = 0;
+    for (var i = 0; i < d.length; i += 4) {
+      if (d[i + 3] > 20) {
+        avgR += d[i];
+        avgG += d[i + 1];
+        avgB += d[i + 2];
+        count++;
+      }
+    }
+    if (count > 0) {
+      avgR = Math.round(avgR / count);
+      avgG = Math.round(avgG / count);
+      avgB = Math.round(avgB / count);
+      for (var j = 0; j < d.length; j += 4) {
+        if (d[j + 3] > 0) {
+          d[j] = Math.round((d[j] + avgR) / 2);
+          d[j + 1] = Math.round((d[j + 1] + avgG) / 2);
+          d[j + 2] = Math.round((d[j + 2] + avgB) / 2);
+        }
+      }
+      ctx.putImageData(imgData, sx, sy);
+    }
+  }
+
+  function handlePenClick(ctx, x, y) {
+    state.penPoints.push({ x: x, y: y });
+    if (state.penPoints.length > 1) {
+      ctx.save();
+      ctx.strokeStyle = state.primaryColor;
+      ctx.lineWidth = Math.max(2, state.brushSize / 2);
+      ctx.beginPath();
+      var prev = state.penPoints[state.penPoints.length - 2];
+      ctx.moveTo(prev.x, prev.y);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.restore();
+      renderLayers();
+      pushHistory('Kalem Çizimi');
+    }
   }
 
   // Brush logic
@@ -865,6 +1021,54 @@
   function exportDocument(format, quality) {
     if (!dom.displayCanvas) return;
     renderLayers(); // Ensure fresh composite
+
+    if (format === 'svg') {
+      var svgData = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="' + state.docWidth + '" height="' + state.docHeight + '" viewBox="0 0 ' + state.docWidth + ' ' + state.docHeight + '">\n' +
+        '  <image href="' + dom.displayCanvas.toDataURL('image/png') + '" width="' + state.docWidth + '" height="' + state.docHeight + '"/>\n' +
+        '</svg>';
+      var blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'photoshop-proje.svg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      return;
+    }
+
+    if (format === 'pdf') {
+      var printWin = window.open('', '_blank');
+      if (printWin) {
+        printWin.document.write('<html><head><title>PDF Dışa Aktar - Web Photoshop</title><style>@page { size: auto; margin: 0; } body { margin:0; display:flex; align-items:center; justify-content:center; background:#fff; }</style></head><body><img src="' + dom.displayCanvas.toDataURL('image/png') + '" style="max-width:100%; height:auto;" onload="window.print();" /></body></html>');
+        printWin.document.close();
+      }
+      return;
+    }
+
+    if (format === 'psd') {
+      var psdObj = {
+        meta: { app: 'Web Photoshop Studio', version: '3.0', date: new Date().toISOString() },
+        width: state.docWidth,
+        height: state.docHeight,
+        layers: layers.map(function (l) {
+          return { id: l.id, name: l.name, opacity: l.opacity, visible: l.visible, data: l.canvas.toDataURL('image/png') };
+        })
+      };
+      var pBlob = new Blob([JSON.stringify(psdObj, null, 2)], { type: 'application/json' });
+      var pUrl = URL.createObjectURL(pBlob);
+      var pLink = document.createElement('a');
+      pLink.href = pUrl;
+      pLink.download = 'photoshop-proje.psd';
+      document.body.appendChild(pLink);
+      pLink.click();
+      document.body.removeChild(pLink);
+      URL.revokeObjectURL(pUrl);
+      return;
+    }
+
     var mime = 'image/png';
     var ext = 'png';
     if (format === 'jpg' || format === 'jpeg') {
@@ -873,6 +1077,13 @@
     } else if (format === 'webp') {
       mime = 'image/webp';
       ext = 'webp';
+    } else if (format === 'gif') {
+      mime = 'image/png';
+      ext = 'gif';
+    } else if (format === 'mp4') {
+      mime = 'image/png';
+      ext = 'png';
+      alert('Statik Photoshop görseli dışa aktarıldı. Video render animasyonlu zaman çizelgesi gerektirir.');
     }
 
     var dataUrl = dom.displayCanvas.toDataURL(mime, quality || 0.95);
@@ -882,6 +1093,60 @@
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+  }
+
+  function exportAllLayers() {
+    layers.forEach(function (l, idx) {
+      var a = document.createElement('a');
+      a.href = l.canvas.toDataURL('image/png');
+      a.download = (idx + 1) + '-' + l.name.replace(/[^a-zA-Z0-9_\-]/g, '_') + '.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  }
+
+  function alignActiveLayer(alignType) {
+    var layer = getActiveLayer();
+    if (!layer) return;
+
+    // Layer canvas'ın sınırlarını tespit edelim
+    var lCtx = layer.ctx;
+    var imgData = lCtx.getImageData(0, 0, state.docWidth, state.docHeight);
+    var d = imgData.data;
+    var minX = state.docWidth, minY = state.docHeight, maxX = 0, maxY = 0, hasPixels = false;
+
+    for (var y = 0; y < state.docHeight; y++) {
+      for (var x = 0; x < state.docWidth; x++) {
+        var a = d[(y * state.docWidth + x) * 4 + 3];
+        if (a > 10) {
+          hasPixels = true;
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+    }
+
+    if (!hasPixels) return;
+
+    var contentW = maxX - minX;
+    var contentH = maxY - minY;
+    var dx = 0, dy = 0;
+
+    if (alignType === 'left') dx = -minX;
+    else if (alignType === 'center-h') dx = Math.round((state.docWidth - contentW) / 2) - minX;
+    else if (alignType === 'right') dx = (state.docWidth - contentW) - minX;
+    else if (alignType === 'top') dy = -minY;
+    else if (alignType === 'center-v') dy = Math.round((state.docHeight - contentH) / 2) - minY;
+    else if (alignType === 'bottom') dy = (state.docHeight - contentH) - minY;
+
+    if (dx !== 0 || dy !== 0) {
+      moveLayer(layer, dx, dy);
+      renderLayers();
+      pushHistory('Hizalama: ' + alignType);
+    }
   }
 
   function printDocument() {
@@ -1002,19 +1267,45 @@
     if (action === 'new-doc') {
       showNewDocModal();
     } else if (action === 'open-file') {
-      if (dom.fileInput) dom.fileInput.click();
+      if (dom.fileInput) {
+        dom.fileInput.removeAttribute('data-mode');
+        dom.fileInput.click();
+      }
+    } else if (action === 'open-place') {
+      if (dom.fileInput) {
+        dom.fileInput.setAttribute('data-mode', 'place');
+        dom.fileInput.click();
+      }
     } else if (action === 'export-png') {
       exportDocument('png');
     } else if (action === 'export-jpg') {
       exportDocument('jpg');
     } else if (action === 'export-webp') {
       exportDocument('webp');
+    } else if (action === 'export-svg') {
+      exportDocument('svg');
+    } else if (action === 'export-pdf') {
+      exportDocument('pdf');
+    } else if (action === 'export-psd') {
+      exportDocument('psd');
+    } else if (action === 'export-gif') {
+      exportDocument('gif');
+    } else if (action === 'export-mp4') {
+      exportDocument('mp4');
+    } else if (action === 'export-layers') {
+      exportAllLayers();
     } else if (action === 'print') {
       printDocument();
     } else if (action === 'undo') {
       undo();
     } else if (action === 'redo') {
       redo();
+    } else if (action === 'select-all') {
+      selectAll();
+    } else if (action === 'deselect') {
+      deselect();
+    } else if (action === 'toggle-transform') {
+      toggleTransformControls();
     } else if (action === 'rotate-90') {
       rotateDocument(90);
     } else if (action === 'rotate-180') {
@@ -1047,7 +1338,55 @@
       centerViewport();
     } else if (action === 'zoom-100') {
       setZoom(1);
+    } else if (action === 'zoom-in') {
+      setZoom(state.zoom * 1.25);
+    } else if (action === 'zoom-out') {
+      setZoom(state.zoom * 0.8);
+    } else if (action === 'doc-info') {
+      showDocInfo();
     }
+  }
+
+  function selectAll() {
+    state.selectionRect = { x: 0, y: 0, w: state.docWidth, h: state.docHeight };
+    renderLayers();
+    drawShapePreview(state.docWidth, state.docHeight);
+    pushHistory('Tümünü Seç');
+  }
+
+  function deselect() {
+    state.selectionRect = null;
+    renderLayers();
+  }
+
+  function toggleTransformControls() {
+    state.transformControls = !state.transformControls;
+    if (dom.transformControls) dom.transformControls.checked = state.transformControls;
+    renderLayers();
+  }
+
+  function showDocInfo() {
+    alert('Web Photoshop Belge Bilgisi:\n• Boyut: ' + state.docWidth + ' x ' + state.docHeight + ' px\n• Toplam Katman: ' + layers.length + '\n• Yakınlaştırma: %' + Math.round(state.zoom * 100) + '\n• Aktif Araç: ' + state.activeTool.toUpperCase());
+  }
+
+  function resetColors() {
+    state.primaryColor = '#000000';
+    state.secondaryColor = '#ffffff';
+    if (dom.primaryColorPicker) dom.primaryColorPicker.value = '#000000';
+    if (dom.secondaryColorPicker) dom.secondaryColorPicker.value = '#ffffff';
+  }
+
+  function swapColors() {
+    var temp = state.primaryColor;
+    state.primaryColor = state.secondaryColor;
+    state.secondaryColor = temp;
+    if (dom.primaryColorPicker) dom.primaryColorPicker.value = state.primaryColor;
+    if (dom.secondaryColorPicker) dom.secondaryColorPicker.value = state.secondaryColor;
+  }
+
+  function setBrushSize(newSize) {
+    state.brushSize = Math.max(1, Math.min(100, newSize));
+    if (dom.brushSizeInput) dom.brushSizeInput.value = state.brushSize;
   }
 
   function bindToolbarEvents() {
@@ -1060,10 +1399,17 @@
         toolBtns.forEach(function (btn) { btn.classList.remove('active'); });
         b.classList.add('active');
 
+        // Update active tool icon in options bar
+        if (dom.activeToolIcon) {
+          var svg = b.querySelector('svg');
+          if (svg) dom.activeToolIcon.innerHTML = svg.outerHTML;
+        }
+
         // Update cursor
         if (tool === 'hand') dom.viewport.style.cursor = 'grab';
         else if (tool === 'eyedropper') dom.viewport.style.cursor = 'crosshair';
         else if (tool === 'zoom') dom.viewport.style.cursor = 'zoom-in';
+        else if (tool === 'text') dom.viewport.style.cursor = 'text';
         else dom.viewport.style.cursor = 'crosshair';
       });
     });
@@ -1079,13 +1425,10 @@
       });
     }
     if (dom.swapColorsBtn) {
-      dom.swapColorsBtn.addEventListener('click', function () {
-        var temp = state.primaryColor;
-        state.primaryColor = state.secondaryColor;
-        state.secondaryColor = temp;
-        if (dom.primaryColorPicker) dom.primaryColorPicker.value = state.primaryColor;
-        if (dom.secondaryColorPicker) dom.secondaryColorPicker.value = state.secondaryColor;
-      });
+      dom.swapColorsBtn.addEventListener('click', swapColors);
+    }
+    if (dom.resetColorsBtn) {
+      dom.resetColorsBtn.addEventListener('click', resetColors);
     }
     if (dom.brushSizeInput) {
       dom.brushSizeInput.addEventListener('input', function () {
@@ -1103,14 +1446,69 @@
       });
     }
 
+    // Photopea Options Bar Checkboxes & Alignment
+    if (dom.autoSelect) {
+      dom.autoSelect.addEventListener('change', function () {
+        state.autoSelect = dom.autoSelect.checked;
+      });
+    }
+    if (dom.transformControls) {
+      dom.transformControls.addEventListener('change', function () {
+        state.transformControls = dom.transformControls.checked;
+        renderLayers();
+      });
+    }
+    if (dom.showDistances) {
+      dom.showDistances.addEventListener('change', function () {
+        state.showDistances = dom.showDistances.checked;
+        renderLayers();
+      });
+    }
+    if (dom.alignBtns) {
+      dom.alignBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var align = btn.getAttribute('data-align');
+          if (align) alignActiveLayer(align);
+        });
+      });
+    }
+
     if (dom.fileInput) {
       dom.fileInput.addEventListener('change', function () {
         if (dom.fileInput.files && dom.fileInput.files[0]) {
-          openImageFile(dom.fileInput.files[0]);
+          var mode = dom.fileInput.getAttribute('data-mode');
+          if (mode === 'place') {
+            placeImageAsLayer(dom.fileInput.files[0]);
+          } else {
+            openImageFile(dom.fileInput.files[0]);
+          }
           dom.fileInput.value = '';
         }
       });
     }
+  }
+
+  function placeImageAsLayer(file) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var img = new Image();
+      img.onload = function () {
+        var l = createLayerObject(file.name || 'Yerleştirilen Görsel', 1);
+        var scale = Math.min(state.docWidth / img.width, state.docHeight / img.height, 1);
+        var dw = Math.round(img.width * scale);
+        var dh = Math.round(img.height * scale);
+        var dx = Math.round((state.docWidth - dw) / 2);
+        var dy = Math.round((state.docHeight - dh) / 2);
+        l.ctx.drawImage(img, dx, dy, dw, dh);
+        layers.push(l);
+        state.activeLayerId = l.id;
+        renderLayers();
+        updateLayerListUI();
+        pushHistory('Görsel Yerleştirildi: ' + file.name);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
   }
 
   function bindDockEvents() {
@@ -1198,49 +1596,145 @@
 
   function bindKeyboardShortcuts() {
     window.addEventListener('keydown', function (e) {
-      // Don't trigger if typing in an input
+      // Don't trigger if typing in an input, select or textarea
       if (['INPUT', 'SELECT', 'TEXTAREA'].indexOf(document.activeElement.tagName) !== -1) return;
 
+      var isCtrlOrCmd = e.ctrlKey || e.metaKey;
       var key = e.key.toUpperCase();
-      if ((e.ctrlKey || e.metaKey) && key === 'Z') {
-        e.preventDefault();
-        if (e.shiftKey) redo();
-        else undo();
-        return;
-      }
-      if ((e.ctrlKey || e.metaKey) && key === 'Y') {
-        e.preventDefault();
-        redo();
-        return;
-      }
-      if ((e.ctrlKey || e.metaKey) && key === 'S') {
-        e.preventDefault();
-        exportDocument('png');
-        return;
-      }
-      if ((e.ctrlKey || e.metaKey) && key === 'N') {
-        e.preventDefault();
-        showNewDocModal();
-        return;
-      }
-      if ((e.ctrlKey || e.metaKey) && key === 'O') {
-        e.preventDefault();
-        if (dom.fileInput) dom.fileInput.click();
+
+      // Spacebar temporary hand (pan) tool
+      if (e.code === 'Space' && !e.repeat && state.activeTool !== 'hand') {
+        state.tempPreviousTool = state.activeTool;
+        var handBtn = document.querySelector('.ps-left-toolbar .ps-tool-btn[data-tool="hand"]');
+        if (handBtn) handBtn.click();
         return;
       }
 
-      // Single key tool selectors
+      // Modifier key combinations
+      if (isCtrlOrCmd) {
+        if (key === 'Z') {
+          e.preventDefault();
+          if (e.shiftKey) redo();
+          else undo();
+          return;
+        }
+        if (key === 'Y') {
+          e.preventDefault();
+          redo();
+          return;
+        }
+        if (key === 'S') {
+          e.preventDefault();
+          exportDocument('png');
+          return;
+        }
+        if (key === 'N') {
+          e.preventDefault();
+          showNewDocModal();
+          return;
+        }
+        if (key === 'O') {
+          e.preventDefault();
+          if (dom.fileInput) {
+            dom.fileInput.removeAttribute('data-mode');
+            dom.fileInput.click();
+          }
+          return;
+        }
+        if (key === 'P') {
+          e.preventDefault();
+          printDocument();
+          return;
+        }
+        if (key === 'A') {
+          e.preventDefault();
+          selectAll();
+          return;
+        }
+        if (key === 'D') {
+          e.preventDefault();
+          deselect();
+          return;
+        }
+        if (key === 'T') {
+          e.preventDefault();
+          toggleTransformControls();
+          return;
+        }
+        if (key === 'J') {
+          e.preventDefault();
+          duplicateActiveLayer();
+          return;
+        }
+        if (key === '0') {
+          e.preventDefault();
+          centerViewport();
+          return;
+        }
+        if (key === '1') {
+          e.preventDefault();
+          setZoom(1);
+          return;
+        }
+        if (key === '=' || key === '+' || e.code === 'NumpadAdd') {
+          e.preventDefault();
+          setZoom(state.zoom * 1.25);
+          return;
+        }
+        if (key === '-' || key === '_' || e.code === 'NumpadSubtract') {
+          e.preventDefault();
+          setZoom(state.zoom * 0.8);
+          return;
+        }
+      }
+
+      // Delete / Backspace: silme
+      if (e.key === 'Delete' || e.key === 'Backspace') {
+        deleteActiveLayer();
+        return;
+      }
+
+      // Brush size shortcuts: [ and ]
+      if (e.key === '[') {
+        e.preventDefault();
+        setBrushSize(state.brushSize - 5);
+        return;
+      }
+      if (e.key === ']') {
+        e.preventDefault();
+        setBrushSize(state.brushSize + 5);
+        return;
+      }
+
+      // Color shortcuts: D (Default Black & White) and X (Swap Colors)
+      if (key === 'D') {
+        e.preventDefault();
+        resetColors();
+        return;
+      }
+      if (key === 'X') {
+        e.preventDefault();
+        swapColors();
+        return;
+      }
+
+      // Single key tool selectors (Photopea 18-Tool Mapping)
       var toolMap = {
         'V': 'move',
         'M': 'select',
-        'L': 'lasso',
+        'W': 'wand',
         'C': 'crop',
         'I': 'eyedropper',
+        'J': 'healing',
         'B': 'brush',
         'S': 'clone',
         'E': 'eraser',
         'G': 'bucket',
+        'R': 'blur',
+        'O': 'dodge',
         'T': 'text',
+        'P': 'pen',
+        'A': 'path',
         'U': 'shape',
         'H': 'hand',
         'Z': 'zoom'
@@ -1249,6 +1743,14 @@
       if (toolMap[key]) {
         var btn = document.querySelector('.ps-left-toolbar .ps-tool-btn[data-tool="' + toolMap[key] + '"]');
         if (btn) btn.click();
+      }
+    });
+
+    window.addEventListener('keyup', function (e) {
+      if (e.code === 'Space' && state.tempPreviousTool) {
+        var prevBtn = document.querySelector('.ps-left-toolbar .ps-tool-btn[data-tool="' + state.tempPreviousTool + '"]');
+        if (prevBtn) prevBtn.click();
+        state.tempPreviousTool = null;
       }
     });
   }
