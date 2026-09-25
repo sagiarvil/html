@@ -17,12 +17,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Çeviriler &amp; PDF Çevirici Süiti — Ücretsiz, Hızlı ve Güvenli | HTML&amp;HTML</title>
-  <meta name="description" content="iLovePDF'ten daha donanımlı, sıfır veri saklamalı istemci taraflı PDF ve Çeviri Araçları. PDF Birleştir, Ayır, Sıkıştır, PDF'den Markdown'a (MD), Word, Excel ve Güvenlik araçları.">
+  <meta name="description" content="iLovePDF'ten daha donanımlı, sıfır veri saklamalı istemci taraflı PDF ve Çeviri Araçları. PDF Düzenle, Tam Kapasite Photoshop Web Editör ve PDF'den Markdown'a (MD).">
   <link rel="canonical" href="https://htmlandhtml.com/pdf-cevirici.html">
   <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
   <link rel="stylesheet" href="/assets/css/theme.css?v=20">
   <link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
-    <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=2">
+  <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=23">
+  <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=8">
   <script src="/assets/js/theme.js?v=9"></script>
 
   <!-- PDF-LIB & PDF.JS (Client-Side WASM / JS Engine) -->
@@ -33,6 +34,9 @@
       window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
   </script>
+
+  <!-- SHEETJS / XLSX (Client-Side Multi-Sheet Excel Parser) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <style>
     /* BRAND LOGO CONTRAST & VISIBILITY */
@@ -146,17 +150,18 @@
     }
     .tools-bento-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 18px;
-      max-width: 1200px;
-      margin: 0 auto 80px;
-      padding: 0 20px;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 12px;
+      max-width: 1280px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
     }
     .pdf-tool-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 22px;
+      border-radius: 10px;
+      padding: 14px 12px;
+      min-height: 135px;
       display: flex;
       flex-direction: column;
       text-decoration: none;
@@ -168,19 +173,23 @@
     }
     .pdf-tool-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 16px -4px rgba(0,0,0,0.1);
       border-color: #94a3b8;
     }
     .tool-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       background: #f1f5f9;
       color: #0f172a;
+    }
+    .tool-icon-wrap svg {
+      width: 17px;
+      height: 17px;
     }
     .tool-icon-wrap.primary { background: #eff6ff; color: #2563eb; }
     .tool-icon-wrap.success { background: #ecfdf5; color: #059669; }
@@ -189,12 +198,12 @@
     .tool-icon-wrap.ai { background: #f5f3ff; color: #7c3aed; }
     .tool-badge {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 10px;
+      top: 10px;
+      right: 10px;
+      font-size: 9px;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 2px 7px;
+      padding: 1px 5px;
       border-radius: 4px;
       background: #f1f5f9;
       color: #64748b;
@@ -214,7 +223,7 @@
     html:not([data-theme="light"]) .pdf-tool-card {
       background: #1e293b !important;
       border: 1px solid #334155 !important;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
     }
     html[data-theme="dark"] .pdf-tool-card:hover,
     html:not([data-theme="light"]) .pdf-tool-card:hover {
@@ -226,16 +235,19 @@
     html body .pdf-tool-card h3,
     html:not([data-theme="light"]) .pdf-tool-card h3 {
       color: #ffffff !important;
-      font-weight: 800 !important;
-      font-size: 16px !important;
+      font-weight: 700 !important;
+      font-size: 13.5px !important;
+      line-height: 1.25 !important;
+      margin: 2px 0 4px 0 !important;
     }
     html[data-theme="dark"] .pdf-tool-card p,
     .dark .pdf-tool-card p,
     html body .pdf-tool-card p,
     html:not([data-theme="light"]) .pdf-tool-card p {
-      color: #cbd5e1 !important;
-      font-size: 13px !important;
-      line-height: 1.55 !important;
+      color: #94a3b8 !important;
+      font-size: 11px !important;
+      line-height: 1.35 !important;
+      margin-bottom: 6px !important;
     }
     html[data-theme="dark"] .pdf-hero h1,
     html:not([data-theme="light"]) .pdf-hero h1 {
@@ -298,8 +310,8 @@
     .tool-modal {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.75) !important;
+      backdrop-filter: blur(8px) !important;
       z-index: 9999;
       display: none;
       align-items: center;
@@ -308,20 +320,37 @@
     }
     .tool-modal.open { display: flex; }
     .tool-modal-content {
-      background: #ffffff;
+      background: #1e293b !important;
+      color: #f8fafc !important;
+      border: 1px solid #334155 !important;
       border-radius: 16px;
       width: 100%;
-      max-width: 640px;
-      padding: 30px;
+      max-width: 580px;
+      padding: 26px 24px;
       position: relative;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7) !important;
+    }
+    .tool-modal-content h2,
+    .tool-modal-content h3,
+    #modalToolTitle {
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      font-size: 20px !important;
+      letter-spacing: -0.01em !important;
+      text-shadow: none !important;
+    }
+    .tool-modal-content p,
+    #modalToolDesc {
+      color: #cbd5e1 !important;
+      font-size: 13.5px !important;
+      line-height: 1.5 !important;
     }
     .modal-close-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      border: none;
-      background: #f1f5f9;
+      top: 18px;
+      right: 18px;
+      border: 1px solid #475569 !important;
+      background: #334155 !important;
       width: 32px;
       height: 32px;
       border-radius: 8px;
@@ -329,44 +358,71 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #475569;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.15s ease;
+    }
+    .modal-close-btn:hover {
+      background: #475569 !important;
+      color: #ffffff !important;
     }
     .dropzone-box {
-      border: 2px dashed #cbd5e1;
+      border: 2px dashed #3b82f6 !important;
       border-radius: 12px;
-      padding: 36px 20px;
+      padding: 26px 16px !important;
       text-align: center;
-      margin: 20px 0;
-      background: #f8fafc;
+      margin: 18px 0;
+      background: #0f172a !important;
       cursor: pointer;
       transition: all 0.2s ease;
     }
+    .dropzone-box:hover,
     .dropzone-box.dragover {
-      border-color: #2563eb;
-      background: #eff6ff;
+      border-color: #60a5fa !important;
+      background: #172554 !important;
+    }
+    .dropzone-box p,
+    .dropzone-box span {
+      color: #ffffff !important;
+    }
+    .dropzone-box .dropzone-subtext {
+      color: #94a3b8 !important;
     }
     .dropzone-icon {
-      margin-bottom: 10px;
-      color: #64748b;
+      margin-bottom: 8px;
+      color: #60a5fa !important;
+    }
+    .dropzone-icon svg {
+      stroke: #60a5fa !important;
     }
     .modal-action-btn {
       width: 100%;
-      padding: 13px;
+      padding: 12px;
       border-radius: 8px;
-      background: #2563eb;
-      color: #ffffff;
+      background: #2563eb !important;
+      color: #ffffff !important;
       border: none;
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
       transition: background 0.2s ease;
+      box-shadow: 0 2px 4px rgba(37,99,235,0.2);
     }
     .modal-action-btn:hover:not(:disabled) {
-      background: #1d4ed8;
+      background: #1d4ed8 !important;
     }
     .modal-action-btn:disabled {
-      background: #94a3b8;
+      background: #334155 !important;
+      color: #94a3b8 !important;
+      border: 1px solid #475569 !important;
       cursor: not-allowed;
+      opacity: 0.9 !important;
+      box-shadow: none;
+    }
+    #fileStatus {
+      color: #1d4ed8 !important;
+      font-weight: 600;
     }
     .process-progress {
       padding: 8px 12px;
@@ -400,7 +456,7 @@
     .acrobat-studio-modal {
       position: fixed;
       inset: 0;
-      background: #0b0f19;
+      background: #090d16;
       color: #f8fafc;
       z-index: 10000;
       display: none;
@@ -410,21 +466,26 @@
       display: flex;
     }
     .acrobat-header {
-      height: 52px;
-      background: #111827;
-      border-bottom: 1px solid #1f2937;
+      height: 50px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
       gap: 12px;
+      overflow-x: auto;
+      flex-shrink: 0;
     }
     .acrobat-brand {
-      display: flex;
+      flex-shrink: 0;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-size: 13px;
       font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
     }
     .acrobat-logo-badge {
       background: #dc2626;
@@ -434,59 +495,78 @@
       padding: 2px 6px;
       border-radius: 4px;
       letter-spacing: 0.5px;
+      flex-shrink: 0;
     }
     .file-name-badge {
-      background: #1f2937;
+      background: #1e293b;
       color: #94a3b8;
       padding: 2px 8px;
       border-radius: 4px;
       font-size: 11px;
       font-family: monospace;
-      max-width: 140px;
-      white-space: nowrap;
+      max-width: 180px;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .acrobat-tools {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 4px;
-      background: #1f2937;
+      gap: 3px;
+      background: #1e293b;
       padding: 3px 6px;
       border-radius: 8px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .tool-btn {
-      background: transparent;
-      border: none;
-      color: #94a3b8;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 5px;
+      padding: 6px 10px;
+      border-radius: 6px;
       font-size: 12px;
       font-weight: 600;
+      white-space: nowrap !important;
+      flex-shrink: 0;
+      color: #cbd5e1;
+      background: transparent;
+      border: none;
+      cursor: pointer;
       transition: all 0.15s;
     }
+    .tool-btn span {
+      white-space: nowrap !important;
+      display: inline-block;
+    }
+    .tool-btn svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+    }
     .tool-btn:hover {
-      background: #374151;
-      color: #fff;
+      background: #334155;
+      color: #ffffff;
     }
     .tool-btn.active {
       background: #2563eb;
-      color: #fff;
+      color: #ffffff;
     }
     .acrobat-actions {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .action-btn {
-      padding: 6px 14px;
-      border-radius: 6px;
+      white-space: nowrap !important;
+      flex-shrink: 0;
+      padding: 6px 12px;
       font-size: 12px;
       font-weight: 700;
+      border-radius: 6px;
       cursor: pointer;
       border: none;
       transition: all 0.15s;
@@ -499,37 +579,48 @@
       background: #1d4ed8;
     }
     .action-btn.secondary {
-      background: #1f2937;
+      background: #1e293b;
       color: #cbd5e1;
+      border: 1px solid #334155;
     }
     .action-btn.secondary:hover {
-      background: #374151;
+      background: #334155;
       color: #fff;
     }
     .action-btn.close {
-      background: #374151;
+      background: #334155;
       color: #cbd5e1;
       width: 28px;
       height: 28px;
       padding: 0;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
     }
+    .action-btn.close:hover {
+      background: #ef4444;
+      color: #fff;
+    }
     .acrobat-options-bar {
-      height: 42px;
-      background: #1a2234;
+      height: 38px;
+      background: #111827;
       border-bottom: 1px solid #1f2937;
       display: flex;
       align-items: center;
-      padding: 0 20px;
-      gap: 20px;
+      padding: 0 16px;
+      gap: 16px;
+      font-size: 12px;
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .option-group {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       font-size: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .option-label {
       color: #94a3b8;
@@ -566,14 +657,15 @@
       flex: 1;
       display: flex;
       overflow: hidden;
-      background: #141b2d;
+      background: #090d16;
     }
     .acrobat-sidebar {
-      width: 140px;
+      width: 150px;
       background: #0f172a;
-      border-right: 1px solid #1f2937;
+      border-right: 1px solid #1e293b;
       overflow-y: auto;
-      padding: 14px 10px;
+      padding: 12px 8px;
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -583,16 +675,23 @@
       text-align: center;
       font-size: 11px;
       color: #94a3b8;
+      transition: all 0.15s;
     }
     .thumb-canvas {
       width: 100%;
       border: 2px solid #334155;
       border-radius: 4px;
-      background: #fff;
+      background: #ffffff;
       margin-bottom: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
     .thumb-item.active .thumb-canvas {
-      border-color: #2563eb;
+      border-color: #3b82f6;
+      box-shadow: 0 0 10px rgba(59,130,246,0.6);
+    }
+    .thumb-item.active span {
+      color: #38bdf8;
+      font-weight: 700;
     }
     .acrobat-viewport {
       flex: 1;
@@ -600,13 +699,15 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding: 30px;
+      padding: 24px;
+      background: #090d16;
     }
-    .canvas-wrapper {
+    .canvas-wrapper, #canvasWrapper {
       position: relative;
       background: #ffffff;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-      border-radius: 2px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      border-radius: 4px;
+      margin: auto;
     }
     #pdfRenderCanvas {
       display: block;
@@ -620,14 +721,16 @@
       cursor: crosshair;
     }
     .acrobat-bottombar {
-      height: 44px;
-      background: #111827;
-      border-top: 1px solid #1f2937;
+      height: 40px;
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 16px;
+      z-index: 100;
       font-size: 12px;
+      flex-shrink: 0;
     }
     .page-controls, .zoom-controls {
       display: flex;
@@ -635,17 +738,612 @@
       gap: 10px;
     }
     .nav-btn, .zoom-btn {
-      background: #1f2937;
+      background: #1e293b;
       color: #f8fafc;
-      border: 1px solid #374151;
+      border: 1px solid #334155;
       padding: 4px 10px;
       border-radius: 5px;
       cursor: pointer;
       font-size: 12px;
       font-weight: 600;
+      transition: all 0.15s;
     }
     .nav-btn:hover, .zoom-btn:hover {
-      background: #374151;
+      background: #334155;
+      border-color: #475569;
+    }
+
+    /* ========================================================
+       HTML&HTML WEB PHOTOSHOP STUDIO — MASAÜSTÜ MASTER CSS
+       ======================================================== */
+    .photoshop-studio-modal {
+      position: fixed !important;
+      inset: 0 !important;
+      background: #090d16 !important;
+      color: #f8fafc !important;
+      z-index: 99999 !important;
+      display: none;
+      flex-direction: column !important;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .photoshop-studio-modal.open {
+      display: flex !important;
+    }
+
+    .ps-clone-app {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #090d16;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+    }
+
+    .ps-header {
+      height: 38px;
+      min-height: 38px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      z-index: 1000;
+      flex-shrink: 0;
+    }
+
+    .ps-menu-bar {
+      height: 30px;
+      min-height: 30px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      font-size: 12px;
+      z-index: 999;
+      flex-shrink: 0;
+      user-select: none;
+      gap: 4px;
+    }
+
+    .ps-menu-item {
+      position: relative;
+      padding: 4px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      color: #cbd5e1;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .ps-menu-item:hover,
+    .ps-menu-item.active,
+    .ps-menu-item.open {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .ps-dropdown {
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      min-width: 220px;
+      z-index: 10000;
+      padding: 4px 0;
+    }
+
+    .ps-menu-item:hover .ps-dropdown,
+    .ps-menu-item.active .ps-dropdown,
+    .ps-menu-item.open .ps-dropdown {
+      display: block !important;
+    }
+
+    .ps-dropdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #e2e8f0;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .ps-dropdown-item:hover {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .ps-dropdown-item .shortcut {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-left: 20px;
+      font-family: monospace;
+    }
+
+    .ps-dropdown-divider {
+      height: 1px;
+      background: #334155;
+      margin: 4px 0;
+    }
+
+    .ps-options-bar {
+      height: 34px;
+      min-height: 34px;
+      background: #111827;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 14px;
+      font-size: 11px;
+      color: #94a3b8;
+      flex-shrink: 0;
+      overflow-x: auto;
+    }
+
+    .ps-option-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ps-option-group select,
+    .ps-option-group input[type="range"] {
+      background: #1e293b;
+      color: #f1f5f9;
+      border: 1px solid #334155;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 11px;
+      outline: none;
+    }
+
+    .ps-body-layout {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 102px);
+    }
+
+    .ps-left-toolbar {
+      width: 44px;
+      min-width: 44px;
+      background: #0f172a;
+      border-right: 1px solid #1e293b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 0;
+      gap: 4px;
+      z-index: 100;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .ps-tool-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.15s;
+      padding: 0;
+    }
+
+    .ps-tool-btn:hover {
+      background: #1e293b;
+      color: #f8fafc;
+    }
+
+    .ps-tool-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .ps-tool-btn svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+    }
+
+    .ps-color-picker-box {
+      position: relative;
+      width: 34px;
+      height: 38px;
+      margin-top: 8px;
+    }
+
+    .ps-color-fg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      padding: 0;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      cursor: pointer;
+      background: none;
+      z-index: 2;
+    }
+
+    .ps-color-bg {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      padding: 0;
+      border: 1px solid #475569;
+      border-radius: 3px;
+      cursor: pointer;
+      background: none;
+      z-index: 1;
+    }
+
+    .ps-color-swap {
+      position: absolute;
+      top: -4px;
+      right: -2px;
+      font-size: 11px;
+      color: #94a3b8;
+      cursor: pointer;
+      line-height: 1;
+      user-select: none;
+      z-index: 3;
+    }
+
+    .ps-color-swap:hover {
+      color: #38bdf8;
+    }
+
+    .ps-canvas-workspace,
+    .ps-viewport {
+      flex: 1;
+      background: #0b0f19;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: default;
+    }
+
+    #psCanvasContainer,
+    .ps-canvas-container {
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+      border: 1px solid #1e293b;
+      background: repeating-conic-gradient(#1e293b 0% 25%, #0f172a 0% 50%) 50% / 16px 16px;
+      transform-origin: 0 0 !important;
+      user-select: none;
+    }
+
+    #psDisplayCanvas,
+    .ps-display-canvas {
+      display: block;
+    }
+
+    .ps-right-dock {
+      width: 240px;
+      min-width: 240px;
+      background: #0f172a;
+      border-left: 1px solid #1e293b;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+
+    .ps-panel,
+    .ps-dock-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #1e293b;
+      overflow: hidden;
+    }
+
+    .ps-panel-header,
+    .ps-dock-header {
+      height: 28px;
+      min-height: 28px;
+      background: #1e293b;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      color: #cbd5e1;
+      border-bottom: 1px solid #334155;
+    }
+
+    .ps-panel-content,
+    .ps-dock-body {
+      padding: 8px;
+    }
+
+    .ps-layers-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px;
+      background: #0b1120;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .ps-layer-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ps-layer-item,
+    .ps-dock-layer-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #cbd5e1;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.15s;
+    }
+
+    .ps-layer-item:hover,
+    .ps-dock-layer-item:hover {
+      background: #1e293b;
+    }
+
+    .ps-layer-item.active,
+    .ps-dock-layer-item.active {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .ps-layer-eye-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0 2px;
+      line-height: 1;
+    }
+
+    .ps-layer-thumb {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #334155;
+      background: repeating-conic-gradient(#334155 0% 25%, #1e293b 0% 50%) 50% / 6px 6px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .ps-layer-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ps-dock-history {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ps-dock-history-item {
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #94a3b8;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.15s;
+    }
+
+    .ps-dock-history-item:hover {
+      background: #1e293b;
+      color: #f1f5f9;
+    }
+
+    .ps-dock-history-item.active {
+      background: #334155;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .ps-bottom-status-bar,
+    .ps-status-bar {
+      height: 24px;
+      min-height: 24px;
+      background: #090d16;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      font-size: 10px;
+      color: #64748b;
+      flex-shrink: 0;
+    }
+
+    .ps-status-left,
+    .ps-status-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Modal Dialog */
+    .ps-new-doc-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 20000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .ps-new-doc-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .ps-modal-header {
+      height: 40px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #f8fafc;
+    }
+
+    .ps-modal-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ps-template-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .ps-template-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .ps-template-card:hover {
+      border-color: #38bdf8;
+      background: #243248;
+    }
+
+    .ps-template-card.active {
+      border-color: #0284c7;
+      background: rgba(2, 132, 199, 0.15);
+    }
+
+    .ps-template-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-bottom: 2px;
+    }
+
+    .ps-template-size {
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .ps-custom-size-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .ps-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ps-form-group label {
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .ps-form-group input,
+    .ps-form-group select {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #f8fafc;
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .ps-modal-footer {
+      height: 48px;
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 16px;
+      gap: 8px;
+    }
+
+    .ps-btn-secondary {
+      background: #334155;
+      color: #e2e8f0;
+      border: 1px solid #475569;
+      padding: 6px 14px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .ps-btn-primary {
+      background: #0284c7;
+      color: #ffffff;
+      border: 1px solid #38bdf8;
+      padding: 6px 16px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
     }
   </style>
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">
@@ -681,64 +1379,34 @@
       SIFIR SUNUCU YÜKLEMESİ • %100 YEREL &amp; GİZLİ
     </div>
     <h1>Çeviriler &amp; PDF Çevirici Süiti</h1>
-    <p>iLovePDF'in ötesinde, tarayıcınızda doğrudan çalışan yüksek hızlı dönüştürme ve düzenleme araçları. Dosyalarınız harici sunuculara yüklenmez; anında, sürtünmesiz ve LLM uyumlu Markdown desteğiyle işlenir.</p>
+    <p>Tarayıcınızda doğrudan çalışan yüksek hızlı dönüştürme ve düzenleme araçları. Dosyalarınız harici sunuculara yüklenmez; anında, güvenli ve doğrudan cihazınızda işlenir.</p>
 
     <div class="pdf-search-bar">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" id="toolSearchInput" placeholder="Bir araç arayın (Örn: Markdown, Birleştir, Word, Kilidi Aç)..." aria-label="Araç Ara">
+      <input type="text" id="toolSearchInput" placeholder="Bir araç arayın (Örn: Markdown, PDF Düzenle, Photoshop)..." aria-label="Araç Ara">
     </div>
 
     <div class="category-tabs">
-      <button class="category-tab active" data-category="all">Tüm Araçlar (18+)</button>
-      <button class="category-tab" data-category="organize">Düzenleme &amp; Organizasyon</button>
+      <button class="category-tab active" data-category="all">Tüm Araçlar</button>
+      <button class="category-tab" data-category="organize">Düzenleme &amp; Tasarım</button>
       <button class="category-tab" data-category="convert">Dönüştürme Araçları</button>
-      <button class="category-tab" data-category="security">Güvenlik &amp; İyileştirme</button>
     </div>
   </section>
 
   <section class="tools-bento-grid" id="toolsGrid">
-    <!-- 1. PDF Düzenleme ve Organizasyon -->
-    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-merge">
-      <div class="tool-icon-wrap primary">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+    <!-- 0. Photoshop Web Editör (Tam Kapasite) -->
+    <div class="pdf-tool-card" data-category="organize convert all" data-tool-id="photoshop-web" style="cursor: pointer; border: 2px solid #2563eb !important; background: #1e293b !important;">
+      <div class="tool-icon-wrap primary" style="background:#1e3a8a; color:#60a5fa;">
+        <span style="font-weight:900; font-size:15px; letter-spacing:0.5px; font-family:sans-serif;">Ps</span>
       </div>
-      <span class="tool-badge">Hızlı</span>
-      <h3>PDF Birleştir</h3>
-      <p>Birden fazla PDF dosyasını seçtiğiniz sırayla tek bir dosyada birleştirir.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
+      <span class="tool-badge" style="background:#2563eb; color:#ffffff; font-weight:800;">Popüler / Tam Kapasite</span>
+      <h3 style="color:#ffffff !important;">Photoshop Web Editör</h3>
+      <p style="color:#cbd5e1 !important;">PSD, AI, PNG, JPG katmanlar, filtreler, fırçalar, rötuş ve maskeleme. Tarayıcınızda doğrudan tam ekran ve eksiksiz çalışır.</p>
+      <div class="card-footer-action" style="color:#38bdf8; font-weight:800;">Tam Ekran Editörü Başlat →</div>
     </div>
 
-    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-split">
-      <div class="tool-icon-wrap primary">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" x2="8.12" y1="4" y2="15.88"/><line x1="14.47" x2="20" y1="14.48" y2="20"/><line x1="8.12" x2="12" y1="8.12" y2="12"/></svg>
-      </div>
-      <span class="tool-badge">Popüler</span>
-      <h3>PDF Ayır</h3>
-      <p>Bir PDF'i ayrı sayfalara bölün veya belirli sayfa aralıklarını ayıklayın.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-compress">
-      <div class="tool-icon-wrap primary">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
-      </div>
-      <span class="tool-badge">Kayıpsız</span>
-      <h3>PDF Sıkıştır</h3>
-      <p>PDF dosyalarının boyutunu kaliteden ödün vermeden tarayıcınızda küçültür.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-rotate">
-      <div class="tool-icon-wrap primary">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-      </div>
-      <span class="tool-badge">Tek Tık</span>
-      <h3>PDF Döndür</h3>
-      <p>PDF sayfalarını istediğiniz yöne (90°, 180°, 270°) tek tıkla döndürür.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-edit">
+    <!-- 1. PDF Düzenleme -->
+    <div class="pdf-tool-card" data-category="organize all" data-tool-id="pdf-edit">
       <div class="tool-icon-wrap primary">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
       </div>
@@ -748,135 +1416,14 @@
       <div class="card-footer-action">Hemen Kullan →</div>
     </div>
 
-    <!-- 2. Dönüştürme Araçları -->
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-md">
+    <!-- 2. PDF'den Markdown'a (MD) -->
+    <div class="pdf-tool-card" data-category="convert all" data-tool-id="pdf-to-md">
       <div class="tool-icon-wrap ai">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 3-5 18"/><path d="M4 17h16"/><path d="M4 7h16"/></svg>
       </div>
-      <span class="tool-badge ai-badge">AI / LLM Ready</span>
+      <span class="tool-badge">Markdown Belge</span>
       <h3>PDF'den Markdown'a (MD)</h3>
-      <p>PDF metin, tablo ve formüllerini saf Markdown'a dönüştürür; ChatGPT, Claude ve Gemini için hazırlar.</p>
-      <div class="card-footer-action">Öne Çıkan AI Aracı →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-word">
-      <div class="tool-icon-wrap success">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-      </div>
-      <span class="tool-badge">Düzenlenebilir</span>
-      <h3>PDF'den Word'e</h3>
-      <p>PDF belgelerini düzenlenebilir DOCX Word formatına kayıpsız dönüştürür.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="word-to-pdf">
-      <div class="tool-icon-wrap success">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
-      </div>
-      <span class="tool-badge">Baskı Hazır</span>
-      <h3>Word'den PDF'e</h3>
-      <p>Word (DOCX, DOC) belgelerinizi standart ve güvenli PDF formatına çevirir.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-excel">
-      <div class="tool-icon-wrap success">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
-      </div>
-      <span class="tool-badge">Tablo Çıkarıcı</span>
-      <h3>PDF'den Excel'e</h3>
-      <p>PDF içindeki tabloları otomatik tespit eder ve düzenlenebilir XLSX tablosuna aktarır.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="excel-to-pdf">
-      <div class="tool-icon-wrap success">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
-      </div>
-      <span class="tool-badge">Otomatik Sığdır</span>
-      <h3>Excel'den PDF'e</h3>
-      <p>Excel tablolarınızı bozulmadan, sayfa düzenini koruyarak PDF'e çevirir.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-powerpoint">
-      <div class="tool-icon-wrap warning">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="14" x="3" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-      </div>
-      <span class="tool-badge">Sunum</span>
-      <h3>PDF'den PowerPoint'e</h3>
-      <p>PDF sunumlarınızı düzenlenebilir PPTX slaytlarına dönüştürür.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-jpg">
-      <div class="tool-icon-wrap warning">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-      </div>
-      <span class="tool-badge">Yüksek DPI</span>
-      <h3>PDF'den JPG'ye</h3>
-      <p>Her PDF sayfasını yüksek kaliteli JPG veya PNG görseline çıkarır.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="convert" data-tool-id="jpg-to-pdf">
-      <div class="tool-icon-wrap warning">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 14 2 2 4-4"/></svg>
-      </div>
-      <span class="tool-badge">Toplu Birleştir</span>
-      <h3>JPG'den PDF'e</h3>
-      <p>Birden çok görseli (JPG, PNG, WebP) tek bir PDF dosyasında birleştirir.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <!-- 3. Güvenlik ve İyileştirme -->
-    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-unlock">
-      <div class="tool-icon-wrap danger">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-      </div>
-      <span class="tool-badge">Kilit Açıcı</span>
-      <h3>PDF Kilidini Aç</h3>
-      <p>Parola ve kısıtlama korumalı PDF'lerin güvenlik kilitlerini kaldırır.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-protect">
-      <div class="tool-icon-wrap danger">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </div>
-      <span class="tool-badge">AES-256</span>
-      <h3>PDF Koru</h3>
-      <p>PDF'lerinizi güçlü parola ile şifreleyerek yetkisiz erişimleri engeller.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-watermark">
-      <div class="tool-icon-wrap danger">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
-      </div>
-      <span class="tool-badge">Filigran</span>
-      <h3>PDF Filigranla</h3>
-      <p>Sayfalarınıza metin veya logo damgası ekleyerek telif koruması sağlayın.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-sign">
-      <div class="tool-icon-wrap danger">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 18a2.5 2.5 0 0 1-5 0c0-1.5 2-4 2.5-4.5.5.5 2.5 3 2.5 4.5Z"/><path d="M12 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/></svg>
-      </div>
-      <span class="tool-badge">E-İmza</span>
-      <h3>PDF İmzala</h3>
-      <p>Belgelerinize güvenli elektronik imza ekleyin ve onaylayın.</p>
-      <div class="card-footer-action">Hemen Kullan →</div>
-    </div>
-
-    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-repair">
-      <div class="tool-icon-wrap danger">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </div>
-      <span class="tool-badge">Kurtarıcı</span>
-      <h3>PDF Onar</h3>
-      <p>Bozuk veya hasarlı PDF dosyalarını kurtarmaya ve yeniden yapılandırmaya çalışır.</p>
+      <p>PDF metin, tablo ve içeriklerini düzenlenebilir saf Markdown (MD) formatına dönüştürür.</p>
       <div class="card-footer-action">Hemen Kullan →</div>
     </div>
   </section>
@@ -886,22 +1433,22 @@
 <div class="tool-modal" id="toolModal" role="dialog" aria-modal="true" aria-labelledby="modalToolTitle">
   <div class="tool-modal-content">
     <button class="modal-close-btn" id="closeModalBtn" aria-label="Kapat">✕</button>
-    <h2 id="modalToolTitle" style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Araç Adı</h2>
-    <p id="modalToolDesc" style="font-size: 13px; color: #64748b; margin-bottom: 16px;">Araç Açıklaması</p>
+    <h2 id="modalToolTitle" style="font-size: 20px; font-weight: 800; color: #ffffff !important; margin-bottom: 6px;">Araç Adı</h2>
+    <p id="modalToolDesc" style="font-size: 13.5px; color: #cbd5e1 !important; margin-bottom: 16px;">Araç Açıklaması</p>
 
     <div class="dropzone-box" id="modalDropzone">
       <div class="dropzone-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
       </div>
-      <p style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">Dosyayı buraya sürükleyin veya tıklayarak seçin</p>
-      <p style="font-size: 12px; color: #94a3b8;">PDF, Word, Excel veya Görsel dosyaları desteklenir (%100 yerel işlenir)</p>
+      <p style="font-size: 14px; font-weight: 700; color: #ffffff !important; margin-bottom: 4px;">Dosyayı buraya sürükleyin veya tıklayarak seçin</p>
+      <p style="font-size: 12px; color: #94a3b8 !important; font-weight: 500;">PDF, Word, Excel veya Görsel dosyaları desteklenir (%100 yerel işlenir)</p>
       <input type="file" id="toolFileInput" style="display: none;">
     </div>
 
     <!-- Ek Araç Ayarları (Döndürme açısı, filigran metni vs.) -->
     <div id="extraOptions"></div>
 
-    <div id="fileStatus" style="font-size: 13px; color: #2563eb; margin: 12px 0; display: none;"></div>
+    <div id="fileStatus" style="font-size: 13px; color: #60a5fa; margin: 12px 0; display: none;"></div>
     <div id="processProgress" class="process-progress" style="display: none;"></div>
 
     <button class="modal-action-btn" id="modalActionBtn" disabled>İşlemi Başlat</button>
@@ -909,10 +1456,10 @@
     <!-- Markdown Önizleme Paneli (PDF to MD için) -->
     <div id="markdownPreview" style="display: none; margin-top: 16px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-size: 12px; font-weight: 700; color: #0f172a;">Üretilen Saf Markdown Çıktısı (LLM-Ready):</span>
+        <span style="font-size: 12px; font-weight: 700; color: #f8fafc;">Üretilen Saf Markdown Çıktısı (LLM-Ready):</span>
         <div style="display: flex; gap: 6px;">
-          <button id="copyMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; border-radius: 6px; cursor: pointer;">Markdown'ı Kopyala</button>
-          <button id="downloadMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #0f172a; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;">.md İndir</button>
+          <button id="copyMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #1e3a8a; color: #bfdbfe; border: 1px solid #3b82f6; border-radius: 6px; cursor: pointer;">Markdown'ı Kopyala</button>
+          <button id="downloadMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #2563eb; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;">.md İndir</button>
         </div>
       </div>
       <div class="markdown-box" id="markdownCode"></div>
@@ -921,76 +1468,116 @@
 </div>
 
 <!-- ADOBE ACROBAT PRO DC GRADE EDIT STÜDYOSU (TAM EKRAN) -->
-<div class="acrobat-studio-modal" id="acrobatStudioModal" role="dialog" aria-modal="true" aria-label="PDF Düzenleme Stüdyosu">
-  <div class="acrobat-header">
-    <div class="acrobat-brand">
-      <div class="acrobat-logo-badge">PRO DC</div>
-      <span>HTML&amp;HTML PDF Editor Studio</span>
-      <span class="file-name-badge" id="studioFileName">dokuman.pdf</span>
+<div class="acrobat-studio-modal" id="acrobatStudioModal" role="dialog" aria-modal="true" aria-label="Adobe Acrobat Pro DC Düzenleme Stüdyosu">
+  <!-- Üst Menü & Marka & Aksiyon Çubuğu (Acrobat Pro DC Master Header) -->
+  <div class="acrobat-header" style="overflow-x: auto; flex-wrap: nowrap !important;">
+    <div class="acrobat-brand" style="flex-shrink: 0; white-space: nowrap !important;">
+      <div class="acrobat-logo-badge" style="flex-shrink: 0;">PRO DC</div>
+      <span style="white-space: nowrap !important; font-weight: 700;">Acrobat Pro DC Studio</span>
+      <span class="file-name-badge" id="studioFileName" style="flex-shrink: 0;">dokuman.pdf</span>
     </div>
 
-    <!-- Ana Araç Çubuğu -->
-    <div class="acrobat-tools">
-      <button class="tool-btn active" data-tool="select" title="Seç &amp; Taşı (V)">
+    <!-- Menü Butonları (Dosya, Sayfa, Görünüm, Photopea) -->
+    <div class="acrobat-menu-group" style="display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; margin: 0 4px;">
+      <button class="menu-btn" id="menuOpenFileBtn" title="Yeni PDF Aç">📁 Aç</button>
+      <button class="menu-btn" id="menuPrintBtn" title="Belgeyi Yazdır">🖨️ Yazdır</button>
+      <button class="menu-btn" id="menuFitPageBtn" title="Ekrana Sığdır">⛶ Sığdır</button>
+      <button class="menu-btn" id="openPhotopeaBtn" style="color: #38bdf8; font-weight: 700; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25);" title="Photopea Vektörel PDF Editöründe Aç">🎨 Photopea Vektörel</button>
+      <input type="file" id="studioOpenFileInput" accept="application/pdf" style="display: none;">
+    </div>
+
+    <!-- Ana Araç Çubuğu (Tools) -->
+    <div class="acrobat-tools" style="white-space: nowrap !important; flex-shrink: 0; display: inline-flex !important; flex-wrap: nowrap !important;">
+      <button class="tool-btn" data-tool="edit-text" id="toolEditTextBtn" title="✏️ Metinleri Düzenle (Edit Text - E) — Sayfadaki mevcut yazılara çift tıklayarak doğrudan düzenleyin, arkası otomatik gizlenir." style="background: rgba(37, 99, 235, 0.25); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>✏️ Metinleri Düzenle (E)</span>
+      </button>
+      <button class="tool-btn" id="toggleShowBoxesBtn" title="Tüm Metin Bloklarını Göster (Acrobat DC mavi kılavuz kutuları)" style="background: transparent; color: #94a3b8; border: 1px dashed #475569;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Metin Bloklarını Göster</span>
+      </button>
+      <span style="display:inline-block; width:1px; height:20px; background:#334155; margin:0 4px;"></span>
+      <button class="tool-btn active" data-tool="select" title="Seç &amp; Taşı / Boyutlandır (V)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
         <span>Seç</span>
       </button>
-      <button class="tool-btn" data-tool="text" title="Metin Ekle (T)">
+      <button class="tool-btn" data-tool="text" title="Yeni İnteraktif Metin Kutusu Ekle (T)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
-        <span>Metin</span>
+        <span>Yeni Metin</span>
       </button>
-      <button class="tool-btn" data-tool="pen" title="Kalemle Çizim (P)">
+      <button class="tool-btn" data-tool="pen" title="Pürüzsüz Kalemle Çizim (P)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
         <span>Kalem</span>
       </button>
-      <button class="tool-btn" data-tool="highlighter" title="Vurgulayıcı (H)">
+      <button class="tool-btn" data-tool="highlighter" title="Fosforlu Vurgulayıcı (H)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
         <span>Vurgula</span>
       </button>
-      <button class="tool-btn" data-tool="rect" title="Dikdörtgen Ekle">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
-        <span>Kutu</span>
-      </button>
-      <button class="tool-btn" data-tool="circle" title="Daire Ekle">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-        <span>Daire</span>
-      </button>
-      <button class="tool-btn" data-tool="arrow" title="Ok Çiz">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        <span>Ok</span>
-      </button>
-      <button class="tool-btn" data-tool="stamp" title="Kaşe / İmza Ekle">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 18a2.5 2.5 0 0 1-5 0c0-1.5 2-4 2.5-4.5.5.5 2.5 3 2.5 4.5Z"/><path d="M12 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/></svg>
-        <span>İmza/Kaşe</span>
-      </button>
-      <button class="tool-btn" data-tool="redact" title="Gizle / Karart (Sansür)">
+      <button class="tool-btn" data-tool="redact" title="Sansür &amp; Kalıcı Karartma (R)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect width="18" height="14" x="3" y="5" rx="1"/></svg>
         <span>Karart</span>
       </button>
-      <button class="tool-btn" data-tool="eraser" title="Silgi">
+      <button class="tool-btn" data-tool="whiteout" title="Alanı Sil / Beyazlat (W) — Seçtiğiniz dikdörtgen alanı belgenin düzenini bozmadan tertemiz siler.">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
+          <path d="M22 21H7"/>
+          <path d="m5 11 9 9"/>
+        </svg>
+        <span>Alanı Sil (W)</span>
+      </button>
+      <button class="tool-btn" id="openSignatureStampBtn" title="E-İmza &amp; Hazır Kaşe Stüdyosu (S)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 18a2.5 2.5 0 0 1-5 0c0-1.5 2-4 2.5-4.5.5.5 2.5 3 2.5 4.5Z"/><path d="M12 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/></svg>
+        <span>İmza &amp; Kaşe</span>
+      </button>
+      <button class="tool-btn" data-tool="rect" title="Dikdörtgen Kutu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
+        <span>Kutu</span>
+      </button>
+      <button class="tool-btn" data-tool="circle" title="Daire / Elips">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+        <span>Daire</span>
+      </button>
+      <button class="tool-btn" data-tool="arrow" title="Yön Oku">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <span>Ok</span>
+      </button>
+      <button class="tool-btn" data-tool="line" title="Düz Çizgi">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="20" y2="4"/></svg>
+        <span>Çizgi</span>
+      </button>
+      <button class="tool-btn" id="uploadImageObjectBtn" title="Resim / Logo / Damga Yapıştır">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span>Resim Ekle</span>
+      </button>
+      <input type="file" id="studioImageFileInput" accept="image/png,image/jpeg,image/svg+xml" style="display: none;">
+      <button class="tool-btn" data-tool="eraser" title="Silgi / Seçili Nesneyi Sil">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
-        <span>Silgi</span>
+        <span>Sil</span>
       </button>
     </div>
 
-    <!-- Sağ Dışa Aktarma -->
+    <!-- Sağ Hızlı Eylem Butonları -->
     <div class="acrobat-actions">
-      <button class="action-btn secondary" id="studioUndoBtn" title="Geri Al">↩ Geri</button>
-      <button class="action-btn secondary" id="studioClearBtn" title="Tüm Çizimleri Temizle">🗑️ Temizle</button>
-      <button class="action-btn primary" id="studioExportPdfBtn">💾 PDF Olarak Kaydet &amp; İndir</button>
+      <button class="action-btn secondary" id="studioUndoBtn" title="Geri Al (Ctrl+Z)">↩ Geri</button>
+      <button class="action-btn secondary" id="studioRedoBtn" title="İleri Al (Ctrl+Y)">↪ İleri</button>
+      <button class="action-btn secondary" id="studioClearBtn" title="Mevcut Sayfadaki Çizimleri Temizle">🗑️ Temizle</button>
+      <button class="action-btn primary" id="studioExportPdfBtn" title="Yapılan tüm düzenlemeleri orijinal PDF'e fiziksel olarak kalıcı kaydeder">💾 PDF Olarak Kaydet &amp; İndir</button>
       <button class="action-btn close" id="studioCloseBtn" aria-label="Stüdyoyu Kapat">✕</button>
     </div>
   </div>
 
-  <!-- İkincil Seçenek Çubuğu (Tool Options) -->
-  <div class="acrobat-options-bar">
+  <!-- İkincil Seçenek Çubuğu (Context-Sensitive Tool Options) -->
+  <div class="acrobat-options-bar" id="acrobatOptionsBar">
+    <!-- Genel Renk Seçimi -->
     <div class="option-group">
       <span class="option-label">Renk:</span>
-      <input type="color" id="studioColorPicker" value="#2563eb">
+      <input type="color" id="studioColorPicker" value="#2563eb" style="width:26px; height:24px; padding:0; border:none; border-radius:4px; cursor:pointer; background:none;">
     </div>
-    <div class="option-group">
+
+    <!-- Kalınlık / Stroke -->
+    <div class="option-group" id="strokeOptionsGroup">
       <span class="option-label">Kalınlık:</span>
-      <select id="studioStrokeWidth">
+      <select id="studioStrokeWidth" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
         <option value="1">1 px (İnce)</option>
         <option value="2">2 px (Normal)</option>
         <option value="4" selected>4 px (Orta)</option>
@@ -998,62 +1585,291 @@
         <option value="16">16 px (Geniş Vurgu)</option>
       </select>
     </div>
-    <div class="option-group" id="textOptionsGroup" style="display: none;">
-      <span class="option-label">Font Boyutu:</span>
-      <select id="studioFontSize">
+
+    <!-- Metin Detay Ayarları (Acrobat DC Tipografi Barı) -->
+    <div class="option-group" id="textOptionsGroup" style="display: none; gap: 6px; align-items: center;">
+      <span class="option-label">Font:</span>
+      <select id="studioFontFamily" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
+        <option value="auto" selected>✨ Otomatik (Orijinal Font)</option>
+        <option value="Arial, sans-serif">Arial / Sans-Serif</option>
+        <option value="'Times New Roman', serif">Times New Roman / Serif</option>
+        <option value="'Courier New', monospace">Courier New / Monospace</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="Helvetica, sans-serif">Helvetica</option>
+        <option value="Verdana, sans-serif">Verdana</option>
+      </select>
+
+      <span class="option-label">Boyut:</span>
+      <select id="studioFontSize" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
+        <option value="8">8 px</option>
+        <option value="9">9 px</option>
+        <option value="10">10 px</option>
+        <option value="11">11 px</option>
         <option value="12">12 px</option>
+        <option value="14">14 px</option>
         <option value="16" selected>16 px</option>
+        <option value="18">18 px</option>
         <option value="20">20 px</option>
         <option value="24">24 px</option>
+        <option value="28">28 px</option>
         <option value="32">32 px</option>
+        <option value="36">36 px</option>
+        <option value="40">40 px</option>
+        <option value="48">48 px</option>
+        <option value="60">60 px</option>
+        <option value="72">72 px</option>
+      </select>
+
+      <div style="display: inline-flex; border: 1px solid #334155; border-radius: 4px; overflow: hidden;">
+        <button id="studioTextBoldBtn" style="padding:2px 7px; font-size:11px; font-weight:bold; background:#1e293b; color:#f8fafc; border:none; cursor:pointer;" title="Kalın (Bold)">B</button>
+        <button id="studioTextItalicBtn" style="padding:2px 7px; font-size:11px; font-style:italic; background:#1e293b; color:#f8fafc; border:none; border-left:1px solid #334155; cursor:pointer;" title="İtalik (Italic)">I</button>
+        <button id="studioTextUnderlineBtn" style="padding:2px 7px; font-size:11px; text-decoration:underline; background:#1e293b; color:#f8fafc; border:none; border-left:1px solid #334155; cursor:pointer;" title="Altı Çizili (Underline)">U</button>
+      </div>
+
+      <div style="display: inline-flex; border: 1px solid #334155; border-radius: 4px; overflow: hidden;" title="Hizalama">
+        <button id="studioTextAlignLeftBtn" class="align-btn active" data-align="left" style="padding:2px 6px; font-size:11px; background:#2563eb; color:#fff; border:none; cursor:pointer;" title="Sola Hizala">⇤</button>
+        <button id="studioTextAlignCenterBtn" class="align-btn" data-align="center" style="padding:2px 6px; font-size:11px; background:#1e293b; color:#cbd5e1; border:none; border-left:1px solid #334155; cursor:pointer;" title="Ortala">≡</button>
+        <button id="studioTextAlignRightBtn" class="align-btn" data-align="right" style="padding:2px 6px; font-size:11px; background:#1e293b; color:#cbd5e1; border:none; border-left:1px solid #334155; cursor:pointer;" title="Sağa Hizala">⇥</button>
+      </div>
+
+      <span class="option-label">Yazı:</span>
+      <input type="color" id="studioTextColorPicker" value="#0f172a" style="width:24px; height:22px; padding:0; border:none; border-radius:3px; cursor:pointer; background:none;" title="Yazı Rengi">
+
+      <span class="option-label">Zemin:</span>
+      <select id="studioTextBgColor" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
+        <option value="transparent" selected>Şeffaf</option>
+        <option value="#ffffff">Beyaz</option>
+        <option value="#fef08a">Sarı</option>
+        <option value="#e0f2fe">Açık Mavi</option>
+        <option value="#000000">Siyah</option>
+      </select>
+
+      <span class="option-label">Satır:</span>
+      <select id="studioTextLineHeight" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 4px; font-size:11px;">
+        <option value="1.0">1.0</option>
+        <option value="1.2" selected>1.2</option>
+        <option value="1.4">1.4</option>
+        <option value="1.6">1.6</option>
+        <option value="2.0">2.0</option>
       </select>
     </div>
-    <div class="option-group" id="stampOptionsGroup" style="display: none;">
-      <span class="option-label">Hazır Kaşe:</span>
-      <select id="studioPresetStamp">
-        <option value="ONAYLANDI">✓ ONAYLANDI</option>
-        <option value="GİZLİDİR">🔒 GİZLİDİR</option>
-        <option value="KOPYADIR">📄 KOPYADIR</option>
-        <option value="İPTAL EDİLDİ">✕ İPTAL EDİLDİ</option>
-      </select>
-      <button class="mini-btn" id="studioAddCustomStampBtn">+ Özel Görsel/İmza</button>
-      <input type="file" id="studioCustomStampInput" accept="image/png,image/jpeg" style="display: none;">
+
+    <!-- Akıllı Font Tespit Rozeti -->
+    <div class="option-group" id="smartFontBadgeGroup" style="display: none; align-items: center; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 4px; padding: 2px 8px; font-size: 11px; color: #93c5fd; gap: 5px;">
+      <span id="smartFontBadgeText">✨ Otomatik Font: Hazır</span>
+    </div>
+
+    <!-- Sansür Bilgi Rozeti -->
+    <div class="option-group" id="redactOptionsGroup" style="display: none;">
+      <span style="color:#ef4444; font-weight:700; font-size:11px;">⬛ Sansür Modu:</span>
+      <span style="color:#94a3b8; font-size:11px;">Gizlemek istediğiniz metin/T.C./fiyat alanını tuval üzerinde kutu çizerek kalıcı karartın.</span>
+    </div>
+
+    <!-- Alanı Sil / Beyazlatma (Whiteout) Seçenekleri -->
+    <div class="option-group" id="whiteoutOptionsGroup" style="display: none; align-items: center; gap: 8px;">
+      <span style="color:#38bdf8; font-weight:700; font-size:11px;">🧹 Alanı Sil:</span>
+      <div style="display: inline-flex; background:#0f172a; border:1px solid #334155; border-radius:4px; padding:2px;">
+        <button type="button" id="whiteoutModeAreaBtn" class="active" style="padding:2px 8px; font-size:11px; background:#2563eb; color:#ffffff; border:none; border-radius:3px; cursor:pointer;" title="Dikdörtgen Alan Seçip Sil">⬛ Dikdörtgen Alan</button>
+        <button type="button" id="whiteoutModeBrushBtn" style="padding:2px 8px; font-size:11px; background:transparent; color:#94a3b8; border:none; border-radius:3px; cursor:pointer;" title="Serbest Fırça ile Sil">🖌️ Serbest Fırça</button>
+      </div>
+
+      <span class="option-label" style="margin-left:4px;">Silme Rengi:</span>
+      <input type="color" id="studioWhiteoutColor" value="#ffffff" style="width:24px; height:22px; padding:0; border:1px solid #475569; border-radius:3px; cursor:pointer; background:none;" title="Silme Zemin Rengini Seç">
+
+      <div style="display: inline-flex; gap: 4px;" title="Hazır Zemin Tonları">
+        <button type="button" class="wo-color-swatch active" data-color="#ffffff" style="width:18px; height:18px; border-radius:3px; background:#ffffff; border:1.5px solid #2563eb; cursor:pointer;" title="Saf Beyaz (#ffffff)"></button>
+        <button type="button" class="wo-color-swatch" data-color="#fef9c3" style="width:18px; height:18px; border-radius:3px; background:#fef9c3; border:1px solid #ca8a04; cursor:pointer;" title="Krem / Fildişi (#fef9c3)"></button>
+        <button type="button" class="wo-color-swatch" data-color="#f1f5f9" style="width:18px; height:18px; border-radius:3px; background:#f1f5f9; border:1px solid #94a3b8; cursor:pointer;" title="Açık Gri (#f1f5f9)"></button>
+        <button type="button" class="wo-color-swatch" data-color="#fafaf9" style="width:18px; height:18px; border-radius:3px; background:#fafaf9; border:1px solid #a8a29e; cursor:pointer;" title="Antet Dokusu (#fafaf9)"></button>
+      </div>
+
+      <button type="button" id="studioEyedropperBtn" style="padding:2px 6px; font-size:11px; background:#1e293b; color:#38bdf8; border:1px solid #334155; border-radius:4px; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" title="Sayfadan Renk Al (Damlalık)">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 22 1-1h3l9-9"/><path d="M12 4l3-3 5 5-3 3"/><path d="m14 6 4 4"/></svg>
+        <span>Damlalık</span>
+      </button>
+
+      <div id="whiteoutBrushSizeGroup" style="display: none; align-items: center; gap: 5px;">
+        <span class="option-label">Fırça:</span>
+        <select id="studioWhiteoutBrushSize" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
+          <option value="8">8 px (İnce)</option>
+          <option value="16">16 px (Normal)</option>
+          <option value="24" selected>24 px (Orta)</option>
+          <option value="36">36 px (Geniş)</option>
+          <option value="50">50 px (Ekstra)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Vurgulayıcı Renkleri -->
+    <div class="option-group" id="highlighterOptionsGroup" style="display: none; gap: 6px;">
+      <span class="option-label">Vurgu Rengi:</span>
+      <button class="hl-swatch" data-hl="#fef08a" style="width:18px; height:18px; border-radius:3px; background:#fef08a; border:1px solid #ca8a04; cursor:pointer;" title="Sarı"></button>
+      <button class="hl-swatch" data-hl="#bbf7d0" style="width:18px; height:18px; border-radius:3px; background:#bbf7d0; border:1px solid #16a34a; cursor:pointer;" title="Yeşil"></button>
+      <button class="hl-swatch" data-hl="#bae6fd" style="width:18px; height:18px; border-radius:3px; background:#bae6fd; border:1px solid #0284c7; cursor:pointer;" title="Mavi"></button>
+      <button class="hl-swatch" data-hl="#fbcfe8" style="width:18px; height:18px; border-radius:3px; background:#fbcfe8; border:1px solid #db2777; cursor:pointer;" title="Pembe"></button>
     </div>
   </div>
 
-  <!-- Ana Çalışma Alanı (Canvas & Katmanlar) -->
+  <!-- Ana Çalışma Alanı (Canvas & Thumbnails & Katmanlar) -->
   <div class="acrobat-workspace">
-    <!-- Sol Küçük Resimler (Thumbnails) -->
-    <div class="acrobat-sidebar" id="studioThumbnailsBar"></div>
+    <!-- Sol Küçük Resimler (Thumbnails Bar) -->
+    <div class="acrobat-sidebar" id="studioThumbnailsBar" title="Sayfalar Arasında Geçiş Yapın"></div>
 
-    <!-- Orta Canvas Alanı -->
-    <div class="acrobat-viewport" id="studioViewport">
+    <!-- Orta Viewport Tuval Alanı -->
+    <div class="acrobat-viewport" id="studioViewport" style="position: relative;">
+      <!-- Akıllı Font Tespit Bildirimi (Acrobat Pro DC Grade) -->
+      <div id="smartFontToast" style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%) translateY(-10px); background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #f8fafc; border: 1px solid rgba(59, 130, 246, 0.5); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 99, 235, 0.25); border-radius: 9999px; padding: 6px 18px; font-size: 12px; font-weight: 500; display: none; align-items: center; gap: 8px; z-index: 1000; pointer-events: none; opacity: 0; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+        <span style="color: #4ade80; font-size: 14px;">✓</span>
+        <span id="smartFontToastText">Orijinal Font Tespit Edildi: Arial 14px (Bold)</span>
+      </div>
+
       <div class="canvas-wrapper" id="canvasWrapper">
         <canvas id="pdfRenderCanvas"></canvas>
         <canvas id="pdfDrawOverlay"></canvas>
+        <div id="pdfObjectOverlay" class="pdf-object-overlay"></div>
       </div>
     </div>
   </div>
 
   <!-- Alt Durum & Gezinti Çubuğu -->
   <div class="acrobat-bottombar">
-    <div class="page-controls">
-      <button class="nav-btn" id="prevPageBtn">◀ Önceki</button>
+    <div class="page-controls" style="display: flex; align-items: center; gap: 8px;">
+      <button class="nav-btn" id="prevPageBtn" title="Önceki Sayfa">◀ Önceki</button>
       <span>Sayfa <strong id="currentPageNum">1</strong> / <span id="totalPagesNum">1</span></span>
-      <button class="nav-btn" id="nextPageBtn">Sonraki ▶</button>
+      <button class="nav-btn" id="nextPageBtn" title="Sonraki Sayfa">Sonraki ▶</button>
+      <button class="nav-btn" id="deleteCurrentPageBtn" style="color:#ef4444; border-color:#7f1d1d;" title="Mevcut Sayfayı Belgeden Sil">🗑️ Sayfayı Sil</button>
     </div>
 
-    <div class="zoom-controls">
-      <button class="zoom-btn" id="zoomOutBtn">-</button>
-      <span id="zoomLevelDisplay">100%</span>
-      <button class="zoom-btn" id="zoomInBtn">+</button>
-      <button class="nav-btn" id="rotatePageBtn" title="Sayfayı 90 Derece Döndür">🔄 90° Döndür</button>
+    <div class="zoom-controls" style="display: flex; align-items: center; gap: 8px;">
+      <button class="zoom-btn" id="zoomOutBtn" title="Küçült">-</button>
+      <span id="zoomLevelDisplay" style="min-width: 48px; text-align: center; font-weight: 700;">100%</span>
+      <button class="zoom-btn" id="zoomInBtn" title="Büyüt">+</button>
+      <button class="nav-btn" id="rotatePageBtn" title="Sayfayı 90 Derece Sağa Döndür">🔄 90° Döndür</button>
     </div>
   </div>
 </div>
 
-<script src="/assets/js/pdf-engine.js"></script>
+<!-- E-İMZA & HAZIR KURUMSAL KAŞE STÜDYOSU MODALI -->
+<div class="acrobat-submodal-overlay" id="signatureStampModal" role="dialog" aria-modal="true" aria-label="E-İmza ve Kaşe Stüdyosu">
+  <div class="acrobat-submodal-card">
+    <div class="submodal-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 14px; font-weight: 700; color: #f8fafc;">✍️ E-İmza &amp; Kaşe Stüdyosu</span>
+        <span style="font-size: 10px; background: #2563eb; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: 800;">PRO DC</span>
+      </div>
+      <button class="action-btn close" id="closeSigStampModalBtn" style="background:#334155; color:#cbd5e1; border:none; border-radius:4px; width:26px; height:26px; cursor:pointer;">✕</button>
+    </div>
+
+    <div class="submodal-tabs">
+      <button class="submodal-tab active" data-tab="draw-signature">🖊️ Islak İmza Çiz</button>
+      <button class="submodal-tab" data-tab="preset-stamps">🏢 Kurumsal Kaşeler</button>
+      <button class="submodal-tab" data-tab="upload-signature">📁 İmza Görseli Yükle</button>
+    </div>
+
+    <div class="submodal-body">
+      <!-- Sekme 1: Islak İmza Çiz -->
+      <div id="tabDrawSignature" class="sig-tab-content">
+        <p style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Mouse veya parmağınızla kutunun içine imzanızı çizin:</p>
+        <div class="signature-pad-wrapper">
+          <canvas id="signaturePadCanvas" class="signature-pad-canvas" width="540" height="200"></canvas>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="font-size: 11px; color: #cbd5e1;">Mürekkep:</span>
+            <button class="sig-color-btn active" data-color="#0f172a" style="width:20px; height:20px; border-radius:50%; background:#0f172a; border:2px solid #38bdf8; cursor:pointer;" title="Siyah"></button>
+            <button class="sig-color-btn" data-color="#1d4ed8" style="width:20px; height:20px; border-radius:50%; background:#1d4ed8; border:1px solid #334155; cursor:pointer;" title="Mavi"></button>
+            <button class="sig-color-btn" data-color="#dc2626" style="width:20px; height:20px; border-radius:50%; background:#dc2626; border:1px solid #334155; cursor:pointer;" title="Kırmızı"></button>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="clearSignatureBtn" style="padding: 6px 12px; font-size: 12px; background: #334155; color: #f8fafc; border: none; border-radius: 6px; cursor: pointer;">Temizle</button>
+            <button id="insertSignatureBtn" style="padding: 6px 14px; font-size: 12px; font-weight: 700; background: #2563eb; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;">✓ İmzayı Belgeye Ekle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sekme 2: Hazır Kurumsal Kaşeler -->
+      <div id="tabPresetStamps" class="sig-tab-content" style="display: none;">
+        <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">Belgenize eklemek istediğiniz hazır kaşe veya damgayı seçin:</p>
+        <div class="stamps-grid">
+          <div class="stamp-card-btn" data-stamp="ONAYLANDI" data-color="#16a34a">
+            <div style="border: 2px solid #16a34a; color: #16a34a; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">✓ ONAYLANDI</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Onay Damgası</span>
+          </div>
+
+          <div class="stamp-card-btn" data-stamp="GİZLİDİR" data-color="#dc2626">
+            <div style="border: 2px solid #dc2626; color: #dc2626; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">🔒 GİZLİDİR</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Gizlilik Damgası</span>
+          </div>
+
+          <div class="stamp-card-btn" data-stamp="ASLI GİBİDİR" data-color="#2563eb">
+            <div style="border: 2px solid #2563eb; color: #2563eb; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">📄 ASLI GİBİDİR</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Resmi Suret</span>
+          </div>
+
+          <div class="stamp-card-btn" data-stamp="İPTAL EDİLDİ" data-color="#b91c1c">
+            <div style="border: 2px solid #b91c1c; color: #b91c1c; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">✕ İPTAL EDİLDİ</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">İptal Damgası</span>
+          </div>
+
+          <div class="stamp-card-btn" data-stamp="RESMİ NÜSHA" data-color="#475569">
+            <div style="border: 2px solid #475569; color: #cbd5e1; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">⚖️ RESMİ NÜSHA</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Hukuki Belge</span>
+          </div>
+
+          <div class="stamp-card-btn" data-stamp="ÖDENDİ" data-color="#059669">
+            <div style="border: 2px solid #059669; color: #059669; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">💰 ÖDENDİ</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Finans &amp; Fatura</span>
+          </div>
+
+          <div class="stamp-card-btn" data-stamp="TASLAK" data-color="#d97706">
+            <div style="border: 2px solid #d97706; color: #d97706; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">⚠️ TASLAK / DRAFT</div>
+            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">İnceleme Aşamasında</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sekme 3: Görsel İmza Yükle -->
+      <div id="tabUploadSignature" class="sig-tab-content" style="display: none; text-align: center; padding: 20px 0;">
+        <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px;">Saydam arka planlı (PNG) imza veya şirket kaşenizi yükleyin:</p>
+        <button id="uploadCustomSigBtn" style="padding: 10px 18px; font-size: 13px; font-weight: 700; background: #2563eb; color: #ffffff; border: none; border-radius: 8px; cursor: pointer;">📁 Bilgisayardan İmza / Kaşe Seç</button>
+        <input type="file" id="modalCustomSigFileInput" accept="image/png,image/jpeg" style="display: none;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTOSHOP WEB STUDIO (%100 TAM EKRAN PHOTOPEA PRO STÜDYOSU) -->
+<div class="photoshop-studio-modal" id="photoshopStudioModal" role="dialog" aria-modal="true" aria-label="Photoshop Web Editör Stüdyosu">
+  <div class="ps-modal-container" style="display: flex; flex-direction: column; width: 100vw; height: 100vh; background: #0f172a; overflow: hidden;">
+    <!-- ÜST BAŞLIK & KONTROL BARI -->
+    <header class="ps-header" style="height: 40px; min-height: 40px; background: #0f172a; border-bottom: 1px solid #1e293b; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; z-index: 100; flex-shrink: 0;">
+      <div class="ps-brand" style="display: flex; align-items: center; gap: 8px;">
+        <div class="ps-badge" style="background:#0284c7; color:#fff; font-size:12px; font-weight:900; padding:2px 7px; border-radius:4px;">Ps</div>
+        <span style="font-size:13px; font-weight:700; color:#f8fafc; letter-spacing:-0.2px;">Web Photoshop Studio</span>
+        <span style="font-size:11px; color:#38bdf8; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); padding:2px 8px; border-radius:9999px; font-weight:600;">Photopea Pro Engine</span>
+      </div>
+
+      <div class="ps-top-actions" style="display: flex; align-items: center; gap: 8px;">
+        <button class="action-btn secondary" id="psFsToggleBtn" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:11px; padding:4px 10px; background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:5px;" title="Tam Ekran Modunu Aç/Kapat">
+          <span>⛶ Tam Sayfa Aç</span>
+        </button>
+        <a href="https://www.photopea.com" target="_blank" rel="noopener noreferrer" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; padding:4px 10px; border-radius:5px; font-size:11px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px;" title="Yeni Sekmede Orijinal Sayfada Aç">
+          <span>Yeni Sekmede Aç ↗</span>
+        </a>
+        <button class="action-btn close" id="psStudioCloseBtn" aria-label="Stüdyoyu Kapat" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:5px; width:28px; height:28px; font-size:13px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center;">✕</button>
+      </div>
+    </header>
+
+    <!-- PHOTOPEA ENTEGRASYON ALANI -->
+    <div class="ps-iframe-stage" style="flex: 1; width: 100%; height: calc(100vh - 40px); background: #1e1e1e;">
+      <iframe id="photopeaStudioIframe" src="about:blank" style="width: 100%; height: 100%; border: none; display: block;" allow="clipboard-read; clipboard-write; fullscreen" title="Photopea Web Photoshop Studio"></iframe>
+    </div>
+  </div>
+</div>
+
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+<script src="/assets/js/photoshop-engine.js?v=20260925_clone_v4"></script>
+<script src="/assets/js/pdf-engine.js?v=20260925_excel_to_md_v1"></script>
 </body>
 </html>
