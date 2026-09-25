@@ -22,8 +22,7 @@
   <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
   <link rel="stylesheet" href="/assets/css/theme.css?v=20">
   <link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
-  <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=23">
-  <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=2">
+    <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=2">
   <script src="/assets/js/theme.js?v=9"></script>
 
   <!-- PDF-LIB & PDF.JS (Client-Side WASM / JS Engine) -->
@@ -649,6 +648,8 @@
       background: #374151;
     }
   </style>
+<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
 </head>
 <body class="enterprise-ui">
 <header class="topbar">
@@ -656,14 +657,14 @@
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
       <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
     </a>
-    <nav class="primary-nav" aria-label="Ana navigasyon">
-      <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-      <a href="/pdf-cevirici.html" class="nav-active" style="color:#38bdf8 !important;font-weight:700;">Çeviriler</a>
-      <a href="/editor-photoshop.html">Photoshop Web</a>
-      <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
-      <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
-      <a href="/tr/referans/">Bir Ekibe Öner</a>
-    </nav>
+    <nav class="primary-nav" aria-label="Primary navigation">
+  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
+  <a href="/editor-photoshop.html">Photoshop Web</a>
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
+  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
+  <a href="/tr/referans/">Bir Ekibe Öner</a>
+</nav>
     <div class="nav-actions">
       <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
       <div class="langs">
@@ -1052,5 +1053,7 @@
 </div>
 
 <script src="/assets/js/pdf-engine.js"></script>
+<script src="/assets/js/enterprise-runtime.js?v=3"></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 </body>
 </html>

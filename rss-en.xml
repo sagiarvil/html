@@ -5,9 +5,97 @@
     <link>https://htmlandhtml.com/en/</link>
     <description>Evidence-backed technical briefings, AI Search updates (Google AI Overviews, OpenAI Search, Perplexity, Claude), llms.txt developments, and enterprise crawlability analyses.</description>
     <language>en-US</language>
-    <lastBuildDate>Thu, 24 Sep 2026 20:47:32 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 11:26:16 +0000</lastBuildDate>
     <atom:link href="https://htmlandhtml.com/rss-en.xml" rel="self" type="application/rss+xml" />
     <generator>HTMLandHTML Enterprise RSS Engine v1.0</generator>
+    <item>
+      <title>Automated Red Teaming and Prompt Injection Defenses for ChatGPT Atlas</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-24-continuously-hardening-chatgpt-atlas-against-pro-0ad9fbef8c87</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-24-continuously-hardening-chatgpt-atlas-against-pro-0ad9fbef8c87</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Strengthening browser agents against adversarial exploits using automated reinforcement learning loops.]]></description>
+      <category>PROMPT_INJECTION_DEFENSE_AUTOMATED_RED_TEAMING</category>
+      <category>prompt injection</category>
+      <category>automated red teaming</category>
+      <category>reinforcement learning</category>
+    </item>
+    <item>
+      <title>Web Multimodal Search Performance Reporting in Search Console</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-24-announcing-web-multimodal-search-performance-rep-a88e24112a42</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-24-announcing-web-multimodal-search-performance-rep-a88e24112a42</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Search Console introduces dedicated reporting capabilities to analyze performance metrics originating from visual and multimodal discovery experiences.]]></description>
+      <category>WEB_MULTIMODAL_SEARCH_CONSOLE_REPORTING</category>
+      <category>multimodal search</category>
+      <category>Search Console</category>
+      <category>visual discovery</category>
+    </item>
+    <item>
+      <title>Practices for Governing Agentic AI Systems</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-23-practices-for-governing-agentic-ai-systems-25adcaa1c831</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-23-practices-for-governing-agentic-ai-systems-25adcaa1c831</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A technical assessment on the supervision and safety of autonomous AI agents.]]></description>
+      <category>AGENTIC_AI_GOVERNANCE_SYSTEMS</category>
+      <category>agentic ai</category>
+      <category>governance frameworks</category>
+      <category>ai search systems</category>
+    </item>
+    <item>
+      <title>Introduction of Aardvark: An Autonomous AI-Powered Security Researcher</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-22-introducing-aardvark-openai-s-agentic-security-r-fed198f10f4d</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-22-introducing-aardvark-openai-s-agentic-security-r-fed198f10f4d</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A new AI system capable of autonomously discovering, validating, and remediating software vulnerabilities at scale enters private beta.]]></description>
+      <category>AI_AGENTIC_SECURITY_RESEARCH</category>
+      <category>autonomous vulnerability discovery</category>
+      <category>agentic security research</category>
+      <category>software validation</category>
+    </item>
+    <item>
+      <title>AI Agent Link Safety and Data Exfiltration Protections</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-22-keeping-your-data-safe-when-an-ai-agent-clicks-a-0d2abbb0fa62</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-22-keeping-your-data-safe-when-an-ai-agent-clicks-a-0d2abbb0fa62</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A technical examination of mitigations for data exfiltration and indirect prompt injection when AI assistants visit web links.]]></description>
+      <category>AI_AGENT_LINK_SAFETY_AND_DATA_EXFILTRATION</category>
+      <category>AI agents</category>
+      <category>link safety</category>
+      <category>data exfiltration</category>
+    </item>
+    <item>
+      <title>The OWL Architecture and ChatGPT Atlas: A New Era in Browser Engineering</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-22-how-we-built-owl-the-new-architecture-behind-our-3556c47e80db</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-22-how-we-built-owl-the-new-architecture-behind-our-3556c47e80db</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[An analysis of the new architectural foundation removing traditional browser engine dependencies and optimizing agent-driven web interaction.]]></description>
+      <category>BROWSER_ARCHITECTURE_AI_AGENTS</category>
+      <category>Chromium decoupling</category>
+      <category>OWL architecture</category>
+      <category>ChatGPT Atlas</category>
+    </item>
+    <item>
+      <title>Indexing Capacity Shifts and Web Preparation for AI Agents</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-22-rise-in-crawled-currently-not-indexed-preparing--ded4ea65792e</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-22-rise-in-crawled-currently-not-indexed-preparing--ded4ea65792e</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Analyzing the recent rise in crawled-yet-unindexed pages within Search Console and emerging preparation frameworks for autonomous web agents.]]></description>
+      <category>INDEXING_CAPACITY_AND_AGENT_PREPARATION</category>
+      <category>crawled currently not indexed</category>
+      <category>Google Search Console</category>
+      <category>AI agents</category>
+    </item>
+    <item>
+      <title>Integrated Web Search Capability Announced for ChatGPT</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-21-introducing-chatgpt-search-bd5105ccfa25</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-21-introducing-chatgpt-search-bd5105ccfa25</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Direct search integration technically shifts how artificial intelligence platforms process and present current web data.]]></description>
+      <category>CHATGPT_SEARCH_WEB_READINESS</category>
+      <category>ChatGPT search</category>
+      <category>AI search integration</category>
+      <category>web scraping</category>
+    </item>
     <item>
       <title>News Corp and OpenAI Establish Global Content and AI Partnership</title>
       <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-20-a-landmark-multi-year-global-partnership-with-ne-9f40e902d71f</link>
@@ -29,6 +117,39 @@
       <category>crawled-not-currently-indexed</category>
       <category>google-search-console</category>
       <category>content-quality</category>
+    </item>
+    <item>
+      <title>Agentic Software Development and Codex Integration Analysis</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-20-sea-s-view-on-the-future-of-agentic-software-dev-326607290d21</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-20-sea-s-view-on-the-future-of-agentic-software-dev-326607290d21</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A strategic review of adopting agentic coding infrastructures across engineering organizations.]]></description>
+      <category>AGENTIC_SOFTWARE_DEVELOPMENT_CODEX</category>
+      <category>Codex</category>
+      <category>AI agents</category>
+      <category>software development</category>
+    </item>
+    <item>
+      <title>New AI Overview and AI Mode Performance Reporting in Google Search Console</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-20-gsc-s-new-ai-overview-reporting-how-can-we-use-t-249f4723c527</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-20-gsc-s-new-ai-overview-reporting-how-can-we-use-t-249f4723c527</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Google Search Console introduces fresh telemetry to track how content surfaces across AI Overviews, AI Mode, and Discover AI features.]]></description>
+      <category>GOOGLE_SEARCH_CONSOLE_AI_METRICS</category>
+      <category>Google Search Console</category>
+      <category>AI Overviews</category>
+      <category>AI Mode</category>
+    </item>
+    <item>
+      <title>Automated Type Discovery Architecture for Entity Disambiguation</title>
+      <link>https://htmlandhtml.com/en/llms-txt-news/2026-09-20-discovering-types-for-entity-disambiguation-7f5353232f4b</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-09-20-discovering-types-for-entity-disambiguation-7f5353232f4b</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A novel approach resolving word ambiguity and generating overlapping categories via neural networks.]]></description>
+      <category>AUTOMATED_ENTITY_DISAMBIGUATION_TYPES</category>
+      <category>entity disambiguation</category>
+      <category>neural network</category>
+      <category>non-exclusive categories</category>
     </item>
     <item>
       <title>ChatGPT Agent System Card: AI Search Architecture Analysis</title>
@@ -433,126 +554,6 @@
       <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Hierarchical Discovery Mesh & Crawl Budget Routing, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
       <category>SITEMAP_DISCOVERY</category>
       <category>SITEMAP DISCOVERY</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Introducing a new spam policy for "back button hijacking": AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-04-01-introducing-a-new-spam-policy-for-34-back-button-h-19102844a3</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Linked Data RDF Graph & JSON-LD Entity Networks, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>SCHEMA_ENTITY</category>
-      <category>SCHEMA ENTITY</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Search Central Live is Coming to Shanghai in 2026!: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-04-01-search-central-live-is-coming-to-shanghai-in-2026-f6812d31ba</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Cryptographic Provenance, C2PA & Trust Verification, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>EEAT_CONSENSUS</category>
-      <category>EEAT CONSENSUS</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Inside Googlebot: demystifying crawling, fetching, and the bytes we process: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-03-01-inside-googlebot-demystifying-crawling-fetching-an-5e92b0399d</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Neural Model Inference, Attention & Reasoning Cores, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>AI_INFERENCE</category>
-      <category>AI INFERENCE</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>New Location for the Google Crawlers' IP Range Files: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-03-01-new-location-for-the-google-crawlers-39-ip-range-f-9992b81200</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Large Language Model Optimization & Latent Projection, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>LLMO</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Search Central Live is coming to Canada: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-is-coming-to-canada-3c25683619</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-is-coming-to-canada-3c25683619</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Retrieval-Augmented Generation & Vector Manifolds, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>RAG_RETRIEVAL</category>
-      <category>RAG RETRIEVAL</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Search Central Live Asia Pacific 2026: Get Ready for Sydney and more!: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-03-01-search-central-live-asia-pacific-2026-get-ready-fo-b551c78522</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Generative Engine Optimization & Entity Consensus, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>GEO_OPTIMIZATION</category>
-      <category>GEO OPTIMIZATION</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Google's February 2026 Discover core update: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-02-01-google-39-s-february-2026-discover-core-update-a14d1f42c0</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Answer Engine Optimization & Caliper Extraction, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>AEO_ANALYSIS</category>
-      <category>AEO ANALYSIS</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Search Central Live is coming back to South America: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2026-01-01-search-central-live-is-coming-back-to-south-americ-f4cfba5ff5</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Autonomous Agent Optimization & WebMCP Tool Schemas, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>AAO_AGENT</category>
-      <category>AAO AGENT</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Search Central Live APAC 2025 Recap: A Note of Gratitude: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2025-12-01-search-central-live-apac-2025-recap-a-note-of-grat-eaa6458745</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Crawler Infrastructure, Status Codes & Robots Protocols, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>TECHNICAL_SEO</category>
-      <category>TECHNICAL SEO</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Introducing weekly and monthly views in Search Console: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-weekly-and-monthly-views-in-search-con-e0cd3d107d</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Hierarchical Discovery Mesh & Crawl Budget Routing, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>SITEMAP_DISCOVERY</category>
-      <category>SITEMAP DISCOVERY</category>
-      <category>AI Search</category>
-      <category>llms.txt</category>
-    </item>
-    <item>
-      <title>Introducing social channels in Search Console: AI Search and Technical Web Architecture Analysis</title>
-      <link>https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-social-channels-in-search-console-62c336c509</link>
-      <guid isPermaLink="true">https://htmlandhtml.com/en/llms-txt-news/2025-12-01-introducing-social-channels-in-search-console-62c336c509</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Grounding in authoritative engineering disclosures from Google Search Central Blog, this analysis dissects architectural shifts across Linked Data RDF Graph & JSON-LD Entity Networks, multi-model retrieval dynamics, and production webmaster action plans.]]></description>
-      <category>SCHEMA_ENTITY</category>
-      <category>SCHEMA ENTITY</category>
       <category>AI Search</category>
       <category>llms.txt</category>
     </item>
