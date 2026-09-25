@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="light">
+<html lang="tr" data-theme="dark" class="dark">
 <head>
-<!-- ZERO-FLASH SCRIPT -->
+<!-- ZERO-FLASH SCRIPT (PURE DARK MODE) -->
 <script>
   (function() {
     'use strict';
     try {
-      var h = localStorage.getItem('hh-theme');
-      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
-      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
-      if (!t || t === 'system') {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      document.documentElement.classList.toggle('light', t === 'light');
-      document.documentElement.style.colorScheme = t;
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+      document.documentElement.style.colorScheme = 'dark';
+      localStorage.setItem('hh-theme', 'dark');
     } catch(e) {}
   })();
 </script>
@@ -663,7 +658,8 @@
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
       <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-      <a href="/pdf-cevirici.html" class="nav-active">Çeviriler &amp; PDF</a>
+      <a href="/pdf-cevirici.html" class="nav-active" style="color:#38bdf8 !important;font-weight:700;">Çeviriler</a>
+      <a href="/editor-photoshop.html">Photoshop Web</a>
       <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
       <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
       <a href="/tr/referans/">Bir Ekibe Öner</a>

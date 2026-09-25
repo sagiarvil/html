@@ -6046,3 +6046,60 @@ body.hh-menu-locked {
     visibility: hidden !important;
   }
 }
+
+/* ==========================================================================
+   MASTER SUITE V2: GÖVDE VE ARKA PLAN RENK BÜTÜNLÜĞÜ (ZERO SIDE COLOR MISMATCH)
+   ========================================================================== */
+html,
+html[data-theme],
+html.dark,
+body {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #f8fafc !important;
+}
+
+/* ==========================================================================
+   MASTER SUITE V2: HEADER TASARIM DÜZENİ VE HİZALAMA ONARIMI
+   ========================================================================== */
+header.topbar,
+.topbar {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  width: 100% !important;
+}
+
+.topbar-shell {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  height: 64px !important;
+  flex-wrap: nowrap !important;
+}
+
+.primary-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: nowrap !important;
+}
+
+.primary-nav a {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  padding: 6px 4px !important;
+  transition: color 0.15s ease !important;
+}
+
+.primary-nav a:hover,
+.primary-nav a.active,
+.primary-nav a.nav-active {
+  color: #ffffff !important;
+}

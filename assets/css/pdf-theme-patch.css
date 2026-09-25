@@ -107,33 +107,14 @@ html:not([data-theme="light"]) .card-footer-action {
 }
 
 /* ========================================================
-   2. AYDINLIK MOD (LIGHT THEME) — SAF BEYAZ & KOYU SİYAH METİN
+   PURE DARK MODE ENFORCEMENT — SADECE KOYU TEMA (AÇIK TEMA İPTAL)
    ======================================================== */
-html[data-theme="light"] body,
-html.light body {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
+html, html[data-theme], body {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+  color-scheme: dark !important;
 }
 
-html[data-theme="light"] .pdf-tool-card {
-  background-color: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-}
-
-html[data-theme="light"] .pdf-tool-card h3 {
-  color: #0f172a !important;
-  font-weight: 800 !important;
-}
-
-html[data-theme="light"] .pdf-tool-card p {
-  color: #334155 !important;
-}
-
-/* LOGO KONTRASTI */
-html[data-theme="dark"] .brand-logo,
-html:not([data-theme="light"]) .brand-logo {
-  filter: invert(1) brightness(2) !important;
-}
-html[data-theme="light"] .brand-logo {
-  filter: none !important;
+.brand-logo {
+  filter: invert(1) brightness(2) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) !important;
 }
