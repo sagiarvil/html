@@ -33,11 +33,15 @@
 <meta property="og:title" content="HTML&amp;HTML — AI Arama Teknik Teşhis Platformu">
 <meta property="og:description" content="AI arama görünürlüğünü engelleyebilecek site tarafı sorunlarını kanıtlayan ve uygulanabilir düzeltme paketi üreten karar sistemi.">
 <meta name="theme-color" content="#14151a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HTML&amp;HTML">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh5">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh5">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5">
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
+<link rel="manifest" href="/manifest.webmanifest">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css?v=20260920_27">
 <link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
@@ -135,6 +139,7 @@
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
   <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
   <a href="/tr/referans/">Bir Ekibe Öner</a>
@@ -170,6 +175,10 @@
     <a href="/tr/site-tarama/" class="hh-drawer-link">
       <span>🔍 Site Tarama &amp; Teşhis</span>
       <span class="link-tag">Ücretsiz</span>
+    </a>
+    <a href="/pdf-cevirici.html" class="hh-drawer-link">
+      <span>🔄 Çeviriler &amp; PDF Süiti</span>
+      <span class="link-tag">Yeni</span>
     </a>
     <a href="/tr/yapay-zeka-arama-gorunurlugu/" class="hh-drawer-link">
       <span>🌐 Yapay Zeka Görünürlüğü (GEO)</span>
@@ -833,5 +842,12 @@
 <script src="/assets/js/profound-canvas.js?v=20260920_27" defer></script>
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
 </body>
 </html>

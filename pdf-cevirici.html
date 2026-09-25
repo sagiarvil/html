@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+<!-- ZERO-FLASH SCRIPT -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çeviriler &amp; PDF Çevirici Süiti — Ücretsiz, Hızlı ve Güvenli | HTML&amp;HTML</title>
+  <meta name="description" content="iLovePDF'ten daha donanımlı, sıfır veri saklamalı istemci taraflı PDF ve Çeviri Araçları. PDF Birleştir, Ayır, Sıkıştır, PDF'den Markdown'a (MD), Word, Excel ve Güvenlik araçları.">
+  <link rel="canonical" href="https://htmlandhtml.com/pdf-cevirici.html">
+  <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
+  <link rel="stylesheet" href="/assets/css/theme.css?v=20">
+  <link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
+  <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=23">
+  <script src="/assets/js/theme.js?v=9"></script>
+
+  <!-- PDF-LIB & PDF.JS (Client-Side WASM / JS Engine) -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+
+  <style>
+    .pdf-hero {
+      padding: 60px 20px 30px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pdf-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .pdf-hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .pdf-hero p {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto 30px;
+    }
+    .pdf-search-bar {
+      display: flex;
+      max-width: 580px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+    .pdf-search-bar input {
+      width: 100%;
+      padding: 14px 18px 14px 44px;
+      font-size: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: #ffffff;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .pdf-search-bar input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .pdf-search-bar svg {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .category-tab {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .category-tab:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+    .category-tab.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+    .tools-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+    .pdf-tool-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .pdf-tool-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.08);
+      border-color: #94a3b8;
+    }
+    .tool-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .tool-icon-wrap.primary { background: #eff6ff; color: #2563eb; }
+    .tool-icon-wrap.success { background: #ecfdf5; color: #059669; }
+    .tool-icon-wrap.warning { background: #fffbeb; color: #d97706; }
+    .tool-icon-wrap.danger { background: #fef2f2; color: #dc2626; }
+    .tool-icon-wrap.ai { background: #f5f3ff; color: #7c3aed; }
+    .tool-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #64748b;
+    }
+    .tool-badge.ai-badge {
+      background: #f5f3ff;
+      color: #7c3aed;
+      border: 1px solid #ddd6fe;
+    }
+    .pdf-tool-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px;
+    }
+    .pdf-tool-card p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+      flex-grow: 1;
+    }
+    .card-footer-action {
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #2563eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    /* Modal */
+    .tool-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .tool-modal.open { display: flex; }
+    .tool-modal-content {
+      background: #ffffff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 640px;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: none;
+      background: #f1f5f9;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+    }
+    .dropzone-box {
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 36px 20px;
+      text-align: center;
+      margin: 20px 0;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dropzone-box.dragover {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+    .dropzone-icon {
+      margin-bottom: 10px;
+      color: #64748b;
+    }
+    .modal-action-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .modal-action-btn:hover:not(:disabled) {
+      background: #1d4ed8;
+    }
+    .modal-action-btn:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+    .process-progress {
+      padding: 8px 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .markdown-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 12px;
+      max-height: 220px;
+      overflow-y: auto;
+      margin-top: 14px;
+      white-space: pre-wrap;
+    }
+    .primary-nav .nav-active {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    /* ACROBAT PRO DC STUDIO STYLES */
+    .acrobat-studio-modal {
+      position: fixed;
+      inset: 0;
+      background: #0b0f19;
+      color: #f8fafc;
+      z-index: 10000;
+      display: none;
+      flex-direction: column;
+    }
+    .acrobat-studio-modal.open {
+      display: flex;
+    }
+    .acrobat-header {
+      height: 52px;
+      background: #111827;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      gap: 12px;
+    }
+    .acrobat-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .acrobat-logo-badge {
+      background: #dc2626;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .file-name-badge {
+      background: #1f2937;
+      color: #94a3b8;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: monospace;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .acrobat-tools {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #1f2937;
+      padding: 3px 6px;
+      border-radius: 8px;
+    }
+    .tool-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .tool-btn:hover {
+      background: #374151;
+      color: #fff;
+    }
+    .tool-btn.active {
+      background: #2563eb;
+      color: #fff;
+    }
+    .acrobat-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+    .action-btn.primary {
+      background: #2563eb;
+      color: #fff;
+    }
+    .action-btn.primary:hover {
+      background: #1d4ed8;
+    }
+    .action-btn.secondary {
+      background: #1f2937;
+      color: #cbd5e1;
+    }
+    .action-btn.secondary:hover {
+      background: #374151;
+      color: #fff;
+    }
+    .action-btn.close {
+      background: #374151;
+      color: #cbd5e1;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .acrobat-options-bar {
+      height: 42px;
+      background: #1a2234;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 20px;
+    }
+    .option-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .option-label {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .option-group input[type="color"] {
+      width: 26px;
+      height: 26px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: transparent;
+    }
+    .option-group select {
+      background: #0f172a;
+      color: #f8fafc;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 12px;
+      outline: none;
+    }
+    .mini-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .acrobat-workspace {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      background: #141b2d;
+    }
+    .acrobat-sidebar {
+      width: 140px;
+      background: #0f172a;
+      border-right: 1px solid #1f2937;
+      overflow-y: auto;
+      padding: 14px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .thumb-item {
+      cursor: pointer;
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .thumb-canvas {
+      width: 100%;
+      border: 2px solid #334155;
+      border-radius: 4px;
+      background: #fff;
+      margin-bottom: 4px;
+    }
+    .thumb-item.active .thumb-canvas {
+      border-color: #2563eb;
+    }
+    .acrobat-viewport {
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 30px;
+    }
+    .canvas-wrapper {
+      position: relative;
+      background: #ffffff;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      border-radius: 2px;
+    }
+    #pdfRenderCanvas {
+      display: block;
+    }
+    #pdfDrawOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+    }
+    .acrobat-bottombar {
+      height: 44px;
+      background: #111827;
+      border-top: 1px solid #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-size: 12px;
+    }
+    .page-controls, .zoom-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-btn, .zoom-btn {
+      background: #1f2937;
+      color: #f8fafc;
+      border: 1px solid #374151;
+      padding: 4px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .nav-btn:hover, .zoom-btn:hover {
+      background: #374151;
+    }
+  </style>
+</head>
+<body class="enterprise-ui">
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav class="primary-nav" aria-label="Ana navigasyon">
+      <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+      <a href="/pdf-cevirici.html" class="nav-active">Çeviriler &amp; PDF</a>
+      <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
+      <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
+      <a href="/tr/referans/">Bir Ekibe Öner</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
+      <div class="langs">
+        <button data-lang="tr" class="active">TR</button><span>/</span><button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="pdf-hero">
+    <div class="pdf-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      SIFIR SUNUCU YÜKLEMESİ • %100 YEREL &amp; GİZLİ
+    </div>
+    <h1>Çeviriler &amp; PDF Çevirici Süiti</h1>
+    <p>iLovePDF'in ötesinde, tarayıcınızda doğrudan çalışan yüksek hızlı dönüştürme ve düzenleme araçları. Dosyalarınız harici sunuculara yüklenmez; anında, sürtünmesiz ve LLM uyumlu Markdown desteğiyle işlenir.</p>
+
+    <div class="pdf-search-bar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="toolSearchInput" placeholder="Bir araç arayın (Örn: Markdown, Birleştir, Word, Kilidi Aç)..." aria-label="Araç Ara">
+    </div>
+
+    <div class="category-tabs">
+      <button class="category-tab active" data-category="all">Tüm Araçlar (18+)</button>
+      <button class="category-tab" data-category="organize">Düzenleme &amp; Organizasyon</button>
+      <button class="category-tab" data-category="convert">Dönüştürme Araçları</button>
+      <button class="category-tab" data-category="security">Güvenlik &amp; İyileştirme</button>
+    </div>
+  </section>
+
+  <section class="tools-bento-grid" id="toolsGrid">
+    <!-- 1. PDF Düzenleme ve Organizasyon -->
+    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-merge">
+      <div class="tool-icon-wrap primary">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      </div>
+      <span class="tool-badge">Hızlı</span>
+      <h3>PDF Birleştir</h3>
+      <p>Birden fazla PDF dosyasını seçtiğiniz sırayla tek bir dosyada birleştirir.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-split">
+      <div class="tool-icon-wrap primary">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" x2="8.12" y1="4" y2="15.88"/><line x1="14.47" x2="20" y1="14.48" y2="20"/><line x1="8.12" x2="12" y1="8.12" y2="12"/></svg>
+      </div>
+      <span class="tool-badge">Popüler</span>
+      <h3>PDF Ayır</h3>
+      <p>Bir PDF'i ayrı sayfalara bölün veya belirli sayfa aralıklarını ayıklayın.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-compress">
+      <div class="tool-icon-wrap primary">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
+      </div>
+      <span class="tool-badge">Kayıpsız</span>
+      <h3>PDF Sıkıştır</h3>
+      <p>PDF dosyalarının boyutunu kaliteden ödün vermeden tarayıcınızda küçültür.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-rotate">
+      <div class="tool-icon-wrap primary">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+      </div>
+      <span class="tool-badge">Tek Tık</span>
+      <h3>PDF Döndür</h3>
+      <p>PDF sayfalarını istediğiniz yöne (90°, 180°, 270°) tek tıkla döndürür.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="organize" data-tool-id="pdf-edit">
+      <div class="tool-icon-wrap primary">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      </div>
+      <span class="tool-badge">Görsel</span>
+      <h3>PDF Düzenle</h3>
+      <p>Metin, resim, şekil ekleyerek mevcut PDF içeriğini doğrudan düzenleyin.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <!-- 2. Dönüştürme Araçları -->
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-md">
+      <div class="tool-icon-wrap ai">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 3-5 18"/><path d="M4 17h16"/><path d="M4 7h16"/></svg>
+      </div>
+      <span class="tool-badge ai-badge">AI / LLM Ready</span>
+      <h3>PDF'den Markdown'a (MD)</h3>
+      <p>PDF metin, tablo ve formüllerini saf Markdown'a dönüştürür; ChatGPT, Claude ve Gemini için hazırlar.</p>
+      <div class="card-footer-action">Öne Çıkan AI Aracı →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-word">
+      <div class="tool-icon-wrap success">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <span class="tool-badge">Düzenlenebilir</span>
+      <h3>PDF'den Word'e</h3>
+      <p>PDF belgelerini düzenlenebilir DOCX Word formatına kayıpsız dönüştürür.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="word-to-pdf">
+      <div class="tool-icon-wrap success">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
+      </div>
+      <span class="tool-badge">Baskı Hazır</span>
+      <h3>Word'den PDF'e</h3>
+      <p>Word (DOCX, DOC) belgelerinizi standart ve güvenli PDF formatına çevirir.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-excel">
+      <div class="tool-icon-wrap success">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+      </div>
+      <span class="tool-badge">Tablo Çıkarıcı</span>
+      <h3>PDF'den Excel'e</h3>
+      <p>PDF içindeki tabloları otomatik tespit eder ve düzenlenebilir XLSX tablosuna aktarır.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="excel-to-pdf">
+      <div class="tool-icon-wrap success">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+      </div>
+      <span class="tool-badge">Otomatik Sığdır</span>
+      <h3>Excel'den PDF'e</h3>
+      <p>Excel tablolarınızı bozulmadan, sayfa düzenini koruyarak PDF'e çevirir.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-powerpoint">
+      <div class="tool-icon-wrap warning">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="14" x="3" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+      </div>
+      <span class="tool-badge">Sunum</span>
+      <h3>PDF'den PowerPoint'e</h3>
+      <p>PDF sunumlarınızı düzenlenebilir PPTX slaytlarına dönüştürür.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="pdf-to-jpg">
+      <div class="tool-icon-wrap warning">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+      </div>
+      <span class="tool-badge">Yüksek DPI</span>
+      <h3>PDF'den JPG'ye</h3>
+      <p>Her PDF sayfasını yüksek kaliteli JPG veya PNG görseline çıkarır.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="convert" data-tool-id="jpg-to-pdf">
+      <div class="tool-icon-wrap warning">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 14 2 2 4-4"/></svg>
+      </div>
+      <span class="tool-badge">Toplu Birleştir</span>
+      <h3>JPG'den PDF'e</h3>
+      <p>Birden çok görseli (JPG, PNG, WebP) tek bir PDF dosyasında birleştirir.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <!-- 3. Güvenlik ve İyileştirme -->
+    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-unlock">
+      <div class="tool-icon-wrap danger">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+      </div>
+      <span class="tool-badge">Kilit Açıcı</span>
+      <h3>PDF Kilidini Aç</h3>
+      <p>Parola ve kısıtlama korumalı PDF'lerin güvenlik kilitlerini kaldırır.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-protect">
+      <div class="tool-icon-wrap danger">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <span class="tool-badge">AES-256</span>
+      <h3>PDF Koru</h3>
+      <p>PDF'lerinizi güçlü parola ile şifreleyerek yetkisiz erişimleri engeller.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-watermark">
+      <div class="tool-icon-wrap danger">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+      </div>
+      <span class="tool-badge">Filigran</span>
+      <h3>PDF Filigranla</h3>
+      <p>Sayfalarınıza metin veya logo damgası ekleyerek telif koruması sağlayın.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-sign">
+      <div class="tool-icon-wrap danger">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 18a2.5 2.5 0 0 1-5 0c0-1.5 2-4 2.5-4.5.5.5 2.5 3 2.5 4.5Z"/><path d="M12 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/></svg>
+      </div>
+      <span class="tool-badge">E-İmza</span>
+      <h3>PDF İmzala</h3>
+      <p>Belgelerinize güvenli elektronik imza ekleyin ve onaylayın.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+
+    <div class="pdf-tool-card" data-category="security" data-tool-id="pdf-repair">
+      <div class="tool-icon-wrap danger">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <span class="tool-badge">Kurtarıcı</span>
+      <h3>PDF Onar</h3>
+      <p>Bozuk veya hasarlı PDF dosyalarını kurtarmaya ve yeniden yapılandırmaya çalışır.</p>
+      <div class="card-footer-action">Hemen Kullan →</div>
+    </div>
+  </section>
+</main>
+
+<!-- İstemci Taraflı Hızlı Araç Modalı -->
+<div class="tool-modal" id="toolModal" role="dialog" aria-modal="true" aria-labelledby="modalToolTitle">
+  <div class="tool-modal-content">
+    <button class="modal-close-btn" id="closeModalBtn" aria-label="Kapat">✕</button>
+    <h2 id="modalToolTitle" style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Araç Adı</h2>
+    <p id="modalToolDesc" style="font-size: 13px; color: #64748b; margin-bottom: 16px;">Araç Açıklaması</p>
+
+    <div class="dropzone-box" id="modalDropzone">
+      <div class="dropzone-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+      </div>
+      <p style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">Dosyayı buraya sürükleyin veya tıklayarak seçin</p>
+      <p style="font-size: 12px; color: #94a3b8;">PDF, Word, Excel veya Görsel dosyaları desteklenir (%100 yerel işlenir)</p>
+      <input type="file" id="toolFileInput" style="display: none;">
+    </div>
+
+    <!-- Ek Araç Ayarları (Döndürme açısı, filigran metni vs.) -->
+    <div id="extraOptions"></div>
+
+    <div id="fileStatus" style="font-size: 13px; color: #2563eb; margin: 12px 0; display: none;"></div>
+    <div id="processProgress" class="process-progress" style="display: none;"></div>
+
+    <button class="modal-action-btn" id="modalActionBtn" disabled>İşlemi Başlat</button>
+
+    <!-- Markdown Önizleme Paneli (PDF to MD için) -->
+    <div id="markdownPreview" style="display: none; margin-top: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span style="font-size: 12px; font-weight: 700; color: #0f172a;">Üretilen Saf Markdown Çıktısı (LLM-Ready):</span>
+        <div style="display: flex; gap: 6px;">
+          <button id="copyMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; border-radius: 6px; cursor: pointer;">Markdown'ı Kopyala</button>
+          <button id="downloadMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #0f172a; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;">.md İndir</button>
+        </div>
+      </div>
+      <div class="markdown-box" id="markdownCode"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADOBE ACROBAT PRO DC GRADE EDIT STÜDYOSU (TAM EKRAN) -->
+<div class="acrobat-studio-modal" id="acrobatStudioModal" role="dialog" aria-modal="true" aria-label="PDF Düzenleme Stüdyosu">
+  <div class="acrobat-header">
+    <div class="acrobat-brand">
+      <div class="acrobat-logo-badge">PRO DC</div>
+      <span>HTML&amp;HTML PDF Editor Studio</span>
+      <span class="file-name-badge" id="studioFileName">dokuman.pdf</span>
+    </div>
+
+    <!-- Ana Araç Çubuğu -->
+    <div class="acrobat-tools">
+      <button class="tool-btn active" data-tool="select" title="Seç &amp; Taşı (V)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
+        <span>Seç</span>
+      </button>
+      <button class="tool-btn" data-tool="text" title="Metin Ekle (T)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
+        <span>Metin</span>
+      </button>
+      <button class="tool-btn" data-tool="pen" title="Kalemle Çizim (P)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+        <span>Kalem</span>
+      </button>
+      <button class="tool-btn" data-tool="highlighter" title="Vurgulayıcı (H)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
+        <span>Vurgula</span>
+      </button>
+      <button class="tool-btn" data-tool="rect" title="Dikdörtgen Ekle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
+        <span>Kutu</span>
+      </button>
+      <button class="tool-btn" data-tool="circle" title="Daire Ekle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+        <span>Daire</span>
+      </button>
+      <button class="tool-btn" data-tool="arrow" title="Ok Çiz">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <span>Ok</span>
+      </button>
+      <button class="tool-btn" data-tool="stamp" title="Kaşe / İmza Ekle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 18a2.5 2.5 0 0 1-5 0c0-1.5 2-4 2.5-4.5.5.5 2.5 3 2.5 4.5Z"/><path d="M12 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/></svg>
+        <span>İmza/Kaşe</span>
+      </button>
+      <button class="tool-btn" data-tool="redact" title="Gizle / Karart (Sansür)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect width="18" height="14" x="3" y="5" rx="1"/></svg>
+        <span>Karart</span>
+      </button>
+      <button class="tool-btn" data-tool="eraser" title="Silgi">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
+        <span>Silgi</span>
+      </button>
+    </div>
+
+    <!-- Sağ Dışa Aktarma -->
+    <div class="acrobat-actions">
+      <button class="action-btn secondary" id="studioUndoBtn" title="Geri Al">↩ Geri</button>
+      <button class="action-btn secondary" id="studioClearBtn" title="Tüm Çizimleri Temizle">🗑️ Temizle</button>
+      <button class="action-btn primary" id="studioExportPdfBtn">💾 PDF Olarak Kaydet &amp; İndir</button>
+      <button class="action-btn close" id="studioCloseBtn" aria-label="Stüdyoyu Kapat">✕</button>
+    </div>
+  </div>
+
+  <!-- İkincil Seçenek Çubuğu (Tool Options) -->
+  <div class="acrobat-options-bar">
+    <div class="option-group">
+      <span class="option-label">Renk:</span>
+      <input type="color" id="studioColorPicker" value="#2563eb">
+    </div>
+    <div class="option-group">
+      <span class="option-label">Kalınlık:</span>
+      <select id="studioStrokeWidth">
+        <option value="1">1 px (İnce)</option>
+        <option value="2">2 px (Normal)</option>
+        <option value="4" selected>4 px (Orta)</option>
+        <option value="8">8 px (Kalın)</option>
+        <option value="16">16 px (Geniş Vurgu)</option>
+      </select>
+    </div>
+    <div class="option-group" id="textOptionsGroup" style="display: none;">
+      <span class="option-label">Font Boyutu:</span>
+      <select id="studioFontSize">
+        <option value="12">12 px</option>
+        <option value="16" selected>16 px</option>
+        <option value="20">20 px</option>
+        <option value="24">24 px</option>
+        <option value="32">32 px</option>
+      </select>
+    </div>
+    <div class="option-group" id="stampOptionsGroup" style="display: none;">
+      <span class="option-label">Hazır Kaşe:</span>
+      <select id="studioPresetStamp">
+        <option value="ONAYLANDI">✓ ONAYLANDI</option>
+        <option value="GİZLİDİR">🔒 GİZLİDİR</option>
+        <option value="KOPYADIR">📄 KOPYADIR</option>
+        <option value="İPTAL EDİLDİ">✕ İPTAL EDİLDİ</option>
+      </select>
+      <button class="mini-btn" id="studioAddCustomStampBtn">+ Özel Görsel/İmza</button>
+      <input type="file" id="studioCustomStampInput" accept="image/png,image/jpeg" style="display: none;">
+    </div>
+  </div>
+
+  <!-- Ana Çalışma Alanı (Canvas & Katmanlar) -->
+  <div class="acrobat-workspace">
+    <!-- Sol Küçük Resimler (Thumbnails) -->
+    <div class="acrobat-sidebar" id="studioThumbnailsBar"></div>
+
+    <!-- Orta Canvas Alanı -->
+    <div class="acrobat-viewport" id="studioViewport">
+      <div class="canvas-wrapper" id="canvasWrapper">
+        <canvas id="pdfRenderCanvas"></canvas>
+        <canvas id="pdfDrawOverlay"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alt Durum & Gezinti Çubuğu -->
+  <div class="acrobat-bottombar">
+    <div class="page-controls">
+      <button class="nav-btn" id="prevPageBtn">◀ Önceki</button>
+      <span>Sayfa <strong id="currentPageNum">1</strong> / <span id="totalPagesNum">1</span></span>
+      <button class="nav-btn" id="nextPageBtn">Sonraki ▶</button>
+    </div>
+
+    <div class="zoom-controls">
+      <button class="zoom-btn" id="zoomOutBtn">-</button>
+      <span id="zoomLevelDisplay">100%</span>
+      <button class="zoom-btn" id="zoomInBtn">+</button>
+      <button class="nav-btn" id="rotatePageBtn" title="Sayfayı 90 Derece Döndür">🔄 90° Döndür</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/pdf-engine.js"></script>
+</body>
+</html>
