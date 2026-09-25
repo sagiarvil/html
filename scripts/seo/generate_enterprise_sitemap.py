@@ -327,7 +327,43 @@ def main():
         })
         print(f"  📰 [NEWS] sitemap-news.xml master indexe bağlandı (lastmod: {news_lm})")
 
+    # Mobile sitemap (Mandate v8.0 §2.1 & MG17)
+    mobile_sitemap_file = ROOT / "sitemap-mobile.xml"
+    all_mobile_entries = []
+    for p_data in partitions.values():
+        all_mobile_entries.extend(p_data["entries"])
+    all_mobile_entries.sort(key=lambda x: x["url"])
+    mobile_xml = build_partition_xml(all_mobile_entries)
+    with open(mobile_sitemap_file, "w", encoding="utf-8") as f:
+        f.write(mobile_xml)
+    print(f"  📱 [MOBILE] /sitemap-mobile.xml başarıyla yazıldı ({len(all_mobile_entries)} URL).")
+
+    # Apps sitemap (Mandate v8.0 §2.1)
+    apps_sitemap_file = ROOT / "sitemap-apps.xml"
+    apps_xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '  <url>',
+        f'    <loc>{ORIGIN}/.well-known/assetlinks.json</loc>',
+        f'    <lastmod>{datetime.now(timezone.utc).isoformat()}</lastmod>',
+        '  </url>',
+        '  <url>',
+        f'    <loc>{ORIGIN}/.well-known/apple-app-site-association</loc>',
+        f'    <lastmod>{datetime.now(timezone.utc).isoformat()}</lastmod>',
+        '  </url>',
+        '  <url>',
+        f'    <loc>{ORIGIN}/app-link.json</loc>',
+        f'    <lastmod>{datetime.now(timezone.utc).isoformat()}</lastmod>',
+        '  </url>',
+        '</urlset>\n'
+    ]
+    with open(apps_sitemap_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(apps_xml_lines))
+    print("  📲 [APPS] /sitemap-apps.xml başarıyla yazıldı.")
+
     # Write Master Sitemap Index
+
     master_xml = build_master_index(partitions, extra_sitemaps=extra_sitemaps)
     master_file = ROOT / "sitemap.xml"
     with open(master_file, "w", encoding="utf-8") as f:

@@ -9,10 +9,10 @@
 :root {
   color-scheme: dark;
 
-  /* DARK THEME DEFAULT: Modern Charcoal Black (Kömür Siyahı) — Zero Pitch Black Abyss */
-  --bg: #14151a;
-  --bg-soft: #181a22;
-  --bg-card: #1e2028;
+  /* DARK THEME DEFAULT: Unified Pure Black (#000000) — Zero Side Discrepancy */
+  --bg: #000000;
+  --bg-soft: #08080a;
+  --bg-card: #111215;
   --fg: #f8fafc;
   --fg-soft: #cbd5e1;
   --fg-dim: #94a3b8;
@@ -6053,7 +6053,12 @@ body.hh-menu-locked {
 html,
 html[data-theme],
 html.dark,
-body {
+body,
+main,
+section,
+.hero,
+.decision-hero,
+.profound-constellation-wrap {
   background: #000000 !important;
   background-color: #000000 !important;
   color: #f8fafc !important;

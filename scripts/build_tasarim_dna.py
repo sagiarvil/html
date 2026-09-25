@@ -56,7 +56,13 @@ def generate_html(is_subpath=False):
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=yes">
+<meta name="theme-color" content="#14151a">
+<link rel="manifest" href="/manifest.webmanifest">
 <title>{slot(c, 'meta.title', 'Tasarım DNA — HTML&HTML')}</title>
 <meta name="description" content="{slot(c, 'meta.description')}">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -69,6 +75,7 @@ def generate_html(is_subpath=False):
 {faq_json_str}
 </script>
 </head>
+
 <body class="dna-body">
 
 <!-- S0 — HEADER -->
@@ -784,9 +791,17 @@ def generate_html(is_subpath=False):
 </footer>
 
 <script src="{prefix}assets/js/dna-scroll-spy.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').catch(function() {});
+    });
+  }
+</script>
 </body>
 </html>
 '''
+
     return html
 
 def main():

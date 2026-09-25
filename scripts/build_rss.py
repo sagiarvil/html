@@ -147,8 +147,24 @@ def main():
         f.write(en_xml)
     print("Generated: feed.xml")
 
+    # 4. Mobile-Optimized Feed (/mobile/feed.xml)
+    mobile_dir = ROOT / "mobile"
+    mobile_dir.mkdir(parents=True, exist_ok=True)
+    mobile_xml = build_feed_xml(
+        items=feed_items,
+        lang="tr-TR",
+        feed_url=f"{ORIGIN}/mobile/feed.xml",
+        title="HTML&HTML — Mobile & Voice AI Search Feeds",
+        description="Mobile-first, voice-optimized syndication feeds for AI crawlers, on-device models and aggregators.",
+        link=f"{ORIGIN}/"
+    )
+    with open(mobile_dir / "feed.xml", "w", encoding="utf-8") as f:
+        f.write(mobile_xml)
+    print("Generated: mobile/feed.xml")
+
     print(f"RSS Engine successfully generated feeds with {len(feed_items)} items.")
     return 0
 
 if __name__ == "__main__":
     exit(main())
+

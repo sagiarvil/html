@@ -37,7 +37,7 @@ const icons={
 };
 
 function loadHomepageIntelligence(){if(!document.getElementById('scanForm')||document.querySelector('script[data-home-intelligence]'))return;const s=document.createElement('script');s.src='/assets/js/intelligence-root.js?v=4';s.defer=true;s.dataset.homeIntelligence='1';document.head.appendChild(s)}
-function loadCommercialIntent(){if(document.querySelector('[data-commercial-intent="static"]'))return;if(document.querySelector('script[data-commercial-intent-loader]'))return;const s=document.createElement('script');s.src='/assets/js/commercial-intent.js?v=3';s.defer=true;s.dataset.commercialIntentLoader='1';document.head.appendChild(s)}
+function loadCommercialIntent(){if(location.pathname.indexOf('editor-photoshop')!==-1||location.pathname.indexOf('pdf-cevirici')!==-1)return;if(document.querySelector('[data-commercial-intent="static"]'))return;if(document.querySelector('script[data-commercial-intent-loader]'))return;const s=document.createElement('script');s.src='/assets/js/commercial-intent.js?v=4';s.defer=true;s.dataset.commercialIntentLoader='1';document.head.appendChild(s)}
 function loadPaddleCheckout(){if(!document.querySelector('.checkout-card')||document.querySelector('script[data-paddle-checkout-loader]'))return;const s=document.createElement('script');s.src='/assets/js/paddle-checkout.js?v=2';s.defer=true;s.dataset.paddleCheckoutLoader='1';document.head.appendChild(s)}
 
 function mount(){

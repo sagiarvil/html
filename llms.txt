@@ -147,8 +147,23 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 ## Black-box observation methodology
 - [https://htmlandhtml.com/blackbox-observation-contract.json](https://htmlandhtml.com/blackbox-observation-contract.json) — six non-scoring observation contracts for query fan-out, citation volatility, crawler-policy divergence, render parity, entity drift and agent-action friction. This is an evidence protocol, not secret model access.
 
+## Mobile, App & Voice AI Search Layer (Mandate v8.0)
+- [Voice Queries Map](https://htmlandhtml.com/llms/mobile/voice-queries.md): Voice-search direct answers for assistants (Google Assistant, Siri, Alexa).
+- [Local Intent Map](https://htmlandhtml.com/llms/mobile/local-intent.md): Mobile near-me search and local AI grounding.
+- [Mobile Home Sub-Graph](https://htmlandhtml.com/llms/mobile/home-mobile.md): Mobile-first parity and thumb-safe answer engine.
+- [Mobile Feed](https://htmlandhtml.com/mobile/feed.xml): Mobile and voice-optimized syndication feed.
+- [Mobile Sitemap](https://htmlandhtml.com/sitemap-mobile.xml): Mobile-first indexing URL map.
+- [PWA Manifest](https://htmlandhtml.com/manifest.webmanifest): Installable standalone PWA manifest.
+- [Service Worker](https://htmlandhtml.com/sw.js): Offline-first caching service worker.
+- [AI Agent Manifest](https://htmlandhtml.com/agent.txt): AI Agent and A2A discovery manifest.
+- [Agent Card](https://htmlandhtml.com/.well-known/agent.json): Agent-to-Agent protocol specification.
+- [Android App Links](https://htmlandhtml.com/.well-known/assetlinks.json): Android verified deep link verification.
+- [iOS Universal Links](https://htmlandhtml.com/.well-known/apple-app-site-association): Apple Universal Links verification.
+- [App-Web Deep Link Map](https://htmlandhtml.com/app-link.json): Deep link routing registry.
+
 <!-- LLMS_NEWS_START -->
 ## LLMS.TXT News / AI Search Intelligence
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
 <!-- LLMS_NEWS_END -->
+

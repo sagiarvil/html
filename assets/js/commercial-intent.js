@@ -3,7 +3,7 @@
 const root=document.documentElement;
 const lang=()=>((root.lang||'en').toLowerCase().startsWith('tr')?'tr':'en');
 const path=()=>location.pathname.replace(/\/+$/,'')||'/';
-const legal=()=>/(\/privacy|\/terms|\/gizlilik|\/kullanim-kosullari)(\/|$)/.test(path())||path()==='/checkout'||path()==='/checkout.html';
+const legal=()=>/(\/privacy|\/terms|\/gizlilik|\/kullanim-kosullari|\/editor-photoshop|\/pdf-cevirici)(\/|$)/.test(path())||path()==='/checkout'||path()==='/checkout.html';
 const home=()=>['/','/en','/tr'].includes(path());
 const esc=s=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 

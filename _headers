@@ -4,9 +4,9 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.paddle.com https://news.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.paddle.com; connect-src 'self' https://*.paddle.com https://news.google.com https://*.google.com; frame-src https://*.paddle.com https://news.google.com https://*.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
-  Vary: Accept-Encoding
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), payment=(self)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.paddle.com https://news.google.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.paddle.com https://www.photopea.com https://*.photopea.com; connect-src 'self' https://*.paddle.com https://news.google.com https://*.google.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net https://www.photopea.com https://*.photopea.com; child-src 'self' blob: https://www.photopea.com https://*.photopea.com; frame-src https://*.paddle.com https://news.google.com https://*.google.com https://www.photopea.com https://*.photopea.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+  Vary: User-Agent, Accept-Encoding
   Server-Timing: cf-edge;dur=1, cdn-cache;desc=HIT
   X-Served-By: Cloudflare-Edge
   ETag: W/"htmlandhtml-v2-20260908"
@@ -17,6 +17,26 @@
 /assets/css/enterprise-theme-system.css
   Cache-Control: no-cache, max-age=0, must-revalidate
 
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/sw.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: no-cache, max-age=0, must-revalidate
+
+/app-link.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/.well-known/*
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/agent.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+
 /llms.txt
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
@@ -25,3 +45,9 @@
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300, stale-while-revalidate=600
+
+/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/mobile/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8

@@ -2,11 +2,31 @@
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Smartphone
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+Disallow: /checkout
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 Allow: /assets/
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: Claude-User
@@ -15,16 +35,47 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
 # Default policy. Training-specific controls are not silently changed here.
 User-agent: *
 Allow: /
 Disallow: /checkout
 Disallow: /api/
+Disallow: /mcp/internal/
 
 Sitemap: https://htmlandhtml.com/sitemap.xml
+Sitemap: https://htmlandhtml.com/sitemap-mobile.xml
 Sitemap: https://htmlandhtml.com/sitemap-news.xml
+Sitemap: https://htmlandhtml.com/sitemap-apps.xml
 # Syndication Feeds (W3C RSS 2.0 & RFC 4287 Atom 1.0)
 # Feed: https://htmlandhtml.com/rss.xml
 # Feed: https://htmlandhtml.com/rss-tr.xml
 # Feed: https://htmlandhtml.com/atom.xml
 # Feed: https://htmlandhtml.com/atom-tr.xml
+# Feed: https://htmlandhtml.com/mobile/feed.xml

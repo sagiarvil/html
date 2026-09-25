@@ -12,7 +12,7 @@
  * Engine Divergence, 24 Premium Deliverables, and n8n DLQ Proof.
  */
 
-import { createHash } from 'crypto';
+import { createHash } from 'node:crypto';
 import type { EvidenceClass } from '../../src/intelligence/evidence-classes.ts';
 import { CANONICAL_SOURCES, getSourceById } from '../../src/intelligence/source-registry.ts';
 import { CANONICAL_SURFACES } from '../../src/intelligence/surface-registry.ts';

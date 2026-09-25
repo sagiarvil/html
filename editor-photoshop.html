@@ -1,400 +1,167 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-<!-- ZERO-FLASH SCRIPT -->
-<script>
-  (function() {
-    'use strict';
-    try {
-      var h = localStorage.getItem('hh-theme');
-      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
-      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
-      if (!t || t === 'system') {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      document.documentElement.classList.toggle('light', t === 'light');
-      document.documentElement.style.colorScheme = t;
-    } catch(e) {}
-  })();
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Photoshop &amp; Profesyonel Görsel Düzenleyici | HTML&amp;HTML</title>
-  <meta name="description" content="Tarayıcınızda çalışan ücretsiz, sıfır veri saklamalı profesyonel Web Photoshop. PSD, AI, PNG, JPG, Katmanlar, Filtreler, Rötuş ve Maskeleme desteği.">
+  <title>Web Photoshop Studio — Profesyonel Görsel & Katman Editörü | HTML&HTML</title>
+  <meta name="description" content="Tarayıcınızda çalışan %100 yerel ve tam donanımlı Web Photoshop. Katmanlar, fırçalar, filtreler, geçmiş paneli ve sıfır çökme garantisi.">
   <link rel="canonical" href="https://htmlandhtml.com/editor-photoshop.html">
-  <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-  <link rel="stylesheet" href="/assets/css/theme.css?v=20">
-  <link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
-    <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=2">
-  <script src="/assets/js/theme.js?v=9"></script>
-
   <style>
-    body {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       background: #0f172a;
       color: #f8fafc;
-      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .ps-app-shell {
       display: flex;
       flex-direction: column;
+      width: 100vw;
       height: 100vh;
-      margin: 0;
+      overflow: hidden;
+      background: #0f172a;
     }
-    .ps-header {
-      height: 52px;
-      background: #1e293b;
-      border-bottom: 1px solid #334155;
+    .ps-topbar {
+      height: 42px;
+      min-height: 42px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
-      gap: 12px;
+      padding: 0 14px;
       z-index: 100;
+      flex-shrink: 0;
     }
     .ps-brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
+    }
+    .ps-back-btn {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s;
+    }
+    .ps-back-btn:hover {
+      background: #334155;
+      color: #ffffff;
     }
     .ps-badge {
-      background: #3b82f6;
+      background: #0284c7;
       color: #fff;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 900;
-      padding: 3px 7px;
+      padding: 2px 7px;
       border-radius: 4px;
       letter-spacing: 0.5px;
     }
-    .mode-switch-pill {
-      display: flex;
-      background: #0f172a;
-      padding: 3px;
-      border-radius: 8px;
-      border: 1px solid #334155;
-    }
-    .mode-btn {
-      background: transparent;
-      border: none;
-      color: #94a3b8;
-      padding: 5px 12px;
-      border-radius: 6px;
-      font-size: 12px;
+    .ps-title {
+      font-size: 13px;
       font-weight: 700;
-      cursor: pointer;
-      transition: all 0.15s;
+      color: #f8fafc;
+      letter-spacing: -0.2px;
     }
-    .mode-btn.active {
-      background: #2563eb;
-      color: #fff;
+    .ps-engine-badge {
+      font-size: 11px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 600;
     }
-    .ps-header-actions {
+    .ps-actions {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .btn-action {
-      background: #334155;
-      color: #f8fafc;
-      border: 1px solid #475569;
-      padding: 5px 12px;
+    .ps-btn {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 4px 10px;
       border-radius: 6px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       cursor: pointer;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      transition: all 0.15s;
+      gap: 4px;
+      transition: background 0.15s;
     }
-    .btn-action:hover {
-      background: #475569;
-    }
-    .btn-action.primary {
-      background: #2563eb;
-      border-color: #1d4ed8;
-      color: #fff;
-    }
-    .btn-action.primary:hover {
-      background: #1d4ed8;
-    }
-
-    /* Ana Çalışma Alanı */
-    .ps-workspace-container {
-      flex: 1;
-      display: flex;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* 1. Mod: Yerel Düzenleyici */
-    .ps-native-layout {
-      flex: 1;
-      display: flex;
-      height: 100%;
-    }
-    .ps-left-toolbar {
-      width: 48px;
-      background: #1e293b;
-      border-right: 1px solid #334155;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-      gap: 6px;
-    }
-    .ps-tool-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      border: none;
-      background: transparent;
-      color: #94a3b8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .ps-tool-btn:hover {
+    .ps-btn:hover {
       background: #334155;
-      color: #fff;
+      color: #ffffff;
     }
-    .ps-tool-btn.active {
-      background: #2563eb;
-      color: #fff;
-    }
-    .ps-canvas-stage {
+    .ps-stage {
       flex: 1;
-      overflow: auto;
-      background: #090d16;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      width: 100%;
+      height: calc(100vh - 42px);
+      background: #1e1e1e;
       position: relative;
     }
-    .ps-empty-dropzone {
-      border: 2px dashed #475569;
-      border-radius: 12px;
-      padding: 50px 30px;
-      text-align: center;
-      cursor: pointer;
-      max-width: 450px;
-      background: #1e293b;
-      transition: all 0.2s;
-    }
-    .ps-empty-dropzone:hover, .ps-empty-dropzone.dragover {
-      border-color: #3b82f6;
-      background: #1e293b;
-    }
-    .ps-canvas-box {
-      background: #ffffff;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      display: none;
-    }
-    #psMainCanvas {
+    .ps-stage iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
       display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Sağ Ayarlar & Filtreler Paneli */
-    .ps-right-sidebar {
-      width: 260px;
-      background: #1e293b;
-      border-left: 1px solid #334155;
-      overflow-y: auto;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .sidebar-section h4 {
-      font-size: 12px;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 0 0 10px;
-    }
-    .filter-item {
-      margin-bottom: 10px;
-    }
-    .filter-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: #cbd5e1;
-      margin-bottom: 4px;
-    }
-    .filter-item input[type="range"] {
-      width: 100%;
-      height: 4px;
-      background: #334155;
-      border-radius: 2px;
-      outline: none;
-      cursor: pointer;
-    }
-    .action-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-    .action-grid button {
-      background: #0f172a;
-      border: 1px solid #334155;
-      color: #e2e8f0;
-      padding: 6px;
-      border-radius: 6px;
-      font-size: 11px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .action-grid button:hover {
-      background: #334155;
-    }
-
-    /* 2. Mod: Photopea Pro Iframe */
-    .ps-photopea-container {
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      display: none;
-    }
-    .ps-photopea-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
     }
   </style>
 <link rel="stylesheet" href="/assets/css/enterprise-system.css?v=2">
 <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
 </head>
 <body>
-
-<header class="ps-header">
-  <div class="ps-brand">
-    <a href="/pdf-cevirici.html" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:8px;">
-      <span class="ps-badge">Ps</span>
-      <span>HTML&amp;HTML Web Photoshop</span>
-    </a>
+  <div class="ps-app-shell">
+    <header class="ps-topbar">
+      <div class="ps-brand">
+        <a href="/pdf-cevirici.html" class="ps-back-btn" title="PDF ve Çevirici Araçlarına Dön">
+          <span>← Çeviricilere Dön</span>
+        </a>
+        <div class="ps-badge">Ps</div>
+        <span class="ps-engine-badge">Photopea Pro Engine</span>
+      </div>
+      <div class="ps-actions">
+        <button class="ps-btn" id="fsToggleBtn" title="Tam Ekran Modunu Aç/Kapat">
+          <span>⛶ Tam Sayfa Aç</span>
+        </button>
+        <a href="https://www.photopea.com" target="_blank" rel="noopener noreferrer" class="ps-btn" title="Yeni Sekmede Aç">
+          <span>Yeni Sekmede Aç ↗</span>
+        </a>
+      </div>
+    </header>
+    <main class="ps-stage">
+      <iframe id="photopeaIframe" src="https://www.photopea.com" allow="clipboard-read; clipboard-write; fullscreen" title="Photopea Web Photoshop Studio"></iframe>
+    </main>
   </div>
-
-  <div class="mode-switch-pill">
-    <button class="mode-btn active" id="modeNativeBtn">⚡ Hızlı Editör</button>
-    <button class="mode-btn" id="modePhotopeaBtn">🎨 Photoshop Pro DC (Photopea)</button>
-  </div>
-
-  <div class="ps-header-actions">
-    <input type="file" id="psFileInput" accept="image/*,.psd,.ai,.xd,.sketch" style="display: none;">
-    <button class="btn-action" id="psOpenFileBtn">📁 Dosya Aç (PSD / Görsel)</button>
-    <button class="btn-action" id="psUndoBtn" title="Geri Al">↩ Geri</button>
-    <button class="btn-action primary" id="psExportPng">💾 PNG İndir</button>
-    <button class="btn-action primary" id="psExportJpg">💾 JPG İndir</button>
-    <a href="/pdf-cevirici.html" class="btn-action" style="text-decoration:none;">✕ Çık</a>
-  </div>
-</header>
-
-<div class="ps-workspace-container">
-  <!-- 1. MOD: YEREL CANVAS EDİTÖRÜ -->
-  <div class="ps-native-layout" id="psNativeEditor">
-    <!-- Sol Dikey Araç Çubuğu -->
-    <div class="ps-left-toolbar">
-      <button class="ps-tool-btn active" data-tool="move" title="Seç &amp; Taşı (V)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
-      </button>
-      <button class="ps-tool-btn" data-tool="brush" title="Fırça (B)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>
-      </button>
-      <button class="ps-tool-btn" data-tool="text" title="Metin Ekle (T)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
-      </button>
-      <input type="color" id="psBrushColor" value="#2563eb" style="width:28px; height:28px; border:none; border-radius:4px; cursor:pointer; background:transparent;" title="Fırça Rengi">
-    </div>
-
-    <!-- Orta Sahne -->
-    <div class="ps-canvas-stage">
-      <div class="ps-empty-dropzone" id="psEmptyDropzone">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5" style="margin-bottom:12px;"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        <h3 style="font-size:16px; margin:0 0 6px; color:#f8fafc;">Görseli veya PSD'yi Buraya Sürükleyin</h3>
-        <p style="font-size:13px; color:#94a3b8; margin:0 0 16px;">PNG, JPG, WebP veya PSD formatları doğrudan tarayıcı belleğinde işlenir.</p>
-        <button class="btn-action primary" style="padding:8px 18px;">Dosya Seç</button>
-      </div>
-
-      <div class="ps-canvas-box" id="psCanvasWrapper">
-        <canvas id="psMainCanvas"></canvas>
-      </div>
-    </div>
-
-    <!-- Sağ Ayarlar & Filtreler -->
-    <div class="ps-right-sidebar">
-      <div class="sidebar-section">
-        <h4>Görsel Bilgisi</h4>
-        <div id="psImageInfo" style="font-size:11px; color:#94a3b8; font-family:monospace;">Dosya bekleniyor...</div>
-      </div>
-
-      <div class="sidebar-section">
-        <h4>Fırça Ayarı</h4>
-        <select id="psBrushSize" style="width:100%; background:#0f172a; color:#f8fafc; border:1px solid #334155; padding:5px 8px; border-radius:6px; font-size:12px;">
-          <option value="2">2 px (İnce)</option>
-          <option value="5" selected>5 px (Normal)</option>
-          <option value="12">12 px (Kalın)</option>
-          <option value="24">24 px (Geniş)</option>
-        </select>
-      </div>
-
-      <div class="sidebar-section">
-        <h4>Filtreler &amp; Ayarlar</h4>
-        <div class="filter-item">
-          <div class="filter-header"><span>Parlaklık</span><span id="psVal_brightness">100</span>%</div>
-          <input type="range" id="psRange_brightness" min="0" max="200" value="100">
-        </div>
-        <div class="filter-item">
-          <div class="filter-header"><span>Kontrast</span><span id="psVal_contrast">100</span>%</div>
-          <input type="range" id="psRange_contrast" min="0" max="200" value="100">
-        </div>
-        <div class="filter-item">
-          <div class="filter-header"><span>Doygunluk</span><span id="psVal_saturation">100</span>%</div>
-          <input type="range" id="psRange_saturation" min="0" max="200" value="100">
-        </div>
-        <div class="filter-item">
-          <div class="filter-header"><span>Bulanıklık</span><span id="psVal_blur">0</span>px</div>
-          <input type="range" id="psRange_blur" min="0" max="20" value="0">
-        </div>
-        <div class="filter-item">
-          <div class="filter-header"><span>Gri Tonlama</span><span id="psVal_grayscale">0</span>%</div>
-          <input type="range" id="psRange_grayscale" min="0" max="100" value="0">
-        </div>
-        <div class="filter-item">
-          <div class="filter-header"><span>Negatif (Invert)</span><span id="psVal_invert">0</span>%</div>
-          <input type="range" id="psRange_invert" min="0" max="100" value="0">
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <h4>Döndür &amp; Çevir</h4>
-        <div class="action-grid">
-          <button id="psRotateLeft">⟲ 90° Sola</button>
-          <button id="psRotateRight">⟳ 90° Sağa</button>
-          <button id="psFlipH">⇄ Yatay</button>
-          <button id="psFlipV">⇅ Dikey</button>
-        </div>
-      </div>
-
-      <button id="psResetBtn" style="background:#ef4444; color:#fff; border:none; padding:8px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">Tüm Ayarları Sıfırla</button>
-    </div>
-  </div>
-
-  <!-- 2. MOD: PHOTOPEA PRO ENTEGRASYONU -->
-  <div class="ps-photopea-container" id="psPhotopeaContainer">
-    <iframe id="photopeaIframe" title="Photoshop Pro DC Studio" allow="clipboard-read; clipboard-write"></iframe>
-  </div>
-</div>
-
-<script src="/assets/js/photoshop-engine.js"></script>
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+  <script>
+    (function() {
+      var fsBtn = document.getElementById('fsToggleBtn');
+      if (fsBtn) {
+        fsBtn.addEventListener('click', function() {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(function() {});
+            fsBtn.querySelector('span').textContent = 'Küçült';
+          } else {
+            document.exitFullscreen().catch(function() {});
+            fsBtn.querySelector('span').textContent = '⛶ Tam Sayfa Aç';
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

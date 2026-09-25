@@ -182,7 +182,6 @@ def build_homepages():
     <nav class="primary-nav" aria-label="Ana navigasyon">
   <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
   <a href="/pdf-cevirici.html" style="color:#38bdf8 !important;font-weight:700;">Çeviriler</a>
-  <a href="/editor-photoshop.html">Photoshop Web</a>
   <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
   <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
   <a href="/tr/referans/">Bir Ekibe Öner</a>
