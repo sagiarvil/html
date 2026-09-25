@@ -1,0 +1,139 @@
+/**
+ * HTML&HTML PDF & Çeviri Araçları — Yüksek Kontrast ve Okunabilirlik Yaması
+ * CSS Specificity Fortress: Tüm ezilmeleri önleyen en yüksek özgüllüklü kurallar.
+ */
+
+/* ========================================================
+   1. KARANLIK MOD (DARK THEME) — ŞIK KOYU KART & PARLAK METİN
+   ======================================================== */
+html[data-theme="dark"] body,
+html.dark body,
+body[data-theme="dark"],
+html:not([data-theme="light"]) body {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+
+/* Kahraman (Hero) Metinleri */
+html[data-theme="dark"] .pdf-hero h1,
+html.dark .pdf-hero h1,
+html:not([data-theme="light"]) .pdf-hero h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+html[data-theme="dark"] .pdf-hero p,
+html.dark .pdf-hero p,
+html:not([data-theme="light"]) .pdf-hero p {
+  color: #cbd5e1 !important;
+}
+
+/* Arama Çubuğu */
+html[data-theme="dark"] .pdf-search-bar input,
+html.dark .pdf-search-bar input,
+html:not([data-theme="light"]) .pdf-search-bar input {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border: 1px solid #334155 !important;
+}
+html[data-theme="dark"] .pdf-search-bar input::placeholder,
+html:not([data-theme="light"]) .pdf-search-bar input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Kategori Sekmeleri */
+html[data-theme="dark"] .category-tab,
+html.dark .category-tab,
+html:not([data-theme="light"]) .category-tab {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #334155 !important;
+}
+html[data-theme="dark"] .category-tab.active,
+html.dark .category-tab.active,
+html:not([data-theme="light"]) .category-tab.active {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 12px rgba(37,99,235,0.4) !important;
+}
+
+/* BENTO KARTLARI — Koyu Arka Plan & Kristal Netliğinde Yazılar */
+html[data-theme="dark"] .pdf-tool-card,
+html.dark .pdf-tool-card,
+html:not([data-theme="light"]) .pdf-tool-card {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+}
+
+html[data-theme="dark"] .pdf-tool-card:hover,
+html:not([data-theme="light"]) .pdf-tool-card:hover {
+  background-color: #243048 !important;
+  border-color: #3b82f6 !important;
+  transform: translateY(-2px);
+}
+
+html[data-theme="dark"] .pdf-tool-card h3,
+html.dark .pdf-tool-card h3,
+html body .pdf-tool-card h3,
+html:not([data-theme="light"]) .pdf-tool-card h3 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 17px !important;
+  letter-spacing: -0.01em !important;
+}
+
+html[data-theme="dark"] .pdf-tool-card p,
+html.dark .pdf-tool-card p,
+html body .pdf-tool-card p,
+html:not([data-theme="light"]) .pdf-tool-card p {
+  color: #cbd5e1 !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+}
+
+html[data-theme="dark"] .tool-badge,
+html:not([data-theme="light"]) .tool-badge {
+  background-color: #334155 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #475569 !important;
+}
+
+html[data-theme="dark"] .card-footer-action,
+html:not([data-theme="light"]) .card-footer-action {
+  color: #60a5fa !important;
+  font-weight: 700 !important;
+}
+
+/* ========================================================
+   2. AYDINLIK MOD (LIGHT THEME) — SAF BEYAZ & KOYU SİYAH METİN
+   ======================================================== */
+html[data-theme="light"] body,
+html.light body {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .pdf-tool-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .pdf-tool-card h3 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .pdf-tool-card p {
+  color: #334155 !important;
+}
+
+/* LOGO KONTRASTI */
+html[data-theme="dark"] .brand-logo,
+html:not([data-theme="light"]) .brand-logo {
+  filter: invert(1) brightness(2) !important;
+}
+html[data-theme="light"] .brand-logo {
+  filter: none !important;
+}

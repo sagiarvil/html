@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="/assets/css/theme.css?v=20">
   <link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
   <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=23">
+  <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=2">
   <script src="/assets/js/theme.js?v=9"></script>
 
   <!-- PDF-LIB & PDF.JS (Client-Side WASM / JS Engine) -->
@@ -40,6 +41,24 @@
   </script>
 
   <style>
+    /* BRAND LOGO CONTRAST & VISIBILITY */
+    .brand-logo {
+      height: 26px;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+      transition: filter 0.2s ease;
+    }
+    html[data-theme="dark"] .brand-logo,
+    .dark .brand-logo,
+    html:not([data-theme="light"]) .brand-logo {
+      filter: invert(1) brightness(2) !important;
+    }
+    html[data-theme="light"] .brand-logo,
+    .light .brand-logo {
+      filter: none !important;
+    }
+
     .pdf-hero {
       padding: 60px 20px 30px;
       text-align: center;
@@ -191,24 +210,92 @@
       color: #7c3aed;
       border: 1px solid #ddd6fe;
     }
-    .pdf-tool-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 0 0 6px;
+    /* ========================================================
+       KART KONTRAST KİLİDİ (DARK VE LIGHT MODE)
+       ======================================================== */
+    /* KARANLIK MOD: Koyu Kart Zemin & Kristal Beyaz / Gümüş Metin */
+    html[data-theme="dark"] .pdf-tool-card,
+    .dark .pdf-tool-card,
+    body.enterprise-ui[data-theme="dark"] .pdf-tool-card,
+    html:not([data-theme="light"]) .pdf-tool-card {
+      background: #1e293b !important;
+      border: 1px solid #334155 !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
     }
-    .pdf-tool-card p {
-      font-size: 13px;
-      color: #64748b;
-      line-height: 1.5;
-      margin: 0;
-      flex-grow: 1;
+    html[data-theme="dark"] .pdf-tool-card:hover,
+    html:not([data-theme="light"]) .pdf-tool-card:hover {
+      background: #243147 !important;
+      border-color: #3b82f6 !important;
+    }
+    html[data-theme="dark"] .pdf-tool-card h3,
+    .dark .pdf-tool-card h3,
+    html body .pdf-tool-card h3,
+    html:not([data-theme="light"]) .pdf-tool-card h3 {
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      font-size: 16px !important;
+    }
+    html[data-theme="dark"] .pdf-tool-card p,
+    .dark .pdf-tool-card p,
+    html body .pdf-tool-card p,
+    html:not([data-theme="light"]) .pdf-tool-card p {
+      color: #cbd5e1 !important;
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+    }
+    html[data-theme="dark"] .pdf-hero h1,
+    html:not([data-theme="light"]) .pdf-hero h1 {
+      color: #ffffff !important;
+    }
+    html[data-theme="dark"] .pdf-hero p,
+    html:not([data-theme="light"]) .pdf-hero p {
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="dark"] .tool-badge,
+    html:not([data-theme="light"]) .tool-badge {
+      background: #334155 !important;
+      color: #e2e8f0 !important;
+      border: 1px solid #475569 !important;
+    }
+    html[data-theme="dark"] .category-tab,
+    html:not([data-theme="light"]) .category-tab {
+      background: #1e293b !important;
+      color: #cbd5e1 !important;
+      border-color: #334155 !important;
+    }
+    html[data-theme="dark"] .category-tab.active,
+    html:not([data-theme="light"]) .category-tab.active {
+      background: #2563eb !important;
+      color: #ffffff !important;
+      border-color: #2563eb !important;
+    }
+    html[data-theme="dark"] .pdf-search-bar input,
+    html:not([data-theme="light"]) .pdf-search-bar input {
+      background: #1e293b !important;
+      color: #ffffff !important;
+      border: 1px solid #334155 !important;
+    }
+
+    /* AYDINLIK MOD: Saf Beyaz Zemin & Koyu Zift Metin */
+    html[data-theme="light"] .pdf-tool-card,
+    .light .pdf-tool-card {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+    html[data-theme="light"] .pdf-tool-card h3,
+    .light .pdf-tool-card h3 {
+      color: #0f172a !important;
+      font-weight: 800 !important;
+    }
+    html[data-theme="light"] .pdf-tool-card p,
+    .light .pdf-tool-card p {
+      color: #334155 !important;
     }
     .card-footer-action {
       margin-top: 16px;
       font-size: 12px;
       font-weight: 600;
-      color: #2563eb;
+      color: #38bdf8;
       display: inline-flex;
       align-items: center;
       gap: 4px;
@@ -572,7 +659,7 @@
 <header class="topbar">
   <div class="topbar-shell">
     <a class="brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
     </a>
     <nav class="primary-nav" aria-label="Ana navigasyon">
       <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
