@@ -22,8 +22,11 @@ const apply=()=>{
 
 apply();
 
-const link=document.createElement('link');link.rel='stylesheet';link.href='/assets/css/theme.css?v=12';
-if(!document.querySelector('link[href*="/assets/css/theme.css"]'))document.head.appendChild(link);
+const isMacStore = document.querySelector('.mac-appstore-layout') || document.body?.classList.contains('mac-appstore-body') || document.documentElement.classList.contains('mac-appstore-page') || document.querySelector('link[href*="apple-store"]');
+if(!isMacStore) {
+  const link=document.createElement('link');link.rel='stylesheet';link.href='/assets/css/theme.css?v=12';
+  if(!document.querySelector('link[href*="/assets/css/theme.css"]'))document.head.appendChild(link);
+}
 
 const labels={
   tr:{light:'Açık Tema',dark:'Koyu Tema',system:'Sistem',aria:'Tema Seçimi'},
@@ -41,7 +44,7 @@ function loadCommercialIntent(){if(location.pathname.indexOf('editor-photoshop')
 function loadPaddleCheckout(){if(!document.querySelector('.checkout-card')||document.querySelector('script[data-paddle-checkout-loader]'))return;const s=document.createElement('script');s.src='/assets/js/paddle-checkout.js?v=2';s.defer=true;s.dataset.paddleCheckoutLoader='1';document.head.appendChild(s)}
 
 function mount(){
-  if(document.querySelector('.mac-appstore-layout') || document.body?.classList.contains('mac-appstore-body')) {
+  if(document.querySelector('.mac-appstore-layout') || document.body?.classList.contains('mac-appstore-body') || document.querySelector('link[href*="apple-store"]')) {
     return;
   }
   mountMobileNav();

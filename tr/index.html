@@ -41,9 +41,78 @@
 <link rel="icon" href="/favicon.ico?v=hh5" sizes="any">
 <link rel="manifest" href="/manifest.webmanifest">
 
-<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_4">
-<link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
-<link rel="stylesheet" href="/assets/css/theme.css?v=20260920_27">
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+</style>
 <meta name="author" content="HTML&amp;HTML">
 <link rel="author" href="https://htmlandhtml.com/hakkimizda/">
 <script type="application/ld+json">
