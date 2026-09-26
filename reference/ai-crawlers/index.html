@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
+
 <!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
 <script>
   (function() {
@@ -30,7 +30,7 @@
 <link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/referans/ai-tarayicilar/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/reference/ai-crawlers/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,38 +52,137 @@
 }
 </script>
 <script src="/assets/js/theme.js?v=8"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+
+
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+.mac-doc-wrapper {
+  background: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+  color: #e5e5ea;
+}
+</style>
+
 </head>
-<body>
-<header class="topbar">
-  <div class="topbar-shell">
-    <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
-    </a>
-    <nav class="primary-nav" aria-label="Primary navigation">
-  <a href="/en/website-scanner/">Free Audit</a>
-  <a href="/pdf-cevirici.html">Translations &amp; PDF</a>
-  <a href="/editor-photoshop.html">Photoshop Web</a>
-  <a href="/en/ai-search-visibility/">How It Works</a>
-  <a href="/en/pricing/">Implementation Pack ($99)</a>
-  <a href="/en/referral/">Refer a Team</a>
-</nav>
-    <div class="nav-actions"><a class="nav-scan-cta" href="/en/#scanner">Scan Free</a>
-      <div class="langs">
-        <a href="/tr/referans/ai-tarayicilar/" aria-label="Switch to Turkish">TR</a>
-      </div>
+<body class="mac-appstore-body dark">
+
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+</div>
+
+<div class="mac-appstore-layout">
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+      </a>
     </div>
-  </div>
-</header>
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item"><span class="mac-nav-icon">⊞</span><span>Keşfet</span></a>
+      <a href="/site-tarama/" class="mac-nav-item"><span class="mac-nav-icon">🔍</span><span>Site Tarama</span></a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item"><span class="mac-nav-icon">🤖</span><span>AI Arama Görünürlüğü</span></a>
+      <a href="/llms-txt-validator/" class="mac-nav-item"><span class="mac-nav-icon">📄</span><span>llms.txt Doğrulayıcı</span></a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item"><span class="mac-nav-icon">🕷️</span><span>AI Bot Erişimi</span></a>
+      <a href="/schema-validator/" class="mac-nav-item"><span class="mac-nav-icon">🏷️</span><span>Schema Denetçisi</span></a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item"><span class="mac-nav-icon">🛡️</span><span>Güvenlik Başlıkları</span></a>
+      <a href="/ai-website-readiness/" class="mac-nav-item"><span class="mac-nav-icon">⚡</span><span>AI Readiness</span></a>
+      <a href="/sozluk/" class="mac-nav-item"><span class="mac-nav-icon">📖</span><span>AI Arama Sözlüğü</span></a>
+      <a href="/fiyatlandirma/" class="mac-nav-item"><span class="mac-nav-icon">💳</span><span>Uygulama Paketi ($99)</span></a>
+    </nav>
+  </aside>
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/en/">Home</a>
-  <span>/</span>
-  <span>AI Crawlers</span>
-</nav>
-
-<main>
-<section class="authority-hero">
+  <main class="mac-main-content">
+    <div class="mac-content-inner">
+      <div class="mac-doc-wrapper">
+        <section class="authority-hero">
   <div class="kicker"><span></span><b>CRAWLER REGISTRY</b></div>
   <h1>AI Crawler Directory: <em>User-Agents & IP Ranges</em></h1>
   <p>A canonical reference of official web crawlers operated by OpenAI, Anthropic, Google, Perplexity, and Apple, including purpose, user-agent tokens, and documentation links.</p>
@@ -143,74 +242,16 @@
     </table>
   </div>
 </section>
-</main>
+      </div>
+      <footer class="mac-appstore-footer">
+        <div class="mac-footer-inner">
+          <p>© 2026 HTML&amp;HTML Enterprise. Apple Mac App Store Standartları.</p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
+<script src="/assets/js/apple-store.js?v=20260926_105"></script>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="/en/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
-      </a>
-      <p>Evidence is free. Implementation precision is the product. Audit your website for search and AI retrieval blockers with deterministic evidence.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Product</h4>
-      <ul>
-        <li><a href="/en/platform/">Platform Architecture</a></li>
-        <li><a href="/en/fix-mandate/">Full Site Fix Mandate</a></li>
-        <li><a href="/en/pricing/">Pricing</a></li>
-        <li><a href="/openapi.json">OpenAPI Specification</a></li>
-        <li><a href="/audit-profile.json">Audit Profile</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="/en/website-scanner/">Website Scanner</a></li>
-        <li><a href="/en/ai-website-readiness/">AI Website Readiness</a></li>
-        <li><a href="/en/llms-txt-validator/">llms.txt Validator</a></li>
-        <li><a href="/en/ai-crawler-checker/">AI Crawler Checker</a></li>
-        <li><a href="/en/schema-validator/">Schema Validator</a></li>
-        <li><a href="/en/technical-seo-checker/">Technical SEO Checker</a></li>
-        <li><a href="/en/security-headers-checker/">Security Headers Checker</a></li>
-        <li><a href="/en/accessibility-checker/">Accessibility Checker</a></li>
-        <li><a href="/en/link-integrity-checker/">Link Integrity Checker</a></li>
-        <li><a href="/en/ai-mention-tracker/">AI Mention Tracker</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="/en/guides/">Guides Hub</a></li>
-        <li><a href="/en/guides/ai-website-readiness-checklist/">AI Readiness Checklist</a></li>
-        <li><a href="/en/guides/llms-txt/">llms.txt v2 Standard Guide</a></li>
-        <li><a href="/en/guides/ai-crawler-access/">AI Crawler Access Guide</a></li>
-        <li><a href="/en/guides/structured-data-for-ai/">Structured Data for AI</a></li>
-        <li><a href="/en/guides/ai-search-visibility/">AI Search Visibility (GEO)</a></li>
-        <li><a href="/en/methodology/">Methodology</a></li>
-        <li><a href="/en/evidence-standard/">Evidence Standard</a></li>
-        <li><a href="/en/reference/ai-crawlers/">AI Crawler Directory</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company & Legal</h4>
-      <ul>
-        <li><a href="/en/about/">About Us</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
-        <li><a href="/en/privacy/">Privacy Policy</a></li>
-        <li><a href="/en/terms/">Terms of Service</a></li>
-        <li><a href="/en/refund-policy/">Refund Policy</a></li>
-        <li><a href="/llms.txt">llms.txt (Directory)</a></li>
-        <li><a href="/sources.json">Source Registry</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. All rights reserved. Payments and invoicing are handled by our Merchant of Record, Paddle.com.</span>
-    <span>18 Independent Diagnostic Engines · 50-Page Deterministic Boundary</span>
-  </div>
-</footer>
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 </body>
 </html>

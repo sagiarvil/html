@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
+
 <!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
 <script>
   (function() {
@@ -85,23 +85,137 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+
+
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+.mac-doc-wrapper {
+  background: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+  color: #e5e5ea;
+}
+</style>
+
 </head>
-<body class="dna-body">
+<body class="mac-appstore-body dark">
 
-<!-- S0 — HEADER -->
-<header class="dna-sticky-header" id="dna-header">
-  <div class="dna-container dna-header-inner">
-    <a href="/" class="dna-wordmark" aria-label="HTML&amp;HTML">HTML&amp;HTML</a>
-    <div class="dna-header-right">
-      <span class="dna-spy-num" id="dna-spy-num">| 01</span>
-      <a href="#scanner" class="dna-btn-primary dna-btn-primary-sm">Kontrol Et</a>
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+</div>
+
+<div class="mac-appstore-layout">
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+      </a>
     </div>
-  </div>
-</header>
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item"><span class="mac-nav-icon">⊞</span><span>Keşfet</span></a>
+      <a href="/site-tarama/" class="mac-nav-item"><span class="mac-nav-icon">🔍</span><span>Site Tarama</span></a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item"><span class="mac-nav-icon">🤖</span><span>AI Arama Görünürlüğü</span></a>
+      <a href="/llms-txt-validator/" class="mac-nav-item"><span class="mac-nav-icon">📄</span><span>llms.txt Doğrulayıcı</span></a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item"><span class="mac-nav-icon">🕷️</span><span>AI Bot Erişimi</span></a>
+      <a href="/schema-validator/" class="mac-nav-item"><span class="mac-nav-icon">🏷️</span><span>Schema Denetçisi</span></a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item"><span class="mac-nav-icon">🛡️</span><span>Güvenlik Başlıkları</span></a>
+      <a href="/ai-website-readiness/" class="mac-nav-item"><span class="mac-nav-icon">⚡</span><span>AI Readiness</span></a>
+      <a href="/sozluk/" class="mac-nav-item"><span class="mac-nav-icon">📖</span><span>AI Arama Sözlüğü</span></a>
+      <a href="/fiyatlandirma/" class="mac-nav-item"><span class="mac-nav-icon">💳</span><span>Uygulama Paketi ($99)</span></a>
+    </nav>
+  </aside>
 
-<main data-commercial-intent="static">
-<div style="display:none;" aria-hidden="true">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez</div>
+  <main class="mac-main-content">
+    <div class="mac-content-inner">
+      <div class="mac-doc-wrapper">
+        <div style="display:none;" aria-hidden="true">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez</div>
 
 <!-- S1 — HERO -->
 <section class="dna-section dna-section-dark" id="s1-hero" style="min-height:max(720px, 100svh); display:flex; align-items:center;">
@@ -987,23 +1101,16 @@
     </div>
   </div>
 </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer style="background:#050724; color:rgba(255,255,255,0.7); padding:32px 0; font-size:13px; line-height:1.5;">
-  <div class="dna-container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-    <div>Yasal Uyarı: HTML&HTML bağımsız bir teknik analiz ve teşhis platformudur. OpenAI, Google, Anthropic, Perplexity veya Microsoft ile doğrudan organik bir bağı yoktur. Arama motorlarının algoritmik sonuçları garanti edilemez.</div>
-    <div style="display:flex; gap:16px;">
-      <a href="/tr/gizlilik/" style="color:rgba(255,255,255,0.7); text-decoration:underline;">[DOLDUR: legal.kvkk]</a>
-      <a href="/tr/kullanim-kosullari/" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Kullanım Koşulları</a>
-      <span>© 2026 HTML&HTML. Tüm hakları saklıdır.</span>
+      </div>
+      <footer class="mac-appstore-footer">
+        <div class="mac-footer-inner">
+          <p>© 2026 HTML&amp;HTML Enterprise. Apple Mac App Store Standartları.</p>
+        </div>
+      </footer>
     </div>
-  </div>
-</footer>
+  </main>
+</div>
+<script src="/assets/js/apple-store.js?v=20260926_105"></script>
 
-<script src="assets/js/dna-scroll-spy.js"></script>
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 </body>
 </html>

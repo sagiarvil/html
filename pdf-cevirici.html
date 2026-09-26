@@ -20,8 +20,8 @@
   <meta name="description" content="iLovePDF'ten daha donanımlı, sıfır veri saklamalı istemci taraflı PDF ve Çeviri Araçları. PDF Düzenle, Tam Kapasite Photoshop Web Editör ve PDF'den Markdown'a (MD).">
   <link rel="canonical" href="https://htmlandhtml.com/pdf-cevirici.html">
   <link rel="stylesheet" href="/assets/css/enterprise-theme-system.css">
-  <link rel="stylesheet" href="/assets/css/theme.css?v=20">
-  <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=23">
+  
+  
   <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=10">
   <script src="/assets/js/theme.js?v=9"></script>
 
@@ -1345,33 +1345,214 @@
       cursor: pointer;
     }
   </style>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+
+
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+.mac-doc-wrapper {
+  background: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+  color: #e5e5ea;
+}
+.mac-doc-wrapper h1, .mac-doc-wrapper h2, .mac-doc-wrapper h3 {
+  color: #ffffff;
+}
+.mac-doc-wrapper a {
+  color: #0a84ff;
+}
+.mac-doc-wrapper pre {
+  background: #0a0a0c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+</style>
+
 </head>
-<body class="enterprise-ui">
-<header class="topbar">
-  <div class="topbar-shell">
-    <a class="brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
-    </a>
-    <nav class="primary-nav" aria-label="Primary navigation">
-  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
-  <a href="/editor-photoshop.html">Photoshop Web</a>
-  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
-  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
-  <a href="/tr/referans/">Bir Ekibe Öner</a>
-</nav>
-    <div class="nav-actions">
-      <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
-      <div class="langs">
-        <button data-lang="tr" class="active">TR</button><span>/</span><button data-lang="en">EN</button>
+<body class="mac-appstore-body dark">
+
+<!-- Mobile Sticky Topbar (Screen <= 1024px) -->
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+  <button type="button" class="mac-mobile-toggle-btn" id="macMobileToggleBtn" aria-label="Menüyü Aç">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</div>
+
+<div class="mac-appstore-layout">
+  <!-- Fixed Left Sidebar -->
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+      </a>
+      <span class="mac-sidebar-brand-chevron" aria-hidden="true">⌵</span>
+    </div>
+
+    <div class="mac-sidebar-search">
+      <span class="mac-sidebar-search-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="appleStoreSearch" placeholder="Ara..." aria-label="Spotlight Arama">
+    </div>
+
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item">
+        <span class="mac-nav-icon">⊞</span>
+        <span>Keşfet</span>
+      </a>
+      <a href="/site-tarama/" class="mac-nav-item">
+        <span class="mac-nav-icon">🔍</span>
+        <span>Site Tarama</span>
+      </a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item">
+        <span class="mac-nav-icon">🤖</span>
+        <span>AI Arama Görünürlüğü</span>
+      </a>
+      <a href="/llms-txt-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">📄</span>
+        <span>llms.txt Doğrulayıcı</span>
+      </a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item">
+        <span class="mac-nav-icon">🕷️</span>
+        <span>AI Bot Erişimi</span>
+      </a>
+      <a href="/schema-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🏷️</span>
+        <span>Schema Denetçisi</span>
+      </a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛡️</span>
+        <span>Güvenlik Başlıkları</span>
+      </a>
+      <a href="/ai-website-readiness/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>AI Readiness Testi</span>
+      </a>
+      <a href="/ai-mention-tracker/" class="mac-nav-item">
+        <span class="mac-nav-icon">📡</span>
+        <span>AI Bahsetme Takibi</span>
+      </a>
+      <a href="/indexnow/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>IndexNow İletimi</span>
+      </a>
+      <a href="/sozluk/" class="mac-nav-item">
+        <span class="mac-nav-icon">📖</span>
+        <span>AI Arama Sözlüğü</span>
+      </a>
+      <a href="/fiyatlandirma/" class="mac-nav-item">
+        <span class="mac-nav-icon">💳</span>
+        <span>Uygulama Paketi ($99)</span>
+      </a>
+    </nav>
+
+    <div class="mac-sidebar-footer">
+      <div class="mac-user-badge">
+        <div class="mac-avatar">H&amp;H</div>
+        <div class="mac-user-info">
+          <div class="mac-user-name">HTML&amp;HTML OS</div>
+          <div class="mac-user-tier">Pro Intelligence</div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </aside>
 
-<main>
-  <section class="pdf-hero">
+  <!-- Main Scrollable Content Area -->
+  <main class="mac-main-content">
+    <div class="mac-content-inner">
+
+    <div class="mac-doc-wrapper">
+      <section class="pdf-hero">
     <div class="pdf-eyebrow">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       SIFIR SUNUCU YÜKLEMESİ • %100 YEREL &amp; GİZLİ
@@ -1425,774 +1606,64 @@
       <div class="card-footer-action">Hemen Kullan →</div>
     </div>
   </section>
-</main>
-
-<!-- İstemci Taraflı Hızlı Araç Modalı -->
-<div class="tool-modal" id="toolModal" role="dialog" aria-modal="true" aria-labelledby="modalToolTitle">
-  <div class="tool-modal-content">
-    <button class="modal-close-btn" id="closeModalBtn" aria-label="Kapat">✕</button>
-    <h2 id="modalToolTitle" style="font-size: 20px; font-weight: 800; color: #ffffff !important; margin-bottom: 6px;">Araç Adı</h2>
-    <p id="modalToolDesc" style="font-size: 13.5px; color: #cbd5e1 !important; margin-bottom: 16px;">Araç Açıklaması</p>
-
-    <div class="dropzone-box" id="modalDropzone">
-      <div class="dropzone-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
-      </div>
-      <p style="font-size: 14px; font-weight: 700; color: #ffffff !important; margin-bottom: 4px;">Dosyayı buraya sürükleyin veya tıklayarak seçin</p>
-      <p style="font-size: 12px; color: #94a3b8 !important; font-weight: 500;">PDF, Word, Excel veya Görsel dosyaları desteklenir (%100 yerel işlenir)</p>
-      <input type="file" id="toolFileInput" style="display: none;">
     </div>
-
-    <!-- Ek Araç Ayarları (Döndürme açısı, filigran metni vs.) -->
-    <div id="extraOptions"></div>
-
-    <div id="fileStatus" style="font-size: 13px; color: #60a5fa; margin: 12px 0; display: none;"></div>
-    <div id="processProgress" class="process-progress" style="display: none;"></div>
-
-    <button class="modal-action-btn" id="modalActionBtn" disabled>İşlemi Başlat</button>
-
-    <!-- Markdown Önizleme Paneli (PDF to MD için) -->
-    <div id="markdownPreview" style="display: none; margin-top: 16px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-size: 12px; font-weight: 700; color: #f8fafc;">Üretilen Saf Markdown Çıktısı (LLM-Ready):</span>
-        <div style="display: flex; gap: 6px;">
-          <button id="copyMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #1e3a8a; color: #bfdbfe; border: 1px solid #3b82f6; border-radius: 6px; cursor: pointer;">Markdown'ı Kopyala</button>
-          <button id="downloadMdBtn" style="padding: 5px 10px; font-size: 11px; font-weight: 700; background: #2563eb; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;">.md İndir</button>
-        </div>
-      </div>
-      <div class="markdown-box" id="markdownCode"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ADOBE ACROBAT PRO DC GRADE EDIT STÜDYOSU (TAM EKRAN) -->
-<div class="acrobat-studio-modal" id="acrobatStudioModal" role="dialog" aria-modal="true" aria-label="Adobe Acrobat Pro DC Düzenleme Stüdyosu">
-  <!-- Üst Menü & Marka & Aksiyon Çubuğu (Acrobat Pro DC Master Header) -->
-  <!-- Üst Menü & Marka & Aksiyon Çubuğu (Pro DC Modern Master Toolbar) -->
-  <div class="acrobat-header pro-dc-modern-toolbar">
-    <!-- Sol Bölüm: Sayfalar, Geri/İleri Al -->
-    <div class="acrobat-tool-section left">
-      <button class="pro-tool-item" id="studioTogglePagesBtn" title="Sayfa Küçük Resimleri (Pages)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M8 21h11a2 2 0 0 0 2-2V8"/></svg>
-        <span>Pages</span>
-      </button>
-      <button class="pro-tool-item" id="studioUndoBtn" title="Geri Al (Undo - Ctrl+Z)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
-        <span>Undo</span>
-      </button>
-      <button class="pro-tool-item" id="studioRedoBtn" title="Yinele (Redo - Ctrl+Y)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/></svg>
-        <span>Redo</span>
-      </button>
-      <div class="pro-toolbar-divider"></div>
-    </div>
-
-    <!-- Orta Araç Grubu: Ekrandaki Birebir 17 Araç -->
-    <div class="acrobat-tools-main">
-      <button class="pro-tool-item active" data-tool="select" title="Seç (Select - V)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
-        <span>Select</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="edit-text" id="toolEditTextBtn" title="Metin Düzenle (Text - T)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
-        <span>Text</span>
-      </button>
-
-      <div class="pro-tool-dropdown-wrap">
-        <button class="pro-tool-item" id="openSignatureStampBtn" title="İmza &amp; Kaşe (Sign)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 4 6 6-12 12H2v-6L14 4z"/><line x1="2" y1="22" x2="22" y2="22"/></svg>
-          <span>Sign ▾</span>
-        </button>
-      </div>
-
-      <button class="pro-tool-item" data-tool="whiteout" title="Silgi / Beyazlat (Erase)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
-        <span>Erase</span>
-      </button>
-
-      <button class="pro-tool-item" id="uploadImageObjectBtn" title="Resim Ekle (Image)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        <span>Image</span>
-      </button>
-      <input type="file" id="studioImageFileInput" accept="image/*" style="display: none;">
-
-      <button class="pro-tool-item" data-tool="check" title="Onay İşareti (Check)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>Check</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="cross" title="Çarpı İşareti (Cross)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        <span>Cross</span>
-      </button>
-
-      <div class="pro-tool-dropdown-wrap">
-        <button class="pro-tool-item" id="studioShapesDropdownBtn" title="Şekiller (Shapes)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
-          <span>Shapes ▾</span>
-        </button>
-        <div class="pro-shapes-menu" id="proShapesMenu">
-          <div class="pro-shape-opt" data-shape="rect"><span>▭ Dikdörtgen Kutu</span></div>
-          <div class="pro-shape-opt" data-shape="circle"><span>○ Daire / Elips</span></div>
-          <div class="pro-shape-opt" data-shape="line"><span>― Düz Çizgi</span></div>
-          <div class="pro-shape-opt" data-shape="arrow"><span>⟶ Yön Oku</span></div>
-        </div>
-      </div>
-
-      <button class="pro-tool-item" data-tool="table" title="Tablo Ekle (Table)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-        <span>Table</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="textbox" title="Metin Kutusu (Text Box)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="3 3"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/></svg>
-        <span>Text Box</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="date" title="Tarih Ekle (Date)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span>Date</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="redact" title="Karartma / Sansür (Blackout)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect width="16" height="12" x="4" y="6" rx="1"/></svg>
-        <span>Blackout</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="highlighter" title="Vurgulayıcı (Highlight)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
-        <span>Highlight</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="pen" title="Serbest Çizim (Draw)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-        <span>Draw</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="sticky" title="Yapışkan Not (Sticky)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8Z"/><path d="M15 3v5h6"/></svg>
-        <span>Sticky</span>
-      </button>
-
-      <button class="pro-tool-item" data-tool="watermark" title="Filigran Ekle (Watermark)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17l10-10"/><path d="M10 7h7v7"/></svg>
-        <span>Watermark</span>
-      </button>
-    </div>
-
-    <!-- Sağ Bölüm: Pill Switch, Search, DONE -->
-    <div class="acrobat-tool-section right">
-      <!-- Fill out / Edit PDF Pill Switch -->
-      <div class="pro-pill-switch">
-        <button class="pro-pill-btn" id="proModeFillBtn" title="Form Doldurma Modu">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          <span>Fill out</span>
-        </button>
-        <button class="pro-pill-btn active" id="proModeEditBtn" title="PDF Düzenleme Modu">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h4L18.5 9.5a2.828 2.828 0 0 0-4-4L4 16v4z"/></svg>
-          <span>Edit PDF</span>
-        </button>
-      </div>
-
-      <!-- Search Büyüteç -->
-      <button class="pro-search-btn" id="proSearchBtn" title="Belge İçinde Ara (Search)">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span>Search</span>
-      </button>
-
-      <!-- DONE Butonu (Turuncu / Amber) -->
-      <button class="pro-done-btn" id="studioExportPdfBtn" title="Düzenlemeleri Tamamla &amp; PDF'i İndir">
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>DONE</span>
-      </button>
-
-      <!-- Kapat Butonu -->
-      <button class="action-btn close" id="studioCloseBtn" aria-label="Stüdyoyu Kapat" title="Kapat">✕</button>
-    </div>
-  </div>
-
-  <!-- İkincil Seçenek Çubuğu (Context-Sensitive Tool Options) -->
-  <div class="acrobat-options-bar" id="acrobatOptionsBar">
-    <!-- Genel Renk Seçimi -->
-    <div class="option-group">
-      <span class="option-label">Renk:</span>
-      <input type="color" id="studioColorPicker" value="#2563eb" style="width:26px; height:24px; padding:0; border:none; border-radius:4px; cursor:pointer; background:none;">
-    </div>
-
-    <!-- Kalınlık / Stroke -->
-    <div class="option-group" id="strokeOptionsGroup">
-      <span class="option-label">Kalınlık:</span>
-      <select id="studioStrokeWidth" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
-        <option value="1">1 px (İnce)</option>
-        <option value="2">2 px (Normal)</option>
-        <option value="4" selected>4 px (Orta)</option>
-        <option value="8">8 px (Kalın)</option>
-        <option value="16">16 px (Geniş Vurgu)</option>
-      </select>
-    </div>
-
-    <!-- Metin Detay Ayarları (Acrobat DC Tipografi Barı) -->
-    <div class="option-group" id="textOptionsGroup" style="display: none; gap: 6px; align-items: center;">
-      <span class="option-label">Font:</span>
-      <select id="studioFontFamily" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
-        <option value="auto" selected>✨ Otomatik (Orijinal Font)</option>
-        <option value="Arial, sans-serif">Arial / Sans-Serif</option>
-        <option value="'Times New Roman', serif">Times New Roman / Serif</option>
-        <option value="'Courier New', monospace">Courier New / Monospace</option>
-        <option value="Georgia, serif">Georgia</option>
-        <option value="Helvetica, sans-serif">Helvetica</option>
-        <option value="Verdana, sans-serif">Verdana</option>
-      </select>
-
-      <span class="option-label">Boyut:</span>
-      <select id="studioFontSize" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
-        <option value="8">8 px</option>
-        <option value="9">9 px</option>
-        <option value="10">10 px</option>
-        <option value="11">11 px</option>
-        <option value="12">12 px</option>
-        <option value="14">14 px</option>
-        <option value="16" selected>16 px</option>
-        <option value="18">18 px</option>
-        <option value="20">20 px</option>
-        <option value="24">24 px</option>
-        <option value="28">28 px</option>
-        <option value="32">32 px</option>
-        <option value="36">36 px</option>
-        <option value="40">40 px</option>
-        <option value="48">48 px</option>
-        <option value="60">60 px</option>
-        <option value="72">72 px</option>
-      </select>
-
-      <div style="display: inline-flex; border: 1px solid #334155; border-radius: 4px; overflow: hidden;">
-        <button id="studioTextBoldBtn" style="padding:2px 7px; font-size:11px; font-weight:bold; background:#1e293b; color:#f8fafc; border:none; cursor:pointer;" title="Kalın (Bold)">B</button>
-        <button id="studioTextItalicBtn" style="padding:2px 7px; font-size:11px; font-style:italic; background:#1e293b; color:#f8fafc; border:none; border-left:1px solid #334155; cursor:pointer;" title="İtalik (Italic)">I</button>
-        <button id="studioTextUnderlineBtn" style="padding:2px 7px; font-size:11px; text-decoration:underline; background:#1e293b; color:#f8fafc; border:none; border-left:1px solid #334155; cursor:pointer;" title="Altı Çizili (Underline)">U</button>
-      </div>
-
-      <div style="display: inline-flex; border: 1px solid #334155; border-radius: 4px; overflow: hidden;" title="Hizalama">
-        <button id="studioTextAlignLeftBtn" class="align-btn active" data-align="left" style="padding:2px 6px; font-size:11px; background:#2563eb; color:#fff; border:none; cursor:pointer;" title="Sola Hizala">⇤</button>
-        <button id="studioTextAlignCenterBtn" class="align-btn" data-align="center" style="padding:2px 6px; font-size:11px; background:#1e293b; color:#cbd5e1; border:none; border-left:1px solid #334155; cursor:pointer;" title="Ortala">≡</button>
-        <button id="studioTextAlignRightBtn" class="align-btn" data-align="right" style="padding:2px 6px; font-size:11px; background:#1e293b; color:#cbd5e1; border:none; border-left:1px solid #334155; cursor:pointer;" title="Sağa Hizala">⇥</button>
-      </div>
-
-      <span class="option-label">Yazı:</span>
-      <input type="color" id="studioTextColorPicker" value="#0f172a" style="width:24px; height:22px; padding:0; border:none; border-radius:3px; cursor:pointer; background:none;" title="Yazı Rengi">
-
-      <span class="option-label">Zemin:</span>
-      <select id="studioTextBgColor" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
-        <option value="transparent" selected>Şeffaf</option>
-        <option value="#ffffff">Beyaz</option>
-        <option value="#fef08a">Sarı</option>
-        <option value="#e0f2fe">Açık Mavi</option>
-        <option value="#000000">Siyah</option>
-      </select>
-
-      <span class="option-label">Satır:</span>
-      <select id="studioTextLineHeight" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 4px; font-size:11px;">
-        <option value="1.0">1.0</option>
-        <option value="1.2" selected>1.2</option>
-        <option value="1.4">1.4</option>
-        <option value="1.6">1.6</option>
-        <option value="2.0">2.0</option>
-      </select>
-    </div>
-
-    <!-- Akıllı Font Tespit Rozeti -->
-    <div class="option-group" id="smartFontBadgeGroup" style="display: none; align-items: center; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 4px; padding: 2px 8px; font-size: 11px; color: #93c5fd; gap: 5px;">
-      <span id="smartFontBadgeText">✨ Otomatik Font: Hazır</span>
-    </div>
-
-    <!-- Sansür Bilgi Rozeti -->
-    <div class="option-group" id="redactOptionsGroup" style="display: none;">
-      <span style="color:#ef4444; font-weight:700; font-size:11px;">⬛ Sansür Modu:</span>
-      <span style="color:#94a3b8; font-size:11px;">Gizlemek istediğiniz metin/T.C./fiyat alanını tuval üzerinde kutu çizerek kalıcı karartın.</span>
-    </div>
-
-    <!-- Alanı Sil / Beyazlatma (Whiteout) Seçenekleri -->
-    <div class="option-group" id="whiteoutOptionsGroup" style="display: none; align-items: center; gap: 8px;">
-      <span style="color:#38bdf8; font-weight:700; font-size:11px;">🧹 Alanı Sil:</span>
-      <div style="display: inline-flex; background:#0f172a; border:1px solid #334155; border-radius:4px; padding:2px;">
-        <button type="button" id="whiteoutModeAreaBtn" class="active" style="padding:2px 8px; font-size:11px; background:#2563eb; color:#ffffff; border:none; border-radius:3px; cursor:pointer;" title="Dikdörtgen Alan Seçip Sil">⬛ Dikdörtgen Alan</button>
-        <button type="button" id="whiteoutModeBrushBtn" style="padding:2px 8px; font-size:11px; background:transparent; color:#94a3b8; border:none; border-radius:3px; cursor:pointer;" title="Serbest Fırça ile Sil">🖌️ Serbest Fırça</button>
-      </div>
-
-      <span class="option-label" style="margin-left:4px;">Silme Rengi:</span>
-      <input type="color" id="studioWhiteoutColor" value="#ffffff" style="width:24px; height:22px; padding:0; border:1px solid #475569; border-radius:3px; cursor:pointer; background:none;" title="Silme Zemin Rengini Seç">
-
-      <div style="display: inline-flex; gap: 4px;" title="Hazır Zemin Tonları">
-        <button type="button" class="wo-color-swatch active" data-color="#ffffff" style="width:18px; height:18px; border-radius:3px; background:#ffffff; border:1.5px solid #2563eb; cursor:pointer;" title="Saf Beyaz (#ffffff)"></button>
-        <button type="button" class="wo-color-swatch" data-color="#fef9c3" style="width:18px; height:18px; border-radius:3px; background:#fef9c3; border:1px solid #ca8a04; cursor:pointer;" title="Krem / Fildişi (#fef9c3)"></button>
-        <button type="button" class="wo-color-swatch" data-color="#f1f5f9" style="width:18px; height:18px; border-radius:3px; background:#f1f5f9; border:1px solid #94a3b8; cursor:pointer;" title="Açık Gri (#f1f5f9)"></button>
-        <button type="button" class="wo-color-swatch" data-color="#fafaf9" style="width:18px; height:18px; border-radius:3px; background:#fafaf9; border:1px solid #a8a29e; cursor:pointer;" title="Antet Dokusu (#fafaf9)"></button>
-      </div>
-
-      <button type="button" id="studioEyedropperBtn" style="padding:2px 6px; font-size:11px; background:#1e293b; color:#38bdf8; border:1px solid #334155; border-radius:4px; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" title="Sayfadan Renk Al (Damlalık)">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 22 1-1h3l9-9"/><path d="M12 4l3-3 5 5-3 3"/><path d="m14 6 4 4"/></svg>
-        <span>Damlalık</span>
-      </button>
-
-      <div id="whiteoutBrushSizeGroup" style="display: none; align-items: center; gap: 5px;">
-        <span class="option-label">Fırça:</span>
-        <select id="studioWhiteoutBrushSize" style="background:#1e293b; color:#f8fafc; border:1px solid #334155; border-radius:4px; padding:2px 6px; font-size:11px;">
-          <option value="8">8 px (İnce)</option>
-          <option value="16">16 px (Normal)</option>
-          <option value="24" selected>24 px (Orta)</option>
-          <option value="36">36 px (Geniş)</option>
-          <option value="50">50 px (Ekstra)</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Vurgulayıcı Renkleri -->
-    <div class="option-group" id="highlighterOptionsGroup" style="display: none; gap: 6px;">
-      <span class="option-label">Vurgu Rengi:</span>
-      <button class="hl-swatch" data-hl="#fef08a" style="width:18px; height:18px; border-radius:3px; background:#fef08a; border:1px solid #ca8a04; cursor:pointer;" title="Sarı"></button>
-      <button class="hl-swatch" data-hl="#bbf7d0" style="width:18px; height:18px; border-radius:3px; background:#bbf7d0; border:1px solid #16a34a; cursor:pointer;" title="Yeşil"></button>
-      <button class="hl-swatch" data-hl="#bae6fd" style="width:18px; height:18px; border-radius:3px; background:#bae6fd; border:1px solid #0284c7; cursor:pointer;" title="Mavi"></button>
-      <button class="hl-swatch" data-hl="#fbcfe8" style="width:18px; height:18px; border-radius:3px; background:#fbcfe8; border:1px solid #db2777; cursor:pointer;" title="Pembe"></button>
-    </div>
-  </div>
-
-  <!-- Ana Çalışma Alanı (Canvas & Thumbnails & Katmanlar) -->
-  <div class="acrobat-workspace">
-    <!-- Sol Küçük Resimler (Thumbnails Bar) -->
-    <div class="acrobat-sidebar" id="studioThumbnailsBar" title="Sayfalar Arasında Geçiş Yapın"></div>
-
-    <!-- Orta Viewport Tuval Alanı -->
-    <div class="acrobat-viewport" id="studioViewport" style="position: relative;">
-      <!-- Akıllı Font Tespit Bildirimi (Acrobat Pro DC Grade) -->
-      <div id="smartFontToast" style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%) translateY(-10px); background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #f8fafc; border: 1px solid rgba(59, 130, 246, 0.5); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 99, 235, 0.25); border-radius: 9999px; padding: 6px 18px; font-size: 12px; font-weight: 500; display: none; align-items: center; gap: 8px; z-index: 1000; pointer-events: none; opacity: 0; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
-        <span style="color: #4ade80; font-size: 14px;">✓</span>
-        <span id="smartFontToastText">Orijinal Font Tespit Edildi: Arial 14px (Bold)</span>
-      </div>
-
-      <div class="canvas-wrapper" id="canvasWrapper">
-        <canvas id="pdfRenderCanvas"></canvas>
-        <canvas id="pdfDrawOverlay"></canvas>
-        <div id="pdfObjectOverlay" class="pdf-object-overlay"></div>
-      </div>
-    </div>
-
-    <!-- Sağ Dikey Araç Çubuğu (Görsel 2 Dock: Sliders, Comments, Checklist, Settings) -->
-    <aside class="pro-right-dock-bar">
-      <button class="pro-dock-icon-btn" id="proDockLayersBtn" title="Sayfa &amp; Katman Ayarları">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-      </button>
-      <button class="pro-dock-icon-btn" id="proDockCommentsBtn" title="Yorumlar &amp; Yapışkan Notlar">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </button>
-      <button class="pro-dock-icon-btn" id="proDockFormsBtn" title="Form Alanları &amp; Nesneler">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      </button>
-      <button class="pro-dock-icon-btn" id="proDockSettingsBtn" title="Genel Ayarlar">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-      </button>
-    </aside>
-  </div>
-
-  <!-- Alt Durum & Gezinti Çubuğu -->
-  <div class="acrobat-bottombar">
-    <div class="page-controls" style="display: flex; align-items: center; gap: 8px;">
-      <button class="nav-btn" id="prevPageBtn" title="Önceki Sayfa">◀ Önceki</button>
-      <span>Sayfa <strong id="currentPageNum">1</strong> / <span id="totalPagesNum">1</span></span>
-      <button class="nav-btn" id="nextPageBtn" title="Sonraki Sayfa">Sonraki ▶</button>
-      <button class="nav-btn" id="deleteCurrentPageBtn" style="color:#ef4444; border-color:#7f1d1d;" title="Mevcut Sayfayı Belgeden Sil">🗑️ Sayfayı Sil</button>
-    </div>
-
-    <div class="zoom-controls" style="display: flex; align-items: center; gap: 8px;">
-      <button class="zoom-btn" id="zoomOutBtn" title="Küçült">-</button>
-      <span id="zoomLevelDisplay" style="min-width: 48px; text-align: center; font-weight: 700;">100%</span>
-      <button class="zoom-btn" id="zoomInBtn" title="Büyüt">+</button>
-      <button class="nav-btn" id="rotatePageBtn" title="Sayfayı 90 Derece Sağa Döndür">🔄 90° Döndür</button>
-    </div>
-  </div>
-</div>
-
-<!-- E-İMZA & HAZIR KURUMSAL KAŞE STÜDYOSU MODALI -->
-<div class="acrobat-submodal-overlay" id="signatureStampModal" role="dialog" aria-modal="true" aria-label="E-İmza ve Kaşe Stüdyosu">
-  <div class="acrobat-submodal-card">
-    <div class="submodal-header">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 14px; font-weight: 700; color: #f8fafc;">✍️ E-İmza &amp; Kaşe Stüdyosu</span>
-        <span style="font-size: 10px; background: #2563eb; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: 800;">PRO DC</span>
-      </div>
-      <button class="action-btn close" id="closeSigStampModalBtn" style="background:#334155; color:#cbd5e1; border:none; border-radius:4px; width:26px; height:26px; cursor:pointer;">✕</button>
-    </div>
-
-    <div class="submodal-tabs">
-      <button class="submodal-tab active" data-tab="draw-signature">🖊️ Islak İmza Çiz</button>
-      <button class="submodal-tab" data-tab="preset-stamps">🏢 Kurumsal Kaşeler</button>
-      <button class="submodal-tab" data-tab="upload-signature">📁 İmza Görseli Yükle</button>
-    </div>
-
-    <div class="submodal-body">
-      <!-- Sekme 1: Islak İmza Çiz -->
-      <div id="tabDrawSignature" class="sig-tab-content">
-        <p style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Mouse veya parmağınızla kutunun içine imzanızı çizin:</p>
-        <div class="signature-pad-wrapper">
-          <canvas id="signaturePadCanvas" class="signature-pad-canvas" width="540" height="200"></canvas>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="font-size: 11px; color: #cbd5e1;">Mürekkep:</span>
-            <button class="sig-color-btn active" data-color="#0f172a" style="width:20px; height:20px; border-radius:50%; background:#0f172a; border:2px solid #38bdf8; cursor:pointer;" title="Siyah"></button>
-            <button class="sig-color-btn" data-color="#1d4ed8" style="width:20px; height:20px; border-radius:50%; background:#1d4ed8; border:1px solid #334155; cursor:pointer;" title="Mavi"></button>
-            <button class="sig-color-btn" data-color="#dc2626" style="width:20px; height:20px; border-radius:50%; background:#dc2626; border:1px solid #334155; cursor:pointer;" title="Kırmızı"></button>
-          </div>
-          <div style="display: flex; gap: 8px;">
-            <button id="clearSignatureBtn" style="padding: 6px 12px; font-size: 12px; background: #334155; color: #f8fafc; border: none; border-radius: 6px; cursor: pointer;">Temizle</button>
-            <button id="insertSignatureBtn" style="padding: 6px 14px; font-size: 12px; font-weight: 700; background: #2563eb; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;">✓ İmzayı Belgeye Ekle</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sekme 2: Hazır Kurumsal Kaşeler -->
-      <div id="tabPresetStamps" class="sig-tab-content" style="display: none;">
-        <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">Belgenize eklemek istediğiniz hazır kaşe veya damgayı seçin:</p>
-        <div class="stamps-grid">
-          <div class="stamp-card-btn" data-stamp="ONAYLANDI" data-color="#16a34a">
-            <div style="border: 2px solid #16a34a; color: #16a34a; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">✓ ONAYLANDI</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Onay Damgası</span>
-          </div>
-
-          <div class="stamp-card-btn" data-stamp="GİZLİDİR" data-color="#dc2626">
-            <div style="border: 2px solid #dc2626; color: #dc2626; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">🔒 GİZLİDİR</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Gizlilik Damgası</span>
-          </div>
-
-          <div class="stamp-card-btn" data-stamp="ASLI GİBİDİR" data-color="#2563eb">
-            <div style="border: 2px solid #2563eb; color: #2563eb; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">📄 ASLI GİBİDİR</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Resmi Suret</span>
-          </div>
-
-          <div class="stamp-card-btn" data-stamp="İPTAL EDİLDİ" data-color="#b91c1c">
-            <div style="border: 2px solid #b91c1c; color: #b91c1c; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">✕ İPTAL EDİLDİ</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">İptal Damgası</span>
-          </div>
-
-          <div class="stamp-card-btn" data-stamp="RESMİ NÜSHA" data-color="#475569">
-            <div style="border: 2px solid #475569; color: #cbd5e1; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">⚖️ RESMİ NÜSHA</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Hukuki Belge</span>
-          </div>
-
-          <div class="stamp-card-btn" data-stamp="ÖDENDİ" data-color="#059669">
-            <div style="border: 2px solid #059669; color: #059669; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">💰 ÖDENDİ</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Finans &amp; Fatura</span>
-          </div>
-
-          <div class="stamp-card-btn" data-stamp="TASLAK" data-color="#d97706">
-            <div style="border: 2px solid #d97706; color: #d97706; font-weight: 900; font-size: 13px; padding: 4px 10px; border-radius: 4px; transform: rotate(-6deg); text-align: center;">⚠️ TASLAK / DRAFT</div>
-            <span style="font-size: 11px; color: #94a3b8; margin-top: 8px;">İnceleme Aşamasında</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sekme 3: Görsel İmza Yükle -->
-      <div id="tabUploadSignature" class="sig-tab-content" style="display: none; text-align: center; padding: 20px 0;">
-        <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px;">Saydam arka planlı (PNG) imza veya şirket kaşenizi yükleyin:</p>
-        <button id="uploadCustomSigBtn" style="padding: 10px 18px; font-size: 13px; font-weight: 700; background: #2563eb; color: #ffffff; border: none; border-radius: 8px; cursor: pointer;">📁 Bilgisayardan İmza / Kaşe Seç</button>
-        <input type="file" id="modalCustomSigFileInput" accept="image/png,image/jpeg" style="display: none;">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PHOTOSHOP WEB STUDIO (YEREL TAM DONANIMLI WEB PHOTOSHOP STÜDYOSU) -->
-<div class="photoshop-studio-modal" id="photoshopStudioModal" role="dialog" aria-modal="true" aria-label="Web Photoshop Studio">
-  <div class="ps-clone-app">
-    <!-- 1. Üst Menü Çubuğu -->
-    <header class="ps-menu-bar">
-      <div class="ps-brand" style="display:flex; align-items:center; gap:6px; margin-right:12px; font-weight:900; color:#38bdf8;">
-        <span style="background:#0284c7; color:#fff; font-size:11px; padding:2px 5px; border-radius:3px;">Ps</span>
-        <span style="font-size:12px; color:#f8fafc; font-weight:800;">Web Photoshop</span>
-      </div>
-
-      <!-- Menüler -->
-      <div class="ps-menu-item">
-        <span>Dosya</span>
-        <div class="ps-dropdown">
-          <div class="ps-dropdown-item" data-action="new-doc"><span>Yeni...</span><span class="shortcut">⌥⌘N</span></div>
-          <div class="ps-dropdown-item" data-action="open-file"><span>Aç...</span><span class="shortcut">⌘O</span></div>
-          <div class="ps-dropdown-item" data-action="open-place"><span>Aç ve Yerleştir...</span></div>
-          <div class="ps-dropdown-divider"></div>
-          <div class="ps-dropdown-item" data-action="export-png"><span>Kaydet</span><span class="shortcut">⌘S</span></div>
-          <div class="ps-dropdown-item" data-action="export-psd"><span>PSD Olarak Kaydet</span></div>
-          <div class="ps-dropdown-item has-submenu">
-            <span>Farklı Dışa Aktar</span>
-            <div class="ps-submenu">
-              <div class="ps-dropdown-item" data-action="export-png"><span>PNG</span></div>
-              <div class="ps-dropdown-item" data-action="export-jpg"><span>JPG</span></div>
-              <div class="ps-dropdown-item" data-action="export-svg"><span>SVG</span></div>
-              <div class="ps-dropdown-item" data-action="export-gif"><span>GIF</span></div>
-              <div class="ps-dropdown-item" data-action="export-pdf"><span>PDF</span></div>
-              <div class="ps-dropdown-item" data-action="export-webp"><span>WEBP</span></div>
-              <div class="ps-dropdown-item" data-action="export-mp4"><span>MP4</span></div>
-              <div class="ps-dropdown-divider"></div>
-              <div class="ps-dropdown-item" data-action="export-png"><span>Daha Fazlası...</span></div>
+    
+      <!-- Clean Apple Style Mac Footer -->
+      <footer class="mac-appstore-footer" style="margin-top: 3rem;">
+        <div class="mac-footer-inner">
+          <div class="mac-footer-brand-row">
+            <div class="mac-footer-brand">
+              <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="120" height="20">
+              <span class="mac-footer-brand-tag">AI Search Readiness OS</span>
+            </div>
+            <div class="mac-footer-langs">
+              <span class="mac-lang-active">TR</span>
+              <span class="mac-lang-sep">•</span>
+              <a href="/en/" class="mac-lang-link">EN</a>
             </div>
           </div>
-          <div class="ps-dropdown-divider"></div>
-          <div class="ps-dropdown-item" data-action="export-layers"><span>Katmanları Dışa Aktar...</span></div>
-          <div class="ps-dropdown-item" data-action="print"><span>Yazdır...</span><span class="shortcut">⌘P</span></div>
-          <div class="ps-dropdown-divider"></div>
-          <div class="ps-dropdown-item" data-action="doc-info"><span>Dosya Bilgisi...</span></div>
-        </div>
-      </div>
-
-      <div class="ps-menu-item">
-        <span>Düzen</span>
-        <div class="ps-dropdown">
-          <div class="ps-dropdown-item" data-action="undo"><span>Geri Al</span><span class="shortcut">⌘Z</span></div>
-          <div class="ps-dropdown-item" data-action="redo"><span>Yinele</span><span class="shortcut">⌘Y</span></div>
-          <div class="ps-dropdown-divider"></div>
-          <div class="ps-dropdown-item" data-action="select-all"><span>Tümünü Seç</span><span class="shortcut">⌘A</span></div>
-          <div class="ps-dropdown-item" data-action="deselect"><span>Seçimi Kaldır</span><span class="shortcut">⌘D</span></div>
-          <div class="ps-dropdown-item" data-action="toggle-transform"><span>Serbest Dönüştürme</span><span class="shortcut">⌘T</span></div>
-          <div class="ps-dropdown-divider"></div>
-          <div class="ps-dropdown-item" data-action="delete-layer"><span>Temizle / Sil</span><span class="shortcut">Del</span></div>
-        </div>
-      </div>
-
-      <div class="ps-menu-item">
-        <span>Görüntü</span>
-        <div class="ps-dropdown">
-          <div class="ps-dropdown-item" data-action="rotate-90"><span>90° Sağa Döndür</span></div>
-          <div class="ps-dropdown-item" data-action="rotate-180"><span>180° Döndür</span></div>
-          <div class="ps-dropdown-item" data-action="rotate-270"><span>90° Sola Döndür</span></div>
-          <div class="ps-dropdown-divider"></div>
-          <div class="ps-dropdown-item" data-action="flip-h"><span>Yatay Çevir (Flip Horizontal)</span></div>
-          <div class="ps-dropdown-item" data-action="flip-v"><span>Dikey Çevir (Flip Vertical)</span></div>
-        </div>
-      </div>
-
-      <div class="ps-menu-item">
-        <span>Filtre</span>
-        <div class="ps-dropdown">
-          <div class="ps-dropdown-item" data-action="filter-brightness"><span>Parlaklık...</span></div>
-          <div class="ps-dropdown-item" data-action="filter-contrast"><span>Kontrast...</span></div>
-          <div class="ps-dropdown-item" data-action="invert-colors"><span>Renkleri Ters Çevir (Invert)</span></div>
-          <div class="ps-dropdown-item" data-action="filter-grayscale"><span>Siyah &amp; Beyaz (Grayscale)</span></div>
-          <div class="ps-dropdown-item" data-action="filter-sepia"><span>Sepya</span></div>
-          <div class="ps-dropdown-item" data-action="filter-blur"><span>Bulanıklık (Blur)...</span></div>
-        </div>
-      </div>
-
-      <div class="ps-menu-item">
-        <span>Katman</span>
-        <div class="ps-dropdown">
-          <div class="ps-dropdown-item" data-action="new-layer"><span>Yeni Katman</span><span class="shortcut">⇧⌘N</span></div>
-          <div class="ps-dropdown-item" data-action="duplicate-layer"><span>Katmanı Çoğalt</span><span class="shortcut">⌘J</span></div>
-          <div class="ps-dropdown-item" data-action="delete-layer"><span>Katmanı Sil</span><span class="shortcut">Del</span></div>
-        </div>
-      </div>
-
-      <div class="ps-menu-item">
-        <span>Görünüm</span>
-        <div class="ps-dropdown">
-          <div class="ps-dropdown-item" data-action="zoom-fit"><span>Ekrana Sığdır</span><span class="shortcut">⌘0</span></div>
-          <div class="ps-dropdown-item" data-action="zoom-100"><span>%100 Boyut</span><span class="shortcut">⌘1</span></div>
-          <div class="ps-dropdown-item" data-action="zoom-in"><span>Yakınlaş</span><span class="shortcut">⌘+</span></div>
-          <div class="ps-dropdown-item" data-action="zoom-out"><span>Uzaklaş</span><span class="shortcut">⌘-</span></div>
-        </div>
-      </div>
-
-      <input type="file" id="psGlobalFileInput" accept="image/*" style="display:none;">
-
-      <!-- Sağ Üst Aksiyonlar -->
-      <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
-        <span id="psDocDims" style="font-size:11px; color:#94a3b8; font-family:monospace; margin-right:8px;">1080 x 1080 px</span>
-        <button class="action-btn secondary" id="psFsToggleBtn" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:11px; padding:3px 9px; background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:5px;" title="Tam Ekran">
-          <span>⛶ Tam Sayfa</span>
-        </button>
-        <button class="action-btn close" id="psStudioCloseBtn" aria-label="Stüdyoyu Kapat" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:5px; width:26px; height:26px; font-size:13px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center;">✕</button>
-      </div>
-    </header>
-
-    <!-- 2. Seçenekler Çubuğu (Tool Options Bar) -->
-    <div class="ps-options-bar">
-      <!-- Aktif Araç İkonu -->
-      <div id="psActiveToolIcon" style="display:flex; align-items:center; color:#38bdf8; padding-right:8px; border-right:1px solid #334155;" title="Seçili Araç">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
-      </div>
-
-      <!-- Photopea Standardı: Oto Seçim & Katman/Grup -->
-      <label class="ps-options-checkbox" title="Tıklanan katmanı otomatik seç">
-        <input type="checkbox" id="psAutoSelect" checked>
-        <span>Oto-Seçim</span>
-      </label>
-      <select id="psSelectTarget" style="font-size:11px; padding:1px 4px; background:#0f172a; color:#f8fafc; border:1px solid #475569; border-radius:3px;">
-        <option value="layer">Katman</option>
-        <option value="group">Grup</option>
-      </select>
-
-      <!-- Dönüşüm Kontrolleri (Ctrl+T) & Mesafeler -->
-      <label class="ps-options-checkbox" title="Dönüşüm Kontrollerini Göster (Ctrl+T / ⌘T)">
-        <input type="checkbox" id="psTransformControls">
-        <span>Dönüşüm kontrolleri</span>
-      </label>
-      <label class="ps-options-checkbox" title="Hizalama mesafelerini göster">
-        <input type="checkbox" id="psShowDistances">
-        <span>Mesafeler</span>
-      </label>
-
-      <!-- Hizalama İkonları Grubu -->
-      <div class="ps-align-group" title="Hizalama Araçları">
-        <button class="ps-align-btn" data-align="left" title="Sola Hizala"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="4" y2="20"/><rect x="8" y="7" width="12" height="4" rx="1"/><rect x="8" y="13" width="8" height="4" rx="1"/></svg></button>
-        <button class="ps-align-btn" data-align="center-h" title="Yatay Ortala"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="4" x2="12" y2="20"/><rect x="6" y="7" width="12" height="4" rx="1"/><rect x="8" y="13" width="8" height="4" rx="1"/></svg></button>
-        <button class="ps-align-btn" data-align="right" title="Sağa Hizala"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="20" y1="4" x2="20" y2="20"/><rect x="4" y="7" width="12" height="4" rx="1"/><rect x="8" y="13" width="8" height="4" rx="1"/></svg></button>
-        <button class="ps-align-btn" data-align="top" title="Üste Hizala"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="20" y2="4"/><rect x="7" y="8" width="4" height="12" rx="1"/><rect x="13" y="8" width="4" height="8" rx="1"/></svg></button>
-        <button class="ps-align-btn" data-align="center-v" title="Dikey Ortala"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><rect x="7" y="6" width="4" height="12" rx="1"/><rect x="13" y="8" width="4" height="8" rx="1"/></svg></button>
-        <button class="ps-align-btn" data-align="bottom" title="Alta Hizala"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="20" x2="20" y2="20"/><rect x="7" y="4" width="4" height="12" rx="1"/><rect x="13" y="8" width="4" height="8" rx="1"/></svg></button>
-      </div>
-
-      <!-- Fırça ve Şekil Seçenekleri -->
-      <div class="ps-option-group">
-        <label>Boyut:</label>
-        <input type="range" id="psBrushSize" min="1" max="100" value="10" title="Boyut ([ ve ] tuşları)">
-      </div>
-      <div class="ps-option-group">
-        <label>Opaklık:</label>
-        <input type="range" id="psBrushOpacity" min="0.05" max="1" step="0.05" value="1">
-      </div>
-      <div class="ps-option-group">
-        <label>Şekil:</label>
-        <select id="psShapeSelect">
-          <option value="rect">Dikdörtgen</option>
-          <option value="circle">Elips / Daire</option>
-          <option value="line">Çizgi</option>
-        </select>
-      </div>
-      <div class="ps-option-group" style="margin-left:auto; display:flex; align-items:center; gap:6px;">
-        <label>Yakınlaştırma:</label>
-        <span id="psZoomLevel" style="font-weight:700; color:#38bdf8; min-width:40px;">100%</span>
-      </div>
-    </div>
-
-    <!-- 3. Ana Çalışma Alanı (Toolbar + Viewport + Dock) -->
-    <div class="ps-body-layout">
-      <!-- Sol Dikey Araç Çubuğu (Photopea Standardı 18 Araç) -->
-      <aside class="ps-left-toolbar">
-        <button class="ps-tool-btn active" data-tool="move" title="Taşıma Aracı (V)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg></button>
-        <button class="ps-tool-btn" data-tool="select" title="Dikdörtgen Seçim (M)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1" stroke-dasharray="3 3"/></svg></button>
-        <button class="ps-tool-btn" data-tool="wand" title="Sihirli Değnek / Seçim (W)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 11-8-8-8.5 8.5a5 5 0 0 0 7 7l8.5-8.5Z"/><path d="m14 2 8 8"/></svg></button>
-        <button class="ps-tool-btn" data-tool="crop" title="Kırpma Aracı (C)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></button>
-        <button class="ps-tool-btn" data-tool="eyedropper" title="Damlalık / Renk Seçici (I)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 2 8 8-4 4-8-8 4-4Z"/><path d="m18 6-8.5 8.5"/><path d="m8 14-5 5v3h3l5-5"/></svg></button>
-        <button class="ps-tool-btn" data-tool="healing" title="Nokta Düzeltme Fırçası (J)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24M18.36 5.64l-4.24 4.24m-5.66 5.66-4.24 4.24"/><circle cx="12" cy="12" r="3"/></svg></button>
-        <button class="ps-tool-btn" data-tool="brush" title="Fırça Aracı (B)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg></button>
-        <button class="ps-tool-btn" data-tool="clone" title="Klonlama Damgası (S) - Alt ile kaynak seçin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 22h14"/><path d="M12 2v16"/><path d="M8 6h8"/><path d="M6 10h12"/></svg></button>
-        <button class="ps-tool-btn" data-tool="eraser" title="Silgi Aracı (E)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg></button>
-        <button class="ps-tool-btn" data-tool="bucket" title="Degrade &amp; Boya Kovası (G)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 11-8-8-8.5 8.5a5 5 0 0 0 7 7l8.5-8.5Z"/><path d="m5 2 5 5"/><path d="M2 13h15"/></svg></button>
-        <button class="ps-tool-btn" data-tool="blur" title="Bulanıklık Aracı (R)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></button>
-        <button class="ps-tool-btn" data-tool="dodge" title="Soldurma / Yakma Aracı (O)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
-        <button class="ps-tool-btn" data-tool="text" title="Yazı Aracı (T)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg></button>
-        <button class="ps-tool-btn" data-tool="pen" title="Kalem Aracı (P)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="12" cy="12" r="2"/></svg></button>
-        <button class="ps-tool-btn" data-tool="path" title="Yol Seçimi (A)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/><circle cx="12" cy="12" r="1.5"/></svg></button>
-        <button class="ps-tool-btn" data-tool="shape" title="Şekil Aracı (U)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></button>
-        <button class="ps-tool-btn" data-tool="hand" title="El Aracı / Kaydır (H / Boşluk)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v7"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 0 1 4 4v4a8 8 0 0 1-16 0v-2a2 2 0 0 1 4 0v1"/></svg></button>
-        <button class="ps-tool-btn" data-tool="zoom" title="Yakınlaştır (Z)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button>
-
-        <!-- Çift Renk Seçici Palet (D ve X Kısayolları) -->
-        <div class="ps-color-picker-box">
-          <button id="psResetColors" class="ps-color-reset" title="Varsayılan Renkler: Siyah &amp; Beyaz (D)">◩</button>
-          <input type="color" id="psPrimaryColor" class="ps-color-fg" value="#38bdf8" title="Ön Plan Rengi">
-          <input type="color" id="psSecondaryColor" class="ps-color-bg" value="#ffffff" title="Arka Plan Rengi">
-          <button id="psSwapColors" class="ps-color-swap" title="Renkleri Takas Et (X)">⇄</button>
-        </div>
-      </aside>
-
-      <!-- Orta Tuval / Viewport -->
-      <main class="ps-viewport" id="psViewport">
-        <div class="ps-canvas-container" id="psCanvasContainer">
-          <canvas id="psDisplayCanvas" class="ps-display-canvas"></canvas>
-        </div>
-      </main>
-
-      <!-- Sağ Panel (Dock: Katmanlar & Geçmiş) -->
-      <aside class="ps-right-dock">
-        <!-- Katmanlar Bölümü -->
-        <div class="ps-dock-section ps-dock-layers">
-          <div class="ps-dock-header">
-            <span>Katmanlar</span>
-            <div class="ps-dock-actions" style="display:flex; gap:4px;">
-              <button id="psAddLayerBtn" title="Yeni Katman" style="background:#0284c7; color:#fff; border:none; border-radius:4px; padding:2px 6px; font-size:11px; cursor:pointer;">+ Yeni</button>
-              <button id="psDupLayerBtn" title="Katmanı Çoğalt" style="background:#334155; color:#cbd5e1; border:none; border-radius:4px; padding:2px 6px; font-size:11px; cursor:pointer;">Çoğalt</button>
-              <button id="psDelLayerBtn" title="Katmanı Sil" style="background:#dc2626; color:#fff; border:none; border-radius:4px; padding:2px 6px; font-size:11px; cursor:pointer;">Sil</button>
+          <div class="mac-footer-cols">
+            <div class="mac-footer-col">
+              <h4>Analiz Motorları</h4>
+              <ul>
+                <li><a href="/site-tarama/">Site Tarama Motoru</a></li>
+                <li><a href="/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+                <li><a href="/ai-crawler-checker/">AI Bot İzin Kontrolü</a></li>
+                <li><a href="/schema-validator/">Schema.org JSON-LD</a></li>
+                <li><a href="/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+              </ul>
+            </div>
+            <div class="mac-footer-col">
+              <h4>Bilgi &amp; Metodoloji</h4>
+              <ul>
+                <li><a href="/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır?</a></li>
+                <li><a href="/sozluk/">AI Arama Sözlüğü</a></li>
+                <li><a href="/fiyatlandirma/">Uygulama Paketi ($99)</a></li>
+                <li><a href="/indexnow/">IndexNow Dağıtımı</a></li>
+                <li><a href="/llms.txt">llms.txt Özeti</a></li>
+              </ul>
+            </div>
+            <div class="mac-footer-col">
+              <h4>Kurumsal &amp; Yasal</h4>
+              <ul>
+                <li><a href="/hakkimizda/">Hakkımızda</a></li>
+                <li><a href="/iletisim/">İletişim &amp; Destek</a></li>
+                <li><a href="/gizlilik/">Gizlilik Politikası</a></li>
+                <li><a href="/kullanim-kosullari/">Kullanım Koşulları</a></li>
+              </ul>
             </div>
           </div>
-          <div class="ps-layers-toolbar">
-            <span style="font-size:11px; color:#cbd5e1;">Opaklık:</span>
-            <input type="range" id="psLayerOpacity" min="0" max="100" value="100" style="width:100px; accent-color:#38bdf8;">
-            <span id="psLayerOpacityVal" style="font-size:11px; color:#38bdf8; min-width:32px; text-align:right;">100%</span>
+          <div class="mac-footer-bottom">
+            <p>© 2026 HTML&amp;HTML Enterprise. Tüm hakları saklıdır. Hiçbir arama motoru veya LLM için sıralama/tavsiye garantisi verilmez.</p>
           </div>
-          <div class="ps-layer-list" id="psLayerList"></div>
         </div>
+      </footer>
 
-        <!-- Geçmiş / History Bölümü -->
-        <div class="ps-dock-section" style="flex:0.8; display:flex; flex-direction:column;">
-          <div class="ps-dock-header">
-            <span>Geçmiş (Adımlar)</span>
-          </div>
-          <div class="ps-dock-history" id="psHistoryList" style="flex:1;"></div>
-        </div>
-      </aside>
     </div>
-
-    <!-- 4. Alt Durum Çubuğu -->
-    <footer class="ps-status-bar">
-      <div>HTML&amp;HTML Web Photoshop • %100 İstemci Taraflı &amp; Güvenli</div>
-      <div style="display:flex; gap:16px;">
-        <span id="psZoomResetBtn" style="cursor:pointer;" title="Sıfırla">Yakınlaştırma Sıfırla</span>
-      </div>
-    </footer>
-  </div>
-
-  <!-- YENİ BELGE MODALI -->
-  <div class="ps-new-doc-modal" id="psNewDocModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center;">
-    <div style="background:#0f172a; border:1px solid #334155; border-radius:10px; width:480px; max-width:92vw; padding:20px; color:#f8fafc; box-shadow:0 20px 40px rgba(0,0,0,0.8);">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <h3 style="font-size:15px; font-weight:800; color:#38bdf8;">Yeni Belge Oluştur</h3>
-        <button id="psCloseNewDocModal" style="background:none; border:none; color:#94a3b8; font-size:16px; cursor:pointer;">✕</button>
-      </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
-        <div>
-          <label style="font-size:11px; color:#cbd5e1; display:block; margin-bottom:4px;">Genişlik (px):</label>
-          <input type="number" id="psNewDocWidth" value="1080" style="width:100%; background:#1e293b; border:1px solid #475569; color:#fff; padding:6px 10px; border-radius:6px; font-size:13px;">
-        </div>
-        <div>
-          <label style="font-size:11px; color:#cbd5e1; display:block; margin-bottom:4px;">Yükseklik (px):</label>
-          <input type="number" id="psNewDocHeight" value="1080" style="width:100%; background:#1e293b; border:1px solid #475569; color:#fff; padding:6px 10px; border-radius:6px; font-size:13px;">
-        </div>
-      </div>
-      <div style="margin-bottom:16px;">
-        <label style="font-size:11px; color:#cbd5e1; display:block; margin-bottom:4px;">Arka Plan:</label>
-        <select id="psNewDocBg" style="width:100%; background:#1e293b; border:1px solid #475569; color:#fff; padding:6px 10px; border-radius:6px; font-size:13px;">
-          <option value="#ffffff">Beyaz</option>
-          <option value="#000000">Siyah</option>
-          <option value="transparent">Şeffaf (Saydam)</option>
-        </select>
-      </div>
-      <div style="margin-bottom:18px;">
-        <span style="font-size:11px; color:#94a3b8; display:block; margin-bottom:6px;">Hızlı Şablonlar:</span>
-        <div style="display:flex; gap:6px; flex-wrap:wrap;">
-          <button type="button" class="ps-template-card" data-w="1080" data-h="1080" style="padding:4px 8px; font-size:11px; background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:5px; cursor:pointer;">Kare 1080x1080</button>
-          <button type="button" class="ps-template-card" data-w="1920" data-h="1080" style="padding:4px 8px; font-size:11px; background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:5px; cursor:pointer;">Full HD 1920x1080</button>
-          <button type="button" class="ps-template-card" data-w="1200" data-h="630" style="padding:4px 8px; font-size:11px; background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:5px; cursor:pointer;">Web Banner 1200x630</button>
-        </div>
-      </div>
-      <div style="display:flex; justify-content:flex-end; gap:8px;">
-        <button type="button" id="psCancelDocBtn" style="padding:6px 14px; font-size:12px; background:#334155; color:#cbd5e1; border:none; border-radius:6px; cursor:pointer;">İptal</button>
-        <button type="button" id="psCreateDocBtn" style="padding:6px 16px; font-size:12px; font-weight:700; background:#0284c7; color:#fff; border:none; border-radius:6px; cursor:pointer;">Belgeyi Oluştur</button>
-      </div>
-    </div>
-  </div>
+  </main>
 </div>
 
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
-<script src="/assets/js/photoshop-engine.js?v=20260925_clone_v5"></script>
-<script src="/assets/js/pdf-engine.js?v=20260926_prodc_v2"></script>
+<script src="/assets/js/apple-store.js?v=20260926_105"></script>
+
 </body>
 </html>

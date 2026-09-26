@@ -36,7 +36,7 @@
   }
 }
 </script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh5"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5"><link rel="icon" href="/favicon.ico?v=hh5" sizes="any"><link rel="stylesheet" href="/assets/css/validator.css?v=19"><link rel="stylesheet" href="/assets/css/theme.css?v=19">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=hh5"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=hh5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=hh5"><link rel="icon" href="/favicon.ico?v=hh5" sizes="any"><link rel="stylesheet" href="/assets/css/validator.css?v=19">
 <style>
 .checkout{min-height:100vh;padding:28px 18px 70px}.checkout-shell{width:min(980px,100%);margin:auto}.checkout-top{display:flex;justify-content:space-between;align-items:center;padding:12px 0 30px}.checkout-card{border:1px solid #d8d3c8;background:#ffffff;border-radius:28px;overflow:hidden;box-shadow:0 24px 70px rgba(20,20,16,.08)}.checkout-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;padding:38px;border-bottom:1px solid #d8d3c8}.checkout-kicker{font-size:10px;font-weight:900;letter-spacing:.12em}.checkout-hero h1{font-size:clamp(36px,5vw,58px);line-height:.96;letter-spacing:-.055em;margin:10px 0 14px;max-width:660px}.checkout-hero p{margin:0;max-width:650px;color:#686860;font-size:16px;line-height:1.65}.checkout-price{text-align:right}.checkout-price strong{display:block;font-size:72px;line-height:.82;letter-spacing:-.08em}.checkout-price span{font-size:12px;color:#686860}.checkout-domain{margin:28px 38px 0;border:1px solid #d8d3c8;background:#f4f1e9;border-radius:16px;padding:16px 18px}.checkout-domain small{display:block;font-size:10px;letter-spacing:.1em;font-weight:900;color:#686860;margin-bottom:6px}.checkout-domain-field{width:100%;max-width:480px;height:42px;border:1px solid #cbd5e1;background:#ffffff;border-radius:10px;padding:0 14px;font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;color:#0f172a;outline:none;transition:border-color .15s ease,box-shadow .15s ease}.checkout-domain-field:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.15)}.checkout-domain-field.pulse-error{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,0.2)}.checkout-domain b{font:800 14px ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}.checkout-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#d8d3c8;border-block:1px solid #d8d3c8;margin-top:28px}.checkout-panel{background:#fbfaf6;padding:30px 38px}.checkout-panel h2{font-size:25px;letter-spacing:-.035em;margin:0 0 18px}.checkout-list{list-style:none;padding:0;margin:0;display:grid;gap:11px}.checkout-list li{position:relative;padding-left:24px;font-size:14px;line-height:1.5}.checkout-list li:before{content:'✓';position:absolute;left:0;font-weight:900}.file-stack{display:grid;gap:8px}.file-stack div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #e4e0d7;padding-bottom:8px;font-size:12px}.file-stack b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.checkout-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:30px 38px}.checkout-step{border:1px solid #d8d3c8;border-radius:18px;padding:18px;background:#fff}.checkout-step span{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#11110f;color:#fff;font-weight:900;font-size:11px}.checkout-step h3{font-size:16px;margin:14px 0 6px}.checkout-step p{font-size:13px;color:#686860;line-height:1.5;margin:0}.checkout-notice{margin:0 38px 30px;border:1px solid #d2bd8d;background:#fff9e9;border-radius:18px;padding:18px 20px;color:#594a29;font-size:13px;line-height:1.6}.checkout-notice strong{display:block;color:#302817;margin-bottom:3px}.checkout-actions{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:0 38px 38px}.checkout-back{color:#11110f;font-weight:800;text-decoration:none}.checkout-disabled{appearance:none;border:0;border-radius:999px;background:#11110f;color:#fff;min-height:50px;padding:0 21px;font-weight:900;cursor:pointer;transition:all .2s ease}.checkout-security{display:flex;gap:8px;flex-wrap:wrap;margin:18px 38px 30px}.checkout-security span{border:1px solid #d8d3c8;border-radius:999px;padding:8px 10px;font-size:11px;font-weight:800}.langs{display:flex;gap:7px;align-items:center}.langs button{border:0;background:transparent;font-weight:900;cursor:pointer}.langs button.active{text-decoration:underline}
 .checkout-compliance{margin:24px 38px 0;padding:16px 20px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:16px;font-size:13px;color:#334155;line-height:1.6}
@@ -70,10 +70,214 @@ html[data-theme="dark"] .checkout-disabled{background:#2563eb;color:#ffffff;box-
 html[data-theme="dark"] .checkout-disabled:hover:not([disabled]){background:#1d4ed8}
 @media(max-width:700px){.checkout{padding:14px 12px 40px}.checkout-top{padding-bottom:18px}.checkout-card{border-radius:22px}.checkout-hero{grid-template-columns:1fr;padding:26px 20px}.checkout-price{text-align:left}.checkout-price strong{font-size:58px}.checkout-domain{margin:20px 20px 0}.checkout-grid{grid-template-columns:1fr}.checkout-panel{padding:25px 20px}.checkout-flow{grid-template-columns:1fr;padding:24px 20px}.checkout-security{margin:10px 20px 22px}.checkout-notice{margin:0 20px 22px}.checkout-actions{padding:0 20px 24px;display:grid}.checkout-disabled{width:100%;order:-1}}
 </style><script src="/assets/js/theme.js?v=8"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+
+
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+.mac-doc-wrapper {
+  background: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+  color: #e5e5ea;
+}
+.mac-doc-wrapper h1, .mac-doc-wrapper h2, .mac-doc-wrapper h3 {
+  color: #ffffff;
+}
+.mac-doc-wrapper a {
+  color: #0a84ff;
+}
+.mac-doc-wrapper pre {
+  background: #0a0a0c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+</style>
+
 </head>
-<body>
-<main class="checkout"><div class="checkout-shell">
+<body class="mac-appstore-body dark">
+
+<!-- Mobile Sticky Topbar (Screen <= 1024px) -->
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+  <button type="button" class="mac-mobile-toggle-btn" id="macMobileToggleBtn" aria-label="Menüyü Aç">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</div>
+
+<div class="mac-appstore-layout">
+  <!-- Fixed Left Sidebar -->
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+      </a>
+      <span class="mac-sidebar-brand-chevron" aria-hidden="true">⌵</span>
+    </div>
+
+    <div class="mac-sidebar-search">
+      <span class="mac-sidebar-search-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="appleStoreSearch" placeholder="Ara..." aria-label="Spotlight Arama">
+    </div>
+
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item">
+        <span class="mac-nav-icon">⊞</span>
+        <span>Keşfet</span>
+      </a>
+      <a href="/site-tarama/" class="mac-nav-item">
+        <span class="mac-nav-icon">🔍</span>
+        <span>Site Tarama</span>
+      </a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item">
+        <span class="mac-nav-icon">🤖</span>
+        <span>AI Arama Görünürlüğü</span>
+      </a>
+      <a href="/llms-txt-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">📄</span>
+        <span>llms.txt Doğrulayıcı</span>
+      </a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item">
+        <span class="mac-nav-icon">🕷️</span>
+        <span>AI Bot Erişimi</span>
+      </a>
+      <a href="/schema-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🏷️</span>
+        <span>Schema Denetçisi</span>
+      </a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛡️</span>
+        <span>Güvenlik Başlıkları</span>
+      </a>
+      <a href="/ai-website-readiness/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>AI Readiness Testi</span>
+      </a>
+      <a href="/ai-mention-tracker/" class="mac-nav-item">
+        <span class="mac-nav-icon">📡</span>
+        <span>AI Bahsetme Takibi</span>
+      </a>
+      <a href="/indexnow/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>IndexNow İletimi</span>
+      </a>
+      <a href="/sozluk/" class="mac-nav-item">
+        <span class="mac-nav-icon">📖</span>
+        <span>AI Arama Sözlüğü</span>
+      </a>
+      <a href="/fiyatlandirma/" class="mac-nav-item">
+        <span class="mac-nav-icon">💳</span>
+        <span>Uygulama Paketi ($99)</span>
+      </a>
+    </nav>
+
+    <div class="mac-sidebar-footer">
+      <div class="mac-user-badge">
+        <div class="mac-avatar">H&amp;H</div>
+        <div class="mac-user-info">
+          <div class="mac-user-name">HTML&amp;HTML OS</div>
+          <div class="mac-user-tier">Pro Intelligence</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Scrollable Content Area -->
+  <main class="mac-main-content">
+    <div class="mac-content-inner">
+
+    <div class="mac-doc-wrapper">
+      <div class="checkout-shell">
  <div class="checkout-top"><a class="brand" href="/" aria-label="HTML&amp;HTML"><img class="brand-logo" src="/assets/logo.png?v=hh6" alt="HTML&amp;HTML" width="162" height="28"></a><div class="langs"><button type="button" data-lang="tr" class="active">TR</button><span>/</span><button type="button" data-lang="en">EN</button></div></div>
   <section class="checkout-card">
    <header class="checkout-hero"><div><div class="checkout-kicker" data-k="kicker">AI GÖRÜNÜRLÜK / DİJİTAL YAZILIM LİSANSI</div><h1 data-k="title">Teşhisten üretime hazır deterministik yazılım paketine.</h1><p data-k="lead">Ücretsiz taramada teşhis verilerini ve kanıtları incelediniz. Bu yazılım paketi, aynı alan adı için üretilen deterministik kod yamalarını, yapılandırma şablonlarını ve kabul testlerini içeren ZIP arşivini anında üretir.</p></div><div class="checkout-price"><strong>$99</strong><span data-k="priceNote">tek alan adı · dijital lisans</span></div></header>
@@ -91,25 +295,64 @@ html[data-theme="dark"] .checkout-disabled:hover:not([disabled]){background:#1d4
    <div class="checkout-notice"><strong data-k="noticeT">Güvenli ödeme sağlayıcısı henüz production'a bağlanmadı.</strong><span data-k="noticeC">Bu nedenle kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Ödemeler ve faturalandırma resmi Kayıtlı Satıcımız (Merchant of Record) Paddle.com tarafından yürütülecektir. ZIP üretim ve guest entitlement altyapısı hazırdır; ödeme webhook'u doğrulanmadan teslim yetkisi üretilemez.</span></div>
    <div class="checkout-actions"><a class="checkout-back" href="/" data-k="back">← Ücretsiz taramaya dön</a><button class="checkout-disabled" type="button" disabled data-k="buy">Güvenli ödeme entegrasyonu bekleniyor</button></div>
   </section>
- </div></main>
- <script>
- const T={tr:{kicker:'AI GÖRÜNÜRLÜK / DİJİTAL YAZILIM LİSANSI',title:'Teşhisten üretime hazır deterministik yazılım paketine.',lead:'Ücretsiz taramada teşhis verilerini ve kanıtları incelediniz. Bu yazılım paketi, aynı alan adı için üretilen deterministik kod yamalarını, yapılandırma şablonlarını ve kabul testlerini içeren ZIP arşivini anında üretir.',priceNote:'tek alan adı · dijital lisans',domainLabel:'HEDEF ALAN ADI',defaultDomain:'1 ALAN ADI',s1:'Üyelik gerekmez',s2:'50 sayfa sınırı',s3:'30 gün içinde 1 re-scan',compTitle:'%100 Otomatik Yazılım ve Dijital Ürünler (SaaS)',compBody:'Bu yazılım paketi deterministik kod yamaları, yapılandırma şablonları ve test dosyaları içeren anında indirilebilir bir dijital arşivdir (ZIP). Şirketimiz reklam, pazarlama, SEO danışmanlığı, insan danışmanlığı veya özel yazılım geliştirme hizmeti SUNMAZ. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.',what:'Paket neyi açar?',c1:'P0–P3 kök neden ve uygulama sırası',c2:'ROOT FIX · RECOVERY · PREVENTION',c3:'Acceptance + regression testleri',c4:'Rollback + durma koşulları',c5:'Codebase bağlamı varsa dosya/bileşen hedefleme',c6:'13 Intelligence Audit için uygulama adımları',delivery:'ZIP teslim paketi (30+ Dosyalık V3 Paket)',f0:'Kullanım kılavuzu',f1:'Yönetim özeti',f2:'Teknik uygulama planı',f3:'Makine okunabilir bulgular',f4:'Kabul ve regresyon',f7:'Uygulama kontrolü',p1:'Ödeme doğrulanır',p1c:'Guest checkout entitlement yalnız bu alan adı ve teslim paketi için yetki verir.',p2:'Site yeniden taranır',p2c:'Paket eski bir cache’den değil, ödeme sonrası aynı canonical motorlardan üretilir.',p3:'ZIP otomatik teslim edilir',p3c:'Hesap açmadan, kısa ömürlü alan-adı bağlı teslim yetkisiyle indirilebilir.',noticeT:'Güvenli ödeme sağlayıcısı henüz production’a bağlanmadı.',noticeC:'Bu nedenle kart verisi toplamıyoruz ve ücret tahsil etmiyoruz. Ödemeler ve faturalandırma resmi Kayıtlı Satıcımız (Merchant of Record) Paddle.com tarafından yürütülecektir. ZIP üretim ve guest entitlement altyapısı hazırdır; ödeme webhook’u doğrulanmadan teslim yetkisi üretilemez.',back:'← Ücretsiz taramaya dön',buy:'Güvenli ödeme entegrasyonu bekleniyor'},en:{kicker:'AI VISIBILITY / SOFTWARE LICENSE PACK',title:'From diagnosis to a production-ready deterministic software bundle.',lead:'You already reviewed the diagnostic data and evidence in the free scan. This software package compiles a ZIP archive containing deterministic code patches, configuration templates, and automated acceptance tests for your domain.',priceNote:'single domain · digital license',domainLabel:'TARGET DOMAIN',defaultDomain:'1 DOMAIN',s1:'No membership required',s2:'50-page boundary',s3:'1 re-scan within 30 days',compTitle:'100% Automated Software & Digital Goods (SaaS)',compBody:'This software bundle is an instantly downloadable digital archive (ZIP) containing deterministic code patches, configuration templates, and automated tests. We strictly DO NOT provide advertising, marketing campaigns, SEO consulting, human advisory, or bespoke IT/software development services. Payments and billing are processed by our authorized reseller and Merchant of Record Paddle.com.',what:'What does the package unlock?',c1:'P0–P3 root causes and implementation order',c2:'ROOT FIX · RECOVERY · PREVENTION',c3:'Acceptance + regression tests',c4:'Rollback + stop conditions',c5:'File/component targeting when codebase context exists',c6:'Implementation actions for 13 non-scoring Intelligence analyses',delivery:'ZIP delivery package (30+ Files · Engine V3)',f0:'Usage guide',f1:'Executive summary',f2:'Technical implementation blueprint',f3:'Machine-readable findings',f4:'Acceptance and regression',f7:'Implementation checklist',p1:'Payment is verified',p1c:'The guest checkout entitlement authorizes only this domain and delivery package.',p2:'The site is re-scanned',p2c:'The package is generated from the same canonical engines after payment, not from a stale cache.',p3:'ZIP is delivered automatically',p3c:'Download without creating an account, using a short-lived domain-bound delivery entitlement.',noticeT:'A secure payment provider is not connected to production yet.',noticeC:'We therefore collect no card data and make no charge. Payments and billing will be processed by our Merchant of Record Paddle.com. ZIP generation and guest-entitlement infrastructure are ready; no delivery entitlement can be issued until a payment webhook is verified.',back:'← Back to free scan',buy:'Secure payment integration pending'}};
- const q=new URLSearchParams(location.search);
- let domain=q.get('domain')||localStorage.getItem('hh-last-domain')||'';
- const dIn=document.getElementById('domainInput');
- const dBox=document.getElementById('domainBox');
- if(domain){
-   if(dIn)dIn.value=domain;
-   if(dBox)dBox.textContent=domain;
- }
- if(dIn){
-   dIn.addEventListener('input',()=>{
-     if(dBox)dBox.textContent=dIn.value.trim();
-   });
- }
- function apply(l){document.documentElement.lang=l;localStorage.setItem('hh-lang',l);document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.querySelectorAll('[data-k]').forEach(el=>{const v=T[l][el.dataset.k];if(v!=null)el.textContent=v});if(!dIn?.value&&!domain)if(dBox)dBox.textContent=T[l].defaultDomain;document.title=l==='tr'?'AI Görünürlük Yol Haritası — $99 | HTML&HTML':'AI Search Visibility Roadmap — $99 | HTML&HTML';window.dispatchEvent(new CustomEvent('hh-language-changed',{detail:{lang:l}}))}document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>apply(b.dataset.lang));let l=localStorage.getItem('hh-lang')||((navigator.language||'tr').toLowerCase().startsWith('tr')?'tr':'en');if(!T[l])l='en';apply(l);
- window.dispatchEvent(new CustomEvent('hh-plan-changed', { detail: { plan: 'pro', price: 99 } }));
- </script>
- <script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+ </div>
+    </div>
+    
+      <!-- Clean Apple Style Mac Footer -->
+      <footer class="mac-appstore-footer" style="margin-top: 3rem;">
+        <div class="mac-footer-inner">
+          <div class="mac-footer-brand-row">
+            <div class="mac-footer-brand">
+              <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="120" height="20">
+              <span class="mac-footer-brand-tag">AI Search Readiness OS</span>
+            </div>
+            <div class="mac-footer-langs">
+              <span class="mac-lang-active">TR</span>
+              <span class="mac-lang-sep">•</span>
+              <a href="/en/" class="mac-lang-link">EN</a>
+            </div>
+          </div>
+          <div class="mac-footer-cols">
+            <div class="mac-footer-col">
+              <h4>Analiz Motorları</h4>
+              <ul>
+                <li><a href="/site-tarama/">Site Tarama Motoru</a></li>
+                <li><a href="/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+                <li><a href="/ai-crawler-checker/">AI Bot İzin Kontrolü</a></li>
+                <li><a href="/schema-validator/">Schema.org JSON-LD</a></li>
+                <li><a href="/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+              </ul>
+            </div>
+            <div class="mac-footer-col">
+              <h4>Bilgi &amp; Metodoloji</h4>
+              <ul>
+                <li><a href="/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır?</a></li>
+                <li><a href="/sozluk/">AI Arama Sözlüğü</a></li>
+                <li><a href="/fiyatlandirma/">Uygulama Paketi ($99)</a></li>
+                <li><a href="/indexnow/">IndexNow Dağıtımı</a></li>
+                <li><a href="/llms.txt">llms.txt Özeti</a></li>
+              </ul>
+            </div>
+            <div class="mac-footer-col">
+              <h4>Kurumsal &amp; Yasal</h4>
+              <ul>
+                <li><a href="/hakkimizda/">Hakkımızda</a></li>
+                <li><a href="/iletisim/">İletişim &amp; Destek</a></li>
+                <li><a href="/gizlilik/">Gizlilik Politikası</a></li>
+                <li><a href="/kullanim-kosullari/">Kullanım Koşulları</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mac-footer-bottom">
+            <p>© 2026 HTML&amp;HTML Enterprise. Tüm hakları saklıdır. Hiçbir arama motoru veya LLM için sıralama/tavsiye garantisi verilmez.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script src="/assets/js/apple-store.js?v=20260926_105"></script>
+
 </body></html>
