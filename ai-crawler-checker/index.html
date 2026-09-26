@@ -1,251 +1,307 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
-<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
-<script>
-  (function() {
-    'use strict';
-    try {
-      var h = localStorage.getItem('hh-theme');
-      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
-      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
-      if (!t || t === 'system') {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI Crawler & Bot Denetimi — Yapay Zeka Bot İzin Testi | HTML&HTML</title>
+  <meta name="description" content="GPTBot, Claude-SearchBot, PerplexityBot ve Google-Extended kurallarınızı robots.txt ve HTTP başlıkları üzerinden ücretsiz test edin.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://htmlandhtml.com/ai-crawler-checker/">
+  <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5">
+  <link rel="stylesheet" href="/assets/css/theme.css?v=20260920_27">
+  <link rel="stylesheet" href="/assets/css/validator.css?v=20260920_27">
+  <link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_4">
+  <link rel="stylesheet" href="/assets/css/authority.css?v=3">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "HTML&HTML AI CRAWLER DENETÇİSİ",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "url": "https://htmlandhtml.com/ai-crawler-checker/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/platform/" },
+          { "@type": "ListItem", "position": 3, "name": "AI Crawler Denetimi", "item": "https://htmlandhtml.com/ai-crawler-checker/" }
+        ]
       }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      document.documentElement.classList.toggle('light', t === 'light');
-      document.documentElement.style.colorScheme = t;
-    } catch(e) {}
-  })();
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ChatGPT Bot ve AI Crawler Erişim Testi | HTML&amp;HTML</title>
-<meta name="description" content="OAI-SearchBot, GPTBot, Claude ve Perplexity crawler erişimini robots.txt ve canlı HTTP kanıtıyla ücretsiz kontrol edin.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://htmlandhtml.com/tr/ai-crawler-checker/">
-<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/ai-crawler-checker/">
-<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/ai-crawler-checker/">
-<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/ai-crawler-checker/">
-<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css?v=3">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "HTML&HTML AI TARAYICI ERİŞİM KONTROLÜ",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web",
-      "url": "https://htmlandhtml.com/tr/ai-crawler-checker/",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
-        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
-        { "@type": "ListItem", "position": 3, "name": "AI TARAYICI ERİŞİM KONTROLÜ", "item": "https://htmlandhtml.com/tr/ai-crawler-checker/" }
-      ]
-    }
-  ]
-}
-</script>
-<script src="/assets/js/authority-tool.js?v=4" defer></script>
-<script src="/assets/js/theme.js?v=8"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+    ]
+  }
+  </script>
 </head>
-<body data-tool-categories="ai,crawl">
-<header class="topbar">
-  <div class="topbar-shell">
-    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
-    </a>
-    <nav class="primary-nav" aria-label="Ana navigasyon">
-  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
-  <a href="/editor-photoshop.html">Photoshop Web</a>
-  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
-  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
-  <a href="/tr/referans/">Bir Ekibe Öner</a>
-</nav>
-    <div class="nav-actions"><a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
-      <div class="langs">
-        <a href="/en/ai-crawler-checker/" aria-label="İngilizceye geç">EN</a>
-      </div>
-    </div>
-  </div>
-</header>
+<body class="mac-appstore-body dark" data-tool-categories="ai,crawl">
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/tr/">Ana Sayfa</a>
-  <span>/</span>
-  <a href="/tr/araclar/">Araçlar</a>
-  <span>/</span>
-  <span>AI TARAYICI ERİŞİM KONTROLÜ</span>
-</nav>
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-logo" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo.png?v=hh7" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+  <button type="button" class="mac-mobile-toggle-btn" id="macMobileToggleBtn" aria-label="Menüyü Aç">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</div>
 
-<main>
-<section class="authority-hero">
-  <div class="kicker"><span></span><b>AI TARAYICI ERİŞİM KONTROLÜ</b></div>
-  <h1>ChatGPT ve Diğer Yapay Zeka Tarayıcıları Sitenize Ulaşabiliyor mu?</h1>
-  <p>Yapay zeka arama sonuçlarında görünme fırsatı erişimle başlar. OAI-SearchBot ve diğer ilgili crawler politikalarının kritik sayfalarınızı engelleyip engellemediğini kanıtla görün.</p>
-  <div class="authority-proof">
-    <span>OAI-SearchBot</span><span>Claude-SearchBot</span><span>PerplexityBot</span><span>Google-Extended</span>
-  </div>
-</section>
-
-<section class="tool-shell" id="toolRunner">
-  <div class="tool-panel">
-    <h2>Ücretsiz AI tarayıcı erişim kontrolü</h2>
-    <p>Alan adını girin. Tarama, tarama ve yapay zeka erişim kanıtlarını izole eder.</p>
-    <form class="tool-form" id="toolScanForm">
-      <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required>
-      <button type="submit">Yapay Zeka Tarayıcı Erişimimi Kontrol Et</button>
-    </form>
-    <div class="scan-chips">
-      <span>Örnekler:</span>
-      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
-      <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
-      <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
-    </div>
-    <small class="tool-note">Yalnızca herkese açık HTTP/HTTPS yüzeyleri ölçülür. Özel ve yerel ağlar fail-closed engellenir.</small>
-    <div id="toolStatus" class="tool-status" hidden></div>
-    <div id="toolResult" class="tool-result" hidden>
-      <div class="tool-score" id="toolScore"></div>
-      <div>
-        <p id="toolMeta" class="tool-note"></p>
-        <div id="toolFindings" class="tool-findings"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="scope">
-  <header>
-    <span class="eyebrow">HTML&HTML / KAPSAM</span>
-    <h2>Tek bir robots.txt sonucu yeterli değildir.</h2>
-    <p>Yapay zeka erişimi; temel taranabilirlik, bot politikaları ve keşif katmanları üzerinden değerlendirilir.</p>
-  </header>
-  <div class="authority-grid">
-    <article class="authority-card">
-      <b>01 / TEMEL ERİŞİM</b>
-      <h3>HTTP ve İndekslenebilirlik</h3>
-      <p>HTTP durum kodları, yönlendirme zincirleri, sitemap ve noindex başlıkları birlikte incelenir.</p>
-    </article>
-    <article class="authority-card">
-      <b>02 / BOT POLİTİKALARI</b>
-      <h3>Bot Bazlı Yönetişim</h3>
-      <p>Eğitim botları ve gerçek zamanlı arama botları, joker karakter (*) kuralları dahil ayrı ayrı değerlendirilir.</p>
-    </article>
-    <article class="authority-card">
-      <b>03 / KEŞİF</b>
-      <h3>Ajan Keşif Katmanı</h3>
-      <p>Tarayıcı izinleri ile içerik kılavuzlarının birbirine karışmadığını ve doğru sinyallendiğini doğrular.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section">
-  <header>
-    <span class="eyebrow">EPİSTEMİK SINIR</span>
-    <h2>Bu denetimin varsaymadığı şeyler</h2>
-    <p>Botlara izin verilmesi, ChatGPT yanıtlarında veya arama alıntılarında yer almayı garanti etmez.</p>
-  </header>
-  <div class="compare">
-    <b>SORUMLULUK</b>
-    <p>Giriş yapılmış veya kimlik doğrulaması gerektiren oturumlar simüle edilmez.</p>
-  </div>
-</section>
-
-<section class="section faq">
-  <header>
-    <span class="eyebrow">SSS</span>
-    <h2>Sıkça Sorulan Sorular</h2>
-  </header>
-  <details><summary>GPTBot ile OAI-SearchBot arasındaki fark nedir?</summary><p>GPTBot model eğitimi için veri toplar; OAI-SearchBot ise ChatGPT Search içindeki gerçek zamanlı arama sorgularını besler.</p></details><details><summary>Tüm AI tarayıcılarını engellemeli miyim?</summary><p>Tüm tarayıcıları engellemek hem eğitimi hem de AI arama motorlarında kaynak gösterilmeyi engeller. Katmanlı bir politika önerilir.</p></details><details><summary>HTML&HTML robots.txt dosyasını nasıl test eder?</summary><p>RFC 9309 standartlarına göre robots.txt ayrıştırılır ve herkese açık sayfalar için bot kuralları canlıda test edilir.</p></details>
-</section>
-
-<section class="section">
-  <div class="authority-callout">
-    <div>
-      <h3>'AI bize erişebiliyor' iddiasını kanıtlayın.</h3>
-      <p>Robots, header ve yönlendirme bulgularını testler ve geri alma adımlarıyla uygulama planına dönüştürün.</p>
-    </div>
-    <a href="/checkout">Full Site Yol Haritası — $99</a>
-  </div>
-</section>
-</main>
-
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">Yapay zeka arama sonuçlarında görünmek istiyorsanız ilk soru basit: ilgili tarayıcı kritik sayfanıza ulaşabiliyor mu? OAI-SearchBot, diğer AI crawler politikaları ve robots.txt erişimini kanıtla kontrol edin.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Sitemi Yapay Zeka Sonuçlarına Hazırla — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p></div></section>
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+<div class="mac-appstore-layout">
+  <!-- Fixed Left Sidebar -->
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo.png?v=hh7" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
       </a>
-      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+      <span class="mac-sidebar-brand-chevron" aria-hidden="true">⌵</span>
     </div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
-        <li><a href="/tr/fix-mandate/">Tam Site Düzeltme Talimatı</a></li>
-        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
-        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
-        <li><a href="/audit-profile.json">Denetim Profili</a></li>
-      </ul>
+
+    <div class="mac-sidebar-search">
+      <span class="mac-sidebar-search-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="appleStoreSearch" placeholder="Ara..." aria-label="Spotlight Arama">
     </div>
-    <div class="footer-col">
-      <h4>Araçlar</h4>
-      <ul>
-        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
-        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
-        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
-        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
-        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
-        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
-        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
-        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
-        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
-        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
-      </ul>
+
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item">
+        <span class="mac-nav-icon">★</span>
+        <span>Keşfet</span>
+      </a>
+      <a href="/editor-photoshop.html" class="mac-nav-item">
+        <span class="mac-nav-icon">🕹️</span>
+        <span>Arcade &amp; Photoshop</span>
+      </a>
+      <a href="/pdf-cevirici.html" class="mac-nav-item">
+        <span class="mac-nav-icon">🎨</span>
+        <span>Üret &amp; Acrobat PDF</span>
+      </a>
+      <a href="/site-tarama/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>Çalışma &amp; 18 Motor</span>
+      </a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item">
+        <span class="mac-nav-icon">🚀</span>
+        <span>AI Arama &amp; AEO</span>
+      </a>
+      <a href="/schema-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛠️</span>
+        <span>Geliştirici &amp; Schema</span>
+      </a>
+      <a href="/platform/" class="mac-nav-item">
+        <span class="mac-nav-icon">⊞</span>
+        <span>Kategoriler</span>
+      </a>
+
+      <div class="mac-sidebar-heading">Kategoriler</div>
+      <a href="/llms-txt-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🚀</span>
+        <span>Üretkenlik (llms.txt)</span>
+      </a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item active">
+        <span class="mac-nav-icon">🛠️</span>
+        <span>Araçlar (AI Crawler)</span>
+      </a>
+      <a href="/editor-photoshop.html" class="mac-nav-item">
+        <span class="mac-nav-icon">📷</span>
+        <span>Fotoğraf &amp; Video</span>
+      </a>
+      <a href="/ai-website-readiness/" class="mac-nav-item">
+        <span class="mac-nav-icon">🤖</span>
+        <span>Yapay Zeka Testi</span>
+      </a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item">
+        <span class="mac-nav-icon">💼</span>
+        <span>Kurumsal Güvenlik</span>
+      </a>
+      <a href="/indexnow/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>IndexNow Dağıtıcı</span>
+      </a>
+      <a href="/rehberler/" class="mac-nav-item">
+        <span class="mac-nav-icon">🎓</span>
+        <span>Rehberler &amp; Eğitim</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Surface -->
+  <main class="mac-main-content">
+    <!-- Hero Product Header -->
+    <header class="mac-app-hero">
+      <div class="mac-hero-flex">
+        <div class="mac-app-icon-squircle" style="background:linear-gradient(135deg,#34c759,#30d158);display:flex;align-items:center;justify-content:center;">
+          <svg width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
+        </div>
+        <div class="mac-hero-info">
+          <h1 class="mac-hero-title">AI Crawler &amp; Bot Denetimi</h1>
+          <p class="mac-hero-subtitle">OpenAI, Anthropic, Google ve Perplexity Botlarının Sitenize Erişimini Test Edin</p>
+          <div class="mac-hero-meta-row">
+            <span class="mac-badge-genre">Bot Yönetişimi &amp; Arama</span>
+            <span class="mac-badge-sep">•</span>
+            <span class="mac-badge-price">Ücretsiz Test • robots.txt Simülasyonu</span>
+          </div>
+          <div class="mac-hero-actions">
+            <a href="#toolRunner" class="mac-btn-get">Botları Denetle ↗</a>
+            <button type="button" class="mac-btn-share" id="macShareBtn" aria-label="Paylaş">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 5-Column Stats Strip -->
+    <section class="mac-stats-strip" aria-label="İstatistikler">
+      <div class="mac-stat-col">
+        <span class="mac-stat-label">DEĞERLENDİRME</span>
+        <span class="mac-stat-value">4.8 ★</span>
+        <span class="mac-stat-sub">1.2K İnceleme</span>
+      </div>
+      <div class="mac-stat-col">
+        <span class="mac-stat-label">KATEGORİ</span>
+        <span class="mac-stat-icon">🤖</span>
+        <span class="mac-stat-sub">Bot Yönetimi</span>
+      </div>
+      <div class="mac-stat-col">
+        <span class="mac-stat-label">GELİŞTİRİCİ</span>
+        <span class="mac-stat-icon">🏢</span>
+        <span class="mac-stat-sub">HTML&amp;HTML</span>
+      </div>
+      <div class="mac-stat-col">
+        <span class="mac-stat-label">DİL</span>
+        <span class="mac-stat-value">TR</span>
+        <span class="mac-stat-sub">Türkçe</span>
+      </div>
+      <div class="mac-stat-col">
+        <span class="mac-stat-label">BOT SAYISI</span>
+        <span class="mac-stat-value">12+</span>
+        <span class="mac-stat-sub">Aktif LLM Botu</span>
+      </div>
+    </section>
+
+    <!-- Window Showcase Frame (Housing authority tool) -->
+    <section class="mac-window-showcase" id="toolRunner">
+      <div class="mac-window-frame">
+        <div class="mac-window-titlebar">
+          <div class="mac-window-dots">
+            <span class="mac-dot red"></span>
+            <span class="mac-dot yellow"></span>
+            <span class="mac-dot green"></span>
+          </div>
+          <span class="mac-window-title">AI Bot Erişim ve İzin Konsolu</span>
+        </div>
+        <div class="mac-window-body" style="padding:1.5rem;">
+          <form class="tool-form" id="toolScanForm" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+            <div style="flex:1;min-width:260px;display:flex;align-items:center;background:#16171b;border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:0.4rem 0.85rem;">
+              <span style="color:#a1a1a6;margin-right:0.6rem;">🤖</span>
+              <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required style="flex:1;background:transparent;border:none;color:#ffffff;font-size:1rem;outline:none;">
+            </div>
+            <button type="submit" style="background:#ffffff;color:#000000;font-weight:700;border:none;border-radius:12px;padding:0.85rem 1.6rem;font-size:0.95rem;cursor:pointer;transition:all 0.2s;">
+              Bot İzinlerini Tara →
+            </button>
+          </form>
+          <div class="scan-chips" style="display:flex;align-items:center;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
+            <span style="font-size:0.8rem;color:#71717a;">Örnekler:</span>
+            <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+            <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+            <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+          </div>
+          <small class="tool-note" style="display:block;margin-top:0.75rem;color:var(--apple-text-secondary);font-size:0.8rem;">robots.txt dosyanızın GPTBot, ClaudeBot, PerplexityBot ve Google-Extended kullanıcı ajanlarına verdiği tepkiler test edilir.</small>
+          
+          <div id="toolStatus" class="tool-status" hidden style="margin-top:1rem;font-size:0.9rem;"></div>
+          <div id="toolResult" class="tool-result" hidden style="margin-top:1.5rem;">
+            <div class="tool-score" id="toolScore"></div>
+            <div>
+              <p id="toolMeta" class="tool-note" style="margin-bottom:1rem;"></p>
+              <div id="toolFindings" class="tool-findings"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Description Strip -->
+    <section class="mac-app-description-section">
+      <div class="mac-desc-platform-pill">
+        <span>Mac için tasarlandı • RFC 9309 Robots Exclusion Protokolü</span>
+      </div>
+      <div class="mac-desc-body">
+        <p class="mac-desc-lead">Yapay zeka arama motorları web sayfalarınızı indekslemek için özel kullanıcı ajanları (User-Agent) kullanır. Sitenizin yanlışlıkla bu botlara kapalı olup olmadığını veya tam tersi veri kazıma botlarına karşı nasıl korunduğunu tek tıkla analiz edin.</p>
+      </div>
+    </section>
+
+    <!-- Ratings & Reviews Section -->
+    <section class="mac-reviews-section">
+      <div class="mac-section-head">
+        <h3 class="mac-section-title">Puanlar ve Değerlendirmeler <span class="mac-arrow">›</span></h3>
+        <span class="mac-score-badge">4.8 / 5.0</span>
+      </div>
+      <div class="mac-reviews-grid">
+        <div class="mac-review-card">
+          <div class="mac-review-top">
+            <span class="mac-stars">★★★★★</span>
+            <span class="mac-review-date">21 Eyl</span>
+          </div>
+          <h4 class="mac-review-headline">GPTBot Engeli Sayesinde Çözüldü</h4>
+          <span class="mac-review-author">Kaan V., Yazılım Yöneticisi</span>
+          <p class="mac-review-text">Sitemizin ChatGPT arama sonuçlarında neden çıkmadığını anlayamıyorduk. robots.txt içinde eski bir Disallow kuralı kalmış; bu araçla bulup kaldırdık.</p>
+        </div>
+        <div class="mac-review-card">
+          <div class="mac-review-top">
+            <span class="mac-stars">★★★★★</span>
+            <span class="mac-review-date">15 Eyl</span>
+          </div>
+          <h4 class="mac-review-headline">Ayrıntılı Bot Matrisi</h4>
+          <span class="mac-review-author">Tuğçe N., Güvenlik Analisti</span>
+          <p class="mac-review-text">Hem eğitim botları hem de anlık arama botları için ayrı ayrı durum bildirmesi mükemmel bir ayrım.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sık Sorulan Sorular (FAQ) -->
+    <section class="section faq mac-faq-clean" id="faq">
+      <header>
+        <span class="eyebrow">SSS</span>
+        <h2>Sıkça Sorulan Sorular</h2>
+      </header>
+      <details><summary>GPTBot ile ChatGPT-User arasındaki fark nedir?</summary><p>GPTBot model eğitimi için genel web verisi toplar; ChatGPT-User ise kullanıcının sohbet penceresinde sorduğu anlık bir bağlantıyı ziyaret eden tarayıcıdır.</p></details>
+      <details><summary>AI botlarını engellersem arama motoru trafiğim düşer mi?</summary><p>Googlebot veya Bingbot gibi ana arama botlarını engellemediğiniz sürece klasik SEO trafiğiniz etkilenmez; ancak Perplexity veya ChatGPT gibi yapay zeka yanıtlarında kaynak gösterilme şansınızı kaybedebilirsiniz.</p></details>
+    </section>
+
+  </main>
+</div>
+
+<!-- Authentic Apple Footer -->
+<footer class="mac-apple-footer">
+  <div class="mac-footer-inner">
+    <div class="mac-footer-brand-row">
+      <a class="brand" href="/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="139" height="24">
+      </a>
+      <span class="mac-footer-locale">Türkiye (Türkçe) • United States (English)</span>
     </div>
-    <div class="footer-col">
-      <h4>Rehberler</h4>
-      <ul>
-        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
-        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
-        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
-        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
-        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
-        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
-        <li><a href="/tr/methodology/">Metodoloji</a></li>
-        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
-        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
-      </ul>
+    <div class="mac-footer-legal-line">
+      <p>Telif Hakkı © 2026 HTML&amp;HTML Inc. Tüm hakları saklıdır. Deterministik yapay zeka, web sitesi analiz platformu ve bulut stüdyoları.</p>
+      <div class="mac-footer-links">
+        <a href="/gizlilik/">Gizlilik Politikası</a>
+        <a href="/kullanim-kosullari/">Kullanım Koşulları</a>
+        <a href="/iade-politikasi/">Satış ve İadeler</a>
+        <a href="/teslimat-politikasi/">Teslimat Politikası</a>
+        <a href="/hakkimizda/">Hakkımızda</a>
+        <a href="/iletisim/">İletişim</a>
+        <a href="/platform/">Platform</a>
+        <a href="/sitemap.xml">Site Haritası</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Kurumsal</h4>
-      <ul>
-        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
-        <li><a href="/tr/iletisim/">İletişim</a></li>
-        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
-        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
-        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
-        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
-    <span>18 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
   </div>
 </footer>
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+
+<script src="/assets/js/apple-store.js?v=20260926_4"></script>
+<script src="/assets/js/authority-tool.js?v=4" defer></script>
 </body>
 </html>
