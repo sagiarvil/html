@@ -861,3 +861,842 @@ body, html {
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
+/* ==========================================================================
+   1:1 APPLE MAC APP STORE MASTER ARCHITECTURE (apps.apple.com/us/app/xcode)
+   Fixed Left Sidebar + Radiant Ambient Hero + 5-Col Stats + macOS Windows
+   Reviews + What's New + App Privacy + Featured In + 9-Item More Apps + Footer
+   ========================================================================== */
+
+:root {
+  --mac-sidebar-width: 250px;
+  --mac-blue: #0071e3;
+  --mac-blue-hover: #0077ed;
+  --mac-blue-light: #2997ff;
+  --mac-sidebar-bg: #141517;
+  --mac-card-bg: #141518;
+  --mac-card-border: rgba(255, 255, 255, 0.08);
+  --mac-text-muted: #86868b;
+  --mac-text-secondary: #a1a1a6;
+}
+
+.mac-appstore-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Fixed Left Sidebar */
+.mac-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--mac-sidebar-width);
+  background: var(--mac-sidebar-bg);
+  border-right: 1px solid var(--mac-card-border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0.85rem;
+  overflow-y: auto;
+  z-index: 900;
+  box-sizing: border-box;
+}
+
+.mac-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+  padding: 0 0.5rem;
+}
+
+.mac-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.mac-sidebar-brand img.brand-logo {
+  height: 24px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+.mac-sidebar-brand-chevron {
+  color: var(--mac-text-muted);
+  font-size: 0.8rem;
+}
+
+/* Sidebar Search */
+.mac-sidebar-search {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: 0 0.25rem;
+}
+
+.mac-sidebar-search input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #202124;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 7px 12px 7px 32px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.mac-sidebar-search input:focus {
+  background: #28292d;
+  border-color: var(--mac-blue-light);
+  box-shadow: 0 0 0 2px rgba(41, 151, 255, 0.2);
+}
+
+.mac-sidebar-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--mac-text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Sidebar Navigation Items */
+.mac-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mac-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 7px 12px;
+  border-radius: 8px;
+  color: #d1d1d6;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mac-nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.mac-nav-item.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mac-nav-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mac-blue-light);
+  flex-shrink: 0;
+}
+
+.mac-sidebar-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mac-text-muted);
+  padding: 1.25rem 0.75rem 0.5rem;
+}
+
+/* Main Content Surface */
+.mac-main-content {
+  margin-left: var(--mac-sidebar-width);
+  flex: 1;
+  min-width: 0;
+  background: #000000;
+  box-sizing: border-box;
+}
+
+.mac-main-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+/* Mobile Sticky Topbar (Screen <= 1024px) */
+.mac-mobile-topbar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 56px;
+  background: rgba(20, 21, 23, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--mac-card-border);
+  padding: 0 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mac-mobile-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.mac-mobile-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero Product Header (Radiant Ambient Glow) */
+.mac-app-hero {
+  position: relative;
+  background: radial-gradient(120% 90% at 50% -15%, #004fb0 0%, #001a40 45%, #000000 85%);
+  padding: 3.5rem 2.5rem 2.75rem;
+  border-radius: 0 0 28px 28px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--mac-card-border);
+}
+
+.mac-hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.mac-app-icon-squircle {
+  width: 136px;
+  height: 136px;
+  border-radius: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #1f2024, #0d0e11);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.mac-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mac-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.mac-hero-category {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--mac-blue-light);
+  margin: 0;
+}
+
+.mac-hero-pricing {
+  font-size: 0.9rem;
+  color: var(--mac-text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.mac-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.mac-btn-get {
+  background: var(--mac-blue);
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.65rem 1.6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s ease;
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.4);
+}
+
+.mac-btn-get:hover {
+  background: var(--mac-blue-hover);
+}
+
+.mac-btn-share {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mac-btn-share:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* 5-Column Stats Strip */
+.mac-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid var(--mac-card-border);
+  border-bottom: 1px solid var(--mac-card-border);
+  padding: 1.25rem 0;
+  margin-bottom: 2.75rem;
+}
+
+.mac-stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0.75rem;
+  position: relative;
+}
+
+.mac-stat-col:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--mac-card-border);
+}
+
+.mac-stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mac-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.mac-stat-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.mac-stat-sub {
+  font-size: 0.78rem;
+  color: var(--mac-text-secondary);
+  margin-top: 0.2rem;
+}
+
+/* macOS Window Showcase Gallery */
+.mac-window-showcase {
+  margin-bottom: 3.5rem;
+}
+
+.mac-windows-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.mac-window-frame {
+  background: #141518;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mac-window-titlebar {
+  background: #1c1d22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.mac-window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mac-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.mac-dot.red { background: #ff5f56; }
+.mac-dot.yellow { background: #ffbd2e; }
+.mac-dot.green { background: #27c93f; }
+
+.mac-window-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a1a1a6;
+  flex: 1;
+  text-align: center;
+  margin-right: 35px;
+}
+
+.mac-window-body {
+  padding: 1.5rem;
+}
+
+.mac-platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mac-text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.mac-app-desc-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #d1d1d6;
+  margin: 0;
+}
+
+/* Sections Headings */
+.mac-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.mac-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mac-section-chevron {
+  color: var(--mac-text-muted);
+  font-size: 1.1rem;
+}
+
+/* Ratings & Reviews */
+.mac-reviews-section {
+  border-top: 1px solid var(--mac-card-border);
+  padding-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.mac-reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.mac-review-card {
+  background: var(--mac-card-bg);
+  border: 1px solid var(--mac-card-border);
+  border-radius: 16px;
+  padding: 1.35rem 1.5rem;
+}
+
+.mac-review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+}
+
+.mac-review-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.mac-review-meta {
+  font-size: 0.78rem;
+  color: var(--mac-text-muted);
+  text-align: right;
+}
+
+.mac-review-stars {
+  color: #ff9f0a;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.mac-review-body {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #a1a1a6;
+  margin: 0;
+}
+
+/* What's New */
+.mac-whatsnew-section {
+  border-top: 1px solid var(--mac-card-border);
+  padding-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.mac-whatsnew-version {
+  font-size: 0.85rem;
+  color: var(--mac-text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.mac-whatsnew-body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #d1d1d6;
+  max-width: 860px;
+}
+
+/* App Privacy */
+.mac-privacy-section {
+  border-top: 1px solid var(--mac-card-border);
+  padding-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.mac-privacy-card {
+  background: var(--mac-card-bg);
+  border: 1px solid var(--mac-card-border);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 520px;
+  margin-top: 1.25rem;
+}
+
+.mac-privacy-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(0, 113, 227, 0.15);
+  border: 1px solid rgba(0, 113, 227, 0.3);
+  color: var(--mac-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.mac-privacy-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+}
+
+.mac-privacy-sub {
+  font-size: 0.85rem;
+  color: var(--mac-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.mac-privacy-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.mac-privacy-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Featured In */
+.mac-featured-section {
+  border-top: 1px solid var(--mac-card-border);
+  padding-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.mac-featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mac-featured-card {
+  background: var(--mac-card-bg);
+  border: 1px solid var(--mac-card-border);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mac-featured-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: #191a1e;
+}
+
+.mac-featured-img-wrap {
+  height: 200px;
+  background: linear-gradient(135deg, #1b2838, #0e1217);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mac-featured-details {
+  padding: 1.35rem 1.5rem 1.6rem;
+}
+
+.mac-featured-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mac-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.mac-featured-headline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.mac-featured-subline {
+  font-size: 0.85rem;
+  color: var(--mac-text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* More by HTML&HTML (3x3 Grid) */
+.mac-more-apps-section {
+  border-top: 1px solid var(--mac-card-border);
+  padding-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.mac-apps-grid-3x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.mac-app-card-item {
+  background: var(--mac-card-bg);
+  border: 1px solid var(--mac-card-border);
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.mac-app-card-item:hover {
+  background: #1a1b20;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mac-app-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.mac-app-item-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #222327, #101114);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.mac-app-item-meta {
+  min-width: 0;
+}
+
+.mac-app-item-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mac-app-item-category {
+  font-size: 0.78rem;
+  color: var(--mac-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.mac-app-item-btn {
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--mac-blue-light) !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Authentic Apple Bottom Footer */
+.mac-apple-footer {
+  border-top: 1px solid var(--mac-card-border);
+  padding: 2.5rem 0 2rem;
+  color: var(--mac-text-muted);
+  font-size: 0.82rem;
+}
+
+.mac-footer-countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mac-footer-country-link {
+  color: var(--mac-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.mac-footer-country-link:hover {
+  color: #ffffff;
+}
+
+.mac-footer-bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mac-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.mac-footer-link {
+  color: var(--mac-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.mac-footer-link:hover {
+  color: #ffffff;
+}
+
+/* Responsive Adaptations */
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mac-sidebar.open {
+    transform: translateX(0);
+  }
+  .mac-mobile-topbar {
+    display: flex;
+  }
+  .mac-main-content {
+    margin-left: 0;
+  }
+  .mac-windows-grid,
+  .mac-featured-grid,
+  .mac-reviews-grid,
+  .mac-apps-grid-3x3 {
+    grid-template-columns: 1fr;
+  }
+  .mac-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .mac-stat-col:not(:last-child)::after {
+    display: none;
+  }
+}
+
+

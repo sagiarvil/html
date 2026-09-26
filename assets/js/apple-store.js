@@ -8,15 +8,15 @@
   document.addEventListener('DOMContentLoaded', function() {
     // 1. Spotlight Canlı Arama
     const searchInput = document.getElementById('appleStoreSearch');
-    const appCards = document.querySelectorAll('.apple-app-row-card, .apple-hero-card');
+    const appCards = document.querySelectorAll('.apple-app-row-card, .apple-hero-card, .mac-app-card-item, .mac-featured-card');
 
     if (searchInput) {
       searchInput.addEventListener('input', function(e) {
         const query = (e.target.value || '').toLowerCase().trim();
         appCards.forEach(function(card) {
-          const title = (card.getAttribute('data-app-title') || card.textContent || '').toLowerCase();
-          const category = (card.getAttribute('data-app-category') || '').toLowerCase();
-          const desc = (card.getAttribute('data-app-desc') || '').toLowerCase();
+          const title = (card.getAttribute('data-app-title') || card.querySelector('h3, h4, .mac-app-item-title, .mac-featured-headline')?.textContent || '').toLowerCase();
+          const category = (card.getAttribute('data-app-category') || card.querySelector('.mac-app-item-category, .mac-featured-kicker')?.textContent || '').toLowerCase();
+          const desc = (card.getAttribute('data-app-desc') || card.textContent || '').toLowerCase();
 
           if (!query || title.includes(query) || category.includes(query) || desc.includes(query)) {
             card.style.display = '';
@@ -24,6 +24,34 @@
             card.style.display = 'none';
           }
         });
+      });
+    }
+
+    // 2. Mobile Sidebar Drawer Toggle
+    const mobileToggleBtn = document.getElementById('macMobileToggleBtn');
+    const sidebar = document.getElementById('macSidebar');
+    if (mobileToggleBtn && sidebar) {
+      mobileToggleBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        sidebar.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function(e) {
+        if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && e.target !== mobileToggleBtn) {
+          sidebar.classList.remove('open');
+        }
+      });
+    }
+
+    // 3. Expandable Description Toggle
+    const descMoreBtn = document.getElementById('macDescMoreBtn');
+    const descMoreContent = document.getElementById('macDescMoreContent');
+    if (descMoreBtn && descMoreContent) {
+      descMoreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isHidden = descMoreContent.style.display === 'none';
+        descMoreContent.style.display = isHidden ? 'inline' : 'none';
+        descMoreBtn.textContent = isHidden ? ' daha az' : ' ...daha fazla';
       });
     }
 

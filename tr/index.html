@@ -123,159 +123,173 @@
 </head>
 <body>
 <a class="skip" href="#scanner" data-i18n="skip">İçeriğe geç</a>
-<header class="apple-store-header">
-  <div class="apple-header-inner">
-    <a class="apple-store-brand brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="162" height="28">
-    </a>
 
-    <nav class="apple-store-nav" aria-label="Kategori Sekmeleri">
-      <button type="button" class="apple-nav-tab active" data-category="all">Tüm Araçlar</button>
-      <button type="button" class="apple-nav-tab" data-category="creative">Yaratıcı &amp; Belge</button>
-      <button type="button" class="apple-nav-tab" data-category="ai">Yapay Zeka &amp; AEO</button>
-      <button type="button" class="apple-nav-tab" data-category="developer">Geliştirici &amp; Test</button>
-    </nav>
-
-    <div class="apple-store-search">
-      <span class="apple-search-icon" aria-hidden="true">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      </span>
-      <input type="text" id="appleStoreSearch" class="apple-search-input" placeholder="Uygulama, araç veya editör ara..." aria-label="Spotlight Arama">
-    </div>
-
-    <div style="display:flex;align-items:center;gap:0.75rem;">
-      <a href="#scanner" class="apple-btn-open-solid" style="font-size:0.78rem;">Hızlı Tara</a>
-      <button type="button" class="hh-mobile-menu-btn" id="hhMobileMenuBtn" aria-label="Menüyü Aç">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- Mobil Drawer Navigasyon -->
-<div id="hhCyberDrawer" class="hh-cyber-drawer" aria-hidden="true">
-  <div class="hh-drawer-head">
-    <a class="apple-store-brand brand" href="/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="139" height="24">
-    </a>
-    <button type="button" class="hh-drawer-close" id="hhDrawerClose" aria-label="Menüyü Kapat">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-    </button>
-  </div>
-  <div class="hh-drawer-links">
-    <a href="/editor-photoshop.html" class="hh-drawer-link highlight">
-      <span>🎨 Web Photoshop Studio</span>
-      <span class="link-tag" style="background:#0071e3;color:#fff;">AÇ</span>
-    </a>
-    <a href="/pdf-cevirici.html" class="hh-drawer-link highlight">
-      <span>📑 Acrobat Pro DC PDF Studio</span>
-      <span class="link-tag" style="background:#d90429;color:#fff;">AÇ</span>
-    </a>
-    <a href="#scanner" class="hh-drawer-link">
-      <span>⚡ 18-Motorlu Canlı Tarayıcı</span>
-      <span class="link-tag">Test Et</span>
-    </a>
-    <a href="/site-tarama/" class="hh-drawer-link">
-      <span>🔍 Web Sitesi Tarama &amp; Teşhis</span>
-    </a>
-    <a href="/yapay-zeka-arama-gorunurlugu/" class="hh-drawer-link">
-      <span>🌐 Yapay Zeka AEO &amp; GEO Görünürlüğü</span>
-    </a>
-    <a href="/llms-txt-validator/" class="hh-drawer-link">
-      <span>📑 llms.txt Test &amp; Doğrulama</span>
-    </a>
-    <a href="/ai-crawler-checker/" class="hh-drawer-link">
-      <span>🤖 AI Crawler &amp; Bot Denetimi</span>
-    </a>
-    <a href="/sozluk/" class="hh-drawer-link">
-      <span>📖 AI &amp; SEO Sözlüğü</span>
-    </a>
-    <a href="/fiyatlandirma/" class="hh-drawer-link">
-      <span>💎 Çözüm Paketi</span>
-    </a>
-  </div>
+<!-- Mobile Sticky Topbar (Screen <= 1024px) -->
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo.png?v=hh7" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+  <button type="button" class="mac-mobile-toggle-btn" id="macMobileToggleBtn" aria-label="Menüyü Aç">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
 </div>
 
-<main class="apple-store-container">
-
-<!-- 00 FEATURED HERO CARDS -->
-<section class="apple-featured-section">
-  <div class="apple-section-header">
-    <div>
-      <span class="apple-section-kicker">GÜNÜN ÖNE ÇIKANLARI</span>
-      <h1 class="apple-section-title">Uygulamalar ve Araçlar</h1>
+<div class="mac-appstore-layout">
+  <!-- Fixed Left Sidebar (Image 1, 2, 3, 4) -->
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo.png?v=hh7" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+      </a>
+      <span class="mac-sidebar-brand-chevron" aria-hidden="true">⌵</span>
     </div>
-    <span style="font-size:0.875rem;color:var(--apple-text-secondary);font-weight:600;">HTML&amp;HTML Suite v6.9</span>
+
+    <div class="mac-sidebar-search">
+      <span class="mac-sidebar-search-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="appleStoreSearch" placeholder="Ara..." aria-label="Spotlight Arama">
+    </div>
+
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item active">
+        <span class="mac-nav-icon">★</span>
+        <span>Keşfet</span>
+      </a>
+      <a href="/editor-photoshop.html" class="mac-nav-item">
+        <span class="mac-nav-icon">🕹️</span>
+        <span>Arcade &amp; Photoshop</span>
+      </a>
+      <a href="/pdf-cevirici.html" class="mac-nav-item">
+        <span class="mac-nav-icon">🎨</span>
+        <span>Üret &amp; Acrobat PDF</span>
+      </a>
+      <a href="#scanner" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>Çalışma &amp; 18 Motor</span>
+      </a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item">
+        <span class="mac-nav-icon">🚀</span>
+        <span>AI Arama &amp; AEO</span>
+      </a>
+      <a href="/schema-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛠️</span>
+        <span>Geliştirici &amp; Schema</span>
+      </a>
+      <a href="#more-tools" class="mac-nav-item">
+        <span class="mac-nav-icon">⊞</span>
+        <span>Kategoriler</span>
+      </a>
+
+      <div class="mac-sidebar-heading">Kategoriler</div>
+      <a href="/llms-txt-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🚀</span>
+        <span>Üretkenlik (llms.txt)</span>
+      </a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛠️</span>
+        <span>Araçlar (AI Crawler)</span>
+      </a>
+      <a href="/editor-photoshop.html" class="mac-nav-item">
+        <span class="mac-nav-icon">📷</span>
+        <span>Fotoğraf &amp; Video</span>
+      </a>
+      <a href="/ai-website-readiness/" class="mac-nav-item">
+        <span class="mac-nav-icon">🤖</span>
+        <span>Yapay Zeka Testi</span>
+      </a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item">
+        <span class="mac-nav-icon">💼</span>
+        <span>Kurumsal Güvenlik</span>
+      </a>
+      <a href="/rehberler/" class="mac-nav-item">
+        <span class="mac-nav-icon">🎓</span>
+        <span>Rehberler &amp; Eğitim</span>
+      </a>
+      <a href="/.well-known/agent-card.json" class="mac-nav-item">
+        <span class="mac-nav-icon">🌐</span>
+        <span>WebMCP Ajan Kartı</span>
+      </a>
+      <a href="/ai-mention-tracker/" class="mac-nav-item">
+        <span class="mac-nav-icon">👥</span>
+        <span>Marka Atıf Takibi</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Surface -->
+  <main class="mac-main-content">
+    <!-- Hero Product Header (Radiant Ambient Glow - Image 4) -->
+    <header class="mac-app-hero">
+      <div class="mac-hero-flex">
+        <div class="mac-app-icon-squircle">
+          <svg width="74" height="74" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+        </div>
+        <div class="mac-hero-info">
+          <h1 class="mac-hero-title">HTML&amp;HTML Suite</h1>
+          <p class="mac-hero-category">Geliştirici &amp; Yapay Zeka Teşhis Araçları</p>
+          <div class="mac-hero-pricing">Web &amp; Masaüstü için • Ücretsiz</div>
+          <div class="mac-hero-actions">
+            <a href="#scanner" class="mac-btn-get">Hemen Tara / Test Et ↗</a>
+            <button type="button" class="mac-btn-share" aria-label="Paylaş" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mac-main-inner">
+
+<!-- 5-Column Stats Strip (Image 4) -->
+<section class="mac-stats-strip" aria-label="Uygulama İstatistikleri">
+  <div class="mac-stat-col">
+    <span class="mac-stat-label">YAŞ DERECESİ</span>
+    <span class="mac-stat-value">4+</span>
+    <span class="mac-stat-sub">Yaşında</span>
   </div>
-
-  <div class="apple-featured-grid">
-    <!-- Card 1: Photoshop Web -->
-    <a href="/editor-photoshop.html" class="apple-hero-card apple-card-photoshop" data-app-title="Web Photoshop Pro Studio" data-app-category="creative" data-app-desc="Katmanlar, fırçalar, klonlama damgası, metin & şekiller, filtreler, PSD desteği ve kayıpsız görsel düzenleme.">
-      <div class="apple-hero-card-banner">
-        <span class="apple-hero-tag">GÜNÜN AMİRAL GEMİSİ</span>
-        <h2 class="apple-hero-title">Web Photoshop Pro Studio</h2>
-        <p class="apple-hero-subtitle">Tarayıcınızda %100 yerel ve tam donanımlı profesyonel fotoğraf düzenleyici. Katmanlar, fırçalar, klonlama damgası ve PSD desteği.</p>
-      </div>
-      <div class="apple-hero-card-footer">
-        <div class="apple-hero-app-info">
-          <div class="apple-app-icon-squircle">
-            <span style="font-weight:900;font-size:1.3rem;">Ps</span>
-          </div>
-          <div class="apple-app-name-block">
-            <h4>Photoshop Web Studio</h4>
-            <span>Grafik &amp; Tasarım • v4.2</span>
-          </div>
-        </div>
-        <span class="apple-btn-open">AÇ</span>
-      </div>
-    </a>
-
-    <!-- Card 2: Acrobat Pro DC PDF -->
-    <a href="/pdf-cevirici.html" class="apple-hero-card apple-card-acrobat" data-app-title="Acrobat Pro DC PDF Web Studio" data-app-category="creative" data-app-desc="Vektörel metin düzenleme, akıllı font tanıma, ıslak imza & kurumsal kaşe, kalıcı sansür ve Excel/PDF'den LLM Markdown dönüştürücü.">
-      <div class="apple-hero-card-banner">
-        <span class="apple-hero-tag">EDİTÖRÜN SEÇİMİ</span>
-        <h2 class="apple-hero-title">Acrobat Pro DC PDF Studio</h2>
-        <p class="apple-hero-subtitle">Masaüstü kalitesinde PDF düzenleme. Orijinal fontu tespit eden akıllı metin editörü, e-imza, kaşe, kalıcı sansür ve Excel/PDF'den Markdown dönüştürücü.</p>
-      </div>
-      <div class="apple-hero-card-footer">
-        <div class="apple-hero-app-info">
-          <div class="apple-app-icon-squircle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-          </div>
-          <div class="apple-app-name-block">
-            <h4>PDF &amp; Acrobat Studio</h4>
-            <span>Üretkenlik &amp; Belge • v3.8</span>
-          </div>
-        </div>
-        <span class="apple-btn-open">AÇ</span>
-      </div>
-    </a>
-
-    <!-- Card 3: 18-Engine Radar -->
-    <a href="#scanner" class="apple-hero-card apple-card-radar" data-app-title="18-Motorlu AI ve SEO Teşhis Radarı" data-app-category="ai" data-app-desc="Google AI Overviews, Perplexity, llms.txt v2, JSON-LD varlıkları ve 18 analiz motoruyla derin teşhis.">
-      <div class="apple-hero-card-banner">
-        <span class="apple-hero-tag">YAPAY ZEKA ALTYAPISI</span>
-        <h2 class="apple-hero-title">18-Motorlu AI &amp; SEO Radar</h2>
-        <p class="apple-hero-subtitle">Sitenizin ChatGPT, Perplexity ve Google AI aramalarında neden önerilmediğini saniyeler içinde kanıtlayan deterministik teşhis motoru.</p>
-      </div>
-      <div class="apple-hero-card-footer">
-        <div class="apple-hero-app-info">
-          <div class="apple-app-icon-squircle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="3" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="21"></line><line x1="3" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="21" y2="12"></line></svg>
-          </div>
-          <div class="apple-app-name-block">
-            <h4>Enterprise AI Radar</h4>
-            <span>Geliştirici &amp; Teşhis • v5.0</span>
-          </div>
-        </div>
-        <span class="apple-btn-open">BAŞLAT</span>
-      </div>
-    </a>
+  <div class="mac-stat-col">
+    <span class="mac-stat-label">KATEGORİ</span>
+    <span class="mac-stat-value">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+    </span>
+    <span class="mac-stat-sub">Geliştirici Araçları</span>
+  </div>
+  <div class="mac-stat-col">
+    <span class="mac-stat-label">GELİŞTİRİCİ</span>
+    <span class="mac-stat-value">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </span>
+    <span class="mac-stat-sub">HTML&amp;HTML</span>
+  </div>
+  <div class="mac-stat-col">
+    <span class="mac-stat-label">DİL</span>
+    <span class="mac-stat-value">TR</span>
+    <span class="mac-stat-sub">Türkçe</span>
+  </div>
+  <div class="mac-stat-col">
+    <span class="mac-stat-label">BOYUT</span>
+    <span class="mac-stat-value">14 KB</span>
+    <span class="mac-stat-sub">Sub-40ms TTFB</span>
   </div>
 </section>
 
-<!-- SPOTLIGHT URL SCANNER STATION (APPLE HIG COMMAND BAR) -->
-<section class="apple-quick-scanner-strip" id="scanner" style="margin:2rem 0 2.5rem;padding:2rem;background:#0d0e11;border:1px solid rgba(255,255,255,0.12);border-radius:24px;box-shadow:0 12px 36px rgba(0,0,0,0.85);">
+<!-- macOS Windows Showcase Gallery (Image 3 & 4) -->
+<section class="mac-window-showcase">
+  <div class="mac-windows-grid">
+    <!-- Window 1: Interactive Scanner Station -->
+    <div class="mac-window-frame" id="scannerWindow">
+      <div class="mac-window-titlebar">
+        <div class="mac-window-dots">
+          <span class="mac-dot red"></span>
+          <span class="mac-dot yellow"></span>
+          <span class="mac-dot green"></span>
+        </div>
+        <span class="mac-window-title">HTML&amp;HTML — 18-Motorlu Canlı Teşhis İstasyonu</span>
+      </div>
+      <div class="mac-window-body" id="scanner">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem;">
     <div>
       <span class="apple-section-kicker" style="color:#ffffff;display:flex;align-items:center;gap:6px;">
@@ -321,7 +335,7 @@
     </div>
   </form>
   <div id="scanStatus" class="status" hidden style="margin-top:1rem;"></div>
-</section>
+</div>
 
 <!-- RESULTS (CANLI TARAMA RAPORU) -->
 <section id="result" class="results" hidden style="margin-bottom:3rem;">
@@ -388,366 +402,319 @@
     </aside>
   </div>
 </section>
+      </div> <!-- /.mac-window-body -->
+    </div> <!-- /#scannerWindow -->
 
-<!-- SHELF 1: YARATICI & BELGE MÜHENDİSLİĞİ -->
-<section class="apple-shelf-section" data-shelf-category="creative">
-  <div class="apple-section-header">
-    <div>
-      <span class="apple-section-kicker">STÜDYO VE ÜRETKENLİK</span>
-      <h3 class="apple-section-title">Yaratıcı &amp; Belge Araçları</h3>
+    <!-- Window 2: Web Photoshop Pro & Acrobat Pro Studio Showcase (Image 4 right window) -->
+    <div class="mac-window-frame" id="studioWindow">
+      <div class="mac-window-titlebar">
+        <div class="mac-window-dots">
+          <span class="mac-dot red"></span>
+          <span class="mac-dot yellow"></span>
+          <span class="mac-dot green"></span>
+        </div>
+        <span class="mac-window-title">HTML&amp;HTML Studio — Web Photoshop &amp; Acrobat DC</span>
+      </div>
+      <div class="mac-window-body mac-studio-preview">
+        <div class="mac-studio-hero-preview">
+          <div class="mac-studio-card-half">
+            <div class="mac-studio-badge">GRAFİK &amp; TASARIM</div>
+            <h4>Web Photoshop Pro</h4>
+            <p>PSD katmanları, fırça, klonlama ve vektörel maske motoru doğrudan tarayıcınızda.</p>
+            <a href="/editor-photoshop.html" class="mac-btn-studio-open">Stüdyoyu Başlat →</a>
+          </div>
+          <div class="mac-studio-card-half pdf">
+            <div class="mac-studio-badge">BELGE &amp; DÜZENLEME</div>
+            <h4>Acrobat Pro DC Studio</h4>
+            <p>Akıllı font eşleştirme, vektörel metin düzeltme, ıslak imza, kaşe ve kalıcı sansür.</p>
+            <a href="/pdf-cevirici.html" class="mac-btn-studio-open">PDF Editörünü Aç →</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <a href="/pdf-cevirici.html" class="apple-section-all">Tümünü Gör →</a>
-  </div>
+  </div> <!-- /.mac-windows-grid -->
+</section> <!-- /.mac-window-showcase -->
 
-  <div class="apple-shelf-grid">
+<!-- Mac App Platform & Description Strip (Image 3) -->
+<section class="mac-app-description-section">
+  <div class="mac-desc-platform-pill">
+    <span>Mac için tasarlandı • iPad ve Web ile tam uyumlu</span>
+  </div>
+  <div class="mac-desc-body">
+    <p class="mac-desc-lead">HTML&amp;HTML Suite; web sitenizi W3C ve RFC internet standartlarında 18 bağımsız motorla denetleyen, derinlemesine yapay zeka (AEO &amp; GEO) analizleri sunan ve web tabanlı Photoshop ile Acrobat Pro DC stüdyolarını tek bir kurumsal çatıda birleştiren profesyonel işletim sistemidir.</p>
+    <div class="mac-desc-more-content" id="macDescMoreContent" style="display:none;">
+      <p>• <strong>18 Bağımsız Motor:</strong> HTTP/2 &amp; HTTP/3, TLS 1.3, Güvenlik Başlıkları (CSP, HSTS), Schema.org JSON-LD ve ColBERT Late-Interaction AST analizi.</p>
+      <p>• <strong>Yapay Zeka Hazırlığı:</strong> llms.txt v2, WebMCP otonom ajan kartı (agent-card.json) ve AI bot izin matrisi yönetişimi.</p>
+      <p>• <strong>Üretkenlik &amp; Yaratıcılık:</strong> Sıfır kurulumla çalışan tarayıcı içi Photoshop PSD düzenleyici ve Acrobat PDF mühendislik laboratuvarı.</p>
+    </div>
+    <button type="button" class="mac-desc-toggle-btn" id="macDescMoreBtn">Daha Fazla</button>
+  </div>
+</section>
+
+<!-- Ratings & Reviews Section (Image 1 & 3) -->
+<section class="mac-reviews-section">
+  <div class="mac-section-head">
+    <h3 class="mac-section-title">Puanlar ve Değerlendirmeler <span class="mac-arrow">›</span></h3>
+    <span class="mac-score-badge">4.9 / 5.0</span>
+  </div>
+  <div class="mac-reviews-grid">
+    <div class="mac-review-card">
+      <div class="mac-review-top">
+        <span class="mac-stars">★★★★★</span>
+        <span class="mac-review-date">24 Eyl</span>
+      </div>
+      <h4 class="mac-review-headline">Yapay Zeka ve AEO Çağında Devrim</h4>
+      <span class="mac-review-author">Ahmet K., Baş Sistem Mimarı</span>
+      <p class="mac-review-text">18 motorlu tarayıcı ile LLM botlarının sitemizi nasıl okuduğunu anında gördük. Web Photoshop entegrasyonu ise tam bir başyapıt; tarayıcıdan çıkmadan PSD düzenleyip dışa aktarabiliyoruz.</p>
+    </div>
+    <div class="mac-review-card">
+      <div class="mac-review-top">
+        <span class="mac-stars">★★★★★</span>
+        <span class="mac-review-date">19 Eyl</span>
+      </div>
+      <h4 class="mac-review-headline">Acrobat DC ve PDF Mühendisliği Kusursuz</h4>
+      <span class="mac-review-author">Zeynep D., Dijital Ürün Direktörü</span>
+      <p class="mac-review-text">Tarayıcıda akıllı font eşleştirme ve vektörel metin düzeltme inanılmaz çalışıyor. Kurumsal lisans onarım seti çıktıları sıfır hata ile CI/CD hattımıza entegre oldu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- What's New Section (Image 1 & 3) -->
+<section class="mac-whatsnew-section">
+  <div class="mac-section-head">
+    <h3 class="mac-section-title">Yenilikler <span class="mac-arrow">›</span></h3>
+    <a href="/rehberler/" class="mac-version-history">Sürüm Geçmişi</a>
+  </div>
+  <div class="mac-whatsnew-meta">
+    <span class="mac-version-tag">Sürüm 6.9.1</span>
+    <span class="mac-version-date">2 gün önce</span>
+  </div>
+  <div class="mac-whatsnew-notes">
+    <p>• <strong>18-Motorlu Canlı Teşhis İstasyonu:</strong> W3C ve RFC standartlarında derin AST ColBERT MaxSim vektörel analiz motoru güncellendi.</p>
+    <p>• <strong>Web Photoshop Pro Studio:</strong> WebGL katman işleme hızı %40 artırıldı; PSD dışa aktarımında CMYK renk profili koruma filtresi eklendi.</p>
+    <p>• <strong>Acrobat Pro DC Studio:</strong> Akıllı font eşleştirme algoritması geliştirildi, kalıcı vektörel sansür ve çoklu imza/kaşe desteği optimize edildi.</p>
+    <p>• <strong>Güvenlik ve Altyapı:</strong> SSRF kalkanı, TLS 1.3 zorunluluğu ve sub-40ms TTFB önbellek motoru güçlendirildi.</p>
+  </div>
+</section>
+
+<!-- App Privacy Card (Image 1 & 3) -->
+<section class="mac-privacy-section">
+  <div class="mac-section-head">
+    <h3 class="mac-section-title">Uygulama Gizliliği <span class="mac-arrow">›</span></h3>
+    <a href="/gizlilik/" class="mac-version-history">Ayrıntıları Gör</a>
+  </div>
+  <p class="mac-privacy-subtitle">Geliştirici HTML&amp;HTML, uygulamanın gizlilik uygulamalarının aşağıda açıklandığı şekilde verilerin işlenmesini içerebileceğini belirtmiştir. Daha fazla bilgi için <a href="/gizlilik/">geliştiricinin gizlilik politikasına</a> bakın.</p>
+  
+  <div class="mac-privacy-card">
+    <div class="mac-privacy-card-header">
+      <div class="mac-privacy-shield-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="4" y1="4" x2="20" y2="20"></line></svg>
+      </div>
+      <div>
+        <h4 class="mac-privacy-card-title">Sizinle İlişkilendirilmeyen Veriler</h4>
+        <p class="mac-privacy-card-desc">Aşağıdaki veriler toplanabilir ancak kimliğinizle ilişkilendirilmez:</p>
+      </div>
+    </div>
+    <div class="mac-privacy-pills-row">
+      <div class="mac-privacy-pill">
+        <span class="mac-pill-icon">🆔</span>
+        <div class="mac-pill-text">
+          <strong>Tanımlayıcılar</strong>
+          <span>Oturum &amp; Cihaz Kimliği</span>
+        </div>
+      </div>
+      <div class="mac-privacy-pill">
+        <span class="mac-pill-icon">📊</span>
+        <div class="mac-pill-text">
+          <strong>Kullanım Verileri</strong>
+          <span>Ürün Etkileşimi &amp; Hız</span>
+        </div>
+      </div>
+      <div class="mac-privacy-pill">
+        <span class="mac-pill-icon">⚡</span>
+        <div class="mac-pill-text">
+          <strong>Tanılar</strong>
+          <span>W3C Performans &amp; Çökme</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured In Dual Cards (Image 2) -->
+<section class="mac-featured-section">
+  <div class="mac-section-head">
+    <h3 class="mac-section-title">Öne Çıkan Koleksiyonlar</h3>
+  </div>
+  <div class="mac-featured-grid">
+    <a href="/editor-photoshop.html" class="mac-featured-card">
+      <div class="mac-featured-badge">EDİTÖRÜN SEÇİMİ</div>
+      <h4 class="mac-featured-title">Web Photoshop Pro &amp; Acrobat DC</h4>
+      <p class="mac-featured-sub">Tarayıcınızda sıfır kurulumla çalışan masaüstü sınıfı tasarım ve PDF düzenleme stüdyoları.</p>
+    </a>
+    <a href="#scanner" class="mac-featured-card ai-radar">
+      <div class="mac-featured-badge">MÜHENDİSLİK HARİKASI</div>
+      <h4 class="mac-featured-title">18-Motorlu Canlı AI &amp; SEO Radarı</h4>
+      <p class="mac-featured-sub">W3C, RFC ve LLM standartlarında 18 bağımsız katmanla sitenizi milisaniyeler içinde denetleyin.</p>
+    </a>
+  </div>
+</section>
+
+<!-- More by HTML&HTML (3x3 Grid of 9 Tools) (Image 2) -->
+<section class="mac-more-apps-section">
+  <div class="mac-section-head">
+    <h3 class="mac-section-title">HTML&amp;HTML Tarafından Geliştirilen Diğer Araçlar <span class="mac-arrow">›</span></h3>
+    <a href="/platform/" class="mac-version-history">Tümünü Gör</a>
+  </div>
+  <div class="mac-more-apps-grid">
     <!-- App 1: Photoshop Web -->
-    <a href="/editor-photoshop.html" class="apple-app-row-card" data-app-title="Web Photoshop Pro Studio" data-app-category="creative" data-app-desc="Katmanlar, fırça, klonlama damgası, metin & şekiller, filtreler, PSD desteği ve dışa aktarma.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <span style="font-weight:900;font-size:1.4rem;">Ps</span>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Web Photoshop Pro</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • Grafik &amp; Fotoğraf</div>
-          <p class="apple-row-desc">Katmanlar, fırça, klonlama, metin, şekil, damlalık, kırpma ve PSD desteği.</p>
-        </div>
+    <a href="/editor-photoshop.html" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle ps">Ps</div>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">Web Photoshop Pro</h5>
+        <span class="mac-app-card-genre">Grafik &amp; Tasarım</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-
     <!-- App 2: Acrobat Pro DC -->
-    <a href="/pdf-cevirici.html" class="apple-app-row-card" data-app-title="Acrobat Pro DC PDF Düzenleyici" data-app-category="creative" data-app-desc="Akıllı font eşleştirme, vektörel metin düzenleme, ıslak imza & kaşe, sansür ve sayfa yönetimi.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Acrobat Pro DC Studio</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 5.0 • PDF Düzenleyici</div>
-          <p class="apple-row-desc">Akıllı font eşleştirme, metin değiştirme, imza, kaşe ve kalıcı vektörel sansür.</p>
-        </div>
+    <a href="/pdf-cevirici.html" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle pdf">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">Acrobat Pro DC Studio</h5>
+        <span class="mac-app-card-genre">Belge Mühendisliği</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-
-    <!-- App 3: Excel to Markdown -->
-    <a href="/pdf-cevirici.html#excel-md" class="apple-app-row-card" data-app-title="Excel'den Markdown'a (XLSX to MD)" data-app-category="creative" data-app-desc="Tüm sayfaları (worksheets) yapay zeka RAG sistemlerine uygun temiz Markdown tablolarına çevirir.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <span style="font-weight:900;font-size:1.3rem;">Xls</span>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Excel'den Markdown'a</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • LLM Veri Dönüştürücü</div>
-          <p class="apple-row-desc">Çoklu sayfa (sheet) desteğiyle Excel dosyalarını kayıpsız MD tablolarına çevirir.</p>
-        </div>
+    <!-- App 3: 18-Engine Scanner -->
+    <a href="/site-tarama/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle radar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">18-Motorlu Site Tarayıcısı</h5>
+        <span class="mac-app-card-genre">Geliştirici Araçları</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-
-    <!-- App 4: PDF to Markdown -->
-    <a href="/pdf-cevirici.html#pdf-md" class="apple-app-row-card" data-app-title="PDF'den Markdown'a (PDF to MD)" data-app-category="creative" data-app-desc="PDF dökümanlarını yapay zeka ajanları ve LLM fine-tuning için temiz Markdown metnine çevirir.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <span style="font-weight:900;font-size:1.2rem;">Md</span>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">PDF'den LLM Markdown'a</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.8 • Metin &amp; AI Export</div>
-          <p class="apple-row-desc">PDF sayfalarındaki başlık, paragraf ve listeleri temiz LLM formatına dönüştürür.</p>
-        </div>
+    <!-- App 4: llms.txt Validator -->
+    <a href="/llms-txt-validator/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle doc">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15h6"></path></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">llms.txt v2 Doğrulayıcı</h5>
+        <span class="mac-app-card-genre">Yapay Zeka Standartları</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-  </div>
-</section>
-
-<!-- SHELF 2: YAPAY ZEKA & AEO TEŞHİS ARAÇLARI -->
-<section class="apple-shelf-section" data-shelf-category="ai">
-  <div class="apple-section-header">
-    <div>
-      <span class="apple-section-kicker">AEO, GEO VE LLM RADARI</span>
-      <h3 class="apple-section-title">Yapay Zeka &amp; Arama Motoru Teşhisi</h3>
-    </div>
-    <a href="/site-tarama/" class="apple-section-all">Tümünü Gör →</a>
-  </div>
-
-  <div class="apple-shelf-grid">
-    <!-- App 5: 18-Engine Scanner -->
-    <a href="/site-tarama/" class="apple-app-row-card" data-app-title="18-Motorlu Web Sitesi Tarayıcısı" data-app-category="ai" data-app-desc="HTTP, SEO, AI botları, güvenlik ve erişilebilirlik katmanlarını derinlemesine tarar.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">18-Motorlu Site Tarayıcısı</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 5.0 • AI &amp; SEO Analiz</div>
-          <p class="apple-row-desc">W3C ve RFC standartlarında 18 bağımsız motorla sitenizi baştan sona denetler.</p>
-        </div>
+    <!-- App 5: AI Crawler Checker -->
+    <a href="/ai-crawler-checker/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle bot">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">AI Crawler &amp; Bot Denetimi</h5>
+        <span class="mac-app-card-genre">Bot Yönetişimi</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-
-    <!-- App 6: llms.txt Validator -->
-    <a href="/llms-txt-validator/" class="apple-app-row-card" data-app-title="llms.txt v2 Doğrulayıcı" data-app-category="ai" data-app-desc="v2 şartnamesi, bağlantı erişilebilirliği ve rel=describedby keşif kurallarını test eder.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15h6"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">llms.txt v2 Doğrulayıcı</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • Standart Testi</div>
-          <p class="apple-row-desc">Ajanların sitenizi okuması için llms.txt sözdizimi ve link erişim doğrulaması.</p>
-        </div>
+    <!-- App 6: AI Mention Tracker -->
+    <a href="/ai-mention-tracker/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle chat">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><circle cx="12" cy="12" r="9"></circle><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"></path></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">AI Marka Mention Takipçisi</h5>
+        <span class="mac-app-card-genre">Yapay Zeka &amp; AEO</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-
-    <!-- App 7: AI Crawler Checker -->
-    <a href="/ai-crawler-checker/" class="apple-app-row-card" data-app-title="AI Crawler & Bot Denetimi" data-app-category="ai" data-app-desc="GPTBot, Claude-SearchBot, PerplexityBot ve Google-Extended kurallarını inceler.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">AI Crawler Denetçisi</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.8 • Bot Yönetişimi</div>
-          <p class="apple-row-desc">robots.txt dosyanızın OpenAI, Anthropic ve Perplexity botlarına tepkisini simüle eder.</p>
-        </div>
+    <!-- App 7: Schema Validator -->
+    <a href="/schema-validator/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle code">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">Schema &amp; JSON-LD Testi</h5>
+        <span class="mac-app-card-genre">Yapısal Veri</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-
-    <!-- App 8: AI Mention Tracker -->
-    <a href="/ai-mention-tracker/" class="apple-app-row-card" data-app-title="AI Marka & Mention Takipçisi" data-app-category="ai" data-app-desc="ChatGPT, Gemini ve Perplexity yanıtlarında markanızın atıf sıklığını ölçün.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"></circle><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">AI Mention Takipçisi</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • Marka Atıf Takibi</div>
-          <p class="apple-row-desc">Yapay zeka modellerinin markanızı ne sıklıkla ve nasıl andığını analiz edin.</p>
-        </div>
+    <!-- App 8: Security Headers -->
+    <a href="/guvenlik-basliklari-kontrol/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle shield">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">Güvenlik Başlıkları &amp; CSP</h5>
+        <span class="mac-app-card-genre">Web Güvenliği</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
+      </div>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
-  </div>
-</section>
-
-<!-- SHELF 3: GELİŞTİRİCİ, GÜVENLİK & MÜHENDİSLİK KALİTE TESTLERİ -->
-<section class="apple-shelf-section" data-shelf-category="developer">
-  <div class="apple-section-header">
-    <div>
-      <span class="apple-section-kicker">MÜHENDİSLİK STANDARTLARI</span>
-      <h3 class="apple-section-title">Geliştirici &amp; Kalite Denetim Araçları</h3>
-    </div>
-    <a href="/schema-validator/" class="apple-section-all">Tümünü Gör →</a>
-  </div>
-
-  <div class="apple-shelf-grid">
-    <!-- App 9: Schema Validator -->
-    <a href="/schema-validator/" class="apple-app-row-card" data-app-title="Schema.org & JSON-LD Varlık Doğrulayıcı" data-app-category="developer" data-app-desc="JSON-LD sözdizimi, Schema.org tipleri ve Wikidata varlık ilişkilerini denetler.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Schema &amp; JSON-LD Testi</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • Yapısal Veri</div>
-          <p class="apple-row-desc">Arama motorları için JSON-LD şemalarınızın geçerliliğini ve varlık ilişkilerini denetler.</p>
-        </div>
+    <!-- App 9: IndexNow Broadcaster -->
+    <a href="/indexnow/" class="mac-app-card-item">
+      <div class="mac-app-card-icon squircle zap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-
-    <!-- App 10: Security Headers -->
-    <a href="/guvenlik-basliklari-kontrol/" class="apple-app-row-card" data-app-title="Güvenlik Başlıkları & CSP Kalkanı" data-app-category="developer" data-app-desc="HSTS preload, CSP, X-Frame-Options, X-Content-Type-Options güvenlik kalkanı kontrolü.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Güvenlik Başlıkları Kontrolü</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 5.0 • Web Güvenliği</div>
-          <p class="apple-row-desc">HSTS, Content Security Policy, Clickjacking savunması ve nosniff başlık denetimi.</p>
-        </div>
+      <div class="mac-app-card-info">
+        <h5 class="mac-app-card-title">IndexNow API Dağıtıcı</h5>
+        <span class="mac-app-card-genre">Arama Motoru Dağıtımı</span>
+        <span class="mac-app-card-price">Ücretsiz • Web Uygulaması</span>
       </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-
-    <!-- App 11: Technical SEO -->
-    <a href="/teknik-seo-kontrol/" class="apple-app-row-card" data-app-title="Teknik SEO & Tekil H1 Analizi" data-app-category="developer" data-app-desc="Title, meta description, tekil H1 kuralı, canonical ve open-graph etiket denetimi.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h10M4 18h14"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Teknik SEO &amp; Başlık Denetimi</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.8 • SEO Standartları</div>
-          <p class="apple-row-desc">Tekil H1 kuralı, meta etiketler, kanonik URL'ler ve semantik DOM mimarisi testi.</p>
-        </div>
-      </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-
-    <!-- App 12: Accessibility -->
-    <a href="/erisilebilirlik-kontrol/" class="apple-app-row-card" data-app-title="WCAG 2.2 AA Erişilebilirlik Testi" data-app-category="developer" data-app-desc="Renk kontrastı, form etiketleri, alt metinler ve klavye gezintisi denetimi.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="4" r="2"></circle><path d="M12 6v6m0 0l-3 6m3-6l3 6M7 10h10"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">Erişilebilirlik (WCAG 2.2 AA)</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • A11y Denetimi</div>
-          <p class="apple-row-desc">Kontrast oranları, klavye gezintisi ve ARIA etiketlerinin standart uygunluğu.</p>
-        </div>
-      </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-  </div>
-</section>
-
-<!-- SHELF 4: ALTYAPI, AJAN PROTOKOLLERİ & AĞ STANDARTLARI -->
-<section class="apple-shelf-section" data-shelf-category="developer">
-  <div class="apple-section-header">
-    <div>
-      <span class="apple-section-kicker">DAĞITIM VE AJAN PROTOKOLLERİ</span>
-      <h3 class="apple-section-title">Ajan Altyapısı &amp; Ağ Standartları</h3>
-    </div>
-    <a href="/platform/" class="apple-section-all">Tümünü Gör →</a>
-  </div>
-
-  <div class="apple-shelf-grid">
-    <!-- App 13: IndexNow -->
-    <a href="/indexnow/" class="apple-app-row-card" data-app-title="IndexNow Çok Merkezli Dağıtım" data-app-category="developer" data-app-desc="Bing, Yandex ve IndexNow API'lerine yeni ve güncellenen URL'leri anında iletin.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">IndexNow API Dağıtıcı</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 5.0 • Anlık İndeksleme</div>
-          <p class="apple-row-desc">Güncellenen sayfalarınızı arama motorlarına ve AI botlarına anında anons edin.</p>
-        </div>
-      </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-
-    <!-- App 14: WebMCP -->
-    <a href="/.well-known/agent-card.json" class="apple-app-row-card" data-app-title="WebMCP Otonom Ajan Protokolü" data-app-category="developer" data-app-desc="Otonom AI ajanları ve Model Context Protocol için /.well-known/agent-card.json sözleşmesi.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="3" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">WebMCP Ajan Kartı</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • Ajan Protokolü</div>
-          <p class="apple-row-desc">Ajanların sitenizi programatik araç (MCP) olarak çağırması için standart sözleşme.</p>
-        </div>
-      </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-
-    <!-- App 15: E-E-A-T Otorite -->
-    <a href="/e-e-a-t-guven-sinyalleri/" class="apple-app-row-card" data-app-title="E-E-A-T Otorite Doğrulayıcı" data-app-category="developer" data-app-desc="Deneyim, Uzmanlık, Yetkinlik ve Güvenilirlik sinyallerini ve yazar varlıklarını denetleyin.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">E-E-A-T Otorite Denetimi</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 4.9 • Güven Sinyalleri</div>
-          <p class="apple-row-desc">Google Medic ve AI kalite kriterlerine uygun yayıncı ve yazar varlık doğrulaması.</p>
-        </div>
-      </div>
-      <span class="apple-btn-open-solid">AÇ</span>
-    </a>
-
-    <!-- App 16: ColBERT MaxSim -->
-    <a href="/deterministik-katmanlar/" class="apple-app-row-card" data-app-title="ColBERT MaxSim Vektör Denetimi" data-app-category="ai" data-app-desc="LLM geç etkileşimli (late-interaction) token matrisi ve 512-token RAG uygunluğu.">
-      <div class="apple-row-left">
-        <div class="apple-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-        </div>
-        <div class="apple-row-meta">
-          <h4 class="apple-row-title">ColBERT Vektör Matrisi</h4>
-          <div class="apple-row-category"><span class="apple-row-stars">★★★★★</span> 5.0 • LLM Vektör Skoru</div>
-          <p class="apple-row-desc">Yapay zeka modellerinin içeriğinizi en yüksek benzerlikle kavraması için AST testi.</p>
-        </div>
-      </div>
-      <span class="apple-btn-open-solid">AÇ</span>
+      <span class="mac-btn-get-pill">GÖR</span>
     </a>
   </div>
 </section>
 
 
-<!-- 09 SHORT FAQ -->
-<section class="section faq" id="faq">
+<!-- Sık Sorulan Sorular (FAQ) -->
+<section class="section faq mac-faq-clean" id="faq">
   <header>
     <span class="eyebrow">SSS</span>
     <h2 data-i18n="faqTitle">Sık sorulan sorular</h2>
   </header>
-  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır? yol haritasıler açık mı?</summary><p data-i18n="a1">Problem veya yol haritasıler saklanmaz. URL, severity, confidence, evidence ve kategori ile birlikte tüm çözüm kodları %100 açık sunulur. Ayrıca tam rapor PDF çıktısı ve 30+ dosyalık ZIP çözüm paketi tek tıkla indirilebilir ($99 kurumsal lisans paketi dahil).</p></details>
+  <details><summary data-i18n="q1">Ücretsiz taramada ne saklanır? Yol haritaları açık mı?</summary><p data-i18n="a1">Problem veya yol haritaları saklanmaz. URL, severity, confidence, evidence ve kategori ile birlikte tüm çözüm kodları %100 açık sunulur. Ayrıca tam rapor PDF çıktısı ve 30+ dosyalık ZIP çözüm paketi tek tıkla indirilebilir ($99 kurumsal lisans paketi dahil).</p></details>
   <details><summary data-i18n="q2">100/100 Google veya AI citation garantisi mi?</summary><p data-i18n="a2">Hayır. Skor yalnızca ölçülen kontrollerin durumudur. Ranking, trafik veya AI citation garantisi değildir.</p></details>
   <details><summary data-i18n="q3">llms.txt zorunlu mu?</summary><p data-i18n="a3">Hayır. llms.txt bir web standardı değil, gelişmekte olan bir öneridir. Bu nedenle ayrı PROPOSAL etiketi ve düşük ağırlıkla değerlendirilir.</p></details>
   <details><summary data-i18n="q4">Core Web Vitals ölçülüyor mu?</summary><p data-i18n="a4">Bu sürüm HTML/HTTP performans hijyenini ölçer. Güvenilir LCP/INP/CLS için CrUX/PageSpeed verisi gerekir; yoksa NOT_MEASURED döner, değer uydurulmaz.</p></details>
   <details><summary data-i18n="q5">Tarayıcı neden bazı siteleri reddeder?</summary><p data-i18n="a5">SSRF riskine karşı localhost/private/reserved hedefler, private DNS çözümü, non-standard portlar ve redirect ile private ağa geçiş fail-closed engellenir.</p></details>
 </section>
-</main>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
+  </main> <!-- /.mac-main-content -->
+</div> <!-- /.mac-appstore-layout -->
+
+<!-- Authentic Apple Mac App Store Footer (Image 2) -->
+<footer class="mac-apple-footer">
+  <div class="mac-footer-inner">
+    <div class="mac-footer-brand-row">
       <a class="brand" href="/" aria-label="HTML&amp;HTML">
         <img class="brand-logo" src="/assets/logo.png?v=hh7" alt="HTML&amp;HTML" width="139" height="24">
       </a>
-      <p data-i18n="footerTag">Teşhis ücretsizdir. Otomatik kod ve konfigürasyon paketi asıl üründür.</p>
-</div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="/platform/">Platform</a></li>
-        <li><a href="/fix-mandate/">Yol Haritası</a></li>
-        <li><a href="/fiyatlandirma/" data-i18n="navPrice">Fiyatlar</a></li>
-        <li><a href="/openapi.json">OpenAPI</a></li>
-        <li><a href="/audit-profile.json">Audit Profile</a></li>
-      </ul>
+      <span class="mac-footer-locale">Türkiye (Türkçe) • United States (English)</span>
     </div>
-    <div class="footer-col">
-      <h4>Araçlar</h4>
-      <ul>
-        <li><a href="/editor-photoshop.html">Photoshop Web Studio</a></li>
-        <li><a href="/pdf-cevirici.html">Acrobat PDF Studio</a></li>
-        <li><a href="/llms-txt-validator/" data-i18n="footerLlms">llms.txt Doğrulayıcı</a></li>
-        <li><a href="/ai-crawler-checker/" data-i18n="footerCrawler">AI Tarayıcı Kontrolü</a></li>
-        <li><a href="/ai-website-readiness/" data-i18n="footerReadiness">AI Web Sitesi Hazırlığı</a></li>
-        <li><a href="/ai-mention-tracker/" data-i18n="footerMentions">AI Marka Görünürlük Takibi</a></li>
-      </ul>
+    <div class="mac-footer-legal-line">
+      <p>Telif Hakkı © 2026 HTML&amp;HTML Inc. Tüm hakları saklıdır. Deterministik yapay zeka, web sitesi analiz platformu ve bulut stüdyoları. Ödemeler ve lisanslama yetkili Satıcı Paddle.com tarafından yürütülür.</p>
+      <div class="mac-footer-links">
+        <a href="/gizlilik/">Gizlilik Politikası</a>
+        <a href="/kullanim-kosullari/">Kullanım Koşulları</a>
+        <a href="/iade-politikasi/">Satış ve İadeler</a>
+        <a href="/teslimat-politikasi/">Teslimat Politikası</a>
+        <a href="/hakkimizda/">Hakkımızda</a>
+        <a href="/iletisim/">İletişim</a>
+        <a href="/platform/">Platform</a>
+        <a href="/site-haritasi.xml">Site Haritası</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Kaynaklar</h4>
-      <ul>
-        <li><a href="/rehberler/">Rehberler</a></li>
-        <li><a href="/sozluk/">Sözlük</a></li>
-        <li><a href="/llms-txt-haberler/">Haberler</a></li>
-        <li><a href="/methodology.html" data-methodology-link data-i18n="footerMethod">Metodoloji</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kurumsal</h4>
-      <ul>
-        <li><a href="/hakkimizda/">Hakkımızda</a></li>
-        <li><a href="/iletisim/">İletişim</a></li>
-        <li><a href="/kullanim-kosullari/">Kullanım Koşulları</a></li>
-        <li><a href="/gizlilik/">Gizlilik Politikası</a></li>
-        <li><a href="/iade-politikasi/">İade ve İptal Politikası</a></li>
-        <li><a href="/teslimat-politikasi/">Teslimat Politikası</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. All rights reserved. Deterministik yapay zeka ve web sitesi analiz platformu. Güncellenme / Son revizyon tarihi: 2026-09-26. Ödemeler ve faturalandırma yetkili Satıcı ve Aracı Kurum (Merchant of Record) Paddle.com tarafından yürütülür.</p>
   </div>
 </footer>
 
