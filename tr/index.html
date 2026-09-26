@@ -46,11 +46,23 @@
 <link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
 <style>
 /* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
 html, body.mac-appstore-body {
   background-color: #000000 !important;
   color: #ffffff !important;
   margin: 0 !important;
   padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 .mac-appstore-layout {
   display: flex !important;
