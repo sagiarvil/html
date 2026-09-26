@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/assets/css/theme.css?v=20">
   <link rel="stylesheet" href="/assets/css/premium-experience.css?v=20">
   <link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=23">
-  <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=9">
+  <link rel="stylesheet" href="/assets/css/pdf-theme-patch.css?v=10">
   <script src="/assets/js/theme.js?v=9"></script>
 
   <!-- PDF-LIB & PDF.JS (Client-Side WASM / JS Engine) -->
@@ -1470,99 +1470,147 @@
 <!-- ADOBE ACROBAT PRO DC GRADE EDIT STÜDYOSU (TAM EKRAN) -->
 <div class="acrobat-studio-modal" id="acrobatStudioModal" role="dialog" aria-modal="true" aria-label="Adobe Acrobat Pro DC Düzenleme Stüdyosu">
   <!-- Üst Menü & Marka & Aksiyon Çubuğu (Acrobat Pro DC Master Header) -->
-  <div class="acrobat-header" style="overflow-x: auto; flex-wrap: nowrap !important;">
-    <div class="acrobat-brand" style="flex-shrink: 0; white-space: nowrap !important;">
-      <div class="acrobat-logo-badge" style="flex-shrink: 0;">PRO DC</div>
-      <span style="white-space: nowrap !important; font-weight: 700;">Acrobat Pro DC Studio</span>
-      <span class="file-name-badge" id="studioFileName" style="flex-shrink: 0;">dokuman.pdf</span>
+  <!-- Üst Menü & Marka & Aksiyon Çubuğu (Pro DC Modern Master Toolbar) -->
+  <div class="acrobat-header pro-dc-modern-toolbar">
+    <!-- Sol Bölüm: Sayfalar, Geri/İleri Al -->
+    <div class="acrobat-tool-section left">
+      <button class="pro-tool-item" id="studioTogglePagesBtn" title="Sayfa Küçük Resimleri (Pages)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M8 21h11a2 2 0 0 0 2-2V8"/></svg>
+        <span>Pages</span>
+      </button>
+      <button class="pro-tool-item" id="studioUndoBtn" title="Geri Al (Undo - Ctrl+Z)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
+        <span>Undo</span>
+      </button>
+      <button class="pro-tool-item" id="studioRedoBtn" title="Yinele (Redo - Ctrl+Y)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/></svg>
+        <span>Redo</span>
+      </button>
+      <div class="pro-toolbar-divider"></div>
     </div>
 
-    <!-- Menü Butonları (Dosya, Sayfa, Görünüm, Photopea) -->
-    <div class="acrobat-menu-group" style="display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; margin: 0 4px;">
-      <button class="menu-btn" id="menuOpenFileBtn" title="Yeni PDF Aç">📁 Aç</button>
-      <button class="menu-btn" id="menuPrintBtn" title="Belgeyi Yazdır">🖨️ Yazdır</button>
-      <button class="menu-btn" id="menuFitPageBtn" title="Ekrana Sığdır">⛶ Sığdır</button>
-      <button class="menu-btn" id="openPhotopeaBtn" style="color: #38bdf8; font-weight: 700; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25);" title="Photopea Vektörel PDF Editöründe Aç">🎨 Photopea Vektörel</button>
-      <input type="file" id="studioOpenFileInput" accept="application/pdf" style="display: none;">
+    <!-- Orta Araç Grubu: Ekrandaki Birebir 17 Araç -->
+    <div class="acrobat-tools-main">
+      <button class="pro-tool-item active" data-tool="select" title="Seç (Select - V)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
+        <span>Select</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="edit-text" id="toolEditTextBtn" title="Metin Düzenle (Text - T)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
+        <span>Text</span>
+      </button>
+
+      <div class="pro-tool-dropdown-wrap">
+        <button class="pro-tool-item" id="openSignatureStampBtn" title="İmza &amp; Kaşe (Sign)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 4 6 6-12 12H2v-6L14 4z"/><line x1="2" y1="22" x2="22" y2="22"/></svg>
+          <span>Sign ▾</span>
+        </button>
+      </div>
+
+      <button class="pro-tool-item" data-tool="whiteout" title="Silgi / Beyazlat (Erase)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
+        <span>Erase</span>
+      </button>
+
+      <button class="pro-tool-item" id="uploadImageObjectBtn" title="Resim Ekle (Image)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span>Image</span>
+      </button>
+      <input type="file" id="studioImageFileInput" accept="image/*" style="display: none;">
+
+      <button class="pro-tool-item" data-tool="check" title="Onay İşareti (Check)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Check</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="cross" title="Çarpı İşareti (Cross)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <span>Cross</span>
+      </button>
+
+      <div class="pro-tool-dropdown-wrap">
+        <button class="pro-tool-item" id="studioShapesDropdownBtn" title="Şekiller (Shapes)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+          <span>Shapes ▾</span>
+        </button>
+        <div class="pro-shapes-menu" id="proShapesMenu">
+          <div class="pro-shape-opt" data-shape="rect"><span>▭ Dikdörtgen Kutu</span></div>
+          <div class="pro-shape-opt" data-shape="circle"><span>○ Daire / Elips</span></div>
+          <div class="pro-shape-opt" data-shape="line"><span>― Düz Çizgi</span></div>
+          <div class="pro-shape-opt" data-shape="arrow"><span>⟶ Yön Oku</span></div>
+        </div>
+      </div>
+
+      <button class="pro-tool-item" data-tool="table" title="Tablo Ekle (Table)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+        <span>Table</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="textbox" title="Metin Kutusu (Text Box)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="3 3"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/></svg>
+        <span>Text Box</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="date" title="Tarih Ekle (Date)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>Date</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="redact" title="Karartma / Sansür (Blackout)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect width="16" height="12" x="4" y="6" rx="1"/></svg>
+        <span>Blackout</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="highlighter" title="Vurgulayıcı (Highlight)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
+        <span>Highlight</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="pen" title="Serbest Çizim (Draw)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+        <span>Draw</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="sticky" title="Yapışkan Not (Sticky)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8Z"/><path d="M15 3v5h6"/></svg>
+        <span>Sticky</span>
+      </button>
+
+      <button class="pro-tool-item" data-tool="watermark" title="Filigran Ekle (Watermark)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17l10-10"/><path d="M10 7h7v7"/></svg>
+        <span>Watermark</span>
+      </button>
     </div>
 
-    <!-- Ana Araç Çubuğu (Tools) -->
-    <div class="acrobat-tools" style="white-space: nowrap !important; flex-shrink: 0; display: inline-flex !important; flex-wrap: nowrap !important;">
-      <button class="tool-btn" data-tool="edit-text" id="toolEditTextBtn" title="✏️ Metinleri Düzenle (Edit Text - E) — Sayfadaki mevcut yazılara çift tıklayarak doğrudan düzenleyin, arkası otomatik gizlenir." style="background: rgba(37, 99, 235, 0.25); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        <span>✏️ Metinleri Düzenle (E)</span>
-      </button>
-      <button class="tool-btn" id="toggleShowBoxesBtn" title="Tüm Metin Bloklarını Göster (Acrobat DC mavi kılavuz kutuları)" style="background: transparent; color: #94a3b8; border: 1px dashed #475569;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        <span>Metin Bloklarını Göster</span>
-      </button>
-      <span style="display:inline-block; width:1px; height:20px; background:#334155; margin:0 4px;"></span>
-      <button class="tool-btn active" data-tool="select" title="Seç &amp; Taşı / Boyutlandır (V)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 7 18 3-7 7-3L3 3z"/></svg>
-        <span>Seç</span>
-      </button>
-      <button class="tool-btn" data-tool="text" title="Yeni İnteraktif Metin Kutusu Ekle (T)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
-        <span>Yeni Metin</span>
-      </button>
-      <button class="tool-btn" data-tool="pen" title="Pürüzsüz Kalemle Çizim (P)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
-        <span>Kalem</span>
-      </button>
-      <button class="tool-btn" data-tool="highlighter" title="Fosforlu Vurgulayıcı (H)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
-        <span>Vurgula</span>
-      </button>
-      <button class="tool-btn" data-tool="redact" title="Sansür &amp; Kalıcı Karartma (R)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect width="18" height="14" x="3" y="5" rx="1"/></svg>
-        <span>Karart</span>
-      </button>
-      <button class="tool-btn" data-tool="whiteout" title="Alanı Sil / Beyazlat (W) — Seçtiğiniz dikdörtgen alanı belgenin düzenini bozmadan tertemiz siler.">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
-          <path d="M22 21H7"/>
-          <path d="m5 11 9 9"/>
-        </svg>
-        <span>Alanı Sil (W)</span>
-      </button>
-      <button class="tool-btn" id="openSignatureStampBtn" title="E-İmza &amp; Hazır Kaşe Stüdyosu (S)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 18a2.5 2.5 0 0 1-5 0c0-1.5 2-4 2.5-4.5.5.5 2.5 3 2.5 4.5Z"/><path d="M12 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/></svg>
-        <span>İmza &amp; Kaşe</span>
-      </button>
-      <button class="tool-btn" data-tool="rect" title="Dikdörtgen Kutu">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
-        <span>Kutu</span>
-      </button>
-      <button class="tool-btn" data-tool="circle" title="Daire / Elips">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-        <span>Daire</span>
-      </button>
-      <button class="tool-btn" data-tool="arrow" title="Yön Oku">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        <span>Ok</span>
-      </button>
-      <button class="tool-btn" data-tool="line" title="Düz Çizgi">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="20" y2="4"/></svg>
-        <span>Çizgi</span>
-      </button>
-      <button class="tool-btn" id="uploadImageObjectBtn" title="Resim / Logo / Damga Yapıştır">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        <span>Resim Ekle</span>
-      </button>
-      <input type="file" id="studioImageFileInput" accept="image/png,image/jpeg,image/svg+xml" style="display: none;">
-      <button class="tool-btn" data-tool="eraser" title="Silgi / Seçili Nesneyi Sil">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
-        <span>Sil</span>
-      </button>
-    </div>
+    <!-- Sağ Bölüm: Pill Switch, Search, DONE -->
+    <div class="acrobat-tool-section right">
+      <!-- Fill out / Edit PDF Pill Switch -->
+      <div class="pro-pill-switch">
+        <button class="pro-pill-btn" id="proModeFillBtn" title="Form Doldurma Modu">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span>Fill out</span>
+        </button>
+        <button class="pro-pill-btn active" id="proModeEditBtn" title="PDF Düzenleme Modu">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h4L18.5 9.5a2.828 2.828 0 0 0-4-4L4 16v4z"/></svg>
+          <span>Edit PDF</span>
+        </button>
+      </div>
 
-    <!-- Sağ Hızlı Eylem Butonları -->
-    <div class="acrobat-actions">
-      <button class="action-btn secondary" id="studioUndoBtn" title="Geri Al (Ctrl+Z)">↩ Geri</button>
-      <button class="action-btn secondary" id="studioRedoBtn" title="İleri Al (Ctrl+Y)">↪ İleri</button>
-      <button class="action-btn secondary" id="studioClearBtn" title="Mevcut Sayfadaki Çizimleri Temizle">🗑️ Temizle</button>
-      <button class="action-btn primary" id="studioExportPdfBtn" title="Yapılan tüm düzenlemeleri orijinal PDF'e fiziksel olarak kalıcı kaydeder">💾 PDF Olarak Kaydet &amp; İndir</button>
-      <button class="action-btn close" id="studioCloseBtn" aria-label="Stüdyoyu Kapat">✕</button>
+      <!-- Search Büyüteç -->
+      <button class="pro-search-btn" id="proSearchBtn" title="Belge İçinde Ara (Search)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Search</span>
+      </button>
+
+      <!-- DONE Butonu (Turuncu / Amber) -->
+      <button class="pro-done-btn" id="studioExportPdfBtn" title="Düzenlemeleri Tamamla &amp; PDF'i İndir">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>DONE</span>
+      </button>
+
+      <!-- Kapat Butonu -->
+      <button class="action-btn close" id="studioCloseBtn" aria-label="Stüdyoyu Kapat" title="Kapat">✕</button>
     </div>
   </div>
 
@@ -1729,6 +1777,22 @@
         <div id="pdfObjectOverlay" class="pdf-object-overlay"></div>
       </div>
     </div>
+
+    <!-- Sağ Dikey Araç Çubuğu (Görsel 2 Dock: Sliders, Comments, Checklist, Settings) -->
+    <aside class="pro-right-dock-bar">
+      <button class="pro-dock-icon-btn" id="proDockLayersBtn" title="Sayfa &amp; Katman Ayarları">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      </button>
+      <button class="pro-dock-icon-btn" id="proDockCommentsBtn" title="Yorumlar &amp; Yapışkan Notlar">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </button>
+      <button class="pro-dock-icon-btn" id="proDockFormsBtn" title="Form Alanları &amp; Nesneler">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </button>
+      <button class="pro-dock-icon-btn" id="proDockSettingsBtn" title="Genel Ayarlar">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </aside>
   </div>
 
   <!-- Alt Durum & Gezinti Çubuğu -->
@@ -2131,6 +2195,6 @@
 <script src="/assets/js/enterprise-runtime.js?v=3"></script>
 <script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
 <script src="/assets/js/photoshop-engine.js?v=20260925_clone_v5"></script>
-<script src="/assets/js/pdf-engine.js?v=20260925_excel_to_md_v1"></script>
+<script src="/assets/js/pdf-engine.js?v=20260926_prodc_v2"></script>
 </body>
 </html>

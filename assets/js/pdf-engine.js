@@ -1056,6 +1056,70 @@
           svg.appendChild(straightLine);
         }
         el.appendChild(svg);
+      } else if (obj.type === 'stamp-icon') {
+        var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        iconSvg.setAttribute('viewBox', '0 0 24 24');
+        iconSvg.style.width = '100%';
+        iconSvg.style.height = '100%';
+        iconSvg.style.display = 'block';
+        if (obj.iconType === 'check') {
+          iconSvg.setAttribute('fill', 'none');
+          iconSvg.setAttribute('stroke', obj.color || '#16a34a');
+          iconSvg.setAttribute('stroke-width', '3');
+          var polyCheck = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+          polyCheck.setAttribute('points', '20 6 9 17 4 12');
+          iconSvg.appendChild(polyCheck);
+        } else if (obj.iconType === 'cross') {
+          iconSvg.setAttribute('fill', 'none');
+          iconSvg.setAttribute('stroke', obj.color || '#dc2626');
+          iconSvg.setAttribute('stroke-width', '3');
+          var l1 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          l1.setAttribute('x1', '18'); l1.setAttribute('y1', '6'); l1.setAttribute('x2', '6'); l1.setAttribute('y2', '18');
+          var l2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          l2.setAttribute('x1', '6'); l2.setAttribute('y1', '6'); l2.setAttribute('x2', '18'); l2.setAttribute('y2', '18');
+          iconSvg.appendChild(l1);
+          iconSvg.appendChild(l2);
+        }
+        el.appendChild(iconSvg);
+      } else if (obj.type === 'table') {
+        var tbl = document.createElement('table');
+        tbl.className = 'pdf-obj-table-content';
+        tbl.style.cssText = 'width:100%; height:100%; border-collapse:collapse; background:#ffffff; border:1.5px solid #334155; font-size:11px;';
+        for (var r = 0; r < (obj.rows || 3); r++) {
+          var tr = document.createElement('tr');
+          for (var c = 0; c < (obj.cols || 3); c++) {
+            var td = document.createElement('td');
+            td.style.cssText = 'border:1px solid #94a3b8; padding:4px 6px; color:#0f172a;';
+            td.contentEditable = 'true';
+            var cellVal = (obj.data && obj.data[r] && obj.data[r][c]) ? obj.data[r][c] : '';
+            td.textContent = cellVal;
+            (function (rowIdx, colIdx, cellEl) {
+              cellEl.addEventListener('input', function () {
+                if (!obj.data) obj.data = [];
+                if (!obj.data[rowIdx]) obj.data[rowIdx] = [];
+                obj.data[rowIdx][colIdx] = cellEl.textContent;
+              });
+            })(r, c, td);
+            tr.appendChild(td);
+          }
+          tbl.appendChild(tr);
+        }
+        el.appendChild(tbl);
+      } else if (obj.type === 'sticky') {
+        var stickyDiv = document.createElement('div');
+        stickyDiv.className = 'pdf-obj-sticky-content';
+        stickyDiv.style.cssText = 'width:100%; height:100%; background:#fef08a; border:1px solid #facc15; border-radius:4px; padding:6px; box-shadow:0 4px 10px rgba(0,0,0,0.15); display:flex; flex-direction:column;';
+        var pinIcon = document.createElement('div');
+        pinIcon.style.cssText = 'font-size:11px; margin-bottom:4px; color:#854d0e; font-weight:700;';
+        pinIcon.textContent = '📌 Not';
+        var sText = document.createElement('div');
+        sText.style.cssText = 'flex:1; font-size:11px; color:#713f12; outline:none; overflow-y:auto;';
+        sText.contentEditable = 'true';
+        sText.textContent = obj.text || '';
+        sText.addEventListener('input', function () { obj.text = sText.textContent; });
+        stickyDiv.appendChild(pinIcon);
+        stickyDiv.appendChild(sText);
+        el.appendChild(stickyDiv);
       }
 
       // 2. Silme Butonu (Kırmızı ✕)
@@ -1617,6 +1681,74 @@
   }
 
   /* =========================================================
+   * PRO DC FILIGRAN & ARAMA MOTORU
+   * ========================================================= */
+  function applyWatermarkToDocument() {
+    var txt = prompt('PDF Sayfalarına Eklenecek Filigran Metnini Girin:', 'GİZLİ & TASLAK');
+    if (!txt || !txt.trim()) return;
+    pushUndo();
+
+    var totalPages = studio.pdfDoc ? studio.pdfDoc.numPages : 1;
+    var allPages = confirm('Filigran TÜM sayfalara eklensin mi?\n("Tamam" = Tüm Sayfalar, "İptal" = Yalnızca Bu Sayfa)');
+
+    var targetPages = [];
+    if (allPages) {
+      for (var i = 1; i <= totalPages; i++) targetPages.push(i);
+    } else {
+      targetPages.push(studio.currentPage);
+    }
+
+    targetPages.forEach(function (p) {
+      if (!studio.pageObjects[p]) studio.pageObjects[p] = [];
+      var wmObj = {
+        id: 'wm_' + Date.now() + '_' + p,
+        type: 'text',
+        x: 80,
+        y: 260,
+        width: 450,
+        height: 120,
+        text: txt.trim(),
+        fontSize: 48,
+        fontFamily: 'Arial, sans-serif',
+        color: 'rgba(239, 68, 68, 0.22)',
+        isBold: true,
+        rotation: -45,
+        textAlign: 'center'
+      };
+      studio.pageObjects[p].push(wmObj);
+    });
+
+    renderPageObjects(studio.currentPage);
+    alert('Filigran başarıyla belgenize uygulandı.');
+  }
+
+  async function searchInPdfDocument(query) {
+    if (!studio.pdfDoc || !query) return;
+    var q = query.toLowerCase();
+    var foundPage = -1;
+    var matchCount = 0;
+
+    for (var p = 1; p <= studio.pdfDoc.numPages; p++) {
+      var page = await studio.pdfDoc.getPage(p);
+      var textContent = await page.getTextContent();
+      var str = textContent.items.map(function (it) { return it.str; }).join(' ').toLowerCase();
+      if (str.indexOf(q) !== -1) {
+        matchCount++;
+        if (foundPage === -1) foundPage = p;
+      }
+    }
+
+    if (foundPage !== -1) {
+      alert('"' + query + '" kelimesi ' + matchCount + ' sayfada bulundu. Sayfa ' + foundPage + '\'e yönlendiriliyorsunuz.');
+      studio.currentPage = foundPage;
+      renderThumbnails();
+      renderPage(foundPage);
+    } else {
+      alert('"' + query + '" kelimesi belgede bulunamadı.');
+    }
+  }
+
+  /* =========================================================
    * EVENT LISTENER ENTEGRASYONU (ARAÇLAR & ÇİZİM & TUVAL)
    * ========================================================= */
   function initAcrobatStudioEvents() {
@@ -1663,8 +1795,8 @@
       });
     }
 
-    // 2. Araç Çubuğu Butonları (V, T, P, H, R, Shapes, Eraser)
-    var toolBtns = document.querySelectorAll('.acrobat-tools .tool-btn');
+    // 2. Pro DC Modern Araç Çubuğu Butonları (V, T, Erase, Check, Cross, Shapes, Table, Date, etc.)
+    var toolBtns = document.querySelectorAll('.acrobat-tools .tool-btn, .pro-tool-item[data-tool]');
     toolBtns.forEach(function (b) {
       b.addEventListener('click', function () {
         var tool = b.getAttribute('data-tool');
@@ -1682,7 +1814,7 @@
         var hlOpts = document.getElementById('highlighterOptionsGroup');
         var woOpts = document.getElementById('whiteoutOptionsGroup');
 
-        if (textOpts) textOpts.style.display = (tool === 'text') ? 'flex' : 'none';
+        if (textOpts) textOpts.style.display = (tool === 'text' || tool === 'textbox' || tool === 'edit-text') ? 'flex' : 'none';
         if (strokeOpts) strokeOpts.style.display = (tool === 'pen' || tool === 'highlighter' || tool === 'rect' || tool === 'circle' || tool === 'arrow' || tool === 'line') ? 'inline-flex' : 'none';
         if (redactOpts) redactOpts.style.display = (tool === 'redact') ? 'inline-flex' : 'none';
         if (hlOpts) hlOpts.style.display = (tool === 'highlighter') ? 'inline-flex' : 'none';
@@ -1690,11 +1822,118 @@
 
         if (overlay) {
           overlay.style.cursor = (tool === 'select') ? 'default' :
-            (tool === 'text') ? 'text' :
+            (tool === 'text' || tool === 'textbox' || tool === 'edit-text') ? 'text' :
             (tool === 'eraser' || tool === 'whiteout') ? 'crosshair' : 'crosshair';
         }
       });
     });
+
+    // Pro DC Shapes Dropdown
+    var shapesDropdownBtn = document.getElementById('studioShapesDropdownBtn');
+    var shapesMenu = document.getElementById('proShapesMenu');
+    if (shapesDropdownBtn && shapesMenu) {
+      shapesDropdownBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        shapesMenu.classList.toggle('open');
+      });
+      document.querySelectorAll('.pro-shape-opt').forEach(function (opt) {
+        opt.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var shape = opt.getAttribute('data-shape') || 'rect';
+          studio.activeTool = shape;
+          toolBtns.forEach(function (x) { x.classList.remove('active'); });
+          shapesDropdownBtn.classList.add('active');
+          shapesMenu.classList.remove('open');
+        });
+      });
+      document.addEventListener('click', function () {
+        shapesMenu.classList.remove('open');
+      });
+    }
+
+    // Pro DC Pages (Sol Thumbnail Panelini Aç/Kapat)
+    var togglePagesBtn = document.getElementById('studioTogglePagesBtn');
+    var sidebarEl = document.getElementById('studioThumbnailsBar');
+    if (togglePagesBtn && sidebarEl) {
+      togglePagesBtn.addEventListener('click', function () {
+        var isHidden = sidebarEl.style.display === 'none';
+        sidebarEl.style.display = isHidden ? 'flex' : 'none';
+        togglePagesBtn.classList.toggle('active', isHidden);
+      });
+    }
+
+    // Pro DC Fill out / Edit PDF Pill Switch
+    var modeFillBtn = document.getElementById('proModeFillBtn');
+    var modeEditBtn = document.getElementById('proModeEditBtn');
+    if (modeFillBtn && modeEditBtn) {
+      modeFillBtn.addEventListener('click', function () {
+        modeFillBtn.classList.add('active');
+        modeEditBtn.classList.remove('active');
+        studio.activeTool = 'textbox';
+        var sel = document.querySelector('.pro-tool-item[data-tool="textbox"]');
+        if (sel) sel.click();
+      });
+      modeEditBtn.addEventListener('click', function () {
+        modeEditBtn.classList.add('active');
+        modeFillBtn.classList.remove('active');
+        studio.activeTool = 'select';
+        var sel = document.querySelector('.pro-tool-item[data-tool="select"]');
+        if (sel) sel.click();
+      });
+    }
+
+    // Pro DC Search (Belge İçi Arama)
+    var searchBtn = document.getElementById('proSearchBtn');
+    if (searchBtn) {
+      searchBtn.addEventListener('click', function () {
+        var query = prompt('PDF İçinde Aranacak Kelimeyi Girin:');
+        if (query && query.trim()) {
+          searchInPdfDocument(query.trim());
+        }
+      });
+    }
+
+    // Pro DC Sağ Kenar Dock Butonları
+    var dockLayersBtn = document.getElementById('proDockLayersBtn');
+    if (dockLayersBtn) {
+      dockLayersBtn.addEventListener('click', function () {
+        var ans = confirm('Bu sayfayı 90° sağa döndürmek için "Tamam", sayfayı silmek için "İptal" seçin.');
+        if (ans) {
+          var rotBtn = document.getElementById('rotatePageBtn');
+          if (rotBtn) rotBtn.click();
+        }
+      });
+    }
+    var dockCommentsBtn = document.getElementById('proDockCommentsBtn');
+    if (dockCommentsBtn) {
+      dockCommentsBtn.addEventListener('click', function () {
+        var allNotes = [];
+        Object.keys(studio.pageObjects).forEach(function (p) {
+          (studio.pageObjects[p] || []).forEach(function (obj) {
+            if (obj.type === 'sticky') allNotes.push('Sayfa ' + p + ': ' + obj.text);
+          });
+        });
+        if (allNotes.length === 0) {
+          alert('Belgede henüz eklenmiş yapışkan not bulunmuyor. Üst bardaki "Sticky" aracını kullanarak not ekleyebilirsiniz.');
+        } else {
+          alert('Belgedeki Notlar:\n• ' + allNotes.join('\n• '));
+        }
+      });
+    }
+    var dockFormsBtn = document.getElementById('proDockFormsBtn');
+    if (dockFormsBtn) {
+      dockFormsBtn.addEventListener('click', function () {
+        var count = (studio.pageObjects[studio.currentPage] || []).length;
+        alert('Bu sayfada toplam ' + count + ' adet interaktif nesne/katman bulunmaktadır.');
+      });
+    }
+    var dockSettingsBtn = document.getElementById('proDockSettingsBtn');
+    if (dockSettingsBtn) {
+      dockSettingsBtn.addEventListener('click', function () {
+        var fitBtn = document.getElementById('menuFitPageBtn');
+        if (fitBtn) fitBtn.click();
+      });
+    }
 
     // 3. Renk, Kalınlık, Font ve Metin Ayarları
     var colorPicker = document.getElementById('studioColorPicker');
@@ -2094,6 +2333,139 @@
         }
 
         studio.isDrawing = true;
+
+        // Onay İşareti Damgası (Check)
+        if (studio.activeTool === 'check') {
+          pushUndo();
+          var checkObj = {
+            id: 'check_' + Date.now(),
+            type: 'stamp-icon',
+            iconType: 'check',
+            x: Math.max(0, pos.x - 14),
+            y: Math.max(0, pos.y - 14),
+            width: 28,
+            height: 28,
+            color: '#16a34a'
+          };
+          if (!studio.pageObjects[studio.currentPage]) studio.pageObjects[studio.currentPage] = [];
+          studio.pageObjects[studio.currentPage].push(checkObj);
+          renderPageObjects(studio.currentPage);
+          selectObject(checkObj.id);
+          return;
+        }
+
+        // Çarpı İşareti Damgası (Cross)
+        if (studio.activeTool === 'cross') {
+          pushUndo();
+          var crossObj = {
+            id: 'cross_' + Date.now(),
+            type: 'stamp-icon',
+            iconType: 'cross',
+            x: Math.max(0, pos.x - 14),
+            y: Math.max(0, pos.y - 14),
+            width: 28,
+            height: 28,
+            color: '#dc2626'
+          };
+          if (!studio.pageObjects[studio.currentPage]) studio.pageObjects[studio.currentPage] = [];
+          studio.pageObjects[studio.currentPage].push(crossObj);
+          renderPageObjects(studio.currentPage);
+          selectObject(crossObj.id);
+          return;
+        }
+
+        // Otomatik Tarih Ekleme (Date)
+        if (studio.activeTool === 'date') {
+          pushUndo();
+          var now = new Date();
+          var dateStr = String(now.getDate()).padStart(2, '0') + '.' + String(now.getMonth() + 1).padStart(2, '0') + '.' + now.getFullYear();
+          var dateObj = {
+            id: 'date_' + Date.now(),
+            type: 'text',
+            x: Math.max(0, pos.x - 10),
+            y: Math.max(0, pos.y - 10),
+            width: 120,
+            height: 30,
+            text: dateStr,
+            fontSize: 14,
+            fontFamily: 'Arial, sans-serif',
+            color: '#0f172a'
+          };
+          if (!studio.pageObjects[studio.currentPage]) studio.pageObjects[studio.currentPage] = [];
+          studio.pageObjects[studio.currentPage].push(dateObj);
+          renderPageObjects(studio.currentPage);
+          selectObject(dateObj.id);
+          return;
+        }
+
+        // Düzenlenebilir Tablo Ekleme (Table)
+        if (studio.activeTool === 'table') {
+          pushUndo();
+          var tableObj = {
+            id: 'table_' + Date.now(),
+            type: 'table',
+            x: Math.max(0, pos.x - 20),
+            y: Math.max(0, pos.y - 20),
+            width: 260,
+            height: 90,
+            rows: 3,
+            cols: 3,
+            data: [['Başlık 1', 'Başlık 2', 'Başlık 3'], ['Veri 1', 'Veri 2', 'Veri 3'], ['Veri 4', 'Veri 5', 'Veri 6']]
+          };
+          if (!studio.pageObjects[studio.currentPage]) studio.pageObjects[studio.currentPage] = [];
+          studio.pageObjects[studio.currentPage].push(tableObj);
+          renderPageObjects(studio.currentPage);
+          selectObject(tableObj.id);
+          return;
+        }
+
+        // Çerçeveli Metin Kutusu (Text Box)
+        if (studio.activeTool === 'textbox') {
+          pushUndo();
+          var tbObj = {
+            id: 'tb_' + Date.now(),
+            type: 'text',
+            x: Math.max(0, pos.x - 10),
+            y: Math.max(0, pos.y - 10),
+            width: 200,
+            height: 36,
+            text: 'Metin kutusu...',
+            fontSize: 14,
+            fontFamily: 'Arial, sans-serif',
+            color: '#0f172a',
+            bgColor: '#ffffff'
+          };
+          if (!studio.pageObjects[studio.currentPage]) studio.pageObjects[studio.currentPage] = [];
+          studio.pageObjects[studio.currentPage].push(tbObj);
+          renderPageObjects(studio.currentPage);
+          selectObject(tbObj.id);
+          return;
+        }
+
+        // Yapışkan Not (Sticky Note)
+        if (studio.activeTool === 'sticky') {
+          pushUndo();
+          var stickyObj = {
+            id: 'sticky_' + Date.now(),
+            type: 'sticky',
+            x: Math.max(0, pos.x - 10),
+            y: Math.max(0, pos.y - 10),
+            width: 140,
+            height: 110,
+            text: 'Notunuzu buraya yazın...'
+          };
+          if (!studio.pageObjects[studio.currentPage]) studio.pageObjects[studio.currentPage] = [];
+          studio.pageObjects[studio.currentPage].push(stickyObj);
+          renderPageObjects(studio.currentPage);
+          selectObject(stickyObj.id);
+          return;
+        }
+
+        // Filigran Ekleme (Watermark)
+        if (studio.activeTool === 'watermark') {
+          applyWatermarkToDocument();
+          return;
+        }
 
         // Alanı Sil / Beyazlat (Whiteout & Area Eraser)
         if (studio.activeTool === 'whiteout' || studio.activeTool === 'eraser') {

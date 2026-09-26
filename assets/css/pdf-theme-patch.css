@@ -1648,6 +1648,226 @@ html body .ps-logo-badge {
   cursor: pointer;
 }
 
+/* =========================================================
+ * PRO DC MODERN TOOLBAR & DOCK STYLES (EXACT CLONE)
+ * ========================================================= */
+.acrobat-header.pro-dc-modern-toolbar {
+  height: 58px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 8px;
+  overflow-x: auto;
+  user-select: none;
+}
+
+.acrobat-tool-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.acrobat-tools-main {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.pro-tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 42px;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+}
+
+.pro-tool-item svg {
+  width: 17px;
+  height: 17px;
+}
+
+.pro-tool-item:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.pro-tool-item.active {
+  background: #cbd5e1;
+  color: #0f172a;
+  border-color: #94a3b8;
+  font-weight: 700;
+}
+
+.pro-toolbar-divider {
+  width: 1px;
+  height: 28px;
+  background: #cbd5e1;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.pro-tool-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.pro-shapes-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  min-width: 140px;
+  padding: 4px 0;
+  z-index: 500;
+}
+
+.pro-tool-dropdown-wrap:hover .pro-shapes-menu,
+.pro-shapes-menu.open {
+  display: block;
+}
+
+.pro-shape-opt {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pro-shape-opt:hover {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.pro-pill-switch {
+  display: inline-flex;
+  background: #e2e8f0;
+  border-radius: 20px;
+  padding: 2px;
+  border: 1px solid #cbd5e1;
+  margin-right: 4px;
+}
+
+.pro-pill-btn {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: 18px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.12s ease;
+}
+
+.pro-pill-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.pro-search-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+.pro-search-btn:hover {
+  background: #e2e8f0;
+}
+
+.pro-done-btn {
+  background: #f97316;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.35);
+  transition: all 0.12s ease;
+}
+
+.pro-done-btn:hover {
+  background: #ea580c;
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.45);
+}
+
+/* Sağ Kenar Dikey Dock */
+.pro-right-dock-bar {
+  width: 42px;
+  background: #f8fafc;
+  border-left: 1px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  gap: 14px;
+  flex-shrink: 0;
+  z-index: 40;
+}
+
+.pro-dock-icon-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pro-dock-icon-btn:hover,
+.pro-dock-icon-btn.active {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
 .ps-btn-primary:hover {
   background: #0369a1;
 }
