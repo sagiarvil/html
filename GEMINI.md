@@ -144,3 +144,40 @@ Bu anayasa; kullanıcının sahip olduğu 5 platformun tamamını kapsayan mutla
 1. **Çoklu Chat Kutusu Koruma Protokolü:** test-lab ve bağlı 5 web projesinde (skdm, drfin, excelarsiv, html, vertigonedir) farklı sohbet oturumlarında çalışan ajanlar birbirlerinin kodlarını, bileşenlerini ve dosyalarını ASLA ezemez.
 2. **Kör Üstüne Yazma Yasağı:** Dosya oluşturma ve düzenlemelerde 'overwrite: true' yasaktır; her zaman atomik diff veya cerrahi birleştirme kullanılır.
 3. **Commit & Deploy Öncesi Senkronizasyon:** Hiçbir ajan 'git commit', 'git push' veya 'deploy' yapmadan önce git diff ve '~/.gemini/messages/test-lab/CONCURRENCY_SYNC_LEDGER.jsonl' kütüğünü kontrol etmeden işlem yapamaz. Başka oturumun eklediği yeni dosyalar silinemez.
+
+---
+
+## 🏛️ 19. KANUNİ APPLE MAC APP STORE TASARIM SİSTEMİ ANAYASASI (%100 KİLİTLİ STANDART)
+Kullanıcının kesin talimatı gereği, `htmlandhtml.com` ana sayfası ve İSTİSNASIZ TÜM ALT SAYFALARI (araçlar, rehberler, haberler, yasal sayfalar, analizörler) resmi Apple Mac App Store (`apps.apple.com/us/app/...`) tasarım mimarisine %100 sadık kalmak ZORUNDADIR. Bu anayasa kalıcı olarak hafızaya kazınmıştır ve çiğnenemez:
+
+1. **Sabit Sol Navigasyon (Fixed Left Sidebar - 250px):**
+   - Arka plan: Saf `#141518` veya `#121316` koyu katman, sağ kenarlık: `1px solid rgba(255,255,255,0.06)`.
+   - Marka Başlığı: Orijinal `HTML&HTML` logosu (`assets/logo-dark.png`) ve sağında `⌵` chevron simgesi.
+   - Spotlight Arama: `.mac-sidebar-search` içinde `Ara...` placeholder, sol büyüteç ikonu, sağda dinamik `✕` temizleme butonu ve arama anında dönen Apple mavisi `#2997ff` spinner.
+   - Kategoriler Hiyerarşisi: Mavi SVG ikonlu ve 8px border-radius'lu öğeler (`★ Keşfet`, `🕹️ Arcade & Photoshop`, `🎨 Üret & Acrobat PDF`, `⚡ Çalışma & 18 Motor`, `🚀 AI Arama & AEO`, `🛠️ Geliştirici & Schema`, `⊞ Kategoriler`). Alt grup: `Categories` başlığı altında `Productivity`, `Utilities`, `Developer Tools`, `Business`, `Education`.
+   - Hover / Active State: Seçili menü öğesi `background: rgba(255,255,255,0.08)`, yazı rengi `#ffffff` ve sol ikon `var(--mac-blue-light)`.
+
+2. **Üst Hero ve Ürün Tanıtım Bloğu (Mac App Store Hero):**
+   - Radiant Ambient Glow: `radial-gradient(120% 90% at 50% -15%, #004fb0 0%, #001a40 45%, #000000 85%)` derin uzay mavisi/siyah parıltı.
+   - İkon: 136x136px squircle (`border-radius: 30px`), çift katmanlı inset gölge ve 1px mikro kenarlık.
+   - Başlık & Meta: 2.5rem bold başlık, altında Apple mavisi kategori etiketi, platform/fiyat satırı (`Sadece Web & Masaüstü için · Ücretsiz`).
+   - Eylem Butonları: Apple mavisi hap buton (`.mac-btn-get`: `padding: 0.65rem 1.6rem; border-radius: 9999px; background: #0071e3; color: #fff`) ve sağında dairesel paylaşım/aksiyon butonu (`.mac-btn-share`).
+
+3. **5 Sütunlu Yatay İstatistik Şeridi (5-Column Stats Strip):**
+   - Grid: `grid-template-columns: repeat(5, 1fr)`, üst ve alt `1px solid rgba(255,255,255,0.1)`.
+   - Sütunlar: (1) YAŞ DERECESİ / 4+ Yaşında, (2) KATEGORİ / Geliştirici Araçları, (3) GELİŞTİRİCİ / HTML&HTML, (4) DİL / TR Türkçe, (5) BOYUT / 14 KB Sub-40ms TTFB.
+
+4. **macOS Pencere Vitrini & Görsel Galeri (macOS Window Showcase):**
+   - macOS 3 renkli pencere butonları (`🔴 #ff5f56`, `🟡 #ffbd2e`, `🟢 #27c93f`), ortalanmış pencere başlığı ve koyu gövdeli çalışma alanı.
+
+5. **Apple Standart Alt Bölümleri (Ratings, What's New, App Privacy, Featured In, More by):**
+   - **Puanlar ve Değerlendirmeler (Ratings & Reviews):** 2 sütunlu bento kartları, 5 altın yıldız (`★`), inceleme tarihi ve kullanıcı adı.
+   - **Yenilikler (What's New):** Sürüm ve tarih başlığı, sağda `...daha fazla` açılır metni.
+   - **Uygulama Gizliliği (App Privacy):** Merkezde kilit/kalkan ikonu, "Veriler Sizinle İlişkilendirilmez" deklarasyonu ve kullanım/tanılama rozetleri.
+   - **İlgili İçerik / Öne Çıkanlar (Featured In):** 2 sütunlu büyük editoryal kartlar.
+   - **Diğer Uygulamalar (More by HTML&HTML):** 3x3 ızgara halinde küçük simgeli, kategori etiketli ve sağında hap şeklinde `GÖRÜNTÜLE / AÇ` butonu bulunan yatay kartlar.
+
+6. **Otantik Apple Bölgesel Footer (mac-apple-footer):**
+   - Üst satırda yatay ülke/bölge linkleri (`United States`, `Türkiye`, `Español`, `Deutsch`, `Français` vb.).
+   - Alt satırda telif hakkı ve kurumsal yasal linkler (`Kullanım Koşulları`, `Gizlilik Politikası`, `Çerez Uyarısı`, `Destek`).
+   - SIFIR TİTREME (Hardware Compositing): Tüm ana konteynerlerde `-webkit-transform: translate3d(0,0,0)` ve `scrollbar-gutter: stable`.
