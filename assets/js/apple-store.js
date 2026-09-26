@@ -8,11 +8,42 @@
   document.addEventListener('DOMContentLoaded', function() {
     // 1. Spotlight Canlı Arama
     const searchInput = document.getElementById('appleStoreSearch');
+    const searchContainer = searchInput?.closest('.mac-sidebar-search');
     const appCards = document.querySelectorAll('.apple-app-row-card, .apple-hero-card, .mac-app-card-item, .mac-featured-card');
 
-    if (searchInput) {
-      searchInput.addEventListener('input', function(e) {
-        const query = (e.target.value || '').toLowerCase().trim();
+    if (searchInput && searchContainer) {
+      // Dynamic Spinner
+      let spinner = searchContainer.querySelector('.mac-sidebar-search-spinner');
+      if (!spinner) {
+        spinner = document.createElement('span');
+        spinner.className = 'mac-sidebar-search-spinner';
+        spinner.setAttribute('aria-hidden', 'true');
+        searchContainer.appendChild(spinner);
+      }
+
+      // Dynamic Clear Button (✕)
+      let clearBtn = searchContainer.querySelector('.mac-sidebar-search-clear');
+      if (!clearBtn) {
+        clearBtn = document.createElement('button');
+        clearBtn.type = 'button';
+        clearBtn.className = 'mac-sidebar-search-clear';
+        clearBtn.setAttribute('aria-label', 'Aramayı Temizle');
+        clearBtn.innerHTML = '✕';
+        searchContainer.appendChild(clearBtn);
+
+        clearBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          searchInput.value = '';
+          clearBtn.style.display = 'none';
+          searchContainer.classList.remove('is-searching');
+          applySearchFilter('');
+          searchInput.focus();
+        });
+      }
+
+      let searchDebounce = null;
+      function applySearchFilter(query) {
         appCards.forEach(function(card) {
           const title = (card.getAttribute('data-app-title') || card.querySelector('h3, h4, .mac-app-item-title, .mac-featured-headline')?.textContent || '').toLowerCase();
           const category = (card.getAttribute('data-app-category') || card.querySelector('.mac-app-item-category, .mac-featured-kicker')?.textContent || '').toLowerCase();
@@ -24,6 +55,39 @@
             card.style.display = 'none';
           }
         });
+        searchContainer.classList.remove('is-searching');
+      }
+
+      searchInput.addEventListener('input', function(e) {
+        const query = (e.target.value || '').toLowerCase().trim();
+        if (query) {
+          clearBtn.style.display = 'inline-flex';
+          searchContainer.classList.add('is-searching');
+        } else {
+          clearBtn.style.display = 'none';
+          searchContainer.classList.remove('is-searching');
+        }
+
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(function() {
+          applySearchFilter(query);
+        }, 120);
+      });
+
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          searchInput.value = '';
+          clearBtn.style.display = 'none';
+          searchContainer.classList.remove('is-searching');
+          applySearchFilter('');
+        } else if (e.key === 'Enter') {
+          // Sayfa yenilemesini veya gezinmesini kesinlikle engelle
+          e.preventDefault();
+          e.stopPropagation();
+          clearTimeout(searchDebounce);
+          applySearchFilter((searchInput.value || '').toLowerCase().trim());
+        }
       });
     }
 
