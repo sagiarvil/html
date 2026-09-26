@@ -63,58 +63,55 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.82);
+  height: 64px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.86);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   border-bottom: 1px solid var(--apple-border);
-  transition: background 0.3s, border 0.3s;
+  contain: layout;
 }
 
 [data-theme="light"] .apple-store-header,
 .light .apple-store-header {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.90);
 }
 
 .apple-header-inner {
   max-width: 1240px;
+  height: 100%;
   margin: 0 auto;
-  padding: 0.85rem 1.5rem;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  box-sizing: border-box;
 }
 
 .apple-store-brand {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
   text-decoration: none;
-  color: var(--apple-text-primary);
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-}
-
-.apple-appstore-badge-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #242528, #111214);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
 }
 
-[data-theme="light"] .apple-appstore-badge-icon,
-.light .apple-appstore-badge-icon {
-  background: #000000;
-  color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+.apple-store-brand img.brand-logo,
+.brand img.brand-logo {
+  height: 28px !important;
+  width: auto !important;
+  display: block !important;
+  transition: opacity 0.2s ease;
+}
+
+html[data-theme="dark"] .apple-store-brand img.brand-logo,
+html:not([data-theme="light"]) .apple-store-brand img.brand-logo {
+  filter: invert(1) brightness(1.1) !important;
+}
+
+[data-theme="light"] .apple-store-brand img.brand-logo,
+.light .apple-store-brand img.brand-logo {
+  filter: none !important;
 }
 
 .apple-store-nav {
@@ -254,7 +251,7 @@ body {
   background: var(--apple-card-bg);
   border: 1px solid var(--apple-border);
   box-shadow: var(--apple-shadow-md);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -262,12 +259,16 @@ body {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  transform: none !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .apple-hero-card:hover {
-  transform: translateY(-4px);
+  transform: none !important;
   border-color: var(--apple-border-hover);
   box-shadow: var(--apple-shadow-lg);
+  background: var(--apple-card-hover);
 }
 
 .apple-hero-card-banner {
@@ -411,7 +412,7 @@ body {
 
 .apple-btn-open:hover {
   background: #e5e5ea;
-  transform: scale(1.03);
+  transform: none !important;
 }
 
 [data-theme="light"] .apple-btn-open,
@@ -479,17 +480,20 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: var(--apple-shadow-sm);
   text-decoration: none;
   color: inherit;
+  transform: none !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .apple-app-row-card:hover {
   background: var(--apple-card-hover);
   border-color: var(--apple-border-hover);
   box-shadow: var(--apple-shadow-md);
-  transform: translateY(-2px);
+  transform: none !important;
 }
 
 .apple-row-left {
@@ -624,7 +628,7 @@ body {
 
 .apple-scanner-submit:hover {
   background: #e5e5ea;
-  transform: scale(1.02);
+  transform: none !important;
 }
 
 [data-theme="light"] .apple-scanner-submit,
@@ -638,52 +642,98 @@ body {
   background: #2c2c2e;
 }
 
-/* Minimalist Monochromatic Footer */
-.apple-store-footer {
-  border-top: 1px solid var(--apple-border);
-  padding: 3.5rem 1.5rem 4.5rem;
-  background: var(--apple-bg);
+/* Authentic 4-Column Monochromatic Footer */
+footer, .site-footer {
+  background: var(--apple-bg) !important;
+  border-top: 1px solid var(--apple-border) !important;
+  padding: 64px 24px 100px !important;
+  margin-top: 56px !important;
 }
 
-.apple-footer-inner {
-  max-width: 1240px;
-  margin: 0 auto;
+footer::before, .site-footer::before {
+  display: none !important;
 }
 
-.apple-footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.75rem;
-  margin-bottom: 1.75rem;
+footer .footer-grid, .footer-inner {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr 1.1fr !important;
+  gap: 40px !important;
 }
 
-.apple-footer-link {
-  font-size: 0.85rem;
-  color: var(--apple-text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
+footer .brand-logo {
+  height: 26px !important;
+  width: auto !important;
 }
 
-.apple-footer-link:hover {
-  color: #ffffff;
+footer h4 {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--apple-text-primary) !important;
+  margin: 0 0 16px !important;
 }
 
-[data-theme="light"] .apple-footer-link:hover,
-.light .apple-footer-link:hover {
-  color: #000000;
+footer ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
 }
 
-.apple-footer-copy {
-  font-size: 0.8rem;
-  color: var(--apple-text-tertiary);
-  line-height: 1.6;
-  margin: 0;
+footer a, .footer-nav a, .footer-col a {
+  color: var(--apple-text-secondary) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+  transform: none !important;
+}
+
+footer a:hover, .footer-nav a:hover, .footer-col a:hover {
+  color: var(--apple-text-primary) !important;
+  transform: none !important;
+}
+
+footer p, footer .footer-brand p {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: var(--apple-text-tertiary) !important;
+  margin-top: 14px !important;
+}
+
+footer .footer-bottom, .footer-fine {
+  max-width: 1240px !important;
+  margin: 40px auto 0 !important;
+  border-top: 1px solid var(--apple-border) !important;
+  padding-top: 24px !important;
+  font-size: 13px !important;
+  color: var(--apple-text-tertiary) !important;
+  line-height: 1.65 !important;
+}
+
+@media (max-width: 960px) {
+  footer .footer-grid, .footer-inner {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+  footer .footer-brand {
+    grid-column: span 2 !important;
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .apple-store-header {
+    height: auto;
+  }
   .apple-header-inner {
     flex-wrap: wrap;
+    height: auto;
     padding: 0.75rem 1rem;
   }
   .apple-store-nav {

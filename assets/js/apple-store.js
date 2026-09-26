@@ -47,7 +47,6 @@
           const shelfCat = shelf.getAttribute('data-shelf-category');
           if (shelfCat === category) {
             shelf.style.display = '';
-            shelf.scrollIntoView({ behavior: 'smooth', block: 'start' });
           } else {
             shelf.style.display = 'none';
           }
