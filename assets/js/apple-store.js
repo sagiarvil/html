@@ -55,29 +55,29 @@
       });
     });
 
-    // 3. Hızlı Tarayıcı Köprüsü
-    const quickInput = document.getElementById('appleQuickScanInput');
-    const quickBtn = document.getElementById('appleQuickScanBtn');
+    // 3. Spotlight Scanner İstasyonu (Paste & Clear Yardımcıları)
     const mainInput = document.getElementById('domainInput');
-    const mainBtn = document.getElementById('scanButton');
+    const clearBtn = document.getElementById('hhInputClearBtn');
+    const pasteBtn = document.getElementById('hhInputPasteBtn');
 
-    if (quickBtn && quickInput) {
-      quickBtn.addEventListener('click', function(e) {
+    if (clearBtn && mainInput) {
+      clearBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        const url = (quickInput.value || '').trim();
-        if (!url) return;
-        if (mainInput && mainBtn) {
-          mainInput.value = url;
-          const scannerEl = document.getElementById('scanner');
-          if (scannerEl) {
-            scannerEl.scrollIntoView({ behavior: 'smooth' });
+        mainInput.value = '';
+        mainInput.focus();
+      });
+    }
+
+    if (pasteBtn && mainInput) {
+      pasteBtn.addEventListener('click', async function(e) {
+        e.preventDefault();
+        try {
+          const text = await navigator.clipboard.readText();
+          if (text) {
+            mainInput.value = text.trim();
+            mainInput.focus();
           }
-          setTimeout(function() {
-            mainBtn.click();
-          }, 300);
-        } else {
-          window.location.href = '/site-tarama/?url=' + encodeURIComponent(url);
-        }
+        } catch (err) {}
       });
     }
   });

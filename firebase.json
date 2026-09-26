@@ -38,14 +38,13 @@
           {"key":"Content-Security-Policy","value":"default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.paddle.com https://news.google.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.paddle.com https://www.photopea.com https://*.photopea.com; connect-src 'self' https://*.paddle.com https://news.google.com https://*.google.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net https://www.photopea.com https://*.photopea.com; child-src 'self' blob: https://www.photopea.com https://*.photopea.com; frame-src https://*.paddle.com https://news.google.com https://*.google.com https://www.photopea.com https://*.photopea.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"},
           {"key":"Vary","value":"Accept-Encoding"},
           {"key":"Server-Timing","value":"cdn-cache;desc=HIT"},
-          {"key":"X-Served-By","value":"Firebase-Hosting"},
-          {"key":"ETag","value":"W/\"htmlandhtml-v4-20260908-typography-upgrade\""}
+          {"key":"X-Served-By","value":"Firebase-Hosting"}
         ]
       },
-      {"source":"**/*.@(html|htm)","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
-      {"source":"/","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
-      {"source":"/tr*","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
-      {"source":"/en*","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
+      {"source":"**/*.@(html|htm)","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/tr*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
+      {"source":"/en*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/{tr,en}/**","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},
       {"source":"/favicon.*","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
       {"source":"/apple-touch-icon.png","headers":[{"key":"Cache-Control","value":"no-cache, no-store, must-revalidate"}]},
