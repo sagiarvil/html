@@ -7,6 +7,7 @@
 /architecture  /platform/         301
 /preview       /                  301
 /methodology.html /methodology/   301
+/tr           /                  301
 /tr/*          /:splat            301
 /en/*          /                  301
 

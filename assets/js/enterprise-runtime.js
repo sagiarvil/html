@@ -1,4 +1,4 @@
-﻿(()=>{
+(()=>{
 'use strict';
 const COPY={
  tr:{
@@ -36,6 +36,9 @@ const lensOrder=['SEO','GEO','AEO','LLMO','AAO','RAG','E-E-A-T'];
 const safe=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 let currentLang=()=>document.documentElement.lang==='tr'?'tr':'en';
 function applyCopy(){
+ if (document.querySelector('.apple-store-container') || document.querySelector('.apple-store-header')) {
+  return;
+ }
  const l=currentLang(),c=COPY[l];
  const h=document.querySelector('[data-i18n="heroTitle"]');if(h)h.innerHTML=c.hero;
  const lead=document.querySelector('[data-i18n="heroCopy"]');if(lead)lead.textContent=c.lead;

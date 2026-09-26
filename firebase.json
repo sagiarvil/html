@@ -84,6 +84,8 @@
       {"source":"/api/paddle/webhook","function":{"functionId":"paddleWebhook","region":"us-central1"}}
     ],
     "redirects": [
+      {"source":"/tr","destination":"/","type":301},
+      {"source":"/tr/","destination":"/","type":301},
       {"source":"/tr/:path*","destination":"/:path*","type":301},
       {"source":"/en/**","destination":"/","type":301},
       {"source":"/index.html","destination":"/","type":301},
