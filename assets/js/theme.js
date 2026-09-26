@@ -41,6 +41,9 @@ function loadCommercialIntent(){if(location.pathname.indexOf('editor-photoshop')
 function loadPaddleCheckout(){if(!document.querySelector('.checkout-card')||document.querySelector('script[data-paddle-checkout-loader]'))return;const s=document.createElement('script');s.src='/assets/js/paddle-checkout.js?v=2';s.defer=true;s.dataset.paddleCheckoutLoader='1';document.head.appendChild(s)}
 
 function mount(){
+  if(document.querySelector('.mac-appstore-layout') || document.body?.classList.contains('mac-appstore-body')) {
+    return;
+  }
   mountMobileNav();
   loadHomepageIntelligence();
   loadCommercialIntent();

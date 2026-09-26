@@ -96,22 +96,31 @@ body {
   flex-shrink: 0;
 }
 
+/* Original HTML&HTML Logo: Crisp, Genuine, Zero-Filter Inversion */
+img.brand-logo,
+.brand img.brand-logo,
 .apple-store-brand img.brand-logo,
-.brand img.brand-logo {
-  height: 28px !important;
+.mac-sidebar-brand img.brand-logo,
+.mac-mobile-topbar-brand img.brand-logo,
+.mac-mobile-logo img.brand-logo,
+.mac-footer-brand-row img.brand-logo,
+footer img.brand-logo {
+  height: 24px !important;
   width: auto !important;
   display: block !important;
-  transition: opacity 0.2s ease;
-}
-
-html[data-theme="dark"] .apple-store-brand img.brand-logo,
-html:not([data-theme="light"]) .apple-store-brand img.brand-logo {
-  filter: invert(1) brightness(1.1) !important;
-}
-
-[data-theme="light"] .apple-store-brand img.brand-logo,
-.light .apple-store-brand img.brand-logo {
   filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Purge Legacy Design Elements That Break Apple Store Layout */
+.hh-mobile-toggle,
+.hh-mobile-drawer,
+#hh-mobile-menu-drawer,
+.topbar,
+.topbar-shell,
+.header-top {
+  display: none !important;
 }
 
 .apple-store-nav {
