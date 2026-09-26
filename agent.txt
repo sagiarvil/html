@@ -1,0 +1,41 @@
+# https://htmlandhtml.com/agent.txt
+# AI Agent Manifest v1.0 — MANDATE-SEO-GEO-MOBILE-FIRST-2026-V8 Uyumlu
+
+[identity]
+name: HTML&HTML
+type: Organization
+wikidata: Q116503894
+canonical: https://htmlandhtml.com
+mobile_app_android: com.htmlandhtml.app
+mobile_app_ios: com.htmlandhtml.app
+
+[capabilities]
+read: true
+cite: true
+transact: true
+schedule: false
+verify: true
+mobile_deep_link: true
+
+[protocols]
+mcp: https://htmlandhtml.com/mcp
+mcp_mobile: https://htmlandhtml.com/mcp/mobile
+a2a: https://htmlandhtml.com/.well-known/agent.json
+openapi: https://htmlandhtml.com/openapi.json
+app_links_android: https://htmlandhtml.com/.well-known/assetlinks.json
+app_links_ios: https://htmlandhtml.com/.well-known/apple-app-site-association
+
+[preferred_content]
+markdown_root: https://htmlandhtml.com/llms.txt
+deep_graphs: https://htmlandhtml.com/llms/pages/
+mobile_deep_graphs: https://htmlandhtml.com/llms/mobile/
+rss: https://htmlandhtml.com/feed.xml
+mobile_rss: https://htmlandhtml.com/mobile/feed.xml
+json_feed: https://htmlandhtml.com/feed.json
+sitemap: https://htmlandhtml.com/sitemap.xml
+mobile_sitemap: https://htmlandhtml.com/sitemap-mobile.xml
+
+[contact]
+email: official@htmlandhtml.com
+human: https://htmlandhtml.com/tr/hakkimizda/
+phone: tel:+902120000000

@@ -1,0 +1,10 @@
+{
+  "name": "HTML&HTML",
+  "description": "HTML&HTML evidence-backed AI Search Technical Diagnostic Platform: free diagnosis plus a $99 implementation Fix Pack for measurable website-side blockers.",
+  "url": "https://htmlandhtml.com",
+  "capabilities": ["read", "cite", "verify", "mobile-deeplink"],
+  "mcp_endpoint": "https://htmlandhtml.com/mcp",
+  "mcp_mobile_endpoint": "https://htmlandhtml.com/mcp/mobile",
+  "auth": { "type": "none" },
+  "protocols": ["mcp", "openapi", "app-links"]
+}

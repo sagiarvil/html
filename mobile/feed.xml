@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML&amp;HTML — Mobile &amp; Voice AI Search Feeds</title>
+    <link>https://htmlandhtml.com/</link>
+    <description>Mobile-first, voice-optimized syndication feeds for AI crawlers, on-device models and aggregators.</description>
+    <language>tr-TR</language>
+    <lastBuildDate>Thu, 25 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://htmlandhtml.com/mobile/feed.xml" rel="self" type="application/rss+xml" />
+    <generator>HTMLandHTML Enterprise RSS Engine v1.0</generator>
+    <item>
+      <title>Update to the Site Reputation Policy: Yapay Zeka Arama ve Web Mimarisi Analizi</title>
+      <link>https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/tr/llms-txt-haberler/2026-08-01-update-to-the-site-reputation-policy-ae93fb765c</guid>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Google Search Central Blog tarafından yayımlanan teknik veriler ışığında Large Language Model Optimization & Latent Projection sütunu üzerindeki mimari etkiler, tarama protokolleri, çoklu model alıntı dinamikleri ve web yöneticisi eylem planı.]]></description>
+      <category>LLMO</category>
+      <category>AI Search</category>
+      <category>llms.txt</category>
+    </item>
+    <item>
+      <title>AI Overviews and Technical Search Optimization</title>
+      <link>https://htmlandhtml.com/tr/llms-txt-haberler/ai-overviews-technical-optimization</link>
+      <guid isPermaLink="true">https://htmlandhtml.com/tr/llms-txt-haberler/ai-overviews-technical-optimization</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Google AI Overviews ve OpenAI Search entegrasyonu için kurumsal web sitelerinde 14KB AST bütçesi, semantik hiyerarşi ve varlık temelli indeksleme rehberi.]]></description>
+      <category>AEO</category>
+      <category>GEO</category>
+      <category>Schema.org</category>
+    </item>
+  </channel>
+</rss>

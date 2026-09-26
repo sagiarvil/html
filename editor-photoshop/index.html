@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Photoshop Studio — Profesyonel Görsel & Katman Editörü | HTML&HTML</title>
+  <meta name="description" content="Tarayıcınızda çalışan %100 yerel ve tam donanımlı Web Photoshop. Katmanlar, fırçalar, filtreler, geçmiş paneli ve sıfır çökme garantisi.">
+  <link rel="canonical" href="https://htmlandhtml.com/editor-photoshop.html">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .ps-app-shell {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #0f172a;
+    }
+    .ps-topbar {
+      height: 42px;
+      min-height: 42px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+    .ps-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ps-back-btn {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s;
+    }
+    .ps-back-btn:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+    .ps-badge {
+      background: #0284c7;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .ps-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f8fafc;
+      letter-spacing: -0.2px;
+    }
+    .ps-engine-badge {
+      font-size: 11px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+    .ps-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ps-btn {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s;
+    }
+    .ps-btn:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+    .ps-stage {
+      flex: 1;
+      width: 100%;
+      height: calc(100vh - 42px);
+      background: #1e1e1e;
+      position: relative;
+    }
+    .ps-stage iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="ps-app-shell">
+    <header class="ps-topbar">
+      <div class="ps-brand">
+        <a href="/pdf-cevirici.html" class="ps-back-btn" title="PDF ve Çevirici Araçlarına Dön">
+          <span>← Çeviricilere Dön</span>
+        </a>
+        <div class="ps-badge">Ps</div>
+        <span class="ps-title">Web Photoshop Studio</span>
+        <span class="ps-engine-badge">Photopea Pro Engine</span>
+      </div>
+      <div class="ps-actions">
+        <button class="ps-btn" id="fsToggleBtn" title="Tam Ekran Modunu Aç/Kapat">
+          <span>⛶ Tam Sayfa Aç</span>
+        </button>
+        <a href="https://www.photopea.com" target="_blank" rel="noopener noreferrer" class="ps-btn" title="Yeni Sekmede Aç">
+          <span>Yeni Sekmede Aç ↗</span>
+        </a>
+      </div>
+    </header>
+    <main class="ps-stage">
+      <iframe id="photopeaIframe" src="https://www.photopea.com" allow="clipboard-read; clipboard-write; fullscreen" title="Photopea Web Photoshop Studio"></iframe>
+    </main>
+  </div>
+  <script>
+    (function() {
+      var fsBtn = document.getElementById('fsToggleBtn');
+      if (fsBtn) {
+        fsBtn.addEventListener('click', function() {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(function() {});
+            fsBtn.querySelector('span').textContent = 'Küçült';
+          } else {
+            document.exitFullscreen().catch(function() {});
+            fsBtn.querySelector('span').textContent = '⛶ Tam Sayfa Aç';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

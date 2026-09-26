@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<link rel="stylesheet" href="/assets/css/theme.css?v=19">
+<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Güvenlik Başlıkları Kontrolü — HSTS, CSP ve Güvenlik Temeli | HTML&HTML</title>
+<meta name="description" content="Güvenlik başlıklarınızı ücretsiz denetleyin. HSTS, Content-Security-Policy, X-Content-Type-Options, Referrer-Policy ve clickjacking korumasını kanıtıyla görün.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/security-headers-checker/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/security-headers-checker/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HTML&HTML GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "Araçlar", "item": "https://htmlandhtml.com/tr/araclar/" },
+        { "@type": "ListItem", "position": 3, "name": "GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ", "item": "https://htmlandhtml.com/tr/guvenlik-basliklari-kontrol/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/authority-tool.js?v=4" defer></script>
+<script src="/assets/js/theme.js?v=8"></script>
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=19">
+<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+</head>
+<body data-tool-categories="security">
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav class="primary-nav" aria-label="Ana navigasyon">
+  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
+  <a href="/editor-photoshop.html">Photoshop Web</a>
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
+  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
+  <a href="/tr/referans/">Bir Ekibe Öner</a>
+</nav>
+    <div class="nav-actions"><a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
+      <div class="langs">
+        <a href="/en/security-headers-checker/" aria-label="İngilizceye geç">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <a href="/tr/araclar/">Araçlar</a>
+  <span>/</span>
+  <span>GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>GÜVENLİK TEMELİ VE BAŞLIK DENETİMİ</b></div>
+  <h1>Güvenlik Ayarlarınız Yapay Zeka ve Kullanıcı Erişimini Yanlışlıkla Engelliyor mu?</h1>
+  <p>Güvenlik kontrolleri korunmalı; fakat yanlış yapılandırılmış HTTP politikaları crawler, ajan ve kullanıcı akışlarını istemeden kesebilir.</p>
+  <div class="authority-proof">
+    <span>HSTS Preload</span><span>CSP Doğrulama</span><span>Clickjacking Koruması</span><span>nosniff Zorunluluğu</span>
+  </div>
+</section>
+
+<section class="tool-shell" id="toolRunner">
+  <div class="tool-panel">
+    <h2>Ücretsiz güvenlik başlıkları denetimi</h2>
+    <p>Canlı uç noktalardan güvenlik başlıklarını incelemek için alan adı girin.</p>
+    <form class="tool-form" id="toolScanForm">
+      <input id="toolDomain" aria-label="Domain" autocomplete="url" placeholder="example.com" required>
+      <button type="submit">Erişim ve Güvenlik Temelimi Kontrol Et</button>
+    </form>
+    <div class="scan-chips">
+      <span>Örnekler:</span>
+      <button type="button" class="chip-btn" data-domain="llmstxt.org">llmstxt.org</button>
+      <button type="button" class="chip-btn" data-domain="anthropic.com">anthropic.com</button>
+      <button type="button" class="chip-btn" data-domain="vercel.com">vercel.com</button>
+    </div>
+    <small class="tool-note">Yalnızca herkese açık HTTP/HTTPS yüzeyleri ölçülür. Özel ve yerel ağlar fail-closed engellenir.</small>
+    <div id="toolStatus" class="tool-status" hidden></div>
+    <div id="toolResult" class="tool-result" hidden>
+      <div class="tool-score" id="toolScore"></div>
+      <div>
+        <p id="toolMeta" class="tool-note"></p>
+        <div id="toolFindings" class="tool-findings"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scope">
+  <header>
+    <span class="eyebrow">HTML&HTML / KAPSAM</span>
+    <h2>Güçlendirilmiş HTTP uç savunmaları.</h2>
+    <p>Kullanıcıları, yapay zeka ajanlarını ve marka itibarını tarayıcı taraflı saldırılardan korur.</p>
+  </header>
+  <div class="authority-grid">
+    <article class="authority-card">
+      <b>01 / İLETİM</b>
+      <h3>HSTS ve Şifreleme</h3>
+      <p>max-age, includeSubDomains ve preload durumunu kontrol ederek SSL düşürme saldırılarını önler.</p>
+    </article>
+    <article class="authority-card">
+      <b>02 / İÇERİK POLİTİKASI</b>
+      <h3>CSP ve Çerçeve Koruması</h3>
+      <p>script-src ve frame-ancestors kurallarını clickjacking ve XSS risklerine karşı denetler.</p>
+    </article>
+    <article class="authority-card">
+      <b>03 / SIZINTI</b>
+      <h3>MIME ve Referrer</h3>
+      <p>nosniff zorunluluğunu ve strict-origin-when-cross-origin referrer politikasını doğrular.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <header>
+    <span class="eyebrow">EPİSTEMİK SINIR</span>
+    <h2>Güvenlik kapsam sınırları</h2>
+    <p>Bu denetim sızma testi (penetration test), port taraması veya güvenlik açığı istismarı yapmaz.</p>
+  </header>
+  <div class="compare">
+    <b>SORUMLULUK</b>
+    <p>İş mantığına dokunmadan yalnızca herkese açık HTTP başlık hijyeni kontrol edilir.</p>
+  </div>
+</section>
+
+<section class="section faq">
+  <header>
+    <span class="eyebrow">SSS</span>
+    <h2>Sıkça Sorulan Sorular</h2>
+  </header>
+  <details><summary>HSTS eksikse ne olur?</summary><p>HSTS olmadan, güvensiz ağlardaki saldırganlar HTTPS trafiğini düz HTTP'ye düşürerek trafiği dinleyebilir (SSL stripping).</p></details><details><summary>nosniff neden kritiktir?</summary><p>X-Content-Type-Options: nosniff tarayıcının içerik türünü tahmin etmesini engeller; resim gibi görünen zararlı scriptlerin çalıştırılmasını durdurur.</p></details><details><summary>Yerel sunucuları test edebilir miyim?</summary><p>Hayır. SSRF riskini önlemek için yerel ve özel ağ hedefleri donanımsal olarak reddedilir.</p></details>
+</section>
+
+<section class="section">
+  <div class="authority-callout">
+    <div>
+      <h3>Sunucu güvenlik başlıklarınızı güçlendirin.</h3>
+      <p>$99 Yol Haritası ile Nginx, Cloudflare veya Apache için doğrudan uygulanabilir başlık yapılandırmaları edinin.</p>
+    </div>
+    <a href="/checkout">Full Site Yol Haritası — $99</a>
+  </div>
+</section>
+</main>
+
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. Sitenizin bulunmasını, anlaşılmasını ve değerlendirme kümesine girmesini engelleyen ölçülebilir sorunları kanıtıyla gösterir.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Sitemi Yapay Zeka Sonuçlarına Hazırla — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p></div></section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Tam Site Düzeltme Talimatı</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
+        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
+    <span>18 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+<script src="/assets/js/enterprise-runtime.js?v=3"></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+</body>
+</html>

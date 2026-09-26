@@ -1,9 +1,12 @@
 /index.html    /                  301
 /home          /                  301
-/products      /en/pricing/       301
-/products.html /en/pricing/       301
-/pricing       /en/pricing/       301
-/buy           /en/fix-mandate/   301
-/architecture  /en/platform/      301
+/products      /fiyatlandirma/    301
+/products.html /fiyatlandirma/    301
+/pricing       /fiyatlandirma/    301
+/buy           /fiyatlandirma/    301
+/architecture  /platform/         301
 /preview       /                  301
-/methodology.html /methodology/       301
+/methodology.html /methodology/   301
+/tr/*          /:splat            301
+/en/*          /                  301
+

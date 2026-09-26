@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://htmlandhtml.com/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/hakkimizda/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/hakkimizda/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/about/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/hakkimizda/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/tr/iletisim/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iletisim/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/contact/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/en/contact/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/iletisim/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/contact/" />
+  </url>
+  <url>
+    <loc>https://htmlandhtml.com/offline.html</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+  </url>
+</urlset>

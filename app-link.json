@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "webDomain": "https://htmlandhtml.com",
+  "appLinks": [
+    {
+      "webUrl": "/",
+      "androidIntent": "intent://htmlandhtml.com/#Intent;scheme=https;package=com.htmlandhtml.app;end",
+      "iosUrl": "htmlandhtml://home"
+    },
+    {
+      "webUrl": "/tr/site-tarama/",
+      "androidIntent": "intent://htmlandhtml.com/tr/site-tarama/#Intent;scheme=https;package=com.htmlandhtml.app;end",
+      "iosUrl": "htmlandhtml://scan"
+    },
+    {
+      "webUrl": "/tr/fiyatlandirma/",
+      "androidIntent": "intent://htmlandhtml.com/tr/fiyatlandirma/#Intent;scheme=https;package=com.htmlandhtml.app;end",
+      "iosUrl": "htmlandhtml://pricing"
+    }
+  ]
+}

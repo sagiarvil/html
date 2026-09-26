@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<link rel="stylesheet" href="/assets/css/theme.css?v=19">
+<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
+<script>
+  (function() {
+    'use strict';
+    try {
+      var h = localStorage.getItem('hh-theme');
+      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
+      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
+      if (!t || t === 'system') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.documentElement.classList.toggle('light', t === 'light');
+      document.documentElement.style.colorScheme = t;
+    } catch(e) {}
+  })();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Tarayıcı Dizini — User-Agent ve Bot Amaçları | HTML&HTML</title>
+<meta name="description" content="OpenAI, Anthropic, Google, Perplexity ve Apple tarafından işletilen resmi web tarayıcılarının kullanıcı ajanları, amaçları ve dokümantasyon bağlantıları.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://htmlandhtml.com/tr/referans/ai-tarayicilar/">
+<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/reference/ai-crawlers/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/referans/ai-tarayicilar/">
+<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/reference/ai-crawlers/">
+<link rel="describedby" href="https://htmlandhtml.com/llms.txt">
+<link rel="stylesheet" href="/assets/css/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "AI Tarayıcı Dizini: User-Agent ve IP Bilgileri",
+      "description": "OpenAI, Anthropic, Google, Perplexity ve Apple tarafından işletilen resmi web tarayıcılarının kullanıcı ajanları, amaçları ve dokümantasyon bağlantıları.",
+      "url": "https://htmlandhtml.com/tr/referans/ai-tarayicilar/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://htmlandhtml.com/tr/" },
+        { "@type": "ListItem", "position": 2, "name": "AI Tarayıcılar", "item": "https://htmlandhtml.com/tr/referans/ai-tarayicilar/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/theme.js?v=8"></script>
+<link rel="stylesheet" href="/assets/css/commercial-intent.css?v=2" data-commercial-intent-css="static">
+<link rel="stylesheet" href="/assets/css/premium-experience.css?v=19">
+<link rel="stylesheet" href="/assets/css/enterprise-system.css?v=1">
+<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-shell">
+    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+    </a>
+    <nav class="primary-nav" aria-label="Ana navigasyon">
+  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
+  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
+  <a href="/editor-photoshop.html">Photoshop Web</a>
+  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
+  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
+  <a href="/tr/referans/">Bir Ekibe Öner</a>
+</nav>
+    <div class="nav-actions"><a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
+      <div class="langs">
+        <a href="/en/reference/ai-crawlers/" aria-label="İngilizceye geç">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span>/</span>
+  <span>AI Tarayıcılar</span>
+</nav>
+
+<main>
+<section class="authority-hero">
+  <div class="kicker"><span></span><b>TARAYICI VERİTABANI</b></div>
+  <h1>AI Tarayıcı Dizini: <em>User-Agent ve IP Bilgileri</em></h1>
+  <p>OpenAI, Anthropic, Google, Perplexity ve Apple tarafından işletilen resmi web tarayıcılarının kullanıcı ajanları, amaçları ve dokümantasyon bağlantıları.</p>
+</section>
+
+<section class="section">
+  <div class="comparison-wrap">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>User-Agent</th>
+          <th>Vendor</th>
+          <th>Purpose</th>
+          <th>Description</th>
+          <th>Reference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  <td><strong>OAI-SearchBot</strong></td>
+  <td>OpenAI</td>
+  <td><span class="chip-btn">Real-Time Search & Product Feeds</span></td>
+  <td>Powers web search in ChatGPT and crawls product images across CDN hosts for advertiser product feeds.</td>
+  <td><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers" target="_blank" rel="noopener">Advertiser Docs ↗</a></td>
+</tr><tr>
+  <td><strong>GPTBot</strong></td>
+  <td>OpenAI</td>
+  <td><span class="chip-btn">Model Training</span></td>
+  <td>Collects public data for future foundational model training.</td>
+  <td><a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">Docs ↗</a></td>
+</tr><tr>
+  <td><strong>Claude-SearchBot</strong></td>
+  <td>Anthropic</td>
+  <td><span class="chip-btn">Real-Time Search</span></td>
+  <td>Retrieves web content for Claude live search answers.</td>
+  <td><a href="https://support.anthropic.com/en/articles/8896518" target="_blank" rel="noopener">Docs ↗</a></td>
+</tr><tr>
+  <td><strong>ClaudeBot</strong></td>
+  <td>Anthropic</td>
+  <td><span class="chip-btn">Model Training</span></td>
+  <td>Crawls public text for Claude training datasets.</td>
+  <td><a href="https://support.anthropic.com/en/articles/8896518" target="_blank" rel="noopener">Docs ↗</a></td>
+</tr><tr>
+  <td><strong>PerplexityBot</strong></td>
+  <td>Perplexity</td>
+  <td><span class="chip-btn">Real-Time Search</span></td>
+  <td>Searches and extracts source citations for Perplexity answers.</td>
+  <td><a href="https://docs.perplexity.ai/" target="_blank" rel="noopener">Docs ↗</a></td>
+</tr><tr>
+  <td><strong>Google-Extended</strong></td>
+  <td>Google</td>
+  <td><span class="chip-btn">Training Governance</span></td>
+  <td>Token used in robots.txt to control Gemini/Vertex training data collection.</td>
+  <td><a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers" target="_blank" rel="noopener">Docs ↗</a></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main>
+
+<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. Sitenizin bulunmasını, anlaşılmasını ve değerlendirme kümesine girmesini engelleyen ölçülebilir sorunları kanıtıyla gösterir.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Sitemi Yapay Zeka Sonuçlarına Hazırla — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p></div></section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
+        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+      </a>
+      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
+        <li><a href="/tr/fix-mandate/">Tam Site Düzeltme Talimatı</a></li>
+        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
+        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
+        <li><a href="/audit-profile.json">Denetim Profili</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Araçlar</h4>
+      <ul>
+        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
+        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
+        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
+        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
+        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
+        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
+        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
+        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rehberler</h4>
+      <ul>
+        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
+        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
+        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
+        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
+        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
+        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
+        <li><a href="/tr/methodology/">Metodoloji</a></li>
+        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
+        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
+        <li><a href="/tr/iletisim/">İletişim</a></li>
+        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
+        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
+        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
+        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
+    <span>18 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
+  </div>
+</footer>
+<script src="/assets/js/enterprise-runtime.js?v=3"></script>
+<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+</body>
+</html>

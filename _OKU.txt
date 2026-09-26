@@ -11,3 +11,9 @@ SON OTURUM:
 - Web Photoshop Studio tam ekran Photopea Pro Engine entegrasyonu tamamlandı (editor-photoshop.html, editor-photoshop/index.html, pdf-cevirici.html, assets/js/commercial-intent.js, assets/js/theme.js, _headers, firebase.json). Dış scriptlerin (commercial-intent pazarlama bloğu) sayfayı ezmesi engellendi, trailing slash yönlendirmesi için izole index.html eklendi, CSP frame-src / img-src / connect-src photopea.com izinleri zırhlandı ve Firebase Hosting canlı dağıtımı başarıyla tamamlandı.
 - PDF Çevirici süiti sadeleştirildi (pdf-cevirici.html): Photoshop Web Editör (Tam Kapasite), PDF Düzenle ve PDF'den Markdown'a (MD) haricindeki 15 gereksiz araç kartı temizlendi; arama ve kategori sekmeleri senkronize edildi.
 - Web Photoshop Editör yerelleştirildi (pdf-cevirici.html, assets/js/pdf-engine.js): Harici Photopea iframe ve link bağımlılığı kaldırıldı; katmanlar, fırça, silgi, klonlama damgası, kova, metin, şekil, damlalık, kırpma, filtreler ve PNG/JPG/WebP dışa aktarım özellikli %100 yerel Web Photoshop Studio motoru devreye alındı.
+- Apple App Store Suite & Pure Monochrome Black & White Mimarisi devreye alındı (index.html, assets/css/apple-store.css, assets/js/apple-store.js, _redirects, firebase.json):
+  * İngilizce ve /tr, /en önekleri tamamen iptal edildi; tüm sistem kök .com üzerinden tekil Türkçe kanonik rotaya bağlandı.
+  * Apple App Store vitrin mimarisi (Öne çıkan hikayeler: Photoshop Pro, Acrobat Pro DC, 18-Motorlu Radar), Spotlight canlı filtreleme, Segmented kategori sekmeleri ve Kategori Rafları kuruldu.
+  * Tasarım %100 saf siyah (Obsidian Jet Black #000000 / #0e0f12) ve saf beyaz (#ffffff) monokrom zırhına geçirildi; tüm çiğ renkler, mor/pembe AI gradyanları ve canvas yükü temizlendi.
+  * Sisteme yük getiren 5 ana darboğaz (34 adımlı Python patch hattı, 700+ çift dilli dosya, 1 MB'lık kaskad CSS çatışması, arka plan CPU tüketen profound-canvas ve satış/popup scriptleri) tespit edilip kullanıcıya raporlandı.
+
