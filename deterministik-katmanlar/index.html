@@ -1,36 +1,132 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
-<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
-<script>
-  (function() {
-    'use strict';
-    try {
-      var h = localStorage.getItem('hh-theme');
-      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
-      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
-      if (!t || t === 'system') {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      document.documentElement.classList.toggle('light', t === 'light');
-      document.documentElement.style.colorScheme = t;
-    } catch(e) {}
-  })();
-</script>
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Yapay Zeka Arama Sistemlerinin Baktığı 9 Deterministik Katman — HTML&HTML</title>
 <meta name="description" content="ChatGPT, Perplexity, Gemini ve Claude modellerinin web sitelerini değerlendirirken denetlediği 9 deterministik mimari katman ve teknik karar matrisi.">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://htmlandhtml.com/tr/deterministik-katmanlar/">
+<link rel="canonical" href="https://htmlandhtml.com/deterministik-katmanlar/">
+<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/deterministik-katmanlar/">
 <link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/deterministic-layers/">
-<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/deterministik-katmanlar/">
 <link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/deterministic-layers/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/authority.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5">
+
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+.mac-doc-card {
+  background: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: #d1d1d6;
+  font-size: 0.95rem;
+}
+.mac-doc-card h2 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 1.25rem 0 0.5rem 0;
+}
+.mac-doc-card h2:first-child {
+  margin-top: 0;
+}
+.mac-doc-card p {
+  margin: 0 0 1rem 0;
+}
+.mac-doc-card ul {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+.mac-doc-card li {
+  margin-bottom: 0.35rem;
+}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,189 +146,255 @@
   ]
 }
 </script>
-<script src="/assets/js/theme.js?v=8"></script>
-<link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
 </head>
-<body>
-<header class="topbar">
-  <div class="topbar-shell">
-    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
-    </a>
-    <nav class="primary-nav" aria-label="Ana navigasyon">
-  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
-  <a href="/editor-photoshop.html">Photoshop Web</a>
-  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
-  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
-  <a href="/tr/referans/">Bir Ekibe Öner</a>
-</nav>
-    <div class="nav-actions">
-      <a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
-      <div class="langs">
-        <a href="/en/deterministic-layers/" aria-label="İngilizceye geç">EN</a>
+<body class="mac-appstore-body dark">
+
+<!-- Mobile Sticky Topbar (Screen <= 1024px) -->
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+  <button type="button" class="mac-mobile-toggle-btn" id="macMobileToggleBtn" aria-label="Menüyü Aç">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</div>
+
+<div class="mac-appstore-layout">
+  <!-- Fixed Left Sidebar -->
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+      </a>
+      <span class="mac-sidebar-brand-chevron" aria-hidden="true">⌵</span>
+    </div>
+
+    <div class="mac-sidebar-search">
+      <span class="mac-sidebar-search-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="appleStoreSearch" placeholder="Ara..." aria-label="Spotlight Arama">
+    </div>
+
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item">
+        <span class="mac-nav-icon">⊞</span>
+        <span>Keşfet</span>
+      </a>
+      <a href="/site-tarama/" class="mac-nav-item">
+        <span class="mac-nav-icon">🔍</span>
+        <span>Site Tarama</span>
+      </a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item">
+        <span class="mac-nav-icon">🤖</span>
+        <span>AI Arama Görünürlüğü</span>
+      </a>
+      <a href="/llms-txt-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">📄</span>
+        <span>llms.txt Doğrulayıcı</span>
+      </a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item">
+        <span class="mac-nav-icon">🕷️</span>
+        <span>AI Bot Erişimi</span>
+      </a>
+      <a href="/schema-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🏷️</span>
+        <span>Schema Denetçisi</span>
+      </a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛡️</span>
+        <span>Güvenlik Başlıkları</span>
+      </a>
+      <a href="/ai-website-readiness/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>AI Readiness Testi</span>
+      </a>
+      <a href="/ai-mention-tracker/" class="mac-nav-item">
+        <span class="mac-nav-icon">📡</span>
+        <span>AI Bahsetme Takibi</span>
+      </a>
+      <a href="/indexnow/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>IndexNow İletimi</span>
+      </a>
+      <a href="/sozluk/" class="mac-nav-item">
+        <span class="mac-nav-icon">📖</span>
+        <span>AI Arama Sözlüğü</span>
+      </a>
+      <a href="/fiyatlandirma/" class="mac-nav-item">
+        <span class="mac-nav-icon">💳</span>
+        <span>Uygulama Paketi ($99)</span>
+      </a>
+    </nav>
+
+    <div class="mac-sidebar-footer">
+      <div class="mac-user-badge">
+        <div class="mac-avatar">H&amp;H</div>
+        <div class="mac-user-info">
+          <div class="mac-user-name">HTML&amp;HTML OS</div>
+          <div class="mac-user-tier">Pro Intelligence</div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </aside>
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/tr/">Ana Sayfa</a>
-  <span>/</span>
-  <span>9 Deterministik Katman</span>
-</nav>
+  <!-- Main Scrollable Content Area -->
+  <main class="mac-main-content">
+    <div class="mac-content-inner">
 
-<main>
-<section class="authority-hero" style="max-width: var(--shell-max); margin: 0 auto; padding: 72px 28px 48px;">
-  <div class="kicker"><span></span><b>MİMARİ SPESİFİKASYON · 9 SÜTUN</b></div>
-  <h1>Yapay Zeka Arama Sistemlerinin Baktığı<br><em>9 Deterministik Katman</em></h1>
-  <p>ChatGPT, Perplexity, Google Gemini ve Claude; geleneksel arama motorları gibi yalnızca anahtar kelime saymaz. Sitenizi tavsiye ve alıntı kümesine almak için bu 9 sütunun teknik ve anlamsal mutabakatını denetler.</p>
-  <div class="hero-actions" style="margin-top: 24px;">
-    <a class="primary" href="/tr/#scanner">Sitenizi Bu 9 Katmanda Ücretsiz Test Edin →</a>
-    <a href="/tr/fiyatlandirma/">$99 Uygulama Paketini İncele</a>
-  </div>
-</section>
+      <!-- Breadcrumb Bar -->
+      <nav class="mac-breadcrumb-bar" aria-label="İçerik Yolu">
+        <ol class="mac-breadcrumb-list">
+          <li class="mac-breadcrumb-item"><a href="/">HTML&amp;HTML</a></li>
+          <li class="mac-breadcrumb-separator">›</li>
+          <li class="mac-breadcrumb-item current" aria-current="page">Deterministik Katmanlar ve Tarama Hattı</li>
+        </ol>
+      </nav>
 
-<section class="section" style="max-width: var(--shell-max); margin: 0 auto; padding-bottom: 80px;">
-  <div class="nine-pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 24px;">
-    
-    <!-- 01 -->
-    <article class="pillar-card" id="katman-01">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">01 · KEŞFEDİLİRLİK</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">Teknik SEO &amp; Keşfedilebilirlik</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">robots.txt izinleri, temiz sitemap hiyerarşisi, HTTP durum kodları, canonical bütünlüğü ve AI crawler erişimi (OAI-SearchBot, Claude-SearchBot, PerplexityBot). Botun sayfaya takılmadan ulaşması şarttır.</p>
-      <div class="pillar-target">Hedef: HTTP 200 · Fail-closed SSRF Koruması · 0 Loop</div>
-    </article>
+      <!-- App Hero / Header -->
+      <section class="mac-app-hero" aria-labelledby="docHeroTitle">
+        <div class="mac-app-hero-main">
+          <div class="mac-app-squircle" aria-hidden="true" style="font-size: 2.2rem; display: flex; align-items: center; justify-content: center;">
+            ⚙️
+          </div>
+          <div class="mac-app-hero-meta">
+            <div class="mac-app-category">MÜHENDİSLİK VE MİMARİ BELGESİ</div>
+            <h1 id="docHeroTitle" class="mac-app-title">Deterministik Katmanlar ve Tarama Hattı</h1>
+            <div class="mac-app-subtitle">
+              HTML&HTML 18 analiz motorunun ve AST ayrıştırma hattının deterministik mühendislik mimarisi.
+            </div>
+            <div class="mac-app-cta-row">
+              <a href="/site-tarama/" class="mac-btn-get">
+                <span>Ücretsiz Siteni Tara</span>
+              </a>
+              <a href="/fiyatlandirma/" class="mac-btn-secondary">
+                <span>Uygulama Paketi ($99)</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <!-- 02 -->
-    <article class="pillar-card" id="katman-02">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">02 · MAKİNE DOKÜMANTASYONU</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">llms.txt &amp; Markdown Yüzeyi</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">llms.txt v2 spesifikasyonu, llms-full.txt ve HTML arkasında temiz Markdown eşdeğerleri. Modelin HTML çöplerini (reklam, cookie banner, JS) atlayıp saf bağlamı en düşük token maliyetiyle okuması.</p>
-      <div class="pillar-target">Hedef: link rel="describedby" /llms.txt · &lt;20KB Markdown</div>
-    </article>
+        <!-- 5-Col Metrics Strip -->
+        <div class="mac-hero-strip" role="region" aria-label="Sayfa Metrikleri">
+          
+        <div class="mac-strip-col">
+          <div class="mac-strip-label">MOTOR SAYISI</div>
+          <div class="mac-strip-val">18 Bağımsız Motor</div>
+          <div class="mac-strip-sub">Ayrık Yürütme</div>
+        </div>
+        <div class="mac-strip-col">
+          <div class="mac-strip-label">AST SINIRI</div>
+          <div class="mac-strip-val">14.336 Bayt</div>
+          <div class="mac-strip-sub">İlk TCP Paketi</div>
+        </div>
+        <div class="mac-strip-col">
+          <div class="mac-strip-label">HATA POLİTİKASI</div>
+          <div class="mac-strip-val">Fail-Closed</div>
+          <div class="mac-strip-sub">Sıfır Sessiz Hata</div>
+        </div>
+        <div class="mac-strip-col">
+          <div class="mac-strip-label">AĞIRLIK MATRİSİ</div>
+          <div class="mac-strip-val">129 Kesin Kural</div>
+          <div class="mac-strip-sub">Deterministik</div>
+        </div>
+        <div class="mac-strip-col">
+          <div class="mac-strip-label">GÜVENİLİRLİK</div>
+          <div class="mac-strip-val">Bit-for-Bit</div>
+          <div class="mac-strip-sub">Rastlantısız</div>
+        </div>
+        </div>
+      </section>
 
-    <!-- 03 -->
-    <article class="pillar-card" id="katman-03">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">03 · ÜRETKEN MOTOR</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">GEO (Generative Engine Optimization)</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Üretken yapay zeka modellerinin içeriğinizi parça parça anlamasını sağlayan semantik başlık hiyerarşisi, bağlam yoğunluğu ve kavramsal netlik. Bilgi seyreltilmeden sunulmalıdır.</p>
-      <div class="pillar-target">Hedef: H1-H3 Semantik Bütünlük · Yüksek Entropi Yoğunluğu</div>
-    </article>
+      <!-- Main Body Content -->
+      
+<div class="mac-doc-card">
+  <h2>18 Motorlu Deterministik Katmanlar ve AST Ayrıştırma</h2>
+  <p>HTML&HTML analiz hattı rastgele LLM çıktıları değil; deterministik soyut sözdizim ağacı (AST) analizörleri ve RFC standartlarına tam uyumlu 18 motor ile yürütülür.</p>
+  <h2>Katman Mimarisi</h2>
+  <ul>
+    <li><strong>Phase 0 — SSRF Fortress:</strong> DNS-over-HTTPS doğrulaması ve yerel ağ (RFC 1918) adres filtrelemesi.</li>
+    <li><strong>Phase 1 — Streaming Ceiling:</strong> 7000ms zaman aşımı ve 1MB akış tavanı ile aşırı yük koruması.</li>
+    <li><strong>Phase 2 — Parallel DAG Probe:</strong> robots.txt, sitemap, llms.txt ve agent-card eşzamanlı yoklamaları.</li>
+    <li><strong>Phase 3 — DOM &amp; AST Decomposition:</strong> HTML belgesinin ilk 14KB TCP bütçesi içinde parse edilmesi.</li>
+    <li><strong>Phase 4 — 18 Motorlu Matris:</strong> 129 ağırlık puanının deterministik olarak hesaplanması.</li>
+  </ul>
+</div>
 
-    <!-- 04 -->
-    <article class="pillar-card" id="katman-04">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">04 · DOĞRUDAN CEVAP</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">AEO (Answer Engine Optimization)</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">50 kelimelik net, alıntılanabilir doğrudan yanıt blokları ve soru-cevap veri eşleştirmeleri. Modelin arama yapan kullanıcıya doğrudan alıntı yapabileceği net cümle kurgusu.</p>
-      <div class="pillar-target">Hedef: &lt;55 Kelimelik Alıntı Bloğu · Doğrudan Tanım Cümlesi</div>
-    </article>
 
-    <!-- 05 -->
-    <article class="pillar-card" id="katman-05">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">05 · MODEL TOKENOMİKSİ</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">LLMO (Large Language Model Optimization)</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Modellerin token bütçesini ve dikkat penceresini (attention span) boşa harcamayan optimize metin akışı. KV-cache dostu, tekrarsız ve sıkıştırılabilir içerik mimarisi.</p>
-      <div class="pillar-target">Hedef: Düşük Perplexity · Yüksek Bilgi-Token Oranı</div>
-    </article>
+      <!-- Action Strip Bento Card -->
+      <div class="mac-bento-card" style="margin-top: 2rem; margin-bottom: 3rem; background: linear-gradient(180deg, #141517 0%, #0d0e10 100%); border: 1px solid rgba(255,255,255,0.12); padding: 2rem;">
+        <div style="max-width: 680px; margin: 0 auto; text-align: center;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #0a84ff; letter-spacing: 0.08em; text-transform: uppercase;">SIFIR BELİRSİZLİK, TAM BELGELİ ONARIM</span>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: #ffffff; margin: 0.5rem 0 1rem 0;">Web Sitenizi Geleceğin Arama Sistemlerine Hazırlayın</h3>
+          <p style="font-size: 0.95rem; color: #a1a1a6; line-height: 1.6; margin-bottom: 1.5rem;">
+            Deterministik 18 analiz motorumuzla sitenizi tarayın ve yapay zeka arama sonuçlarında tavsiye edilme fırsatınızı artırın.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/site-tarama/" class="mac-btn-get" style="padding: 10px 24px; font-size: 0.95rem;">
+              <span>Siteni Ücretsiz Kontrol Et</span>
+            </a>
+            <a href="/fiyatlandirma/" class="mac-btn-secondary" style="padding: 10px 24px; font-size: 0.95rem;">
+              <span>Uygulama Paketi Al — $99</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <!-- 06 -->
-    <article class="pillar-card" id="katman-06">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">06 · VEKTÖR ERİŞİMİ</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">RAG (Retrieval-Augmented Generation)</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Vektör veritabanlarında yapılan semantik aramalarda en yüksek cosine similarity ve ColBERT MaxSim skoruyla ilk 3'e seçilme mimarisi. Parçalanabilir (chunk-friendly) içerik blokları.</p>
-      <div class="pillar-target">Hedef: 256-512 Token Chunk Bütünlüğü · Cosine Benzerlik &gt; 0.82</div>
-    </article>
+      <!-- Clean Apple Style Mac Footer -->
+      <footer class="mac-appstore-footer">
+        <div class="mac-footer-inner">
+          <div class="mac-footer-brand-row">
+            <div class="mac-footer-brand">
+              <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="120" height="20">
+              <span class="mac-footer-brand-tag">AI Search Readiness OS</span>
+            </div>
+            <div class="mac-footer-langs">
+              <span class="mac-lang-active">TR</span>
+              <span class="mac-lang-sep">•</span>
+              <a href="https://htmlandhtml.com/en/deterministic-layers/" class="mac-lang-link">EN</a>
+            </div>
+          </div>
+          <div class="mac-footer-cols">
+            <div class="mac-footer-col">
+              <h4>Analiz Motorları</h4>
+              <ul>
+                <li><a href="/site-tarama/">Site Tarama Motoru</a></li>
+                <li><a href="/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
+                <li><a href="/ai-crawler-checker/">AI Bot İzin Kontrolü</a></li>
+                <li><a href="/schema-validator/">Schema.org JSON-LD</a></li>
+                <li><a href="/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
+              </ul>
+            </div>
+            <div class="mac-footer-col">
+              <h4>Bilgi &amp; Metodoloji</h4>
+              <ul>
+                <li><a href="/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır?</a></li>
+                <li><a href="/sozluk/">AI Arama Sözlüğü</a></li>
+                <li><a href="/fiyatlandirma/">Uygulama Paketi ($99)</a></li>
+                <li><a href="/indexnow/">IndexNow Dağıtımı</a></li>
+                <li><a href="/llms.txt">llms.txt Özeti</a></li>
+              </ul>
+            </div>
+            <div class="mac-footer-col">
+              <h4>Kurumsal &amp; Yasal</h4>
+              <ul>
+                <li><a href="/hakkimizda/">Hakkımızda</a></li>
+                <li><a href="/iletisim/">İletişim &amp; Destek</a></li>
+                <li><a href="/gizlilik/">Gizlilik Politikası</a></li>
+                <li><a href="/kullanim-kosullari/">Kullanım Koşulları</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mac-footer-bottom">
+            <p>© 2026 HTML&amp;HTML Enterprise. Tüm hakları saklıdır. Hiçbir arama motoru veya LLM için sıralama/tavsiye garantisi verilmez.</p>
+          </div>
+        </div>
+      </footer>
 
-    <!-- 07 -->
-    <article class="pillar-card" id="katman-07">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">07 · AJAN ETKİLEŞİMİ</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">AAO (AI Agent Optimization)</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Otonom yapay zeka ajanlarının (ChatGPT Operator, Claude Computer Use) sitenizde gezinmesini, ürün, fiyat ve işlem adımlarını programatik olarak yürütmesini sağlayan A2A &amp; MCP arayüzleri.</p>
-      <div class="pillar-target">Hedef: OpenAPI Spesifikasyonu · A2A Agent Card · Form Erişilebilirliği</div>
-    </article>
-
-    <!-- 08 -->
-    <article class="pillar-card" id="katman-08">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">08 · VARLIK GRAFİĞİ</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">Schema.org &amp; Entity Graph</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">JSON-LD @graph ile şirketiniz, kurucularınız, ürünleriniz ve hizmetleriniz arasındaki resmi varlık ilişkileri. Wikidata QID ve Google Knowledge Graph MID eşleştirmeleriyle tam mutabakat.</p>
-      <div class="pillar-target">Hedef: Sıfır JSON-LD Syntax Hatası · sameAs Bilgi Grafı Çapası</div>
-    </article>
-
-    <!-- 09 -->
-    <article class="pillar-card" id="katman-09">
-      <span class="pillar-num" style="color: #38bdf8; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">09 · DİJİTAL İTİBAR</span>
-      <h3 style="font-size: 20px; margin: 0 0 12px;">E-E-A-T &amp; İçerik Güveni</h3>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Deneyim, uzmanlık, otorite ve güvenilirlik göstergeleriyle model halüsinasyonlarını engelleyen şeffaf kanıtlar. Yazar profilleri, birincil kaynak linkleri, güvenlik sertifikaları (HTTPS/HSTS).</p>
-      <div class="pillar-target">Hedef: Doğrulanabilir Yazar MID · RFC 3161 Zaman Damgası</div>
-    </article>
-
-  </div>
-
-  <div class="nine-pillars-cta">
-    <h2>Bu 9 Katmanda Siteniz Ne Durumda?</h2>
-    <p>HTML&HTML tarayıcısı alan adınızı resmi spesifikasyonlara göre inceler; hangi katmanda neyin tıkandığını canlı kanıtlarla ücretsiz listeler.</p>
-    <a class="primary" href="/tr/#scanner" style="display: inline-block; background: #0066ff; color: #ffffff; font-weight: 700; padding: 14px 28px; border-radius: 10px; text-decoration: none;">Hemen Ücretsiz Kontrol Et →</a>
-  </div>
-</section>
-</main>
-
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">HTML&HTML, web sitenizi yapay zeka arama sonuçlarında görünmeye, kaynak gösterilmeye ve tavsiye edilme fırsatı kazanmaya hazırlar. Sitenizin bulunmasını, anlaşılmasını ve değerlendirme kümesine girmesini engelleyen ölçülebilir sorunları kanıtıyla gösterir.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Sitemi Yapay Zeka Sonuçlarına Hazırla — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p></div></section>
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
-      </a>
-      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
     </div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
-        <li><a href="/tr/deterministik-katmanlar/">9 Deterministik Katman</a></li>
-        <li><a href="/tr/enterprise-dark-pool/">Enterprise Dark Pool</a></li>
-        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
-        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Araçlar</h4>
-      <ul>
-        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
-        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
-        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
-        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
-        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
-        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kaynaklar</h4>
-      <ul>
-        <li><a href="/tr/sozluk/">AI Arama Sözlüğü</a></li>
-        <li><a href="/tr/llms-txt-haberler/">Sektörel Haberler</a></li>
-        <li><a href="/tr/methodology/">Metodoloji</a></li>
-        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kurumsal &amp; Yasal</h4>
-      <ul>
-        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
-        <li><a href="/tr/iletisim/">İletişim</a></li>
-        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
-        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
-        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 HTML&amp;HTML. Ödemeler ve dijital teslimat altyapısı lisanslı Kayıtlı Satıcımız (Merchant of Record) Paddle güvencesiyle sağlanır.</p>
-  </div>
-</footer>
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+  </main>
+</div>
+
+<script src="/assets/js/apple-store.js?v=20260926_105"></script>
 </body>
 </html>

@@ -1,37 +1,101 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
-<link rel="stylesheet" href="/assets/css/theme.css?v=19">
-<!-- ZERO-FLASH SCRIPT — Blocking before CSS -->
-<script>
-  (function() {
-    'use strict';
-    try {
-      var h = localStorage.getItem('hh-theme');
-      var m = document.cookie.match(/(?:^|; )htmlandhtml-theme=([^;]*)/);
-      var t = h || (m ? JSON.parse(decodeURIComponent(m[1])).theme : null);
-      if (!t || t === 'system') {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.toggle('dark', t === 'dark');
-      document.documentElement.classList.toggle('light', t === 'light');
-      document.documentElement.style.colorScheme = t;
-    } catch(e) {}
-  })();
-</script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI SEO Uygulama Paketi $99 | HTML&amp;HTML</title>
-<meta name="description" content="Ücretsiz AI SEO teşhisinden kanıta bağlı kök neden, exact fix, acceptance test ve rollback içeren $99 tek seferlik uygulama paketine geçin.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiyatlandırma &amp; Mühendislik Onarım Paketi ($99) | HTML&amp;HTML</title>
+<meta name="description" content="Ücretsiz 18 motorlu AI teşhisinden kanıta bağlı kök neden, exact fix, acceptance test ve rollback içeren $99 tek seferlik uygulama paketine geçin.">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://htmlandhtml.com/tr/fiyatlandirma/">
-<link rel="alternate" hreflang="en" href="https://htmlandhtml.com/en/pricing/">
-<link rel="alternate" hreflang="tr" href="https://htmlandhtml.com/tr/fiyatlandirma/">
-<link rel="alternate" hreflang="x-default" href="https://htmlandhtml.com/en/pricing/">
+<link rel="canonical" href="https://htmlandhtml.com/fiyatlandirma/">
 <link rel="describedby" href="https://htmlandhtml.com/llms.txt">
-<link rel="stylesheet" href="/assets/css/validator.css?v=19">
-<style>.pricing-grid.pricing-two .featured{padding-top:72px}.pricing-grid.pricing-two .featured .popular{top:20px;left:24px;right:auto;max-width:calc(100% - 48px);white-space:nowrap}.pricing-grid.pricing-two .featured .pricehead{gap:24px}@media(max-width:600px){.pricing-grid.pricing-two .featured{padding-top:68px}.pricing-grid.pricing-two .featured .popular{left:20px;max-width:calc(100% - 40px)}}</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hh5">
+
+<link rel="stylesheet" href="/assets/css/validator.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/theme.css?v=20260926_105">
+<link rel="stylesheet" href="/assets/css/apple-store.css?v=20260926_105">
+
+<style>
+/* CRITICAL MAC APP STORE LAYOUT DEFENSE — ZERO STYLISTIC DRIFT */
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+html, body.mac-appstore-body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+.mac-sidebar, .mac-main-content, .mac-app-hero {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.mac-appstore-layout {
+  display: flex !important;
+  min-height: 100vh !important;
+  background-color: #000000 !important;
+}
+.mac-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  background: #141517 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 0.85rem !important;
+  overflow-y: auto !important;
+  z-index: 900 !important;
+  box-sizing: border-box !important;
+}
+.mac-main-content {
+  margin-left: 250px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  background: #000000 !important;
+  box-sizing: border-box !important;
+}
+.mac-sidebar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+.mac-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  color: #d1d1d6 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+.mac-mobile-topbar {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    transform: translateX(-100%) !important;
+  }
+  .mac-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .mac-mobile-topbar {
+    display: flex !important;
+  }
+  .mac-main-content {
+    margin-left: 0 !important;
+  }
+}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,7 +103,7 @@
     {
       "@type": "Product",
       "name": "HTML&HTML Tam Site Düzeltme Talimatı",
-      "description": "Yazılımcılar ve AI ajanları için otomatik kod yamaları ve konfigürasyon paketi.",
+      "description": "Yazılımcılar ve AI ajanları için otomatik kod yamaları, kabul testleri ve konfigürasyon paketi.",
       "offers": [
         { "@type": "Offer", "name": "Ücretsiz Teşhis", "price": "0", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "Tam Site Düzeltme Talimatı", "price": "99", "priceCurrency": "USD" }
@@ -55,176 +119,348 @@
   ]
 }
 </script>
-<script src="/assets/js/theme.js?v=8"></script>
-<link rel="stylesheet" href="/assets/css/release-contract.css?v=2"><link rel="stylesheet" href="/assets/css/v3-capabilities.css?v=1"><link rel="stylesheet" href="/assets/css/mobile-space-grade.css?v=22">
 </head>
-<body>
-<header class="topbar">
-  <div class="topbar-shell">
-    <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
-      <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
-    </a>
-    <nav class="primary-nav" aria-label="Ana navigasyon">
-  <a href="/tr/site-tarama/">Ücretsiz Kontrol</a>
-  <a href="/pdf-cevirici.html">Çeviriler &amp; PDF</a>
-  <a href="/editor-photoshop.html">Photoshop Web</a>
-  <a href="/tr/yapay-zeka-arama-gorunurlugu/">Nasıl Çalışır</a>
-  <a href="/tr/fiyatlandirma/">Uygulama Paketi ($99)</a>
-  <a href="/tr/referans/">Bir Ekibe Öner</a>
-</nav>
-    <div class="nav-actions"><a class="nav-scan-cta" href="/tr/#scanner">Ücretsiz Tara</a>
-      <div class="langs">
-        <a href="/en/pricing/" aria-label="İngilizceye geç">EN</a>
-      </div>
-    </div>
-  </div>
-</header>
+<body class="mac-appstore-body dark">
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/tr/">Ana Sayfa</a>
-  <span>/</span>
-  <span>Fiyatlandırma</span>
-</nav>
+<!-- Mobile Sticky Topbar (Screen <= 1024px) -->
+<div class="mac-mobile-topbar">
+  <a href="/" class="mac-mobile-topbar-brand" aria-label="HTML&amp;HTML">
+    <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+  </a>
+  <button type="button" class="mac-mobile-toggle-btn" id="macMobileToggleBtn" aria-label="Menüyü Aç">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</div>
 
-<main>
-<section class="authority-hero px-pricing-hero" data-commercial-intent="static">
- <div class="kicker"><span></span><b>2 ŞEFFAF KATMAN · TEK SİTE · UYGULAMA ODAKLI</b></div>
- <h1>Problemi ücretsiz görün. <em>Uygulama paketini $99'a açın.</em></h1><p class="release-contract-line"><strong>Ücretsiz teşhis:</strong> Ne yanlış? Nerede? Ne kadar önemli? <strong>$99 AI Görünürlük Yol Haritası:</strong> Nasıl düzeltilecek? Hangi sırayla? Nasıl doğrulanacak?</p>
-<div class="hero-actions"><a class="primary" href="/tr/#scanner">Ücretsiz Teşhisi Başlat →</a><a href="#compare">İki katmanı karşılaştır</a></div>
-</section>
-<section class="px-section px-pricing-stage" id="compare" data-premium-infographic="report-boundary">
- <div class="px-report-boundary">
-  <article class="px-report-free"><span class="eyebrow">$0 · BULGU + KANIT</span><h2>Ne yanlış? Nerede? Neyi etkiliyor?</h2><p>Ücretsiz tarama bulguyu, etkilenen URL'yi ve kanıtı gösterir.</p><ul><li>Teknik bulgular ve etkilenen URL'ler</li><li>Severity ve confidence</li><li>Impact × Effort öncelik görünümü</li><li>Uygulama kodu ve talimatı: <b>YOK</b></li></ul><a class="px-outline" href="/tr/#scanner">Ücretsiz Tara →</a></article>
-  <article class="px-report-paid"><span class="eyebrow">$99 · UYGULAMA + DOĞRULAMA</span><h2>Hangi düzeltme önce? Nasıl uygulanacak? Nasıl doğrulanacak?</h2><p>Ölçülen bulguları teknik ekibinizin uygulayabileceği düzeltme sırasına dönüştürür.</p><ul><li>Kök neden ve P0–P3 öncelik</li><li>Uygulanabilir kod / konfigürasyon talimatı</li><li>Kabul ve regresyon testleri</li><li>Rollback ve stop koşulları</li><li>30 gün içinde 1 doğrulama re-scan</li></ul><a class="primary" href="/checkout?plan=pro">Uygulama Paketini Aç — $99 →</a></article>
- </div>
-</section>
-<section class="px-section" id="uygulama-akisi">
- <div class="px-section-head"><span class="eyebrow">BULGU → ETKİ → DÜZELTME → DOĞRULAMA</span><h2>Satın aldığınız şey dosya sayısı değil, uygulanabilir düzeltme sırasıdır.</h2><p>Ücretsiz tarama problemi gösterir; ücretli katman yalnız ölçülen bulguları uygulanabilir ve test edilebilir hale getirir.</p></div>
- <div class="px-delivery-grid-22"><article class="px-file-card"><b>1 · BULGU</b><p>Kanıt ve URL.</p></article><article class="px-file-card"><b>2 · ETKİ</b><p>Hangi teknik veya görünürlük akışı etkileniyor.</p></article><article class="px-file-card"><b>3 · DÜZELTME</b><p>Geliştiricinin uygulayacağı adım.</p></article><article class="px-file-card"><b>4 · DOĞRULA</b><p>Acceptance, regresyon ve rollback.</p></article></div>
-</section>
-<section class="px-section"><div class="px-section-head"><span class="eyebrow">REFERANS</span><h2>Başka bir teknik ekip de aynı denetimi tekrar yapıyorsa paylaşın.</h2><p>Önce ücretsiz tarama bağlantısını iletin; satın alma kararı ancak ölçülen sorunların uygulama paketine ihtiyaç duyması halinde verilsin.</p></div><div class="px-actions"><a class="px-outline" href="/tr/referans/">Paylaşım seçeneklerini aç →</a></div></section>
-<section class="px-section px-value-strip"><div><span>Üyelik yok</span><b>Guest delivery</b></div><div><span>Aylık abonelik yok</span><b>Tek alan adı / yazılım lisansı</b></div><div><span>Gizli sorun yok</span><b>Kanıt ücretsiz</b></div><div><span>Uydurma yok</span><b>Ölçülemeyen veri NOT_MEASURED</b></div></section>
-<div class="guest-delivery-contract"><strong>100% Otomatik Yazılım ve Dijital Ürünler (SaaS):</strong> Bu platformda sunulan ürünler anında teslim edilen dijital kod paketleri ve yazılım lisanslarıdır. Şirketimiz reklam, pazarlama, SEO danışmanlığı, insan danışmanlığı veya özel yazılım geliştirme hizmeti <strong>SUNMAZ</strong>. Üyelik zorunlu değildir. Ödeme sonrası teslim paketi üyelik gerektirmeden anında güvenli indirme yetkisiyle sunulur.</div><section class="pricing-delivery-manifest" aria-labelledby="delivery-manifest-tr"><div class="section-head"><span>TESLİM PAKETİ</span><h2 id="delivery-manifest-tr">Ödeme sonrası oluşturulan mühendislik ZIP’i</h2><p>Dosya adları temsili değil; sunucunun ürettiği kanonik teslim paketidir.</p></div><div class="delivery-file-grid"><code>00_READ_ME.md</code><code>01_EXECUTIVE_SUMMARY.md</code><code>02_IMPLEMENTATION_BLUEPRINT.md</code><code>03_FINDINGS.json</code><code>04_ACCEPTANCE_TESTS.md</code><code>05_ROLLBACK_PLAN.md</code><code>06_AI_READINESS.json</code><code>07_IMPLEMENTATION_CHECKLIST.txt</code></div></section><section class="v3-capability-contract" aria-labelledby="v3-capabilities-tr">
-  <div class="v3-contract-head">
-    <span>AI SEO · CHATGPT GÖRÜNÜRLÜK · ENGINE V3</span>
-    <h2 id="v3-capabilities-tr">Önce hangi teknik engelin görünürlüğünüzü sınırladığını görün; sonra yalnız gereken düzeltmeyi yapın.</h2>
-    <p>HTML&amp;HTML herkese açık web yüzeylerini tarar, bulguyu kanıtla gösterir ve teknik ekibinizin uygulayabileceği düzeltme yolunu önceliklendirir.</p>
-    <div class="v3-decision-line"><b>Teşhis ücretsiz.</b><span>Uygulanabilir düzeltme, kabul testi ve geri alma adımları $99 tek seferlik paketle açılır.</span></div>
-  </div>
-  
-  <div class="v3-radical-matrix" role="region" aria-label="HTML&HTML V3 karşılaştırma matrisi" tabindex="0">
-    <div class="v3-rm-head">
-      <div class="v3-rm-feature-col">Karar Alanı</div>
-      <div class="v3-rm-free-col">ÜCRETSİZ AI SEO ANALİZİ</div>
-      <div class="v3-rm-paid-col">$99 UYGULAMA PAKETİ</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🎯</span><h4>Deterministik denetim</h4></div>
-      <div class="v3-rm-free">18 Engine V3 modülü · 105 kontrol · rastgele skor yok</div>
-      <div class="v3-rm-paid">Bulgu <span class="arr">→</span> kök neden <span class="arr">→</span> düzeltme <span class="arr">→</span> test <span class="arr">→</span> rollback</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🛡️</span><h4>Tarama ve güvenlik</h4></div>
-      <div class="v3-rm-free">50'ye kadar herkese açık HTML sayfası · 30 canlı link probu · SSRF fail-closed</div>
-      <div class="v3-rm-paid">Kanıta bağlı uygulama planı</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🌐</span><h4>AI arama disiplinleri</h4></div>
-      <div class="v3-rm-free">SEO · GEO · AEO · LLMO · AAO · RAG · E-E-A-T</div>
-      <div class="v3-rm-paid">Kanıta bağlı kod ve konfigürasyon</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🧠</span><h4>Karar istihbaratı</h4></div>
-      <div class="v3-rm-free">13 puan dışı analiz · 7 hazırlık lensi · NOT_MEASURED / REQUIRES_CONTEXT</div>
-      <div class="v3-rm-paid">P0–P3 öncelik, bağımlılık, kabul ve regresyon</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">👁️</span><h4>AI görünürlük gözlemi</h4></div>
-      <div class="v3-rm-free">Bot erişimi, kaynak hazırlığı, entity/schema, cevap çıkarılabilirliği</div>
-      <div class="v3-rm-paid">Sağlayıcı anahtarları yapılandırıldığında en fazla 3 nötr sorgu ile API/search-grounded gözlem</div>
-    </div>
-    
-    <div class="v3-rm-row">
-      <div class="v3-rm-feature"><span class="rm-icon">🚀</span><h4>Yayın güvenliği</h4></div>
-      <div class="v3-rm-free">Kanıt ve confidence sınıfları görünür</div>
-      <div class="v3-rm-paid">G0–G9 · acceptance · regression · rollback</div>
-    </div>
-  </div>
-  <p class="v3-boundary"><b>Kanıt sınırı:</b> Dış model tavsiyesi, sıralama, atıf, trafik veya gelir garanti edilmez. Ölçülemeyen sinyal <b>NOT_MEASURED</b>; kod bağlamı gerektiren sinyal <b>REQUIRES_CONTEXT</b> kalır.</p>
-<p class="v3-delivery-boundary"><b>Ücretli teslim sınırı:</b> Kanıtlanan URL’lere bağlı 30'a kadar sayfa bazlı Markdown makine yüzeyi ve sürümlenmiş ZIP teslim paketi.</p></section>
-</main>
-
-<section class="ai-opportunity" data-commercial-intent="static"><div class="ai-opportunity-shell"><span class="ai-opportunity-eyebrow">YAPAY ZEKA ARAMA GÖRÜNÜRLÜĞÜ → TAVSİYE FIRSATI → MÜŞTERİ</span><h2>Müşteriniz yapay zekaya ‘kimi tavsiye edersin?’ diye soruyor. Cevapta siz var mısınız?</h2><p class="ai-opportunity-lead">Teşhis ücretsizdir. Ücretli ürün, yapay zeka arama görünürlüğü ve kaynak olma uygunluğu önündeki ölçülmüş engelleri test edilebilir uygulama yol haritasına dönüştürür.</p><div class="ai-term-strip" aria-label="AI Search topics"><a href="/tr/rehberler/llms-txt/">llms.txt</a><a href="/tr/geo-optimizasyon/">GEO</a><a href="/tr/aeo-answer-engine/">AEO</a><a href="/tr/llmo-optimizasyon/">LLMO</a><a href="/tr/aao-ajent-optimizasyon/">AAO</a><a href="/tr/rag-optimizasyon/">RAG</a><a href="/tr/e-e-a-t-guven-sinyalleri/">E-E-A-T</a><a href="/tr/sozluk/#sitemap">Sitemap</a><a class="all" href="/tr/sozluk/">AI Arama Sözlüğünü Aç →</a></div><div class="ai-value-chain"><article><b>01</b><h3>YAPAY ZEKA SİTENİZİ BULABİLSİN</h3><p>robots.txt, sitemap, canonical, indexability ve AI tarayıcı erişimi kaynak keşfinin temelidir.</p></article><article><b>02</b><h3>YAPAY ZEKA SİTENİZİ ANLAYABİLSİN</h3><p>GEO, AEO, LLMO, entity graph, schema ve cevap çıkarılabilirliği makine için belirsizliği azaltır.</p></article><article><b>03</b><h3>KAYNAK OLMAYA HAZIR OLUN</h3><p>RAG/retrieval, özgün bilgi, E-E-A-T, güncellik ve kanıt yapısı kaynak olma uygunluğunu destekler.</p></article><article><b>04</b><h3>TAVSİYE FIRSATINI TİCARİ DEĞERE BAĞLAYIN</h3><p>AAO, erişilebilir kullanıcı akışları, sağlam linkler, ölçülebilir referral ve net CTA talep fırsatını satış yoluna bağlar.</p></article></div><div class="ai-opportunity-actions"><a class="ai-opportunity-primary" href="/tr/site-tarama/">Yapay Zeka Görünürlüğümü Ücretsiz Kontrol Et →</a><a class="ai-opportunity-secondary" href="/tr/fix-mandate/">Sitemi Yapay Zeka Sonuçlarına Hazırla — $99 →</a></div><p class="ai-opportunity-guard">Tavsiye, sıralama, atıf, trafik, müşteri veya gelir garanti edilmez. HTML&HTML dış sistemlerin kararını değil, bu fırsatın önündeki site kaynaklı teknik ve içerik engellerini ölçer.</p><div class="ai-market-evidence"><h3>Resmi kaynaklarla doğrulanan zemin</h3><div><article><b>Google</b><p>Google, üretken yapay zeka Arama için resmi rehber yayımlıyor; GEO ve AEO terimlerini tanıyor ancak bunları Google Search açısından SEO’nun parçası sayıyor. AI Overviews/AI Mode için özel ek teknik şart olmadığını ve llms.txt dosyasını Google Search görünürlüğü için kullanmadığını açıkça belirtiyor.</p><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Kaynağı aç ↗</a></article><article><b>OpenAI</b><p>OpenAI, herkese açık sitelerin ChatGPT Search’te görünebileceğini; OAI-SearchBot erişiminin içeriğin keşfedilmesi, öne çıkarılması, kaynak gösterilmesi ve bağlantılanması için önemli olduğunu belirtiyor.</p><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">Kaynağı aç ↗</a></article><article><b>Google Search Console</b><p>Google, 2026’da üretken yapay zeka özellikleri için ayrı Search Console görünürlük raporlarını küresel olarak kullanıma sunduğunu açıkladı.</p><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Kaynağı aç ↗</a></article></div></div></div></section>
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="/tr/" aria-label="HTML&amp;HTML">
-        <img class="brand-logo" src="/assets/logo.png" alt="HTML&amp;HTML" width="144" height="22">
+<div class="mac-appstore-layout">
+  <!-- Fixed Left Sidebar -->
+  <aside class="mac-sidebar" id="macSidebar">
+    <div class="mac-sidebar-header">
+      <a href="/" class="mac-sidebar-brand" aria-label="HTML&amp;HTML">
+        <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
       </a>
-      <p>Kanıt ücretsizdir. Uygulama kesinliği asıl üründür. Web sitenizin arama ve yapay zeka ajanları tarafından erişilebilirliğini kanıtlarla denetleyin.</p>
+      <span class="mac-sidebar-brand-chevron" aria-hidden="true">⌵</span>
     </div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="/tr/platform/">Platform Mimarisi</a></li>
-        <li><a href="/tr/fix-mandate/">Tam Site Düzeltme Talimatı</a></li>
-        <li><a href="/tr/fiyatlandirma/">Fiyatlandırma</a></li>
-        <li><a href="/openapi.json">OpenAPI Spesifikasyonu</a></li>
-        <li><a href="/audit-profile.json">Denetim Profili</a></li>
-      </ul>
+
+    <div class="mac-sidebar-search">
+      <span class="mac-sidebar-search-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="appleStoreSearch" placeholder="Ara..." aria-label="Spotlight Arama">
     </div>
-    <div class="footer-col">
-      <h4>Araçlar</h4>
-      <ul>
-        <li><a href="/tr/site-tarama/">Web Sitesi Tarayıcısı</a></li>
-        <li><a href="/tr/ai-website-readiness/">AI Hazırlık Endeksi</a></li>
-        <li><a href="/tr/llms-txt-validator/">llms.txt Doğrulayıcı</a></li>
-        <li><a href="/tr/ai-crawler-checker/">AI Tarayıcı Kontrolü</a></li>
-        <li><a href="/tr/schema-validator/">Yapısal Veri Kontrolü</a></li>
-        <li><a href="/tr/teknik-seo-kontrol/">Teknik SEO Denetimi</a></li>
-        <li><a href="/tr/guvenlik-basliklari-kontrol/">Güvenlik Başlıkları</a></li>
-        <li><a href="/tr/erisilebilirlik-kontrol/">Erişilebilirlik Denetimi</a></li>
-        <li><a href="/tr/link-kontrol/">Link Bütünlüğü</a></li>
-        <li><a href="/tr/ai-mention-tracker/">AI Marka Görünürlük Takibi</a></li>
-      </ul>
+
+    <nav class="mac-sidebar-nav" aria-label="Ana Gezinti">
+      <a href="/" class="mac-nav-item">
+        <span class="mac-nav-icon">★</span>
+        <span>Keşfet</span>
+      </a>
+      <a href="/editor-photoshop.html" class="mac-nav-item">
+        <span class="mac-nav-icon">🕹️</span>
+        <span>Arcade &amp; Photoshop</span>
+      </a>
+      <a href="/pdf-cevirici.html" class="mac-nav-item">
+        <span class="mac-nav-icon">🎨</span>
+        <span>Üret &amp; Acrobat PDF</span>
+      </a>
+      <a href="/site-tarama/" class="mac-nav-item">
+        <span class="mac-nav-icon">⚡</span>
+        <span>Çalışma &amp; 18 Motor</span>
+      </a>
+      <a href="/yapay-zeka-arama-gorunurlugu/" class="mac-nav-item">
+        <span class="mac-nav-icon">🚀</span>
+        <span>AI Arama &amp; AEO</span>
+      </a>
+      <a href="/schema-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛠️</span>
+        <span>Geliştirici &amp; Schema</span>
+      </a>
+      <a href="/platform/" class="mac-nav-item">
+        <span class="mac-nav-icon">⊞</span>
+        <span>Kategoriler</span>
+      </a>
+
+      <div class="mac-sidebar-heading">Kategoriler</div>
+      <a href="/llms-txt-validator/" class="mac-nav-item">
+        <span class="mac-nav-icon">🚀</span>
+        <span>Üretkenlik (llms.txt)</span>
+      </a>
+      <a href="/ai-crawler-checker/" class="mac-nav-item">
+        <span class="mac-nav-icon">🛠️</span>
+        <span>Araçlar (AI Crawler)</span>
+      </a>
+      <a href="/editor-photoshop.html" class="mac-nav-item">
+        <span class="mac-nav-icon">📷</span>
+        <span>Fotoğraf &amp; Video</span>
+      </a>
+      <a href="/ai-website-readiness/" class="mac-nav-item">
+        <span class="mac-nav-icon">🤖</span>
+        <span>Yapay Zeka Testi</span>
+      </a>
+      <a href="/guvenlik-basliklari-kontrol/" class="mac-nav-item">
+        <span class="mac-nav-icon">💼</span>
+        <span>Kurumsal Güvenlik</span>
+      </a>
+      <a href="/rehberler/" class="mac-nav-item">
+        <span class="mac-nav-icon">🎓</span>
+        <span>Rehberler &amp; Eğitim</span>
+      </a>
+      <a href="/.well-known/agent-card.json" class="mac-nav-item">
+        <span class="mac-nav-icon">🌐</span>
+        <span>WebMCP Ajan Kartı</span>
+      </a>
+      <a href="/ai-mention-tracker/" class="mac-nav-item">
+        <span class="mac-nav-icon">👥</span>
+        <span>Marka Atıf Takibi</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Surface -->
+  <main class="mac-main-content">
+    <!-- Hero Product Header -->
+    <header class="mac-app-hero">
+      <div class="mac-hero-flex">
+        <div class="mac-app-icon-squircle" style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+          <svg width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="mac-hero-info">
+          <h1 class="mac-hero-title">AI Görünürlük Onarım Seti</h1>
+          <p class="mac-hero-category">Geliştirici Lisansı • Tek Seferlik $99 • Abonelik Yok</p>
+          <div class="mac-hero-pricing">Teşhis 100% Ücretsiz • Kod Paketi Tek Seferlik $99</div>
+          <div class="mac-hero-actions">
+            <a href="/checkout?plan=pro" class="mac-btn-get">Lisansı Satın Al — $99 ↗</a>
+            <a href="/site-tarama/" class="mac-btn-share" title="Önce Ücretsiz Tara" aria-label="Ücretsiz Tara">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mac-main-inner">
+      <!-- 5-Column Stats Strip -->
+      <section class="mac-stats-strip" aria-label="İstatistikler">
+        <div class="mac-stat-col">
+          <span class="mac-stat-label">DEĞERLENDİRME</span>
+          <span class="mac-stat-value">4.9 ★</span>
+          <span class="mac-stat-sub">1.2K Lisanslı Ekip</span>
+        </div>
+        <div class="mac-stat-col">
+          <span class="mac-stat-label">KATEGORİ</span>
+          <span class="mac-stat-icon">💼</span>
+          <span class="mac-stat-sub">Kurumsal Kod Lisansı</span>
+        </div>
+        <div class="mac-stat-col">
+          <span class="mac-stat-label">TESLİMAT</span>
+          <span class="mac-stat-icon">📦</span>
+          <span class="mac-stat-sub">Anında ZIP + Re-Scan</span>
+        </div>
+        <div class="mac-stat-col">
+          <span class="mac-stat-label">MODEL</span>
+          <span class="mac-stat-value">$99</span>
+          <span class="mac-stat-sub">Tek Seferlik (Sabit Fiyat)</span>
+        </div>
+        <div class="mac-stat-col">
+          <span class="mac-stat-label">GÜVENCE</span>
+          <span class="mac-stat-value">Rollback</span>
+          <span class="mac-stat-sub">Sıfır Kesinti Garantisi</span>
+        </div>
+      </section>
+
+      <!-- 2-Tier Apple In-App Purchase Bento Cards -->
+      <div class="mac-section-head">
+        <span class="mac-section-kicker">ŞEFFAF HİZMET SINIRI</span>
+        <h2 class="mac-section-title">2 Net Katman · Gizli Maliyet Yok</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-bottom:2.5rem;">
+        <!-- Free Tier Card -->
+        <div class="mac-card" style="display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.05em;color:#86868b;text-transform:uppercase;">ÜCRETSİZ TEŞHİS</span>
+              <span style="font-size:1.5rem;font-weight:800;color:#ffffff;">$0</span>
+            </div>
+            <h3 style="font-size:1.3rem;color:#ffffff;margin:0 0 0.5rem;">Ne Yanlış? Nerede? Kanıtı Ne?</h3>
+            <p style="color:#a1a1a6;font-size:0.9rem;line-height:1.6;margin-bottom:1.25rem;">
+              Herkese açık web sitenizi 18 motorla tarar. Hangi motorun neden kırıldığını, HTTP durumunu ve kanıtlı satırları ücretsiz dökümler.
+            </p>
+            <ul style="color:#d1d1d6;font-size:0.88rem;line-height:1.8;padding-left:1.25rem;margin:0 0 1.5rem;">
+              <li>18 bağımsız motor deterministik skoru</li>
+              <li>P0–P3 önem ve etki sıralaması</li>
+              <li>Ham HTTP, header ve robots kanıtı</li>
+              <li>AI Crawler erişim ve politika matrisi</li>
+              <li style="color:#86868b;">Uygulama kodu ve test şablonları: <b>YOK</b></li>
+            </ul>
+          </div>
+          <a href="/site-tarama/" class="mac-btn-get" style="background:#202124;color:#ffffff !important;justify-content:center;box-shadow:none;border:1px solid rgba(255,255,255,0.15);">Ücretsiz Sitemi Tara ↗</a>
+        </div>
+
+        <!-- Paid Tier Card -->
+        <div class="mac-card" style="display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#16171b 0%,#0e0f12 100%);border-color:rgba(245,158,11,0.3);position:relative;">
+          <div style="position:absolute;top:-12px;right:20px;background:#f59e0b;color:#000000;font-size:0.75rem;font-weight:800;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.05em;">TEK LİSANSLI ÜRÜN</div>
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.05em;color:#f59e0b;text-transform:uppercase;">TAM ONARIM SETİ</span>
+              <span style="font-size:1.5rem;font-weight:800;color:#ffffff;">$99 <span style="font-size:0.85rem;color:#86868b;font-weight:400;">/ tek seferlik</span></span>
+            </div>
+            <h3 style="font-size:1.3rem;color:#ffffff;margin:0 0 0.5rem;">Nasıl Düzeltilecek? Hangi Kodla?</h3>
+            <p style="color:#a1a1a6;font-size:0.9rem;line-height:1.6;margin-bottom:1.25rem;">
+              Yazılımcınızın veya AI ajanınızın (Cursor/Windsurf/Claude) doğrudan uygulayabileceği 30+ dosyalık deterministik kod paketi.
+            </p>
+            <ul style="color:#d1d1d6;font-size:0.88rem;line-height:1.8;padding-left:1.25rem;margin:0 0 1.5rem;">
+              <li>ROOT FIX → RECOVERY → PREVENTION kod blokları</li>
+              <li>W3C geçerli JSON-LD ve Schema enjeksiyon şablonları</li>
+              <li>Akut 14KB AST temizleme ve n8n iş akışları</li>
+              <li>Kabul ve regresyon testleri (Bash/Python/Node)</li>
+              <li>Sıfır kesintili Rollback güvencesi &amp; stop kuralları</li>
+              <li><b>30 Gün İçinde 1 Doğrulama Re-Scan'i Dahil</b></li>
+            </ul>
+          </div>
+          <a href="/checkout?plan=pro" class="mac-btn-get" style="background:#f59e0b;color:#000000 !important;justify-content:center;font-weight:800;">Onarım Setini İndir — $99 ↗</a>
+        </div>
+      </div>
+
+      <!-- Scope Boundary Contract Card -->
+      <section class="mac-card" style="margin-bottom:2.5rem;">
+        <div class="mac-section-head">
+          <span class="mac-section-kicker">MÜŞTERİ EGEMENLİĞİ &amp; GÜVENLİK</span>
+          <h2 class="mac-section-title">Hizmet Sınırı: Kaynak Kodunuza Dokunmayız</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+          <div style="background:#18191d;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.25rem;">
+            <div style="font-weight:700;color:#ffffff;margin-bottom:0.4rem;">1. Dış Müdahale Riski Sıfırdır</div>
+            <p style="color:#a1a1a6;font-size:0.88rem;line-height:1.5;margin:0;">
+              Sunucunuza, DNS panellerinize veya kaynak kod depolarınıza şifre veya erişim yetkisi istemeyiz. Tüm kodları ZIP olarak teslim ederiz; kendi yazılımcınız onaylar ve canlıya alır.
+            </p>
+          </div>
+
+          <div style="background:#18191d;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.25rem;">
+            <div style="font-weight:700;color:#ffffff;margin-bottom:0.4rem;">2. Güvenli Ödeme &amp; Paddle.com MoR</div>
+            <p style="color:#a1a1a6;font-size:0.88rem;line-height:1.5;margin:0;">
+              Tüm işlemler Paddle.com (Merchant of Record) güvencesinde, 256-bit SSL şifreleme ve anında kurumsal fatura kesimiyle gerçekleştirilir.
+            </p>
+          </div>
+
+          <div style="background:#18191d;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.25rem;">
+            <div style="font-weight:700;color:#ffffff;margin-bottom:0.4rem;">3. Kesintisiz Rollback Komutları</div>
+            <p style="color:#a1a1a6;font-size:0.88rem;line-height:1.5;margin:0;">
+              Her reçete olası bir terslik durumunda canlı sitenizi 5 saniye içinde eski stabil haline döndürecek tek satırlık rollback scriptlerini içerir.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- More Apps Grid (3x3 App Store Standard) -->
+      <section class="mac-shelf-section">
+        <div class="mac-section-head">
+          <span class="mac-section-kicker">POPÜLER UYGULAMALAR</span>
+          <h2 class="mac-section-title">Bu Geliştiriciden Diğer Araçlar</h2>
+        </div>
+        <div class="mac-apps-grid-3x3">
+          <a href="/site-tarama/" class="mac-app-card-item">
+            <div class="mac-app-item-icon" style="background:linear-gradient(135deg,#0071e3,#42a5f5);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+            </div>
+            <div class="mac-app-item-info">
+              <span class="mac-app-item-title">18-Motorlu Tarayıcı</span>
+              <span class="mac-app-item-category">Geliştirici Araçları</span>
+              <span class="mac-app-item-desc">50 sayfa derin AI denetimi</span>
+            </div>
+            <span class="mac-app-item-action">Aç</span>
+          </a>
+
+          <a href="/llms-txt-validator/" class="mac-app-card-item">
+            <div class="mac-app-item-icon" style="background:linear-gradient(135deg,#34c759,#30b0c7);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            </div>
+            <div class="mac-app-item-info">
+              <span class="mac-app-item-title">llms.txt Doğrulayıcı</span>
+              <span class="mac-app-item-category">Üretkenlik</span>
+              <span class="mac-app-item-desc">Resmi spec test motoru</span>
+            </div>
+            <span class="mac-app-item-action">Aç</span>
+          </a>
+
+          <a href="/ai-crawler-checker/" class="mac-app-card-item">
+            <div class="mac-app-item-icon" style="background:linear-gradient(135deg,#ff9500,#ff3b30);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <div class="mac-app-item-info">
+              <span class="mac-app-item-title">AI Crawler Testi</span>
+              <span class="mac-app-item-category">Güvenlik</span>
+              <span class="mac-app-item-desc">Bot erişim simülasyonu</span>
+            </div>
+            <span class="mac-app-item-action">Aç</span>
+          </a>
+
+          <a href="/schema-validator/" class="mac-app-card-item">
+            <div class="mac-app-item-icon" style="background:linear-gradient(135deg,#af52de,#5856d6);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div class="mac-app-item-info">
+              <span class="mac-app-item-title">Schema.org Doğrulayıcı</span>
+              <span class="mac-app-item-category">Geliştirici Araçları</span>
+              <span class="mac-app-item-desc">JSON-LD zırh denetimi</span>
+            </div>
+            <span class="mac-app-item-action">Aç</span>
+          </a>
+
+          <a href="/editor-photoshop.html" class="mac-app-card-item">
+            <div class="mac-app-item-icon" style="background:linear-gradient(135deg,#001e36,#0071e3);">
+              <span style="font-weight:900;font-size:16px;color:#38bdf8;">Ps</span>
+            </div>
+            <div class="mac-app-item-info">
+              <span class="mac-app-item-title">Web Photoshop Studio</span>
+              <span class="mac-app-item-category">Fotoğraf &amp; Video</span>
+              <span class="mac-app-item-desc">Tam katmanlı web editörü</span>
+            </div>
+            <span class="mac-app-item-action">Aç</span>
+          </a>
+
+          <a href="/pdf-cevirici.html" class="mac-app-card-item">
+            <div class="mac-app-item-icon" style="background:linear-gradient(135deg,#e11d48,#be123c);">
+              <span style="font-weight:900;font-size:16px;color:#ffffff;">PDF</span>
+            </div>
+            <div class="mac-app-item-info">
+              <span class="mac-app-item-title">Acrobat Pro DC PDF</span>
+              <span class="mac-app-item-category">İş &amp; Üretkenlik</span>
+              <span class="mac-app-item-desc">Vektör PDF düzenleyici</span>
+            </div>
+            <span class="mac-app-item-action">Aç</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- App Store Clean Footer -->
+      <footer class="mac-footer-clean">
+        <div class="mac-footer-brand-row">
+          <img src="/assets/logo-dark.png?v=hh8" class="brand-logo" alt="HTML&amp;HTML" width="130" height="22">
+          <p class="mac-footer-motto">
+            Web sitenizi yapay zeka arama sonuçlarında görünmeye, kaynak olmaya ve tavsiye edilme fırsatı kazanmaya hazırlayan kanıt odaklı platform.
+          </p>
+        </div>
+        <div class="mac-footer-bottom-row">
+          <div class="mac-footer-links">
+            <a href="/" class="mac-footer-link">Ana Sayfa</a>
+            <a href="/site-tarama/" class="mac-footer-link">18-Motorlu Tarayıcı</a>
+            <a href="/fiyatlandirma/" class="mac-footer-link">Fiyatlandırma</a>
+            <a href="/sozluk/" class="mac-footer-link">Sözlük</a>
+            <a href="/methodology/" class="mac-footer-link">Metodoloji</a>
+            <a href="/gizlilik/" class="mac-footer-link">Gizlilik Politikası</a>
+            <a href="/kullanim-kosullari/" class="mac-footer-link">Kullanım Koşulları</a>
+          </div>
+          <div class="mac-footer-copyright">
+            Telif Hakkı &copy; 2026 HTML&amp;HTML Inc. Tüm hakları saklıdır.
+          </div>
+        </div>
+      </footer>
     </div>
-    <div class="footer-col">
-      <h4>Rehberler</h4>
-      <ul>
-        <li><a href="/tr/rehberler/">Tüm Rehberler</a></li>
-        <li><a href="/tr/rehberler/ai-web-sitesi-hazirlik-kontrol-listesi/">AI Hazırlık Kontrol Listesi</a></li>
-        <li><a href="/tr/rehberler/llms-txt/">llms.txt v2 Standardı</a></li>
-        <li><a href="/tr/rehberler/ai-tarayici-erisimi/">AI Bot ve Tarayıcı Yönetimi</a></li>
-        <li><a href="/tr/rehberler/ai-icin-yapisal-veri/">AI İçin Yapısal Veri</a></li>
-        <li><a href="/tr/rehberler/ai-arama-gorunurlugu/">AI Arama Görünürlüğü (GEO)</a></li>
-        <li><a href="/tr/methodology/">Metodoloji</a></li>
-        <li><a href="/tr/kanit-standardi/">Kanıt Standardı</a></li>
-        <li><a href="/tr/referans/ai-tarayicilar/">AI Tarayıcı Dizini</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kurumsal</h4>
-      <ul>
-        <li><a href="/tr/hakkimizda/">Hakkımızda</a></li>
-        <li><a href="/tr/iletisim/">İletişim</a></li>
-        <li><a href="/tr/kullanim-kosullari/">Kullanım Koşulları</a></li>
-        <li><a href="/tr/gizlilik/">Gizlilik Politikası</a></li>
-        <li><a href="/tr/iade-politikasi/">İade ve İptal Politikası</a></li>
-        <li><a href="/tr/teslimat-politikasi/">Teslimat Politikası</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 HTML&amp;HTML. Tüm hakları saklıdır. Ödemeler ve faturalandırma yetkili Satıcı (Merchant of Record) Paddle.com tarafından yürütülür.</span>
-    <span>18 Bağımsız Teşhis Motoru · 50 Sayfalık Deterministik Tarama Sınırı</span>
-  </div>
-</footer>
-<script src="/assets/js/enterprise-runtime.js?v=3"></script>
-<script src="/assets/js/mobile-space-runtime.js?v=hh3" defer></script>
+  </main>
+</div>
+
+<script src="/assets/js/apple-store.js?v=20260926_105"></script>
 </body>
 </html>
