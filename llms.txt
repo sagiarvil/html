@@ -166,4 +166,3 @@ Eighteen deterministic evaluation engines (ENG-01 through ENG-18) evaluate site-
 - [LLMS.TXT Haberler (TR)](https://htmlandhtml.com/tr/llms-txt-haberler/): Yapay zeka arama ve llms.txt gelişmelerinin özgün, kaynak bağlantılı teknik analizi.
 - [LLMS.TXT News (EN)](https://htmlandhtml.com/en/llms-txt-news/): Original source-linked technical analysis of AI search and llms.txt developments.
 <!-- LLMS_NEWS_END -->
-
